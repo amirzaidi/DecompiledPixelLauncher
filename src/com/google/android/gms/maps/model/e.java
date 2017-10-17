@@ -12,53 +12,53 @@ import android.os.Parcelable$Creator;
 
 public class e implements Parcelable$Creator
 {
-    static void IS(final Tile tile, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, tile.Kd());
-        a.fj(parcel, 2, tile.Fb);
-        a.fj(parcel, 3, tile.Fc);
-        a.fv(parcel, 4, tile.Fd, false);
-        a.fe(parcel, ey);
+    static void JL(final Tile tile, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, tile.KW());
+        a.hX(parcel, 2, tile.GG);
+        a.hX(parcel, 3, tile.GH);
+        a.ij(parcel, 4, tile.GI, false);
+        a.hS(parcel, hm);
     }
     
-    public Tile[] IT(final int n) {
+    public Tile[] JM(final int n) {
         return new Tile[n];
     }
     
-    public Tile IU(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        byte[] gf = null;
-        int fn2 = 0;
-        int fn3 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public Tile JN(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        byte[] it = null;
+        int ib2 = 0;
+        int ib3 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gf = b.gf(parcel, fs);
+                    it = b.iT(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new Tile(fn3, fn2, fn, gf);
+        if (parcel.dataPosition() == ix) {
+            return new Tile(ib3, ib2, ib, it);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

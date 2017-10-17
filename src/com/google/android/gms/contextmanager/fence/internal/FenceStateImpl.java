@@ -11,45 +11,45 @@ import com.google.android.gms.awareness.fence.FenceState;
 public class FenceStateImpl extends FenceState
 {
     public static final Parcelable$Creator CREATOR;
-    private final int Ip;
-    private final int Iq;
-    private final long Ir;
-    private final String Is;
-    private final int It;
+    private final int JU;
+    private final int JV;
+    private final long JW;
+    private final String JX;
+    private final int JY;
     
     static {
         CREATOR = (Parcelable$Creator)new g();
     }
     
-    FenceStateImpl(final int iq, final int ip, final long ir, final String is, final int it) {
-        this.Iq = iq;
-        this.Ip = ip;
-        this.Ir = ir;
-        this.Is = is;
-        this.It = it;
+    FenceStateImpl(final int jv, final int ju, final long jw, final String jx, final int jy) {
+        this.JV = jv;
+        this.JU = ju;
+        this.JW = jw;
+        this.JX = jx;
+        this.JY = jy;
     }
     
-    public int OA() {
-        return this.Ip;
+    public int Pq() {
+        return this.JY;
     }
     
-    public String OB() {
-        return this.Is;
+    public long Pr() {
+        return this.JW;
     }
     
-    public int Ox() {
-        return this.It;
+    int Ps() {
+        return this.JV;
     }
     
-    public long Oy() {
-        return this.Ir;
+    public int Pt() {
+        return this.JU;
     }
     
-    int Oz() {
-        return this.Iq;
+    public String Pu() {
+        return this.JX;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        g.NY(this, parcel, n);
+        g.OR(this, parcel, n);
     }
 }

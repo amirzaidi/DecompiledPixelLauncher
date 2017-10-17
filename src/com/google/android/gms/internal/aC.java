@@ -4,105 +4,39 @@
 
 package com.google.android.gms.internal;
 
-public final class ac extends ba
+import android.os.Parcel;
+import com.google.android.gms.common.api.Status;
+import android.os.IBinder;
+
+class ac implements zzqc
 {
-    public String rs;
-    public long rt;
-    public long ru;
-    public int rv;
-    public String rw;
+    private IBinder rQ;
     
-    public ac() {
-        this.tL();
+    ac(final IBinder rq) {
+        this.rQ = rq;
     }
     
-    protected int computeSerializedSize() {
-        final long n = 0L;
-        int computeSerializedSize = super.computeSerializedSize();
-        if (this.rt != n) {
-            computeSerializedSize += aV.wv(1, this.rt);
-        }
-        if (this.ru != n) {
-            computeSerializedSize += aV.wv(2, this.ru);
-        }
-        if (this.rv != 0) {
-            computeSerializedSize += aV.wn(3, this.rv);
-        }
-        if (!this.rs.equals("")) {
-            computeSerializedSize += aV.wl(4, this.rs);
-        }
-        if (!this.rw.equals("")) {
-            computeSerializedSize += aV.wl(5, this.rw);
-        }
-        return computeSerializedSize;
+    public IBinder asBinder() {
+        return this.rQ;
     }
     
-    public void sa(final aV av) {
-        final long n = 0L;
-        if (this.rt != n) {
-            av.vY(1, this.rt);
-        }
-        if (this.ru != n) {
-            av.vY(2, this.ru);
-        }
-        if (this.rv != 0) {
-            av.vX(3, this.rv);
-        }
-        if (!this.rs.equals("")) {
-            av.vU(4, this.rs);
-        }
-        if (!this.rw.equals("")) {
-            av.vU(5, this.rw);
-        }
-        super.sa(av);
-    }
-    
-    public ac tK(final be be) {
-        while (true) {
-            final int xg = be.xG();
-            switch (xg) {
-                default: {
-                    if (!super.xt(be, xg)) {
-                        return this;
-                    }
-                    continue;
-                }
-                case 0: {
-                    return this;
-                }
-                case 8: {
-                    this.rt = be.xX();
-                    continue;
-                }
-                case 16: {
-                    this.ru = be.xX();
-                    continue;
-                }
-                case 24: {
-                    this.rv = be.xF();
-                    continue;
-                }
-                case 34: {
-                    this.rs = be.ya();
-                    continue;
-                }
-                case 42: {
-                    this.rw = be.ya();
-                    continue;
-                }
+    public void zzae(final Status status) {
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.clearcut.internal.IClearcutLoggerCallbacks";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (status == null) {
+                obtain.writeInt(0);
             }
+            else {
+                obtain.writeInt(1);
+                status.writeToParcel(obtain, 0);
+            }
+            this.rQ.transact(1, obtain, (Parcel)null, 1);
         }
-    }
-    
-    public ac tL() {
-        final long n = 0L;
-        this.rt = n;
-        this.ru = n;
-        this.rv = 0;
-        this.rs = "";
-        this.rw = "";
-        this.tt = null;
-        this.sB = -1;
-        return this;
+        finally {
+            obtain.recycle();
+        }
     }
 }

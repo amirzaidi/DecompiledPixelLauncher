@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field final Kf:I
+.field final LK:I
 
-.field private final Kg:Lcom/google/android/gms/common/internal/ResolveAccountResponse;
+.field private final LL:Lcom/google/android/gms/common/internal/ResolveAccountResponse;
 
-.field private final Kh:Lcom/google/android/gms/common/ConnectionResult;
+.field private final LM:Lcom/google/android/gms/common/ConnectionResult;
 
 
 # direct methods
@@ -46,11 +46,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->Kf:I
+    iput p1, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->LK:I
 
-    iput-object p2, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->Kh:Lcom/google/android/gms/common/ConnectionResult;
+    iput-object p2, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->LM:Lcom/google/android/gms/common/ConnectionResult;
 
-    iput-object p3, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->Kg:Lcom/google/android/gms/common/internal/ResolveAccountResponse;
+    iput-object p3, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->LL:Lcom/google/android/gms/common/internal/ResolveAccountResponse;
 
     return-void
 .end method
@@ -67,18 +67,18 @@
 
 
 # virtual methods
-.method public Qm()Lcom/google/android/gms/common/internal/ResolveAccountResponse;
+.method public Rf()Lcom/google/android/gms/common/internal/ResolveAccountResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->Kg:Lcom/google/android/gms/common/internal/ResolveAccountResponse;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->LL:Lcom/google/android/gms/common/internal/ResolveAccountResponse;
 
     return-object v0
 .end method
 
-.method public Qn()Lcom/google/android/gms/common/ConnectionResult;
+.method public Rg()Lcom/google/android/gms/common/ConnectionResult;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->Kh:Lcom/google/android/gms/common/ConnectionResult;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/SignInResponse;->LM:Lcom/google/android/gms/common/ConnectionResult;
 
     return-object v0
 .end method
@@ -86,7 +86,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/a;->PU(Lcom/google/android/gms/signin/internal/SignInResponse;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/a;->QN(Lcom/google/android/gms/signin/internal/SignInResponse;Landroid/os/Parcel;I)V
 
     return-void
 .end method

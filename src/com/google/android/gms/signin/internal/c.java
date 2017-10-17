@@ -12,14 +12,14 @@ import android.os.IBinder;
 
 class c implements zzd
 {
-    private IBinder JS;
+    private IBinder Lx;
     
-    c(final IBinder js) {
-        this.JS = js;
+    c(final IBinder lx) {
+        this.Lx = lx;
     }
     
     public IBinder asBinder() {
-        return this.JS;
+        return this.Lx;
     }
     
     public void zza(final ConnectionResult connectionResult, final AuthAccountResult authAccountResult) {
@@ -40,7 +40,7 @@ class c implements zzd
                     }
                     if (authAccountResult == null) {
                         obtain.writeInt(0);
-                        this.JS.transact(3, obtain, obtain2, 0);
+                        this.Lx.transact(3, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -74,7 +74,7 @@ class c implements zzd
                     }
                     if (googleSignInAccount == null) {
                         obtain.writeInt(0);
-                        this.JS.transact(7, obtain, obtain2, 0);
+                        this.Lx.transact(7, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -104,7 +104,7 @@ class c implements zzd
                 obtain.writeInt(1);
                 signInResponse.writeToParcel(obtain, 0);
             }
-            this.JS.transact(8, obtain, obtain2, 0);
+            this.Lx.transact(8, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -127,7 +127,7 @@ class c implements zzd
                 obtain.writeInt(1);
                 status.writeToParcel(obtain, 0);
             }
-            this.JS.transact(4, obtain, obtain2, 0);
+            this.Lx.transact(4, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -150,7 +150,7 @@ class c implements zzd
                 obtain.writeInt(1);
                 status.writeToParcel(obtain, 0);
             }
-            this.JS.transact(6, obtain, obtain2, 0);
+            this.Lx.transact(6, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {

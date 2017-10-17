@@ -3,39 +3,39 @@
 
 
 # static fields
-.field public static final Gc:Lcom/google/android/gms/common/api/h;
+.field public static final HH:Lcom/google/android/gms/common/api/e;
 
-.field public static final Gf:Lcom/google/android/gms/common/api/l;
+.field public static final HK:Lcom/google/android/gms/common/api/j;
 
-.field public static final Gh:Lcom/google/android/gms/common/api/r;
+.field public static final HM:Lcom/google/android/gms/common/api/q;
 
-.field public static final Gi:Lcom/google/android/gms/clearcut/g;
+.field public static final HN:Lcom/google/android/gms/clearcut/g;
 
 
 # instance fields
-.field private Ga:Ljava/lang/String;
+.field private HF:Ljava/lang/String;
 
-.field private Gb:Ljava/lang/String;
+.field private HG:Ljava/lang/String;
 
-.field private final Gd:Z
+.field private final HI:Z
 
-.field private final Ge:Lcom/google/android/gms/clearcut/d;
+.field private final HJ:Lcom/google/android/gms/clearcut/d;
 
-.field private final Gg:Lcom/google/android/gms/clearcut/f;
+.field private final HL:Lcom/google/android/gms/clearcut/f;
 
-.field private Gj:I
+.field private HO:I
 
-.field private final Gk:Lcom/google/android/gms/common/a/a;
+.field private final HP:Lcom/google/android/gms/common/a/a;
 
-.field private Gl:I
+.field private HQ:I
 
-.field private final Gm:I
+.field private final HR:I
 
-.field private Gn:Ljava/lang/String;
+.field private HS:Ljava/lang/String;
 
-.field private final Go:Lcom/google/android/gms/clearcut/g;
+.field private final HT:Lcom/google/android/gms/clearcut/g;
 
-.field private Gp:Lcom/google/android/gms/clearcut/c;
+.field private HU:Lcom/google/android/gms/clearcut/c;
 
 .field private final mContext:Landroid/content/Context;
 
@@ -46,35 +46,35 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    new-instance v0, Lcom/google/android/gms/common/api/r;
+    new-instance v0, Lcom/google/android/gms/common/api/q;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/r;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/api/q;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/clearcut/a;->Gh:Lcom/google/android/gms/common/api/r;
+    sput-object v0, Lcom/google/android/gms/clearcut/a;->HM:Lcom/google/android/gms/common/api/q;
 
     new-instance v0, Lcom/google/android/gms/clearcut/h;
 
     invoke-direct {v0}, Lcom/google/android/gms/clearcut/h;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/clearcut/a;->Gf:Lcom/google/android/gms/common/api/l;
+    sput-object v0, Lcom/google/android/gms/clearcut/a;->HK:Lcom/google/android/gms/common/api/j;
 
-    new-instance v0, Lcom/google/android/gms/common/api/h;
+    new-instance v0, Lcom/google/android/gms/common/api/e;
 
-    sget-object v1, Lcom/google/android/gms/clearcut/a;->Gf:Lcom/google/android/gms/common/api/l;
+    sget-object v1, Lcom/google/android/gms/clearcut/a;->HK:Lcom/google/android/gms/common/api/j;
 
-    sget-object v2, Lcom/google/android/gms/clearcut/a;->Gh:Lcom/google/android/gms/common/api/r;
+    sget-object v2, Lcom/google/android/gms/clearcut/a;->HM:Lcom/google/android/gms/common/api/q;
 
     const-string/jumbo v3, "ClearcutLogger.API"
 
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/h;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/l;Lcom/google/android/gms/common/api/r;)V
+    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/e;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/j;Lcom/google/android/gms/common/api/q;)V
 
-    sput-object v0, Lcom/google/android/gms/clearcut/a;->Gc:Lcom/google/android/gms/common/api/h;
+    sput-object v0, Lcom/google/android/gms/clearcut/a;->HH:Lcom/google/android/gms/common/api/e;
 
-    new-instance v0, Lcom/google/android/gms/internal/az;
+    new-instance v0, Lcom/google/android/gms/internal/at;
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/az;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/internal/at;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/clearcut/a;->Gi:Lcom/google/android/gms/clearcut/g;
+    sput-object v0, Lcom/google/android/gms/clearcut/a;->HN:Lcom/google/android/gms/clearcut/g;
 
     return-void
 .end method
@@ -88,9 +88,9 @@
 
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/google/android/gms/clearcut/a;->Gl:I
+    iput v0, p0, Lcom/google/android/gms/clearcut/a;->HQ:I
 
-    iput v1, p0, Lcom/google/android/gms/clearcut/a;->Gj:I
+    iput v1, p0, Lcom/google/android/gms/clearcut/a;->HO:I
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -109,25 +109,25 @@
 
     iput-object v0, p0, Lcom/google/android/gms/clearcut/a;->mPackageName:Ljava/lang/String;
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/clearcut/a;->Lx(Landroid/content/Context;)I
+    invoke-direct {p0, p1}, Lcom/google/android/gms/clearcut/a;->Mq(Landroid/content/Context;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/google/android/gms/clearcut/a;->Gm:I
+    iput v0, p0, Lcom/google/android/gms/clearcut/a;->HR:I
 
-    iput p2, p0, Lcom/google/android/gms/clearcut/a;->Gl:I
+    iput p2, p0, Lcom/google/android/gms/clearcut/a;->HQ:I
 
-    iput-object p3, p0, Lcom/google/android/gms/clearcut/a;->Gb:Ljava/lang/String;
+    iput-object p3, p0, Lcom/google/android/gms/clearcut/a;->HG:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/google/android/gms/clearcut/a;->Ga:Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/gms/clearcut/a;->HF:Ljava/lang/String;
 
-    iput-object p5, p0, Lcom/google/android/gms/clearcut/a;->Gn:Ljava/lang/String;
+    iput-object p5, p0, Lcom/google/android/gms/clearcut/a;->HS:Ljava/lang/String;
 
-    iput-boolean p6, p0, Lcom/google/android/gms/clearcut/a;->Gd:Z
+    iput-boolean p6, p0, Lcom/google/android/gms/clearcut/a;->HI:Z
 
-    iput-object p7, p0, Lcom/google/android/gms/clearcut/a;->Go:Lcom/google/android/gms/clearcut/g;
+    iput-object p7, p0, Lcom/google/android/gms/clearcut/a;->HT:Lcom/google/android/gms/clearcut/g;
 
-    iput-object p8, p0, Lcom/google/android/gms/clearcut/a;->Gk:Lcom/google/android/gms/common/a/a;
+    iput-object p8, p0, Lcom/google/android/gms/clearcut/a;->HP:Lcom/google/android/gms/common/a/a;
 
     if-nez p9, :cond_1
 
@@ -136,15 +136,15 @@
     invoke-direct {p9}, Lcom/google/android/gms/clearcut/c;-><init>()V
 
     :cond_1
-    iput-object p9, p0, Lcom/google/android/gms/clearcut/a;->Gp:Lcom/google/android/gms/clearcut/c;
+    iput-object p9, p0, Lcom/google/android/gms/clearcut/a;->HU:Lcom/google/android/gms/clearcut/c;
 
-    iput-object p10, p0, Lcom/google/android/gms/clearcut/a;->Gg:Lcom/google/android/gms/clearcut/f;
+    iput-object p10, p0, Lcom/google/android/gms/clearcut/a;->HL:Lcom/google/android/gms/clearcut/f;
 
-    iput v1, p0, Lcom/google/android/gms/clearcut/a;->Gj:I
+    iput v1, p0, Lcom/google/android/gms/clearcut/a;->HO:I
 
-    iput-object p11, p0, Lcom/google/android/gms/clearcut/a;->Ge:Lcom/google/android/gms/clearcut/d;
+    iput-object p11, p0, Lcom/google/android/gms/clearcut/a;->HJ:Lcom/google/android/gms/clearcut/d;
 
-    iget-boolean v0, p0, Lcom/google/android/gms/clearcut/a;->Gd:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/clearcut/a;->HI:Z
 
     if-nez v0, :cond_2
 
@@ -152,7 +152,7 @@
     return-void
 
     :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Ga:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HF:Ljava/lang/String;
 
     if-eqz v0, :cond_3
 
@@ -161,7 +161,7 @@
     :goto_1
     const-string/jumbo v1, "can\'t be anonymous with an upload account"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/l;->hq(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/l;->ke(ZLjava/lang/Object;)V
 
     goto :goto_0
 
@@ -176,17 +176,17 @@
 
     const/4 v5, 0x0
 
-    sget-object v7, Lcom/google/android/gms/clearcut/a;->Gi:Lcom/google/android/gms/clearcut/g;
+    sget-object v7, Lcom/google/android/gms/clearcut/a;->HN:Lcom/google/android/gms/clearcut/g;
 
-    invoke-static {}, Lcom/google/android/gms/common/a/m;->jR()Lcom/google/android/gms/common/a/a;
+    invoke-static {}, Lcom/google/android/gms/common/a/m;->mF()Lcom/google/android/gms/common/a/a;
 
     move-result-object v8
 
-    sget-object v10, Lcom/google/android/gms/clearcut/f;->GG:Lcom/google/android/gms/clearcut/f;
+    sget-object v10, Lcom/google/android/gms/clearcut/f;->Il:Lcom/google/android/gms/clearcut/f;
 
-    new-instance v11, Lcom/google/android/gms/internal/av;
+    new-instance v11, Lcom/google/android/gms/internal/aq;
 
-    invoke-direct {v11, p1}, Lcom/google/android/gms/internal/av;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, p1}, Lcom/google/android/gms/internal/aq;-><init>(Landroid/content/Context;)V
 
     const/4 v6, 0x0
 
@@ -207,47 +207,7 @@
     return-void
 .end method
 
-.method static synthetic LA(Lcom/google/android/gms/clearcut/a;)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/google/android/gms/clearcut/a;->Gd:Z
-
-    return v0
-.end method
-
-.method static synthetic LB(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->mPackageName:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic LC(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Ga:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic LD(Lcom/google/android/gms/clearcut/a;)I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/clearcut/a;->Gj:I
-
-    return v0
-.end method
-
-.method static synthetic LE(Lcom/google/android/gms/clearcut/a;)Landroid/content/Context;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method private static Lj(Ljava/util/ArrayList;)[Ljava/lang/String;
+.method private static Mc(Ljava/util/ArrayList;)[Ljava/lang/String;
     .locals 1
 
     const/4 v0, 0x0
@@ -270,59 +230,59 @@
     return-object v0
 .end method
 
-.method static synthetic Lk(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
+.method static synthetic Md(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Gb:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HG:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic Ll(Ljava/util/ArrayList;)[Ljava/lang/String;
+.method static synthetic Me(Ljava/util/ArrayList;)[Ljava/lang/String;
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/clearcut/a;->Lj(Ljava/util/ArrayList;)[Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/android/gms/clearcut/a;->Mc(Ljava/util/ArrayList;)[Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic Lm(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/common/a/a;
+.method static synthetic Mf(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/common/a/a;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Gk:Lcom/google/android/gms/common/a/a;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HP:Lcom/google/android/gms/common/a/a;
 
     return-object v0
 .end method
 
-.method static synthetic Ln(Ljava/util/ArrayList;)[I
+.method static synthetic Mg(Ljava/util/ArrayList;)[I
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/clearcut/a;->Lu(Ljava/util/ArrayList;)[I
+    invoke-static {p0}, Lcom/google/android/gms/clearcut/a;->Mn(Ljava/util/ArrayList;)[I
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic Lo(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/g;
+.method static synthetic Mh(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/g;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Go:Lcom/google/android/gms/clearcut/g;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HT:Lcom/google/android/gms/clearcut/g;
 
     return-object v0
 .end method
 
-.method static synthetic Lp(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/c;
+.method static synthetic Mi(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/c;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Gp:Lcom/google/android/gms/clearcut/c;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HU:Lcom/google/android/gms/clearcut/c;
 
     return-object v0
 .end method
 
-.method private static Lq(Ljava/util/ArrayList;)[[B
+.method private static Mj(Ljava/util/ArrayList;)[[B
     .locals 1
 
     const/4 v0, 0x0
@@ -345,25 +305,25 @@
     return-object v0
 .end method
 
-.method static synthetic Lr(Ljava/util/ArrayList;)[[B
+.method static synthetic Mk(Ljava/util/ArrayList;)[[B
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/clearcut/a;->Lq(Ljava/util/ArrayList;)[[B
+    invoke-static {p0}, Lcom/google/android/gms/clearcut/a;->Mj(Ljava/util/ArrayList;)[[B
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic Lt(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/d;
+.method static synthetic Mm(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/d;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Ge:Lcom/google/android/gms/clearcut/d;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HJ:Lcom/google/android/gms/clearcut/d;
 
     return-object v0
 .end method
 
-.method private static Lu(Ljava/util/ArrayList;)[I
+.method private static Mn(Ljava/util/ArrayList;)[I
     .locals 5
 
     const/4 v1, 0x0
@@ -414,23 +374,23 @@
     goto :goto_0
 .end method
 
-.method static synthetic Lv(Lcom/google/android/gms/clearcut/a;)I
+.method static synthetic Mo(Lcom/google/android/gms/clearcut/a;)I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/clearcut/a;->Gm:I
+    iget v0, p0, Lcom/google/android/gms/clearcut/a;->HR:I
 
     return v0
 .end method
 
-.method static synthetic Lw(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
+.method static synthetic Mp(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Gn:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HS:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method private Lx(Landroid/content/Context;)I
+.method private Mq(Landroid/content/Context;)I
     .locals 4
 
     const/4 v0, 0x0
@@ -469,25 +429,65 @@
     goto :goto_0
 .end method
 
-.method static synthetic Ly(Lcom/google/android/gms/clearcut/a;)I
+.method static synthetic Mr(Lcom/google/android/gms/clearcut/a;)I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/clearcut/a;->Gl:I
+    iget v0, p0, Lcom/google/android/gms/clearcut/a;->HQ:I
 
     return v0
 .end method
 
-.method static synthetic Lz(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/f;
+.method static synthetic Ms(Lcom/google/android/gms/clearcut/a;)Lcom/google/android/gms/clearcut/f;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->Gg:Lcom/google/android/gms/clearcut/f;
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HL:Lcom/google/android/gms/clearcut/f;
+
+    return-object v0
+.end method
+
+.method static synthetic Mt(Lcom/google/android/gms/clearcut/a;)Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/google/android/gms/clearcut/a;->HI:Z
+
+    return v0
+.end method
+
+.method static synthetic Mu(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->mPackageName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic Mv(Lcom/google/android/gms/clearcut/a;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->HF:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic Mw(Lcom/google/android/gms/clearcut/a;)I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/clearcut/a;->HO:I
+
+    return v0
+.end method
+
+.method static synthetic Mx(Lcom/google/android/gms/clearcut/a;)Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/clearcut/a;->mContext:Landroid/content/Context;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public Ls([B)Lcom/google/android/gms/clearcut/b;
+.method public Ml([B)Lcom/google/android/gms/clearcut/b;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/clearcut/b;

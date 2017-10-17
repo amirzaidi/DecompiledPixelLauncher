@@ -3,18 +3,18 @@
 
 
 # instance fields
-.field public final fA:Landroid/os/Bundle;
+.field public final ir:I
 
-.field final synthetic fB:Lcom/google/android/gms/common/internal/x;
+.field public final is:Landroid/os/Bundle;
 
-.field public final fz:I
+.field final synthetic it:Lcom/google/android/gms/common/internal/x;
 
 
 # direct methods
 .method protected constructor <init>(Lcom/google/android/gms/common/internal/x;ILandroid/os/Bundle;)V
     .locals 1
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/i;->fB:Lcom/google/android/gms/common/internal/x;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/i;->it:Lcom/google/android/gms/common/internal/x;
 
     const/4 v0, 0x1
 
@@ -24,16 +24,16 @@
 
     invoke-direct {p0, p1, v0}, Lcom/google/android/gms/common/internal/F;-><init>(Lcom/google/android/gms/common/internal/x;Ljava/lang/Object;)V
 
-    iput p2, p0, Lcom/google/android/gms/common/internal/i;->fz:I
+    iput p2, p0, Lcom/google/android/gms/common/internal/i;->ir:I
 
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/i;->fA:Landroid/os/Bundle;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/i;->is:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected hf(Ljava/lang/Boolean;)V
+.method protected jT(Ljava/lang/Boolean;)V
     .locals 3
 
     const/4 v2, 0x1
@@ -42,48 +42,48 @@
 
     if-eqz p1, :cond_1
 
-    iget v1, p0, Lcom/google/android/gms/common/internal/i;->fz:I
+    iget v1, p0, Lcom/google/android/gms/common/internal/i;->ir:I
 
     sparse-switch v1, :sswitch_data_0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->fB:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->it:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ip(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ld(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->fA:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->is:Landroid/os/Bundle;
 
     if-nez v1, :cond_2
 
     :goto_0
     new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
 
-    iget v2, p0, Lcom/google/android/gms/common/internal/i;->fz:I
+    iget v2, p0, Lcom/google/android/gms/common/internal/i;->ir:I
 
     invoke-direct {v1, v2, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/i;->hi(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/i;->jW(Lcom/google/android/gms/common/ConnectionResult;)V
 
     :cond_0
     :goto_1
     return-void
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->fB:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->it:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ip(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ld(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
 
     return-void
 
     :sswitch_0
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/i;->hh()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/i;->jV()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->fB:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->it:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ip(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ld(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
 
     new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
 
@@ -91,14 +91,14 @@
 
     invoke-direct {v1, v2, v0}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/i;->hi(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/internal/i;->jW(Lcom/google/android/gms/common/ConnectionResult;)V
 
     goto :goto_1
 
     :sswitch_1
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->fB:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/i;->it:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ip(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/common/internal/x;->ld(Lcom/google/android/gms/common/internal/x;ILandroid/os/IInterface;)V
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -109,7 +109,7 @@
     throw v0
 
     :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/i;->fA:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/i;->is:Landroid/os/Bundle;
 
     const-string/jumbo v1, "pendingIntent"
 
@@ -130,23 +130,23 @@
     .end sparse-switch
 .end method
 
-.method protected synthetic hg(Ljava/lang/Object;)V
+.method protected synthetic jU(Ljava/lang/Object;)V
     .locals 0
 
     check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/i;->hf(Ljava/lang/Boolean;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/i;->jT(Ljava/lang/Boolean;)V
 
     return-void
 .end method
 
-.method protected abstract hh()Z
+.method protected abstract jV()Z
 .end method
 
-.method protected abstract hi(Lcom/google/android/gms/common/ConnectionResult;)V
+.method protected abstract jW(Lcom/google/android/gms/common/ConnectionResult;)V
 .end method
 
-.method protected hj()V
+.method protected jX()V
     .locals 0
 
     return-void

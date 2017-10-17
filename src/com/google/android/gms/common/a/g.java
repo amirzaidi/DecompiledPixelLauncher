@@ -8,17 +8,17 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager$NameNotFoundException;
 import android.util.Log;
 import com.google.android.gms.common.j;
-import com.google.android.gms.internal.aG;
+import com.google.android.gms.internal.az;
 import android.content.Context;
 
 public final class g
 {
-    public static boolean jD(final Context context, final int n, final String s) {
-        return aG.uS(context).xD(n, s);
+    public static boolean mr(final Context context, final int n, final String s) {
+        return az.uR(context).xC(n, s);
     }
     
-    public static boolean jE(final Context context, final int n) {
-        if (!jD(context, n, "com.google.android.gms")) {
+    public static boolean ms(final Context context, final int n) {
+        if (!mr(context, n, "com.google.android.gms")) {
             return false;
         }
         final PackageManager packageManager = context.getPackageManager();
@@ -27,7 +27,7 @@ public final class g
         final PackageManager packageManager2 = packageManager;
         final String s2 = s;
         try {
-            return j.getInstance(context).ob(context.getPackageManager(), packageManager2.getPackageInfo(s2, n2));
+            return j.getInstance(context).qN(context.getPackageManager(), packageManager2.getPackageInfo(s2, n2));
         }
         catch (PackageManager$NameNotFoundException ex) {
             if (Log.isLoggable("UidVerifier", 3)) {

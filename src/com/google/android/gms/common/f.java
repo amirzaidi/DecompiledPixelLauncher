@@ -16,18 +16,18 @@ import android.content.Context;
 
 public class f
 {
-    public static final int kC;
-    private static final f kD;
+    public static final int nu;
+    private static final f nv;
     
     static {
-        kC = k.kI;
-        kD = new f();
+        nu = k.nA;
+        nv = new f();
     }
     
-    private String nV(final Context context, final String s) {
+    private String qH(final Context context, final String s) {
         final StringBuilder sb = new StringBuilder();
         sb.append("gcore_");
-        sb.append(f.kC);
+        sb.append(f.nu);
         sb.append("-");
         if (!TextUtils.isEmpty((CharSequence)s)) {
             sb.append(s);
@@ -57,64 +57,64 @@ public class f
         return sb.toString();
     }
     
-    public PendingIntent nA(final Context context, final int n, final int n2) {
-        return this.nL(context, n, n2, null);
+    public boolean qB(final Context context, final int n) {
+        return k.rd(context, n);
     }
     
-    public boolean nC(final int n) {
-        return k.oc(n);
+    public boolean qF(final Context context, final String s) {
+        return k.qU(context, s);
     }
     
-    public Intent nJ(final Context context, final int n, final String s) {
+    public void qG(final Context context) {
+        k.qZ(context);
+    }
+    
+    public PendingIntent qn(final Context context, final int n, final int n2) {
+        return this.qx(context, n, n2, null);
+    }
+    
+    public boolean qp(final int n) {
+        return k.qO(n);
+    }
+    
+    public Intent qv(final Context context, final int n, final String s) {
         switch (n) {
             default: {
                 return null;
             }
             case 1:
             case 2: {
-                return t.hE("com.google.android.gms", this.nV(context, s));
+                return t.ks("com.google.android.gms", this.qH(context, s));
             }
             case 42: {
-                return t.hG();
+                return t.ku();
             }
             case 3: {
-                return t.hD("com.google.android.gms");
+                return t.kr("com.google.android.gms");
             }
         }
     }
     
-    public PendingIntent nL(final Context context, int n, final int n2, final String s) {
-        if (c.jx(context) && n == 2) {
+    public PendingIntent qx(final Context context, int n, final int n2, final String s) {
+        if (c.ml(context) && n == 2) {
             n = 42;
         }
-        final Intent nj = this.nJ(context, n, s);
-        if (nj != null) {
-            return PendingIntent.getActivity(context, n2, nj, 268435456);
+        final Intent qv = this.qv(context, n, s);
+        if (qv != null) {
+            return PendingIntent.getActivity(context, n2, qv, 268435456);
         }
         return null;
     }
     
-    public Intent nM(final int n) {
-        return this.nJ(null, n, null);
+    public Intent qy(final int n) {
+        return this.qv(null, n, null);
     }
     
-    public int nN(final Context context) {
-        int op = k.op(context);
-        if (k.or(context, op)) {
-            op = 18;
+    public int qz(final Context context) {
+        int rb = k.rb(context);
+        if (k.rd(context, rb)) {
+            rb = 18;
         }
-        return op;
-    }
-    
-    public boolean nP(final Context context, final int n) {
-        return k.or(context, n);
-    }
-    
-    public boolean nT(final Context context, final String s) {
-        return k.oi(context, s);
-    }
-    
-    public void nU(final Context context) {
-        k.on(context);
+        return rb;
     }
 }

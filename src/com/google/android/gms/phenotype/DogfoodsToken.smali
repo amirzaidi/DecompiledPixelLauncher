@@ -7,18 +7,18 @@
 
 
 # instance fields
-.field final lg:I
+.field final yO:I
 
-.field public final lh:[B
+.field public final yP:[B
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/phenotype/k;
+    new-instance v0, Lcom/google/android/gms/phenotype/j;
 
-    invoke-direct {v0}, Lcom/google/android/gms/phenotype/k;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/phenotype/j;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/phenotype/DogfoodsToken;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -30,9 +30,9 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/phenotype/DogfoodsToken;->lg:I
+    iput p1, p0, Lcom/google/android/gms/phenotype/DogfoodsToken;->yO:I
 
-    iput-object p2, p0, Lcom/google/android/gms/phenotype/DogfoodsToken;->lh:[B
+    iput-object p2, p0, Lcom/google/android/gms/phenotype/DogfoodsToken;->yP:[B
 
     return-void
 .end method
@@ -42,7 +42,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/phenotype/k;->pl(Lcom/google/android/gms/phenotype/DogfoodsToken;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/phenotype/j;->Df(Lcom/google/android/gms/phenotype/DogfoodsToken;Landroid/os/Parcel;I)V
 
     return-void
 .end method

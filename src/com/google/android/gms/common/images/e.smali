@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract mG(Landroid/net/Uri;Landroid/graphics/drawable/Drawable;Z)V
+.method public abstract pu(Landroid/net/Uri;Landroid/graphics/drawable/Drawable;Z)V
 .end method

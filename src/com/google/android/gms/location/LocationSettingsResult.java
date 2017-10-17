@@ -7,39 +7,39 @@ package com.google.android.gms.location;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import android.os.Parcelable$Creator;
-import com.google.android.gms.common.api.b;
+import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
-public final class LocationSettingsResult extends AbstractSafeParcelable implements b
+public final class LocationSettingsResult extends AbstractSafeParcelable implements m
 {
     public static final Parcelable$Creator CREATOR;
-    private final LocationSettingsStates CO;
-    private final Status CP;
-    private final int CQ;
+    private final LocationSettingsStates Et;
+    private final Status Eu;
+    private final int Ev;
     
     static {
         CREATOR = (Parcelable$Creator)new i();
     }
     
-    LocationSettingsResult(final int cq, final Status cp, final LocationSettingsStates co) {
-        this.CQ = cq;
-        this.CP = cp;
-        this.CO = co;
+    LocationSettingsResult(final int ev, final Status eu, final LocationSettingsStates et) {
+        this.Ev = ev;
+        this.Eu = eu;
+        this.Et = et;
     }
     
-    public LocationSettingsStates Hu() {
-        return this.CO;
+    public LocationSettingsStates In() {
+        return this.Et;
     }
     
-    public int Hv() {
-        return this.CQ;
+    public int Io() {
+        return this.Ev;
     }
     
-    public Status dr() {
-        return this.CP;
+    public Status gV() {
+        return this.Eu;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        i.Hm(this, parcel, n);
+        i.If(this, parcel, n);
     }
 }

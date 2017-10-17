@@ -30,20 +30,20 @@ import com.google.android.gms.common.ConnectionResult;
 
 class w implements c
 {
-    final /* synthetic */ x fV;
+    final /* synthetic */ x iN;
     
-    public w(final x fv) {
-        this.fV = fv;
+    public w(final x in) {
+        this.iN = in;
     }
     
-    public void gB(final ConnectionResult connectionResult) {
-        if (!connectionResult.nw()) {
-            if (this.fV.gl != null) {
-                this.fV.gl.hC(connectionResult);
+    public void jp(final ConnectionResult connectionResult) {
+        if (!connectionResult.qj()) {
+            if (this.iN.jd != null) {
+                this.iN.jd.kq(connectionResult);
             }
         }
         else {
-            this.fV.eb(null, this.fV.im());
+            this.iN.gI(null, this.iN.la());
         }
     }
 }

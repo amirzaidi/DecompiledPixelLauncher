@@ -10,17 +10,17 @@
 
 
 # instance fields
-.field Cn:Landroid/os/Bundle;
+.field DS:Landroid/os/Bundle;
 
-.field private final Co:I
+.field private final DT:I
 
-.field Cp:Ljava/util/List;
+.field DU:Ljava/util/List;
 
-.field Cq:J
+.field DV:J
 
-.field Cr:I
+.field DW:I
 
-.field Cs:J
+.field DX:J
 
 
 # direct methods
@@ -41,22 +41,22 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Co:I
+    iput p1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DT:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cp:Ljava/util/List;
+    iput-object p2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DU:Ljava/util/List;
 
-    iput-wide p3, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cs:J
+    iput-wide p3, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DX:J
 
-    iput-wide p5, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cq:J
+    iput-wide p5, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DV:J
 
-    iput p7, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cr:I
+    iput p7, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DW:I
 
-    iput-object p8, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cn:Landroid/os/Bundle;
+    iput-object p8, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DS:Landroid/os/Bundle;
 
     return-void
 .end method
 
-.method private static GK(Landroid/os/Bundle;Landroid/os/Bundle;)Z
+.method private static HD(Landroid/os/Bundle;Landroid/os/Bundle;)Z
     .locals 5
 
     const/4 v4, 0x1
@@ -182,7 +182,7 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Lcom/google/android/gms/location/ActivityRecognitionResult;->GK(Landroid/os/Bundle;Landroid/os/Bundle;)Z
+    invoke-static {v2, v0}, Lcom/google/android/gms/location/ActivityRecognitionResult;->HD(Landroid/os/Bundle;Landroid/os/Bundle;)Z
 
     move-result v0
 
@@ -193,10 +193,10 @@
 
 
 # virtual methods
-.method public GJ()I
+.method public HC()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Co:I
+    iget v0, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DT:I
 
     return v0
 .end method
@@ -231,25 +231,25 @@
 
     check-cast p1, Lcom/google/android/gms/location/ActivityRecognitionResult;
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cs:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DX:J
 
-    iget-wide v4, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cs:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_3
-
-    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cq:J
-
-    iget-wide v4, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cq:J
+    iget-wide v4, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->DX:J
 
     cmp-long v2, v2, v4
 
     if-nez v2, :cond_3
 
-    iget v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cr:I
+    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DV:J
 
-    iget v3, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cr:I
+    iget-wide v4, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->DV:J
+
+    cmp-long v2, v2, v4
+
+    if-nez v2, :cond_3
+
+    iget v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DW:I
+
+    iget v3, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->DW:I
 
     if-eq v2, v3, :cond_5
 
@@ -261,21 +261,21 @@
     return v0
 
     :cond_5
-    iget-object v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cp:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DU:Ljava/util/List;
 
-    iget-object v3, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cp:Ljava/util/List;
+    iget-object v3, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->DU:Ljava/util/List;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_3
 
-    iget-object v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cn:Landroid/os/Bundle;
+    iget-object v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DS:Landroid/os/Bundle;
 
-    iget-object v3, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cn:Landroid/os/Bundle;
+    iget-object v3, p1, Lcom/google/android/gms/location/ActivityRecognitionResult;->DS:Landroid/os/Bundle;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/location/ActivityRecognitionResult;->GK(Landroid/os/Bundle;Landroid/os/Bundle;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/location/ActivityRecognitionResult;->HD(Landroid/os/Bundle;Landroid/os/Bundle;)Z
 
     move-result v2
 
@@ -291,7 +291,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cs:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DX:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -301,7 +301,7 @@
 
     aput-object v1, v0, v2
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cq:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DV:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -311,7 +311,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cr:I
+    iget v1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DW:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -321,19 +321,19 @@
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cp:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DU:Ljava/util/List;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cn:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DS:Landroid/os/Bundle;
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -343,15 +343,15 @@
 .method public toString()Ljava/lang/String;
     .locals 7
 
-    iget-object v0, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cp:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DU:Ljava/util/List;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cs:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DX:J
 
-    iget-wide v4, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->Cq:J
+    iget-wide v4, p0, Lcom/google/android/gms/location/ActivityRecognitionResult;->DV:J
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -413,7 +413,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/v;->Ik(Lcom/google/android/gms/location/ActivityRecognitionResult;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/v;->Jd(Lcom/google/android/gms/location/ActivityRecognitionResult;Landroid/os/Parcel;I)V
 
     return-void
 .end method

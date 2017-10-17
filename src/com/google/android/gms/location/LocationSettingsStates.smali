@@ -7,19 +7,19 @@
 
 
 # instance fields
-.field private final Db:Z
+.field private final EG:Z
 
-.field private final Dc:Z
+.field private final EH:Z
 
-.field private final Dd:I
+.field private final EI:I
 
-.field private final De:Z
+.field private final EJ:Z
 
-.field private final Df:Z
+.field private final EK:Z
 
-.field private final Dg:Z
+.field private final EL:Z
 
-.field private final Dh:Z
+.field private final EM:Z
 
 
 # direct methods
@@ -40,77 +40,77 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dd:I
+    iput p1, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EI:I
 
-    iput-boolean p2, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Db:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EG:Z
 
-    iput-boolean p3, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Df:Z
+    iput-boolean p3, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EK:Z
 
-    iput-boolean p4, p0, Lcom/google/android/gms/location/LocationSettingsStates;->De:Z
+    iput-boolean p4, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EJ:Z
 
-    iput-boolean p5, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dh:Z
+    iput-boolean p5, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EM:Z
 
-    iput-boolean p6, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dg:Z
+    iput-boolean p6, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EL:Z
 
-    iput-boolean p7, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dc:Z
+    iput-boolean p7, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EH:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public HF()Z
+.method public IA()I
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dh:Z
+    iget v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EI:I
 
     return v0
 .end method
 
-.method public HG()Z
+.method public IB()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Df:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EG:Z
 
     return v0
 .end method
 
-.method public HH()I
+.method public IC()Z
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dd:I
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EL:Z
 
     return v0
 .end method
 
-.method public HI()Z
+.method public ID()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Db:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EJ:Z
 
     return v0
 .end method
 
-.method public HJ()Z
+.method public IE()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dg:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EH:Z
 
     return v0
 .end method
 
-.method public HK()Z
+.method public Iy()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->De:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EM:Z
 
     return v0
 .end method
 
-.method public HL()Z
+.method public Iz()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->Dc:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsStates;->EK:Z
 
     return v0
 .end method
@@ -118,7 +118,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/e;->GM(Lcom/google/android/gms/location/LocationSettingsStates;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/e;->HF(Lcom/google/android/gms/location/LocationSettingsStates;Landroid/os/Parcel;I)V
 
     return-void
 .end method

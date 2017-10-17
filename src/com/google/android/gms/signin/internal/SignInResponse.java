@@ -14,9 +14,9 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class SignInResponse extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final int Kf;
-    private final ResolveAccountResponse Kg;
-    private final ConnectionResult Kh;
+    final int LK;
+    private final ResolveAccountResponse LL;
+    private final ConnectionResult LM;
     
     static {
         CREATOR = (Parcelable$Creator)new a();
@@ -26,25 +26,25 @@ public class SignInResponse extends AbstractSafeParcelable
         this(new ConnectionResult(n, null), null);
     }
     
-    SignInResponse(final int kf, final ConnectionResult kh, final ResolveAccountResponse kg) {
-        this.Kf = kf;
-        this.Kh = kh;
-        this.Kg = kg;
+    SignInResponse(final int lk, final ConnectionResult lm, final ResolveAccountResponse ll) {
+        this.LK = lk;
+        this.LM = lm;
+        this.LL = ll;
     }
     
     public SignInResponse(final ConnectionResult connectionResult, final ResolveAccountResponse resolveAccountResponse) {
         this(1, connectionResult, resolveAccountResponse);
     }
     
-    public ResolveAccountResponse Qm() {
-        return this.Kg;
+    public ResolveAccountResponse Rf() {
+        return this.LL;
     }
     
-    public ConnectionResult Qn() {
-        return this.Kh;
+    public ConnectionResult Rg() {
+        return this.LM;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        a.PU(this, parcel, n);
+        a.QN(this, parcel, n);
     }
 }

@@ -14,14 +14,14 @@
     return-void
 .end method
 
-.method static HC(Lcom/google/android/gms/location/LocationSettingsRequest;Landroid/os/Parcel;I)V
+.method static Iv(Lcom/google/android/gms/location/LocationSettingsRequest;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Hy()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Ir()Ljava/util/List;
 
     move-result-object v1
 
@@ -29,45 +29,45 @@
 
     const/4 v3, 0x1
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->fc(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->hQ(Landroid/os/Parcel;ILjava/util/List;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Hw()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Ip()Z
 
     move-result v1
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fa(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hO(Landroid/os/Parcel;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Hx()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Iq()Z
 
     move-result v1
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fa(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hO(Landroid/os/Parcel;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Hz()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationSettingsRequest;->Is()I
 
     move-result v1
 
     const/16 v2, 0x3e8
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public HD(Landroid/os/Parcel;)Lcom/google/android/gms/location/LocationSettingsRequest;
+.method public Iw(Landroid/os/Parcel;)Lcom/google/android/gms/location/LocationSettingsRequest;
     .locals 7
 
     const/4 v0, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v4
 
@@ -99,45 +99,45 @@
     return-object v4
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v5
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v6
 
     sparse-switch v6, :sswitch_data_0
 
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :sswitch_0
     sget-object v2, Lcom/google/android/gms/location/LocationRequest;->CREATOR:Lcom/google/android/gms/location/n;
 
-    invoke-static {p1, v5, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fZ(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    invoke-static {p1, v5, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iN(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
     move-result-object v2
 
     goto :goto_0
 
     :sswitch_1
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
 
     move-result v1
 
     goto :goto_0
 
     :sswitch_2
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
 
     move-result v0
 
     goto :goto_0
 
     :sswitch_3
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v3
 
@@ -179,7 +179,7 @@
     .end sparse-switch
 .end method
 
-.method public HE(I)[Lcom/google/android/gms/location/LocationSettingsRequest;
+.method public Ix(I)[Lcom/google/android/gms/location/LocationSettingsRequest;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/location/LocationSettingsRequest;
@@ -190,7 +190,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/m;->HD(Landroid/os/Parcel;)Lcom/google/android/gms/location/LocationSettingsRequest;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/m;->Iw(Landroid/os/Parcel;)Lcom/google/android/gms/location/LocationSettingsRequest;
 
     move-result-object v0
 
@@ -200,7 +200,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/m;->HE(I)[Lcom/google/android/gms/location/LocationSettingsRequest;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/m;->Ix(I)[Lcom/google/android/gms/location/LocationSettingsRequest;
 
     move-result-object v0
 

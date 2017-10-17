@@ -29,50 +29,50 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class GoogleSignInAccount extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    public static a Jl;
-    private static Comparator Jp;
-    final int Jf;
-    private String Jg;
-    private String Jh;
-    private String Ji;
-    private String Jj;
-    private String Jk;
-    private long Jm;
-    private String Jn;
-    private String Jo;
-    List Jq;
-    private String Jr;
-    private Uri Js;
+    public static a KQ;
+    private static Comparator KU;
+    final int KK;
+    private String KL;
+    private String KM;
+    private String KN;
+    private String KO;
+    private String KP;
+    private long KR;
+    private String KS;
+    private String KT;
+    List KV;
+    private String KW;
+    private Uri KX;
     
     static {
         CREATOR = (Parcelable$Creator)new d();
-        GoogleSignInAccount.Jl = m.jR();
-        GoogleSignInAccount.Jp = new c();
+        GoogleSignInAccount.KQ = m.mF();
+        GoogleSignInAccount.KU = new b();
     }
     
-    GoogleSignInAccount(final int jf, final String jh, final String ji, final String jj, final String jr, final Uri js, final String jg, final long jm, final String jk, final List jq, final String jo, final String jn) {
-        this.Jf = jf;
-        this.Jh = jh;
-        this.Ji = ji;
-        this.Jj = jj;
-        this.Jr = jr;
-        this.Js = js;
-        this.Jg = jg;
-        this.Jm = jm;
-        this.Jk = jk;
-        this.Jq = jq;
-        this.Jo = jo;
-        this.Jn = jn;
+    GoogleSignInAccount(final int kk, final String km, final String kn, final String ko, final String kw, final Uri kx, final String kl, final long kr, final String kp, final List kv, final String kt, final String ks) {
+        this.KK = kk;
+        this.KM = km;
+        this.KN = kn;
+        this.KO = ko;
+        this.KW = kw;
+        this.KX = kx;
+        this.KL = kl;
+        this.KR = kr;
+        this.KP = kp;
+        this.KV = kv;
+        this.KT = kt;
+        this.KS = ks;
     }
     
-    public static GoogleSignInAccount Ps(final String s, final String s2, final String s3, final String s4, final String s5, final String s6, final Uri uri, Long value, final String s7, final Set set) {
+    public static GoogleSignInAccount Ql(final String s, final String s2, final String s3, final String s4, final String s5, final String s6, final Uri uri, Long value, final String s7, final Set set) {
         if (value == null) {
-            value = GoogleSignInAccount.Jl.js() / 1000L;
+            value = GoogleSignInAccount.KQ.mg() / 1000L;
         }
-        return new GoogleSignInAccount(3, s, s2, s3, s4, uri, null, value, l.hr(s7), new ArrayList((Collection)l.ht(set)), s5, s6);
+        return new GoogleSignInAccount(3, s, s2, s3, s4, uri, null, value, l.kf(s7), new ArrayList((Collection)l.kh(set)), s5, s6);
     }
     
-    public static GoogleSignInAccount Pu(final String s) {
+    public static GoogleSignInAccount Qn(final String s) {
         int i = 0;
         if (!TextUtils.isEmpty((CharSequence)s)) {
             final JSONObject jsonObject = new JSONObject(s);
@@ -89,12 +89,12 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
             for (JSONArray jsonArray = jsonObject.getJSONArray("grantedScopes"); i < jsonArray.length(); ++i) {
                 set.add(new Scope(jsonArray.getString(i)));
             }
-            return Ps(jsonObject.optString("id"), jsonObject.optString("tokenId", (String)null), jsonObject.optString("email", (String)null), jsonObject.optString("displayName", (String)null), jsonObject.optString("givenName", (String)null), jsonObject.optString("familyName", (String)null), parse, long1, jsonObject.getString("obfuscatedIdentifier"), set).Py(jsonObject.optString("serverAuthCode", (String)null));
+            return Ql(jsonObject.optString("id"), jsonObject.optString("tokenId", (String)null), jsonObject.optString("email", (String)null), jsonObject.optString("displayName", (String)null), jsonObject.optString("givenName", (String)null), jsonObject.optString("familyName", (String)null), parse, long1, jsonObject.getString("obfuscatedIdentifier"), set).Qr(jsonObject.optString("serverAuthCode", (String)null));
         }
         return null;
     }
     
-    private JSONObject Px() {
+    private JSONObject Qq() {
         final JSONObject jsonObject = new JSONObject();
     Label_0335_Outer:
         while (true) {
@@ -104,21 +104,21 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
                 while (true) {
                 Label_0310_Outer:
                     while (true) {
-                        List jq;
-                        List jq2;
+                        List kv;
+                        List kv2;
                         Iterator<Scope> iterator;
-                        Uri pt;
+                        Uri qm;
                         Scope next;
-                        Label_0071:Label_0230_Outer:Label_0250_Outer:Label_0290_Outer:
+                        Label_0071:Label_0290_Outer:
                         while (true) {
-                            Label_0062:Label_0270_Outer:
+                            Label_0062:Label_0250_Outer:Label_0270_Outer:
                             while (true) {
+                            Label_0053:
                                 while (true) {
                                 Label_0044:
                                     while (true) {
                                     Label_0035:
                                         while (true) {
-                                        Label_0026:
                                             while (true) {
                                                 Label_0017: {
                                                     if (this.getId() == null) {
@@ -127,16 +127,16 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
                                                     Label_0178: {
                                                         break Label_0178;
                                                         while (true) {
-                                                            jsonObject.put("expirationTime", this.Jm);
-                                                            jsonObject.put("obfuscatedIdentifier", (Object)this.Pv());
+                                                            jsonObject.put("expirationTime", this.KR);
+                                                            jsonObject.put("obfuscatedIdentifier", (Object)this.Qo());
                                                             try {
                                                                 jsonArray = new JSONArray();
-                                                                jq = this.Jq;
+                                                                kv = this.KV;
                                                                 try {
-                                                                    Collections.sort((List<Object>)jq, GoogleSignInAccount.Jp);
-                                                                    jq2 = this.Jq;
+                                                                    Collections.sort((List<Object>)kv, GoogleSignInAccount.KU);
+                                                                    kv2 = this.KV;
                                                                     try {
-                                                                        iterator = jq2.iterator();
+                                                                        iterator = kv2.iterator();
                                                                         try {
                                                                             if (!iterator.hasNext()) {
                                                                                 jsonObject.put("grantedScopes", (Object)jsonArray);
@@ -144,11 +144,11 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
                                                                             }
                                                                             Label_0355: {
                                                                                 break Label_0355;
-                                                                                pt = this.Pt();
+                                                                                qm = this.Qm();
                                                                                 try {
-                                                                                    jsonObject.put("photoUrl", (Object)pt.toString());
+                                                                                    jsonObject.put("photoUrl", (Object)qm.toString());
                                                                                     break Label_0071;
-                                                                                    jsonObject.put("serverAuthCode", (Object)this.Pp());
+                                                                                    jsonObject.put("serverAuthCode", (Object)this.Qi());
                                                                                     continue Label_0310_Outer;
                                                                                     next = iterator.next();
                                                                                     try {
@@ -158,17 +158,17 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
                                                                                 }
                                                                                 catch (JSONException ex2) {}
                                                                             }
-                                                                            jsonObject.put("tokenId", (Object)this.Pw());
-                                                                            break Label_0026;
+                                                                            jsonObject.put("email", (Object)this.Qk());
+                                                                            break Label_0035;
+                                                                            jsonObject.put("familyName", (Object)this.Qt());
+                                                                            break Label_0062;
+                                                                            jsonObject.put("displayName", (Object)this.Qu());
+                                                                            break Label_0044;
+                                                                            jsonObject.put("givenName", (Object)this.Qh());
+                                                                            break Label_0053;
                                                                             jsonObject.put("id", (Object)this.getId());
                                                                             break;
-                                                                            jsonObject.put("email", (Object)this.Pr());
-                                                                            break Label_0035;
-                                                                            jsonObject.put("displayName", (Object)this.PB());
-                                                                            break Label_0044;
-                                                                            jsonObject.put("familyName", (Object)this.PA());
-                                                                            break Label_0062;
-                                                                            jsonObject.put("givenName", (Object)this.Po());
+                                                                            jsonObject.put("tokenId", (Object)this.Qp());
                                                                         }
                                                                         catch (JSONException ex3) {}
                                                                     }
@@ -180,37 +180,37 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
                                                         }
                                                     }
                                                 }
-                                                if (this.Pw() != null) {
-                                                    continue Label_0230_Outer;
+                                                if (this.Qp() != null) {
+                                                    continue;
                                                 }
                                                 break;
                                             }
-                                            if (this.Pr() != null) {
-                                                continue Label_0250_Outer;
+                                            if (this.Qk() != null) {
+                                                continue Label_0290_Outer;
                                             }
                                             break;
                                         }
-                                        if (this.PB() != null) {
-                                            continue Label_0290_Outer;
+                                        if (this.Qu() != null) {
+                                            continue Label_0270_Outer;
                                         }
                                         break;
                                     }
-                                    if (this.Po() != null) {
+                                    if (this.Qh() != null) {
                                         continue;
                                     }
                                     break;
                                 }
-                                if (this.PA() != null) {
-                                    continue Label_0270_Outer;
+                                if (this.Qt() != null) {
+                                    continue Label_0250_Outer;
                                 }
                                 break;
                             }
-                            if (this.Pt() != null) {
+                            if (this.Qm() != null) {
                                 continue Label_0335_Outer;
                             }
                             break;
                         }
-                        if (this.Pp() == null) {
+                        if (this.Qi() == null) {
                             continue Label_0310_Outer;
                         }
                         break;
@@ -219,65 +219,65 @@ public class GoogleSignInAccount extends AbstractSafeParcelable implements Refle
                 }
             }
             catch (JSONException ex7) {}
-            jsonArray.put((Object)scope.el());
+            jsonArray.put((Object)scope.gS());
             continue;
         }
     }
     
-    public String PA() {
-        return this.Jn;
+    public String Qh() {
+        return this.KT;
     }
     
-    public String PB() {
-        return this.Jr;
+    public String Qi() {
+        return this.KL;
     }
     
-    public String Po() {
-        return this.Jo;
+    public long Qj() {
+        return this.KR;
     }
     
-    public String Pp() {
-        return this.Jg;
+    public String Qk() {
+        return this.KO;
     }
     
-    public long Pq() {
-        return this.Jm;
+    public Uri Qm() {
+        return this.KX;
     }
     
-    public String Pr() {
-        return this.Jj;
+    public String Qo() {
+        return this.KP;
     }
     
-    public Uri Pt() {
-        return this.Js;
+    public String Qp() {
+        return this.KN;
     }
     
-    public String Pv() {
-        return this.Jk;
-    }
-    
-    public String Pw() {
-        return this.Ji;
-    }
-    
-    public GoogleSignInAccount Py(final String jg) {
-        this.Jg = jg;
+    public GoogleSignInAccount Qr(final String kl) {
+        this.KL = kl;
         return this;
     }
     
-    public String Pz() {
-        return this.Px().toString();
+    public String Qs() {
+        return this.Qq().toString();
+    }
+    
+    public String Qt() {
+        return this.KS;
+    }
+    
+    public String Qu() {
+        return this.KW;
     }
     
     public boolean equals(final Object o) {
-        return o instanceof GoogleSignInAccount && ((GoogleSignInAccount)o).Pz().equals(this.Pz());
+        return o instanceof GoogleSignInAccount && ((GoogleSignInAccount)o).Qs().equals(this.Qs());
     }
     
     public String getId() {
-        return this.Jh;
+        return this.KM;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        d.PQ(this, parcel, n);
+        d.QJ(this, parcel, n);
     }
 }

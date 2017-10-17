@@ -7,8 +7,8 @@ package com.google.android.gms.location.internal;
 import android.os.Bundle;
 import android.os.IBinder;
 import com.google.android.gms.common.internal.a;
-import com.google.android.gms.common.api.f;
-import com.google.android.gms.common.api.g;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.d;
 import android.os.Looper;
 import android.content.Context;
 import com.google.android.gms.common.internal.R;
@@ -16,17 +16,17 @@ import android.os.IInterface;
 
 class q implements r
 {
-    final /* synthetic */ i Bi;
+    final /* synthetic */ i CN;
     
-    q(final i bi) {
-        this.Bi = bi;
+    q(final i cn) {
+        this.CN = cn;
     }
     
-    public zzi FL() {
-        return (zzi)this.Bi.hY();
+    public zzi GE() {
+        return (zzi)this.CN.kM();
     }
     
-    public void FM() {
-        this.Bi.ik();
+    public void GF() {
+        this.CN.kY();
     }
 }

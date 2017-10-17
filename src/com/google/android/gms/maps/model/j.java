@@ -9,13 +9,13 @@ import com.google.android.gms.dynamic.zzd;
 
 public final class j
 {
-    private final zzd El;
+    private final zzd FQ;
     
     public j(final zzd zzd) {
-        this.El = (zzd)l.ht(zzd);
+        this.FQ = (zzd)l.kh(zzd);
     }
     
-    public zzd Jl() {
-        return this.El;
+    public zzd Ke() {
+        return this.FQ;
     }
 }

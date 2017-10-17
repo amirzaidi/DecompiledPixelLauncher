@@ -12,31 +12,31 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public final class UserDataType extends AbstractSafeParcelable
 {
+    public static final UserDataType Bf;
+    public static final UserDataType Bg;
+    public static final UserDataType Bh;
+    public static final Set Bi;
     public static final h CREATOR;
-    public static final UserDataType zA;
-    public static final UserDataType zB;
-    public static final UserDataType zC;
-    public static final Set zD;
-    final int zE;
-    final int zF;
-    final String zG;
+    final int Bj;
+    final int Bk;
+    final String Bl;
     
     static {
-        zC = DS("test_type", 1);
-        zB = DS("labeled_place", 6);
-        zA = DS("here_content", 7);
-        zD = o.kc(UserDataType.zC, UserDataType.zB, UserDataType.zA);
+        Bh = EL("test_type", 1);
+        Bg = EL("labeled_place", 6);
+        Bf = EL("here_content", 7);
+        Bi = o.mQ(UserDataType.Bh, UserDataType.Bg, UserDataType.Bf);
         CREATOR = new h();
     }
     
-    UserDataType(final int ze, final String zg, final int zf) {
-        l.hr(zg);
-        this.zE = ze;
-        this.zG = zg;
-        this.zF = zf;
+    UserDataType(final int bj, final String bl, final int bk) {
+        l.kf(bl);
+        this.Bj = bj;
+        this.Bl = bl;
+        this.Bk = bk;
     }
     
-    private static UserDataType DS(final String s, final int n) {
+    private static UserDataType EL(final String s, final int n) {
         return new UserDataType(0, s, n);
     }
     
@@ -47,7 +47,7 @@ public final class UserDataType extends AbstractSafeParcelable
         }
         if (o instanceof UserDataType) {
             final UserDataType userDataType = (UserDataType)o;
-            if (this.zG.equals(userDataType.zG) || this.zF != userDataType.zF) {
+            if (this.Bl.equals(userDataType.Bl) || this.Bk != userDataType.Bk) {
                 b = false;
             }
             return b;
@@ -56,14 +56,14 @@ public final class UserDataType extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return this.zG.hashCode();
+        return this.Bl.hashCode();
     }
     
     public String toString() {
-        return this.zG;
+        return this.Bl;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.Ex(this, parcel, n);
+        h.Fq(this, parcel, n);
     }
 }

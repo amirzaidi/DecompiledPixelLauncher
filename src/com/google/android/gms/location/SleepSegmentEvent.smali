@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final CK:J
+.field private final Ep:J
 
-.field private final CL:I
+.field private final Eq:I
 
-.field private final CM:J
+.field private final Er:J
 
-.field private final CN:I
+.field private final Es:I
 
 
 # direct methods
@@ -54,7 +54,7 @@
     :goto_1
     const-string/jumbo v3, "startTimeMillis must be greater than 0."
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/l;->hq(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/l;->ke(ZLjava/lang/Object;)V
 
     cmp-long v0, v4, p4
 
@@ -70,7 +70,7 @@
     :goto_3
     const-string/jumbo v3, "endTimeMillis must be greater than 0."
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/l;->hq(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/l;->ke(ZLjava/lang/Object;)V
 
     cmp-long v0, p2, p4
 
@@ -84,15 +84,15 @@
     :goto_5
     const-string/jumbo v0, "endTimeMillis must be greater than or equal to startTimeMillis"
 
-    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/l;->hq(ZLjava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/l;->ke(ZLjava/lang/Object;)V
 
-    iput p1, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CL:I
+    iput p1, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Eq:I
 
-    iput-wide p2, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CM:J
+    iput-wide p2, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Er:J
 
-    iput-wide p4, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CK:J
+    iput-wide p4, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Ep:J
 
-    iput p6, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CN:I
+    iput p6, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Es:I
 
     return-void
 
@@ -129,34 +129,34 @@
 
 
 # virtual methods
-.method public Hg()I
+.method public HZ()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CN:I
+    iget v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Es:I
 
     return v0
 .end method
 
-.method public Hh()J
+.method public Ia()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CK:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Ep:J
 
     return-wide v0
 .end method
 
-.method public Hi()I
+.method public Ib()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CL:I
+    iget v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Eq:I
 
     return v0
 .end method
 
-.method public Hj()J
+.method public Ic()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CM:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Er:J
 
     return-wide v0
 .end method
@@ -168,7 +168,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CM:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Er:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -178,7 +178,7 @@
 
     aput-object v1, v0, v2
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CK:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Ep:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -188,7 +188,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->CN:I
+    iget v1, p0, Lcom/google/android/gms/location/SleepSegmentEvent;->Es:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -210,7 +210,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/k;->Hp(Lcom/google/android/gms/location/SleepSegmentEvent;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/k;->Ii(Lcom/google/android/gms/location/SleepSegmentEvent;Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static final kF:Ljava/lang/ref/WeakReference;
+.field private static final nx:Ljava/lang/ref/WeakReference;
 
 
 # instance fields
-.field private kE:Ljava/lang/ref/WeakReference;
+.field private nw:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/common/i;->kF:Ljava/lang/ref/WeakReference;
+    sput-object v0, Lcom/google/android/gms/common/i;->nx:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
@@ -30,25 +30,25 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/l;-><init>([B)V
 
-    sget-object v0, Lcom/google/android/gms/common/i;->kF:Ljava/lang/ref/WeakReference;
+    sget-object v0, Lcom/google/android/gms/common/i;->nx:Ljava/lang/ref/WeakReference;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/i;->kE:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/google/android/gms/common/i;->nw:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract nQ()[B
+.method protected abstract qC()[B
 .end method
 
-.method nR()[B
+.method qD()[B
     .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/i;->kE:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/google/android/gms/common/i;->nw:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -64,7 +64,7 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/google/android/gms/common/i;->nQ()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/common/i;->qC()[B
 
     move-result-object v0
 
@@ -72,7 +72,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/i;->kE:Ljava/lang/ref/WeakReference;
+    iput-object v1, p0, Lcom/google/android/gms/common/i;->nw:Ljava/lang/ref/WeakReference;
 
     goto :goto_0
 

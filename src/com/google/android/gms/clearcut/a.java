@@ -10,90 +10,91 @@ import android.content.pm.PackageManager$NameNotFoundException;
 import android.util.Log;
 import java.util.Iterator;
 import java.util.ArrayList;
-import com.google.android.gms.internal.av;
+import com.google.android.gms.internal.aq;
 import com.google.android.gms.common.a.m;
-import com.google.android.gms.internal.az;
+import com.google.android.gms.common.internal.l;
+import com.google.android.gms.internal.at;
 import android.content.Context;
-import com.google.android.gms.common.api.r;
-import com.google.android.gms.common.api.l;
-import com.google.android.gms.common.api.h;
+import com.google.android.gms.common.api.q;
+import com.google.android.gms.common.api.j;
+import com.google.android.gms.common.api.e;
 
 public final class a
 {
-    public static final h Gc;
-    public static final l Gf;
-    public static final r Gh;
-    public static final g Gi;
-    private String Ga;
-    private String Gb;
-    private final boolean Gd;
-    private final d Ge;
-    private final f Gg;
-    private int Gj;
-    private final com.google.android.gms.common.a.a Gk;
-    private int Gl;
-    private final int Gm;
-    private String Gn;
-    private final g Go;
-    private c Gp;
+    public static final e HH;
+    public static final j HK;
+    public static final q HM;
+    public static final g HN;
+    private String HF;
+    private String HG;
+    private final boolean HI;
+    private final d HJ;
+    private final f HL;
+    private int HO;
+    private final com.google.android.gms.common.a.a HP;
+    private int HQ;
+    private final int HR;
+    private String HS;
+    private final g HT;
+    private c HU;
     private final Context mContext;
     private final String mPackageName;
     
     static {
-        Gh = new r();
-        Gf = new com.google.android.gms.clearcut.h();
-        Gc = new h("ClearcutLogger.API", a.Gf, a.Gh);
-        Gi = new az();
+        HM = new q();
+        HK = new h();
+        HH = new e("ClearcutLogger.API", a.HK, a.HM);
+        HN = new at();
     }
     
-    public a(final Context context, final int gl, final String gb, final String ga, final String gn, final boolean gd, final g go, final com.google.android.gms.common.a.a gk, c gp, final f gg, final d ge) {
-        this.Gl = -1;
-        this.Gj = 0;
+    public a(final Context context, final int hq, final String hg, final String hf, final String hs, final boolean hi, final g ht, final com.google.android.gms.common.a.a hp, c hu, final f hl, final d hj) {
+        this.HQ = -1;
+        this.HO = 0;
         Context applicationContext = context.getApplicationContext();
         if (applicationContext == null) {
             applicationContext = context;
         }
         this.mContext = applicationContext;
         this.mPackageName = context.getPackageName();
-        this.Gm = this.Lx(context);
-        this.Gl = gl;
-        this.Gb = gb;
-        this.Ga = ga;
-        this.Gn = gn;
-        this.Gd = gd;
-        this.Go = go;
-        this.Gk = gk;
-        if (gp == null) {
-            gp = new c();
+        this.HR = this.Mq(context);
+        this.HQ = hq;
+        this.HG = hg;
+        this.HF = hf;
+        this.HS = hs;
+        this.HI = hi;
+        this.HT = ht;
+        this.HP = hp;
+        if (hu == null) {
+            hu = new c();
         }
-        this.Gp = gp;
-        this.Gg = gg;
-        this.Gj = 0;
-        this.Ge = ge;
-        if (this.Gd) {
-            com.google.android.gms.common.internal.l.hq(this.Ga == null, "can't be anonymous with an upload account");
+        this.HU = hu;
+        this.HL = hl;
+        this.HO = 0;
+        this.HJ = hj;
+        if (this.HI) {
+            l.ke(this.HF == null, "can't be anonymous with an upload account");
         }
     }
     
     public a(final Context context, final String s, final String s2) {
-        this(context, -1, s, s2, null, false, a.Gi, m.jR(), null, f.GG, new av(context));
+        this(context, -1, s, s2, null, false, a.HN, m.mF(), null, f.Il, new aq(context));
     }
     
-    private static String[] Lj(final ArrayList list) {
+    private static String[] Mc(final ArrayList list) {
         if (list != null) {
             return list.toArray(new String[0]);
         }
         return null;
     }
     
-    private static byte[][] Lq(final ArrayList list) {
+    private static byte[][] Mj(final ArrayList list) {
         if (list != null) {
             return list.toArray(new byte[0][]);
         }
         return null;
     }
     
-    private static int[] Lu(final ArrayList list) {
+    private static int[] Mn(final ArrayList list) {
         int n = 0;
         if (list != null) {
             final int[] array = new int[list.size()];
@@ -112,7 +113,7 @@ public final class a
         return null;
     }
     
-    private int Lx(final Context context) {
+    private int Mq(final Context context) {
         int versionCode = 0;
         try {
             final PackageManager packageManager = context.getPackageManager();
@@ -131,7 +132,7 @@ public final class a
         catch (PackageManager$NameNotFoundException ex3) {}
     }
     
-    public b Ls(final byte[] array) {
-        return new b(this, array, (com.google.android.gms.clearcut.h)null);
+    public b Ml(final byte[] array) {
+        return new b(this, array, (h)null);
     }
 }

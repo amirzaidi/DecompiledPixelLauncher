@@ -33,30 +33,30 @@ import android.content.ServiceConnection;
 public final class e implements ServiceConnection
 {
     private final int Jm;
-    final /* synthetic */ x fi;
+    final /* synthetic */ x ia;
     
-    public e(final x fi, final int jm) {
-        this.fi = fi;
+    public e(final x ia, final int jm) {
+        this.ia = ia;
         this.Jm = jm;
     }
     
     public void onServiceConnected(final ComponentName componentName, final IBinder binder) {
-        l.ho(binder, "Expecting a valid IBinder");
-        final x fi = this.fi;
-        synchronized (fi.gh) {
-            this.fi.gi = zzu$zza.zzha(binder);
-            // monitorexit(x.ii(fi))
-            this.fi.hS(0, null, this.Jm);
+        l.kc(binder, "Expecting a valid IBinder");
+        final x ia = this.ia;
+        synchronized (ia.iZ) {
+            this.ia.ja = zzu$zza.zzha(binder);
+            // monitorexit(x.kW(ia))
+            this.ia.kG(0, null, this.Jm);
         }
     }
     
     public void onServiceDisconnected(final ComponentName componentName) {
-        Object o = this.fi.gh;
+        Object o = this.ia.iZ;
         synchronized (o) {
-            this.fi.gi = null;
+            this.ia.ja = null;
             // monitorexit(o)
-            final Handler mHandler = this.fi.mHandler;
-            o = this.fi.mHandler;
+            final Handler mHandler = this.ia.mHandler;
+            o = this.ia.mHandler;
             o = ((Handler)o).obtainMessage(4, this.Jm, 1);
             mHandler.sendMessage((Message)o);
         }

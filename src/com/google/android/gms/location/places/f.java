@@ -13,47 +13,47 @@ import android.os.Parcelable$Creator;
 
 public class f implements Parcelable$Creator
 {
-    static void Eh(final AutocompleteFilter autocompleteFilter, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fa(parcel, 1, autocompleteFilter.zz);
-        a.fb(parcel, 2, autocompleteFilter.zx, false);
-        a.fj(parcel, 1000, autocompleteFilter.zy);
-        a.fe(parcel, ey);
+    static void Fa(final AutocompleteFilter autocompleteFilter, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hO(parcel, 1, autocompleteFilter.Be);
+        a.hP(parcel, 2, autocompleteFilter.Bc, false);
+        a.hX(parcel, 1000, autocompleteFilter.Bd);
+        a.hS(parcel, hm);
     }
     
-    public AutocompleteFilter Ef(final Parcel parcel) {
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
-        List fh = null;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public AutocompleteFilter EY(final Parcel parcel) {
+        boolean il = false;
+        final int ix = b.ix(parcel);
+        List iv = null;
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fh = b.fH(parcel, fs);
+                    iv = b.iv(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new AutocompleteFilter(fn, fx, fh);
+        if (parcel.dataPosition() == ix) {
+            return new AutocompleteFilter(ib, il, iv);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public AutocompleteFilter[] Eg(final int n) {
+    public AutocompleteFilter[] EZ(final int n) {
         return new AutocompleteFilter[n];
     }
 }

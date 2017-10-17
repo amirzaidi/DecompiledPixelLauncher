@@ -13,35 +13,35 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class RecordConsentRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final Scope[] JY;
-    final int JZ;
-    private final String Ka;
-    private final Account Kb;
+    private final Scope[] LD;
+    final int LE;
+    private final String LF;
+    private final Account LG;
     
     static {
         CREATOR = (Parcelable$Creator)new g();
     }
     
-    RecordConsentRequest(final int jz, final Account kb, final Scope[] jy, final String ka) {
-        this.JZ = jz;
-        this.Kb = kb;
-        this.JY = jy;
-        this.Ka = ka;
+    RecordConsentRequest(final int le, final Account lg, final Scope[] ld, final String lf) {
+        this.LE = le;
+        this.LG = lg;
+        this.LD = ld;
+        this.LF = lf;
     }
     
-    public String Qf() {
-        return this.Ka;
+    public String QY() {
+        return this.LF;
     }
     
-    public Scope[] Qg() {
-        return this.JY;
+    public Scope[] QZ() {
+        return this.LD;
     }
     
     public Account getAccount() {
-        return this.Kb;
+        return this.LG;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        g.Qi(this, parcel, n);
+        g.Rb(this, parcel, n);
     }
 }

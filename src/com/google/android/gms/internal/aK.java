@@ -4,10 +4,44 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.d;
-import android.content.Context;
+import android.os.Parcel;
+import com.google.android.gms.clearcut.LogEventParcelable;
+import android.os.IBinder;
 
-public interface ak
+class ak implements zzqd
 {
-    d ub(final Context p0);
+    private IBinder rX;
+    
+    ak(final IBinder rx) {
+        this.rX = rx;
+    }
+    
+    public IBinder asBinder() {
+        return this.rX;
+    }
+    
+    public void zza(final zzqc zzqc, final LogEventParcelable logEventParcelable) {
+        IBinder binder = null;
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.clearcut.internal.IClearcutLoggerService";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (zzqc != null) {
+                binder = zzqc.asBinder();
+            }
+            obtain.writeStrongBinder(binder);
+            if (logEventParcelable == null) {
+                obtain.writeInt(0);
+            }
+            else {
+                obtain.writeInt(1);
+                logEventParcelable.writeToParcel(obtain, 0);
+            }
+            this.rX.transact(1, obtain, (Parcel)null, 1);
+        }
+        finally {
+            obtain.recycle();
+        }
+    }
 }

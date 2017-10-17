@@ -3,9 +3,9 @@
 
 
 # static fields
-.field private static final gv:Ljava/lang/Object;
+.field private static final jn:Ljava/lang/Object;
 
-.field private static gw:Lcom/google/android/gms/common/internal/C;
+.field private static jo:Lcom/google/android/gms/common/internal/C;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/C;->gv:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/internal/C;->jn:Ljava/lang/Object;
 
     return-void
 .end method
@@ -29,15 +29,15 @@
     return-void
 .end method
 
-.method public static is(Landroid/content/Context;)Lcom/google/android/gms/common/internal/C;
+.method public static lg(Landroid/content/Context;)Lcom/google/android/gms/common/internal/C;
     .locals 3
 
-    sget-object v1, Lcom/google/android/gms/common/internal/C;->gv:Ljava/lang/Object;
+    sget-object v1, Lcom/google/android/gms/common/internal/C;->jn:Ljava/lang/Object;
 
     monitor-enter v1
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/common/internal/C;->gw:Lcom/google/android/gms/common/internal/C;
+    sget-object v0, Lcom/google/android/gms/common/internal/C;->jo:Lcom/google/android/gms/common/internal/C;
 
     if-eqz v0, :cond_0
 
@@ -46,7 +46,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v0, Lcom/google/android/gms/common/internal/C;->gw:Lcom/google/android/gms/common/internal/C;
+    sget-object v0, Lcom/google/android/gms/common/internal/C;->jo:Lcom/google/android/gms/common/internal/C;
 
     return-object v0
 
@@ -60,7 +60,7 @@
 
     invoke-direct {v0, v2}, Lcom/google/android/gms/common/internal/h;-><init>(Landroid/content/Context;)V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/C;->gw:Lcom/google/android/gms/common/internal/C;
+    sput-object v0, Lcom/google/android/gms/common/internal/C;->jo:Lcom/google/android/gms/common/internal/C;
 
     goto :goto_0
 
@@ -76,8 +76,8 @@
 
 
 # virtual methods
-.method public abstract gZ(Ljava/lang/String;Ljava/lang/String;Landroid/content/ServiceConnection;Ljava/lang/String;)V
+.method public abstract jN(Ljava/lang/String;Ljava/lang/String;Landroid/content/ServiceConnection;Ljava/lang/String;)V
 .end method
 
-.method public abstract hd(Ljava/lang/String;Ljava/lang/String;Landroid/content/ServiceConnection;Ljava/lang/String;)Z
+.method public abstract jR(Ljava/lang/String;Ljava/lang/String;Landroid/content/ServiceConnection;Ljava/lang/String;)Z
 .end method

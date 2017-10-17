@@ -2,100 +2,136 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/internal/g;
+.implements Lcom/google/android/gms/common/api/c;
 
 
 # instance fields
-.field final synthetic wU:Lcom/google/android/gms/internal/bW;
+.field public final xh:I
+
+.field public final xi:Lcom/google/android/gms/common/api/a;
+
+.field public final xj:Lcom/google/android/gms/common/api/c;
+
+.field final synthetic xk:Lcom/google/android/gms/internal/bk;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/internal/bW;)V
+.method public constructor <init>(Lcom/google/android/gms/internal/bk;ILcom/google/android/gms/common/api/a;Lcom/google/android/gms/common/api/c;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ct;->wU:Lcom/google/android/gms/internal/bW;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ct;->xk:Lcom/google/android/gms/internal/bk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p2, p0, Lcom/google/android/gms/internal/ct;->xh:I
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/ct;->xi:Lcom/google/android/gms/common/api/a;
+
+    iput-object p4, p0, Lcom/google/android/gms/internal/ct;->xj:Lcom/google/android/gms/common/api/c;
+
+    invoke-virtual {p3, p0}, Lcom/google/android/gms/common/api/a;->gk(Lcom/google/android/gms/common/api/c;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public rZ(Lcom/google/android/gms/internal/b;)V
-    .locals 2
+.method public Ci()V
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->wU:Lcom/google/android/gms/internal/bW;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->xi:Lcom/google/android/gms/common/api/a;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/bW;->wa:Ljava/util/Set;
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/api/a;->gh(Lcom/google/android/gms/common/api/c;)V
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->xi:Lcom/google/android/gms/common/api/a;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/b;->rQ()Ljava/lang/Integer;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/a;->gi()V
 
-    move-result-object v0
-
-    if-nez v0, :cond_2
-
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->wU:Lcom/google/android/gms/internal/bW;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/bW;->Bz(Lcom/google/android/gms/internal/bW;)Lcom/google/android/gms/internal/cx;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3
-
-    :cond_1
-    :goto_1
     return-void
+.end method
 
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->wU:Lcom/google/android/gms/internal/bW;
+.method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    .locals 3
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/bW;->BD(Lcom/google/android/gms/internal/bW;)Lcom/google/android/gms/common/api/k;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->wU:Lcom/google/android/gms/internal/bW;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/bW;->BD(Lcom/google/android/gms/internal/bW;)Lcom/google/android/gms/common/api/k;
+    invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/b;->rQ()Ljava/lang/Integer;
+    const-string/jumbo v1, "GoogleApiClient #"
+
+    invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/android/gms/internal/ct;->xh:I
+
+    invoke-virtual {v0, v1}, Ljava/io/PrintWriter;->print(I)V
+
+    const-string/jumbo v0, ":"
+
+    invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->xi:Lcom/google/android/gms/common/api/a;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    const-string/jumbo v2, "  "
 
-    move-result v1
+    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/k;->ej(I)V
+    move-result-object v1
 
-    goto :goto_0
+    invoke-virtual {v0, v1, p2, p3, p4}, Lcom/google/android/gms/common/api/a;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->wU:Lcom/google/android/gms/internal/bW;
+    return-void
+.end method
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/bW;->wa:Ljava/util/Set;
+.method public gw(Lcom/google/android/gms/common/ConnectionResult;)V
+    .locals 3
 
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->wU:Lcom/google/android/gms/internal/bW;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/bW;->Bz(Lcom/google/android/gms/internal/bW;)Lcom/google/android/gms/internal/cx;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/cx;->Ci()V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1b
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string/jumbo v2, "beginFailureResolution for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "AutoManageHelper"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/ct;->xk:Lcom/google/android/gms/internal/bk;
+
+    iget v1, p0, Lcom/google/android/gms/internal/ct;->xh:I
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/internal/bk;->yz(Lcom/google/android/gms/common/ConnectionResult;I)V
+
+    return-void
 .end method

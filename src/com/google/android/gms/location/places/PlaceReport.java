@@ -14,35 +14,35 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class PlaceReport extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final String Al;
-    private final String Am;
-    final int An;
-    private final String Ao;
+    private final String BQ;
+    private final String BR;
+    final int BS;
+    private final String BT;
     
     static {
         CREATOR = (Parcelable$Creator)new l();
     }
     
-    PlaceReport(final int an, final String ao, final String am, final String al) {
-        this.An = an;
-        this.Ao = ao;
-        this.Am = am;
-        this.Al = al;
+    PlaceReport(final int bs, final String bt, final String br, final String bq) {
+        this.BS = bs;
+        this.BT = bt;
+        this.BR = br;
+        this.BQ = bq;
     }
     
-    public String EM() {
-        return this.Ao;
+    public String FF() {
+        return this.BT;
     }
     
-    public String EN() {
-        return this.Al;
+    public String FG() {
+        return this.BQ;
     }
     
     public boolean equals(final Object o) {
         boolean b = false;
         if (o instanceof PlaceReport) {
             final PlaceReport placeReport = (PlaceReport)o;
-            if (u.hH(this.Ao, placeReport.Ao) && u.hH(this.Am, placeReport.Am) && u.hH(this.Al, placeReport.Al)) {
+            if (u.kv(this.BT, placeReport.BT) && u.kv(this.BR, placeReport.BR) && u.kv(this.BQ, placeReport.BQ)) {
                 b = true;
             }
             return b;
@@ -51,24 +51,24 @@ public class PlaceReport extends AbstractSafeParcelable implements ReflectedParc
     }
     
     public String getTag() {
-        return this.Am;
+        return this.BR;
     }
     
     public int hashCode() {
-        return u.hI(this.Ao, this.Am, this.Al);
+        return u.kw(this.BT, this.BR, this.BQ);
     }
     
     public String toString() {
-        final n hj = u.hJ(this);
-        hj.hB("placeId", this.Ao);
-        hj.hB("tag", this.Am);
-        if (!"unknown".equals(this.Al)) {
-            hj.hB("source", this.Al);
+        final n kx = u.kx(this);
+        kx.kp("placeId", this.BT);
+        kx.kp("tag", this.BR);
+        if (!"unknown".equals(this.BQ)) {
+            kx.kp("source", this.BQ);
         }
-        return hj.toString();
+        return kx.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        l.EQ(this, parcel, n);
+        l.FJ(this, parcel, n);
     }
 }

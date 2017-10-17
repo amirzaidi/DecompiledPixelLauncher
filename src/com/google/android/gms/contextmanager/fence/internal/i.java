@@ -9,14 +9,14 @@ import android.os.IBinder;
 
 class i implements zzm
 {
-    private IBinder HY;
+    private IBinder JD;
     
-    i(final IBinder hy) {
-        this.HY = hy;
+    i(final IBinder jd) {
+        this.JD = jd;
     }
     
     public IBinder asBinder() {
-        return this.HY;
+        return this.JD;
     }
     
     public void zza(final FenceTriggerInfoImpl fenceTriggerInfoImpl) {
@@ -33,7 +33,7 @@ class i implements zzm
                 obtain.writeInt(1);
                 fenceTriggerInfoImpl.writeToParcel(obtain, 0);
             }
-            this.HY.transact(1, obtain, obtain2, 0);
+            this.JD.transact(1, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {

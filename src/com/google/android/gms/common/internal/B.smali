@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract iq(I)V
+.method public abstract le(I)V
 .end method
 
-.method public abstract ir(Landroid/os/Bundle;)V
+.method public abstract lf(Landroid/os/Bundle;)V
 .end method

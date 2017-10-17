@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private final mA:I
+.field private final fX:I
 
-.field private final mB:I
+.field private final fY:I
 
 
 # direct methods
@@ -30,27 +30,27 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->mB:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->fY:I
 
-    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->mA:I
+    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->fX:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getState()I
+.method eW()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->mA:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->fY:I
 
     return v0
 .end method
 
-.method pZ()I
+.method public getState()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->mB:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->fX:I
 
     return v0
 .end method
@@ -58,11 +58,11 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->mA:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->fX:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->mA:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->fX:I
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -106,7 +106,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/h;->qi(Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/h;->eZ(Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

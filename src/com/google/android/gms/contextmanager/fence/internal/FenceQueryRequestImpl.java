@@ -12,8 +12,8 @@ import com.google.android.gms.awareness.fence.FenceQueryRequest;
 public class FenceQueryRequestImpl extends FenceQueryRequest
 {
     public static final Parcelable$Creator CREATOR;
-    private final FenceQueryRequestImpl$QueryFenceOperation HZ;
-    private final int Ia;
+    private final FenceQueryRequestImpl$QueryFenceOperation JE;
+    private final int JF;
     
     static {
         CREATOR = (Parcelable$Creator)new c();
@@ -21,23 +21,23 @@ public class FenceQueryRequestImpl extends FenceQueryRequest
     
     public FenceQueryRequestImpl() {
         final int n = 1;
-        this(n, FenceQueryRequestImpl$QueryFenceOperation.OC(n, null));
+        this(n, FenceQueryRequestImpl$QueryFenceOperation.Pv(n, null));
     }
     
-    FenceQueryRequestImpl(final int ia, final FenceQueryRequestImpl$QueryFenceOperation hz) {
-        this.Ia = ia;
-        this.HZ = hz;
+    FenceQueryRequestImpl(final int jf, final FenceQueryRequestImpl$QueryFenceOperation je) {
+        this.JF = jf;
+        this.JE = je;
     }
     
-    public FenceQueryRequestImpl$QueryFenceOperation Oe() {
-        return this.HZ;
+    public FenceQueryRequestImpl$QueryFenceOperation OX() {
+        return this.JE;
     }
     
-    public int Of() {
-        return this.Ia;
+    public int OY() {
+        return this.JF;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        c.NM(this, parcel, n);
+        c.OF(this, parcel, n);
     }
 }

@@ -14,47 +14,47 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void Qq(final AuthAccountResult authAccountResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, authAccountResult.Kd);
-        a.fj(parcel, 2, authAccountResult.Ql());
-        a.eW(parcel, 3, (Parcelable)authAccountResult.Qk(), n, false);
-        a.fe(parcel, ey);
+    static void Rj(final AuthAccountResult authAccountResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, authAccountResult.LI);
+        a.hX(parcel, 2, authAccountResult.Re());
+        a.hK(parcel, 3, (Parcelable)authAccountResult.Rd(), n, false);
+        a.hS(parcel, hm);
     }
     
-    public AuthAccountResult Qo(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
+    public AuthAccountResult Rh(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
         Intent intent = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    intent = (Intent)b.fW(parcel, fs, Intent.CREATOR);
+                    intent = (Intent)b.iK(parcel, ig, Intent.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new AuthAccountResult(fn2, fn, intent);
+        if (parcel.dataPosition() == ix) {
+            return new AuthAccountResult(ib2, ib, intent);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public AuthAccountResult[] Qp(final int n) {
+    public AuthAccountResult[] Ri(final int n) {
         return new AuthAccountResult[n];
     }
 }

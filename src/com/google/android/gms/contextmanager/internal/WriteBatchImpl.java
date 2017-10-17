@@ -12,11 +12,11 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class WriteBatchImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int HA;
-    private final boolean HB;
-    private ArrayList HC;
-    private ArrayList HD;
-    private ArrayList Hz;
+    private ArrayList Je;
+    private final int Jf;
+    private final boolean Jg;
+    private ArrayList Jh;
+    private ArrayList Ji;
     
     static {
         CREATOR = (Parcelable$Creator)new b();
@@ -26,40 +26,40 @@ public class WriteBatchImpl extends AbstractSafeParcelable
         this(false);
     }
     
-    WriteBatchImpl(final int ha, final boolean hb, final ArrayList hc, final ArrayList hd, final ArrayList hz) {
-        this.HA = ha;
-        this.HB = hb;
-        this.HC = hc;
-        this.HD = hd;
-        this.Hz = hz;
+    WriteBatchImpl(final int jf, final boolean jg, final ArrayList jh, final ArrayList ji, final ArrayList je) {
+        this.Jf = jf;
+        this.Jg = jg;
+        this.Jh = jh;
+        this.Ji = ji;
+        this.Je = je;
     }
     
-    public WriteBatchImpl(final boolean hb) {
-        this.HA = 1;
-        this.HB = hb;
+    public WriteBatchImpl(final boolean jg) {
+        this.Jf = 1;
+        this.Jg = jg;
     }
     
-    public ArrayList MZ() {
-        return this.Hz;
+    public ArrayList NS() {
+        return this.Je;
     }
     
-    public boolean Na() {
-        return this.HB;
+    public boolean NT() {
+        return this.Jg;
     }
     
-    int Nb() {
-        return this.HA;
+    int NU() {
+        return this.Jf;
     }
     
-    public ArrayList Nc() {
-        return this.HD;
+    public ArrayList NV() {
+        return this.Ji;
     }
     
-    public ArrayList Nd() {
-        return this.HC;
+    public ArrayList NW() {
+        return this.Jh;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.Ma(this, parcel, n);
+        b.MT(this, parcel, n);
     }
 }

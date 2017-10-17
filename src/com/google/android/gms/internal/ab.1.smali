@@ -1,354 +1,849 @@
-.class public final Lcom/google/android/gms/internal/ab;
-.super Lcom/google/android/gms/internal/aI;
-
-
-# instance fields
-.field public rp:J
-
-.field public rq:I
-
-.field public rr:I
+.class public Lcom/google/android/gms/internal/ab;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method private static tR([BIJJ[J)V
+    .locals 12
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/aI;-><init>()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ab;->tJ()Lcom/google/android/gms/internal/ab;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected computeSerializedSize()I
-    .locals 6
-
-    invoke-super {p0}, Lcom/google/android/gms/internal/aI;->computeSerializedSize()I
-
-    move-result v0
-
-    iget v1, p0, Lcom/google/android/gms/internal/ab;->rr:I
-
-    if-nez v1, :cond_1
-
-    :goto_0
-    iget-wide v2, p0, Lcom/google/android/gms/internal/ab;->rp:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v1, v2, v4
-
-    if-eqz v1, :cond_0
-
-    iget-wide v2, p0, Lcom/google/android/gms/internal/ab;->rp:J
-
-    const/4 v1, 0x2
-
-    invoke-static {v1, v2, v3}, Lcom/google/android/gms/internal/aV;->wv(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    :cond_0
-    iget v1, p0, Lcom/google/android/gms/internal/ab;->rq:I
-
-    if-nez v1, :cond_2
-
-    :goto_1
-    return v0
-
-    :cond_1
-    iget v1, p0, Lcom/google/android/gms/internal/ab;->rr:I
-
-    const/4 v2, 0x1
-
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/aV;->wn(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    goto :goto_0
-
-    :cond_2
-    iget v1, p0, Lcom/google/android/gms/internal/ab;->rq:I
-
-    const/4 v2, 0x3
-
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/aV;->wn(II)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    goto :goto_1
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 6
-
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    if-eq p1, p0, :cond_0
-
-    instance-of v0, p1, Lcom/google/android/gms/internal/ab;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Lcom/google/android/gms/internal/ab;
-
-    iget v0, p0, Lcom/google/android/gms/internal/ab;->rr:I
-
-    iget v1, p1, Lcom/google/android/gms/internal/ab;->rr:I
-
-    if-ne v0, v1, :cond_2
-
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ab;->rp:J
-
-    iget-wide v2, p1, Lcom/google/android/gms/internal/ab;->rp:J
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_3
-
-    return v4
-
-    :cond_0
-    return v5
-
-    :cond_1
-    return v4
-
-    :cond_2
-    return v4
-
-    :cond_3
-    iget v0, p0, Lcom/google/android/gms/internal/ab;->rq:I
-
-    iget v1, p1, Lcom/google/android/gms/internal/ab;->rq:I
-
-    if-ne v0, v1, :cond_4
-
-    return v5
-
-    :cond_4
-    return v4
-.end method
-
-.method public hashCode()I
-    .locals 6
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    add-int/lit16 v0, v0, 0x20f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lcom/google/android/gms/internal/ab;->rr:I
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-wide v2, p0, Lcom/google/android/gms/internal/ab;->rp:J
-
-    iget-wide v4, p0, Lcom/google/android/gms/internal/ab;->rp:J
-
-    const/16 v1, 0x20
-
-    ushr-long/2addr v4, v1
-
-    xor-long/2addr v2, v4
-
-    long-to-int v1, v2
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lcom/google/android/gms/internal/ab;->rq:I
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public sa(Lcom/google/android/gms/internal/aV;)V
-    .locals 4
-
-    iget v0, p0, Lcom/google/android/gms/internal/ab;->rr:I
-
-    if-nez v0, :cond_1
-
-    :goto_0
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ab;->rp:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_0
-
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ab;->rp:J
-
-    const/4 v2, 0x2
-
-    invoke-virtual {p1, v2, v0, v1}, Lcom/google/android/gms/internal/aV;->vY(IJ)V
-
-    :cond_0
-    iget v0, p0, Lcom/google/android/gms/internal/ab;->rq:I
-
-    if-nez v0, :cond_2
-
-    :goto_1
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/aI;->sa(Lcom/google/android/gms/internal/aV;)V
-
-    return-void
-
-    :cond_1
-    iget v0, p0, Lcom/google/android/gms/internal/ab;->rr:I
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/aV;->vX(II)V
-
-    goto :goto_0
-
-    :cond_2
-    iget v0, p0, Lcom/google/android/gms/internal/ab;->rq:I
-
-    const/4 v1, 0x3
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/aV;->vX(II)V
-
-    goto :goto_1
-.end method
-
-.method public synthetic sc(Lcom/google/android/gms/internal/be;)Lcom/google/android/gms/internal/aI;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ab;->tI(Lcom/google/android/gms/internal/be;)Lcom/google/android/gms/internal/ab;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public tI(Lcom/google/android/gms/internal/be;)Lcom/google/android/gms/internal/ab;
-    .locals 2
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xG()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/internal/aN;->vn(Lcom/google/android/gms/internal/be;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object p0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xF()I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_0
-
-    :pswitch_0
-    iput v0, p0, Lcom/google/android/gms/internal/ab;->rr:I
-
-    goto :goto_0
-
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xX()J
+    invoke-static {p0, p1}, Lcom/google/android/gms/internal/ab;->tT([BI)J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ab;->rp:J
+    add-int/lit8 v2, p1, 0x8
 
-    goto :goto_0
+    invoke-static {p0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
 
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xF()I
+    move-result-wide v2
 
-    move-result v0
+    add-int/lit8 v4, p1, 0x10
 
-    packed-switch v0, :pswitch_data_1
+    invoke-static {p0, v4}, Lcom/google/android/gms/internal/ab;->tT([BI)J
 
-    goto :goto_0
+    move-result-wide v4
 
-    :pswitch_1
-    iput v0, p0, Lcom/google/android/gms/internal/ab;->rq:I
+    add-int/lit8 v6, p1, 0x18
 
-    goto :goto_0
+    invoke-static {p0, v6}, Lcom/google/android/gms/internal/ab;->tT([BI)J
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x18 -> :sswitch_3
-    .end sparse-switch
+    move-result-wide v6
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+    add-long/2addr v0, p2
 
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
+    add-long v8, p4, v0
+
+    add-long/2addr v8, v6
+
+    const/16 v10, 0x33
+
+    invoke-static {v8, v9, v10}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v8
+
+    add-long/2addr v2, v0
+
+    add-long/2addr v2, v4
+
+    const/16 v4, 0x17
+
+    invoke-static {v2, v3, v4}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v4
+
+    add-long/2addr v4, v8
+
+    add-long/2addr v2, v6
+
+    const/4 v6, 0x0
+
+    aput-wide v2, p6, v6
+
+    add-long/2addr v0, v4
+
+    const/4 v2, 0x1
+
+    aput-wide v0, p6, v2
+
+    return-void
 .end method
 
-.method public tJ()Lcom/google/android/gms/internal/ab;
-    .locals 3
+.method private static tS([BJ)J
+    .locals 11
+
+    const/4 v0, 0x0
+
+    const-wide v8, -0x395b586ca42e166bL    # -2.0946245025644615E32
+
+    array-length v1, p0
+
+    and-int/lit8 v6, v1, -0x8
+
+    array-length v1, p0
+
+    and-int/lit8 v7, v1, 0x7
+
+    array-length v1, p0
+
+    int-to-long v2, v1
+
+    mul-long/2addr v2, v8
+
+    xor-long/2addr v2, p1
+
+    move v10, v0
+
+    move-wide v0, v2
+
+    move v2, v10
+
+    :goto_0
+    if-lt v2, v6, :cond_0
+
+    if-nez v7, :cond_1
+
+    :goto_1
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ab;->tW(J)J
+
+    move-result-wide v0
+
+    mul-long/2addr v0, v8
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/ab;->tW(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+
+    :cond_0
+    invoke-static {p0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v4
+
+    mul-long/2addr v4, v8
+
+    invoke-static {v4, v5}, Lcom/google/android/gms/internal/ab;->tW(J)J
+
+    move-result-wide v4
+
+    mul-long/2addr v4, v8
+
+    xor-long/2addr v0, v4
+
+    mul-long v4, v0, v8
+
+    add-int/lit8 v0, v2, 0x8
+
+    move v2, v0
+
+    move-wide v0, v4
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {p0, v6, v7}, Lcom/google/android/gms/internal/ab;->tX([BII)J
+
+    move-result-wide v2
+
+    xor-long/2addr v0, v2
+
+    mul-long/2addr v0, v8
+
+    goto :goto_1
+.end method
+
+.method private static tT([BI)J
+    .locals 2
+
+    const/16 v0, 0x8
+
+    invoke-static {p0, p1, v0}, Ljava/nio/ByteBuffer;->wrap([BII)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getLong()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method private static tU([B)J
+    .locals 22
+
+    move-object/from16 v0, p0
+
+    array-length v9, v0
 
     const/4 v2, 0x0
 
-    iput v2, p0, Lcom/google/android/gms/internal/ab;->rr:I
+    move-object/from16 v0, p0
 
-    const-wide/16 v0, 0x0
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
 
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ab;->rp:J
+    move-result-wide v18
 
-    iput v2, p0, Lcom/google/android/gms/internal/ab;->rq:I
+    add-int/lit8 v2, v9, -0x10
 
-    const/4 v0, -0x1
+    move-object/from16 v0, p0
 
-    iput v0, p0, Lcom/google/android/gms/internal/ab;->sB:I
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
 
-    return-object p0
+    move-result-wide v2
+
+    const-wide v4, -0x72a753d9501ed1b9L
+
+    xor-long v6, v2, v4
+
+    add-int/lit8 v2, v9, -0x38
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v2
+
+    const-wide v4, -0x5a47a3a1e67127b7L    # -5.623071142144676E-127
+
+    xor-long v20, v2, v4
+
+    const/4 v2, 0x2
+
+    new-array v8, v2, [J
+
+    const/4 v2, 0x2
+
+    new-array v0, v2, [J
+
+    move-object/from16 v16, v0
+
+    add-int/lit8 v3, v9, -0x40
+
+    int-to-long v4, v9
+
+    move-object/from16 v2, p0
+
+    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/internal/ab;->tR([BIJJ[J)V
+
+    add-int/lit8 v11, v9, -0x20
+
+    int-to-long v2, v9
+
+    const-wide v4, -0x72a753d9501ed1b9L
+
+    mul-long v12, v2, v4
+
+    const-wide v14, -0x5a47a3a1e67127b7L    # -5.623071142144676E-127
+
+    move-object/from16 v10, p0
+
+    invoke-static/range {v10 .. v16}, Lcom/google/android/gms/internal/ab;->tR([BIJJ[J)V
+
+    const/4 v2, 0x1
+
+    aget-wide v2, v8, v2
+
+    invoke-static {v2, v3}, Lcom/google/android/gms/internal/ab;->tW(J)J
+
+    move-result-wide v2
+
+    const-wide v4, -0x72a753d9501ed1b9L
+
+    mul-long/2addr v2, v4
+
+    add-long v4, v20, v2
+
+    add-long v2, v4, v18
+
+    const/16 v10, 0x27
+
+    invoke-static {v2, v3, v10}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v2
+
+    const-wide v10, -0x72a753d9501ed1b9L
+
+    mul-long/2addr v10, v2
+
+    const/16 v2, 0x21
+
+    invoke-static {v6, v7, v2}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v2
+
+    const-wide v6, -0x72a753d9501ed1b9L
+
+    mul-long v14, v2, v6
+
+    add-int/lit8 v2, v9, -0x1
+
+    and-int/lit8 v2, v2, -0x40
+
+    const/4 v3, 0x0
+
+    move-wide v6, v10
+
+    move v9, v2
+
+    :goto_0
+    add-long/2addr v6, v14
+
+    const/4 v2, 0x0
+
+    aget-wide v10, v8, v2
+
+    add-long/2addr v6, v10
+
+    add-int/lit8 v2, v3, 0x10
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v10
+
+    add-long/2addr v6, v10
+
+    const/16 v2, 0x25
+
+    invoke-static {v6, v7, v2}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v6
+
+    const-wide v10, -0x72a753d9501ed1b9L
+
+    mul-long/2addr v6, v10
+
+    const/4 v2, 0x1
+
+    aget-wide v10, v8, v2
+
+    add-long/2addr v10, v14
+
+    add-int/lit8 v2, v3, 0x30
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v12
+
+    add-long/2addr v10, v12
+
+    const/16 v2, 0x2a
+
+    invoke-static {v10, v11, v2}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v10
+
+    const-wide v12, -0x72a753d9501ed1b9L
+
+    mul-long/2addr v10, v12
+
+    const/4 v2, 0x1
+
+    aget-wide v12, v16, v2
+
+    xor-long v18, v6, v12
+
+    const/4 v2, 0x0
+
+    aget-wide v6, v8, v2
+
+    xor-long v14, v10, v6
+
+    const/4 v2, 0x0
+
+    aget-wide v6, v16, v2
+
+    xor-long/2addr v4, v6
+
+    const/16 v2, 0x21
+
+    invoke-static {v4, v5, v2}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v20
+
+    const/4 v2, 0x1
+
+    aget-wide v4, v8, v2
+
+    const-wide v6, -0x72a753d9501ed1b9L
+
+    mul-long/2addr v4, v6
+
+    const/4 v2, 0x0
+
+    aget-wide v6, v16, v2
+
+    add-long v6, v6, v18
+
+    move-object/from16 v2, p0
+
+    invoke-static/range {v2 .. v8}, Lcom/google/android/gms/internal/ab;->tR([BIJJ[J)V
+
+    add-int/lit8 v11, v3, 0x20
+
+    const/4 v2, 0x1
+
+    aget-wide v4, v16, v2
+
+    add-long v12, v20, v4
+
+    move-object/from16 v10, p0
+
+    invoke-static/range {v10 .. v16}, Lcom/google/android/gms/internal/ab;->tR([BIJJ[J)V
+
+    add-int/lit8 v3, v3, 0x40
+
+    add-int/lit8 v2, v9, -0x40
+
+    if-eqz v2, :cond_0
+
+    move-wide/from16 v4, v18
+
+    move-wide/from16 v6, v20
+
+    move v9, v2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    aget-wide v2, v8, v2
+
+    const/4 v4, 0x0
+
+    aget-wide v4, v16, v4
+
+    invoke-static {v2, v3, v4, v5}, Lcom/google/android/gms/internal/ab;->tZ(JJ)J
+
+    move-result-wide v2
+
+    invoke-static {v14, v15}, Lcom/google/android/gms/internal/ab;->tW(J)J
+
+    move-result-wide v4
+
+    const-wide v6, -0x72a753d9501ed1b9L
+
+    mul-long/2addr v4, v6
+
+    add-long/2addr v2, v4
+
+    add-long v2, v2, v18
+
+    const/4 v4, 0x1
+
+    aget-wide v4, v8, v4
+
+    const/4 v6, 0x1
+
+    aget-wide v6, v16, v6
+
+    invoke-static {v4, v5, v6, v7}, Lcom/google/android/gms/internal/ab;->tZ(JJ)J
+
+    move-result-wide v4
+
+    add-long v4, v4, v20
+
+    invoke-static {v2, v3, v4, v5}, Lcom/google/android/gms/internal/ab;->tZ(JJ)J
+
+    move-result-wide v2
+
+    return-wide v2
+.end method
+
+.method public static tV([B)J
+    .locals 8
+
+    const-wide v4, -0x5a47a3a1e67127b7L    # -5.623071142144676E-127
+
+    array-length v0, p0
+
+    const/16 v1, 0x20
+
+    if-le v0, v1, :cond_2
+
+    array-length v0, p0
+
+    const/16 v1, 0x40
+
+    if-le v0, v1, :cond_3
+
+    invoke-static {p0}, Lcom/google/android/gms/internal/ab;->tU([B)J
+
+    move-result-wide v0
+
+    :goto_0
+    array-length v2, p0
+
+    const/16 v3, 0x8
+
+    if-ge v2, v3, :cond_4
+
+    move-wide v2, v4
+
+    :goto_1
+    array-length v6, p0
+
+    const/16 v7, 0x9
+
+    if-ge v6, v7, :cond_5
+
+    :goto_2
+    add-long/2addr v0, v4
+
+    invoke-static {v0, v1, v2, v3}, Lcom/google/android/gms/internal/ab;->tZ(JJ)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    if-eqz v2, :cond_0
+
+    const-wide/16 v2, 0x1
+
+    cmp-long v2, v0, v2
+
+    if-nez v2, :cond_1
+
+    :cond_0
+    const-wide/16 v2, -0x2
+
+    add-long/2addr v0, v2
+
+    :cond_1
+    return-wide v0
+
+    :cond_2
+    const-wide v0, -0x1364611973070723L    # -1.4877559216887398E215
+
+    invoke-static {p0, v0, v1}, Lcom/google/android/gms/internal/ab;->tS([BJ)J
+
+    move-result-wide v0
+
+    goto :goto_0
+
+    :cond_3
+    invoke-static {p0}, Lcom/google/android/gms/internal/ab;->tY([B)J
+
+    move-result-wide v0
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v2, 0x0
+
+    invoke-static {p0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v2
+
+    goto :goto_1
+
+    :cond_5
+    array-length v4, p0
+
+    add-int/lit8 v4, v4, -0x8
+
+    invoke-static {p0, v4}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v4
+
+    goto :goto_2
+.end method
+
+.method private static tW(J)J
+    .locals 2
+
+    const/16 v0, 0x2f
+
+    ushr-long v0, p0, v0
+
+    xor-long/2addr v0, p0
+
+    return-wide v0
+.end method
+
+.method private static tX([BII)J
+    .locals 8
+
+    const-wide/16 v2, 0x0
+
+    const/16 v0, 0x8
+
+    invoke-static {p2, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-lt v0, v1, :cond_0
+
+    return-wide v2
+
+    :cond_0
+    add-int v4, p1, v0
+
+    aget-byte v4, p0, v4
+
+    int-to-long v4, v4
+
+    const-wide/16 v6, 0xff
+
+    and-long/2addr v4, v6
+
+    mul-int/lit8 v6, v0, 0x8
+
+    shl-long/2addr v4, v6
+
+    or-long/2addr v2, v4
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+.end method
+
+.method private static tY([B)J
+    .locals 18
+
+    move-object/from16 v0, p0
+
+    array-length v2, v0
+
+    const/16 v3, 0x18
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v4
+
+    const/4 v3, 0x0
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v6
+
+    int-to-long v8, v2
+
+    add-int/lit8 v3, v2, -0x10
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v10
+
+    add-long/2addr v8, v10
+
+    const-wide v10, -0x5a47a3a1e67127b7L    # -5.623071142144676E-127
+
+    mul-long/2addr v8, v10
+
+    add-long/2addr v6, v8
+
+    add-long v8, v6, v4
+
+    const/16 v3, 0x34
+
+    invoke-static {v8, v9, v3}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v8
+
+    const/16 v3, 0x25
+
+    invoke-static {v6, v7, v3}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v10
+
+    const/16 v3, 0x8
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v12
+
+    add-long/2addr v6, v12
+
+    const/4 v3, 0x7
+
+    invoke-static {v6, v7, v3}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v12
+
+    add-long/2addr v10, v12
+
+    const/16 v3, 0x10
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v12
+
+    add-long/2addr v6, v12
+
+    add-long/2addr v4, v6
+
+    const/16 v3, 0x1f
+
+    invoke-static {v6, v7, v3}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v6
+
+    add-long/2addr v6, v8
+
+    add-long/2addr v6, v10
+
+    const/16 v3, 0x10
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v8
+
+    add-int/lit8 v3, v2, -0x20
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v10
+
+    add-long/2addr v8, v10
+
+    add-int/lit8 v3, v2, -0x8
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v10
+
+    add-long v12, v8, v10
+
+    const/16 v3, 0x34
+
+    invoke-static {v12, v13, v3}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v12
+
+    const/16 v3, 0x25
+
+    invoke-static {v8, v9, v3}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v14
+
+    add-int/lit8 v3, v2, -0x18
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v3}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v16
+
+    add-long v8, v8, v16
+
+    const/4 v3, 0x7
+
+    invoke-static {v8, v9, v3}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v16
+
+    add-long v14, v14, v16
+
+    add-int/lit8 v2, v2, -0x10
+
+    move-object/from16 v0, p0
+
+    invoke-static {v0, v2}, Lcom/google/android/gms/internal/ab;->tT([BI)J
+
+    move-result-wide v2
+
+    add-long/2addr v2, v8
+
+    add-long v8, v2, v10
+
+    const/16 v10, 0x1f
+
+    invoke-static {v2, v3, v10}, Ljava/lang/Long;->rotateRight(JI)J
+
+    move-result-wide v2
+
+    add-long/2addr v2, v12
+
+    add-long/2addr v2, v14
+
+    add-long/2addr v2, v4
+
+    const-wide v4, -0x3b849161c568f12dL    # -8.096527404817815E21
+
+    mul-long/2addr v2, v4
+
+    add-long v4, v8, v6
+
+    const-wide v8, -0x5a47a3a1e67127b7L    # -5.623071142144676E-127
+
+    mul-long/2addr v4, v8
+
+    add-long/2addr v2, v4
+
+    invoke-static {v2, v3}, Lcom/google/android/gms/internal/ab;->tW(J)J
+
+    move-result-wide v2
+
+    const-wide v4, -0x5a47a3a1e67127b7L    # -5.623071142144676E-127
+
+    mul-long/2addr v2, v4
+
+    add-long/2addr v2, v6
+
+    invoke-static {v2, v3}, Lcom/google/android/gms/internal/ab;->tW(J)J
+
+    move-result-wide v2
+
+    const-wide v4, -0x3b849161c568f12dL    # -8.096527404817815E21
+
+    mul-long/2addr v2, v4
+
+    return-wide v2
+.end method
+
+.method private static tZ(JJ)J
+    .locals 8
+
+    const/16 v6, 0x2f
+
+    const-wide v4, -0x395b586ca42e166bL    # -2.0946245025644615E32
+
+    xor-long v0, p2, p0
+
+    mul-long/2addr v0, v4
+
+    ushr-long v2, v0, v6
+
+    xor-long/2addr v0, v2
+
+    xor-long/2addr v0, p0
+
+    mul-long/2addr v0, v4
+
+    ushr-long v2, v0, v6
+
+    xor-long/2addr v0, v2
+
+    mul-long/2addr v0, v4
+
+    return-wide v0
 .end method

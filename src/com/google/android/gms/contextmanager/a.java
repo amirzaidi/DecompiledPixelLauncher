@@ -11,41 +11,41 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void OU(final ContextData contextData, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1, contextData.ON());
-        com.google.android.gms.common.internal.safeparcel.a.fv(parcel, 2, contextData.OJ(), false);
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void PN(final ContextData contextData, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1, contextData.PG());
+        com.google.android.gms.common.internal.safeparcel.a.ij(parcel, 2, contextData.PC(), false);
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
-    public ContextData[] OT(final int n) {
+    public ContextData[] PM(final int n) {
         return new ContextData[n];
     }
     
-    public ContextData OV(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        byte[] gf = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public ContextData PO(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        byte[] it = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    gf = b.gf(parcel, fs);
+                    it = b.iT(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ContextData(fn, gf);
+        if (parcel.dataPosition() == ix) {
+            return new ContextData(ib, it);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

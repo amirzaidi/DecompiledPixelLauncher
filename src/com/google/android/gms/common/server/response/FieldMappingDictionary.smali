@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final ia:Ljava/util/HashMap;
+.field private final kS:Ljava/util/HashMap;
 
-.field private final ib:I
+.field private final kT:I
 
-.field private final ic:Ljava/util/ArrayList;
+.field private final kU:Ljava/util/ArrayList;
 
-.field private final id:Ljava/lang/String;
+.field private final kV:Ljava/lang/String;
 
 
 # direct methods
@@ -34,32 +34,32 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ib:I
+    iput p1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kT:I
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ic:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kU:Ljava/util/ArrayList;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS(Ljava/util/ArrayList;)Ljava/util/HashMap;
+    invoke-static {p2}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->nF(Ljava/util/ArrayList;)Ljava/util/HashMap;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/l;->ht(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/l;->kh(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->id:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kV:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kR()V
+    invoke-virtual {p0}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->nE()V
 
     return-void
 .end method
 
-.method private static kS(Ljava/util/ArrayList;)Ljava/util/HashMap;
+.method private static nF(Ljava/util/ArrayList;)Ljava/util/HashMap;
     .locals 5
 
     new-instance v2, Ljava/util/HashMap;
@@ -86,9 +86,9 @@
 
     check-cast v0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$Entry;
 
-    iget-object v4, v0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$Entry;->hR:Ljava/lang/String;
+    iget-object v4, v0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$Entry;->kJ:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$Entry;->ku()Ljava/util/HashMap;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$Entry;->ni()Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -103,10 +103,10 @@
 
 
 # virtual methods
-.method public kR()V
+.method public nE()V
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -132,7 +132,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -167,27 +167,27 @@
 
     check-cast v1, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
 
-    invoke-virtual {v1, p0}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->km(Lcom/google/android/gms/common/server/response/FieldMappingDictionary;)V
+    invoke-virtual {v1, p0}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->na(Lcom/google/android/gms/common/server/response/FieldMappingDictionary;)V
 
     goto :goto_0
 .end method
 
-.method kT()I
+.method nG()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ib:I
+    iget v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kT:I
 
     return v0
 .end method
 
-.method kU()Ljava/util/ArrayList;
+.method nH()Ljava/util/ArrayList;
     .locals 5
 
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -215,7 +215,7 @@
 
     new-instance v4, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$Entry;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -230,10 +230,10 @@
     goto :goto_0
 .end method
 
-.method public kV(Ljava/lang/String;)Ljava/util/Map;
+.method public nI(Ljava/lang/String;)Ljava/util/Map;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -244,10 +244,10 @@
     return-object v0
 .end method
 
-.method public kW()Ljava/lang/String;
+.method public nJ()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->id:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kV:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -259,7 +259,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -297,7 +297,7 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->ia:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kS:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -354,7 +354,7 @@
 
     sget-object v0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->CREATOR:Lcom/google/android/gms/common/server/response/c;
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/response/c;->kN(Lcom/google/android/gms/common/server/response/FieldMappingDictionary;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/response/c;->nB(Lcom/google/android/gms/common/server/response/FieldMappingDictionary;Landroid/os/Parcel;I)V
 
     return-void
 .end method

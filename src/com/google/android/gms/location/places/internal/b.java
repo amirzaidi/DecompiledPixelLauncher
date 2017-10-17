@@ -11,71 +11,71 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void CW(final PlacesParams placesParams, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, placesParams.zf, false);
-        a.fo(parcel, 2, placesParams.ze, false);
-        a.fo(parcel, 3, placesParams.zb, false);
-        a.fo(parcel, 4, placesParams.zd, false);
-        a.fj(parcel, 6, placesParams.za);
-        a.fj(parcel, 7, placesParams.yZ);
-        a.fj(parcel, 1000, placesParams.yY);
-        a.fe(parcel, ey);
+    static void DP(final PlacesParams placesParams, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, placesParams.AK, false);
+        a.ic(parcel, 2, placesParams.AJ, false);
+        a.ic(parcel, 3, placesParams.AG, false);
+        a.ic(parcel, 4, placesParams.AI, false);
+        a.hX(parcel, 6, placesParams.AF);
+        a.hX(parcel, 7, placesParams.AE);
+        a.hX(parcel, 1000, placesParams.AD);
+        a.hS(parcel, hm);
     }
     
-    public PlacesParams CX(final Parcel parcel) {
-        int fn = 0;
-        String fq = null;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn2 = 0;
-        String fq2 = null;
-        String fq3 = null;
-        String fq4 = null;
-        int fn3 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+    public PlacesParams DQ(final Parcel parcel) {
+        int ib = 0;
+        String ie = null;
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib2 = 0;
+        String ie2 = null;
+        String ie3 = null;
+        String ie4 = null;
+        int ib3 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq4 = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie4 = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq3 = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie3 = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fq2 = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie2 = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fq = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fn2 = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib2 = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn3 = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib3 = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlacesParams(fn3, fq4, fq3, fq2, fq, fn2, fn);
+        if (parcel.dataPosition() == ix) {
+            return new PlacesParams(ib3, ie4, ie3, ie2, ie, ib2, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public PlacesParams[] CY(final int n) {
+    public PlacesParams[] DR(final int n) {
         return new PlacesParams[n];
     }
 }

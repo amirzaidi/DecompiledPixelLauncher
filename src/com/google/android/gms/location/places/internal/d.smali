@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private final yq:Ljava/lang/String;
+.field private final zV:Ljava/lang/String;
 
 
 # direct methods
@@ -17,11 +17,11 @@
 
     const-string/jumbo v0, "photo_fife_url"
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/location/places/internal/d;->na(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/location/places/internal/d;->pN(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/d;->yq:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/d;->zV:Ljava/lang/String;
 
     return-void
 .end method

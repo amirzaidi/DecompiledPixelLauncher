@@ -5,86 +5,86 @@
 package com.google.android.gms.contextmanager.fence.internal;
 
 import android.os.Parcel;
-import com.google.android.gms.internal.aI;
+import com.google.android.gms.internal.aC;
 import com.google.android.gms.internal.zzaxw;
-import com.google.android.gms.internal.P;
-import com.google.android.gms.internal.M;
+import com.google.android.gms.internal.J;
+import com.google.android.gms.internal.G;
 import android.os.Parcelable$Creator;
 import com.google.android.gms.awareness.fence.AwarenessFence;
 
 public class ContextFenceStub extends AwarenessFence
 {
     public static final Parcelable$Creator CREATOR;
-    private M Im;
-    private final int In;
-    private byte[] Io;
+    private G JR;
+    private final int JS;
+    private byte[] JT;
     
     static {
         CREATOR = (Parcelable$Creator)new j();
     }
     
-    ContextFenceStub(final int in, final byte[] io) {
-        this.In = in;
-        this.Im = null;
-        this.Io = io;
-        this.Ou();
+    ContextFenceStub(final int js, final byte[] jt) {
+        this.JS = js;
+        this.JR = null;
+        this.JT = jt;
+        this.Pn();
     }
     
-    private void Os() {
-        if (!this.Ot()) {
+    private void Pl() {
+        if (!this.Pm()) {
             try {
-                final byte[] io = this.Io;
+                final byte[] jt = this.JT;
                 try {
-                    this.Im = M.tb(io);
-                    this.Io = null;
+                    this.JR = G.ta(jt);
+                    this.JT = null;
                 }
                 catch (zzaxw zzaxw) {
-                    P.tf("ContextFenceStub", "Could not deserialize context fence bytes.", zzaxw);
+                    J.te("ContextFenceStub", "Could not deserialize context fence bytes.", zzaxw);
                     throw new IllegalStateException(zzaxw);
                 }
             }
             catch (zzaxw zzaxw2) {}
         }
-        this.Ou();
+        this.Pn();
     }
     
-    private boolean Ot() {
-        return this.Im != null;
+    private boolean Pm() {
+        return this.JR != null;
     }
     
-    private void Ou() {
-        if (this.Im == null && this.Io != null) {
+    private void Pn() {
+        if (this.JR == null && this.JT != null) {
             return;
         }
-        if (this.Im != null && this.Io == null) {
+        if (this.JR != null && this.JT == null) {
             return;
         }
-        if (this.Im != null && this.Io != null) {
+        if (this.JR != null && this.JT != null) {
             throw new IllegalStateException("Invalid internal representation - full");
         }
-        if (this.Im == null && this.Io == null) {
+        if (this.JR == null && this.JT == null) {
             throw new IllegalStateException("Invalid internal representation - empty");
         }
         throw new IllegalStateException("Impossible");
     }
     
-    public byte[] Ov() {
-        if (this.Io == null) {
-            return aI.uW(this.Im);
+    public byte[] Po() {
+        if (this.JT == null) {
+            return aC.uV(this.JR);
         }
-        return this.Io;
+        return this.JT;
     }
     
-    int Ow() {
-        return this.In;
+    int Pp() {
+        return this.JS;
     }
     
     public String toString() {
-        this.Os();
-        return this.Im.toString();
+        this.Pl();
+        return this.JR.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        j.Oh(this, parcel, n);
+        j.Pa(this, parcel, n);
     }
 }

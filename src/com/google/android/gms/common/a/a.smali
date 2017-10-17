@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract js()J
+.method public abstract mg()J
 .end method
 
-.method public abstract jt()J
+.method public abstract mh()J
 .end method

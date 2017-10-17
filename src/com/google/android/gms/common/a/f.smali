@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static hw:Ljava/lang/String;
+.field private static ko:Ljava/lang/String;
 
 
 # direct methods
@@ -12,12 +12,12 @@
 
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/google/android/gms/common/a/f;->hw:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/common/a/f;->ko:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private static jB(I)Ljava/lang/String;
+.method private static mp(I)Ljava/lang/String;
     .locals 5
 
     const/4 v2, 0x0
@@ -181,14 +181,14 @@
     goto :goto_1
 .end method
 
-.method public static jC()Ljava/lang/String;
+.method public static mq()Ljava/lang/String;
     .locals 1
 
     invoke-static {}, Landroid/os/Binder;->getCallingPid()I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/a/f;->jB(I)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/common/a/f;->mp(I)Ljava/lang/String;
 
     move-result-object v0
 

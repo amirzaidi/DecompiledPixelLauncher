@@ -12,44 +12,44 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void kw(final FieldMappingDictionary$FieldMapPair fieldMappingDictionary$FieldMapPair, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1, fieldMappingDictionary$FieldMapPair.hC);
-        com.google.android.gms.common.internal.safeparcel.a.fo(parcel, 2, fieldMappingDictionary$FieldMapPair.hE, false);
-        com.google.android.gms.common.internal.safeparcel.a.eW(parcel, 3, (Parcelable)fieldMappingDictionary$FieldMapPair.hD, n, false);
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void nk(final FieldMappingDictionary$FieldMapPair fieldMappingDictionary$FieldMapPair, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1, fieldMappingDictionary$FieldMapPair.ku);
+        com.google.android.gms.common.internal.safeparcel.a.ic(parcel, 2, fieldMappingDictionary$FieldMapPair.kw, false);
+        com.google.android.gms.common.internal.safeparcel.a.hK(parcel, 3, (Parcelable)fieldMappingDictionary$FieldMapPair.kv, n, false);
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
     public FieldMappingDictionary$FieldMapPair createFromParcel(final Parcel parcel) {
         FastJsonResponse$Field fastJsonResponse$Field = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fastJsonResponse$Field = (FastJsonResponse$Field)b.fW(parcel, fs, (Parcelable$Creator)FastJsonResponse$Field.CREATOR);
+                    fastJsonResponse$Field = (FastJsonResponse$Field)b.iK(parcel, ig, (Parcelable$Creator)FastJsonResponse$Field.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FieldMappingDictionary$FieldMapPair(fn, fq, fastJsonResponse$Field);
+        if (parcel.dataPosition() == ix) {
+            return new FieldMappingDictionary$FieldMapPair(ib, ie, fastJsonResponse$Field);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public FieldMappingDictionary$FieldMapPair[] newArray(final int n) {

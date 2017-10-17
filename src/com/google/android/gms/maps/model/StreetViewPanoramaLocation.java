@@ -10,25 +10,25 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public class StreetViewPanoramaLocation extends AbstractSafeParcelable
 {
-    public static final n CREATOR;
-    public final StreetViewPanoramaLink[] DH;
-    private final int DI;
-    public final LatLng DJ;
-    public final String DK;
+    public static final o CREATOR;
+    public final StreetViewPanoramaLink[] Fm;
+    private final int Fn;
+    public final LatLng Fo;
+    public final String Fp;
     
     static {
-        CREATOR = new n();
+        CREATOR = new o();
     }
     
-    StreetViewPanoramaLocation(final int di, final StreetViewPanoramaLink[] dh, final LatLng dj, final String dk) {
-        this.DI = di;
-        this.DH = dh;
-        this.DJ = dj;
-        this.DK = dk;
+    StreetViewPanoramaLocation(final int fn, final StreetViewPanoramaLink[] fm, final LatLng fo, final String fp) {
+        this.Fn = fn;
+        this.Fm = fm;
+        this.Fo = fo;
+        this.Fp = fp;
     }
     
-    int IB() {
-        return this.DI;
+    int Ju() {
+        return this.Fn;
     }
     
     public boolean equals(final Object o) {
@@ -38,7 +38,7 @@ public class StreetViewPanoramaLocation extends AbstractSafeParcelable
         }
         if (o instanceof StreetViewPanoramaLocation) {
             final StreetViewPanoramaLocation streetViewPanoramaLocation = (StreetViewPanoramaLocation)o;
-            if (!this.DK.equals(streetViewPanoramaLocation.DK) || !this.DJ.equals(streetViewPanoramaLocation.DJ)) {
+            if (!this.Fp.equals(streetViewPanoramaLocation.Fp) || !this.Fo.equals(streetViewPanoramaLocation.Fo)) {
                 b = false;
             }
             return b;
@@ -47,14 +47,14 @@ public class StreetViewPanoramaLocation extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.DJ, this.DK);
+        return u.kw(this.Fo, this.Fp);
     }
     
     public String toString() {
-        return u.hJ(this).hB("panoId", this.DK).hB("position", this.DJ.toString()).toString();
+        return u.kx(this).kp("panoId", this.Fp).kp("position", this.Fo.toString()).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        n.JS(this, parcel, n);
+        o.KL(this, parcel, n);
     }
 }

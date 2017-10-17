@@ -10,9 +10,9 @@
 
 
 # instance fields
-.field IW:Lcom/google/android/gms/iid/zzb;
+.field KB:Lcom/google/android/gms/iid/zzb;
 
-.field IX:Landroid/os/Messenger;
+.field KC:Landroid/os/Messenger;
 
 
 # direct methods
@@ -43,7 +43,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IW:Lcom/google/android/gms/iid/zzb;
+    iput-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KB:Lcom/google/android/gms/iid/zzb;
 
     :goto_0
     return-void
@@ -53,21 +53,21 @@
 
     invoke-direct {v0, p1}, Landroid/os/Messenger;-><init>(Landroid/os/IBinder;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IX:Landroid/os/Messenger;
+    iput-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KC:Landroid/os/Messenger;
 
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method public Pf()Landroid/os/IBinder;
+.method public PY()Landroid/os/IBinder;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IX:Landroid/os/Messenger;
+    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KC:Landroid/os/Messenger;
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IW:Lcom/google/android/gms/iid/zzb;
+    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KB:Lcom/google/android/gms/iid/zzb;
 
     invoke-interface {v0}, Lcom/google/android/gms/iid/zzb;->asBinder()Landroid/os/IBinder;
 
@@ -77,7 +77,7 @@
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IX:Landroid/os/Messenger;
+    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KC:Landroid/os/Messenger;
 
     invoke-virtual {v0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
 
@@ -102,13 +102,13 @@
     if-eqz p1, :cond_0
 
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/android/gms/iid/MessengerCompat;->Pf()Landroid/os/IBinder;
+    invoke-virtual {p0}, Lcom/google/android/gms/iid/MessengerCompat;->PY()Landroid/os/IBinder;
 
     move-result-object v0
 
     check-cast p1, Lcom/google/android/gms/iid/MessengerCompat;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/iid/MessengerCompat;->Pf()Landroid/os/IBinder;
+    invoke-virtual {p1}, Lcom/google/android/gms/iid/MessengerCompat;->PY()Landroid/os/IBinder;
 
     move-result-object v1
 
@@ -132,7 +132,7 @@
 .method public hashCode()I
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/iid/MessengerCompat;->Pf()Landroid/os/IBinder;
+    invoke-virtual {p0}, Lcom/google/android/gms/iid/MessengerCompat;->PY()Landroid/os/IBinder;
 
     move-result-object v0
 
@@ -146,11 +146,11 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IX:Landroid/os/Messenger;
+    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KC:Landroid/os/Messenger;
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IW:Lcom/google/android/gms/iid/zzb;
+    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KB:Lcom/google/android/gms/iid/zzb;
 
     invoke-interface {v0}, Lcom/google/android/gms/iid/zzb;->asBinder()Landroid/os/IBinder;
 
@@ -162,7 +162,7 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->IX:Landroid/os/Messenger;
+    iget-object v0, p0, Lcom/google/android/gms/iid/MessengerCompat;->KC:Landroid/os/Messenger;
 
     invoke-virtual {v0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
 

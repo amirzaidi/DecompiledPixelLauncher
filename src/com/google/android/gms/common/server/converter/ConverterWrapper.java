@@ -11,47 +11,47 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ConverterWrapper extends AbstractSafeParcelable
 {
     public static final b CREATOR;
-    private final StringToIntConverter il;
-    private final int im;
+    private final StringToIntConverter ld;
+    private final int le;
     
     static {
         CREATOR = new b();
     }
     
-    ConverterWrapper(final int im, final StringToIntConverter il) {
-        this.im = im;
-        this.il = il;
+    ConverterWrapper(final int le, final StringToIntConverter ld) {
+        this.le = le;
+        this.ld = ld;
     }
     
-    private ConverterWrapper(final StringToIntConverter il) {
-        this.im = 1;
-        this.il = il;
+    private ConverterWrapper(final StringToIntConverter ld) {
+        this.le = 1;
+        this.ld = ld;
     }
     
-    public static ConverterWrapper lp(final e e) {
+    public static ConverterWrapper od(final e e) {
         if (!(e instanceof StringToIntConverter)) {
             throw new IllegalArgumentException("Unsupported safe parcelable field converter class.");
         }
         return new ConverterWrapper((StringToIntConverter)e);
     }
     
-    StringToIntConverter lo() {
-        return this.il;
+    StringToIntConverter oc() {
+        return this.ld;
     }
     
-    int lq() {
-        return this.im;
+    int oe() {
+        return this.le;
     }
     
-    public e lr() {
-        if (this.il == null) {
+    public e of() {
+        if (this.ld == null) {
             throw new IllegalStateException("There was no converter wrapped in this ConverterWrapper.");
         }
-        return this.il;
+        return this.ld;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final b creator = ConverterWrapper.CREATOR;
-        b.lt(this, parcel, n);
+        b.oh(this, parcel, n);
     }
 }

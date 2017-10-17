@@ -10,14 +10,14 @@ import android.os.IBinder;
 
 class j implements zzh
 {
-    private IBinder AN;
+    private IBinder Cs;
     
-    j(final IBinder an) {
-        this.AN = an;
+    j(final IBinder cs) {
+        this.Cs = cs;
     }
     
     public IBinder asBinder() {
-        return this.AN;
+        return this.Cs;
     }
     
     public void zza(final int n, final PendingIntent pendingIntent) {
@@ -34,7 +34,7 @@ class j implements zzh
                 obtain.writeInt(1);
                 pendingIntent.writeToParcel(obtain, 0);
             }
-            this.AN.transact(3, obtain, (Parcel)null, 1);
+            this.Cs.transact(3, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();
@@ -49,7 +49,7 @@ class j implements zzh
             parcel.writeInterfaceToken(s);
             obtain.writeInt(n);
             obtain.writeStringArray(array);
-            this.AN.transact(1, obtain, (Parcel)null, 1);
+            this.Cs.transact(1, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();
@@ -64,7 +64,7 @@ class j implements zzh
             parcel.writeInterfaceToken(s);
             obtain.writeInt(n);
             obtain.writeStringArray(array);
-            this.AN.transact(2, obtain, (Parcel)null, 1);
+            this.Cs.transact(2, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();

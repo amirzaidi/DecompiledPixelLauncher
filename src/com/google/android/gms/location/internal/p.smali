@@ -16,15 +16,15 @@
 
 
 # virtual methods
-.method public FK(Lcom/google/android/gms/common/api/d;)Landroid/location/Location;
+.method public GD(Lcom/google/android/gms/common/api/a;)Landroid/location/Location;
     .locals 1
 
-    invoke-static {p1}, Lcom/google/android/gms/location/b;->GB(Lcom/google/android/gms/common/api/d;)Lcom/google/android/gms/location/internal/a;
+    invoke-static {p1}, Lcom/google/android/gms/location/b;->Hu(Lcom/google/android/gms/common/api/a;)Lcom/google/android/gms/location/internal/a;
 
     move-result-object v0
 
     :try_start_0
-    invoke-virtual {v0}, Lcom/google/android/gms/location/internal/a;->ER()Landroid/location/Location;
+    invoke-virtual {v0}, Lcom/google/android/gms/location/internal/a;->FK()Landroid/location/Location;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

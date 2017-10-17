@@ -5,17 +5,17 @@
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
-.field public static final ks:Lcom/google/android/gms/common/ConnectionResult;
+.field public static final nk:Lcom/google/android/gms/common/ConnectionResult;
 
 
 # instance fields
-.field private final kt:Landroid/app/PendingIntent;
+.field private final nl:Landroid/app/PendingIntent;
 
-.field final ku:I
+.field final nm:I
 
-.field private final kv:Ljava/lang/String;
+.field private final nn:Ljava/lang/String;
 
-.field private final kw:I
+.field private final no:I
 
 
 # direct methods
@@ -28,7 +28,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(I)V
 
-    sput-object v0, Lcom/google/android/gms/common/ConnectionResult;->ks:Lcom/google/android/gms/common/ConnectionResult;
+    sput-object v0, Lcom/google/android/gms/common/ConnectionResult;->nk:Lcom/google/android/gms/common/ConnectionResult;
 
     new-instance v0, Lcom/google/android/gms/common/h;
 
@@ -54,13 +54,13 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/ConnectionResult;->ku:I
+    iput p1, p0, Lcom/google/android/gms/common/ConnectionResult;->nm:I
 
-    iput p2, p0, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iput p2, p0, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
-    iput-object p3, p0, Lcom/google/android/gms/common/ConnectionResult;->kt:Landroid/app/PendingIntent;
+    iput-object p3, p0, Lcom/google/android/gms/common/ConnectionResult;->nl:Landroid/app/PendingIntent;
 
-    iput-object p4, p0, Lcom/google/android/gms/common/ConnectionResult;->kv:Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/gms/common/ConnectionResult;->nn:Ljava/lang/String;
 
     return-void
 .end method
@@ -85,7 +85,7 @@
     return-void
 .end method
 
-.method static nt(I)Ljava/lang/String;
+.method static qg(I)Ljava/lang/String;
     .locals 2
 
     sparse-switch p0, :sswitch_data_0
@@ -292,9 +292,9 @@
 
     check-cast p1, Lcom/google/android/gms/common/ConnectionResult;
 
-    iget v2, p0, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iget v2, p0, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
-    iget v3, p1, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iget v3, p1, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
     if-eq v2, v3, :cond_4
 
@@ -312,21 +312,21 @@
     return v1
 
     :cond_4
-    iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->kt:Landroid/app/PendingIntent;
+    iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->nl:Landroid/app/PendingIntent;
 
-    iget-object v3, p1, Lcom/google/android/gms/common/ConnectionResult;->kt:Landroid/app/PendingIntent;
+    iget-object v3, p1, Lcom/google/android/gms/common/ConnectionResult;->nl:Landroid/app/PendingIntent;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->kv:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/common/ConnectionResult;->nn:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/google/android/gms/common/ConnectionResult;->kv:Ljava/lang/String;
+    iget-object v3, p1, Lcom/google/android/gms/common/ConnectionResult;->nn:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -342,7 +342,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -352,47 +352,47 @@
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kt:Landroid/app/PendingIntent;
+    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->nl:Landroid/app/PendingIntent;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kv:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->nn:Ljava/lang/String;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public nu()I
+.method public qh()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iget v0, p0, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
     return v0
 .end method
 
-.method public nv()Ljava/lang/String;
+.method public qi()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/ConnectionResult;->kv:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/ConnectionResult;->nn:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public nw()Z
+.method public qj()Z
     .locals 2
 
     const/4 v0, 0x0
 
-    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
     if-eqz v1, :cond_0
 
@@ -405,12 +405,12 @@
     goto :goto_0
 .end method
 
-.method public nx()Z
+.method public qk()Z
     .locals 2
 
     const/4 v0, 0x0
 
-    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
     if-nez v1, :cond_1
 
@@ -419,7 +419,7 @@
     return v0
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kt:Landroid/app/PendingIntent;
+    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->nl:Landroid/app/PendingIntent;
 
     if-eqz v1, :cond_0
 
@@ -428,10 +428,10 @@
     goto :goto_0
 .end method
 
-.method public ny()Landroid/app/PendingIntent;
+.method public ql()Landroid/app/PendingIntent;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/ConnectionResult;->kt:Landroid/app/PendingIntent;
+    iget-object v0, p0, Lcom/google/android/gms/common/ConnectionResult;->nl:Landroid/app/PendingIntent;
 
     return-object v0
 .end method
@@ -439,35 +439,35 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->hJ(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->kx(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kw:I
+    iget v1, p0, Lcom/google/android/gms/common/ConnectionResult;->no:I
 
-    invoke-static {v1}, Lcom/google/android/gms/common/ConnectionResult;->nt(I)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/gms/common/ConnectionResult;->qg(I)Ljava/lang/String;
 
     move-result-object v1
 
     const-string/jumbo v2, "statusCode"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kt:Landroid/app/PendingIntent;
+    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->nl:Landroid/app/PendingIntent;
 
     const-string/jumbo v2, "resolution"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->kv:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/ConnectionResult;->nn:Ljava/lang/String;
 
     const-string/jumbo v2, "message"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
@@ -481,7 +481,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/h;->nX(Lcom/google/android/gms/common/ConnectionResult;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/h;->qJ(Lcom/google/android/gms/common/ConnectionResult;Landroid/os/Parcel;I)V
 
     return-void
 .end method

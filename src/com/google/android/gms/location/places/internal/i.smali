@@ -14,12 +14,12 @@
     return-void
 .end method
 
-.method static DF(Lcom/google/android/gms/location/places/internal/PlaceEntity;Landroid/os/Parcel;I)V
+.method static Ey(Lcom/google/android/gms/location/places/internal/PlaceEntity;Landroid/os/Parcel;I)V
     .locals 5
 
     const/4 v4, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v1
 
@@ -29,111 +29,111 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dx()Landroid/os/Bundle;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Eq()Landroid/os/Bundle;
 
     move-result-object v0
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->eT(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->hH(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dn()Lcom/google/android/gms/location/places/internal/PlaceLocalization;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Eg()Lcom/google/android/gms/location/places/internal/PlaceLocalization;
 
     move-result-object v0
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dz()Lcom/google/android/gms/maps/model/LatLng;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Es()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v0
 
     const/4 v2, 0x4
 
-    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dv()F
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Eo()F
 
     move-result v0
 
     const/4 v2, 0x5
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dl()Lcom/google/android/gms/maps/model/LatLngBounds;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ee()Lcom/google/android/gms/maps/model/LatLngBounds;
 
     move-result-object v0
 
     const/4 v2, 0x6
 
-    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dr()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ek()Ljava/lang/String;
 
     move-result-object v0
 
     const/4 v2, 0x7
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yx:I
+    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ac:I
 
     const/16 v2, 0x3e8
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dk()Landroid/net/Uri;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ed()Landroid/net/Uri;
 
     move-result-object v0
 
     const/16 v2, 0x8
 
-    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v0, p2, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dy()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Er()Z
 
     move-result v0
 
     const/16 v2, 0x9
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fa(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hO(Landroid/os/Parcel;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Di()F
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Eb()F
 
     move-result v0
 
     const/16 v2, 0xa
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dp()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ei()I
 
     move-result v0
 
     const/16 v2, 0xb
 
-    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dw()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ep()J
 
     move-result-wide v2
 
     const/16 v0, 0xc
 
-    invoke-static {p1, v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v0, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dm()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ef()Ljava/util/List;
 
     move-result-object v0
 
     const/16 v2, 0xd
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fb(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->hP(Landroid/os/Parcel;ILjava/util/List;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ds()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->El()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -141,9 +141,9 @@
 
     const/16 v2, 0xe
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dq()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ej()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -151,25 +151,25 @@
 
     const/16 v2, 0xf
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dj()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ec()Ljava/lang/String;
 
     move-result-object v0
 
     const/16 v2, 0x10
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Du()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->En()Ljava/util/List;
 
     move-result-object v0
 
     const/16 v2, 0x11
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fr(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->if(Landroid/os/Parcel;ILjava/util/List;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Do()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Eh()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -177,27 +177,27 @@
 
     const/16 v2, 0x13
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dt()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Em()Ljava/util/List;
 
     move-result-object v0
 
     const/16 v2, 0x14
 
-    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->fb(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v2, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/a;->hP(Landroid/os/Parcel;ILjava/util/List;Z)V
 
-    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public DD(Landroid/os/Parcel;)Lcom/google/android/gms/location/places/internal/PlaceEntity;
+.method public Ew(Landroid/os/Parcel;)Lcom/google/android/gms/location/places/internal/PlaceEntity;
     .locals 26
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v3
 
@@ -261,11 +261,11 @@
     return-object v3
 
     :cond_0
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v2
 
-    invoke-static {v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v25
 
@@ -273,14 +273,14 @@
 
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :sswitch_0
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -289,7 +289,7 @@
     :sswitch_1
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fP(Landroid/os/Parcel;I)Landroid/os/Bundle;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iD(Landroid/os/Parcel;I)Landroid/os/Bundle;
 
     move-result-object v8
 
@@ -302,7 +302,7 @@
 
     move-object/from16 v1, v24
 
-    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
 
@@ -317,7 +317,7 @@
 
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2, v14}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {v0, v2, v14}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
 
@@ -330,7 +330,7 @@
     :sswitch_4
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v15
 
@@ -343,7 +343,7 @@
 
     move-object/from16 v1, v16
 
-    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
 
@@ -356,7 +356,7 @@
     :sswitch_6
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v17
 
@@ -365,7 +365,7 @@
     :sswitch_7
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v4
 
@@ -378,7 +378,7 @@
 
     move-object/from16 v1, v18
 
-    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {v0, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v2
 
@@ -391,7 +391,7 @@
     :sswitch_9
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
 
     move-result v19
 
@@ -400,7 +400,7 @@
     :sswitch_a
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v20
 
@@ -409,7 +409,7 @@
     :sswitch_b
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v21
 
@@ -418,7 +418,7 @@
     :sswitch_c
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v22
 
@@ -427,7 +427,7 @@
     :sswitch_d
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fH(Landroid/os/Parcel;I)Ljava/util/ArrayList;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iv(Landroid/os/Parcel;I)Ljava/util/ArrayList;
 
     move-result-object v7
 
@@ -436,7 +436,7 @@
     :sswitch_e
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v10
 
@@ -445,7 +445,7 @@
     :sswitch_f
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v11
 
@@ -454,7 +454,7 @@
     :sswitch_10
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v12
 
@@ -463,7 +463,7 @@
     :sswitch_11
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fR(Landroid/os/Parcel;I)Ljava/util/ArrayList;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iF(Landroid/os/Parcel;I)Ljava/util/ArrayList;
 
     move-result-object v13
 
@@ -472,7 +472,7 @@
     :sswitch_12
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v9
 
@@ -481,7 +481,7 @@
     :sswitch_13
     move-object/from16 v0, p1
 
-    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fH(Landroid/os/Parcel;I)Ljava/util/ArrayList;
+    invoke-static {v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iv(Landroid/os/Parcel;I)Ljava/util/ArrayList;
 
     move-result-object v6
 
@@ -543,7 +543,7 @@
     .end sparse-switch
 .end method
 
-.method public DE(I)[Lcom/google/android/gms/location/places/internal/PlaceEntity;
+.method public Ex(I)[Lcom/google/android/gms/location/places/internal/PlaceEntity;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/location/places/internal/PlaceEntity;
@@ -554,7 +554,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/places/internal/i;->DD(Landroid/os/Parcel;)Lcom/google/android/gms/location/places/internal/PlaceEntity;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/places/internal/i;->Ew(Landroid/os/Parcel;)Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
     move-result-object v0
 
@@ -564,7 +564,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/places/internal/i;->DE(I)[Lcom/google/android/gms/location/places/internal/PlaceEntity;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/places/internal/i;->Ex(I)[Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
     move-result-object v0
 

@@ -14,78 +14,78 @@
     return-void
 .end method
 
-.method static Ij(Lcom/google/android/gms/location/FloorChangeEvent;Landroid/os/Parcel;I)V
+.method static Jc(Lcom/google/android/gms/location/FloorChangeEvent;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Io()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Jh()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Im()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Jf()I
 
     move-result v1
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Iq()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Jj()J
 
     move-result-wide v2
 
     const/4 v1, 0x3
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Ip()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Ji()J
 
     move-result-wide v2
 
     const/4 v1, 0x4
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->In()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Jg()J
 
     move-result-wide v2
 
     const/4 v1, 0x5
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Is()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Jl()J
 
     move-result-wide v2
 
     const/4 v1, 0x6
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Il()F
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Je()F
 
     move-result v1
 
     const/4 v2, 0x7
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Ir()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/FloorChangeEvent;->Jk()I
 
     move-result v1
 
     const/16 v2, 0x3e8
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
@@ -95,7 +95,7 @@
 .method public createFromParcel(Landroid/os/Parcel;)Lcom/google/android/gms/location/FloorChangeEvent;
     .locals 17
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v2
 
@@ -135,11 +135,11 @@
     return-object v2
 
     :cond_0
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v15
 
-    invoke-static {v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v16
 
@@ -147,14 +147,14 @@
 
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :sswitch_0
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v4
 
@@ -163,7 +163,7 @@
     :sswitch_1
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v5
 
@@ -172,7 +172,7 @@
     :sswitch_2
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v6
 
@@ -181,7 +181,7 @@
     :sswitch_3
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v8
 
@@ -190,7 +190,7 @@
     :sswitch_4
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v10
 
@@ -199,7 +199,7 @@
     :sswitch_5
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v12
 
@@ -208,7 +208,7 @@
     :sswitch_6
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v14
 
@@ -217,7 +217,7 @@
     :sswitch_7
     move-object/from16 v0, p1
 
-    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {v0, v15}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v3
 

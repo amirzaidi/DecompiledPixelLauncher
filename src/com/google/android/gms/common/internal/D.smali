@@ -3,13 +3,13 @@
 
 
 # static fields
-.field private static gA:Z
+.field private static jp:Ljava/lang/String;
 
-.field private static gx:Ljava/lang/String;
+.field private static jq:I
 
-.field private static gy:I
+.field private static jr:Ljava/lang/Object;
 
-.field private static gz:Ljava/lang/Object;
+.field private static js:Z
 
 
 # direct methods
@@ -20,42 +20,42 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/D;->gz:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/internal/D;->jr:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static it(Landroid/content/Context;)I
+.method public static lh(Landroid/content/Context;)I
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/D;->iu(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/D;->li(Landroid/content/Context;)V
 
-    sget v0, Lcom/google/android/gms/common/internal/D;->gy:I
+    sget v0, Lcom/google/android/gms/common/internal/D;->jq:I
 
     return v0
 .end method
 
-.method private static iu(Landroid/content/Context;)V
+.method private static li(Landroid/content/Context;)V
     .locals 4
 
-    sget-object v1, Lcom/google/android/gms/common/internal/D;->gz:Ljava/lang/Object;
+    sget-object v1, Lcom/google/android/gms/common/internal/D;->jr:Ljava/lang/Object;
 
     monitor-enter v1
 
     :try_start_0
-    sget-boolean v0, Lcom/google/android/gms/common/internal/D;->gA:Z
+    sget-boolean v0, Lcom/google/android/gms/common/internal/D;->js:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/google/android/gms/common/internal/D;->gA:Z
+    sput-boolean v0, Lcom/google/android/gms/common/internal/D;->js:Z
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {p0}, Lcom/google/android/gms/internal/aG;->uS(Landroid/content/Context;)Lcom/google/android/gms/internal/bc;
+    invoke-static {p0}, Lcom/google/android/gms/internal/az;->uR(Landroid/content/Context;)Lcom/google/android/gms/internal/aW;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -64,7 +64,7 @@
     const/16 v3, 0x80
 
     :try_start_1
-    invoke-virtual {v2, v0, v3}, Lcom/google/android/gms/internal/bc;->xE(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v2, v0, v3}, Lcom/google/android/gms/internal/aW;->xD(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
@@ -78,7 +78,7 @@
 
     move-result-object v2
 
-    sput-object v2, Lcom/google/android/gms/common/internal/D;->gx:Ljava/lang/String;
+    sput-object v2, Lcom/google/android/gms/common/internal/D;->jp:Ljava/lang/String;
 
     const-string/jumbo v2, "com.google.android.gms.version"
 
@@ -86,7 +86,7 @@
 
     move-result v0
 
-    sput v0, Lcom/google/android/gms/common/internal/D;->gy:I
+    sput v0, Lcom/google/android/gms/common/internal/D;->jq:I
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0

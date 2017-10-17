@@ -12,65 +12,65 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void Ea(final NearbyAlertFilter nearbyAlertFilter, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fr(parcel, 1, nearbyAlertFilter.zK, false);
-        a.fb(parcel, 2, nearbyAlertFilter.zI, false);
-        a.fc(parcel, 3, nearbyAlertFilter.zO, false);
-        a.fo(parcel, 4, nearbyAlertFilter.zN, false);
-        a.fa(parcel, 5, nearbyAlertFilter.zP);
-        a.fj(parcel, 1000, nearbyAlertFilter.zM);
-        a.fe(parcel, ey);
+    static void ET(final NearbyAlertFilter nearbyAlertFilter, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.if(parcel, 1, nearbyAlertFilter.Bp, false);
+        a.hP(parcel, 2, nearbyAlertFilter.Bn, false);
+        a.hQ(parcel, 3, nearbyAlertFilter.Bt, false);
+        a.ic(parcel, 4, nearbyAlertFilter.Bs, false);
+        a.hO(parcel, 5, nearbyAlertFilter.Bu);
+        a.hX(parcel, 1000, nearbyAlertFilter.Br);
+        a.hS(parcel, hm);
     }
     
-    public NearbyAlertFilter DZ(final Parcel parcel) {
-        boolean fx = false;
-        String fq = null;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        List fz = null;
-        List fh = null;
-        List fr = null;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+    public NearbyAlertFilter ES(final Parcel parcel) {
+        boolean il = false;
+        String ie = null;
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        List in = null;
+        List iv = null;
+        List if1 = null;
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fr = com.google.android.gms.common.internal.safeparcel.b.fR(parcel, fs);
+                    if1 = com.google.android.gms.common.internal.safeparcel.b.iF(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fh = com.google.android.gms.common.internal.safeparcel.b.fH(parcel, fs);
+                    iv = com.google.android.gms.common.internal.safeparcel.b.iv(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fz = com.google.android.gms.common.internal.safeparcel.b.fZ(parcel, fs, (Parcelable$Creator)UserDataType.CREATOR);
+                    in = com.google.android.gms.common.internal.safeparcel.b.iN(parcel, ig, (Parcelable$Creator)UserDataType.CREATOR);
                     continue;
                 }
                 case 4: {
-                    fq = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fx = com.google.android.gms.common.internal.safeparcel.b.fX(parcel, fs);
+                    il = com.google.android.gms.common.internal.safeparcel.b.iL(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new NearbyAlertFilter(fn, fr, fh, fz, fq, fx);
+        if (parcel.dataPosition() == ix) {
+            return new NearbyAlertFilter(ib, if1, iv, in, ie, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public NearbyAlertFilter[] Eb(final int n) {
+    public NearbyAlertFilter[] EU(final int n) {
         return new NearbyAlertFilter[n];
     }
 }

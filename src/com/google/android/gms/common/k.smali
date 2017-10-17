@@ -3,23 +3,23 @@
 
 
 # static fields
-.field private static kH:Ljava/lang/String;
+.field public static final nA:I
 
-.field public static final kI:I
+.field private static final nB:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private static final kJ:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public static nC:Z
 
-.field public static kK:Z
+.field public static nD:Z
 
-.field public static kL:Z
+.field static nE:Z
 
-.field static kM:Z
+.field private static nF:I
 
-.field private static kN:I
+.field private static nG:Z
 
-.field private static kO:Z
+.field static final nH:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field static final kP:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private static nz:Ljava/lang/String;
 
 
 # direct methods
@@ -28,37 +28,37 @@
 
     const/4 v1, 0x0
 
-    invoke-static {}, Lcom/google/android/gms/common/k;->ok()I
+    invoke-static {}, Lcom/google/android/gms/common/k;->qW()I
 
     move-result v0
 
-    sput v0, Lcom/google/android/gms/common/k;->kI:I
+    sput v0, Lcom/google/android/gms/common/k;->nA:I
 
-    sput-boolean v1, Lcom/google/android/gms/common/k;->kK:Z
+    sput-boolean v1, Lcom/google/android/gms/common/k;->nC:Z
 
-    sput-boolean v1, Lcom/google/android/gms/common/k;->kL:Z
+    sput-boolean v1, Lcom/google/android/gms/common/k;->nD:Z
 
-    sput-boolean v1, Lcom/google/android/gms/common/k;->kM:Z
+    sput-boolean v1, Lcom/google/android/gms/common/k;->nE:Z
 
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/google/android/gms/common/k;->kH:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/common/k;->nz:Ljava/lang/String;
 
-    sput v1, Lcom/google/android/gms/common/k;->kN:I
+    sput v1, Lcom/google/android/gms/common/k;->nF:I
 
-    sput-boolean v1, Lcom/google/android/gms/common/k;->kO:Z
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/common/k;->kP:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sput-boolean v1, Lcom/google/android/gms/common/k;->nG:Z
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/k;->kJ:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sput-object v0, Lcom/google/android/gms/common/k;->nH:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/common/k;->nB:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
@@ -71,7 +71,7 @@
     return-void
 .end method
 
-.method public static oc(I)Z
+.method public static qO(I)Z
     .locals 1
 
     packed-switch p0, :pswitch_data_0
@@ -102,7 +102,7 @@
     .end packed-switch
 .end method
 
-.method public static od()Z
+.method public static qP()Z
     .locals 2
 
     sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
@@ -116,7 +116,7 @@
     return v0
 .end method
 
-.method public static oe(Landroid/content/Context;)Ljava/lang/String;
+.method public static qQ(Landroid/content/Context;)Ljava/lang/String;
     .locals 6
 
     const/4 v1, 0x0
@@ -151,7 +151,7 @@
     move-result-object v2
 
     :try_start_0
-    invoke-static {p0}, Lcom/google/android/gms/internal/aG;->uS(Landroid/content/Context;)Lcom/google/android/gms/internal/bc;
+    invoke-static {p0}, Lcom/google/android/gms/internal/az;->uR(Landroid/content/Context;)Lcom/google/android/gms/internal/aW;
 
     move-result-object v3
 
@@ -161,7 +161,7 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual {v3, v4, v5}, Lcom/google/android/gms/internal/bc;->xE(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v3, v4, v5}, Lcom/google/android/gms/internal/aW;->xD(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -186,10 +186,10 @@
     goto :goto_1
 .end method
 
-.method private static of(Landroid/content/Context;)V
+.method private static qR(Landroid/content/Context;)V
     .locals 1
 
-    sget-boolean v0, Lcom/google/android/gms/common/k;->kO:Z
+    sget-boolean v0, Lcom/google/android/gms/common/k;->nG:Z
 
     if-eqz v0, :cond_0
 
@@ -197,32 +197,32 @@
     return-void
 
     :cond_0
-    invoke-static {p0}, Lcom/google/android/gms/common/k;->os(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/google/android/gms/common/k;->re(Landroid/content/Context;)V
 
     goto :goto_0
 .end method
 
-.method public static og(Landroid/content/Context;I)Z
+.method public static qS(Landroid/content/Context;I)Z
     .locals 1
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/a/g;->jE(Landroid/content/Context;I)Z
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/a/g;->ms(Landroid/content/Context;I)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public static oh(Landroid/content/Context;)Z
+.method public static qT(Landroid/content/Context;)Z
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/common/k;->of(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/google/android/gms/common/k;->qR(Landroid/content/Context;)V
 
-    sget-boolean v0, Lcom/google/android/gms/common/k;->kM:Z
+    sget-boolean v0, Lcom/google/android/gms/common/k;->nE:Z
 
     return v0
 .end method
 
-.method static oi(Landroid/content/Context;Ljava/lang/String;)Z
+.method static qU(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 5
 
     const/4 v1, 0x1
@@ -238,7 +238,7 @@
     if-nez v3, :cond_3
 
     :cond_0
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->jU()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mI()Z
 
     move-result v0
 
@@ -271,7 +271,7 @@
     return v0
 
     :cond_3
-    invoke-static {}, Lcom/google/android/gms/common/a/j;->jI()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/j;->mw()Z
 
     move-result v0
 
@@ -328,7 +328,7 @@
     return v0
 
     :cond_7
-    invoke-static {p0}, Lcom/google/android/gms/common/k;->oj(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/google/android/gms/common/k;->qV(Landroid/content/Context;)Z
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -346,12 +346,12 @@
     return v2
 .end method
 
-.method public static oj(Landroid/content/Context;)Z
+.method public static qV(Landroid/content/Context;)Z
     .locals 3
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->jW()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mK()Z
 
     move-result v0
 
@@ -398,20 +398,20 @@
     return v0
 .end method
 
-.method private static ok()I
+.method private static qW()I
     .locals 1
 
-    sget v0, Lcom/google/android/gms/common/internal/p;->fG:I
+    sget v0, Lcom/google/android/gms/common/internal/p;->iy:I
 
     return v0
 .end method
 
-.method public static ol(Landroid/content/Context;)Z
+.method public static qX(Landroid/content/Context;)Z
     .locals 2
 
     const/4 v0, 0x0
 
-    invoke-static {p0}, Lcom/google/android/gms/common/k;->oh(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/google/android/gms/common/k;->qT(Landroid/content/Context;)Z
 
     move-result v1
 
@@ -424,7 +424,7 @@
     return v0
 
     :cond_1
-    invoke-static {}, Lcom/google/android/gms/common/k;->od()Z
+    invoke-static {}, Lcom/google/android/gms/common/k;->qP()Z
 
     move-result v1
 
@@ -433,7 +433,7 @@
     goto :goto_0
 .end method
 
-.method public static om(Landroid/content/Context;)Landroid/content/res/Resources;
+.method public static qY(Landroid/content/Context;)Landroid/content/res/Resources;
     .locals 2
 
     :try_start_0
@@ -459,10 +459,10 @@
     return-object v0
 .end method
 
-.method public static on(Landroid/content/Context;)V
+.method public static qZ(Landroid/content/Context;)V
     .locals 2
 
-    sget-object v0, Lcom/google/android/gms/common/k;->kP:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object v0, Lcom/google/android/gms/common/k;->nH:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
@@ -504,10 +504,10 @@
     goto :goto_0
 .end method
 
-.method private static oo(Landroid/content/Context;)V
+.method private static ra(Landroid/content/Context;)V
     .locals 6
 
-    sget-object v0, Lcom/google/android/gms/common/k;->kJ:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object v0, Lcom/google/android/gms/common/k;->nB:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
@@ -515,15 +515,15 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {p0}, Lcom/google/android/gms/common/k;->of(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/google/android/gms/common/k;->qR(Landroid/content/Context;)V
 
-    sget v0, Lcom/google/android/gms/common/k;->kN:I
+    sget v0, Lcom/google/android/gms/common/k;->nF:I
 
     if-eqz v0, :cond_1
 
-    sget v0, Lcom/google/android/gms/common/k;->kN:I
+    sget v0, Lcom/google/android/gms/common/k;->nF:I
 
-    sget v1, Lcom/google/android/gms/common/k;->kI:I
+    sget v1, Lcom/google/android/gms/common/k;->nA:I
 
     if-ne v0, v1, :cond_2
 
@@ -544,9 +544,9 @@
     :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    sget v1, Lcom/google/android/gms/common/k;->kI:I
+    sget v1, Lcom/google/android/gms/common/k;->nA:I
 
-    sget v2, Lcom/google/android/gms/common/k;->kN:I
+    sget v2, Lcom/google/android/gms/common/k;->nF:I
 
     const-string/jumbo v3, "com.google.android.gms.version"
 
@@ -613,7 +613,7 @@
     throw v0
 .end method
 
-.method public static op(Landroid/content/Context;)I
+.method public static rb(Landroid/content/Context;)I
     .locals 8
 
     const/16 v7, 0x9
@@ -653,7 +653,7 @@
     if-eqz v1, :cond_1
 
     :goto_1
-    invoke-static {p0}, Lcom/google/android/gms/common/a/c;->jx(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/google/android/gms/common/a/c;->ml(Landroid/content/Context;)Z
 
     move-result v1
 
@@ -682,24 +682,24 @@
 
     if-nez v1, :cond_4
 
-    sget-object v0, Lcom/google/android/gms/common/c;->kz:[Lcom/google/android/gms/common/l;
+    sget-object v0, Lcom/google/android/gms/common/c;->nr:[Lcom/google/android/gms/common/l;
 
-    invoke-virtual {v6, v5, v0}, Lcom/google/android/gms/common/j;->nZ(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+    invoke-virtual {v6, v5, v0}, Lcom/google/android/gms/common/j;->qL(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
 
     move-result-object v0
 
     if-eqz v0, :cond_6
 
     :cond_0
-    sget v0, Lcom/google/android/gms/common/k;->kI:I
+    sget v0, Lcom/google/android/gms/common/k;->nA:I
 
-    invoke-static {v0}, Lcom/google/android/gms/common/a/k;->jJ(I)I
+    invoke-static {v0}, Lcom/google/android/gms/common/a/k;->mx(I)I
 
     move-result v0
 
     iget v1, v5, Landroid/content/pm/PackageInfo;->versionCode:I
 
-    invoke-static {v1}, Lcom/google/android/gms/common/a/k;->jJ(I)I
+    invoke-static {v1}, Lcom/google/android/gms/common/a/k;->mx(I)I
 
     move-result v1
 
@@ -728,7 +728,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {p0}, Lcom/google/android/gms/common/k;->oo(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/google/android/gms/common/k;->ra(Landroid/content/Context;)V
 
     goto :goto_1
 
@@ -774,9 +774,9 @@
     return v3
 
     :cond_4
-    sget-object v1, Lcom/google/android/gms/common/c;->kz:[Lcom/google/android/gms/common/l;
+    sget-object v1, Lcom/google/android/gms/common/c;->nr:[Lcom/google/android/gms/common/l;
 
-    invoke-virtual {v6, v0, v1}, Lcom/google/android/gms/common/j;->nZ(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+    invoke-virtual {v6, v0, v1}, Lcom/google/android/gms/common/j;->qL(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
 
     move-result-object v0
 
@@ -786,7 +786,7 @@
 
     aput-object v0, v1, v2
 
-    invoke-virtual {v6, v5, v1}, Lcom/google/android/gms/common/j;->nZ(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+    invoke-virtual {v6, v5, v1}, Lcom/google/android/gms/common/j;->qL(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
 
     move-result-object v0
 
@@ -819,7 +819,7 @@
     return v7
 
     :cond_7
-    sget v0, Lcom/google/android/gms/common/k;->kI:I
+    sget v0, Lcom/google/android/gms/common/k;->nA:I
 
     iget v1, v5, Landroid/content/pm/PackageInfo;->versionCode:I
 
@@ -892,7 +892,7 @@
     return v0
 .end method
 
-.method static oq(I)Z
+.method static rc(I)Z
     .locals 1
 
     sparse-switch p0, :sswitch_data_0
@@ -918,7 +918,7 @@
     .end sparse-switch
 .end method
 
-.method public static or(Landroid/content/Context;I)Z
+.method public static rd(Landroid/content/Context;I)Z
     .locals 2
 
     const/4 v1, 0x1
@@ -939,14 +939,14 @@
     :cond_1
     const-string/jumbo v0, "com.google.android.gms"
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/k;->oi(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/k;->qU(Landroid/content/Context;Ljava/lang/String;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method private static os(Landroid/content/Context;)V
+.method private static re(Landroid/content/Context;)V
     .locals 6
 
     const/4 v5, 0x1
@@ -956,23 +956,23 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/k;->kH:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/common/k;->nz:Ljava/lang/String;
 
-    invoke-static {p0}, Lcom/google/android/gms/internal/aG;->uS(Landroid/content/Context;)Lcom/google/android/gms/internal/bc;
+    invoke-static {p0}, Lcom/google/android/gms/internal/az;->uR(Landroid/content/Context;)Lcom/google/android/gms/internal/aW;
 
     move-result-object v0
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/D;->it(Landroid/content/Context;)I
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/D;->lh(Landroid/content/Context;)I
 
     move-result v1
 
-    sput v1, Lcom/google/android/gms/common/k;->kN:I
+    sput v1, Lcom/google/android/gms/common/k;->nF:I
 
     const-string/jumbo v1, "com.google.android.gms"
 
     const/16 v2, 0x40
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/bc;->xC(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/aW;->xB(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v0
 
@@ -981,13 +981,13 @@
     :cond_0
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/google/android/gms/common/k;->kM:Z
+    sput-boolean v0, Lcom/google/android/gms/common/k;->nE:Z
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :goto_0
-    sput-boolean v5, Lcom/google/android/gms/common/k;->kO:Z
+    sput-boolean v5, Lcom/google/android/gms/common/k;->nG:Z
 
     return-void
 
@@ -1001,7 +1001,7 @@
 
     new-array v2, v2, [Lcom/google/android/gms/common/l;
 
-    sget-object v3, Lcom/google/android/gms/common/c;->kz:[Lcom/google/android/gms/common/l;
+    sget-object v3, Lcom/google/android/gms/common/c;->nr:[Lcom/google/android/gms/common/l;
 
     const/4 v4, 0x1
 
@@ -1011,7 +1011,7 @@
 
     aput-object v3, v2, v4
 
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/common/j;->nZ(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/common/j;->qL(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
 
     move-result-object v0
 
@@ -1019,7 +1019,7 @@
 
     const/4 v0, 0x1
 
-    sput-boolean v0, Lcom/google/android/gms/common/k;->kM:Z
+    sput-boolean v0, Lcom/google/android/gms/common/k;->nE:Z
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -1043,7 +1043,7 @@
     :catchall_0
     move-exception v0
 
-    sput-boolean v5, Lcom/google/android/gms/common/k;->kO:Z
+    sput-boolean v5, Lcom/google/android/gms/common/k;->nG:Z
 
     throw v0
 .end method

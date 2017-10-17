@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class k implements Parcelable$Creator
 {
-    static void Jn(final LatLng latLng, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, latLng.JY());
-        a.fq(parcel, 2, latLng.EU);
-        a.fq(parcel, 3, latLng.EV);
-        a.fe(parcel, ey);
+    static void Kg(final LatLng latLng, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, latLng.KR());
+        a.ie(parcel, 2, latLng.Gz);
+        a.ie(parcel, 3, latLng.GA);
+        a.hS(parcel, hm);
     }
     
-    public LatLng Jo(final Parcel parcel) {
-        double gb = 0.0;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        double gb2 = gb;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public LatLng Kh(final Parcel parcel) {
+        double ip = 0.0;
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        double ip2 = ip;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    gb2 = b.gb(parcel, fs);
+                    ip2 = b.iP(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    gb = b.gb(parcel, fs);
+                    ip = b.iP(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LatLng(fn, gb2, gb);
+        if (parcel.dataPosition() == ix) {
+            return new LatLng(ib, ip2, ip);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public LatLng[] Jp(final int n) {
+    public LatLng[] Ki(final int n) {
         return new LatLng[n];
     }
 }

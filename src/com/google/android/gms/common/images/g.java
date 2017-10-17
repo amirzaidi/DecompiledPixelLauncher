@@ -10,7 +10,7 @@ import java.lang.ref.WeakReference;
 
 public final class g extends i
 {
-    private WeakReference jE;
+    private WeakReference mw;
     
     public boolean equals(final Object o) {
         final boolean b = true;
@@ -19,22 +19,22 @@ public final class g extends i
         }
         if (this != o) {
             final g g = (g)o;
-            final e e = (e)this.jE.get();
-            final e e2 = (e)g.jE.get();
-            return e2 != null && e != null && u.hH(e2, e) && u.hH(g.jO, this.jO) && b;
+            final e e = (e)this.mw.get();
+            final e e2 = (e)g.mw.get();
+            return e2 != null && e != null && u.kv(e2, e) && u.kv(g.mG, this.mG) && b;
         }
         return b;
     }
     
     public int hashCode() {
-        return u.hI(this.jO);
+        return u.kw(this.mG);
     }
     
-    protected void mI(final Drawable drawable, final boolean b, final boolean b2, final boolean b3) {
+    protected void pw(final Drawable drawable, final boolean b, final boolean b2, final boolean b3) {
         if (!b2) {
-            final e e = (e)this.jE.get();
+            final e e = (e)this.mw.get();
             if (e != null) {
-                e.mG(this.jO.jB, drawable, b3);
+                e.pu(this.mG.mt, drawable, b3);
             }
         }
     }

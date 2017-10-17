@@ -13,14 +13,14 @@ import android.os.IBinder;
 
 class a implements zzi
 {
-    private IBinder Dy;
+    private IBinder Fd;
     
-    a(final IBinder dy) {
-        this.Dy = dy;
+    a(final IBinder fd) {
+        this.Fd = fd;
     }
     
     public IBinder asBinder() {
-        return this.Dy;
+        return this.Fd;
     }
     
     public Tile getTile(final int n, final int n2, final int n3) {
@@ -33,7 +33,7 @@ class a implements zzi
             obtain.writeInt(n);
             obtain.writeInt(n2);
             obtain.writeInt(n3);
-            this.Dy.transact(1, obtain, obtain2, 0);
+            this.Fd.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             Tile tile;
             if (obtain2.readInt() == 0) {

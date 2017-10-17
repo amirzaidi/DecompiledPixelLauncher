@@ -12,41 +12,41 @@ import android.os.Parcelable$Creator;
 
 public class d implements Parcelable$Creator
 {
-    static void pR(final DayAttributesImpl dayAttributesImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, dayAttributesImpl.pG());
-        a.fn(parcel, 2, dayAttributesImpl.pF(), false);
-        a.fe(parcel, ey);
+    static void eL(final DayAttributesImpl dayAttributesImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, dayAttributesImpl.eA());
+        a.ib(parcel, 2, dayAttributesImpl.ez(), false);
+        a.hS(parcel, hm);
     }
     
-    public DayAttributesImpl pQ(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int[] fk = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public DayAttributesImpl eK(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int[] iy = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fk = b.fK(parcel, fs);
+                    iy = b.iy(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new DayAttributesImpl(fn, fk);
+        if (parcel.dataPosition() == ix) {
+            return new DayAttributesImpl(ib, iy);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public DayAttributesImpl[] pS(final int n) {
+    public DayAttributesImpl[] eM(final int n) {
         return new DayAttributesImpl[n];
     }
 }

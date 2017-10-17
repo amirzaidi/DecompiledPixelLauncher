@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract eC()V
+.method public abstract hq()V
 .end method

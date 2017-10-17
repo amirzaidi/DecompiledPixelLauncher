@@ -14,47 +14,47 @@ import android.os.Parcelable$Creator;
 
 public class g implements Parcelable$Creator
 {
-    static void Gq(final OptInRequest optInRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, optInRequest.Gv());
-        a.eW(parcel, 2, (Parcelable)optInRequest.getAccount(), n, false);
-        a.fo(parcel, 3, optInRequest.getTag(), false);
-        a.fe(parcel, ey);
+    static void Hj(final OptInRequest optInRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, optInRequest.Ho());
+        a.hK(parcel, 2, (Parcelable)optInRequest.getAccount(), n, false);
+        a.ic(parcel, 3, optInRequest.getTag(), false);
+        a.hS(parcel, hm);
     }
     
     public OptInRequest createFromParcel(final Parcel parcel) {
         Account account = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     break;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     break;
                 }
                 case 2: {
-                    account = (Account)b.fW(parcel, fs, Account.CREATOR);
+                    account = (Account)b.iK(parcel, ig, Account.CREATOR);
                     break;
                 }
                 case 3: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     break;
                 }
             }
-            final String s = fq;
+            final String s = ie;
             account = account;
-            fq = s;
+            ie = s;
         }
-        if (parcel.dataPosition() == fj) {
-            return new OptInRequest(fn, account, fq);
+        if (parcel.dataPosition() == ix) {
+            return new OptInRequest(ib, account, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public OptInRequest[] newArray(final int n) {

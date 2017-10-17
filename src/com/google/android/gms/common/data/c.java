@@ -10,26 +10,26 @@ import java.util.Iterator;
 
 public class c implements Iterator
 {
-    protected final a jQ;
-    protected int jR;
+    protected final a mI;
+    protected int mJ;
     
     public c(final a a) {
-        this.jQ = (a)l.ht(a);
-        this.jR = -1;
+        this.mI = (a)l.kh(a);
+        this.mJ = -1;
     }
     
     public boolean hasNext() {
-        return this.jR < this.jQ.mW() - 1;
+        return this.mJ < this.mI.pK() - 1;
     }
     
     public Object next() {
         if (this.hasNext()) {
-            final a jq = this.jQ;
-            final int jr = this.jR + 1;
-            this.jR = jr;
-            return jq.mX(jr);
+            final a mi = this.mI;
+            final int mj = this.mJ + 1;
+            this.mJ = mj;
+            return mi.get(mj);
         }
-        throw new NoSuchElementException(new StringBuilder(46).append("Cannot advance the iterator beyond ").append(this.jR).toString());
+        throw new NoSuchElementException(new StringBuilder(46).append("Cannot advance the iterator beyond ").append(this.mJ).toString());
     }
     
     public void remove() {

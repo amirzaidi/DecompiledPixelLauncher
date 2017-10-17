@@ -4,9 +4,7 @@
 
 package com.google.android.gms.common.api;
 
-import com.google.android.gms.common.ConnectionResult;
-
-public interface f
+public abstract class f
 {
-    void dQ(final ConnectionResult p0);
+    public abstract void gF(final v p0);
 }

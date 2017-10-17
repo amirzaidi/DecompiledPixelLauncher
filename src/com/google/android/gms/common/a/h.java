@@ -10,20 +10,20 @@ import java.util.regex.Pattern;
 
 public final class h
 {
-    private static final Pattern hx;
-    private static final Pattern hy;
+    private static final Pattern kp;
+    private static final Pattern kq;
     
     static {
-        hx = Pattern.compile("\\\\.");
-        hy = Pattern.compile("[\\\\\"/\b\f\n\r\t]");
+        kp = Pattern.compile("\\\\.");
+        kq = Pattern.compile("[\\\\\"/\b\f\n\r\t]");
     }
     
-    public static String jF(final String s) {
+    public static String mt(final String s) {
         StringBuffer sb = null;
         if (TextUtils.isEmpty((CharSequence)s)) {
             return s;
         }
-        final Matcher matcher = h.hy.matcher(s);
+        final Matcher matcher = h.kq.matcher(s);
         while (matcher.find()) {
             if (sb == null) {
                 sb = new StringBuffer();

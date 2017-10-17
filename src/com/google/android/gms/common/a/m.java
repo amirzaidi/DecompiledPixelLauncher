@@ -8,22 +8,22 @@ import android.os.SystemClock;
 
 public final class m implements a
 {
-    private static m hB;
+    private static m kt;
     
-    public static a jR() {
+    public static a mF() {
         synchronized (m.class) {
-            if (m.hB == null) {
-                m.hB = new m();
+            if (m.kt == null) {
+                m.kt = new m();
             }
-            return m.hB;
+            return m.kt;
         }
     }
     
-    public long js() {
+    public long mg() {
         return System.currentTimeMillis();
     }
     
-    public long jt() {
+    public long mh() {
         return SystemClock.elapsedRealtime();
     }
 }

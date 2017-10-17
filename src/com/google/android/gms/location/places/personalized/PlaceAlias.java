@@ -11,39 +11,39 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class PlaceAlias extends AbstractSafeParcelable
 {
     public static final b CREATOR;
-    public static final PlaceAlias xN;
-    public static final PlaceAlias xO;
-    final int xP;
-    private final String xQ;
+    public static final PlaceAlias zs;
+    public static final PlaceAlias zt;
+    final int zu;
+    private final String zv;
     
     static {
         CREATOR = new b();
-        xO = new PlaceAlias(0, "Home");
-        xN = new PlaceAlias(0, "Work");
+        zt = new PlaceAlias(0, "Home");
+        zs = new PlaceAlias(0, "Work");
     }
     
-    PlaceAlias(final int xp, final String xq) {
-        this.xP = xp;
-        this.xQ = xq;
+    PlaceAlias(final int zu, final String zv) {
+        this.zu = zu;
+        this.zv = zv;
     }
     
-    public String CK() {
-        return this.xQ;
+    public String DD() {
+        return this.zv;
     }
     
     public boolean equals(final Object o) {
-        return this == o || (o instanceof PlaceAlias && u.hH(this.xQ, ((PlaceAlias)o).xQ));
+        return this == o || (o instanceof PlaceAlias && u.kv(this.zv, ((PlaceAlias)o).zv));
     }
     
     public int hashCode() {
-        return u.hI(this.xQ);
+        return u.kw(this.zv);
     }
     
     public String toString() {
-        return u.hJ(this).hB("alias", this.xQ).toString();
+        return u.kx(this).kp("alias", this.zv).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.CL(this, parcel, n);
+        b.DE(this, parcel, n);
     }
 }

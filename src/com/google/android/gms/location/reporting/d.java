@@ -6,7 +6,7 @@ package com.google.android.gms.location.reporting;
 
 public final class d
 {
-    public static boolean FU(final int n) {
+    public static boolean GN(final int n) {
         boolean b = false;
         if (n > 0) {
             b = true;
@@ -14,11 +14,11 @@ public final class d
         return b;
     }
     
-    public static int FV(final int n) {
+    public static int GO(final int n) {
         switch (n) {
             default: {
                 int n2;
-                if (!FU(n)) {
+                if (!GN(n)) {
                     n2 = -3;
                 }
                 else {

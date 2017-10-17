@@ -14,77 +14,77 @@ import android.os.Parcelable$Creator;
 
 public class q implements Parcelable$Creator
 {
-    static void Ia(final ActivityRecognitionRequest activityRecognitionRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fw(parcel, 1, activityRecognitionRequest.GF());
-        a.fa(parcel, 2, activityRecognitionRequest.GG());
-        a.eW(parcel, 3, (Parcelable)activityRecognitionRequest.GE(), n, false);
-        a.fo(parcel, 4, activityRecognitionRequest.getTag(), false);
-        a.fn(parcel, 5, activityRecognitionRequest.GI(), false);
-        a.fa(parcel, 6, activityRecognitionRequest.GC());
-        a.fo(parcel, 7, activityRecognitionRequest.GD(), false);
-        a.fj(parcel, 1000, activityRecognitionRequest.GH());
-        a.fe(parcel, ey);
+    static void IT(final ActivityRecognitionRequest activityRecognitionRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ik(parcel, 1, activityRecognitionRequest.Hy());
+        a.hO(parcel, 2, activityRecognitionRequest.Hz());
+        a.hK(parcel, 3, (Parcelable)activityRecognitionRequest.Hx(), n, false);
+        a.ic(parcel, 4, activityRecognitionRequest.getTag(), false);
+        a.ib(parcel, 5, activityRecognitionRequest.HB(), false);
+        a.hO(parcel, 6, activityRecognitionRequest.Hv());
+        a.ic(parcel, 7, activityRecognitionRequest.Hw(), false);
+        a.hX(parcel, 1000, activityRecognitionRequest.HA());
+        a.hS(parcel, hm);
     }
     
-    public ActivityRecognitionRequest Ib(final Parcel parcel) {
-        boolean fx = false;
-        String fq = null;
-        final int fj = b.fJ(parcel);
-        long fl = 0L;
-        int[] fk = null;
-        String fq2 = null;
+    public ActivityRecognitionRequest IU(final Parcel parcel) {
+        boolean il = false;
+        String ie = null;
+        final int ix = b.ix(parcel);
+        long iz = 0L;
+        int[] iy = null;
+        String ie2 = null;
         WorkSource workSource = null;
-        boolean fx2 = false;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        boolean il2 = false;
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    workSource = (WorkSource)b.fW(parcel, fs, WorkSource.CREATOR);
+                    workSource = (WorkSource)b.iK(parcel, ig, WorkSource.CREATOR);
                     continue;
                 }
                 case 4: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fk = b.fK(parcel, fs);
+                    iy = b.iy(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ActivityRecognitionRequest(fn, fl, fx2, workSource, fq2, fk, fx, fq);
+        if (parcel.dataPosition() == ix) {
+            return new ActivityRecognitionRequest(ib, iz, il2, workSource, ie2, iy, il, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public ActivityRecognitionRequest[] Ic(final int n) {
+    public ActivityRecognitionRequest[] IV(final int n) {
         return new ActivityRecognitionRequest[n];
     }
 }

@@ -12,18 +12,18 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class PlaceLikelihoodEntity extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final int yg;
-    final PlaceEntity yh;
-    final float yi;
+    final int zL;
+    final PlaceEntity zM;
+    final float zN;
     
     static {
         CREATOR = (Parcelable$Creator)new a();
     }
     
-    PlaceLikelihoodEntity(final int yg, final PlaceEntity yh, final float yi) {
-        this.yg = yg;
-        this.yh = yh;
-        this.yi = yi;
+    PlaceLikelihoodEntity(final int zl, final PlaceEntity zm, final float zn) {
+        this.zL = zl;
+        this.zM = zm;
+        this.zN = zn;
     }
     
     public boolean equals(final Object o) {
@@ -33,7 +33,7 @@ public class PlaceLikelihoodEntity extends AbstractSafeParcelable
         }
         if (o instanceof PlaceLikelihoodEntity) {
             final PlaceLikelihoodEntity placeLikelihoodEntity = (PlaceLikelihoodEntity)o;
-            if (this.yh.equals(placeLikelihoodEntity.yh) || this.yi != placeLikelihoodEntity.yi) {
+            if (this.zM.equals(placeLikelihoodEntity.zM) || this.zN != placeLikelihoodEntity.zN) {
                 b = false;
             }
             return b;
@@ -42,14 +42,14 @@ public class PlaceLikelihoodEntity extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.yh, this.yi);
+        return u.kw(this.zM, this.zN);
     }
     
     public String toString() {
-        return u.hJ(this).hB("place", this.yh).hB("likelihood", this.yi).toString();
+        return u.kx(this).kp("place", this.zM).kp("likelihood", this.zN).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        a.CV(this, parcel, n);
+        a.DO(this, parcel, n);
     }
 }

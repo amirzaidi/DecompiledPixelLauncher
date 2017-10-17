@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final CR:Z
+.field private final Ew:Z
 
-.field private final CS:I
+.field private final Ex:I
 
-.field private final CT:Z
+.field private final Ey:Z
 
-.field private final CU:Ljava/util/List;
+.field private final Ez:Ljava/util/List;
 
 
 # direct methods
@@ -34,39 +34,39 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CS:I
+    iput p1, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ex:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CU:Ljava/util/List;
+    iput-object p2, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ez:Ljava/util/List;
 
-    iput-boolean p3, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CT:Z
+    iput-boolean p3, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ey:Z
 
-    iput-boolean p4, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CR:Z
+    iput-boolean p4, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ew:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Hw()Z
+.method public Ip()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CT:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ey:Z
 
     return v0
 .end method
 
-.method public Hx()Z
+.method public Iq()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CR:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ew:Z
 
     return v0
 .end method
 
-.method public Hy()Ljava/util/List;
+.method public Ir()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CU:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ez:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
@@ -75,10 +75,10 @@
     return-object v0
 .end method
 
-.method public Hz()I
+.method public Is()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->CS:I
+    iget v0, p0, Lcom/google/android/gms/location/LocationSettingsRequest;->Ex:I
 
     return v0
 .end method
@@ -86,7 +86,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/m;->HC(Lcom/google/android/gms/location/LocationSettingsRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/m;->Iv(Lcom/google/android/gms/location/LocationSettingsRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

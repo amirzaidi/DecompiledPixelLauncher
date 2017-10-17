@@ -11,80 +11,80 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void FR(final ReportingState reportingState, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1, reportingState.Gg());
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 2, reportingState.Gf());
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 3, reportingState.Gb());
-        com.google.android.gms.common.internal.safeparcel.a.fa(parcel, 4, reportingState.FZ());
-        com.google.android.gms.common.internal.safeparcel.a.fa(parcel, 5, reportingState.Ga());
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 7, reportingState.Ge());
-        com.google.android.gms.common.internal.safeparcel.a.fi(parcel, 8, reportingState.FY(), false);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 9, reportingState.Gc());
-        com.google.android.gms.common.internal.safeparcel.a.fa(parcel, 10, reportingState.Gd());
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void GK(final ReportingState reportingState, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1, reportingState.GZ());
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 2, reportingState.GY());
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 3, reportingState.GU());
+        com.google.android.gms.common.internal.safeparcel.a.hO(parcel, 4, reportingState.GS());
+        com.google.android.gms.common.internal.safeparcel.a.hO(parcel, 5, reportingState.GT());
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 7, reportingState.GX());
+        com.google.android.gms.common.internal.safeparcel.a.hW(parcel, 8, reportingState.GR(), false);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 9, reportingState.GV());
+        com.google.android.gms.common.internal.safeparcel.a.hO(parcel, 10, reportingState.GW());
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
     public ReportingState createFromParcel(final Parcel parcel) {
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
-        Integer fe = null;
-        int fn = 0;
-        int fn2 = 0;
-        boolean fx2 = false;
-        boolean fx3 = false;
-        int fn3 = 0;
-        int fn4 = 0;
-        int fn5 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        boolean il = false;
+        final int ix = b.ix(parcel);
+        Integer is = null;
+        int ib = 0;
+        int ib2 = 0;
+        boolean il2 = false;
+        boolean il3 = false;
+        int ib3 = 0;
+        int ib4 = 0;
+        int ib5 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn5 = b.fN(parcel, fs);
+                    ib5 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn4 = b.fN(parcel, fs);
+                    ib4 = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fx3 = b.fX(parcel, fs);
+                    il3 = b.iL(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fe = b.fE(parcel, fs);
+                    is = b.is(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ReportingState(fn5, fn4, fn3, fx3, fx2, fn2, fn, fe, fx);
+        if (parcel.dataPosition() == ix) {
+            return new ReportingState(ib5, ib4, ib3, il3, il2, ib2, ib, is, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public ReportingState[] newArray(final int n) {

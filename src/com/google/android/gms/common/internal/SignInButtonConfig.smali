@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final gZ:[Lcom/google/android/gms/common/api/Scope;
+.field private final jR:[Lcom/google/android/gms/common/api/Scope;
 
-.field final ha:I
+.field final jS:I
 
-.field private final hb:I
+.field private final jT:I
 
-.field private final hc:I
+.field private final jU:I
 
 
 # direct methods
@@ -34,39 +34,39 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->ha:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->jS:I
 
-    iput p2, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->hc:I
+    iput p2, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->jU:I
 
-    iput p3, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->hb:I
+    iput p3, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->jT:I
 
-    iput-object p4, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->gZ:[Lcom/google/android/gms/common/api/Scope;
+    iput-object p4, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->jR:[Lcom/google/android/gms/common/api/Scope;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public je()I
+.method public lS()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->hb:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->jT:I
 
     return v0
 .end method
 
-.method public jf()[Lcom/google/android/gms/common/api/Scope;
+.method public lT()[Lcom/google/android/gms/common/api/Scope;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->gZ:[Lcom/google/android/gms/common/api/Scope;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->jR:[Lcom/google/android/gms/common/api/Scope;
 
     return-object v0
 .end method
 
-.method public jg()I
+.method public lU()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->hc:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/SignInButtonConfig;->jU:I
 
     return v0
 .end method
@@ -74,7 +74,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/U;->jr(Lcom/google/android/gms/common/internal/SignInButtonConfig;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/U;->mf(Lcom/google/android/gms/common/internal/SignInButtonConfig;Landroid/os/Parcel;I)V
 
     return-void
 .end method

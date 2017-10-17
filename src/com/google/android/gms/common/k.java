@@ -14,14 +14,14 @@ import android.os.Bundle;
 import android.os.UserManager;
 import java.util.Iterator;
 import com.google.android.gms.common.a.n;
-import com.google.android.gms.common.a.j;
 import android.content.pm.PackageInstaller$SessionInfo;
+import com.google.android.gms.common.a.j;
 import com.google.android.gms.common.a.g;
-import com.google.android.gms.internal.bc;
+import com.google.android.gms.internal.aW;
 import android.content.pm.PackageManager;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager$NameNotFoundException;
-import com.google.android.gms.internal.aG;
+import com.google.android.gms.internal.az;
 import android.text.TextUtils;
 import android.content.Context;
 import android.os.Build;
@@ -29,29 +29,29 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class k
 {
-    private static String kH;
-    public static final int kI;
-    private static final AtomicBoolean kJ;
-    public static boolean kK;
-    public static boolean kL;
-    static boolean kM;
-    private static int kN;
-    private static boolean kO;
-    static final AtomicBoolean kP;
+    public static final int nA;
+    private static final AtomicBoolean nB;
+    public static boolean nC;
+    public static boolean nD;
+    static boolean nE;
+    private static int nF;
+    private static boolean nG;
+    static final AtomicBoolean nH;
+    private static String nz;
     
     static {
-        kI = ok();
-        k.kK = false;
-        k.kL = false;
-        k.kM = false;
-        k.kH = null;
-        k.kN = 0;
-        k.kO = false;
-        kP = new AtomicBoolean();
-        kJ = new AtomicBoolean();
+        nA = qW();
+        k.nC = false;
+        k.nD = false;
+        k.nE = false;
+        k.nz = null;
+        k.nF = 0;
+        k.nG = false;
+        nH = new AtomicBoolean();
+        nB = new AtomicBoolean();
     }
     
-    public static boolean oc(final int n) {
+    public static boolean qO(final int n) {
         switch (n) {
             default: {
                 return false;
@@ -65,22 +65,22 @@ public class k
         }
     }
     
-    public static boolean od() {
+    public static boolean qP() {
         return "user".equals(Build.TYPE);
     }
     
-    public static String oe(final Context context) {
-        ApplicationInfo xe = null;
+    public static String qQ(final Context context) {
+        ApplicationInfo xd = null;
         String s = context.getApplicationInfo().name;
         if (TextUtils.isEmpty((CharSequence)s)) {
             s = context.getPackageName();
             final PackageManager packageManager = context.getApplicationContext().getPackageManager();
             try {
-                final bc us = aG.uS(context);
+                final aW ur = az.uR(context);
                 try {
-                    xe = us.xE(context.getPackageName(), 0);
-                    if (xe != null) {
-                        s = packageManager.getApplicationLabel(xe).toString();
+                    xd = ur.xD(context.getPackageName(), 0);
+                    if (xd != null) {
+                        s = packageManager.getApplicationLabel(xd).toString();
                         return s;
                     }
                     return s;
@@ -92,22 +92,22 @@ public class k
         return s;
     }
     
-    private static void of(final Context context) {
-        if (!k.kO) {
-            os(context);
+    private static void qR(final Context context) {
+        if (!k.nG) {
+            re(context);
         }
     }
     
-    public static boolean og(final Context context, final int n) {
-        return g.jE(context, n);
+    public static boolean qS(final Context context, final int n) {
+        return g.ms(context, n);
     }
     
-    public static boolean oh(final Context context) {
-        of(context);
-        return k.kM;
+    public static boolean qT(final Context context) {
+        qR(context);
+        return k.nE;
     }
     
-    static boolean oi(final Context context, final String s) {
+    static boolean qU(final Context context, final String s) {
         final boolean b = true;
         final boolean equals = s.equals("com.google.android.gms");
         while (true) {
@@ -125,28 +125,26 @@ public class k
                             try {
                                 final ApplicationInfo applicationInfo = packageManager2.getApplicationInfo(s, n);
                                 if (!equals) {
-                                    return applicationInfo.enabled && !oj(context) && b;
+                                    return applicationInfo.enabled && !qV(context) && b;
                                 }
                                 return applicationInfo.enabled;
-                                // iftrue(Label_0100:, !s.equals((Object)(PackageInstaller$SessionInfo)iterator.next().getAppPackageName()))
-                                // iftrue(Label_0027:, !iterator.hasNext())
+                                // iftrue(Label_0017:, !j.mw())
+                                return false;
                                 while (true) {
                                     return b;
                                     final Iterator<PackageInstaller$SessionInfo> iterator = context.getPackageManager().getPackageInstaller().getAllSessions().iterator();
-                                    Label_0100: {
-                                        continue;
-                                    }
+                                    continue;
                                 }
-                                // iftrue(Label_0017:, !j.jI())
-                                return false;
                             }
+                            // iftrue(Label_0027:, !iterator.hasNext())
+                            // iftrue(Label_0100:, !s.equals((Object)(PackageInstaller$SessionInfo)iterator.next().getAppPackageName()))
                             catch (PackageManager$NameNotFoundException ex) {
                                 return false;
                             }
                         }
                     }
                 }
-                if (!n.jU()) {
+                if (!n.mI()) {
                     continue;
                 }
                 break;
@@ -155,8 +153,8 @@ public class k
         }
     }
     
-    public static boolean oj(final Context context) {
-        if (n.jW()) {
+    public static boolean qV(final Context context) {
+        if (n.mK()) {
             final Bundle applicationRestrictions = ((UserManager)context.getSystemService("user")).getApplicationRestrictions(context.getPackageName());
             if (applicationRestrictions != null && "true".equals(applicationRestrictions.getString("restricted_profile"))) {
                 return true;
@@ -165,19 +163,19 @@ public class k
         return false;
     }
     
-    private static int ok() {
-        return p.fG;
+    private static int qW() {
+        return p.iy;
     }
     
-    public static boolean ol(final Context context) {
+    public static boolean qX(final Context context) {
         boolean b = false;
-        if (oh(context) || !od()) {
+        if (qT(context) || !qP()) {
             b = true;
         }
         return b;
     }
     
-    public static Resources om(final Context context) {
+    public static Resources qY(final Context context) {
         try {
             return context.getPackageManager().getResourcesForApplication("com.google.android.gms");
         }
@@ -186,8 +184,8 @@ public class k
         }
     }
     
-    public static void on(final Context context) {
-        if (k.kP.getAndSet(true)) {
+    public static void qZ(final Context context) {
+        if (k.nH.getAndSet(true)) {
             return;
         }
         final String s = "notification";
@@ -204,24 +202,24 @@ public class k
         catch (SecurityException ex2) {}
     }
     
-    private static void oo(final Context context) {
-        if (k.kJ.get()) {
+    private static void ra(final Context context) {
+        if (k.nB.get()) {
             return;
         }
-        of(context);
-        if (k.kN == 0) {
+        qR(context);
+        if (k.nF == 0) {
             throw new IllegalStateException("A required meta-data tag in your app's AndroidManifest.xml does not exist.  You must have the following declaration within the <application> element:     <meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />");
         }
-        if (k.kN == k.kI) {
+        if (k.nF == k.nA) {
             return;
         }
-        final int ki = k.kI;
-        final int kn = k.kN;
+        final int na = k.nA;
+        final int nf = k.nF;
         final String value = String.valueOf("com.google.android.gms.version");
-        throw new IllegalStateException(new StringBuilder(String.valueOf(value).length() + 290).append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ").append(ki).append(" but found ").append(kn).append(".  You must have the following declaration within the <application> element:     <meta-data android:name=\"").append(value).append("\" android:value=\"@integer/google_play_services_version\" />").toString());
+        throw new IllegalStateException(new StringBuilder(String.valueOf(value).length() + 290).append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ").append(na).append(" but found ").append(nf).append(".  You must have the following declaration within the <application> element:     <meta-data android:name=\"").append(value).append("\" android:value=\"@integer/google_play_services_version\" />").toString());
     }
     
-    public static int op(final Context p0) {
+    public static int rb(final Context p0) {
         // 
         // This method could not be decompiled.
         // 
@@ -261,7 +259,7 @@ public class k
         //    57: iload           10
         //    59: ifeq            205
         //    62: aload_0        
-        //    63: invokestatic    com/google/android/gms/common/a/c.jx:(Landroid/content/Context;)Z
+        //    63: invokestatic    com/google/android/gms/common/a/c.ml:(Landroid/content/Context;)Z
         //    66: istore          10
         //    68: iload           10
         //    70: ifeq            212
@@ -285,21 +283,21 @@ public class k
         //   107: astore          12
         //   109: iload           10
         //   111: ifne            270
-        //   114: getstatic       com/google/android/gms/common/c.kz:[Lcom/google/android/gms/common/l;
+        //   114: getstatic       com/google/android/gms/common/c.nr:[Lcom/google/android/gms/common/l;
         //   117: astore          4
         //   119: aload           12
         //   121: aload           9
         //   123: aload           4
-        //   125: invokevirtual   com/google/android/gms/common/j.nZ:(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+        //   125: invokevirtual   com/google/android/gms/common/j.qL:(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
         //   128: astore          4
         //   130: aload           4
         //   132: ifnull          343
-        //   135: getstatic       com/google/android/gms/common/k.kI:I
-        //   138: invokestatic    com/google/android/gms/common/a/k.jJ:(I)I
+        //   135: getstatic       com/google/android/gms/common/k.nA:I
+        //   138: invokestatic    com/google/android/gms/common/a/k.mx:(I)I
         //   141: istore_3       
         //   142: aload           9
         //   144: getfield        android/content/pm/PackageInfo.versionCode:I
-        //   147: invokestatic    com/google/android/gms/common/a/k.jJ:(I)I
+        //   147: invokestatic    com/google/android/gms/common/a/k.mx:(I)I
         //   150: istore          10
         //   152: iload           10
         //   154: iload_3        
@@ -327,7 +325,7 @@ public class k
         //   201: pop            
         //   202: goto            38
         //   205: aload_0        
-        //   206: invokestatic    com/google/android/gms/common/k.oo:(Landroid/content/Context;)V
+        //   206: invokestatic    com/google/android/gms/common/k.ra:(Landroid/content/Context;)V
         //   209: goto            62
         //   212: iload_2        
         //   213: istore          10
@@ -356,12 +354,12 @@ public class k
         //   267: pop            
         //   268: iload_2        
         //   269: ireturn        
-        //   270: getstatic       com/google/android/gms/common/c.kz:[Lcom/google/android/gms/common/l;
+        //   270: getstatic       com/google/android/gms/common/c.nr:[Lcom/google/android/gms/common/l;
         //   273: astore          7
         //   275: aload           12
         //   277: aload           4
         //   279: aload           7
-        //   281: invokevirtual   com/google/android/gms/common/j.nZ:(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+        //   281: invokevirtual   com/google/android/gms/common/j.qL:(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
         //   284: astore          4
         //   286: aload           4
         //   288: ifnull          331
@@ -375,7 +373,7 @@ public class k
         //   303: aload           12
         //   305: aload           9
         //   307: aload           7
-        //   309: invokevirtual   com/google/android/gms/common/j.nZ:(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+        //   309: invokevirtual   com/google/android/gms/common/j.qL:(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
         //   312: astore          4
         //   314: aload           4
         //   316: ifnonnull       135
@@ -397,7 +395,7 @@ public class k
         //   352: pop            
         //   353: iload_1        
         //   354: ireturn        
-        //   355: getstatic       com/google/android/gms/common/k.kI:I
+        //   355: getstatic       com/google/android/gms/common/k.nA:I
         //   358: istore_3       
         //   359: aload           9
         //   361: getfield        android/content/pm/PackageInfo.versionCode:I
@@ -482,7 +480,7 @@ public class k
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    static boolean oq(final int n) {
+    static boolean rc(final int n) {
         switch (n) {
             default: {
                 return false;
@@ -497,36 +495,36 @@ public class k
         }
     }
     
-    public static boolean or(final Context context, final int n) {
+    public static boolean rd(final Context context, final int n) {
         final boolean b = true;
         if (n != 18) {
-            return n == (b ? 1 : 0) && oi(context, "com.google.android.gms");
+            return n == (b ? 1 : 0) && qU(context, "com.google.android.gms");
         }
         return b;
     }
     
-    private static void os(final Context context) {
-        final boolean ko = true;
+    private static void re(final Context context) {
+        final boolean ng = true;
         try {
             final String packageName = context.getPackageName();
             try {
-                k.kH = packageName;
-                final bc us = aG.uS(context);
+                k.nz = packageName;
+                final aW ur = az.uR(context);
                 try {
-                    final int it = D.it(context);
+                    final int lh = D.lh(context);
                     try {
-                        k.kN = it;
-                        final PackageInfo xc = us.xC("com.google.android.gms", 64);
+                        k.nF = lh;
+                        final PackageInfo xb = ur.xB("com.google.android.gms", 64);
                         Label_0046: {
-                            if (xc != null) {
+                            if (xb != null) {
                                 final com.google.android.gms.common.j instance = com.google.android.gms.common.j.getInstance(context);
                                 final l[] array = { null };
                                 try {
-                                    array[0] = c.kz[1];
-                                    if (instance.nZ(xc, array) == null) {
+                                    array[0] = c.nr[1];
+                                    if (instance.qL(xb, array) == null) {
                                         break Label_0046;
                                     }
-                                    k.kM = true;
+                                    k.nE = true;
                                 }
                                 catch (PackageManager$NameNotFoundException ex) {
                                     Log.w("GooglePlayServicesUtil", "Cannot find Google Play services package name.", (Throwable)ex);
@@ -534,7 +532,7 @@ public class k
                                 return;
                             }
                         }
-                        k.kM = false;
+                        k.nE = false;
                     }
                     catch (PackageManager$NameNotFoundException ex2) {}
                 }
@@ -544,7 +542,7 @@ public class k
         }
         catch (PackageManager$NameNotFoundException ex5) {}
         finally {
-            k.kO = ko;
+            k.nG = ng;
         }
     }
 }

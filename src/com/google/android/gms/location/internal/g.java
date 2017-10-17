@@ -27,14 +27,14 @@ import android.os.IBinder;
 
 class g implements zzi
 {
-    private IBinder AA;
+    private IBinder Cf;
     
-    g(final IBinder aa) {
-        this.AA = aa;
+    g(final IBinder cf) {
+        this.Cf = cf;
     }
     
     public IBinder asBinder() {
-        return this.AA;
+        return this.Cf;
     }
     
     public void zza(final long n, final boolean b, final PendingIntent pendingIntent) {
@@ -58,7 +58,7 @@ class g implements zzi
                 obtain.writeInt(1);
                 pendingIntent.writeToParcel(obtain, 0);
             }
-            this.AA.transact(5, obtain, obtain2, 0);
+            this.Cf.transact(5, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -86,7 +86,7 @@ class g implements zzi
                     }
                     if (zzre == null) {
                         obtain.writeStrongBinder(binder);
-                        this.AA.transact(65, obtain, obtain2, 0);
+                        this.Cf.transact(65, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -121,7 +121,7 @@ class g implements zzi
                     if (zzh == null) {
                         obtain.writeStrongBinder(binder);
                         obtain.writeString(s);
-                        this.AA.transact(2, obtain, obtain2, 0);
+                        this.Cf.transact(2, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -151,7 +151,7 @@ class g implements zzi
                 location.writeToParcel(obtain, 0);
             }
             obtain.writeInt(n);
-            this.AA.transact(26, obtain, obtain2, 0);
+            this.Cf.transact(26, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -184,7 +184,7 @@ class g implements zzi
                             obtain.writeInt(0);
                             if (zzre == null) {
                                 obtain.writeStrongBinder(binder);
-                                this.AA.transact(70, obtain, obtain2, 0);
+                                this.Cf.transact(70, obtain, obtain2, 0);
                                 obtain2.readException();
                                 return;
                             }
@@ -229,7 +229,7 @@ class g implements zzi
                             obtain.writeInt(0);
                             if (zzh == null) {
                                 obtain.writeStrongBinder(binder);
-                                this.AA.transact(57, obtain, obtain2, 0);
+                                this.Cf.transact(57, obtain, obtain2, 0);
                                 obtain2.readException();
                                 return;
                             }
@@ -274,7 +274,7 @@ class g implements zzi
                             obtain.writeInt(0);
                             if (zzre == null) {
                                 obtain.writeStrongBinder(binder);
-                                this.AA.transact(60, obtain, obtain2, 0);
+                                this.Cf.transact(60, obtain, obtain2, 0);
                                 obtain2.readException();
                                 return;
                             }
@@ -313,7 +313,7 @@ class g implements zzi
                     }
                     if (pendingIntent == null) {
                         obtain.writeInt(0);
-                        this.AA.transact(9, obtain, obtain2, 0);
+                        this.Cf.transact(9, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -348,7 +348,7 @@ class g implements zzi
                     }
                     if (zzf == null) {
                         obtain.writeStrongBinder(binder);
-                        this.AA.transact(8, obtain, obtain2, 0);
+                        this.Cf.transact(8, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -383,7 +383,7 @@ class g implements zzi
                     if (zzf == null) {
                         obtain.writeStrongBinder(binder);
                         obtain.writeString(s);
-                        this.AA.transact(20, obtain, obtain2, 0);
+                        this.Cf.transact(20, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -418,7 +418,7 @@ class g implements zzi
                     if (zzj == null) {
                         obtain.writeStrongBinder(binder);
                         obtain.writeString(s);
-                        this.AA.transact(63, obtain, obtain2, 0);
+                        this.Cf.transact(63, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -451,7 +451,7 @@ class g implements zzi
                     }
                     if (pendingIntent == null) {
                         obtain.writeInt(0);
-                        this.AA.transact(53, obtain, obtain2, 0);
+                        this.Cf.transact(53, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -486,7 +486,7 @@ class g implements zzi
                     }
                     if (zzf == null) {
                         obtain.writeStrongBinder(binder);
-                        this.AA.transact(52, obtain, obtain2, 0);
+                        this.Cf.transact(52, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -515,7 +515,7 @@ class g implements zzi
                 obtain.writeInt(1);
                 locationRequestUpdateData.writeToParcel(obtain, 0);
             }
-            this.AA.transact(59, obtain, obtain2, 0);
+            this.Cf.transact(59, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -536,7 +536,7 @@ class g implements zzi
                 binder = zzg.asBinder();
             }
             obtain.writeStrongBinder(binder);
-            this.AA.transact(67, obtain, obtain2, 0);
+            this.Cf.transact(67, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -558,7 +558,7 @@ class g implements zzi
             }
             obtain.writeStrongBinder(binder);
             obtain.writeString(s);
-            this.AA.transact(4, obtain, obtain2, 0);
+            this.Cf.transact(4, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -579,7 +579,7 @@ class g implements zzi
                 binder = zzf.asBinder();
             }
             obtain.writeStrongBinder(binder);
-            this.AA.transact(10, obtain, obtain2, 0);
+            this.Cf.transact(10, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -609,7 +609,7 @@ class g implements zzi
                     if (zzh == null) {
                         obtain.writeStrongBinder(binder);
                         obtain.writeString(s);
-                        this.AA.transact(1, obtain, obtain2, 0);
+                        this.Cf.transact(1, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -638,7 +638,7 @@ class g implements zzi
             }
             obtain.writeStrongBinder(binder);
             obtain.writeString(s);
-            this.AA.transact(3, obtain, obtain2, 0);
+            this.Cf.transact(3, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -661,7 +661,7 @@ class g implements zzi
                 obtain.writeInt(1);
                 pendingIntent.writeToParcel(obtain, 0);
             }
-            this.AA.transact(6, obtain, obtain2, 0);
+            this.Cf.transact(6, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -689,7 +689,7 @@ class g implements zzi
                     }
                     if (zzre == null) {
                         obtain.writeStrongBinder(binder);
-                        this.AA.transact(66, obtain, obtain2, 0);
+                        this.Cf.transact(66, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -711,7 +711,7 @@ class g implements zzi
         final Parcel parcel = obtain;
         try {
             parcel.writeInterfaceToken(s);
-            this.AA.transact(7, obtain, obtain2, 0);
+            this.Cf.transact(7, obtain, obtain2, 0);
             obtain2.readException();
             Location location;
             if (obtain2.readInt() == 0) {
@@ -742,7 +742,7 @@ class g implements zzi
                 obtain.writeInt(1);
                 pendingIntent.writeToParcel(obtain, 0);
             }
-            this.AA.transact(11, obtain, obtain2, 0);
+            this.Cf.transact(11, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -770,7 +770,7 @@ class g implements zzi
                     }
                     if (zzre == null) {
                         obtain.writeStrongBinder(binder);
-                        this.AA.transact(61, obtain, obtain2, 0);
+                        this.Cf.transact(61, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -799,7 +799,7 @@ class g implements zzi
                 obtain.writeInt(1);
                 location.writeToParcel(obtain, 0);
             }
-            this.AA.transact(13, obtain, obtain2, 0);
+            this.Cf.transact(13, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -820,7 +820,7 @@ class g implements zzi
                 n = 1;
             }
             obtain.writeInt(n);
-            this.AA.transact(12, obtain, obtain2, 0);
+            this.Cf.transact(12, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -848,7 +848,7 @@ class g implements zzi
                     }
                     if (zzre == null) {
                         obtain.writeStrongBinder(binder);
-                        this.AA.transact(68, obtain, obtain2, 0);
+                        this.Cf.transact(68, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -882,7 +882,7 @@ class g implements zzi
                     }
                     if (zzre == null) {
                         obtain.writeStrongBinder(binder);
-                        this.AA.transact(69, obtain, obtain2, 0);
+                        this.Cf.transact(69, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -905,7 +905,7 @@ class g implements zzi
         try {
             parcel.writeInterfaceToken(s2);
             obtain.writeString(s);
-            this.AA.transact(64, obtain, obtain2, 0);
+            this.Cf.transact(64, obtain, obtain2, 0);
             obtain2.readException();
             ActivityRecognitionResult activityRecognitionResult;
             if (obtain2.readInt() == 0) {
@@ -930,7 +930,7 @@ class g implements zzi
         try {
             parcel.writeInterfaceToken(s2);
             obtain.writeString(s);
-            this.AA.transact(21, obtain, obtain2, 0);
+            this.Cf.transact(21, obtain, obtain2, 0);
             obtain2.readException();
             Location location;
             if (obtain2.readInt() == 0) {
@@ -955,7 +955,7 @@ class g implements zzi
         try {
             parcel.writeInterfaceToken(s2);
             obtain.writeString(s);
-            this.AA.transact(34, obtain, obtain2, 0);
+            this.Cf.transact(34, obtain, obtain2, 0);
             obtain2.readException();
             LocationAvailability locationAvailability;
             if (obtain2.readInt() == 0) {

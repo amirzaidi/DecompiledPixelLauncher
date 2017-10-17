@@ -7,25 +7,25 @@
 
 
 # instance fields
-.field private final AX:J
+.field private final CC:J
 
-.field private final AY:S
+.field private final CD:S
 
-.field private final AZ:Ljava/lang/String;
+.field private final CE:Ljava/lang/String;
 
-.field private final Ba:I
+.field private final CF:I
 
-.field private final Bb:I
+.field private final CG:I
 
-.field private final Bc:F
+.field private final CH:F
 
-.field private final Bd:I
+.field private final CI:I
 
-.field private final Be:D
+.field private final CJ:D
 
-.field private final Bf:D
+.field private final CK:D
 
-.field private final Bg:I
+.field private final CL:I
 
 
 # direct methods
@@ -46,46 +46,46 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    invoke-static {p2}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Fv(Ljava/lang/String;)V
+    invoke-static {p2}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Go(Ljava/lang/String;)V
 
-    invoke-static {p9}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Fz(F)V
+    invoke-static {p9}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Gs(F)V
 
-    invoke-static {p5, p6, p7, p8}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Fq(DD)V
+    invoke-static {p5, p6, p7, p8}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Gj(DD)V
 
-    invoke-static {p3}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Fs(I)I
+    invoke-static {p3}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Gl(I)I
 
     move-result v1
 
-    iput p1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bd:I
+    iput p1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CI:I
 
     int-to-short v2, p4
 
-    iput-short v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AY:S
+    iput-short v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CD:S
 
-    iput-object p2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AZ:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CE:Ljava/lang/String;
 
-    iput-wide p5, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Be:D
+    iput-wide p5, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CJ:D
 
-    iput-wide p7, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bf:D
+    iput-wide p7, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CK:D
 
-    iput p9, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bc:F
+    iput p9, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CH:F
 
-    iput-wide p10, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AX:J
+    iput-wide p10, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CC:J
 
-    iput v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bg:I
+    iput v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CL:I
 
     move/from16 v0, p12
 
-    iput v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Ba:I
+    iput v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CF:I
 
     move/from16 v0, p13
 
-    iput v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bb:I
+    iput v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CG:I
 
     return-void
 .end method
 
-.method private static Fq(DD)V
+.method private static Gj(DD)V
     .locals 4
 
     const/4 v0, 0x1
@@ -193,7 +193,7 @@
     return-void
 .end method
 
-.method private static Fs(I)I
+.method private static Gl(I)I
     .locals 3
 
     and-int/lit8 v0, p0, 0x7
@@ -230,7 +230,7 @@
     throw v0
 .end method
 
-.method private static Fv(Ljava/lang/String;)V
+.method private static Go(Ljava/lang/String;)V
     .locals 4
 
     if-nez p0, :cond_1
@@ -278,7 +278,7 @@
     goto :goto_0
 .end method
 
-.method private static Fx(I)Ljava/lang/String;
+.method private static Gq(I)Ljava/lang/String;
     .locals 1
 
     packed-switch p0, :pswitch_data_0
@@ -300,7 +300,7 @@
     .end packed-switch
 .end method
 
-.method private static Fz(F)V
+.method private static Gs(F)V
     .locals 3
 
     const/4 v0, 0x0
@@ -341,74 +341,74 @@
 
 
 # virtual methods
-.method public FA()J
+.method public Gi()D
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AX:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CK:D
 
     return-wide v0
 .end method
 
-.method public FB()I
+.method public Gk()Ljava/lang/String;
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bb:I
-
-    return v0
-.end method
-
-.method public FC()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bd:I
-
-    return v0
-.end method
-
-.method public Fp()D
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bf:D
-
-    return-wide v0
-.end method
-
-.method public Fr()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AZ:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CE:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Ft()D
+.method public Gm()D
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Be:D
+    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CJ:D
 
     return-wide v0
 .end method
 
-.method public Fu()S
+.method public Gn()S
     .locals 1
 
-    iget-short v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AY:S
+    iget-short v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CD:S
 
     return v0
 .end method
 
-.method public Fw()I
+.method public Gp()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bg:I
+    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CL:I
 
     return v0
 .end method
 
-.method public Fy()I
+.method public Gr()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Ba:I
+    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CF:I
+
+    return v0
+.end method
+
+.method public Gt()J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CC:J
+
+    return-wide v0
+.end method
+
+.method public Gu()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CG:I
+
+    return v0
+.end method
+
+.method public Gv()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CI:I
 
     return v0
 .end method
@@ -430,9 +430,9 @@
 
     check-cast p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;
 
-    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bc:F
+    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CH:F
 
-    iget v1, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bc:F
+    iget v1, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CH:F
 
     cmpl-float v0, v0, v1
 
@@ -450,9 +450,9 @@
     return v4
 
     :cond_3
-    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Be:D
+    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CJ:D
 
-    iget-wide v2, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Be:D
+    iget-wide v2, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CJ:D
 
     cmpl-double v0, v0, v2
 
@@ -461,9 +461,9 @@
     return v4
 
     :cond_4
-    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bf:D
+    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CK:D
 
-    iget-wide v2, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bf:D
+    iget-wide v2, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CK:D
 
     cmpl-double v0, v0, v2
 
@@ -472,9 +472,9 @@
     return v4
 
     :cond_5
-    iget-short v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AY:S
+    iget-short v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CD:S
 
-    iget-short v1, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AY:S
+    iget-short v1, p1, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CD:S
 
     if-ne v0, v1, :cond_6
 
@@ -487,7 +487,7 @@
 .method public getRadius()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bc:F
+    iget v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CH:F
 
     return v0
 .end method
@@ -497,7 +497,7 @@
 
     const/16 v4, 0x20
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Be:D
+    iget-wide v0, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CJ:D
 
     invoke-static {v0, v1}, Ljava/lang/Double;->doubleToLongBits(D)J
 
@@ -511,7 +511,7 @@
 
     add-int/lit8 v0, v0, 0x1f
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bf:D
+    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CK:D
 
     invoke-static {v2, v3}, Ljava/lang/Double;->doubleToLongBits(D)J
 
@@ -529,7 +529,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bc:F
+    iget v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CH:F
 
     invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
@@ -539,13 +539,13 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-short v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AY:S
+    iget-short v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CD:S
 
     add-int/2addr v0, v1
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bg:I
+    iget v1, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CL:I
 
     add-int/2addr v0, v1
 
@@ -561,9 +561,9 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget-short v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AY:S
+    iget-short v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CD:S
 
-    invoke-static {v2}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Fx(I)Ljava/lang/String;
+    invoke-static {v2}, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Gq(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -571,13 +571,13 @@
 
     aput-object v2, v1, v3
 
-    iget-object v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AZ:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CE:Ljava/lang/String;
 
     const/4 v3, 0x1
 
     aput-object v2, v1, v3
 
-    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bg:I
+    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CL:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -587,7 +587,7 @@
 
     aput-object v2, v1, v3
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Be:D
+    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CJ:D
 
     invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
@@ -597,7 +597,7 @@
 
     aput-object v2, v1, v3
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bf:D
+    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CK:D
 
     invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
@@ -607,7 +607,7 @@
 
     aput-object v2, v1, v3
 
-    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bc:F
+    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CH:F
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -617,7 +617,7 @@
 
     aput-object v2, v1, v3
 
-    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Ba:I
+    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CF:I
 
     div-int/lit16 v2, v2, 0x3e8
 
@@ -629,7 +629,7 @@
 
     aput-object v2, v1, v3
 
-    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->Bb:I
+    iget v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CG:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -639,7 +639,7 @@
 
     aput-object v2, v1, v3
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->AX:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CC:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -663,7 +663,7 @@
 
     sget-object v0, Lcom/google/android/gms/location/internal/ParcelableGeofence;->CREATOR:Lcom/google/android/gms/location/internal/n;
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/internal/n;->FJ(Lcom/google/android/gms/location/internal/ParcelableGeofence;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/internal/n;->GC(Lcom/google/android/gms/location/internal/ParcelableGeofence;Landroid/os/Parcel;I)V
 
     return-void
 .end method

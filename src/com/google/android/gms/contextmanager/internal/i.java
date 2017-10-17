@@ -14,56 +14,56 @@ import android.os.Parcelable$Creator;
 
 public class i implements Parcelable$Creator
 {
-    static void MU(final InterestUpdateBatchImpl$Operation interestUpdateBatchImpl$Operation, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, interestUpdateBatchImpl$Operation.NA());
-        a.fj(parcel, 2, interestUpdateBatchImpl$Operation.Nz());
-        a.eW(parcel, 3, (Parcelable)interestUpdateBatchImpl$Operation.Ny(), n, false);
-        a.fo(parcel, 4, interestUpdateBatchImpl$Operation.NB(), false);
-        a.fe(parcel, ey);
+    static void NN(final InterestUpdateBatchImpl$Operation interestUpdateBatchImpl$Operation, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, interestUpdateBatchImpl$Operation.Ot());
+        a.hX(parcel, 2, interestUpdateBatchImpl$Operation.Os());
+        a.hK(parcel, 3, (Parcelable)interestUpdateBatchImpl$Operation.Or(), n, false);
+        a.ic(parcel, 4, interestUpdateBatchImpl$Operation.Ou(), false);
+        a.hS(parcel, hm);
     }
     
-    public InterestUpdateBatchImpl$Operation[] MT(final int n) {
+    public InterestUpdateBatchImpl$Operation[] NM(final int n) {
         return new InterestUpdateBatchImpl$Operation[n];
     }
     
-    public InterestUpdateBatchImpl$Operation MV(final Parcel parcel) {
+    public InterestUpdateBatchImpl$Operation NO(final Parcel parcel) {
         InterestRecordStub interestRecordStub = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int fn2 = 0;
-        String fq = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int ib2 = 0;
+        String ie = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     break;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     break;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     break;
                 }
                 case 3: {
-                    interestRecordStub = (InterestRecordStub)b.fW(parcel, fs, InterestRecordStub.CREATOR);
+                    interestRecordStub = (InterestRecordStub)b.iK(parcel, ig, InterestRecordStub.CREATOR);
                     break;
                 }
                 case 4: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     break;
                 }
             }
-            final String s = fq;
+            final String s = ie;
             interestRecordStub = interestRecordStub;
-            fq = s;
+            ie = s;
         }
-        if (parcel.dataPosition() == fj) {
-            return new InterestUpdateBatchImpl$Operation(fn2, fn, interestRecordStub, fq);
+        if (parcel.dataPosition() == ix) {
+            return new InterestUpdateBatchImpl$Operation(ib2, ib, interestRecordStub, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

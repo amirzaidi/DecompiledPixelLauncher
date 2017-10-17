@@ -12,65 +12,65 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void DV(final PlaceRequest placeRequest, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.eW(parcel, 2, (Parcelable)placeRequest.EA(), n, false);
-        com.google.android.gms.common.internal.safeparcel.a.fw(parcel, 3, placeRequest.EB());
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 4, placeRequest.Ez());
-        com.google.android.gms.common.internal.safeparcel.a.fw(parcel, 5, placeRequest.EC());
-        com.google.android.gms.common.internal.safeparcel.a.fa(parcel, 6, placeRequest.Ey());
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1000, placeRequest.Ah);
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void EO(final PlaceRequest placeRequest, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hK(parcel, 2, (Parcelable)placeRequest.Ft(), n, false);
+        com.google.android.gms.common.internal.safeparcel.a.ik(parcel, 3, placeRequest.Fu());
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 4, placeRequest.Fs());
+        com.google.android.gms.common.internal.safeparcel.a.ik(parcel, 5, placeRequest.Fv());
+        com.google.android.gms.common.internal.safeparcel.a.hO(parcel, 6, placeRequest.Fr());
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1000, placeRequest.BM);
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
-    public PlaceRequest DT(final Parcel parcel) {
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
+    public PlaceRequest EM(final Parcel parcel) {
+        boolean il = false;
+        final int ix = b.ix(parcel);
         PlaceFilter placeFilter = null;
-        long fl = -1;
-        int fn = -1;
-        long fl2 = Long.MAX_VALUE;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        long iz = -1;
+        int ib = -1;
+        long iz2 = Long.MAX_VALUE;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    placeFilter = (PlaceFilter)b.fW(parcel, fs, (Parcelable$Creator)PlaceFilter.CREATOR);
+                    placeFilter = (PlaceFilter)b.iK(parcel, ig, (Parcelable$Creator)PlaceFilter.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fl2 = b.fL(parcel, fs);
+                    iz2 = b.iz(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlaceRequest(fn2, placeFilter, fl, fn, fl2, fx);
+        if (parcel.dataPosition() == ix) {
+            return new PlaceRequest(ib2, placeFilter, iz, ib, iz2, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public PlaceRequest[] DU(final int n) {
+    public PlaceRequest[] EN(final int n) {
         return new PlaceRequest[n];
     }
 }

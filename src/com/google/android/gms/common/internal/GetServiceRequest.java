@@ -17,44 +17,44 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class GetServiceRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    String eZ;
-    Scope[] fa;
-    final int fb;
-    long fc;
-    int fd;
-    Bundle fe;
-    Account ff;
-    final int fg;
-    IBinder fh;
+    String hS;
+    Scope[] hT;
+    long hU;
+    int hV;
+    Bundle hW;
+    Account hX;
+    final int hY;
+    IBinder hZ;
+    final int version;
     
     static {
         CREATOR = (Parcelable$Creator)new d();
     }
     
-    public GetServiceRequest(final int fg) {
-        this.fb = 3;
-        this.fd = f.kC;
-        this.fg = fg;
+    public GetServiceRequest(final int hy) {
+        this.version = 3;
+        this.hV = f.nu;
+        this.hY = hy;
     }
     
-    GetServiceRequest(final int fb, final int fg, final int fd, final String ez, final IBinder fh, final Scope[] fa, final Bundle fe, final Account ff, final long fc) {
-        this.fb = fb;
-        this.fg = fg;
-        this.fd = fd;
-        this.eZ = ez;
-        if (fb >= 2) {
-            this.fh = fh;
-            this.ff = ff;
+    GetServiceRequest(final int version, final int hy, final int hv, final String hs, final IBinder hz, final Scope[] ht, final Bundle hw, final Account hx, final long hu) {
+        this.version = version;
+        this.hY = hy;
+        this.hV = hv;
+        this.hS = hs;
+        if (version >= 2) {
+            this.hZ = hz;
+            this.hX = hx;
         }
         else {
-            this.ff = this.gF(fh);
+            this.hX = this.jt(hz);
         }
-        this.fa = fa;
-        this.fe = fe;
-        this.fc = fc;
+        this.hT = ht;
+        this.hW = hw;
+        this.hU = hu;
     }
     
-    private Account gF(final IBinder binder) {
+    private Account jt(final IBinder binder) {
         Account zza = null;
         if (binder != null) {
             zza = com.google.android.gms.common.internal.zza.zza(zzq$zza.zzgw(binder));
@@ -62,34 +62,34 @@ public class GetServiceRequest extends AbstractSafeParcelable
         return zza;
     }
     
-    public GetServiceRequest gC(final zzq zzq) {
+    public GetServiceRequest jq(final zzq zzq) {
         if (zzq != null) {
-            this.fh = zzq.asBinder();
+            this.hZ = zzq.asBinder();
         }
         return this;
     }
     
-    public GetServiceRequest gD(final Bundle fe) {
-        this.fe = fe;
+    public GetServiceRequest jr(final Bundle hw) {
+        this.hW = hw;
         return this;
     }
     
-    public GetServiceRequest gE(final Account ff) {
-        this.ff = ff;
+    public GetServiceRequest js(final Account hx) {
+        this.hX = hx;
         return this;
     }
     
-    public GetServiceRequest gG(final String ez) {
-        this.eZ = ez;
+    public GetServiceRequest ju(final String hs) {
+        this.hS = hs;
         return this;
     }
     
-    public GetServiceRequest gH(final Collection collection) {
-        this.fa = collection.toArray(new Scope[collection.size()]);
+    public GetServiceRequest jv(final Collection collection) {
+        this.hT = collection.toArray(new Scope[collection.size()]);
         return this;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        d.gI(this, parcel, n);
+        d.jw(this, parcel, n);
     }
 }

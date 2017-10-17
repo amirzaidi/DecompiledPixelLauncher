@@ -13,25 +13,25 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class AuthAccountRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    Integer ho;
-    final Scope[] hp;
-    final int hq;
-    final IBinder hr;
-    Integer hs;
+    Integer kg;
+    final Scope[] kh;
+    final int ki;
+    final IBinder kj;
+    Integer kk;
     
     static {
         CREATOR = (Parcelable$Creator)new K();
     }
     
-    AuthAccountRequest(final int hq, final IBinder hr, final Scope[] hp, final Integer ho, final Integer hs) {
-        this.hq = hq;
-        this.hr = hr;
-        this.hp = hp;
-        this.ho = ho;
-        this.hs = hs;
+    AuthAccountRequest(final int ki, final IBinder kj, final Scope[] kh, final Integer kg, final Integer kk) {
+        this.ki = ki;
+        this.kj = kj;
+        this.kh = kh;
+        this.kg = kg;
+        this.kk = kk;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        K.iV(this, parcel, n);
+        K.lJ(this, parcel, n);
     }
 }

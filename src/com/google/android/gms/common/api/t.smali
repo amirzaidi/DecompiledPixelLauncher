@@ -1,15 +1,7 @@
-.class public final Lcom/google/android/gms/common/api/t;
+.class public interface abstract Lcom/google/android/gms/common/api/t;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcom/google/android/gms/common/api/m;
 
-
-# direct methods
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract hh(Lcom/google/android/gms/common/api/Status;)V
 .end method

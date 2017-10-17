@@ -12,26 +12,26 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class AliasedPlace extends AbstractSafeParcelable
 {
     public static final a CREATOR;
-    final int xK;
-    private final String xL;
-    private final List xM;
+    final int zp;
+    private final String zq;
+    private final List zr;
     
     static {
         CREATOR = new a();
     }
     
-    AliasedPlace(final int xk, final String xl, final List xm) {
-        this.xK = xk;
-        this.xL = xl;
-        this.xM = xm;
+    AliasedPlace(final int zp, final String zq, final List zr) {
+        this.zp = zp;
+        this.zq = zq;
+        this.zr = zr;
     }
     
-    public String CH() {
-        return this.xL;
+    public String DA() {
+        return this.zq;
     }
     
-    public List CI() {
-        return this.xM;
+    public List DB() {
+        return this.zr;
     }
     
     public boolean equals(final Object o) {
@@ -41,7 +41,7 @@ public class AliasedPlace extends AbstractSafeParcelable
         }
         if (o instanceof AliasedPlace) {
             final AliasedPlace aliasedPlace = (AliasedPlace)o;
-            if (!this.xL.equals(aliasedPlace.xL) || !this.xM.equals(aliasedPlace.xM)) {
+            if (!this.zq.equals(aliasedPlace.zq) || !this.zr.equals(aliasedPlace.zr)) {
                 b = false;
             }
             return b;
@@ -50,14 +50,14 @@ public class AliasedPlace extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.xL, this.xM);
+        return u.kw(this.zq, this.zr);
     }
     
     public String toString() {
-        return u.hJ(this).hB("placeId", this.xL).hB("placeAliases", this.xM).toString();
+        return u.kx(this).kp("placeId", this.zq).kp("placeAliases", this.zr).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        a.CJ(this, parcel, n);
+        a.DC(this, parcel, n);
     }
 }

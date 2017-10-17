@@ -1,90 +1,129 @@
-.class public Lcom/google/android/gms/internal/bF;
+.class Lcom/google/android/gms/internal/bF;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/g;
-.implements Lcom/google/android/gms/common/api/f;
+.implements Landroid/os/IBinder$DeathRecipient;
+.implements Lcom/google/android/gms/internal/g;
 
 
 # instance fields
-.field public final uL:Lcom/google/android/gms/common/api/h;
+.field private final vu:Ljava/lang/ref/WeakReference;
 
-.field private final uM:I
+.field private final vv:Ljava/lang/ref/WeakReference;
 
-.field private uN:Lcom/google/android/gms/internal/cf;
+.field private final vw:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/h;I)V
-    .locals 0
+.method private constructor <init>(Lcom/google/android/gms/internal/b;Lcom/google/android/gms/common/api/i;Landroid/os/IBinder;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/bF;->uL:Lcom/google/android/gms/common/api/h;
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    iput p2, p0, Lcom/google/android/gms/internal/bF;->uM:I
+    invoke-direct {v0, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/bF;->vw:Ljava/lang/ref/WeakReference;
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/bF;->vu:Ljava/lang/ref/WeakReference;
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/bF;->vv:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
-.method private zT()V
-    .locals 2
+.method synthetic constructor <init>(Lcom/google/android/gms/internal/b;Lcom/google/android/gms/common/api/i;Landroid/os/IBinder;Lcom/google/android/gms/internal/cn;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/bF;->uN:Lcom/google/android/gms/internal/cf;
-
-    const-string/jumbo v1, "Callbacks must be attached to a GoogleApiClient instance before connecting the client."
-
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/l;->ho(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/gms/internal/bF;-><init>(Lcom/google/android/gms/internal/b;Lcom/google/android/gms/common/api/i;Landroid/os/IBinder;)V
 
     return-void
+.end method
+
+.method private AN()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/bF;->vu:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/internal/b;
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/bF;->vw:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/api/i;
+
+    if-nez v1, :cond_1
+
+    :cond_0
+    :goto_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/bF;->vv:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/IBinder;
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/bF;->vv:Ljava/lang/ref/WeakReference;
+
+    if-nez v1, :cond_2
+
+    :goto_1
+    return-void
+
+    :cond_1
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/b;->rS()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/common/api/i;->gQ(I)V
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
+
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public dQ(Lcom/google/android/gms/common/ConnectionResult;)V
-    .locals 3
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/bF;->zT()V
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/bF;->uN:Lcom/google/android/gms/internal/cf;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/bF;->uL:Lcom/google/android/gms/common/api/h;
-
-    iget v2, p0, Lcom/google/android/gms/internal/bF;->uM:I
-
-    invoke-virtual {v0, p1, v1, v2}, Lcom/google/android/gms/internal/cf;->Ca(Lcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/common/api/h;I)V
-
-    return-void
-.end method
-
-.method public dR(I)V
-    .locals 1
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/bF;->zT()V
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/bF;->uN:Lcom/google/android/gms/internal/cf;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/cf;->BY(I)V
-
-    return-void
-.end method
-
-.method public dS(Landroid/os/Bundle;)V
-    .locals 1
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/bF;->zT()V
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/bF;->uN:Lcom/google/android/gms/internal/cf;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/cf;->BT(Landroid/os/Bundle;)V
-
-    return-void
-.end method
-
-.method public zS(Lcom/google/android/gms/internal/cf;)V
+.method public binderDied()V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/bF;->uN:Lcom/google/android/gms/internal/cf;
+    invoke-direct {p0}, Lcom/google/android/gms/internal/bF;->AN()V
+
+    return-void
+.end method
+
+.method public sb(Lcom/google/android/gms/internal/b;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/bF;->AN()V
 
     return-void
 .end method

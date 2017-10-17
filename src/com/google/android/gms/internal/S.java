@@ -5,37 +5,32 @@
 package com.google.android.gms.internal;
 
 import com.google.android.gms.phenotype.Configurations;
-import com.google.android.gms.common.api.o;
-import com.google.android.gms.common.api.b;
+import com.google.android.gms.phenotype.r;
+import com.google.android.gms.common.api.n;
+import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.api.a;
 
-class s extends q
+class s extends o
 {
-    final /* synthetic */ String oK;
-    final /* synthetic */ int oL;
-    final /* synthetic */ String[] oM;
-    final /* synthetic */ byte[] oN;
-    final /* synthetic */ k oO;
-    final /* synthetic */ String oP;
-    final /* synthetic */ String oQ;
+    final /* synthetic */ String pd;
+    final /* synthetic */ k pe;
+    final /* synthetic */ String pf;
+    final /* synthetic */ String pg;
     
-    s(final k oo, final d d, final String ok, final int ol, final String[] om, final byte[] on, final String oq, final String op) {
-        this.oO = oo;
-        this.oK = ok;
-        this.oL = ol;
-        this.oM = om;
-        this.oN = on;
-        this.oQ = oq;
-        this.oP = op;
-        super(d);
+    s(final k pe, final a a, final String pd, final String pg, final String pf) {
+        this.pe = pe;
+        this.pd = pd;
+        this.pg = pg;
+        this.pf = pf;
+        super(a);
     }
     
-    protected void sv(final p p) {
-        ((zzzb)p.hY()).zza(new u(this), this.oK, this.oL, this.oM, this.oN, this.oQ, this.oP);
+    protected void sv(final com.google.android.gms.internal.n n) {
+        ((zzzb)n.kM()).zza(new q(this), this.pd, this.pg, this.pf);
     }
     
-    public com.google.android.gms.phenotype.b sw(final Status status) {
-        return new z(status, null);
+    public r sw(final Status status) {
+        return new t(status, null);
     }
 }

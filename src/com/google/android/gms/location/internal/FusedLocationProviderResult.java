@@ -7,39 +7,39 @@ package com.google.android.gms.location.internal;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import android.os.Parcelable$Creator;
-import com.google.android.gms.common.api.b;
+import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
-public final class FusedLocationProviderResult extends AbstractSafeParcelable implements b
+public final class FusedLocationProviderResult extends AbstractSafeParcelable implements m
 {
-    public static final FusedLocationProviderResult AD;
     public static final Parcelable$Creator CREATOR;
-    private final Status AB;
-    private final int AC;
+    public static final FusedLocationProviderResult Ci;
+    private final Status Cg;
+    private final int Ch;
     
     static {
-        AD = new FusedLocationProviderResult(Status.dU);
+        Ci = new FusedLocationProviderResult(Status.hn);
         CREATOR = (Parcelable$Creator)new l();
     }
     
-    FusedLocationProviderResult(final int ac, final Status ab) {
-        this.AC = ac;
-        this.AB = ab;
+    FusedLocationProviderResult(final int ch, final Status cg) {
+        this.Ch = ch;
+        this.Cg = cg;
     }
     
     public FusedLocationProviderResult(final Status status) {
         this(1, status);
     }
     
-    public int Fh() {
-        return this.AC;
+    public int Ga() {
+        return this.Ch;
     }
     
-    public Status dr() {
-        return this.AB;
+    public Status gV() {
+        return this.Cg;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        l.FF(this, parcel, n);
+        l.Gy(this, parcel, n);
     }
 }

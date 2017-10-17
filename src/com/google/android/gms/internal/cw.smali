@@ -1,220 +1,237 @@
-.class Lcom/google/android/gms/internal/cw;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Lcom/google/android/gms/internal/cw;
+.super Lcom/google/android/gms/internal/f;
 
 
 # instance fields
-.field final synthetic wZ:Lcom/google/android/gms/internal/bo;
+.field private xJ:I
+
+.field private xK:Z
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/android/gms/internal/bo;)V
-    .locals 0
+.method private CE(Lcom/google/android/gms/common/ConnectionResult;)V
+    .locals 3
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    invoke-virtual {v2}, Landroid/support/v4/a/t;->size()I
+
+    move-result v0
+
+    if-lt v1, v0, :cond_0
 
     return-void
-.end method
 
-.method synthetic constructor <init>(Lcom/google/android/gms/internal/bo;Lcom/google/android/gms/internal/bY;)V
-    .locals 0
+    :cond_0
+    invoke-virtual {v2, v1}, Landroid/support/v4/a/t;->aib(I)Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/cw;-><init>(Lcom/google/android/gms/internal/bo;)V
+    move-result-object v0
 
-    return-void
+    check-cast v0, Lcom/google/android/gms/internal/bW;
+
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/internal/cw;->CD(Lcom/google/android/gms/internal/bW;Lcom/google/android/gms/common/ConnectionResult;)V
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 6
+.method protected CB(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/E;
+    .locals 2
 
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    monitor-enter v0
 
-    iget-boolean v0, v0, Lcom/google/android/gms/internal/bo;->mStarted:Z
+    :try_start_0
+    new-instance v0, Lcom/google/android/gms/common/ConnectionResult;
 
-    if-eqz v0, :cond_0
+    const/16 v1, 0x8
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/ConnectionResult;-><init>(I)V
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/bo;->yB(Lcom/google/android/gms/internal/bo;)Lcom/google/android/gms/common/ConnectionResult;
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/cw;->CE(Lcom/google/android/gms/common/ConnectionResult;)V
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->nx()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    iget-object v0, v0, Lcom/google/android/gms/internal/bo;->uc:Lcom/google/android/gms/common/a;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/bo;->yB(Lcom/google/android/gms/internal/bo;)Lcom/google/android/gms/common/ConnectionResult;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/common/ConnectionResult;->nu()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/a;->nC(I)Z
+    invoke-virtual {v0}, Landroid/support/v4/a/t;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_2
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    if-eq v0, v1, :cond_0
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/bo;->yB(Lcom/google/android/gms/internal/bo;)Lcom/google/android/gms/common/ConnectionResult;
+    new-instance v0, Lcom/google/android/gms/common/api/E;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/ConnectionResult;->nu()I
-
-    move-result v0
-
-    const/16 v1, 0x12
-
-    if-eq v0, v1, :cond_3
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/bo;->yB(Lcom/google/android/gms/internal/bo;)Lcom/google/android/gms/common/ConnectionResult;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    invoke-static {v2}, Lcom/google/android/gms/internal/bo;->yy(Lcom/google/android/gms/internal/bo;)I
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/bo;->yz(Lcom/google/android/gms/common/ConnectionResult;I)V
+    invoke-direct {v0, p1, v1}, Lcom/google/android/gms/common/api/E;-><init>(Lcom/google/android/gms/common/api/Status;Landroid/support/v4/a/t;)V
 
     :goto_0
-    return-void
+    const/4 v1, 0x0
+
+    monitor-exit v1
+
+    return-object v0
 
     :cond_0
-    return-void
+    new-instance v0, Lcom/google/android/gms/common/api/D;
 
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    const/4 v1, 0x0
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/bo;->sC:Lcom/google/android/gms/internal/aC;
+    invoke-direct {v0, p1, v1}, Lcom/google/android/gms/common/api/D;-><init>(Lcom/google/android/gms/common/api/Status;Landroid/support/v4/a/t;)V
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    goto :goto_0
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/bo;->getActivity()Landroid/app/Activity;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v1
+    const/4 v1, 0x0
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v2}, Lcom/google/android/gms/internal/bo;->yB(Lcom/google/android/gms/internal/bo;)Lcom/google/android/gms/common/ConnectionResult;
+    throw v0
+.end method
 
-    move-result-object v2
+.method public CC()Ljava/util/Set;
+    .locals 1
 
-    invoke-virtual {v2}, Lcom/google/android/gms/common/ConnectionResult;->ny()Landroid/app/PendingIntent;
+    const/4 v0, 0x0
 
-    move-result-object v2
+    invoke-virtual {v0}, Landroid/support/v4/a/t;->keySet()Ljava/util/Set;
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    move-result-object v0
 
-    invoke-static {v3}, Lcom/google/android/gms/internal/bo;->yy(Lcom/google/android/gms/internal/bo;)I
+    return-object v0
+.end method
 
-    move-result v3
-
-    invoke-static {v1, v2, v3, v4}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eQ(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;
-
-    move-result-object v1
+.method public CD(Lcom/google/android/gms/internal/bW;Lcom/google/android/gms/common/ConnectionResult;)V
+    .locals 3
 
     const/4 v2, 0x1
 
-    invoke-interface {v0, v1, v2}, Lcom/google/android/gms/internal/aC;->startActivityForResult(Landroid/content/Intent;I)V
+    const/4 v0, 0x0
+
+    monitor-enter v0
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-virtual {v0, p1, p2}, Landroid/support/v4/a/t;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget v0, p0, Lcom/google/android/gms/internal/cw;->xJ:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lcom/google/android/gms/internal/cw;->xJ:I
+
+    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->qj()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :goto_0
+    iget v0, p0, Lcom/google/android/gms/internal/cw;->xJ:I
+
+    if-eqz v0, :cond_1
+
+    :goto_1
+    const/4 v0, 0x0
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/cw;->xK:Z
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    const/4 v1, 0x0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_1
+    :try_start_1
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/cw;->xK:Z
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->hn:Lcom/google/android/gms/common/api/Status;
+
+    move-object v1, v0
+
+    :goto_2
+    const/4 v0, 0x0
+
+    invoke-virtual {v0}, Landroid/support/v4/a/t;->size()I
+
+    move-result v0
+
+    if-eq v0, v2, :cond_3
+
+    new-instance v0, Lcom/google/android/gms/common/api/E;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/E;-><init>(Lcom/google/android/gms/common/api/Status;Landroid/support/v4/a/t;)V
+
+    :goto_3
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/cw;->rV(Lcom/google/android/gms/common/api/m;)V
+
+    goto :goto_1
 
     :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/bo;->uc:Lcom/google/android/gms/common/a;
+    const/16 v1, 0xd
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Status;-><init>(I)V
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/bo;->getActivity()Landroid/app/Activity;
+    move-object v1, v0
 
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    iget-object v2, v2, Lcom/google/android/gms/internal/bo;->sC:Lcom/google/android/gms/internal/aC;
-
-    iget-object v3, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    invoke-static {v3}, Lcom/google/android/gms/internal/bo;->yB(Lcom/google/android/gms/internal/bo;)Lcom/google/android/gms/common/ConnectionResult;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/google/android/gms/common/ConnectionResult;->nu()I
-
-    move-result v3
-
-    iget-object v5, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    const/4 v4, 0x2
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/gms/common/a;->nD(Landroid/app/Activity;Lcom/google/android/gms/internal/aC;IILandroid/content/DialogInterface$OnCancelListener;)Z
-
-    goto :goto_0
+    goto :goto_2
 
     :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    new-instance v0, Lcom/google/android/gms/common/api/D;
 
-    iget-object v0, v0, Lcom/google/android/gms/internal/bo;->uc:Lcom/google/android/gms/common/a;
+    const/4 v2, 0x0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/D;-><init>(Lcom/google/android/gms/common/api/Status;Landroid/support/v4/a/t;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/bo;->getActivity()Landroid/app/Activity;
+    goto :goto_3
+.end method
 
-    move-result-object v1
+.method protected synthetic rY(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/m;
+    .locals 1
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/common/a;->nH(Landroid/app/Activity;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/cw;->CB(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/E;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    iget-object v1, v1, Lcom/google/android/gms/internal/bo;->uc:Lcom/google/android/gms/common/a;
-
-    iget-object v2, p0, Lcom/google/android/gms/internal/cw;->wZ:Lcom/google/android/gms/internal/bo;
-
-    invoke-virtual {v2}, Lcom/google/android/gms/internal/bo;->getActivity()Landroid/app/Activity;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    new-instance v3, Lcom/google/android/gms/internal/cr;
-
-    invoke-direct {v3, p0, v0}, Lcom/google/android/gms/internal/cr;-><init>(Lcom/google/android/gms/internal/cw;Landroid/app/Dialog;)V
-
-    invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/common/a;->nz(Landroid/content/Context;Lcom/google/android/gms/internal/by;)Lcom/google/android/gms/internal/bw;
-
-    goto :goto_0
+    return-object v0
 .end method

@@ -16,29 +16,29 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class Configurations extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private static final Charset lz;
-    public final Configuration[] lA;
-    public final Map lB;
-    public final String lC;
-    public final boolean lD;
-    final int lE;
-    public final String ly;
+    private static final Charset xY;
+    public final String xX;
+    public final Configuration[] xZ;
+    public final Map ya;
+    public final String yb;
+    public final boolean yc;
+    final int yd;
     
     static {
-        lz = Charset.forName("UTF-8");
-        CREATOR = (Parcelable$Creator)new r();
+        xY = Charset.forName("UTF-8");
+        CREATOR = (Parcelable$Creator)new q();
     }
     
-    Configurations(final int le, final String ly, final String lc, final Configuration[] la, final boolean ld) {
-        this.lE = le;
-        this.ly = ly;
-        this.lC = lc;
-        this.lA = la;
-        this.lD = ld;
-        this.lB = new TreeMap();
-        for (int length = la.length, i = 0; i < length; ++i) {
-            final Configuration configuration = la[i];
-            this.lB.put(configuration.lK, configuration);
+    Configurations(final int yd, final String xx, final String yb, final Configuration[] xz, final boolean yc) {
+        this.yd = yd;
+        this.xX = xx;
+        this.yb = yb;
+        this.xZ = xz;
+        this.yc = yc;
+        this.ya = new TreeMap();
+        for (int length = xz.length, i = 0; i < length; ++i) {
+            final Configuration configuration = xz[i];
+            this.ya.put(configuration.xS, configuration);
         }
     }
     
@@ -46,7 +46,7 @@ public class Configurations extends AbstractSafeParcelable
         boolean b = false;
         if (o != null && o instanceof Configurations) {
             final Configurations configurations = (Configurations)o;
-            if (this.lE == configurations.lE && u.hH(this.ly, configurations.ly) && u.hH(this.lC, configurations.lC) && u.hH(this.lB, configurations.lB) && this.lD == configurations.lD) {
+            if (this.yd == configurations.yd && u.kv(this.xX, configurations.xX) && u.kv(this.yb, configurations.yb) && u.kv(this.ya, configurations.ya) && this.yc == configurations.yc) {
                 b = true;
             }
             return b;
@@ -58,30 +58,30 @@ public class Configurations extends AbstractSafeParcelable
         final char c = ')';
         final char c2 = '\'';
         final StringBuilder sb = new StringBuilder("Configurations(");
-        sb.append(this.lE);
+        sb.append(this.yd);
         sb.append(", ");
         sb.append(c2);
-        sb.append(this.ly);
+        sb.append(this.xX);
         sb.append(c2);
         sb.append(", ");
         sb.append(c2);
-        sb.append(this.lC);
+        sb.append(this.yb);
         sb.append(c2);
         sb.append(", ");
         sb.append('(');
-        final Iterator<Configuration> iterator = this.lB.values().iterator();
+        final Iterator<Configuration> iterator = this.ya.values().iterator();
         while (iterator.hasNext()) {
             sb.append(iterator.next());
             sb.append(", ");
         }
         sb.append(c);
         sb.append(", ");
-        sb.append(this.lD);
+        sb.append(this.yc);
         sb.append(c);
         return sb.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        r.pu(this, parcel, n);
+        q.Do(this, parcel, n);
     }
 }

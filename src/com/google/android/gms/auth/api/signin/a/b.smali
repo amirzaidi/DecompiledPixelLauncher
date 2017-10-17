@@ -3,11 +3,11 @@
 
 
 # static fields
-.field static Jd:I
+.field static KI:I
 
 
 # instance fields
-.field private Je:I
+.field private KJ:I
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     const/16 v0, 0x1f
 
-    sput v0, Lcom/google/android/gms/auth/api/signin/a/b;->Jd:I
+    sput v0, Lcom/google/android/gms/auth/api/signin/a/b;->KI:I
 
     return-void
 .end method
@@ -28,19 +28,19 @@
 
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->Je:I
+    iput v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->KJ:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Pl(Ljava/lang/Object;)Lcom/google/android/gms/auth/api/signin/a/b;
+.method public Qe(Ljava/lang/Object;)Lcom/google/android/gms/auth/api/signin/a/b;
     .locals 2
 
-    sget v0, Lcom/google/android/gms/auth/api/signin/a/b;->Jd:I
+    sget v0, Lcom/google/android/gms/auth/api/signin/a/b;->KI:I
 
-    iget v1, p0, Lcom/google/android/gms/auth/api/signin/a/b;->Je:I
+    iget v1, p0, Lcom/google/android/gms/auth/api/signin/a/b;->KJ:I
 
     mul-int/2addr v1, v0
 
@@ -53,7 +53,7 @@
     :goto_0
     add-int/2addr v0, v1
 
-    iput v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->Je:I
+    iput v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->KJ:I
 
     return-object p0
 
@@ -63,14 +63,14 @@
     goto :goto_0
 .end method
 
-.method public Pm(Z)Lcom/google/android/gms/auth/api/signin/a/b;
+.method public Qf(Z)Lcom/google/android/gms/auth/api/signin/a/b;
     .locals 3
 
     const/4 v0, 0x0
 
-    sget v1, Lcom/google/android/gms/auth/api/signin/a/b;->Jd:I
+    sget v1, Lcom/google/android/gms/auth/api/signin/a/b;->KI:I
 
-    iget v2, p0, Lcom/google/android/gms/auth/api/signin/a/b;->Je:I
+    iget v2, p0, Lcom/google/android/gms/auth/api/signin/a/b;->KJ:I
 
     mul-int/2addr v1, v2
 
@@ -79,7 +79,7 @@
     :goto_0
     add-int/2addr v0, v1
 
-    iput v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->Je:I
+    iput v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->KJ:I
 
     return-object p0
 
@@ -89,10 +89,10 @@
     goto :goto_0
 .end method
 
-.method public Pn()I
+.method public Qg()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->Je:I
+    iget v0, p0, Lcom/google/android/gms/auth/api/signin/a/b;->KJ:I
 
     return v0
 .end method

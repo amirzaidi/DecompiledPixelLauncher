@@ -3,25 +3,25 @@
 
 
 # static fields
-.field private static ht:Ljava/lang/Boolean;
+.field private static kl:Ljava/lang/Boolean;
 
-.field private static hu:Ljava/lang/Boolean;
+.field private static km:Ljava/lang/Boolean;
 
-.field private static hv:Ljava/lang/Boolean;
+.field private static kn:Ljava/lang/Boolean;
 
 
 # direct methods
-.method private static jv(Landroid/content/res/Resources;)Z
+.method private static mj(Landroid/content/res/Resources;)Z
     .locals 4
 
     const/4 v0, 0x0
 
-    sget-object v1, Lcom/google/android/gms/common/a/c;->ht:Ljava/lang/Boolean;
+    sget-object v1, Lcom/google/android/gms/common/a/c;->kl:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_0
 
     :goto_0
-    sget-object v0, Lcom/google/android/gms/common/a/c;->ht:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/common/a/c;->kl:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -34,7 +34,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->ka()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mO()Z
 
     move-result v2
 
@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/a/c;->ht:Ljava/lang/Boolean;
+    sput-object v0, Lcom/google/android/gms/common/a/c;->kl:Ljava/lang/Boolean;
 
     goto :goto_0
 
@@ -70,7 +70,7 @@
     goto :goto_1
 .end method
 
-.method public static jw(Landroid/content/res/Resources;)Z
+.method public static mk(Landroid/content/res/Resources;)Z
     .locals 4
 
     const/4 v2, 0x1
@@ -79,12 +79,12 @@
 
     if-eqz p0, :cond_0
 
-    sget-object v0, Lcom/google/android/gms/common/a/c;->hu:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/common/a/c;->km:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_1
 
     :goto_0
-    sget-object v0, Lcom/google/android/gms/common/a/c;->hu:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/common/a/c;->km:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -111,14 +111,14 @@
     move v0, v1
 
     :goto_1
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->jV()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mJ()Z
 
     move-result v3
 
     if-nez v3, :cond_4
 
     :cond_2
-    invoke-static {p0}, Lcom/google/android/gms/common/a/c;->jv(Landroid/content/res/Resources;)Z
+    invoke-static {p0}, Lcom/google/android/gms/common/a/c;->mj(Landroid/content/res/Resources;)Z
 
     move-result v0
 
@@ -129,7 +129,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/a/c;->hu:Ljava/lang/Boolean;
+    sput-object v0, Lcom/google/android/gms/common/a/c;->km:Ljava/lang/Boolean;
 
     goto :goto_0
 
@@ -147,17 +147,17 @@
     goto :goto_2
 .end method
 
-.method public static jx(Landroid/content/Context;)Z
+.method public static ml(Landroid/content/Context;)Z
     .locals 3
 
     const/4 v0, 0x0
 
-    sget-object v1, Lcom/google/android/gms/common/a/c;->hv:Ljava/lang/Boolean;
+    sget-object v1, Lcom/google/android/gms/common/a/c;->kn:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_0
 
     :goto_0
-    sget-object v0, Lcom/google/android/gms/common/a/c;->hv:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/common/a/c;->kn:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -166,7 +166,7 @@
     return v0
 
     :cond_0
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->jS()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mG()Z
 
     move-result v1
 
@@ -178,7 +178,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/a/c;->hv:Ljava/lang/Boolean;
+    sput-object v0, Lcom/google/android/gms/common/a/c;->kn:Ljava/lang/Boolean;
 
     goto :goto_0
 

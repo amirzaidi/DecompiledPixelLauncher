@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field private final mI:F
+.field private final gf:F
 
-.field private final mJ:F
+.field private final gg:F
 
-.field private final mK:[I
+.field private final gh:[I
 
-.field private final mL:I
+.field private final gi:I
 
-.field private final mM:F
+.field private final gj:F
 
-.field private final mN:I
+.field private final gk:I
 
 
 # direct methods
@@ -38,22 +38,22 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mL:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gi:I
 
-    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mJ:F
+    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gg:F
 
-    iput p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mM:F
+    iput p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gj:F
 
-    iput p4, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mI:F
+    iput p4, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gf:F
 
-    iput p5, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mN:I
+    iput p5, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gk:I
 
-    iput-object p6, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mK:[I
+    iput-object p6, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gh:[I
 
     return-void
 .end method
 
-.method static qo(IF)F
+.method static fi(IF)F
     .locals 3
 
     packed-switch p0, :pswitch_data_0
@@ -66,7 +66,7 @@
 
     const-string/jumbo v2, "Invalid temperature unit %s"
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/internal/P;->ti(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/internal/J;->th(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -80,7 +80,7 @@
     return p1
 
     :pswitch_1
-    invoke-static {p1}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qp(F)F
+    invoke-static {p1}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fj(F)F
 
     move-result v0
 
@@ -95,7 +95,7 @@
     .end packed-switch
 .end method
 
-.method private static qp(F)F
+.method private static fj(F)F
     .locals 2
 
     const/high16 v0, 0x42000000    # 32.0f
@@ -115,84 +115,84 @@
 
 
 # virtual methods
-.method public qq(I)F
+.method public fk(I)F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mJ:F
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gg:F
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qo(IF)F
+    invoke-static {p1, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fi(IF)F
 
     move-result v0
 
     return v0
 .end method
 
-.method public qr()F
+.method public fl()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mJ:F
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gg:F
 
     return v0
 .end method
 
-.method public qs(I)F
+.method public fm(I)F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mM:F
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gj:F
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qo(IF)F
+    invoke-static {p1, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fi(IF)F
 
     move-result v0
 
     return v0
 .end method
 
-.method public qt()[I
+.method public fn()[I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mK:[I
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gh:[I
 
     return-object v0
 .end method
 
-.method public qu()F
+.method public fo()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mI:F
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gf:F
 
     return v0
 .end method
 
-.method public qv()F
+.method public fp()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mM:F
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gj:F
 
     return v0
 .end method
 
-.method public qw()I
+.method public fq()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mN:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gk:I
 
     return v0
 .end method
 
-.method qx()I
+.method fr()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mL:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gi:I
 
     return v0
 .end method
 
-.method public qy(I)F
+.method public fs(I)F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->mI:F
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->gf:F
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qo(IF)F
+    invoke-static {p1, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fi(IF)F
 
     move-result v0
 
@@ -218,7 +218,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qq(I)F
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fk(I)F
 
     move-result v4
 
@@ -232,7 +232,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v5}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qq(I)F
+    invoke-virtual {p0, v5}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fk(I)F
 
     move-result v4
 
@@ -246,7 +246,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qs(I)F
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fm(I)F
 
     move-result v4
 
@@ -260,7 +260,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v5}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qs(I)F
+    invoke-virtual {p0, v5}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fm(I)F
 
     move-result v4
 
@@ -274,7 +274,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qy(I)F
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fs(I)F
 
     move-result v4
 
@@ -288,7 +288,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v5}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qy(I)F
+    invoke-virtual {p0, v5}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fs(I)F
 
     move-result v4
 
@@ -302,7 +302,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qw()I
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fq()I
 
     move-result v4
 
@@ -314,7 +314,7 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qt()[I
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fn()[I
 
     move-result-object v2
 
@@ -324,7 +324,7 @@
 
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->qt()[I
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->fn()[I
 
     move-result-object v4
 
@@ -380,7 +380,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/a;->pI(Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/a;->eC(Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

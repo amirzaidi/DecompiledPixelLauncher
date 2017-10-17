@@ -10,58 +10,58 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class GestureEvent extends AbstractSafeParcelable
 {
     public static final g CREATOR;
-    private final boolean CA;
-    private final int CB;
-    private final long CC;
-    private final long CD;
-    private final int CE;
-    private final int CF;
-    private final boolean Cz;
+    private final boolean Ee;
+    private final boolean Ef;
+    private final int Eg;
+    private final long Eh;
+    private final long Ei;
+    private final int Ej;
+    private final int Ek;
     
     static {
         CREATOR = new g();
     }
     
-    GestureEvent(final int cb, final int cf, final long cc, final long cd, final int ce, final boolean ca, final boolean cz) {
-        this.CB = cb;
-        this.CF = cf;
-        this.CC = cc;
-        this.CD = cd;
-        this.CE = ce;
-        this.CA = ca;
-        this.Cz = cz;
+    GestureEvent(final int eg, final int ek, final long eh, final long ei, final int ej, final boolean ef, final boolean ee) {
+        this.Eg = eg;
+        this.Ek = ek;
+        this.Eh = eh;
+        this.Ei = ei;
+        this.Ej = ej;
+        this.Ef = ef;
+        this.Ee = ee;
     }
     
-    public boolean GT() {
-        return this.CA;
+    public boolean HM() {
+        return this.Ef;
     }
     
-    public int GU() {
-        return this.CE;
+    public int HN() {
+        return this.Ej;
     }
     
-    public boolean GV() {
-        return this.Cz;
+    public boolean HO() {
+        return this.Ee;
     }
     
-    public int GW() {
-        return this.CF;
+    public int HP() {
+        return this.Ek;
     }
     
-    public int GX() {
-        return this.CB;
+    public int HQ() {
+        return this.Eg;
     }
     
-    public long GY() {
-        return this.CD;
+    public long HR() {
+        return this.Ei;
     }
     
-    public long GZ() {
-        return this.CC;
+    public long HS() {
+        return this.Eh;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final g creator = GestureEvent.CREATOR;
-        g.Hc(this, parcel, n);
+        g.HV(this, parcel, n);
     }
 }

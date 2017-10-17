@@ -15,59 +15,59 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void Ma(final WriteBatchImpl writeBatchImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, writeBatchImpl.Nb());
-        a.fa(parcel, 2, writeBatchImpl.Na());
-        a.fc(parcel, 3, writeBatchImpl.Nd(), false);
-        a.fc(parcel, 4, writeBatchImpl.Nc(), false);
-        a.fc(parcel, 5, writeBatchImpl.MZ(), false);
-        a.fe(parcel, ey);
+    static void MT(final WriteBatchImpl writeBatchImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, writeBatchImpl.NU());
+        a.hO(parcel, 2, writeBatchImpl.NT());
+        a.hQ(parcel, 3, writeBatchImpl.NW(), false);
+        a.hQ(parcel, 4, writeBatchImpl.NV(), false);
+        a.hQ(parcel, 5, writeBatchImpl.NS(), false);
+        a.hS(parcel, hm);
     }
     
-    public WriteBatchImpl[] LZ(final int n) {
+    public WriteBatchImpl[] MS(final int n) {
         return new WriteBatchImpl[n];
     }
     
-    public WriteBatchImpl Mb(final Parcel parcel) {
-        boolean fx = false;
-        ArrayList fz = null;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        ArrayList fz2 = null;
-        ArrayList fz3 = null;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+    public WriteBatchImpl MU(final Parcel parcel) {
+        boolean il = false;
+        ArrayList in = null;
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        ArrayList in2 = null;
+        ArrayList in3 = null;
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fx = com.google.android.gms.common.internal.safeparcel.b.fX(parcel, fs);
+                    il = com.google.android.gms.common.internal.safeparcel.b.iL(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fz3 = com.google.android.gms.common.internal.safeparcel.b.fZ(parcel, fs, ContextData.CREATOR);
+                    in3 = com.google.android.gms.common.internal.safeparcel.b.iN(parcel, ig, ContextData.CREATOR);
                     continue;
                 }
                 case 4: {
-                    fz2 = com.google.android.gms.common.internal.safeparcel.b.fZ(parcel, fs, Relation.CREATOR);
+                    in2 = com.google.android.gms.common.internal.safeparcel.b.iN(parcel, ig, Relation.CREATOR);
                     continue;
                 }
                 case 5: {
-                    fz = com.google.android.gms.common.internal.safeparcel.b.fZ(parcel, fs, Relation.CREATOR);
+                    in = com.google.android.gms.common.internal.safeparcel.b.iN(parcel, ig, Relation.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new WriteBatchImpl(fn, fx, fz3, fz2, fz);
+        if (parcel.dataPosition() == ix) {
+            return new WriteBatchImpl(ib, il, in3, in2, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

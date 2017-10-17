@@ -14,56 +14,56 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void nX(final ConnectionResult connectionResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, connectionResult.ku);
-        a.fj(parcel, 2, connectionResult.nu());
-        a.eW(parcel, 3, (Parcelable)connectionResult.ny(), n, false);
-        a.fo(parcel, 4, connectionResult.nv(), false);
-        a.fe(parcel, ey);
+    static void qJ(final ConnectionResult connectionResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, connectionResult.nm);
+        a.hX(parcel, 2, connectionResult.qh());
+        a.hK(parcel, 3, (Parcelable)connectionResult.ql(), n, false);
+        a.ic(parcel, 4, connectionResult.qi(), false);
+        a.hS(parcel, hm);
     }
     
-    public ConnectionResult[] nW(final int n) {
+    public ConnectionResult[] qI(final int n) {
         return new ConnectionResult[n];
     }
     
-    public ConnectionResult nY(final Parcel parcel) {
+    public ConnectionResult qK(final Parcel parcel) {
         PendingIntent pendingIntent = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int fn2 = 0;
-        String fq = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int ib2 = 0;
+        String ie = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     break;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     break;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     break;
                 }
                 case 3: {
-                    pendingIntent = (PendingIntent)b.fW(parcel, fs, PendingIntent.CREATOR);
+                    pendingIntent = (PendingIntent)b.iK(parcel, ig, PendingIntent.CREATOR);
                     break;
                 }
                 case 4: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     break;
                 }
             }
-            final String s = fq;
+            final String s = ie;
             pendingIntent = pendingIntent;
-            fq = s;
+            ie = s;
         }
-        if (parcel.dataPosition() == fj) {
-            return new ConnectionResult(fn2, fn, pendingIntent, fq);
+        if (parcel.dataPosition() == ix) {
+            return new ConnectionResult(ib2, ib, pendingIntent, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

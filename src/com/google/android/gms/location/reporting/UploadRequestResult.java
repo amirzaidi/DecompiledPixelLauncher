@@ -11,37 +11,37 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class UploadRequestResult extends AbstractSafeParcelable
 {
     public static final e CREATOR;
-    private final long Bt;
-    private final int Bu;
-    private final int Bv;
+    private final long CY;
+    private final int CZ;
+    private final int Da;
     
     static {
         CREATOR = new e();
     }
     
-    UploadRequestResult(final int bv, final int bu, final long bt) {
-        this.Bv = bv;
-        this.Bu = bu;
-        this.Bt = bt;
+    UploadRequestResult(final int da, final int cz, final long cy) {
+        this.Da = da;
+        this.CZ = cz;
+        this.CY = cy;
     }
     
-    public int Gh() {
-        return this.Bu;
+    public int Ha() {
+        return this.CZ;
     }
     
-    public long Gi() {
-        return this.Bt;
+    public long Hb() {
+        return this.CY;
     }
     
-    int Gj() {
-        return this.Bv;
+    int Hc() {
+        return this.Da;
     }
     
     public boolean equals(final Object o) {
         boolean b = false;
         if (o instanceof UploadRequestResult) {
             final UploadRequestResult uploadRequestResult = (UploadRequestResult)o;
-            if (this.Bt == uploadRequestResult.Bt && this.Bu == uploadRequestResult.Bu) {
+            if (this.CY == uploadRequestResult.CY && this.CZ == uploadRequestResult.CZ) {
                 b = true;
             }
             return b;
@@ -50,15 +50,15 @@ public final class UploadRequestResult extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.Bu, this.Bt);
+        return u.kw(this.CZ, this.CY);
     }
     
     public String toString() {
-        return new StringBuilder(90).append("Result{mVersionCode=").append(this.Bv).append(", mResultCode=").append(this.Bu).append(", mRequestId=").append(this.Bt).append("}").toString();
+        return new StringBuilder(90).append("Result{mVersionCode=").append(this.Da).append(", mResultCode=").append(this.CZ).append(", mRequestId=").append(this.CY).append("}").toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final e creator = UploadRequestResult.CREATOR;
-        e.FW(this, parcel, n);
+        e.GP(this, parcel, n);
     }
 }

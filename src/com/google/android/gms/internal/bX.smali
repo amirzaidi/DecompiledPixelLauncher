@@ -1,121 +1,143 @@
-.class final Lcom/google/android/gms/internal/bX;
-.super Ljava/lang/Thread;
+.class public final Lcom/google/android/gms/internal/bX;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/gms/common/api/k;
+
+
+# static fields
+.field public static final wr:Lcom/google/android/gms/internal/bX;
 
 
 # instance fields
-.field private final we:Ljava/lang/ref/ReferenceQueue;
+.field private final ws:Z
 
-.field private final wf:Landroid/util/SparseArray;
+.field private final wt:Ljava/lang/Long;
 
-.field private final wg:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final wu:Z
+
+.field private final wv:Z
+
+.field private final ww:Ljava/lang/String;
+
+.field private final wx:Ljava/lang/Long;
+
+.field private final wy:Ljava/lang/String;
+
+.field private final wz:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/ref/ReferenceQueue;Landroid/util/SparseArray;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const-string/jumbo v0, "GoogleApiCleanup"
+    new-instance v0, Lcom/google/android/gms/internal/bI;
 
-    invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Lcom/google/android/gms/internal/bI;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bI;->Bn()Lcom/google/android/gms/internal/bX;
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/bX;->wg:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/bX;->we:Ljava/lang/ref/ReferenceQueue;
-
-    iput-object p2, p0, Lcom/google/android/gms/internal/bX;->wf:Landroid/util/SparseArray;
+    sput-object v0, Lcom/google/android/gms/internal/bX;->wr:Lcom/google/android/gms/internal/bX;
 
     return-void
 .end method
 
-.method static synthetic BF(Lcom/google/android/gms/internal/bX;)Ljava/util/concurrent/atomic/AtomicBoolean;
-    .locals 1
+.method private constructor <init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wg:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-object v0
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/bX;->wz:Z
+
+    iput-boolean p2, p0, Lcom/google/android/gms/internal/bX;->wv:Z
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/bX;->ww:Ljava/lang/String;
+
+    iput-boolean p4, p0, Lcom/google/android/gms/internal/bX;->wu:Z
+
+    iput-boolean p6, p0, Lcom/google/android/gms/internal/bX;->ws:Z
+
+    iput-object p5, p0, Lcom/google/android/gms/internal/bX;->wy:Ljava/lang/String;
+
+    iput-object p7, p0, Lcom/google/android/gms/internal/bX;->wt:Ljava/lang/Long;
+
+    iput-object p8, p0, Lcom/google/android/gms/internal/bX;->wx:Ljava/lang/Long;
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;Lcom/google/android/gms/internal/ca;)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p8}, Lcom/google/android/gms/internal/bX;-><init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;)V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public BH()Z
+    .locals 1
 
-    const/4 v3, 0x0
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/bX;->ws:Z
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wg:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return v0
+.end method
 
-    const/4 v1, 0x1
+.method public BI()Ljava/lang/Long;
+    .locals 1
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wx:Ljava/lang/Long;
 
-    const/16 v0, 0xa
+    return-object v0
+.end method
 
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+.method public BJ()Ljava/lang/String;
+    .locals 1
 
-    :goto_0
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wg:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->ww:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    return-object v0
+.end method
 
-    move-result v0
+.method public BK()Z
+    .locals 1
 
-    if-nez v0, :cond_0
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/bX;->wz:Z
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wg:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return v0
+.end method
 
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+.method public BL()Ljava/lang/Long;
+    .locals 1
 
-    :goto_1
-    return-void
+    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wt:Ljava/lang/Long;
 
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->we:Ljava/lang/ref/ReferenceQueue;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/ref/ReferenceQueue;->remove()Ljava/lang/ref/Reference;
+.method public BM()Ljava/lang/String;
+    .locals 1
 
-    move-result-object v0
+    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wy:Ljava/lang/String;
 
-    check-cast v0, Lcom/google/android/gms/internal/cu;
+    return-object v0
+.end method
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/bX;->wf:Landroid/util/SparseArray;
+.method public BN()Z
+    .locals 1
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/cu;->Cg(Lcom/google/android/gms/internal/cu;)I
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/bX;->wv:Z
 
-    move-result v2
+    return v0
+.end method
 
-    invoke-virtual {v1, v2}, Landroid/util/SparseArray;->remove(I)V
+.method public BO()Z
+    .locals 1
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cu;->Ch()V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/bX;->wu:Z
 
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/bX;->wg:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/bX;->wg:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    throw v0
+    return v0
 .end method

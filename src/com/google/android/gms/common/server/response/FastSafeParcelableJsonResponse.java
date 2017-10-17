@@ -12,11 +12,11 @@ public abstract class FastSafeParcelableJsonResponse extends g implements SafePa
         return 0;
     }
     
-    public boolean kd(final String s) {
+    public boolean mR(final String s) {
         return false;
     }
     
-    public Object ke(final String s) {
+    public Object mS(final String s) {
         return null;
     }
 }

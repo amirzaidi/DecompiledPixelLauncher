@@ -14,77 +14,77 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void NE(final UpdateFenceOperation updateFenceOperation, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1, updateFenceOperation.Oq());
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 2, updateFenceOperation.Oo());
-        com.google.android.gms.common.internal.safeparcel.a.eW(parcel, 3, (Parcelable)updateFenceOperation.Op(), n, false);
-        com.google.android.gms.common.internal.safeparcel.a.ff(parcel, 4, updateFenceOperation.Om(), false);
-        com.google.android.gms.common.internal.safeparcel.a.eW(parcel, 5, (Parcelable)updateFenceOperation.getPendingIntent(), n, false);
-        com.google.android.gms.common.internal.safeparcel.a.fo(parcel, 6, updateFenceOperation.Or(), false);
-        com.google.android.gms.common.internal.safeparcel.a.fw(parcel, 7, updateFenceOperation.On());
-        com.google.android.gms.common.internal.safeparcel.a.fw(parcel, 8, updateFenceOperation.Ol());
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void Ox(final UpdateFenceOperation updateFenceOperation, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1, updateFenceOperation.Pj());
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 2, updateFenceOperation.Ph());
+        com.google.android.gms.common.internal.safeparcel.a.hK(parcel, 3, (Parcelable)updateFenceOperation.Pi(), n, false);
+        com.google.android.gms.common.internal.safeparcel.a.hT(parcel, 4, updateFenceOperation.Pf(), false);
+        com.google.android.gms.common.internal.safeparcel.a.hK(parcel, 5, (Parcelable)updateFenceOperation.getPendingIntent(), n, false);
+        com.google.android.gms.common.internal.safeparcel.a.ic(parcel, 6, updateFenceOperation.Pk(), false);
+        com.google.android.gms.common.internal.safeparcel.a.ik(parcel, 7, updateFenceOperation.Pg());
+        com.google.android.gms.common.internal.safeparcel.a.ik(parcel, 8, updateFenceOperation.Pe());
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
-    public UpdateFenceOperation[] NF(final int n) {
+    public UpdateFenceOperation[] Oy(final int n) {
         return new UpdateFenceOperation[n];
     }
     
-    public UpdateFenceOperation NG(final Parcel parcel) {
-        long fl = 0L;
-        int fn = 0;
-        String fq = null;
-        final int fj = b.fJ(parcel);
-        long fl2 = fl;
+    public UpdateFenceOperation Oz(final Parcel parcel) {
+        long iz = 0L;
+        int ib = 0;
+        String ie = null;
+        final int ix = b.ix(parcel);
+        long iz2 = iz;
         PendingIntent pendingIntent = null;
-        IBinder gh = null;
+        IBinder iv = null;
         ContextFenceRegistrationStub contextFenceRegistrationStub = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    contextFenceRegistrationStub = (ContextFenceRegistrationStub)b.fW(parcel, fs, ContextFenceRegistrationStub.CREATOR);
+                    contextFenceRegistrationStub = (ContextFenceRegistrationStub)b.iK(parcel, ig, ContextFenceRegistrationStub.CREATOR);
                     continue;
                 }
                 case 4: {
-                    gh = b.gh(parcel, fs);
+                    iv = b.iV(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    pendingIntent = (PendingIntent)b.fW(parcel, fs, PendingIntent.CREATOR);
+                    pendingIntent = (PendingIntent)b.iK(parcel, ig, PendingIntent.CREATOR);
                     continue;
                 }
                 case 6: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fl2 = b.fL(parcel, fs);
+                    iz2 = b.iz(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new UpdateFenceOperation(fn2, fn, contextFenceRegistrationStub, gh, pendingIntent, fq, fl2, fl);
+        if (parcel.dataPosition() == ix) {
+            return new UpdateFenceOperation(ib2, ib, contextFenceRegistrationStub, iv, pendingIntent, ie, iz2, iz);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

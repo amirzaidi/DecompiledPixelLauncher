@@ -9,14 +9,14 @@ import android.os.IBinder;
 
 class f implements zze
 {
-    private IBinder CG;
+    private IBinder El;
     
-    f(final IBinder cg) {
-        this.CG = cg;
+    f(final IBinder el) {
+        this.El = el;
     }
     
     public IBinder asBinder() {
-        return this.CG;
+        return this.El;
     }
     
     public void onLocationAvailability(final LocationAvailability locationAvailability) {
@@ -32,7 +32,7 @@ class f implements zze
                 obtain.writeInt(1);
                 locationAvailability.writeToParcel(obtain, 0);
             }
-            this.CG.transact(2, obtain, (Parcel)null, 1);
+            this.El.transact(2, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();
@@ -52,7 +52,7 @@ class f implements zze
                 obtain.writeInt(1);
                 locationResult.writeToParcel(obtain, 0);
             }
-            this.CG.transact(1, obtain, (Parcel)null, 1);
+            this.El.transact(1, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();

@@ -16,50 +16,50 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void CM(final AliasedPlacesResult aliasedPlacesResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.eW(parcel, 1, (Parcelable)aliasedPlacesResult.dr(), n, false);
-        a.fc(parcel, 2, aliasedPlacesResult.CG(), false);
-        a.fj(parcel, 1000, aliasedPlacesResult.xI);
-        a.fe(parcel, ey);
+    static void DF(final AliasedPlacesResult aliasedPlacesResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hK(parcel, 1, (Parcelable)aliasedPlacesResult.gV(), n, false);
+        a.hQ(parcel, 2, aliasedPlacesResult.Dz(), false);
+        a.hX(parcel, 1000, aliasedPlacesResult.zn);
+        a.hS(parcel, hm);
     }
     
-    public AliasedPlacesResult[] CN(final int n) {
+    public AliasedPlacesResult[] DG(final int n) {
         return new AliasedPlacesResult[n];
     }
     
-    public AliasedPlacesResult CO(final Parcel parcel) {
+    public AliasedPlacesResult DH(final Parcel parcel) {
         Status status = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        ArrayList fz = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        ArrayList in = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     break;
                 }
                 case 1: {
-                    status = (Status)b.fW(parcel, fs, Status.CREATOR);
+                    status = (Status)b.iK(parcel, ig, Status.CREATOR);
                     break;
                 }
                 case 2: {
-                    fz = b.fZ(parcel, fs, (Parcelable$Creator)AliasedPlace.CREATOR);
+                    in = b.iN(parcel, ig, (Parcelable$Creator)AliasedPlace.CREATOR);
                     break;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     break;
                 }
             }
-            final ArrayList list = fz;
+            final ArrayList list = in;
             status = status;
-            fz = list;
+            in = list;
         }
-        if (parcel.dataPosition() == fj) {
-            return new AliasedPlacesResult(fn, status, fz);
+        if (parcel.dataPosition() == ix) {
+            return new AliasedPlacesResult(ib, status, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

@@ -15,69 +15,69 @@ import java.util.Set;
 public final class NearbyAlertFilter extends AbstractPlaceFilter
 {
     public static final b CREATOR;
-    private final Set zH;
-    final List zI;
-    private final Set zJ;
-    final List zK;
-    private final Set zL;
-    final int zM;
-    final String zN;
-    final List zO;
-    final boolean zP;
+    private final Set Bm;
+    final List Bn;
+    private final Set Bo;
+    final List Bp;
+    private final Set Bq;
+    final int Br;
+    final String Bs;
+    final List Bt;
+    final boolean Bu;
     
     static {
         CREATOR = new b();
     }
     
-    NearbyAlertFilter(final int zm, final List list, final List list2, final List list3, final String zn, final boolean zp) {
-        this.zM = zm;
-        List<Object> zi;
+    NearbyAlertFilter(final int br, final List list, final List list2, final List list3, final String bs, final boolean bu) {
+        this.Br = br;
+        List<Object> bn;
         if (list2 != null) {
-            zi = Collections.unmodifiableList((List<?>)list2);
+            bn = Collections.unmodifiableList((List<?>)list2);
         }
         else {
-            zi = Collections.emptyList();
+            bn = Collections.emptyList();
         }
-        this.zI = zi;
-        List<Object> zo;
+        this.Bn = bn;
+        List<Object> bt;
         if (list3 != null) {
-            zo = Collections.unmodifiableList((List<?>)list3);
+            bt = Collections.unmodifiableList((List<?>)list3);
         }
         else {
-            zo = Collections.emptyList();
+            bt = Collections.emptyList();
         }
-        this.zO = zo;
-        List<Object> zk;
+        this.Bt = bt;
+        List<Object> bp;
         if (list != null) {
-            zk = Collections.unmodifiableList((List<?>)list);
+            bp = Collections.unmodifiableList((List<?>)list);
         }
         else {
-            zk = Collections.emptyList();
+            bp = Collections.emptyList();
         }
-        this.zK = zk;
-        this.zL = AbstractPlaceFilter.Ei(this.zI);
-        this.zJ = AbstractPlaceFilter.Ei(this.zO);
-        this.zH = AbstractPlaceFilter.Ei(this.zK);
-        this.zN = zn;
-        this.zP = zp;
+        this.Bp = bp;
+        this.Bq = AbstractPlaceFilter.Fb(this.Bn);
+        this.Bo = AbstractPlaceFilter.Fb(this.Bt);
+        this.Bm = AbstractPlaceFilter.Fb(this.Bp);
+        this.Bs = bs;
+        this.Bu = bu;
     }
     
-    public static NearbyAlertFilter DW(final Collection collection) {
+    public static NearbyAlertFilter EP(final Collection collection) {
         if (collection != null && !collection.isEmpty()) {
-            return new NearbyAlertFilter(0, AbstractPlaceFilter.Ej(collection), null, null, null, false);
+            return new NearbyAlertFilter(0, AbstractPlaceFilter.Fc(collection), null, null, null, false);
         }
         throw new IllegalArgumentException("NearbyAlertFilters must contain at least oneplace ID to match results with.");
     }
     
-    public static NearbyAlertFilter DY(final Collection collection) {
+    public static NearbyAlertFilter ER(final Collection collection) {
         if (collection != null && !collection.isEmpty()) {
-            return new NearbyAlertFilter(0, null, AbstractPlaceFilter.Ej(collection), null, null, false);
+            return new NearbyAlertFilter(0, null, AbstractPlaceFilter.Fc(collection), null, null, false);
         }
         throw new IllegalArgumentException("NearbyAlertFilters must contain at least oneplace type to match results with.");
     }
     
-    public boolean DX() {
-        return this.zP;
+    public boolean EQ() {
+        return this.Bu;
     }
     
     public boolean equals(final Object o) {
@@ -89,12 +89,12 @@ public final class NearbyAlertFilter extends AbstractPlaceFilter
             return false;
         }
         final NearbyAlertFilter nearbyAlertFilter = (NearbyAlertFilter)o;
-        if (this.zN == null && nearbyAlertFilter.zN != null) {
+        if (this.Bs == null && nearbyAlertFilter.Bs != null) {
             return false;
         }
-        if (this.zL.equals(nearbyAlertFilter.zL) && this.zJ.equals(nearbyAlertFilter.zJ) && this.zH.equals(nearbyAlertFilter.zH)) {
-            if (this.zN == null || this.zN.equals(nearbyAlertFilter.zN)) {
-                if (this.zP == nearbyAlertFilter.DX()) {
+        if (this.Bq.equals(nearbyAlertFilter.Bq) && this.Bo.equals(nearbyAlertFilter.Bo) && this.Bm.equals(nearbyAlertFilter.Bm)) {
+            if (this.Bs == null || this.Bs.equals(nearbyAlertFilter.Bs)) {
+                if (this.Bu == nearbyAlertFilter.EQ()) {
                     return b;
                 }
             }
@@ -104,28 +104,28 @@ public final class NearbyAlertFilter extends AbstractPlaceFilter
     }
     
     public int hashCode() {
-        return u.hI(this.zL, this.zJ, this.zH, this.zN, this.zP);
+        return u.kw(this.Bq, this.Bo, this.Bm, this.Bs, this.Bu);
     }
     
     public String toString() {
-        final n hj = u.hJ(this);
-        if (!this.zL.isEmpty()) {
-            hj.hB("types", this.zL);
+        final n kx = u.kx(this);
+        if (!this.Bq.isEmpty()) {
+            kx.kp("types", this.Bq);
         }
-        if (!this.zH.isEmpty()) {
-            hj.hB("placeIds", this.zH);
+        if (!this.Bm.isEmpty()) {
+            kx.kp("placeIds", this.Bm);
         }
-        if (!this.zJ.isEmpty()) {
-            hj.hB("requestedUserDataTypes", this.zJ);
+        if (!this.Bo.isEmpty()) {
+            kx.kp("requestedUserDataTypes", this.Bo);
         }
-        if (this.zN != null) {
-            hj.hB("chainName", this.zN);
+        if (this.Bs != null) {
+            kx.kp("chainName", this.Bs);
         }
-        hj.hB("Beacon required: ", this.zP);
-        return hj.toString();
+        kx.kp("Beacon required: ", this.Bu);
+        return kx.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.Ea(this, parcel, n);
+        b.ET(this, parcel, n);
     }
 }

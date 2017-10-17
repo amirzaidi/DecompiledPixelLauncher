@@ -6,7 +6,7 @@ package com.google.android.gms.location.reporting;
 
 public class c
 {
-    public static int FT(final int n) {
+    public static int GM(final int n) {
         switch (n) {
             default: {
                 return 1;

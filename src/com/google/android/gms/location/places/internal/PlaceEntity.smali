@@ -10,51 +10,51 @@
 
 
 # instance fields
-.field private final yA:Ljava/lang/String;
+.field private final Aa:Landroid/net/Uri;
 
-.field private final yB:Lcom/google/android/gms/maps/model/LatLng;
+.field private final Ab:I
 
-.field private final yC:Ljava/lang/String;
+.field final Ac:I
 
-.field private final yD:F
+.field private final Ad:Ljava/lang/String;
 
-.field private final yE:Ljava/util/Map;
+.field private final Ae:F
 
-.field private final yF:Landroid/os/Bundle;
+.field private final Af:Ljava/lang/String;
 
-.field private final yG:Lcom/google/android/gms/maps/model/LatLngBounds;
+.field private final Ag:Lcom/google/android/gms/maps/model/LatLng;
 
-.field private final yH:Ljava/util/List;
+.field private final Ah:Ljava/lang/String;
 
-.field private final yI:Ljava/util/TimeZone;
+.field private final Ai:F
 
-.field private final yJ:Ljava/lang/String;
+.field private final Aj:Ljava/util/Map;
 
-.field private final yK:Ljava/lang/String;
+.field private final Ak:Landroid/os/Bundle;
 
-.field private final yL:Z
+.field private final Al:Lcom/google/android/gms/maps/model/LatLngBounds;
 
-.field private final yM:Ljava/util/List;
+.field private final Am:Ljava/util/List;
 
-.field private yN:Ljava/util/Locale;
+.field private final An:Ljava/util/TimeZone;
 
-.field private final yr:Ljava/util/List;
+.field private final Ao:Ljava/lang/String;
 
-.field private final ys:Ljava/lang/String;
+.field private final Ap:Ljava/lang/String;
 
-.field private final yt:J
+.field private final Aq:Z
 
-.field private final yu:Lcom/google/android/gms/location/places/internal/PlaceLocalization;
+.field private final Ar:Ljava/util/List;
 
-.field private final yv:Landroid/net/Uri;
+.field private As:Ljava/util/Locale;
 
-.field private final yw:I
+.field private final zW:Ljava/util/List;
 
-.field final yx:I
+.field private final zX:Ljava/lang/String;
 
-.field private final yy:Ljava/lang/String;
+.field private final zY:J
 
-.field private final yz:F
+.field private final zZ:Lcom/google/android/gms/location/places/internal/PlaceLocalization;
 
 
 # direct methods
@@ -75,17 +75,17 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yx:I
+    iput p1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ac:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yC:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ah:Ljava/lang/String;
 
     invoke-static {p3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yr:Ljava/util/List;
+    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zW:Ljava/util/List;
 
-    iput-object p4, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yM:Ljava/util/List;
+    iput-object p4, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ar:Ljava/util/List;
 
     if-nez p5, :cond_0
 
@@ -94,15 +94,15 @@
     invoke-direct {p5}, Landroid/os/Bundle;-><init>()V
 
     :cond_0
-    iput-object p5, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yF:Landroid/os/Bundle;
+    iput-object p5, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ak:Landroid/os/Bundle;
 
-    iput-object p6, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->ys:Ljava/lang/String;
+    iput-object p6, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zX:Ljava/lang/String;
 
-    iput-object p7, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yJ:Ljava/lang/String;
+    iput-object p7, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ao:Ljava/lang/String;
 
-    iput-object p8, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yK:Ljava/lang/String;
+    iput-object p8, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ap:Ljava/lang/String;
 
-    iput-object p9, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yA:Ljava/lang/String;
+    iput-object p9, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Af:Ljava/lang/String;
 
     if-nez p10, :cond_1
 
@@ -111,15 +111,15 @@
     move-result-object p10
 
     :cond_1
-    iput-object p10, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yH:Ljava/util/List;
+    iput-object p10, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Am:Ljava/util/List;
 
-    iput-object p11, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yB:Lcom/google/android/gms/maps/model/LatLng;
+    iput-object p11, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ag:Lcom/google/android/gms/maps/model/LatLng;
 
-    iput p12, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yD:F
+    iput p12, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ai:F
 
     move-object/from16 v0, p13
 
-    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yG:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Al:Lcom/google/android/gms/maps/model/LatLngBounds;
 
     if-nez p14, :cond_2
 
@@ -128,27 +128,27 @@
     :cond_2
     move-object/from16 v0, p14
 
-    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yy:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ad:Ljava/lang/String;
 
     move-object/from16 v0, p15
 
-    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yv:Landroid/net/Uri;
+    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Aa:Landroid/net/Uri;
 
     move/from16 v0, p16
 
-    iput-boolean v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yL:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Aq:Z
 
     move/from16 v0, p17
 
-    iput v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yz:F
+    iput v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ae:F
 
     move/from16 v0, p18
 
-    iput v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yw:I
+    iput v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ab:I
 
     move-wide/from16 v0, p19
 
-    iput-wide v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yt:J
+    iput-wide v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zY:J
 
     new-instance v2, Ljava/util/HashMap;
 
@@ -158,195 +158,195 @@
 
     move-result-object v2
 
-    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yE:Ljava/util/Map;
+    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Aj:Ljava/util/Map;
 
     const/4 v2, 0x0
 
-    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yI:Ljava/util/TimeZone;
+    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->An:Ljava/util/TimeZone;
 
     const/4 v2, 0x0
 
-    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yN:Ljava/util/Locale;
+    iput-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->As:Ljava/util/Locale;
 
     move-object/from16 v0, p21
 
-    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yu:Lcom/google/android/gms/location/places/internal/PlaceLocalization;
+    iput-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zZ:Lcom/google/android/gms/location/places/internal/PlaceLocalization;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Di()F
+.method public Eb()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yz:F
+    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ae:F
 
     return v0
 .end method
 
-.method public Dj()Ljava/lang/String;
+.method public Ec()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yA:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Af:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Dk()Landroid/net/Uri;
+.method public Ed()Landroid/net/Uri;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yv:Landroid/net/Uri;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Aa:Landroid/net/Uri;
 
     return-object v0
 .end method
 
-.method public Dl()Lcom/google/android/gms/maps/model/LatLngBounds;
+.method public Ee()Lcom/google/android/gms/maps/model/LatLngBounds;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yG:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Al:Lcom/google/android/gms/maps/model/LatLngBounds;
 
     return-object v0
 .end method
 
-.method public Dm()Ljava/util/List;
+.method public Ef()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yM:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ar:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public Dn()Lcom/google/android/gms/location/places/internal/PlaceLocalization;
+.method public Eg()Lcom/google/android/gms/location/places/internal/PlaceLocalization;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yu:Lcom/google/android/gms/location/places/internal/PlaceLocalization;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zZ:Lcom/google/android/gms/location/places/internal/PlaceLocalization;
 
     return-object v0
 .end method
 
-.method public bridge synthetic Do()Ljava/lang/CharSequence;
+.method public bridge synthetic Eh()Ljava/lang/CharSequence;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Do()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Eh()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public Do()Ljava/lang/String;
+.method public Eh()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->ys:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zX:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Dp()I
+.method public Ei()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yw:I
+    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ab:I
 
     return v0
 .end method
 
-.method public bridge synthetic Dq()Ljava/lang/CharSequence;
+.method public bridge synthetic Ej()Ljava/lang/CharSequence;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Dq()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ej()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public Dq()Ljava/lang/String;
+.method public Ej()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yK:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ap:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Dr()Ljava/lang/String;
+.method public Ek()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yy:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ad:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public bridge synthetic Ds()Ljava/lang/CharSequence;
+.method public bridge synthetic El()Ljava/lang/CharSequence;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ds()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->El()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public Ds()Ljava/lang/String;
+.method public El()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yJ:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ao:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Dt()Ljava/util/List;
+.method public Em()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yr:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zW:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public Du()Ljava/util/List;
+.method public En()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yH:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Am:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public Dv()F
+.method public Eo()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yD:F
+    iget v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ai:F
 
     return v0
 .end method
 
-.method public Dw()J
+.method public Ep()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yt:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zY:J
 
     return-wide v0
 .end method
 
-.method public Dx()Landroid/os/Bundle;
+.method public Eq()Landroid/os/Bundle;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yF:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ak:Landroid/os/Bundle;
 
     return-object v0
 .end method
 
-.method public Dy()Z
+.method public Er()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yL:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Aq:Z
 
     return v0
 .end method
 
-.method public Dz()Lcom/google/android/gms/maps/model/LatLng;
+.method public Es()Lcom/google/android/gms/maps/model/LatLng;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yB:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ag:Lcom/google/android/gms/maps/model/LatLng;
 
     return-object v0
 .end method
@@ -366,9 +366,9 @@
 
     check-cast p1, Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
-    iget-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yC:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ah:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yC:Ljava/lang/String;
+    iget-object v3, p1, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ah:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -389,19 +389,19 @@
     return v1
 
     :cond_3
-    iget-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yN:Ljava/util/Locale;
+    iget-object v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->As:Ljava/util/Locale;
 
-    iget-object v3, p1, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yN:Ljava/util/Locale;
+    iget-object v3, p1, Lcom/google/android/gms/location/places/internal/PlaceEntity;->As:Ljava/util/Locale;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yt:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zY:J
 
-    iget-wide v4, p1, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yt:J
+    iget-wide v4, p1, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zY:J
 
     cmp-long v2, v2, v4
 
@@ -413,7 +413,7 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yC:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ah:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -425,19 +425,19 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yC:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ah:Ljava/lang/String;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yN:Ljava/util/Locale;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->As:Ljava/util/Locale;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yt:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zY:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -447,7 +447,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -457,83 +457,83 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->hJ(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->kx(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yC:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ah:Ljava/lang/String;
 
     const-string/jumbo v2, "id"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yr:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zW:Ljava/util/List;
 
     const-string/jumbo v2, "placeTypes"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yN:Ljava/util/Locale;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->As:Ljava/util/Locale;
 
     const-string/jumbo v2, "locale"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->ys:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zX:Ljava/lang/String;
 
     const-string/jumbo v2, "name"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yJ:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ao:Ljava/lang/String;
 
     const-string/jumbo v2, "address"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yK:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ap:Ljava/lang/String;
 
     const-string/jumbo v2, "phoneNumber"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yB:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ag:Lcom/google/android/gms/maps/model/LatLng;
 
     const-string/jumbo v2, "latlng"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yG:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Al:Lcom/google/android/gms/maps/model/LatLngBounds;
 
     const-string/jumbo v2, "viewport"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yv:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Aa:Landroid/net/Uri;
 
     const-string/jumbo v2, "websiteUri"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yL:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Aq:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -541,11 +541,11 @@
 
     const-string/jumbo v2, "isPermanentlyClosed"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yw:I
+    iget v1, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->Ab:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -553,11 +553,11 @@
 
     const-string/jumbo v2, "priceLevel"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->yt:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/places/internal/PlaceEntity;->zY:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -565,7 +565,7 @@
 
     const-string/jumbo v2, "timestampSecs"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
@@ -579,7 +579,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/internal/i;->DF(Lcom/google/android/gms/location/places/internal/PlaceEntity;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/internal/i;->Ey(Lcom/google/android/gms/location/places/internal/PlaceEntity;Landroid/os/Parcel;I)V
 
     return-void
 .end method

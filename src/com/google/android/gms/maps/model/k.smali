@@ -14,46 +14,46 @@
     return-void
 .end method
 
-.method static Jn(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
+.method static Kg(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/LatLng;->JY()I
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/LatLng;->KR()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->EU:D
+    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->Gz:D
 
     const/4 v1, 0x2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fq(Landroid/os/Parcel;ID)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ie(Landroid/os/Parcel;ID)V
 
-    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->EV:D
+    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->GA:D
 
     const/4 v1, 0x3
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fq(Landroid/os/Parcel;ID)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ie(Landroid/os/Parcel;ID)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Jo(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
+.method public Kh(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
     .locals 8
 
     const-wide/16 v4, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -81,36 +81,36 @@
     return-object v0
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v6
 
-    invoke-static {v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v7
 
     packed-switch v7, :pswitch_data_0
 
-    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v1
 
     goto :goto_0
 
     :pswitch_1
-    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->gb(Landroid/os/Parcel;I)D
+    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->iP(Landroid/os/Parcel;I)D
 
     move-result-wide v2
 
     goto :goto_0
 
     :pswitch_2
-    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->gb(Landroid/os/Parcel;I)D
+    invoke-static {p1, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->iP(Landroid/os/Parcel;I)D
 
     move-result-wide v4
 
@@ -151,7 +151,7 @@
     .end packed-switch
 .end method
 
-.method public Jp(I)[Lcom/google/android/gms/maps/model/LatLng;
+.method public Ki(I)[Lcom/google/android/gms/maps/model/LatLng;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/maps/model/LatLng;
@@ -162,7 +162,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/k;->Jo(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/k;->Kh(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v0
 
@@ -172,7 +172,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/k;->Jp(I)[Lcom/google/android/gms/maps/model/LatLng;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/k;->Ki(I)[Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v0
 

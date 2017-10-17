@@ -11,10 +11,10 @@
     return-void
 .end method
 
-.method public static FX(I)I
+.method public static GQ(I)I
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/location/reporting/d;->FV(I)I
+    invoke-static {p0}, Lcom/google/android/gms/location/reporting/d;->GO(I)I
 
     move-result v0
 

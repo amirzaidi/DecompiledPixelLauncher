@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class j implements Parcelable$Creator
 {
-    static void MW(final TimeFilterImpl$Interval timeFilterImpl$Interval, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, timeFilterImpl$Interval.Ni());
-        a.fw(parcel, 2, timeFilterImpl$Interval.Nj());
-        a.fw(parcel, 3, timeFilterImpl$Interval.Nh());
-        a.fe(parcel, ey);
+    static void NP(final TimeFilterImpl$Interval timeFilterImpl$Interval, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, timeFilterImpl$Interval.Ob());
+        a.ik(parcel, 2, timeFilterImpl$Interval.Oc());
+        a.ik(parcel, 3, timeFilterImpl$Interval.Oa());
+        a.hS(parcel, hm);
     }
     
-    public TimeFilterImpl$Interval MX(final Parcel parcel) {
-        long fl = 0L;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        long fl2 = fl;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public TimeFilterImpl$Interval NQ(final Parcel parcel) {
+        long iz = 0L;
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        long iz2 = iz;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fl2 = b.fL(parcel, fs);
+                    iz2 = b.iz(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new TimeFilterImpl$Interval(fn, fl2, fl);
+        if (parcel.dataPosition() == ix) {
+            return new TimeFilterImpl$Interval(ib, iz2, iz);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public TimeFilterImpl$Interval[] MY(final int n) {
+    public TimeFilterImpl$Interval[] NR(final int n) {
         return new TimeFilterImpl$Interval[n];
     }
 }

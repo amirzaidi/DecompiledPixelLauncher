@@ -3,14 +3,14 @@
 
 
 # instance fields
-.field private AO:Landroid/os/Handler;
+.field private CB:Landroid/os/Handler;
 
 
 # virtual methods
 .method public onLocationChanged(Landroid/location/Location;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/location/internal/k;->AO:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/google/android/gms/location/internal/k;->CB:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
@@ -24,7 +24,7 @@
 
     iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/android/gms/location/internal/k;->AO:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/google/android/gms/location/internal/k;->CB:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 

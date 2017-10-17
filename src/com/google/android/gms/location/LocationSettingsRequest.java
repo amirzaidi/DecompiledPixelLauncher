@@ -13,39 +13,39 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class LocationSettingsRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final boolean CR;
-    private final int CS;
-    private final boolean CT;
-    private final List CU;
+    private final boolean Ew;
+    private final int Ex;
+    private final boolean Ey;
+    private final List Ez;
     
     static {
         CREATOR = (Parcelable$Creator)new m();
     }
     
-    LocationSettingsRequest(final int cs, final List cu, final boolean ct, final boolean cr) {
-        this.CS = cs;
-        this.CU = cu;
-        this.CT = ct;
-        this.CR = cr;
+    LocationSettingsRequest(final int ex, final List ez, final boolean ey, final boolean ew) {
+        this.Ex = ex;
+        this.Ez = ez;
+        this.Ey = ey;
+        this.Ew = ew;
     }
     
-    public boolean Hw() {
-        return this.CT;
+    public boolean Ip() {
+        return this.Ey;
     }
     
-    public boolean Hx() {
-        return this.CR;
+    public boolean Iq() {
+        return this.Ew;
     }
     
-    public List Hy() {
-        return Collections.unmodifiableList((List<?>)this.CU);
+    public List Ir() {
+        return Collections.unmodifiableList((List<?>)this.Ez);
     }
     
-    public int Hz() {
-        return this.CS;
+    public int Is() {
+        return this.Ex;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        m.HC(this, parcel, n);
+        m.Iv(this, parcel, n);
     }
 }

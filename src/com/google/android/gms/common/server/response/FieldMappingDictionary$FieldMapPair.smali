@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field final hC:I
+.field final ku:I
 
-.field final hD:Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
+.field final kv:Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
 
-.field final hE:Ljava/lang/String;
+.field final kw:Ljava/lang/String;
 
 
 # direct methods
@@ -32,11 +32,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->hC:I
+    iput p1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->ku:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->hE:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->kw:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->hD:Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
+    iput-object p3, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->kv:Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
 
     return-void
 .end method
@@ -48,11 +48,11 @@
 
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->hC:I
+    iput v0, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->ku:I
 
-    iput-object p1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->hE:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->kw:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->hD:Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
+    iput-object p2, p0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->kv:Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
 
     return-void
 .end method
@@ -64,7 +64,7 @@
 
     sget-object v0, Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;->CREATOR:Lcom/google/android/gms/common/server/response/a;
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/response/a;->kw(Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/response/a;->nk(Lcom/google/android/gms/common/server/response/FieldMappingDictionary$FieldMapPair;Landroid/os/Parcel;I)V
 
     return-void
 .end method

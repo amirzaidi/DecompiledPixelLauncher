@@ -8,34 +8,34 @@ import android.os.Parcel;
 import java.util.Iterator;
 import android.location.Location;
 import java.util.Collections;
-import android.os.Parcelable$Creator;
 import java.util.List;
+import android.os.Parcelable$Creator;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public final class LocationResult extends AbstractSafeParcelable implements ReflectedParcelable
 {
-    static final List CJ;
     public static final Parcelable$Creator CREATOR;
-    private final List CH;
-    private final int CI;
+    static final List Eo;
+    private final List Em;
+    private final int En;
     
     static {
-        CJ = Collections.emptyList();
+        Eo = Collections.emptyList();
         CREATOR = (Parcelable$Creator)new t();
     }
     
-    LocationResult(final int ci, final List ch) {
-        this.CI = ci;
-        this.CH = ch;
+    LocationResult(final int en, final List em) {
+        this.En = en;
+        this.Em = em;
     }
     
-    public List Hd() {
-        return this.CH;
+    public List HW() {
+        return this.Em;
     }
     
-    int He() {
-        return this.CI;
+    int HX() {
+        return this.En;
     }
     
     public boolean equals(final Object o) {
@@ -43,9 +43,9 @@ public final class LocationResult extends AbstractSafeParcelable implements Refl
             return false;
         }
         final LocationResult locationResult = (LocationResult)o;
-        if (locationResult.CH.size() == this.CH.size()) {
-            final Iterator iterator = locationResult.CH.iterator();
-            final Iterator<Location> iterator2 = this.CH.iterator();
+        if (locationResult.Em.size() == this.Em.size()) {
+            final Iterator iterator = locationResult.Em.iterator();
+            final Iterator<Location> iterator2 = this.Em.iterator();
             while (iterator.hasNext()) {
                 if (iterator2.next().getTime() != iterator.next().getTime()) {
                     return false;
@@ -58,7 +58,7 @@ public final class LocationResult extends AbstractSafeParcelable implements Refl
     
     public int hashCode() {
         final int n = 17;
-        final Iterator<Location> iterator = (Iterator<Location>)this.CH.iterator();
+        final Iterator<Location> iterator = (Iterator<Location>)this.Em.iterator();
         int n2 = n;
         while (iterator.hasNext()) {
             final long time = iterator.next().getTime();
@@ -68,11 +68,11 @@ public final class LocationResult extends AbstractSafeParcelable implements Refl
     }
     
     public String toString() {
-        final String value = String.valueOf(this.CH);
+        final String value = String.valueOf(this.Em);
         return new StringBuilder(String.valueOf(value).length() + 27).append("LocationResult[locations: ").append(value).append("]").toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        t.Ih(this, parcel, n);
+        t.Ja(this, parcel, n);
     }
 }

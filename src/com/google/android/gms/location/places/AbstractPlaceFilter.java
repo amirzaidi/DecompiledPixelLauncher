@@ -14,14 +14,14 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public abstract class AbstractPlaceFilter extends AbstractSafeParcelable
 {
-    static Set Ei(final List list) {
+    static Set Fb(final List list) {
         if (list != null && !list.isEmpty()) {
             return Collections.unmodifiableSet((Set<?>)new HashSet<Object>(list));
         }
         return Collections.emptySet();
     }
     
-    static List Ej(final Collection collection) {
+    static List Fc(final Collection collection) {
         if (collection != null && !collection.isEmpty()) {
             return new ArrayList(collection);
         }

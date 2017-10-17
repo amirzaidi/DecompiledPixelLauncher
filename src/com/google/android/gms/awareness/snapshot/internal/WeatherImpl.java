@@ -5,100 +5,100 @@
 package com.google.android.gms.awareness.snapshot.internal;
 
 import android.os.Parcel;
-import com.google.android.gms.internal.P;
+import com.google.android.gms.internal.J;
 import android.os.Parcelable$Creator;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public class WeatherImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final float mI;
-    private final float mJ;
-    private final int[] mK;
-    private final int mL;
-    private final float mM;
-    private final int mN;
+    private final float gf;
+    private final float gg;
+    private final int[] gh;
+    private final int gi;
+    private final float gj;
+    private final int gk;
     
     static {
         CREATOR = (Parcelable$Creator)new a();
     }
     
-    WeatherImpl(final int ml, final float mj, final float mm, final float mi, final int mn, final int[] mk) {
-        this.mL = ml;
-        this.mJ = mj;
-        this.mM = mm;
-        this.mI = mi;
-        this.mN = mn;
-        this.mK = mk;
+    WeatherImpl(final int gi, final float gg, final float gj, final float gf, final int gk, final int[] gh) {
+        this.gi = gi;
+        this.gg = gg;
+        this.gj = gj;
+        this.gf = gf;
+        this.gk = gk;
+        this.gh = gh;
     }
     
-    static float qo(final int n, final float n2) {
+    static float fi(final int n, final float n2) {
         switch (n) {
             default: {
-                P.ti("WeatherImpl", "Invalid temperature unit %s", n);
+                J.th("WeatherImpl", "Invalid temperature unit %s", n);
                 throw new IllegalArgumentException("Invalid temperature unit");
             }
             case 1: {
                 return n2;
             }
             case 2: {
-                return qp(n2);
+                return fj(n2);
             }
         }
     }
     
-    private static float qp(final float n) {
+    private static float fj(final float n) {
         return (n - 32.0f) * 5.0f / 9.0f;
     }
     
-    public float qq(final int n) {
-        return qo(n, this.mJ);
+    public float fk(final int n) {
+        return fi(n, this.gg);
     }
     
-    public float qr() {
-        return this.mJ;
+    public float fl() {
+        return this.gg;
     }
     
-    public float qs(final int n) {
-        return qo(n, this.mM);
+    public float fm(final int n) {
+        return fi(n, this.gj);
     }
     
-    public int[] qt() {
-        return this.mK;
+    public int[] fn() {
+        return this.gh;
     }
     
-    public float qu() {
-        return this.mI;
+    public float fo() {
+        return this.gf;
     }
     
-    public float qv() {
-        return this.mM;
+    public float fp() {
+        return this.gj;
     }
     
-    public int qw() {
-        return this.mN;
+    public int fq() {
+        return this.gk;
     }
     
-    int qx() {
-        return this.mL;
+    int fr() {
+        return this.gi;
     }
     
-    public float qy(final int n) {
-        return qo(n, this.mI);
+    public float fs(final int n) {
+        return fi(n, this.gf);
     }
     
     public String toString() {
         final int n = 2;
         final int n2 = 1;
         final StringBuilder sb = new StringBuilder();
-        sb.append("Temp=").append(this.qq(n2)).append("F/").append(this.qq(n)).append("C, Feels=").append(this.qs(n2)).append("F/").append(this.qs(n)).append("C, Dew=").append(this.qy(n2)).append("F/").append(this.qy(n)).append("C, Humidity=").append(this.qw()).append(", Condition=");
-        if (this.qt() != null) {
+        sb.append("Temp=").append(this.fk(n2)).append("F/").append(this.fk(n)).append("C, Feels=").append(this.fm(n2)).append("F/").append(this.fm(n)).append("C, Dew=").append(this.fs(n2)).append("F/").append(this.fs(n)).append("C, Humidity=").append(this.fq()).append(", Condition=");
+        if (this.fn() != null) {
             sb.append("[");
-            final int[] qt = this.qt();
-            final int length = qt.length;
+            final int[] fn = this.fn();
+            final int length = fn.length;
             int n3 = n2;
             for (int i = 0; i < length; ++i, n3 = 0) {
-                final int n4 = qt[i];
+                final int n4 = fn[i];
                 if (n3 == 0) {
                     sb.append(",");
                 }
@@ -113,6 +113,6 @@ public class WeatherImpl extends AbstractSafeParcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        a.pI(this, parcel, n);
+        a.eC(this, parcel, n);
     }
 }

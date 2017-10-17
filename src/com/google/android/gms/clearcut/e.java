@@ -6,5 +6,5 @@ package com.google.android.gms.clearcut;
 
 public interface e
 {
-    byte[] LI();
+    byte[] MB();
 }

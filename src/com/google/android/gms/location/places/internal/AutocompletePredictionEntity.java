@@ -14,34 +14,34 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class AutocompletePredictionEntity extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private static final List yf;
-    final String xV;
-    final List xW;
-    final List xX;
-    final int xY;
-    final String xZ;
-    final String ya;
-    final int yb;
-    final String yc;
-    final List yd;
-    final List ye;
+    private static final List zK;
+    final String zA;
+    final List zB;
+    final List zC;
+    final int zD;
+    final String zE;
+    final String zF;
+    final int zG;
+    final String zH;
+    final List zI;
+    final List zJ;
     
     static {
         CREATOR = (Parcelable$Creator)new h();
-        yf = Collections.emptyList();
+        zK = Collections.emptyList();
     }
     
-    AutocompletePredictionEntity(final int yb, final String yc, final List xw, final int xy, final String xz, final List ye, final String xv, final List yd, final String ya, final List xx) {
-        this.yb = yb;
-        this.yc = yc;
-        this.xW = xw;
-        this.xY = xy;
-        this.xZ = xz;
-        this.ye = ye;
-        this.xV = xv;
-        this.yd = yd;
-        this.ya = ya;
-        this.xX = xx;
+    AutocompletePredictionEntity(final int zg, final String zh, final List zb, final int zd, final String ze, final List zj, final String za, final List zi, final String zf, final List zc) {
+        this.zG = zg;
+        this.zH = zh;
+        this.zB = zb;
+        this.zD = zd;
+        this.zE = ze;
+        this.zJ = zj;
+        this.zA = za;
+        this.zI = zi;
+        this.zF = zf;
+        this.zC = zc;
     }
     
     public boolean equals(final Object o) {
@@ -51,7 +51,7 @@ public class AutocompletePredictionEntity extends AbstractSafeParcelable
         }
         if (o instanceof AutocompletePredictionEntity) {
             final AutocompletePredictionEntity autocompletePredictionEntity = (AutocompletePredictionEntity)o;
-            if (!u.hH(this.yc, autocompletePredictionEntity.yc) || !u.hH(this.xW, autocompletePredictionEntity.xW) || !u.hH(this.xY, autocompletePredictionEntity.xY) || !u.hH(this.xZ, autocompletePredictionEntity.xZ) || !u.hH(this.ye, autocompletePredictionEntity.ye) || !u.hH(this.xV, autocompletePredictionEntity.xV) || !u.hH(this.yd, autocompletePredictionEntity.yd) || !u.hH(this.ya, autocompletePredictionEntity.ya) || !u.hH(this.xX, autocompletePredictionEntity.xX)) {
+            if (!u.kv(this.zH, autocompletePredictionEntity.zH) || !u.kv(this.zB, autocompletePredictionEntity.zB) || !u.kv(this.zD, autocompletePredictionEntity.zD) || !u.kv(this.zE, autocompletePredictionEntity.zE) || !u.kv(this.zJ, autocompletePredictionEntity.zJ) || !u.kv(this.zA, autocompletePredictionEntity.zA) || !u.kv(this.zI, autocompletePredictionEntity.zI) || !u.kv(this.zF, autocompletePredictionEntity.zF) || !u.kv(this.zC, autocompletePredictionEntity.zC)) {
                 b = false;
             }
             return b;
@@ -60,14 +60,14 @@ public class AutocompletePredictionEntity extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.yc, this.xW, this.xY, this.xZ, this.ye, this.xV, this.yd, this.ya, this.xX);
+        return u.kw(this.zH, this.zB, this.zD, this.zE, this.zJ, this.zA, this.zI, this.zF, this.zC);
     }
     
     public String toString() {
-        return u.hJ(this).hB("placeId", this.yc).hB("placeTypes", this.xW).hB("fullText", this.xZ).hB("fullTextMatchedSubstrings", this.ye).hB("primaryText", this.xV).hB("primaryTextMatchedSubstrings", this.yd).hB("secondaryText", this.ya).hB("secondaryTextMatchedSubstrings", this.xX).toString();
+        return u.kx(this).kp("placeId", this.zH).kp("placeTypes", this.zB).kp("fullText", this.zE).kp("fullTextMatchedSubstrings", this.zJ).kp("primaryText", this.zA).kp("primaryTextMatchedSubstrings", this.zI).kp("secondaryText", this.zF).kp("secondaryTextMatchedSubstrings", this.zC).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.DC(this, parcel, n);
+        h.Ev(this, parcel, n);
     }
 }

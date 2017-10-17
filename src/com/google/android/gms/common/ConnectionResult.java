@@ -13,14 +13,14 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class ConnectionResult extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    public static final ConnectionResult ks;
-    private final PendingIntent kt;
-    final int ku;
-    private final String kv;
-    private final int kw;
+    public static final ConnectionResult nk;
+    private final PendingIntent nl;
+    final int nm;
+    private final String nn;
+    private final int no;
     
     static {
-        ks = new ConnectionResult(0);
+        nk = new ConnectionResult(0);
         CREATOR = (Parcelable$Creator)new h();
     }
     
@@ -28,11 +28,11 @@ public final class ConnectionResult extends AbstractSafeParcelable
         this(n, null, null);
     }
     
-    ConnectionResult(final int ku, final int kw, final PendingIntent kt, final String kv) {
-        this.ku = ku;
-        this.kw = kw;
-        this.kt = kt;
-        this.kv = kv;
+    ConnectionResult(final int nm, final int no, final PendingIntent nl, final String nn) {
+        this.nm = nm;
+        this.no = no;
+        this.nl = nl;
+        this.nn = nn;
     }
     
     public ConnectionResult(final int n, final PendingIntent pendingIntent) {
@@ -43,7 +43,7 @@ public final class ConnectionResult extends AbstractSafeParcelable
         this(1, n, pendingIntent, s);
     }
     
-    static String nt(final int n) {
+    static String qg(final int n) {
         switch (n) {
             default: {
                 return new StringBuilder(31).append("UNKNOWN_ERROR_CODE(").append(n).append(")").toString();
@@ -133,7 +133,7 @@ public final class ConnectionResult extends AbstractSafeParcelable
         }
         if (o instanceof ConnectionResult) {
             final ConnectionResult connectionResult = (ConnectionResult)o;
-            if (this.kw != connectionResult.kw || !u.hH(this.kt, connectionResult.kt) || u.hH(this.kv, connectionResult.kv)) {
+            if (this.no != connectionResult.no || !u.kv(this.nl, connectionResult.nl) || u.kv(this.nn, connectionResult.nn)) {
                 b = false;
             }
             return b;
@@ -142,42 +142,42 @@ public final class ConnectionResult extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.kw, this.kt, this.kv);
+        return u.kw(this.no, this.nl, this.nn);
     }
     
-    public int nu() {
-        return this.kw;
+    public int qh() {
+        return this.no;
     }
     
-    public String nv() {
-        return this.kv;
+    public String qi() {
+        return this.nn;
     }
     
-    public boolean nw() {
+    public boolean qj() {
         boolean b = false;
-        if (this.kw == 0) {
+        if (this.no == 0) {
             b = true;
         }
         return b;
     }
     
-    public boolean nx() {
+    public boolean qk() {
         boolean b = false;
-        if (this.kw != 0 && this.kt != null) {
+        if (this.no != 0 && this.nl != null) {
             b = true;
         }
         return b;
     }
     
-    public PendingIntent ny() {
-        return this.kt;
+    public PendingIntent ql() {
+        return this.nl;
     }
     
     public String toString() {
-        return u.hJ(this).hB("statusCode", nt(this.kw)).hB("resolution", this.kt).hB("message", this.kv).toString();
+        return u.kx(this).kp("statusCode", qg(this.no)).kp("resolution", this.nl).kp("message", this.nn).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.nX(this, parcel, n);
+        h.qJ(this, parcel, n);
     }
 }

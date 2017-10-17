@@ -4,61 +4,56 @@
 
 package com.google.android.gms.common.api;
 
-public class A
+import com.google.android.gms.internal.d;
+import com.google.android.gms.internal.b;
+import android.os.Looper;
+import android.content.Context;
+import java.io.PrintWriter;
+import java.io.FileDescriptor;
+import java.util.Map;
+import java.util.Collections;
+import java.util.WeakHashMap;
+import java.util.Set;
+
+public abstract class a
 {
-    public static String eG(final int n) {
-        switch (n) {
-            default: {
-                return new StringBuilder(32).append("unknown status code: ").append(n).toString();
-            }
-            case -1: {
-                return "SUCCESS_CACHE";
-            }
-            case 0: {
-                return "SUCCESS";
-            }
-            case 2: {
-                return "SERVICE_VERSION_UPDATE_REQUIRED";
-            }
-            case 3: {
-                return "SERVICE_DISABLED";
-            }
-            case 4: {
-                return "SIGN_IN_REQUIRED";
-            }
-            case 5: {
-                return "INVALID_ACCOUNT";
-            }
-            case 6: {
-                return "RESOLUTION_REQUIRED";
-            }
-            case 7: {
-                return "NETWORK_ERROR";
-            }
-            case 8: {
-                return "INTERNAL_ERROR";
-            }
-            case 10: {
-                return "DEVELOPER_ERROR";
-            }
-            case 13: {
-                return "ERROR";
-            }
-            case 14: {
-                return "INTERRUPTED";
-            }
-            case 15: {
-                return "TIMEOUT";
-            }
-            case 16: {
-                return "CANCELED";
-            }
-            case 17: {
-                return "API_NOT_CONNECTED";
-            }
-            case 18: {
-                return "DEAD_CLIENT";
-            }
-        }
+    private static final Set gJ;
+    
+    static {
+        gJ = Collections.newSetFromMap(new WeakHashMap<Object, Boolean>());
+    }
+    
+    public abstract void dump(final String p0, final FileDescriptor p1, final PrintWriter p2, final String[] p3);
+    
+    public Context getContext() {
+        throw new UnsupportedOperationException();
+    }
+    
+    public Looper gf() {
+        throw new UnsupportedOperationException();
+    }
+    
+    public abstract void gg();
+    
+    public abstract void gh(final c p0);
+    
+    public abstract void gi();
+    
+    public b gj(final b b) {
+        throw new UnsupportedOperationException();
+    }
+    
+    public abstract void gk(final c p0);
+    
+    public g gl(final h h) {
+        throw new UnsupportedOperationException();
+    }
+    
+    public void gm(final d d) {
+        throw new UnsupportedOperationException();
+    }
+    
+    public void gn(final d d) {
+        throw new UnsupportedOperationException();
     }
 }

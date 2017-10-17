@@ -1,18 +1,29 @@
 .class Lcom/google/android/gms/internal/aB;
-.super Ljava/lang/Thread;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic sn:Landroid/content/ContentResolver;
+.field final synthetic sE:Lcom/google/android/gms/internal/aD;
+
+.field final synthetic sF:Lcom/google/android/gms/internal/ba;
+
+.field final synthetic sG:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Landroid/content/ContentResolver;)V
+.method constructor <init>(Lcom/google/android/gms/internal/ba;Lcom/google/android/gms/internal/aD;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/aB;->sn:Landroid/content/ContentResolver;
+    iput-object p1, p0, Lcom/google/android/gms/internal/aB;->sF:Lcom/google/android/gms/internal/ba;
 
-    invoke-direct {p0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    iput-object p2, p0, Lcom/google/android/gms/internal/aB;->sE:Lcom/google/android/gms/internal/aD;
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/aB;->sG:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -20,31 +31,87 @@
 
 # virtual methods
 .method public run()V
-    .locals 5
+    .locals 3
 
-    invoke-static {}, Landroid/os/Looper;->prepare()V
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/aB;->sn:Landroid/content/ContentResolver;
+    iget-object v1, p0, Lcom/google/android/gms/internal/aB;->sF:Lcom/google/android/gms/internal/ba;
 
-    sget-object v1, Lcom/google/android/gms/internal/aY;->CONTENT_URI:Landroid/net/Uri;
+    invoke-static {v1}, Lcom/google/android/gms/internal/ba;->ym(Lcom/google/android/gms/internal/ba;)I
 
-    new-instance v2, Lcom/google/android/gms/internal/bd;
+    move-result v1
 
-    new-instance v3, Landroid/os/Handler;
+    const/4 v2, 0x1
 
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    if-ge v1, v2, :cond_0
 
-    move-result-object v4
+    :goto_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/aB;->sF:Lcom/google/android/gms/internal/ba;
 
-    invoke-direct {v3, v4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-static {v0}, Lcom/google/android/gms/internal/ba;->ym(Lcom/google/android/gms/internal/ba;)I
 
-    invoke-direct {v2, p0, v3}, Lcom/google/android/gms/internal/bd;-><init>(Lcom/google/android/gms/internal/aB;Landroid/os/Handler;)V
+    move-result v0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x2
 
-    invoke-virtual {v0, v1, v3, v2}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
+    if-ge v0, v1, :cond_2
 
-    invoke-static {}, Landroid/os/Looper;->loop()V
+    :goto_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/aB;->sF:Lcom/google/android/gms/internal/ba;
 
+    invoke-static {v0}, Lcom/google/android/gms/internal/ba;->ym(Lcom/google/android/gms/internal/ba;)I
+
+    move-result v0
+
+    const/4 v1, 0x3
+
+    if-ge v0, v1, :cond_3
+
+    :goto_2
     return-void
+
+    :cond_0
+    iget-object v1, p0, Lcom/google/android/gms/internal/aB;->sE:Lcom/google/android/gms/internal/aD;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/aB;->sF:Lcom/google/android/gms/internal/ba;
+
+    invoke-static {v2}, Lcom/google/android/gms/internal/ba;->yl(Lcom/google/android/gms/internal/ba;)Landroid/os/Bundle;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    :goto_3
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/aD;->onCreate(Landroid/os/Bundle;)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/aB;->sF:Lcom/google/android/gms/internal/ba;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/ba;->yl(Lcom/google/android/gms/internal/ba;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/aB;->sG:Ljava/lang/String;
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_2
+    iget-object v0, p0, Lcom/google/android/gms/internal/aB;->sE:Lcom/google/android/gms/internal/aD;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/aD;->onStart()V
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v0, p0, Lcom/google/android/gms/internal/aB;->sE:Lcom/google/android/gms/internal/aD;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/aD;->onStop()V
+
+    goto :goto_2
 .end method

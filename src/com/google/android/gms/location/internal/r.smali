@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract FM()V
+.method public abstract GF()V
 .end method
 
-.method public abstract FN()Landroid/os/IInterface;
+.method public abstract GG()Landroid/os/IInterface;
 .end method

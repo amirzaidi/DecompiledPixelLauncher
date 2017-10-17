@@ -12,35 +12,35 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class SignInButtonConfig extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final Scope[] gZ;
-    final int ha;
-    private final int hb;
-    private final int hc;
+    private final Scope[] jR;
+    final int jS;
+    private final int jT;
+    private final int jU;
     
     static {
         CREATOR = (Parcelable$Creator)new U();
     }
     
-    SignInButtonConfig(final int ha, final int hc, final int hb, final Scope[] gz) {
-        this.ha = ha;
-        this.hc = hc;
-        this.hb = hb;
-        this.gZ = gz;
+    SignInButtonConfig(final int js, final int ju, final int jt, final Scope[] jr) {
+        this.jS = js;
+        this.jU = ju;
+        this.jT = jt;
+        this.jR = jr;
     }
     
-    public int je() {
-        return this.hb;
+    public int lS() {
+        return this.jT;
     }
     
-    public Scope[] jf() {
-        return this.gZ;
+    public Scope[] lT() {
+        return this.jR;
     }
     
-    public int jg() {
-        return this.hc;
+    public int lU() {
+        return this.jU;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        U.jr(this, parcel, n);
+        U.mf(this, parcel, n);
     }
 }

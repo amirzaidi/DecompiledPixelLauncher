@@ -12,19 +12,19 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class GroundOverlayOptions extends AbstractSafeParcelable
 {
     public static final c CREATOR;
-    private boolean EG;
-    private LatLngBounds EH;
-    private boolean EI;
-    private j EJ;
-    private float EK;
-    private float EL;
-    private float EM;
-    private float EN;
-    private final int EO;
-    private LatLng EP;
-    private float EQ;
-    private float ER;
-    private float ES;
+    private boolean Gl;
+    private LatLngBounds Gm;
+    private boolean Gn;
+    private j Go;
+    private float Gp;
+    private float Gq;
+    private float Gr;
+    private float Gs;
+    private final int Gt;
+    private LatLng Gu;
+    private float Gv;
+    private float Gw;
+    private float Gx;
     
     static {
         CREATOR = new c();
@@ -33,89 +33,89 @@ public final class GroundOverlayOptions extends AbstractSafeParcelable
     public GroundOverlayOptions() {
         final boolean b = true;
         final float n = 0.5f;
-        this.EG = b;
-        this.EK = 0.0f;
-        this.EQ = n;
-        this.EN = n;
-        this.EI = false;
-        this.EO = (b ? 1 : 0);
+        this.Gl = b;
+        this.Gp = 0.0f;
+        this.Gv = n;
+        this.Gs = n;
+        this.Gn = false;
+        this.Gt = (b ? 1 : 0);
     }
     
-    GroundOverlayOptions(final int eo, final IBinder binder, final LatLng ep, final float es, final float el, final LatLngBounds eh, final float er, final float em, final boolean eg, final float ek, final float eq, final float en, final boolean ei) {
+    GroundOverlayOptions(final int gt, final IBinder binder, final LatLng gu, final float gx, final float gq, final LatLngBounds gm, final float gw, final float gr, final boolean gl, final float gp, final float gv, final float gs, final boolean gn) {
         final float n = 0.5f;
-        this.EG = true;
-        this.EK = 0.0f;
-        this.EQ = n;
-        this.EN = n;
-        this.EI = false;
-        this.EO = eo;
-        this.EJ = new j(zzd$zza.zzis(binder));
-        this.EP = ep;
-        this.ES = es;
-        this.EL = el;
-        this.EH = eh;
-        this.ER = er;
-        this.EM = em;
-        this.EG = eg;
-        this.EK = ek;
-        this.EQ = eq;
-        this.EN = en;
-        this.EI = ei;
+        this.Gl = true;
+        this.Gp = 0.0f;
+        this.Gv = n;
+        this.Gs = n;
+        this.Gn = false;
+        this.Gt = gt;
+        this.Go = new j(zzd$zza.zzis(binder));
+        this.Gu = gu;
+        this.Gx = gx;
+        this.Gq = gq;
+        this.Gm = gm;
+        this.Gw = gw;
+        this.Gr = gr;
+        this.Gl = gl;
+        this.Gp = gp;
+        this.Gv = gv;
+        this.Gs = gs;
+        this.Gn = gn;
     }
     
-    IBinder JC() {
-        return this.EJ.Jl().asBinder();
+    public float KA() {
+        return this.Gw;
     }
     
-    public LatLng JD() {
-        return this.EP;
+    public float KB() {
+        return this.Gr;
     }
     
-    public float JE() {
-        return this.EK;
+    public LatLngBounds KC() {
+        return this.Gm;
     }
     
-    public float JF() {
-        return this.EN;
+    public boolean KD() {
+        return this.Gn;
     }
     
-    public float JG() {
-        return this.EQ;
+    int KE() {
+        return this.Gt;
     }
     
-    public float JH() {
-        return this.ER;
+    IBinder Kv() {
+        return this.Go.Ke().asBinder();
     }
     
-    public float JI() {
-        return this.EM;
+    public LatLng Kw() {
+        return this.Gu;
     }
     
-    public LatLngBounds JJ() {
-        return this.EH;
+    public float Kx() {
+        return this.Gp;
     }
     
-    public boolean JK() {
-        return this.EI;
+    public float Ky() {
+        return this.Gs;
     }
     
-    int JL() {
-        return this.EO;
+    public float Kz() {
+        return this.Gv;
     }
     
     public float getHeight() {
-        return this.EL;
+        return this.Gq;
     }
     
     public float getWidth() {
-        return this.ES;
+        return this.Gx;
     }
     
     public boolean isVisible() {
-        return this.EG;
+        return this.Gl;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        c.ID(this, parcel, n);
+        c.Jw(this, parcel, n);
     }
 }

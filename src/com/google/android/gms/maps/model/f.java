@@ -10,13 +10,13 @@ import android.os.IBinder;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import com.google.android.gms.maps.model.internal.zzi;
 
-class f implements o
+class f implements n
 {
-    private final zzi DX;
-    final /* synthetic */ TileOverlayOptions DY;
+    private final zzi FC;
+    final /* synthetic */ TileOverlayOptions FD;
     
-    f(final TileOverlayOptions dy) {
-        this.DY = dy;
-        this.DX = this.DY.Ef;
+    f(final TileOverlayOptions fd) {
+        this.FD = fd;
+        this.FC = this.FD.FK;
     }
 }

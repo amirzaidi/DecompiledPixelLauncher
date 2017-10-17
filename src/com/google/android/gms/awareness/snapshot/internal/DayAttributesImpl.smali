@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private final my:I
+.field private final fV:I
 
-.field private final mz:[I
+.field private final fW:[I
 
 
 # direct methods
@@ -30,29 +30,29 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->my:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->fV:I
 
-    iput-object p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->mz:[I
+    iput-object p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->fW:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public pF()[I
+.method eA()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->mz:[I
-
-    return-object v0
-.end method
-
-.method pG()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->my:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->fV:I
 
     return v0
+.end method
+
+.method public ez()[I
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->fW:[I
+
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -68,7 +68,7 @@
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->mz:[I
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->fW:[I
 
     if-eqz v0, :cond_0
 
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x1
 
-    iget-object v4, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->mz:[I
+    iget-object v4, p0, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->fW:[I
 
     array-length v5, v4
 
@@ -132,7 +132,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/d;->pR(Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/d;->eL(Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

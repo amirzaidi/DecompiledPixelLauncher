@@ -12,15 +12,15 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class PolygonOptions extends AbstractSafeParcelable
 {
     public static final m CREATOR;
-    private boolean DO;
-    private final List DP;
-    private int DQ;
-    private boolean DR;
-    private boolean DS;
-    private int DT;
-    private float DU;
-    private final int DV;
-    private final List DW;
+    private final int FA;
+    private final List FB;
+    private boolean Ft;
+    private final List Fu;
+    private int Fv;
+    private boolean Fw;
+    private boolean Fx;
+    private int Fy;
+    private float Fz;
     private float mStrokeWidth;
     
     static {
@@ -30,78 +30,78 @@ public final class PolygonOptions extends AbstractSafeParcelable
     public PolygonOptions() {
         final boolean b = true;
         this.mStrokeWidth = 10.0f;
-        this.DQ = -16777216;
-        this.DT = 0;
-        this.DU = 0.0f;
-        this.DR = b;
-        this.DO = false;
-        this.DS = false;
-        this.DV = (b ? 1 : 0);
-        this.DP = new ArrayList();
-        this.DW = new ArrayList();
+        this.Fv = -16777216;
+        this.Fy = 0;
+        this.Fz = 0.0f;
+        this.Fw = b;
+        this.Ft = false;
+        this.Fx = false;
+        this.FA = (b ? 1 : 0);
+        this.Fu = new ArrayList();
+        this.FB = new ArrayList();
     }
     
-    PolygonOptions(final int dv, final List dp, final List dw, final float mStrokeWidth, final int dq, final int dt, final float du, final boolean dr, final boolean do1, final boolean ds) {
+    PolygonOptions(final int fa, final List fu, final List fb, final float mStrokeWidth, final int fv, final int fy, final float fz, final boolean fw, final boolean ft, final boolean fx) {
         this.mStrokeWidth = 10.0f;
-        this.DQ = -16777216;
-        this.DT = 0;
-        this.DU = 0.0f;
-        this.DR = true;
-        this.DO = false;
-        this.DS = false;
-        this.DV = dv;
-        this.DP = dp;
-        this.DW = dw;
+        this.Fv = -16777216;
+        this.Fy = 0;
+        this.Fz = 0.0f;
+        this.Fw = true;
+        this.Ft = false;
+        this.Fx = false;
+        this.FA = fa;
+        this.Fu = fu;
+        this.FB = fb;
         this.mStrokeWidth = mStrokeWidth;
-        this.DQ = dq;
-        this.DT = dt;
-        this.DU = du;
-        this.DR = dr;
-        this.DO = do1;
-        this.DS = ds;
+        this.Fv = fv;
+        this.Fy = fy;
+        this.Fz = fz;
+        this.Fw = fw;
+        this.Ft = ft;
+        this.Fx = fx;
     }
     
-    public float IJ() {
-        return this.DU;
+    public float JC() {
+        return this.Fz;
     }
     
-    public boolean IK() {
-        return this.DO;
+    public boolean JD() {
+        return this.Ft;
     }
     
-    public float IL() {
+    public float JE() {
         return this.mStrokeWidth;
     }
     
-    List IM() {
-        return this.DW;
+    List JF() {
+        return this.FB;
     }
     
-    public boolean IN() {
-        return this.DS;
+    public boolean JG() {
+        return this.Fx;
     }
     
-    int IO() {
-        return this.DV;
+    int JH() {
+        return this.FA;
     }
     
-    public int IP() {
-        return this.DQ;
+    public int JI() {
+        return this.Fv;
     }
     
-    public int IQ() {
-        return this.DT;
+    public int JJ() {
+        return this.Fy;
     }
     
-    public List IR() {
-        return this.DP;
+    public List JK() {
+        return this.Fu;
     }
     
     public boolean isVisible() {
-        return this.DR;
+        return this.Fw;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        m.JQ(this, parcel, n);
+        m.KJ(this, parcel, n);
     }
 }

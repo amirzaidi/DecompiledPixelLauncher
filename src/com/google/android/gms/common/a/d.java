@@ -6,7 +6,7 @@ package com.google.android.gms.common.a;
 
 public final class d
 {
-    public static String jy(final byte[] array, final int n, final int n2, final boolean b) {
+    public static String mm(final byte[] array, final int n, final int n2, final boolean b) {
         final int n3 = 16;
         final int n4 = 8;
         final int n5 = 1;

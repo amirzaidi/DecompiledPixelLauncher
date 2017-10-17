@@ -22,9 +22,9 @@
     if-nez v0, :cond_2
 
     :cond_0
-    new-instance v0, Lcom/google/android/gms/internal/m;
+    new-instance v0, Lcom/google/android/gms/internal/l;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/m;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/internal/l;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 

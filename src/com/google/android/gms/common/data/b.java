@@ -8,16 +8,18 @@ import java.util.Iterator;
 
 public abstract class b implements a
 {
-    protected final DataHolder jP;
+    protected final DataHolder mH;
     
-    protected b(final DataHolder jp) {
-        this.jP = jp;
-        final DataHolder jp2 = this.jP;
+    protected b(final DataHolder mh) {
+        this.mH = mh;
+        final DataHolder mh2 = this.mH;
     }
     
-    public void eC() {
-        if (this.jP != null) {
-            this.jP.close();
+    public abstract Object get(final int p0);
+    
+    public void hq() {
+        if (this.mH != null) {
+            this.mH.close();
         }
     }
     
@@ -25,16 +27,14 @@ public abstract class b implements a
         return new c(this);
     }
     
-    public int mW() {
-        int nd;
-        if (this.jP != null) {
-            nd = this.jP.nd();
+    public int pK() {
+        int pq;
+        if (this.mH != null) {
+            pq = this.mH.pQ();
         }
         else {
-            nd = 0;
+            pq = 0;
         }
-        return nd;
+        return pq;
     }
-    
-    public abstract Object mX(final int p0);
 }

@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private final EX:I
+.field private final GC:I
 
-.field public final EY:Ljava/lang/String;
+.field public final GD:Ljava/lang/String;
 
-.field public final EZ:Lcom/google/android/gms/maps/model/LatLng;
+.field public final GE:Lcom/google/android/gms/maps/model/LatLng;
 
 .field public final name:Ljava/lang/String;
 
@@ -34,11 +34,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->EX:I
+    iput p1, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->GC:I
 
-    iput-object p2, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->EZ:Lcom/google/android/gms/maps/model/LatLng;
+    iput-object p2, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->GE:Lcom/google/android/gms/maps/model/LatLng;
 
-    iput-object p3, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->EY:Ljava/lang/String;
+    iput-object p3, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->GD:Ljava/lang/String;
 
     iput-object p4, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->name:Ljava/lang/String;
 
@@ -47,10 +47,10 @@
 
 
 # virtual methods
-.method JZ()I
+.method KS()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->EX:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/PointOfInterest;->GC:I
 
     return v0
 .end method
@@ -58,7 +58,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/r;->Kn(Lcom/google/android/gms/maps/model/PointOfInterest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/r;->Lg(Lcom/google/android/gms/maps/model/PointOfInterest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -12,32 +12,32 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class PlaceUserData extends AbstractSafeParcelable
 {
     public static final d CREATOR;
-    final int xR;
-    private final String xS;
-    private final String xT;
-    private final List xU;
+    final int zw;
+    private final String zx;
+    private final String zy;
+    private final List zz;
     
     static {
         CREATOR = new d();
     }
     
-    PlaceUserData(final int xr, final String xs, final String xt, final List xu) {
-        this.xR = xr;
-        this.xS = xs;
-        this.xT = xt;
-        this.xU = xu;
+    PlaceUserData(final int zw, final String zx, final String zy, final List zz) {
+        this.zw = zw;
+        this.zx = zx;
+        this.zy = zy;
+        this.zz = zz;
     }
     
-    public String CP() {
-        return this.xS;
+    public String DI() {
+        return this.zx;
     }
     
-    public String CQ() {
-        return this.xT;
+    public String DJ() {
+        return this.zy;
     }
     
-    public List CR() {
-        return this.xU;
+    public List DK() {
+        return this.zz;
     }
     
     public boolean equals(final Object o) {
@@ -47,7 +47,7 @@ public class PlaceUserData extends AbstractSafeParcelable
         }
         if (o instanceof PlaceUserData) {
             final PlaceUserData placeUserData = (PlaceUserData)o;
-            if (!this.xS.equals(placeUserData.xS) || !this.xT.equals(placeUserData.xT) || !this.xU.equals(placeUserData.xU)) {
+            if (!this.zx.equals(placeUserData.zx) || !this.zy.equals(placeUserData.zy) || !this.zz.equals(placeUserData.zz)) {
                 b = false;
             }
             return b;
@@ -56,14 +56,14 @@ public class PlaceUserData extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.xS, this.xT, this.xU);
+        return u.kw(this.zx, this.zy, this.zz);
     }
     
     public String toString() {
-        return u.hJ(this).hB("accountName", this.xS).hB("placeId", this.xT).hB("placeAliases", this.xU).toString();
+        return u.kx(this).kp("accountName", this.zx).kp("placeId", this.zy).kp("placeAliases", this.zz).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        d.CS(this, parcel, n);
+        d.DL(this, parcel, n);
     }
 }

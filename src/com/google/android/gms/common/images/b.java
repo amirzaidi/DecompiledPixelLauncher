@@ -5,82 +5,114 @@
 package com.google.android.gms.common.images;
 
 import android.os.Handler;
-import android.content.Context;
 import java.util.concurrent.ExecutorService;
-import com.google.android.gms.internal.cE;
+import android.content.Context;
+import com.google.android.gms.internal.cy;
 import java.util.Map;
 import java.util.HashSet;
-import java.io.FileDescriptor;
-import android.graphics.Bitmap;
-import java.io.IOException;
-import android.util.Log;
-import android.graphics.BitmapFactory;
-import java.util.concurrent.CountDownLatch;
-import com.google.android.gms.common.internal.m;
-import android.net.Uri;
 import android.os.ParcelFileDescriptor;
+import android.os.Bundle;
+import android.os.ResultReceiver;
+import com.google.android.gms.common.internal.m;
+import java.util.ArrayList;
+import android.os.SystemClock;
+import java.util.concurrent.CountDownLatch;
+import android.net.Uri;
+import android.graphics.Bitmap;
 
 final class b implements Runnable
 {
-    private final ParcelFileDescriptor jv;
-    final /* synthetic */ h jw;
+    private final Bitmap mBitmap;
     private final Uri mUri;
+    private boolean mm;
+    final /* synthetic */ h mn;
+    private final CountDownLatch mo;
     
-    public b(final h jw, final Uri mUri, final ParcelFileDescriptor jv) {
-        this.jw = jw;
+    public b(final h mn, final Uri mUri, final Bitmap mBitmap, final boolean mm, final CountDownLatch mo) {
+        this.mn = mn;
         this.mUri = mUri;
-        this.jv = jv;
+        this.mBitmap = mBitmap;
+        this.mm = mm;
+        this.mo = mo;
+    }
+    
+    private void pk(final ImageManager$ImageReceiver imageManager$ImageReceiver, final boolean b) {
+        final ArrayList pv = imageManager$ImageReceiver.mv;
+        for (int size = pv.size(), i = 0; i < size; ++i) {
+            final i j = pv.get(i);
+            if (!b) {
+                this.mn.mz.put(this.mUri, SystemClock.elapsedRealtime());
+                j.pH(this.mn.mContext, this.mn.mC, false);
+            }
+            else {
+                j.pJ(this.mn.mContext, this.mBitmap, false);
+            }
+            if (!(j instanceof g)) {
+                this.mn.mE.remove(j);
+            }
+        }
     }
     
     public void run() {
-        Bitmap decodeFileDescriptor = null;
-        final boolean b = true;
-        m.hz("LoadBitmapFromDiskRunnable can't be executed in the main thread");
-        boolean b2 = false;
-        Label_0089: {
-            if (this.jv != null) {
-                break Label_0089;
-            }
+        m.km("OnBitmapLoadedRunnable must be executed in the main thread");
+        Bitmap mBitmap = this.mBitmap;
+        while (true) {
+        Label_0104_Outer:
             while (true) {
-                final CountDownLatch countDownLatch = new CountDownLatch(b ? 1 : 0);
-                this.jw.mHandler.post((Runnable)new a(this.jw, this.mUri, decodeFileDescriptor, b2, countDownLatch));
-                try {
-                    countDownLatch.await();
-                    return;
-                    try {
-                        final ParcelFileDescriptor jv = this.jv;
-                        try {
-                            final FileDescriptor fileDescriptor = jv.getFileDescriptor();
-                            try {
-                                decodeFileDescriptor = BitmapFactory.decodeFileDescriptor(fileDescriptor);
-                                try {
-                                    final ParcelFileDescriptor jv2 = this.jv;
-                                    try {
-                                        jv2.close();
-                                        continue;
-                                    }
-                                    catch (IOException ex) {
-                                        Log.e("ImageManager", "closed failed", (Throwable)ex);
-                                        continue;
+                Label_0034: {
+                    while (true) {
+                        Label_0020: {
+                            if (mBitmap == null) {
+                                final boolean b = false;
+                                mBitmap = null;
+                                break Label_0020;
+                            }
+                            Label_0099: {
+                                break Label_0099;
+                            Block_4_Outer:
+                                while (true) {
+                                    this.mo.countDown();
+                                    synchronized (h.mA) {
+                                        h.mx.remove(this.mUri);
+                                        return;
+                                        // iftrue(Label_0034:, !b)
+                                        // iftrue(Label_0163:, this.mm)
+                                        while (true) {
+                                            while (true) {
+                                                this.mn.my.put(new f(this.mUri), this.mBitmap);
+                                                break Label_0034;
+                                                continue Block_4_Outer;
+                                            }
+                                            continue Label_0104_Outer;
+                                        }
+                                        Label_0163: {
+                                            this.mn.my.ait();
+                                        }
+                                        System.gc();
+                                        this.mm = false;
+                                        this.mn.mHandler.post((Runnable)this);
+                                        return;
+                                        final boolean b = true;
+                                        break;
+                                        final ImageManager$ImageReceiver imageManager$ImageReceiver;
+                                        this.pk(imageManager$ImageReceiver, b);
                                     }
                                 }
-                                catch (IOException ex2) {}
-                            }
-                            catch (OutOfMemoryError outOfMemoryError) {
-                                final String value = String.valueOf(this.mUri);
-                                Log.e("ImageManager", new StringBuilder(String.valueOf(value).length() + 34).append("OOM while loading bitmap for uri: ").append(value).toString(), (Throwable)outOfMemoryError);
-                                b2 = b;
                             }
                         }
-                        catch (OutOfMemoryError outOfMemoryError2) {}
+                        if (this.mn.my != null) {
+                            continue;
+                        }
+                        break;
                     }
-                    catch (OutOfMemoryError outOfMemoryError3) {}
                 }
-                catch (InterruptedException ex3) {
-                    final String value2 = String.valueOf(this.mUri);
-                    Log.w("ImageManager", new StringBuilder(String.valueOf(value2).length() + 32).append("Latch interrupted while posting ").append(value2).toString());
+                final ImageManager$ImageReceiver imageManager$ImageReceiver = this.mn.mB.remove(this.mUri);
+                if (imageManager$ImageReceiver == null) {
+                    continue;
                 }
+                break;
             }
+            continue;
         }
     }
 }

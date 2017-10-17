@@ -14,27 +14,27 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class FieldMappingDictionary$Entry extends AbstractSafeParcelable
 {
     public static final d CREATOR;
-    final int hQ;
-    final String hR;
-    final ArrayList hS;
+    final int kI;
+    final String kJ;
+    final ArrayList kK;
     
     static {
         CREATOR = new d();
     }
     
-    FieldMappingDictionary$Entry(final int hq, final String hr, final ArrayList hs) {
-        this.hQ = hq;
-        this.hR = hr;
-        this.hS = hs;
+    FieldMappingDictionary$Entry(final int ki, final String kj, final ArrayList kk) {
+        this.kI = ki;
+        this.kJ = kj;
+        this.kK = kk;
     }
     
-    FieldMappingDictionary$Entry(final String hr, final Map map) {
-        this.hQ = 1;
-        this.hR = hr;
-        this.hS = kv(map);
+    FieldMappingDictionary$Entry(final String kj, final Map map) {
+        this.kI = 1;
+        this.kJ = kj;
+        this.kK = nj(map);
     }
     
-    private static ArrayList kv(final Map map) {
+    private static ArrayList nj(final Map map) {
         if (map != null) {
             final ArrayList<FieldMappingDictionary$FieldMapPair> list = new ArrayList<FieldMappingDictionary$FieldMapPair>();
             for (final String s : map.keySet()) {
@@ -45,17 +45,17 @@ public class FieldMappingDictionary$Entry extends AbstractSafeParcelable
         return null;
     }
     
-    HashMap ku() {
+    HashMap ni() {
         final HashMap<String, FastJsonResponse$Field> hashMap = new HashMap<String, FastJsonResponse$Field>();
-        for (int size = this.hS.size(), i = 0; i < size; ++i) {
-            final FieldMappingDictionary$FieldMapPair fieldMappingDictionary$FieldMapPair = this.hS.get(i);
-            hashMap.put(fieldMappingDictionary$FieldMapPair.hE, fieldMappingDictionary$FieldMapPair.hD);
+        for (int size = this.kK.size(), i = 0; i < size; ++i) {
+            final FieldMappingDictionary$FieldMapPair fieldMappingDictionary$FieldMapPair = this.kK.get(i);
+            hashMap.put(fieldMappingDictionary$FieldMapPair.kw, fieldMappingDictionary$FieldMapPair.kv);
         }
         return hashMap;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final d creator = FieldMappingDictionary$Entry.CREATOR;
-        d.kO(this, parcel, n);
+        d.nC(this, parcel, n);
     }
 }

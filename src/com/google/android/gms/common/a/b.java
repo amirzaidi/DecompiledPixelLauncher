@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class b
 {
-    public static void ju(final StringBuilder sb, final HashMap hashMap) {
+    public static void mi(final StringBuilder sb, final HashMap hashMap) {
         sb.append("{");
         final boolean b = true;
         final float n = Float.MIN_VALUE;

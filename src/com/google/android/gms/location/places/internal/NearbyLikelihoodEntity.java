@@ -12,18 +12,18 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class NearbyLikelihoodEntity extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final int yV;
-    final PlaceEntity yW;
-    final float yX;
+    final int AA;
+    final PlaceEntity AB;
+    final float AC;
     
     static {
         CREATOR = (Parcelable$Creator)new e();
     }
     
-    NearbyLikelihoodEntity(final int yv, final PlaceEntity yw, final float yx) {
-        this.yV = yv;
-        this.yW = yw;
-        this.yX = yx;
+    NearbyLikelihoodEntity(final int aa, final PlaceEntity ab, final float ac) {
+        this.AA = aa;
+        this.AB = ab;
+        this.AC = ac;
     }
     
     public boolean equals(final Object o) {
@@ -33,7 +33,7 @@ public class NearbyLikelihoodEntity extends AbstractSafeParcelable
         }
         if (o instanceof NearbyLikelihoodEntity) {
             final NearbyLikelihoodEntity nearbyLikelihoodEntity = (NearbyLikelihoodEntity)o;
-            if (this.yW.equals(nearbyLikelihoodEntity.yW) || this.yX != nearbyLikelihoodEntity.yX) {
+            if (this.AB.equals(nearbyLikelihoodEntity.AB) || this.AC != nearbyLikelihoodEntity.AC) {
                 b = false;
             }
             return b;
@@ -42,14 +42,14 @@ public class NearbyLikelihoodEntity extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.yW, this.yX);
+        return u.kw(this.AB, this.AC);
     }
     
     public String toString() {
-        return u.hJ(this).hB("nearby place", this.yW).hB("likelihood", this.yX).toString();
+        return u.kx(this).kp("nearby place", this.AB).kp("likelihood", this.AC).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        e.De(this, parcel, n);
+        e.DX(this, parcel, n);
     }
 }

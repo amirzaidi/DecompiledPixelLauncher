@@ -9,21 +9,21 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public abstract class StatsEvent extends AbstractSafeParcelable implements ReflectedParcelable
 {
-    public abstract String lE();
+    public abstract long oB();
     
-    public abstract long lI();
+    public abstract String os();
     
-    public abstract int lJ();
+    public abstract long ow();
     
-    public abstract long lN();
+    public abstract int ox();
     
     public String toString() {
-        final long li = this.lI();
+        final long ow = this.ow();
         final String value = String.valueOf("\t");
-        final int lj = this.lJ();
+        final int ox = this.ox();
         final String value2 = String.valueOf("\t");
-        final long ln = this.lN();
-        final String value3 = String.valueOf(this.lE());
-        return new StringBuilder(String.valueOf(value).length() + 51 + String.valueOf(value2).length() + String.valueOf(value3).length()).append(li).append(value).append(lj).append(value2).append(ln).append(value3).toString();
+        final long ob = this.oB();
+        final String value3 = String.valueOf(this.os());
+        return new StringBuilder(String.valueOf(value).length() + 51 + String.valueOf(value2).length() + String.valueOf(value3).length()).append(ow).append(value).append(ox).append(value2).append(ob).append(value3).toString();
     }
 }

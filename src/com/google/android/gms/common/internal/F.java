@@ -18,56 +18,64 @@ import android.os.IBinder;
 
 final class f
 {
-    private final z fj;
-    final /* synthetic */ h fk;
-    private final v fl;
-    private IBinder fm;
-    private boolean fn;
-    private final Set fo;
-    private ComponentName fp;
+    private final z ib;
+    final /* synthetic */ h ic;
+    private final v id;
+    private IBinder ie;
+    private boolean if;
+    private final Set ig;
+    private ComponentName ih;
     private int mState;
     
-    public f(final h fk, final v fl) {
-        this.fk = fk;
-        this.fl = fl;
-        this.fj = new z(this);
-        this.fo = new HashSet();
+    public f(final h ic, final v id) {
+        this.ic = ic;
+        this.id = id;
+        this.ib = new z(this);
+        this.ig = new HashSet();
         this.mState = 2;
     }
     
-    public IBinder gM() {
-        return this.fm;
+    public int getState() {
+        return this.mState;
     }
     
-    public void gN(final ServiceConnection serviceConnection, final String s) {
-        this.fk.fv.lV(this.fk.fx, serviceConnection, s, this.fl.hK());
-        this.fo.add(serviceConnection);
+    public boolean isBound() {
+        return this.if;
     }
     
-    public boolean gO() {
-        return this.fo.isEmpty();
+    public IBinder jA() {
+        return this.ie;
     }
     
-    public void gP(final ServiceConnection serviceConnection, final String s) {
-        this.fk.fv.ma(this.fk.fx, serviceConnection);
-        this.fo.remove(serviceConnection);
+    public void jB(final ServiceConnection serviceConnection, final String s) {
+        this.ic.in.oJ(this.ic.ip, serviceConnection, s, this.id.ky());
+        this.ig.add(serviceConnection);
     }
     
-    public void gQ(final String s) {
+    public boolean jC() {
+        return this.ig.isEmpty();
+    }
+    
+    public void jD(final ServiceConnection serviceConnection, final String s) {
+        this.ic.in.oO(this.ic.ip, serviceConnection);
+        this.ig.remove(serviceConnection);
+    }
+    
+    public void jE(final String s) {
         this.mState = 3;
-        this.fn = this.fk.fv.lS(this.fk.fx, s, this.fl.hK(), (ServiceConnection)this.fj, 129);
-        if (!this.fn) {
+        this.if = this.ic.in.oG(this.ic.ip, s, this.id.ky(), (ServiceConnection)this.ib, 129);
+        if (!this.if) {
             this.mState = 2;
             try {
-                final h fk = this.fk;
+                final h ic = this.ic;
                 try {
-                    final b gy = fk.fv;
+                    final b jm = ic.in;
                     try {
-                        final h fk2 = this.fk;
+                        final h ic2 = this.ic;
                         try {
-                            final Context hb = fk2.fx;
+                            final Context jp = ic2.ip;
                             try {
-                                gy.lT(hb, (ServiceConnection)this.fj);
+                                jm.oH(jp, (ServiceConnection)this.ib);
                             }
                             catch (IllegalArgumentException ex) {}
                         }
@@ -81,25 +89,17 @@ final class f
         }
     }
     
-    public void gS(final String s) {
-        this.fk.fv.lT(this.fk.fx, (ServiceConnection)this.fj);
-        this.fn = false;
+    public void jG(final String s) {
+        this.ic.in.oH(this.ic.ip, (ServiceConnection)this.ib);
+        this.if = false;
         this.mState = 2;
     }
     
-    public ComponentName gU() {
-        return this.fp;
+    public ComponentName jI() {
+        return this.ih;
     }
     
-    public boolean gV(final ServiceConnection serviceConnection) {
-        return this.fo.contains(serviceConnection);
-    }
-    
-    public int getState() {
-        return this.mState;
-    }
-    
-    public boolean isBound() {
-        return this.fn;
+    public boolean jJ(final ServiceConnection serviceConnection) {
+        return this.ig.contains(serviceConnection);
     }
 }

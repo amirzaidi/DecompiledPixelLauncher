@@ -3,12 +3,12 @@
 
 
 # direct methods
-.method public static jH(Landroid/content/Context;Ljava/lang/String;)Z
+.method public static mv(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 3
 
     const/4 v0, 0x0
 
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->jY()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mM()Z
 
     move-result v1
 
@@ -24,13 +24,13 @@
 
     :cond_0
     :try_start_0
-    invoke-static {p0}, Lcom/google/android/gms/internal/aG;->uS(Landroid/content/Context;)Lcom/google/android/gms/internal/bc;
+    invoke-static {p0}, Lcom/google/android/gms/internal/az;->uR(Landroid/content/Context;)Lcom/google/android/gms/internal/aW;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, p1, v2}, Lcom/google/android/gms/internal/bc;->xE(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v1, p1, v2}, Lcom/google/android/gms/internal/aW;->xD(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v1
 
@@ -51,7 +51,7 @@
     return v0
 
     :cond_2
-    invoke-static {}, Lcom/google/android/gms/common/a/j;->jI()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/j;->mw()Z
 
     move-result v1
 
@@ -70,7 +70,7 @@
     return v0
 .end method
 
-.method public static jI()Z
+.method public static mw()Z
     .locals 1
 
     const/4 v0, 0x0

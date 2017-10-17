@@ -11,41 +11,41 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void OX(final Relation relation, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, relation.OS());
-        a.fv(parcel, 2, relation.OQ(), false);
-        a.fe(parcel, ey);
+    static void PQ(final Relation relation, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, relation.PL());
+        a.ij(parcel, 2, relation.PJ(), false);
+        a.hS(parcel, hm);
     }
     
-    public Relation[] OW(final int n) {
+    public Relation[] PP(final int n) {
         return new Relation[n];
     }
     
-    public Relation OY(final Parcel parcel) {
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn = 0;
-        byte[] gf = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+    public Relation PR(final Parcel parcel) {
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib = 0;
+        byte[] it = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    gf = com.google.android.gms.common.internal.safeparcel.b.gf(parcel, fs);
+                    it = com.google.android.gms.common.internal.safeparcel.b.iT(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new Relation(fn, gf);
+        if (parcel.dataPosition() == ix) {
+            return new Relation(ib, it);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

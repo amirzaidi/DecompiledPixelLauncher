@@ -14,36 +14,36 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ContextDataFilterImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final ArrayList He;
-    private final QueryFilterParameters Hf;
-    private final int Hg;
-    private final ArrayList Hh;
+    private final ArrayList IJ;
+    private final QueryFilterParameters IK;
+    private final int IL;
+    private final ArrayList IM;
     
     static {
         CREATOR = (Parcelable$Creator)new k();
     }
     
-    public ContextDataFilterImpl(final int hg, final ArrayList he, final ArrayList hh, final QueryFilterParameters hf) {
-        this.Hg = hg;
-        this.He = he;
-        this.Hh = hh;
-        this.Hf = hf;
+    public ContextDataFilterImpl(final int il, final ArrayList ij, final ArrayList im, final QueryFilterParameters ik) {
+        this.IL = il;
+        this.IJ = ij;
+        this.IM = im;
+        this.IK = ik;
     }
     
-    public QueryFilterParameters Mq() {
-        return this.Hf;
+    public QueryFilterParameters Nj() {
+        return this.IK;
     }
     
-    public ArrayList Mr() {
-        return this.Hh;
+    public ArrayList Nk() {
+        return this.IM;
     }
     
-    int Ms() {
-        return this.Hg;
+    int Nl() {
+        return this.IL;
     }
     
-    public ArrayList Mt() {
-        return this.He;
+    public ArrayList Nm() {
+        return this.IJ;
     }
     
     public boolean equals(final Object o) {
@@ -53,7 +53,7 @@ public class ContextDataFilterImpl extends AbstractSafeParcelable
         }
         if (o instanceof ContextDataFilterImpl) {
             final ContextDataFilterImpl contextDataFilterImpl = (ContextDataFilterImpl)o;
-            if (!u.hH(this.He, contextDataFilterImpl.He) || !u.hH(this.Hh, contextDataFilterImpl.Hh)) {
+            if (!u.kv(this.IJ, contextDataFilterImpl.IJ) || !u.kv(this.IM, contextDataFilterImpl.IM)) {
                 b = false;
             }
             return b;
@@ -62,16 +62,16 @@ public class ContextDataFilterImpl extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.He, this.Hh);
+        return u.kw(this.IJ, this.IM);
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append("contexts=[");
-        if (this.He != null && this.He.size() > 0) {
-            final Iterator<ContextDataFilterImpl$Inclusion> iterator = (Iterator<ContextDataFilterImpl$Inclusion>)this.He.iterator();
+        if (this.IJ != null && this.IJ.size() > 0) {
+            final Iterator<ContextDataFilterImpl$Inclusion> iterator = (Iterator<ContextDataFilterImpl$Inclusion>)this.IJ.iterator();
             while (iterator.hasNext()) {
-                sb.append(iterator.next().Nm()).append(",");
+                sb.append(iterator.next().Of()).append(",");
             }
         }
         sb.append("]");
@@ -79,6 +79,6 @@ public class ContextDataFilterImpl extends AbstractSafeParcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        k.Ne(this, parcel, n);
+        k.NX(this, parcel, n);
     }
 }

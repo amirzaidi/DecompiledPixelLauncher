@@ -10,13 +10,13 @@
 
 
 # instance fields
-.field private final nb:Ljava/lang/String;
+.field private final gA:Ljava/lang/String;
 
-.field private final nc:[B
+.field private final gB:[B
 
-.field private final nd:I
+.field private final gC:I
 
-.field private final ne:Ljava/lang/String;
+.field private final gD:Ljava/lang/String;
 
 
 # direct methods
@@ -37,47 +37,47 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nd:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gC:I
 
-    iput-object p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nb:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gA:Ljava/lang/String;
 
-    iput-object p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->ne:Ljava/lang/String;
+    iput-object p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gD:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nc:[B
+    iput-object p4, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gB:[B
 
     return-void
 .end method
 
 
 # virtual methods
-.method public qV()[B
+.method public fR()[B
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nc:[B
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gB:[B
 
     return-object v0
 .end method
 
-.method public qW()Ljava/lang/String;
+.method public fS()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nb:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gA:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public qX()Ljava/lang/String;
+.method public fT()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->ne:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gD:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method qY()I
+.method fU()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nd:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gC:I
 
     return v0
 .end method
@@ -85,20 +85,20 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nc:[B
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gB:[B
 
     if-eqz v0, :cond_0
 
     new-instance v0, Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nc:[B
+    iget-object v1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gB:[B
 
     invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
 
     :goto_0
-    iget-object v1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->nb:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gA:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->ne:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;->gD:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -185,7 +185,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/f;->pY(Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/f;->eS(Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$BeaconInfoImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

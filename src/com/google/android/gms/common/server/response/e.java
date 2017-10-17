@@ -6,5 +6,5 @@ package com.google.android.gms.common.server.response;
 
 public interface e
 {
-    Object kP(final Object p0);
+    Object nD(final Object p0);
 }

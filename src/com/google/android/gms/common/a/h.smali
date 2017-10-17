@@ -3,9 +3,9 @@
 
 
 # static fields
-.field private static final hx:Ljava/util/regex/Pattern;
+.field private static final kp:Ljava/util/regex/Pattern;
 
-.field private static final hy:Ljava/util/regex/Pattern;
+.field private static final kq:Ljava/util/regex/Pattern;
 
 
 # direct methods
@@ -18,7 +18,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/a/h;->hx:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/a/h;->kp:Ljava/util/regex/Pattern;
 
     const-string/jumbo v0, "[\\\\\"/\u0008\u000c\n\r\t]"
 
@@ -26,12 +26,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/a/h;->hy:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/a/h;->kq:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method public static jF(Ljava/lang/String;)Ljava/lang/String;
+.method public static mt(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
     const/4 v0, 0x0
@@ -47,7 +47,7 @@
     return-object p0
 
     :cond_0
-    sget-object v1, Lcom/google/android/gms/common/a/h;->hy:Ljava/util/regex/Pattern;
+    sget-object v1, Lcom/google/android/gms/common/a/h;->kq:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 

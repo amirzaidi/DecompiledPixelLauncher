@@ -14,41 +14,41 @@ import android.os.Parcelable$Creator;
 
 public class d implements Parcelable$Creator
 {
-    static void NQ(final FenceUpdateRequestImpl fenceUpdateRequestImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, fenceUpdateRequestImpl.Ok());
-        a.fc(parcel, 2, fenceUpdateRequestImpl.Oj(), false);
-        a.fe(parcel, ey);
+    static void OJ(final FenceUpdateRequestImpl fenceUpdateRequestImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, fenceUpdateRequestImpl.Pd());
+        a.hQ(parcel, 2, fenceUpdateRequestImpl.Pc(), false);
+        a.hS(parcel, hm);
     }
     
-    public FenceUpdateRequestImpl NP(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        ArrayList fz = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public FenceUpdateRequestImpl OI(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        ArrayList in = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fz = b.fZ(parcel, fs, UpdateFenceOperation.CREATOR);
+                    in = b.iN(parcel, ig, UpdateFenceOperation.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FenceUpdateRequestImpl(fn, fz);
+        if (parcel.dataPosition() == ix) {
+            return new FenceUpdateRequestImpl(ib, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public FenceUpdateRequestImpl[] NR(final int n) {
+    public FenceUpdateRequestImpl[] OK(final int n) {
         return new FenceUpdateRequestImpl[n];
     }
 }

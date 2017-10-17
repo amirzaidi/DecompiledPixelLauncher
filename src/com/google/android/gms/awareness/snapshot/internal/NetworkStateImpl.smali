@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private final mv:I
+.field private final fS:I
 
-.field private final mw:I
+.field private final fT:I
 
-.field private final mx:I
+.field private final fU:I
 
 
 # direct methods
@@ -32,16 +32,16 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mw:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fT:I
 
-    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mv:I
+    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fS:I
 
-    iput p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mx:I
+    iput p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fU:I
 
     return-void
 .end method
 
-.method public static pA(I)Ljava/lang/String;
+.method public static eu(I)Ljava/lang/String;
     .locals 2
 
     packed-switch p0, :pswitch_data_0
@@ -91,7 +91,7 @@
     .end packed-switch
 .end method
 
-.method public static pC(I)Ljava/lang/String;
+.method public static ew(I)Ljava/lang/String;
     .locals 2
 
     packed-switch p0, :pswitch_data_0
@@ -137,26 +137,26 @@
 
 
 # virtual methods
-.method pB()I
+.method ev()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mx:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fU:I
 
     return v0
 .end method
 
-.method public pD()I
+.method public ex()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mv:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fS:I
 
     return v0
 .end method
 
-.method pE()I
+.method ey()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mw:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fT:I
 
     return v0
 .end method
@@ -164,9 +164,9 @@
 .method public toString()Ljava/lang/String;
     .locals 5
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mv:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fS:I
 
-    invoke-static {v0}, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->pA(I)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->eu(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -174,9 +174,9 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->mx:I
+    iget v1, p0, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->fU:I
 
-    invoke-static {v1}, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->pC(I)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->ew(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -238,7 +238,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/l;->ri(Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/l;->gc(Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

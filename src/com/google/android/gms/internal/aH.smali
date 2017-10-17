@@ -1,117 +1,128 @@
-.class Lcom/google/android/gms/internal/aH;
+.class public final Lcom/google/android/gms/internal/aH;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final sP:[Ljava/lang/String;
 
-# instance fields
-.field final synthetic sA:Ljava/lang/String;
+.field public static final sQ:[D
 
-.field final synthetic sy:Lcom/google/android/gms/internal/aJ;
+.field public static final sR:[F
 
-.field final synthetic sz:Lcom/google/android/gms/internal/bg;
+.field public static final sS:[[B
+
+.field public static final sT:[Z
+
+.field public static final sU:[I
+
+.field public static final sV:[J
+
+.field public static final sW:[B
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/internal/bg;Lcom/google/android/gms/internal/aJ;Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/aH;->sz:Lcom/google/android/gms/internal/bg;
+    const/4 v1, 0x0
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/aH;->sy:Lcom/google/android/gms/internal/aJ;
+    new-array v0, v1, [I
 
-    iput-object p3, p0, Lcom/google/android/gms/internal/aH;->sA:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sU:[I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-array v0, v1, [J
+
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sV:[J
+
+    new-array v0, v1, [F
+
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sR:[F
+
+    new-array v0, v1, [D
+
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sQ:[D
+
+    new-array v0, v1, [Z
+
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sT:[Z
+
+    new-array v0, v1, [Ljava/lang/String;
+
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sP:[Ljava/lang/String;
+
+    new-array v0, v1, [[B
+
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sS:[[B
+
+    new-array v0, v1, [B
+
+    sput-object v0, Lcom/google/android/gms/internal/aH;->sW:[B
 
     return-void
 .end method
 
+.method public static vi(II)I
+    .locals 1
 
-# virtual methods
-.method public run()V
+    shl-int/lit8 v0, p0, 0x3
+
+    or-int/2addr v0, p1
+
+    return v0
+.end method
+
+.method public static final vj(Lcom/google/android/gms/internal/aY;I)I
     .locals 3
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/aH;->sz:Lcom/google/android/gms/internal/bg;
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/bg;->yn(Lcom/google/android/gms/internal/bg;)I
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/aY;->xK()I
 
     move-result v1
 
-    const/4 v2, 0x1
-
-    if-ge v1, v2, :cond_0
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/aY;->xU(I)Z
 
     :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/aH;->sz:Lcom/google/android/gms/internal/bg;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/aY;->xF()I
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/bg;->yn(Lcom/google/android/gms/internal/bg;)I
+    move-result v2
 
-    move-result v0
+    if-eq v2, p1, :cond_0
 
-    const/4 v1, 0x2
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/internal/aY;->xY(I)V
 
-    if-ge v0, v1, :cond_2
-
-    :goto_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/aH;->sz:Lcom/google/android/gms/internal/bg;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/bg;->yn(Lcom/google/android/gms/internal/bg;)I
-
-    move-result v0
-
-    const/4 v1, 0x3
-
-    if-ge v0, v1, :cond_3
-
-    :goto_2
-    return-void
+    return v0
 
     :cond_0
-    iget-object v1, p0, Lcom/google/android/gms/internal/aH;->sy:Lcom/google/android/gms/internal/aJ;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/aY;->xU(I)Z
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/aH;->sz:Lcom/google/android/gms/internal/bg;
-
-    invoke-static {v2}, Lcom/google/android/gms/internal/bg;->ym(Lcom/google/android/gms/internal/bg;)Landroid/os/Bundle;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
-
-    :goto_3
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/aJ;->onCreate(Landroid/os/Bundle;)V
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+.end method
 
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/aH;->sz:Lcom/google/android/gms/internal/bg;
+.method public static vk(I)I
+    .locals 1
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/bg;->ym(Lcom/google/android/gms/internal/bg;)Landroid/os/Bundle;
+    ushr-int/lit8 v0, p0, 0x3
 
-    move-result-object v0
+    return v0
+.end method
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/aH;->sA:Ljava/lang/String;
+.method static vl(I)I
+    .locals 1
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    and-int/lit8 v0, p0, 0x7
 
-    move-result-object v0
+    return v0
+.end method
 
-    goto :goto_3
+.method public static vm(Lcom/google/android/gms/internal/aY;I)Z
+    .locals 1
 
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/internal/aH;->sy:Lcom/google/android/gms/internal/aJ;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/aY;->xU(I)Z
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/aJ;->onStart()V
+    move-result v0
 
-    goto :goto_1
-
-    :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/internal/aH;->sy:Lcom/google/android/gms/internal/aJ;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/aJ;->onStop()V
-
-    goto :goto_2
+    return v0
 .end method

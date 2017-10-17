@@ -6,14 +6,14 @@ package com.google.android.gms.common.a;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager$NameNotFoundException;
-import com.google.android.gms.internal.aG;
+import com.google.android.gms.internal.az;
 import android.content.Context;
 
 public class j
 {
-    public static boolean jH(final Context context, final String s) {
+    public static boolean mv(final Context context, final String s) {
         boolean b = false;
-        if (!n.jY()) {
+        if (!n.mM()) {
             return false;
         }
         Label_0066: {
@@ -23,15 +23,14 @@ public class j
             try {
             Label_0025:
                 while (true) {
-                    final ApplicationInfo xe = aG.uS(context).xE(s, 0);
+                    final ApplicationInfo xd = az.uR(context).xD(s, 0);
                     try {
-                        if ((xe.flags & 0x200000) != 0x0) {
+                        if ((xd.flags & 0x200000) != 0x0) {
                             b = true;
                         }
                         return b;
-                        // iftrue(Label_0025:, !jI())
-                        return false;
                     }
+                    // iftrue(Label_0025:, !mw())
                     catch (PackageManager$NameNotFoundException ex) {
                         return false;
                     }
@@ -41,7 +40,7 @@ public class j
         }
     }
     
-    public static boolean jI() {
+    public static boolean mw() {
         return false;
     }
 }

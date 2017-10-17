@@ -13,69 +13,69 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class TileOverlayOptions extends AbstractSafeParcelable
 {
     public static final l CREATOR;
-    private o DZ;
-    private boolean Ea;
-    private boolean Eb;
-    private float Ec;
-    private float Ed;
-    private final int Ee;
-    private zzi Ef;
+    private n FE;
+    private boolean FF;
+    private boolean FG;
+    private float FH;
+    private float FI;
+    private final int FJ;
+    private zzi FK;
     
     static {
         CREATOR = new l();
     }
     
     public TileOverlayOptions() {
-        final boolean ee = true;
-        this.Ea = ee;
-        this.Eb = ee;
-        this.Ec = 0.0f;
-        this.Ee = (ee ? 1 : 0);
+        final boolean fj = true;
+        this.FF = fj;
+        this.FG = fj;
+        this.FH = 0.0f;
+        this.FJ = (fj ? 1 : 0);
     }
     
-    TileOverlayOptions(final int ee, final IBinder binder, final boolean ea, final float ed, final boolean eb, final float ec) {
-        o dz = null;
+    TileOverlayOptions(final int fj, final IBinder binder, final boolean ff, final float fi, final boolean fg, final float fh) {
+        n fe = null;
         final boolean b = true;
-        this.Ea = b;
-        this.Eb = b;
-        this.Ec = 0.0f;
-        this.Ee = ee;
-        this.Ef = zzi$zza.zznr(binder);
-        if (this.Ef != null) {
-            dz = new f(this);
+        this.FF = b;
+        this.FG = b;
+        this.FH = 0.0f;
+        this.FJ = fj;
+        this.FK = zzi$zza.zznr(binder);
+        if (this.FK != null) {
+            fe = new f(this);
         }
-        this.DZ = dz;
-        this.Ea = ea;
-        this.Ed = ed;
-        this.Eb = eb;
-        this.Ec = ec;
+        this.FE = fe;
+        this.FF = ff;
+        this.FI = fi;
+        this.FG = fg;
+        this.FH = fh;
     }
     
-    public boolean IY() {
-        return this.Eb;
+    public boolean JR() {
+        return this.FG;
     }
     
-    public float IZ() {
-        return this.Ec;
+    public float JS() {
+        return this.FH;
     }
     
-    IBinder Jb() {
-        return this.Ef.asBinder();
+    IBinder JU() {
+        return this.FK.asBinder();
     }
     
-    public float Jc() {
-        return this.Ed;
+    public float JV() {
+        return this.FI;
     }
     
-    int Jd() {
-        return this.Ee;
+    int JW() {
+        return this.FJ;
     }
     
     public boolean isVisible() {
-        return this.Ea;
+        return this.FF;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        l.JN(this, parcel, n);
+        l.KG(this, parcel, n);
     }
 }

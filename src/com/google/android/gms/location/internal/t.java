@@ -10,14 +10,14 @@ import android.os.IBinder;
 
 class t implements zzj
 {
-    private IBinder Bj;
+    private IBinder CO;
     
-    t(final IBinder bj) {
-        this.Bj = bj;
+    t(final IBinder co) {
+        this.CO = co;
     }
     
     public IBinder asBinder() {
-        return this.Bj;
+        return this.CO;
     }
     
     public void zza(final LocationSettingsResult locationSettingsResult) {
@@ -33,7 +33,7 @@ class t implements zzj
                 obtain.writeInt(1);
                 locationSettingsResult.writeToParcel(obtain, 0);
             }
-            this.Bj.transact(1, obtain, (Parcel)null, 1);
+            this.CO.transact(1, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();

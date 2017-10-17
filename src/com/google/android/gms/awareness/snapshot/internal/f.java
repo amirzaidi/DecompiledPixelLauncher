@@ -12,53 +12,53 @@ import android.os.Parcelable$Creator;
 
 public class f implements Parcelable$Creator
 {
-    static void pY(final BeaconStateImpl$BeaconInfoImpl beaconStateImpl$BeaconInfoImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, beaconStateImpl$BeaconInfoImpl.qY());
-        a.fo(parcel, 2, beaconStateImpl$BeaconInfoImpl.qW(), false);
-        a.fo(parcel, 3, beaconStateImpl$BeaconInfoImpl.qX(), false);
-        a.fv(parcel, 4, beaconStateImpl$BeaconInfoImpl.qV(), false);
-        a.fe(parcel, ey);
+    static void eS(final BeaconStateImpl$BeaconInfoImpl beaconStateImpl$BeaconInfoImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, beaconStateImpl$BeaconInfoImpl.fU());
+        a.ic(parcel, 2, beaconStateImpl$BeaconInfoImpl.fS(), false);
+        a.ic(parcel, 3, beaconStateImpl$BeaconInfoImpl.fT(), false);
+        a.ij(parcel, 4, beaconStateImpl$BeaconInfoImpl.fR(), false);
+        a.hS(parcel, hm);
     }
     
-    public BeaconStateImpl$BeaconInfoImpl[] pW(final int n) {
+    public BeaconStateImpl$BeaconInfoImpl[] eQ(final int n) {
         return new BeaconStateImpl$BeaconInfoImpl[n];
     }
     
-    public BeaconStateImpl$BeaconInfoImpl pX(final Parcel parcel) {
-        byte[] gf = null;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        int fn = 0;
-        String fq2 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public BeaconStateImpl$BeaconInfoImpl eR(final Parcel parcel) {
+        byte[] it = null;
+        final int ix = b.ix(parcel);
+        String ie = null;
+        int ib = 0;
+        String ie2 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gf = b.gf(parcel, fs);
+                    it = b.iT(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new BeaconStateImpl$BeaconInfoImpl(fn, fq, fq2, gf);
+        if (parcel.dataPosition() == ix) {
+            return new BeaconStateImpl$BeaconInfoImpl(ib, ie, ie2, it);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

@@ -10,9 +10,9 @@
 
 
 # instance fields
-.field private final eA:Ljava/lang/String;
+.field private final hi:Ljava/lang/String;
 
-.field final eB:I
+.field final hj:I
 
 
 # direct methods
@@ -35,11 +35,11 @@
 
     const-string/jumbo v0, "scopeUri must not be null or empty"
 
-    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/l;->hp(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/google/android/gms/common/internal/l;->kd(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    iput p1, p0, Lcom/google/android/gms/common/api/Scope;->eB:I
+    iput p1, p0, Lcom/google/android/gms/common/api/Scope;->hj:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/api/Scope;->eA:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/api/Scope;->hi:Ljava/lang/String;
 
     return-void
 .end method
@@ -56,14 +56,6 @@
 
 
 # virtual methods
-.method public el()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->eA:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 2
 
@@ -75,11 +67,11 @@
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->eA:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->hi:Ljava/lang/String;
 
     check-cast p1, Lcom/google/android/gms/common/api/Scope;
 
-    iget-object v1, p1, Lcom/google/android/gms/common/api/Scope;->eA:Ljava/lang/String;
+    iget-object v1, p1, Lcom/google/android/gms/common/api/Scope;->hi:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -96,10 +88,18 @@
     return v1
 .end method
 
+.method public gS()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->hi:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->eA:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->hi:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -111,7 +111,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->eA:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/api/Scope;->hi:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -119,7 +119,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/api/x;->eB(Lcom/google/android/gms/common/api/Scope;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/api/x;->hp(Lcom/google/android/gms/common/api/Scope;Landroid/os/Parcel;I)V
 
     return-void
 .end method

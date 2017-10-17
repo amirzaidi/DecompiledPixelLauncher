@@ -3,24 +3,24 @@
 
 
 # static fields
-.field public static final kC:I
+.field public static final nu:I
 
-.field private static final kD:Lcom/google/android/gms/common/f;
+.field private static final nv:Lcom/google/android/gms/common/f;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    sget v0, Lcom/google/android/gms/common/k;->kI:I
+    sget v0, Lcom/google/android/gms/common/k;->nA:I
 
-    sput v0, Lcom/google/android/gms/common/f;->kC:I
+    sput v0, Lcom/google/android/gms/common/f;->nu:I
 
     new-instance v0, Lcom/google/android/gms/common/f;
 
     invoke-direct {v0}, Lcom/google/android/gms/common/f;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/f;->kD:Lcom/google/android/gms/common/f;
+    sput-object v0, Lcom/google/android/gms/common/f;->nv:Lcom/google/android/gms/common/f;
 
     return-void
 .end method
@@ -33,7 +33,7 @@
     return-void
 .end method
 
-.method private nV(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+.method private qH(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -44,7 +44,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget v1, Lcom/google/android/gms/common/f;->kC:I
+    sget v1, Lcom/google/android/gms/common/f;->nu:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -125,29 +125,57 @@
 
 
 # virtual methods
-.method public nA(Landroid/content/Context;II)Landroid/app/PendingIntent;
+.method public qB(Landroid/content/Context;I)Z
     .locals 1
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/android/gms/common/f;->nL(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public nC(I)Z
-    .locals 1
-
-    invoke-static {p1}, Lcom/google/android/gms/common/k;->oc(I)Z
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/k;->rd(Landroid/content/Context;I)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public nJ(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+.method public qF(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 1
+
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/k;->qU(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public qG(Landroid/content/Context;)V
+    .locals 0
+
+    invoke-static {p1}, Lcom/google/android/gms/common/k;->qZ(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+.method public qn(Landroid/content/Context;II)Landroid/app/PendingIntent;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/android/gms/common/f;->qx(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public qp(I)Z
+    .locals 1
+
+    invoke-static {p1}, Lcom/google/android/gms/common/k;->qO(I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public qv(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
     .locals 2
 
     sparse-switch p2, :sswitch_data_0
@@ -157,20 +185,20 @@
     return-object v0
 
     :sswitch_0
-    invoke-direct {p0, p1, p3}, Lcom/google/android/gms/common/f;->nV(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, p1, p3}, Lcom/google/android/gms/common/f;->qH(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string/jumbo v1, "com.google.android.gms"
 
-    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/t;->hE(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v1, v0}, Lcom/google/android/gms/common/internal/t;->ks(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
     return-object v0
 
     :sswitch_1
-    invoke-static {}, Lcom/google/android/gms/common/internal/t;->hG()Landroid/content/Intent;
+    invoke-static {}, Lcom/google/android/gms/common/internal/t;->ku()Landroid/content/Intent;
 
     move-result-object v0
 
@@ -179,7 +207,7 @@
     :sswitch_2
     const-string/jumbo v0, "com.google.android.gms"
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/t;->hD(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/t;->kr(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -194,12 +222,12 @@
     .end sparse-switch
 .end method
 
-.method public nL(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
+.method public qx(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
     .locals 2
 
     const/4 v1, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/a/c;->jx(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/google/android/gms/common/a/c;->ml(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -207,7 +235,7 @@
 
     :cond_0
     :goto_0
-    invoke-virtual {p0, p1, p2, p4}, Lcom/google/android/gms/common/f;->nJ(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, p1, p2, p4}, Lcom/google/android/gms/common/f;->qv(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -234,26 +262,26 @@
     return-object v1
 .end method
 
-.method public nM(I)Landroid/content/Intent;
+.method public qy(I)Landroid/content/Intent;
     .locals 1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, p1, v0}, Lcom/google/android/gms/common/f;->nJ(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, v0, p1, v0}, Lcom/google/android/gms/common/f;->qv(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public nN(Landroid/content/Context;)I
+.method public qz(Landroid/content/Context;)I
     .locals 2
 
-    invoke-static {p1}, Lcom/google/android/gms/common/k;->op(Landroid/content/Context;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/k;->rb(Landroid/content/Context;)I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/k;->or(Landroid/content/Context;I)Z
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/k;->rd(Landroid/content/Context;I)Z
 
     move-result v1
 
@@ -266,32 +294,4 @@
     const/16 v0, 0x12
 
     goto :goto_0
-.end method
-
-.method public nP(Landroid/content/Context;I)Z
-    .locals 1
-
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/k;->or(Landroid/content/Context;I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public nT(Landroid/content/Context;Ljava/lang/String;)Z
-    .locals 1
-
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/k;->oi(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public nU(Landroid/content/Context;)V
-    .locals 0
-
-    invoke-static {p1}, Lcom/google/android/gms/common/k;->on(Landroid/content/Context;)V
-
-    return-void
 .end method

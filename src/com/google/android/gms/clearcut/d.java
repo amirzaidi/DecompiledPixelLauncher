@@ -6,5 +6,5 @@ package com.google.android.gms.clearcut;
 
 public interface d
 {
-    boolean un(final String p0, final int p1);
+    boolean um(final String p0, final int p1);
 }

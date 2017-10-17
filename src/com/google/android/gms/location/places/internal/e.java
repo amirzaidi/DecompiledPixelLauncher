@@ -13,47 +13,47 @@ import android.os.Parcelable$Creator;
 
 public class e implements Parcelable$Creator
 {
-    static void De(final NearbyLikelihoodEntity nearbyLikelihoodEntity, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.eW(parcel, 1, (Parcelable)nearbyLikelihoodEntity.yW, n, false);
-        a.fs(parcel, 2, nearbyLikelihoodEntity.yX);
-        a.fj(parcel, 1000, nearbyLikelihoodEntity.yV);
-        a.fe(parcel, ey);
+    static void DX(final NearbyLikelihoodEntity nearbyLikelihoodEntity, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hK(parcel, 1, (Parcelable)nearbyLikelihoodEntity.AB, n, false);
+        a.ig(parcel, 2, nearbyLikelihoodEntity.AC);
+        a.hX(parcel, 1000, nearbyLikelihoodEntity.AA);
+        a.hS(parcel, hm);
     }
     
-    public NearbyLikelihoodEntity Dc(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
+    public NearbyLikelihoodEntity DV(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
         PlaceEntity placeEntity = null;
-        float gj = 0.0f;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        float ix2 = 0.0f;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    placeEntity = (PlaceEntity)b.fW(parcel, fs, (Parcelable$Creator)PlaceEntity.CREATOR);
+                    placeEntity = (PlaceEntity)b.iK(parcel, ig, (Parcelable$Creator)PlaceEntity.CREATOR);
                     continue;
                 }
                 case 2: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new NearbyLikelihoodEntity(fn, placeEntity, gj);
+        if (parcel.dataPosition() == ix) {
+            return new NearbyLikelihoodEntity(ib, placeEntity, ix2);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public NearbyLikelihoodEntity[] Dd(final int n) {
+    public NearbyLikelihoodEntity[] DW(final int n) {
         return new NearbyLikelihoodEntity[n];
     }
 }

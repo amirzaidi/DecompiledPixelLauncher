@@ -4,9 +4,9 @@
 
 package com.google.android.gms.common.api;
 
-public abstract class c
+import com.google.android.gms.common.ConnectionResult;
+
+public interface c
 {
-    public abstract void cancel();
-    
-    public abstract void ds(final a p0);
+    void gw(final ConnectionResult p0);
 }

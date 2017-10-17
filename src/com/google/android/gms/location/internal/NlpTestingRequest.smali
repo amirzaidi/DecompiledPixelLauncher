@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private final Aq:I
+.field private final BV:I
 
-.field private final Ar:J
+.field private final BW:J
 
 
 # direct methods
@@ -30,27 +30,27 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->Aq:I
+    iput p1, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->BV:I
 
-    iput-wide p2, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->Ar:J
+    iput-wide p2, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->BW:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public ES()J
+.method public FL()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->Ar:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->BW:J
 
     return-wide v0
 .end method
 
-.method public ET()I
+.method public FM()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->Aq:I
+    iget v0, p0, Lcom/google/android/gms/location/internal/NlpTestingRequest;->BV:I
 
     return v0
 .end method
@@ -58,7 +58,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/internal/m;->FG(Lcom/google/android/gms/location/internal/NlpTestingRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/internal/m;->Gz(Lcom/google/android/gms/location/internal/NlpTestingRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

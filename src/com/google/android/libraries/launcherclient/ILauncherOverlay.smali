@@ -43,6 +43,9 @@
 .method public abstract startScroll()V
 .end method
 
+.method public abstract startSearch([BLandroid/os/Bundle;)Z
+.end method
+
 .method public abstract windowAttached(Landroid/view/WindowManager$LayoutParams;Lcom/google/android/libraries/launcherclient/ILauncherOverlayCallback;I)V
 .end method
 

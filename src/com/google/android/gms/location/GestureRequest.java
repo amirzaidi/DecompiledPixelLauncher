@@ -13,12 +13,12 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class GestureRequest extends AbstractSafeParcelable
 {
     public static final s CREATOR;
-    private static final List CV;
-    private static final List CX;
-    private static final List CY;
-    private static final List CZ;
-    private final int CW;
-    private final List Da;
+    private static final List EA;
+    private static final List EC;
+    private static final List ED;
+    private static final List EE;
+    private final int EB;
+    private final List EF;
     
     static {
         final int n = 5;
@@ -46,10 +46,10 @@ public final class GestureRequest extends AbstractSafeParcelable
         array[16] = 17;
         array[17] = 18;
         array[18] = 19;
-        CZ = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array));
+        EE = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array));
         final Integer[] array2 = new Integer[n5];
         array2[0] = n5;
-        CY = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array2));
+        ED = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array2));
         final Integer[] array3 = new Integer[10];
         array3[0] = n4;
         array3[n5] = n2;
@@ -61,7 +61,7 @@ public final class GestureRequest extends AbstractSafeParcelable
         array3[7] = 16;
         array3[8] = 18;
         array3[9] = 19;
-        CV = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array3));
+        EA = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array3));
         final Integer[] array4 = new Integer[8];
         array4[0] = n3;
         array4[n5] = n;
@@ -71,24 +71,24 @@ public final class GestureRequest extends AbstractSafeParcelable
         array4[n] = 13;
         array4[6] = 15;
         array4[7] = 17;
-        CX = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array4));
+        EC = Collections.unmodifiableList((List<?>)Arrays.asList((T[])array4));
         CREATOR = new s();
     }
     
-    GestureRequest(final int cw, final List da) {
-        this.CW = cw;
-        this.Da = da;
+    GestureRequest(final int eb, final List ef) {
+        this.EB = eb;
+        this.EF = ef;
     }
     
-    public List HA() {
-        return this.Da;
+    public List It() {
+        return this.EF;
     }
     
-    public int HB() {
-        return this.CW;
+    public int Iu() {
+        return this.EB;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        s.If(this, parcel, n);
+        s.IY(this, parcel, n);
     }
 }

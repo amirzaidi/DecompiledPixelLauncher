@@ -13,35 +13,35 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class LatLngBounds extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final q CREATOR;
-    public final LatLng DA;
-    public final LatLng DB;
-    private final int Dz;
+    private final int Fe;
+    public final LatLng Ff;
+    public final LatLng Fg;
     
     static {
         CREATOR = new q();
     }
     
-    LatLngBounds(final int dz, final LatLng da, final LatLng db) {
+    LatLngBounds(final int fe, final LatLng ff, final LatLng fg) {
         final int n = 1;
-        l.ho(da, "null southwest");
-        l.ho(db, "null northeast");
+        l.kc(ff, "null southwest");
+        l.kc(fg, "null northeast");
         boolean b;
-        if (db.EU >= da.EU) {
+        if (fg.Gz >= ff.Gz) {
             b = (n != 0);
         }
         else {
             b = false;
         }
-        final Object[] array = { da.EU, null };
-        array[n] = db.EU;
-        l.hu(b, "southern latitude exceeds northern latitude (%s > %s)", array);
-        this.Dz = dz;
-        this.DA = da;
-        this.DB = db;
+        final Object[] array = { ff.Gz, null };
+        array[n] = fg.Gz;
+        l.ki(b, "southern latitude exceeds northern latitude (%s > %s)", array);
+        this.Fe = fe;
+        this.Ff = ff;
+        this.Fg = fg;
     }
     
-    int Iu() {
-        return this.Dz;
+    int Jn() {
+        return this.Fe;
     }
     
     public boolean equals(final Object o) {
@@ -51,7 +51,7 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
         }
         if (o instanceof LatLngBounds) {
             final LatLngBounds latLngBounds = (LatLngBounds)o;
-            if (!this.DA.equals(latLngBounds.DA) || !this.DB.equals(latLngBounds.DB)) {
+            if (!this.Ff.equals(latLngBounds.Ff) || !this.Fg.equals(latLngBounds.Fg)) {
                 b = false;
             }
             return b;
@@ -60,14 +60,14 @@ public final class LatLngBounds extends AbstractSafeParcelable implements Reflec
     }
     
     public int hashCode() {
-        return u.hI(this.DA, this.DB);
+        return u.kw(this.Ff, this.Fg);
     }
     
     public String toString() {
-        return u.hJ(this).hB("southwest", this.DA).hB("northeast", this.DB).toString();
+        return u.kx(this).kp("southwest", this.Ff).kp("northeast", this.Fg).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        q.Kc(this, parcel, n);
+        q.KV(this, parcel, n);
     }
 }

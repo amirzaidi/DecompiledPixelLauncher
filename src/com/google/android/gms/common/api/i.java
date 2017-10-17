@@ -4,35 +4,18 @@
 
 package com.google.android.gms.common.api;
 
-import android.content.Intent;
-import com.google.android.gms.common.internal.c;
-import android.os.IBinder;
-import java.util.Set;
-import com.google.android.gms.common.internal.zzq;
-import java.io.PrintWriter;
-import java.io.FileDescriptor;
+import java.util.WeakHashMap;
+import java.util.Map;
 
-public interface i extends o
+public abstract class i
 {
-    boolean dZ();
+    private static final Object hg;
+    private static final Map hh;
     
-    void dump(final String p0, final FileDescriptor p1, final PrintWriter p2, final String[] p3);
+    static {
+        hh = new WeakHashMap();
+        hg = new Object();
+    }
     
-    boolean ea();
-    
-    void eb(final zzq p0, final Set p1);
-    
-    void ec();
-    
-    IBinder ed();
-    
-    void ee(final c p0);
-    
-    Intent ef();
-    
-    boolean eg();
-    
-    boolean eh();
-    
-    boolean ei();
+    public abstract void gQ(final int p0);
 }

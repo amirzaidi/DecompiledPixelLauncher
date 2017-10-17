@@ -13,59 +13,59 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void Ee(final PlaceFilter placeFilter, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fb(parcel, 1, placeFilter.zh, false);
-        a.fa(parcel, 3, placeFilter.zi);
-        a.fc(parcel, 4, placeFilter.zo, false);
-        a.fr(parcel, 6, placeFilter.zk, false);
-        a.fj(parcel, 1000, placeFilter.zn);
-        a.fe(parcel, ey);
+    static void EX(final PlaceFilter placeFilter, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hP(parcel, 1, placeFilter.AM, false);
+        a.hO(parcel, 3, placeFilter.AN);
+        a.hQ(parcel, 4, placeFilter.AT, false);
+        a.if(parcel, 6, placeFilter.AP, false);
+        a.hX(parcel, 1000, placeFilter.AS);
+        a.hS(parcel, hm);
     }
     
-    public PlaceFilter[] Ec(final int n) {
+    public PlaceFilter[] EV(final int n) {
         return new PlaceFilter[n];
     }
     
-    public PlaceFilter Ed(final Parcel parcel) {
-        boolean fx = false;
-        List fz = null;
-        final int fj = b.fJ(parcel);
-        List fr = null;
-        List fh = null;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public PlaceFilter EW(final Parcel parcel) {
+        boolean il = false;
+        List in = null;
+        final int ix = b.ix(parcel);
+        List if1 = null;
+        List iv = null;
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fh = b.fH(parcel, fs);
+                    iv = b.iv(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fz = b.fZ(parcel, fs, (Parcelable$Creator)UserDataType.CREATOR);
+                    in = b.iN(parcel, ig, (Parcelable$Creator)UserDataType.CREATOR);
                     continue;
                 }
                 case 6: {
-                    fr = b.fR(parcel, fs);
+                    if1 = b.iF(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlaceFilter(fn, fh, fx, fr, fz);
+        if (parcel.dataPosition() == ix) {
+            return new PlaceFilter(ib, iv, il, if1, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

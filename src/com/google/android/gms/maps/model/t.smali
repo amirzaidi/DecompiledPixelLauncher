@@ -14,46 +14,46 @@
     return-void
 .end method
 
-.method static KA(Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;Landroid/os/Parcel;I)V
+.method static Lt(Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;Landroid/os/Parcel;I)V
     .locals 3
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Iv()I
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Jo()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DC:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fh:F
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DE:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fj:F
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Ky(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+.method public Lr(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
     .locals 6
 
     const/4 v0, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v3
 
@@ -83,36 +83,36 @@
     return-object v3
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v4
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v5
 
     packed-switch v5, :pswitch_data_0
 
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v2
 
     goto :goto_0
 
     :pswitch_1
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v1
 
     goto :goto_0
 
     :pswitch_2
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v0
 
@@ -153,7 +153,7 @@
     .end packed-switch
 .end method
 
-.method public Kz(I)[Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+.method public Ls(I)[Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
@@ -164,7 +164,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/t;->Ky(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/t;->Lr(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
 
     move-result-object v0
 
@@ -174,7 +174,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/t;->Kz(I)[Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/t;->Ls(I)[Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
 
     move-result-object v0
 

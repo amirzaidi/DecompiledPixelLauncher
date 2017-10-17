@@ -14,80 +14,80 @@ import android.os.Parcelable$Creator;
 
 public class f implements Parcelable$Creator
 {
-    static void kQ(final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, fastJsonResponse$Field.ki());
-        a.fj(parcel, 2, fastJsonResponse$Field.kt());
-        a.fa(parcel, 3, fastJsonResponse$Field.ko());
-        a.fj(parcel, 4, fastJsonResponse$Field.kf());
-        a.fa(parcel, 5, fastJsonResponse$Field.kh());
-        a.fo(parcel, 6, fastJsonResponse$Field.kn(), false);
-        a.fj(parcel, 7, fastJsonResponse$Field.kj());
-        a.fo(parcel, 8, fastJsonResponse$Field.kg(), false);
-        a.eW(parcel, 9, (Parcelable)fastJsonResponse$Field.kk(), n, false);
-        a.fe(parcel, ey);
+    static void nK(final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, fastJsonResponse$Field.mW());
+        a.hX(parcel, 2, fastJsonResponse$Field.nh());
+        a.hO(parcel, 3, fastJsonResponse$Field.nc());
+        a.hX(parcel, 4, fastJsonResponse$Field.mT());
+        a.hO(parcel, 5, fastJsonResponse$Field.mV());
+        a.ic(parcel, 6, fastJsonResponse$Field.nb(), false);
+        a.hX(parcel, 7, fastJsonResponse$Field.mX());
+        a.ic(parcel, 8, fastJsonResponse$Field.mU(), false);
+        a.hK(parcel, 9, (Parcelable)fastJsonResponse$Field.mY(), n, false);
+        a.hS(parcel, hm);
     }
     
     public FastJsonResponse$Field createFromParcel(final Parcel parcel) {
         ConverterWrapper converterWrapper = null;
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        String fq2 = null;
-        boolean fx = false;
-        int fn2 = 0;
-        boolean fx2 = false;
-        int fn3 = 0;
-        int fn4 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        String ie = null;
+        String ie2 = null;
+        boolean il = false;
+        int ib2 = 0;
+        boolean il2 = false;
+        int ib3 = 0;
+        int ib4 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn4 = b.fN(parcel, fs);
+                    ib4 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    converterWrapper = (ConverterWrapper)b.fW(parcel, fs, (Parcelable$Creator)ConverterWrapper.CREATOR);
+                    converterWrapper = (ConverterWrapper)b.iK(parcel, ig, (Parcelable$Creator)ConverterWrapper.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FastJsonResponse$Field(fn4, fn3, fx2, fn2, fx, fq2, fn, fq, converterWrapper);
+        if (parcel.dataPosition() == ix) {
+            return new FastJsonResponse$Field(ib4, ib3, il2, ib2, il, ie2, ib, ie, converterWrapper);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public FastJsonResponse$Field[] newArray(final int n) {

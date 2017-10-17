@@ -12,56 +12,56 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void Hf(final LocationAvailability locationAvailability, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, locationAvailability.BL);
-        a.fj(parcel, 2, locationAvailability.BN);
-        a.fw(parcel, 3, locationAvailability.BO);
-        a.fj(parcel, 4, locationAvailability.BP);
-        a.fj(parcel, 1000, locationAvailability.Gy());
-        a.fe(parcel, ey);
+    static void HY(final LocationAvailability locationAvailability, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, locationAvailability.Dq);
+        a.hX(parcel, 2, locationAvailability.Ds);
+        a.ik(parcel, 3, locationAvailability.Dt);
+        a.hX(parcel, 4, locationAvailability.Du);
+        a.hX(parcel, 1000, locationAvailability.Hr());
+        a.hS(parcel, hm);
     }
     
     public LocationAvailability createFromParcel(final Parcel parcel) {
-        int fn = 1;
-        final int fj = b.fJ(parcel);
-        int fn2 = 0;
-        int fn3 = 1000;
-        long fl = 0L;
-        int fn4 = fn;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib = 1;
+        final int ix = b.ix(parcel);
+        int ib2 = 0;
+        int ib3 = 1000;
+        long iz = 0L;
+        int ib4 = ib;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn4 = b.fN(parcel, fs);
+                    ib4 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LocationAvailability(fn2, fn3, fn4, fn, fl);
+        if (parcel.dataPosition() == ix) {
+            return new LocationAvailability(ib2, ib3, ib4, ib, iz);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public LocationAvailability[] newArray(final int n) {

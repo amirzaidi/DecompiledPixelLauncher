@@ -11,33 +11,33 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class FenceTriggerInfoImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final String HV;
-    private final boolean HW;
-    private final int HX;
+    private final String JA;
+    private final boolean JB;
+    private final int JC;
     
     static {
         CREATOR = (Parcelable$Creator)new h();
     }
     
-    FenceTriggerInfoImpl(final int hx, final boolean hw, final String hv) {
-        this.HX = hx;
-        this.HW = hw;
-        this.HV = hv;
+    FenceTriggerInfoImpl(final int jc, final boolean jb, final String ja) {
+        this.JC = jc;
+        this.JB = jb;
+        this.JA = ja;
     }
     
-    public boolean NN() {
-        return this.HW;
+    public boolean OG() {
+        return this.JB;
     }
     
-    int NO() {
-        return this.HX;
+    int OH() {
+        return this.JC;
     }
     
     public String getKey() {
-        return this.HV;
+        return this.JA;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.Oc(this, parcel, n);
+        h.OV(this, parcel, n);
     }
 }

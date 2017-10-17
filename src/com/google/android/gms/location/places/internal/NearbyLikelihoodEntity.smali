@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field final yV:I
+.field final AA:I
 
-.field final yW:Lcom/google/android/gms/location/places/internal/PlaceEntity;
+.field final AB:Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
-.field final yX:F
+.field final AC:F
 
 
 # direct methods
@@ -32,11 +32,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yV:I
+    iput p1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AA:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yW:Lcom/google/android/gms/location/places/internal/PlaceEntity;
+    iput-object p2, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AB:Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
-    iput p3, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yX:F
+    iput p3, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AC:F
 
     return-void
 .end method
@@ -58,9 +58,9 @@
 
     check-cast p1, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;
 
-    iget-object v2, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yW:Lcom/google/android/gms/location/places/internal/PlaceEntity;
+    iget-object v2, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AB:Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
-    iget-object v3, p1, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yW:Lcom/google/android/gms/location/places/internal/PlaceEntity;
+    iget-object v3, p1, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AB:Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
     invoke-virtual {v2, v3}, Lcom/google/android/gms/location/places/internal/PlaceEntity;->equals(Ljava/lang/Object;)Z
 
@@ -81,9 +81,9 @@
     return v1
 
     :cond_3
-    iget v2, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yX:F
+    iget v2, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AC:F
 
-    iget v3, p1, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yX:F
+    iget v3, p1, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AC:F
 
     cmpl-float v2, v2, v3
 
@@ -99,13 +99,13 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yW:Lcom/google/android/gms/location/places/internal/PlaceEntity;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AB:Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yX:F
+    iget v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AC:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -115,7 +115,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -125,19 +125,19 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->hJ(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->kx(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yW:Lcom/google/android/gms/location/places/internal/PlaceEntity;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AB:Lcom/google/android/gms/location/places/internal/PlaceEntity;
 
     const-string/jumbo v2, "nearby place"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->yX:F
+    iget v1, p0, Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;->AC:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -145,7 +145,7 @@
 
     const-string/jumbo v2, "likelihood"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
@@ -159,7 +159,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/internal/e;->De(Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/internal/e;->DX(Lcom/google/android/gms/location/places/internal/NearbyLikelihoodEntity;Landroid/os/Parcel;I)V
 
     return-void
 .end method

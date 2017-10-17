@@ -24,70 +24,70 @@ import java.util.List;
 
 public class b
 {
-    private static final Object iO;
-    private static Integer iQ;
-    private static b iR;
-    private final List iP;
-    private final List iS;
-    private final List iT;
-    private final List iU;
-    private f iV;
-    private f iW;
+    private static final Object lG;
+    private static Integer lI;
+    private static b lJ;
+    private final List lH;
+    private final List lK;
+    private final List lL;
+    private final List lM;
+    private f lN;
+    private f lO;
     
     static {
-        iO = new Object();
+        lG = new Object();
     }
     
     private b() {
         final int n = 1024;
-        if (lX() != a.ir) {
-            final String s = (String)e.jk.get();
-            List<String> ip;
+        if (oL() != a.lj) {
+            final String s = (String)d.mc.get();
+            List<String> lh;
             if (s != null) {
-                ip = Arrays.asList(s.split(","));
+                lh = Arrays.asList(s.split(","));
             }
             else {
-                ip = (List<String>)Collections.EMPTY_LIST;
+                lh = (List<String>)Collections.EMPTY_LIST;
             }
-            this.iP = ip;
-            final String s2 = (String)e.jj.get();
-            List<String> iu;
+            this.lH = lh;
+            final String s2 = (String)d.mb.get();
+            List<String> lm;
             if (s2 != null) {
-                iu = Arrays.asList(s2.split(","));
+                lm = Arrays.asList(s2.split(","));
             }
             else {
-                iu = (List<String>)Collections.EMPTY_LIST;
+                lm = (List<String>)Collections.EMPTY_LIST;
             }
-            this.iU = iu;
-            final String s3 = (String)e.jo.get();
-            List<String> is;
+            this.lM = lm;
+            final String s3 = (String)d.mg.get();
+            List<String> lk;
             if (s3 != null) {
-                is = Arrays.asList(s3.split(","));
+                lk = Arrays.asList(s3.split(","));
             }
             else {
-                is = (List<String>)Collections.EMPTY_LIST;
+                lk = (List<String>)Collections.EMPTY_LIST;
             }
-            this.iS = is;
-            final String s4 = (String)e.jl.get();
-            List<String> it;
+            this.lK = lk;
+            final String s4 = (String)d.md.get();
+            List<String> ll;
             if (s4 != null) {
-                it = Arrays.asList(s4.split(","));
+                ll = Arrays.asList(s4.split(","));
             }
             else {
-                it = (List<String>)Collections.EMPTY_LIST;
+                ll = (List<String>)Collections.EMPTY_LIST;
             }
-            this.iT = it;
-            this.iW = new f(n, (long)e.jm.get());
-            this.iV = new f(n, (long)e.jm.get());
+            this.lL = ll;
+            this.lO = new f(n, (long)d.me.get());
+            this.lN = new f(n, (long)d.me.get());
             return;
         }
-        this.iP = Collections.EMPTY_LIST;
-        this.iU = Collections.EMPTY_LIST;
-        this.iS = Collections.EMPTY_LIST;
-        this.iT = Collections.EMPTY_LIST;
+        this.lH = Collections.EMPTY_LIST;
+        this.lM = Collections.EMPTY_LIST;
+        this.lK = Collections.EMPTY_LIST;
+        this.lL = Collections.EMPTY_LIST;
     }
     
-    private static String lQ(final StackTraceElement[] array, final int n) {
+    private static String oE(final StackTraceElement[] array, final int n) {
         if (n + 4 < array.length) {
             final StackTraceElement stackTraceElement = array[n + 4];
             final String value = String.valueOf(stackTraceElement.getClassName());
@@ -97,16 +97,16 @@ public class b
         return "<bottom of call stack>";
     }
     
-    private boolean lR(final Context context, final Intent intent) {
+    private boolean oF(final Context context, final Intent intent) {
         final ComponentName component = intent.getComponent();
-        return component != null && j.jH(context, component.getPackageName());
+        return component != null && j.mv(context, component.getPackageName());
     }
     
-    private boolean lU() {
+    private boolean oI() {
         return false;
     }
     
-    private static ServiceInfo lW(final Context context, final Intent intent) {
+    private static ServiceInfo oK(final Context context, final Intent intent) {
         final int n = 3;
         final int n2 = 2;
         final int n3 = 1;
@@ -114,7 +114,7 @@ public class b
         if (queryIntentServices == null || queryIntentServices.size() == 0) {
             final Object[] array = new Object[n2];
             array[0] = intent.toUri(0);
-            array[n3] = lY(n, 20);
+            array[n3] = oM(n, 20);
             Log.w("ConnectionTracker", String.format("There are no handler of this intent: %s\n Stack trace: %s", array));
             return null;
         }
@@ -123,7 +123,7 @@ public class b
         }
         final Object[] array2 = new Object[n2];
         array2[0] = intent.toUri(0);
-        array2[n3] = lY(n, 20);
+        array2[n3] = oM(n, 20);
         Log.w("ConnectionTracker", String.format("Multiple handlers found for this intent: %s\n Stack trace: %s", array2));
         final Iterator<ResolveInfo> iterator = queryIntentServices.iterator();
         while (iterator.hasNext()) {
@@ -132,24 +132,24 @@ public class b
         return null;
     }
     
-    private static int lX() {
-        if (b.iQ == null) {
+    private static int oL() {
+        if (b.lI == null) {
             while (true) {
                 Integer n2 = null;
                 try {
                     Label_0056: {
-                        if (j.jI()) {
+                        if (j.mw()) {
                             break Label_0056;
                         }
-                        final int n = a.ir;
+                        final int n = a.lj;
                         try {
                             final Integer value = n;
                             try {
-                                b.iQ = value;
-                                return b.iQ;
-                                final i jn = e.jn;
+                                b.lI = value;
+                                return b.lI;
+                                final i mf = d.mf;
                                 try {
-                                    final Object value2 = jn.get();
+                                    final Object value2 = mf.get();
                                     try {
                                         n2 = (Integer)value2;
                                     }
@@ -167,95 +167,95 @@ public class b
                 continue;
             }
         }
-        return b.iQ;
+        return b.lI;
     }
     
-    private static String lY(int i, final int n) {
+    private static String oM(int i, final int n) {
         final StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         final StringBuffer sb = new StringBuffer();
         while (i < n + i) {
-            sb.append(lQ(stackTrace, i)).append(" ");
+            sb.append(oE(stackTrace, i)).append(" ");
             ++i;
         }
         return sb.toString();
     }
     
-    private void lZ(final Context context, final String s, final String s2, final Intent intent, final int n) {
+    private void oN(final Context context, final String s, final String s2, final Intent intent, final int n) {
         final int n2 = 1;
-        String jc = null;
-        if (this.lU() && this.iW != null) {
+        String mq = null;
+        if (this.oI() && this.lO != null) {
             String processName;
             String name;
             if (n != 4 && n != n2) {
-                final ServiceInfo lw = lW(context, intent);
-                if (lw == null) {
+                final ServiceInfo ok = oK(context, intent);
+                if (ok == null) {
                     final Object[] array = { s2, null };
                     array[n2] = intent.toUri(0);
                     Log.w("ConnectionTracker", String.format("Client %s made an invalid request %s", array));
                     return;
                 }
-                processName = lw.processName;
-                name = lw.name;
-                jc = com.google.android.gms.common.a.f.jC();
-                if (!this.me(jc, s2, processName, name)) {
+                processName = ok.processName;
+                name = ok.name;
+                mq = com.google.android.gms.common.a.f.mq();
+                if (!this.oS(mq, s2, processName, name)) {
                     return;
                 }
-                this.iW.mt(s);
+                this.lO.ph(s);
             }
             else {
-                if (!this.iW.mu(s)) {
+                if (!this.lO.pi(s)) {
                     return;
                 }
                 name = null;
                 processName = null;
             }
-            this.md(context, s, n, jc, s2, processName, name);
+            this.oR(context, s, n, mq, s2, processName, name);
         }
     }
     
-    private String mb(final ServiceConnection serviceConnection) {
+    private String oP(final ServiceConnection serviceConnection) {
         return String.valueOf(Process.myPid() << 32 | System.identityHashCode(serviceConnection));
     }
     
-    public static b mc() {
-        synchronized (b.iO) {
-            if (b.iR == null) {
-                b.iR = new b();
+    public static b oQ() {
+        synchronized (b.lG) {
+            if (b.lJ == null) {
+                b.lJ = new b();
             }
-            return b.iR;
+            return b.lJ;
         }
     }
     
-    private void md(final Context context, final String s, final int n, final String s2, final String s3, final String s4, final String s5) {
+    private void oR(final Context context, final String s, final int n, final String s2, final String s3, final String s4, final String s5) {
         final long currentTimeMillis = System.currentTimeMillis();
-        String ly = null;
-        if ((lX() & a.it) != 0x0 && n != 13) {
-            ly = lY(3, 5);
+        String om = null;
+        if ((oL() & a.ll) != 0x0 && n != 13) {
+            om = oM(3, 5);
         }
         long nativeHeapAllocatedSize = 0L;
-        if ((lX() & a.iv) != 0x0) {
+        if ((oL() & a.ln) != 0x0) {
             nativeHeapAllocatedSize = Debug.getNativeHeapAllocatedSize();
         }
         ConnectionEvent connectionEvent;
         if (n != 1 && n != 4 && n != 14) {
-            connectionEvent = new ConnectionEvent(currentTimeMillis, n, s2, s3, s4, s5, ly, s, SystemClock.elapsedRealtime(), nativeHeapAllocatedSize);
+            connectionEvent = new ConnectionEvent(currentTimeMillis, n, s2, s3, s4, s5, om, s, SystemClock.elapsedRealtime(), nativeHeapAllocatedSize);
         }
         else {
-            connectionEvent = new ConnectionEvent(currentTimeMillis, n, null, null, null, null, ly, s, SystemClock.elapsedRealtime(), nativeHeapAllocatedSize);
+            connectionEvent = new ConnectionEvent(currentTimeMillis, n, null, null, null, null, om, s, SystemClock.elapsedRealtime(), nativeHeapAllocatedSize);
         }
-        context.startService(new Intent().setComponent(a.iw).putExtra("com.google.android.gms.common.stats.EXTRA_LOG_EVENT", (Parcelable)connectionEvent));
+        context.startService(new Intent().setComponent(a.lo).putExtra("com.google.android.gms.common.stats.EXTRA_LOG_EVENT", (Parcelable)connectionEvent));
     }
     
-    private boolean me(final String s, final String s2, final String s3, final String s4) {
-        final int lx = lX();
-        return !this.iP.contains(s) && !this.iU.contains(s2) && !this.iS.contains(s3) && !this.iT.contains(s4) && (s3.equals(s) || (lx & a.iu) == 0x0);
+    private boolean oS(final String s, final String s2, final String s3, final String s4) {
+        final int ol = oL();
+        return !this.lH.contains(s) && !this.lM.contains(s2) && !this.lK.contains(s3) && !this.lL.contains(s4) && (s3.equals(s) || (ol & a.lm) == 0x0);
     }
     
-    public boolean lS(final Context context, final String s, final Intent intent, final ServiceConnection serviceConnection, final int n) {
-        if (!this.lR(context, intent)) {
+    public boolean oG(final Context context, final String s, final Intent intent, final ServiceConnection serviceConnection, final int n) {
+        if (!this.oF(context, intent)) {
             final boolean bindService = context.bindService(intent, serviceConnection, n);
             if (bindService) {
-                this.lZ(context, this.mb(serviceConnection), s, intent, 2);
+                this.oN(context, this.oP(serviceConnection), s, intent, 2);
             }
             return bindService;
         }
@@ -263,16 +263,16 @@ public class b
         return false;
     }
     
-    public void lT(final Context context, final ServiceConnection serviceConnection) {
+    public void oH(final Context context, final ServiceConnection serviceConnection) {
         context.unbindService(serviceConnection);
-        this.lZ(context, this.mb(serviceConnection), null, null, 1);
+        this.oN(context, this.oP(serviceConnection), null, null, 1);
     }
     
-    public void lV(final Context context, final ServiceConnection serviceConnection, final String s, final Intent intent) {
-        this.lZ(context, this.mb(serviceConnection), s, intent, 3);
+    public void oJ(final Context context, final ServiceConnection serviceConnection, final String s, final Intent intent) {
+        this.oN(context, this.oP(serviceConnection), s, intent, 3);
     }
     
-    public void ma(final Context context, final ServiceConnection serviceConnection) {
-        this.lZ(context, this.mb(serviceConnection), null, null, 4);
+    public void oO(final Context context, final ServiceConnection serviceConnection) {
+        this.oN(context, this.oP(serviceConnection), null, null, 4);
     }
 }

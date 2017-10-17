@@ -14,20 +14,20 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class WebImage extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int jA;
-    private final Uri jx;
-    private final int jy;
-    private final int jz;
+    private final Uri mp;
+    private final int mq;
+    private final int mr;
+    private final int ms;
     
     static {
         CREATOR = (Parcelable$Creator)new c();
     }
     
-    WebImage(final int jz, final Uri jx, final int ja, final int jy) {
-        this.jz = jz;
-        this.jx = jx;
-        this.jA = ja;
-        this.jy = jy;
+    WebImage(final int mr, final Uri mp, final int ms, final int mq) {
+        this.mr = mr;
+        this.mp = mp;
+        this.ms = ms;
+        this.mq = mq;
     }
     
     public boolean equals(final Object o) {
@@ -37,7 +37,7 @@ public final class WebImage extends AbstractSafeParcelable
         }
         if (o != null && o instanceof WebImage) {
             final WebImage webImage = (WebImage)o;
-            if (u.hH(this.jx, webImage.jx) || this.jA != webImage.jA || this.jy != webImage.jy) {
+            if (u.kv(this.mp, webImage.mp) || this.ms != webImage.ms || this.mq != webImage.mq) {
                 b = false;
             }
             return b;
@@ -46,30 +46,30 @@ public final class WebImage extends AbstractSafeParcelable
     }
     
     public int getHeight() {
-        return this.jy;
+        return this.mq;
     }
     
     public int getWidth() {
-        return this.jA;
+        return this.ms;
     }
     
     public int hashCode() {
-        return u.hI(this.jx, this.jA, this.jy);
+        return u.kw(this.mp, this.ms, this.mq);
     }
     
-    public Uri mE() {
-        return this.jx;
+    public Uri ps() {
+        return this.mp;
     }
     
-    int mF() {
-        return this.jz;
+    int pt() {
+        return this.mr;
     }
     
     public String toString() {
-        return String.format(Locale.US, "Image %dx%d %s", this.jA, this.jy, this.jx.toString());
+        return String.format(Locale.US, "Image %dx%d %s", this.ms, this.mq, this.mp.toString());
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        c.my(this, parcel, n);
+        c.pm(this, parcel, n);
     }
 }

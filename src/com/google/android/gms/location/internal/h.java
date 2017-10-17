@@ -14,30 +14,30 @@ import android.content.ContentProviderClient;
 
 public class h
 {
-    private ContentProviderClient AE;
-    private boolean AF;
-    private Map AG;
-    private Map AH;
-    private final r AI;
+    private ContentProviderClient Cj;
+    private boolean Ck;
+    private Map Cl;
+    private Map Cm;
+    private final r Cn;
     private final Context mContext;
     
-    public h(final Context mContext, final r ai) {
-        this.AE = null;
-        this.AF = false;
-        this.AG = new HashMap();
-        this.AH = new HashMap();
+    public h(final Context mContext, final r cn) {
+        this.Cj = null;
+        this.Ck = false;
+        this.Cl = new HashMap();
+        this.Cm = new HashMap();
         this.mContext = mContext;
-        this.AI = ai;
+        this.Cn = cn;
     }
     
-    public Location Fi() {
-        this.AI.FM();
+    public Location Gb() {
+        this.Cn.GF();
         try {
-            final r ai = this.AI;
+            final r cn = this.Cn;
             try {
-                final IInterface fn = ai.FN();
+                final IInterface gg = cn.GG();
                 try {
-                    final zzi zzi = (zzi)fn;
+                    final zzi zzi = (zzi)gg;
                     try {
                         final Context mContext = this.mContext;
                         try {
@@ -56,8 +56,8 @@ public class h
         catch (RemoteException ex5) {}
     }
     
-    public void Fj() {
-        if (this.AF) {
+    public void Gc() {
+        if (this.Ck) {
             try {
                 this.zzcf(false);
             }
@@ -67,19 +67,19 @@ public class h
         }
     }
     
-    public void Fk() {
+    public void Gd() {
         // 
         // This method could not be decompiled.
         // 
         // Original Bytecode:
         // 
         //     0: aload_0        
-        //     1: getfield        com/google/android/gms/location/internal/h.AG:Ljava/util/Map;
+        //     1: getfield        com/google/android/gms/location/internal/h.Cl:Ljava/util/Map;
         //     4: astore_1       
         //     5: aload_1        
         //     6: monitorenter   
         //     7: aload_0        
-        //     8: getfield        com/google/android/gms/location/internal/h.AG:Ljava/util/Map;
+        //     8: getfield        com/google/android/gms/location/internal/h.Cl:Ljava/util/Map;
         //    11: astore_2       
         //    12: aload_2        
         //    13: invokeinterface java/util/Map.values:()Ljava/util/Collection;
@@ -93,19 +93,19 @@ public class h
         //    34: iload           4
         //    36: ifne            105
         //    39: aload_0        
-        //    40: getfield        com/google/android/gms/location/internal/h.AG:Ljava/util/Map;
+        //    40: getfield        com/google/android/gms/location/internal/h.Cl:Ljava/util/Map;
         //    43: astore_2       
         //    44: aload_2        
         //    45: invokeinterface java/util/Map.clear:()V
         //    50: aload_1        
         //    51: monitorexit    
         //    52: aload_0        
-        //    53: getfield        com/google/android/gms/location/internal/h.AH:Ljava/util/Map;
+        //    53: getfield        com/google/android/gms/location/internal/h.Cm:Ljava/util/Map;
         //    56: astore_1       
         //    57: aload_1        
         //    58: monitorenter   
         //    59: aload_0        
-        //    60: getfield        com/google/android/gms/location/internal/h.AH:Ljava/util/Map;
+        //    60: getfield        com/google/android/gms/location/internal/h.Cm:Ljava/util/Map;
         //    63: astore_2       
         //    64: aload_2        
         //    65: invokeinterface java/util/Map.values:()Ljava/util/Collection;
@@ -119,7 +119,7 @@ public class h
         //    86: iload           4
         //    88: ifne            180
         //    91: aload_0        
-        //    92: getfield        com/google/android/gms/location/internal/h.AH:Ljava/util/Map;
+        //    92: getfield        com/google/android/gms/location/internal/h.Cm:Ljava/util/Map;
         //    95: astore_2       
         //    96: aload_2        
         //    97: invokeinterface java/util/Map.clear:()V
@@ -135,17 +135,17 @@ public class h
         //   117: aload_2        
         //   118: ifnull          26
         //   121: aload_0        
-        //   122: getfield        com/google/android/gms/location/internal/h.AI:Lcom/google/android/gms/location/internal/r;
+        //   122: getfield        com/google/android/gms/location/internal/h.Cn:Lcom/google/android/gms/location/internal/r;
         //   125: astore          5
         //   127: aload           5
-        //   129: invokeinterface com/google/android/gms/location/internal/r.FN:()Landroid/os/IInterface;
+        //   129: invokeinterface com/google/android/gms/location/internal/r.GG:()Landroid/os/IInterface;
         //   134: astore          5
         //   136: aload           5
         //   138: checkcast       Lcom/google/android/gms/location/internal/zzi;
         //   141: astore          5
         //   143: aload_2        
         //   144: aconst_null    
-        //   145: invokestatic    com/google/android/gms/location/internal/LocationRequestUpdateData.EV:(Lcom/google/android/gms/location/zzf;Lcom/google/android/gms/location/internal/zzg;)Lcom/google/android/gms/location/internal/LocationRequestUpdateData;
+        //   145: invokestatic    com/google/android/gms/location/internal/LocationRequestUpdateData.FO:(Lcom/google/android/gms/location/zzf;Lcom/google/android/gms/location/internal/zzg;)Lcom/google/android/gms/location/internal/LocationRequestUpdateData;
         //   148: astore_2       
         //   149: aload           5
         //   151: aload_2        
@@ -173,17 +173,17 @@ public class h
         //   192: aload_2        
         //   193: ifnull          78
         //   196: aload_0        
-        //   197: getfield        com/google/android/gms/location/internal/h.AI:Lcom/google/android/gms/location/internal/r;
+        //   197: getfield        com/google/android/gms/location/internal/h.Cn:Lcom/google/android/gms/location/internal/r;
         //   200: astore          5
         //   202: aload           5
-        //   204: invokeinterface com/google/android/gms/location/internal/r.FN:()Landroid/os/IInterface;
+        //   204: invokeinterface com/google/android/gms/location/internal/r.GG:()Landroid/os/IInterface;
         //   209: astore          5
         //   211: aload           5
         //   213: checkcast       Lcom/google/android/gms/location/internal/zzi;
         //   216: astore          5
         //   218: aload_2        
         //   219: aconst_null    
-        //   220: invokestatic    com/google/android/gms/location/internal/LocationRequestUpdateData.EY:(Lcom/google/android/gms/location/zze;Lcom/google/android/gms/location/internal/zzg;)Lcom/google/android/gms/location/internal/LocationRequestUpdateData;
+        //   220: invokestatic    com/google/android/gms/location/internal/LocationRequestUpdateData.FR:(Lcom/google/android/gms/location/zze;Lcom/google/android/gms/location/internal/zzg;)Lcom/google/android/gms/location/internal/LocationRequestUpdateData;
         //   223: astore_2       
         //   224: aload           5
         //   226: aload_2        
@@ -260,9 +260,9 @@ public class h
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    public void zzcf(final boolean af) {
-        this.AI.FM();
-        ((zzi)this.AI.FN()).zzcf(af);
-        this.AF = af;
+    public void zzcf(final boolean ck) {
+        this.Cn.GF();
+        ((zzi)this.Cn.GG()).zzcf(ck);
+        this.Ck = ck;
     }
 }

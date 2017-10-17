@@ -14,47 +14,47 @@ import android.os.Parcelable$Creator;
 
 public class g implements Parcelable$Creator
 {
-    static void np(final BitmapTeleporter bitmapTeleporter, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, bitmapTeleporter.jT);
-        a.eW(parcel, 2, (Parcelable)bitmapTeleporter.jS, n, false);
-        a.fj(parcel, 3, bitmapTeleporter.jW);
-        a.fe(parcel, ey);
+    static void qc(final BitmapTeleporter bitmapTeleporter, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, bitmapTeleporter.mL);
+        a.hK(parcel, 2, (Parcelable)bitmapTeleporter.mK, n, false);
+        a.hX(parcel, 3, bitmapTeleporter.mO);
+        a.hS(parcel, hm);
     }
     
-    public BitmapTeleporter nn(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int fn2 = 0;
+    public BitmapTeleporter qa(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int ib2 = 0;
         ParcelFileDescriptor parcelFileDescriptor = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    parcelFileDescriptor = (ParcelFileDescriptor)b.fW(parcel, fs, ParcelFileDescriptor.CREATOR);
+                    parcelFileDescriptor = (ParcelFileDescriptor)b.iK(parcel, ig, ParcelFileDescriptor.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new BitmapTeleporter(fn, parcelFileDescriptor, fn2);
+        if (parcel.dataPosition() == ix) {
+            return new BitmapTeleporter(ib, parcelFileDescriptor, ib2);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public BitmapTeleporter[] no(final int n) {
+    public BitmapTeleporter[] qb(final int n) {
         return new BitmapTeleporter[n];
     }
 }

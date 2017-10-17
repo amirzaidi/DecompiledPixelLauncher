@@ -4,6 +4,6 @@
 
 package com.google.android.gms.phenotype;
 
-class w implements m
+class w implements l
 {
 }

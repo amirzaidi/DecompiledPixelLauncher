@@ -1,77 +1,209 @@
-.class final Lcom/google/android/gms/internal/cs;
-.super Landroid/os/Handler;
+.class Lcom/google/android/gms/internal/cs;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/gms/internal/bV;
 
 
 # instance fields
-.field final synthetic wT:Lcom/google/android/gms/internal/cA;
+.field final synthetic xg:Lcom/google/android/gms/internal/bp;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/internal/cA;Landroid/os/Looper;)V
+.method private constructor <init>(Lcom/google/android/gms/internal/bp;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/cs;->wT:Lcom/google/android/gms/internal/cA;
+    iput-object p1, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
 
-    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/google/android/gms/internal/bp;Lcom/google/android/gms/internal/bx;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/cs;-><init>(Lcom/google/android/gms/internal/bp;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public handleMessage(Landroid/os/Message;)V
-    .locals 3
+.method public Br(Lcom/google/android/gms/common/ConnectionResult;)V
+    .locals 2
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    const/16 v2, 0x1f
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-static {v0, p1}, Lcom/google/android/gms/internal/bp;->zm(Lcom/google/android/gms/internal/bp;Lcom/google/android/gms/common/ConnectionResult;)Lcom/google/android/gms/common/ConnectionResult;
 
-    const-string/jumbo v2, "Unknown message id: "
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zd(Lcom/google/android/gms/internal/bp;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v1}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw v0
+.end method
+
+.method public Bs(Landroid/os/Bundle;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    sget-object v1, Lcom/google/android/gms/common/ConnectionResult;->nk:Lcom/google/android/gms/common/ConnectionResult;
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/bp;->zm(Lcom/google/android/gms/internal/bp;Lcom/google/android/gms/common/ConnectionResult;)Lcom/google/android/gms/common/ConnectionResult;
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zd(Lcom/google/android/gms/internal/bp;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
 
     move-result-object v0
 
-    const-string/jumbo v1, "GoogleApiClientImpl"
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    :goto_0
     return-void
 
-    :pswitch_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->wT:Lcom/google/android/gms/internal/cA;
+    :catchall_0
+    move-exception v0
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/cA;->Cn(Lcom/google/android/gms/internal/cA;)V
+    iget-object v1, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
 
-    goto :goto_0
+    invoke-static {v1}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
 
-    :pswitch_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->wT:Lcom/google/android/gms/internal/cA;
+    move-result-object v1
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/cA;->Co(Lcom/google/android/gms/internal/cA;)V
+    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    goto :goto_0
+    throw v0
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+.method public Bt(IZ)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->yX(Lcom/google/android/gms/internal/bp;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/bp;->yK(Lcom/google/android/gms/internal/bp;Z)Z
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->yT(Lcom/google/android/gms/internal/bp;)Lcom/google/android/gms/internal/bZ;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/bZ;->BX(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/bp;->yK(Lcom/google/android/gms/internal/bp;Z)Z
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0, p1, p2}, Lcom/google/android/gms/internal/bp;->yQ(Lcom/google/android/gms/internal/bp;IZ)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/cs;->xg:Lcom/google/android/gms/internal/bp;
+
+    invoke-static {v1}, Lcom/google/android/gms/internal/bp;->zg(Lcom/google/android/gms/internal/bp;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw v0
 .end method

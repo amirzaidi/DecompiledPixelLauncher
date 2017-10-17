@@ -12,41 +12,41 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class FenceQueryRequestImpl$QueryFenceOperation extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final List Iu;
-    private final int Iv;
-    private final int Iw;
+    private final List JZ;
+    private final int Ka;
+    private final int Kb;
     
     static {
         CREATOR = (Parcelable$Creator)new e();
     }
     
-    FenceQueryRequestImpl$QueryFenceOperation(final int iv, final int iw, final List iu) {
-        this.Iv = iv;
-        this.Iw = iw;
-        this.Iu = iu;
+    FenceQueryRequestImpl$QueryFenceOperation(final int ka, final int kb, final List jz) {
+        this.Ka = ka;
+        this.Kb = kb;
+        this.JZ = jz;
     }
     
     private FenceQueryRequestImpl$QueryFenceOperation(final int n, final List list) {
         this(1, n, list);
     }
     
-    public static FenceQueryRequestImpl$QueryFenceOperation OC(final int n, final List list) {
+    public static FenceQueryRequestImpl$QueryFenceOperation Pv(final int n, final List list) {
         return new FenceQueryRequestImpl$QueryFenceOperation(n, list);
     }
     
-    public List OD() {
-        return this.Iu;
+    public List Pw() {
+        return this.JZ;
     }
     
-    public int OE() {
-        return this.Iw;
+    public int Px() {
+        return this.Kb;
     }
     
-    int OF() {
-        return this.Iv;
+    int Py() {
+        return this.Ka;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        e.NS(this, parcel, n);
+        e.OL(this, parcel, n);
     }
 }

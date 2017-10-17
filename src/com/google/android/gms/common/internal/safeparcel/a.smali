@@ -3,20 +3,20 @@
 
 
 # direct methods
-.method public static eT(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
+.method public static hH(Landroid/os/Parcel;ILandroid/os/Bundle;Z)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -27,37 +27,37 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static eU(Landroid/os/Parcel;IS)V
+.method public static hI(Landroid/os/Parcel;IS)V
     .locals 1
 
     const/4 v0, 0x4
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
 .end method
 
-.method public static eV(Landroid/os/Parcel;I[JZ)V
+.method public static hJ(Landroid/os/Parcel;I[JZ)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeLongArray([J)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -68,25 +68,25 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+.method public static hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-interface {p2, p0, p3}, Landroid/os/Parcelable;->writeToParcel(Landroid/os/Parcel;I)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -97,12 +97,12 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static eX(Landroid/os/Parcel;ILjava/lang/Float;Z)V
+.method public static hL(Landroid/os/Parcel;ILjava/lang/Float;Z)V
     .locals 1
 
     const/4 v0, 0x0
@@ -111,7 +111,7 @@
 
     const/4 v0, 0x4
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
@@ -128,24 +128,24 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static eY(Landroid/os/Parcel;)I
+.method public static hM(Landroid/os/Parcel;)I
     .locals 1
 
     const/16 v0, 0x4f45
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method private static eZ(Landroid/os/Parcel;II)V
+.method private static hN(Landroid/os/Parcel;II)V
     .locals 1
 
     const v0, 0xffff
@@ -173,14 +173,14 @@
     goto :goto_0
 .end method
 
-.method public static fa(Landroid/os/Parcel;IZ)V
+.method public static hO(Landroid/os/Parcel;IZ)V
     .locals 2
 
     const/4 v0, 0x0
 
     const/4 v1, 0x4
 
-    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     if-nez p2, :cond_0
 
@@ -195,14 +195,14 @@
     goto :goto_0
 .end method
 
-.method public static fb(Landroid/os/Parcel;ILjava/util/List;Z)V
+.method public static hP(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 4
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v2
 
@@ -217,7 +217,7 @@
     :goto_0
     if-lt v1, v3, :cond_2
 
-    invoke-static {p0, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -228,7 +228,7 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_1
 
@@ -252,14 +252,14 @@
     goto :goto_0
 .end method
 
-.method public static fc(Landroid/os/Parcel;ILjava/util/List;Z)V
+.method public static hQ(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 5
 
     const/4 v2, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v3
 
@@ -274,7 +274,7 @@
     :goto_0
     if-lt v1, v4, :cond_2
 
-    invoke-static {p0, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -285,7 +285,7 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_1
 
@@ -298,7 +298,7 @@
 
     if-eqz v0, :cond_3
 
-    invoke-static {p0, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->fm(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+    invoke-static {p0, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->ia(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
     :goto_2
     add-int/lit8 v0, v1, 0x1
@@ -313,14 +313,14 @@
     goto :goto_2
 .end method
 
-.method public static fd(Landroid/os/Parcel;I[[BZ)V
+.method public static hR(Landroid/os/Parcel;I[[BZ)V
     .locals 4
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -331,7 +331,7 @@
     :goto_0
     if-lt v0, v2, :cond_2
 
-    invoke-static {p0, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -342,7 +342,7 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_1
 
@@ -356,28 +356,28 @@
     goto :goto_0
 .end method
 
-.method public static fe(Landroid/os/Parcel;I)V
+.method public static hS(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
-.method public static ff(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+.method public static hT(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -388,25 +388,25 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fg(Landroid/os/Parcel;ILjava/util/List;Z)V
+.method public static hU(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -417,19 +417,19 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fh(Landroid/os/Parcel;ILandroid/os/Parcel;Z)V
+.method public static hV(Landroid/os/Parcel;ILandroid/os/Parcel;Z)V
     .locals 3
 
     const/4 v2, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -439,7 +439,7 @@
 
     invoke-virtual {p0, p2, v2, v1}, Landroid/os/Parcel;->appendFrom(Landroid/os/Parcel;II)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -450,12 +450,12 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fi(Landroid/os/Parcel;ILjava/lang/Integer;Z)V
+.method public static hW(Landroid/os/Parcel;ILjava/lang/Integer;Z)V
     .locals 1
 
     const/4 v0, 0x0
@@ -464,7 +464,7 @@
 
     const/4 v0, 0x4
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
@@ -481,37 +481,37 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fj(Landroid/os/Parcel;II)V
+.method public static hX(Landroid/os/Parcel;II)V
     .locals 1
 
     const/4 v0, 0x4
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
 .end method
 
-.method public static fk(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
+.method public static hY(Landroid/os/Parcel;I[Ljava/lang/String;Z)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -522,12 +522,12 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method private static fl(Landroid/os/Parcel;I)I
+.method private static hZ(Landroid/os/Parcel;I)I
     .locals 1
 
     const/high16 v0, -0x10000
@@ -547,7 +547,7 @@
     return v0
 .end method
 
-.method private static fm(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+.method private static ia(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
     .locals 3
 
     invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
@@ -579,20 +579,20 @@
     return-void
 .end method
 
-.method public static fn(Landroid/os/Parcel;I[IZ)V
+.method public static ib(Landroid/os/Parcel;I[IZ)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -603,25 +603,25 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+.method public static ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -632,19 +632,19 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fp(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+.method public static id(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
     .locals 5
 
     const/4 v1, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v2
 
@@ -657,7 +657,7 @@
     :goto_0
     if-lt v0, v3, :cond_2
 
-    invoke-static {p0, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -668,7 +668,7 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_1
 
@@ -677,7 +677,7 @@
 
     if-eqz v4, :cond_3
 
-    invoke-static {p0, v4, p3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fm(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
+    invoke-static {p0, v4, p3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ia(Landroid/os/Parcel;Landroid/os/Parcelable;I)V
 
     :goto_2
     add-int/lit8 v0, v0, 0x1
@@ -690,32 +690,32 @@
     goto :goto_2
 .end method
 
-.method public static fq(Landroid/os/Parcel;ID)V
+.method public static ie(Landroid/os/Parcel;ID)V
     .locals 2
 
     const/16 v0, 0x8
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0, p2, p3}, Landroid/os/Parcel;->writeDouble(D)V
 
     return-void
 .end method
 
-.method public static fr(Landroid/os/Parcel;ILjava/util/List;Z)V
+.method public static if(Landroid/os/Parcel;ILjava/util/List;Z)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -726,24 +726,24 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fs(Landroid/os/Parcel;IF)V
+.method public static ig(Landroid/os/Parcel;IF)V
     .locals 1
 
     const/4 v0, 0x4
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeFloat(F)V
 
     return-void
 .end method
 
-.method private static ft(Landroid/os/Parcel;I)V
+.method private static ih(Landroid/os/Parcel;I)V
     .locals 3
 
     invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
@@ -763,32 +763,32 @@
     return-void
 .end method
 
-.method public static fu(Landroid/os/Parcel;IB)V
+.method public static ii(Landroid/os/Parcel;IB)V
     .locals 1
 
     const/4 v0, 0x4
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
 .end method
 
-.method public static fv(Landroid/os/Parcel;I[BZ)V
+.method public static ij(Landroid/os/Parcel;I[BZ)V
     .locals 1
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_0
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fl(Landroid/os/Parcel;I)I
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hZ(Landroid/os/Parcel;I)I
 
     move-result v0
 
     invoke-virtual {p0, p2}, Landroid/os/Parcel;->writeByteArray([B)V
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ft(Landroid/os/Parcel;I)V
+    invoke-static {p0, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->ih(Landroid/os/Parcel;I)V
 
     return-void
 
@@ -799,17 +799,17 @@
     return-void
 
     :cond_1
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     goto :goto_0
 .end method
 
-.method public static fw(Landroid/os/Parcel;IJ)V
+.method public static ik(Landroid/os/Parcel;IJ)V
     .locals 2
 
     const/16 v0, 0x8
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eZ(Landroid/os/Parcel;II)V
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hN(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0, p2, p3}, Landroid/os/Parcel;->writeLong(J)V
 

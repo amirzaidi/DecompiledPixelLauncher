@@ -6,97 +6,97 @@ package com.google.android.gms.maps;
 
 import android.os.Parcel;
 import com.google.android.gms.maps.a.a;
-import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.StreetViewPanoramaCamera;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public final class StreetViewPanoramaOptions extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final b CREATOR;
-    private LatLng FQ;
-    private Boolean FR;
-    private Integer FS;
-    private Boolean FT;
-    private String FU;
-    private StreetViewPanoramaCamera FV;
-    private Boolean FW;
-    private final int FX;
-    private Boolean FY;
-    private Boolean FZ;
+    private StreetViewPanoramaCamera HA;
+    private Boolean HB;
+    private final int HC;
+    private Boolean HD;
+    private Boolean HE;
+    private LatLng Hv;
+    private Boolean Hw;
+    private Integer Hx;
+    private Boolean Hy;
+    private String Hz;
     
     static {
         CREATOR = new b();
     }
     
     public StreetViewPanoramaOptions() {
-        final boolean fx = true;
-        this.FR = fx;
-        this.FT = fx;
-        this.FW = fx;
-        this.FZ = fx;
-        this.FX = (fx ? 1 : 0);
+        final boolean hc = true;
+        this.Hw = hc;
+        this.Hy = hc;
+        this.HB = hc;
+        this.HE = hc;
+        this.HC = (hc ? 1 : 0);
     }
     
-    StreetViewPanoramaOptions(final int fx, final StreetViewPanoramaCamera fv, final String fu, final LatLng fq, final Integer fs, final byte b, final byte b2, final byte b3, final byte b4, final byte b5) {
+    StreetViewPanoramaOptions(final int hc, final StreetViewPanoramaCamera ha, final String hz, final LatLng hv, final Integer hx, final byte b, final byte b2, final byte b3, final byte b4, final byte b5) {
         final boolean b6 = true;
-        this.FR = b6;
-        this.FT = b6;
-        this.FW = b6;
-        this.FZ = b6;
-        this.FX = fx;
-        this.FV = fv;
-        this.FQ = fq;
-        this.FS = fs;
-        this.FU = fu;
-        this.FR = a.KB(b);
-        this.FT = a.KB(b2);
-        this.FW = a.KB(b3);
-        this.FZ = a.KB(b4);
-        this.FY = a.KB(b5);
+        this.Hw = b6;
+        this.Hy = b6;
+        this.HB = b6;
+        this.HE = b6;
+        this.HC = hc;
+        this.HA = ha;
+        this.Hv = hv;
+        this.Hx = hx;
+        this.Hz = hz;
+        this.Hw = a.Lu(b);
+        this.Hy = a.Lu(b2);
+        this.HB = a.Lu(b3);
+        this.HE = a.Lu(b4);
+        this.HD = a.Lu(b5);
     }
     
-    byte La() {
-        return a.KC(this.FY);
+    byte LT() {
+        return a.Lv(this.HD);
     }
     
-    public String Lb() {
-        return this.FU;
+    public String LU() {
+        return this.Hz;
     }
     
-    public StreetViewPanoramaCamera Lc() {
-        return this.FV;
+    public StreetViewPanoramaCamera LV() {
+        return this.HA;
     }
     
-    byte Ld() {
-        return a.KC(this.FT);
+    byte LW() {
+        return a.Lv(this.Hy);
     }
     
-    byte Le() {
-        return a.KC(this.FZ);
+    byte LX() {
+        return a.Lv(this.HE);
     }
     
-    public LatLng Lf() {
-        return this.FQ;
+    public LatLng LY() {
+        return this.Hv;
     }
     
-    byte Lg() {
-        return a.KC(this.FR);
+    byte LZ() {
+        return a.Lv(this.Hw);
     }
     
-    byte Lh() {
-        return a.KC(this.FW);
+    byte Ma() {
+        return a.Lv(this.HB);
     }
     
-    int Li() {
-        return this.FX;
+    int Mb() {
+        return this.HC;
     }
     
     public Integer getRadius() {
-        return this.FS;
+        return this.Hx;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.KX(this, parcel, n);
+        b.LQ(this, parcel, n);
     }
 }

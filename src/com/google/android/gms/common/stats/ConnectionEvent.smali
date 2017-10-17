@@ -7,38 +7,38 @@
 
 
 # instance fields
-.field private final iX:Ljava/lang/String;
+.field private final lP:Ljava/lang/String;
 
-.field private final iY:J
+.field private final lQ:J
 
-.field private final iZ:J
+.field private final lR:J
 
-.field private ja:J
+.field private lS:J
 
-.field private final jb:Ljava/lang/String;
+.field private final lT:Ljava/lang/String;
 
-.field private final jc:Ljava/lang/String;
+.field private final lU:Ljava/lang/String;
 
-.field private final jd:J
+.field private final lV:J
 
-.field private je:I
+.field private lW:I
 
-.field private final jf:Ljava/lang/String;
+.field private final lX:Ljava/lang/String;
 
-.field private final jg:Ljava/lang/String;
+.field private final lY:Ljava/lang/String;
 
-.field final jh:I
+.field final lZ:I
 
-.field private final ji:Ljava/lang/String;
+.field private final ma:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/common/stats/d;
+    new-instance v0, Lcom/google/android/gms/common/stats/e;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/stats/d;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/stats/e;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/common/stats/ConnectionEvent;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -50,35 +50,35 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/stats/StatsEvent;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jh:I
+    iput p1, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lZ:I
 
-    iput-wide p2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jd:J
+    iput-wide p2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lV:J
 
-    iput p4, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->je:I
+    iput p4, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lW:I
 
-    iput-object p5, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->ji:Ljava/lang/String;
+    iput-object p5, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->ma:Ljava/lang/String;
 
-    iput-object p6, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jf:Ljava/lang/String;
+    iput-object p6, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lX:Ljava/lang/String;
 
-    iput-object p7, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jg:Ljava/lang/String;
+    iput-object p7, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lY:Ljava/lang/String;
 
-    iput-object p8, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jb:Ljava/lang/String;
+    iput-object p8, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lT:Ljava/lang/String;
 
     const-wide/16 v2, -0x1
 
-    iput-wide v2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->ja:J
+    iput-wide v2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lS:J
 
-    iput-object p9, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iX:Ljava/lang/String;
+    iput-object p9, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lP:Ljava/lang/String;
 
-    iput-object p10, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jc:Ljava/lang/String;
+    iput-object p10, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lU:Ljava/lang/String;
 
     move-wide/from16 v0, p11
 
-    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iY:J
+    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lQ:J
 
     move-wide/from16 v0, p13
 
-    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iZ:J
+    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lR:J
 
     return-void
 .end method
@@ -117,7 +117,47 @@
 
 
 # virtual methods
-.method public lE()Ljava/lang/String;
+.method public oB()J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lS:J
+
+    return-wide v0
+.end method
+
+.method public oW()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->ma:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public oX()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lT:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public oY()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lP:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public oZ()J
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lR:J
+
+    return-wide v0
+.end method
+
+.method public os()Ljava/lang/String;
     .locals 14
 
     const-string/jumbo v0, "\t"
@@ -126,7 +166,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->mi()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->oW()Ljava/lang/String;
 
     move-result-object v0
 
@@ -134,7 +174,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->mm()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->pa()Ljava/lang/String;
 
     move-result-object v0
 
@@ -148,7 +188,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->mo()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->pc()Ljava/lang/String;
 
     move-result-object v0
 
@@ -156,7 +196,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->mj()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->oX()Ljava/lang/String;
 
     move-result-object v0
 
@@ -170,11 +210,11 @@
 
     move-result-object v7
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iX:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lP:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iX:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lP:Ljava/lang/String;
 
     :goto_0
     const-string/jumbo v8, "\t"
@@ -183,7 +223,7 @@
 
     move-result-object v8
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->ml()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->oZ()J
 
     move-result-wide v10
 
@@ -345,90 +385,50 @@
     goto/16 :goto_0
 .end method
 
-.method public lI()J
+.method public ow()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jd:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lV:J
 
     return-wide v0
 .end method
 
-.method public lJ()I
+.method public ox()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->je:I
+    iget v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lW:I
 
     return v0
 .end method
 
-.method public lN()J
+.method public pa()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lX:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public pb()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lU:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public pc()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lY:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public pd()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->ja:J
-
-    return-wide v0
-.end method
-
-.method public mi()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->ji:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public mj()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jb:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public mk()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iX:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public ml()J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iZ:J
-
-    return-wide v0
-.end method
-
-.method public mm()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jf:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public mn()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jc:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public mo()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->jg:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public mp()J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->iY:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->lQ:J
 
     return-wide v0
 .end method
@@ -436,7 +436,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/stats/d;->ms(Lcom/google/android/gms/common/stats/ConnectionEvent;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/stats/e;->pg(Lcom/google/android/gms/common/stats/ConnectionEvent;Landroid/os/Parcel;I)V
 
     return-void
 .end method

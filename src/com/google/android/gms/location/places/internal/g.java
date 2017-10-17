@@ -13,65 +13,65 @@ import android.os.Parcelable$Creator;
 
 public class g implements Parcelable$Creator
 {
-    static void Df(final PlaceLocalization placeLocalization, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, placeLocalization.name, false);
-        a.fo(parcel, 2, placeLocalization.yk, false);
-        a.fo(parcel, 3, placeLocalization.ym, false);
-        a.fo(parcel, 4, placeLocalization.yl, false);
-        a.fr(parcel, 5, placeLocalization.yn, false);
-        a.fj(parcel, 1000, placeLocalization.yj);
-        a.fe(parcel, ey);
+    static void DY(final PlaceLocalization placeLocalization, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, placeLocalization.name, false);
+        a.ic(parcel, 2, placeLocalization.zP, false);
+        a.ic(parcel, 3, placeLocalization.zR, false);
+        a.ic(parcel, 4, placeLocalization.zQ, false);
+        a.if(parcel, 5, placeLocalization.zS, false);
+        a.hX(parcel, 1000, placeLocalization.zO);
+        a.hS(parcel, hm);
     }
     
-    public PlaceLocalization Dg(final Parcel parcel) {
-        List fr = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        String fq2 = null;
-        String fq3 = null;
-        String fq4 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public PlaceLocalization DZ(final Parcel parcel) {
+        List if1 = null;
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        String ie2 = null;
+        String ie3 = null;
+        String ie4 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq4 = b.fQ(parcel, fs);
+                    ie4 = b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq3 = b.fQ(parcel, fs);
+                    ie3 = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fr = b.fR(parcel, fs);
+                    if1 = b.iF(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlaceLocalization(fn, fq4, fq3, fq2, fq, fr);
+        if (parcel.dataPosition() == ix) {
+            return new PlaceLocalization(ib, ie4, ie3, ie2, ie, if1);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public PlaceLocalization[] Dh(final int n) {
+    public PlaceLocalization[] Ea(final int n) {
         return new PlaceLocalization[n];
     }
 }

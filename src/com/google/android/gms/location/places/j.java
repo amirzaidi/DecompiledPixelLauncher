@@ -13,77 +13,77 @@ import android.os.Parcelable$Creator;
 
 public class j implements Parcelable$Creator
 {
-    static void EG(final NearbyAlertRequest nearbyAlertRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, nearbyAlertRequest.El());
-        a.fj(parcel, 2, nearbyAlertRequest.Er());
-        a.eW(parcel, 3, (Parcelable)nearbyAlertRequest.Ep(), n, false);
-        a.eW(parcel, 4, (Parcelable)nearbyAlertRequest.Em(), n, false);
-        a.fa(parcel, 5, nearbyAlertRequest.Eo());
-        a.fj(parcel, 6, nearbyAlertRequest.Ek());
-        a.fj(parcel, 7, nearbyAlertRequest.En());
-        a.fj(parcel, 1000, nearbyAlertRequest.Eq());
-        a.fe(parcel, ey);
+    static void Fz(final NearbyAlertRequest nearbyAlertRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, nearbyAlertRequest.Fe());
+        a.hX(parcel, 2, nearbyAlertRequest.Fk());
+        a.hK(parcel, 3, (Parcelable)nearbyAlertRequest.Fi(), n, false);
+        a.hK(parcel, 4, (Parcelable)nearbyAlertRequest.Ff(), n, false);
+        a.hO(parcel, 5, nearbyAlertRequest.Fh());
+        a.hX(parcel, 6, nearbyAlertRequest.Fd());
+        a.hX(parcel, 7, nearbyAlertRequest.Fg());
+        a.hX(parcel, 1000, nearbyAlertRequest.Fj());
+        a.hS(parcel, hm);
     }
     
-    public NearbyAlertRequest EH(final Parcel parcel) {
+    public NearbyAlertRequest FA(final Parcel parcel) {
         NearbyAlertFilter nearbyAlertFilter = null;
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        int fn2 = -1;
-        int fn3 = 110;
-        boolean fx = false;
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        int ib2 = -1;
+        int ib3 = 110;
+        boolean il = false;
         PlaceFilter placeFilter = null;
-        int fn4 = 0;
-        int fn5 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib4 = 0;
+        int ib5 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn4 = b.fN(parcel, fs);
+                    ib4 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    placeFilter = (PlaceFilter)b.fW(parcel, fs, (Parcelable$Creator)PlaceFilter.CREATOR);
+                    placeFilter = (PlaceFilter)b.iK(parcel, ig, (Parcelable$Creator)PlaceFilter.CREATOR);
                     continue;
                 }
                 case 4: {
-                    nearbyAlertFilter = (NearbyAlertFilter)b.fW(parcel, fs, (Parcelable$Creator)NearbyAlertFilter.CREATOR);
+                    nearbyAlertFilter = (NearbyAlertFilter)b.iK(parcel, ig, (Parcelable$Creator)NearbyAlertFilter.CREATOR);
                     continue;
                 }
                 case 5: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn5 = b.fN(parcel, fs);
+                    ib5 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new NearbyAlertRequest(fn5, fn4, fn2, placeFilter, nearbyAlertFilter, fx, fn, fn3);
+        if (parcel.dataPosition() == ix) {
+            return new NearbyAlertRequest(ib5, ib4, ib2, placeFilter, nearbyAlertFilter, il, ib, ib3);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public NearbyAlertRequest[] EI(final int n) {
+    public NearbyAlertRequest[] FB(final int n) {
         return new NearbyAlertRequest[n];
     }
 }

@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final hj:I
+.field private final kb:I
 
-.field final hk:I
+.field final kc:I
 
-.field private final hl:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.field private final kd:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
-.field private final hm:Landroid/accounts/Account;
+.field private final ke:Landroid/accounts/Account;
 
 
 # direct methods
@@ -34,13 +34,13 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->hk:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->kc:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->hm:Landroid/accounts/Account;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->ke:Landroid/accounts/Account;
 
-    iput p3, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->hj:I
+    iput p3, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->kb:I
 
-    iput-object p4, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->hl:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    iput-object p4, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->kd:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     return-void
 .end method
@@ -60,23 +60,23 @@
 .method public getAccount()Landroid/accounts/Account;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->hm:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->ke:Landroid/accounts/Account;
 
     return-object v0
 .end method
 
-.method public jn()I
+.method public mb()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->hj:I
+    iget v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->kb:I
 
     return v0
 .end method
 
-.method public jo()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.method public mc()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->hl:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountRequest;->kd:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     return-object v0
 .end method
@@ -84,7 +84,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/H;->iC(Lcom/google/android/gms/common/internal/ResolveAccountRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/H;->lq(Lcom/google/android/gms/common/internal/ResolveAccountRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

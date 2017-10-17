@@ -10,19 +10,19 @@ import java.util.HashMap;
 
 public class e
 {
-    private final HashMap km;
-    private final String[] kn;
-    private final String ko;
-    private boolean kp;
-    private final ArrayList kq;
-    private String kr;
+    private final HashMap ne;
+    private final String[] nf;
+    private final String ng;
+    private boolean nh;
+    private final ArrayList ni;
+    private String nj;
     
-    private e(final String[] array, final String ko) {
-        this.kn = (String[])l.ht(array);
-        this.kq = new ArrayList();
-        this.ko = ko;
-        this.km = new HashMap();
-        this.kp = false;
-        this.kr = null;
+    private e(final String[] array, final String ng) {
+        this.nf = (String[])l.kh(array);
+        this.ni = new ArrayList();
+        this.ng = ng;
+        this.ne = new HashMap();
+        this.nh = false;
+        this.nj = null;
     }
 }

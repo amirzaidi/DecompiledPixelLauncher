@@ -1,14 +1,34 @@
-.class abstract Lcom/google/android/gms/internal/q;
-.super Lcom/google/android/gms/internal/b;
+.class Lcom/google/android/gms/internal/q;
+.super Lcom/google/android/gms/internal/j;
+
+
+# instance fields
+.field final synthetic pb:Lcom/google/android/gms/internal/s;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/d;)V
-    .locals 1
+.method constructor <init>(Lcom/google/android/gms/internal/s;)V
+    .locals 0
 
-    sget-object v0, Lcom/google/android/gms/phenotype/f;->lS:Lcom/google/android/gms/common/api/h;
+    iput-object p1, p0, Lcom/google/android/gms/internal/q;->pb:Lcom/google/android/gms/internal/s;
 
-    invoke-direct {p0, v0, p1}, Lcom/google/android/gms/internal/b;-><init>(Lcom/google/android/gms/common/api/h;Lcom/google/android/gms/common/api/d;)V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/j;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public zza(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/phenotype/Configurations;)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/q;->pb:Lcom/google/android/gms/internal/s;
+
+    new-instance v1, Lcom/google/android/gms/internal/t;
+
+    invoke-direct {v1, p1, p2}, Lcom/google/android/gms/internal/t;-><init>(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/phenotype/Configurations;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/s;->rV(Lcom/google/android/gms/common/api/m;)V
 
     return-void
 .end method

@@ -12,27 +12,27 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class SignInRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final int JN;
-    final ResolveAccountRequest JO;
+    final int Ls;
+    final ResolveAccountRequest Lt;
     
     static {
         CREATOR = (Parcelable$Creator)new b();
     }
     
-    SignInRequest(final int jn, final ResolveAccountRequest jo) {
-        this.JN = jn;
-        this.JO = jo;
+    SignInRequest(final int ls, final ResolveAccountRequest lt) {
+        this.Ls = ls;
+        this.Lt = lt;
     }
     
     public SignInRequest(final ResolveAccountRequest resolveAccountRequest) {
         this(1, resolveAccountRequest);
     }
     
-    public ResolveAccountRequest PV() {
-        return this.JO;
+    public ResolveAccountRequest QO() {
+        return this.Lt;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.PX(this, parcel, n);
+        b.QQ(this, parcel, n);
     }
 }

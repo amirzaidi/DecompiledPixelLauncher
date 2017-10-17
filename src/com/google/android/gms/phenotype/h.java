@@ -4,47 +4,14 @@
 
 package com.google.android.gms.phenotype;
 
-import android.content.Context;
+import java.util.Comparator;
 
-public class h
+public class h implements Comparator
 {
-    private final String mf;
-    private final String mg;
-    private final String mh;
-    
-    public h(final String s) {
-        this(s, "", "");
-    }
-    
-    private h(final String mf, final String mg, final String mh) {
-        this.mf = mf;
-        this.mg = mg;
-        this.mh = mh;
-    }
-    
-    public h ph(final String s) {
-        return new h(this.mf, this.mg, s);
-    }
-    
-    public g pi(final String s, final boolean b) {
-        final String value = String.valueOf(this.mg);
-        final String value2 = String.valueOf(s);
-        String concat;
-        if (value2.length() == 0) {
-            concat = new String(value);
+    public int Dc(final Flag flag, final Flag flag2) {
+        if (flag.yD != flag2.yD) {
+            return flag.yD - flag2.yD;
         }
-        else {
-            concat = value.concat(value2);
-        }
-        final String value3 = String.valueOf(this.mh);
-        final String value4 = String.valueOf(s);
-        String concat2;
-        if (value4.length() == 0) {
-            concat2 = new String(value3);
-        }
-        else {
-            concat2 = value3.concat(value4);
-        }
-        return pf(concat, null, concat2, 0, this.mf, null, b);
+        return flag.name.compareTo(flag2.name);
     }
 }

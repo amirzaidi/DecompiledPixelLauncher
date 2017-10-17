@@ -10,14 +10,14 @@ import android.os.IBinder;
 
 class r implements zzf
 {
-    private IBinder Dp;
+    private IBinder EU;
     
-    r(final IBinder dp) {
-        this.Dp = dp;
+    r(final IBinder eu) {
+        this.EU = eu;
     }
     
     public IBinder asBinder() {
-        return this.Dp;
+        return this.EU;
     }
     
     public void onLocationChanged(final Location location) {
@@ -33,7 +33,7 @@ class r implements zzf
                 obtain.writeInt(1);
                 location.writeToParcel(obtain, 0);
             }
-            this.Dp.transact(1, obtain, (Parcel)null, 1);
+            this.EU.transact(1, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();

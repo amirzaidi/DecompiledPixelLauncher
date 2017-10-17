@@ -4,16 +4,6 @@
 
 package com.google.android.gms.common.api;
 
-import java.util.Collections;
-import java.util.List;
-
-public abstract class s
+public final class s implements k
 {
-    public int es() {
-        return -1 >>> 1;
-    }
-    
-    public List et(final Object o) {
-        return Collections.emptyList();
-    }
 }

@@ -8,11 +8,11 @@ import java.util.Comparator;
 
 class w implements Comparator
 {
-    public int It(final DetectedActivity detectedActivity, final DetectedActivity detectedActivity2) {
-        final int compareTo = Integer.valueOf(detectedActivity2.GO()).compareTo(Integer.valueOf(detectedActivity.GO()));
+    public int Jm(final DetectedActivity detectedActivity, final DetectedActivity detectedActivity2) {
+        final int compareTo = Integer.valueOf(detectedActivity2.HH()).compareTo(Integer.valueOf(detectedActivity.HH()));
         if (compareTo != 0) {
             return compareTo;
         }
-        return Integer.valueOf(detectedActivity.GQ()).compareTo(Integer.valueOf(detectedActivity2.GQ()));
+        return Integer.valueOf(detectedActivity.HJ()).compareTo(Integer.valueOf(detectedActivity2.HJ()));
     }
 }

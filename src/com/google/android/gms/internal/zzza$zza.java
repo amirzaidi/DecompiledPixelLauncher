@@ -29,7 +29,7 @@ public abstract class zzza$zza extends Binder implements zzza
         if (queryLocalInterface != null && queryLocalInterface instanceof zzza) {
             return (zzza)queryLocalInterface;
         }
-        return new t(binder);
+        return new p(binder);
     }
     
     public IBinder asBinder() {

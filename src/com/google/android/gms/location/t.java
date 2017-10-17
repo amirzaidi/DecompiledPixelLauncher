@@ -14,41 +14,41 @@ import android.os.Parcelable$Creator;
 
 public class t implements Parcelable$Creator
 {
-    static void Ih(final LocationResult locationResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fc(parcel, 1, locationResult.Hd(), false);
-        a.fj(parcel, 1000, locationResult.He());
-        a.fe(parcel, ey);
+    static void Ja(final LocationResult locationResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hQ(parcel, 1, locationResult.HW(), false);
+        a.hX(parcel, 1000, locationResult.HX());
+        a.hS(parcel, hm);
     }
     
-    public LocationResult[] Ig(final int n) {
+    public LocationResult[] IZ(final int n) {
         return new LocationResult[n];
     }
     
-    public LocationResult Ii(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        List list = LocationResult.CJ;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public LocationResult Jb(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        List list = LocationResult.Eo;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    list = b.fZ(parcel, fs, Location.CREATOR);
+                    list = b.iN(parcel, ig, Location.CREATOR);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LocationResult(fn, list);
+        if (parcel.dataPosition() == ix) {
+            return new LocationResult(ib, list);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

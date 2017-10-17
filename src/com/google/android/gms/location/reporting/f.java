@@ -6,7 +6,7 @@ package com.google.android.gms.location.reporting;
 
 public final class f
 {
-    public static int FX(final int n) {
-        return d.FV(n);
+    public static int GQ(final int n) {
+        return d.GO(n);
     }
 }

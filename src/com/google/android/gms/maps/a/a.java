@@ -6,7 +6,7 @@ package com.google.android.gms.maps.a;
 
 public final class a
 {
-    public static Boolean KB(final byte b) {
+    public static Boolean Lu(final byte b) {
         switch (b) {
             default: {
                 return null;
@@ -20,7 +20,7 @@ public final class a
         }
     }
     
-    public static byte KC(final Boolean b) {
+    public static byte Lv(final Boolean b) {
         byte b2 = 0;
         if (b == null) {
             b2 = -1;

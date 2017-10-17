@@ -9,66 +9,66 @@ import android.content.Context;
 
 public abstract class i
 {
-    private static String on;
-    private static final Object oq;
-    private static aZ or;
-    private static int ot;
-    protected final String oo;
-    private Object op;
-    protected final Object os;
+    private static String oP;
+    private static final Object oS;
+    private static aT oT;
+    private static int oV;
+    protected final String oQ;
+    private Object oR;
+    protected final Object oU;
     
     static {
-        oq = new Object();
-        i.or = null;
-        i.ot = 0;
-        i.on = "com.google.android.providers.gsf.permission.READ_GSERVICES";
+        oS = new Object();
+        i.oT = null;
+        i.oV = 0;
+        i.oP = "com.google.android.providers.gsf.permission.READ_GSERVICES";
     }
     
-    protected i(final String oo, final Object os) {
-        this.op = null;
-        this.oo = oo;
-        this.os = os;
+    protected i(final String oq, final Object ou) {
+        this.oR = null;
+        this.oQ = oq;
+        this.oU = ou;
     }
     
-    public static i sh(final String s, final boolean b) {
-        return new aU(s, Boolean.valueOf(b));
+    public static i sj(final String s, final boolean b) {
+        return new aO(s, Boolean.valueOf(b));
     }
     
-    public static i si(final String s, final String s2) {
-        return new aL(s, s2);
+    public static i sk(final String s, final String s2) {
+        return new aF(s, s2);
     }
     
-    public static void sj(final Context p0) {
+    public static void sl(final Context p0) {
         // 
         // This method could not be decompiled.
         // 
         // Original Bytecode:
         // 
-        //     0: getstatic       com/google/android/gms/internal/i.oq:Ljava/lang/Object;
+        //     0: getstatic       com/google/android/gms/internal/i.oS:Ljava/lang/Object;
         //     3: astore_1       
         //     4: aload_1        
         //     5: monitorenter   
-        //     6: getstatic       com/google/android/gms/internal/i.or:Lcom/google/android/gms/internal/aZ;
+        //     6: getstatic       com/google/android/gms/internal/i.oT:Lcom/google/android/gms/internal/aT;
         //     9: astore_2       
         //    10: aload_2        
         //    11: ifnull          25
-        //    14: getstatic       com/google/android/gms/internal/i.ot:I
+        //    14: getstatic       com/google/android/gms/internal/i.oV:I
         //    17: istore_3       
         //    18: iload_3        
         //    19: ifeq            53
         //    22: aload_1        
         //    23: monitorexit    
         //    24: return         
-        //    25: new             Lcom/google/android/gms/internal/bi;
+        //    25: new             Lcom/google/android/gms/internal/bc;
         //    28: astore_2       
         //    29: aload_0        
         //    30: invokevirtual   android/content/Context.getContentResolver:()Landroid/content/ContentResolver;
         //    33: astore          4
         //    35: aload_2        
         //    36: aload           4
-        //    38: invokespecial   com/google/android/gms/internal/bi.<init>:(Landroid/content/ContentResolver;)V
+        //    38: invokespecial   com/google/android/gms/internal/bc.<init>:(Landroid/content/ContentResolver;)V
         //    41: aload_2        
-        //    42: putstatic       com/google/android/gms/internal/i.or:Lcom/google/android/gms/internal/aZ;
+        //    42: putstatic       com/google/android/gms/internal/i.oT:Lcom/google/android/gms/internal/aT;
         //    45: goto            14
         //    48: astore_2       
         //    49: aload_1        
@@ -89,7 +89,7 @@ public abstract class i
         //    71: getfield        android/content/pm/ApplicationInfo.uid:I
         //    74: istore_3       
         //    75: iload_3        
-        //    76: putstatic       com/google/android/gms/internal/i.ot:I
+        //    76: putstatic       com/google/android/gms/internal/i.oV:I
         //    79: goto            22
         //    82: astore_2       
         //    83: aload_2        
@@ -150,27 +150,27 @@ public abstract class i
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    public static i sm(final String s, final Long n) {
-        return new aS(s, n);
+    public static i so(final String s, final Long n) {
+        return new aM(s, n);
     }
     
-    public static i sn(final String s, final Integer n) {
-        return new aQ(s, n);
+    public static i sp(final String s, final Integer n) {
+        return new aK(s, n);
     }
     
     public final Object get() {
         Label_0020: {
-            if (this.op != null) {
+            if (this.oR != null) {
                 break Label_0020;
             }
             try {
-                return this.sl(this.oo);
-                return this.op;
+                return this.sn(this.oQ);
+                return this.oR;
             }
             catch (SecurityException ex) {
                 final long clearCallingIdentity = Binder.clearCallingIdentity();
                 try {
-                    return this.sl(this.oo);
+                    return this.sn(this.oQ);
                 }
                 finally {
                     Binder.restoreCallingIdentity(clearCallingIdentity);
@@ -179,5 +179,5 @@ public abstract class i
         }
     }
     
-    protected abstract Object sl(final String p0);
+    protected abstract Object sn(final String p0);
 }

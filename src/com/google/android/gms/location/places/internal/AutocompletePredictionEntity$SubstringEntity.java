@@ -13,17 +13,17 @@ public class AutocompletePredictionEntity$SubstringEntity extends AbstractSafePa
 {
     public static final Parcelable$Creator CREATOR;
     final int mOffset;
-    final int yo;
-    final int yp;
+    final int zT;
+    final int zU;
     
     static {
         CREATOR = (Parcelable$Creator)new j();
     }
     
-    public AutocompletePredictionEntity$SubstringEntity(final int yo, final int mOffset, final int yp) {
-        this.yo = yo;
+    public AutocompletePredictionEntity$SubstringEntity(final int zt, final int mOffset, final int zu) {
+        this.zT = zt;
         this.mOffset = mOffset;
-        this.yp = yp;
+        this.zU = zu;
     }
     
     public boolean equals(final Object o) {
@@ -33,7 +33,7 @@ public class AutocompletePredictionEntity$SubstringEntity extends AbstractSafePa
         }
         if (o instanceof AutocompletePredictionEntity$SubstringEntity) {
             final AutocompletePredictionEntity$SubstringEntity autocompletePredictionEntity$SubstringEntity = (AutocompletePredictionEntity$SubstringEntity)o;
-            if (!u.hH(this.mOffset, autocompletePredictionEntity$SubstringEntity.mOffset) || !u.hH(this.yp, autocompletePredictionEntity$SubstringEntity.yp)) {
+            if (!u.kv(this.mOffset, autocompletePredictionEntity$SubstringEntity.mOffset) || !u.kv(this.zU, autocompletePredictionEntity$SubstringEntity.zU)) {
                 b = false;
             }
             return b;
@@ -42,14 +42,14 @@ public class AutocompletePredictionEntity$SubstringEntity extends AbstractSafePa
     }
     
     public int hashCode() {
-        return u.hI(this.mOffset, this.yp);
+        return u.kw(this.mOffset, this.zU);
     }
     
     public String toString() {
-        return u.hJ(this).hB("offset", this.mOffset).hB("length", this.yp).toString();
+        return u.kx(this).kp("offset", this.mOffset).kp("length", this.zU).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        j.DI(this, parcel, n);
+        j.EB(this, parcel, n);
     }
 }

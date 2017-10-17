@@ -4,7 +4,11 @@
 
 package com.google.android.gms.common.api;
 
-public interface u
+public abstract class u
 {
-    void eu(final Status p0);
+    public abstract f hi(final m p0);
+    
+    public Status hj(final Status status) {
+        return status;
+    }
 }

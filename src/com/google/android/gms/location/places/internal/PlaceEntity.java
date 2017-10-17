@@ -8,7 +8,6 @@ import android.os.Parcel;
 import com.google.android.gms.common.internal.u;
 import java.util.HashMap;
 import java.util.Collections;
-import android.net.Uri;
 import java.util.Locale;
 import java.util.TimeZone;
 import java.util.List;
@@ -16,145 +15,146 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import android.os.Bundle;
 import java.util.Map;
 import com.google.android.gms.maps.model.LatLng;
+import android.net.Uri;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public final class PlaceEntity extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final i CREATOR;
-    private final String yA;
-    private final LatLng yB;
-    private final String yC;
-    private final float yD;
-    private final Map yE;
-    private final Bundle yF;
-    private final LatLngBounds yG;
-    private final List yH;
-    private final TimeZone yI;
-    private final String yJ;
-    private final String yK;
-    private final boolean yL;
-    private final List yM;
-    private Locale yN;
-    private final List yr;
-    private final String ys;
-    private final long yt;
-    private final PlaceLocalization yu;
-    private final Uri yv;
-    private final int yw;
-    final int yx;
-    private final String yy;
-    private final float yz;
+    private final Uri Aa;
+    private final int Ab;
+    final int Ac;
+    private final String Ad;
+    private final float Ae;
+    private final String Af;
+    private final LatLng Ag;
+    private final String Ah;
+    private final float Ai;
+    private final Map Aj;
+    private final Bundle Ak;
+    private final LatLngBounds Al;
+    private final List Am;
+    private final TimeZone An;
+    private final String Ao;
+    private final String Ap;
+    private final boolean Aq;
+    private final List Ar;
+    private Locale As;
+    private final List zW;
+    private final String zX;
+    private final long zY;
+    private final PlaceLocalization zZ;
     
     static {
         CREATOR = new i();
     }
     
-    PlaceEntity(final int yx, final String yc, final List list, final List ym, Bundle yf, final String ys, final String yj, final String yk, final String ya, List emptyList, final LatLng yb, final float yd, final LatLngBounds yg, String yy, final Uri yv, final boolean yl, final float yz, final int yw, final long yt, final PlaceLocalization yu) {
-        this.yx = yx;
-        this.yC = yc;
-        this.yr = Collections.unmodifiableList((List<?>)list);
-        this.yM = ym;
-        if (yf == null) {
-            yf = new Bundle();
+    PlaceEntity(final int ac, final String ah, final List list, final List ar, Bundle ak, final String zx, final String ao, final String ap, final String af, List emptyList, final LatLng ag, final float ai, final LatLngBounds al, String ad, final Uri aa, final boolean aq, final float ae, final int ab, final long zy, final PlaceLocalization zz) {
+        this.Ac = ac;
+        this.Ah = ah;
+        this.zW = Collections.unmodifiableList((List<?>)list);
+        this.Ar = ar;
+        if (ak == null) {
+            ak = new Bundle();
         }
-        this.yF = yf;
-        this.ys = ys;
-        this.yJ = yj;
-        this.yK = yk;
-        this.yA = ya;
+        this.Ak = ak;
+        this.zX = zx;
+        this.Ao = ao;
+        this.Ap = ap;
+        this.Af = af;
         if (emptyList == null) {
             emptyList = Collections.emptyList();
         }
-        this.yH = emptyList;
-        this.yB = yb;
-        this.yD = yd;
-        this.yG = yg;
-        if (yy == null) {
-            yy = "UTC";
+        this.Am = emptyList;
+        this.Ag = ag;
+        this.Ai = ai;
+        this.Al = al;
+        if (ad == null) {
+            ad = "UTC";
         }
-        this.yy = yy;
-        this.yv = yv;
-        this.yL = yl;
-        this.yz = yz;
-        this.yw = yw;
-        this.yt = yt;
-        this.yE = Collections.unmodifiableMap((Map<?, ?>)new HashMap<Object, Object>());
-        this.yI = null;
-        this.yN = null;
-        this.yu = yu;
+        this.Ad = ad;
+        this.Aa = aa;
+        this.Aq = aq;
+        this.Ae = ae;
+        this.Ab = ab;
+        this.zY = zy;
+        this.Aj = Collections.unmodifiableMap((Map<?, ?>)new HashMap<Object, Object>());
+        this.An = null;
+        this.As = null;
+        this.zZ = zz;
     }
     
-    public float Di() {
-        return this.yz;
+    public float Eb() {
+        return this.Ae;
     }
     
-    public String Dj() {
-        return this.yA;
+    public String Ec() {
+        return this.Af;
     }
     
-    public Uri Dk() {
-        return this.yv;
+    public Uri Ed() {
+        return this.Aa;
     }
     
-    public LatLngBounds Dl() {
-        return this.yG;
+    public LatLngBounds Ee() {
+        return this.Al;
     }
     
-    public List Dm() {
-        return this.yM;
+    public List Ef() {
+        return this.Ar;
     }
     
-    public PlaceLocalization Dn() {
-        return this.yu;
+    public PlaceLocalization Eg() {
+        return this.zZ;
     }
     
-    public String Do() {
-        return this.ys;
+    public String Eh() {
+        return this.zX;
     }
     
-    public int Dp() {
-        return this.yw;
+    public int Ei() {
+        return this.Ab;
     }
     
-    public String Dq() {
-        return this.yK;
+    public String Ej() {
+        return this.Ap;
     }
     
-    public String Dr() {
-        return this.yy;
+    public String Ek() {
+        return this.Ad;
     }
     
-    public String Ds() {
-        return this.yJ;
+    public String El() {
+        return this.Ao;
     }
     
-    public List Dt() {
-        return this.yr;
+    public List Em() {
+        return this.zW;
     }
     
-    public List Du() {
-        return this.yH;
+    public List En() {
+        return this.Am;
     }
     
-    public float Dv() {
-        return this.yD;
+    public float Eo() {
+        return this.Ai;
     }
     
-    public long Dw() {
-        return this.yt;
+    public long Ep() {
+        return this.zY;
     }
     
-    public Bundle Dx() {
-        return this.yF;
+    public Bundle Eq() {
+        return this.Ak;
     }
     
-    public boolean Dy() {
-        return this.yL;
+    public boolean Er() {
+        return this.Aq;
     }
     
-    public LatLng Dz() {
-        return this.yB;
+    public LatLng Es() {
+        return this.Ag;
     }
     
     public boolean equals(final Object o) {
@@ -164,7 +164,7 @@ public final class PlaceEntity extends AbstractSafeParcelable implements Reflect
         }
         if (o instanceof PlaceEntity) {
             final PlaceEntity placeEntity = (PlaceEntity)o;
-            if (!this.yC.equals(placeEntity.yC) || !u.hH(this.yN, placeEntity.yN) || this.yt != placeEntity.yt) {
+            if (!this.Ah.equals(placeEntity.Ah) || !u.kv(this.As, placeEntity.As) || this.zY != placeEntity.zY) {
                 b = false;
             }
             return b;
@@ -173,18 +173,18 @@ public final class PlaceEntity extends AbstractSafeParcelable implements Reflect
     }
     
     public String getId() {
-        return this.yC;
+        return this.Ah;
     }
     
     public int hashCode() {
-        return u.hI(this.yC, this.yN, this.yt);
+        return u.kw(this.Ah, this.As, this.zY);
     }
     
     public String toString() {
-        return u.hJ(this).hB("id", this.yC).hB("placeTypes", this.yr).hB("locale", this.yN).hB("name", this.ys).hB("address", this.yJ).hB("phoneNumber", this.yK).hB("latlng", this.yB).hB("viewport", this.yG).hB("websiteUri", this.yv).hB("isPermanentlyClosed", this.yL).hB("priceLevel", this.yw).hB("timestampSecs", this.yt).toString();
+        return u.kx(this).kp("id", this.Ah).kp("placeTypes", this.zW).kp("locale", this.As).kp("name", this.zX).kp("address", this.Ao).kp("phoneNumber", this.Ap).kp("latlng", this.Ag).kp("viewport", this.Al).kp("websiteUri", this.Aa).kp("isPermanentlyClosed", this.Aq).kp("priceLevel", this.Ab).kp("timestampSecs", this.zY).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        i.DF(this, parcel, n);
+        i.Ey(this, parcel, n);
     }
 }

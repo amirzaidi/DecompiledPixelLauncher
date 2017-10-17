@@ -13,89 +13,89 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void DC(final AutocompletePredictionEntity autocompletePredictionEntity, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, autocompletePredictionEntity.xZ, false);
-        a.fo(parcel, 2, autocompletePredictionEntity.yc, false);
-        a.fb(parcel, 3, autocompletePredictionEntity.xW, false);
-        a.fc(parcel, 4, autocompletePredictionEntity.ye, false);
-        a.fj(parcel, 5, autocompletePredictionEntity.xY);
-        a.fo(parcel, 6, autocompletePredictionEntity.xV, false);
-        a.fc(parcel, 7, autocompletePredictionEntity.yd, false);
-        a.fj(parcel, 1000, autocompletePredictionEntity.yb);
-        a.fo(parcel, 8, autocompletePredictionEntity.ya, false);
-        a.fc(parcel, 9, autocompletePredictionEntity.xX, false);
-        a.fe(parcel, ey);
+    static void Ev(final AutocompletePredictionEntity autocompletePredictionEntity, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, autocompletePredictionEntity.zE, false);
+        a.ic(parcel, 2, autocompletePredictionEntity.zH, false);
+        a.hP(parcel, 3, autocompletePredictionEntity.zB, false);
+        a.hQ(parcel, 4, autocompletePredictionEntity.zJ, false);
+        a.hX(parcel, 5, autocompletePredictionEntity.zD);
+        a.ic(parcel, 6, autocompletePredictionEntity.zA, false);
+        a.hQ(parcel, 7, autocompletePredictionEntity.zI, false);
+        a.hX(parcel, 1000, autocompletePredictionEntity.zG);
+        a.ic(parcel, 8, autocompletePredictionEntity.zF, false);
+        a.hQ(parcel, 9, autocompletePredictionEntity.zC, false);
+        a.hS(parcel, hm);
     }
     
-    public AutocompletePredictionEntity DA(final Parcel parcel) {
-        int fn = 0;
-        List fz = null;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        List fz2 = null;
-        String fq2 = null;
-        List fz3 = null;
-        String fq3 = null;
-        List fh = null;
-        String fq4 = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public AutocompletePredictionEntity Et(final Parcel parcel) {
+        int ib = 0;
+        List in = null;
+        final int ix = b.ix(parcel);
+        String ie = null;
+        List in2 = null;
+        String ie2 = null;
+        List in3 = null;
+        String ie3 = null;
+        List iv = null;
+        String ie4 = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq3 = b.fQ(parcel, fs);
+                    ie3 = b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq4 = b.fQ(parcel, fs);
+                    ie4 = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fh = b.fH(parcel, fs);
+                    iv = b.iv(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fz3 = b.fZ(parcel, fs, AutocompletePredictionEntity$SubstringEntity.CREATOR);
+                    in3 = b.iN(parcel, ig, AutocompletePredictionEntity$SubstringEntity.CREATOR);
                     continue;
                 }
                 case 5: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fz2 = b.fZ(parcel, fs, AutocompletePredictionEntity$SubstringEntity.CREATOR);
+                    in2 = b.iN(parcel, ig, AutocompletePredictionEntity$SubstringEntity.CREATOR);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fz = b.fZ(parcel, fs, AutocompletePredictionEntity$SubstringEntity.CREATOR);
+                    in = b.iN(parcel, ig, AutocompletePredictionEntity$SubstringEntity.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new AutocompletePredictionEntity(fn2, fq4, fh, fn, fq3, fz3, fq2, fz2, fq, fz);
+        if (parcel.dataPosition() == ix) {
+            return new AutocompletePredictionEntity(ib2, ie4, iv, ib, ie3, in3, ie2, in2, ie, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public AutocompletePredictionEntity[] DB(final int n) {
+    public AutocompletePredictionEntity[] Eu(final int n) {
         return new AutocompletePredictionEntity[n];
     }
 }

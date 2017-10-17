@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static jy([BIIZ)Ljava/lang/String;
+.method public static mm([BIIZ)Ljava/lang/String;
     .locals 12
 
     const/4 v2, 0x0

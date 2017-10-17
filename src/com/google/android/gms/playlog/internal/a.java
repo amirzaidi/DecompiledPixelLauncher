@@ -11,86 +11,86 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void OZ(final PlayLoggerContext playLoggerContext, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1, playLoggerContext.IG);
-        com.google.android.gms.common.internal.safeparcel.a.fo(parcel, 2, playLoggerContext.packageName, false);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 3, playLoggerContext.IO);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 4, playLoggerContext.IL);
-        com.google.android.gms.common.internal.safeparcel.a.fo(parcel, 5, playLoggerContext.IJ, false);
-        com.google.android.gms.common.internal.safeparcel.a.fo(parcel, 6, playLoggerContext.IM, false);
-        com.google.android.gms.common.internal.safeparcel.a.fa(parcel, 7, playLoggerContext.IK);
-        com.google.android.gms.common.internal.safeparcel.a.fo(parcel, 8, playLoggerContext.IH, false);
-        com.google.android.gms.common.internal.safeparcel.a.fa(parcel, 9, playLoggerContext.IN);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 10, playLoggerContext.II);
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void PS(final PlayLoggerContext playLoggerContext, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1, playLoggerContext.Kl);
+        com.google.android.gms.common.internal.safeparcel.a.ic(parcel, 2, playLoggerContext.packageName, false);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 3, playLoggerContext.Kt);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 4, playLoggerContext.Kq);
+        com.google.android.gms.common.internal.safeparcel.a.ic(parcel, 5, playLoggerContext.Ko, false);
+        com.google.android.gms.common.internal.safeparcel.a.ic(parcel, 6, playLoggerContext.Kr, false);
+        com.google.android.gms.common.internal.safeparcel.a.hO(parcel, 7, playLoggerContext.Kp);
+        com.google.android.gms.common.internal.safeparcel.a.ic(parcel, 8, playLoggerContext.Km, false);
+        com.google.android.gms.common.internal.safeparcel.a.hO(parcel, 9, playLoggerContext.Ks);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 10, playLoggerContext.Kn);
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
     public PlayLoggerContext createFromParcel(final Parcel parcel) {
-        String fq = null;
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        boolean fx = true;
-        boolean fx2 = false;
-        String fq2 = null;
-        String fq3 = null;
-        int fn2 = 0;
-        int fn3 = 0;
-        String fq4 = null;
-        int fn4 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        String ie = null;
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        boolean il = true;
+        boolean il2 = false;
+        String ie2 = null;
+        String ie3 = null;
+        int ib2 = 0;
+        int ib3 = 0;
+        String ie4 = null;
+        int ib4 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn4 = b.fN(parcel, fs);
+                    ib4 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq4 = b.fQ(parcel, fs);
+                    ie4 = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fq3 = b.fQ(parcel, fs);
+                    ie3 = b.iE(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlayLoggerContext(fn4, fq4, fn3, fn2, fq3, fq2, fx, fq, fx2, fn);
+        if (parcel.dataPosition() == ix) {
+            return new PlayLoggerContext(ib4, ie4, ib3, ib2, ie3, ie2, il, ie, il2, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public PlayLoggerContext[] newArray(final int n) {

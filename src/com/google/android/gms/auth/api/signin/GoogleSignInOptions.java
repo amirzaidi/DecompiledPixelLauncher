@@ -6,6 +6,7 @@ package com.google.android.gms.auth.api.signin;
 
 import android.os.Parcel;
 import java.util.Iterator;
+import com.google.android.gms.auth.api.signin.a.b;
 import java.util.List;
 import java.util.Collections;
 import android.text.TextUtils;
@@ -16,73 +17,73 @@ import android.accounts.Account;
 import java.util.Comparator;
 import com.google.android.gms.common.api.Scope;
 import android.os.Parcelable$Creator;
-import com.google.android.gms.common.api.m;
+import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
-public class GoogleSignInOptions extends AbstractSafeParcelable implements ReflectedParcelable, m
+public class GoogleSignInOptions extends AbstractSafeParcelable implements ReflectedParcelable, k
 {
     public static final Parcelable$Creator CREATOR;
-    public static final Scope JB;
-    public static final Scope JC;
-    private static Comparator JG;
-    public static final Scope JK;
-    public static final GoogleSignInOptions JM;
-    final int JA;
-    private Account JD;
-    private final boolean JE;
-    private final boolean JF;
-    private boolean JH;
-    private String JI;
-    private final ArrayList JJ;
-    private String JL;
+    public static final Scope Lg;
+    public static final Scope Lh;
+    private static Comparator Ll;
+    public static final Scope Lp;
+    public static final GoogleSignInOptions Lr;
+    final int Lf;
+    private Account Li;
+    private final boolean Lj;
+    private final boolean Lk;
+    private boolean Lm;
+    private String Ln;
+    private final ArrayList Lo;
+    private String Lq;
     
     static {
-        JK = new Scope("profile");
-        JB = new Scope("email");
-        JC = new Scope("openid");
-        JM = new a().PD().PC().build();
-        CREATOR = (Parcelable$Creator)new b();
-        GoogleSignInOptions.JG = new e();
+        Lp = new Scope("profile");
+        Lg = new Scope("email");
+        Lh = new Scope("openid");
+        Lr = new a().Qw().Qv().build();
+        CREATOR = (Parcelable$Creator)new c();
+        GoogleSignInOptions.Ll = new e();
     }
     
-    GoogleSignInOptions(final int ja, final ArrayList jj, final Account jd, final boolean jh, final boolean jf, final boolean je, final String ji, final String jl) {
-        this.JA = ja;
-        this.JJ = jj;
-        this.JD = jd;
-        this.JH = jh;
-        this.JF = jf;
-        this.JE = je;
-        this.JI = ji;
-        this.JL = jl;
+    GoogleSignInOptions(final int lf, final ArrayList lo, final Account li, final boolean lm, final boolean lk, final boolean lj, final String ln, final String lq) {
+        this.Lf = lf;
+        this.Lo = lo;
+        this.Li = li;
+        this.Lm = lm;
+        this.Lk = lk;
+        this.Lj = lj;
+        this.Ln = ln;
+        this.Lq = lq;
     }
     
     private GoogleSignInOptions(final Set set, final Account account, final boolean b, final boolean b2, final boolean b3, final String s, final String s2) {
         this(2, new ArrayList(set), account, b, b2, b3, s, s2);
     }
     
-    public ArrayList PE() {
-        return new ArrayList(this.JJ);
+    public boolean QA() {
+        return this.Lk;
     }
     
-    public String PF() {
-        return this.JL;
+    public boolean QB() {
+        return this.Lm;
     }
     
-    public String PG() {
-        return this.JI;
+    public boolean QC() {
+        return this.Lj;
     }
     
-    public boolean PH() {
-        return this.JF;
+    public ArrayList Qx() {
+        return new ArrayList(this.Lo);
     }
     
-    public boolean PI() {
-        return this.JH;
+    public String Qy() {
+        return this.Lq;
     }
     
-    public boolean PJ() {
-        return this.JE;
+    public String Qz() {
+        return this.Ln;
     }
     
     public boolean equals(final Object o) {
@@ -93,64 +94,64 @@ public class GoogleSignInOptions extends AbstractSafeParcelable implements Refle
         try {
             final GoogleSignInOptions googleSignInOptions = (GoogleSignInOptions)o;
             try {
-                final ArrayList jj = this.JJ;
+                final ArrayList lo = this.Lo;
                 try {
-                    final int size = jj.size();
+                    final int size = lo.size();
                     try {
-                        final ArrayList pe = googleSignInOptions.PE();
+                        final ArrayList qx = googleSignInOptions.Qx();
                         try {
-                            if (size == pe.size()) {
-                                final ArrayList jj2 = this.JJ;
+                            if (size == qx.size()) {
+                                final ArrayList lo2 = this.Lo;
                                 try {
-                                    if (!jj2.containsAll(googleSignInOptions.PE())) {
+                                    if (!lo2.containsAll(googleSignInOptions.Qx())) {
                                         return false;
                                     }
                                     Label_0105: {
-                                        if (this.JD == null) {
+                                        if (this.Li == null) {
                                             break Label_0105;
                                         }
-                                        final Account jd = this.JD;
+                                        final Account li = this.Li;
                                         try {
                                             Label_0114: {
-                                                if (jd.equals((Object)googleSignInOptions.getAccount())) {
+                                                if (li.equals((Object)googleSignInOptions.getAccount())) {
                                                     break Label_0114;
                                                 }
                                                 Label_0103: {
                                                     return b;
                                                 }
                                             }
-                                            final String ji = this.JI;
+                                            final String ln = this.Ln;
                                             try {
                                                 Label_0216: {
-                                                    if (TextUtils.isEmpty((CharSequence)ji)) {
+                                                    if (TextUtils.isEmpty((CharSequence)ln)) {
                                                         break Label_0216;
                                                     }
-                                                    final String ji2 = this.JI;
+                                                    final String ln2 = this.Ln;
                                                     try {
-                                                        if (!ji2.equals(googleSignInOptions.PG())) {
+                                                        if (!ln2.equals(googleSignInOptions.Qz())) {
                                                             return b;
                                                         }
                                                         while (true) {
-                                                            final boolean je = this.JE;
+                                                            final boolean lj = this.Lj;
                                                             try {
-                                                                if (je != googleSignInOptions.PJ()) {
+                                                                if (lj != googleSignInOptions.QC()) {
                                                                     return b;
                                                                 }
-                                                                final boolean jh = this.JH;
+                                                                final boolean lm = this.Lm;
                                                                 try {
-                                                                    if (jh != googleSignInOptions.PI()) {
+                                                                    if (lm != googleSignInOptions.QB()) {
                                                                         return b;
                                                                     }
-                                                                    final boolean jf = this.JF;
+                                                                    final boolean lk = this.Lk;
                                                                     try {
-                                                                        if (jf == googleSignInOptions.PH()) {
+                                                                        if (lk == googleSignInOptions.QA()) {
                                                                             b = true;
                                                                             return b;
                                                                         }
                                                                         return b;
-                                                                        final String pg = googleSignInOptions.PG();
+                                                                        final String qz = googleSignInOptions.Qz();
                                                                         try {
-                                                                            if (!TextUtils.isEmpty((CharSequence)pg)) {
+                                                                            if (!TextUtils.isEmpty((CharSequence)qz)) {
                                                                                 return b;
                                                                             }
                                                                             continue;
@@ -191,20 +192,20 @@ public class GoogleSignInOptions extends AbstractSafeParcelable implements Refle
     }
     
     public Account getAccount() {
-        return this.JD;
+        return this.Li;
     }
     
     public int hashCode() {
         final ArrayList<String> list = (ArrayList<String>)new ArrayList<Comparable>();
-        final Iterator<Scope> iterator = this.JJ.iterator();
+        final Iterator<Scope> iterator = this.Lo.iterator();
         while (iterator.hasNext()) {
-            list.add(iterator.next().el());
+            list.add(iterator.next().gS());
         }
         Collections.sort((List<Comparable>)list);
-        return new com.google.android.gms.auth.api.signin.a.b().Pl(list).Pl(this.JD).Pl(this.JI).Pm(this.JE).Pm(this.JH).Pm(this.JF).Pn();
+        return new b().Qe(list).Qe(this.Li).Qe(this.Ln).Qf(this.Lj).Qf(this.Lm).Qf(this.Lk).Qg();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.PM(this, parcel, n);
+        c.QG(this, parcel, n);
     }
 }

@@ -16,22 +16,22 @@
 
 
 # virtual methods
-.method public abstract lE()Ljava/lang/String;
+.method public abstract oB()J
 .end method
 
-.method public abstract lI()J
+.method public abstract os()Ljava/lang/String;
 .end method
 
-.method public abstract lJ()I
+.method public abstract ow()J
 .end method
 
-.method public abstract lN()J
+.method public abstract ox()I
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 11
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->lI()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->ow()J
 
     move-result-wide v0
 
@@ -41,7 +41,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->lJ()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->ox()I
 
     move-result v3
 
@@ -51,11 +51,11 @@
 
     move-result-object v4
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->lN()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->oB()J
 
     move-result-wide v6
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->lE()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/StatsEvent;->os()Ljava/lang/String;
 
     move-result-object v5
 

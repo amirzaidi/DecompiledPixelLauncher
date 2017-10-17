@@ -6,14 +6,14 @@
 
 
 # instance fields
-.field final synthetic hn:Lcom/google/android/gms/common/api/f;
+.field final synthetic kf:Lcom/google/android/gms/common/api/c;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/common/api/f;)V
+.method constructor <init>(Lcom/google/android/gms/common/api/c;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/T;->hn:Lcom/google/android/gms/common/api/f;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/T;->kf:Lcom/google/android/gms/common/api/c;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public hC(Lcom/google/android/gms/common/ConnectionResult;)V
+.method public kq(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/T;->hn:Lcom/google/android/gms/common/api/f;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/T;->kf:Lcom/google/android/gms/common/api/c;
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/f;->dQ(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/api/c;->gw(Lcom/google/android/gms/common/ConnectionResult;)V
 
     return-void
 .end method

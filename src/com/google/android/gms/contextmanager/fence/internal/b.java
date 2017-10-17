@@ -12,41 +12,41 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void NH(final FenceStateMapImpl fenceStateMapImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, fenceStateMapImpl.ND());
-        a.eT(parcel, 2, fenceStateMapImpl.NC(), false);
-        a.fe(parcel, ey);
+    static void OA(final FenceStateMapImpl fenceStateMapImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, fenceStateMapImpl.Ow());
+        a.hH(parcel, 2, fenceStateMapImpl.Ov(), false);
+        a.hS(parcel, hm);
     }
     
-    public FenceStateMapImpl[] NI(final int n) {
+    public FenceStateMapImpl[] OB(final int n) {
         return new FenceStateMapImpl[n];
     }
     
-    public FenceStateMapImpl NJ(final Parcel parcel) {
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn = 0;
-        Bundle fp = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+    public FenceStateMapImpl OC(final Parcel parcel) {
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib = 0;
+        Bundle id = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fp = com.google.android.gms.common.internal.safeparcel.b.fP(parcel, fs);
+                    id = com.google.android.gms.common.internal.safeparcel.b.iD(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FenceStateMapImpl(fn, fp);
+        if (parcel.dataPosition() == ix) {
+            return new FenceStateMapImpl(ib, id);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

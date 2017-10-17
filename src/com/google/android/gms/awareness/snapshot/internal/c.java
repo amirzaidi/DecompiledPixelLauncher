@@ -14,47 +14,47 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void pO(final SnapshotRequest snapshotRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, snapshotRequest.qe());
-        a.fj(parcel, 2, snapshotRequest.qf());
-        a.fc(parcel, 3, snapshotRequest.qd(), false);
-        a.fe(parcel, ey);
+    static void eI(final SnapshotRequest snapshotRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, snapshotRequest.fb());
+        a.hX(parcel, 2, snapshotRequest.fc());
+        a.hQ(parcel, 3, snapshotRequest.fa(), false);
+        a.hS(parcel, hm);
     }
     
-    public SnapshotRequest[] pN(final int n) {
+    public SnapshotRequest[] eH(final int n) {
         return new SnapshotRequest[n];
     }
     
-    public SnapshotRequest pP(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        ArrayList fz = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public SnapshotRequest eJ(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        ArrayList in = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fz = b.fZ(parcel, fs, BeaconStateImpl$TypeFilterImpl.CREATOR);
+                    in = b.iN(parcel, ig, BeaconStateImpl$TypeFilterImpl.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new SnapshotRequest(fn2, fn, fz);
+        if (parcel.dataPosition() == ix) {
+            return new SnapshotRequest(ib2, ib, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

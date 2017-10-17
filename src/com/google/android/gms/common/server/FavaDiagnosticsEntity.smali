@@ -10,11 +10,11 @@
 
 
 # instance fields
-.field public final in:I
+.field public final lf:I
 
-.field final io:I
+.field final lg:I
 
-.field public final ip:Ljava/lang/String;
+.field public final lh:Ljava/lang/String;
 
 
 # direct methods
@@ -35,11 +35,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->io:I
+    iput p1, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->lg:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->ip:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->lh:Ljava/lang/String;
 
-    iput p3, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->in:I
+    iput p3, p0, Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;->lf:I
 
     return-void
 .end method
@@ -49,7 +49,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/a;->ly(Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/a;->om(Lcom/google/android/gms/common/server/FavaDiagnosticsEntity;Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -10,24 +10,24 @@
 
 
 # instance fields
-.field public final lK:I
+.field public final xS:I
 
-.field public final lL:[Lcom/google/android/gms/phenotype/Flag;
+.field public final xT:[Lcom/google/android/gms/phenotype/Flag;
 
-.field final lM:I
+.field final xU:I
 
-.field public final lN:[Ljava/lang/String;
+.field public final xV:[Ljava/lang/String;
 
-.field public final lO:Ljava/util/Map;
+.field public final xW:Ljava/util/Map;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcom/google/android/gms/phenotype/n;
+    new-instance v0, Lcom/google/android/gms/phenotype/m;
 
-    invoke-direct {v0}, Lcom/google/android/gms/phenotype/n;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/phenotype/m;-><init>()V
 
     sput-object v0, Lcom/google/android/gms/phenotype/Configuration;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -39,17 +39,17 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/phenotype/Configuration;->lM:I
+    iput p1, p0, Lcom/google/android/gms/phenotype/Configuration;->xU:I
 
-    iput p2, p0, Lcom/google/android/gms/phenotype/Configuration;->lK:I
+    iput p2, p0, Lcom/google/android/gms/phenotype/Configuration;->xS:I
 
-    iput-object p3, p0, Lcom/google/android/gms/phenotype/Configuration;->lL:[Lcom/google/android/gms/phenotype/Flag;
+    iput-object p3, p0, Lcom/google/android/gms/phenotype/Configuration;->xT:[Lcom/google/android/gms/phenotype/Flag;
 
     new-instance v0, Ljava/util/TreeMap;
 
     invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lO:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xW:Ljava/util/Map;
 
     array-length v1, p3
 
@@ -58,9 +58,9 @@
     :goto_0
     if-lt v0, v1, :cond_0
 
-    iput-object p4, p0, Lcom/google/android/gms/phenotype/Configuration;->lN:[Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/gms/phenotype/Configuration;->xV:[Ljava/lang/String;
 
-    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lN:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xV:[Ljava/lang/String;
 
     if-nez v0, :cond_1
 
@@ -70,7 +70,7 @@
     :cond_0
     aget-object v2, p3, v0
 
-    iget-object v3, p0, Lcom/google/android/gms/phenotype/Configuration;->lO:Ljava/util/Map;
+    iget-object v3, p0, Lcom/google/android/gms/phenotype/Configuration;->xW:Ljava/util/Map;
 
     iget-object v4, v2, Lcom/google/android/gms/phenotype/Flag;->name:Ljava/lang/String;
 
@@ -81,7 +81,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lN:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xV:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->sort([Ljava/lang/Object;)V
 
@@ -90,12 +90,24 @@
 
 
 # virtual methods
+.method public CM(Lcom/google/android/gms/phenotype/Configuration;)I
+    .locals 2
+
+    iget v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xS:I
+
+    iget v1, p1, Lcom/google/android/gms/phenotype/Configuration;->xS:I
+
+    sub-int/2addr v0, v1
+
+    return v0
+.end method
+
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
 
     check-cast p1, Lcom/google/android/gms/phenotype/Configuration;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/phenotype/Configuration;->pc(Lcom/google/android/gms/phenotype/Configuration;)I
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/phenotype/Configuration;->CM(Lcom/google/android/gms/phenotype/Configuration;)I
 
     move-result v0
 
@@ -119,9 +131,9 @@
 
     check-cast p1, Lcom/google/android/gms/phenotype/Configuration;
 
-    iget v1, p0, Lcom/google/android/gms/phenotype/Configuration;->lM:I
+    iget v1, p0, Lcom/google/android/gms/phenotype/Configuration;->xU:I
 
-    iget v2, p1, Lcom/google/android/gms/phenotype/Configuration;->lM:I
+    iget v2, p1, Lcom/google/android/gms/phenotype/Configuration;->xU:I
 
     if-eq v1, v2, :cond_3
 
@@ -130,25 +142,25 @@
     return v0
 
     :cond_3
-    iget v1, p0, Lcom/google/android/gms/phenotype/Configuration;->lK:I
+    iget v1, p0, Lcom/google/android/gms/phenotype/Configuration;->xS:I
 
-    iget v2, p1, Lcom/google/android/gms/phenotype/Configuration;->lK:I
+    iget v2, p1, Lcom/google/android/gms/phenotype/Configuration;->xS:I
 
     if-ne v1, v2, :cond_2
 
-    iget-object v1, p0, Lcom/google/android/gms/phenotype/Configuration;->lO:Ljava/util/Map;
+    iget-object v1, p0, Lcom/google/android/gms/phenotype/Configuration;->xW:Ljava/util/Map;
 
-    iget-object v2, p1, Lcom/google/android/gms/phenotype/Configuration;->lO:Ljava/util/Map;
+    iget-object v2, p1, Lcom/google/android/gms/phenotype/Configuration;->xW:Ljava/util/Map;
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    iget-object v1, p0, Lcom/google/android/gms/phenotype/Configuration;->lN:[Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/phenotype/Configuration;->xV:[Ljava/lang/String;
 
-    iget-object v2, p1, Lcom/google/android/gms/phenotype/Configuration;->lN:[Ljava/lang/String;
+    iget-object v2, p1, Lcom/google/android/gms/phenotype/Configuration;->xV:[Ljava/lang/String;
 
     invoke-static {v1, v2}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
@@ -159,18 +171,6 @@
     const/4 v0, 0x1
 
     goto :goto_0
-.end method
-
-.method public pc(Lcom/google/android/gms/phenotype/Configuration;)I
-    .locals 2
-
-    iget v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lK:I
-
-    iget v1, p1, Lcom/google/android/gms/phenotype/Configuration;->lK:I
-
-    sub-int/2addr v0, v1
-
-    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -184,7 +184,7 @@
 
     invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lM:I
+    iget v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xU:I
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -192,7 +192,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lK:I
+    iget v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xS:I
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -204,7 +204,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lO:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xW:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
@@ -233,7 +233,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->lN:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/phenotype/Configuration;->xV:[Ljava/lang/String;
 
     if-nez v0, :cond_2
 
@@ -272,7 +272,7 @@
     goto :goto_0
 
     :cond_2
-    iget-object v3, p0, Lcom/google/android/gms/phenotype/Configuration;->lN:[Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/gms/phenotype/Configuration;->xV:[Ljava/lang/String;
 
     array-length v4, v3
 
@@ -297,7 +297,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/phenotype/n;->pn(Lcom/google/android/gms/phenotype/Configuration;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/phenotype/m;->Dh(Lcom/google/android/gms/phenotype/Configuration;Landroid/os/Parcel;I)V
 
     return-void
 .end method

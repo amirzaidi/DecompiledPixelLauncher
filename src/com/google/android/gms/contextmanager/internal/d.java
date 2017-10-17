@@ -12,53 +12,53 @@ import android.os.Parcelable$Creator;
 
 public class d implements Parcelable$Creator
 {
-    static void Mi(final KeyFilterImpl$Inclusion keyFilterImpl$Inclusion, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, keyFilterImpl$Inclusion.LP());
-        a.fk(parcel, 2, keyFilterImpl$Inclusion.LO(), false);
-        a.fk(parcel, 3, keyFilterImpl$Inclusion.LM(), false);
-        a.fk(parcel, 4, keyFilterImpl$Inclusion.LN(), false);
-        a.fe(parcel, ey);
+    static void Nb(final KeyFilterImpl$Inclusion keyFilterImpl$Inclusion, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, keyFilterImpl$Inclusion.MI());
+        a.hY(parcel, 2, keyFilterImpl$Inclusion.MH(), false);
+        a.hY(parcel, 3, keyFilterImpl$Inclusion.MF(), false);
+        a.hY(parcel, 4, keyFilterImpl$Inclusion.MG(), false);
+        a.hS(parcel, hm);
     }
     
-    public KeyFilterImpl$Inclusion[] Mh(final int n) {
+    public KeyFilterImpl$Inclusion[] Na(final int n) {
         return new KeyFilterImpl$Inclusion[n];
     }
     
-    public KeyFilterImpl$Inclusion Mj(final Parcel parcel) {
-        String[] fu = null;
-        final int fj = b.fJ(parcel);
-        String[] fu2 = null;
-        int fn = 0;
-        String[] fu3 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public KeyFilterImpl$Inclusion Nc(final Parcel parcel) {
+        String[] ii = null;
+        final int ix = b.ix(parcel);
+        String[] ii2 = null;
+        int ib = 0;
+        String[] ii3 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fu2 = b.fU(parcel, fs);
+                    ii2 = b.iI(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fu3 = b.fU(parcel, fs);
+                    ii3 = b.iI(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fu = b.fU(parcel, fs);
+                    ii = b.iI(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new KeyFilterImpl$Inclusion(fn, fu2, fu3, fu);
+        if (parcel.dataPosition() == ix) {
+            return new KeyFilterImpl$Inclusion(ib, ii2, ii3, ii);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

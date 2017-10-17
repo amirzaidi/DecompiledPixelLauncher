@@ -10,34 +10,34 @@ import java.util.Set;
 
 public final class a
 {
-    private boolean Jt;
-    private boolean Ju;
-    private boolean Jv;
-    private String Jw;
-    private Set Jx;
-    private String Jy;
-    private Account Jz;
+    private boolean KY;
+    private boolean KZ;
+    private boolean La;
+    private String Lb;
+    private Set Lc;
+    private String Ld;
+    private Account Le;
     
     public a() {
-        this.Jx = new HashSet();
+        this.Lc = new HashSet();
     }
     
-    public a PC() {
-        this.Jx.add(GoogleSignInOptions.JK);
+    public a Qv() {
+        this.Lc.add(GoogleSignInOptions.Lp);
         return this;
     }
     
-    public a PD() {
-        this.Jx.add(GoogleSignInOptions.JC);
+    public a Qw() {
+        this.Lc.add(GoogleSignInOptions.Lh);
         return this;
     }
     
     public GoogleSignInOptions build() {
-        if (this.Jv) {
-            if (this.Jz == null || !this.Jx.isEmpty()) {
-                this.PD();
+        if (this.La) {
+            if (this.Le == null || !this.Lc.isEmpty()) {
+                this.Qw();
             }
         }
-        return new GoogleSignInOptions(this.Jx, this.Jz, this.Jv, this.Ju, this.Jt, this.Jw, this.Jy, null);
+        return new GoogleSignInOptions(this.Lc, this.Le, this.La, this.KZ, this.KY, this.Lb, this.Ld, null);
     }
 }

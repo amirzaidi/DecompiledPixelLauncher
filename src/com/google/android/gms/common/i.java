@@ -8,28 +8,28 @@ import java.lang.ref.WeakReference;
 
 abstract class i extends l
 {
-    private static final WeakReference kF;
-    private WeakReference kE;
+    private static final WeakReference nx;
+    private WeakReference nw;
     
     static {
-        kF = new WeakReference(null);
+        nx = new WeakReference(null);
     }
     
     i(final byte[] array) {
         super(array);
-        this.kE = i.kF;
+        this.nw = i.nx;
     }
     
-    protected abstract byte[] nQ();
+    protected abstract byte[] qC();
     
-    byte[] nR() {
+    byte[] qD() {
         synchronized (this) {
-            byte[] nq = (byte[])this.kE.get();
-            if (nq == null) {
-                nq = this.nQ();
-                this.kE = new WeakReference(nq);
+            byte[] qc = (byte[])this.nw.get();
+            if (qc == null) {
+                qc = this.qC();
+                this.nw = new WeakReference(qc);
             }
-            return nq;
+            return qc;
         }
     }
 }

@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field public final EU:D
+.field public final GA:D
 
-.field public final EV:D
+.field private final GB:I
 
-.field private final EW:I
+.field public final Gz:D
 
 
 # direct methods
@@ -36,7 +36,7 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/LatLng;->EW:I
+    iput p1, p0, Lcom/google/android/gms/maps/model/LatLng;->GB:I
 
     const-wide v0, -0x3f99800000000000L    # -180.0
 
@@ -48,7 +48,7 @@
 
     if-gez v0, :cond_0
 
-    iput-wide p4, p0, Lcom/google/android/gms/maps/model/LatLng;->EV:D
+    iput-wide p4, p0, Lcom/google/android/gms/maps/model/LatLng;->GA:D
 
     :goto_0
     const-wide v0, 0x4056800000000000L    # 90.0
@@ -63,7 +63,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->EU:D
+    iput-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->Gz:D
 
     return-void
 
@@ -78,17 +78,17 @@
 
     sub-double/2addr v0, v2
 
-    iput-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->EV:D
+    iput-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->GA:D
 
     goto :goto_0
 .end method
 
 
 # virtual methods
-.method JY()I
+.method KR()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/LatLng;->EW:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/LatLng;->GB:I
 
     return v0
 .end method
@@ -108,13 +108,13 @@
 
     check-cast p1, Lcom/google/android/gms/maps/model/LatLng;
 
-    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->EU:D
+    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->Gz:D
 
     invoke-static {v2, v3}, Ljava/lang/Double;->doubleToLongBits(D)J
 
     move-result-wide v2
 
-    iget-wide v4, p1, Lcom/google/android/gms/maps/model/LatLng;->EU:D
+    iget-wide v4, p1, Lcom/google/android/gms/maps/model/LatLng;->Gz:D
 
     invoke-static {v4, v5}, Ljava/lang/Double;->doubleToLongBits(D)J
 
@@ -124,13 +124,13 @@
 
     if-nez v2, :cond_2
 
-    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->EV:D
+    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->GA:D
 
     invoke-static {v2, v3}, Ljava/lang/Double;->doubleToLongBits(D)J
 
     move-result-wide v2
 
-    iget-wide v4, p1, Lcom/google/android/gms/maps/model/LatLng;->EV:D
+    iget-wide v4, p1, Lcom/google/android/gms/maps/model/LatLng;->GA:D
 
     invoke-static {v4, v5}, Ljava/lang/Double;->doubleToLongBits(D)J
 
@@ -160,7 +160,7 @@
 
     const/16 v4, 0x20
 
-    iget-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->EU:D
+    iget-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->Gz:D
 
     invoke-static {v0, v1}, Ljava/lang/Double;->doubleToLongBits(D)J
 
@@ -174,7 +174,7 @@
 
     add-int/lit8 v0, v0, 0x1f
 
-    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->EV:D
+    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->GA:D
 
     invoke-static {v2, v3}, Ljava/lang/Double;->doubleToLongBits(D)J
 
@@ -196,9 +196,9 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    iget-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->EU:D
+    iget-wide v0, p0, Lcom/google/android/gms/maps/model/LatLng;->Gz:D
 
-    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->EV:D
+    iget-wide v2, p0, Lcom/google/android/gms/maps/model/LatLng;->GA:D
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -242,7 +242,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/k;->Jn(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/k;->Kg(Lcom/google/android/gms/maps/model/LatLng;Landroid/os/Parcel;I)V
 
     return-void
 .end method

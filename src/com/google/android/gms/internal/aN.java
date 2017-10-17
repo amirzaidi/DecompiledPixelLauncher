@@ -4,59 +4,35 @@
 
 package com.google.android.gms.internal;
 
-import android.content.Context;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.Executors;
-import com.google.android.gms.common.api.u;
-import com.google.android.gms.common.api.c;
-import com.google.android.gms.common.a.m;
-import java.util.concurrent.TimeUnit;
-import com.google.android.gms.common.a.a;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ScheduledExecutorService;
-import com.google.android.gms.clearcut.g;
-import android.util.Log;
-import com.google.android.gms.common.api.o;
-import com.google.android.gms.common.api.b;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.d;
 import com.google.android.gms.clearcut.LogEventParcelable;
+import android.os.IInterface;
+import android.os.IBinder;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.internal.a;
+import android.os.Looper;
+import android.content.Context;
+import com.google.android.gms.common.internal.R;
 
-final class an extends ay
+public class an extends R
 {
-    private final LogEventParcelable rQ;
-    
-    an(final LogEventParcelable rq, final d d) {
-        super(d);
-        this.rQ = rq;
+    public an(final Context context, final Looper looper, final a a, final d d, final c c) {
+        super(context, looper, 40, a, d, c);
     }
     
-    public boolean equals(final Object o) {
-        return o instanceof an && this.rQ.equals(((an)o).rQ);
+    protected String jk() {
+        return "com.google.android.gms.clearcut.service.START";
     }
     
-    public String toString() {
-        final String value = String.valueOf(this.rQ);
-        return new StringBuilder(String.valueOf(value).length() + 12).append("MethodImpl(").append(value).append(")").toString();
+    protected String jl() {
+        return "com.google.android.gms.clearcut.internal.IClearcutLoggerService";
     }
     
-    protected Status uc(final Status status) {
-        return status;
+    protected zzqd uh(final IBinder binder) {
+        return zzqd$zza.zzgo(binder);
     }
     
-    protected void ud(final at at) {
-        final au au = new au(this);
-        try {
-            final LogEventParcelable rq = this.rQ;
-            try {
-                ut(rq);
-                at.zza(au, this.rQ);
-            }
-            catch (RuntimeException ex) {
-                Log.e("ClearcutLoggerApiImpl", "derived ClearcutLogger.MessageProducer ", (Throwable)ex);
-                this.rs(new Status(10, "MessageProducer"));
-            }
-        }
-        catch (RuntimeException ex2) {}
+    public void zza(final zzqc zzqc, final LogEventParcelable logEventParcelable) {
+        ((zzqd)this.kM()).zza(zzqc, logEventParcelable);
     }
 }

@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field protected final jP:Lcom/google/android/gms/common/data/DataHolder;
+.field protected final mH:Lcom/google/android/gms/common/data/DataHolder;
 
 
 # direct methods
@@ -15,19 +15,22 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/data/b;->jP:Lcom/google/android/gms/common/data/DataHolder;
+    iput-object p1, p0, Lcom/google/android/gms/common/data/b;->mH:Lcom/google/android/gms/common/data/DataHolder;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->jP:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->mH:Lcom/google/android/gms/common/data/DataHolder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public eC()V
+.method public abstract get(I)Ljava/lang/Object;
+.end method
+
+.method public hq()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->jP:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->mH:Lcom/google/android/gms/common/data/DataHolder;
 
     if-nez v0, :cond_0
 
@@ -35,7 +38,7 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->jP:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->mH:Lcom/google/android/gms/common/data/DataHolder;
 
     invoke-virtual {v0}, Lcom/google/android/gms/common/data/DataHolder;->close()V
 
@@ -52,16 +55,16 @@
     return-object v0
 .end method
 
-.method public mW()I
+.method public pK()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->jP:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->mH:Lcom/google/android/gms/common/data/DataHolder;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->jP:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, p0, Lcom/google/android/gms/common/data/b;->mH:Lcom/google/android/gms/common/data/DataHolder;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/data/DataHolder;->nd()I
+    invoke-virtual {v0}, Lcom/google/android/gms/common/data/DataHolder;->pQ()I
 
     move-result v0
 
@@ -72,7 +75,4 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public abstract mX(I)Ljava/lang/Object;
 .end method

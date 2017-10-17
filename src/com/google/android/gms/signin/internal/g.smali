@@ -14,20 +14,20 @@
     return-void
 .end method
 
-.method static Qi(Lcom/google/android/gms/signin/internal/RecordConsentRequest;Landroid/os/Parcel;I)V
+.method static Rb(Lcom/google/android/gms/signin/internal/RecordConsentRequest;Landroid/os/Parcel;I)V
     .locals 4
 
     const/4 v3, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    iget v1, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->JZ:I
+    iget v1, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LE:I
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->getAccount()Landroid/accounts/Account;
 
@@ -35,32 +35,32 @@
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->Qg()[Lcom/google/android/gms/common/api/Scope;
+    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->QZ()[Lcom/google/android/gms/common/api/Scope;
 
     move-result-object v1
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fp(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->id(Landroid/os/Parcel;I[Landroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->Qf()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->QY()Ljava/lang/String;
 
     move-result-object v1
 
     const/4 v2, 0x4
 
-    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Qh(I)[Lcom/google/android/gms/signin/internal/RecordConsentRequest;
+.method public Ra(I)[Lcom/google/android/gms/signin/internal/RecordConsentRequest;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/signin/internal/RecordConsentRequest;
@@ -68,12 +68,12 @@
     return-object v0
 .end method
 
-.method public Qj(Landroid/os/Parcel;)Lcom/google/android/gms/signin/internal/RecordConsentRequest;
+.method public Rc(Landroid/os/Parcel;)Lcom/google/android/gms/signin/internal/RecordConsentRequest;
     .locals 8
 
     const/4 v0, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v5
 
@@ -107,17 +107,17 @@
     return-object v0
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v6
 
     packed-switch v6, :pswitch_data_0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     :goto_1
     move-object v0, v1
@@ -140,7 +140,7 @@
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v4
 
@@ -149,7 +149,7 @@
     :pswitch_1
     sget-object v3, Landroid/accounts/Account;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -170,7 +170,7 @@
     :pswitch_2
     sget-object v2, Lcom/google/android/gms/common/api/Scope;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fM(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
+    invoke-static {p1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iA(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)[Ljava/lang/Object;
 
     move-result-object v0
 
@@ -189,7 +189,7 @@
     goto :goto_2
 
     :pswitch_3
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -236,7 +236,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/signin/internal/g;->Qj(Landroid/os/Parcel;)Lcom/google/android/gms/signin/internal/RecordConsentRequest;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/signin/internal/g;->Rc(Landroid/os/Parcel;)Lcom/google/android/gms/signin/internal/RecordConsentRequest;
 
     move-result-object v0
 
@@ -246,7 +246,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/signin/internal/g;->Qh(I)[Lcom/google/android/gms/signin/internal/RecordConsentRequest;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/signin/internal/g;->Ra(I)[Lcom/google/android/gms/signin/internal/RecordConsentRequest;
 
     move-result-object v0
 

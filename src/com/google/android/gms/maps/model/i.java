@@ -13,83 +13,83 @@ import android.os.Parcelable$Creator;
 
 public class i implements Parcelable$Creator
 {
-    static void Jk(final CircleOptions circleOptions, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, circleOptions.Kv());
-        a.eW(parcel, 2, (Parcelable)circleOptions.Kr(), n, false);
-        a.fq(parcel, 3, circleOptions.getRadius());
-        a.fs(parcel, 4, circleOptions.Kt());
-        a.fj(parcel, 5, circleOptions.Kw());
-        a.fj(parcel, 6, circleOptions.Kx());
-        a.fs(parcel, 7, circleOptions.Ks());
-        a.fa(parcel, 8, circleOptions.isVisible());
-        a.fa(parcel, 9, circleOptions.Ku());
-        a.fe(parcel, ey);
+    static void Kd(final CircleOptions circleOptions, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, circleOptions.Lo());
+        a.hK(parcel, 2, (Parcelable)circleOptions.Lk(), n, false);
+        a.ie(parcel, 3, circleOptions.getRadius());
+        a.ig(parcel, 4, circleOptions.Lm());
+        a.hX(parcel, 5, circleOptions.Lp());
+        a.hX(parcel, 6, circleOptions.Lq());
+        a.ig(parcel, 7, circleOptions.Ll());
+        a.hO(parcel, 8, circleOptions.isVisible());
+        a.hO(parcel, 9, circleOptions.Ln());
+        a.hS(parcel, hm);
     }
     
-    public CircleOptions Ji(final Parcel parcel) {
-        float gj = 0.0f;
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
+    public CircleOptions Kb(final Parcel parcel) {
+        float ix = 0.0f;
+        boolean il = false;
+        final int ix2 = b.ix(parcel);
         LatLng latLng = null;
-        double gb = 0.0;
-        boolean fx2 = false;
-        int fn = 0;
-        int fn2 = 0;
-        float gj2 = 0.0f;
-        int fn3 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        double ip = 0.0;
+        boolean il2 = false;
+        int ib = 0;
+        int ib2 = 0;
+        float ix3 = 0.0f;
+        int ib3 = 0;
+        while (parcel.dataPosition() < ix2) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    latLng = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 3: {
-                    gb = b.gb(parcel, fs);
+                    ip = b.iP(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    gj = b.gj(parcel, fs);
+                    ix = b.iX(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new CircleOptions(fn3, latLng, gb, gj2, fn2, fn, gj, fx2, fx);
+        if (parcel.dataPosition() == ix2) {
+            return new CircleOptions(ib3, latLng, ip, ix3, ib2, ib, ix, il2, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix2).toString(), parcel);
     }
     
-    public CircleOptions[] Jj(final int n) {
+    public CircleOptions[] Kc(final int n) {
         return new CircleOptions[n];
     }
 }

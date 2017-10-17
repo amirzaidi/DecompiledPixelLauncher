@@ -1,72 +1,60 @@
-.class Lcom/google/android/gms/internal/cp;
-.super Lcom/google/android/gms/common/api/l;
+.class final Lcom/google/android/gms/internal/cp;
+.super Ljava/lang/ref/PhantomReference;
+
+
+# instance fields
+.field private final xd:I
+
+.field final synthetic xe:Lcom/google/android/gms/internal/bG;
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/internal/bG;Lcom/google/android/gms/common/api/C;ILjava/lang/ref/ReferenceQueue;)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/l;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/cp;->xe:Lcom/google/android/gms/internal/bG;
+
+    invoke-direct {p0, p2, p4}, Ljava/lang/ref/PhantomReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
+
+    iput p3, p0, Lcom/google/android/gms/internal/cp;->xd:I
 
     return-void
 .end method
 
+.method static synthetic Cf(Lcom/google/android/gms/internal/cp;)I
+    .locals 1
 
-# virtual methods
-.method public Cf(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/a;Lcom/google/android/gms/internal/cd;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/signin/internal/e;
-    .locals 8
+    iget v0, p0, Lcom/google/android/gms/internal/cp;->xd:I
 
-    if-eqz p4, :cond_0
-
-    move-object v5, p4
-
-    :goto_0
-    new-instance v0, Lcom/google/android/gms/signin/internal/e;
-
-    const/4 v3, 0x1
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v6, p5
-
-    move-object v7, p6
-
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/signin/internal/e;-><init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Lcom/google/android/gms/internal/cd;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)V
-
-    return-object v0
-
-    :cond_0
-    sget-object v5, Lcom/google/android/gms/internal/cd;->wl:Lcom/google/android/gms/internal/cd;
-
-    goto :goto_0
+    return v0
 .end method
 
-.method public bridge synthetic ek(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/a;Ljava/lang/Object;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/common/api/i;
-    .locals 7
 
-    move-object v4, p4
+# virtual methods
+.method public Cg()V
+    .locals 4
 
-    check-cast v4, Lcom/google/android/gms/internal/cd;
+    const/4 v3, 0x2
 
-    move-object v0, p0
+    iget-object v0, p0, Lcom/google/android/gms/internal/cp;->xe:Lcom/google/android/gms/internal/bG;
 
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-virtual/range {v0 .. v6}, Lcom/google/android/gms/internal/cp;->Cf(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/a;Lcom/google/android/gms/internal/cd;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/signin/internal/e;
+    invoke-static {v0}, Lcom/google/android/gms/internal/bG;->AS(Lcom/google/android/gms/internal/bG;)Landroid/os/Handler;
 
     move-result-object v0
 
-    return-object v0
+    iget-object v1, p0, Lcom/google/android/gms/internal/cp;->xe:Lcom/google/android/gms/internal/bG;
+
+    invoke-static {v1}, Lcom/google/android/gms/internal/bG;->AS(Lcom/google/android/gms/internal/bG;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/google/android/gms/internal/cp;->xd:I
+
+    invoke-virtual {v1, v3, v2, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
 .end method

@@ -11,17 +11,17 @@ import com.google.android.gms.common.n;
 import android.content.res.Resources;
 import com.google.android.gms.R$string;
 import android.content.Context;
-import android.support.v4.a.k;
+import android.support.v4.a.b;
 
 public final class I
 {
-    private static final k gH;
+    private static final b jz;
     
     static {
-        gH = new k();
+        jz = new b();
     }
     
-    public static String iF(final Context context, final int n) {
+    public static String lt(final Context context, final int n) {
         final Resources resources = context.getResources();
         switch (n) {
             default: {
@@ -39,17 +39,17 @@ public final class I
         }
     }
     
-    private static String iG(final Context context, final String s) {
-        synchronized (I.gH) {
-            final String s2 = (String)I.gH.get(s);
+    private static String lu(final Context context, final String s) {
+        synchronized (I.jz) {
+            final String s2 = (String)I.jz.get(s);
             if (s2 != null) {
                 return s2;
             }
-            final Resources ox = n.ox(context);
-            if (ox == null) {
+            final Resources rj = n.rj(context);
+            if (rj == null) {
                 return null;
             }
-            final int identifier = ox.getIdentifier(s, "string", "com.google.android.gms");
+            final int identifier = rj.getIdentifier(s, "string", "com.google.android.gms");
             if (identifier == 0) {
                 final String value = String.valueOf(s);
                 final int length = value.length();
@@ -65,9 +65,9 @@ public final class I
                 Log.w(s3, concat);
                 return null;
             }
-            final String string = ox.getString(identifier);
+            final String string = rj.getString(identifier);
             if (!TextUtils.isEmpty((CharSequence)string)) {
-                I.gH.put(s, string);
+                I.jz.put(s, string);
                 return string;
             }
             final String value2 = String.valueOf(s);
@@ -86,7 +86,7 @@ public final class I
         }
     }
     
-    public static String iH(final Context context, final int n, final String s) {
+    public static String lv(final Context context, final int n, final String s) {
         final int n2 = 1;
         final Resources resources = context.getResources();
         switch (n) {
@@ -97,7 +97,7 @@ public final class I
                 return resources.getString(common_google_play_services_unknown_issue, array);
             }
             case 1: {
-                if (!c.jw(resources)) {
+                if (!c.mk(resources)) {
                     final int common_google_play_services_install_text_phone = R$string.common_google_play_services_install_text_phone;
                     final Object[] array2 = new Object[n2];
                     array2[0] = s;
@@ -136,31 +136,31 @@ public final class I
                 return resources.getString(common_google_play_services_unsupported_text, array7);
             }
             case 7: {
-                return iK(context, "common_google_play_services_network_error_text", s);
+                return ly(context, "common_google_play_services_network_error_text", s);
             }
             case 5: {
-                return iK(context, "common_google_play_services_invalid_account_text", s);
+                return ly(context, "common_google_play_services_invalid_account_text", s);
             }
             case 16: {
-                return iK(context, "common_google_play_services_api_unavailable_text", s);
+                return ly(context, "common_google_play_services_api_unavailable_text", s);
             }
             case 17: {
-                return iK(context, "common_google_play_services_sign_in_failed_text", s);
+                return ly(context, "common_google_play_services_sign_in_failed_text", s);
             }
             case 20: {
-                return iK(context, "common_google_play_services_restricted_profile_text", s);
+                return ly(context, "common_google_play_services_restricted_profile_text", s);
             }
         }
     }
     
-    public static String iI(final Context context, final int n, final String s) {
+    public static String lw(final Context context, final int n, final String s) {
         if (n != 6) {
-            return iH(context, n, s);
+            return lv(context, n, s);
         }
-        return iK(context, "common_google_play_services_resolution_required_text", s);
+        return ly(context, "common_google_play_services_resolution_required_text", s);
     }
     
-    public static String iJ(final Context context, final int n) {
+    public static String lx(final Context context, final int n) {
         final Resources resources = context.getResources();
         switch (n) {
             default: {
@@ -190,7 +190,7 @@ public final class I
             }
             case 7: {
                 Log.e("GoogleApiAvailability", "Network error occurred. Please retry request later.");
-                return iG(context, "common_google_play_services_network_error_title");
+                return lu(context, "common_google_play_services_network_error_title");
             }
             case 8: {
                 Log.e("GoogleApiAvailability", "Internal error occurred. Please see logs for detailed information");
@@ -202,7 +202,7 @@ public final class I
             }
             case 5: {
                 Log.e("GoogleApiAvailability", "An invalid account was specified when connecting. Please provide a valid account.");
-                return iG(context, "common_google_play_services_invalid_account_title");
+                return lu(context, "common_google_play_services_invalid_account_title");
             }
             case 11: {
                 Log.e("GoogleApiAvailability", "The application is not licensed to the user.");
@@ -214,28 +214,28 @@ public final class I
             }
             case 17: {
                 Log.e("GoogleApiAvailability", "The specified account could not be signed in.");
-                return iG(context, "common_google_play_services_sign_in_failed_title");
+                return lu(context, "common_google_play_services_sign_in_failed_title");
             }
             case 20: {
                 Log.e("GoogleApiAvailability", "The current user profile is restricted and could not use authenticated features.");
-                return iG(context, "common_google_play_services_restricted_profile_title");
+                return lu(context, "common_google_play_services_restricted_profile_title");
             }
         }
     }
     
-    private static String iK(final Context context, final String s, final String s2) {
+    private static String ly(final Context context, final String s, final String s2) {
         final Resources resources = context.getResources();
-        String s3 = iG(context, s);
+        String s3 = lu(context, s);
         if (s3 == null) {
             s3 = resources.getString(R$string.common_google_play_services_unknown_issue);
         }
         return String.format(resources.getConfiguration().locale, s3, s2);
     }
     
-    public static String iL(final Context context, final int n) {
+    public static String lz(final Context context, final int n) {
         if (n != 6) {
-            return iJ(context, n);
+            return lx(context, n);
         }
-        return iG(context, "common_google_play_services_resolution_required_title");
+        return lu(context, "common_google_play_services_resolution_required_title");
     }
 }

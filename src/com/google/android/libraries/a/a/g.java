@@ -4,60 +4,82 @@
 
 package com.google.android.libraries.a.a;
 
+import com.google.android.libraries.launcherclient.ILauncherOverlay$Stub;
 import android.os.IBinder;
 import android.content.ComponentName;
-import android.content.Intent;
-import android.util.Log;
 import android.content.Context;
-import android.content.ServiceConnection;
+import java.lang.ref.WeakReference;
+import com.google.android.libraries.launcherclient.ILauncherOverlay;
 
-class g implements ServiceConnection
+class g extends h
 {
-    private boolean KF;
-    private final Context mContext;
-    private final int mFlags;
+    private static g Mj;
+    private boolean Mg;
+    private ILauncherOverlay Mh;
+    private WeakReference Mi;
     
-    g(final Context mContext, final int mFlags) {
-        this.mContext = mContext;
-        this.mFlags = mFlags;
+    private g(final Context context) {
+        super(context, 33);
     }
     
-    public final boolean QX() {
-        if (!this.KF) {
-            try {
-                final Context mContext = this.mContext;
-                try {
-                    final Context mContext2 = this.mContext;
-                    try {
-                        final Intent qi = c.QI(mContext2);
-                        try {
-                            this.KF = mContext.bindService(qi, (ServiceConnection)this, this.mFlags);
-                            return this.KF;
-                        }
-                        catch (SecurityException ex) {
-                            Log.e("LauncherClient", "Unable to connect to overlay service", (Throwable)ex);
-                            return this.KF;
-                        }
-                    }
-                    catch (SecurityException ex2) {}
+    private void RO() {
+        if (this.Mg && this.Mh == null) {
+            this.RS();
+        }
+    }
+    
+    private void RP(final ILauncherOverlay mh) {
+        this.Mh = mh;
+        final d rq = this.RQ();
+        if (rq != null) {
+            rq.Rn(this.Mh);
+        }
+    }
+    
+    private d RQ() {
+        d d = null;
+        if (this.Mi != null) {
+            d = (d)this.Mi.get();
+        }
+        return d;
+    }
+    
+    static g get(final Context context) {
+        if (g.Mj == null) {
+            g.Mj = new g(context.getApplicationContext());
+        }
+        return g.Mj;
+    }
+    
+    public void RL(final d d, final boolean b) {
+        final d rq = this.RQ();
+        if (rq != null && rq.equals(d)) {
+            this.Mi = null;
+            if (b) {
+                this.RS();
+                if (g.Mj == this) {
+                    g.Mj = null;
                 }
-                catch (SecurityException ex3) {}
             }
-            catch (SecurityException ex4) {}
         }
-        return this.KF;
     }
     
-    public void QY() {
-        if (this.KF) {
-            this.mContext.unbindService((ServiceConnection)this);
-            this.KF = false;
-        }
+    public void RM(final boolean mg) {
+        this.Mg = mg;
+        this.RO();
+    }
+    
+    public ILauncherOverlay RN(final d d) {
+        this.Mi = new WeakReference((T)d);
+        return this.Mh;
     }
     
     public void onServiceConnected(final ComponentName componentName, final IBinder binder) {
+        this.RP(ILauncherOverlay$Stub.asInterface(binder));
     }
     
     public void onServiceDisconnected(final ComponentName componentName) {
+        this.RP(null);
+        this.RO();
     }
 }

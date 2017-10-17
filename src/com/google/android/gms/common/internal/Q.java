@@ -8,5 +8,5 @@ import com.google.android.gms.common.ConnectionResult;
 
 public interface q
 {
-    void hC(final ConnectionResult p0);
+    void kq(final ConnectionResult p0);
 }

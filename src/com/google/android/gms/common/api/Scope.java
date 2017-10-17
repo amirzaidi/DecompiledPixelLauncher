@@ -13,40 +13,40 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class Scope extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final String eA;
-    final int eB;
+    private final String hi;
+    final int hj;
     
     static {
         CREATOR = (Parcelable$Creator)new x();
     }
     
-    Scope(final int eb, final String ea) {
-        l.hp(ea, "scopeUri must not be null or empty");
-        this.eB = eb;
-        this.eA = ea;
+    Scope(final int hj, final String hi) {
+        l.kd(hi, "scopeUri must not be null or empty");
+        this.hj = hj;
+        this.hi = hi;
     }
     
     public Scope(final String s) {
         this(1, s);
     }
     
-    public String el() {
-        return this.eA;
+    public boolean equals(final Object o) {
+        return this == o || (o instanceof Scope && this.hi.equals(((Scope)o).hi));
     }
     
-    public boolean equals(final Object o) {
-        return this == o || (o instanceof Scope && this.eA.equals(((Scope)o).eA));
+    public String gS() {
+        return this.hi;
     }
     
     public int hashCode() {
-        return this.eA.hashCode();
+        return this.hi.hashCode();
     }
     
     public String toString() {
-        return this.eA;
+        return this.hi;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        x.eB(this, parcel, n);
+        x.hp(this, parcel, n);
     }
 }

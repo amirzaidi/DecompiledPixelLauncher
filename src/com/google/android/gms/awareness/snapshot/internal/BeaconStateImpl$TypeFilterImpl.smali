@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private final mG:Lcom/google/android/gms/internal/E;
+.field private final gd:Lcom/google/android/gms/internal/z;
 
-.field private final mH:I
+.field private final ge:I
 
 
 # direct methods
@@ -30,19 +30,19 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/awareness/state/BeaconState$TypeFilter;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mH:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ge:I
 
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-static {p2}, Lcom/google/android/gms/internal/E;->sK([B)Lcom/google/android/gms/internal/E;
+    invoke-static {p2}, Lcom/google/android/gms/internal/z;->sJ([B)Lcom/google/android/gms/internal/z;
     :try_end_0
     .catch Lcom/google/android/gms/internal/zzaxw; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
     :goto_0
-    iput-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
+    iput-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
 
     return-void
 
@@ -53,7 +53,7 @@
 
     const-string/jumbo v2, "Could not deserialize BeaconFence.BeaconTypeFilter"
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/internal/P;->tg(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/google/android/gms/internal/J;->tf(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     goto :goto_0
 .end method
@@ -75,11 +75,11 @@
 
     check-cast p1, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qk()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fe()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qk()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fe()Ljava/lang/String;
 
     move-result-object v3
 
@@ -103,11 +103,11 @@
     return v1
 
     :cond_4
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ql()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ff()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ql()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ff()Ljava/lang/String;
 
     move-result-object v3
 
@@ -117,11 +117,11 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qj()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fd()[B
 
     move-result-object v2
 
-    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qj()[B
+    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fd()[B
 
     move-result-object v3
 
@@ -134,6 +134,98 @@
     goto :goto_0
 .end method
 
+.method public fd()[B
+    .locals 2
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    if-nez v0, :cond_1
+
+    :cond_0
+    return-object v1
+
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/z;->pu:[B
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/z;->pu:[B
+
+    array-length v0, v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/z;->pu:[B
+
+    return-object v0
+.end method
+
+.method public fe()Ljava/lang/String;
+    .locals 2
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/z;->pr:Ljava/lang/String;
+
+    return-object v0
+
+    :cond_0
+    return-object v1
+.end method
+
+.method public ff()Ljava/lang/String;
+    .locals 2
+
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    iget-object v0, v0, Lcom/google/android/gms/internal/z;->pt:Ljava/lang/String;
+
+    return-object v0
+
+    :cond_0
+    return-object v1
+.end method
+
+.method fg()[B
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->gd:Lcom/google/android/gms/internal/z;
+
+    invoke-static {v0}, Lcom/google/android/gms/internal/aC;->uV(Lcom/google/android/gms/internal/aC;)[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method fh()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ge:I
+
+    return v0
+.end method
+
 .method public hashCode()I
     .locals 4
 
@@ -143,13 +235,13 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qk()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fe()Ljava/lang/String;
 
     move-result-object v2
 
     aput-object v2, v1, v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ql()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ff()Ljava/lang/String;
 
     move-result-object v2
 
@@ -157,7 +249,7 @@
 
     aput-object v2, v1, v3
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qj()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fd()[B
 
     move-result-object v2
 
@@ -165,7 +257,7 @@
 
     if-eqz v2, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qj()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fd()[B
 
     move-result-object v0
 
@@ -180,101 +272,9 @@
 
     aput-object v0, v1, v3
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
-
-    return v0
-.end method
-
-.method public qj()[B
-    .locals 2
-
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    return-object v1
-
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    iget-object v0, v0, Lcom/google/android/gms/internal/E;->pn:[B
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    iget-object v0, v0, Lcom/google/android/gms/internal/E;->pn:[B
-
-    array-length v0, v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    iget-object v0, v0, Lcom/google/android/gms/internal/E;->pn:[B
-
-    return-object v0
-.end method
-
-.method public qk()Ljava/lang/String;
-    .locals 2
-
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    iget-object v0, v0, Lcom/google/android/gms/internal/E;->pk:Ljava/lang/String;
-
-    return-object v0
-
-    :cond_0
-    return-object v1
-.end method
-
-.method public ql()Ljava/lang/String;
-    .locals 2
-
-    const/4 v1, 0x0
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    iget-object v0, v0, Lcom/google/android/gms/internal/E;->pm:Ljava/lang/String;
-
-    return-object v0
-
-    :cond_0
-    return-object v1
-.end method
-
-.method qm()[B
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mG:Lcom/google/android/gms/internal/E;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/aI;->uW(Lcom/google/android/gms/internal/aI;)[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method qn()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->mH:I
 
     return v0
 .end method
@@ -282,7 +282,7 @@
 .method public toString()Ljava/lang/String;
     .locals 6
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qk()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fe()Ljava/lang/String;
 
     move-result-object v0
 
@@ -290,7 +290,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ql()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->ff()Ljava/lang/String;
 
     move-result-object v0
 
@@ -298,7 +298,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qj()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fd()[B
 
     move-result-object v0
 
@@ -306,7 +306,7 @@
 
     new-instance v0, Ljava/lang/String;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->qj()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->fd()[B
 
     move-result-object v3
 
@@ -398,7 +398,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/e;->pT(Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/e;->eN(Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

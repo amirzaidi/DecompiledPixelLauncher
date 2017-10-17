@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private final KK:Lcom/google/android/gms/internal/V;
+.field private final Mn:Lcom/google/android/gms/internal/O;
 
-.field private final KL:I
+.field private final Mo:I
 
 
 # direct methods
@@ -30,19 +30,19 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->KL:I
+    iput p1, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->Mo:I
 
     const/4 v0, 0x0
 
     :try_start_0
-    invoke-static {p2}, Lcom/google/android/gms/internal/V;->tw([B)Lcom/google/android/gms/internal/V;
+    invoke-static {p2}, Lcom/google/android/gms/internal/O;->tt([B)Lcom/google/android/gms/internal/O;
     :try_end_0
     .catch Lcom/google/android/gms/internal/zzaxw; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
     :goto_0
-    iput-object v0, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->KK:Lcom/google/android/gms/internal/V;
+    iput-object v0, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->Mn:Lcom/google/android/gms/internal/O;
 
     return-void
 
@@ -60,22 +60,22 @@
 
 
 # virtual methods
-.method QZ()[B
+.method RT()[B
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->KK:Lcom/google/android/gms/internal/V;
+    iget-object v0, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->Mn:Lcom/google/android/gms/internal/O;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/aI;->uW(Lcom/google/android/gms/internal/aI;)[B
+    invoke-static {v0}, Lcom/google/android/gms/internal/aC;->uV(Lcom/google/android/gms/internal/aC;)[B
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method Ra()I
+.method RU()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->KL:I
+    iget v0, p0, Lcom/google/android/contextmanager/interest/InterestRecordStub;->Mo:I
 
     return v0
 .end method
@@ -83,7 +83,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/contextmanager/interest/a;->Rd(Lcom/google/android/contextmanager/interest/InterestRecordStub;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/contextmanager/interest/a;->RX(Lcom/google/android/contextmanager/interest/InterestRecordStub;Landroid/os/Parcel;I)V
 
     return-void
 .end method

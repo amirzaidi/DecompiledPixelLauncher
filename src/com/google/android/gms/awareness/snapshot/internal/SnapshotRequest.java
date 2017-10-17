@@ -14,20 +14,20 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class SnapshotRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private static final int[] mD;
-    private final ArrayList mC;
-    private final int mE;
-    private final int mF;
+    private static final int[] ga;
+    private final ArrayList fZ;
+    private final int gb;
+    private final int gc;
     
     static {
-        mD = new int[] { 10002, 10003, 10004, 10005, 10006, 10007, 10008 };
+        ga = new int[] { 10002, 10003, 10004, 10005, 10006, 10007, 10008 };
         CREATOR = (Parcelable$Creator)new c();
     }
     
-    SnapshotRequest(final int me, final int mf, final ArrayList mc) {
-        this.mE = me;
-        this.mF = mf;
-        this.mC = mc;
+    SnapshotRequest(final int gb, final int gc, final ArrayList fz) {
+        this.gb = gb;
+        this.gc = gc;
+        this.fZ = fz;
     }
     
     public boolean equals(final Object o) {
@@ -39,17 +39,17 @@ public class SnapshotRequest extends AbstractSafeParcelable
             return false;
         }
         final SnapshotRequest snapshotRequest = (SnapshotRequest)o;
-        if (this.mF != snapshotRequest.qf()) {
+        if (this.gc != snapshotRequest.fc()) {
             return false;
         }
-        if (!((this.mC == null && b) ^ (snapshotRequest.qd() == null && b))) {
-            if (this.mC != null) {
-                if (this.mC.size() != snapshotRequest.qd().size()) {
+        if (!((this.fZ == null && b) ^ (snapshotRequest.fa() == null && b))) {
+            if (this.fZ != null) {
+                if (this.fZ.size() != snapshotRequest.fa().size()) {
                     return false;
                 }
-                final Iterator<BeaconStateImpl$TypeFilterImpl> iterator = this.mC.iterator();
+                final Iterator<BeaconStateImpl$TypeFilterImpl> iterator = this.fZ.iterator();
                 while (iterator.hasNext()) {
-                    if (!snapshotRequest.qd().contains(iterator.next())) {
+                    if (!snapshotRequest.fa().contains(iterator.next())) {
                         return false;
                     }
                 }
@@ -59,34 +59,34 @@ public class SnapshotRequest extends AbstractSafeParcelable
         return false;
     }
     
+    public ArrayList fa() {
+        return this.fZ;
+    }
+    
+    int fb() {
+        return this.gb;
+    }
+    
+    public int fc() {
+        return this.gc;
+    }
+    
     public int hashCode() {
         int n;
-        if (this.mC == null) {
+        if (this.fZ == null) {
             n = 0;
         }
         else {
-            final Iterator<BeaconStateImpl$TypeFilterImpl> iterator = this.mC.iterator();
+            final Iterator<BeaconStateImpl$TypeFilterImpl> iterator = this.fZ.iterator();
             n = 0;
             while (iterator.hasNext()) {
                 n += iterator.next().hashCode() * 13;
             }
         }
-        return u.hI(this.mF, n);
-    }
-    
-    public ArrayList qd() {
-        return this.mC;
-    }
-    
-    int qe() {
-        return this.mE;
-    }
-    
-    public int qf() {
-        return this.mF;
+        return u.kw(this.gc, n);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        c.pO(this, parcel, n);
+        c.eI(this, parcel, n);
     }
 }

@@ -14,104 +14,104 @@
     return-void
 .end method
 
-.method static qA(Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;Landroid/os/Parcel;I)V
+.method static fu(Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;Landroid/os/Parcel;I)V
     .locals 4
 
     const/4 v3, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qU()I
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fO()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qM()Lcom/google/android/gms/location/ActivityRecognitionResult;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fG()Lcom/google/android/gms/location/ActivityRecognitionResult;
 
     move-result-object v1
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qK()Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fE()Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;
 
     move-result-object v1
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qP()Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fJ()Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;
 
     move-result-object v1
 
     const/4 v2, 0x4
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qN()Landroid/location/Location;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fH()Landroid/location/Location;
 
     move-result-object v1
 
     const/4 v2, 0x5
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qR()Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fL()Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;
 
     move-result-object v1
 
     const/4 v2, 0x6
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qS()Lcom/google/android/gms/common/data/DataHolder;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fM()Lcom/google/android/gms/common/data/DataHolder;
 
     move-result-object v1
 
     const/4 v2, 0x7
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qQ()Lcom/google/android/gms/awareness/snapshot/internal/PowerStateImpl;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fK()Lcom/google/android/gms/awareness/snapshot/internal/PowerStateImpl;
 
     move-result-object v1
 
     const/16 v2, 0x8
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qL()Lcom/google/android/gms/awareness/snapshot/internal/ScreenStateImpl;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fF()Lcom/google/android/gms/awareness/snapshot/internal/ScreenStateImpl;
 
     move-result-object v1
 
     const/16 v2, 0x9
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qO()Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fI()Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;
 
     move-result-object v1
 
     const/16 v2, 0xa
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->qT()Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;->fN()Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;
 
     move-result-object v1
 
     const/16 v2, 0xb
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
@@ -121,37 +121,19 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/i;->qz(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/i;->ft(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/i;->qB(I)[Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public qB(I)[Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
-    .locals 1
-
-    new-array v0, p1, [Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
-
-    return-object v0
-.end method
-
-.method public qz(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
+.method public ft(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
     .locals 14
 
     const/4 v11, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v12
 
@@ -195,22 +177,22 @@
     return-object v0
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v13
 
     packed-switch v13, :pswitch_data_0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -219,7 +201,7 @@
     :pswitch_1
     sget-object v2, Lcom/google/android/gms/location/ActivityRecognitionResult;->CREATOR:Lcom/google/android/gms/location/v;
 
-    invoke-static {p1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -232,7 +214,7 @@
     :pswitch_2
     sget-object v3, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -245,7 +227,7 @@
     :pswitch_3
     sget-object v4, Lcom/google/android/gms/awareness/snapshot/internal/HeadphoneStateImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -258,7 +240,7 @@
     :pswitch_4
     sget-object v5, Landroid/location/Location;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -271,7 +253,7 @@
     :pswitch_5
     sget-object v6, Lcom/google/android/gms/awareness/snapshot/internal/NetworkStateImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v6}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -284,7 +266,7 @@
     :pswitch_6
     sget-object v7, Lcom/google/android/gms/common/data/DataHolder;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -297,7 +279,7 @@
     :pswitch_7
     sget-object v8, Lcom/google/android/gms/awareness/snapshot/internal/PowerStateImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v8}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v8}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -310,7 +292,7 @@
     :pswitch_8
     sget-object v9, Lcom/google/android/gms/awareness/snapshot/internal/ScreenStateImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v9}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v9}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -323,7 +305,7 @@
     :pswitch_9
     sget-object v10, Lcom/google/android/gms/awareness/snapshot/internal/WeatherImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v10}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v10}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -336,7 +318,7 @@
     :pswitch_a
     sget-object v11, Lcom/google/android/gms/awareness/snapshot/internal/DayAttributesImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v0, v11}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v11}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -387,4 +369,22 @@
         :pswitch_9
         :pswitch_a
     .end packed-switch
+.end method
+
+.method public fv(I)[Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/i;->fv(I)[Lcom/google/android/gms/awareness/snapshot/internal/Snapshot;
+
+    move-result-object v0
+
+    return-object v0
 .end method

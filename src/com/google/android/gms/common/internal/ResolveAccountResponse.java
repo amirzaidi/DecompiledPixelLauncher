@@ -13,22 +13,22 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ResolveAccountResponse extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final int gQ;
-    private boolean gR;
-    IBinder gS;
-    private ConnectionResult gT;
-    private boolean gU;
+    final int jI;
+    private boolean jJ;
+    IBinder jK;
+    private ConnectionResult jL;
+    private boolean jM;
     
     static {
         CREATOR = (Parcelable$Creator)new M();
     }
     
-    ResolveAccountResponse(final int gq, final IBinder gs, final ConnectionResult gt, final boolean gr, final boolean gu) {
-        this.gQ = gq;
-        this.gS = gs;
-        this.gT = gt;
-        this.gR = gr;
-        this.gU = gu;
+    ResolveAccountResponse(final int ji, final IBinder jk, final ConnectionResult jl, final boolean jj, final boolean jm) {
+        this.jI = ji;
+        this.jK = jk;
+        this.jL = jl;
+        this.jJ = jj;
+        this.jM = jm;
     }
     
     public boolean equals(final Object o) {
@@ -38,7 +38,7 @@ public class ResolveAccountResponse extends AbstractSafeParcelable
         }
         if (o instanceof ResolveAccountResponse) {
             final ResolveAccountResponse resolveAccountResponse = (ResolveAccountResponse)o;
-            if (!this.gT.equals(resolveAccountResponse.gT) || !this.iX().equals(resolveAccountResponse.iX())) {
+            if (!this.jL.equals(resolveAccountResponse.jL) || !this.lL().equals(resolveAccountResponse.lL())) {
                 b = false;
             }
             return b;
@@ -46,23 +46,23 @@ public class ResolveAccountResponse extends AbstractSafeParcelable
         return false;
     }
     
-    public zzq iX() {
-        return zzq$zza.zzgw(this.gS);
+    public zzq lL() {
+        return zzq$zza.zzgw(this.jK);
     }
     
-    public ConnectionResult iY() {
-        return this.gT;
+    public ConnectionResult lM() {
+        return this.jL;
     }
     
-    public boolean iZ() {
-        return this.gR;
+    public boolean lN() {
+        return this.jJ;
     }
     
-    public boolean ja() {
-        return this.gU;
+    public boolean lO() {
+        return this.jM;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        M.jc(this, parcel, n);
+        M.lQ(this, parcel, n);
     }
 }

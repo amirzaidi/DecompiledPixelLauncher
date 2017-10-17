@@ -13,45 +13,45 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class LocationRequest extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final n CREATOR;
-    long BQ;
-    long BR;
-    int BS;
-    long BT;
-    long BU;
-    private final int BV;
-    float BW;
-    int BX;
-    boolean BY;
+    private final int DA;
+    float DB;
+    int DC;
+    boolean DD;
+    long Dv;
+    long Dw;
+    int Dx;
+    long Dy;
+    long Dz;
     
     static {
         CREATOR = new n();
     }
     
     public LocationRequest() {
-        this.BV = 1;
-        this.BX = 102;
-        this.BT = 3600000L;
-        this.BR = 600000L;
-        this.BY = false;
-        this.BU = Long.MAX_VALUE;
-        this.BS = -1 >>> 1;
-        this.BW = 0.0f;
-        this.BQ = 0L;
+        this.DA = 1;
+        this.DC = 102;
+        this.Dy = 3600000L;
+        this.Dw = 600000L;
+        this.DD = false;
+        this.Dz = Long.MAX_VALUE;
+        this.Dx = -1 >>> 1;
+        this.DB = 0.0f;
+        this.Dv = 0L;
     }
     
-    LocationRequest(final int bv, final int bx, final long bt, final long br, final boolean by, final long bu, final int bs, final float bw, final long bq) {
-        this.BV = bv;
-        this.BX = bx;
-        this.BT = bt;
-        this.BR = br;
-        this.BY = by;
-        this.BU = bu;
-        this.BS = bs;
-        this.BW = bw;
-        this.BQ = bq;
+    LocationRequest(final int da, final int dc, final long dy, final long dw, final boolean dd, final long dz, final int dx, final float db, final long dv) {
+        this.DA = da;
+        this.DC = dc;
+        this.Dy = dy;
+        this.Dw = dw;
+        this.DD = dd;
+        this.Dz = dz;
+        this.Dx = dx;
+        this.DB = db;
+        this.Dv = dv;
     }
     
-    public static String Gz(final int n) {
+    public static String Hs(final int n) {
         switch (n) {
             default: {
                 return "???";
@@ -71,8 +71,8 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
         }
     }
     
-    int GA() {
-        return this.BV;
+    int Ht() {
+        return this.DA;
     }
     
     public boolean equals(final Object o) {
@@ -82,7 +82,7 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
         }
         if (o instanceof LocationRequest) {
             final LocationRequest locationRequest = (LocationRequest)o;
-            if (this.BX != locationRequest.BX || this.BT != locationRequest.BT || this.BR != locationRequest.BR || this.BY != locationRequest.BY || this.BU != locationRequest.BU || this.BS != locationRequest.BS || this.BW != locationRequest.BW) {
+            if (this.DC != locationRequest.DC || this.Dy != locationRequest.Dy || this.Dw != locationRequest.Dw || this.DD != locationRequest.DD || this.Dz != locationRequest.Dz || this.Dx != locationRequest.Dx || this.DB != locationRequest.DB) {
                 b = false;
             }
             return b;
@@ -91,20 +91,20 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
     }
     
     public int hashCode() {
-        return u.hI(this.BX, this.BT, this.BR, this.BY, this.BU, this.BS, this.BW);
+        return u.kw(this.DC, this.Dy, this.Dw, this.DD, this.Dz, this.Dx, this.DB);
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append("Request[").append(Gz(this.BX));
-        if (this.BX != 105) {
+        sb.append("Request[").append(Hs(this.DC));
+        if (this.DC != 105) {
             sb.append(" requested=");
-            sb.append(this.BT).append("ms");
+            sb.append(this.Dy).append("ms");
         }
         sb.append(" fastest=");
-        sb.append(this.BR).append("ms");
+        sb.append(this.Dw).append("ms");
         int n;
-        if (this.BQ <= this.BT) {
+        if (this.Dv <= this.Dy) {
             n = 1;
         }
         else {
@@ -112,21 +112,21 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
         }
         if (n == 0) {
             sb.append(" maxWait=");
-            sb.append(this.BQ).append("ms");
+            sb.append(this.Dv).append("ms");
         }
-        if (this.BU != Long.MAX_VALUE) {
-            final long n2 = this.BU - SystemClock.elapsedRealtime();
+        if (this.Dz != Long.MAX_VALUE) {
+            final long n2 = this.Dz - SystemClock.elapsedRealtime();
             sb.append(" expireIn=");
             sb.append(n2).append("ms");
         }
-        if (this.BS != -1 >>> 1) {
-            sb.append(" num=").append(this.BS);
+        if (this.Dx != -1 >>> 1) {
+            sb.append(" num=").append(this.Dx);
         }
         sb.append(']');
         return sb.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        n.HM(this, parcel, n);
+        n.IF(this, parcel, n);
     }
 }

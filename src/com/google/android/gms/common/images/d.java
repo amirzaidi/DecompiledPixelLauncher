@@ -9,11 +9,11 @@ import android.support.v4.a.h;
 
 final class d extends h
 {
-    protected int mA(final f f, final Bitmap bitmap) {
+    protected int po(final f f, final Bitmap bitmap) {
         return bitmap.getHeight() * bitmap.getRowBytes();
     }
     
-    protected void mB(final boolean b, final f f, final Bitmap bitmap, final Bitmap bitmap2) {
-        super.mC(b, f, bitmap, bitmap2);
+    protected void pp(final boolean b, final f f, final Bitmap bitmap, final Bitmap bitmap2) {
+        super.pq(b, f, bitmap, bitmap2);
     }
 }

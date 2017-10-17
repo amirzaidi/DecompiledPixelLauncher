@@ -24,7 +24,7 @@ public abstract class zzre$zza extends Binder implements zzre
         if (queryLocalInterface != null && queryLocalInterface instanceof zzre) {
             return (zzre)queryLocalInterface;
         }
-        return new bB(binder);
+        return new bv(binder);
     }
     
     public IBinder asBinder() {

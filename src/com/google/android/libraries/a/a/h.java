@@ -4,32 +4,60 @@
 
 package com.google.android.libraries.a.a;
 
-import android.content.res.Resources;
-import com.google.android.libraries.launcherclient.ILauncherOverlayCallback;
-import android.os.Parcelable;
-import android.os.Bundle;
-import android.net.Uri;
-import android.os.Process;
+import android.os.IBinder;
+import android.content.ComponentName;
 import android.content.Intent;
-import android.os.RemoteException;
-import android.content.pm.ResolveInfo;
-import android.os.Build$VERSION;
-import android.content.IntentFilter;
+import android.util.Log;
 import android.content.Context;
-import android.content.BroadcastReceiver;
-import com.google.android.libraries.launcherclient.ILauncherOverlay;
-import android.view.WindowManager$LayoutParams;
-import android.app.Activity;
+import android.content.ServiceConnection;
 
-class h implements Runnable
+class h implements ServiceConnection
 {
-    final /* synthetic */ c KG;
+    private boolean Mk;
+    private final Context mContext;
+    private final int mFlags;
     
-    h(final c kg) {
-        this.KG = kg;
+    h(final Context mContext, final int mFlags) {
+        this.mContext = mContext;
+        this.mFlags = mFlags;
     }
     
-    public void run() {
-        this.KG.QK(0);
+    public final boolean RR() {
+        if (!this.Mk) {
+            try {
+                final Context mContext = this.mContext;
+                try {
+                    final Context mContext2 = this.mContext;
+                    try {
+                        final Intent rc = d.RC(mContext2);
+                        try {
+                            this.Mk = mContext.bindService(rc, (ServiceConnection)this, this.mFlags);
+                            return this.Mk;
+                        }
+                        catch (SecurityException ex) {
+                            Log.e("LauncherClient", "Unable to connect to overlay service", (Throwable)ex);
+                            return this.Mk;
+                        }
+                    }
+                    catch (SecurityException ex2) {}
+                }
+                catch (SecurityException ex3) {}
+            }
+            catch (SecurityException ex4) {}
+        }
+        return this.Mk;
+    }
+    
+    public void RS() {
+        if (this.Mk) {
+            this.mContext.unbindService((ServiceConnection)this);
+            this.Mk = false;
+        }
+    }
+    
+    public void onServiceConnected(final ComponentName componentName, final IBinder binder) {
+    }
+    
+    public void onServiceDisconnected(final ComponentName componentName) {
     }
 }

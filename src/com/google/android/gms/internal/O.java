@@ -4,26 +4,12 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.b;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.d;
+import com.google.android.gms.phenotype.g;
+import com.google.android.gms.common.api.a;
 
-class o extends q
+abstract class o extends b
 {
-    final /* synthetic */ String oH;
-    final /* synthetic */ k oI;
-    
-    o(final k oi, final d d, final String oh) {
-        this.oI = oi;
-        this.oH = oh;
-        super(d);
-    }
-    
-    public Status ss(final Status status) {
-        return status;
-    }
-    
-    protected void st(final p p) {
-        ((zzzb)p.hY()).zzb(new w(this), this.oH);
+    public o(final a a) {
+        super(g.yN, a);
     }
 }

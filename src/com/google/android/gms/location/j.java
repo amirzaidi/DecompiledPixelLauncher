@@ -12,44 +12,44 @@ import android.os.Parcelable$Creator;
 
 public class j implements Parcelable$Creator
 {
-    static void Hn(final DetectedActivity detectedActivity, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, detectedActivity.Ct);
-        a.fj(parcel, 2, detectedActivity.Cu);
-        a.fj(parcel, 1000, detectedActivity.GS());
-        a.fe(parcel, ey);
+    static void Ig(final DetectedActivity detectedActivity, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, detectedActivity.DY);
+        a.hX(parcel, 2, detectedActivity.DZ);
+        a.hX(parcel, 1000, detectedActivity.HL());
+        a.hS(parcel, hm);
     }
     
     public DetectedActivity createFromParcel(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        int fn2 = 0;
-        int fn3 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        int ib2 = 0;
+        int ib3 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new DetectedActivity(fn3, fn2, fn);
+        if (parcel.dataPosition() == ix) {
+            return new DetectedActivity(ib3, ib2, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public DetectedActivity[] newArray(final int n) {

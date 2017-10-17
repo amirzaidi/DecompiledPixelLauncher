@@ -14,89 +14,89 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void KX(final StreetViewPanoramaOptions streetViewPanoramaOptions, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, streetViewPanoramaOptions.Li());
-        a.eW(parcel, 2, (Parcelable)streetViewPanoramaOptions.Lc(), n, false);
-        a.fo(parcel, 3, streetViewPanoramaOptions.Lb(), false);
-        a.eW(parcel, 4, (Parcelable)streetViewPanoramaOptions.Lf(), n, false);
-        a.fi(parcel, 5, streetViewPanoramaOptions.getRadius(), false);
-        a.fu(parcel, 6, streetViewPanoramaOptions.Lg());
-        a.fu(parcel, 7, streetViewPanoramaOptions.Ld());
-        a.fu(parcel, 8, streetViewPanoramaOptions.Lh());
-        a.fu(parcel, 9, streetViewPanoramaOptions.Le());
-        a.fu(parcel, 10, streetViewPanoramaOptions.La());
-        a.fe(parcel, ey);
+    static void LQ(final StreetViewPanoramaOptions streetViewPanoramaOptions, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, streetViewPanoramaOptions.Mb());
+        a.hK(parcel, 2, (Parcelable)streetViewPanoramaOptions.LV(), n, false);
+        a.ic(parcel, 3, streetViewPanoramaOptions.LU(), false);
+        a.hK(parcel, 4, (Parcelable)streetViewPanoramaOptions.LY(), n, false);
+        a.hW(parcel, 5, streetViewPanoramaOptions.getRadius(), false);
+        a.ii(parcel, 6, streetViewPanoramaOptions.LZ());
+        a.ii(parcel, 7, streetViewPanoramaOptions.LW());
+        a.ii(parcel, 8, streetViewPanoramaOptions.Ma());
+        a.ii(parcel, 9, streetViewPanoramaOptions.LX());
+        a.ii(parcel, 10, streetViewPanoramaOptions.LT());
+        a.hS(parcel, hm);
     }
     
-    public StreetViewPanoramaOptions KY(final Parcel parcel) {
-        Integer fe = null;
-        byte fi = 0;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        byte fi2 = 0;
-        byte fi3 = 0;
-        byte fi4 = 0;
-        byte fi5 = 0;
+    public StreetViewPanoramaOptions LR(final Parcel parcel) {
+        Integer is = null;
+        byte iw = 0;
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        byte iw2 = 0;
+        byte iw3 = 0;
+        byte iw4 = 0;
+        byte iw5 = 0;
         LatLng latLng = null;
-        String fq = null;
+        String ie = null;
         StreetViewPanoramaCamera streetViewPanoramaCamera = null;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    streetViewPanoramaCamera = (StreetViewPanoramaCamera)com.google.android.gms.common.internal.safeparcel.b.fW(parcel, fs, (Parcelable$Creator)StreetViewPanoramaCamera.CREATOR);
+                    streetViewPanoramaCamera = (StreetViewPanoramaCamera)com.google.android.gms.common.internal.safeparcel.b.iK(parcel, ig, (Parcelable$Creator)StreetViewPanoramaCamera.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fq = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    latLng = (LatLng)com.google.android.gms.common.internal.safeparcel.b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)com.google.android.gms.common.internal.safeparcel.b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 5: {
-                    fe = com.google.android.gms.common.internal.safeparcel.b.fE(parcel, fs);
+                    is = com.google.android.gms.common.internal.safeparcel.b.is(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fi5 = com.google.android.gms.common.internal.safeparcel.b.fI(parcel, fs);
+                    iw5 = com.google.android.gms.common.internal.safeparcel.b.iw(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fi4 = com.google.android.gms.common.internal.safeparcel.b.fI(parcel, fs);
+                    iw4 = com.google.android.gms.common.internal.safeparcel.b.iw(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fi3 = com.google.android.gms.common.internal.safeparcel.b.fI(parcel, fs);
+                    iw3 = com.google.android.gms.common.internal.safeparcel.b.iw(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fi2 = com.google.android.gms.common.internal.safeparcel.b.fI(parcel, fs);
+                    iw2 = com.google.android.gms.common.internal.safeparcel.b.iw(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    fi = com.google.android.gms.common.internal.safeparcel.b.fI(parcel, fs);
+                    iw = com.google.android.gms.common.internal.safeparcel.b.iw(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new StreetViewPanoramaOptions(fn, streetViewPanoramaCamera, fq, latLng, fe, fi5, fi4, fi3, fi2, fi);
+        if (parcel.dataPosition() == ix) {
+            return new StreetViewPanoramaOptions(ib, streetViewPanoramaCamera, ie, latLng, is, iw5, iw4, iw3, iw2, iw);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public StreetViewPanoramaOptions[] KZ(final int n) {
+    public StreetViewPanoramaOptions[] LS(final int n) {
         return new StreetViewPanoramaOptions[n];
     }
 }

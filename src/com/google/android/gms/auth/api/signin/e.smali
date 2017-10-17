@@ -16,14 +16,14 @@
 
 
 # virtual methods
-.method public PR(Lcom/google/android/gms/common/api/Scope;Lcom/google/android/gms/common/api/Scope;)I
+.method public QK(Lcom/google/android/gms/common/api/Scope;Lcom/google/android/gms/common/api/Scope;)I
     .locals 2
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Scope;->el()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Scope;->gS()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p2}, Lcom/google/android/gms/common/api/Scope;->el()Ljava/lang/String;
+    invoke-virtual {p2}, Lcom/google/android/gms/common/api/Scope;->gS()Ljava/lang/String;
 
     move-result-object v1
 
@@ -41,7 +41,7 @@
 
     check-cast p2, Lcom/google/android/gms/common/api/Scope;
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/auth/api/signin/e;->PR(Lcom/google/android/gms/common/api/Scope;Lcom/google/android/gms/common/api/Scope;)I
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/auth/api/signin/e;->QK(Lcom/google/android/gms/common/api/Scope;Lcom/google/android/gms/common/api/Scope;)I
 
     move-result v0
 

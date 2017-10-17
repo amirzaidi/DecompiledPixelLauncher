@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class t implements Parcelable$Creator
 {
-    static void KA(final StreetViewPanoramaOrientation streetViewPanoramaOrientation, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, streetViewPanoramaOrientation.Iv());
-        a.fs(parcel, 2, streetViewPanoramaOrientation.DC);
-        a.fs(parcel, 3, streetViewPanoramaOrientation.DE);
-        a.fe(parcel, ey);
+    static void Lt(final StreetViewPanoramaOrientation streetViewPanoramaOrientation, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, streetViewPanoramaOrientation.Jo());
+        a.ig(parcel, 2, streetViewPanoramaOrientation.Fh);
+        a.ig(parcel, 3, streetViewPanoramaOrientation.Fj);
+        a.hS(parcel, hm);
     }
     
-    public StreetViewPanoramaOrientation Ky(final Parcel parcel) {
-        float gj = 0.0f;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        float gj2 = 0.0f;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public StreetViewPanoramaOrientation Lr(final Parcel parcel) {
+        float ix = 0.0f;
+        final int ix2 = b.ix(parcel);
+        int ib = 0;
+        float ix3 = 0.0f;
+        while (parcel.dataPosition() < ix2) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    gj = b.gj(parcel, fs);
+                    ix = b.iX(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new StreetViewPanoramaOrientation(fn, gj2, gj);
+        if (parcel.dataPosition() == ix2) {
+            return new StreetViewPanoramaOrientation(ib, ix3, ix);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix2).toString(), parcel);
     }
     
-    public StreetViewPanoramaOrientation[] Kz(final int n) {
+    public StreetViewPanoramaOrientation[] Ls(final int n) {
         return new StreetViewPanoramaOrientation[n];
     }
 }

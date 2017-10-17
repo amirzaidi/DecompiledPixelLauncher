@@ -1,66 +1,28 @@
-.class Lcom/google/android/gms/internal/ci;
-.super Lcom/google/android/gms/common/api/l;
-
-
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/l;-><init>()V
-
-    return-void
-.end method
+.class public interface abstract Lcom/google/android/gms/internal/ci;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public Cc(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/a;Lcom/google/android/gms/internal/cl;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/signin/internal/e;
-    .locals 8
-
-    new-instance v0, Lcom/google/android/gms/signin/internal/e;
-
-    invoke-virtual {p4}, Lcom/google/android/gms/internal/cl;->Cd()Landroid/os/Bundle;
-
-    move-result-object v5
-
-    const/4 v3, 0x0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v6, p5
-
-    move-object v7, p6
-
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/signin/internal/e;-><init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Landroid/os/Bundle;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)V
-
-    return-object v0
+.method public abstract AC(Lcom/google/android/gms/common/ConnectionResult;Lcom/google/android/gms/common/api/e;I)V
 .end method
 
-.method public bridge synthetic ek(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/a;Ljava/lang/Object;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/common/api/i;
-    .locals 7
+.method public abstract Ab(Lcom/google/android/gms/internal/b;)Lcom/google/android/gms/internal/b;
+.end method
 
-    move-object v4, p4
+.method public abstract Ac()Z
+.end method
 
-    check-cast v4, Lcom/google/android/gms/internal/cl;
+.method public abstract Ag(Lcom/google/android/gms/internal/b;)Lcom/google/android/gms/internal/b;
+.end method
 
-    move-object v0, p0
+.method public abstract As()V
+.end method
 
-    move-object v1, p1
+.method public abstract At(Landroid/os/Bundle;)V
+.end method
 
-    move-object v2, p2
+.method public abstract Ay(I)V
+.end method
 
-    move-object v3, p3
-
-    move-object v5, p5
-
-    move-object v6, p6
-
-    invoke-virtual/range {v0 .. v6}, Lcom/google/android/gms/internal/ci;->Cc(Landroid/content/Context;Landroid/os/Looper;Lcom/google/android/gms/common/internal/a;Lcom/google/android/gms/internal/cl;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)Lcom/google/android/gms/signin/internal/e;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract zX()V
 .end method

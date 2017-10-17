@@ -4,30 +4,25 @@
 
 package com.google.android.gms.internal;
 
-import android.util.SparseArray;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.o;
+import com.google.android.gms.common.api.g;
+import com.google.android.gms.signin.internal.e;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.internal.a;
+import android.os.Looper;
+import android.content.Context;
+import com.google.android.gms.common.api.j;
 
-public final class cj extends bI
+class cj extends j
 {
-    public final b wN;
-    
-    public void AL(final o o) {
-        this.wN.rq(o);
-    }
-    
-    public void AM(final Status status) {
-        this.wN.rs(status);
-    }
-    
-    public void AN(final SparseArray sparseArray) {
-        final bW bw = (bW)sparseArray.get(this.vi);
-        if (bw != null) {
-            bw.BB(this.wN);
+    public e Ce(final Context context, final Looper looper, final a a, final bX bx, final d d, final c c) {
+        bX wr;
+        if (bx != null) {
+            wr = bx;
         }
-    }
-    
-    public boolean cancel() {
-        return this.wN.rR();
+        else {
+            wr = bX.wr;
+        }
+        return new e(context, looper, true, a, wr, d, c);
     }
 }

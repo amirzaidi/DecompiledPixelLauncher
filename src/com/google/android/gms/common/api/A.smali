@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method public static eG(I)Ljava/lang/String;
+.method public static hu(I)Ljava/lang/String;
     .locals 2
 
     packed-switch p0, :pswitch_data_0

@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field final gQ:I
+.field final jI:I
 
-.field private gR:Z
+.field private jJ:Z
 
-.field gS:Landroid/os/IBinder;
+.field jK:Landroid/os/IBinder;
 
-.field private gT:Lcom/google/android/gms/common/ConnectionResult;
+.field private jL:Lcom/google/android/gms/common/ConnectionResult;
 
-.field private gU:Z
+.field private jM:Z
 
 
 # direct methods
@@ -36,15 +36,15 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gQ:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jI:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gS:Landroid/os/IBinder;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jK:Landroid/os/IBinder;
 
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gT:Lcom/google/android/gms/common/ConnectionResult;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jL:Lcom/google/android/gms/common/ConnectionResult;
 
-    iput-boolean p4, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gR:Z
+    iput-boolean p4, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jJ:Z
 
-    iput-boolean p5, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gU:Z
+    iput-boolean p5, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jM:Z
 
     return-void
 .end method
@@ -66,9 +66,9 @@
 
     check-cast p1, Lcom/google/android/gms/common/internal/ResolveAccountResponse;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gT:Lcom/google/android/gms/common/ConnectionResult;
+    iget-object v2, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jL:Lcom/google/android/gms/common/ConnectionResult;
 
-    iget-object v3, p1, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gT:Lcom/google/android/gms/common/ConnectionResult;
+    iget-object v3, p1, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jL:Lcom/google/android/gms/common/ConnectionResult;
 
     invoke-virtual {v2, v3}, Lcom/google/android/gms/common/ConnectionResult;->equals(Ljava/lang/Object;)Z
 
@@ -89,11 +89,11 @@
     return v1
 
     :cond_3
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->iX()Lcom/google/android/gms/common/internal/zzq;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->lL()Lcom/google/android/gms/common/internal/zzq;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->iX()Lcom/google/android/gms/common/internal/zzq;
+    invoke-virtual {p1}, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->lL()Lcom/google/android/gms/common/internal/zzq;
 
     move-result-object v3
 
@@ -106,10 +106,10 @@
     goto :goto_0
 .end method
 
-.method public iX()Lcom/google/android/gms/common/internal/zzq;
+.method public lL()Lcom/google/android/gms/common/internal/zzq;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gS:Landroid/os/IBinder;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jK:Landroid/os/IBinder;
 
     invoke-static {v0}, Lcom/google/android/gms/common/internal/zzq$zza;->zzgw(Landroid/os/IBinder;)Lcom/google/android/gms/common/internal/zzq;
 
@@ -118,26 +118,26 @@
     return-object v0
 .end method
 
-.method public iY()Lcom/google/android/gms/common/ConnectionResult;
+.method public lM()Lcom/google/android/gms/common/ConnectionResult;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gT:Lcom/google/android/gms/common/ConnectionResult;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jL:Lcom/google/android/gms/common/ConnectionResult;
 
     return-object v0
 .end method
 
-.method public iZ()Z
+.method public lN()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gR:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jJ:Z
 
     return v0
 .end method
 
-.method public ja()Z
+.method public lO()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->gU:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/common/internal/ResolveAccountResponse;->jM:Z
 
     return v0
 .end method
@@ -145,7 +145,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/M;->jc(Lcom/google/android/gms/common/internal/ResolveAccountResponse;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/M;->lQ(Lcom/google/android/gms/common/internal/ResolveAccountResponse;Landroid/os/Parcel;I)V
 
     return-void
 .end method

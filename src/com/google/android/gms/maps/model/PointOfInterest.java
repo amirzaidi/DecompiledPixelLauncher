@@ -10,27 +10,27 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class PointOfInterest extends AbstractSafeParcelable
 {
     public static final r CREATOR;
-    private final int EX;
-    public final String EY;
-    public final LatLng EZ;
+    private final int GC;
+    public final String GD;
+    public final LatLng GE;
     public final String name;
     
     static {
         CREATOR = new r();
     }
     
-    PointOfInterest(final int ex, final LatLng ez, final String ey, final String name) {
-        this.EX = ex;
-        this.EZ = ez;
-        this.EY = ey;
+    PointOfInterest(final int gc, final LatLng ge, final String gd, final String name) {
+        this.GC = gc;
+        this.GE = ge;
+        this.GD = gd;
         this.name = name;
     }
     
-    int JZ() {
-        return this.EX;
+    int KS() {
+        return this.GC;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        r.Kn(this, parcel, n);
+        r.Lg(this, parcel, n);
     }
 }

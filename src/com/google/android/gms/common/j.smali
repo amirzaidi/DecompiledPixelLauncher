@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static kG:Lcom/google/android/gms/common/j;
+.field private static ny:Lcom/google/android/gms/common/j;
 
 
 # instance fields
@@ -28,7 +28,7 @@
 .method public static getInstance(Landroid/content/Context;)Lcom/google/android/gms/common/j;
     .locals 2
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/l;->ht(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/l;->kh(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-class v1, Lcom/google/android/gms/common/j;
 
@@ -37,7 +37,7 @@
     monitor-enter v0
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/common/j;->kG:Lcom/google/android/gms/common/j;
+    sget-object v0, Lcom/google/android/gms/common/j;->ny:Lcom/google/android/gms/common/j;
 
     if-eqz v0, :cond_0
 
@@ -46,19 +46,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v0, Lcom/google/android/gms/common/j;->kG:Lcom/google/android/gms/common/j;
+    sget-object v0, Lcom/google/android/gms/common/j;->ny:Lcom/google/android/gms/common/j;
 
     return-object v0
 
     :cond_0
     :try_start_1
-    invoke-static {p0}, Lcom/google/android/gms/common/e;->nS(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/google/android/gms/common/e;->qE(Landroid/content/Context;)V
 
     new-instance v0, Lcom/google/android/gms/common/j;
 
     invoke-direct {v0, p0}, Lcom/google/android/gms/common/j;-><init>(Landroid/content/Context;)V
 
-    sput-object v0, Lcom/google/android/gms/common/j;->kG:Lcom/google/android/gms/common/j;
+    sput-object v0, Lcom/google/android/gms/common/j;->ny:Lcom/google/android/gms/common/j;
 
     goto :goto_0
 
@@ -74,7 +74,7 @@
 
 
 # virtual methods
-.method varargs nZ(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+.method varargs qL(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
     .locals 4
 
     const/4 v0, 0x0
@@ -143,7 +143,7 @@
     return-object v0
 .end method
 
-.method public oa(Landroid/content/pm/PackageInfo;Z)Z
+.method public qM(Landroid/content/pm/PackageInfo;Z)Z
     .locals 4
 
     const/4 v0, 0x1
@@ -168,13 +168,13 @@
 
     new-array v2, v0, [Lcom/google/android/gms/common/l;
 
-    sget-object v3, Lcom/google/android/gms/common/c;->kz:[Lcom/google/android/gms/common/l;
+    sget-object v3, Lcom/google/android/gms/common/c;->nr:[Lcom/google/android/gms/common/l;
 
     aget-object v3, v3, v1
 
     aput-object v3, v2, v1
 
-    invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/common/j;->nZ(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+    invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/common/j;->qL(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
 
     move-result-object v2
 
@@ -184,16 +184,16 @@
     goto :goto_0
 
     :cond_3
-    sget-object v2, Lcom/google/android/gms/common/c;->kz:[Lcom/google/android/gms/common/l;
+    sget-object v2, Lcom/google/android/gms/common/c;->nr:[Lcom/google/android/gms/common/l;
 
-    invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/common/j;->nZ(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
+    invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/common/j;->qL(Landroid/content/pm/PackageInfo;[Lcom/google/android/gms/common/l;)Lcom/google/android/gms/common/l;
 
     move-result-object v2
 
     goto :goto_1
 .end method
 
-.method public ob(Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
+.method public qN(Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
     .locals 3
 
     const/4 v1, 0x1
@@ -202,13 +202,13 @@
 
     if-eqz p2, :cond_0
 
-    invoke-virtual {p0, p2, v2}, Lcom/google/android/gms/common/j;->oa(Landroid/content/pm/PackageInfo;Z)Z
+    invoke-virtual {p0, p2, v2}, Lcom/google/android/gms/common/j;->qM(Landroid/content/pm/PackageInfo;Z)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    invoke-virtual {p0, p2, v1}, Lcom/google/android/gms/common/j;->oa(Landroid/content/pm/PackageInfo;Z)Z
+    invoke-virtual {p0, p2, v1}, Lcom/google/android/gms/common/j;->qM(Landroid/content/pm/PackageInfo;Z)Z
 
     move-result v0
 
@@ -226,7 +226,7 @@
     :cond_2
     iget-object v0, p0, Lcom/google/android/gms/common/j;->mContext:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/k;->ol(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/google/android/gms/common/k;->qX(Landroid/content/Context;)Z
 
     move-result v0
 

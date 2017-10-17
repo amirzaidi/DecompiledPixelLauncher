@@ -16,25 +16,25 @@ import com.google.android.gms.common.internal.zzs$zza;
 
 abstract class l extends zzs$zza
 {
-    private int kQ;
+    private int nI;
     
     protected l(byte[] copyOfRange) {
         final int n = 25;
         boolean b = false;
         if (copyOfRange.length != n) {
             final int length = copyOfRange.length;
-            final String value = String.valueOf(d.jy(copyOfRange, 0, copyOfRange.length, false));
+            final String value = String.valueOf(d.mm(copyOfRange, 0, copyOfRange.length, false));
             Log.wtf("GoogleCertificates", new StringBuilder(String.valueOf(value).length() + 51).append("Cert hash data has incorrect length (").append(length).append("):\n").append(value).toString(), (Throwable)new Exception());
             copyOfRange = Arrays.copyOfRange(copyOfRange, 0, n);
             if (copyOfRange.length == n) {
                 b = true;
             }
-            com.google.android.gms.common.internal.l.hq(b, new StringBuilder(55).append("cert hash data has incorrect length. length=").append(copyOfRange.length).toString());
+            com.google.android.gms.common.internal.l.ke(b, new StringBuilder(55).append("cert hash data has incorrect length. length=").append(copyOfRange.length).toString());
         }
-        this.kQ = Arrays.hashCode(copyOfRange);
+        this.nI = Arrays.hashCode(copyOfRange);
     }
     
-    protected static byte[] ot(final String s) {
+    protected static byte[] rf(final String s) {
         final String s2 = "ISO-8859-1";
         try {
             return s.getBytes(s2);
@@ -64,7 +64,7 @@ abstract class l extends zzs$zza
                     try {
                         final byte[] array = (byte[])zzag;
                         try {
-                            return Arrays.equals(this.nR(), array);
+                            return Arrays.equals(this.qD(), array);
                         }
                         catch (RemoteException ex) {
                             Log.e("GoogleCertificates", "iCertData failed to retrive data from remote");
@@ -81,13 +81,13 @@ abstract class l extends zzs$zza
     }
     
     public int hashCode() {
-        return this.kQ;
+        return this.nI;
     }
     
-    abstract byte[] nR();
+    abstract byte[] qD();
     
     public zzd zzarf() {
-        return zze.zzal(this.nR());
+        return zze.zzal(this.qD());
     }
     
     public int zzarg() {

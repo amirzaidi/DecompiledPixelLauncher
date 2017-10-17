@@ -4,84 +4,85 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.a;
+import com.google.android.gms.common.api.v;
 import android.os.DeadObjectException;
-import com.google.android.gms.common.api.o;
+import com.google.android.gms.common.api.n;
+import com.google.android.gms.common.api.m;
 import android.app.PendingIntent;
 import com.google.android.gms.common.api.Status;
 import android.os.RemoteException;
 import com.google.android.gms.common.internal.l;
-import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.api.a;
 import java.util.concurrent.atomic.AtomicReference;
+import com.google.android.gms.common.api.e;
 import com.google.android.gms.common.api.h;
-import com.google.android.gms.common.api.j;
 
 public abstract class b extends f
 {
-    private final j nm;
-    private final h nn;
-    private AtomicReference no;
+    private final h nO;
+    private final e nP;
+    private AtomicReference nQ;
     
-    protected b(final h nn, final d d) {
-        super((d)l.ho(d, "GoogleApiClient must not be null"));
-        this.no = new AtomicReference();
-        this.nm = nn.dT();
-        this.nn = nn;
+    protected b(final e np, final a a) {
+        super((a)l.kc(a, "GoogleApiClient must not be null"));
+        this.nQ = new AtomicReference();
+        this.nO = np.gz();
+        this.nP = np;
     }
     
-    private void rl(final RemoteException ex) {
-        this.rs(new Status(8, ex.getLocalizedMessage(), null));
-    }
-    
-    public final j rm() {
-        return this.nm;
-    }
-    
-    protected void rn(final com.google.android.gms.common.api.b b) {
+    private void rn(final RemoteException ex) {
+        this.ru(new Status(8, ex.getLocalizedMessage(), null));
     }
     
     public final h ro() {
-        return this.nn;
+        return this.nO;
     }
     
-    protected abstract void rp(final o p0);
+    protected void rp(final m m) {
+    }
     
-    public final void rq(final o o) {
+    public final e rq() {
+        return this.nP;
+    }
+    
+    protected abstract void rr(final n p0);
+    
+    public final void rs(final n n) {
         try {
-            this.rp(o);
+            this.rr(n);
         }
         catch (DeadObjectException ex) {
-            this.rl((RemoteException)ex);
+            this.rn((RemoteException)ex);
             throw ex;
         }
         catch (RemoteException ex2) {
-            this.rl(ex2);
+            this.rn(ex2);
         }
     }
     
-    protected void rr() {
-        final g g = this.no.getAndSet(null);
+    protected void rt() {
+        final g g = this.nQ.getAndSet(null);
         if (g != null) {
-            g.rZ(this);
+            g.sb(this);
         }
     }
     
-    public final void rs(final Status status) {
+    public final void ru(final Status status) {
         boolean b = false;
-        if (!status.dF()) {
+        if (!status.gY()) {
             b = true;
         }
-        l.hq(b, "Failed result must not be success");
-        final com.google.android.gms.common.api.b rw = this.rW(status);
-        this.rT(rw);
-        this.rn(rw);
+        l.ke(b, "Failed result must not be success");
+        final m ry = this.rY(status);
+        this.rV(ry);
+        this.rp(ry);
     }
     
-    public void rt(final g g) {
-        this.no.set(g);
+    public void rv(final g g) {
+        this.nQ.set(g);
     }
     
-    public void ru() {
-        this.ds(null);
+    public void rw() {
+        this.gF(null);
     }
 }

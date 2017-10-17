@@ -4,20 +4,16 @@
 
 package com.google.android.gms.internal;
 
-import android.os.Process;
+import android.app.Activity;
+import android.content.Intent;
 
-class aw implements Runnable
+public interface aw
 {
-    final /* synthetic */ as rY;
-    final /* synthetic */ Runnable rZ;
+    void startActivityForResult(final Intent p0, final int p1);
     
-    aw(final as ry, final Runnable rz) {
-        this.rY = ry;
-        this.rZ = rz;
-    }
+    aD uF(final String p0, final Class p1);
     
-    public void run() {
-        Process.setThreadPriority(10);
-        this.rZ.run();
-    }
+    void uG(final String p0, final aD p1);
+    
+    Activity uH();
 }

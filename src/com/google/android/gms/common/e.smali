@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static kB:Landroid/content/Context;
+.field private static nt:Landroid/content/Context;
 
 
 # direct methods
-.method static declared-synchronized nS(Landroid/content/Context;)V
+.method static declared-synchronized qE(Landroid/content/Context;)V
     .locals 3
 
     const-class v1, Lcom/google/android/gms/common/e;
@@ -15,7 +15,7 @@
     monitor-enter v1
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/common/e;->kB:Landroid/content/Context;
+    sget-object v0, Lcom/google/android/gms/common/e;->nt:Landroid/content/Context;
 
     if-eqz v0, :cond_1
 
@@ -41,7 +41,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/e;->kB:Landroid/content/Context;
+    sput-object v0, Lcom/google/android/gms/common/e;->nt:Landroid/content/Context;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

@@ -4,22 +4,33 @@
 
 package com.google.android.gms.phenotype;
 
-import com.google.android.gms.internal.k;
-import com.google.android.gms.common.api.h;
-import com.google.android.gms.common.api.l;
-import com.google.android.gms.common.api.r;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.locks.ReadWriteLock;
 
-public final class f
+public class f
 {
-    public static final r lP;
-    public static final a lQ;
-    public static final l lR;
-    public static final h lS;
+    private static final f yw;
+    private final ReadWriteLock yt;
+    private final Set yu;
+    private final Map yv;
+    private final c yx;
+    private final Map yy;
+    private final Map yz;
     
     static {
-        lP = new r();
-        lR = new com.google.android.gms.phenotype.l();
-        lS = new h("Phenotype.API", f.lR, f.lP);
-        lQ = new k();
+        yw = new f();
+    }
+    
+    private f() {
+        this.yt = new ReentrantReadWriteLock();
+        this.yz = new HashMap();
+        this.yy = new HashMap();
+        this.yu = new HashSet();
+        this.yv = new HashMap();
+        this.yx = g.yL;
     }
 }

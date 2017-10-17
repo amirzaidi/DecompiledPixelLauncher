@@ -9,7 +9,7 @@ import java.util.Set;
 
 public final class o
 {
-    public static Set kc(final Object o, final Object o2, final Object o3) {
+    public static Set mQ(final Object o, final Object o2, final Object o3) {
         final i i = new i(3);
         i.add(o);
         i.add(o2);

@@ -15,66 +15,66 @@ import java.util.concurrent.locks.Lock;
 
 public class a
 {
-    private static a IZ;
-    private static final Lock Jb;
-    private final Lock Ja;
-    private final SharedPreferences Jc;
+    private static a KE;
+    private static final Lock KG;
+    private final Lock KF;
+    private final SharedPreferences KH;
     
     static {
-        Jb = new ReentrantLock();
+        KG = new ReentrantLock();
     }
     
     a(final Context context) {
-        this.Ja = new ReentrantLock();
-        this.Jc = context.getSharedPreferences("com.google.android.gms.signin", 0);
+        this.KF = new ReentrantLock();
+        this.KH = context.getSharedPreferences("com.google.android.gms.signin", 0);
     }
     
-    public static a Ph(final Context context) {
-        l.ht(context);
-        a.Jb.lock();
+    public static a Qa(final Context context) {
+        l.kh(context);
+        a.KG.lock();
         try {
-            if (a.IZ == null) {
-                a.IZ = new a(context.getApplicationContext());
+            if (a.KE == null) {
+                a.KE = new a(context.getApplicationContext());
             }
-            return a.IZ;
+            return a.KE;
         }
         finally {
-            a.Jb.unlock();
+            a.KG.unlock();
         }
     }
     
-    private String Pi(final String s, final String s2) {
+    private String Qb(final String s, final String s2) {
         final String value = String.valueOf(":");
         return new StringBuilder(String.valueOf(s).length() + 0 + String.valueOf(value).length() + String.valueOf(s2).length()).append(s).append(value).append(s2).toString();
     }
     
-    public GoogleSignInAccount Pg() {
-        return this.Pk(this.Pj("defaultGoogleSignInAccount"));
+    public GoogleSignInAccount PZ() {
+        return this.Qd(this.Qc("defaultGoogleSignInAccount"));
     }
     
-    protected String Pj(final String s) {
-        this.Ja.lock();
+    protected String Qc(final String s) {
+        this.KF.lock();
         try {
-            return this.Jc.getString(s, (String)null);
+            return this.KH.getString(s, (String)null);
         }
         finally {
-            this.Ja.unlock();
+            this.KF.unlock();
         }
     }
     
-    GoogleSignInAccount Pk(final String s) {
-        GoogleSignInAccount pu = null;
+    GoogleSignInAccount Qd(final String s) {
+        GoogleSignInAccount qn = null;
         if (!TextUtils.isEmpty((CharSequence)s)) {
-            final String pj = this.Pj(this.Pi("googleSignInAccount", s));
-            if (pj != null) {
+            final String qc = this.Qc(this.Qb("googleSignInAccount", s));
+            if (qc != null) {
                 try {
-                    pu = GoogleSignInAccount.Pu(pj);
+                    qn = GoogleSignInAccount.Qn(qc);
                 }
                 catch (JSONException ex) {
                     return null;
                 }
             }
-            return pu;
+            return qn;
         }
         return null;
     }

@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final He:Ljava/util/ArrayList;
+.field private final IJ:Ljava/util/ArrayList;
 
-.field private final Hf:Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
+.field private final IK:Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
 
-.field private final Hg:I
+.field private final IL:I
 
-.field private final Hh:Ljava/util/ArrayList;
+.field private final IM:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -34,47 +34,47 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hg:I
+    iput p1, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IL:I
 
-    iput-object p2, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iput-object p2, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hh:Ljava/util/ArrayList;
+    iput-object p3, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IM:Ljava/util/ArrayList;
 
-    iput-object p4, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hf:Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
+    iput-object p4, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IK:Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Mq()Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
+.method public Nj()Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hf:Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IK:Lcom/google/android/gms/contextmanager/internal/QueryFilterParameters;
 
     return-object v0
 .end method
 
-.method public Mr()Ljava/util/ArrayList;
+.method public Nk()Ljava/util/ArrayList;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hh:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IM:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
-.method Ms()I
+.method Nl()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hg:I
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IL:I
 
     return v0
 .end method
 
-.method public Mt()Ljava/util/ArrayList;
+.method public Nm()Ljava/util/ArrayList;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -94,11 +94,11 @@
 
     check-cast p1, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;
 
-    iget-object v2, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
-    iget-object v3, p1, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iget-object v3, p1, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -117,11 +117,11 @@
     return v1
 
     :cond_3
-    iget-object v2, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hh:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IM:Ljava/util/ArrayList;
 
-    iget-object v3, p1, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hh:Ljava/util/ArrayList;
+    iget-object v3, p1, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IM:Ljava/util/ArrayList;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -137,19 +137,19 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->Hh:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IM:Ljava/util/ArrayList;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -167,7 +167,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
@@ -183,7 +183,7 @@
     return-object v0
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -191,7 +191,7 @@
 
     if-lez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->He:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;->IJ:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -210,7 +210,7 @@
 
     check-cast v0, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl$Inclusion;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl$Inclusion;->Nm()I
+    invoke-virtual {v0}, Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl$Inclusion;->Of()I
 
     move-result v0
 
@@ -228,7 +228,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/internal/k;->Ne(Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/internal/k;->NX(Lcom/google/android/gms/contextmanager/internal/ContextDataFilterImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

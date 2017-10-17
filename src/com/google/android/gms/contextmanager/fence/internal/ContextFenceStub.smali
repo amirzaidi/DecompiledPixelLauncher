@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private Im:Lcom/google/android/gms/internal/M;
+.field private JR:Lcom/google/android/gms/internal/G;
 
-.field private final In:I
+.field private final JS:I
 
-.field private Io:[B
+.field private JT:[B
 
 
 # direct methods
@@ -32,46 +32,46 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/awareness/fence/AwarenessFence;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->In:I
+    iput p1, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JS:I
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
-    iput-object p2, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iput-object p2, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
-    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Ou()V
+    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Pn()V
 
     return-void
 .end method
 
-.method private Os()V
+.method private Pl()V
     .locals 3
 
-    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Ot()Z
+    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Pm()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     :goto_0
-    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Ou()V
+    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Pn()V
 
     return-void
 
     :cond_0
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/M;->tb([B)Lcom/google/android/gms/internal/M;
+    invoke-static {v0}, Lcom/google/android/gms/internal/G;->ta([B)Lcom/google/android/gms/internal/G;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
     :try_end_0
     .catch Lcom/google/android/gms/internal/zzaxw; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -84,7 +84,7 @@
 
     const-string/jumbo v2, "Could not deserialize context fence bytes."
 
-    invoke-static {v1, v2, v0}, Lcom/google/android/gms/internal/P;->tf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lcom/google/android/gms/internal/J;->te(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
 
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -93,10 +93,10 @@
     throw v1
 .end method
 
-.method private Ot()Z
+.method private Pm()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
     if-nez v0, :cond_0
 
@@ -111,25 +111,25 @@
     goto :goto_0
 .end method
 
-.method private Ou()V
+.method private Pn()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
     if-eqz v0, :cond_4
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
     if-nez v0, :cond_5
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
     if-nez v0, :cond_6
 
     :cond_2
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
     if-eqz v0, :cond_7
 
@@ -143,21 +143,21 @@
     throw v0
 
     :cond_4
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
     if-eqz v0, :cond_0
 
     return-void
 
     :cond_5
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
     if-nez v0, :cond_1
 
     return-void
 
     :cond_6
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
     if-eqz v0, :cond_2
 
@@ -170,7 +170,7 @@
     throw v0
 
     :cond_7
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
     if-nez v0, :cond_3
 
@@ -185,31 +185,31 @@
 
 
 # virtual methods
-.method public Ov()[B
+.method public Po()[B
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/aI;->uW(Lcom/google/android/gms/internal/aI;)[B
+    invoke-static {v0}, Lcom/google/android/gms/internal/aC;->uV(Lcom/google/android/gms/internal/aC;)[B
 
     move-result-object v0
 
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Io:[B
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JT:[B
 
     return-object v0
 .end method
 
-.method Ow()I
+.method Pp()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->In:I
+    iget v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JS:I
 
     return v0
 .end method
@@ -217,11 +217,11 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Os()V
+    invoke-direct {p0}, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Pl()V
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->Im:Lcom/google/android/gms/internal/M;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;->JR:Lcom/google/android/gms/internal/G;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/M;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/G;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -231,7 +231,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/fence/internal/j;->Oh(Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/fence/internal/j;->Pa(Lcom/google/android/gms/contextmanager/fence/internal/ContextFenceStub;Landroid/os/Parcel;I)V
 
     return-void
 .end method

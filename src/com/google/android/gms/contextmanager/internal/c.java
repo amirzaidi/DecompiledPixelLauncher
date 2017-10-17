@@ -12,89 +12,89 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void Mg(final ContextManagerClientInfo contextManagerClientInfo, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, contextManagerClientInfo.MD());
-        a.fo(parcel, 2, contextManagerClientInfo.MC(), false);
-        a.fo(parcel, 3, contextManagerClientInfo.getPackageName(), false);
-        a.fj(parcel, 4, contextManagerClientInfo.ME());
-        a.fo(parcel, 5, contextManagerClientInfo.MA(), false);
-        a.fj(parcel, 6, contextManagerClientInfo.MB());
-        a.fj(parcel, 7, contextManagerClientInfo.Mv());
-        a.fo(parcel, 8, contextManagerClientInfo.Mw(), false);
-        a.fo(parcel, 9, contextManagerClientInfo.My(), false);
-        a.fj(parcel, 10, contextManagerClientInfo.Mx());
-        a.fe(parcel, ey);
+    static void MZ(final ContextManagerClientInfo contextManagerClientInfo, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, contextManagerClientInfo.Nw());
+        a.ic(parcel, 2, contextManagerClientInfo.Nv(), false);
+        a.ic(parcel, 3, contextManagerClientInfo.getPackageName(), false);
+        a.hX(parcel, 4, contextManagerClientInfo.Nx());
+        a.ic(parcel, 5, contextManagerClientInfo.Nt(), false);
+        a.hX(parcel, 6, contextManagerClientInfo.Nu());
+        a.hX(parcel, 7, contextManagerClientInfo.No());
+        a.ic(parcel, 8, contextManagerClientInfo.Np(), false);
+        a.ic(parcel, 9, contextManagerClientInfo.Nr(), false);
+        a.hX(parcel, 10, contextManagerClientInfo.Nq());
+        a.hS(parcel, hm);
     }
     
-    public ContextManagerClientInfo Me(final Parcel parcel) {
-        String fq = null;
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        String fq2 = null;
-        int fn2 = 0;
-        int fn3 = 0;
-        String fq3 = null;
-        int fn4 = 0;
-        String fq4 = null;
-        String fq5 = null;
-        int fn5 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public ContextManagerClientInfo MX(final Parcel parcel) {
+        String ie = null;
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        String ie2 = null;
+        int ib2 = 0;
+        int ib3 = 0;
+        String ie3 = null;
+        int ib4 = 0;
+        String ie4 = null;
+        String ie5 = null;
+        int ib5 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn5 = b.fN(parcel, fs);
+                    ib5 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq5 = b.fQ(parcel, fs);
+                    ie5 = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fq4 = b.fQ(parcel, fs);
+                    ie4 = b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fn4 = b.fN(parcel, fs);
+                    ib4 = b.iB(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fq3 = b.fQ(parcel, fs);
+                    ie3 = b.iE(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ContextManagerClientInfo(fn5, fq5, fq4, fn4, fq3, fn3, fn2, fq2, fq, fn);
+        if (parcel.dataPosition() == ix) {
+            return new ContextManagerClientInfo(ib5, ie5, ie4, ib4, ie3, ib3, ib2, ie2, ie, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public ContextManagerClientInfo[] Mf(final int n) {
+    public ContextManagerClientInfo[] MY(final int n) {
         return new ContextManagerClientInfo[n];
     }
 }

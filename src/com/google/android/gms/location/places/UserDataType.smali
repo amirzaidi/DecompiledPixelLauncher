@@ -3,23 +3,23 @@
 
 
 # static fields
+.field public static final Bf:Lcom/google/android/gms/location/places/UserDataType;
+
+.field public static final Bg:Lcom/google/android/gms/location/places/UserDataType;
+
+.field public static final Bh:Lcom/google/android/gms/location/places/UserDataType;
+
+.field public static final Bi:Ljava/util/Set;
+
 .field public static final CREATOR:Lcom/google/android/gms/location/places/h;
-
-.field public static final zA:Lcom/google/android/gms/location/places/UserDataType;
-
-.field public static final zB:Lcom/google/android/gms/location/places/UserDataType;
-
-.field public static final zC:Lcom/google/android/gms/location/places/UserDataType;
-
-.field public static final zD:Ljava/util/Set;
 
 
 # instance fields
-.field final zE:I
+.field final Bj:I
 
-.field final zF:I
+.field final Bk:I
 
-.field final zG:Ljava/lang/String;
+.field final Bl:Ljava/lang/String;
 
 
 # direct methods
@@ -30,43 +30,43 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/location/places/UserDataType;->DS(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
+    invoke-static {v0, v1}, Lcom/google/android/gms/location/places/UserDataType;->EL(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->zC:Lcom/google/android/gms/location/places/UserDataType;
+    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->Bh:Lcom/google/android/gms/location/places/UserDataType;
 
     const-string/jumbo v0, "labeled_place"
 
     const/4 v1, 0x6
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/location/places/UserDataType;->DS(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
+    invoke-static {v0, v1}, Lcom/google/android/gms/location/places/UserDataType;->EL(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->zB:Lcom/google/android/gms/location/places/UserDataType;
+    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->Bg:Lcom/google/android/gms/location/places/UserDataType;
 
     const-string/jumbo v0, "here_content"
 
     const/4 v1, 0x7
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/location/places/UserDataType;->DS(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
+    invoke-static {v0, v1}, Lcom/google/android/gms/location/places/UserDataType;->EL(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->zA:Lcom/google/android/gms/location/places/UserDataType;
+    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->Bf:Lcom/google/android/gms/location/places/UserDataType;
 
-    sget-object v0, Lcom/google/android/gms/location/places/UserDataType;->zC:Lcom/google/android/gms/location/places/UserDataType;
+    sget-object v0, Lcom/google/android/gms/location/places/UserDataType;->Bh:Lcom/google/android/gms/location/places/UserDataType;
 
-    sget-object v1, Lcom/google/android/gms/location/places/UserDataType;->zB:Lcom/google/android/gms/location/places/UserDataType;
+    sget-object v1, Lcom/google/android/gms/location/places/UserDataType;->Bg:Lcom/google/android/gms/location/places/UserDataType;
 
-    sget-object v2, Lcom/google/android/gms/location/places/UserDataType;->zA:Lcom/google/android/gms/location/places/UserDataType;
+    sget-object v2, Lcom/google/android/gms/location/places/UserDataType;->Bf:Lcom/google/android/gms/location/places/UserDataType;
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/gms/common/a/o;->kc(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
+    invoke-static {v0, v1, v2}, Lcom/google/android/gms/common/a/o;->mQ(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->zD:Ljava/util/Set;
+    sput-object v0, Lcom/google/android/gms/location/places/UserDataType;->Bi:Ljava/util/Set;
 
     new-instance v0, Lcom/google/android/gms/location/places/h;
 
@@ -82,18 +82,18 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/l;->hr(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/l;->kf(Ljava/lang/String;)Ljava/lang/String;
 
-    iput p1, p0, Lcom/google/android/gms/location/places/UserDataType;->zE:I
+    iput p1, p0, Lcom/google/android/gms/location/places/UserDataType;->Bj:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/places/UserDataType;->zG:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/location/places/UserDataType;->Bl:Ljava/lang/String;
 
-    iput p3, p0, Lcom/google/android/gms/location/places/UserDataType;->zF:I
+    iput p3, p0, Lcom/google/android/gms/location/places/UserDataType;->Bk:I
 
     return-void
 .end method
 
-.method private static DS(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
+.method private static EL(Ljava/lang/String;I)Lcom/google/android/gms/location/places/UserDataType;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/location/places/UserDataType;
@@ -122,9 +122,9 @@
 
     check-cast p1, Lcom/google/android/gms/location/places/UserDataType;
 
-    iget-object v2, p0, Lcom/google/android/gms/location/places/UserDataType;->zG:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/location/places/UserDataType;->Bl:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/google/android/gms/location/places/UserDataType;->zG:Ljava/lang/String;
+    iget-object v3, p1, Lcom/google/android/gms/location/places/UserDataType;->Bl:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -145,9 +145,9 @@
     return v1
 
     :cond_3
-    iget v2, p0, Lcom/google/android/gms/location/places/UserDataType;->zF:I
+    iget v2, p0, Lcom/google/android/gms/location/places/UserDataType;->Bk:I
 
-    iget v3, p1, Lcom/google/android/gms/location/places/UserDataType;->zF:I
+    iget v3, p1, Lcom/google/android/gms/location/places/UserDataType;->Bk:I
 
     if-eq v2, v3, :cond_0
 
@@ -157,7 +157,7 @@
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/UserDataType;->zG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/UserDataType;->Bl:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -169,7 +169,7 @@
 .method public toString()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/UserDataType;->zG:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/UserDataType;->Bl:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -177,7 +177,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/h;->Ex(Lcom/google/android/gms/location/places/UserDataType;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/h;->Fq(Lcom/google/android/gms/location/places/UserDataType;Landroid/os/Parcel;I)V
 
     return-void
 .end method

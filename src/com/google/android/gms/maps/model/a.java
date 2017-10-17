@@ -11,53 +11,53 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void Iw(final StreetViewPanoramaCamera streetViewPanoramaCamera, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1, streetViewPanoramaCamera.Jh());
-        com.google.android.gms.common.internal.safeparcel.a.fs(parcel, 2, streetViewPanoramaCamera.Ej);
-        com.google.android.gms.common.internal.safeparcel.a.fs(parcel, 3, streetViewPanoramaCamera.Eg);
-        com.google.android.gms.common.internal.safeparcel.a.fs(parcel, 4, streetViewPanoramaCamera.Ek);
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void Jp(final StreetViewPanoramaCamera streetViewPanoramaCamera, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1, streetViewPanoramaCamera.JX());
+        com.google.android.gms.common.internal.safeparcel.a.ig(parcel, 2, streetViewPanoramaCamera.FO);
+        com.google.android.gms.common.internal.safeparcel.a.ig(parcel, 3, streetViewPanoramaCamera.FL);
+        com.google.android.gms.common.internal.safeparcel.a.ig(parcel, 4, streetViewPanoramaCamera.FP);
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
-    public StreetViewPanoramaCamera Ix(final Parcel parcel) {
-        float gj = 0.0f;
-        final int fj = b.fJ(parcel);
-        float gj2 = 0.0f;
-        int fn = 0;
-        float gj3 = 0.0f;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public StreetViewPanoramaCamera Jq(final Parcel parcel) {
+        float ix = 0.0f;
+        final int ix2 = b.ix(parcel);
+        float ix3 = 0.0f;
+        int ib = 0;
+        float ix4 = 0.0f;
+        while (parcel.dataPosition() < ix2) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    gj3 = b.gj(parcel, fs);
+                    ix4 = b.iX(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gj = b.gj(parcel, fs);
+                    ix = b.iX(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new StreetViewPanoramaCamera(fn, gj2, gj3, gj);
+        if (parcel.dataPosition() == ix2) {
+            return new StreetViewPanoramaCamera(ib, ix3, ix4, ix);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix2).toString(), parcel);
     }
     
-    public StreetViewPanoramaCamera[] Iy(final int n) {
+    public StreetViewPanoramaCamera[] Jr(final int n) {
         return new StreetViewPanoramaCamera[n];
     }
 }

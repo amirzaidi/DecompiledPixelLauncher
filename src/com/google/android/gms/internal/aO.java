@@ -4,20 +4,18 @@
 
 package com.google.android.gms.internal;
 
-public class ao
+import com.google.android.gms.common.api.m;
+import com.google.android.gms.common.api.Status;
+
+class ao extends zzqc$zza
 {
-    public static long ue(final long n, final long n2) {
-        final long n3 = Long.MAX_VALUE;
-        int n4;
-        if (n < 0L) {
-            n4 = 1;
-        }
-        else {
-            n4 = 0;
-        }
-        if (n4 == 0) {
-            return n % n2;
-        }
-        return (n3 % n2 + 1L + (n & n3) % n2) % n2;
+    final /* synthetic */ ah sa;
+    
+    ao(final ah sa) {
+        this.sa = sa;
+    }
+    
+    public void zzae(final Status status) {
+        this.sa.rV(status);
     }
 }

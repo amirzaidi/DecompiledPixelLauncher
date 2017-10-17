@@ -8,15 +8,15 @@ import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import android.content.Intent;
 import android.os.Parcelable$Creator;
-import com.google.android.gms.common.api.b;
+import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
-public class AuthAccountResult extends AbstractSafeParcelable implements b
+public class AuthAccountResult extends AbstractSafeParcelable implements m
 {
     public static final Parcelable$Creator CREATOR;
-    private int Kc;
-    final int Kd;
-    private Intent Ke;
+    private int LH;
+    final int LI;
+    private Intent LJ;
     
     static {
         CREATOR = (Parcelable$Creator)new h();
@@ -26,32 +26,32 @@ public class AuthAccountResult extends AbstractSafeParcelable implements b
         this(0, null);
     }
     
-    AuthAccountResult(final int kd, final int kc, final Intent ke) {
-        this.Kd = kd;
-        this.Kc = kc;
-        this.Ke = ke;
+    AuthAccountResult(final int li, final int lh, final Intent lj) {
+        this.LI = li;
+        this.LH = lh;
+        this.LJ = lj;
     }
     
     public AuthAccountResult(final int n, final Intent intent) {
         this(2, n, intent);
     }
     
-    public Intent Qk() {
-        return this.Ke;
+    public Intent Rd() {
+        return this.LJ;
     }
     
-    public int Ql() {
-        return this.Kc;
+    public int Re() {
+        return this.LH;
     }
     
-    public Status dr() {
-        if (this.Kc != 0) {
-            return Status.dR;
+    public Status gV() {
+        if (this.LH != 0) {
+            return Status.hk;
         }
-        return Status.dU;
+        return Status.hn;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.Qq(this, parcel, n);
+        h.Rj(this, parcel, n);
     }
 }

@@ -4,18 +4,25 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.i;
-import com.google.android.gms.signin.internal.e;
-import com.google.android.gms.common.api.f;
-import com.google.android.gms.common.api.g;
-import com.google.android.gms.common.internal.a;
-import android.os.Looper;
-import android.content.Context;
-import com.google.android.gms.common.api.l;
+import android.os.Bundle;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.ConnectionResult;
 
-class ci extends l
+public interface ci
 {
-    public e Cc(final Context context, final Looper looper, final a a, final cl cl, final g g, final f f) {
-        return new e(context, looper, false, a, cl.Cd(), g, f);
-    }
+    void AC(final ConnectionResult p0, final e p1, final int p2);
+    
+    b Ab(final b p0);
+    
+    boolean Ac();
+    
+    b Ag(final b p0);
+    
+    void As();
+    
+    void At(final Bundle p0);
+    
+    void Ay(final int p0);
+    
+    void zX();
 }

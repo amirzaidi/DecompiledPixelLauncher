@@ -8,43 +8,43 @@ import android.os.Build$VERSION;
 
 public final class n
 {
-    public static boolean jS() {
-        return jX(20);
+    public static boolean mG() {
+        return mL(20);
     }
     
-    public static boolean jT() {
-        return jX(19);
+    public static boolean mH() {
+        return mL(19);
     }
     
-    public static boolean jU() {
-        return jX(21);
+    public static boolean mI() {
+        return mL(21);
     }
     
-    public static boolean jV() {
-        return jX(11);
+    public static boolean mJ() {
+        return mL(11);
     }
     
-    public static boolean jW() {
-        return jX(18);
+    public static boolean mK() {
+        return mL(18);
     }
     
-    private static boolean jX(final int n) {
+    private static boolean mL(final int n) {
         return Build$VERSION.SDK_INT >= n;
     }
     
-    public static boolean jY() {
-        return jX(12);
+    public static boolean mM() {
+        return mL(12);
     }
     
-    public static boolean jZ() {
-        return jX(16);
+    public static boolean mN() {
+        return mL(16);
     }
     
-    public static boolean ka() {
-        return jX(13);
+    public static boolean mO() {
+        return mL(13);
     }
     
-    public static boolean kb() {
-        return jX(14);
+    public static boolean mP() {
+        return mL(14);
     }
 }

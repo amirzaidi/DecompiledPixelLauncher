@@ -4,18 +4,17 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.api.Status;
 
 class r extends j
 {
-    final /* synthetic */ l oJ;
+    final /* synthetic */ m pc;
     
-    r(final l oj) {
-        this.oJ = oj;
+    r(final m pc) {
+        this.pc = pc;
     }
     
-    public void zzgp(final Status status) {
-        this.oJ.rT(status);
+    public void zzgr(final Status status) {
+        this.pc.rV(status);
     }
 }

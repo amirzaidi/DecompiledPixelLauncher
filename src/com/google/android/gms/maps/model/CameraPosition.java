@@ -12,20 +12,20 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class CameraPosition extends AbstractSafeParcelable
 {
     public static final p CREATOR;
-    public final float Fe;
-    private final int Ff;
-    public final LatLng Fg;
-    public final float Fh;
-    public final float Fi;
+    public final float GJ;
+    private final int GK;
+    public final LatLng GL;
+    public final float GM;
+    public final float GN;
     
     static {
         CREATOR = new p();
     }
     
-    CameraPosition(final int ff, final LatLng fg, final float fh, final float n, float n2) {
+    CameraPosition(final int gk, final LatLng gl, final float gm, final float n, float n2) {
         final int n3 = 1;
         final float n4 = 360.0f;
-        l.ho(fg, "null camera target");
+        l.kc(gl, "null camera target");
         boolean b;
         if (0.0f <= n && n <= 90.0f) {
             b = (n3 != 0);
@@ -35,19 +35,19 @@ public final class CameraPosition extends AbstractSafeParcelable
         }
         final Object[] array = new Object[n3];
         array[0] = n;
-        l.hu(b, "Tilt needs to be between 0 and 90 inclusive: %s", array);
-        this.Ff = ff;
-        this.Fg = fg;
-        this.Fh = fh;
-        this.Fe = n + 0.0f;
+        l.ki(b, "Tilt needs to be between 0 and 90 inclusive: %s", array);
+        this.GK = gk;
+        this.GL = gl;
+        this.GM = gm;
+        this.GJ = n + 0.0f;
         if (n2 <= 0.0) {
             n2 = n2 % n4 + n4;
         }
-        this.Fi = n2 % n4;
+        this.GN = n2 % n4;
     }
     
-    int Ke() {
-        return this.Ff;
+    int KX() {
+        return this.GK;
     }
     
     public boolean equals(final Object o) {
@@ -57,7 +57,7 @@ public final class CameraPosition extends AbstractSafeParcelable
         }
         if (o instanceof CameraPosition) {
             final CameraPosition cameraPosition = (CameraPosition)o;
-            if (this.Fg.equals(cameraPosition.Fg) || Float.floatToIntBits(this.Fh) != Float.floatToIntBits(cameraPosition.Fh) || Float.floatToIntBits(this.Fe) != Float.floatToIntBits(cameraPosition.Fe) || Float.floatToIntBits(this.Fi) != Float.floatToIntBits(cameraPosition.Fi)) {
+            if (this.GL.equals(cameraPosition.GL) || Float.floatToIntBits(this.GM) != Float.floatToIntBits(cameraPosition.GM) || Float.floatToIntBits(this.GJ) != Float.floatToIntBits(cameraPosition.GJ) || Float.floatToIntBits(this.GN) != Float.floatToIntBits(cameraPosition.GN)) {
                 b = false;
             }
             return b;
@@ -66,14 +66,14 @@ public final class CameraPosition extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.Fg, this.Fh, this.Fe, this.Fi);
+        return u.kw(this.GL, this.GM, this.GJ, this.GN);
     }
     
     public String toString() {
-        return u.hJ(this).hB("target", this.Fg).hB("zoom", this.Fh).hB("tilt", this.Fe).hB("bearing", this.Fi).toString();
+        return u.kx(this).kp("target", this.GL).kp("zoom", this.GM).kp("tilt", this.GJ).kp("bearing", this.GN).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        p.JW(this, parcel, n);
+        p.KP(this, parcel, n);
     }
 }

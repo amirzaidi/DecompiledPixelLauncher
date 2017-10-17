@@ -4,6 +4,16 @@
 
 package com.google.android.gms.common.api;
 
-public final class r extends j
+import java.util.Collections;
+import java.util.List;
+
+public abstract class r
 {
+    public int hf() {
+        return -1 >>> 1;
+    }
+    
+    public List hg(final Object o) {
+        return Collections.emptyList();
+    }
 }

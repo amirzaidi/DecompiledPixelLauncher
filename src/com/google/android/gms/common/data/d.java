@@ -9,13 +9,13 @@ import com.google.android.gms.common.internal.l;
 
 public abstract class d
 {
-    private int jY;
-    protected final DataHolder jZ;
-    protected int ka;
+    private int mQ;
+    protected final DataHolder mR;
+    protected int mS;
     
     public d(final DataHolder dataHolder, final int n) {
-        this.jZ = (DataHolder)l.ht(dataHolder);
-        this.nb(n);
+        this.mR = (DataHolder)l.kh(dataHolder);
+        this.pO(n);
     }
     
     public boolean equals(final Object o) {
@@ -24,27 +24,27 @@ public abstract class d
             return false;
         }
         final d d = (d)o;
-        if (u.hH(d.ka, this.ka) && u.hH(d.jY, this.jY) && d.jZ == this.jZ) {
+        if (u.kv(d.mS, this.mS) && u.kv(d.mQ, this.mQ) && d.mR == this.mR) {
             b = true;
         }
         return b;
     }
     
     public int hashCode() {
-        return u.hI(this.ka, this.jY, this.jZ);
+        return u.kw(this.mS, this.mQ, this.mR);
     }
     
-    protected String na(final String s) {
-        return this.jZ.nf(s, this.ka, this.jY);
+    protected String pN(final String s) {
+        return this.mR.pS(s, this.mS, this.mQ);
     }
     
-    protected void nb(final int ka) {
+    protected void pO(final int ms) {
         boolean b = false;
-        if (ka >= 0 && ka < this.jZ.nd()) {
+        if (ms >= 0 && ms < this.mR.pQ()) {
             b = true;
         }
-        l.hs(b);
-        this.ka = ka;
-        this.jY = this.jZ.ne(this.ka);
+        l.kg(b);
+        this.mS = ms;
+        this.mQ = this.mR.pR(this.mS);
     }
 }

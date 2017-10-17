@@ -13,41 +13,41 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void PX(final SignInRequest signInRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, signInRequest.JN);
-        a.eW(parcel, 2, (Parcelable)signInRequest.PV(), n, false);
-        a.fe(parcel, ey);
+    static void QQ(final SignInRequest signInRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, signInRequest.Ls);
+        a.hK(parcel, 2, (Parcelable)signInRequest.QO(), n, false);
+        a.hS(parcel, hm);
     }
     
-    public SignInRequest PW(final Parcel parcel) {
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn = 0;
+    public SignInRequest QP(final Parcel parcel) {
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib = 0;
         ResolveAccountRequest resolveAccountRequest = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    resolveAccountRequest = (ResolveAccountRequest)com.google.android.gms.common.internal.safeparcel.b.fW(parcel, fs, ResolveAccountRequest.CREATOR);
+                    resolveAccountRequest = (ResolveAccountRequest)com.google.android.gms.common.internal.safeparcel.b.iK(parcel, ig, ResolveAccountRequest.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new SignInRequest(fn, resolveAccountRequest);
+        if (parcel.dataPosition() == ix) {
+            return new SignInRequest(ib, resolveAccountRequest);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public SignInRequest[] PY(final int n) {
+    public SignInRequest[] QR(final int n) {
         return new SignInRequest[n];
     }
 }

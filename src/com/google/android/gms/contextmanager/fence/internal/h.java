@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void Oc(final FenceTriggerInfoImpl fenceTriggerInfoImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, fenceTriggerInfoImpl.NO());
-        a.fa(parcel, 2, fenceTriggerInfoImpl.NN());
-        a.fo(parcel, 3, fenceTriggerInfoImpl.getKey(), false);
-        a.fe(parcel, ey);
+    static void OV(final FenceTriggerInfoImpl fenceTriggerInfoImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, fenceTriggerInfoImpl.OH());
+        a.hO(parcel, 2, fenceTriggerInfoImpl.OG());
+        a.ic(parcel, 3, fenceTriggerInfoImpl.getKey(), false);
+        a.hS(parcel, hm);
     }
     
-    public FenceTriggerInfoImpl[] Ob(final int n) {
+    public FenceTriggerInfoImpl[] OU(final int n) {
         return new FenceTriggerInfoImpl[n];
     }
     
-    public FenceTriggerInfoImpl Od(final Parcel parcel) {
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public FenceTriggerInfoImpl OW(final Parcel parcel) {
+        boolean il = false;
+        final int ix = b.ix(parcel);
+        String ie = null;
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FenceTriggerInfoImpl(fn, fx, fq);
+        if (parcel.dataPosition() == ix) {
+            return new FenceTriggerInfoImpl(ib, il, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

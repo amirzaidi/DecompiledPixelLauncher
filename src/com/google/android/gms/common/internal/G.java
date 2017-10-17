@@ -10,14 +10,14 @@ import android.os.IBinder;
 
 class g implements zzt
 {
-    private IBinder fu;
+    private IBinder im;
     
-    g(final IBinder fu) {
-        this.fu = fu;
+    g(final IBinder im) {
+        this.im = im;
     }
     
     public IBinder asBinder() {
-        return this.fu;
+        return this.im;
     }
     
     public void zza(final int n, final Bundle bundle) {
@@ -35,7 +35,7 @@ class g implements zzt
                 obtain.writeInt(1);
                 bundle.writeToParcel(obtain, 0);
             }
-            this.fu.transact(2, obtain, obtain2, 0);
+            this.im.transact(2, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -60,7 +60,7 @@ class g implements zzt
                 obtain.writeInt(1);
                 bundle.writeToParcel(obtain, 0);
             }
-            this.fu.transact(1, obtain, obtain2, 0);
+            this.im.transact(1, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {

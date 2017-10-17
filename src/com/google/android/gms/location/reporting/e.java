@@ -12,44 +12,44 @@ import android.os.Parcelable$Creator;
 
 public class e implements Parcelable$Creator
 {
-    static void FW(final UploadRequestResult uploadRequestResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, uploadRequestResult.Gj());
-        a.fj(parcel, 2, uploadRequestResult.Gh());
-        a.fw(parcel, 3, uploadRequestResult.Gi());
-        a.fe(parcel, ey);
+    static void GP(final UploadRequestResult uploadRequestResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, uploadRequestResult.Hc());
+        a.hX(parcel, 2, uploadRequestResult.Ha());
+        a.ik(parcel, 3, uploadRequestResult.Hb());
+        a.hS(parcel, hm);
     }
     
     public UploadRequestResult createFromParcel(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        long fl = 0L;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        long iz = 0L;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new UploadRequestResult(fn2, fn, fl);
+        if (parcel.dataPosition() == ix) {
+            return new UploadRequestResult(ib2, ib, iz);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public UploadRequestResult[] newArray(final int n) {

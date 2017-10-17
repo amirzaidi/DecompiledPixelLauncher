@@ -12,33 +12,33 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class GeofencingRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int Dm;
-    private final int Dn;
-    private final List Do;
+    private final int ER;
+    private final int ES;
+    private final List ET;
     
     static {
         CREATOR = (Parcelable$Creator)new l();
     }
     
-    GeofencingRequest(final int dm, final List do1, final int dn) {
-        this.Dm = dm;
-        this.Do = do1;
-        this.Dn = dn;
+    GeofencingRequest(final int er, final List et, final int es) {
+        this.ER = er;
+        this.ET = et;
+        this.ES = es;
     }
     
-    public int HX() {
-        return this.Dn;
+    public int IQ() {
+        return this.ES;
     }
     
-    public List HY() {
-        return this.Do;
+    public List IR() {
+        return this.ET;
     }
     
-    public int HZ() {
-        return this.Dm;
+    public int IS() {
+        return this.ER;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        l.Hr(this, parcel, n);
+        l.Ik(this, parcel, n);
     }
 }

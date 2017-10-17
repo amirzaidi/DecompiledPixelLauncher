@@ -7,19 +7,19 @@
 
 
 # instance fields
-.field private final hT:I
+.field private final kL:I
 
-.field private hU:I
+.field private kM:I
 
-.field private final hV:Landroid/os/Parcel;
+.field private final kN:Landroid/os/Parcel;
 
-.field private final hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+.field private final kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
-.field private final hX:I
+.field private final kP:I
 
-.field private hY:I
+.field private kQ:I
 
-.field private final hZ:Ljava/lang/String;
+.field private final kR:Ljava/lang/String;
 
 
 # direct methods
@@ -44,564 +44,49 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/server/response/FastSafeParcelableJsonResponse;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hX:I
+    iput p1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kP:I
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/l;->ht(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/l;->kh(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/os/Parcel;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hV:Landroid/os/Parcel;
+    iput-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kN:Landroid/os/Parcel;
 
-    iput v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hT:I
+    iput v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kL:I
 
-    iput-object p3, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iput-object p3, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kW()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->nJ()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hZ:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kR:Ljava/lang/String;
 
     :goto_0
-    iput v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hU:I
+    iput v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kM:I
 
     return-void
 
     :cond_0
-    iput-object v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hZ:Ljava/lang/String;
+    iput-object v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kR:Ljava/lang/String;
 
     goto :goto_0
 .end method
 
-.method private kD(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
-    .locals 4
-
-    const/4 v0, 0x0
-
-    const-string/jumbo v1, "["
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    :goto_0
-    if-lt v0, v1, :cond_0
-
-    const-string/jumbo v0, "]"
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    return-void
-
-    :cond_0
-    if-nez v0, :cond_1
-
-    :goto_1
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kt()I
-
-    move-result v2
-
-    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-direct {p0, p1, v2, v3}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kI(Ljava/lang/StringBuilder;ILjava/lang/Object;)V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const-string/jumbo v2, ","
-
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_1
-.end method
-
-.method private kF(Ljava/lang/StringBuilder;Ljava/lang/String;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
-    .locals 2
-
-    const-string/jumbo v0, "\""
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "\":"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p3}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kq()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-direct {p0, p1, p3, p4, p5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kz(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    invoke-direct {p0, p1, p3, p4, p5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kJ(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
-
-    goto :goto_0
-.end method
-
-.method private kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->ko()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kt()I
-
-    move-result v0
-
-    invoke-direct {p0, p1, v0, p3}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kI(Ljava/lang/StringBuilder;ILjava/lang/Object;)V
-
-    :goto_0
-    return-void
-
-    :cond_0
-    check-cast p3, Ljava/util/ArrayList;
-
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kD(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
-
-    goto :goto_0
-.end method
-
-.method private static kH(Ljava/util/Map;)Landroid/util/SparseArray;
-    .locals 4
-
-    new-instance v2, Landroid/util/SparseArray;
-
-    invoke-direct {v2}, Landroid/util/SparseArray;-><init>()V
-
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object v2
-
-    :cond_0
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kj()I
-
-    move-result v1
-
-    invoke-virtual {v2, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
-
-    goto :goto_0
-.end method
-
-.method private kI(Ljava/lang/StringBuilder;ILjava/lang/Object;)V
-    .locals 3
-
-    packed-switch p2, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const/16 v2, 0x1a
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string/jumbo v2, "Unknown type = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_0
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    :goto_0
-    return-void
-
-    :pswitch_1
-    const-string/jumbo v0, "\""
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/gms/common/a/h;->jF(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    :pswitch_2
-    const-string/jumbo v0, "\""
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    check-cast p3, [B
-
-    invoke-static {p3}, Lcom/google/android/gms/common/a/e;->jz([B)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "\""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    :pswitch_3
-    const-string/jumbo v0, "\""
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    check-cast p3, [B
-
-    invoke-static {p3}, Lcom/google/android/gms/common/a/e;->jA([B)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string/jumbo v0, "\""
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_0
-
-    :pswitch_4
-    check-cast p3, Ljava/util/HashMap;
-
-    invoke-static {p1, p3}, Lcom/google/android/gms/common/a/b;->ju(Ljava/lang/StringBuilder;Ljava/util/HashMap;)V
-
-    goto :goto_0
-
-    :pswitch_5
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "Method does not accept concrete type."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-    .end packed-switch
-.end method
-
-.method private kJ(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
-    .locals 4
-
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kf()I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kf()I
-
-    move-result v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const/16 v3, 0x24
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string/jumbo v3, "Unknown field out type = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_0
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_1
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fF(Landroid/os/Parcel;I)Ljava/math/BigInteger;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_2
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_3
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_4
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gb(Landroid/os/Parcel;I)D
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_5
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gi(Landroid/os/Parcel;I)Ljava/math/BigDecimal;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_6
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_7
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_8
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gf(Landroid/os/Parcel;I)[B
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_9
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fP(Landroid/os/Parcel;I)Landroid/os/Bundle;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->ky(Landroid/os/Bundle;)Ljava/util/HashMap;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->lb(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kG(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_a
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "Method does not accept concrete type."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-        :pswitch_5
-        :pswitch_6
-        :pswitch_7
-        :pswitch_8
-        :pswitch_8
-        :pswitch_9
-        :pswitch_a
-    .end packed-switch
-.end method
-
-.method private kx(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
+.method private nl(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
     .locals 8
 
     const/4 v0, 0x0
 
-    invoke-static {p2}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kH(Ljava/util/Map;)Landroid/util/SparseArray;
+    invoke-static {p2}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nv(Ljava/util/Map;)Landroid/util/SparseArray;
 
     move-result-object v6
 
@@ -609,7 +94,7 @@
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v7
 
@@ -636,11 +121,11 @@
     return-void
 
     :cond_1
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v5
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v0
 
@@ -673,7 +158,7 @@
 
     move-object v4, p3
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kF(Ljava/lang/StringBuilder;Ljava/lang/String;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
+    invoke-direct/range {v0 .. v5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nt(Ljava/lang/StringBuilder;Ljava/lang/String;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
 
     const/4 v0, 0x1
 
@@ -716,7 +201,7 @@
     throw v0
 .end method
 
-.method public static ky(Landroid/os/Bundle;)Ljava/util/HashMap;
+.method public static nm(Landroid/os/Bundle;)Ljava/util/HashMap;
     .locals 4
 
     new-instance v1, Ljava/util/HashMap;
@@ -756,18 +241,18 @@
     goto :goto_0
 .end method
 
-.method private kz(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
+.method private nn(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
     .locals 6
 
     const/4 v2, 0x0
 
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kh()Z
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->mV()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kf()I
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->mT()I
 
     move-result v0
 
@@ -786,7 +271,7 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kf()I
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->mT()I
 
     move-result v0
 
@@ -801,11 +286,11 @@
     throw v0
 
     :pswitch_0
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fK(Landroid/os/Parcel;I)[I
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iy(Landroid/os/Parcel;I)[I
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jM(Ljava/lang/StringBuilder;[I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->mA(Ljava/lang/StringBuilder;[I)V
 
     :cond_1
     :goto_0
@@ -817,65 +302,65 @@
     return-void
 
     :pswitch_1
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gc(Landroid/os/Parcel;I)[Ljava/math/BigInteger;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iQ(Landroid/os/Parcel;I)[Ljava/math/BigInteger;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jK(Ljava/lang/StringBuilder;[Ljava/lang/Object;)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->my(Ljava/lang/StringBuilder;[Ljava/lang/Object;)V
 
     goto :goto_0
 
     :pswitch_2
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fT(Landroid/os/Parcel;I)[J
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iH(Landroid/os/Parcel;I)[J
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jN(Ljava/lang/StringBuilder;[J)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->mB(Ljava/lang/StringBuilder;[J)V
 
     goto :goto_0
 
     :pswitch_3
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fC(Landroid/os/Parcel;I)[F
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iq(Landroid/os/Parcel;I)[F
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jQ(Ljava/lang/StringBuilder;[F)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->mE(Ljava/lang/StringBuilder;[F)V
 
     goto :goto_0
 
     :pswitch_4
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gg(Landroid/os/Parcel;I)[D
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iU(Landroid/os/Parcel;I)[D
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jP(Ljava/lang/StringBuilder;[D)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->mD(Ljava/lang/StringBuilder;[D)V
 
     goto :goto_0
 
     :pswitch_5
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fV(Landroid/os/Parcel;I)[Ljava/math/BigDecimal;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iJ(Landroid/os/Parcel;I)[Ljava/math/BigDecimal;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jK(Ljava/lang/StringBuilder;[Ljava/lang/Object;)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->my(Ljava/lang/StringBuilder;[Ljava/lang/Object;)V
 
     goto :goto_0
 
     :pswitch_6
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gd(Landroid/os/Parcel;I)[Z
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iR(Landroid/os/Parcel;I)[Z
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jO(Ljava/lang/StringBuilder;[Z)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->mC(Ljava/lang/StringBuilder;[Z)V
 
     goto :goto_0
 
     :pswitch_7
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fU(Landroid/os/Parcel;I)[Ljava/lang/String;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iI(Landroid/os/Parcel;I)[Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->jL(Ljava/lang/StringBuilder;[Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/a/l;->mz(Ljava/lang/StringBuilder;[Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -889,7 +374,7 @@
     throw v0
 
     :pswitch_9
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fz(Landroid/os/Parcel;I)[Landroid/os/Parcel;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->in(Landroid/os/Parcel;I)[Landroid/os/Parcel;
 
     move-result-object v1
 
@@ -907,13 +392,13 @@
 
     invoke-virtual {v4, v2}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kp()Ljava/util/Map;
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->nd()Ljava/util/Map;
 
     move-result-object v4
 
     aget-object v5, v1, v0
 
-    invoke-direct {p0, p1, v4, v5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kx(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
+    invoke-direct {p0, p1, v4, v5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nl(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
 
     add-int/lit8 v0, v0, 0x1
 
@@ -927,7 +412,7 @@
     goto :goto_3
 
     :pswitch_a
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v0
 
@@ -936,7 +421,7 @@
     goto :goto_1
 
     :pswitch_b
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fF(Landroid/os/Parcel;I)Ljava/math/BigInteger;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->it(Landroid/os/Parcel;I)Ljava/math/BigInteger;
 
     move-result-object v0
 
@@ -945,7 +430,7 @@
     goto :goto_1
 
     :pswitch_c
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v0
 
@@ -954,7 +439,7 @@
     goto :goto_1
 
     :pswitch_d
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v0
 
@@ -963,7 +448,7 @@
     goto/16 :goto_1
 
     :pswitch_e
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gb(Landroid/os/Parcel;I)D
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iP(Landroid/os/Parcel;I)D
 
     move-result-wide v0
 
@@ -972,7 +457,7 @@
     goto/16 :goto_1
 
     :pswitch_f
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gi(Landroid/os/Parcel;I)Ljava/math/BigDecimal;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iW(Landroid/os/Parcel;I)Ljava/math/BigDecimal;
 
     move-result-object v0
 
@@ -981,7 +466,7 @@
     goto/16 :goto_1
 
     :pswitch_10
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
 
     move-result v0
 
@@ -990,7 +475,7 @@
     goto/16 :goto_1
 
     :pswitch_11
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1000,7 +485,7 @@
 
     move-result-object v1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/a/h;->jF(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/common/a/h;->mt(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1015,7 +500,7 @@
     goto/16 :goto_1
 
     :pswitch_12
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gf(Landroid/os/Parcel;I)[B
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iT(Landroid/os/Parcel;I)[B
 
     move-result-object v0
 
@@ -1025,7 +510,7 @@
 
     move-result-object v1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/a/e;->jz([B)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/common/a/e;->mn([B)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1040,7 +525,7 @@
     goto/16 :goto_1
 
     :pswitch_13
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->gf(Landroid/os/Parcel;I)[B
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iT(Landroid/os/Parcel;I)[B
 
     move-result-object v0
 
@@ -1050,7 +535,7 @@
 
     move-result-object v1
 
-    invoke-static {v0}, Lcom/google/android/gms/common/a/e;->jA([B)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/common/a/e;->mo([B)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1063,7 +548,7 @@
     goto/16 :goto_1
 
     :pswitch_14
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fP(Landroid/os/Parcel;I)Landroid/os/Bundle;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iD(Landroid/os/Parcel;I)Landroid/os/Bundle;
 
     move-result-object v3
 
@@ -1136,7 +621,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/a/h;->jF(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/common/a/h;->mt(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1160,17 +645,17 @@
     goto :goto_5
 
     :pswitch_15
-    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fx(Landroid/os/Parcel;I)Landroid/os/Parcel;
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->il(Landroid/os/Parcel;I)Landroid/os/Parcel;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->kp()Ljava/util/Map;
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->nd()Ljava/util/Map;
 
     move-result-object v1
 
-    invoke-direct {p0, p1, v1, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kx(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
+    invoke-direct {p0, p1, v1, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nl(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
 
     goto/16 :goto_1
 
@@ -1207,18 +692,557 @@
     .end packed-switch
 .end method
 
-
-# virtual methods
-.method kA()Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+.method private nr(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
     .locals 4
 
-    iget v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hT:I
+    const/4 v0, 0x0
+
+    const-string/jumbo v1, "["
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    :goto_0
+    if-lt v0, v1, :cond_0
+
+    const-string/jumbo v0, "]"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    return-void
+
+    :cond_0
+    if-nez v0, :cond_1
+
+    :goto_1
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->nh()I
+
+    move-result v2
+
+    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-direct {p0, p1, v2, v3}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nw(Ljava/lang/StringBuilder;ILjava/lang/Object;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const-string/jumbo v2, ","
+
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+.end method
+
+.method private nt(Ljava/lang/StringBuilder;Ljava/lang/String;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
+    .locals 2
+
+    const-string/jumbo v0, "\""
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "\":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p3}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->ne()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0, p1, p3, p4, p5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nn(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    invoke-direct {p0, p1, p3, p4, p5}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nx(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
+
+    goto :goto_0
+.end method
+
+.method private nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+    .locals 1
+
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->nc()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->nh()I
+
+    move-result v0
+
+    invoke-direct {p0, p1, v0, p3}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nw(Ljava/lang/StringBuilder;ILjava/lang/Object;)V
+
+    :goto_0
+    return-void
+
+    :cond_0
+    check-cast p3, Ljava/util/ArrayList;
+
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nr(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/util/ArrayList;)V
+
+    goto :goto_0
+.end method
+
+.method private static nv(Ljava/util/Map;)Landroid/util/SparseArray;
+    .locals 4
+
+    new-instance v2, Landroid/util/SparseArray;
+
+    invoke-direct {v2}, Landroid/util/SparseArray;-><init>()V
+
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-object v2
+
+    :cond_0
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->mX()I
+
+    move-result v1
+
+    invoke-virtual {v2, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    goto :goto_0
+.end method
+
+.method private nw(Ljava/lang/StringBuilder;ILjava/lang/Object;)V
+    .locals 3
+
+    packed-switch p2, :pswitch_data_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x1a
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string/jumbo v2, "Unknown type = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_0
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    :goto_0
+    return-void
+
+    :pswitch_1
+    const-string/jumbo v0, "\""
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/android/gms/common/a/h;->mt(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "\""
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :pswitch_2
+    const-string/jumbo v0, "\""
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    check-cast p3, [B
+
+    invoke-static {p3}, Lcom/google/android/gms/common/a/e;->mn([B)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "\""
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :pswitch_3
+    const-string/jumbo v0, "\""
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    check-cast p3, [B
+
+    invoke-static {p3}, Lcom/google/android/gms/common/a/e;->mo([B)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string/jumbo v0, "\""
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :pswitch_4
+    check-cast p3, Ljava/util/HashMap;
+
+    invoke-static {p1, p3}, Lcom/google/android/gms/common/a/b;->mi(Ljava/lang/StringBuilder;Ljava/util/HashMap;)V
+
+    goto :goto_0
+
+    :pswitch_5
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Method does not accept concrete type."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+    .end packed-switch
+.end method
+
+.method private nx(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Landroid/os/Parcel;I)V
+    .locals 4
+
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->mT()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p2}, Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;->mT()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const/16 v3, 0x24
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string/jumbo v3, "Unknown field out type = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_0
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    :goto_0
+    return-void
+
+    :pswitch_1
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->it(Landroid/os/Parcel;I)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_2
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_3
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_4
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iP(Landroid/os/Parcel;I)D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_5
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iW(Landroid/os/Parcel;I)Ljava/math/BigDecimal;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_6
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_7
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_8
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iT(Landroid/os/Parcel;I)[B
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_9
+    invoke-static {p3, p4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iD(Landroid/os/Parcel;I)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nm(Landroid/os/Bundle;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nP(Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nu(Ljava/lang/StringBuilder;Lcom/google/android/gms/common/server/response/FastJsonResponse$Field;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :pswitch_a
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Method does not accept concrete type."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_8
+        :pswitch_9
+        :pswitch_a
+    .end packed-switch
+.end method
+
+
+# virtual methods
+.method public mR(Ljava/lang/String;)Z
+    .locals 2
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string/jumbo v1, "Converting to JSON does not require this method."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public mS(Ljava/lang/String;)Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string/jumbo v1, "Converting to JSON does not require this method."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method no()Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    .locals 4
+
+    iget v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kL:I
 
     packed-switch v0, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    iget v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hT:I
+    iget v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kL:I
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1250,12 +1274,12 @@
     return-object v0
 
     :pswitch_1
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
     return-object v0
 
     :pswitch_2
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
     return-object v0
 
@@ -1269,20 +1293,20 @@
     .end packed-switch
 .end method
 
-.method public kB()Ljava/util/Map;
+.method public np()Ljava/util/Map;
     .locals 2
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hZ:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kR:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kV(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->nI(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -1292,54 +1316,54 @@
     return-object v1
 .end method
 
-.method public kC()I
+.method public nq()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hX:I
+    iget v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kP:I
 
     return v0
 .end method
 
-.method public kE()Landroid/os/Parcel;
+.method public ns()Landroid/os/Parcel;
     .locals 3
 
     const/4 v2, 0x2
 
-    iget v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hU:I
+    iget v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kM:I
 
     packed-switch v0, :pswitch_data_0
 
     :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hV:Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kN:Landroid/os/Parcel;
 
     return-object v0
 
     :pswitch_0
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hV:Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kN:Landroid/os/Parcel;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    iput v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hY:I
+    iput v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kQ:I
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hV:Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kN:Landroid/os/Parcel;
 
-    iget v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hY:I
+    iget v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kQ:I
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     :goto_1
-    iput v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hU:I
+    iput v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kM:I
 
     goto :goto_0
 
     :pswitch_1
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hV:Landroid/os/Parcel;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kN:Landroid/os/Parcel;
 
-    iget v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hY:I
+    iget v1, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kQ:I
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     goto :goto_1
 
@@ -1352,40 +1376,16 @@
     .end packed-switch
 .end method
 
-.method public kd(Ljava/lang/String;)Z
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string/jumbo v1, "Converting to JSON does not require this method."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public ke(Ljava/lang/String;)Ljava/lang/Object;
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string/jumbo v1, "Converting to JSON does not require this method."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v0, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
     const-string/jumbo v1, "Cannot convert to JSON on client side."
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/l;->ho(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/l;->kc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kE()Landroid/os/Parcel;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->ns()Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -1399,15 +1399,15 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hW:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
+    iget-object v2, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kO:Lcom/google/android/gms/common/server/response/FieldMappingDictionary;
 
-    iget-object v3, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->hZ:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kR:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->kV(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {v2, v3}, Lcom/google/android/gms/common/server/response/FieldMappingDictionary;->nI(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v2
 
-    invoke-direct {p0, v1, v2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->kx(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
+    invoke-direct {p0, v1, v2, v0}, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->nl(Ljava/lang/StringBuilder;Ljava/util/Map;Landroid/os/Parcel;)V
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1421,7 +1421,7 @@
 
     sget-object v0, Lcom/google/android/gms/common/server/response/SafeParcelResponse;->CREATOR:Lcom/google/android/gms/common/server/response/b;
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/response/b;->kM(Lcom/google/android/gms/common/server/response/SafeParcelResponse;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/server/response/b;->nA(Lcom/google/android/gms/common/server/response/SafeParcelResponse;Landroid/os/Parcel;I)V
 
     return-void
 .end method

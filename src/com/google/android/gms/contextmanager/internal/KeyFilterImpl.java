@@ -13,35 +13,35 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class KeyFilterImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final ArrayList Hc;
-    private final int Hd;
+    private final ArrayList IH;
+    private final int II;
     
     static {
         CREATOR = (Parcelable$Creator)new m();
     }
     
-    KeyFilterImpl(final int hd, final ArrayList hc) {
-        this.Hd = hd;
-        this.Hc = hc;
+    KeyFilterImpl(final int ii, final ArrayList ih) {
+        this.II = ii;
+        this.IH = ih;
     }
     
-    int Mc() {
-        return this.Hd;
+    int MV() {
+        return this.II;
     }
     
-    public ArrayList Md() {
-        return this.Hc;
+    public ArrayList MW() {
+        return this.IH;
     }
     
     public boolean equals(final Object o) {
-        return this == o || (o instanceof KeyFilterImpl && this.Md().equals(((KeyFilterImpl)o).Md()));
+        return this == o || (o instanceof KeyFilterImpl && this.MW().equals(((KeyFilterImpl)o).MW()));
     }
     
     public int hashCode() {
-        return u.hI(this.Hc);
+        return u.kw(this.IH);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        m.Nv(this, parcel, n);
+        m.Oo(this, parcel, n);
     }
 }

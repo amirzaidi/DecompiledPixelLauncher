@@ -4,12 +4,19 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.phenotype.f;
-import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.api.m;
+import com.google.android.gms.phenotype.Configurations;
+import com.google.android.gms.common.api.Status;
 
-abstract class q extends b
+class q extends j
 {
-    public q(final d d) {
-        super(com.google.android.gms.phenotype.f.lS, d);
+    final /* synthetic */ s pb;
+    
+    q(final s pb) {
+        this.pb = pb;
+    }
+    
+    public void zza(final Status status, final Configurations configurations) {
+        this.pb.rV(new t(status, configurations));
     }
 }

@@ -6,48 +6,38 @@
 
 
 # instance fields
-.field final synthetic uJ:Lcom/google/android/gms/internal/bv;
+.field final synthetic vq:Lcom/google/android/gms/internal/bB;
+
+
+# direct methods
+.method constructor <init>(Lcom/google/android/gms/internal/bB;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/bD;->vq:Lcom/google/android/gms/internal/bB;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
 .method public run()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/bD;->uJ:Lcom/google/android/gms/internal/bv;
+    iget-object v0, p0, Lcom/google/android/gms/internal/bD;->vq:Lcom/google/android/gms/internal/bB;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/bv;->zh(Lcom/google/android/gms/internal/bv;)Ljava/util/concurrent/locks/Lock;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
-
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/bD;->uJ:Lcom/google/android/gms/internal/bv;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/bv;->ze(Lcom/google/android/gms/internal/bv;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/bD;->uJ:Lcom/google/android/gms/internal/bv;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/bv;->zh(Lcom/google/android/gms/internal/bv;)Ljava/util/concurrent/locks/Lock;
+    invoke-static {v0}, Lcom/google/android/gms/internal/bB;->zZ(Lcom/google/android/gms/internal/bB;)Lcom/google/android/gms/common/f;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    iget-object v1, p0, Lcom/google/android/gms/internal/bD;->vq:Lcom/google/android/gms/internal/bB;
 
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/bD;->uJ:Lcom/google/android/gms/internal/bv;
-
-    invoke-static {v1}, Lcom/google/android/gms/internal/bv;->zh(Lcom/google/android/gms/internal/bv;)Ljava/util/concurrent/locks/Lock;
+    invoke-static {v1}, Lcom/google/android/gms/internal/bB;->Au(Lcom/google/android/gms/internal/bB;)Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/f;->qG(Landroid/content/Context;)V
 
-    throw v0
+    return-void
 .end method

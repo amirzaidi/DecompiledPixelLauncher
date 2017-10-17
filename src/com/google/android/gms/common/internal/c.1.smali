@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract gB(Lcom/google/android/gms/common/ConnectionResult;)V
+.method public abstract jp(Lcom/google/android/gms/common/ConnectionResult;)V
 .end method

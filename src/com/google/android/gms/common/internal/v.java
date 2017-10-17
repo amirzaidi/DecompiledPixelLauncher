@@ -9,14 +9,14 @@ import android.content.ComponentName;
 
 final class v
 {
-    private final String fM;
-    private final String fN;
-    private final ComponentName fO;
+    private final String iE;
+    private final String iF;
+    private final ComponentName iG;
     
     public v(final String s, final String s2) {
-        this.fM = l.hr(s);
-        this.fN = l.hr(s2);
-        this.fO = null;
+        this.iE = l.kf(s);
+        this.iF = l.kf(s2);
+        this.iG = null;
     }
     
     public boolean equals(final Object o) {
@@ -26,7 +26,7 @@ final class v
         }
         if (o instanceof v) {
             final v v = (v)o;
-            if (!u.hH(this.fM, v.fM) || !u.hH(this.fO, v.fO)) {
+            if (!u.kv(this.iE, v.iE) || !u.kv(this.iG, v.iG)) {
                 b = false;
             }
             return b;
@@ -34,28 +34,28 @@ final class v
         return false;
     }
     
-    public Intent hK() {
+    public int hashCode() {
+        return u.kw(this.iE, this.iG);
+    }
+    
+    public Intent ky() {
         Intent intent;
-        if (this.fM == null) {
-            intent = new Intent().setComponent(this.fO);
+        if (this.iE == null) {
+            intent = new Intent().setComponent(this.iG);
         }
         else {
-            intent = new Intent(this.fM).setPackage(this.fN);
+            intent = new Intent(this.iE).setPackage(this.iF);
         }
         return intent;
     }
     
-    public int hashCode() {
-        return u.hI(this.fM, this.fO);
-    }
-    
     public String toString() {
         String s;
-        if (this.fM != null) {
-            s = this.fM;
+        if (this.iE != null) {
+            s = this.iE;
         }
         else {
-            s = this.fO.flattenToString();
+            s = this.iG.flattenToString();
         }
         return s;
     }

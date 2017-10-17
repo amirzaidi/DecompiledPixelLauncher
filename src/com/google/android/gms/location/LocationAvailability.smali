@@ -10,15 +10,15 @@
 
 
 # instance fields
-.field BL:I
+.field Dq:I
 
-.field private final BM:I
+.field private final Dr:I
 
-.field BN:I
+.field Ds:I
 
-.field BO:J
+.field Dt:J
 
-.field BP:I
+.field Du:I
 
 
 # direct methods
@@ -39,25 +39,25 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/LocationAvailability;->BM:I
+    iput p1, p0, Lcom/google/android/gms/location/LocationAvailability;->Dr:I
 
-    iput p2, p0, Lcom/google/android/gms/location/LocationAvailability;->BP:I
+    iput p2, p0, Lcom/google/android/gms/location/LocationAvailability;->Du:I
 
-    iput p3, p0, Lcom/google/android/gms/location/LocationAvailability;->BL:I
+    iput p3, p0, Lcom/google/android/gms/location/LocationAvailability;->Dq:I
 
-    iput p4, p0, Lcom/google/android/gms/location/LocationAvailability;->BN:I
+    iput p4, p0, Lcom/google/android/gms/location/LocationAvailability;->Ds:I
 
-    iput-wide p5, p0, Lcom/google/android/gms/location/LocationAvailability;->BO:J
+    iput-wide p5, p0, Lcom/google/android/gms/location/LocationAvailability;->Dt:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Gx()Z
+.method public Hq()Z
     .locals 2
 
-    iget v0, p0, Lcom/google/android/gms/location/LocationAvailability;->BP:I
+    iget v0, p0, Lcom/google/android/gms/location/LocationAvailability;->Du:I
 
     const/16 v1, 0x3e8
 
@@ -74,10 +74,10 @@
     goto :goto_0
 .end method
 
-.method Gy()I
+.method Hr()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/LocationAvailability;->BM:I
+    iget v0, p0, Lcom/google/android/gms/location/LocationAvailability;->Dr:I
 
     return v0
 .end method
@@ -93,9 +93,9 @@
 
     check-cast p1, Lcom/google/android/gms/location/LocationAvailability;
 
-    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->BP:I
+    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->Du:I
 
-    iget v2, p1, Lcom/google/android/gms/location/LocationAvailability;->BP:I
+    iget v2, p1, Lcom/google/android/gms/location/LocationAvailability;->Du:I
 
     if-eq v1, v2, :cond_2
 
@@ -107,21 +107,21 @@
     return v0
 
     :cond_2
-    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->BL:I
+    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->Dq:I
 
-    iget v2, p1, Lcom/google/android/gms/location/LocationAvailability;->BL:I
-
-    if-ne v1, v2, :cond_0
-
-    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->BN:I
-
-    iget v2, p1, Lcom/google/android/gms/location/LocationAvailability;->BN:I
+    iget v2, p1, Lcom/google/android/gms/location/LocationAvailability;->Dq:I
 
     if-ne v1, v2, :cond_0
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/LocationAvailability;->BO:J
+    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->Ds:I
 
-    iget-wide v4, p1, Lcom/google/android/gms/location/LocationAvailability;->BO:J
+    iget v2, p1, Lcom/google/android/gms/location/LocationAvailability;->Ds:I
+
+    if-ne v1, v2, :cond_0
+
+    iget-wide v2, p0, Lcom/google/android/gms/location/LocationAvailability;->Dt:J
+
+    iget-wide v4, p1, Lcom/google/android/gms/location/LocationAvailability;->Dt:J
 
     cmp-long v1, v2, v4
 
@@ -139,7 +139,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->BP:I
+    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->Du:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -149,7 +149,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->BL:I
+    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->Dq:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -159,7 +159,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->BN:I
+    iget v1, p0, Lcom/google/android/gms/location/LocationAvailability;->Ds:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -169,7 +169,7 @@
 
     aput-object v1, v0, v2
 
-    iget-wide v2, p0, Lcom/google/android/gms/location/LocationAvailability;->BO:J
+    iget-wide v2, p0, Lcom/google/android/gms/location/LocationAvailability;->Dt:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -179,7 +179,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -189,7 +189,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationAvailability;->Gx()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/location/LocationAvailability;->Hq()Z
 
     move-result v0
 
@@ -225,7 +225,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/h;->Hf(Lcom/google/android/gms/location/LocationAvailability;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/h;->HY(Lcom/google/android/gms/location/LocationAvailability;Landroid/os/Parcel;I)V
 
     return-void
 .end method

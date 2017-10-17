@@ -6,15 +6,15 @@
 
 
 # static fields
-.field private static fq:Ljava/lang/ClassLoader;
+.field private static ii:Ljava/lang/ClassLoader;
 
-.field private static fr:Ljava/lang/Integer;
+.field private static ij:Ljava/lang/Integer;
 
-.field private static final fs:Ljava/lang/Object;
+.field private static final ik:Ljava/lang/Object;
 
 
 # instance fields
-.field private ft:Z
+.field private il:Z
 
 
 # direct methods
@@ -27,11 +27,11 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->fs:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->ik:Ljava/lang/Object;
 
-    sput-object v1, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->fq:Ljava/lang/ClassLoader;
+    sput-object v1, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->ii:Ljava/lang/ClassLoader;
 
-    sput-object v1, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->fr:Ljava/lang/Integer;
+    sput-object v1, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->ij:Ljava/lang/Integer;
 
     return-void
 .end method
@@ -43,7 +43,7 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->ft:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/internal/DowngradeableSafeParcel;->il:Z
 
     return-void
 .end method

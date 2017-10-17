@@ -6,25 +6,7 @@ package com.google.android.gms.common.a;
 
 public final class l
 {
-    public static void jK(final StringBuilder sb, final Object[] array) {
-        for (int i = 0; i < array.length; ++i) {
-            if (i != 0) {
-                sb.append(",");
-            }
-            sb.append(array[i].toString());
-        }
-    }
-    
-    public static void jL(final StringBuilder sb, final String[] array) {
-        for (int i = 0; i < array.length; ++i) {
-            if (i != 0) {
-                sb.append(",");
-            }
-            sb.append("\"").append(array[i]).append("\"");
-        }
-    }
-    
-    public static void jM(final StringBuilder sb, final int[] array) {
+    public static void mA(final StringBuilder sb, final int[] array) {
         for (int i = 0; i < array.length; ++i) {
             if (i != 0) {
                 sb.append(",");
@@ -33,7 +15,7 @@ public final class l
         }
     }
     
-    public static void jN(final StringBuilder sb, final long[] array) {
+    public static void mB(final StringBuilder sb, final long[] array) {
         for (int i = 0; i < array.length; ++i) {
             if (i != 0) {
                 sb.append(",");
@@ -42,7 +24,7 @@ public final class l
         }
     }
     
-    public static void jO(final StringBuilder sb, final boolean[] array) {
+    public static void mC(final StringBuilder sb, final boolean[] array) {
         for (int i = 0; i < array.length; ++i) {
             if (i != 0) {
                 sb.append(",");
@@ -51,7 +33,7 @@ public final class l
         }
     }
     
-    public static void jP(final StringBuilder sb, final double[] array) {
+    public static void mD(final StringBuilder sb, final double[] array) {
         for (int i = 0; i < array.length; ++i) {
             if (i != 0) {
                 sb.append(",");
@@ -60,12 +42,30 @@ public final class l
         }
     }
     
-    public static void jQ(final StringBuilder sb, final float[] array) {
+    public static void mE(final StringBuilder sb, final float[] array) {
         for (int i = 0; i < array.length; ++i) {
             if (i != 0) {
                 sb.append(",");
             }
             sb.append(Float.toString(array[i]));
+        }
+    }
+    
+    public static void my(final StringBuilder sb, final Object[] array) {
+        for (int i = 0; i < array.length; ++i) {
+            if (i != 0) {
+                sb.append(",");
+            }
+            sb.append(array[i].toString());
+        }
+    }
+    
+    public static void mz(final StringBuilder sb, final String[] array) {
+        for (int i = 0; i < array.length; ++i) {
+            if (i != 0) {
+                sb.append(",");
+            }
+            sb.append("\"").append(array[i]).append("\"");
         }
     }
 }

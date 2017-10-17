@@ -6,7 +6,7 @@ package com.google.android.gms.common.api;
 
 import android.content.DialogInterface;
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.internal.bM;
+import com.google.android.gms.internal.bG;
 import android.os.Parcelable;
 import android.content.Context;
 import android.os.Bundle;
@@ -20,14 +20,14 @@ import android.app.Activity;
 
 public class GoogleApiActivity extends Activity implements DialogInterface$OnCancelListener
 {
-    protected int eK;
+    protected int hD;
     
     public GoogleApiActivity() {
-        this.eK = 0;
+        this.hD = 0;
     }
     
-    private void eO() {
-        final boolean ek = true;
+    private void hC() {
+        final boolean hd = true;
         final Bundle extras = this.getIntent().getExtras();
         if (extras == null) {
             Log.e("GoogleApiActivity", "Activity started without extras");
@@ -42,13 +42,13 @@ public class GoogleApiActivity extends Activity implements DialogInterface$OnCan
             return;
         }
         if (pendingIntent == null) {
-            a.nI().nG(this, n, 2, (DialogInterface$OnCancelListener)this);
-            this.eK = (ek ? 1 : 0);
+            a.getInstance().qt(this, n, 2, (DialogInterface$OnCancelListener)this);
+            this.hD = (hd ? 1 : 0);
         }
         else {
             try {
                 this.startIntentSenderForResult(pendingIntent.getIntentSender(), 1, (Intent)null, 0, 0, 0);
-                this.eK = 1;
+                this.hD = 1;
             }
             catch (IntentSender$SendIntentException ex) {
                 Log.e("GoogleApiActivity", "Failed to launch pendingIntent", (Throwable)ex);
@@ -57,11 +57,11 @@ public class GoogleApiActivity extends Activity implements DialogInterface$OnCan
         }
     }
     
-    public static PendingIntent eP(final Context context, final PendingIntent pendingIntent, final int n, final boolean b) {
-        return PendingIntent.getActivity(context, 0, eQ(context, pendingIntent, n, b), 134217728);
+    public static PendingIntent hD(final Context context, final PendingIntent pendingIntent, final int n, final boolean b) {
+        return PendingIntent.getActivity(context, 0, hE(context, pendingIntent, n, b), 134217728);
     }
     
-    public static Intent eQ(final Context context, final PendingIntent pendingIntent, final int n, final boolean b) {
+    public static Intent hE(final Context context, final PendingIntent pendingIntent, final int n, final boolean b) {
         final Intent intent = new Intent(context, (Class)GoogleApiActivity.class);
         intent.putExtra("pending_intent", (Parcelable)pendingIntent);
         intent.putExtra("failing_client_id", n);
@@ -69,24 +69,24 @@ public class GoogleApiActivity extends Activity implements DialogInterface$OnCan
         return intent;
     }
     
-    public static PendingIntent eR(final Context context, final PendingIntent pendingIntent, final int n) {
-        return eP(context, pendingIntent, n, true);
+    public static PendingIntent hF(final Context context, final PendingIntent pendingIntent, final int n) {
+        return hD(context, pendingIntent, n, true);
     }
     
-    private void eS(final int n, final bM bm) {
+    private void hG(final int n, final bG bg) {
         switch (n) {
             case 0: {
-                bm.AP(new ConnectionResult(13, null), this.getIntent().getIntExtra("failing_client_id", -1));
+                bg.AO(new ConnectionResult(13, null), this.getIntent().getIntExtra("failing_client_id", -1));
                 break;
             }
             case -1: {
-                bm.Bg();
+                bg.Bf();
                 break;
             }
         }
     }
     
-    protected void eN(final int result) {
+    protected void hB(final int result) {
         this.setResult(result);
     }
     
@@ -95,39 +95,39 @@ public class GoogleApiActivity extends Activity implements DialogInterface$OnCan
         super.onActivityResult(n, n2, intent);
         if (n != (b ? 1 : 0)) {
             if (n == 2) {
-                this.eK = 0;
-                this.eN(n2);
+                this.hD = 0;
+                this.hB(n2);
             }
         }
         else {
             final boolean booleanExtra = this.getIntent().getBooleanExtra("notify_manager", b);
-            this.eK = 0;
-            final bM bj = bM.Bj();
-            this.eN(n2);
+            this.hD = 0;
+            final bG bi = bG.Bi();
+            this.hB(n2);
             if (booleanExtra) {
-                this.eS(n2, bj);
+                this.hG(n2, bi);
             }
         }
         this.finish();
     }
     
     public void onCancel(final DialogInterface dialogInterface) {
-        this.setResult(this.eK = 0);
+        this.setResult(this.hD = 0);
         this.finish();
     }
     
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
         if (bundle != null) {
-            this.eK = bundle.getInt("resolution");
+            this.hD = bundle.getInt("resolution");
         }
-        if (this.eK != 1) {
-            this.eO();
+        if (this.hD != 1) {
+            this.hC();
         }
     }
     
     protected void onSaveInstanceState(final Bundle bundle) {
-        bundle.putInt("resolution", this.eK);
+        bundle.putInt("resolution", this.hD);
         super.onSaveInstanceState(bundle);
     }
 }

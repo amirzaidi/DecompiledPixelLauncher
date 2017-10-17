@@ -12,41 +12,41 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void lt(final ConverterWrapper converterWrapper, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, converterWrapper.lq());
-        a.eW(parcel, 2, (Parcelable)converterWrapper.lo(), n, false);
-        a.fe(parcel, ey);
+    static void oh(final ConverterWrapper converterWrapper, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, converterWrapper.oe());
+        a.hK(parcel, 2, (Parcelable)converterWrapper.oc(), n, false);
+        a.hS(parcel, hm);
     }
     
-    public ConverterWrapper ls(final Parcel parcel) {
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn = 0;
+    public ConverterWrapper og(final Parcel parcel) {
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib = 0;
         StringToIntConverter stringToIntConverter = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    stringToIntConverter = (StringToIntConverter)com.google.android.gms.common.internal.safeparcel.b.fW(parcel, fs, (Parcelable$Creator)StringToIntConverter.CREATOR);
+                    stringToIntConverter = (StringToIntConverter)com.google.android.gms.common.internal.safeparcel.b.iK(parcel, ig, (Parcelable$Creator)StringToIntConverter.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ConverterWrapper(fn, stringToIntConverter);
+        if (parcel.dataPosition() == ix) {
+            return new ConverterWrapper(ib, stringToIntConverter);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public ConverterWrapper[] lu(final int n) {
+    public ConverterWrapper[] oi(final int n) {
         return new ConverterWrapper[n];
     }
 }

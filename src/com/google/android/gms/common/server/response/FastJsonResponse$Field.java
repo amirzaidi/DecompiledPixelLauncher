@@ -13,129 +13,129 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class FastJsonResponse$Field extends AbstractSafeParcelable
 {
     public static final f CREATOR;
-    protected final int hF;
-    protected final boolean hG;
-    protected final String hH;
-    protected final boolean hI;
-    protected final int hJ;
-    protected final int hK;
-    private FieldMappingDictionary hL;
-    private final int hM;
-    protected final Class hN;
-    protected final String hO;
-    private e hP;
+    protected final boolean kA;
+    protected final int kB;
+    protected final int kC;
+    private FieldMappingDictionary kD;
+    private final int kE;
+    protected final Class kF;
+    protected final String kG;
+    private e kH;
+    protected final int kx;
+    protected final boolean ky;
+    protected final String kz;
     
     static {
         CREATOR = new f();
     }
     
-    FastJsonResponse$Field(final int hm, final int hf, final boolean hi, final int hj, final boolean hg, final String hh, final int hk, final String ho, final ConverterWrapper converterWrapper) {
-        this.hM = hm;
-        this.hF = hf;
-        this.hI = hi;
-        this.hJ = hj;
-        this.hG = hg;
-        this.hH = hh;
-        this.hK = hk;
-        if (ho != null) {
-            this.hN = SafeParcelResponse.class;
-            this.hO = ho;
+    FastJsonResponse$Field(final int ke, final int kx, final boolean ka, final int kb, final boolean ky, final String kz, final int kc, final String kg, final ConverterWrapper converterWrapper) {
+        this.kE = ke;
+        this.kx = kx;
+        this.kA = ka;
+        this.kB = kb;
+        this.ky = ky;
+        this.kz = kz;
+        this.kC = kc;
+        if (kg != null) {
+            this.kF = SafeParcelResponse.class;
+            this.kG = kg;
         }
         else {
-            this.hN = null;
-            this.hO = null;
+            this.kF = null;
+            this.kG = null;
         }
         if (converterWrapper != null) {
-            this.hP = converterWrapper.lr();
+            this.kH = converterWrapper.of();
         }
         else {
-            this.hP = null;
+            this.kH = null;
         }
     }
     
-    public int kf() {
-        return this.hJ;
+    public int mT() {
+        return this.kB;
     }
     
-    String kg() {
-        if (this.hO != null) {
-            return this.hO;
-        }
-        return null;
-    }
-    
-    public boolean kh() {
-        return this.hG;
-    }
-    
-    public int ki() {
-        return this.hM;
-    }
-    
-    public int kj() {
-        return this.hK;
-    }
-    
-    ConverterWrapper kk() {
-        if (this.hP != null) {
-            return ConverterWrapper.lp(this.hP);
+    String mU() {
+        if (this.kG != null) {
+            return this.kG;
         }
         return null;
     }
     
-    public Object kl(final Object o) {
-        return this.hP.kP(o);
+    public boolean mV() {
+        return this.ky;
     }
     
-    public void km(final FieldMappingDictionary hl) {
-        this.hL = hl;
+    public int mW() {
+        return this.kE;
     }
     
-    public String kn() {
-        return this.hH;
+    public int mX() {
+        return this.kC;
     }
     
-    public boolean ko() {
-        return this.hI;
+    ConverterWrapper mY() {
+        if (this.kH != null) {
+            return ConverterWrapper.od(this.kH);
+        }
+        return null;
     }
     
-    public Map kp() {
-        l.ht(this.hO);
-        l.ht(this.hL);
-        return this.hL.kV(this.hO);
+    public Object mZ(final Object o) {
+        return this.kH.nD(o);
     }
     
-    public boolean kq() {
-        return this.hP != null;
+    public void na(final FieldMappingDictionary kd) {
+        this.kD = kd;
     }
     
-    public Class ks() {
-        return this.hN;
+    public String nb() {
+        return this.kz;
     }
     
-    public int kt() {
-        return this.hF;
+    public boolean nc() {
+        return this.kA;
+    }
+    
+    public Map nd() {
+        l.kh(this.kG);
+        l.kh(this.kD);
+        return this.kD.nI(this.kG);
+    }
+    
+    public boolean ne() {
+        return this.kH != null;
+    }
+    
+    public Class ng() {
+        return this.kF;
+    }
+    
+    public int nh() {
+        return this.kx;
     }
     
     public String toString() {
         final char c = '\n';
         final StringBuilder sb = new StringBuilder();
         sb.append("Field\n");
-        sb.append("            versionCode=").append(this.hM).append(c);
-        sb.append("                 typeIn=").append(this.hF).append(c);
-        sb.append("            typeInArray=").append(this.hI).append(c);
-        sb.append("                typeOut=").append(this.hJ).append(c);
-        sb.append("           typeOutArray=").append(this.hG).append(c);
-        sb.append("        outputFieldName=").append(this.hH).append(c);
-        sb.append("      safeParcelFieldId=").append(this.hK).append(c);
-        sb.append("       concreteTypeName=").append(this.kg()).append(c);
-        if (this.ks() != null) {
-            sb.append("     concreteType.class=").append(this.ks().getCanonicalName()).append(c);
+        sb.append("            versionCode=").append(this.kE).append(c);
+        sb.append("                 typeIn=").append(this.kx).append(c);
+        sb.append("            typeInArray=").append(this.kA).append(c);
+        sb.append("                typeOut=").append(this.kB).append(c);
+        sb.append("           typeOutArray=").append(this.ky).append(c);
+        sb.append("        outputFieldName=").append(this.kz).append(c);
+        sb.append("      safeParcelFieldId=").append(this.kC).append(c);
+        sb.append("       concreteTypeName=").append(this.mU()).append(c);
+        if (this.ng() != null) {
+            sb.append("     concreteType.class=").append(this.ng().getCanonicalName()).append(c);
         }
         final StringBuilder append = sb.append("          converterName=");
         String canonicalName;
-        if (this.hP != null) {
-            canonicalName = this.hP.getClass().getCanonicalName();
+        if (this.kH != null) {
+            canonicalName = this.kH.getClass().getCanonicalName();
         }
         else {
             canonicalName = "null";
@@ -146,6 +146,6 @@ public class FastJsonResponse$Field extends AbstractSafeParcelable
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final f creator = FastJsonResponse$Field.CREATOR;
-        f.kQ(this, parcel, n);
+        f.nK(this, parcel, n);
     }
 }

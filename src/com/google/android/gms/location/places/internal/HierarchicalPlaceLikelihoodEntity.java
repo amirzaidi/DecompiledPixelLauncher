@@ -7,33 +7,33 @@ package com.google.android.gms.location.places.internal;
 import android.os.Parcel;
 import com.google.android.gms.common.internal.u;
 import java.util.Collections;
-import java.util.List;
 import android.os.Parcelable$Creator;
+import java.util.List;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public class HierarchicalPlaceLikelihoodEntity extends AbstractSafeParcelable
 {
+    public static final List Ax;
     public static final Parcelable$Creator CREATOR;
-    public static final List yS;
-    final PlaceEntity yO;
-    final List yP;
-    final int yQ;
-    final int yR;
-    final float yT;
-    final float yU;
+    final PlaceEntity At;
+    final List Au;
+    final int Av;
+    final int Aw;
+    final float Ay;
+    final float Az;
     
     static {
-        yS = Collections.emptyList();
+        Ax = Collections.emptyList();
         CREATOR = (Parcelable$Creator)new c();
     }
     
-    HierarchicalPlaceLikelihoodEntity(final int yq, final PlaceEntity yo, final float yt, final float yu, final int yr, final List yp) {
-        this.yQ = yq;
-        this.yO = yo;
-        this.yT = yt;
-        this.yU = yu;
-        this.yR = yr;
-        this.yP = yp;
+    HierarchicalPlaceLikelihoodEntity(final int av, final PlaceEntity at, final float ay, final float az, final int aw, final List au) {
+        this.Av = av;
+        this.At = at;
+        this.Ay = ay;
+        this.Az = az;
+        this.Aw = aw;
+        this.Au = au;
     }
     
     public boolean equals(final Object o) {
@@ -43,7 +43,7 @@ public class HierarchicalPlaceLikelihoodEntity extends AbstractSafeParcelable
         }
         if (o instanceof HierarchicalPlaceLikelihoodEntity) {
             final HierarchicalPlaceLikelihoodEntity hierarchicalPlaceLikelihoodEntity = (HierarchicalPlaceLikelihoodEntity)o;
-            if (this.yO.equals(hierarchicalPlaceLikelihoodEntity.yO) || this.yT != hierarchicalPlaceLikelihoodEntity.yT || this.yU != hierarchicalPlaceLikelihoodEntity.yU || this.yR != hierarchicalPlaceLikelihoodEntity.yR || this.yP.equals(hierarchicalPlaceLikelihoodEntity.yP)) {
+            if (this.At.equals(hierarchicalPlaceLikelihoodEntity.At) || this.Ay != hierarchicalPlaceLikelihoodEntity.Ay || this.Az != hierarchicalPlaceLikelihoodEntity.Az || this.Aw != hierarchicalPlaceLikelihoodEntity.Aw || this.Au.equals(hierarchicalPlaceLikelihoodEntity.Au)) {
                 b = false;
             }
             return b;
@@ -52,14 +52,14 @@ public class HierarchicalPlaceLikelihoodEntity extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.yO, this.yT);
+        return u.kw(this.At, this.Ay);
     }
     
     public String toString() {
-        return u.hJ(this).hB("place", this.yO).hB("likelihood", this.yT).hB("hierarchyLikelihood", this.yU).hB("hierarchyLevel", this.yR).hB("containedPlaceIds", this.yP.toString()).toString();
+        return u.kx(this).kp("place", this.At).kp("likelihood", this.Ay).kp("hierarchyLikelihood", this.Az).kp("hierarchyLevel", this.Aw).kp("containedPlaceIds", this.Au.toString()).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        c.CZ(this, parcel, n);
+        c.DS(this, parcel, n);
     }
 }

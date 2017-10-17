@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/phenotype/m;
+.implements Lcom/google/android/gms/phenotype/l;
 
 
 # direct methods

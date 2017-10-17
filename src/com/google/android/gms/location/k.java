@@ -12,53 +12,53 @@ import android.os.Parcelable$Creator;
 
 public class k implements Parcelable$Creator
 {
-    static void Hp(final SleepSegmentEvent sleepSegmentEvent, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fw(parcel, 1, sleepSegmentEvent.Hj());
-        a.fw(parcel, 2, sleepSegmentEvent.Hh());
-        a.fj(parcel, 3, sleepSegmentEvent.Hg());
-        a.fj(parcel, 1000, sleepSegmentEvent.Hi());
-        a.fe(parcel, ey);
+    static void Ii(final SleepSegmentEvent sleepSegmentEvent, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ik(parcel, 1, sleepSegmentEvent.Ic());
+        a.ik(parcel, 2, sleepSegmentEvent.Ia());
+        a.hX(parcel, 3, sleepSegmentEvent.HZ());
+        a.hX(parcel, 1000, sleepSegmentEvent.Ib());
+        a.hS(parcel, hm);
     }
     
-    public SleepSegmentEvent Ho(final Parcel parcel) {
-        long fl = 0L;
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        long fl2 = fl;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public SleepSegmentEvent Ih(final Parcel parcel) {
+        long iz = 0L;
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        long iz2 = iz;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fl2 = b.fL(parcel, fs);
+                    iz2 = b.iz(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new SleepSegmentEvent(fn2, fl2, fl, fn);
+        if (parcel.dataPosition() == ix) {
+            return new SleepSegmentEvent(ib2, iz2, iz, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public SleepSegmentEvent[] Hq(final int n) {
+    public SleepSegmentEvent[] Ij(final int n) {
         return new SleepSegmentEvent[n];
     }
 }

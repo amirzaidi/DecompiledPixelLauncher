@@ -1,58 +1,76 @@
-.class public final Lcom/google/android/gms/phenotype/f;
+.class public Lcom/google/android/gms/phenotype/f;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field public static final lP:Lcom/google/android/gms/common/api/r;
+.field private static final yw:Lcom/google/android/gms/phenotype/f;
 
-.field public static final lQ:Lcom/google/android/gms/phenotype/a;
 
-.field public static final lR:Lcom/google/android/gms/common/api/l;
+# instance fields
+.field private final yt:Ljava/util/concurrent/locks/ReadWriteLock;
 
-.field public static final lS:Lcom/google/android/gms/common/api/h;
+.field private final yu:Ljava/util/Set;
+
+.field private final yv:Ljava/util/Map;
+
+.field private final yx:Lcom/google/android/gms/phenotype/c;
+
+.field private final yy:Ljava/util/Map;
+
+.field private final yz:Ljava/util/Map;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 1
 
-    new-instance v0, Lcom/google/android/gms/common/api/r;
+    new-instance v0, Lcom/google/android/gms/phenotype/f;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/r;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/phenotype/f;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/phenotype/f;->lP:Lcom/google/android/gms/common/api/r;
-
-    new-instance v0, Lcom/google/android/gms/phenotype/l;
-
-    invoke-direct {v0}, Lcom/google/android/gms/phenotype/l;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/phenotype/f;->lR:Lcom/google/android/gms/common/api/l;
-
-    new-instance v0, Lcom/google/android/gms/common/api/h;
-
-    sget-object v1, Lcom/google/android/gms/phenotype/f;->lR:Lcom/google/android/gms/common/api/l;
-
-    sget-object v2, Lcom/google/android/gms/phenotype/f;->lP:Lcom/google/android/gms/common/api/r;
-
-    const-string/jumbo v3, "Phenotype.API"
-
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/h;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/l;Lcom/google/android/gms/common/api/r;)V
-
-    sput-object v0, Lcom/google/android/gms/phenotype/f;->lS:Lcom/google/android/gms/common/api/h;
-
-    new-instance v0, Lcom/google/android/gms/internal/k;
-
-    invoke-direct {v0}, Lcom/google/android/gms/internal/k;-><init>()V
-
-    sput-object v0, Lcom/google/android/gms/phenotype/f;->lQ:Lcom/google/android/gms/phenotype/a;
+    sput-object v0, Lcom/google/android/gms/phenotype/f;->yw:Lcom/google/android/gms/phenotype/f;
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/phenotype/f;->yt:Ljava/util/concurrent/locks/ReadWriteLock;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/phenotype/f;->yz:Ljava/util/Map;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/phenotype/f;->yy:Ljava/util/Map;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/phenotype/f;->yu:Ljava/util/Set;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/phenotype/f;->yv:Ljava/util/Map;
+
+    sget-object v0, Lcom/google/android/gms/phenotype/g;->yL:Lcom/google/android/gms/phenotype/c;
+
+    iput-object v0, p0, Lcom/google/android/gms/phenotype/f;->yx:Lcom/google/android/gms/phenotype/c;
 
     return-void
 .end method

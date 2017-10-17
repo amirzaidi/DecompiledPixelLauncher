@@ -3,17 +3,17 @@
 
 
 # instance fields
-.field private final km:Ljava/util/HashMap;
+.field private final ne:Ljava/util/HashMap;
 
-.field private final kn:[Ljava/lang/String;
+.field private final nf:[Ljava/lang/String;
 
-.field private final ko:Ljava/lang/String;
+.field private final ng:Ljava/lang/String;
 
-.field private kp:Z
+.field private nh:Z
 
-.field private final kq:Ljava/util/ArrayList;
+.field private final ni:Ljava/util/ArrayList;
 
-.field private kr:Ljava/lang/String;
+.field private nj:Ljava/lang/String;
 
 
 # direct methods
@@ -22,35 +22,35 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/l;->ht(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/l;->kh(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Ljava/lang/String;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->kn:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->nf:[Ljava/lang/String;
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->kq:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->ni:Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lcom/google/android/gms/common/data/e;->ko:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/common/data/e;->ng:Ljava/lang/String;
 
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->km:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->ne:Ljava/util/HashMap;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/gms/common/data/e;->kp:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/common/data/e;->nh:Z
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->kr:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/common/data/e;->nj:Ljava/lang/String;
 
     return-void
 .end method

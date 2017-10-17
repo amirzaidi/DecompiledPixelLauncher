@@ -14,30 +14,30 @@
     return-void
 .end method
 
-.method static IH(Lcom/google/android/gms/maps/model/MarkerOptions;Landroid/os/Parcel;I)V
+.method static JA(Lcom/google/android/gms/maps/model/MarkerOptions;Landroid/os/Parcel;I)V
     .locals 4
 
     const/4 v3, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jv()I
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Ko()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->JA()Lcom/google/android/gms/maps/model/LatLng;
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kt()Lcom/google/android/gms/maps/model/LatLng;
 
     move-result-object v1
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v2, v1, p2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->getTitle()Ljava/lang/String;
 
@@ -45,47 +45,47 @@
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jq()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kj()Ljava/lang/String;
 
     move-result-object v1
 
     const/4 v2, 0x4
 
-    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fo(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ic(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jy()Landroid/os/IBinder;
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kr()Landroid/os/IBinder;
 
     move-result-object v1
 
     const/4 v2, 0x5
 
-    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ff(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
+    invoke-static {p1, v2, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->hT(Landroid/os/Parcel;ILandroid/os/IBinder;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jw()F
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kp()F
 
     move-result v1
 
     const/4 v2, 0x6
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jr()F
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kk()F
 
     move-result v1
 
     const/4 v2, 0x7
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->JB()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Ku()Z
 
     move-result v1
 
     const/16 v2, 0x8
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fa(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hO(Landroid/os/Parcel;IZ)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->isVisible()Z
 
@@ -93,39 +93,39 @@
 
     const/16 v2, 0x9
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fa(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hO(Landroid/os/Parcel;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Js()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kl()Z
 
     move-result v1
 
     const/16 v2, 0xa
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fa(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hO(Landroid/os/Parcel;IZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Ju()F
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kn()F
 
     move-result v1
 
     const/16 v2, 0xb
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jz()F
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Ks()F
 
     move-result v1
 
     const/16 v2, 0xc
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jt()F
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Km()F
 
     move-result v1
 
     const/16 v2, 0xd
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->getAlpha()F
 
@@ -133,27 +133,35 @@
 
     const/16 v2, 0xe
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Jx()F
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/MarkerOptions;->Kq()F
 
     move-result v1
 
     const/16 v2, 0xf
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public IG(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/MarkerOptions;
+.method public JB(I)[Lcom/google/android/gms/maps/model/MarkerOptions;
+    .locals 1
+
+    new-array v0, p1, [Lcom/google/android/gms/maps/model/MarkerOptions;
+
+    return-object v0
+.end method
+
+.method public Jz(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/MarkerOptions;
     .locals 19
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v17
 
@@ -211,11 +219,11 @@
     return-object v1
 
     :cond_0
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v1
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v18
 
@@ -223,14 +231,14 @@
 
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v2
 
@@ -241,7 +249,7 @@
 
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {v0, v1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -254,7 +262,7 @@
     :pswitch_2
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -263,7 +271,7 @@
     :pswitch_3
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fQ(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iE(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -272,7 +280,7 @@
     :pswitch_4
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gh(Landroid/os/Parcel;I)Landroid/os/IBinder;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iV(Landroid/os/Parcel;I)Landroid/os/IBinder;
 
     move-result-object v6
 
@@ -281,7 +289,7 @@
     :pswitch_5
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v7
 
@@ -290,7 +298,7 @@
     :pswitch_6
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v8
 
@@ -299,7 +307,7 @@
     :pswitch_7
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
 
     move-result v9
 
@@ -308,7 +316,7 @@
     :pswitch_8
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
 
     move-result v10
 
@@ -317,7 +325,7 @@
     :pswitch_9
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fX(Landroid/os/Parcel;I)Z
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iL(Landroid/os/Parcel;I)Z
 
     move-result v11
 
@@ -326,7 +334,7 @@
     :pswitch_a
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v12
 
@@ -335,7 +343,7 @@
     :pswitch_b
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v13
 
@@ -344,7 +352,7 @@
     :pswitch_c
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v14
 
@@ -353,7 +361,7 @@
     :pswitch_d
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v15
 
@@ -362,7 +370,7 @@
     :pswitch_e
     move-object/from16 v0, p1
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v16
 
@@ -419,18 +427,10 @@
     .end packed-switch
 .end method
 
-.method public II(I)[Lcom/google/android/gms/maps/model/MarkerOptions;
-    .locals 1
-
-    new-array v0, p1, [Lcom/google/android/gms/maps/model/MarkerOptions;
-
-    return-object v0
-.end method
-
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/d;->IG(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/MarkerOptions;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/d;->Jz(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/MarkerOptions;
 
     move-result-object v0
 
@@ -440,7 +440,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/d;->II(I)[Lcom/google/android/gms/maps/model/MarkerOptions;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/d;->JB(I)[Lcom/google/android/gms/maps/model/MarkerOptions;
 
     move-result-object v0
 

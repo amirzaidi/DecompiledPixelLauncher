@@ -10,8 +10,8 @@ import android.os.Parcelable$Creator;
 
 public final class c
 {
-    public static SafeParcelable gk(final byte[] array, final Parcelable$Creator parcelable$Creator) {
-        l.ht(parcelable$Creator);
+    public static SafeParcelable iY(final byte[] array, final Parcelable$Creator parcelable$Creator) {
+        l.kh(parcelable$Creator);
         final Parcel obtain = Parcel.obtain();
         obtain.unmarshall(array, 0, array.length);
         obtain.setDataPosition(0);
@@ -20,7 +20,7 @@ public final class c
         return safeParcelable;
     }
     
-    public static byte[] gl(final SafeParcelable safeParcelable) {
+    public static byte[] iZ(final SafeParcelable safeParcelable) {
         final Parcel obtain = Parcel.obtain();
         safeParcelable.writeToParcel(obtain, 0);
         final byte[] marshall = obtain.marshall();

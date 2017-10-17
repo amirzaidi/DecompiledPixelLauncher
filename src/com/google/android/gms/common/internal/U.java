@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public final class u
 {
-    public static boolean hH(final Object o, final Object o2) {
+    public static boolean kv(final Object o, final Object o2) {
         boolean b = false;
         if (o != o2) {
             if (o == null) {
@@ -22,11 +22,11 @@ public final class u
         return b;
     }
     
-    public static int hI(final Object... array) {
+    public static int kw(final Object... array) {
         return Arrays.hashCode(array);
     }
     
-    public static n hJ(final Object o) {
+    public static n kx(final Object o) {
         return new n(o, null);
     }
 }

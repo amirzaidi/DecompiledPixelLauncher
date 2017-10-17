@@ -14,24 +14,24 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class UpdateFenceOperation extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final long Id;
-    private final long Ie;
-    private final a If;
-    private final String Ig;
-    private final ContextFenceRegistrationStub Ih;
-    private final PendingIntent Ii;
-    private final int Ij;
-    private zzm Ik;
-    private final int Il;
+    private final long JI;
+    private final long JJ;
+    private final a JK;
+    private final String JL;
+    private final ContextFenceRegistrationStub JM;
+    private final PendingIntent JN;
+    private final int JO;
+    private zzm JP;
+    private final int JQ;
     
     static {
         CREATOR = (Parcelable$Creator)new com.google.android.gms.contextmanager.fence.internal.a();
     }
     
-    UpdateFenceOperation(final int ij, final int il, final ContextFenceRegistrationStub ih, final IBinder binder, final PendingIntent ii, final String ig, final long id, final long ie) {
-        this.Ij = ij;
-        this.Il = il;
-        this.Ih = ih;
+    UpdateFenceOperation(final int jo, final int jq, final ContextFenceRegistrationStub jm, final IBinder binder, final PendingIntent jn, final String jl, final long ji, final long jj) {
+        this.JO = jo;
+        this.JQ = jq;
+        this.JM = jm;
         zzm zzhn;
         if (binder != null) {
             zzhn = zzm$zza.zzhn(binder);
@@ -39,50 +39,50 @@ public class UpdateFenceOperation extends AbstractSafeParcelable
         else {
             zzhn = null;
         }
-        this.Ik = zzhn;
-        this.If = null;
-        this.Ii = ii;
-        this.Ig = ig;
-        this.Id = id;
-        this.Ie = ie;
+        this.JP = zzhn;
+        this.JK = null;
+        this.JN = jn;
+        this.JL = jl;
+        this.JI = ji;
+        this.JJ = jj;
     }
     
-    public long Ol() {
-        return this.Ie;
+    public long Pe() {
+        return this.JJ;
     }
     
-    IBinder Om() {
-        if (this.Ik != null) {
-            return this.Ik.asBinder();
+    IBinder Pf() {
+        if (this.JP != null) {
+            return this.JP.asBinder();
         }
         return null;
     }
     
-    public long On() {
-        return this.Id;
+    public long Pg() {
+        return this.JI;
     }
     
-    public int Oo() {
-        return this.Il;
+    public int Ph() {
+        return this.JQ;
     }
     
-    public ContextFenceRegistrationStub Op() {
-        return this.Ih;
+    public ContextFenceRegistrationStub Pi() {
+        return this.JM;
     }
     
-    int Oq() {
-        return this.Ij;
+    int Pj() {
+        return this.JO;
     }
     
-    public String Or() {
-        return this.Ig;
+    public String Pk() {
+        return this.JL;
     }
     
     public PendingIntent getPendingIntent() {
-        return this.Ii;
+        return this.JN;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        com.google.android.gms.contextmanager.fence.internal.a.NE(this, parcel, n);
+        com.google.android.gms.contextmanager.fence.internal.a.Ox(this, parcel, n);
     }
 }

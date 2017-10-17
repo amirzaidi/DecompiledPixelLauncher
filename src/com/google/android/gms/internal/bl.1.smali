@@ -1,36 +1,74 @@
-.class public abstract Lcom/google/android/gms/internal/bl;
+.class abstract Lcom/google/android/gms/internal/bl;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field private static final tW:Ljava/util/concurrent/ExecutorService;
+# instance fields
+.field private final uk:Lcom/google/android/gms/internal/ci;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method protected constructor <init>(Lcom/google/android/gms/internal/ci;)V
+    .locals 0
 
-    new-instance v0, Lcom/google/android/gms/internal/aT;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string/jumbo v1, "GAC_Executor"
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/aT;-><init>(Ljava/lang/String;)V
-
-    const/4 v1, 0x2
-
-    invoke-static {v1, v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/gms/internal/bl;->tW:Ljava/util/concurrent/ExecutorService;
+    iput-object p1, p0, Lcom/google/android/gms/internal/bl;->uk:Lcom/google/android/gms/internal/ci;
 
     return-void
 .end method
 
-.method public static yt()Ljava/util/concurrent/ExecutorService;
-    .locals 1
 
-    sget-object v0, Lcom/google/android/gms/internal/bl;->tW:Ljava/util/concurrent/ExecutorService;
+# virtual methods
+.method public final yH(Lcom/google/android/gms/internal/bZ;)V
+    .locals 2
 
-    return-object v0
+    invoke-static {p1}, Lcom/google/android/gms/internal/bZ;->BR(Lcom/google/android/gms/internal/bZ;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+
+    :try_start_0
+    invoke-static {p1}, Lcom/google/android/gms/internal/bZ;->BW(Lcom/google/android/gms/internal/bZ;)Lcom/google/android/gms/internal/ci;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/bl;->uk:Lcom/google/android/gms/internal/ci;
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/bl;->yq()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/bZ;->BR(Lcom/google/android/gms/internal/bZ;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-void
+
+    :cond_0
+    invoke-static {p1}, Lcom/google/android/gms/internal/bZ;->BR(Lcom/google/android/gms/internal/bZ;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    invoke-static {p1}, Lcom/google/android/gms/internal/bZ;->BR(Lcom/google/android/gms/internal/bZ;)Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw v0
+.end method
+
+.method protected abstract yq()V
 .end method

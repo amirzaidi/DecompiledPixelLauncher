@@ -30,30 +30,30 @@ import android.os.IBinder;
 
 final class s extends i
 {
-    public final IBinder fI;
-    final /* synthetic */ x fJ;
+    public final IBinder iA;
+    final /* synthetic */ x iB;
     
-    public s(final x fj, final int n, final IBinder fi, final Bundle bundle) {
-        this.fJ = fj;
-        super(fj, n, bundle);
-        this.fI = fi;
+    public s(final x ib, final int n, final IBinder ia, final Bundle bundle) {
+        this.iB = ib;
+        super(ib, n, bundle);
+        this.iA = ia;
     }
     
-    protected boolean hh() {
+    protected boolean jV() {
         // 
         // This method could not be decompiled.
         // 
         // Original Bytecode:
         // 
         //     0: aload_0        
-        //     1: getfield        com/google/android/gms/common/internal/s.fI:Landroid/os/IBinder;
+        //     1: getfield        com/google/android/gms/common/internal/s.iA:Landroid/os/IBinder;
         //     4: astore_1       
         //     5: aload_1        
         //     6: invokeinterface android/os/IBinder.getInterfaceDescriptor:()Ljava/lang/String;
         //    11: astore_1       
         //    12: aload_0        
-        //    13: getfield        com/google/android/gms/common/internal/s.fJ:Lcom/google/android/gms/common/internal/x;
-        //    16: invokevirtual   com/google/android/gms/common/internal/x.gx:()Ljava/lang/String;
+        //    13: getfield        com/google/android/gms/common/internal/s.iB:Lcom/google/android/gms/common/internal/x;
+        //    16: invokevirtual   com/google/android/gms/common/internal/x.jl:()Ljava/lang/String;
         //    19: astore_2       
         //    20: aload_2        
         //    21: aload_1        
@@ -62,14 +62,14 @@ final class s extends i
         //    26: iload_3        
         //    27: ifeq            63
         //    30: aload_0        
-        //    31: getfield        com/google/android/gms/common/internal/s.fJ:Lcom/google/android/gms/common/internal/x;
+        //    31: getfield        com/google/android/gms/common/internal/s.iB:Lcom/google/android/gms/common/internal/x;
         //    34: astore_1       
         //    35: aload_0        
-        //    36: getfield        com/google/android/gms/common/internal/s.fI:Landroid/os/IBinder;
+        //    36: getfield        com/google/android/gms/common/internal/s.iA:Landroid/os/IBinder;
         //    39: astore_2       
         //    40: aload_1        
         //    41: aload_2        
-        //    42: invokevirtual   com/google/android/gms/common/internal/x.gz:(Landroid/os/IBinder;)Landroid/os/IInterface;
+        //    42: invokevirtual   com/google/android/gms/common/internal/x.jn:(Landroid/os/IBinder;)Landroid/os/IInterface;
         //    45: astore_1       
         //    46: aload_1        
         //    47: ifnonnull       147
@@ -83,8 +83,8 @@ final class s extends i
         //    61: iconst_0       
         //    62: ireturn        
         //    63: aload_0        
-        //    64: getfield        com/google/android/gms/common/internal/s.fJ:Lcom/google/android/gms/common/internal/x;
-        //    67: invokevirtual   com/google/android/gms/common/internal/x.gx:()Ljava/lang/String;
+        //    64: getfield        com/google/android/gms/common/internal/s.iB:Lcom/google/android/gms/common/internal/x;
+        //    67: invokevirtual   com/google/android/gms/common/internal/x.jl:()Ljava/lang/String;
         //    70: invokestatic    java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
         //    73: astore_2       
         //    74: new             Ljava/lang/StringBuilder;
@@ -124,7 +124,7 @@ final class s extends i
         //   145: iconst_0       
         //   146: ireturn        
         //   147: aload_0        
-        //   148: getfield        com/google/android/gms/common/internal/s.fJ:Lcom/google/android/gms/common/internal/x;
+        //   148: getfield        com/google/android/gms/common/internal/s.iB:Lcom/google/android/gms/common/internal/x;
         //   151: astore_2       
         //   152: iconst_2       
         //   153: istore          7
@@ -134,29 +134,29 @@ final class s extends i
         //   159: iload           7
         //   161: iload           5
         //   163: aload_1        
-        //   164: invokestatic    com/google/android/gms/common/internal/x.id:(Lcom/google/android/gms/common/internal/x;IILandroid/os/IInterface;)Z
+        //   164: invokestatic    com/google/android/gms/common/internal/x.kR:(Lcom/google/android/gms/common/internal/x;IILandroid/os/IInterface;)Z
         //   167: istore          8
         //   169: iload           8
         //   171: ifeq            50
         //   174: aload_0        
-        //   175: getfield        com/google/android/gms/common/internal/s.fJ:Lcom/google/android/gms/common/internal/x;
-        //   178: invokevirtual   com/google/android/gms/common/internal/x.ig:()Landroid/os/Bundle;
+        //   175: getfield        com/google/android/gms/common/internal/s.iB:Lcom/google/android/gms/common/internal/x;
+        //   178: invokevirtual   com/google/android/gms/common/internal/x.kU:()Landroid/os/Bundle;
         //   181: astore_1       
         //   182: aload_0        
-        //   183: getfield        com/google/android/gms/common/internal/s.fJ:Lcom/google/android/gms/common/internal/x;
-        //   186: invokestatic    com/google/android/gms/common/internal/x.ia:(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
+        //   183: getfield        com/google/android/gms/common/internal/s.iB:Lcom/google/android/gms/common/internal/x;
+        //   186: invokestatic    com/google/android/gms/common/internal/x.kO:(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
         //   189: astore_2       
         //   190: aload_2        
         //   191: ifnonnull       196
         //   194: iconst_1       
         //   195: ireturn        
         //   196: aload_0        
-        //   197: getfield        com/google/android/gms/common/internal/s.fJ:Lcom/google/android/gms/common/internal/x;
-        //   200: invokestatic    com/google/android/gms/common/internal/x.ia:(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
+        //   197: getfield        com/google/android/gms/common/internal/s.iB:Lcom/google/android/gms/common/internal/x;
+        //   200: invokestatic    com/google/android/gms/common/internal/x.kO:(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
         //   203: astore_2       
         //   204: aload_2        
         //   205: aload_1        
-        //   206: invokeinterface com/google/android/gms/common/internal/B.ir:(Landroid/os/Bundle;)V
+        //   206: invokeinterface com/google/android/gms/common/internal/B.lf:(Landroid/os/Bundle;)V
         //   211: goto            194
         //    Exceptions:
         //  Try           Handler
@@ -167,7 +167,7 @@ final class s extends i
         // 
         // The error that occurred was:
         // 
-        // java.lang.IllegalStateException: Expression is linked from several locations: invokestatic:boolean(x::id, getfield:x(s::fJ, this:s), ldc:int(2), ldc:int(3), var_1_2D:IInterface)
+        // java.lang.IllegalStateException: Expression is linked from several locations: invokestatic:boolean(x::kR, getfield:x(s::iB, this:s), ldc:int(2), ldc:int(3), var_1_2D:IInterface)
         //     at com.strobel.decompiler.ast.Error.expressionLinkedFromMultipleLocations(Error.java:27)
         //     at com.strobel.decompiler.ast.GotoRemoval.traverseGraph(GotoRemoval.java:88)
         //     at com.strobel.decompiler.ast.GotoRemoval.removeGotos(GotoRemoval.java:52)
@@ -191,10 +191,10 @@ final class s extends i
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    protected void hi(final ConnectionResult connectionResult) {
-        if (this.fJ.gl != null) {
-            this.fJ.gl.hC(connectionResult);
+    protected void jW(final ConnectionResult connectionResult) {
+        if (this.iB.jd != null) {
+            this.iB.jd.kq(connectionResult);
         }
-        this.fJ.hV(connectionResult);
+        this.iB.kJ(connectionResult);
     }
 }

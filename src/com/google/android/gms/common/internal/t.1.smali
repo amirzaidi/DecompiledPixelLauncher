@@ -3,9 +3,9 @@
 
 
 # static fields
-.field private static final fK:Landroid/net/Uri;
+.field private static final iC:Landroid/net/Uri;
 
-.field private static final fL:Landroid/net/Uri;
+.field private static final iD:Landroid/net/Uri;
 
 
 # direct methods
@@ -18,9 +18,9 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/internal/t;->fK:Landroid/net/Uri;
+    sput-object v0, Lcom/google/android/gms/common/internal/t;->iC:Landroid/net/Uri;
 
-    sget-object v0, Lcom/google/android/gms/common/internal/t;->fK:Landroid/net/Uri;
+    sget-object v0, Lcom/google/android/gms/common/internal/t;->iC:Landroid/net/Uri;
 
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
@@ -42,12 +42,12 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/internal/t;->fL:Landroid/net/Uri;
+    sput-object v0, Lcom/google/android/gms/common/internal/t;->iD:Landroid/net/Uri;
 
     return-void
 .end method
 
-.method public static hD(Ljava/lang/String;)Landroid/content/Intent;
+.method public static kr(Ljava/lang/String;)Landroid/content/Intent;
     .locals 3
 
     const-string/jumbo v0, "package"
@@ -69,7 +69,7 @@
     return-object v1
 .end method
 
-.method public static hE(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+.method public static ks(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
     .locals 2
 
     new-instance v0, Landroid/content/Intent;
@@ -78,7 +78,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/t;->hF(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    invoke-static {p0, p1}, Lcom/google/android/gms/common/internal/t;->kt(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
@@ -95,7 +95,7 @@
     return-object v0
 .end method
 
-.method private static hF(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+.method private static kt(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
     .locals 2
 
     const-string/jumbo v0, "market://details"
@@ -135,7 +135,7 @@
     goto :goto_0
 .end method
 
-.method public static hG()Landroid/content/Intent;
+.method public static ku()Landroid/content/Intent;
     .locals 2
 
     new-instance v0, Landroid/content/Intent;

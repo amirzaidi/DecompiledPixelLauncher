@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static ju(Ljava/lang/StringBuilder;Ljava/util/HashMap;)V
+.method public static mi(Ljava/lang/StringBuilder;Ljava/util/HashMap;)V
     .locals 6
 
     const/4 v3, 0x0

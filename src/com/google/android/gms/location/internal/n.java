@@ -12,89 +12,89 @@ import android.os.Parcelable$Creator;
 
 public class n implements Parcelable$Creator
 {
-    static void FJ(final ParcelableGeofence parcelableGeofence, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, parcelableGeofence.Fr(), false);
-        a.fw(parcel, 2, parcelableGeofence.FA());
-        a.eU(parcel, 3, parcelableGeofence.Fu());
-        a.fq(parcel, 4, parcelableGeofence.Ft());
-        a.fq(parcel, 5, parcelableGeofence.Fp());
-        a.fs(parcel, 6, parcelableGeofence.getRadius());
-        a.fj(parcel, 7, parcelableGeofence.Fw());
-        a.fj(parcel, 1000, parcelableGeofence.FC());
-        a.fj(parcel, 8, parcelableGeofence.Fy());
-        a.fj(parcel, 9, parcelableGeofence.FB());
-        a.fe(parcel, ey);
+    static void GC(final ParcelableGeofence parcelableGeofence, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, parcelableGeofence.Gk(), false);
+        a.ik(parcel, 2, parcelableGeofence.Gt());
+        a.hI(parcel, 3, parcelableGeofence.Gn());
+        a.ie(parcel, 4, parcelableGeofence.Gm());
+        a.ie(parcel, 5, parcelableGeofence.Gi());
+        a.ig(parcel, 6, parcelableGeofence.getRadius());
+        a.hX(parcel, 7, parcelableGeofence.Gp());
+        a.hX(parcel, 1000, parcelableGeofence.Gv());
+        a.hX(parcel, 8, parcelableGeofence.Gr());
+        a.hX(parcel, 9, parcelableGeofence.Gu());
+        a.hS(parcel, hm);
     }
     
-    public ParcelableGeofence FH(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        int fn2 = 0;
-        short fy = 0;
-        double gb = 0.0;
-        double gb2 = 0.0;
-        float gj = 0.0f;
-        long fl = 0L;
-        int fn3 = 0;
-        int fn4 = -1;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public ParcelableGeofence GA(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        int ib2 = 0;
+        short im = 0;
+        double ip = 0.0;
+        double ip2 = 0.0;
+        float ix2 = 0.0f;
+        long iz = 0L;
+        int ib3 = 0;
+        int ib4 = -1;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fy = b.fy(parcel, fs);
+                    im = b.im(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gb = b.gb(parcel, fs);
+                    ip = b.iP(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    gb2 = b.gb(parcel, fs);
+                    ip2 = b.iP(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fn4 = b.fN(parcel, fs);
+                    ib4 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ParcelableGeofence(fn, fq, fn2, fy, gb, gb2, gj, fl, fn3, fn4);
+        if (parcel.dataPosition() == ix) {
+            return new ParcelableGeofence(ib, ie, ib2, im, ip, ip2, ix2, iz, ib3, ib4);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public ParcelableGeofence[] FI(final int n) {
+    public ParcelableGeofence[] GB(final int n) {
         return new ParcelableGeofence[n];
     }
 }

@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field private final jp:J
+.field private final mh:J
 
-.field private final jq:I
+.field private final mi:I
 
-.field private final jr:Landroid/support/v4/a/k;
+.field private final mj:Landroid/support/v4/a/b;
 
 
 # direct methods
@@ -20,15 +20,15 @@
 
     const-wide/32 v0, 0xea60
 
-    iput-wide v0, p0, Lcom/google/android/gms/common/stats/f;->jp:J
+    iput-wide v0, p0, Lcom/google/android/gms/common/stats/f;->mh:J
 
-    iput v2, p0, Lcom/google/android/gms/common/stats/f;->jq:I
+    iput v2, p0, Lcom/google/android/gms/common/stats/f;->mi:I
 
-    new-instance v0, Landroid/support/v4/a/k;
+    new-instance v0, Landroid/support/v4/a/b;
 
-    invoke-direct {v0, v2}, Landroid/support/v4/a/k;-><init>(I)V
+    invoke-direct {v0, v2}, Landroid/support/v4/a/b;-><init>(I)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iput-object v0, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
     return-void
 .end method
@@ -38,27 +38,27 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Lcom/google/android/gms/common/stats/f;->jp:J
+    iput-wide p2, p0, Lcom/google/android/gms/common/stats/f;->mh:J
 
-    iput p1, p0, Lcom/google/android/gms/common/stats/f;->jq:I
+    iput p1, p0, Lcom/google/android/gms/common/stats/f;->mi:I
 
-    new-instance v0, Landroid/support/v4/a/k;
+    new-instance v0, Landroid/support/v4/a/b;
 
-    invoke-direct {v0}, Landroid/support/v4/a/k;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/a/b;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iput-object v0, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
     return-void
 .end method
 
-.method private mv(JJ)V
+.method private pj(JJ)V
     .locals 7
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
-    invoke-virtual {v0}, Landroid/support/v4/a/k;->size()I
+    invoke-virtual {v0}, Landroid/support/v4/a/b;->size()I
 
     move-result v0
 
@@ -72,9 +72,9 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
-    invoke-virtual {v0, v2}, Landroid/support/v4/a/k;->ahi(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Landroid/support/v4/a/b;->aia(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -95,9 +95,9 @@
     :goto_1
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
-    invoke-virtual {v0, v2}, Landroid/support/v4/a/k;->ahc(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Landroid/support/v4/a/b;->ahU(I)Ljava/lang/Object;
 
     :cond_1
     add-int/lit8 v0, v2, -0x1
@@ -114,36 +114,36 @@
 
 
 # virtual methods
-.method public mt(Ljava/lang/String;)Ljava/lang/Long;
+.method public ph(Ljava/lang/String;)Ljava/lang/Long;
     .locals 7
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/f;->jp:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/f;->mh:J
 
     monitor-enter p0
 
     :goto_0
     :try_start_0
-    iget-object v4, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iget-object v4, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
-    invoke-virtual {v4}, Landroid/support/v4/a/k;->size()I
+    invoke-virtual {v4}, Landroid/support/v4/a/b;->size()I
 
     move-result v4
 
-    iget v5, p0, Lcom/google/android/gms/common/stats/f;->jq:I
+    iget v5, p0, Lcom/google/android/gms/common/stats/f;->mi:I
 
     if-ge v4, v5, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
-    invoke-virtual {v0, p1, v1}, Landroid/support/v4/a/k;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Landroid/support/v4/a/b;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -154,13 +154,13 @@
     return-object v0
 
     :cond_0
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/common/stats/f;->mv(JJ)V
+    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/common/stats/f;->pj(JJ)V
 
     const-wide/16 v4, 0x2
 
     div-long/2addr v0, v4
 
-    iget v4, p0, Lcom/google/android/gms/common/stats/f;->jq:I
+    iget v4, p0, Lcom/google/android/gms/common/stats/f;->mi:I
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -208,15 +208,15 @@
     throw v0
 .end method
 
-.method public mu(Ljava/lang/String;)Z
+.method public pi(Ljava/lang/String;)Z
     .locals 1
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->jr:Landroid/support/v4/a/k;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/f;->mj:Landroid/support/v4/a/b;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/a/k;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/support/v4/a/b;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

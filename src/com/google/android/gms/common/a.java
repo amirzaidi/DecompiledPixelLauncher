@@ -4,13 +4,8 @@
 
 package com.google.android.gms.common;
 
-import android.content.BroadcastReceiver;
-import android.content.IntentFilter;
-import com.google.android.gms.internal.bw;
-import com.google.android.gms.internal.by;
 import com.google.android.gms.common.internal.I;
 import android.util.TypedValue;
-import com.google.android.gms.common.a.c;
 import android.content.Intent;
 import android.app.AlertDialog;
 import android.content.res.Resources;
@@ -23,106 +18,140 @@ import android.widget.ProgressBar;
 import android.app.Dialog;
 import com.google.android.gms.common.internal.P;
 import android.content.DialogInterface$OnCancelListener;
-import com.google.android.gms.internal.aC;
+import com.google.android.gms.internal.aw;
 import android.app.Activity;
 import com.google.android.gms.common.api.GoogleApiActivity;
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
+import com.google.android.gms.internal.bq;
+import com.google.android.gms.internal.bs;
+import com.google.android.gms.common.a.c;
 import android.app.PendingIntent;
 import android.content.Context;
 
 public class a extends f
 {
-    public static final int kx;
-    private static final a ky;
+    public static final int np;
+    private static final a nq;
     
     static {
-        ky = new a();
-        kx = f.kC;
+        nq = new a();
+        np = f.nu;
     }
     
-    public static a nI() {
-        return a.ky;
+    public static a getInstance() {
+        return a.nq;
     }
     
-    public PendingIntent nA(final Context context, final int n, final int n2) {
-        return super.nA(context, n, n2);
+    public PendingIntent qA(final Context context, final ConnectionResult connectionResult) {
+        if (!connectionResult.qk()) {
+            int qh = connectionResult.qh();
+            if (c.ml(context) && qh == 2) {
+                qh = 42;
+            }
+            return this.qn(context, qh, 0);
+        }
+        return connectionResult.ql();
     }
     
-    public void nB(final Context context, final ConnectionResult connectionResult, final int n) {
-        final PendingIntent no = this.nO(context, connectionResult);
-        if (no != null) {
-            n.oy(connectionResult.nu(), context, GoogleApiActivity.eR(context, no, n));
+    public boolean qB(final Context context, final int n) {
+        return super.qB(context, n);
+    }
+    
+    public bq qm(final Context context, final bs bs) {
+        final IntentFilter intentFilter = new IntentFilter("android.intent.action.PACKAGE_ADDED");
+        intentFilter.addDataScheme("package");
+        final bq bq = new bq(bs);
+        context.registerReceiver((BroadcastReceiver)bq, intentFilter);
+        bq.zn(context);
+        if (this.qF(context, "com.google.android.gms")) {
+            return bq;
+        }
+        bs.zp();
+        bq.zo();
+        return null;
+    }
+    
+    public PendingIntent qn(final Context context, final int n, final int n2) {
+        return super.qn(context, n, n2);
+    }
+    
+    public void qo(final Context context, final ConnectionResult connectionResult, final int n) {
+        final PendingIntent qa = this.qA(context, connectionResult);
+        if (qa != null) {
+            n.rk(connectionResult.qh(), context, GoogleApiActivity.hF(context, qa, n));
         }
     }
     
-    public final boolean nC(final int n) {
-        return super.nC(n);
+    public final boolean qp(final int n) {
+        return super.qp(n);
     }
     
-    public boolean nD(final Activity activity, final aC ac, final int n, final int n2, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
-        final Dialog nk = this.nK((Context)activity, n, P.jh(ac, this.nJ((Context)activity, n, "d"), n2), dialogInterface$OnCancelListener);
-        if (nk != null) {
-            this.nE(activity, nk, "GooglePlayServicesErrorDialog", dialogInterface$OnCancelListener);
+    public boolean qq(final Activity activity, final aw aw, final int n, final int n2, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
+        final Dialog qw = this.qw((Context)activity, n, P.lV(aw, this.qv((Context)activity, n, "d"), n2), dialogInterface$OnCancelListener);
+        if (qw != null) {
+            this.qr(activity, qw, "GooglePlayServicesErrorDialog", dialogInterface$OnCancelListener);
             return true;
         }
         return false;
     }
     
-    void nE(final Activity activity, final Dialog dialog, final String s, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
+    void qr(final Activity activity, final Dialog dialog, final String s, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
         if (!(activity instanceof android.support.v4.app.a)) {
-            if (!com.google.android.gms.common.a.n.jV()) {
+            if (!com.google.android.gms.common.a.n.mJ()) {
                 throw new RuntimeException("This Activity does not support Fragments.");
             }
-            o.oz(dialog, dialogInterface$OnCancelListener).show(activity.getFragmentManager(), s);
+            o.rl(dialog, dialogInterface$OnCancelListener).show(activity.getFragmentManager(), s);
         }
         else {
-            m.ov(dialog, dialogInterface$OnCancelListener).ou(((android.support.v4.app.a)activity).ahY(), s);
+            m.rh(dialog, dialogInterface$OnCancelListener).rg(((android.support.v4.app.a)activity).aji(), s);
         }
     }
     
-    public Dialog nF(final Activity activity, final int n, final int n2, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
-        return this.nK((Context)activity, n, P.ji(activity, this.nJ((Context)activity, n, "d"), n2), dialogInterface$OnCancelListener);
+    public Dialog qs(final Activity activity, final int n, final int n2, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
+        return this.qw((Context)activity, n, P.lW(activity, this.qv((Context)activity, n, "d"), n2), dialogInterface$OnCancelListener);
     }
     
-    public boolean nG(final Activity activity, final int n, final int n2, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
-        final Dialog nf = this.nF(activity, n, n2, dialogInterface$OnCancelListener);
-        if (nf != null) {
-            this.nE(activity, nf, "GooglePlayServicesErrorDialog", dialogInterface$OnCancelListener);
+    public boolean qt(final Activity activity, final int n, final int n2, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
+        final Dialog qs = this.qs(activity, n, n2, dialogInterface$OnCancelListener);
+        if (qs != null) {
+            this.qr(activity, qs, "GooglePlayServicesErrorDialog", dialogInterface$OnCancelListener);
             return true;
         }
         return false;
     }
     
-    public Dialog nH(final Activity activity, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
+    public Dialog qu(final Activity activity, final DialogInterface$OnCancelListener dialogInterface$OnCancelListener) {
         final int indeterminate = 1;
         final ProgressBar view = new ProgressBar((Context)activity, (AttributeSet)null, 16842874);
         view.setIndeterminate((boolean)(indeterminate != 0));
         view.setVisibility(0);
         final AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Context)activity);
         alertDialog$Builder.setView((View)view);
-        final String oe = k.oe((Context)activity);
+        final String qq = k.qQ((Context)activity);
         final Resources resources = activity.getResources();
         final int common_google_play_services_updating_text = R$string.common_google_play_services_updating_text;
         final Object[] array = new Object[indeterminate];
-        array[0] = oe;
+        array[0] = qq;
         alertDialog$Builder.setMessage((CharSequence)resources.getString(common_google_play_services_updating_text, array));
         alertDialog$Builder.setTitle(R$string.common_google_play_services_updating_title);
         alertDialog$Builder.setPositiveButton((CharSequence)"", (DialogInterface$OnClickListener)null);
         final AlertDialog create = alertDialog$Builder.create();
-        this.nE(activity, (Dialog)create, "GooglePlayServicesUpdatingDialog", dialogInterface$OnCancelListener);
+        this.qr(activity, (Dialog)create, "GooglePlayServicesUpdatingDialog", dialogInterface$OnCancelListener);
         return (Dialog)create;
     }
     
-    public Intent nJ(final Context context, final int n, final String s) {
-        return super.nJ(context, n, s);
+    public Intent qv(final Context context, final int n, final String s) {
+        return super.qv(context, n, s);
     }
     
-    Dialog nK(final Context context, int n, final P p4, final DialogInterface$OnCancelListener onCancelListener) {
+    Dialog qw(final Context context, int n, final P p4, final DialogInterface$OnCancelListener onCancelListener) {
         AlertDialog$Builder alertDialog$Builder = null;
         if (n != 0) {
-            if (c.jx(context) && n == 2) {
+            if (c.ml(context) && n == 2) {
                 n = 42;
             }
-            if (com.google.android.gms.common.a.n.kb()) {
+            if (com.google.android.gms.common.a.n.mP()) {
                 final TypedValue typedValue = new TypedValue();
                 context.getTheme().resolveAttribute(16843529, typedValue, true);
                 if ("Theme.Dialog.Alert".equals(context.getResources().getResourceEntryName(typedValue.resourceId))) {
@@ -132,61 +161,32 @@ public class a extends f
             if (alertDialog$Builder == null) {
                 alertDialog$Builder = new AlertDialog$Builder(context);
             }
-            alertDialog$Builder.setMessage((CharSequence)I.iH(context, n, k.oe(context)));
+            alertDialog$Builder.setMessage((CharSequence)I.lv(context, n, k.qQ(context)));
             if (onCancelListener != null) {
                 alertDialog$Builder.setOnCancelListener(onCancelListener);
             }
-            final String if1 = I.iF(context, n);
-            if (if1 != null) {
-                alertDialog$Builder.setPositiveButton((CharSequence)if1, (DialogInterface$OnClickListener)p4);
+            final String lt = I.lt(context, n);
+            if (lt != null) {
+                alertDialog$Builder.setPositiveButton((CharSequence)lt, (DialogInterface$OnClickListener)p4);
             }
-            final String ij = I.iJ(context, n);
-            if (ij != null) {
-                alertDialog$Builder.setTitle((CharSequence)ij);
+            final String lx = I.lx(context, n);
+            if (lx != null) {
+                alertDialog$Builder.setTitle((CharSequence)lx);
             }
             return (Dialog)alertDialog$Builder.create();
         }
         return null;
     }
     
-    public PendingIntent nL(final Context context, final int n, final int n2, final String s) {
-        return super.nL(context, n, n2, s);
+    public PendingIntent qx(final Context context, final int n, final int n2, final String s) {
+        return super.qx(context, n, n2, s);
     }
     
-    public Intent nM(final int n) {
-        return super.nM(n);
+    public Intent qy(final int n) {
+        return super.qy(n);
     }
     
-    public int nN(final Context context) {
-        return super.nN(context);
-    }
-    
-    public PendingIntent nO(final Context context, final ConnectionResult connectionResult) {
-        if (!connectionResult.nx()) {
-            int nu = connectionResult.nu();
-            if (c.jx(context) && nu == 2) {
-                nu = 42;
-            }
-            return this.nA(context, nu, 0);
-        }
-        return connectionResult.ny();
-    }
-    
-    public boolean nP(final Context context, final int n) {
-        return super.nP(context, n);
-    }
-    
-    public bw nz(final Context context, final by by) {
-        final IntentFilter intentFilter = new IntentFilter("android.intent.action.PACKAGE_ADDED");
-        intentFilter.addDataScheme("package");
-        final bw bw = new bw(by);
-        context.registerReceiver((BroadcastReceiver)bw, intentFilter);
-        bw.zo(context);
-        if (this.nT(context, "com.google.android.gms")) {
-            return bw;
-        }
-        by.zq();
-        bw.zp();
-        return null;
+    public int qz(final Context context) {
+        return super.qz(context);
     }
 }

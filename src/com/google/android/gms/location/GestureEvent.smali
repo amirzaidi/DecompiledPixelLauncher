@@ -7,19 +7,19 @@
 
 
 # instance fields
-.field private final CA:Z
+.field private final Ee:Z
 
-.field private final CB:I
+.field private final Ef:Z
 
-.field private final CC:J
+.field private final Eg:I
 
-.field private final CD:J
+.field private final Eh:J
 
-.field private final CE:I
+.field private final Ei:J
 
-.field private final CF:I
+.field private final Ej:I
 
-.field private final Cz:Z
+.field private final Ek:I
 
 
 # direct methods
@@ -40,77 +40,77 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/GestureEvent;->CB:I
+    iput p1, p0, Lcom/google/android/gms/location/GestureEvent;->Eg:I
 
-    iput p2, p0, Lcom/google/android/gms/location/GestureEvent;->CF:I
+    iput p2, p0, Lcom/google/android/gms/location/GestureEvent;->Ek:I
 
-    iput-wide p3, p0, Lcom/google/android/gms/location/GestureEvent;->CC:J
+    iput-wide p3, p0, Lcom/google/android/gms/location/GestureEvent;->Eh:J
 
-    iput-wide p5, p0, Lcom/google/android/gms/location/GestureEvent;->CD:J
+    iput-wide p5, p0, Lcom/google/android/gms/location/GestureEvent;->Ei:J
 
-    iput p7, p0, Lcom/google/android/gms/location/GestureEvent;->CE:I
+    iput p7, p0, Lcom/google/android/gms/location/GestureEvent;->Ej:I
 
-    iput-boolean p8, p0, Lcom/google/android/gms/location/GestureEvent;->CA:Z
+    iput-boolean p8, p0, Lcom/google/android/gms/location/GestureEvent;->Ef:Z
 
-    iput-boolean p9, p0, Lcom/google/android/gms/location/GestureEvent;->Cz:Z
+    iput-boolean p9, p0, Lcom/google/android/gms/location/GestureEvent;->Ee:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public GT()Z
+.method public HM()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/GestureEvent;->CA:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/GestureEvent;->Ef:Z
 
     return v0
 .end method
 
-.method public GU()I
+.method public HN()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/GestureEvent;->CE:I
+    iget v0, p0, Lcom/google/android/gms/location/GestureEvent;->Ej:I
 
     return v0
 .end method
 
-.method public GV()Z
+.method public HO()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/location/GestureEvent;->Cz:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/location/GestureEvent;->Ee:Z
 
     return v0
 .end method
 
-.method public GW()I
+.method public HP()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/GestureEvent;->CF:I
+    iget v0, p0, Lcom/google/android/gms/location/GestureEvent;->Ek:I
 
     return v0
 .end method
 
-.method public GX()I
+.method public HQ()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/GestureEvent;->CB:I
+    iget v0, p0, Lcom/google/android/gms/location/GestureEvent;->Eg:I
 
     return v0
 .end method
 
-.method public GY()J
+.method public HR()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/GestureEvent;->CD:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/GestureEvent;->Ei:J
 
     return-wide v0
 .end method
 
-.method public GZ()J
+.method public HS()J
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/android/gms/location/GestureEvent;->CC:J
+    iget-wide v0, p0, Lcom/google/android/gms/location/GestureEvent;->Eh:J
 
     return-wide v0
 .end method
@@ -120,7 +120,7 @@
 
     sget-object v0, Lcom/google/android/gms/location/GestureEvent;->CREATOR:Lcom/google/android/gms/location/g;
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/g;->Hc(Lcom/google/android/gms/location/GestureEvent;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/g;->HV(Lcom/google/android/gms/location/GestureEvent;Landroid/os/Parcel;I)V
 
     return-void
 .end method

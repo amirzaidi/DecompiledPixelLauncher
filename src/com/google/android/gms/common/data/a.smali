@@ -7,14 +7,8 @@
 
 
 # virtual methods
-.method public abstract eC()V
+.method public abstract get(I)Ljava/lang/Object;
 .end method
 
-.method public abstract iterator()Ljava/util/Iterator;
-.end method
-
-.method public abstract mW()I
-.end method
-
-.method public abstract mX(I)Ljava/lang/Object;
+.method public abstract pK()I
 .end method

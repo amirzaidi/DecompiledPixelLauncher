@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public final HT:Ljava/util/Map;
+.field public final Jy:Ljava/util/Map;
 
-.field private final HU:I
+.field private final Jz:I
 
 
 # direct methods
@@ -30,13 +30,13 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->HU:I
+    iput p1, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->Jz:I
 
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->HT:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->Jy:Ljava/util/Map;
 
     if-nez p2, :cond_1
 
@@ -65,7 +65,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->HT:Ljava/util/Map;
+    iget-object v3, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->Jy:Ljava/util/Map;
 
     invoke-virtual {p2, v0}, Landroid/os/Bundle;->getByteArray(Ljava/lang/String;)[B
 
@@ -73,7 +73,7 @@
 
     sget-object v4, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {v1, v4}, Lcom/google/android/gms/common/internal/safeparcel/c;->gk([BLandroid/os/Parcelable$Creator;)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
+    invoke-static {v1, v4}, Lcom/google/android/gms/common/internal/safeparcel/c;->iY([BLandroid/os/Parcelable$Creator;)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
 
     move-result-object v1
 
@@ -86,12 +86,12 @@
 
 
 # virtual methods
-.method NC()Landroid/os/Bundle;
+.method Ov()Landroid/os/Bundle;
     .locals 4
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->HT:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->Jy:Ljava/util/Map;
 
     if-eqz v0, :cond_0
 
@@ -99,7 +99,7 @@
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->HT:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->Jy:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -140,7 +140,7 @@
 
     check-cast v0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateImpl;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/c;->gl(Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;)[B
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/c;->iZ(Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;)[B
 
     move-result-object v0
 
@@ -149,10 +149,10 @@
     goto :goto_0
 .end method
 
-.method ND()I
+.method Ow()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->HU:I
+    iget v0, p0, Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;->Jz:I
 
     return v0
 .end method
@@ -160,7 +160,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/fence/internal/b;->NH(Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/fence/internal/b;->OA(Lcom/google/android/gms/contextmanager/fence/internal/FenceStateMapImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

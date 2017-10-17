@@ -12,14 +12,14 @@ import com.google.android.gms.location.zzf$zza;
 
 class k extends zzf$zza
 {
-    private Handler AO;
+    private Handler CB;
     
     public void onLocationChanged(final Location obj) {
-        if (this.AO != null) {
+        if (this.CB != null) {
             final Message obtain = Message.obtain();
             obtain.what = 1;
             obtain.obj = obj;
-            this.AO.sendMessage(obtain);
+            this.CB.sendMessage(obtain);
             return;
         }
         Log.e("LocationClientHelper", "Received a location in client after calling removeLocationUpdates.");

@@ -14,47 +14,47 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class LogEventParcelable extends AbstractSafeParcelable
 {
     public static final i CREATOR;
-    public final int GH;
-    public String[] GI;
-    public final h GJ;
-    public byte[] GK;
-    public int[] GL;
-    public final e GM;
-    public boolean GN;
-    public int[] GO;
-    public byte[][] GP;
-    public PlayLoggerContext GQ;
-    public final e GR;
+    public final int Im;
+    public String[] In;
+    public final h Io;
+    public byte[] Ip;
+    public int[] Iq;
+    public final e Ir;
+    public boolean Is;
+    public int[] It;
+    public byte[][] Iu;
+    public PlayLoggerContext Iv;
+    public final e Iw;
     
     static {
         CREATOR = new i();
     }
     
-    LogEventParcelable(final int gh, final PlayLoggerContext gq, final byte[] gk, final int[] gl, final String[] gi, final int[] go, final byte[][] gp, final boolean gn) {
-        this.GH = gh;
-        this.GQ = gq;
-        this.GK = gk;
-        this.GL = gl;
-        this.GI = gi;
-        this.GJ = null;
-        this.GR = null;
-        this.GM = null;
-        this.GO = go;
-        this.GP = gp;
-        this.GN = gn;
+    LogEventParcelable(final int im, final PlayLoggerContext iv, final byte[] ip, final int[] iq, final String[] in, final int[] it, final byte[][] iu, final boolean is) {
+        this.Im = im;
+        this.Iv = iv;
+        this.Ip = ip;
+        this.Iq = iq;
+        this.In = in;
+        this.Io = null;
+        this.Iw = null;
+        this.Ir = null;
+        this.It = it;
+        this.Iu = iu;
+        this.Is = is;
     }
     
-    public LogEventParcelable(final PlayLoggerContext gq, final h gj, final e gr, final e gm, final int[] gl, final String[] gi, final int[] go, final byte[][] gp, final boolean gn) {
-        this.GH = 1;
-        this.GQ = gq;
-        this.GJ = gj;
-        this.GR = gr;
-        this.GM = gm;
-        this.GL = gl;
-        this.GI = gi;
-        this.GO = go;
-        this.GP = gp;
-        this.GN = gn;
+    public LogEventParcelable(final PlayLoggerContext iv, final h io, final e iw, final e ir, final int[] iq, final String[] in, final int[] it, final byte[][] iu, final boolean is) {
+        this.Im = 1;
+        this.Iv = iv;
+        this.Io = io;
+        this.Iw = iw;
+        this.Ir = ir;
+        this.Iq = iq;
+        this.In = in;
+        this.It = it;
+        this.Iu = iu;
+        this.Is = is;
     }
     
     public boolean equals(final Object o) {
@@ -66,26 +66,26 @@ public class LogEventParcelable extends AbstractSafeParcelable
             return false;
         }
         final LogEventParcelable logEventParcelable = (LogEventParcelable)o;
-        if (this.GH != logEventParcelable.GH || !u.hH(this.GQ, logEventParcelable.GQ) || !Arrays.equals(this.GK, logEventParcelable.GK) || !Arrays.equals(this.GL, logEventParcelable.GL) || !Arrays.equals(this.GI, logEventParcelable.GI) || !u.hH(this.GJ, logEventParcelable.GJ) || !u.hH(this.GR, logEventParcelable.GR) || !u.hH(this.GM, logEventParcelable.GM) || !Arrays.equals(this.GO, logEventParcelable.GO) || !Arrays.deepEquals(this.GP, logEventParcelable.GP) || this.GN != logEventParcelable.GN) {
+        if (this.Im != logEventParcelable.Im || !u.kv(this.Iv, logEventParcelable.Iv) || !Arrays.equals(this.Ip, logEventParcelable.Ip) || !Arrays.equals(this.Iq, logEventParcelable.Iq) || !Arrays.equals(this.In, logEventParcelable.In) || !u.kv(this.Io, logEventParcelable.Io) || !u.kv(this.Iw, logEventParcelable.Iw) || !u.kv(this.Ir, logEventParcelable.Ir) || !Arrays.equals(this.It, logEventParcelable.It) || !Arrays.deepEquals(this.Iu, logEventParcelable.Iu) || this.Is != logEventParcelable.Is) {
             b = false;
         }
         return b;
     }
     
     public int hashCode() {
-        return u.hI(this.GH, this.GQ, this.GK, this.GL, this.GI, this.GJ, this.GR, this.GM, this.GO, this.GP, this.GN);
+        return u.kw(this.Im, this.Iv, this.Ip, this.Iq, this.In, this.Io, this.Iw, this.Ir, this.It, this.Iu, this.Is);
     }
     
     public String toString() {
         String s = null;
-        final StringBuilder append = new StringBuilder("LogEventParcelable[").append(this.GH).append(", ").append(this.GQ).append(", ").append("LogEventBytes: ");
-        if (this.GK != null) {
-            s = new String(this.GK);
+        final StringBuilder append = new StringBuilder("LogEventParcelable[").append(this.Im).append(", ").append(this.Iv).append(", ").append("LogEventBytes: ");
+        if (this.Ip != null) {
+            s = new String(this.Ip);
         }
-        return append.append(s).append(", ").append("TestCodes: ").append(Arrays.toString(this.GL)).append(", ").append("MendelPackages: ").append(Arrays.toString(this.GI)).append(", ").append("LogEvent: ").append(this.GJ).append(", ").append("ExtensionProducer: ").append(this.GR).append(", ").append("VeProducer: ").append(this.GM).append(", ").append("ExperimentIDs: ").append(Arrays.toString(this.GO)).append(", ").append("ExperimentTokens: ").append(Arrays.toString(this.GP)).append(", ").append("AddPhenotypeExperimentTokens: ").append(this.GN).append("]").toString();
+        return append.append(s).append(", ").append("TestCodes: ").append(Arrays.toString(this.Iq)).append(", ").append("MendelPackages: ").append(Arrays.toString(this.In)).append(", ").append("LogEvent: ").append(this.Io).append(", ").append("ExtensionProducer: ").append(this.Iw).append(", ").append("VeProducer: ").append(this.Ir).append(", ").append("ExperimentIDs: ").append(Arrays.toString(this.It)).append(", ").append("ExperimentTokens: ").append(Arrays.toString(this.Iu)).append(", ").append("AddPhenotypeExperimentTokens: ").append(this.Is).append("]").toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        i.LL(this, parcel, n);
+        i.ME(this, parcel, n);
     }
 }

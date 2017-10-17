@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract rk()V
+.method public abstract rm()V
 .end method

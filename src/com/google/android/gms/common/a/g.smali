@@ -3,28 +3,28 @@
 
 
 # direct methods
-.method public static jD(Landroid/content/Context;ILjava/lang/String;)Z
+.method public static mr(Landroid/content/Context;ILjava/lang/String;)Z
     .locals 1
 
-    invoke-static {p0}, Lcom/google/android/gms/internal/aG;->uS(Landroid/content/Context;)Lcom/google/android/gms/internal/bc;
+    invoke-static {p0}, Lcom/google/android/gms/internal/az;->uR(Landroid/content/Context;)Lcom/google/android/gms/internal/aW;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/bc;->xD(ILjava/lang/String;)Z
+    invoke-virtual {v0, p1, p2}, Lcom/google/android/gms/internal/aW;->xC(ILjava/lang/String;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public static jE(Landroid/content/Context;I)Z
+.method public static ms(Landroid/content/Context;I)Z
     .locals 4
 
     const/4 v3, 0x0
 
     const-string/jumbo v0, "com.google.android.gms"
 
-    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/a/g;->jD(Landroid/content/Context;ILjava/lang/String;)Z
+    invoke-static {p0, p1, v0}, Lcom/google/android/gms/common/a/g;->mr(Landroid/content/Context;ILjava/lang/String;)Z
 
     move-result v0
 
@@ -53,7 +53,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/common/j;->ob(Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/common/j;->qN(Landroid/content/pm/PackageManager;Landroid/content/pm/PackageInfo;)Z
 
     move-result v0
 

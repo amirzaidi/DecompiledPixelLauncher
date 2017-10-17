@@ -4,24 +4,44 @@
 
 package com.google.android.gms.internal;
 
-import android.os.DeadObjectException;
-import java.util.Iterator;
-import com.google.android.gms.common.api.h;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.o;
-import com.google.android.gms.common.api.Status;
 import android.os.Bundle;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.internal.l;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.d;
 
-class bz extends br
+public class bz implements d, c
 {
-    final /* synthetic */ bQ ux;
+    public final e uR;
+    private final int uS;
+    private bZ uT;
     
-    bz(final bQ ux, final co co) {
-        this.ux = ux;
-        super(co);
+    public bz(final e ur, final int us) {
+        this.uR = ur;
+        this.uS = us;
     }
     
-    public void yr() {
-        this.ux.vO.wD.Bt(null);
+    private void zS() {
+        l.kc(this.uT, "Callbacks must be attached to a GoogleApiClient instance before connecting the client.");
+    }
+    
+    public void gw(final ConnectionResult connectionResult) {
+        this.zS();
+        this.uT.BZ(connectionResult, this.uR, this.uS);
+    }
+    
+    public void gx(final int n) {
+        this.zS();
+        this.uT.BX(n);
+    }
+    
+    public void gy(final Bundle bundle) {
+        this.zS();
+        this.uT.BS(bundle);
+    }
+    
+    public void zR(final bZ ut) {
+        this.uT = ut;
     }
 }

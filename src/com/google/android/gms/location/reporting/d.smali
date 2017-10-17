@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method public static FU(I)Z
+.method public static GN(I)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -27,12 +27,12 @@
     goto :goto_0
 .end method
 
-.method public static FV(I)I
+.method public static GO(I)I
     .locals 1
 
     packed-switch p0, :pswitch_data_0
 
-    invoke-static {p0}, Lcom/google/android/gms/location/reporting/d;->FU(I)Z
+    invoke-static {p0}, Lcom/google/android/gms/location/reporting/d;->GN(I)Z
 
     move-result v0
 

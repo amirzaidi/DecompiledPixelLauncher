@@ -15,53 +15,53 @@ import android.os.Parcelable$Creator;
 
 public class k implements Parcelable$Creator
 {
-    static void Ne(final ContextDataFilterImpl contextDataFilterImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, contextDataFilterImpl.Ms());
-        a.fc(parcel, 2, contextDataFilterImpl.Mt(), false);
-        a.fr(parcel, 3, contextDataFilterImpl.Mr(), false);
-        a.eW(parcel, 4, (Parcelable)contextDataFilterImpl.Mq(), n, false);
-        a.fe(parcel, ey);
+    static void NX(final ContextDataFilterImpl contextDataFilterImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, contextDataFilterImpl.Nl());
+        a.hQ(parcel, 2, contextDataFilterImpl.Nm(), false);
+        a.if(parcel, 3, contextDataFilterImpl.Nk(), false);
+        a.hK(parcel, 4, (Parcelable)contextDataFilterImpl.Nj(), n, false);
+        a.hS(parcel, hm);
     }
     
-    public ContextDataFilterImpl Nf(final Parcel parcel) {
+    public ContextDataFilterImpl NY(final Parcel parcel) {
         QueryFilterParameters queryFilterParameters = null;
-        final int fj = b.fJ(parcel);
-        ArrayList fz = null;
-        int fn = 0;
-        ArrayList fr = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        ArrayList in = null;
+        int ib = 0;
+        ArrayList if1 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fz = b.fZ(parcel, fs, ContextDataFilterImpl$Inclusion.CREATOR);
+                    in = b.iN(parcel, ig, ContextDataFilterImpl$Inclusion.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fr = b.fR(parcel, fs);
+                    if1 = b.iF(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    queryFilterParameters = (QueryFilterParameters)b.fW(parcel, fs, QueryFilterParameters.CREATOR);
+                    queryFilterParameters = (QueryFilterParameters)b.iK(parcel, ig, QueryFilterParameters.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ContextDataFilterImpl(fn, fz, fr, queryFilterParameters);
+        if (parcel.dataPosition() == ix) {
+            return new ContextDataFilterImpl(ib, in, if1, queryFilterParameters);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public ContextDataFilterImpl[] Ng(final int n) {
+    public ContextDataFilterImpl[] NZ(final int n) {
         return new ContextDataFilterImpl[n];
     }
 }

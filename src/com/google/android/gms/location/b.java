@@ -4,39 +4,39 @@
 
 package com.google.android.gms.location;
 
-import com.google.android.gms.common.api.j;
-import com.google.android.gms.location.internal.e;
 import com.google.android.gms.common.api.h;
-import com.google.android.gms.common.api.l;
-import com.google.android.gms.common.api.r;
+import com.google.android.gms.common.internal.l;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.api.j;
+import com.google.android.gms.common.api.q;
 
 public class b
 {
-    public static final c BZ;
-    public static final d Ca;
-    private static final r Cb;
-    private static final l Cc;
-    public static final h Cd;
-    public static final a Ce;
+    public static final c DE;
+    public static final d DF;
+    private static final q DG;
+    private static final j DH;
+    public static final e DI;
+    public static final a DJ;
     
     static {
-        Cb = new r();
-        Cc = new p();
-        Cd = new h("LocationServices.API", b.Cc, b.Cb);
-        Ce = new com.google.android.gms.location.internal.p();
-        Ca = new e();
-        BZ = new com.google.android.gms.location.internal.b();
+        DG = new q();
+        DH = new p();
+        DI = new e("LocationServices.API", b.DH, b.DG);
+        DJ = new com.google.android.gms.location.internal.p();
+        DF = new com.google.android.gms.location.internal.e();
+        DE = new com.google.android.gms.location.internal.b();
     }
     
-    public static com.google.android.gms.location.internal.a GB(final com.google.android.gms.common.api.d d) {
+    public static com.google.android.gms.location.internal.a Hu(final com.google.android.gms.common.api.a a) {
         final boolean b = true;
         boolean b2 = false;
-        com.google.android.gms.common.internal.l.hq(d != null && b, "GoogleApiClient parameter is required.");
-        final com.google.android.gms.location.internal.a a = (com.google.android.gms.location.internal.a)d.dA(com.google.android.gms.location.b.Cb);
-        if (a != null) {
+        l.ke(a != null && b, "GoogleApiClient parameter is required.");
+        final com.google.android.gms.location.internal.a a2 = (com.google.android.gms.location.internal.a)a.gl(com.google.android.gms.location.b.DG);
+        if (a2 != null) {
             b2 = b;
         }
-        com.google.android.gms.common.internal.l.hv(b2, "GoogleApiClient is not configured to use the LocationServices.API Api. Pass thisinto GoogleApiClient.Builder#addApi() to use this feature.");
-        return a;
+        l.kj(b2, "GoogleApiClient is not configured to use the LocationServices.API Api. Pass thisinto GoogleApiClient.Builder#addApi() to use this feature.");
+        return a2;
     }
 }

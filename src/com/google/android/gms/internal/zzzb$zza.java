@@ -19,7 +19,7 @@ public abstract class zzzb$zza extends Binder implements zzzb
         if (queryLocalInterface != null && queryLocalInterface instanceof zzzb) {
             return (zzzb)queryLocalInterface;
         }
-        return new m(binder);
+        return new l(binder);
     }
     
     public boolean onTransact(final int n, final Parcel parcel, final Parcel parcel2, final int n2) {

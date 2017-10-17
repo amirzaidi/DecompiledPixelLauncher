@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field private final HA:I
+.field private Je:Ljava/util/ArrayList;
 
-.field private final HB:Z
+.field private final Jf:I
 
-.field private HC:Ljava/util/ArrayList;
+.field private final Jg:Z
 
-.field private HD:Ljava/util/ArrayList;
+.field private Jh:Ljava/util/ArrayList;
 
-.field private Hz:Ljava/util/ArrayList;
+.field private Ji:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -46,15 +46,15 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HA:I
+    iput p1, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jf:I
 
-    iput-boolean p2, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HB:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jg:Z
 
-    iput-object p3, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HC:Ljava/util/ArrayList;
+    iput-object p3, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jh:Ljava/util/ArrayList;
 
-    iput-object p4, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HD:Ljava/util/ArrayList;
+    iput-object p4, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Ji:Ljava/util/ArrayList;
 
-    iput-object p5, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Hz:Ljava/util/ArrayList;
+    iput-object p5, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Je:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -66,51 +66,51 @@
 
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HA:I
+    iput v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jf:I
 
-    iput-boolean p1, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HB:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jg:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public MZ()Ljava/util/ArrayList;
+.method public NS()Ljava/util/ArrayList;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Hz:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Je:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
-.method public Na()Z
+.method public NT()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HB:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jg:Z
 
     return v0
 .end method
 
-.method Nb()I
+.method NU()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HA:I
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jf:I
 
     return v0
 .end method
 
-.method public Nc()Ljava/util/ArrayList;
+.method public NV()Ljava/util/ArrayList;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HD:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Ji:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
-.method public Nd()Ljava/util/ArrayList;
+.method public NW()Ljava/util/ArrayList;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->HC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;->Jh:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -118,7 +118,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/internal/b;->Ma(Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/internal/b;->MT(Lcom/google/android/gms/contextmanager/internal/WriteBatchImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

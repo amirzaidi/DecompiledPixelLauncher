@@ -4,7 +4,7 @@
 
 package com.google.android.gms.common.internal;
 
-import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.api.b;
 import android.content.Context;
 import java.util.Iterator;
 import java.util.Collection;
@@ -12,98 +12,98 @@ import java.util.HashSet;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
-import com.google.android.gms.internal.cd;
+import com.google.android.gms.internal.bX;
 import android.accounts.Account;
 import android.view.View;
 
 public final class a
 {
-    private final View eO;
-    private final Account eP;
-    private final String eQ;
-    private final cd eR;
-    private Integer eS;
-    private final Set eT;
-    private final int eU;
-    private final Set eV;
-    private final String eW;
-    private final Map eX;
+    private final View hH;
+    private final Account hI;
+    private final String hJ;
+    private final bX hK;
+    private Integer hL;
+    private final Set hM;
+    private final int hN;
+    private final Set hO;
+    private final String hP;
+    private final Map hQ;
     
-    public a(final Account ep, final Set set, Map empty_MAP, final int eu, final View eo, final String eq, final String ew, final cd er) {
-        this.eP = ep;
-        Set<Object> et;
+    public a(final Account hi, final Set set, Map empty_MAP, final int hn, final View hh, final String hj, final String hp, final bX hk) {
+        this.hI = hi;
+        Set<Object> hm;
         if (set != null) {
-            et = Collections.unmodifiableSet((Set<?>)set);
+            hm = Collections.unmodifiableSet((Set<?>)set);
         }
         else {
-            et = (Set<Object>)Collections.EMPTY_SET;
+            hm = (Set<Object>)Collections.EMPTY_SET;
         }
-        this.eT = et;
+        this.hM = hm;
         if (empty_MAP == null) {
             empty_MAP = Collections.EMPTY_MAP;
         }
-        this.eX = empty_MAP;
-        this.eO = eo;
-        this.eU = eu;
-        this.eQ = eq;
-        this.eW = ew;
-        this.eR = er;
-        final HashSet<Object> set2 = new HashSet<Object>(this.eT);
-        final Iterator<Q> iterator = this.eX.values().iterator();
+        this.hQ = empty_MAP;
+        this.hH = hh;
+        this.hN = hn;
+        this.hJ = hj;
+        this.hP = hp;
+        this.hK = hk;
+        final HashSet<Object> set2 = new HashSet<Object>(this.hM);
+        final Iterator<Q> iterator = this.hQ.values().iterator();
         while (iterator.hasNext()) {
-            set2.addAll(iterator.next().hf);
+            set2.addAll(iterator.next().jX);
         }
-        this.eV = Collections.unmodifiableSet((Set<?>)set2);
+        this.hO = Collections.unmodifiableSet((Set<?>)set2);
     }
     
-    public static a gm(final Context context) {
-        return new e(context).dJ();
+    public static a ja(final Context context) {
+        return new b(context).gp();
     }
     
     public Account getAccount() {
-        return this.eP;
+        return this.hI;
     }
     
-    public String gn() {
-        return this.eW;
+    public String jb() {
+        return this.hP;
     }
     
-    public String go() {
-        return this.eQ;
+    public String jc() {
+        return this.hJ;
     }
     
-    public void gp(final Integer es) {
-        this.eS = es;
+    public void jd(final Integer hl) {
+        this.hL = hl;
     }
     
-    public Map gq() {
-        return this.eX;
+    public Map je() {
+        return this.hQ;
     }
     
-    public Account gr() {
-        Account ep;
-        if (this.eP == null) {
-            ep = new Account("<<default account>>", "com.google");
+    public Account jf() {
+        Account hi;
+        if (this.hI == null) {
+            hi = new Account("<<default account>>", "com.google");
         }
         else {
-            ep = this.eP;
+            hi = this.hI;
         }
-        return ep;
+        return hi;
     }
     
-    public Set gs() {
-        return this.eT;
+    public Set jg() {
+        return this.hM;
     }
     
-    public Integer gt() {
-        return this.eS;
+    public Integer jh() {
+        return this.hL;
     }
     
-    public cd gu() {
-        return this.eR;
+    public bX ji() {
+        return this.hK;
     }
     
-    public Set gv() {
-        return this.eV;
+    public Set jj() {
+        return this.hO;
     }
 }

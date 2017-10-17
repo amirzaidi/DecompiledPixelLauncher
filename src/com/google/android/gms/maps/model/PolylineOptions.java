@@ -12,14 +12,14 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class PolylineOptions extends AbstractSafeParcelable
 {
     public static final g CREATOR;
-    private boolean Fj;
-    private final List Fk;
-    private boolean Fl;
-    private int Fm;
-    private boolean Fn;
-    private float Fo;
-    private final int Fp;
-    private float Fq;
+    private boolean GO;
+    private final List GP;
+    private boolean GQ;
+    private int GR;
+    private boolean GS;
+    private float GT;
+    private final int GU;
+    private float GV;
     
     static {
         CREATOR = new g();
@@ -27,66 +27,66 @@ public final class PolylineOptions extends AbstractSafeParcelable
     
     public PolylineOptions() {
         final boolean b = true;
-        this.Fq = 10.0f;
-        this.Fm = -16777216;
-        this.Fo = 0.0f;
-        this.Fl = b;
-        this.Fj = false;
-        this.Fn = false;
-        this.Fp = (b ? 1 : 0);
-        this.Fk = new ArrayList();
+        this.GV = 10.0f;
+        this.GR = -16777216;
+        this.GT = 0.0f;
+        this.GQ = b;
+        this.GO = false;
+        this.GS = false;
+        this.GU = (b ? 1 : 0);
+        this.GP = new ArrayList();
     }
     
-    PolylineOptions(final int fp, final List fk, final float fq, final int fm, final float fo, final boolean fl, final boolean fj, final boolean fn) {
-        this.Fq = 10.0f;
-        this.Fm = -16777216;
-        this.Fo = 0.0f;
-        this.Fl = true;
-        this.Fj = false;
-        this.Fn = false;
-        this.Fp = fp;
-        this.Fk = fk;
-        this.Fq = fq;
-        this.Fm = fm;
-        this.Fo = fo;
-        this.Fl = fl;
-        this.Fj = fj;
-        this.Fn = fn;
+    PolylineOptions(final int gu, final List gp, final float gv, final int gr, final float gt, final boolean gq, final boolean go, final boolean gs) {
+        this.GV = 10.0f;
+        this.GR = -16777216;
+        this.GT = 0.0f;
+        this.GQ = true;
+        this.GO = false;
+        this.GS = false;
+        this.GU = gu;
+        this.GP = gp;
+        this.GV = gv;
+        this.GR = gr;
+        this.GT = gt;
+        this.GQ = gq;
+        this.GO = go;
+        this.GS = gs;
     }
     
-    public int Kf() {
-        return this.Fm;
+    public int KY() {
+        return this.GR;
     }
     
-    public float Kg() {
-        return this.Fo;
+    public float KZ() {
+        return this.GT;
     }
     
-    public boolean Kh() {
-        return this.Fj;
+    public boolean La() {
+        return this.GO;
     }
     
-    public boolean Ki() {
-        return this.Fn;
+    public boolean Lb() {
+        return this.GS;
     }
     
-    int Kj() {
-        return this.Fp;
+    int Lc() {
+        return this.GU;
     }
     
-    public List Kk() {
-        return this.Fk;
+    public List Ld() {
+        return this.GP;
     }
     
     public float getWidth() {
-        return this.Fq;
+        return this.GV;
     }
     
     public boolean isVisible() {
-        return this.Fl;
+        return this.GQ;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        g.IW(this, parcel, n);
+        g.JP(this, parcel, n);
     }
 }

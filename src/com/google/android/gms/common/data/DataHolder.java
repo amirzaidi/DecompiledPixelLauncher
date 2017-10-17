@@ -17,35 +17,35 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class DataHolder extends AbstractSafeParcelable implements Closeable
 {
     public static final Parcelable$Creator CREATOR;
-    private static final e kd;
-    private final String[] kb;
-    private final CursorWindow[] kc;
-    Bundle ke;
-    int[] kf;
-    private final int kg;
-    boolean kh;
-    private boolean ki;
-    private final int kj;
-    private final Bundle kk;
-    int kl;
+    private static final e mV;
+    private final String[] mT;
+    private final CursorWindow[] mU;
+    Bundle mW;
+    int[] mX;
+    private final int mY;
+    boolean mZ;
+    private boolean na;
+    private final int nb;
+    private final Bundle nc;
+    int nd;
     
     static {
         CREATOR = (Parcelable$Creator)new h();
-        kd = new f(new String[0], null);
+        mV = new f(new String[0], null);
     }
     
-    DataHolder(final int kj, final String[] kb, final CursorWindow[] kc, final int kg, final Bundle kk) {
-        this.kh = false;
-        this.ki = true;
-        this.kj = kj;
-        this.kb = kb;
-        this.kc = kc;
-        this.kg = kg;
-        this.kk = kk;
+    DataHolder(final int nb, final String[] mt, final CursorWindow[] mu, final int my, final Bundle nc) {
+        this.mZ = false;
+        this.na = true;
+        this.nb = nb;
+        this.mT = mt;
+        this.mU = mu;
+        this.mY = my;
+        this.nc = nc;
     }
     
-    private void nm(final String s, final int n) {
-        if (this.ke == null || !this.ke.containsKey(s)) {
+    private void pZ(final String s, final int n) {
+        if (this.mW == null || !this.mW.containsKey(s)) {
             final String value = String.valueOf(s);
             final int length = value.length();
             final String s2 = "No such column: ";
@@ -58,22 +58,22 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
             }
             throw new IllegalArgumentException(concat);
         }
-        if (this.nc()) {
+        if (this.pP()) {
             throw new IllegalArgumentException("Buffer is closed.");
         }
-        if (n >= 0 && n < this.kl) {
+        if (n >= 0 && n < this.nd) {
             return;
         }
-        throw new CursorIndexOutOfBoundsException(n, this.kl);
+        throw new CursorIndexOutOfBoundsException(n, this.nd);
     }
     
     public void close() {
         int i = 0;
         synchronized (this) {
-            if (!this.kh) {
-                this.kh = true;
-                while (i < this.kc.length) {
-                    this.kc[i].close();
+            if (!this.mZ) {
+                this.mZ = true;
+                while (i < this.mU.length) {
+                    this.mU[i].close();
                     ++i;
                 }
             }
@@ -82,7 +82,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     
     protected void finalize() {
         try {
-            if (this.ki && this.kc.length > 0 && !this.nc()) {
+            if (this.na && this.mU.length > 0 && !this.pP()) {
                 this.close();
                 final String value = String.valueOf(this.toString());
                 Log.e("DataBuffer", new StringBuilder(String.valueOf(value).length() + 178).append("Internal data leak within a DataBuffer object detected!  Be sure to explicitly call release() on all DataBuffer extending objects when you are done with them. (internal object: ").append(value).append(")").toString());
@@ -93,74 +93,74 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
         }
     }
     
-    public boolean nc() {
+    public boolean pP() {
         synchronized (this) {
-            return this.kh;
+            return this.mZ;
         }
     }
     
-    public int nd() {
-        return this.kl;
+    public int pQ() {
+        return this.nd;
     }
     
-    public int ne(final int n) {
+    public int pR(final int n) {
         int i = 0;
-        l.hs(n >= 0 && n < this.kl);
-        while (i < this.kf.length) {
-            if (n < this.kf[i]) {
+        l.kg(n >= 0 && n < this.nd);
+        while (i < this.mX.length) {
+            if (n < this.mX[i]) {
                 --i;
                 break;
             }
             ++i;
         }
-        if (i == this.kf.length) {
+        if (i == this.mX.length) {
             --i;
         }
         return i;
     }
     
-    public String nf(final String s, final int n, final int n2) {
-        this.nm(s, n);
-        return this.kc[n2].getString(n, this.ke.getInt(s));
+    public String pS(final String s, final int n, final int n2) {
+        this.pZ(s, n);
+        return this.mU[n2].getString(n, this.mW.getInt(s));
     }
     
-    int ng() {
-        return this.kj;
+    int pT() {
+        return this.nb;
     }
     
-    public Bundle nh() {
-        return this.kk;
+    public Bundle pU() {
+        return this.nc;
     }
     
-    public int ni() {
-        return this.kg;
+    public int pV() {
+        return this.mY;
     }
     
-    CursorWindow[] nj() {
-        return this.kc;
+    CursorWindow[] pW() {
+        return this.mU;
     }
     
-    public void nk() {
+    public void pX() {
         int i = 0;
-        this.ke = new Bundle();
-        for (int j = 0; j < this.kb.length; ++j) {
-            this.ke.putInt(this.kb[j], j);
+        this.mW = new Bundle();
+        for (int j = 0; j < this.mT.length; ++j) {
+            this.mW.putInt(this.mT[j], j);
         }
-        this.kf = new int[this.kc.length];
-        int kl = 0;
-        while (i < this.kc.length) {
-            this.kf[i] = kl;
-            kl += this.kc[i].getNumRows() - (kl - this.kc[i].getStartPosition());
+        this.mX = new int[this.mU.length];
+        int nd = 0;
+        while (i < this.mU.length) {
+            this.mX[i] = nd;
+            nd += this.mU[i].getNumRows() - (nd - this.mU[i].getStartPosition());
             ++i;
         }
-        this.kl = kl;
+        this.nd = nd;
     }
     
-    String[] nl() {
-        return this.kb;
+    String[] pY() {
+        return this.mT;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.ns(this, parcel, n);
+        h.qf(this, parcel, n);
     }
 }

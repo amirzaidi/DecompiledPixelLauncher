@@ -1,42 +1,40 @@
-.class public final Lcom/google/android/gms/internal/bO;
-.super Ljava/lang/Object;
+.class Lcom/google/android/gms/internal/bO;
+.super Lcom/google/android/gms/internal/bl;
+
+
+# instance fields
+.field final synthetic vZ:Lcom/google/android/gms/internal/bB;
+
+.field final synthetic wa:Lcom/google/android/gms/signin/internal/SignInResponse;
+
+.field final synthetic wb:Lcom/google/android/gms/internal/cg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Lcom/google/android/gms/internal/cg;Lcom/google/android/gms/internal/ci;Lcom/google/android/gms/internal/bB;Lcom/google/android/gms/signin/internal/SignInResponse;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/bO;->wb:Lcom/google/android/gms/internal/cg;
+
+    iput-object p3, p0, Lcom/google/android/gms/internal/bO;->vZ:Lcom/google/android/gms/internal/bB;
+
+    iput-object p4, p0, Lcom/google/android/gms/internal/bO;->wa:Lcom/google/android/gms/signin/internal/SignInResponse;
+
+    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/bl;-><init>(Lcom/google/android/gms/internal/ci;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Bo()Lcom/google/android/gms/internal/cd;
-    .locals 10
+.method public yq()V
+    .locals 2
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lcom/google/android/gms/internal/bO;->vZ:Lcom/google/android/gms/internal/bB;
 
-    const/4 v3, 0x0
+    iget-object v1, p0, Lcom/google/android/gms/internal/bO;->wa:Lcom/google/android/gms/signin/internal/SignInResponse;
 
-    new-instance v0, Lcom/google/android/gms/internal/cd;
+    invoke-static {v0, v1}, Lcom/google/android/gms/internal/bB;->Aj(Lcom/google/android/gms/internal/bB;Lcom/google/android/gms/signin/internal/SignInResponse;)V
 
-    move v2, v1
-
-    move v4, v1
-
-    move-object v5, v3
-
-    move v6, v1
-
-    move-object v7, v3
-
-    move-object v8, v3
-
-    move-object v9, v3
-
-    invoke-direct/range {v0 .. v9}, Lcom/google/android/gms/internal/cd;-><init>(ZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/Long;Ljava/lang/Long;Lcom/google/android/gms/internal/cg;)V
-
-    return-object v0
+    return-void
 .end method

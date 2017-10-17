@@ -9,80 +9,81 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager$NameNotFoundException;
 import android.util.Log;
 import java.util.Iterator;
-import com.google.android.gms.internal.av;
+import com.google.android.gms.internal.aq;
 import com.google.android.gms.common.a.m;
-import com.google.android.gms.internal.az;
+import com.google.android.gms.common.internal.l;
+import com.google.android.gms.internal.at;
 import android.content.Context;
-import com.google.android.gms.common.api.r;
-import com.google.android.gms.common.api.l;
+import com.google.android.gms.common.api.q;
+import com.google.android.gms.common.api.j;
 import com.google.android.gms.playlog.internal.PlayLoggerContext;
 import com.google.android.gms.common.api.B;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.c;
-import com.google.android.gms.internal.h;
+import com.google.android.gms.common.api.f;
 import java.util.ArrayList;
+import com.google.android.gms.internal.h;
 
 public class b
 {
-    private ArrayList GA;
-    private ArrayList GB;
-    private boolean GC;
-    private String GD;
-    private e GE;
-    private final e Gq;
-    final /* synthetic */ a Gr;
-    private String Gs;
-    private final h Gt;
-    private boolean Gu;
-    private String Gv;
-    private ArrayList Gw;
-    private ArrayList Gx;
-    private int Gy;
-    private int Gz;
+    private final e HV;
+    final /* synthetic */ a HW;
+    private String HX;
+    private final h HY;
+    private boolean HZ;
+    private String Ia;
+    private ArrayList Ib;
+    private ArrayList Ic;
+    private int Id;
+    private int Ie;
+    private ArrayList If;
+    private ArrayList Ig;
+    private boolean Ih;
+    private String Ii;
+    private e Ij;
     
     private b(final a a, final byte[] array) {
         this(a, array, (e)null);
     }
     
-    private b(final a gr, final byte[] nw, final e gq) {
-        this.Gr = gr;
-        this.Gz = this.Gr.Gl;
-        this.Gv = this.Gr.Gb;
-        this.Gs = this.Gr.Ga;
-        this.GD = this.Gr.Gn;
-        this.Gy = this.Gr.Gj;
-        this.GA = null;
-        this.Gw = null;
-        this.Gx = null;
-        this.GB = null;
-        this.GC = true;
-        this.Gt = new h();
-        this.Gu = false;
-        this.Gs = gr.Ga;
-        this.GD = gr.Gn;
-        this.Gt.oa = gr.Gk.js();
-        this.Gt.od = gr.Gk.jt();
-        this.Gt.nQ = gr.Gg.LJ(gr.mContext);
-        this.Gt.ok = gr.Gp.LH(this.Gt.oa);
-        if (nw != null) {
-            this.Gt.nW = nw;
+    private b(final a hw, final byte[] oy, final e hv) {
+        this.HW = hw;
+        this.Ie = this.HW.HQ;
+        this.Ia = this.HW.HG;
+        this.HX = this.HW.HF;
+        this.Ii = this.HW.HS;
+        this.Id = this.HW.HO;
+        this.If = null;
+        this.Ib = null;
+        this.Ic = null;
+        this.Ig = null;
+        this.Ih = true;
+        this.HY = new h();
+        this.HZ = false;
+        this.HX = hw.HF;
+        this.Ii = hw.HS;
+        this.HY.oC = hw.HP.mg();
+        this.HY.oF = hw.HP.mh();
+        this.HY.os = hw.HL.MC(hw.mContext);
+        this.HY.oM = hw.HU.MA(this.HY.oC);
+        if (oy != null) {
+            this.HY.oy = oy;
         }
-        this.Gq = gq;
+        this.HV = hv;
     }
     
-    public c LF() {
-        if (this.Gu) {
+    public f My() {
+        if (this.HZ) {
             throw new IllegalStateException("do not reuse LogEventBuilder");
         }
-        this.Gu = true;
-        final PlayLoggerContext gq = this.LG().GQ;
-        if (!this.Gr.Ge.un(gq.IH, gq.IL)) {
-            return B.eH(Status.dU);
+        this.HZ = true;
+        final PlayLoggerContext iv = this.Mz().Iv;
+        if (!this.HW.HJ.um(iv.Km, iv.Kq)) {
+            return B.hv(Status.hn);
         }
-        return this.Gr.Go.uz(this.Gr.mContext, this.LG());
+        return this.HW.HT.uy(this.HW.mContext, this.Mz());
     }
     
-    public LogEventParcelable LG() {
-        return new LogEventParcelable(new PlayLoggerContext(this.Gr.mPackageName, this.Gr.Gm, this.Gz, this.Gv, this.Gs, this.GD, this.Gr.Gd, this.Gy), this.Gt, this.Gq, this.GE, Lu(this.GA), Lj(this.Gw), Lu(this.Gx), Lq(this.GB), this.GC);
+    public LogEventParcelable Mz() {
+        return new LogEventParcelable(new PlayLoggerContext(this.HW.mPackageName, this.HW.HR, this.Ie, this.Ia, this.HX, this.Ii, this.HW.HI, this.Id), this.HY, this.HV, this.Ij, Mn(this.If), Mc(this.Ib), Mn(this.Ic), Mj(this.Ig), this.Ih);
     }
 }

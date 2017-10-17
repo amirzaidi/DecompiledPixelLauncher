@@ -15,77 +15,77 @@ import android.os.Parcelable$Creator;
 
 public class g implements Parcelable$Creator
 {
-    static void Qi(final RecordConsentRequest recordConsentRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, recordConsentRequest.JZ);
-        a.eW(parcel, 2, (Parcelable)recordConsentRequest.getAccount(), n, false);
-        a.fp(parcel, 3, (Parcelable[])recordConsentRequest.Qg(), n, false);
-        a.fo(parcel, 4, recordConsentRequest.Qf(), false);
-        a.fe(parcel, ey);
+    static void Rb(final RecordConsentRequest recordConsentRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, recordConsentRequest.LE);
+        a.hK(parcel, 2, (Parcelable)recordConsentRequest.getAccount(), n, false);
+        a.id(parcel, 3, (Parcelable[])recordConsentRequest.QZ(), n, false);
+        a.ic(parcel, 4, recordConsentRequest.QY(), false);
+        a.hS(parcel, hm);
     }
     
-    public RecordConsentRequest[] Qh(final int n) {
+    public RecordConsentRequest[] Ra(final int n) {
         return new RecordConsentRequest[n];
     }
     
-    public RecordConsentRequest Qj(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
+    public RecordConsentRequest Rc(final Parcel parcel) {
+        final int ix = b.ix(parcel);
         Scope[] array = null;
         Account account = null;
-        int fn = 0;
-        String fq = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
+        int ib = 0;
+        String ie = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
             int n = 0;
             Account account3 = null;
             String s = null;
             Scope[] array3 = null;
             Label_0128: {
-                switch (b.ga(fs)) {
+                switch (b.iO(ig)) {
                     default: {
-                        b.fA(parcel, fs);
+                        b.io(parcel, ig);
                         break;
                     }
                     case 1: {
-                        fn = b.fN(parcel, fs);
+                        ib = b.iB(parcel, ig);
                         break;
                     }
                     case 2: {
-                        final Account account2 = (Account)b.fW(parcel, fs, Account.CREATOR);
-                        n = fn;
+                        final Account account2 = (Account)b.iK(parcel, ig, Account.CREATOR);
+                        n = ib;
                         final Scope[] array2 = array;
                         account3 = account2;
-                        s = fq;
+                        s = ie;
                         array3 = array2;
                         break Label_0128;
                     }
                     case 3: {
-                        final Scope[] array4 = (Scope[])b.fM(parcel, fs, Scope.CREATOR);
+                        final Scope[] array4 = (Scope[])b.iA(parcel, ig, Scope.CREATOR);
                         account3 = account;
-                        n = fn;
-                        final String s2 = fq;
+                        n = ib;
+                        final String s2 = ie;
                         array3 = array4;
                         s = s2;
                         break Label_0128;
                     }
                     case 4: {
-                        fq = b.fQ(parcel, fs);
+                        ie = b.iE(parcel, ig);
                         break;
                     }
                 }
-                s = fq;
+                s = ie;
                 array3 = array;
                 account3 = account;
-                n = fn;
+                n = ib;
             }
-            fn = n;
+            ib = n;
             account = account3;
             array = array3;
-            fq = s;
+            ie = s;
         }
-        if (parcel.dataPosition() == fj) {
-            return new RecordConsentRequest(fn, account, array, fq);
+        if (parcel.dataPosition() == ix) {
+            return new RecordConsentRequest(ib, account, array, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

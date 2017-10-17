@@ -12,27 +12,27 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class PlacesData extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int mO;
-    private final ArrayList mP;
+    private final int gl;
+    private final ArrayList gm;
     
     static {
         CREATOR = (Parcelable$Creator)new k();
     }
     
-    PlacesData(final int mo, final ArrayList mp) {
-        this.mO = mo;
-        this.mP = mp;
+    PlacesData(final int gl, final ArrayList gm) {
+        this.gl = gl;
+        this.gm = gm;
     }
     
-    ArrayList qC() {
-        return this.mP;
+    int fA() {
+        return this.gl;
     }
     
-    int qD() {
-        return this.mO;
+    ArrayList fz() {
+        return this.gm;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        k.qJ(this, parcel, n);
+        k.fD(this, parcel, n);
     }
 }

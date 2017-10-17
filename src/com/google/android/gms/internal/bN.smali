@@ -1,92 +1,46 @@
-.class public final Lcom/google/android/gms/internal/bN;
+.class public abstract Lcom/google/android/gms/internal/bN;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field public static final vF:Lcom/google/android/gms/common/api/r;
-
-.field public static final vG:Lcom/google/android/gms/common/api/r;
-
-.field public static final vH:Lcom/google/android/gms/common/api/Scope;
-
-.field public static final vI:Lcom/google/android/gms/common/api/h;
-
-.field public static final vJ:Lcom/google/android/gms/common/api/h;
-
-.field static final vK:Lcom/google/android/gms/common/api/l;
-
-.field public static final vL:Lcom/google/android/gms/common/api/l;
-
-.field public static final vM:Lcom/google/android/gms/common/api/Scope;
+.field private static final vY:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 9
 
-    new-instance v0, Lcom/google/android/gms/common/api/r;
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/r;-><init>()V
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vF:Lcom/google/android/gms/common/api/r;
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    new-instance v0, Lcom/google/android/gms/common/api/r;
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/r;-><init>()V
+    new-instance v8, Lcom/google/android/gms/internal/aN;
 
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vG:Lcom/google/android/gms/common/api/r;
+    const-string/jumbo v0, "GAC_Transform"
 
-    new-instance v0, Lcom/google/android/gms/internal/cp;
+    invoke-direct {v8, v0}, Lcom/google/android/gms/internal/aN;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/cp;-><init>()V
+    const/4 v2, 0x0
 
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vL:Lcom/google/android/gms/common/api/l;
+    const/4 v3, 0x4
 
-    new-instance v0, Lcom/google/android/gms/internal/ci;
+    const-wide/16 v4, 0x3c
 
-    invoke-direct {v0}, Lcom/google/android/gms/internal/ci;-><init>()V
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vK:Lcom/google/android/gms/common/api/l;
-
-    new-instance v0, Lcom/google/android/gms/common/api/Scope;
-
-    const-string/jumbo v1, "profile"
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vM:Lcom/google/android/gms/common/api/Scope;
-
-    new-instance v0, Lcom/google/android/gms/common/api/Scope;
-
-    const-string/jumbo v1, "email"
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vH:Lcom/google/android/gms/common/api/Scope;
-
-    new-instance v0, Lcom/google/android/gms/common/api/h;
-
-    sget-object v1, Lcom/google/android/gms/internal/bN;->vL:Lcom/google/android/gms/common/api/l;
-
-    sget-object v2, Lcom/google/android/gms/internal/bN;->vF:Lcom/google/android/gms/common/api/r;
-
-    const-string/jumbo v3, "SignIn.API"
-
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/h;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/l;Lcom/google/android/gms/common/api/r;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vI:Lcom/google/android/gms/common/api/h;
-
-    new-instance v0, Lcom/google/android/gms/common/api/h;
-
-    sget-object v1, Lcom/google/android/gms/internal/bN;->vK:Lcom/google/android/gms/common/api/l;
-
-    sget-object v2, Lcom/google/android/gms/internal/bN;->vG:Lcom/google/android/gms/common/api/r;
-
-    const-string/jumbo v3, "SignIn.INTERNAL_API"
-
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/h;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/l;Lcom/google/android/gms/common/api/r;)V
-
-    sput-object v0, Lcom/google/android/gms/internal/bN;->vJ:Lcom/google/android/gms/common/api/h;
+    sput-object v1, Lcom/google/android/gms/internal/bN;->vY:Ljava/util/concurrent/ExecutorService;
 
     return-void
+.end method
+
+.method public static Bu()Ljava/util/concurrent/ExecutorService;
+    .locals 1
+
+    sget-object v0, Lcom/google/android/gms/internal/bN;->vY:Ljava/util/concurrent/ExecutorService;
+
+    return-object v0
 .end method

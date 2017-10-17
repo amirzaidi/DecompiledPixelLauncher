@@ -15,47 +15,47 @@ import android.os.Parcelable$Creator;
 
 public class l implements Parcelable$Creator
 {
-    static void Nu(final RelationFilterImpl relationFilterImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, relationFilterImpl.Nq());
-        a.fc(parcel, 2, relationFilterImpl.Nr(), false);
-        a.eW(parcel, 3, (Parcelable)relationFilterImpl.Np(), n, false);
-        a.fe(parcel, ey);
+    static void On(final RelationFilterImpl relationFilterImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, relationFilterImpl.Oj());
+        a.hQ(parcel, 2, relationFilterImpl.Ok(), false);
+        a.hK(parcel, 3, (Parcelable)relationFilterImpl.Oi(), n, false);
+        a.hS(parcel, hm);
     }
     
-    public RelationFilterImpl[] Ns(final int n) {
+    public RelationFilterImpl[] Ol(final int n) {
         return new RelationFilterImpl[n];
     }
     
-    public RelationFilterImpl Nt(final Parcel parcel) {
+    public RelationFilterImpl Om(final Parcel parcel) {
         QueryFilterParameters queryFilterParameters = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        ArrayList fz = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        ArrayList in = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fz = b.fZ(parcel, fs, RelationFilterImpl$Inclusion.CREATOR);
+                    in = b.iN(parcel, ig, RelationFilterImpl$Inclusion.CREATOR);
                     continue;
                 }
                 case 3: {
-                    queryFilterParameters = (QueryFilterParameters)b.fW(parcel, fs, QueryFilterParameters.CREATOR);
+                    queryFilterParameters = (QueryFilterParameters)b.iK(parcel, ig, QueryFilterParameters.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new RelationFilterImpl(fn, fz, queryFilterParameters);
+        if (parcel.dataPosition() == ix) {
+            return new RelationFilterImpl(ib, in, queryFilterParameters);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

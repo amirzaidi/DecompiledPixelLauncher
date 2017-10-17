@@ -15,37 +15,37 @@ import android.app.DialogFragment;
 
 public class o extends DialogFragment
 {
-    private DialogInterface$OnCancelListener kU;
-    private Dialog kV;
+    private DialogInterface$OnCancelListener nM;
+    private Dialog nN;
     
     public o() {
-        this.kV = null;
-        this.kU = null;
+        this.nN = null;
+        this.nM = null;
     }
     
-    public static o oz(final Dialog dialog, final DialogInterface$OnCancelListener ku) {
+    public static o rl(final Dialog dialog, final DialogInterface$OnCancelListener nm) {
         final o o = new o();
-        final Dialog kv = (Dialog)l.ho(dialog, "Cannot display null dialog");
-        kv.setOnCancelListener((DialogInterface$OnCancelListener)null);
-        kv.setOnDismissListener((DialogInterface$OnDismissListener)null);
-        o.kV = kv;
-        if (ku != null) {
-            o.kU = ku;
+        final Dialog nn = (Dialog)l.kc(dialog, "Cannot display null dialog");
+        nn.setOnCancelListener((DialogInterface$OnCancelListener)null);
+        nn.setOnDismissListener((DialogInterface$OnDismissListener)null);
+        o.nN = nn;
+        if (nm != null) {
+            o.nM = nm;
         }
         return o;
     }
     
     public void onCancel(final DialogInterface dialogInterface) {
-        if (this.kU != null) {
-            this.kU.onCancel(dialogInterface);
+        if (this.nM != null) {
+            this.nM.onCancel(dialogInterface);
         }
     }
     
     public Dialog onCreateDialog(final Bundle bundle) {
-        if (this.kV == null) {
+        if (this.nN == null) {
             this.setShowsDialog(false);
         }
-        return this.kV;
+        return this.nN;
     }
     
     public void show(final FragmentManager fragmentManager, final String s) {

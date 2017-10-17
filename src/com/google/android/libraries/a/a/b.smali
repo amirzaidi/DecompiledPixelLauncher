@@ -1,6 +1,11 @@
-.class interface abstract annotation Lcom/google/android/libraries/a/a/b;
+.class public interface abstract Lcom/google/android/libraries/a/a/b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
+
+# virtual methods
+.method public abstract et(ZZ)V
+.end method
+
+.method public abstract onOverlayScrollChanged(F)V
+.end method

@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final jA:I
+.field private final mp:Landroid/net/Uri;
 
-.field private final jx:Landroid/net/Uri;
+.field private final mq:I
 
-.field private final jy:I
+.field private final mr:I
 
-.field private final jz:I
+.field private final ms:I
 
 
 # direct methods
@@ -34,13 +34,13 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/images/WebImage;->jz:I
+    iput p1, p0, Lcom/google/android/gms/common/images/WebImage;->mr:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/images/WebImage;->jx:Landroid/net/Uri;
+    iput-object p2, p0, Lcom/google/android/gms/common/images/WebImage;->mp:Landroid/net/Uri;
 
-    iput p3, p0, Lcom/google/android/gms/common/images/WebImage;->jA:I
+    iput p3, p0, Lcom/google/android/gms/common/images/WebImage;->ms:I
 
-    iput p4, p0, Lcom/google/android/gms/common/images/WebImage;->jy:I
+    iput p4, p0, Lcom/google/android/gms/common/images/WebImage;->mq:I
 
     return-void
 .end method
@@ -71,11 +71,11 @@
 
     check-cast p1, Lcom/google/android/gms/common/images/WebImage;
 
-    iget-object v2, p0, Lcom/google/android/gms/common/images/WebImage;->jx:Landroid/net/Uri;
+    iget-object v2, p0, Lcom/google/android/gms/common/images/WebImage;->mp:Landroid/net/Uri;
 
-    iget-object v3, p1, Lcom/google/android/gms/common/images/WebImage;->jx:Landroid/net/Uri;
+    iget-object v3, p1, Lcom/google/android/gms/common/images/WebImage;->mp:Landroid/net/Uri;
 
-    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
 
@@ -89,15 +89,15 @@
     return v0
 
     :cond_5
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->jA:I
+    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->ms:I
 
-    iget v3, p1, Lcom/google/android/gms/common/images/WebImage;->jA:I
+    iget v3, p1, Lcom/google/android/gms/common/images/WebImage;->ms:I
 
     if-ne v2, v3, :cond_3
 
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->jy:I
+    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->mq:I
 
-    iget v3, p1, Lcom/google/android/gms/common/images/WebImage;->jy:I
+    iget v3, p1, Lcom/google/android/gms/common/images/WebImage;->mq:I
 
     if-eq v2, v3, :cond_4
 
@@ -107,7 +107,7 @@
 .method public getHeight()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/images/WebImage;->jy:I
+    iget v0, p0, Lcom/google/android/gms/common/images/WebImage;->mq:I
 
     return v0
 .end method
@@ -115,7 +115,7 @@
 .method public getWidth()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/images/WebImage;->jA:I
+    iget v0, p0, Lcom/google/android/gms/common/images/WebImage;->ms:I
 
     return v0
 .end method
@@ -127,13 +127,13 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/images/WebImage;->jx:Landroid/net/Uri;
+    iget-object v1, p0, Lcom/google/android/gms/common/images/WebImage;->mp:Landroid/net/Uri;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->jA:I
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->ms:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -143,7 +143,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->jy:I
+    iget v1, p0, Lcom/google/android/gms/common/images/WebImage;->mq:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -153,25 +153,25 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public mE()Landroid/net/Uri;
+.method public ps()Landroid/net/Uri;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/images/WebImage;->jx:Landroid/net/Uri;
+    iget-object v0, p0, Lcom/google/android/gms/common/images/WebImage;->mp:Landroid/net/Uri;
 
     return-object v0
 .end method
 
-.method mF()I
+.method pt()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/images/WebImage;->jz:I
+    iget v0, p0, Lcom/google/android/gms/common/images/WebImage;->mr:I
 
     return v0
 .end method
@@ -185,7 +185,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->jA:I
+    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->ms:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -195,7 +195,7 @@
 
     aput-object v2, v1, v3
 
-    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->jy:I
+    iget v2, p0, Lcom/google/android/gms/common/images/WebImage;->mq:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -205,7 +205,7 @@
 
     aput-object v2, v1, v3
 
-    iget-object v2, p0, Lcom/google/android/gms/common/images/WebImage;->jx:Landroid/net/Uri;
+    iget-object v2, p0, Lcom/google/android/gms/common/images/WebImage;->mp:Landroid/net/Uri;
 
     invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
@@ -227,7 +227,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/images/c;->my(Lcom/google/android/gms/common/images/WebImage;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/images/c;->pm(Lcom/google/android/gms/common/images/WebImage;Landroid/os/Parcel;I)V
 
     return-void
 .end method

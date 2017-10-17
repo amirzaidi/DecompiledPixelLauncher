@@ -8,14 +8,14 @@ import java.util.Arrays;
 
 class d extends l
 {
-    private final byte[] kA;
+    private final byte[] ns;
     
-    d(final byte[] ka) {
-        super(Arrays.copyOfRange(ka, 0, 25));
-        this.kA = ka;
+    d(final byte[] ns) {
+        super(Arrays.copyOfRange(ns, 0, 25));
+        this.ns = ns;
     }
     
-    byte[] nR() {
-        return this.kA;
+    byte[] qD() {
+        return this.ns;
     }
 }

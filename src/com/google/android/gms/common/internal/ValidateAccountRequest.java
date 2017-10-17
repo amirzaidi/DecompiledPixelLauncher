@@ -14,43 +14,43 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ValidateAccountRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int fP;
-    private final Scope[] fQ;
-    private final Bundle fR;
-    final int fS;
-    final IBinder fT;
-    private final String fU;
+    private final int iH;
+    private final Scope[] iI;
+    private final Bundle iJ;
+    final int iK;
+    final IBinder iL;
+    private final String iM;
     
     static {
         CREATOR = (Parcelable$Creator)new E();
     }
     
-    ValidateAccountRequest(final int fs, final int fp, final IBinder ft, final Scope[] fq, final Bundle fr, final String fu) {
-        this.fS = fs;
-        this.fP = fp;
-        this.fT = ft;
-        this.fQ = fq;
-        this.fR = fr;
-        this.fU = fu;
+    ValidateAccountRequest(final int ik, final int ih, final IBinder il, final Scope[] ii, final Bundle ij, final String im) {
+        this.iK = ik;
+        this.iH = ih;
+        this.iL = il;
+        this.iI = ii;
+        this.iJ = ij;
+        this.iM = im;
     }
     
-    public int hL() {
-        return this.fP;
+    public Scope[] kA() {
+        return this.iI;
     }
     
-    public Scope[] hM() {
-        return this.fQ;
+    public String kB() {
+        return this.iM;
     }
     
-    public String hN() {
-        return this.fU;
+    public Bundle kC() {
+        return this.iJ;
     }
     
-    public Bundle hO() {
-        return this.fR;
+    public int kz() {
+        return this.iH;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        E.iw(this, parcel, n);
+        E.lk(this, parcel, n);
     }
 }

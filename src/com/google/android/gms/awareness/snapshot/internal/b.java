@@ -11,47 +11,47 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void pL(final PowerStateImpl powerStateImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, powerStateImpl.rg());
-        a.fj(parcel, 2, powerStateImpl.rf());
-        a.fq(parcel, 3, powerStateImpl.rd());
-        a.fe(parcel, ey);
+    static void eF(final PowerStateImpl powerStateImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, powerStateImpl.ga());
+        a.hX(parcel, 2, powerStateImpl.fZ());
+        a.ie(parcel, 3, powerStateImpl.fX());
+        a.hS(parcel, hm);
     }
     
-    public PowerStateImpl[] pK(final int n) {
+    public PowerStateImpl[] eE(final int n) {
         return new PowerStateImpl[n];
     }
     
-    public PowerStateImpl pM(final Parcel parcel) {
-        int fn = 0;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        double gb = 0.0;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+    public PowerStateImpl eG(final Parcel parcel) {
+        int ib = 0;
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        double ip = 0.0;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib2 = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    gb = com.google.android.gms.common.internal.safeparcel.b.gb(parcel, fs);
+                    ip = com.google.android.gms.common.internal.safeparcel.b.iP(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PowerStateImpl(fn2, fn, gb);
+        if (parcel.dataPosition() == ix) {
+            return new PowerStateImpl(ib2, ib, ip);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

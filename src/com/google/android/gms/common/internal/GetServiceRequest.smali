@@ -7,23 +7,23 @@
 
 
 # instance fields
-.field eZ:Ljava/lang/String;
+.field hS:Ljava/lang/String;
 
-.field fa:[Lcom/google/android/gms/common/api/Scope;
+.field hT:[Lcom/google/android/gms/common/api/Scope;
 
-.field final fb:I
+.field hU:J
 
-.field fc:J
+.field hV:I
 
-.field fd:I
+.field hW:Landroid/os/Bundle;
 
-.field fe:Landroid/os/Bundle;
+.field hX:Landroid/accounts/Account;
 
-.field ff:Landroid/accounts/Account;
+.field final hY:I
 
-.field final fg:I
+.field hZ:Landroid/os/IBinder;
 
-.field fh:Landroid/os/IBinder;
+.field final version:I
 
 
 # direct methods
@@ -46,13 +46,13 @@
 
     const/4 v0, 0x3
 
-    iput v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fb:I
+    iput v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->version:I
 
-    sget v0, Lcom/google/android/gms/common/f;->kC:I
+    sget v0, Lcom/google/android/gms/common/f;->nu:I
 
-    iput v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fd:I
+    iput v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hV:I
 
-    iput p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fg:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hY:I
 
     return-void
 .end method
@@ -62,42 +62,42 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fb:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->version:I
 
-    iput p2, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fg:I
+    iput p2, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hY:I
 
-    iput p3, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fd:I
+    iput p3, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hV:I
 
-    iput-object p4, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->eZ:Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hS:Ljava/lang/String;
 
     const/4 v0, 0x2
 
     if-lt p1, v0, :cond_0
 
-    iput-object p5, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fh:Landroid/os/IBinder;
+    iput-object p5, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hZ:Landroid/os/IBinder;
 
-    iput-object p8, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->ff:Landroid/accounts/Account;
+    iput-object p8, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hX:Landroid/accounts/Account;
 
     :goto_0
-    iput-object p6, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fa:[Lcom/google/android/gms/common/api/Scope;
+    iput-object p6, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hT:[Lcom/google/android/gms/common/api/Scope;
 
-    iput-object p7, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fe:Landroid/os/Bundle;
+    iput-object p7, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hW:Landroid/os/Bundle;
 
-    iput-wide p9, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fc:J
+    iput-wide p9, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hU:J
 
     return-void
 
     :cond_0
-    invoke-direct {p0, p5}, Lcom/google/android/gms/common/internal/GetServiceRequest;->gF(Landroid/os/IBinder;)Landroid/accounts/Account;
+    invoke-direct {p0, p5}, Lcom/google/android/gms/common/internal/GetServiceRequest;->jt(Landroid/os/IBinder;)Landroid/accounts/Account;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->ff:Landroid/accounts/Account;
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hX:Landroid/accounts/Account;
 
     goto :goto_0
 .end method
 
-.method private gF(Landroid/os/IBinder;)Landroid/accounts/Account;
+.method private jt(Landroid/os/IBinder;)Landroid/accounts/Account;
     .locals 1
 
     const/4 v0, 0x0
@@ -121,7 +121,7 @@
 
 
 # virtual methods
-.method public gC(Lcom/google/android/gms/common/internal/zzq;)Lcom/google/android/gms/common/internal/GetServiceRequest;
+.method public jq(Lcom/google/android/gms/common/internal/zzq;)Lcom/google/android/gms/common/internal/GetServiceRequest;
     .locals 1
 
     if-nez p1, :cond_0
@@ -134,36 +134,36 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fh:Landroid/os/IBinder;
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hZ:Landroid/os/IBinder;
 
     goto :goto_0
 .end method
 
-.method public gD(Landroid/os/Bundle;)Lcom/google/android/gms/common/internal/GetServiceRequest;
+.method public jr(Landroid/os/Bundle;)Lcom/google/android/gms/common/internal/GetServiceRequest;
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fe:Landroid/os/Bundle;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hW:Landroid/os/Bundle;
 
     return-object p0
 .end method
 
-.method public gE(Landroid/accounts/Account;)Lcom/google/android/gms/common/internal/GetServiceRequest;
+.method public js(Landroid/accounts/Account;)Lcom/google/android/gms/common/internal/GetServiceRequest;
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->ff:Landroid/accounts/Account;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hX:Landroid/accounts/Account;
 
     return-object p0
 .end method
 
-.method public gG(Ljava/lang/String;)Lcom/google/android/gms/common/internal/GetServiceRequest;
+.method public ju(Ljava/lang/String;)Lcom/google/android/gms/common/internal/GetServiceRequest;
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->eZ:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hS:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public gH(Ljava/util/Collection;)Lcom/google/android/gms/common/internal/GetServiceRequest;
+.method public jv(Ljava/util/Collection;)Lcom/google/android/gms/common/internal/GetServiceRequest;
     .locals 1
 
     invoke-interface {p1}, Ljava/util/Collection;->size()I
@@ -178,7 +178,7 @@
 
     check-cast v0, [Lcom/google/android/gms/common/api/Scope;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->fa:[Lcom/google/android/gms/common/api/Scope;
+    iput-object v0, p0, Lcom/google/android/gms/common/internal/GetServiceRequest;->hT:[Lcom/google/android/gms/common/api/Scope;
 
     return-object p0
 .end method
@@ -186,7 +186,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/d;->gI(Lcom/google/android/gms/common/internal/GetServiceRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/d;->jw(Lcom/google/android/gms/common/internal/GetServiceRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

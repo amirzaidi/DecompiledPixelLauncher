@@ -2,101 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/internal/zzqd;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private rR:Landroid/os/IBinder;
+.field final synthetic sb:Lcom/google/android/gms/internal/am;
+
+.field final synthetic sc:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/IBinder;)V
+.method constructor <init>(Lcom/google/android/gms/internal/am;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ap;->sb:Lcom/google/android/gms/internal/am;
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ap;->rR:Landroid/os/IBinder;
+    iput-object p2, p0, Lcom/google/android/gms/internal/ap;->sc:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
+.method public run()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ap;->rR:Landroid/os/IBinder;
+    const/16 v0, 0xa
 
-    return-object v0
-.end method
+    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-.method public zza(Lcom/google/android/gms/internal/zzqc;Lcom/google/android/gms/clearcut/LogEventParcelable;)V
-    .locals 5
+    iget-object v0, p0, Lcom/google/android/gms/internal/ap;->sc:Ljava/lang/Runnable;
 
-    const/4 v0, 0x0
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    :try_start_0
-    const-string/jumbo v2, "com.google.android.gms.clearcut.internal.IClearcutLoggerService"
-
-    invoke-virtual {v1, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    if-nez p1, :cond_0
-
-    :goto_0
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    if-nez p2, :cond_1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    :goto_1
-    iget-object v0, p0, Lcom/google/android/gms/internal/ap;->rR:Landroid/os/IBinder;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x1
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     return-void
-
-    :cond_0
-    :try_start_1
-    invoke-interface {p1}, Lcom/google/android/gms/internal/zzqc;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x1
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p2, v1, v0}, Lcom/google/android/gms/clearcut/LogEventParcelable;->writeToParcel(Landroid/os/Parcel;I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
 .end method

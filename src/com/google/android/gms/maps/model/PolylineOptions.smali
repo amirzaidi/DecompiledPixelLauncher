@@ -7,21 +7,21 @@
 
 
 # instance fields
-.field private Fj:Z
+.field private GO:Z
 
-.field private final Fk:Ljava/util/List;
+.field private final GP:Ljava/util/List;
 
-.field private Fl:Z
+.field private GQ:Z
 
-.field private Fm:I
+.field private GR:I
 
-.field private Fn:Z
+.field private GS:Z
 
-.field private Fo:F
+.field private GT:F
 
-.field private final Fp:I
+.field private final GU:I
 
-.field private Fq:F
+.field private GV:F
 
 
 # direct methods
@@ -48,29 +48,29 @@
 
     const/high16 v0, 0x41200000    # 10.0f
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fq:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GV:F
 
     const/high16 v0, -0x1000000
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fm:I
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GR:I
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fo:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GT:F
 
-    iput-boolean v2, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fl:Z
+    iput-boolean v2, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GQ:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fj:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GO:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fn:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GS:Z
 
-    iput v2, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fp:I
+    iput v2, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GU:I
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fk:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GP:Ljava/util/List;
 
     return-void
 .end method
@@ -84,89 +84,89 @@
 
     const/high16 v0, 0x41200000    # 10.0f
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fq:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GV:F
 
     const/high16 v0, -0x1000000
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fm:I
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GR:I
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fo:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GT:F
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fl:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GQ:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fj:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GO:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fn:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GS:Z
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fp:I
+    iput p1, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GU:I
 
-    iput-object p2, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fk:Ljava/util/List;
+    iput-object p2, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GP:Ljava/util/List;
 
-    iput p3, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fq:F
+    iput p3, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GV:F
 
-    iput p4, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fm:I
+    iput p4, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GR:I
 
-    iput p5, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fo:F
+    iput p5, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GT:F
 
-    iput-boolean p6, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fl:Z
+    iput-boolean p6, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GQ:Z
 
-    iput-boolean p7, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fj:Z
+    iput-boolean p7, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GO:Z
 
-    iput-boolean p8, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fn:Z
+    iput-boolean p8, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GS:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Kf()I
+.method public KY()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fm:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GR:I
 
     return v0
 .end method
 
-.method public Kg()F
+.method public KZ()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fo:F
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GT:F
 
     return v0
 .end method
 
-.method public Kh()Z
+.method public La()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fj:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GO:Z
 
     return v0
 .end method
 
-.method public Ki()Z
+.method public Lb()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fn:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GS:Z
 
     return v0
 .end method
 
-.method Kj()I
+.method Lc()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fp:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GU:I
 
     return v0
 .end method
 
-.method public Kk()Ljava/util/List;
+.method public Ld()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fk:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GP:Ljava/util/List;
 
     return-object v0
 .end method
@@ -174,7 +174,7 @@
 .method public getWidth()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fq:F
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GV:F
 
     return v0
 .end method
@@ -182,7 +182,7 @@
 .method public isVisible()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->Fl:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolylineOptions;->GQ:Z
 
     return v0
 .end method
@@ -190,7 +190,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/g;->IW(Lcom/google/android/gms/maps/model/PolylineOptions;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/g;->JP(Lcom/google/android/gms/maps/model/PolylineOptions;Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -4,9 +4,7 @@
 
 package com.google.android.libraries.a.a;
 
-public interface a
+public interface a extends b
 {
-    void dd(final boolean p0, final boolean p1);
-    
-    void onOverlayScrollChanged(final float p0);
+    void es(final int p0);
 }

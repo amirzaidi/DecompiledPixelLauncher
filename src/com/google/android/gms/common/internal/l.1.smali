@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static ho(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public static kc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     if-eqz p0, :cond_0
@@ -22,7 +22,7 @@
     throw v0
 .end method
 
-.method public static hp(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+.method public static kd(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
     .locals 2
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -45,7 +45,7 @@
     throw v0
 .end method
 
-.method public static hq(ZLjava/lang/Object;)V
+.method public static ke(ZLjava/lang/Object;)V
     .locals 2
 
     if-eqz p0, :cond_0
@@ -64,7 +64,7 @@
     throw v0
 .end method
 
-.method public static hr(Ljava/lang/String;)Ljava/lang/String;
+.method public static kf(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -85,7 +85,7 @@
     throw v0
 .end method
 
-.method public static hs(Z)V
+.method public static kg(Z)V
     .locals 1
 
     if-eqz p0, :cond_0
@@ -100,7 +100,7 @@
     throw v0
 .end method
 
-.method public static ht(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static kh(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     if-eqz p0, :cond_0
@@ -117,7 +117,7 @@
     throw v0
 .end method
 
-.method public static varargs hu(ZLjava/lang/String;[Ljava/lang/Object;)V
+.method public static varargs ki(ZLjava/lang/String;[Ljava/lang/Object;)V
     .locals 2
 
     if-eqz p0, :cond_0
@@ -136,7 +136,7 @@
     throw v0
 .end method
 
-.method public static hv(ZLjava/lang/Object;)V
+.method public static kj(ZLjava/lang/Object;)V
     .locals 2
 
     if-eqz p0, :cond_0
@@ -155,7 +155,7 @@
     throw v0
 .end method
 
-.method public static varargs hw(ZLjava/lang/String;[Ljava/lang/Object;)V
+.method public static varargs kk(ZLjava/lang/String;[Ljava/lang/Object;)V
     .locals 2
 
     if-eqz p0, :cond_0
@@ -174,7 +174,7 @@
     throw v0
 .end method
 
-.method public static hx(Z)V
+.method public static kl(Z)V
     .locals 1
 
     if-eqz p0, :cond_0

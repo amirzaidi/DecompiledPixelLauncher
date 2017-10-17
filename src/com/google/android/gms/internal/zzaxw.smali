@@ -11,19 +11,7 @@
     return-void
 .end method
 
-.method static xA()Lcom/google/android/gms/internal/zzaxw;
-    .locals 2
-
-    new-instance v0, Lcom/google/android/gms/internal/zzaxw;
-
-    const-string/jumbo v1, "CodedInputStream encountered a malformed varint."
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/zzaxw;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method static xu()Lcom/google/android/gms/internal/zzaxw;
+.method static xt()Lcom/google/android/gms/internal/zzaxw;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/internal/zzaxw;
@@ -35,7 +23,7 @@
     return-object v0
 .end method
 
-.method static xv()Lcom/google/android/gms/internal/zzaxw;
+.method static xu()Lcom/google/android/gms/internal/zzaxw;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/internal/zzaxw;
@@ -47,7 +35,7 @@
     return-object v0
 .end method
 
-.method static xw()Lcom/google/android/gms/internal/zzaxw;
+.method static xv()Lcom/google/android/gms/internal/zzaxw;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/internal/zzaxw;
@@ -59,7 +47,7 @@
     return-object v0
 .end method
 
-.method static xx()Lcom/google/android/gms/internal/zzaxw;
+.method static xw()Lcom/google/android/gms/internal/zzaxw;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/internal/zzaxw;
@@ -71,7 +59,7 @@
     return-object v0
 .end method
 
-.method static xy()Lcom/google/android/gms/internal/zzaxw;
+.method static xx()Lcom/google/android/gms/internal/zzaxw;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/internal/zzaxw;
@@ -83,12 +71,24 @@
     return-object v0
 .end method
 
-.method static xz()Lcom/google/android/gms/internal/zzaxw;
+.method static xy()Lcom/google/android/gms/internal/zzaxw;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/internal/zzaxw;
 
     const-string/jumbo v1, "While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either than the input has been truncated or that an embedded message misreported its own length."
+
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/zzaxw;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method static xz()Lcom/google/android/gms/internal/zzaxw;
+    .locals 2
+
+    new-instance v0, Lcom/google/android/gms/internal/zzaxw;
+
+    const-string/jumbo v1, "CodedInputStream encountered a malformed varint."
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/internal/zzaxw;-><init>(Ljava/lang/String;)V
 

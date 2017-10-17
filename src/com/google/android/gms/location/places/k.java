@@ -15,64 +15,64 @@ import android.os.Parcelable$Creator;
 
 public class k implements Parcelable$Creator
 {
-    static void EJ(final PlacePhotoMetadataResult placePhotoMetadataResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.eW(parcel, 1, (Parcelable)placePhotoMetadataResult.dr(), n, false);
-        a.eW(parcel, 2, (Parcelable)placePhotoMetadataResult.zV, n, false);
-        a.fj(parcel, 1000, placePhotoMetadataResult.zU);
-        a.fe(parcel, ey);
+    static void FC(final PlacePhotoMetadataResult placePhotoMetadataResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hK(parcel, 1, (Parcelable)placePhotoMetadataResult.gV(), n, false);
+        a.hK(parcel, 2, (Parcelable)placePhotoMetadataResult.BA, n, false);
+        a.hX(parcel, 1000, placePhotoMetadataResult.Bz);
+        a.hS(parcel, hm);
     }
     
-    public PlacePhotoMetadataResult EK(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
+    public PlacePhotoMetadataResult FD(final Parcel parcel) {
+        final int ix = b.ix(parcel);
         Status status = null;
-        int fn = 0;
+        int ib = 0;
         DataHolder dataHolder = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
             int n = 0;
             DataHolder dataHolder2 = null;
             Status status4 = null;
             Label_0124: {
-                switch (b.ga(fs)) {
+                switch (b.iO(ig)) {
                     default: {
-                        b.fA(parcel, fs);
+                        b.io(parcel, ig);
                         break;
                     }
                     case 1: {
-                        final Status status2 = (Status)b.fW(parcel, fs, Status.CREATOR);
-                        n = fn;
+                        final Status status2 = (Status)b.iK(parcel, ig, Status.CREATOR);
+                        n = ib;
                         final Status status3 = status2;
                         dataHolder2 = dataHolder;
                         status4 = status3;
                         break Label_0124;
                     }
                     case 2: {
-                        dataHolder2 = (DataHolder)b.fW(parcel, fs, DataHolder.CREATOR);
+                        dataHolder2 = (DataHolder)b.iK(parcel, ig, DataHolder.CREATOR);
                         status4 = status;
-                        n = fn;
+                        n = ib;
                         break Label_0124;
                     }
                     case 1000: {
-                        fn = b.fN(parcel, fs);
+                        ib = b.iB(parcel, ig);
                         break;
                     }
                 }
                 dataHolder2 = dataHolder;
                 status4 = status;
-                n = fn;
+                n = ib;
             }
-            fn = n;
+            ib = n;
             status = status4;
             dataHolder = dataHolder2;
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlacePhotoMetadataResult(fn, status, dataHolder);
+        if (parcel.dataPosition() == ix) {
+            return new PlacePhotoMetadataResult(ib, status, dataHolder);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public PlacePhotoMetadataResult[] EL(final int n) {
+    public PlacePhotoMetadataResult[] FE(final int n) {
         return new PlacePhotoMetadataResult[n];
     }
 }

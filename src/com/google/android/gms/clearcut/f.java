@@ -8,18 +8,18 @@ import android.content.Context;
 
 public class f
 {
-    private static int GF;
-    public static final f GG;
+    private static int Ik;
+    public static final f Il;
     
     static {
-        f.GF = -1;
-        GG = new f();
+        f.Ik = -1;
+        Il = new f();
     }
     
-    public int LJ(final Context context) {
-        if (f.GF < 0) {
-            f.GF = context.getSharedPreferences("bootCount", 0).getInt("bootCount", 1);
+    public int MC(final Context context) {
+        if (f.Ik < 0) {
+            f.Ik = context.getSharedPreferences("bootCount", 0).getInt("bootCount", 1);
         }
-        return f.GF;
+        return f.Ik;
     }
 }

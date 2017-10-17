@@ -17,39 +17,39 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class FenceStateMapImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    public final Map HT;
-    private final int HU;
+    public final Map Jy;
+    private final int Jz;
     
     static {
         CREATOR = (Parcelable$Creator)new b();
     }
     
-    FenceStateMapImpl(final int hu, final Bundle bundle) {
-        this.HU = hu;
-        this.HT = new HashMap();
+    FenceStateMapImpl(final int jz, final Bundle bundle) {
+        this.Jz = jz;
+        this.Jy = new HashMap();
         if (bundle != null) {
             for (final String s : bundle.keySet()) {
-                this.HT.put(s, c.gk(bundle.getByteArray(s), FenceStateImpl.CREATOR));
+                this.Jy.put(s, c.iY(bundle.getByteArray(s), FenceStateImpl.CREATOR));
             }
         }
     }
     
-    Bundle NC() {
-        if (this.HT != null) {
+    Bundle Ov() {
+        if (this.Jy != null) {
             final Bundle bundle = new Bundle();
-            for (final Map.Entry<String, V> entry : this.HT.entrySet()) {
-                bundle.putByteArray((String)entry.getKey(), c.gl((SafeParcelable)entry.getValue()));
+            for (final Map.Entry<String, V> entry : this.Jy.entrySet()) {
+                bundle.putByteArray((String)entry.getKey(), c.iZ((SafeParcelable)entry.getValue()));
             }
             return bundle;
         }
         return null;
     }
     
-    int ND() {
-        return this.HU;
+    int Ow() {
+        return this.Jz;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.NH(this, parcel, n);
+        b.OA(this, parcel, n);
     }
 }

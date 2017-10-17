@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method static Ei(Ljava/util/List;)Ljava/util/Set;
+.method static Fb(Ljava/util/List;)Ljava/util/Set;
     .locals 1
 
     if-nez p0, :cond_1
@@ -41,7 +41,7 @@
     return-object v0
 .end method
 
-.method static Ej(Ljava/util/Collection;)Ljava/util/List;
+.method static Fc(Ljava/util/Collection;)Ljava/util/List;
     .locals 1
 
     if-nez p0, :cond_1

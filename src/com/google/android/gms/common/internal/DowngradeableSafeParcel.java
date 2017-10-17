@@ -8,18 +8,18 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public abstract class DowngradeableSafeParcel extends AbstractSafeParcelable implements ReflectedParcelable
 {
-    private static ClassLoader fq;
-    private static Integer fr;
-    private static final Object fs;
-    private boolean ft;
+    private static ClassLoader ii;
+    private static Integer ij;
+    private static final Object ik;
+    private boolean il;
     
     static {
-        fs = new Object();
-        DowngradeableSafeParcel.fq = null;
-        DowngradeableSafeParcel.fr = null;
+        ik = new Object();
+        DowngradeableSafeParcel.ii = null;
+        DowngradeableSafeParcel.ij = null;
     }
     
     public DowngradeableSafeParcel() {
-        this.ft = false;
+        this.il = false;
     }
 }

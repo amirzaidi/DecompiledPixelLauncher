@@ -12,83 +12,83 @@ import android.os.Parcelable$Creator;
 
 public class v implements Parcelable$Creator
 {
-    static void py(final Flag flag, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, flag.lc);
-        a.fo(parcel, 2, flag.name, false);
-        a.fw(parcel, 3, flag.le);
-        a.fa(parcel, 4, flag.lf);
-        a.fq(parcel, 5, flag.kY);
-        a.fo(parcel, 6, flag.kW, false);
-        a.fv(parcel, 7, flag.lb, false);
-        a.fj(parcel, 8, flag.ld);
-        a.fj(parcel, 9, flag.kZ);
-        a.fe(parcel, ey);
+    static void Dx(final Flag flag, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, flag.yG);
+        a.ic(parcel, 2, flag.name, false);
+        a.ik(parcel, 3, flag.yI);
+        a.hO(parcel, 4, flag.yJ);
+        a.ie(parcel, 5, flag.yC);
+        a.ic(parcel, 6, flag.yA, false);
+        a.ij(parcel, 7, flag.yF, false);
+        a.hX(parcel, 8, flag.yH);
+        a.hX(parcel, 9, flag.yD);
+        a.hS(parcel, hm);
     }
     
-    public Flag px(final Parcel parcel) {
-        byte[] gf = null;
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        long fl = 0L;
-        double gb = 0.0;
-        int fn2 = 0;
-        String fq = null;
-        boolean fx = false;
-        String fq2 = null;
-        int fn3 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public Flag Dw(final Parcel parcel) {
+        byte[] it = null;
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        long iz = 0L;
+        double ip = 0.0;
+        int ib2 = 0;
+        String ie = null;
+        boolean il = false;
+        String ie2 = null;
+        int ib3 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    gb = b.gb(parcel, fs);
+                    ip = b.iP(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    gf = b.gf(parcel, fs);
+                    it = b.iT(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new Flag(fn3, fq2, fl, fx, gb, fq, gf, fn2, fn);
+        if (parcel.dataPosition() == ix) {
+            return new Flag(ib3, ie2, iz, il, ip, ie, it, ib2, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public Flag[] pz(final int n) {
+    public Flag[] Dy(final int n) {
         return new Flag[n];
     }
 }

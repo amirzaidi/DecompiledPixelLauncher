@@ -16,71 +16,71 @@ import android.os.Parcelable$Creator;
 
 public class i implements Parcelable$Creator
 {
-    static void EF(final AddPlaceRequest addPlaceRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, addPlaceRequest.DM(), false);
-        a.eW(parcel, 2, (Parcelable)addPlaceRequest.DP(), n, false);
-        a.fo(parcel, 3, addPlaceRequest.DL(), false);
-        a.fb(parcel, 4, addPlaceRequest.DQ(), false);
-        a.fo(parcel, 5, addPlaceRequest.DO(), false);
-        a.eW(parcel, 6, (Parcelable)addPlaceRequest.DN(), n, false);
-        a.fj(parcel, 1000, addPlaceRequest.zt);
-        a.fe(parcel, ey);
+    static void Fy(final AddPlaceRequest addPlaceRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, addPlaceRequest.EF(), false);
+        a.hK(parcel, 2, (Parcelable)addPlaceRequest.EI(), n, false);
+        a.ic(parcel, 3, addPlaceRequest.EE(), false);
+        a.hP(parcel, 4, addPlaceRequest.EJ(), false);
+        a.ic(parcel, 5, addPlaceRequest.EH(), false);
+        a.hK(parcel, 6, (Parcelable)addPlaceRequest.EG(), n, false);
+        a.hX(parcel, 1000, addPlaceRequest.AY);
+        a.hS(parcel, hm);
     }
     
-    public AddPlaceRequest[] ED(final int n) {
+    public AddPlaceRequest[] Fw(final int n) {
         return new AddPlaceRequest[n];
     }
     
-    public AddPlaceRequest EE(final Parcel parcel) {
+    public AddPlaceRequest Fx(final Parcel parcel) {
         Uri uri = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        List fh = null;
-        String fq2 = null;
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        List iv = null;
+        String ie2 = null;
         LatLng latLng = null;
-        String fq3 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        String ie3 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq3 = b.fQ(parcel, fs);
+                    ie3 = b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    latLng = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fh = b.fH(parcel, fs);
+                    iv = b.iv(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    uri = (Uri)b.fW(parcel, fs, Uri.CREATOR);
+                    uri = (Uri)b.iK(parcel, ig, Uri.CREATOR);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new AddPlaceRequest(fn, fq3, latLng, fq2, fh, fq, uri);
+        if (parcel.dataPosition() == ix) {
+            return new AddPlaceRequest(ib, ie3, latLng, ie2, iv, ie, uri);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

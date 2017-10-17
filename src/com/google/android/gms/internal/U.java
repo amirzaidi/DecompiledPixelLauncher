@@ -4,19 +4,36 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.b;
-import com.google.android.gms.phenotype.Configurations;
-import com.google.android.gms.common.api.Status;
+import android.accounts.Account;
+import android.util.Log;
 
-class u extends j
+public class u
 {
-    final /* synthetic */ s oS;
-    
-    u(final s os) {
-        this.oS = os;
+    public static String sy(final Integer n) {
+        if (n != null) {
+            String s;
+            if (!Log.isLoggable("GCoreUlr", 2)) {
+                s = new StringBuilder(15).append("tag#").append(n % 20).toString();
+            }
+            else {
+                s = String.valueOf(n);
+            }
+            return s;
+        }
+        return "(null)";
     }
     
-    public void zza(final Status status, final Configurations configurations) {
-        this.oS.rT(new z(status, configurations));
+    public static String sz(final Account account) {
+        if (account != null) {
+            String s;
+            if (!Log.isLoggable("GCoreUlr", 2)) {
+                s = new StringBuilder(20).append("account#").append(account.name.hashCode() % 20).append("#").toString();
+            }
+            else {
+                s = account.name;
+            }
+            return s;
+        }
+        return "null";
     }
 }

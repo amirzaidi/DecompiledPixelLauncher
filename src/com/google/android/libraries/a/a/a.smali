@@ -2,10 +2,10 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcom/google/android/libraries/a/a/b;
+
 
 # virtual methods
-.method public abstract dd(ZZ)V
-.end method
-
-.method public abstract onOverlayScrollChanged(F)V
+.method public abstract es(I)V
 .end method

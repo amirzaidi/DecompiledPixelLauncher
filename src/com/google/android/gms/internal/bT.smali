@@ -1,46 +1,32 @@
-.class public abstract Lcom/google/android/gms/internal/bT;
-.super Ljava/lang/Object;
+.class Lcom/google/android/gms/internal/bT;
+.super Lcom/google/android/gms/internal/bl;
 
 
-# static fields
-.field private static final vS:Ljava/util/concurrent/ExecutorService;
+# instance fields
+.field final synthetic wn:Lcom/google/android/gms/internal/bK;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method constructor <init>(Lcom/google/android/gms/internal/bK;Lcom/google/android/gms/internal/ci;)V
+    .locals 0
 
-    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+    iput-object p1, p0, Lcom/google/android/gms/internal/bT;->wn:Lcom/google/android/gms/internal/bK;
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
-
-    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-
-    new-instance v8, Lcom/google/android/gms/internal/aT;
-
-    const-string/jumbo v0, "GAC_Transform"
-
-    invoke-direct {v8, v0}, Lcom/google/android/gms/internal/aT;-><init>(Ljava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x4
-
-    const-wide/16 v4, 0x3c
-
-    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
-
-    sput-object v1, Lcom/google/android/gms/internal/bT;->vS:Ljava/util/concurrent/ExecutorService;
+    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/bl;-><init>(Lcom/google/android/gms/internal/ci;)V
 
     return-void
 .end method
 
-.method public static Bv()Ljava/util/concurrent/ExecutorService;
-    .locals 1
 
-    sget-object v0, Lcom/google/android/gms/internal/bT;->vS:Ljava/util/concurrent/ExecutorService;
+# virtual methods
+.method public yq()V
+    .locals 2
 
-    return-object v0
+    iget-object v0, p0, Lcom/google/android/gms/internal/bT;->wn:Lcom/google/android/gms/internal/bK;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/bK;->Ay(I)V
+
+    return-void
 .end method

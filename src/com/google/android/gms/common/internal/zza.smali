@@ -103,7 +103,7 @@
 
     if-eq v0, v1, :cond_0
 
-    invoke-static {v2, v0}, Lcom/google/android/gms/common/k;->og(Landroid/content/Context;I)Z
+    invoke-static {v2, v0}, Lcom/google/android/gms/common/k;->qS(Landroid/content/Context;I)Z
 
     move-result v1
 

@@ -9,17 +9,17 @@ import android.support.v4.app.a;
 
 public class e
 {
-    private final Object nz;
+    private final Object ob;
     
-    public boolean rJ() {
-        return this.nz instanceof a;
+    public boolean rL() {
+        return this.ob instanceof a;
     }
     
-    public Activity rK() {
-        return (Activity)this.nz;
+    public Activity rM() {
+        return (Activity)this.ob;
     }
     
-    public a rL() {
-        return (a)this.nz;
+    public a rN() {
+        return (a)this.ob;
     }
 }

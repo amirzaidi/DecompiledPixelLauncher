@@ -11,30 +11,30 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class HeadphoneStateImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int mA;
-    private final int mB;
+    private final int fX;
+    private final int fY;
     
     static {
         CREATOR = (Parcelable$Creator)new h();
     }
     
-    HeadphoneStateImpl(final int mb, final int ma) {
-        this.mB = mb;
-        this.mA = ma;
+    HeadphoneStateImpl(final int fy, final int fx) {
+        this.fY = fy;
+        this.fX = fx;
+    }
+    
+    int eW() {
+        return this.fY;
     }
     
     public int getState() {
-        return this.mA;
-    }
-    
-    int pZ() {
-        return this.mB;
+        return this.fX;
     }
     
     public String toString() {
-        switch (this.mA) {
+        switch (this.fX) {
             default: {
-                return new StringBuilder(35).append("unknown headphone state=").append(this.mA).toString();
+                return new StringBuilder(35).append("unknown headphone state=").append(this.fX).toString();
             }
             case 1: {
                 return "HEADPHONE_PLUGGED";
@@ -46,6 +46,6 @@ public final class HeadphoneStateImpl extends AbstractSafeParcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.qi(this, parcel, n);
+        h.eZ(this, parcel, n);
     }
 }

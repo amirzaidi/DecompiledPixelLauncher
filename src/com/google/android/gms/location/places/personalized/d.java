@@ -13,50 +13,50 @@ import android.os.Parcelable$Creator;
 
 public class d implements Parcelable$Creator
 {
-    static void CS(final PlaceUserData placeUserData, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, placeUserData.CP(), false);
-        a.fo(parcel, 2, placeUserData.CQ(), false);
-        a.fc(parcel, 6, placeUserData.CR(), false);
-        a.fj(parcel, 1000, placeUserData.xR);
-        a.fe(parcel, ey);
+    static void DL(final PlaceUserData placeUserData, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, placeUserData.DI(), false);
+        a.ic(parcel, 2, placeUserData.DJ(), false);
+        a.hQ(parcel, 6, placeUserData.DK(), false);
+        a.hX(parcel, 1000, placeUserData.zw);
+        a.hS(parcel, hm);
     }
     
     public PlaceUserData createFromParcel(final Parcel parcel) {
-        List fz = null;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        int fn = 0;
-        String fq2 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        List in = null;
+        final int ix = b.ix(parcel);
+        String ie = null;
+        int ib = 0;
+        String ie2 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fz = b.fZ(parcel, fs, (Parcelable$Creator)PlaceAlias.CREATOR);
+                    in = b.iN(parcel, ig, (Parcelable$Creator)PlaceAlias.CREATOR);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlaceUserData(fn, fq, fq2, fz);
+        if (parcel.dataPosition() == ix) {
+            return new PlaceUserData(ib, ie, ie2, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public PlaceUserData[] newArray(final int n) {

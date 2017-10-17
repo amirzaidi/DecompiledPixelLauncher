@@ -12,26 +12,26 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class StreetViewPanoramaCamera extends AbstractSafeParcelable
 {
     public static final a CREATOR;
-    public final float Eg;
-    private StreetViewPanoramaOrientation Eh;
-    private final int Ei;
-    public final float Ej;
-    public final float Ek;
+    public final float FL;
+    private StreetViewPanoramaOrientation FM;
+    private final int FN;
+    public final float FO;
+    public final float FP;
     
     static {
         CREATOR = new a();
     }
     
-    StreetViewPanoramaCamera(final int ei, float ej, final float n, final float n2) {
+    StreetViewPanoramaCamera(final int fn, float fo, final float n, final float n2) {
         final double n3 = 0.0;
         final float n4 = 360.0f;
-        l.hq(-90.0f <= n && n <= 90.0f, "Tilt needs to be between -90 and 90 inclusive");
-        this.Ei = ei;
-        if (ej <= n3) {
-            ej = 0.0f;
+        l.ke(-90.0f <= n && n <= 90.0f, "Tilt needs to be between -90 and 90 inclusive");
+        this.FN = fn;
+        if (fo <= n3) {
+            fo = 0.0f;
         }
-        this.Ej = ej;
-        this.Eg = n + 0.0f;
+        this.FO = fo;
+        this.FL = n + 0.0f;
         float n5;
         if (n2 <= n3) {
             n5 = n2 % n4 + n4;
@@ -39,12 +39,12 @@ public class StreetViewPanoramaCamera extends AbstractSafeParcelable
         else {
             n5 = n2;
         }
-        this.Ek = n5 % n4;
-        this.Eh = new b().Iz(n).IA(n2).build();
+        this.FP = n5 % n4;
+        this.FM = new b().Js(n).Jt(n2).build();
     }
     
-    int Jh() {
-        return this.Ei;
+    int JX() {
+        return this.FN;
     }
     
     public boolean equals(final Object o) {
@@ -54,7 +54,7 @@ public class StreetViewPanoramaCamera extends AbstractSafeParcelable
         }
         if (o instanceof StreetViewPanoramaCamera) {
             final StreetViewPanoramaCamera streetViewPanoramaCamera = (StreetViewPanoramaCamera)o;
-            if (Float.floatToIntBits(this.Ej) != Float.floatToIntBits(streetViewPanoramaCamera.Ej) || Float.floatToIntBits(this.Eg) != Float.floatToIntBits(streetViewPanoramaCamera.Eg) || Float.floatToIntBits(this.Ek) != Float.floatToIntBits(streetViewPanoramaCamera.Ek)) {
+            if (Float.floatToIntBits(this.FO) != Float.floatToIntBits(streetViewPanoramaCamera.FO) || Float.floatToIntBits(this.FL) != Float.floatToIntBits(streetViewPanoramaCamera.FL) || Float.floatToIntBits(this.FP) != Float.floatToIntBits(streetViewPanoramaCamera.FP)) {
                 b = false;
             }
             return b;
@@ -63,14 +63,14 @@ public class StreetViewPanoramaCamera extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.Ej, this.Eg, this.Ek);
+        return u.kw(this.FO, this.FL, this.FP);
     }
     
     public String toString() {
-        return u.hJ(this).hB("zoom", this.Ej).hB("tilt", this.Eg).hB("bearing", this.Ek).toString();
+        return u.kx(this).kp("zoom", this.FO).kp("tilt", this.FL).kp("bearing", this.FP).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        a.Iw(this, parcel, n);
+        a.Jp(this, parcel, n);
     }
 }

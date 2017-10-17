@@ -7,23 +7,23 @@
 
 
 # instance fields
-.field private DO:Z
+.field private final FA:I
 
-.field private final DP:Ljava/util/List;
+.field private final FB:Ljava/util/List;
 
-.field private DQ:I
+.field private Ft:Z
 
-.field private DR:Z
+.field private final Fu:Ljava/util/List;
 
-.field private DS:Z
+.field private Fv:I
 
-.field private DT:I
+.field private Fw:Z
 
-.field private DU:F
+.field private Fx:Z
 
-.field private final DV:I
+.field private Fy:I
 
-.field private final DW:Ljava/util/List;
+.field private Fz:F
 
 .field private mStrokeWidth:F
 
@@ -56,33 +56,33 @@
 
     const/high16 v0, -0x1000000
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DQ:I
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fv:I
 
-    iput v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DT:I
+    iput v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fy:I
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DU:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fz:F
 
-    iput-boolean v2, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DR:Z
+    iput-boolean v2, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fw:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DO:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Ft:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DS:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fx:Z
 
-    iput v2, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DV:I
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DP:Ljava/util/List;
+    iput v2, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->FA:I
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DW:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fu:Ljava/util/List;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->FB:Ljava/util/List;
 
     return-void
 .end method
@@ -100,64 +100,64 @@
 
     const/high16 v0, -0x1000000
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DQ:I
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fv:I
 
-    iput v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DT:I
+    iput v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fy:I
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DU:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fz:F
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DR:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fw:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DO:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Ft:Z
 
-    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DS:Z
+    iput-boolean v1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fx:Z
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DV:I
+    iput p1, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->FA:I
 
-    iput-object p2, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DP:Ljava/util/List;
+    iput-object p2, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fu:Ljava/util/List;
 
-    iput-object p3, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DW:Ljava/util/List;
+    iput-object p3, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->FB:Ljava/util/List;
 
     iput p4, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->mStrokeWidth:F
 
-    iput p5, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DQ:I
+    iput p5, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fv:I
 
-    iput p6, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DT:I
+    iput p6, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fy:I
 
-    iput p7, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DU:F
+    iput p7, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fz:F
 
-    iput-boolean p8, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DR:Z
+    iput-boolean p8, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fw:Z
 
-    iput-boolean p9, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DO:Z
+    iput-boolean p9, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Ft:Z
 
-    iput-boolean p10, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DS:Z
+    iput-boolean p10, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fx:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public IJ()F
+.method public JC()F
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DU:F
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fz:F
 
     return v0
 .end method
 
-.method public IK()Z
+.method public JD()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DO:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Ft:Z
 
     return v0
 .end method
 
-.method public IL()F
+.method public JE()F
     .locals 1
 
     iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->mStrokeWidth:F
@@ -165,50 +165,50 @@
     return v0
 .end method
 
-.method IM()Ljava/util/List;
+.method JF()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DW:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->FB:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public IN()Z
+.method public JG()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DS:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fx:Z
 
     return v0
 .end method
 
-.method IO()I
+.method JH()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DV:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->FA:I
 
     return v0
 .end method
 
-.method public IP()I
+.method public JI()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DQ:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fv:I
 
     return v0
 .end method
 
-.method public IQ()I
+.method public JJ()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DT:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fy:I
 
     return v0
 .end method
 
-.method public IR()Ljava/util/List;
+.method public JK()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DP:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fu:Ljava/util/List;
 
     return-object v0
 .end method
@@ -216,7 +216,7 @@
 .method public isVisible()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->DR:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/maps/model/PolygonOptions;->Fw:Z
 
     return v0
 .end method
@@ -224,7 +224,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/m;->JQ(Lcom/google/android/gms/maps/model/PolygonOptions;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/m;->KJ(Lcom/google/android/gms/maps/model/PolygonOptions;Landroid/os/Parcel;I)V
 
     return-void
 .end method

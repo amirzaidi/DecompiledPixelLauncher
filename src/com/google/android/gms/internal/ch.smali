@@ -1,42 +1,36 @@
 .class Lcom/google/android/gms/internal/ch;
-.super Lcom/google/android/gms/internal/br;
-
-
-# instance fields
-.field final synthetic wL:Lcom/google/android/gms/internal/bk;
-
-.field final synthetic wM:Lcom/google/android/gms/common/internal/c;
+.super Ljava/lang/ThreadLocal;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/internal/bk;Lcom/google/android/gms/internal/co;Lcom/google/android/gms/common/internal/c;)V
+.method constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/ch;->wL:Lcom/google/android/gms/internal/bk;
-
-    iput-object p3, p0, Lcom/google/android/gms/internal/ch;->wM:Lcom/google/android/gms/common/internal/c;
-
-    invoke-direct {p0, p2}, Lcom/google/android/gms/internal/br;-><init>(Lcom/google/android/gms/internal/co;)V
+    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public yr()V
-    .locals 4
+.method protected Cd()Ljava/lang/Boolean;
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ch;->wM:Lcom/google/android/gms/common/internal/c;
+    const/4 v0, 0x0
 
-    new-instance v1, Lcom/google/android/gms/common/ConnectionResult;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    const/16 v3, 0x10
+    return-object v0
+.end method
 
-    invoke-direct {v1, v3, v2}, Lcom/google/android/gms/common/ConnectionResult;-><init>(ILandroid/app/PendingIntent;)V
+.method protected synthetic initialValue()Ljava/lang/Object;
+    .locals 1
 
-    invoke-interface {v0, v1}, Lcom/google/android/gms/common/internal/c;->gB(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/ch;->Cd()Ljava/lang/Boolean;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

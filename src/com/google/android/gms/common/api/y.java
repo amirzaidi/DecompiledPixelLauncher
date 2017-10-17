@@ -6,5 +6,5 @@ package com.google.android.gms.common.api;
 
 public interface y
 {
-    void eC();
+    void hq();
 }

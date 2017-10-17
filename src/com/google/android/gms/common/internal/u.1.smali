@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static hH(Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public static kv(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 2
 
     const/4 v0, 0x0
@@ -29,7 +29,7 @@
     goto :goto_0
 .end method
 
-.method public static varargs hI([Ljava/lang/Object;)I
+.method public static varargs kw([Ljava/lang/Object;)I
     .locals 1
 
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
@@ -39,7 +39,7 @@
     return v0
 .end method
 
-.method public static hJ(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+.method public static kx(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/common/internal/n;

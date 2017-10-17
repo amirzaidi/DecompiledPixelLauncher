@@ -4,10 +4,10 @@
 
 package com.google.android.gms.clearcut;
 
-import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.f;
 import android.content.Context;
 
 public interface g
 {
-    c uz(final Context p0, final LogEventParcelable p1);
+    f uy(final Context p0, final LogEventParcelable p1);
 }

@@ -11,28 +11,28 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class VisibleRegion extends AbstractSafeParcelable
 {
     public static final s CREATOR;
-    public final LatLng Em;
-    public final LatLngBounds En;
-    private final int Eo;
-    public final LatLng Ep;
-    public final LatLng Eq;
-    public final LatLng Er;
+    public final LatLng FR;
+    public final LatLngBounds FS;
+    private final int FT;
+    public final LatLng FU;
+    public final LatLng FV;
+    public final LatLng FW;
     
     static {
         CREATOR = new s();
     }
     
-    VisibleRegion(final int eo, final LatLng ep, final LatLng eq, final LatLng er, final LatLng em, final LatLngBounds en) {
-        this.Eo = eo;
-        this.Ep = ep;
-        this.Eq = eq;
-        this.Er = er;
-        this.Em = em;
-        this.En = en;
+    VisibleRegion(final int ft, final LatLng fu, final LatLng fv, final LatLng fw, final LatLng fr, final LatLngBounds fs) {
+        this.FT = ft;
+        this.FU = fu;
+        this.FV = fv;
+        this.FW = fw;
+        this.FR = fr;
+        this.FS = fs;
     }
     
-    int Jm() {
-        return this.Eo;
+    int Kf() {
+        return this.FT;
     }
     
     public boolean equals(final Object o) {
@@ -42,7 +42,7 @@ public final class VisibleRegion extends AbstractSafeParcelable
         }
         if (o instanceof VisibleRegion) {
             final VisibleRegion visibleRegion = (VisibleRegion)o;
-            if (!this.Ep.equals(visibleRegion.Ep) || !this.Eq.equals(visibleRegion.Eq) || !this.Er.equals(visibleRegion.Er) || !this.Em.equals(visibleRegion.Em) || !this.En.equals(visibleRegion.En)) {
+            if (!this.FU.equals(visibleRegion.FU) || !this.FV.equals(visibleRegion.FV) || !this.FW.equals(visibleRegion.FW) || !this.FR.equals(visibleRegion.FR) || !this.FS.equals(visibleRegion.FS)) {
                 b = false;
             }
             return b;
@@ -51,14 +51,14 @@ public final class VisibleRegion extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.Ep, this.Eq, this.Er, this.Em, this.En);
+        return u.kw(this.FU, this.FV, this.FW, this.FR, this.FS);
     }
     
     public String toString() {
-        return u.hJ(this).hB("nearLeft", this.Ep).hB("nearRight", this.Eq).hB("farLeft", this.Er).hB("farRight", this.Em).hB("latLngBounds", this.En).toString();
+        return u.kx(this).kp("nearLeft", this.FU).kp("nearRight", this.FV).kp("farLeft", this.FW).kp("farRight", this.FR).kp("latLngBounds", this.FS).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        s.Kq(this, parcel, n);
+        s.Lj(this, parcel, n);
     }
 }

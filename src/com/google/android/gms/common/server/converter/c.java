@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void lx(final StringToIntConverter$Entry stringToIntConverter$Entry, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, stringToIntConverter$Entry.ie);
-        a.fo(parcel, 2, stringToIntConverter$Entry.if, false);
-        a.fj(parcel, 3, stringToIntConverter$Entry.ig);
-        a.fe(parcel, ey);
+    static void ol(final StringToIntConverter$Entry stringToIntConverter$Entry, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, stringToIntConverter$Entry.kW);
+        a.ic(parcel, 2, stringToIntConverter$Entry.kX, false);
+        a.hX(parcel, 3, stringToIntConverter$Entry.kY);
+        a.hS(parcel, hm);
     }
     
-    public StringToIntConverter$Entry[] lv(final int n) {
+    public StringToIntConverter$Entry[] oj(final int n) {
         return new StringToIntConverter$Entry[n];
     }
     
-    public StringToIntConverter$Entry lw(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public StringToIntConverter$Entry ok(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        String ie = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new StringToIntConverter$Entry(fn2, fq, fn);
+        if (parcel.dataPosition() == ix) {
+            return new StringToIntConverter$Entry(ib2, ie, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

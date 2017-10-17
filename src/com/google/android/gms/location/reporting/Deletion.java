@@ -13,38 +13,38 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class Deletion extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final h CREATOR;
-    private final long BD;
-    private final long BE;
-    private final int BF;
-    private final long BG;
-    private final Account BH;
+    private final long Di;
+    private final long Dj;
+    private final int Dk;
+    private final long Dl;
+    private final Account Dm;
     
     static {
         CREATOR = new h();
     }
     
-    Deletion(final int bf, final Account bh, final Long n, final Long n2, final Long n3) {
-        this.BF = bf;
-        this.BH = bh;
-        this.BD = n;
-        this.BE = n2;
-        this.BG = n3;
+    Deletion(final int dk, final Account dm, final Long n, final Long n2, final Long n3) {
+        this.Dk = dk;
+        this.Dm = dm;
+        this.Di = n;
+        this.Dj = n2;
+        this.Dl = n3;
     }
     
-    public long Gr() {
-        return this.BE;
+    public long Hk() {
+        return this.Dj;
     }
     
-    public long Gs() {
-        return this.BD;
+    public long Hl() {
+        return this.Di;
     }
     
-    public int Gt() {
-        return this.BF;
+    public int Hm() {
+        return this.Dk;
     }
     
-    public long Gu() {
-        return this.BG;
+    public long Hn() {
+        return this.Dl;
     }
     
     public boolean equals(final Object o) {
@@ -54,7 +54,7 @@ public final class Deletion extends AbstractSafeParcelable implements ReflectedP
         }
         if (o instanceof Deletion) {
             final Deletion deletion = (Deletion)o;
-            if (this.BD != deletion.BD || this.BE != deletion.BE || this.BG != deletion.BG || !u.hH(this.BH, deletion.BH)) {
+            if (this.Di != deletion.Di || this.Dj != deletion.Dj || this.Dl != deletion.Dl || !u.kv(this.Dm, deletion.Dm)) {
                 b = false;
             }
             return b;
@@ -63,20 +63,20 @@ public final class Deletion extends AbstractSafeParcelable implements ReflectedP
     }
     
     public Account getAccount() {
-        return this.BH;
+        return this.Dm;
     }
     
     public int hashCode() {
-        return u.hI(this.BH, this.BD, this.BE, this.BG);
+        return u.kw(this.Dm, this.Di, this.Dj, this.Dl);
     }
     
     public String toString() {
-        final String value = String.valueOf(this.BH);
-        return new StringBuilder(String.valueOf(value).length() + 122).append("Deletion{mAccount=").append(value).append(", mStartTimeMs=").append(this.BD).append(", mEndTimeMs=").append(this.BE).append(", mTimestampMs=").append(this.BG).append("}").toString();
+        final String value = String.valueOf(this.Dm);
+        return new StringBuilder(String.valueOf(value).length() + 122).append("Deletion{mAccount=").append(value).append(", mStartTimeMs=").append(this.Di).append(", mEndTimeMs=").append(this.Dj).append(", mTimestampMs=").append(this.Dl).append("}").toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final h creator = Deletion.CREATOR;
-        h.Gw(this, parcel, n);
+        h.Hp(this, parcel, n);
     }
 }

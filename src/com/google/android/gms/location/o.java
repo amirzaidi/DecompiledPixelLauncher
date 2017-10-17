@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class o implements Parcelable$Creator
 {
-    static void HO(final WifiScan wifiScan, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fw(parcel, 1, wifiScan.HT());
-        a.eV(parcel, 2, wifiScan.Dj, false);
-        a.fj(parcel, 1000, wifiScan.HV());
-        a.fe(parcel, ey);
+    static void IH(final WifiScan wifiScan, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ik(parcel, 1, wifiScan.IM());
+        a.hJ(parcel, 2, wifiScan.EO, false);
+        a.hX(parcel, 1000, wifiScan.IO());
+        a.hS(parcel, hm);
     }
     
-    public WifiScan[] HN(final int n) {
+    public WifiScan[] IG(final int n) {
         return new WifiScan[n];
     }
     
-    public WifiScan HP(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        long fl = 0L;
-        long[] array = WifiScan.Dk;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public WifiScan II(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        long iz = 0L;
+        long[] array = WifiScan.EP;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    array = b.fT(parcel, fs);
+                    array = b.iH(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new WifiScan(fn, fl, array);
+        if (parcel.dataPosition() == ix) {
+            return new WifiScan(ib, iz, array);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

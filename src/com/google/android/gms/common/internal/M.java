@@ -9,14 +9,7 @@ import android.os.Looper;
 
 public final class m
 {
-    public static void hA(final Object o) {
-        if (o != null) {
-            return;
-        }
-        throw new IllegalArgumentException("null reference");
-    }
-    
-    public static void hy(final String s) {
+    public static void km(final String s) {
         if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
             return;
         }
@@ -26,7 +19,7 @@ public final class m
         throw new IllegalStateException(s);
     }
     
-    public static void hz(final String s) {
+    public static void kn(final String s) {
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
             return;
         }
@@ -34,5 +27,12 @@ public final class m
         final String value2 = String.valueOf(Looper.getMainLooper().getThread());
         Log.e("Asserts", new StringBuilder(String.valueOf(value).length() + 56 + String.valueOf(value2).length()).append("checkNotMainThread: current thread ").append(value).append(" IS the main thread ").append(value2).append("!").toString());
         throw new IllegalStateException(s);
+    }
+    
+    public static void ko(final Object o) {
+        if (o != null) {
+            return;
+        }
+        throw new IllegalArgumentException("null reference");
     }
 }

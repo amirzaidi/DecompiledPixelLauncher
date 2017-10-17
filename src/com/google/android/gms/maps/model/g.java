@@ -13,77 +13,77 @@ import android.os.Parcelable$Creator;
 
 public class g implements Parcelable$Creator
 {
-    static void IW(final PolylineOptions polylineOptions, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, polylineOptions.Kj());
-        a.fc(parcel, 2, polylineOptions.Kk(), false);
-        a.fs(parcel, 3, polylineOptions.getWidth());
-        a.fj(parcel, 4, polylineOptions.Kf());
-        a.fs(parcel, 5, polylineOptions.Kg());
-        a.fa(parcel, 6, polylineOptions.isVisible());
-        a.fa(parcel, 7, polylineOptions.Kh());
-        a.fa(parcel, 8, polylineOptions.Ki());
-        a.fe(parcel, ey);
+    static void JP(final PolylineOptions polylineOptions, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, polylineOptions.Lc());
+        a.hQ(parcel, 2, polylineOptions.Ld(), false);
+        a.ig(parcel, 3, polylineOptions.getWidth());
+        a.hX(parcel, 4, polylineOptions.KY());
+        a.ig(parcel, 5, polylineOptions.KZ());
+        a.hO(parcel, 6, polylineOptions.isVisible());
+        a.hO(parcel, 7, polylineOptions.La());
+        a.hO(parcel, 8, polylineOptions.Lb());
+        a.hS(parcel, hm);
     }
     
-    public PolylineOptions IV(final Parcel parcel) {
-        float gj = 0.0f;
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
-        List fz = null;
-        boolean fx2 = false;
-        boolean fx3 = false;
-        int fn = 0;
-        float gj2 = 0.0f;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public PolylineOptions JO(final Parcel parcel) {
+        float ix = 0.0f;
+        boolean il = false;
+        final int ix2 = b.ix(parcel);
+        List in = null;
+        boolean il2 = false;
+        boolean il3 = false;
+        int ib = 0;
+        float ix3 = 0.0f;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix2) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fz = b.fZ(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    in = b.iN(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 3: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    gj = b.gj(parcel, fs);
+                    ix = b.iX(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fx3 = b.fX(parcel, fs);
+                    il3 = b.iL(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PolylineOptions(fn2, fz, gj2, fn, gj, fx3, fx2, fx);
+        if (parcel.dataPosition() == ix2) {
+            return new PolylineOptions(ib2, in, ix3, ib, ix, il3, il2, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix2).toString(), parcel);
     }
     
-    public PolylineOptions[] IX(final int n) {
+    public PolylineOptions[] JQ(final int n) {
         return new PolylineOptions[n];
     }
 }

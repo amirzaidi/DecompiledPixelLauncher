@@ -10,14 +10,14 @@ import android.os.IBinder;
 
 class b implements zzb
 {
-    private IBinder IV;
+    private IBinder KA;
     
-    b(final IBinder iv) {
-        this.IV = iv;
+    b(final IBinder ka) {
+        this.KA = ka;
     }
     
     public IBinder asBinder() {
-        return this.IV;
+        return this.KA;
     }
     
     public void send(final Message message) {
@@ -33,7 +33,7 @@ class b implements zzb
                 obtain.writeInt(1);
                 message.writeToParcel(obtain, 0);
             }
-            this.IV.transact(1, obtain, (Parcel)null, 1);
+            this.KA.transact(1, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();

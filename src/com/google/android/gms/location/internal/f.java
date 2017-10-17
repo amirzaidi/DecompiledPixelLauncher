@@ -15,71 +15,71 @@ import android.os.Parcelable$Creator;
 
 public class f implements Parcelable$Creator
 {
-    static void Fe(final LocationRequestUpdateData locationRequestUpdateData, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, locationRequestUpdateData.Aw);
-        a.eW(parcel, 2, (Parcelable)locationRequestUpdateData.At, n, false);
-        a.ff(parcel, 3, locationRequestUpdateData.EU(), false);
-        a.eW(parcel, 4, (Parcelable)locationRequestUpdateData.Au, n, false);
-        a.ff(parcel, 5, locationRequestUpdateData.EX(), false);
-        a.ff(parcel, 6, locationRequestUpdateData.EZ(), false);
-        a.fj(parcel, 1000, locationRequestUpdateData.EW());
-        a.fe(parcel, ey);
+    static void FX(final LocationRequestUpdateData locationRequestUpdateData, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, locationRequestUpdateData.Cb);
+        a.hK(parcel, 2, (Parcelable)locationRequestUpdateData.BY, n, false);
+        a.hT(parcel, 3, locationRequestUpdateData.FN(), false);
+        a.hK(parcel, 4, (Parcelable)locationRequestUpdateData.BZ, n, false);
+        a.hT(parcel, 5, locationRequestUpdateData.FQ(), false);
+        a.hT(parcel, 6, locationRequestUpdateData.FS(), false);
+        a.hX(parcel, 1000, locationRequestUpdateData.FP());
+        a.hS(parcel, hm);
     }
     
-    public LocationRequestUpdateData[] Ff(final int n) {
+    public LocationRequestUpdateData[] FY(final int n) {
         return new LocationRequestUpdateData[n];
     }
     
-    public LocationRequestUpdateData Fg(final Parcel parcel) {
-        IBinder gh = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int fn2 = 1;
-        IBinder gh2 = null;
+    public LocationRequestUpdateData FZ(final Parcel parcel) {
+        IBinder iv = null;
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int ib2 = 1;
+        IBinder iv2 = null;
         PendingIntent pendingIntent = null;
-        IBinder gh3 = null;
+        IBinder iv3 = null;
         LocationRequestInternal locationRequestInternal = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    locationRequestInternal = (LocationRequestInternal)b.fW(parcel, fs, (Parcelable$Creator)LocationRequestInternal.CREATOR);
+                    locationRequestInternal = (LocationRequestInternal)b.iK(parcel, ig, (Parcelable$Creator)LocationRequestInternal.CREATOR);
                     continue;
                 }
                 case 3: {
-                    gh3 = b.gh(parcel, fs);
+                    iv3 = b.iV(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    pendingIntent = (PendingIntent)b.fW(parcel, fs, PendingIntent.CREATOR);
+                    pendingIntent = (PendingIntent)b.iK(parcel, ig, PendingIntent.CREATOR);
                     continue;
                 }
                 case 5: {
-                    gh2 = b.gh(parcel, fs);
+                    iv2 = b.iV(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    gh = b.gh(parcel, fs);
+                    iv = b.iV(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LocationRequestUpdateData(fn, fn2, locationRequestInternal, gh3, pendingIntent, gh2, gh);
+        if (parcel.dataPosition() == ix) {
+            return new LocationRequestUpdateData(ib, ib2, locationRequestInternal, iv3, pendingIntent, iv2, iv);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

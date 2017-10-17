@@ -5,13 +5,14 @@
 package com.google.android.libraries.launcherclient;
 
 import android.os.Bundle;
+import com.google.android.aidl.a;
 import android.view.WindowManager$LayoutParams;
 import android.os.Parcel;
 import android.os.IBinder;
 import android.os.IInterface;
-import android.os.Binder;
+import com.google.android.aidl.BaseStub;
 
-public abstract class ILauncherOverlay$Stub extends Binder implements ILauncherOverlay
+public abstract class ILauncherOverlay$Stub extends BaseStub implements ILauncherOverlay
 {
     public ILauncherOverlay$Stub() {
         this.attachInterface((IInterface)this, "com.google.android.libraries.launcherclient.ILauncherOverlay");
@@ -22,124 +23,94 @@ public abstract class ILauncherOverlay$Stub extends Binder implements ILauncherO
             return null;
         }
         final IInterface queryLocalInterface = binder.queryLocalInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-        if (queryLocalInterface != null && queryLocalInterface instanceof ILauncherOverlay) {
-            return (ILauncherOverlay)queryLocalInterface;
+        if (!(queryLocalInterface instanceof ILauncherOverlay)) {
+            return new ILauncherOverlay$Stub$Proxy(binder);
         }
-        return new b(binder);
-    }
-    
-    public IBinder asBinder() {
-        return (IBinder)this;
+        return (ILauncherOverlay)queryLocalInterface;
     }
     
     public boolean onTransact(final int n, final Parcel parcel, final Parcel parcel2, final int n2) {
-        Object o = null;
-        int n3 = 0;
-        final int n4 = 1;
-        switch (n) {
-            default: {
-                return super.onTransact(n, parcel, parcel2, n2);
-            }
-            case 1598968902: {
-                parcel2.writeString("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                return n4 != 0;
-            }
-            case 1: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.startScroll();
-                return n4 != 0;
-            }
-            case 2: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.onScroll(parcel.readFloat());
-                return n4 != 0;
-            }
-            case 3: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.endScroll();
-                return n4 != 0;
-            }
-            case 4: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                if (parcel.readInt() != 0) {
-                    o = WindowManager$LayoutParams.CREATOR.createFromParcel(parcel);
+        final boolean b = true;
+        if (!this.routeToSuperOrEnforceInterface(n, parcel, parcel2, n2)) {
+            switch (n) {
+                default: {
+                    return false;
                 }
-                this.windowAttached((WindowManager$LayoutParams)o, ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()), parcel.readInt());
-                return n4 != 0;
-            }
-            case 14: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                if (parcel.readInt() != 0) {
-                    o = Bundle.CREATOR.createFromParcel(parcel);
+                case 1: {
+                    this.startScroll();
+                    break;
                 }
-                this.windowAttached2((Bundle)o, ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()));
-                return n4 != 0;
-            }
-            case 5: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.windowDetached(parcel.readInt() != 0 && n4);
-                return n4 != 0;
-            }
-            case 6: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.closeOverlay(parcel.readInt());
-                return n4 != 0;
-            }
-            case 7: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.onPause();
-                return n4 != 0;
-            }
-            case 8: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.onResume();
-                return n4 != 0;
-            }
-            case 16: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.setActivityState(parcel.readInt());
-                return n4 != 0;
-            }
-            case 9: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                this.openOverlay(parcel.readInt());
-                return n4 != 0;
-            }
-            case 10: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                if (parcel.readInt() != 0) {
-                    n3 = n4;
+                case 2: {
+                    this.onScroll(parcel.readFloat());
+                    break;
                 }
-                this.requestVoiceDetection(n3 != 0);
-                return n4 != 0;
-            }
-            case 11: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                final String voiceSearchLanguage = this.getVoiceSearchLanguage();
-                parcel2.writeNoException();
-                parcel2.writeString(voiceSearchLanguage);
-                return n4 != 0;
-            }
-            case 12: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                final boolean voiceDetectionRunning = this.isVoiceDetectionRunning();
-                parcel2.writeNoException();
-                if (voiceDetectionRunning) {
-                    n3 = n4;
+                case 3: {
+                    this.endScroll();
+                    break;
                 }
-                parcel2.writeInt(n3);
-                return n4 != 0;
-            }
-            case 13: {
-                parcel.enforceInterface("com.google.android.libraries.launcherclient.ILauncherOverlay");
-                final boolean hasOverlayContent = this.hasOverlayContent();
-                parcel2.writeNoException();
-                if (hasOverlayContent) {
-                    n3 = n4;
+                case 4: {
+                    this.windowAttached((WindowManager$LayoutParams)a.RZ(parcel, WindowManager$LayoutParams.CREATOR), ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()), parcel.readInt());
+                    break;
                 }
-                parcel2.writeInt(n3);
-                return n4 != 0;
+                case 14: {
+                    this.windowAttached2((Bundle)a.RZ(parcel, Bundle.CREATOR), ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()));
+                    break;
+                }
+                case 5: {
+                    this.windowDetached(a.RY(parcel));
+                    break;
+                }
+                case 6: {
+                    this.closeOverlay(parcel.readInt());
+                    break;
+                }
+                case 7: {
+                    this.onPause();
+                    break;
+                }
+                case 8: {
+                    this.onResume();
+                    break;
+                }
+                case 16: {
+                    this.setActivityState(parcel.readInt());
+                    break;
+                }
+                case 9: {
+                    this.openOverlay(parcel.readInt());
+                    break;
+                }
+                case 10: {
+                    this.requestVoiceDetection(a.RY(parcel));
+                    break;
+                }
+                case 11: {
+                    final String voiceSearchLanguage = this.getVoiceSearchLanguage();
+                    parcel2.writeNoException();
+                    parcel2.writeString(voiceSearchLanguage);
+                    break;
+                }
+                case 12: {
+                    final boolean voiceDetectionRunning = this.isVoiceDetectionRunning();
+                    parcel2.writeNoException();
+                    a.Sc(parcel2, voiceDetectionRunning);
+                    break;
+                }
+                case 13: {
+                    final boolean hasOverlayContent = this.hasOverlayContent();
+                    parcel2.writeNoException();
+                    a.Sc(parcel2, hasOverlayContent);
+                    break;
+                }
+                case 17: {
+                    final boolean startSearch = this.startSearch(parcel.createByteArray(), (Bundle)a.RZ(parcel, Bundle.CREATOR));
+                    parcel2.writeNoException();
+                    a.Sc(parcel2, startSearch);
+                    break;
+                }
             }
+            return b;
         }
+        return b;
     }
 }

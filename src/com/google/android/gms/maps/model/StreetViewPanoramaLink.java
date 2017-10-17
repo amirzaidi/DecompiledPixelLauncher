@@ -11,26 +11,26 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class StreetViewPanoramaLink extends AbstractSafeParcelable
 {
     public static final h CREATOR;
-    private final int DL;
-    public final String DM;
-    public final float DN;
+    private final int Fq;
+    public final String Fr;
+    public final float Fs;
     
     static {
         CREATOR = new h();
     }
     
-    StreetViewPanoramaLink(final int dl, final String dm, float n) {
+    StreetViewPanoramaLink(final int fq, final String fr, float n) {
         final float n2 = 360.0f;
-        this.DL = dl;
-        this.DM = dm;
+        this.Fq = fq;
+        this.Fr = fr;
         if (n <= 0.0) {
             n = n % n2 + n2;
         }
-        this.DN = n % n2;
+        this.Fs = n % n2;
     }
     
-    int IF() {
-        return this.DL;
+    int Jy() {
+        return this.Fq;
     }
     
     public boolean equals(final Object o) {
@@ -40,7 +40,7 @@ public class StreetViewPanoramaLink extends AbstractSafeParcelable
         }
         if (o instanceof StreetViewPanoramaLink) {
             final StreetViewPanoramaLink streetViewPanoramaLink = (StreetViewPanoramaLink)o;
-            if (this.DM.equals(streetViewPanoramaLink.DM) || Float.floatToIntBits(this.DN) != Float.floatToIntBits(streetViewPanoramaLink.DN)) {
+            if (this.Fr.equals(streetViewPanoramaLink.Fr) || Float.floatToIntBits(this.Fs) != Float.floatToIntBits(streetViewPanoramaLink.Fs)) {
                 b = false;
             }
             return b;
@@ -49,14 +49,14 @@ public class StreetViewPanoramaLink extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.DM, this.DN);
+        return u.kw(this.Fr, this.Fs);
     }
     
     public String toString() {
-        return u.hJ(this).hB("panoId", this.DM).hB("bearing", this.DN).toString();
+        return u.kx(this).kp("panoId", this.Fr).kp("bearing", this.Fs).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.Jg(this, parcel, n);
+        h.Ka(this, parcel, n);
     }
 }

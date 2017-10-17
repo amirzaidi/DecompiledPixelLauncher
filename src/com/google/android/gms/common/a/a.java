@@ -6,7 +6,7 @@ package com.google.android.gms.common.a;
 
 public interface a
 {
-    long js();
+    long mg();
     
-    long jt();
+    long mh();
 }

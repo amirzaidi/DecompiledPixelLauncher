@@ -8,13 +8,13 @@ import java.util.regex.Pattern;
 
 public final class k
 {
-    private static Pattern hA;
+    private static Pattern ks;
     
     static {
-        k.hA = null;
+        k.ks = null;
     }
     
-    public static int jJ(final int n) {
+    public static int mx(final int n) {
         return n / 1000;
     }
 }

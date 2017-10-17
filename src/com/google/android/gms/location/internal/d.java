@@ -13,24 +13,24 @@ import com.google.android.gms.location.zze$zza;
 
 class d extends zze$zza
 {
-    private Handler Az;
+    private Handler Ce;
     
-    private void Fd(final int what, final Object obj) {
-        if (this.Az != null) {
+    private void FW(final int what, final Object obj) {
+        if (this.Ce != null) {
             final Message obtain = Message.obtain();
             obtain.what = what;
             obtain.obj = obj;
-            this.Az.sendMessage(obtain);
+            this.Ce.sendMessage(obtain);
             return;
         }
         Log.e("LocationClientHelper", "Received a data in client after calling removeLocationUpdates.");
     }
     
     public void onLocationAvailability(final LocationAvailability locationAvailability) {
-        this.Fd(1, locationAvailability);
+        this.FW(1, locationAvailability);
     }
     
     public void onLocationResult(final LocationResult locationResult) {
-        this.Fd(0, locationResult);
+        this.FW(0, locationResult);
     }
 }

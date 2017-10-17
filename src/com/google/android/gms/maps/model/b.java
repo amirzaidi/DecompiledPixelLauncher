@@ -6,20 +6,20 @@ package com.google.android.gms.maps.model;
 
 public final class b
 {
-    public float DF;
-    public float DG;
+    public float Fk;
+    public float Fl;
     
-    public b IA(final float df) {
-        this.DF = df;
+    public b Js(final float fl) {
+        this.Fl = fl;
         return this;
     }
     
-    public b Iz(final float dg) {
-        this.DG = dg;
+    public b Jt(final float fk) {
+        this.Fk = fk;
         return this;
     }
     
     public StreetViewPanoramaOrientation build() {
-        return new StreetViewPanoramaOrientation(this.DG, this.DF);
+        return new StreetViewPanoramaOrientation(this.Fl, this.Fk);
     }
 }

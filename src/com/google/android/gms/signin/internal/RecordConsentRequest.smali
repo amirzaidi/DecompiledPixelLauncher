@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final JY:[Lcom/google/android/gms/common/api/Scope;
+.field private final LD:[Lcom/google/android/gms/common/api/Scope;
 
-.field final JZ:I
+.field final LE:I
 
-.field private final Ka:Ljava/lang/String;
+.field private final LF:Ljava/lang/String;
 
-.field private final Kb:Landroid/accounts/Account;
+.field private final LG:Landroid/accounts/Account;
 
 
 # direct methods
@@ -34,31 +34,31 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->JZ:I
+    iput p1, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LE:I
 
-    iput-object p2, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->Kb:Landroid/accounts/Account;
+    iput-object p2, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LG:Landroid/accounts/Account;
 
-    iput-object p3, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->JY:[Lcom/google/android/gms/common/api/Scope;
+    iput-object p3, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LD:[Lcom/google/android/gms/common/api/Scope;
 
-    iput-object p4, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->Ka:Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LF:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Qf()Ljava/lang/String;
+.method public QY()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->Ka:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LF:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Qg()[Lcom/google/android/gms/common/api/Scope;
+.method public QZ()[Lcom/google/android/gms/common/api/Scope;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->JY:[Lcom/google/android/gms/common/api/Scope;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LD:[Lcom/google/android/gms/common/api/Scope;
 
     return-object v0
 .end method
@@ -66,7 +66,7 @@
 .method public getAccount()Landroid/accounts/Account;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->Kb:Landroid/accounts/Account;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/RecordConsentRequest;->LG:Landroid/accounts/Account;
 
     return-object v0
 .end method
@@ -74,7 +74,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/g;->Qi(Lcom/google/android/gms/signin/internal/RecordConsentRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/g;->Rb(Lcom/google/android/gms/signin/internal/RecordConsentRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

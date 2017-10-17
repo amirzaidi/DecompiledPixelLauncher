@@ -2,21 +2,21 @@
 .super Lcom/google/android/gms/common/internal/R;
 
 # interfaces
-.implements Lcom/google/android/gms/internal/bm;
+.implements Lcom/google/android/gms/internal/bg;
 
 
 # instance fields
-.field private final JU:Z
+.field private LA:Ljava/lang/Integer;
 
-.field private JV:Ljava/lang/Integer;
+.field private final LB:Lcom/google/android/gms/common/internal/a;
 
-.field private final JW:Lcom/google/android/gms/common/internal/a;
+.field private final LC:Landroid/os/Bundle;
 
-.field private final JX:Landroid/os/Bundle;
+.field private final Lz:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Landroid/os/Bundle;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Landroid/os/Bundle;Lcom/google/android/gms/common/api/d;Lcom/google/android/gms/common/api/c;)V
     .locals 7
 
     const/16 v3, 0x2c
@@ -33,27 +33,27 @@
 
     move-object v6, p7
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/common/internal/R;-><init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/a;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/android/gms/common/internal/R;-><init>(Landroid/content/Context;Landroid/os/Looper;ILcom/google/android/gms/common/internal/a;Lcom/google/android/gms/common/api/d;Lcom/google/android/gms/common/api/c;)V
 
-    iput-boolean p3, p0, Lcom/google/android/gms/signin/internal/e;->JU:Z
+    iput-boolean p3, p0, Lcom/google/android/gms/signin/internal/e;->Lz:Z
 
-    iput-object p4, p0, Lcom/google/android/gms/signin/internal/e;->JW:Lcom/google/android/gms/common/internal/a;
+    iput-object p4, p0, Lcom/google/android/gms/signin/internal/e;->LB:Lcom/google/android/gms/common/internal/a;
 
-    iput-object p5, p0, Lcom/google/android/gms/signin/internal/e;->JX:Landroid/os/Bundle;
+    iput-object p5, p0, Lcom/google/android/gms/signin/internal/e;->LC:Landroid/os/Bundle;
 
-    invoke-virtual {p4}, Lcom/google/android/gms/common/internal/a;->gt()Ljava/lang/Integer;
+    invoke-virtual {p4}, Lcom/google/android/gms/common/internal/a;->jh()Ljava/lang/Integer;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/signin/internal/e;->JV:Ljava/lang/Integer;
+    iput-object v0, p0, Lcom/google/android/gms/signin/internal/e;->LA:Ljava/lang/Integer;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Lcom/google/android/gms/internal/cd;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Lcom/google/android/gms/internal/bX;Lcom/google/android/gms/common/api/d;Lcom/google/android/gms/common/api/c;)V
     .locals 8
 
-    invoke-static {p4}, Lcom/google/android/gms/signin/internal/e;->Qb(Lcom/google/android/gms/common/internal/a;)Landroid/os/Bundle;
+    invoke-static {p4}, Lcom/google/android/gms/signin/internal/e;->QU(Lcom/google/android/gms/common/internal/a;)Landroid/os/Bundle;
 
     move-result-object v5
 
@@ -71,17 +71,17 @@
 
     move-object v7, p7
 
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/signin/internal/e;-><init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Landroid/os/Bundle;Lcom/google/android/gms/common/api/g;Lcom/google/android/gms/common/api/f;)V
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/signin/internal/e;-><init>(Landroid/content/Context;Landroid/os/Looper;ZLcom/google/android/gms/common/internal/a;Landroid/os/Bundle;Lcom/google/android/gms/common/api/d;Lcom/google/android/gms/common/api/c;)V
 
     return-void
 .end method
 
-.method private Qa()Lcom/google/android/gms/common/internal/ResolveAccountRequest;
+.method private QT()Lcom/google/android/gms/common/internal/ResolveAccountRequest;
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->JW:Lcom/google/android/gms/common/internal/a;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->LB:Lcom/google/android/gms/common/internal/a;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/a;->gr()Landroid/accounts/Account;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/a;->jf()Landroid/accounts/Account;
 
     move-result-object v1
 
@@ -100,7 +100,7 @@
     :goto_0
     new-instance v2, Lcom/google/android/gms/common/internal/ResolveAccountRequest;
 
-    iget-object v3, p0, Lcom/google/android/gms/signin/internal/e;->JV:Ljava/lang/Integer;
+    iget-object v3, p0, Lcom/google/android/gms/signin/internal/e;->LA:Ljava/lang/Integer;
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
@@ -115,25 +115,25 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/auth/api/signin/a/a;->Ph(Landroid/content/Context;)Lcom/google/android/gms/auth/api/signin/a/a;
+    invoke-static {v0}, Lcom/google/android/gms/auth/api/signin/a/a;->Qa(Landroid/content/Context;)Lcom/google/android/gms/auth/api/signin/a/a;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/auth/api/signin/a/a;->Pg()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    invoke-virtual {v0}, Lcom/google/android/gms/auth/api/signin/a/a;->PZ()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public static Qb(Lcom/google/android/gms/common/internal/a;)Landroid/os/Bundle;
+.method public static QU(Lcom/google/android/gms/common/internal/a;)Landroid/os/Bundle;
     .locals 6
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/a;->gu()Lcom/google/android/gms/internal/cd;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/a;->ji()Lcom/google/android/gms/internal/bX;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/a;->gt()Ljava/lang/Integer;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/a;->jh()Ljava/lang/Integer;
 
     move-result-object v1
 
@@ -170,7 +170,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BL()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BK()Z
 
     move-result v1
 
@@ -178,7 +178,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BO()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BN()Z
 
     move-result v1
 
@@ -186,7 +186,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BK()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BJ()Ljava/lang/String;
 
     move-result-object v1
 
@@ -200,7 +200,7 @@
 
     invoke-virtual {v2, v1, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BP()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BO()Z
 
     move-result v1
 
@@ -208,7 +208,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BN()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BM()Ljava/lang/String;
 
     move-result-object v1
 
@@ -216,7 +216,7 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BI()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BH()Z
 
     move-result v1
 
@@ -224,20 +224,20 @@
 
     invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BM()Ljava/lang/Long;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BL()Ljava/lang/Long;
 
     move-result-object v1
 
     if-nez v1, :cond_3
 
     :goto_2
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BJ()Ljava/lang/Long;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BI()Ljava/lang/Long;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BJ()Ljava/lang/Long;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BI()Ljava/lang/Long;
 
     move-result-object v0
 
@@ -252,7 +252,7 @@
     goto :goto_1
 
     :cond_3
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/cd;->BM()Ljava/lang/Long;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/bX;->BL()Ljava/lang/Long;
 
     move-result-object v1
 
@@ -269,7 +269,7 @@
 
 
 # virtual methods
-.method protected PZ(Landroid/os/IBinder;)Lcom/google/android/gms/signin/internal/zze;
+.method protected QS(Landroid/os/IBinder;)Lcom/google/android/gms/signin/internal/zze;
     .locals 1
 
     invoke-static {p1}, Lcom/google/android/gms/signin/internal/zze$zza;->zzqy(Landroid/os/IBinder;)Lcom/google/android/gms/signin/internal/zze;
@@ -279,15 +279,15 @@
     return-object v0
 .end method
 
-.method public dZ()Z
+.method public gG()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/gms/signin/internal/e;->JU:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/signin/internal/e;->Lz:Z
 
     return v0
 .end method
 
-.method protected gw()Ljava/lang/String;
+.method protected jk()Ljava/lang/String;
     .locals 1
 
     const-string/jumbo v0, "com.google.android.gms.signin.service.START"
@@ -295,7 +295,7 @@
     return-object v0
 .end method
 
-.method protected gx()Ljava/lang/String;
+.method protected jl()Ljava/lang/String;
     .locals 1
 
     const-string/jumbo v0, "com.google.android.gms.signin.internal.ISignInService"
@@ -303,22 +303,22 @@
     return-object v0
 .end method
 
-.method protected synthetic gz(Landroid/os/IBinder;)Landroid/os/IInterface;
+.method protected synthetic jn(Landroid/os/IBinder;)Landroid/os/IInterface;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/signin/internal/e;->PZ(Landroid/os/IBinder;)Lcom/google/android/gms/signin/internal/zze;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/signin/internal/e;->QS(Landroid/os/IBinder;)Lcom/google/android/gms/signin/internal/zze;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected io()Landroid/os/Bundle;
+.method protected lc()Landroid/os/Bundle;
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->JW:Lcom/google/android/gms/common/internal/a;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->LB:Lcom/google/android/gms/common/internal/a;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/a;->go()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/a;->jc()Ljava/lang/String;
 
     move-result-object v0
 
@@ -337,16 +337,16 @@
     if-eqz v0, :cond_0
 
     :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->JX:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->LC:Landroid/os/Bundle;
 
     return-object v0
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->JX:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/e;->LC:Landroid/os/Bundle;
 
-    iget-object v1, p0, Lcom/google/android/gms/signin/internal/e;->JW:Lcom/google/android/gms/common/internal/a;
+    iget-object v1, p0, Lcom/google/android/gms/signin/internal/e;->LB:Lcom/google/android/gms/common/internal/a;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/a;->go()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/a;->jc()Ljava/lang/String;
 
     move-result-object v1
 
@@ -357,29 +357,29 @@
     goto :goto_0
 .end method
 
-.method public yu()V
+.method public yt()V
     .locals 1
 
     new-instance v0, Lcom/google/android/gms/common/internal/w;
 
     invoke-direct {v0, p0}, Lcom/google/android/gms/common/internal/w;-><init>(Lcom/google/android/gms/common/internal/x;)V
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/signin/internal/e;->ee(Lcom/google/android/gms/common/internal/c;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/signin/internal/e;->gL(Lcom/google/android/gms/common/internal/c;)V
 
     return-void
 .end method
 
-.method public yv()V
+.method public yu()V
     .locals 2
 
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/e;->hY()Landroid/os/IInterface;
+    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/e;->kM()Landroid/os/IInterface;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/gms/signin/internal/zze;
 
-    iget-object v1, p0, Lcom/google/android/gms/signin/internal/e;->JV:Ljava/lang/Integer;
+    iget-object v1, p0, Lcom/google/android/gms/signin/internal/e;->LA:Ljava/lang/Integer;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -404,17 +404,17 @@
     goto :goto_0
 .end method
 
-.method public yw(Lcom/google/android/gms/common/internal/zzq;Z)V
+.method public yv(Lcom/google/android/gms/common/internal/zzq;Z)V
     .locals 2
 
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/e;->hY()Landroid/os/IInterface;
+    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/e;->kM()Landroid/os/IInterface;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/android/gms/signin/internal/zze;
 
-    iget-object v1, p0, Lcom/google/android/gms/signin/internal/e;->JV:Ljava/lang/Integer;
+    iget-object v1, p0, Lcom/google/android/gms/signin/internal/e;->LA:Ljava/lang/Integer;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -439,19 +439,19 @@
     goto :goto_0
 .end method
 
-.method public yx(Lcom/google/android/gms/signin/internal/zzd;)V
+.method public yw(Lcom/google/android/gms/signin/internal/zzd;)V
     .locals 3
 
     const-string/jumbo v0, "Expecting a valid ISignInCallbacks"
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/l;->ho(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/l;->kc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_0
-    invoke-direct {p0}, Lcom/google/android/gms/signin/internal/e;->Qa()Lcom/google/android/gms/common/internal/ResolveAccountRequest;
+    invoke-direct {p0}, Lcom/google/android/gms/signin/internal/e;->QT()Lcom/google/android/gms/common/internal/ResolveAccountRequest;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/e;->hY()Landroid/os/IInterface;
+    invoke-virtual {p0}, Lcom/google/android/gms/signin/internal/e;->kM()Landroid/os/IInterface;
 
     move-result-object v0
 

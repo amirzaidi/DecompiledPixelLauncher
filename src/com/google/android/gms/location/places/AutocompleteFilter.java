@@ -14,33 +14,33 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class AutocompleteFilter extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final f CREATOR;
-    final int zw;
-    final List zx;
-    final int zy;
-    final boolean zz;
+    final int Bb;
+    final List Bc;
+    final int Bd;
+    final boolean Be;
     
     static {
         CREATOR = new f();
     }
     
-    AutocompleteFilter(final int zy, final boolean zz, final List zx) {
+    AutocompleteFilter(final int bd, final boolean be, final List bc) {
         final int n = 1;
-        boolean zz2 = false;
-        this.zy = zy;
-        this.zx = zx;
-        this.zw = DR(zx);
-        if (this.zy >= n) {
-            this.zz = zz;
+        boolean be2 = false;
+        this.Bd = bd;
+        this.Bc = bc;
+        this.Bb = EK(bc);
+        if (this.Bd >= n) {
+            this.Be = be;
         }
         else {
-            if (!zz) {
-                zz2 = (n != 0);
+            if (!be) {
+                be2 = (n != 0);
             }
-            this.zz = zz2;
+            this.Be = be2;
         }
     }
     
-    private static int DR(final Collection collection) {
+    private static int EK(final Collection collection) {
         if (collection != null && !collection.isEmpty()) {
             return collection.iterator().next();
         }
@@ -54,7 +54,7 @@ public class AutocompleteFilter extends AbstractSafeParcelable implements Reflec
         }
         if (o instanceof AutocompleteFilter) {
             final AutocompleteFilter autocompleteFilter = (AutocompleteFilter)o;
-            if (this.zw != autocompleteFilter.zw || this.zz != autocompleteFilter.zz) {
+            if (this.Bb != autocompleteFilter.Bb || this.Be != autocompleteFilter.Be) {
                 b = false;
             }
             return b;
@@ -63,14 +63,14 @@ public class AutocompleteFilter extends AbstractSafeParcelable implements Reflec
     }
     
     public int hashCode() {
-        return u.hI(this.zz, this.zw);
+        return u.kw(this.Be, this.Bb);
     }
     
     public String toString() {
-        return u.hJ(this).hB("includeQueryPredictions", this.zz).hB("typeFilter", this.zw).toString();
+        return u.kx(this).kp("includeQueryPredictions", this.Be).kp("typeFilter", this.Bb).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        f.Eh(this, parcel, n);
+        f.Fa(this, parcel, n);
     }
 }

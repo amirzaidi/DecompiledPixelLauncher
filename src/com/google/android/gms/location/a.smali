@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract FK(Lcom/google/android/gms/common/api/d;)Landroid/location/Location;
+.method public abstract GD(Lcom/google/android/gms/common/api/a;)Landroid/location/Location;
 .end method

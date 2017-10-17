@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private volatile np:Ljava/lang/Object;
+.field private volatile nR:Ljava/lang/Object;
 
 
 # virtual methods
@@ -12,7 +12,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/c;->np:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/internal/c;->nR:Ljava/lang/Object;
 
     return-void
 .end method

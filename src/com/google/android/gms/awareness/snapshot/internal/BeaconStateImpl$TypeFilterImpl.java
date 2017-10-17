@@ -5,36 +5,36 @@
 package com.google.android.gms.awareness.snapshot.internal;
 
 import android.os.Parcel;
-import com.google.android.gms.internal.aI;
 import com.google.android.gms.common.internal.u;
+import com.google.android.gms.internal.aC;
 import java.util.Arrays;
 import android.text.TextUtils;
 import com.google.android.gms.internal.zzaxw;
-import com.google.android.gms.internal.P;
-import com.google.android.gms.internal.E;
+import com.google.android.gms.internal.J;
+import com.google.android.gms.internal.z;
 import android.os.Parcelable$Creator;
 import com.google.android.gms.awareness.state.BeaconState$TypeFilter;
 
 public class BeaconStateImpl$TypeFilterImpl extends BeaconState$TypeFilter
 {
     public static final Parcelable$Creator CREATOR;
-    private final E mG;
-    private final int mH;
+    private final z gd;
+    private final int ge;
     
     static {
         CREATOR = (Parcelable$Creator)new e();
     }
     
-    BeaconStateImpl$TypeFilterImpl(final int mh, final byte[] array) {
-        this.mH = mh;
-        E sk = null;
+    BeaconStateImpl$TypeFilterImpl(final int ge, final byte[] array) {
+        this.ge = ge;
+        z sj = null;
         while (true) {
             try {
-                sk = E.sK(array);
-                this.mG = sk;
+                sj = z.sJ(array);
+                this.gd = sj;
             }
             catch (zzaxw zzaxw) {
-                P.tg("BeaconStateImpl", "Could not deserialize BeaconFence.BeaconTypeFilter");
+                J.tf("BeaconStateImpl", "Could not deserialize BeaconFence.BeaconTypeFilter");
                 continue;
             }
             break;
@@ -48,7 +48,7 @@ public class BeaconStateImpl$TypeFilterImpl extends BeaconState$TypeFilter
         }
         if (o instanceof BeaconStateImpl$TypeFilterImpl) {
             final BeaconStateImpl$TypeFilterImpl beaconStateImpl$TypeFilterImpl = (BeaconStateImpl$TypeFilterImpl)o;
-            if (!TextUtils.equals((CharSequence)this.qk(), (CharSequence)beaconStateImpl$TypeFilterImpl.qk()) || !TextUtils.equals((CharSequence)this.ql(), (CharSequence)beaconStateImpl$TypeFilterImpl.ql()) || !Arrays.equals(this.qj(), beaconStateImpl$TypeFilterImpl.qj())) {
+            if (!TextUtils.equals((CharSequence)this.fe(), (CharSequence)beaconStateImpl$TypeFilterImpl.fe()) || !TextUtils.equals((CharSequence)this.ff(), (CharSequence)beaconStateImpl$TypeFilterImpl.ff()) || !Arrays.equals(this.fd(), beaconStateImpl$TypeFilterImpl.fd())) {
                 b = false;
             }
             return b;
@@ -56,53 +56,53 @@ public class BeaconStateImpl$TypeFilterImpl extends BeaconState$TypeFilter
         return false;
     }
     
+    public byte[] fd() {
+        if (this.gd != null && this.gd.pu != null && this.gd.pu.length != 0) {
+            return this.gd.pu;
+        }
+        return null;
+    }
+    
+    public String fe() {
+        if (this.gd != null) {
+            return this.gd.pr;
+        }
+        return null;
+    }
+    
+    public String ff() {
+        if (this.gd != null) {
+            return this.gd.pt;
+        }
+        return null;
+    }
+    
+    byte[] fg() {
+        return aC.uV(this.gd);
+    }
+    
+    int fh() {
+        return this.ge;
+    }
+    
     public int hashCode() {
         int hashCode = 0;
-        final Object[] array = { this.qk(), this.ql(), null };
-        final byte[] qj = this.qj();
+        final Object[] array = { this.fe(), this.ff(), null };
+        final byte[] fd = this.fd();
         final int n = 2;
-        if (qj != null) {
-            hashCode = Arrays.hashCode(this.qj());
+        if (fd != null) {
+            hashCode = Arrays.hashCode(this.fd());
         }
         array[n] = hashCode;
-        return u.hI(array);
-    }
-    
-    public byte[] qj() {
-        if (this.mG != null && this.mG.pn != null && this.mG.pn.length != 0) {
-            return this.mG.pn;
-        }
-        return null;
-    }
-    
-    public String qk() {
-        if (this.mG != null) {
-            return this.mG.pk;
-        }
-        return null;
-    }
-    
-    public String ql() {
-        if (this.mG != null) {
-            return this.mG.pm;
-        }
-        return null;
-    }
-    
-    byte[] qm() {
-        return aI.uW(this.mG);
-    }
-    
-    int qn() {
-        return this.mH;
+        return u.kw(array);
     }
     
     public String toString() {
-        final String value = String.valueOf(this.qk());
-        final String value2 = String.valueOf(this.ql());
+        final String value = String.valueOf(this.fe());
+        final String value2 = String.valueOf(this.ff());
         String s;
-        if (this.qj() != null) {
-            s = new String(this.qj());
+        if (this.fd() != null) {
+            s = new String(this.fd());
         }
         else {
             s = "null";
@@ -111,6 +111,6 @@ public class BeaconStateImpl$TypeFilterImpl extends BeaconState$TypeFilter
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        e.pT(this, parcel, n);
+        e.eN(this, parcel, n);
     }
 }

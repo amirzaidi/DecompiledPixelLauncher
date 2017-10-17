@@ -27,8 +27,8 @@ public final class zzd$zzg extends zzt$zza
     }
     
     public void zza(final int n, final IBinder binder, final Bundle bundle) {
-        l.ho(this.Jl, "onPostInitComplete can be called only once per call to getRemoteService");
-        this.Jl.hU(n, binder, bundle, this.Jm);
+        l.kc(this.Jl, "onPostInitComplete can be called only once per call to getRemoteService");
+        this.Jl.kI(n, binder, bundle, this.Jm);
         this.zzawh();
     }
 }

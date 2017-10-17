@@ -11,36 +11,36 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class DayAttributesImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int my;
-    private final int[] mz;
+    private final int fV;
+    private final int[] fW;
     
     static {
         CREATOR = (Parcelable$Creator)new d();
     }
     
-    DayAttributesImpl(final int my, final int[] mz) {
-        this.my = my;
-        this.mz = mz;
+    DayAttributesImpl(final int fv, final int[] fw) {
+        this.fV = fv;
+        this.fW = fw;
     }
     
-    public int[] pF() {
-        return this.mz;
+    int eA() {
+        return this.fV;
     }
     
-    int pG() {
-        return this.my;
+    public int[] ez() {
+        return this.fW;
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append("Attributes=");
-        if (this.mz != null) {
+        if (this.fW != null) {
             sb.append("[");
-            final int[] mz = this.mz;
-            final int length = mz.length;
+            final int[] fw = this.fW;
+            final int length = fw.length;
             int n = 1;
             for (int i = 0; i < length; ++i, n = 0) {
-                final int n2 = mz[i];
+                final int n2 = fw[i];
                 if (n == 0) {
                     sb.append(", ");
                 }
@@ -55,6 +55,6 @@ public class DayAttributesImpl extends AbstractSafeParcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        d.pR(this, parcel, n);
+        d.eL(this, parcel, n);
     }
 }

@@ -3,15 +3,15 @@
 
 
 # static fields
-.field private static IZ:Lcom/google/android/gms/auth/api/signin/a/a;
+.field private static KE:Lcom/google/android/gms/auth/api/signin/a/a;
 
-.field private static final Jb:Ljava/util/concurrent/locks/Lock;
+.field private static final KG:Ljava/util/concurrent/locks/Lock;
 
 
 # instance fields
-.field private final Ja:Ljava/util/concurrent/locks/Lock;
+.field private final KF:Ljava/util/concurrent/locks/Lock;
 
-.field private final Jc:Landroid/content/SharedPreferences;
+.field private final KH:Landroid/content/SharedPreferences;
 
 
 # direct methods
@@ -22,7 +22,7 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->Jb:Ljava/util/concurrent/locks/Lock;
+    sput-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->KG:Ljava/util/concurrent/locks/Lock;
 
     return-void
 .end method
@@ -36,7 +36,7 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->Ja:Ljava/util/concurrent/locks/Lock;
+    iput-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->KF:Ljava/util/concurrent/locks/Lock;
 
     const-string/jumbo v0, "com.google.android.gms.signin"
 
@@ -46,31 +46,31 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->Jc:Landroid/content/SharedPreferences;
+    iput-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->KH:Landroid/content/SharedPreferences;
 
     return-void
 .end method
 
-.method public static Ph(Landroid/content/Context;)Lcom/google/android/gms/auth/api/signin/a/a;
+.method public static Qa(Landroid/content/Context;)Lcom/google/android/gms/auth/api/signin/a/a;
     .locals 2
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/l;->ht(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/l;->kh(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->Jb:Ljava/util/concurrent/locks/Lock;
+    sget-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->KG:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->IZ:Lcom/google/android/gms/auth/api/signin/a/a;
+    sget-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->KE:Lcom/google/android/gms/auth/api/signin/a/a;
 
     if-eqz v0, :cond_0
 
     :goto_0
-    sget-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->IZ:Lcom/google/android/gms/auth/api/signin/a/a;
+    sget-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->KE:Lcom/google/android/gms/auth/api/signin/a/a;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v1, Lcom/google/android/gms/auth/api/signin/a/a;->Jb:Ljava/util/concurrent/locks/Lock;
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/a/a;->KG:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
@@ -86,7 +86,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/auth/api/signin/a/a;-><init>(Landroid/content/Context;)V
 
-    sput-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->IZ:Lcom/google/android/gms/auth/api/signin/a/a;
+    sput-object v0, Lcom/google/android/gms/auth/api/signin/a/a;->KE:Lcom/google/android/gms/auth/api/signin/a/a;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -95,14 +95,14 @@
     :catchall_0
     move-exception v0
 
-    sget-object v1, Lcom/google/android/gms/auth/api/signin/a/a;->Jb:Ljava/util/concurrent/locks/Lock;
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/a/a;->KG:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     throw v0
 .end method
 
-.method private Pi(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method private Qb(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
     const-string/jumbo v0, ":"
@@ -166,31 +166,31 @@
 
 
 # virtual methods
-.method public Pg()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.method public PZ()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
     .locals 1
 
     const-string/jumbo v0, "defaultGoogleSignInAccount"
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/a/a;->Pj(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/a/a;->Qc(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/a/a;->Pk(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/auth/api/signin/a/a;->Qd(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected Pj(Ljava/lang/String;)Ljava/lang/String;
+.method protected Qc(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->Ja:Ljava/util/concurrent/locks/Lock;
+    iget-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->KF:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->Jc:Landroid/content/SharedPreferences;
+    iget-object v0, p0, Lcom/google/android/gms/auth/api/signin/a/a;->KH:Landroid/content/SharedPreferences;
 
     const/4 v1, 0x0
 
@@ -200,7 +200,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/a/a;->Ja:Ljava/util/concurrent/locks/Lock;
+    iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/a/a;->KF:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
@@ -209,14 +209,14 @@
     :catchall_0
     move-exception v0
 
-    iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/a/a;->Ja:Ljava/util/concurrent/locks/Lock;
+    iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/a/a;->KF:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     throw v0
 .end method
 
-.method Pk(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.method Qd(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
     .locals 2
 
     const/4 v0, 0x0
@@ -229,11 +229,11 @@
 
     const-string/jumbo v1, "googleSignInAccount"
 
-    invoke-direct {p0, v1, p1}, Lcom/google/android/gms/auth/api/signin/a/a;->Pi(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0, v1, p1}, Lcom/google/android/gms/auth/api/signin/a/a;->Qb(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/auth/api/signin/a/a;->Pj(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/auth/api/signin/a/a;->Qc(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -247,7 +247,7 @@
 
     :cond_1
     :try_start_0
-    invoke-static {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->Pu(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    invoke-static {v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->Qn(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 

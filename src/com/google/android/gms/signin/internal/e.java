@@ -7,7 +7,6 @@ package com.google.android.gms.signin.internal;
 import com.google.android.gms.common.internal.zzq;
 import android.os.RemoteException;
 import android.util.Log;
-import com.google.android.gms.common.internal.c;
 import com.google.android.gms.common.internal.x;
 import com.google.android.gms.common.internal.w;
 import android.os.IInterface;
@@ -16,106 +15,106 @@ import android.os.Parcelable;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import android.accounts.Account;
 import com.google.android.gms.common.internal.ResolveAccountRequest;
-import com.google.android.gms.internal.cd;
-import com.google.android.gms.common.api.f;
-import com.google.android.gms.common.api.g;
+import com.google.android.gms.internal.bX;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.d;
 import android.os.Looper;
 import android.content.Context;
 import android.os.Bundle;
 import com.google.android.gms.common.internal.a;
-import com.google.android.gms.internal.bm;
+import com.google.android.gms.internal.bg;
 import com.google.android.gms.common.internal.R;
 
-public class e extends R implements bm
+public class e extends R implements bg
 {
-    private final boolean JU;
-    private Integer JV;
-    private final a JW;
-    private final Bundle JX;
+    private Integer LA;
+    private final a LB;
+    private final Bundle LC;
+    private final boolean Lz;
     
-    public e(final Context context, final Looper looper, final boolean ju, final a jw, final Bundle jx, final g g, final f f) {
-        super(context, looper, 44, jw, g, f);
-        this.JU = ju;
-        this.JW = jw;
-        this.JX = jx;
-        this.JV = jw.gt();
+    public e(final Context context, final Looper looper, final boolean lz, final a lb, final Bundle lc, final d d, final c c) {
+        super(context, looper, 44, lb, d, c);
+        this.Lz = lz;
+        this.LB = lb;
+        this.LC = lc;
+        this.LA = lb.jh();
     }
     
-    public e(final Context context, final Looper looper, final boolean b, final a a, final cd cd, final g g, final f f) {
-        this(context, looper, b, a, Qb(a), g, f);
+    public e(final Context context, final Looper looper, final boolean b, final a a, final bX bx, final d d, final c c) {
+        this(context, looper, b, a, QU(a), d, c);
     }
     
-    private ResolveAccountRequest Qa() {
-        final Account gr = this.JW.gr();
-        GoogleSignInAccount pg = null;
-        if ("<<default account>>".equals(gr.name)) {
-            pg = com.google.android.gms.auth.api.signin.a.a.Ph(this.getContext()).Pg();
+    private ResolveAccountRequest QT() {
+        final Account jf = this.LB.jf();
+        GoogleSignInAccount pz = null;
+        if ("<<default account>>".equals(jf.name)) {
+            pz = com.google.android.gms.auth.api.signin.a.a.Qa(this.getContext()).PZ();
         }
-        return new ResolveAccountRequest(gr, this.JV, pg);
+        return new ResolveAccountRequest(jf, this.LA, pz);
     }
     
-    public static Bundle Qb(final a a) {
-        final cd gu = a.gu();
-        final Integer gt = a.gt();
+    public static Bundle QU(final a a) {
+        final bX ji = a.ji();
+        final Integer jh = a.jh();
         final Bundle bundle = new Bundle();
         bundle.putParcelable("com.google.android.gms.signin.internal.clientRequestedAccount", (Parcelable)a.getAccount());
-        if (gt != null) {
-            bundle.putInt("com.google.android.gms.common.internal.ClientSettings.sessionId", (int)gt);
+        if (jh != null) {
+            bundle.putInt("com.google.android.gms.common.internal.ClientSettings.sessionId", (int)jh);
         }
-        if (gu != null) {
-            bundle.putBoolean("com.google.android.gms.signin.internal.offlineAccessRequested", gu.BL());
-            bundle.putBoolean("com.google.android.gms.signin.internal.idTokenRequested", gu.BO());
-            bundle.putString("com.google.android.gms.signin.internal.serverClientId", gu.BK());
+        if (ji != null) {
+            bundle.putBoolean("com.google.android.gms.signin.internal.offlineAccessRequested", ji.BK());
+            bundle.putBoolean("com.google.android.gms.signin.internal.idTokenRequested", ji.BN());
+            bundle.putString("com.google.android.gms.signin.internal.serverClientId", ji.BJ());
             bundle.putBoolean("com.google.android.gms.signin.internal.usePromptModeForAuthCode", true);
-            bundle.putBoolean("com.google.android.gms.signin.internal.forceCodeForRefreshToken", gu.BP());
-            bundle.putString("com.google.android.gms.signin.internal.hostedDomain", gu.BN());
-            bundle.putBoolean("com.google.android.gms.signin.internal.waitForAccessTokenRefresh", gu.BI());
-            if (gu.BM() != null) {
-                bundle.putLong("com.google.android.gms.signin.internal.authApiSignInModuleVersion", (long)gu.BM());
+            bundle.putBoolean("com.google.android.gms.signin.internal.forceCodeForRefreshToken", ji.BO());
+            bundle.putString("com.google.android.gms.signin.internal.hostedDomain", ji.BM());
+            bundle.putBoolean("com.google.android.gms.signin.internal.waitForAccessTokenRefresh", ji.BH());
+            if (ji.BL() != null) {
+                bundle.putLong("com.google.android.gms.signin.internal.authApiSignInModuleVersion", (long)ji.BL());
             }
-            if (gu.BJ() != null) {
-                bundle.putLong("com.google.android.gms.signin.internal.realClientLibraryVersion", (long)gu.BJ());
+            if (ji.BI() != null) {
+                bundle.putLong("com.google.android.gms.signin.internal.realClientLibraryVersion", (long)ji.BI());
             }
         }
         return bundle;
     }
     
-    protected zze PZ(final IBinder binder) {
+    protected zze QS(final IBinder binder) {
         return zze$zza.zzqy(binder);
     }
     
-    public boolean dZ() {
-        return this.JU;
+    public boolean gG() {
+        return this.Lz;
     }
     
-    protected String gw() {
+    protected String jk() {
         return "com.google.android.gms.signin.service.START";
     }
     
-    protected String gx() {
+    protected String jl() {
         return "com.google.android.gms.signin.internal.ISignInService";
     }
     
-    protected Bundle io() {
-        if (!this.getContext().getPackageName().equals(this.JW.go())) {
-            this.JX.putString("com.google.android.gms.signin.internal.realClientPackageName", this.JW.go());
+    protected Bundle lc() {
+        if (!this.getContext().getPackageName().equals(this.LB.jc())) {
+            this.LC.putString("com.google.android.gms.signin.internal.realClientPackageName", this.LB.jc());
         }
-        return this.JX;
+        return this.LC;
+    }
+    
+    public void yt() {
+        this.gL(new w(this));
     }
     
     public void yu() {
-        this.ee(new w(this));
-    }
-    
-    public void yv() {
         try {
-            final IInterface hy = this.hY();
+            final IInterface km = this.kM();
             try {
-                final zze zze = (zze)hy;
+                final zze zze = (zze)km;
                 try {
-                    final Integer jv = this.JV;
+                    final Integer la = this.LA;
                     try {
-                        zze.zzajw(jv);
+                        zze.zzajw(la);
                     }
                     catch (RemoteException ex) {
                         Log.w("SignInClientImpl", "Remote service probably died when clearAccountFromSessionStore is called");
@@ -128,15 +127,15 @@ public class e extends R implements bm
         catch (RemoteException ex4) {}
     }
     
-    public void yw(final zzq zzq, final boolean b) {
+    public void yv(final zzq zzq, final boolean b) {
         try {
-            final IInterface hy = this.hY();
+            final IInterface km = this.kM();
             try {
-                final zze zze = (zze)hy;
+                final zze zze = (zze)km;
                 try {
-                    final Integer jv = this.JV;
+                    final Integer la = this.LA;
                     try {
-                        zze.zza(zzq, jv, b);
+                        zze.zza(zzq, la, b);
                     }
                     catch (RemoteException ex) {
                         Log.w("SignInClientImpl", "Remote service probably died when saveDefaultAccount is called");
@@ -149,7 +148,7 @@ public class e extends R implements bm
         catch (RemoteException ex4) {}
     }
     
-    public void yx(final zzd p0) {
+    public void yw(final zzd p0) {
         // 
         // This method could not be decompiled.
         // 
@@ -159,13 +158,13 @@ public class e extends R implements bm
         //     2: astore_2       
         //     3: aload_1        
         //     4: aload_2        
-        //     5: invokestatic    com/google/android/gms/common/internal/l.ho:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        //     5: invokestatic    com/google/android/gms/common/internal/l.kc:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
         //     8: pop            
         //     9: aload_0        
-        //    10: invokespecial   com/google/android/gms/signin/internal/e.Qa:()Lcom/google/android/gms/common/internal/ResolveAccountRequest;
+        //    10: invokespecial   com/google/android/gms/signin/internal/e.QT:()Lcom/google/android/gms/common/internal/ResolveAccountRequest;
         //    13: astore_3       
         //    14: aload_0        
-        //    15: invokevirtual   com/google/android/gms/signin/internal/e.hY:()Landroid/os/IInterface;
+        //    15: invokevirtual   com/google/android/gms/signin/internal/e.kM:()Landroid/os/IInterface;
         //    18: astore_2       
         //    19: aload_2        
         //    20: checkcast       Lcom/google/android/gms/signin/internal/zze;

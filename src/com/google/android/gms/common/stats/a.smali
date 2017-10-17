@@ -3,23 +3,23 @@
 
 
 # static fields
-.field public static iq:I
+.field public static li:I
 
-.field public static ir:I
+.field public static lj:I
 
-.field public static is:I
+.field public static lk:I
 
-.field public static it:I
+.field public static ll:I
 
-.field public static iu:I
+.field public static lm:I
 
-.field public static iv:I
+.field public static ln:I
 
-.field public static final iw:Landroid/content/ComponentName;
+.field public static final lo:Landroid/content/ComponentName;
 
-.field public static ix:I
+.field public static lp:I
 
-.field public static iy:I
+.field public static lq:I
 
 
 # direct methods
@@ -36,35 +36,35 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/common/stats/a;->iw:Landroid/content/ComponentName;
+    sput-object v0, Lcom/google/android/gms/common/stats/a;->lo:Landroid/content/ComponentName;
 
     const/4 v0, 0x0
 
-    sput v0, Lcom/google/android/gms/common/stats/a;->ir:I
+    sput v0, Lcom/google/android/gms/common/stats/a;->lj:I
 
-    sput v3, Lcom/google/android/gms/common/stats/a;->ix:I
+    sput v3, Lcom/google/android/gms/common/stats/a;->lp:I
 
     const/4 v0, 0x2
 
-    sput v0, Lcom/google/android/gms/common/stats/a;->iy:I
+    sput v0, Lcom/google/android/gms/common/stats/a;->lq:I
 
     const/4 v0, 0x4
 
-    sput v0, Lcom/google/android/gms/common/stats/a;->is:I
+    sput v0, Lcom/google/android/gms/common/stats/a;->lk:I
 
     const/16 v0, 0x8
 
-    sput v0, Lcom/google/android/gms/common/stats/a;->it:I
+    sput v0, Lcom/google/android/gms/common/stats/a;->ll:I
 
     const/16 v0, 0x10
 
-    sput v0, Lcom/google/android/gms/common/stats/a;->iu:I
+    sput v0, Lcom/google/android/gms/common/stats/a;->lm:I
 
     const/16 v0, 0x20
 
-    sput v0, Lcom/google/android/gms/common/stats/a;->iv:I
+    sput v0, Lcom/google/android/gms/common/stats/a;->ln:I
 
-    sput v3, Lcom/google/android/gms/common/stats/a;->iq:I
+    sput v3, Lcom/google/android/gms/common/stats/a;->li:I
 
     return-void
 .end method

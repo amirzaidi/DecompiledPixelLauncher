@@ -4,33 +4,30 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.o;
-import com.google.android.gms.common.api.b;
-import com.google.android.gms.common.api.Status;
+import android.os.IInterface;
+import android.os.IBinder;
+import com.google.android.gms.common.api.c;
 import com.google.android.gms.common.api.d;
+import com.google.android.gms.common.internal.a;
+import android.os.Looper;
+import android.content.Context;
+import com.google.android.gms.common.internal.R;
 
-class n extends q
+public class n extends R
 {
-    final /* synthetic */ String oC;
-    final /* synthetic */ int oD;
-    final /* synthetic */ String[] oE;
-    final /* synthetic */ byte[] oF;
-    final /* synthetic */ k oG;
-    
-    n(final k og, final d d, final String oc, final int od, final String[] oe, final byte[] of) {
-        this.oG = og;
-        this.oC = oc;
-        this.oD = od;
-        this.oE = oe;
-        this.oF = of;
-        super(d);
+    public n(final Context context, final Looper looper, final a a, final d d, final c c) {
+        super(context, looper, 51, a, d, c);
     }
     
-    public Status sq(final Status status) {
-        return status;
+    protected String jk() {
+        return "com.google.android.gms.phenotype.service.START";
     }
     
-    protected void sr(final p p) {
-        ((zzzb)p.hY()).zza(new x(this), this.oC, this.oD, this.oE, this.oF);
+    protected String jl() {
+        return "com.google.android.gms.phenotype.internal.IPhenotypeService";
+    }
+    
+    protected zzzb su(final IBinder binder) {
+        return zzzb$zza.zzpe(binder);
     }
 }

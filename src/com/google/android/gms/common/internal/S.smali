@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract eg()Z
+.method public abstract gN()Z
 .end method
 
-.method public abstract ig()Landroid/os/Bundle;
+.method public abstract kU()Landroid/os/Bundle;
 .end method

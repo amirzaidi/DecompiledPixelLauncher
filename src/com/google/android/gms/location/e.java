@@ -12,71 +12,71 @@ import android.os.Parcelable$Creator;
 
 public class e implements Parcelable$Creator
 {
-    static void GM(final LocationSettingsStates locationSettingsStates, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fa(parcel, 1, locationSettingsStates.HI());
-        a.fa(parcel, 2, locationSettingsStates.HG());
-        a.fa(parcel, 3, locationSettingsStates.HK());
-        a.fa(parcel, 4, locationSettingsStates.HF());
-        a.fa(parcel, 5, locationSettingsStates.HJ());
-        a.fa(parcel, 6, locationSettingsStates.HL());
-        a.fj(parcel, 1000, locationSettingsStates.HH());
-        a.fe(parcel, ey);
+    static void HF(final LocationSettingsStates locationSettingsStates, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hO(parcel, 1, locationSettingsStates.IB());
+        a.hO(parcel, 2, locationSettingsStates.Iz());
+        a.hO(parcel, 3, locationSettingsStates.ID());
+        a.hO(parcel, 4, locationSettingsStates.Iy());
+        a.hO(parcel, 5, locationSettingsStates.IC());
+        a.hO(parcel, 6, locationSettingsStates.IE());
+        a.hX(parcel, 1000, locationSettingsStates.IA());
+        a.hS(parcel, hm);
     }
     
-    public LocationSettingsStates GL(final Parcel parcel) {
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
-        boolean fx2 = false;
-        boolean fx3 = false;
-        boolean fx4 = false;
-        boolean fx5 = false;
-        boolean fx6 = false;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public LocationSettingsStates HE(final Parcel parcel) {
+        boolean il = false;
+        final int ix = b.ix(parcel);
+        boolean il2 = false;
+        boolean il3 = false;
+        boolean il4 = false;
+        boolean il5 = false;
+        boolean il6 = false;
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fx6 = b.fX(parcel, fs);
+                    il6 = b.iL(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fx5 = b.fX(parcel, fs);
+                    il5 = b.iL(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fx4 = b.fX(parcel, fs);
+                    il4 = b.iL(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fx3 = b.fX(parcel, fs);
+                    il3 = b.iL(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LocationSettingsStates(fn, fx6, fx5, fx4, fx3, fx2, fx);
+        if (parcel.dataPosition() == ix) {
+            return new LocationSettingsStates(ib, il6, il5, il4, il3, il2, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public LocationSettingsStates[] GN(final int n) {
+    public LocationSettingsStates[] HG(final int n) {
         return new LocationSettingsStates[n];
     }
 }

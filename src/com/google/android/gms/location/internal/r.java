@@ -8,7 +8,7 @@ import android.os.IInterface;
 
 public interface r
 {
-    void FM();
+    void GF();
     
-    IInterface FN();
+    IInterface GG();
 }

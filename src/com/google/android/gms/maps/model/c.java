@@ -14,107 +14,107 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void ID(final GroundOverlayOptions groundOverlayOptions, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, groundOverlayOptions.JL());
-        a.ff(parcel, 2, groundOverlayOptions.JC(), false);
-        a.eW(parcel, 3, (Parcelable)groundOverlayOptions.JD(), n, false);
-        a.fs(parcel, 4, groundOverlayOptions.getWidth());
-        a.fs(parcel, 5, groundOverlayOptions.getHeight());
-        a.eW(parcel, 6, (Parcelable)groundOverlayOptions.JJ(), n, false);
-        a.fs(parcel, 7, groundOverlayOptions.JH());
-        a.fs(parcel, 8, groundOverlayOptions.JI());
-        a.fa(parcel, 9, groundOverlayOptions.isVisible());
-        a.fs(parcel, 10, groundOverlayOptions.JE());
-        a.fs(parcel, 11, groundOverlayOptions.JG());
-        a.fs(parcel, 12, groundOverlayOptions.JF());
-        a.fa(parcel, 13, groundOverlayOptions.JK());
-        a.fe(parcel, ey);
+    static void Jw(final GroundOverlayOptions groundOverlayOptions, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, groundOverlayOptions.KE());
+        a.hT(parcel, 2, groundOverlayOptions.Kv(), false);
+        a.hK(parcel, 3, (Parcelable)groundOverlayOptions.Kw(), n, false);
+        a.ig(parcel, 4, groundOverlayOptions.getWidth());
+        a.ig(parcel, 5, groundOverlayOptions.getHeight());
+        a.hK(parcel, 6, (Parcelable)groundOverlayOptions.KC(), n, false);
+        a.ig(parcel, 7, groundOverlayOptions.KA());
+        a.ig(parcel, 8, groundOverlayOptions.KB());
+        a.hO(parcel, 9, groundOverlayOptions.isVisible());
+        a.ig(parcel, 10, groundOverlayOptions.Kx());
+        a.ig(parcel, 11, groundOverlayOptions.Kz());
+        a.ig(parcel, 12, groundOverlayOptions.Ky());
+        a.hO(parcel, 13, groundOverlayOptions.KD());
+        a.hS(parcel, hm);
     }
     
-    public GroundOverlayOptions IC(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        IBinder gh = null;
+    public GroundOverlayOptions Jv(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        IBinder iv = null;
         LatLng latLng = null;
-        float gj = 0.0f;
-        float gj2 = 0.0f;
+        float ix2 = 0.0f;
+        float ix3 = 0.0f;
         LatLngBounds latLngBounds = null;
-        float gj3 = 0.0f;
-        float gj4 = 0.0f;
-        boolean fx = false;
-        float gj5 = 0.0f;
-        float gj6 = 0.0f;
-        float gj7 = 0.0f;
-        boolean fx2 = false;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        float ix4 = 0.0f;
+        float ix5 = 0.0f;
+        boolean il = false;
+        float ix6 = 0.0f;
+        float ix7 = 0.0f;
+        float ix8 = 0.0f;
+        boolean il2 = false;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    gh = b.gh(parcel, fs);
+                    iv = b.iV(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    latLng = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 4: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    latLngBounds = (LatLngBounds)b.fW(parcel, fs, (Parcelable$Creator)LatLngBounds.CREATOR);
+                    latLngBounds = (LatLngBounds)b.iK(parcel, ig, (Parcelable$Creator)LatLngBounds.CREATOR);
                     continue;
                 }
                 case 7: {
-                    gj3 = b.gj(parcel, fs);
+                    ix4 = b.iX(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    gj4 = b.gj(parcel, fs);
+                    ix5 = b.iX(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    gj5 = b.gj(parcel, fs);
+                    ix6 = b.iX(parcel, ig);
                     continue;
                 }
                 case 11: {
-                    gj6 = b.gj(parcel, fs);
+                    ix7 = b.iX(parcel, ig);
                     continue;
                 }
                 case 12: {
-                    gj7 = b.gj(parcel, fs);
+                    ix8 = b.iX(parcel, ig);
                     continue;
                 }
                 case 13: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new GroundOverlayOptions(fn, gh, latLng, gj, gj2, latLngBounds, gj3, gj4, fx, gj5, gj6, gj7, fx2);
+        if (parcel.dataPosition() == ix) {
+            return new GroundOverlayOptions(ib, iv, latLng, ix2, ix3, latLngBounds, ix4, ix5, il, ix6, ix7, ix8, il2);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public GroundOverlayOptions[] IE(final int n) {
+    public GroundOverlayOptions[] Jx(final int n) {
         return new GroundOverlayOptions[n];
     }
 }

@@ -10,29 +10,29 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class LatLng extends AbstractSafeParcelable
 {
     public static final k CREATOR;
-    public final double EU;
-    public final double EV;
-    private final int EW;
+    public final double GA;
+    private final int GB;
+    public final double Gz;
     
     static {
         CREATOR = new k();
     }
     
-    LatLng(final int ew, final double n, final double ev) {
+    LatLng(final int gb, final double n, final double ga) {
         final double n2 = 360.0;
         final double n3 = 180.0;
-        this.EW = ew;
-        if (-180.0 <= ev && ev < n3) {
-            this.EV = ev;
+        this.GB = gb;
+        if (-180.0 <= ga && ga < n3) {
+            this.GA = ga;
         }
         else {
-            this.EV = ((ev - n3) % n2 + n2) % n2 - n3;
+            this.GA = ((ga - n3) % n2 + n2) % n2 - n3;
         }
-        this.EU = Math.max(-90.0, Math.min(90.0, n));
+        this.Gz = Math.max(-90.0, Math.min(90.0, n));
     }
     
-    int JY() {
-        return this.EW;
+    int KR() {
+        return this.GB;
     }
     
     public boolean equals(final Object o) {
@@ -42,7 +42,7 @@ public final class LatLng extends AbstractSafeParcelable
         }
         if (o instanceof LatLng) {
             final LatLng latLng = (LatLng)o;
-            if (Double.doubleToLongBits(this.EU) != Double.doubleToLongBits(latLng.EU) || Double.doubleToLongBits(this.EV) != Double.doubleToLongBits(latLng.EV)) {
+            if (Double.doubleToLongBits(this.Gz) != Double.doubleToLongBits(latLng.Gz) || Double.doubleToLongBits(this.GA) != Double.doubleToLongBits(latLng.GA)) {
                 b = false;
             }
             return b;
@@ -52,17 +52,17 @@ public final class LatLng extends AbstractSafeParcelable
     
     public int hashCode() {
         final int n = 32;
-        final long doubleToLongBits = Double.doubleToLongBits(this.EU);
+        final long doubleToLongBits = Double.doubleToLongBits(this.Gz);
         final int n2 = (int)(doubleToLongBits ^ doubleToLongBits >>> n) + 31;
-        final long doubleToLongBits2 = Double.doubleToLongBits(this.EV);
+        final long doubleToLongBits2 = Double.doubleToLongBits(this.GA);
         return n2 * 31 + (int)(doubleToLongBits2 ^ doubleToLongBits2 >>> n);
     }
     
     public String toString() {
-        return new StringBuilder(60).append("lat/lng: (").append(this.EU).append(",").append(this.EV).append(")").toString();
+        return new StringBuilder(60).append("lat/lng: (").append(this.Gz).append(",").append(this.GA).append(")").toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        k.Jn(this, parcel, n);
+        k.Kg(this, parcel, n);
     }
 }

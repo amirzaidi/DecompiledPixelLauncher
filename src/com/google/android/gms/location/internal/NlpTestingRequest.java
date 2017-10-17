@@ -10,27 +10,27 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class NlpTestingRequest extends AbstractSafeParcelable
 {
     public static final m CREATOR;
-    private final int Aq;
-    private final long Ar;
+    private final int BV;
+    private final long BW;
     
     static {
         CREATOR = new m();
     }
     
-    NlpTestingRequest(final int aq, final long ar) {
-        this.Aq = aq;
-        this.Ar = ar;
+    NlpTestingRequest(final int bv, final long bw) {
+        this.BV = bv;
+        this.BW = bw;
     }
     
-    public long ES() {
-        return this.Ar;
+    public long FL() {
+        return this.BW;
     }
     
-    public int ET() {
-        return this.Aq;
+    public int FM() {
+        return this.BV;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        m.FG(this, parcel, n);
+        m.Gz(this, parcel, n);
     }
 }

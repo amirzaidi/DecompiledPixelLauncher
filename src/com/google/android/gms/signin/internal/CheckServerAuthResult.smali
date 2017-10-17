@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field final JP:I
+.field final Lu:I
 
-.field final JQ:Z
+.field final Lv:Z
 
-.field final JR:Ljava/util/List;
+.field final Lw:Ljava/util/List;
 
 
 # direct methods
@@ -32,11 +32,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;->JP:I
+    iput p1, p0, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;->Lu:I
 
-    iput-boolean p2, p0, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;->JQ:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;->Lv:Z
 
-    iput-object p3, p0, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;->JR:Ljava/util/List;
+    iput-object p3, p0, Lcom/google/android/gms/signin/internal/CheckServerAuthResult;->Lw:Ljava/util/List;
 
     return-void
 .end method
@@ -46,7 +46,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/f;->Qc(Lcom/google/android/gms/signin/internal/CheckServerAuthResult;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/f;->QV(Lcom/google/android/gms/signin/internal/CheckServerAuthResult;Landroid/os/Parcel;I)V
 
     return-void
 .end method

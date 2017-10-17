@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private final kA:[B
+.field private final ns:[B
 
 
 # direct methods
@@ -20,17 +20,17 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/gms/common/l;-><init>([B)V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/d;->kA:[B
+    iput-object p1, p0, Lcom/google/android/gms/common/d;->ns:[B
 
     return-void
 .end method
 
 
 # virtual methods
-.method nR()[B
+.method qD()[B
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/d;->kA:[B
+    iget-object v0, p0, Lcom/google/android/gms/common/d;->ns:[B
 
     return-object v0
 .end method

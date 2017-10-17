@@ -32,20 +32,20 @@ import android.os.Handler;
 
 final class j extends Handler
 {
-    final /* synthetic */ x fC;
+    final /* synthetic */ x iu;
     
-    public j(final x fc, final Looper looper) {
-        this.fC = fc;
+    public j(final x iu, final Looper looper) {
+        this.iu = iu;
         super(looper);
     }
     
-    private void hk(final Message message) {
+    private void jY(final Message message) {
         final F f = (F)message.obj;
-        f.hj();
-        f.iA();
+        f.jX();
+        f.lo();
     }
     
-    private boolean hl(final Message message) {
+    private boolean jZ(final Message message) {
         boolean b = true;
         if (message.what != 2 && message.what != (b ? 1 : 0) && message.what != 5) {
             b = false;
@@ -57,15 +57,15 @@ final class j extends Handler
         final int n = 1;
         final int n2 = 4;
         PendingIntent pendingIntent = null;
-        if (this.fC.gm.get() != message.arg1) {
-            if (this.hl(message)) {
-                this.hk(message);
+        if (this.iu.je.get() != message.arg1) {
+            if (this.jZ(message)) {
+                this.jY(message);
             }
             return;
         }
         if (message.what == n || message.what == 5) {
-            if (!this.fC.ea()) {
-                this.hk(message);
+            if (!this.iu.gH()) {
+                this.jY(message);
                 return;
             }
         }
@@ -74,27 +74,27 @@ final class j extends Handler
                 pendingIntent = (PendingIntent)message.obj;
             }
             final ConnectionResult connectionResult = new ConnectionResult(message.arg2, pendingIntent);
-            this.fC.gr.gB(connectionResult);
-            this.fC.hV(connectionResult);
+            this.iu.jj.jp(connectionResult);
+            this.iu.kJ(connectionResult);
             return;
         }
         if (message.what == n2) {
-            this.fC.ih(n2, null);
-            if (this.fC.ge != null) {
-                this.fC.ge.iq(message.arg2);
+            this.iu.kV(n2, null);
+            if (this.iu.iW != null) {
+                this.iu.iW.le(message.arg2);
             }
-            this.fC.ij(message.arg2);
-            this.fC.if(n2, n, null);
+            this.iu.kX(message.arg2);
+            this.iu.kT(n2, n, null);
             return;
         }
-        if (message.what == 2 && !this.fC.eg()) {
-            this.hk(message);
+        if (message.what == 2 && !this.iu.gN()) {
+            this.jY(message);
             return;
         }
-        if (!this.hl(message)) {
+        if (!this.jZ(message)) {
             Log.wtf("GmsClient", new StringBuilder(45).append("Don't know how to handle message: ").append(message.what).toString(), (Throwable)new Exception());
             return;
         }
-        ((F)message.obj).iy();
+        ((F)message.obj).lm();
     }
 }

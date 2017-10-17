@@ -12,38 +12,38 @@ import android.os.Parcelable$Creator;
 
 public class m implements Parcelable$Creator
 {
-    static void FG(final NlpTestingRequest nlpTestingRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fw(parcel, 1, nlpTestingRequest.ES());
-        a.fj(parcel, 1000, nlpTestingRequest.ET());
-        a.fe(parcel, ey);
+    static void Gz(final NlpTestingRequest nlpTestingRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ik(parcel, 1, nlpTestingRequest.FL());
+        a.hX(parcel, 1000, nlpTestingRequest.FM());
+        a.hS(parcel, hm);
     }
     
     public NlpTestingRequest createFromParcel(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        long fl = 0L;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        long iz = 0L;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new NlpTestingRequest(fn, fl);
+        if (parcel.dataPosition() == ix) {
+            return new NlpTestingRequest(ib, iz);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public NlpTestingRequest[] newArray(final int n) {

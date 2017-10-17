@@ -14,74 +14,74 @@ import android.os.Parcelable$Creator;
 
 public class i implements Parcelable$Creator
 {
-    static void LL(final LogEventParcelable logEventParcelable, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, logEventParcelable.GH);
-        a.eW(parcel, 2, (Parcelable)logEventParcelable.GQ, n, false);
-        a.fv(parcel, 3, logEventParcelable.GK, false);
-        a.fn(parcel, 4, logEventParcelable.GL, false);
-        a.fk(parcel, 5, logEventParcelable.GI, false);
-        a.fn(parcel, 6, logEventParcelable.GO, false);
-        a.fd(parcel, 7, logEventParcelable.GP, false);
-        a.fa(parcel, 8, logEventParcelable.GN);
-        a.fe(parcel, ey);
+    static void ME(final LogEventParcelable logEventParcelable, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, logEventParcelable.Im);
+        a.hK(parcel, 2, (Parcelable)logEventParcelable.Iv, n, false);
+        a.ij(parcel, 3, logEventParcelable.Ip, false);
+        a.ib(parcel, 4, logEventParcelable.Iq, false);
+        a.hY(parcel, 5, logEventParcelable.In, false);
+        a.ib(parcel, 6, logEventParcelable.It, false);
+        a.hR(parcel, 7, logEventParcelable.Iu, false);
+        a.hO(parcel, 8, logEventParcelable.Is);
+        a.hS(parcel, hm);
     }
     
     public LogEventParcelable createFromParcel(final Parcel parcel) {
-        byte[][] fb = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        boolean fx = true;
-        int[] fk = null;
-        String[] fu = null;
-        int[] fk2 = null;
-        byte[] gf = null;
+        byte[][] ip = null;
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        boolean il = true;
+        int[] iy = null;
+        String[] ii = null;
+        int[] iy2 = null;
+        byte[] it = null;
         PlayLoggerContext playLoggerContext = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    playLoggerContext = (PlayLoggerContext)b.fW(parcel, fs, (Parcelable$Creator)PlayLoggerContext.CREATOR);
+                    playLoggerContext = (PlayLoggerContext)b.iK(parcel, ig, (Parcelable$Creator)PlayLoggerContext.CREATOR);
                     continue;
                 }
                 case 3: {
-                    gf = b.gf(parcel, fs);
+                    it = b.iT(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fk2 = b.fK(parcel, fs);
+                    iy2 = b.iy(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fu = b.fU(parcel, fs);
+                    ii = b.iI(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fk = b.fK(parcel, fs);
+                    iy = b.iy(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fb = b.fB(parcel, fs);
+                    ip = b.ip(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LogEventParcelable(fn, playLoggerContext, gf, fk2, fu, fk, fb, fx);
+        if (parcel.dataPosition() == ix) {
+            return new LogEventParcelable(ib, playLoggerContext, it, iy2, ii, iy, ip, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public LogEventParcelable[] newArray(final int n) {

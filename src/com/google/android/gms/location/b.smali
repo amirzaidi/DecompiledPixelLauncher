@@ -3,64 +3,64 @@
 
 
 # static fields
-.field public static final BZ:Lcom/google/android/gms/location/c;
+.field public static final DE:Lcom/google/android/gms/location/c;
 
-.field public static final Ca:Lcom/google/android/gms/location/d;
+.field public static final DF:Lcom/google/android/gms/location/d;
 
-.field private static final Cb:Lcom/google/android/gms/common/api/r;
+.field private static final DG:Lcom/google/android/gms/common/api/q;
 
-.field private static final Cc:Lcom/google/android/gms/common/api/l;
+.field private static final DH:Lcom/google/android/gms/common/api/j;
 
-.field public static final Cd:Lcom/google/android/gms/common/api/h;
+.field public static final DI:Lcom/google/android/gms/common/api/e;
 
-.field public static final Ce:Lcom/google/android/gms/location/a;
+.field public static final DJ:Lcom/google/android/gms/location/a;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 4
 
-    new-instance v0, Lcom/google/android/gms/common/api/r;
+    new-instance v0, Lcom/google/android/gms/common/api/q;
 
-    invoke-direct {v0}, Lcom/google/android/gms/common/api/r;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/gms/common/api/q;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/location/b;->Cb:Lcom/google/android/gms/common/api/r;
+    sput-object v0, Lcom/google/android/gms/location/b;->DG:Lcom/google/android/gms/common/api/q;
 
     new-instance v0, Lcom/google/android/gms/location/p;
 
     invoke-direct {v0}, Lcom/google/android/gms/location/p;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/location/b;->Cc:Lcom/google/android/gms/common/api/l;
+    sput-object v0, Lcom/google/android/gms/location/b;->DH:Lcom/google/android/gms/common/api/j;
 
-    new-instance v0, Lcom/google/android/gms/common/api/h;
+    new-instance v0, Lcom/google/android/gms/common/api/e;
 
-    sget-object v1, Lcom/google/android/gms/location/b;->Cc:Lcom/google/android/gms/common/api/l;
+    sget-object v1, Lcom/google/android/gms/location/b;->DH:Lcom/google/android/gms/common/api/j;
 
-    sget-object v2, Lcom/google/android/gms/location/b;->Cb:Lcom/google/android/gms/common/api/r;
+    sget-object v2, Lcom/google/android/gms/location/b;->DG:Lcom/google/android/gms/common/api/q;
 
     const-string/jumbo v3, "LocationServices.API"
 
-    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/h;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/l;Lcom/google/android/gms/common/api/r;)V
+    invoke-direct {v0, v3, v1, v2}, Lcom/google/android/gms/common/api/e;-><init>(Ljava/lang/String;Lcom/google/android/gms/common/api/j;Lcom/google/android/gms/common/api/q;)V
 
-    sput-object v0, Lcom/google/android/gms/location/b;->Cd:Lcom/google/android/gms/common/api/h;
+    sput-object v0, Lcom/google/android/gms/location/b;->DI:Lcom/google/android/gms/common/api/e;
 
     new-instance v0, Lcom/google/android/gms/location/internal/p;
 
     invoke-direct {v0}, Lcom/google/android/gms/location/internal/p;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/location/b;->Ce:Lcom/google/android/gms/location/a;
+    sput-object v0, Lcom/google/android/gms/location/b;->DJ:Lcom/google/android/gms/location/a;
 
     new-instance v0, Lcom/google/android/gms/location/internal/e;
 
     invoke-direct {v0}, Lcom/google/android/gms/location/internal/e;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/location/b;->Ca:Lcom/google/android/gms/location/d;
+    sput-object v0, Lcom/google/android/gms/location/b;->DF:Lcom/google/android/gms/location/d;
 
     new-instance v0, Lcom/google/android/gms/location/internal/b;
 
     invoke-direct {v0}, Lcom/google/android/gms/location/internal/b;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/location/b;->BZ:Lcom/google/android/gms/location/c;
+    sput-object v0, Lcom/google/android/gms/location/b;->DE:Lcom/google/android/gms/location/c;
 
     return-void
 .end method
@@ -73,7 +73,7 @@
     return-void
 .end method
 
-.method public static GB(Lcom/google/android/gms/common/api/d;)Lcom/google/android/gms/location/internal/a;
+.method public static Hu(Lcom/google/android/gms/common/api/a;)Lcom/google/android/gms/location/internal/a;
     .locals 4
 
     const/4 v2, 0x1
@@ -87,11 +87,11 @@
     :goto_0
     const-string/jumbo v3, "GoogleApiClient parameter is required."
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/l;->hq(ZLjava/lang/Object;)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/l;->ke(ZLjava/lang/Object;)V
 
-    sget-object v0, Lcom/google/android/gms/location/b;->Cb:Lcom/google/android/gms/common/api/r;
+    sget-object v0, Lcom/google/android/gms/location/b;->DG:Lcom/google/android/gms/common/api/q;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/d;->dA(Lcom/google/android/gms/common/api/j;)Lcom/google/android/gms/common/api/i;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/a;->gl(Lcom/google/android/gms/common/api/h;)Lcom/google/android/gms/common/api/g;
 
     move-result-object v0
 
@@ -102,7 +102,7 @@
     :goto_1
     const-string/jumbo v2, "GoogleApiClient is not configured to use the LocationServices.API Api. Pass thisinto GoogleApiClient.Builder#addApi() to use this feature."
 
-    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/l;->hv(ZLjava/lang/Object;)V
+    invoke-static {v1, v2}, Lcom/google/android/gms/common/internal/l;->kj(ZLjava/lang/Object;)V
 
     return-object v0
 

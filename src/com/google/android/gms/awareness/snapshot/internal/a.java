@@ -11,65 +11,65 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void pI(final WeatherImpl weatherImpl, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1, weatherImpl.qx());
-        com.google.android.gms.common.internal.safeparcel.a.fs(parcel, 2, weatherImpl.qr());
-        com.google.android.gms.common.internal.safeparcel.a.fs(parcel, 3, weatherImpl.qv());
-        com.google.android.gms.common.internal.safeparcel.a.fs(parcel, 4, weatherImpl.qu());
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 5, weatherImpl.qw());
-        com.google.android.gms.common.internal.safeparcel.a.fn(parcel, 6, weatherImpl.qt(), false);
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void eC(final WeatherImpl weatherImpl, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1, weatherImpl.fr());
+        com.google.android.gms.common.internal.safeparcel.a.ig(parcel, 2, weatherImpl.fl());
+        com.google.android.gms.common.internal.safeparcel.a.ig(parcel, 3, weatherImpl.fp());
+        com.google.android.gms.common.internal.safeparcel.a.ig(parcel, 4, weatherImpl.fo());
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 5, weatherImpl.fq());
+        com.google.android.gms.common.internal.safeparcel.a.ib(parcel, 6, weatherImpl.fn(), false);
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
-    public WeatherImpl pH(final Parcel parcel) {
-        int fn = 0;
-        float gj = 0.0f;
-        final int fj = b.fJ(parcel);
-        int[] fk = null;
-        float gj2 = 0.0f;
-        float gj3 = 0.0f;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public WeatherImpl eB(final Parcel parcel) {
+        int ib = 0;
+        float ix = 0.0f;
+        final int ix2 = b.ix(parcel);
+        int[] iy = null;
+        float ix3 = 0.0f;
+        float ix4 = 0.0f;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix2) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    gj3 = b.gj(parcel, fs);
+                    ix4 = b.iX(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gj = b.gj(parcel, fs);
+                    ix = b.iX(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fk = b.fK(parcel, fs);
+                    iy = b.iy(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new WeatherImpl(fn2, gj3, gj2, gj, fn, fk);
+        if (parcel.dataPosition() == ix2) {
+            return new WeatherImpl(ib2, ix4, ix3, ix, ib, iy);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix2).toString(), parcel);
     }
     
-    public WeatherImpl[] pJ(final int n) {
+    public WeatherImpl[] eD(final int n) {
         return new WeatherImpl[n];
     }
 }

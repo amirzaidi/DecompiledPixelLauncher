@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract un(Ljava/lang/String;I)Z
+.method public abstract um(Ljava/lang/String;I)Z
 .end method

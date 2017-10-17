@@ -14,41 +14,41 @@ import android.os.Parcelable$Creator;
 
 public class l implements Parcelable$Creator
 {
-    static void FF(final FusedLocationProviderResult fusedLocationProviderResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.eW(parcel, 1, (Parcelable)fusedLocationProviderResult.dr(), n, false);
-        a.fj(parcel, 1000, fusedLocationProviderResult.Fh());
-        a.fe(parcel, ey);
+    static void Gy(final FusedLocationProviderResult fusedLocationProviderResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hK(parcel, 1, (Parcelable)fusedLocationProviderResult.gV(), n, false);
+        a.hX(parcel, 1000, fusedLocationProviderResult.Ga());
+        a.hS(parcel, hm);
     }
     
-    public FusedLocationProviderResult FD(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
+    public FusedLocationProviderResult Gw(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
         Status status = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    status = (Status)b.fW(parcel, fs, Status.CREATOR);
+                    status = (Status)b.iK(parcel, ig, Status.CREATOR);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FusedLocationProviderResult(fn, status);
+        if (parcel.dataPosition() == ix) {
+            return new FusedLocationProviderResult(ib, status);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public FusedLocationProviderResult[] FE(final int n) {
+    public FusedLocationProviderResult[] Gx(final int n) {
         return new FusedLocationProviderResult[n];
     }
 }

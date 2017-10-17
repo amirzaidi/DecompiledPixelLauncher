@@ -12,51 +12,51 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class SleepSegmentEvent extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final long CK;
-    private final int CL;
-    private final long CM;
-    private final int CN;
+    private final long Ep;
+    private final int Eq;
+    private final long Er;
+    private final int Es;
     
     static {
         CREATOR = (Parcelable$Creator)new k();
     }
     
-    public SleepSegmentEvent(final int cl, final long cm, final long ck, final int cn) {
+    public SleepSegmentEvent(final int eq, final long er, final long ep, final int es) {
         final long n = 0L;
         boolean b = true;
-        l.hq((n < cm || !b) && b, "startTimeMillis must be greater than 0.");
-        l.hq((n < ck || !b) && b, "endTimeMillis must be greater than 0.");
-        if (cm > ck && b) {
+        l.ke((n < er || !b) && b, "startTimeMillis must be greater than 0.");
+        l.ke((n < ep || !b) && b, "endTimeMillis must be greater than 0.");
+        if (er > ep && b) {
             b = false;
         }
-        l.hq(b, "endTimeMillis must be greater than or equal to startTimeMillis");
-        this.CL = cl;
-        this.CM = cm;
-        this.CK = ck;
-        this.CN = cn;
+        l.ke(b, "endTimeMillis must be greater than or equal to startTimeMillis");
+        this.Eq = eq;
+        this.Er = er;
+        this.Ep = ep;
+        this.Es = es;
     }
     
-    public int Hg() {
-        return this.CN;
+    public int HZ() {
+        return this.Es;
     }
     
-    public long Hh() {
-        return this.CK;
+    public long Ia() {
+        return this.Ep;
     }
     
-    public int Hi() {
-        return this.CL;
+    public int Ib() {
+        return this.Eq;
     }
     
-    public long Hj() {
-        return this.CM;
+    public long Ic() {
+        return this.Er;
     }
     
     public String toString() {
-        return String.format("startTimeMillis=%d, endTimeMillis=%d, mStatus=%d]", this.CM, this.CK, this.CN);
+        return String.format("startTimeMillis=%d, endTimeMillis=%d, mStatus=%d]", this.Er, this.Ep, this.Es);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        k.Hp(this, parcel, n);
+        k.Ii(this, parcel, n);
     }
 }

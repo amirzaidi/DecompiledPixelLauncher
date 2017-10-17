@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/a;
+.implements Lcom/google/android/gms/common/api/v;
 
 
 # direct methods
@@ -16,20 +16,20 @@
 
 
 # virtual methods
-.method public final C(Lcom/google/android/gms/common/api/b;)V
+.method public final hk(Lcom/google/android/gms/common/api/m;)V
     .locals 5
 
-    invoke-interface {p1}, Lcom/google/android/gms/common/api/b;->dr()Lcom/google/android/gms/common/api/Status;
+    invoke-interface {p1}, Lcom/google/android/gms/common/api/m;->gV()Lcom/google/android/gms/common/api/Status;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/api/Status;->dF()Z
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/Status;->gY()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/w;->ex(Lcom/google/android/gms/common/api/Status;)V
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/common/api/w;->hl(Lcom/google/android/gms/common/api/Status;)V
 
     instance-of v1, p1, Lcom/google/android/gms/common/api/y;
 
@@ -39,7 +39,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/w;->ey(Lcom/google/android/gms/common/api/b;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/w;->hm(Lcom/google/android/gms/common/api/m;)V
 
     goto :goto_0
 
@@ -51,7 +51,7 @@
 
     move-object v1, v0
 
-    invoke-interface {v1}, Lcom/google/android/gms/common/api/y;->eC()V
+    invoke-interface {v1}, Lcom/google/android/gms/common/api/y;->hq()V
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -99,8 +99,8 @@
     goto :goto_0
 .end method
 
-.method public abstract ex(Lcom/google/android/gms/common/api/Status;)V
+.method public abstract hl(Lcom/google/android/gms/common/api/Status;)V
 .end method
 
-.method public abstract ey(Lcom/google/android/gms/common/api/b;)V
+.method public abstract hm(Lcom/google/android/gms/common/api/m;)V
 .end method

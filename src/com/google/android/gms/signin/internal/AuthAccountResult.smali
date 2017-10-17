@@ -2,7 +2,7 @@
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/b;
+.implements Lcom/google/android/gms/common/api/m;
 
 
 # static fields
@@ -10,11 +10,11 @@
 
 
 # instance fields
-.field private Kc:I
+.field private LH:I
 
-.field final Kd:I
+.field final LI:I
 
-.field private Ke:Landroid/content/Intent;
+.field private LJ:Landroid/content/Intent;
 
 
 # direct methods
@@ -47,11 +47,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->Kd:I
+    iput p1, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->LI:I
 
-    iput p2, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->Kc:I
+    iput p2, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->LH:I
 
-    iput-object p3, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->Ke:Landroid/content/Intent;
+    iput-object p3, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->LJ:Landroid/content/Intent;
 
     return-void
 .end method
@@ -68,35 +68,35 @@
 
 
 # virtual methods
-.method public Qk()Landroid/content/Intent;
+.method public Rd()Landroid/content/Intent;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->Ke:Landroid/content/Intent;
+    iget-object v0, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->LJ:Landroid/content/Intent;
 
     return-object v0
 .end method
 
-.method public Ql()I
+.method public Re()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->Kc:I
+    iget v0, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->LH:I
 
     return v0
 .end method
 
-.method public dr()Lcom/google/android/gms/common/api/Status;
+.method public gV()Lcom/google/android/gms/common/api/Status;
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->Kc:I
+    iget v0, p0, Lcom/google/android/gms/signin/internal/AuthAccountResult;->LH:I
 
     if-eqz v0, :cond_0
 
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->dR:Lcom/google/android/gms/common/api/Status;
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->hk:Lcom/google/android/gms/common/api/Status;
 
     return-object v0
 
     :cond_0
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->dU:Lcom/google/android/gms/common/api/Status;
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->hn:Lcom/google/android/gms/common/api/Status;
 
     return-object v0
 .end method
@@ -104,7 +104,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/h;->Qq(Lcom/google/android/gms/signin/internal/AuthAccountResult;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/signin/internal/h;->Rj(Lcom/google/android/gms/signin/internal/AuthAccountResult;Landroid/os/Parcel;I)V
 
     return-void
 .end method

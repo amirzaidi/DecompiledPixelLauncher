@@ -13,68 +13,68 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void FS(final UploadRequest uploadRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, uploadRequest.Gp());
-        a.eW(parcel, 2, (Parcelable)uploadRequest.getAccount(), n, false);
-        a.fo(parcel, 3, uploadRequest.Gk(), false);
-        a.fw(parcel, 4, uploadRequest.Go());
-        a.fw(parcel, 5, uploadRequest.Gl());
-        a.fw(parcel, 6, uploadRequest.Gm());
-        a.fo(parcel, 7, uploadRequest.Gn(), false);
-        a.fe(parcel, ey);
+    static void GL(final UploadRequest uploadRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, uploadRequest.Hi());
+        a.hK(parcel, 2, (Parcelable)uploadRequest.getAccount(), n, false);
+        a.ic(parcel, 3, uploadRequest.Hd(), false);
+        a.ik(parcel, 4, uploadRequest.Hh());
+        a.ik(parcel, 5, uploadRequest.He());
+        a.ik(parcel, 6, uploadRequest.Hf());
+        a.ic(parcel, 7, uploadRequest.Hg(), false);
+        a.hS(parcel, hm);
     }
     
     public UploadRequest createFromParcel(final Parcel parcel) {
-        long fl = 0L;
-        String fq = null;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn = 0;
-        long fl2 = fl;
-        long fl3 = fl;
-        String fq2 = null;
+        long iz = 0L;
+        String ie = null;
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib = 0;
+        long iz2 = iz;
+        long iz3 = iz;
+        String ie2 = null;
         Account account = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    account = (Account)com.google.android.gms.common.internal.safeparcel.b.fW(parcel, fs, Account.CREATOR);
+                    account = (Account)com.google.android.gms.common.internal.safeparcel.b.iK(parcel, ig, Account.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fq2 = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie2 = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fl3 = com.google.android.gms.common.internal.safeparcel.b.fL(parcel, fs);
+                    iz3 = com.google.android.gms.common.internal.safeparcel.b.iz(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fl2 = com.google.android.gms.common.internal.safeparcel.b.fL(parcel, fs);
+                    iz2 = com.google.android.gms.common.internal.safeparcel.b.iz(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fl = com.google.android.gms.common.internal.safeparcel.b.fL(parcel, fs);
+                    iz = com.google.android.gms.common.internal.safeparcel.b.iz(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fq = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new UploadRequest(fn, account, fq2, fl3, fl2, fl, fq);
+        if (parcel.dataPosition() == ix) {
+            return new UploadRequest(ib, account, ie2, iz3, iz2, iz, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public UploadRequest[] newArray(final int n) {

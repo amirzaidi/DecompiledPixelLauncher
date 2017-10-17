@@ -12,9 +12,9 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class StreetViewPanoramaOrientation extends AbstractSafeParcelable
 {
     public static final t CREATOR;
-    public final float DC;
-    private final int DD;
-    public final float DE;
+    public final float Fh;
+    private final int Fi;
+    public final float Fj;
     
     static {
         CREATOR = new t();
@@ -24,19 +24,19 @@ public class StreetViewPanoramaOrientation extends AbstractSafeParcelable
         this(1, n, n2);
     }
     
-    StreetViewPanoramaOrientation(final int dd, final float n, float n2) {
+    StreetViewPanoramaOrientation(final int fi, final float n, float n2) {
         final float n3 = 360.0f;
-        l.hq(-90.0f <= n && n <= 90.0f, "Tilt needs to be between -90 and 90 inclusive");
-        this.DD = dd;
-        this.DC = 0.0f + n;
+        l.ke(-90.0f <= n && n <= 90.0f, "Tilt needs to be between -90 and 90 inclusive");
+        this.Fi = fi;
+        this.Fh = 0.0f + n;
         if (n2 <= 0.0) {
             n2 = n2 % n3 + n3;
         }
-        this.DE = n2 % n3;
+        this.Fj = n2 % n3;
     }
     
-    int Iv() {
-        return this.DD;
+    int Jo() {
+        return this.Fi;
     }
     
     public boolean equals(final Object o) {
@@ -46,7 +46,7 @@ public class StreetViewPanoramaOrientation extends AbstractSafeParcelable
         }
         if (o instanceof StreetViewPanoramaOrientation) {
             final StreetViewPanoramaOrientation streetViewPanoramaOrientation = (StreetViewPanoramaOrientation)o;
-            if (Float.floatToIntBits(this.DC) != Float.floatToIntBits(streetViewPanoramaOrientation.DC) || Float.floatToIntBits(this.DE) != Float.floatToIntBits(streetViewPanoramaOrientation.DE)) {
+            if (Float.floatToIntBits(this.Fh) != Float.floatToIntBits(streetViewPanoramaOrientation.Fh) || Float.floatToIntBits(this.Fj) != Float.floatToIntBits(streetViewPanoramaOrientation.Fj)) {
                 b = false;
             }
             return b;
@@ -55,14 +55,14 @@ public class StreetViewPanoramaOrientation extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.DC, this.DE);
+        return u.kw(this.Fh, this.Fj);
     }
     
     public String toString() {
-        return u.hJ(this).hB("tilt", this.DC).hB("bearing", this.DE).toString();
+        return u.kx(this).kp("tilt", this.Fh).kp("bearing", this.Fj).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        t.KA(this, parcel, n);
+        t.Lt(this, parcel, n);
     }
 }

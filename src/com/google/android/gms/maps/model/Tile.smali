@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field private final Fa:I
+.field private final GF:I
 
-.field public final Fb:I
+.field public final GG:I
 
-.field public final Fc:I
+.field public final GH:I
 
-.field public final Fd:[B
+.field public final GI:[B
 
 
 # direct methods
@@ -34,13 +34,13 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/Tile;->Fa:I
+    iput p1, p0, Lcom/google/android/gms/maps/model/Tile;->GF:I
 
-    iput p2, p0, Lcom/google/android/gms/maps/model/Tile;->Fb:I
+    iput p2, p0, Lcom/google/android/gms/maps/model/Tile;->GG:I
 
-    iput p3, p0, Lcom/google/android/gms/maps/model/Tile;->Fc:I
+    iput p3, p0, Lcom/google/android/gms/maps/model/Tile;->GH:I
 
-    iput-object p4, p0, Lcom/google/android/gms/maps/model/Tile;->Fd:[B
+    iput-object p4, p0, Lcom/google/android/gms/maps/model/Tile;->GI:[B
 
     return-void
 .end method
@@ -57,10 +57,10 @@
 
 
 # virtual methods
-.method Kd()I
+.method KW()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/Tile;->Fa:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/Tile;->GF:I
 
     return v0
 .end method
@@ -68,7 +68,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/e;->IS(Lcom/google/android/gms/maps/model/Tile;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/e;->JL(Lcom/google/android/gms/maps/model/Tile;Landroid/os/Parcel;I)V
 
     return-void
 .end method

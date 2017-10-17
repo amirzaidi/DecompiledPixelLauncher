@@ -14,53 +14,53 @@ import android.os.Parcelable$Creator;
 
 public class z implements Parcelable$Creator
 {
-    static void eF(final Status status, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, status.dD());
-        a.fo(parcel, 2, status.dE(), false);
-        a.eW(parcel, 3, (Parcelable)status.getPendingIntent(), n, false);
-        a.fj(parcel, 1000, status.dG());
-        a.fe(parcel, ey);
+    static void ht(final Status status, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, status.gW());
+        a.ic(parcel, 2, status.gX(), false);
+        a.hK(parcel, 3, (Parcelable)status.getPendingIntent(), n, false);
+        a.hX(parcel, 1000, status.gZ());
+        a.hS(parcel, hm);
     }
     
-    public Status[] eD(final int n) {
+    public Status[] hr(final int n) {
         return new Status[n];
     }
     
-    public Status eE(final Parcel parcel) {
+    public Status hs(final Parcel parcel) {
         PendingIntent pendingIntent = null;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int fn2 = 0;
-        String fq = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int ib2 = 0;
+        String ie = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    pendingIntent = (PendingIntent)b.fW(parcel, fs, PendingIntent.CREATOR);
+                    pendingIntent = (PendingIntent)b.iK(parcel, ig, PendingIntent.CREATOR);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new Status(fn2, fn, fq, pendingIntent);
+        if (parcel.dataPosition() == ix) {
+            return new Status(ib2, ib, ie, pendingIntent);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

@@ -15,64 +15,64 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class StringToIntConverter extends AbstractSafeParcelable implements e
 {
     public static final a CREATOR;
-    private final HashMap ih;
-    private final ArrayList ii;
-    private final int ij;
-    private final SparseArray ik;
+    private final HashMap kZ;
+    private final ArrayList la;
+    private final int lb;
+    private final SparseArray lc;
     
     static {
         CREATOR = new a();
     }
     
     public StringToIntConverter() {
-        this.ij = 1;
-        this.ih = new HashMap();
-        this.ik = new SparseArray();
-        this.ii = null;
+        this.lb = 1;
+        this.kZ = new HashMap();
+        this.lc = new SparseArray();
+        this.la = null;
     }
     
-    StringToIntConverter(final int ij, final ArrayList list) {
-        this.ij = ij;
-        this.ih = new HashMap();
-        this.ik = new SparseArray();
-        this.ii = null;
-        this.lg(list);
+    StringToIntConverter(final int lb, final ArrayList list) {
+        this.lb = lb;
+        this.kZ = new HashMap();
+        this.lc = new SparseArray();
+        this.la = null;
+        this.nU(list);
     }
     
-    private void lg(final ArrayList list) {
+    private void nU(final ArrayList list) {
         for (final StringToIntConverter$Entry stringToIntConverter$Entry : list) {
-            this.li(stringToIntConverter$Entry.if, stringToIntConverter$Entry.ig);
+            this.nW(stringToIntConverter$Entry.kX, stringToIntConverter$Entry.kY);
         }
     }
     
-    public String lh(final Integer n) {
-        final String s = (String)this.ik.get((int)n);
-        if (s == null && this.ih.containsKey("gms_unknown")) {
+    public String nV(final Integer n) {
+        final String s = (String)this.lc.get((int)n);
+        if (s == null && this.kZ.containsKey("gms_unknown")) {
             return "gms_unknown";
         }
         return s;
     }
     
-    public StringToIntConverter li(final String s, final int n) {
-        this.ih.put(s, n);
-        this.ik.put(n, (Object)s);
+    public StringToIntConverter nW(final String s, final int n) {
+        this.kZ.put(s, n);
+        this.lc.put(n, (Object)s);
         return this;
     }
     
-    ArrayList lj() {
+    ArrayList nX() {
         final ArrayList<StringToIntConverter$Entry> list = new ArrayList<StringToIntConverter$Entry>();
-        for (final String s : this.ih.keySet()) {
-            list.add(new StringToIntConverter$Entry(s, (int)this.ih.get(s)));
+        for (final String s : this.kZ.keySet()) {
+            list.add(new StringToIntConverter$Entry(s, (int)this.kZ.get(s)));
         }
         return list;
     }
     
-    int lk() {
-        return this.ij;
+    int nY() {
+        return this.lb;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final a creator = StringToIntConverter.CREATOR;
-        a.ll(this, parcel, n);
+        a.nZ(this, parcel, n);
     }
 }

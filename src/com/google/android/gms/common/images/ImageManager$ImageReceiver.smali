@@ -3,18 +3,18 @@
 
 
 # instance fields
-.field final synthetic jC:Lcom/google/android/gms/common/images/h;
-
-.field private final jD:Ljava/util/ArrayList;
-
 .field private final mUri:Landroid/net/Uri;
+
+.field final synthetic mu:Lcom/google/android/gms/common/images/h;
+
+.field private final mv:Ljava/util/ArrayList;
 
 
 # direct methods
-.method static synthetic mH(Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;)Ljava/util/ArrayList;
+.method static synthetic pv(Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;)Ljava/util/ArrayList;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->jD:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->mv:Ljava/util/ArrayList;
 
     return-object v0
 .end method
@@ -32,19 +32,19 @@
 
     check-cast v0, Landroid/os/ParcelFileDescriptor;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->jC:Lcom/google/android/gms/common/images/h;
+    iget-object v1, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->mu:Lcom/google/android/gms/common/images/h;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/images/h;->mR(Lcom/google/android/gms/common/images/h;)Ljava/util/concurrent/ExecutorService;
+    invoke-static {v1}, Lcom/google/android/gms/common/images/h;->pF(Lcom/google/android/gms/common/images/h;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v1
 
-    new-instance v2, Lcom/google/android/gms/common/images/b;
+    new-instance v2, Lcom/google/android/gms/common/images/a;
 
-    iget-object v3, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->jC:Lcom/google/android/gms/common/images/h;
+    iget-object v3, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->mu:Lcom/google/android/gms/common/images/h;
 
     iget-object v4, p0, Lcom/google/android/gms/common/images/ImageManager$ImageReceiver;->mUri:Landroid/net/Uri;
 
-    invoke-direct {v2, v3, v4, v0}, Lcom/google/android/gms/common/images/b;-><init>(Lcom/google/android/gms/common/images/h;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;)V
+    invoke-direct {v2, v3, v4, v0}, Lcom/google/android/gms/common/images/a;-><init>(Lcom/google/android/gms/common/images/h;Landroid/net/Uri;Landroid/os/ParcelFileDescriptor;)V
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 

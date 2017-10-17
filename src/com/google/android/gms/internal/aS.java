@@ -4,17 +4,11 @@
 
 package com.google.android.gms.internal;
 
-import java.util.concurrent.ThreadFactory;
+import com.google.android.gms.common.api.a;
 
-class as implements ThreadFactory
+abstract class as extends b
 {
-    final /* synthetic */ az rT;
-    
-    as(final az rt) {
-        this.rT = rt;
-    }
-    
-    public Thread newThread(final Runnable runnable) {
-        return new Thread(new aw(this, runnable), "ClearcutLoggerApiImpl");
+    public as(final a a) {
+        super(com.google.android.gms.clearcut.a.HH, a);
     }
 }

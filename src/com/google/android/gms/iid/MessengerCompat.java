@@ -14,8 +14,8 @@ import android.os.Parcelable;
 public class MessengerCompat implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    zzb IW;
-    Messenger IX;
+    zzb KB;
+    Messenger KC;
     
     static {
         CREATOR = (Parcelable$Creator)new a();
@@ -23,20 +23,20 @@ public class MessengerCompat implements Parcelable
     
     public MessengerCompat(final IBinder binder) {
         if (Build$VERSION.SDK_INT < 21) {
-            this.IW = zzb$zza.zzkv(binder);
+            this.KB = zzb$zza.zzkv(binder);
         }
         else {
-            this.IX = new Messenger(binder);
+            this.KC = new Messenger(binder);
         }
     }
     
-    public IBinder Pf() {
+    public IBinder PY() {
         IBinder binder;
-        if (this.IX == null) {
-            binder = this.IW.asBinder();
+        if (this.KC == null) {
+            binder = this.KB.asBinder();
         }
         else {
-            binder = this.IX.getBinder();
+            binder = this.KC.getBinder();
         }
         return binder;
     }
@@ -50,11 +50,11 @@ public class MessengerCompat implements Parcelable
             return false;
         }
         try {
-            final IBinder pf = this.Pf();
+            final IBinder py = this.PY();
             try {
                 final MessengerCompat messengerCompat = (MessengerCompat)o;
                 try {
-                    return pf.equals(messengerCompat.Pf());
+                    return py.equals(messengerCompat.PY());
                 }
                 catch (ClassCastException ex) {
                     return false;
@@ -66,15 +66,15 @@ public class MessengerCompat implements Parcelable
     }
     
     public int hashCode() {
-        return this.Pf().hashCode();
+        return this.PY().hashCode();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        if (this.IX == null) {
-            parcel.writeStrongBinder(this.IW.asBinder());
+        if (this.KC == null) {
+            parcel.writeStrongBinder(this.KB.asBinder());
         }
         else {
-            parcel.writeStrongBinder(this.IX.getBinder());
+            parcel.writeStrongBinder(this.KC.getBinder());
         }
     }
 }

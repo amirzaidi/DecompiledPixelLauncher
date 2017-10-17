@@ -2,7 +2,7 @@
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/b;
+.implements Lcom/google/android/gms/common/api/m;
 
 
 # static fields
@@ -10,13 +10,13 @@
 
 
 # instance fields
+.field private final Bv:Lcom/google/android/gms/common/api/Status;
+
+.field final Bw:Lcom/google/android/gms/common/data/BitmapTeleporter;
+
+.field final Bx:I
+
 .field private final mBitmap:Landroid/graphics/Bitmap;
-
-.field private final zQ:Lcom/google/android/gms/common/api/Status;
-
-.field final zR:Lcom/google/android/gms/common/data/BitmapTeleporter;
-
-.field final zS:I
 
 
 # direct methods
@@ -39,13 +39,13 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->zS:I
+    iput p1, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->Bx:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->zQ:Lcom/google/android/gms/common/api/Status;
+    iput-object p2, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->Bv:Lcom/google/android/gms/common/api/Status;
 
-    iput-object p3, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->zR:Lcom/google/android/gms/common/data/BitmapTeleporter;
+    iput-object p3, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->Bw:Lcom/google/android/gms/common/data/BitmapTeleporter;
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->zR:Lcom/google/android/gms/common/data/BitmapTeleporter;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->Bw:Lcom/google/android/gms/common/data/BitmapTeleporter;
 
     if-nez v0, :cond_0
 
@@ -66,10 +66,10 @@
 
 
 # virtual methods
-.method public dr()Lcom/google/android/gms/common/api/Status;
+.method public gV()Lcom/google/android/gms/common/api/Status;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->zQ:Lcom/google/android/gms/common/api/Status;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->Bv:Lcom/google/android/gms/common/api/Status;
 
     return-object v0
 .end method
@@ -77,15 +77,15 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->hJ(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->kx(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->zQ:Lcom/google/android/gms/common/api/Status;
+    iget-object v1, p0, Lcom/google/android/gms/location/places/PlacePhotoResult;->Bv:Lcom/google/android/gms/common/api/Status;
 
     const-string/jumbo v2, "status"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
@@ -93,7 +93,7 @@
 
     const-string/jumbo v2, "bitmap"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
@@ -107,7 +107,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/g;->Es(Lcom/google/android/gms/location/places/PlacePhotoResult;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/g;->Fl(Lcom/google/android/gms/location/places/PlacePhotoResult;Landroid/os/Parcel;I)V
 
     return-void
 .end method

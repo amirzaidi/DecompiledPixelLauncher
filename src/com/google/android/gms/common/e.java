@@ -9,15 +9,15 @@ import android.content.Context;
 
 class e
 {
-    private static Context kB;
+    private static Context nt;
     
-    static void nS(final Context context) {
+    static void qE(final Context context) {
         synchronized (e.class) {
-            if (e.kB != null) {
+            if (e.nt != null) {
                 Log.w("GoogleCertificates", "GoogleCertificates has been initialized already");
             }
             else if (context != null) {
-                e.kB = context.getApplicationContext();
+                e.nt = context.getApplicationContext();
             }
         }
     }

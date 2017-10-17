@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void Ex(final UserDataType userDataType, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, userDataType.zG, false);
-        a.fj(parcel, 2, userDataType.zF);
-        a.fj(parcel, 1000, userDataType.zE);
-        a.fe(parcel, ey);
+    static void Fq(final UserDataType userDataType, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, userDataType.Bl, false);
+        a.hX(parcel, 2, userDataType.Bk);
+        a.hX(parcel, 1000, userDataType.Bj);
+        a.hS(parcel, hm);
     }
     
-    public UserDataType Ev(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public UserDataType Fo(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        String ie = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new UserDataType(fn2, fq, fn);
+        if (parcel.dataPosition() == ix) {
+            return new UserDataType(ib2, ie, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public UserDataType[] Ew(final int n) {
+    public UserDataType[] Fp(final int n) {
         return new UserDataType[n];
     }
 }

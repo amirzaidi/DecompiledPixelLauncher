@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field ho:Ljava/lang/Integer;
+.field kg:Ljava/lang/Integer;
 
-.field final hp:[Lcom/google/android/gms/common/api/Scope;
+.field final kh:[Lcom/google/android/gms/common/api/Scope;
 
-.field final hq:I
+.field final ki:I
 
-.field final hr:Landroid/os/IBinder;
+.field final kj:Landroid/os/IBinder;
 
-.field hs:Ljava/lang/Integer;
+.field kk:Ljava/lang/Integer;
 
 
 # direct methods
@@ -36,15 +36,15 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->hq:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->ki:I
 
-    iput-object p2, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->hr:Landroid/os/IBinder;
+    iput-object p2, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->kj:Landroid/os/IBinder;
 
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->hp:[Lcom/google/android/gms/common/api/Scope;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->kh:[Lcom/google/android/gms/common/api/Scope;
 
-    iput-object p4, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->ho:Ljava/lang/Integer;
+    iput-object p4, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->kg:Ljava/lang/Integer;
 
-    iput-object p5, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->hs:Ljava/lang/Integer;
+    iput-object p5, p0, Lcom/google/android/gms/common/internal/AuthAccountRequest;->kk:Ljava/lang/Integer;
 
     return-void
 .end method
@@ -54,7 +54,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/K;->iV(Lcom/google/android/gms/common/internal/AuthAccountRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/K;->lJ(Lcom/google/android/gms/common/internal/AuthAccountRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

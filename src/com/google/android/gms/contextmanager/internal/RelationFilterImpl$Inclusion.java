@@ -12,36 +12,36 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class RelationFilterImpl$Inclusion extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final TimeFilterImpl GW;
-    private final KeyFilterImpl GX;
-    private final int GY;
-    private final int GZ;
+    private final TimeFilterImpl IB;
+    private final KeyFilterImpl IC;
+    private final int ID;
+    private final int IE;
     
     static {
         CREATOR = (Parcelable$Creator)new a();
     }
     
-    RelationFilterImpl$Inclusion(final int gy, final int gz, final TimeFilterImpl gw, final KeyFilterImpl gx) {
-        this.GY = gy;
-        this.GZ = gz;
-        this.GW = gw;
-        this.GX = gx;
+    RelationFilterImpl$Inclusion(final int id, final int ie, final TimeFilterImpl ib, final KeyFilterImpl ic) {
+        this.ID = id;
+        this.IE = ie;
+        this.IB = ib;
+        this.IC = ic;
     }
     
-    public TimeFilterImpl LQ() {
-        return this.GW;
+    public TimeFilterImpl MJ() {
+        return this.IB;
     }
     
-    public KeyFilterImpl LR() {
-        return this.GX;
+    public KeyFilterImpl MK() {
+        return this.IC;
     }
     
-    public int LS() {
-        return this.GZ;
+    public int ML() {
+        return this.IE;
     }
     
-    public int LT() {
-        return this.GY;
+    public int MM() {
+        return this.ID;
     }
     
     public boolean equals(final Object o) {
@@ -51,7 +51,7 @@ public class RelationFilterImpl$Inclusion extends AbstractSafeParcelable
         }
         if (o instanceof RelationFilterImpl$Inclusion) {
             final RelationFilterImpl$Inclusion relationFilterImpl$Inclusion = (RelationFilterImpl$Inclusion)o;
-            if (this.LS() != relationFilterImpl$Inclusion.LS() || !this.LQ().equals(relationFilterImpl$Inclusion.LQ()) || u.hH(this.LR(), relationFilterImpl$Inclusion.LR())) {
+            if (this.ML() != relationFilterImpl$Inclusion.ML() || !this.MJ().equals(relationFilterImpl$Inclusion.MJ()) || u.kv(this.MK(), relationFilterImpl$Inclusion.MK())) {
                 b = false;
             }
             return b;
@@ -60,10 +60,10 @@ public class RelationFilterImpl$Inclusion extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.GZ, this.GW, this.GX);
+        return u.kw(this.IE, this.IB, this.IC);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        a.LY(this, parcel, n);
+        a.MR(this, parcel, n);
     }
 }

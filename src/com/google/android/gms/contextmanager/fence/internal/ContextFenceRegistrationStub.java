@@ -13,41 +13,41 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ContextFenceRegistrationStub extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final String Ix;
-    private final int Iy;
-    private ContextFenceStub Iz;
+    private final String Kc;
+    private final int Kd;
+    private ContextFenceStub Ke;
     
     static {
         CREATOR = (Parcelable$Creator)new f();
     }
     
-    ContextFenceRegistrationStub(final int iy, final String ix, final ContextFenceStub iz) {
-        this.Iy = iy;
-        this.Ix = ix;
-        this.Iz = iz;
+    ContextFenceRegistrationStub(final int kd, final String kc, final ContextFenceStub ke) {
+        this.Kd = kd;
+        this.Kc = kc;
+        this.Ke = ke;
     }
     
-    public ContextFenceStub OG() {
-        return this.Iz;
+    public String PA() {
+        return this.Kc;
     }
     
-    public String OH() {
-        return this.Ix;
+    int PB() {
+        return this.Kd;
     }
     
-    int OI() {
-        return this.Iy;
+    public ContextFenceStub Pz() {
+        return this.Ke;
     }
     
     public boolean equals(final Object o) {
-        return this == o || (o instanceof ContextFenceRegistrationStub && TextUtils.equals((CharSequence)this.OH(), (CharSequence)((ContextFenceRegistrationStub)o).OH()));
+        return this == o || (o instanceof ContextFenceRegistrationStub && TextUtils.equals((CharSequence)this.PA(), (CharSequence)((ContextFenceRegistrationStub)o).PA()));
     }
     
     public int hashCode() {
-        return u.hI(this.Ix);
+        return u.kw(this.Kc);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        f.NW(this, parcel, n);
+        f.OP(this, parcel, n);
     }
 }

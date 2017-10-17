@@ -1,128 +1,127 @@
-.class public final Lcom/google/android/gms/internal/aN;
+.class public Lcom/google/android/gms/internal/aN;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
 
-# static fields
-.field public static final sJ:[Ljava/lang/String;
 
-.field public static final sK:[D
+# instance fields
+.field private final th:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public static final sL:[F
+.field private final ti:Ljava/lang/String;
 
-.field public static final sM:[[B
+.field private final tj:Ljava/util/concurrent/ThreadFactory;
 
-.field public static final sN:[Z
-
-.field public static final sO:[I
-
-.field public static final sP:[J
-
-.field public static final sQ:[B
+.field private final tk:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    new-array v0, v1, [I
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sO:[I
-
-    new-array v0, v1, [J
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sP:[J
-
-    new-array v0, v1, [F
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sL:[F
-
-    new-array v0, v1, [D
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sK:[D
-
-    new-array v0, v1, [Z
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sN:[Z
-
-    new-array v0, v1, [Ljava/lang/String;
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sJ:[Ljava/lang/String;
-
-    new-array v0, v1, [[B
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sM:[[B
-
-    new-array v0, v1, [B
-
-    sput-object v0, Lcom/google/android/gms/internal/aN;->sQ:[B
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/aN;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public static vj(II)I
+.method public constructor <init>(Ljava/lang/String;I)V
     .locals 1
 
-    shl-int/lit8 v0, p0, 0x3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    or-int/2addr v0, p1
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    return v0
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/aN;->th:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/aN;->tj:Ljava/util/concurrent/ThreadFactory;
+
+    const-string/jumbo v0, "Name must not be null"
+
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/l;->kc(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/aN;->ti:Ljava/lang/String;
+
+    iput p2, p0, Lcom/google/android/gms/internal/aN;->tk:I
+
+    return-void
 .end method
 
-.method public static final vk(Lcom/google/android/gms/internal/be;I)I
-    .locals 3
 
-    const/4 v0, 0x1
+# virtual methods
+.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 5
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/be;->xL()I
+    iget-object v0, p0, Lcom/google/android/gms/internal/aN;->tj:Ljava/util/concurrent/ThreadFactory;
 
-    move-result v1
+    new-instance v1, Lcom/google/android/gms/internal/bb;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/be;->xV(I)Z
+    iget v2, p0, Lcom/google/android/gms/internal/aN;->tk:I
 
-    :goto_0
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/be;->xG()I
+    invoke-direct {v1, p1, v2}, Lcom/google/android/gms/internal/bb;-><init>(Ljava/lang/Runnable;I)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/aN;->ti:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/google/android/gms/internal/aN;->th:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
     move-result v2
 
-    if-eq v2, p1, :cond_0
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/internal/be;->xZ(I)V
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    return v0
+    move-result-object v4
 
-    :cond_0
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/be;->xV(I)Z
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    add-int/lit8 v0, v0, 0x1
+    move-result v4
 
-    goto :goto_0
-.end method
+    add-int/lit8 v4, v4, 0xd
 
-.method public static vl(I)I
-    .locals 1
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    ushr-int/lit8 v0, p0, 0x3
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return v0
-.end method
+    move-result-object v1
 
-.method static vm(I)I
-    .locals 1
+    const-string/jumbo v3, "["
 
-    and-int/lit8 v0, p0, 0x7
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return v0
-.end method
+    move-result-object v1
 
-.method public static vn(Lcom/google/android/gms/internal/be;I)Z
-    .locals 1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/be;->xV(I)Z
+    move-result-object v1
 
-    move-result v0
+    const-string/jumbo v2, "]"
 
-    return v0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
+
+    return-object v0
 .end method

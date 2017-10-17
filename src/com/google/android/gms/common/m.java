@@ -4,51 +4,51 @@
 
 package com.google.android.gms.common;
 
-import android.support.v4.app.bb;
+import android.support.v4.app.aW;
 import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.DialogInterface$OnDismissListener;
 import com.google.android.gms.common.internal.l;
 import android.app.Dialog;
 import android.content.DialogInterface$OnCancelListener;
-import android.support.v4.app.aX;
+import android.support.v4.app.aT;
 
-public class m extends aX
+public class m extends aT
 {
-    private DialogInterface$OnCancelListener kR;
-    private Dialog kS;
+    private DialogInterface$OnCancelListener nJ;
+    private Dialog nK;
     
     public m() {
-        this.kS = null;
-        this.kR = null;
+        this.nK = null;
+        this.nJ = null;
     }
     
-    public static m ov(final Dialog dialog, final DialogInterface$OnCancelListener kr) {
+    public static m rh(final Dialog dialog, final DialogInterface$OnCancelListener nj) {
         final m m = new m();
-        final Dialog ks = (Dialog)l.ho(dialog, "Cannot display null dialog");
-        ks.setOnCancelListener((DialogInterface$OnCancelListener)null);
-        ks.setOnDismissListener((DialogInterface$OnDismissListener)null);
-        m.kS = ks;
-        if (kr != null) {
-            m.kR = kr;
+        final Dialog nk = (Dialog)l.kc(dialog, "Cannot display null dialog");
+        nk.setOnCancelListener((DialogInterface$OnCancelListener)null);
+        nk.setOnDismissListener((DialogInterface$OnDismissListener)null);
+        m.nK = nk;
+        if (nj != null) {
+            m.nJ = nj;
         }
         return m;
     }
     
     public void onCancel(final DialogInterface dialogInterface) {
-        if (this.kR != null) {
-            this.kR.onCancel(dialogInterface);
+        if (this.nJ != null) {
+            this.nJ.onCancel(dialogInterface);
         }
     }
     
     public Dialog onCreateDialog(final Bundle bundle) {
-        if (this.kS == null) {
-            this.aqi(false);
+        if (this.nK == null) {
+            this.arj(false);
         }
-        return this.kS;
+        return this.nK;
     }
     
-    public void ou(final bb bb, final String s) {
-        super.ou(bb, s);
+    public void rg(final aW aw, final String s) {
+        super.rg(aw, s);
     }
 }

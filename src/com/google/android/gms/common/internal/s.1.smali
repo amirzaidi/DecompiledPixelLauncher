@@ -3,33 +3,33 @@
 
 
 # instance fields
-.field public final fI:Landroid/os/IBinder;
+.field public final iA:Landroid/os/IBinder;
 
-.field final synthetic fJ:Lcom/google/android/gms/common/internal/x;
+.field final synthetic iB:Lcom/google/android/gms/common/internal/x;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/common/internal/x;ILandroid/os/IBinder;Landroid/os/Bundle;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
     invoke-direct {p0, p1, p2, p4}, Lcom/google/android/gms/common/internal/i;-><init>(Lcom/google/android/gms/common/internal/x;ILandroid/os/Bundle;)V
 
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/s;->fI:Landroid/os/IBinder;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/s;->iA:Landroid/os/IBinder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected hh()Z
+.method protected jV()Z
     .locals 6
 
     const/4 v5, 0x0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->fI:Landroid/os/IBinder;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->iA:Landroid/os/IBinder;
 
     invoke-interface {v0}, Landroid/os/IBinder;->getInterfaceDescriptor()Ljava/lang/String;
     :try_end_0
@@ -37,9 +37,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/x;->gx()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/x;->jl()Ljava/lang/String;
 
     move-result-object v1
 
@@ -49,11 +49,11 @@
 
     if-eqz v1, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->fI:Landroid/os/IBinder;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->iA:Landroid/os/IBinder;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/x;->gz(Landroid/os/IBinder;)Landroid/os/IInterface;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/internal/x;->jn(Landroid/os/IBinder;)Landroid/os/IInterface;
 
     move-result-object v0
 
@@ -74,9 +74,9 @@
     return v5
 
     :cond_1
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/x;->gx()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/common/internal/x;->jl()Ljava/lang/String;
 
     move-result-object v1
 
@@ -139,27 +139,27 @@
     return v5
 
     :cond_2
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
     const/4 v2, 0x2
 
     const/4 v3, 0x3
 
-    invoke-static {v1, v2, v3, v0}, Lcom/google/android/gms/common/internal/x;->id(Lcom/google/android/gms/common/internal/x;IILandroid/os/IInterface;)Z
+    invoke-static {v1, v2, v3, v0}, Lcom/google/android/gms/common/internal/x;->kR(Lcom/google/android/gms/common/internal/x;IILandroid/os/IInterface;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/x;->ig()Landroid/os/Bundle;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/internal/x;->kU()Landroid/os/Bundle;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/x;->ia(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/x;->kO(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
 
     move-result-object v1
 
@@ -171,43 +171,43 @@
     return v0
 
     :cond_3
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v1}, Lcom/google/android/gms/common/internal/x;->ia(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
+    invoke-static {v1}, Lcom/google/android/gms/common/internal/x;->kO(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/B;
 
     move-result-object v1
 
-    invoke-interface {v1, v0}, Lcom/google/android/gms/common/internal/B;->ir(Landroid/os/Bundle;)V
+    invoke-interface {v1, v0}, Lcom/google/android/gms/common/internal/B;->lf(Landroid/os/Bundle;)V
 
     goto :goto_0
 .end method
 
-.method protected hi(Lcom/google/android/gms/common/ConnectionResult;)V
+.method protected jW(Lcom/google/android/gms/common/ConnectionResult;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/x;->hT(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/q;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/x;->kH(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/q;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
     :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/x;->hV(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/x;->kJ(Lcom/google/android/gms/common/ConnectionResult;)V
 
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->fJ:Lcom/google/android/gms/common/internal/x;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/s;->iB:Lcom/google/android/gms/common/internal/x;
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/x;->hT(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/q;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/x;->kH(Lcom/google/android/gms/common/internal/x;)Lcom/google/android/gms/common/internal/q;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/common/internal/q;->hC(Lcom/google/android/gms/common/ConnectionResult;)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/common/internal/q;->kq(Lcom/google/android/gms/common/ConnectionResult;)V
 
     goto :goto_0
 .end method

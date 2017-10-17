@@ -5,15 +5,15 @@
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
-.field private static final mD:[I
+.field private static final ga:[I
 
 
 # instance fields
-.field private final mC:Ljava/util/ArrayList;
+.field private final fZ:Ljava/util/ArrayList;
 
-.field private final mE:I
+.field private final gb:I
 
-.field private final mF:I
+.field private final gc:I
 
 
 # direct methods
@@ -66,7 +66,7 @@
 
     aput v1, v0, v2
 
-    sput-object v0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mD:[I
+    sput-object v0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->ga:[I
 
     new-instance v0, Lcom/google/android/gms/awareness/snapshot/internal/c;
 
@@ -82,11 +82,11 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mE:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->gb:I
 
-    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mF:I
+    iput p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->gc:I
 
-    iput-object p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
+    iput-object p3, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -108,22 +108,22 @@
 
     check-cast p1, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mF:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->gc:I
 
-    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->qf()I
+    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fc()I
 
     move-result v3
 
     if-ne v0, v3, :cond_3
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_4
 
     move v0, v1
 
     :goto_0
-    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->qd()Ljava/util/ArrayList;
+    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fa()Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -136,7 +136,7 @@
 
     if-nez v0, :cond_6
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
 
     if-nez v0, :cond_7
 
@@ -166,13 +166,13 @@
     return v1
 
     :cond_7
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->qd()Ljava/util/ArrayList;
+    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fa()Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -182,7 +182,7 @@
 
     if-ne v0, v3, :cond_9
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -201,7 +201,7 @@
 
     check-cast v0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->qd()Ljava/util/ArrayList;
+    invoke-virtual {p1}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fa()Ljava/util/ArrayList;
 
     move-result-object v4
 
@@ -217,12 +217,36 @@
     return v1
 .end method
 
+.method public fa()Ljava/util/ArrayList;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
+
+    return-object v0
+.end method
+
+.method fb()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->gb:I
+
+    return v0
+.end method
+
+.method public fc()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->gc:I
+
+    return v0
+.end method
+
 .method public hashCode()I
     .locals 4
 
     const/4 v2, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
@@ -233,7 +257,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget v3, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mF:I
+    iget v3, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->gc:I
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -249,14 +273,14 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fZ:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -290,34 +314,10 @@
     goto :goto_0
 .end method
 
-.method public qd()Ljava/util/ArrayList;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mC:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method qe()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mE:I
-
-    return v0
-.end method
-
-.method public qf()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->mF:I
-
-    return v0
-.end method
-
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/c;->pO(Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/c;->eI(Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

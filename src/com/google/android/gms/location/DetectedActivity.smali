@@ -5,19 +5,19 @@
 # static fields
 .field public static final CREATOR:Lcom/google/android/gms/location/j;
 
-.field public static final Cv:Ljava/util/Comparator;
+.field public static final Ea:Ljava/util/Comparator;
 
-.field public static final Cw:[I
+.field public static final Eb:[I
 
-.field public static final Cy:[I
+.field public static final Ed:[I
 
 
 # instance fields
-.field Ct:I
+.field DY:I
 
-.field Cu:I
+.field DZ:I
 
-.field private final Cx:I
+.field private final Ec:I
 
 
 # direct methods
@@ -38,7 +38,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/location/w;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/location/DetectedActivity;->Cv:Ljava/util/Comparator;
+    sput-object v0, Lcom/google/android/gms/location/DetectedActivity;->Ea:Ljava/util/Comparator;
 
     new-array v0, v4, [I
 
@@ -48,7 +48,7 @@
 
     aput v5, v0, v3
 
-    sput-object v0, Lcom/google/android/gms/location/DetectedActivity;->Cw:[I
+    sput-object v0, Lcom/google/android/gms/location/DetectedActivity;->Eb:[I
 
     const/16 v0, 0xd
 
@@ -112,7 +112,7 @@
 
     aput v1, v0, v2
 
-    sput-object v0, Lcom/google/android/gms/location/DetectedActivity;->Cy:[I
+    sput-object v0, Lcom/google/android/gms/location/DetectedActivity;->Ed:[I
 
     new-instance v0, Lcom/google/android/gms/location/j;
 
@@ -128,16 +128,16 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/DetectedActivity;->Cx:I
+    iput p1, p0, Lcom/google/android/gms/location/DetectedActivity;->Ec:I
 
-    iput p2, p0, Lcom/google/android/gms/location/DetectedActivity;->Ct:I
+    iput p2, p0, Lcom/google/android/gms/location/DetectedActivity;->DY:I
 
-    iput p3, p0, Lcom/google/android/gms/location/DetectedActivity;->Cu:I
+    iput p3, p0, Lcom/google/android/gms/location/DetectedActivity;->DZ:I
 
     return-void
 .end method
 
-.method private GP(I)I
+.method private HI(I)I
     .locals 1
 
     const/16 v0, 0xf
@@ -152,7 +152,7 @@
     return v0
 .end method
 
-.method public static GR(I)Ljava/lang/String;
+.method public static HK(I)Ljava/lang/String;
     .locals 1
 
     packed-switch p0, :pswitch_data_0
@@ -220,30 +220,30 @@
 
 
 # virtual methods
-.method public GO()I
+.method public HH()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/DetectedActivity;->Cu:I
+    iget v0, p0, Lcom/google/android/gms/location/DetectedActivity;->DZ:I
 
     return v0
 .end method
 
-.method public GQ()I
+.method public HJ()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/DetectedActivity;->Ct:I
+    iget v0, p0, Lcom/google/android/gms/location/DetectedActivity;->DY:I
 
-    invoke-direct {p0, v0}, Lcom/google/android/gms/location/DetectedActivity;->GP(I)I
+    invoke-direct {p0, v0}, Lcom/google/android/gms/location/DetectedActivity;->HI(I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public GS()I
+.method public HL()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/DetectedActivity;->Cx:I
+    iget v0, p0, Lcom/google/android/gms/location/DetectedActivity;->Ec:I
 
     return v0
 .end method
@@ -278,9 +278,9 @@
 
     check-cast p1, Lcom/google/android/gms/location/DetectedActivity;
 
-    iget v2, p0, Lcom/google/android/gms/location/DetectedActivity;->Ct:I
+    iget v2, p0, Lcom/google/android/gms/location/DetectedActivity;->DY:I
 
-    iget v3, p1, Lcom/google/android/gms/location/DetectedActivity;->Ct:I
+    iget v3, p1, Lcom/google/android/gms/location/DetectedActivity;->DY:I
 
     if-eq v2, v3, :cond_4
 
@@ -291,9 +291,9 @@
     return v0
 
     :cond_4
-    iget v2, p0, Lcom/google/android/gms/location/DetectedActivity;->Cu:I
+    iget v2, p0, Lcom/google/android/gms/location/DetectedActivity;->DZ:I
 
-    iget v3, p1, Lcom/google/android/gms/location/DetectedActivity;->Cu:I
+    iget v3, p1, Lcom/google/android/gms/location/DetectedActivity;->DZ:I
 
     if-eq v2, v3, :cond_3
 
@@ -307,7 +307,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/android/gms/location/DetectedActivity;->Ct:I
+    iget v1, p0, Lcom/google/android/gms/location/DetectedActivity;->DY:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -317,7 +317,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/location/DetectedActivity;->Cu:I
+    iget v1, p0, Lcom/google/android/gms/location/DetectedActivity;->DZ:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -327,7 +327,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -337,11 +337,11 @@
 .method public toString()Ljava/lang/String;
     .locals 4
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/DetectedActivity;->GQ()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/DetectedActivity;->HJ()I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/gms/location/DetectedActivity;->GR(I)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/location/DetectedActivity;->HK(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -349,7 +349,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/gms/location/DetectedActivity;->Cu:I
+    iget v1, p0, Lcom/google/android/gms/location/DetectedActivity;->DZ:I
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -401,7 +401,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/j;->Hn(Lcom/google/android/gms/location/DetectedActivity;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/j;->Ig(Lcom/google/android/gms/location/DetectedActivity;Landroid/os/Parcel;I)V
 
     return-void
 .end method

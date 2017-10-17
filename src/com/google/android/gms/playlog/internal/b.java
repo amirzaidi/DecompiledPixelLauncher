@@ -12,65 +12,65 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void Pb(final LogEvent logEvent, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, logEvent.IP);
-        a.fw(parcel, 2, logEvent.IQ);
-        a.fo(parcel, 3, logEvent.IU, false);
-        a.fv(parcel, 4, logEvent.IS, false);
-        a.eT(parcel, 5, logEvent.IT, false);
-        a.fw(parcel, 6, logEvent.IR);
-        a.fe(parcel, ey);
+    static void PU(final LogEvent logEvent, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, logEvent.Ku);
+        a.ik(parcel, 2, logEvent.Kv);
+        a.ic(parcel, 3, logEvent.Kz, false);
+        a.ij(parcel, 4, logEvent.Kx, false);
+        a.hH(parcel, 5, logEvent.Ky, false);
+        a.ik(parcel, 6, logEvent.Kw);
+        a.hS(parcel, hm);
     }
     
-    public LogEvent[] Pa(final int n) {
+    public LogEvent[] PT(final int n) {
         return new LogEvent[n];
     }
     
-    public LogEvent Pc(final Parcel parcel) {
-        long fl = 0L;
-        Bundle fp = null;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn = 0;
-        byte[] gf = null;
-        String fq = null;
-        long fl2 = fl;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+    public LogEvent PV(final Parcel parcel) {
+        long iz = 0L;
+        Bundle id = null;
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib = 0;
+        byte[] it = null;
+        String ie = null;
+        long iz2 = iz;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fl2 = com.google.android.gms.common.internal.safeparcel.b.fL(parcel, fs);
+                    iz2 = com.google.android.gms.common.internal.safeparcel.b.iz(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fq = com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, fs);
+                    ie = com.google.android.gms.common.internal.safeparcel.b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gf = com.google.android.gms.common.internal.safeparcel.b.gf(parcel, fs);
+                    it = com.google.android.gms.common.internal.safeparcel.b.iT(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fp = com.google.android.gms.common.internal.safeparcel.b.fP(parcel, fs);
+                    id = com.google.android.gms.common.internal.safeparcel.b.iD(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fl = com.google.android.gms.common.internal.safeparcel.b.fL(parcel, fs);
+                    iz = com.google.android.gms.common.internal.safeparcel.b.iz(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LogEvent(fn, fl2, fl, fq, gf, fp);
+        if (parcel.dataPosition() == ix) {
+            return new LogEvent(ib, iz2, iz, ie, it, id);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

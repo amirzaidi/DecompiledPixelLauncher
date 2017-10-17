@@ -14,31 +14,31 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class BeaconStateImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final ArrayList nh;
-    private final int ni;
+    private final ArrayList gE;
+    private final int gF;
     
     static {
         CREATOR = (Parcelable$Creator)new j();
     }
     
-    BeaconStateImpl(final int ni, final ArrayList nh) {
-        this.ni = ni;
-        this.nh = nh;
+    BeaconStateImpl(final int gf, final ArrayList ge) {
+        this.gF = gf;
+        this.gE = ge;
     }
     
-    ArrayList rb() {
-        return this.nh;
+    ArrayList fV() {
+        return this.gE;
     }
     
-    int rc() {
-        return this.ni;
+    int fW() {
+        return this.gF;
     }
     
     public String toString() {
-        if (this.nh != null && !this.nh.isEmpty()) {
+        if (this.gE != null && !this.gE.isEmpty()) {
             final StringBuilder sb = new StringBuilder();
             sb.append("BeaconState: ");
-            final Iterator<a> iterator = (Iterator<a>)this.nh.iterator();
+            final Iterator<a> iterator = (Iterator<a>)this.gE.iterator();
             while (iterator.hasNext()) {
                 sb.append(iterator.next());
             }
@@ -48,6 +48,6 @@ public final class BeaconStateImpl extends AbstractSafeParcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        j.qF(this, parcel, n);
+        j.fx(this, parcel, n);
     }
 }

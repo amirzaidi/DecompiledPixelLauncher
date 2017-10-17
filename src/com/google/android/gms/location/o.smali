@@ -14,45 +14,45 @@
     return-void
 .end method
 
-.method static HO(Lcom/google/android/gms/location/WifiScan;Landroid/os/Parcel;I)V
+.method static IH(Lcom/google/android/gms/location/WifiScan;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/WifiScan;->HT()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/WifiScan;->IM()J
 
     move-result-wide v2
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    iget-object v1, p0, Lcom/google/android/gms/location/WifiScan;->Dj:[J
+    iget-object v1, p0, Lcom/google/android/gms/location/WifiScan;->EO:[J
 
     const/4 v2, 0x0
 
     const/4 v3, 0x2
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->eV(Landroid/os/Parcel;I[JZ)V
+    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->hJ(Landroid/os/Parcel;I[JZ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/WifiScan;->HV()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/WifiScan;->IO()I
 
     move-result v1
 
     const/16 v2, 0x3e8
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public HN(I)[Lcom/google/android/gms/location/WifiScan;
+.method public IG(I)[Lcom/google/android/gms/location/WifiScan;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/location/WifiScan;
@@ -60,10 +60,10 @@
     return-object v0
 .end method
 
-.method public HP(Landroid/os/Parcel;)Lcom/google/android/gms/location/WifiScan;
+.method public II(Landroid/os/Parcel;)Lcom/google/android/gms/location/WifiScan;
     .locals 7
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v4
 
@@ -71,7 +71,7 @@
 
     const-wide/16 v2, 0x0
 
-    sget-object v0, Lcom/google/android/gms/location/WifiScan;->Dk:[J
+    sget-object v0, Lcom/google/android/gms/location/WifiScan;->EP:[J
 
     :goto_0
     invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
@@ -93,36 +93,36 @@
     return-object v4
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v5
 
-    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v6
 
     sparse-switch v6, :sswitch_data_0
 
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :sswitch_0
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v2
 
     goto :goto_0
 
     :sswitch_1
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fT(Landroid/os/Parcel;I)[J
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iH(Landroid/os/Parcel;I)[J
 
     move-result-object v0
 
     goto :goto_0
 
     :sswitch_2
-    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v5}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -168,7 +168,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/o;->HP(Landroid/os/Parcel;)Lcom/google/android/gms/location/WifiScan;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/o;->II(Landroid/os/Parcel;)Lcom/google/android/gms/location/WifiScan;
 
     move-result-object v0
 
@@ -178,7 +178,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/o;->HN(I)[Lcom/google/android/gms/location/WifiScan;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/o;->IG(I)[Lcom/google/android/gms/location/WifiScan;
 
     move-result-object v0
 

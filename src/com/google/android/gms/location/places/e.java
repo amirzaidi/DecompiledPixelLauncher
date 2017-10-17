@@ -13,7 +13,7 @@ public class e extends b
         super(dataHolder);
     }
     
-    public d mX(final int n) {
-        return new com.google.android.gms.location.places.internal.d(this.jP, n);
+    public d get(final int n) {
+        return new com.google.android.gms.location.places.internal.d(this.mH, n);
     }
 }

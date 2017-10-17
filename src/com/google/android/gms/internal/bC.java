@@ -4,60 +4,29 @@
 
 package com.google.android.gms.internal;
 
-import android.content.pm.ApplicationInfo;
-import android.app.AppOpsManager;
-import com.google.android.gms.common.a.n;
-import android.content.pm.PackageInfo;
-import android.content.Context;
+import android.content.ContentResolver;
 
-public class bc
+class bc implements aT
 {
-    protected final Context mContext;
+    private final ContentResolver tX;
     
-    public bc(final Context mContext) {
-        this.mContext = mContext;
+    public bc(final ContentResolver tx) {
+        this.tX = tx;
     }
     
-    public PackageInfo xC(final String s, final int n) {
-        return this.mContext.getPackageManager().getPackageInfo(s, n);
+    public Long xo(final String s, final Long n) {
+        return aS.xh(this.tX, s, n);
     }
     
-    public boolean xD(final int n, final String s) {
-        final boolean b = true;
-        final String[] packagesForUid;
-        Label_0074: {
-            if (n.jT()) {
-                try {
-                    final Object systemService = this.mContext.getSystemService("appops");
-                    try {
-                        ((AppOpsManager)systemService).checkPackage(n, s);
-                        return b;
-                    }
-                    catch (SecurityException ex) {
-                        return false;
-                    }
-                }
-                catch (SecurityException ex2) {}
-                break Label_0074;
-            }
-            packagesForUid = this.mContext.getPackageManager().getPackagesForUid(n);
-            if (s != null) {
-                break Label_0074;
-            }
-            return false;
-        }
-        if (packagesForUid != null) {
-            for (int i = 0; i < packagesForUid.length; ++i) {
-                if (s.equals(packagesForUid[i])) {
-                    return b;
-                }
-            }
-            return false;
-        }
-        return false;
+    public Integer xp(final String s, final Integer n) {
+        return aS.xj(this.tX, s, n);
     }
     
-    public ApplicationInfo xE(final String s, final int n) {
-        return this.mContext.getPackageManager().getApplicationInfo(s, n);
+    public String xq(final String s, final String s2) {
+        return aS.xf(this.tX, s, s2);
+    }
+    
+    public Boolean xr(final String s, final Boolean b) {
+        return aS.xk(this.tX, s, b);
     }
 }

@@ -3,9 +3,9 @@
 
 
 # static fields
-.field public static final kx:I
+.field public static final np:I
 
-.field private static final ky:Lcom/google/android/gms/common/a;
+.field private static final nq:Lcom/google/android/gms/common/a;
 
 
 # direct methods
@@ -16,11 +16,11 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/a;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/a;->ky:Lcom/google/android/gms/common/a;
+    sput-object v0, Lcom/google/android/gms/common/a;->nq:Lcom/google/android/gms/common/a;
 
-    sget v0, Lcom/google/android/gms/common/f;->kC:I
+    sget v0, Lcom/google/android/gms/common/f;->nu:I
 
-    sput v0, Lcom/google/android/gms/common/a;->kx:I
+    sput v0, Lcom/google/android/gms/common/a;->np:I
 
     return-void
 .end method
@@ -33,30 +33,127 @@
     return-void
 .end method
 
-.method public static nI()Lcom/google/android/gms/common/a;
+.method public static getInstance()Lcom/google/android/gms/common/a;
     .locals 1
 
-    sget-object v0, Lcom/google/android/gms/common/a;->ky:Lcom/google/android/gms/common/a;
+    sget-object v0, Lcom/google/android/gms/common/a;->nq:Lcom/google/android/gms/common/a;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public nA(Landroid/content/Context;II)Landroid/app/PendingIntent;
+.method public qA(Landroid/content/Context;Lcom/google/android/gms/common/ConnectionResult;)Landroid/app/PendingIntent;
+    .locals 3
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->qk()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->qh()I
+
+    move-result v0
+
+    invoke-static {p1}, Lcom/google/android/gms/common/a/c;->ml(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    :cond_0
+    :goto_0
+    invoke-virtual {p0, p1, v0, v2}, Lcom/google/android/gms/common/a;->qn(Landroid/content/Context;II)Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_1
+    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->ql()Landroid/app/PendingIntent;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_2
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_0
+
+    const/16 v0, 0x2a
+
+    goto :goto_0
+.end method
+
+.method public qB(Landroid/content/Context;I)Z
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Lcom/google/android/gms/common/f;->nA(Landroid/content/Context;II)Landroid/app/PendingIntent;
+    invoke-super {p0, p1, p2}, Lcom/google/android/gms/common/f;->qB(Landroid/content/Context;I)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public qm(Landroid/content/Context;Lcom/google/android/gms/internal/bs;)Lcom/google/android/gms/internal/bq;
+    .locals 2
+
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string/jumbo v1, "android.intent.action.PACKAGE_ADDED"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v1, "package"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
+
+    new-instance v1, Lcom/google/android/gms/internal/bq;
+
+    invoke-direct {v1, p2}, Lcom/google/android/gms/internal/bq;-><init>(Lcom/google/android/gms/internal/bs;)V
+
+    invoke-virtual {p1, v1, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    invoke-virtual {v1, p1}, Lcom/google/android/gms/internal/bq;->zn(Landroid/content/Context;)V
+
+    const-string/jumbo v0, "com.google.android.gms"
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/common/a;->qF(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    invoke-virtual {p2}, Lcom/google/android/gms/internal/bs;->zp()V
+
+    invoke-virtual {v1}, Lcom/google/android/gms/internal/bq;->zo()V
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public qn(Landroid/content/Context;II)Landroid/app/PendingIntent;
+    .locals 1
+
+    invoke-super {p0, p1, p2, p3}, Lcom/google/android/gms/common/f;->qn(Landroid/content/Context;II)Landroid/app/PendingIntent;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public nB(Landroid/content/Context;Lcom/google/android/gms/common/ConnectionResult;I)V
+.method public qo(Landroid/content/Context;Lcom/google/android/gms/common/ConnectionResult;I)V
     .locals 2
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/common/a;->nO(Landroid/content/Context;Lcom/google/android/gms/common/ConnectionResult;)Landroid/app/PendingIntent;
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/common/a;->qA(Landroid/content/Context;Lcom/google/android/gms/common/ConnectionResult;)Landroid/app/PendingIntent;
 
     move-result-object v0
 
@@ -66,43 +163,43 @@
     return-void
 
     :cond_0
-    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->nu()I
+    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->qh()I
 
     move-result v1
 
-    invoke-static {p1, v0, p3}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eR(Landroid/content/Context;Landroid/app/PendingIntent;I)Landroid/app/PendingIntent;
+    invoke-static {p1, v0, p3}, Lcom/google/android/gms/common/api/GoogleApiActivity;->hF(Landroid/content/Context;Landroid/app/PendingIntent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
-    invoke-static {v1, p1, v0}, Lcom/google/android/gms/common/n;->oy(ILandroid/content/Context;Landroid/app/PendingIntent;)V
+    invoke-static {v1, p1, v0}, Lcom/google/android/gms/common/n;->rk(ILandroid/content/Context;Landroid/app/PendingIntent;)V
 
     goto :goto_0
 .end method
 
-.method public final nC(I)Z
+.method public final qp(I)Z
     .locals 1
 
-    invoke-super {p0, p1}, Lcom/google/android/gms/common/f;->nC(I)Z
+    invoke-super {p0, p1}, Lcom/google/android/gms/common/f;->qp(I)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public nD(Landroid/app/Activity;Lcom/google/android/gms/internal/aC;IILandroid/content/DialogInterface$OnCancelListener;)Z
+.method public qq(Landroid/app/Activity;Lcom/google/android/gms/internal/aw;IILandroid/content/DialogInterface$OnCancelListener;)Z
     .locals 2
 
     const-string/jumbo v0, "d"
 
-    invoke-virtual {p0, p1, p3, v0}, Lcom/google/android/gms/common/a;->nJ(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, p1, p3, v0}, Lcom/google/android/gms/common/a;->qv(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    invoke-static {p2, v0, p4}, Lcom/google/android/gms/common/internal/P;->jh(Lcom/google/android/gms/internal/aC;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/P;
+    invoke-static {p2, v0, p4}, Lcom/google/android/gms/common/internal/P;->lV(Lcom/google/android/gms/internal/aw;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/P;
 
     move-result-object v0
 
-    invoke-virtual {p0, p1, p3, v0, p5}, Lcom/google/android/gms/common/a;->nK(Landroid/content/Context;ILcom/google/android/gms/common/internal/P;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-virtual {p0, p1, p3, v0, p5}, Lcom/google/android/gms/common/a;->qw(Landroid/content/Context;ILcom/google/android/gms/common/internal/P;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object v0
 
@@ -110,7 +207,7 @@
 
     const-string/jumbo v1, "GooglePlayServicesErrorDialog"
 
-    invoke-virtual {p0, p1, v0, v1, p5}, Lcom/google/android/gms/common/a;->nE(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {p0, p1, v0, v1, p5}, Lcom/google/android/gms/common/a;->qr(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
 
     const/4 v0, 0x1
 
@@ -122,7 +219,7 @@
     return v0
 .end method
 
-.method nE(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
+.method qr(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
     .locals 2
 
     const/4 v0, 0x0
@@ -135,7 +232,7 @@
     :goto_0
     if-nez v0, :cond_0
 
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->jV()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mJ()Z
 
     move-result v0
 
@@ -157,15 +254,15 @@
     :cond_0
     check-cast p1, Landroid/support/v4/app/a;
 
-    invoke-virtual {p1}, Landroid/support/v4/app/a;->ahY()Landroid/support/v4/app/bb;
+    invoke-virtual {p1}, Landroid/support/v4/app/a;->aji()Landroid/support/v4/app/aW;
 
     move-result-object v0
 
-    invoke-static {p2, p4}, Lcom/google/android/gms/common/m;->ov(Landroid/app/Dialog;Landroid/content/DialogInterface$OnCancelListener;)Lcom/google/android/gms/common/m;
+    invoke-static {p2, p4}, Lcom/google/android/gms/common/m;->rh(Landroid/app/Dialog;Landroid/content/DialogInterface$OnCancelListener;)Lcom/google/android/gms/common/m;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0, p3}, Lcom/google/android/gms/common/m;->ou(Landroid/support/v4/app/bb;Ljava/lang/String;)V
+    invoke-virtual {v1, v0, p3}, Lcom/google/android/gms/common/m;->rg(Landroid/support/v4/app/aW;Ljava/lang/String;)V
 
     :goto_1
     return-void
@@ -175,7 +272,7 @@
 
     move-result-object v0
 
-    invoke-static {p2, p4}, Lcom/google/android/gms/common/o;->oz(Landroid/app/Dialog;Landroid/content/DialogInterface$OnCancelListener;)Lcom/google/android/gms/common/o;
+    invoke-static {p2, p4}, Lcom/google/android/gms/common/o;->rl(Landroid/app/Dialog;Landroid/content/DialogInterface$OnCancelListener;)Lcom/google/android/gms/common/o;
 
     move-result-object v1
 
@@ -184,30 +281,30 @@
     goto :goto_1
 .end method
 
-.method public nF(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+.method public qs(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
     .locals 1
 
     const-string/jumbo v0, "d"
 
-    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/gms/common/a;->nJ(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/gms/common/a;->qv(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    invoke-static {p1, v0, p3}, Lcom/google/android/gms/common/internal/P;->ji(Landroid/app/Activity;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/P;
+    invoke-static {p1, v0, p3}, Lcom/google/android/gms/common/internal/P;->lW(Landroid/app/Activity;Landroid/content/Intent;I)Lcom/google/android/gms/common/internal/P;
 
     move-result-object v0
 
-    invoke-virtual {p0, p1, p2, v0, p4}, Lcom/google/android/gms/common/a;->nK(Landroid/content/Context;ILcom/google/android/gms/common/internal/P;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-virtual {p0, p1, p2, v0, p4}, Lcom/google/android/gms/common/a;->qw(Landroid/content/Context;ILcom/google/android/gms/common/internal/P;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public nG(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
+.method public qt(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
     .locals 2
 
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/gms/common/a;->nF(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/android/gms/common/a;->qs(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
 
     move-result-object v0
 
@@ -215,7 +312,7 @@
 
     const-string/jumbo v1, "GooglePlayServicesErrorDialog"
 
-    invoke-virtual {p0, p1, v0, v1, p4}, Lcom/google/android/gms/common/a;->nE(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {p0, p1, v0, v1, p4}, Lcom/google/android/gms/common/a;->qr(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
 
     const/4 v0, 0x1
 
@@ -227,7 +324,7 @@
     return v0
 .end method
 
-.method public nH(Landroid/app/Activity;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+.method public qu(Landroid/app/Activity;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
     .locals 7
 
     const/4 v6, 0x0
@@ -252,7 +349,7 @@
 
     invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    invoke-static {p1}, Lcom/google/android/gms/common/n;->oe(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/android/gms/common/n;->qQ(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -286,29 +383,29 @@
 
     const-string/jumbo v1, "GooglePlayServicesUpdatingDialog"
 
-    invoke-virtual {p0, p1, v0, v1, p2}, Lcom/google/android/gms/common/a;->nE(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {p0, p1, v0, v1, p2}, Lcom/google/android/gms/common/a;->qr(Landroid/app/Activity;Landroid/app/Dialog;Ljava/lang/String;Landroid/content/DialogInterface$OnCancelListener;)V
 
     return-object v0
 .end method
 
-.method public nJ(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+.method public qv(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Lcom/google/android/gms/common/f;->nJ(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+    invoke-super {p0, p1, p2, p3}, Lcom/google/android/gms/common/f;->qv(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method nK(Landroid/content/Context;ILcom/google/android/gms/common/internal/P;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
+.method qw(Landroid/content/Context;ILcom/google/android/gms/common/internal/P;Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/Dialog;
     .locals 5
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_2
 
-    invoke-static {p1}, Lcom/google/android/gms/common/a/c;->jx(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/google/android/gms/common/a/c;->ml(Landroid/content/Context;)Z
 
     move-result v1
 
@@ -316,7 +413,7 @@
 
     :cond_0
     :goto_0
-    invoke-static {}, Lcom/google/android/gms/common/a/n;->kb()Z
+    invoke-static {}, Lcom/google/android/gms/common/a/n;->mP()Z
 
     move-result v1
 
@@ -327,11 +424,11 @@
     if-eqz v0, :cond_5
 
     :goto_2
-    invoke-static {p1}, Lcom/google/android/gms/common/k;->oe(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/google/android/gms/common/k;->qQ(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {p1, p2, v1}, Lcom/google/android/gms/common/internal/I;->iH(Landroid/content/Context;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2, v1}, Lcom/google/android/gms/common/internal/I;->lv(Landroid/content/Context;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -340,14 +437,14 @@
     if-nez p4, :cond_6
 
     :goto_3
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/I;->iF(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/I;->lt(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
     if-nez v1, :cond_7
 
     :goto_4
-    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/I;->iJ(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p1, p2}, Lcom/google/android/gms/common/internal/I;->lx(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -436,129 +533,32 @@
     goto :goto_5
 .end method
 
-.method public nL(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
+.method public qx(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
     .locals 1
 
-    invoke-super {p0, p1, p2, p3, p4}, Lcom/google/android/gms/common/f;->nL(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/google/android/gms/common/f;->qx(Landroid/content/Context;IILjava/lang/String;)Landroid/app/PendingIntent;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public nM(I)Landroid/content/Intent;
+.method public qy(I)Landroid/content/Intent;
     .locals 1
 
-    invoke-super {p0, p1}, Lcom/google/android/gms/common/f;->nM(I)Landroid/content/Intent;
+    invoke-super {p0, p1}, Lcom/google/android/gms/common/f;->qy(I)Landroid/content/Intent;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public nN(Landroid/content/Context;)I
+.method public qz(Landroid/content/Context;)I
     .locals 1
 
-    invoke-super {p0, p1}, Lcom/google/android/gms/common/f;->nN(Landroid/content/Context;)I
+    invoke-super {p0, p1}, Lcom/google/android/gms/common/f;->qz(Landroid/content/Context;)I
 
     move-result v0
 
     return v0
-.end method
-
-.method public nO(Landroid/content/Context;Lcom/google/android/gms/common/ConnectionResult;)Landroid/app/PendingIntent;
-    .locals 3
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->nx()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->nu()I
-
-    move-result v0
-
-    invoke-static {p1}, Lcom/google/android/gms/common/a/c;->jx(Landroid/content/Context;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p0, p1, v0, v2}, Lcom/google/android/gms/common/a;->nA(Landroid/content/Context;II)Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_1
-    invoke-virtual {p2}, Lcom/google/android/gms/common/ConnectionResult;->ny()Landroid/app/PendingIntent;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_2
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_0
-
-    const/16 v0, 0x2a
-
-    goto :goto_0
-.end method
-
-.method public nP(Landroid/content/Context;I)Z
-    .locals 1
-
-    invoke-super {p0, p1, p2}, Lcom/google/android/gms/common/f;->nP(Landroid/content/Context;I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public nz(Landroid/content/Context;Lcom/google/android/gms/internal/by;)Lcom/google/android/gms/internal/bw;
-    .locals 2
-
-    new-instance v0, Landroid/content/IntentFilter;
-
-    const-string/jumbo v1, "android.intent.action.PACKAGE_ADDED"
-
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v1, "package"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
-
-    new-instance v1, Lcom/google/android/gms/internal/bw;
-
-    invoke-direct {v1, p2}, Lcom/google/android/gms/internal/bw;-><init>(Lcom/google/android/gms/internal/by;)V
-
-    invoke-virtual {p1, v1, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    invoke-virtual {v1, p1}, Lcom/google/android/gms/internal/bw;->zo(Landroid/content/Context;)V
-
-    const-string/jumbo v0, "com.google.android.gms"
-
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/common/a;->nT(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-object v1
-
-    :cond_0
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/by;->zq()V
-
-    invoke-virtual {v1}, Lcom/google/android/gms/internal/bw;->zp()V
-
-    const/4 v0, 0x0
-
-    return-object v0
 .end method

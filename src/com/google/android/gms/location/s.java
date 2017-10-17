@@ -13,41 +13,41 @@ import android.os.Parcelable$Creator;
 
 public class s implements Parcelable$Creator
 {
-    static void If(final GestureRequest gestureRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fb(parcel, 1, gestureRequest.HA(), false);
-        a.fj(parcel, 1000, gestureRequest.HB());
-        a.fe(parcel, ey);
+    static void IY(final GestureRequest gestureRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hP(parcel, 1, gestureRequest.It(), false);
+        a.hX(parcel, 1000, gestureRequest.Iu());
+        a.hS(parcel, hm);
     }
     
-    public GestureRequest[] Id(final int n) {
+    public GestureRequest[] IW(final int n) {
         return new GestureRequest[n];
     }
     
-    public GestureRequest Ie(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        List fh = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public GestureRequest IX(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        List iv = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fh = b.fH(parcel, fs);
+                    iv = b.iv(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new GestureRequest(fn, fh);
+        if (parcel.dataPosition() == ix) {
+            return new GestureRequest(ib, iv);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

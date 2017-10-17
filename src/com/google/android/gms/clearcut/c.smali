@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public LH(J)J
+.method public MA(J)J
     .locals 3
 
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;

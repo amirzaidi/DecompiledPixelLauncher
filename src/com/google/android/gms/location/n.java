@@ -12,80 +12,80 @@ import android.os.Parcelable$Creator;
 
 public class n implements Parcelable$Creator
 {
-    static void HM(final LocationRequest locationRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, locationRequest.BX);
-        a.fw(parcel, 2, locationRequest.BT);
-        a.fw(parcel, 3, locationRequest.BR);
-        a.fa(parcel, 4, locationRequest.BY);
-        a.fw(parcel, 5, locationRequest.BU);
-        a.fj(parcel, 6, locationRequest.BS);
-        a.fs(parcel, 7, locationRequest.BW);
-        a.fj(parcel, 1000, locationRequest.GA());
-        a.fw(parcel, 8, locationRequest.BQ);
-        a.fe(parcel, ey);
+    static void IF(final LocationRequest locationRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, locationRequest.DC);
+        a.ik(parcel, 2, locationRequest.Dy);
+        a.ik(parcel, 3, locationRequest.Dw);
+        a.hO(parcel, 4, locationRequest.DD);
+        a.ik(parcel, 5, locationRequest.Dz);
+        a.hX(parcel, 6, locationRequest.Dx);
+        a.ig(parcel, 7, locationRequest.DB);
+        a.hX(parcel, 1000, locationRequest.Ht());
+        a.ik(parcel, 8, locationRequest.Dv);
+        a.hS(parcel, hm);
     }
     
     public LocationRequest createFromParcel(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int fn2 = 102;
-        long fl = 3600000L;
-        long fl2 = 600000L;
-        boolean fx = false;
-        long fl3 = Long.MAX_VALUE;
-        int fn3 = -1 >>> 1;
-        float gj = 0.0f;
-        long fl4 = 0L;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int ib2 = 102;
+        long iz = 3600000L;
+        long iz2 = 600000L;
+        boolean il = false;
+        long iz3 = Long.MAX_VALUE;
+        int ib3 = -1 >>> 1;
+        float ix2 = 0.0f;
+        long iz4 = 0L;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fl2 = b.fL(parcel, fs);
+                    iz2 = b.iz(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fl3 = b.fL(parcel, fs);
+                    iz3 = b.iz(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fl4 = b.fL(parcel, fs);
+                    iz4 = b.iz(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LocationRequest(fn, fn2, fl, fl2, fx, fl3, fn3, gj, fl4);
+        if (parcel.dataPosition() == ix) {
+            return new LocationRequest(ib, ib2, iz, iz2, il, iz3, ib3, ix2, iz4);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public LocationRequest[] newArray(final int n) {

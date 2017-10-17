@@ -6,9 +6,9 @@ package com.google.android.gms.internal;
 
 public final class c
 {
-    private volatile Object np;
+    private volatile Object nR;
     
     public void clear() {
-        this.np = null;
+        this.nR = null;
     }
 }

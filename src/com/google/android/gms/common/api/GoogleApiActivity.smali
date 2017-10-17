@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field protected eK:I
+.field protected hD:I
 
 
 # direct methods
@@ -17,12 +17,12 @@
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
     return-void
 .end method
 
-.method private eO()V
+.method private hC()V
     .locals 7
 
     const/4 v3, 0x1
@@ -58,7 +58,7 @@
     :cond_0
     if-nez v0, :cond_3
 
-    invoke-static {}, Lcom/google/android/gms/common/a;->nI()Lcom/google/android/gms/common/a;
+    invoke-static {}, Lcom/google/android/gms/common/a;->getInstance()Lcom/google/android/gms/common/a;
 
     move-result-object v0
 
@@ -68,9 +68,9 @@
 
     const/4 v2, 0x2
 
-    invoke-virtual {v0, p0, v1, v2, p0}, Lcom/google/android/gms/common/a;->nG(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
+    invoke-virtual {v0, p0, v1, v2, p0}, Lcom/google/android/gms/common/a;->qt(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)Z
 
-    iput v3, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iput v3, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
     :goto_0
     return-void
@@ -121,7 +121,7 @@
 
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
     :try_end_0
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -141,10 +141,10 @@
     goto :goto_0
 .end method
 
-.method public static eP(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/app/PendingIntent;
+.method public static hD(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/app/PendingIntent;
     .locals 3
 
-    invoke-static {p0, p1, p2, p3}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eQ(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;
+    invoke-static {p0, p1, p2, p3}, Lcom/google/android/gms/common/api/GoogleApiActivity;->hE(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;
 
     move-result-object v0
 
@@ -159,7 +159,7 @@
     return-object v0
 .end method
 
-.method public static eQ(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;
+.method public static hE(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/content/Intent;
     .locals 2
 
     new-instance v0, Landroid/content/Intent;
@@ -183,19 +183,19 @@
     return-object v0
 .end method
 
-.method public static eR(Landroid/content/Context;Landroid/app/PendingIntent;I)Landroid/app/PendingIntent;
+.method public static hF(Landroid/content/Context;Landroid/app/PendingIntent;I)Landroid/app/PendingIntent;
     .locals 1
 
     const/4 v0, 0x1
 
-    invoke-static {p0, p1, p2, v0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eP(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/app/PendingIntent;
+    invoke-static {p0, p1, p2, v0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD(Landroid/content/Context;Landroid/app/PendingIntent;IZ)Landroid/app/PendingIntent;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private eS(ILcom/google/android/gms/internal/bM;)V
+.method private hG(ILcom/google/android/gms/internal/bG;)V
     .locals 4
 
     packed-switch p1, :pswitch_data_0
@@ -224,12 +224,12 @@
 
     move-result v1
 
-    invoke-virtual {p2, v0, v1}, Lcom/google/android/gms/internal/bM;->AP(Lcom/google/android/gms/common/ConnectionResult;I)V
+    invoke-virtual {p2, v0, v1}, Lcom/google/android/gms/internal/bG;->AO(Lcom/google/android/gms/common/ConnectionResult;I)V
 
     goto :goto_0
 
     :pswitch_1
-    invoke-virtual {p2}, Lcom/google/android/gms/internal/bM;->Bg()V
+    invoke-virtual {p2}, Lcom/google/android/gms/internal/bG;->Bf()V
 
     goto :goto_0
 
@@ -242,7 +242,7 @@
 
 
 # virtual methods
-.method protected eN(I)V
+.method protected hB(I)V
     .locals 0
 
     invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/GoogleApiActivity;->setResult(I)V
@@ -282,24 +282,24 @@
 
     move-result v0
 
-    iput v2, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iput v2, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
-    invoke-static {}, Lcom/google/android/gms/internal/bM;->Bj()Lcom/google/android/gms/internal/bM;
+    invoke-static {}, Lcom/google/android/gms/internal/bG;->Bi()Lcom/google/android/gms/internal/bG;
 
     move-result-object v1
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eN(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/common/api/GoogleApiActivity;->hB(I)V
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0, p2, v1}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eS(ILcom/google/android/gms/internal/bM;)V
+    invoke-direct {p0, p2, v1}, Lcom/google/android/gms/common/api/GoogleApiActivity;->hG(ILcom/google/android/gms/internal/bG;)V
 
     goto :goto_0
 
     :cond_2
-    iput v2, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iput v2, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eN(I)V
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/common/api/GoogleApiActivity;->hB(I)V
 
     goto :goto_0
 .end method
@@ -309,7 +309,7 @@
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
     invoke-virtual {p0, v0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->setResult(I)V
 
@@ -326,7 +326,7 @@
     if-nez p1, :cond_0
 
     :goto_0
-    iget v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iget v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
     const/4 v1, 0x1
 
@@ -342,12 +342,12 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iput v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
     goto :goto_0
 
     :cond_1
-    invoke-direct {p0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->eO()V
+    invoke-direct {p0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->hC()V
 
     goto :goto_1
 .end method
@@ -355,7 +355,7 @@
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
 
-    iget v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->eK:I
+    iget v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->hD:I
 
     const-string/jumbo v1, "resolution"
 

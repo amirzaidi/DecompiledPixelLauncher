@@ -1,7 +1,17 @@
-.class public interface abstract Lcom/google/android/gms/common/api/f;
+.class public abstract Lcom/google/android/gms/common/api/f;
 .super Ljava/lang/Object;
 
 
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract dQ(Lcom/google/android/gms/common/ConnectionResult;)V
+.method public abstract gF(Lcom/google/android/gms/common/api/v;)V
 .end method

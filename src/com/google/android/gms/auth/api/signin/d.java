@@ -16,101 +16,101 @@ import android.os.Parcelable$Creator;
 
 public class d implements Parcelable$Creator
 {
-    static void PQ(final GoogleSignInAccount googleSignInAccount, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, googleSignInAccount.Jf);
-        a.fo(parcel, 2, googleSignInAccount.getId(), false);
-        a.fo(parcel, 3, googleSignInAccount.Pw(), false);
-        a.fo(parcel, 4, googleSignInAccount.Pr(), false);
-        a.fo(parcel, 5, googleSignInAccount.PB(), false);
-        a.eW(parcel, 6, (Parcelable)googleSignInAccount.Pt(), n, false);
-        a.fo(parcel, 7, googleSignInAccount.Pp(), false);
-        a.fw(parcel, 8, googleSignInAccount.Pq());
-        a.fo(parcel, 9, googleSignInAccount.Pv(), false);
-        a.fc(parcel, 10, googleSignInAccount.Jq, false);
-        a.fo(parcel, 11, googleSignInAccount.Po(), false);
-        a.fo(parcel, 12, googleSignInAccount.PA(), false);
-        a.fe(parcel, ey);
+    static void QJ(final GoogleSignInAccount googleSignInAccount, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, googleSignInAccount.KK);
+        a.ic(parcel, 2, googleSignInAccount.getId(), false);
+        a.ic(parcel, 3, googleSignInAccount.Qp(), false);
+        a.ic(parcel, 4, googleSignInAccount.Qk(), false);
+        a.ic(parcel, 5, googleSignInAccount.Qu(), false);
+        a.hK(parcel, 6, (Parcelable)googleSignInAccount.Qm(), n, false);
+        a.ic(parcel, 7, googleSignInAccount.Qi(), false);
+        a.ik(parcel, 8, googleSignInAccount.Qj());
+        a.ic(parcel, 9, googleSignInAccount.Qo(), false);
+        a.hQ(parcel, 10, googleSignInAccount.KV, false);
+        a.ic(parcel, 11, googleSignInAccount.Qh(), false);
+        a.ic(parcel, 12, googleSignInAccount.Qt(), false);
+        a.hS(parcel, hm);
     }
     
-    public GoogleSignInAccount[] PO(final int n) {
+    public GoogleSignInAccount[] QH(final int n) {
         return new GoogleSignInAccount[n];
     }
     
-    public GoogleSignInAccount PP(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        String fq2 = null;
-        String fq3 = null;
-        String fq4 = null;
+    public GoogleSignInAccount QI(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        String ie2 = null;
+        String ie3 = null;
+        String ie4 = null;
         Uri uri = null;
-        String fq5 = null;
-        long fl = 0L;
-        String fq6 = null;
-        List fz = null;
-        String fq7 = null;
-        String fq8 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        String ie5 = null;
+        long iz = 0L;
+        String ie6 = null;
+        List in = null;
+        String ie7 = null;
+        String ie8 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fq3 = b.fQ(parcel, fs);
+                    ie3 = b.iE(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fq4 = b.fQ(parcel, fs);
+                    ie4 = b.iE(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    uri = (Uri)b.fW(parcel, fs, Uri.CREATOR);
+                    uri = (Uri)b.iK(parcel, ig, Uri.CREATOR);
                     continue;
                 }
                 case 7: {
-                    fq5 = b.fQ(parcel, fs);
+                    ie5 = b.iE(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fq6 = b.fQ(parcel, fs);
+                    ie6 = b.iE(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    fz = b.fZ(parcel, fs, Scope.CREATOR);
+                    in = b.iN(parcel, ig, Scope.CREATOR);
                     continue;
                 }
                 case 11: {
-                    fq7 = b.fQ(parcel, fs);
+                    ie7 = b.iE(parcel, ig);
                     continue;
                 }
                 case 12: {
-                    fq8 = b.fQ(parcel, fs);
+                    ie8 = b.iE(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new GoogleSignInAccount(fn, fq, fq2, fq3, fq4, uri, fq5, fl, fq6, fz, fq7, fq8);
+        if (parcel.dataPosition() == ix) {
+            return new GoogleSignInAccount(ib, ie, ie2, ie3, ie4, uri, ie5, iz, ie6, in, ie7, ie8);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

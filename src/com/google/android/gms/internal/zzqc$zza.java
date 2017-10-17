@@ -24,7 +24,7 @@ public abstract class zzqc$zza extends Binder implements zzqc
         if (queryLocalInterface != null && queryLocalInterface instanceof zzqc) {
             return (zzqc)queryLocalInterface;
         }
-        return new aj(binder);
+        return new ac(binder);
     }
     
     public IBinder asBinder() {

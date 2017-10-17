@@ -6,38 +6,38 @@ package com.google.android.gms.contextmanager;
 
 import android.os.Parcel;
 import com.google.android.gms.common.internal.u;
-import com.google.android.gms.internal.aI;
+import com.google.android.gms.internal.aC;
 import com.google.android.gms.internal.zzaxw;
 import android.util.Log;
-import com.google.android.gms.internal.I;
+import com.google.android.gms.internal.C;
 import android.os.Parcelable$Creator;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public class Relation extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private I ID;
-    private final int IE;
-    private byte[] IF;
+    private C Ki;
+    private final int Kj;
+    private byte[] Kk;
     
     static {
         CREATOR = (Parcelable$Creator)new b();
     }
     
-    Relation(final int ie, final byte[] if1) {
-        this.IE = ie;
-        this.ID = null;
-        this.IF = if1;
-        this.OR();
+    Relation(final int kj, final byte[] kk) {
+        this.Kj = kj;
+        this.Ki = null;
+        this.Kk = kk;
+        this.PK();
     }
     
-    private void OO() {
-        if (!this.OP()) {
+    private void PH() {
+        if (!this.PI()) {
             try {
-                final byte[] if1 = this.IF;
+                final byte[] kk = this.Kk;
                 try {
-                    this.ID = I.sR(if1);
-                    this.IF = null;
+                    this.Ki = C.sQ(kk);
+                    this.Kk = null;
                 }
                 catch (zzaxw zzaxw) {
                     Log.e("Relation", "Could not deserialize relation bytes.", (Throwable)zzaxw);
@@ -46,38 +46,38 @@ public class Relation extends AbstractSafeParcelable
             }
             catch (zzaxw zzaxw2) {}
         }
-        this.OR();
+        this.PK();
     }
     
-    private void OR() {
-        if (this.ID == null && this.IF != null) {
+    private void PK() {
+        if (this.Ki == null && this.Kk != null) {
             return;
         }
-        if (this.ID != null && this.IF == null) {
+        if (this.Ki != null && this.Kk == null) {
             return;
         }
-        if (this.ID != null && this.IF != null) {
+        if (this.Ki != null && this.Kk != null) {
             throw new IllegalStateException("Invalid internal representation - full");
         }
-        if (this.ID == null && this.IF == null) {
+        if (this.Ki == null && this.Kk == null) {
             throw new IllegalStateException("Invalid internal representation - empty");
         }
         throw new IllegalStateException("Impossible");
     }
     
-    boolean OP() {
-        return this.ID != null;
+    boolean PI() {
+        return this.Ki != null;
     }
     
-    byte[] OQ() {
-        if (this.IF == null) {
-            return aI.uW(this.ID);
+    byte[] PJ() {
+        if (this.Kk == null) {
+            return aC.uV(this.Ki);
         }
-        return this.IF;
+        return this.Kk;
     }
     
-    int OS() {
-        return this.IE;
+    int PL() {
+        return this.Kj;
     }
     
     public boolean equals(final Object o) {
@@ -87,9 +87,9 @@ public class Relation extends AbstractSafeParcelable
         }
         if (o instanceof Relation) {
             final Relation relation = (Relation)o;
-            this.OO();
-            relation.OO();
-            if (this.getId().equals(relation.getId()) || this.ID.px.rv != relation.ID.px.rv) {
+            this.PH();
+            relation.PH();
+            if (this.getId().equals(relation.getId()) || this.Ki.pE.version != relation.Ki.pE.version) {
                 b = false;
             }
             return b;
@@ -98,16 +98,16 @@ public class Relation extends AbstractSafeParcelable
     }
     
     public String getId() {
-        this.OO();
-        return this.ID.pB;
+        this.PH();
+        return this.Ki.pI;
     }
     
     public int hashCode() {
-        this.OO();
-        return u.hI(this.getId(), this.ID.px.rv);
+        this.PH();
+        return u.kw(this.getId(), this.Ki.pE.version);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.OX(this, parcel, n);
+        b.PQ(this, parcel, n);
     }
 }

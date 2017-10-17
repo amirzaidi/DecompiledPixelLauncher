@@ -13,30 +13,30 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class TimeFilterImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int[] Hs;
-    private final int Ht;
-    private final ArrayList Hu;
+    private final int[] Jb;
+    private final int Jc;
+    private final ArrayList Jd;
     
     static {
         CREATOR = (Parcelable$Creator)new g();
     }
     
-    TimeFilterImpl(final int ht, final ArrayList hu, final int[] hs) {
-        this.Ht = ht;
-        this.Hu = hu;
-        this.Hs = hs;
+    TimeFilterImpl(final int jc, final ArrayList jd, final int[] jb) {
+        this.Jc = jc;
+        this.Jd = jd;
+        this.Jb = jb;
     }
     
-    public ArrayList MI() {
-        return this.Hu;
+    public ArrayList NG() {
+        return this.Jd;
     }
     
-    public int[] MJ() {
-        return this.Hs;
+    public int[] NH() {
+        return this.Jb;
     }
     
-    int MK() {
-        return this.Ht;
+    int NI() {
+        return this.Jc;
     }
     
     public boolean equals(final Object o) {
@@ -46,7 +46,7 @@ public class TimeFilterImpl extends AbstractSafeParcelable
         }
         if (o instanceof TimeFilterImpl) {
             final TimeFilterImpl timeFilterImpl = (TimeFilterImpl)o;
-            if (!u.hH(this.Hu, timeFilterImpl.Hu) || !u.hH(this.Hs, timeFilterImpl.Hs)) {
+            if (!u.kv(this.Jd, timeFilterImpl.Jd) || !u.kv(this.Jb, timeFilterImpl.Jb)) {
                 b = false;
             }
             return b;
@@ -55,10 +55,10 @@ public class TimeFilterImpl extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.Hu, this.Hs);
+        return u.kw(this.Jd, this.Jb);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        g.MH(this, parcel, n);
+        g.NA(this, parcel, n);
     }
 }

@@ -13,41 +13,41 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void NM(final FenceQueryRequestImpl fenceQueryRequestImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, fenceQueryRequestImpl.Of());
-        a.eW(parcel, 2, (Parcelable)fenceQueryRequestImpl.Oe(), n, false);
-        a.fe(parcel, ey);
+    static void OF(final FenceQueryRequestImpl fenceQueryRequestImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, fenceQueryRequestImpl.OY());
+        a.hK(parcel, 2, (Parcelable)fenceQueryRequestImpl.OX(), n, false);
+        a.hS(parcel, hm);
     }
     
-    public FenceQueryRequestImpl NK(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
+    public FenceQueryRequestImpl OD(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
         FenceQueryRequestImpl$QueryFenceOperation fenceQueryRequestImpl$QueryFenceOperation = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fenceQueryRequestImpl$QueryFenceOperation = (FenceQueryRequestImpl$QueryFenceOperation)b.fW(parcel, fs, FenceQueryRequestImpl$QueryFenceOperation.CREATOR);
+                    fenceQueryRequestImpl$QueryFenceOperation = (FenceQueryRequestImpl$QueryFenceOperation)b.iK(parcel, ig, FenceQueryRequestImpl$QueryFenceOperation.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FenceQueryRequestImpl(fn, fenceQueryRequestImpl$QueryFenceOperation);
+        if (parcel.dataPosition() == ix) {
+            return new FenceQueryRequestImpl(ib, fenceQueryRequestImpl$QueryFenceOperation);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public FenceQueryRequestImpl[] NL(final int n) {
+    public FenceQueryRequestImpl[] OE(final int n) {
         return new FenceQueryRequestImpl[n];
     }
 }

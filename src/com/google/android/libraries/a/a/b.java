@@ -4,7 +4,9 @@
 
 package com.google.android.libraries.a.a;
 
-import java.lang.annotation.Annotation;
-
-@interface b {
+public interface b
+{
+    void et(final boolean p0, final boolean p1);
+    
+    void onOverlayScrollChanged(final float p0);
 }

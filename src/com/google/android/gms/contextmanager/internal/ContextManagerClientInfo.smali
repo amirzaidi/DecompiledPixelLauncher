@@ -7,25 +7,25 @@
 
 
 # instance fields
-.field private final Hi:I
+.field private final IN:I
 
-.field private final Hj:I
+.field private final IO:I
 
-.field private final Hk:Ljava/lang/String;
+.field private final IP:Ljava/lang/String;
 
-.field private Hl:Lcom/google/android/gms/internal/O;
+.field private IQ:Lcom/google/android/gms/internal/I;
 
-.field private final Hm:I
+.field private final IR:I
 
-.field private final Hn:Ljava/lang/String;
+.field private final IS:Ljava/lang/String;
 
-.field private final Ho:I
+.field private final IT:I
 
-.field private final Hp:Ljava/lang/String;
+.field private final IU:Ljava/lang/String;
 
-.field private final Hq:Ljava/lang/String;
+.field private final IV:Ljava/lang/String;
 
-.field private final Hr:I
+.field private final IW:I
 
 .field private final mPackageName:Ljava/lang/String;
 
@@ -48,75 +48,35 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Ho:I
+    iput p1, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IT:I
 
-    iput-object p2, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hk:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IP:Ljava/lang/String;
 
     iput-object p3, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->mPackageName:Ljava/lang/String;
 
-    iput p4, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hm:I
+    iput p4, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IR:I
 
-    iput-object p5, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hq:Ljava/lang/String;
+    iput-object p5, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IV:Ljava/lang/String;
 
-    iput p6, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hj:I
+    iput p6, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IO:I
 
-    iput p7, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hr:I
+    iput p7, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IW:I
 
-    iput-object p8, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hn:Ljava/lang/String;
+    iput-object p8, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IS:Ljava/lang/String;
 
-    iput-object p9, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hp:Ljava/lang/String;
+    iput-object p9, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IU:Ljava/lang/String;
 
-    iput p10, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hi:I
+    iput p10, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IN:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public MA()Ljava/lang/String;
+.method public Nn()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hq:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public MB()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hj:I
-
-    return v0
-.end method
-
-.method public MC()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hk:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method MD()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Ho:I
-
-    return v0
-.end method
-
-.method public ME()I
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hm:I
-
-    return v0
-.end method
-
-.method public Mu()Ljava/lang/String;
-    .locals 1
-
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hr:I
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IW:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -151,53 +111,53 @@
     .end packed-switch
 .end method
 
-.method Mv()I
+.method No()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hr:I
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IW:I
 
     return v0
 .end method
 
-.method public Mw()Ljava/lang/String;
+.method public Np()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hn:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IS:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Mx()I
+.method public Nq()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hi:I
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IN:I
 
     return v0
 .end method
 
-.method public My()Ljava/lang/String;
+.method public Nr()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hp:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IU:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public Mz()Lcom/google/android/gms/internal/O;
+.method public Ns()Lcom/google/android/gms/internal/I;
     .locals 2
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hk:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IP:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hl:Lcom/google/android/gms/internal/O;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IQ:Lcom/google/android/gms/internal/I;
 
     if-eqz v0, :cond_1
 
     :goto_0
-    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hl:Lcom/google/android/gms/internal/O;
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IQ:Lcom/google/android/gms/internal/I;
 
     return-object v0
 
@@ -205,15 +165,55 @@
     return-object v1
 
     :cond_1
-    new-instance v0, Lcom/google/android/gms/internal/O;
+    new-instance v0, Lcom/google/android/gms/internal/I;
 
-    iget-object v1, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hk:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IP:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/O;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/google/android/gms/internal/I;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Hl:Lcom/google/android/gms/internal/O;
+    iput-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IQ:Lcom/google/android/gms/internal/I;
 
     goto :goto_0
+.end method
+
+.method public Nt()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IV:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public Nu()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IO:I
+
+    return v0
+.end method
+
+.method public Nv()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IP:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method Nw()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IT:I
+
+    return v0
+.end method
+
+.method public Nx()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->IR:I
+
+    return v0
 .end method
 
 .method public getPackageName()Ljava/lang/String;
@@ -227,7 +227,7 @@
 .method public toString()Ljava/lang/String;
     .locals 11
 
-    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Mz()Lcom/google/android/gms/internal/O;
+    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Ns()Lcom/google/android/gms/internal/I;
 
     move-result-object v0
 
@@ -243,11 +243,11 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->ME()I
+    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Nx()I
 
     move-result v2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->MA()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Nt()Ljava/lang/String;
 
     move-result-object v3
 
@@ -255,11 +255,11 @@
 
     move-result-object v3
 
-    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->MB()I
+    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Nu()I
 
     move-result v4
 
-    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Mu()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Nn()Ljava/lang/String;
 
     move-result-object v5
 
@@ -267,7 +267,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Mw()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Np()Ljava/lang/String;
 
     move-result-object v6
 
@@ -275,7 +275,7 @@
 
     move-result-object v6
 
-    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->My()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;->Nr()Ljava/lang/String;
 
     move-result-object v7
 
@@ -443,7 +443,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/internal/c;->Mg(Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/contextmanager/internal/c;->MZ(Lcom/google/android/gms/contextmanager/internal/ContextManagerClientInfo;Landroid/os/Parcel;I)V
 
     return-void
 .end method

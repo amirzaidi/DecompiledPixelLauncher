@@ -10,46 +10,46 @@ import android.content.res.Resources;
 
 public final class c
 {
-    private static Boolean ht;
-    private static Boolean hu;
-    private static Boolean hv;
+    private static Boolean kl;
+    private static Boolean km;
+    private static Boolean kn;
     
-    private static boolean jv(final Resources resources) {
+    private static boolean mj(final Resources resources) {
         boolean b = false;
-        if (c.ht == null) {
+        if (c.kl == null) {
             final Configuration configuration = resources.getConfiguration();
-            if (n.ka() && (configuration.screenLayout & 0xF) <= 3 && configuration.smallestScreenWidthDp >= 600) {
+            if (n.mO() && (configuration.screenLayout & 0xF) <= 3 && configuration.smallestScreenWidthDp >= 600) {
                 b = true;
             }
-            c.ht = b;
+            c.kl = b;
         }
-        return c.ht;
+        return c.kl;
     }
     
-    public static boolean jw(final Resources resources) {
+    public static boolean mk(final Resources resources) {
         final boolean b = true;
         boolean b2 = false;
         if (resources != null) {
-            if (c.hu == null) {
+            if (c.km == null) {
                 final boolean b3 = (resources.getConfiguration().screenLayout & 0xF) > 3 && b;
-                if ((n.jV() && b3) || jv(resources)) {
+                if ((n.mJ() && b3) || mj(resources)) {
                     b2 = b;
                 }
-                c.hu = b2;
+                c.km = b2;
             }
-            return c.hu;
+            return c.km;
         }
         return false;
     }
     
-    public static boolean jx(final Context context) {
+    public static boolean ml(final Context context) {
         boolean b = false;
-        if (c.hv == null) {
-            if (n.jS() && context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
+        if (c.kn == null) {
+            if (n.mG() && context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
                 b = true;
             }
-            c.hv = b;
+            c.kn = b;
         }
-        return c.hv;
+        return c.kn;
     }
 }

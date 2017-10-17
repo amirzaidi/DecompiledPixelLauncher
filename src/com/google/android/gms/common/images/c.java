@@ -14,54 +14,54 @@ import android.os.Parcelable$Creator;
 
 public class c implements Parcelable$Creator
 {
-    static void my(final WebImage webImage, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, webImage.mF());
-        a.eW(parcel, 2, (Parcelable)webImage.mE(), n, false);
-        a.fj(parcel, 3, webImage.getWidth());
-        a.fj(parcel, 4, webImage.getHeight());
-        a.fe(parcel, ey);
+    static void pm(final WebImage webImage, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, webImage.pt());
+        a.hK(parcel, 2, (Parcelable)webImage.ps(), n, false);
+        a.hX(parcel, 3, webImage.getWidth());
+        a.hX(parcel, 4, webImage.getHeight());
+        a.hS(parcel, hm);
     }
     
-    public WebImage[] mx(final int n) {
+    public WebImage[] pl(final int n) {
         return new WebImage[n];
     }
     
-    public WebImage mz(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        int fn2 = 0;
-        int fn3 = 0;
+    public WebImage pn(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        int ib2 = 0;
+        int ib3 = 0;
         Uri uri = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     break;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     break;
                 }
                 case 2: {
-                    uri = (Uri)b.fW(parcel, fs, Uri.CREATOR);
+                    uri = (Uri)b.iK(parcel, ig, Uri.CREATOR);
                     break;
                 }
                 case 3: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     break;
                 }
                 case 4: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     break;
                 }
             }
-            fn3 = fn3;
+            ib3 = ib3;
         }
-        if (parcel.dataPosition() == fj) {
-            return new WebImage(fn2, uri, fn, fn3);
+        if (parcel.dataPosition() == ix) {
+            return new WebImage(ib2, uri, ib, ib3);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

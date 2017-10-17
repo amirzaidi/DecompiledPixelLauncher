@@ -11,21 +11,21 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class PowerStateImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int nj;
-    private final int nk;
-    private final double nl;
+    private final int gG;
+    private final int gH;
+    private final double gI;
     
     static {
         CREATOR = (Parcelable$Creator)new b();
     }
     
-    PowerStateImpl(final int nj, final int nk, final double nl) {
-        this.nj = nj;
-        this.nk = nk;
-        this.nl = nl;
+    PowerStateImpl(final int gg, final int gh, final double gi) {
+        this.gG = gg;
+        this.gH = gh;
+        this.gI = gi;
     }
     
-    public static String re(final int n) {
+    public static String fY(final int n) {
         switch (n) {
             default: {
                 return new StringBuilder(36).append("unknown plugged in state=").append(n).toString();
@@ -45,24 +45,24 @@ public class PowerStateImpl extends AbstractSafeParcelable
         }
     }
     
-    public double rd() {
-        return this.nl;
+    public double fX() {
+        return this.gI;
     }
     
-    public int rf() {
-        return this.nk;
+    public int fZ() {
+        return this.gH;
     }
     
-    int rg() {
-        return this.nj;
+    int ga() {
+        return this.gG;
     }
     
     public String toString() {
-        final String value = String.valueOf(re(this.nk));
-        return new StringBuilder(String.valueOf(value).length() + 69).append("PowerConnectionState = ").append(value).append(" Battery Percentage = ").append(this.nl).toString();
+        final String value = String.valueOf(fY(this.gH));
+        return new StringBuilder(String.valueOf(value).length() + 69).append("PowerConnectionState = ").append(value).append(" Battery Percentage = ").append(this.gI).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        b.pL(this, parcel, n);
+        b.eF(this, parcel, n);
     }
 }

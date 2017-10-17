@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static kc(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
+.method public static mQ(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Set;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/common/a/i;

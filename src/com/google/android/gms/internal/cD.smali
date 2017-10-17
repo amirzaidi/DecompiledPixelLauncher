@@ -1,45 +1,42 @@
-.class Lcom/google/android/gms/internal/cD;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/android/gms/internal/cx;
+.class public final Lcom/google/android/gms/internal/cd;
+.super Lcom/google/android/gms/internal/bC;
 
 
 # instance fields
-.field final synthetic xF:I
-
-.field final synthetic xG:Lcom/google/android/gms/internal/bC;
+.field public final wT:Lcom/google/android/gms/internal/b;
 
 
-# direct methods
-.method constructor <init>(Lcom/google/android/gms/internal/bC;I)V
-    .locals 0
+# virtual methods
+.method public AK(Lcom/google/android/gms/common/api/n;)V
+    .locals 1
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/cD;->xG:Lcom/google/android/gms/internal/bC;
+    iget-object v0, p0, Lcom/google/android/gms/internal/cd;->wT:Lcom/google/android/gms/internal/b;
 
-    iput p2, p0, Lcom/google/android/gms/internal/cD;->xF:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/b;->rs(Lcom/google/android/gms/common/api/n;)V
 
     return-void
 .end method
 
+.method public AL(Lcom/google/android/gms/common/api/Status;)V
+    .locals 1
 
-# virtual methods
-.method public Ci()V
-    .locals 3
+    iget-object v0, p0, Lcom/google/android/gms/internal/cd;->wT:Lcom/google/android/gms/internal/b;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/b;->ru(Lcom/google/android/gms/common/api/Status;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/cD;->xG:Lcom/google/android/gms/internal/bC;
+    return-void
+.end method
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/bC;->zP(Lcom/google/android/gms/internal/bC;)Ljava/util/Queue;
+.method public AM(Landroid/util/SparseArray;)V
+    .locals 2
+
+    iget v0, p0, Lcom/google/android/gms/internal/cd;->vo:I
+
+    invoke-virtual {p1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
-
-    move-result v0
+    check-cast v0, Lcom/google/android/gms/internal/bQ;
 
     if-nez v0, :cond_0
 
@@ -47,11 +44,21 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/gms/internal/cD;->xG:Lcom/google/android/gms/internal/bC;
+    iget-object v1, p0, Lcom/google/android/gms/internal/cd;->wT:Lcom/google/android/gms/internal/b;
 
-    iget v1, p0, Lcom/google/android/gms/internal/cD;->xF:I
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/internal/bC;->zC(IZ)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/internal/bQ;->BA(Lcom/google/android/gms/internal/b;)V
 
     goto :goto_0
+.end method
+
+.method public cancel()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/cd;->wT:Lcom/google/android/gms/internal/b;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/b;->rT()Z
+
+    move-result v0
+
+    return v0
 .end method

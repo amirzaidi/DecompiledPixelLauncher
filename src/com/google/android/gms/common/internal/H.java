@@ -18,33 +18,33 @@ import android.os.Handler$Callback;
 
 final class h extends C implements Handler$Callback
 {
-    private final b fv;
-    private final HashMap fw;
-    private final Context fx;
-    private final long fy;
+    private final b in;
+    private final HashMap io;
+    private final Context ip;
+    private final long iq;
     private final Handler mHandler;
     
     h(final Context context) {
-        this.fw = new HashMap();
-        this.fx = context.getApplicationContext();
+        this.io = new HashMap();
+        this.ip = context.getApplicationContext();
         this.mHandler = new Handler(context.getMainLooper(), (Handler$Callback)this);
-        this.fv = b.mc();
-        this.fy = 5000L;
+        this.in = b.oQ();
+        this.iq = 5000L;
     }
     
-    private void hc(final v v, final ServiceConnection serviceConnection, final String s) {
+    private void jQ(final v v, final ServiceConnection serviceConnection, final String s) {
         while (true) {
-            l.ho(serviceConnection, "ServiceConnection must not be null");
+            l.kc(serviceConnection, "ServiceConnection must not be null");
             Label_0248: {
-                synchronized (this.fw) {
-                    final f f = this.fw.get(v);
+                synchronized (this.io) {
+                    final f f = this.io.get(v);
                     if (f == null) {
                         final String value = String.valueOf(v);
                         throw new IllegalStateException(new StringBuilder(String.valueOf(value).length() + 50).append("Nonexistent connection status for service config: ").append(value).toString());
                     }
-                    if (f.gV(serviceConnection)) {
-                        f.gP(serviceConnection, s);
-                        if (!f.gO()) {
+                    if (f.jJ(serviceConnection)) {
+                        f.jD(serviceConnection, s);
+                        if (!f.jC()) {
                             return;
                         }
                         break Label_0248;
@@ -53,28 +53,28 @@ final class h extends C implements Handler$Callback
                 break;
             }
             final Throwable t;
-            this.mHandler.sendMessageDelayed(this.mHandler.obtainMessage(0, (Object)t), this.fy);
+            this.mHandler.sendMessageDelayed(this.mHandler.obtainMessage(0, (Object)t), this.iq);
             return;
         }
         final String value2 = String.valueOf(v);
         throw new IllegalStateException(new StringBuilder(String.valueOf(value2).length() + 76).append("Trying to unbind a GmsServiceConnection  that was not bound before.  config=").append(value2).toString());
     }
     
-    private boolean he(final v v, final ServiceConnection serviceConnection, final String s) {
+    private boolean jS(final v v, final ServiceConnection serviceConnection, final String s) {
         while (true) {
-            l.ho(serviceConnection, "ServiceConnection must not be null");
+            l.kc(serviceConnection, "ServiceConnection must not be null");
             while (true) {
                 f f = null;
                 Label_0286: {
                     Label_0259: {
-                        synchronized (this.fw) {
-                            f = this.fw.get(v);
+                        synchronized (this.io) {
+                            f = this.io.get(v);
                             if (f != null) {
                                 this.mHandler.removeMessages(0, (Object)f);
-                                if (f.gV(serviceConnection)) {
+                                if (f.jJ(serviceConnection)) {
                                     break;
                                 }
-                                f.gN(serviceConnection, s);
+                                f.jB(serviceConnection, s);
                                 switch (f.getState()) {
                                     case 1: {
                                         break Label_0259;
@@ -86,28 +86,24 @@ final class h extends C implements Handler$Callback
                             }
                             else {
                                 f = new f(this, v);
-                                f.gN(serviceConnection, s);
-                                f.gQ(s);
-                                this.fw.put(v, f);
+                                f.jB(serviceConnection, s);
+                                f.jE(s);
+                                this.io.put(v, f);
                             }
-                            // monitorexit(this.fw)
+                            // monitorexit(this.io)
                             return f.isBound();
                         }
                         break;
                     }
-                    serviceConnection.onServiceConnected(f.gU(), f.gM());
+                    serviceConnection.onServiceConnected(f.jI(), f.jA());
                     continue;
                 }
-                f.gQ(s);
+                f.jE(s);
                 continue;
             }
         }
         final String value = String.valueOf(v);
         final IllegalStateException ex = new IllegalStateException(new StringBuilder(String.valueOf(value).length() + 81).append("Trying to bind a GmsServiceConnection that was already connected before.  config=").append(value).toString());
-    }
-    
-    public void gZ(final String s, final String s2, final ServiceConnection serviceConnection, final String s3) {
-        this.hc(new v(s, s2), serviceConnection, s3);
     }
     
     public boolean handleMessage(final Message message) {
@@ -120,17 +116,17 @@ final class h extends C implements Handler$Callback
                     final f f = (f)message.obj;
                     while (true) {
                         Label_0105: {
-                            synchronized (this.fw) {
-                                if (f.gO()) {
+                            synchronized (this.io) {
+                                if (f.jC()) {
                                     if (f.isBound()) {
                                         break Label_0105;
                                     }
-                                    this.fw.remove(f.fl);
+                                    this.io.remove(f.id);
                                 }
                                 return true;
                             }
                         }
-                        f.gS("GmsClientSupervisor");
+                        f.jG("GmsClientSupervisor");
                         continue;
                     }
                 }
@@ -139,7 +135,11 @@ final class h extends C implements Handler$Callback
         }
     }
     
-    public boolean hd(final String s, final String s2, final ServiceConnection serviceConnection, final String s3) {
-        return this.he(new v(s, s2), serviceConnection, s3);
+    public void jN(final String s, final String s2, final ServiceConnection serviceConnection, final String s3) {
+        this.jQ(new v(s, s2), serviceConnection, s3);
+    }
+    
+    public boolean jR(final String s, final String s2, final ServiceConnection serviceConnection, final String s3) {
+        return this.jS(new v(s, s2), serviceConnection, s3);
     }
 }

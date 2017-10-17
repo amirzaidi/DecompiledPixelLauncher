@@ -16,10 +16,10 @@
 
 
 # virtual methods
-.method public It(Lcom/google/android/gms/location/DetectedActivity;Lcom/google/android/gms/location/DetectedActivity;)I
+.method public Jm(Lcom/google/android/gms/location/DetectedActivity;Lcom/google/android/gms/location/DetectedActivity;)I
     .locals 2
 
-    invoke-virtual {p2}, Lcom/google/android/gms/location/DetectedActivity;->GO()I
+    invoke-virtual {p2}, Lcom/google/android/gms/location/DetectedActivity;->HH()I
 
     move-result v0
 
@@ -27,7 +27,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/google/android/gms/location/DetectedActivity;->GO()I
+    invoke-virtual {p1}, Lcom/google/android/gms/location/DetectedActivity;->HH()I
 
     move-result v1
 
@@ -44,7 +44,7 @@
     return v0
 
     :cond_0
-    invoke-virtual {p1}, Lcom/google/android/gms/location/DetectedActivity;->GQ()I
+    invoke-virtual {p1}, Lcom/google/android/gms/location/DetectedActivity;->HJ()I
 
     move-result v0
 
@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Lcom/google/android/gms/location/DetectedActivity;->GQ()I
+    invoke-virtual {p2}, Lcom/google/android/gms/location/DetectedActivity;->HJ()I
 
     move-result v1
 
@@ -74,7 +74,7 @@
 
     check-cast p2, Lcom/google/android/gms/location/DetectedActivity;
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/location/w;->It(Lcom/google/android/gms/location/DetectedActivity;Lcom/google/android/gms/location/DetectedActivity;)I
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/location/w;->Jm(Lcom/google/android/gms/location/DetectedActivity;Lcom/google/android/gms/location/DetectedActivity;)I
 
     move-result v0
 

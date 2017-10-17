@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field public final Em:Lcom/google/android/gms/maps/model/LatLng;
+.field public final FR:Lcom/google/android/gms/maps/model/LatLng;
 
-.field public final En:Lcom/google/android/gms/maps/model/LatLngBounds;
+.field public final FS:Lcom/google/android/gms/maps/model/LatLngBounds;
 
-.field private final Eo:I
+.field private final FT:I
 
-.field public final Ep:Lcom/google/android/gms/maps/model/LatLng;
+.field public final FU:Lcom/google/android/gms/maps/model/LatLng;
 
-.field public final Eq:Lcom/google/android/gms/maps/model/LatLng;
+.field public final FV:Lcom/google/android/gms/maps/model/LatLng;
 
-.field public final Er:Lcom/google/android/gms/maps/model/LatLng;
+.field public final FW:Lcom/google/android/gms/maps/model/LatLng;
 
 
 # direct methods
@@ -38,27 +38,27 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Eo:I
+    iput p1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FT:I
 
-    iput-object p2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Ep:Lcom/google/android/gms/maps/model/LatLng;
+    iput-object p2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FU:Lcom/google/android/gms/maps/model/LatLng;
 
-    iput-object p3, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Eq:Lcom/google/android/gms/maps/model/LatLng;
+    iput-object p3, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FV:Lcom/google/android/gms/maps/model/LatLng;
 
-    iput-object p4, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Er:Lcom/google/android/gms/maps/model/LatLng;
+    iput-object p4, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FW:Lcom/google/android/gms/maps/model/LatLng;
 
-    iput-object p5, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Em:Lcom/google/android/gms/maps/model/LatLng;
+    iput-object p5, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FR:Lcom/google/android/gms/maps/model/LatLng;
 
-    iput-object p6, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->En:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iput-object p6, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FS:Lcom/google/android/gms/maps/model/LatLngBounds;
 
     return-void
 .end method
 
 
 # virtual methods
-.method Jm()I
+.method Kf()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Eo:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FT:I
 
     return v0
 .end method
@@ -78,9 +78,9 @@
 
     check-cast p1, Lcom/google/android/gms/maps/model/VisibleRegion;
 
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Ep:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FU:Lcom/google/android/gms/maps/model/LatLng;
 
-    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->Ep:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->FU:Lcom/google/android/gms/maps/model/LatLng;
 
     invoke-virtual {v2, v3}, Lcom/google/android/gms/maps/model/LatLng;->equals(Ljava/lang/Object;)Z
 
@@ -102,19 +102,9 @@
     return v1
 
     :cond_4
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Eq:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FV:Lcom/google/android/gms/maps/model/LatLng;
 
-    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->Eq:Lcom/google/android/gms/maps/model/LatLng;
-
-    invoke-virtual {v2, v3}, Lcom/google/android/gms/maps/model/LatLng;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Er:Lcom/google/android/gms/maps/model/LatLng;
-
-    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->Er:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->FV:Lcom/google/android/gms/maps/model/LatLng;
 
     invoke-virtual {v2, v3}, Lcom/google/android/gms/maps/model/LatLng;->equals(Ljava/lang/Object;)Z
 
@@ -122,9 +112,9 @@
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Em:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FW:Lcom/google/android/gms/maps/model/LatLng;
 
-    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->Em:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->FW:Lcom/google/android/gms/maps/model/LatLng;
 
     invoke-virtual {v2, v3}, Lcom/google/android/gms/maps/model/LatLng;->equals(Ljava/lang/Object;)Z
 
@@ -132,9 +122,19 @@
 
     if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->En:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FR:Lcom/google/android/gms/maps/model/LatLng;
 
-    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->En:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->FR:Lcom/google/android/gms/maps/model/LatLng;
+
+    invoke-virtual {v2, v3}, Lcom/google/android/gms/maps/model/LatLng;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FS:Lcom/google/android/gms/maps/model/LatLngBounds;
+
+    iget-object v3, p1, Lcom/google/android/gms/maps/model/VisibleRegion;->FS:Lcom/google/android/gms/maps/model/LatLngBounds;
 
     invoke-virtual {v2, v3}, Lcom/google/android/gms/maps/model/LatLngBounds;->equals(Ljava/lang/Object;)Z
 
@@ -152,37 +152,37 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Ep:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FU:Lcom/google/android/gms/maps/model/LatLng;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Eq:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FV:Lcom/google/android/gms/maps/model/LatLng;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Er:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FW:Lcom/google/android/gms/maps/model/LatLng;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Em:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FR:Lcom/google/android/gms/maps/model/LatLng;
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->En:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FS:Lcom/google/android/gms/maps/model/LatLngBounds;
 
     const/4 v2, 0x4
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -192,47 +192,47 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->hJ(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->kx(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Ep:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FU:Lcom/google/android/gms/maps/model/LatLng;
 
     const-string/jumbo v2, "nearLeft"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Eq:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FV:Lcom/google/android/gms/maps/model/LatLng;
 
     const-string/jumbo v2, "nearRight"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Er:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FW:Lcom/google/android/gms/maps/model/LatLng;
 
     const-string/jumbo v2, "farLeft"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->Em:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FR:Lcom/google/android/gms/maps/model/LatLng;
 
     const-string/jumbo v2, "farRight"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->En:Lcom/google/android/gms/maps/model/LatLngBounds;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/VisibleRegion;->FS:Lcom/google/android/gms/maps/model/LatLngBounds;
 
     const-string/jumbo v2, "latLngBounds"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
@@ -246,7 +246,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/s;->Kq(Lcom/google/android/gms/maps/model/VisibleRegion;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/s;->Lj(Lcom/google/android/gms/maps/model/VisibleRegion;Landroid/os/Parcel;I)V
 
     return-void
 .end method

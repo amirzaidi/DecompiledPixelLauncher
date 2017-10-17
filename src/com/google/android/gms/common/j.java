@@ -12,7 +12,7 @@ import android.content.Context;
 
 public class j
 {
-    private static j kG;
+    private static j ny;
     private final Context mContext;
     
     private j(final Context context) {
@@ -20,18 +20,18 @@ public class j
     }
     
     public static j getInstance(final Context context) {
-        l.ht(context);
+        l.kh(context);
         final Class<j> clazz = j.class;
         synchronized (j.class) {
-            if (j.kG == null) {
-                e.nS(context);
-                j.kG = new j(context);
+            if (j.ny == null) {
+                e.qE(context);
+                j.ny = new j(context);
             }
-            return j.kG;
+            return j.ny;
         }
     }
     
-    com.google.android.gms.common.l nZ(final PackageInfo packageInfo, final com.google.android.gms.common.l... array) {
+    com.google.android.gms.common.l qL(final PackageInfo packageInfo, final com.google.android.gms.common.l... array) {
         int i = 0;
         if (packageInfo.signatures == null) {
             return null;
@@ -50,17 +50,17 @@ public class j
         return null;
     }
     
-    public boolean oa(final PackageInfo packageInfo, final boolean b) {
+    public boolean qM(final PackageInfo packageInfo, final boolean b) {
         int n = 1;
         if (packageInfo != null && packageInfo.signatures != null) {
             com.google.android.gms.common.l l;
             if (!b) {
                 final com.google.android.gms.common.l[] array = new com.google.android.gms.common.l[n];
-                array[0] = c.kz[0];
-                l = this.nZ(packageInfo, array);
+                array[0] = c.nr[0];
+                l = this.qL(packageInfo, array);
             }
             else {
-                l = this.nZ(packageInfo, c.kz);
+                l = this.qL(packageInfo, c.nr);
             }
             if (l != null) {
                 return n != 0;
@@ -70,14 +70,14 @@ public class j
         return n != 0;
     }
     
-    public boolean ob(final PackageManager packageManager, final PackageInfo packageInfo) {
+    public boolean qN(final PackageManager packageManager, final PackageInfo packageInfo) {
         final boolean b = true;
         if (packageInfo == null) {
             return false;
         }
-        if (!this.oa(packageInfo, false)) {
-            if (this.oa(packageInfo, b)) {
-                if (k.ol(this.mContext)) {
+        if (!this.qM(packageInfo, false)) {
+            if (this.qM(packageInfo, b)) {
+                if (k.qX(this.mContext)) {
                     return b;
                 }
                 Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");

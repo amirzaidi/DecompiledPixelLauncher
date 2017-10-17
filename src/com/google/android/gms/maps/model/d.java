@@ -14,119 +14,119 @@ import android.os.Parcelable$Creator;
 
 public class d implements Parcelable$Creator
 {
-    static void IH(final MarkerOptions markerOptions, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, markerOptions.Jv());
-        a.eW(parcel, 2, (Parcelable)markerOptions.JA(), n, false);
-        a.fo(parcel, 3, markerOptions.getTitle(), false);
-        a.fo(parcel, 4, markerOptions.Jq(), false);
-        a.ff(parcel, 5, markerOptions.Jy(), false);
-        a.fs(parcel, 6, markerOptions.Jw());
-        a.fs(parcel, 7, markerOptions.Jr());
-        a.fa(parcel, 8, markerOptions.JB());
-        a.fa(parcel, 9, markerOptions.isVisible());
-        a.fa(parcel, 10, markerOptions.Js());
-        a.fs(parcel, 11, markerOptions.Ju());
-        a.fs(parcel, 12, markerOptions.Jz());
-        a.fs(parcel, 13, markerOptions.Jt());
-        a.fs(parcel, 14, markerOptions.getAlpha());
-        a.fs(parcel, 15, markerOptions.Jx());
-        a.fe(parcel, ey);
+    static void JA(final MarkerOptions markerOptions, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, markerOptions.Ko());
+        a.hK(parcel, 2, (Parcelable)markerOptions.Kt(), n, false);
+        a.ic(parcel, 3, markerOptions.getTitle(), false);
+        a.ic(parcel, 4, markerOptions.Kj(), false);
+        a.hT(parcel, 5, markerOptions.Kr(), false);
+        a.ig(parcel, 6, markerOptions.Kp());
+        a.ig(parcel, 7, markerOptions.Kk());
+        a.hO(parcel, 8, markerOptions.Ku());
+        a.hO(parcel, 9, markerOptions.isVisible());
+        a.hO(parcel, 10, markerOptions.Kl());
+        a.ig(parcel, 11, markerOptions.Kn());
+        a.ig(parcel, 12, markerOptions.Ks());
+        a.ig(parcel, 13, markerOptions.Km());
+        a.ig(parcel, 14, markerOptions.getAlpha());
+        a.ig(parcel, 15, markerOptions.Kq());
+        a.hS(parcel, hm);
     }
     
-    public MarkerOptions IG(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
+    public MarkerOptions[] JB(final int n) {
+        return new MarkerOptions[n];
+    }
+    
+    public MarkerOptions Jz(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
         LatLng latLng = null;
-        String fq = null;
-        String fq2 = null;
-        IBinder gh = null;
-        float gj = 0.0f;
-        float gj2 = 0.0f;
-        boolean fx = false;
-        boolean fx2 = false;
-        boolean fx3 = false;
-        float gj3 = 0.0f;
-        float gj4 = 0.5f;
-        float gj5 = 0.0f;
-        float gj6 = 1.0f;
-        float gj7 = 0.0f;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        String ie = null;
+        String ie2 = null;
+        IBinder iv = null;
+        float ix2 = 0.0f;
+        float ix3 = 0.0f;
+        boolean il = false;
+        boolean il2 = false;
+        boolean il3 = false;
+        float ix4 = 0.0f;
+        float ix5 = 0.5f;
+        float ix6 = 0.0f;
+        float ix7 = 1.0f;
+        float ix8 = 0.0f;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    latLng = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    gh = b.gh(parcel, fs);
+                    iv = b.iV(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 9: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    fx3 = b.fX(parcel, fs);
+                    il3 = b.iL(parcel, ig);
                     continue;
                 }
                 case 11: {
-                    gj3 = b.gj(parcel, fs);
+                    ix4 = b.iX(parcel, ig);
                     continue;
                 }
                 case 12: {
-                    gj4 = b.gj(parcel, fs);
+                    ix5 = b.iX(parcel, ig);
                     continue;
                 }
                 case 13: {
-                    gj5 = b.gj(parcel, fs);
+                    ix6 = b.iX(parcel, ig);
                     continue;
                 }
                 case 14: {
-                    gj6 = b.gj(parcel, fs);
+                    ix7 = b.iX(parcel, ig);
                     continue;
                 }
                 case 15: {
-                    gj7 = b.gj(parcel, fs);
+                    ix8 = b.iX(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new MarkerOptions(fn, latLng, fq, fq2, gh, gj, gj2, fx, fx2, fx3, gj3, gj4, gj5, gj6, gj7);
+        if (parcel.dataPosition() == ix) {
+            return new MarkerOptions(ib, latLng, ie, ie2, iv, ix2, ix3, il, il2, il3, ix4, ix5, ix6, ix7, ix8);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
-    }
-    
-    public MarkerOptions[] II(final int n) {
-        return new MarkerOptions[n];
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

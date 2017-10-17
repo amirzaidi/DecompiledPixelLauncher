@@ -26,149 +26,149 @@ import android.os.Parcelable$Creator;
 
 public class i implements Parcelable$Creator
 {
-    static void DF(final PlaceEntity placeEntity, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fo(parcel, 1, placeEntity.getId(), false);
-        a.eT(parcel, 2, placeEntity.Dx(), false);
-        a.eW(parcel, 3, (Parcelable)placeEntity.Dn(), n, false);
-        a.eW(parcel, 4, (Parcelable)placeEntity.Dz(), n, false);
-        a.fs(parcel, 5, placeEntity.Dv());
-        a.eW(parcel, 6, (Parcelable)placeEntity.Dl(), n, false);
-        a.fo(parcel, 7, placeEntity.Dr(), false);
-        a.fj(parcel, 1000, placeEntity.yx);
-        a.eW(parcel, 8, (Parcelable)placeEntity.Dk(), n, false);
-        a.fa(parcel, 9, placeEntity.Dy());
-        a.fs(parcel, 10, placeEntity.Di());
-        a.fj(parcel, 11, placeEntity.Dp());
-        a.fw(parcel, 12, placeEntity.Dw());
-        a.fb(parcel, 13, placeEntity.Dm(), false);
-        a.fo(parcel, 14, (String)placeEntity.Ds(), false);
-        a.fo(parcel, 15, (String)placeEntity.Dq(), false);
-        a.fo(parcel, 16, placeEntity.Dj(), false);
-        a.fr(parcel, 17, placeEntity.Du(), false);
-        a.fo(parcel, 19, (String)placeEntity.Do(), false);
-        a.fb(parcel, 20, placeEntity.Dt(), false);
-        a.fe(parcel, ey);
+    static void Ey(final PlaceEntity placeEntity, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.ic(parcel, 1, placeEntity.getId(), false);
+        a.hH(parcel, 2, placeEntity.Eq(), false);
+        a.hK(parcel, 3, (Parcelable)placeEntity.Eg(), n, false);
+        a.hK(parcel, 4, (Parcelable)placeEntity.Es(), n, false);
+        a.ig(parcel, 5, placeEntity.Eo());
+        a.hK(parcel, 6, (Parcelable)placeEntity.Ee(), n, false);
+        a.ic(parcel, 7, placeEntity.Ek(), false);
+        a.hX(parcel, 1000, placeEntity.Ac);
+        a.hK(parcel, 8, (Parcelable)placeEntity.Ed(), n, false);
+        a.hO(parcel, 9, placeEntity.Er());
+        a.ig(parcel, 10, placeEntity.Eb());
+        a.hX(parcel, 11, placeEntity.Ei());
+        a.ik(parcel, 12, placeEntity.Ep());
+        a.hP(parcel, 13, placeEntity.Ef(), false);
+        a.ic(parcel, 14, (String)placeEntity.El(), false);
+        a.ic(parcel, 15, (String)placeEntity.Ej(), false);
+        a.ic(parcel, 16, placeEntity.Ec(), false);
+        a.if(parcel, 17, placeEntity.En(), false);
+        a.ic(parcel, 19, (String)placeEntity.Eh(), false);
+        a.hP(parcel, 20, placeEntity.Em(), false);
+        a.hS(parcel, hm);
     }
     
-    public PlaceEntity DD(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        List fh = null;
-        List fh2 = null;
-        Bundle fp = null;
-        String fq2 = null;
-        String fq3 = null;
-        String fq4 = null;
-        String fq5 = null;
-        List fr = null;
+    public PlaceEntity Ew(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        List iv = null;
+        List iv2 = null;
+        Bundle id = null;
+        String ie2 = null;
+        String ie3 = null;
+        String ie4 = null;
+        String ie5 = null;
+        List if1 = null;
         LatLng latLng = null;
-        float gj = 0.0f;
+        float ix2 = 0.0f;
         LatLngBounds latLngBounds = null;
-        String fq6 = null;
+        String ie6 = null;
         Uri uri = null;
-        boolean fx = false;
-        float gj2 = 0.0f;
-        int fn2 = 0;
-        long fl = 0L;
+        boolean il = false;
+        float ix3 = 0.0f;
+        int ib2 = 0;
+        long iz = 0L;
         PlaceLocalization placeLocalization = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fp = b.fP(parcel, fs);
+                    id = b.iD(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    placeLocalization = (PlaceLocalization)b.fW(parcel, fs, (Parcelable$Creator)PlaceLocalization.CREATOR);
+                    placeLocalization = (PlaceLocalization)b.iK(parcel, ig, (Parcelable$Creator)PlaceLocalization.CREATOR);
                     continue;
                 }
                 case 4: {
-                    latLng = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 5: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
                 case 6: {
-                    latLngBounds = (LatLngBounds)b.fW(parcel, fs, (Parcelable$Creator)LatLngBounds.CREATOR);
+                    latLngBounds = (LatLngBounds)b.iK(parcel, ig, (Parcelable$Creator)LatLngBounds.CREATOR);
                     continue;
                 }
                 case 7: {
-                    fq6 = b.fQ(parcel, fs);
+                    ie6 = b.iE(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    uri = (Uri)b.fW(parcel, fs, Uri.CREATOR);
+                    uri = (Uri)b.iK(parcel, ig, Uri.CREATOR);
                     continue;
                 }
                 case 9: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
                 case 10: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 11: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 12: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 13: {
-                    fh2 = b.fH(parcel, fs);
+                    iv2 = b.iv(parcel, ig);
                     continue;
                 }
                 case 14: {
-                    fq3 = b.fQ(parcel, fs);
+                    ie3 = b.iE(parcel, ig);
                     continue;
                 }
                 case 15: {
-                    fq4 = b.fQ(parcel, fs);
+                    ie4 = b.iE(parcel, ig);
                     continue;
                 }
                 case 16: {
-                    fq5 = b.fQ(parcel, fs);
+                    ie5 = b.iE(parcel, ig);
                     continue;
                 }
                 case 17: {
-                    fr = b.fR(parcel, fs);
+                    if1 = b.iF(parcel, ig);
                     continue;
                 }
                 case 19: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     continue;
                 }
                 case 20: {
-                    fh = b.fH(parcel, fs);
+                    iv = b.iv(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlaceEntity(fn, fq, fh, fh2, fp, fq2, fq3, fq4, fq5, fr, latLng, gj, latLngBounds, fq6, uri, fx, gj2, fn2, fl, placeLocalization);
+        if (parcel.dataPosition() == ix) {
+            return new PlaceEntity(ib, ie, iv, iv2, id, ie2, ie3, ie4, ie5, if1, latLng, ix2, latLngBounds, ie6, uri, il, ix3, ib2, iz, placeLocalization);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public PlaceEntity[] DE(final int n) {
+    public PlaceEntity[] Ex(final int n) {
         return new PlaceEntity[n];
     }
 }

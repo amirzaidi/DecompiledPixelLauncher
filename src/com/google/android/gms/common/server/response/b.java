@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class b implements Parcelable$Creator
 {
-    static void kM(final SafeParcelResponse safeParcelResponse, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, safeParcelResponse.kC());
-        a.fh(parcel, 2, safeParcelResponse.kE(), false);
-        a.eW(parcel, 3, (Parcelable)safeParcelResponse.kA(), n, false);
-        a.fe(parcel, ey);
+    static void nA(final SafeParcelResponse safeParcelResponse, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, safeParcelResponse.nq());
+        a.hV(parcel, 2, safeParcelResponse.ns(), false);
+        a.hK(parcel, 3, (Parcelable)safeParcelResponse.no(), n, false);
+        a.hS(parcel, hm);
     }
     
-    public SafeParcelResponse kK(final Parcel parcel) {
+    public SafeParcelResponse ny(final Parcel parcel) {
         FieldMappingDictionary fieldMappingDictionary = null;
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        int fn = 0;
-        Parcel fx = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            switch (com.google.android.gms.common.internal.safeparcel.b.ga(fs)) {
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        int ib = 0;
+        Parcel il = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            switch (com.google.android.gms.common.internal.safeparcel.b.iO(ig)) {
                 default: {
-                    com.google.android.gms.common.internal.safeparcel.b.fA(parcel, fs);
+                    com.google.android.gms.common.internal.safeparcel.b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = com.google.android.gms.common.internal.safeparcel.b.fN(parcel, fs);
+                    ib = com.google.android.gms.common.internal.safeparcel.b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fx = com.google.android.gms.common.internal.safeparcel.b.fx(parcel, fs);
+                    il = com.google.android.gms.common.internal.safeparcel.b.il(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fieldMappingDictionary = (FieldMappingDictionary)com.google.android.gms.common.internal.safeparcel.b.fW(parcel, fs, (Parcelable$Creator)FieldMappingDictionary.CREATOR);
+                    fieldMappingDictionary = (FieldMappingDictionary)com.google.android.gms.common.internal.safeparcel.b.iK(parcel, ig, (Parcelable$Creator)FieldMappingDictionary.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new SafeParcelResponse(fn, fx, fieldMappingDictionary);
+        if (parcel.dataPosition() == ix) {
+            return new SafeParcelResponse(ib, il, fieldMappingDictionary);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public SafeParcelResponse[] kL(final int n) {
+    public SafeParcelResponse[] nz(final int n) {
         return new SafeParcelResponse[n];
     }
 }

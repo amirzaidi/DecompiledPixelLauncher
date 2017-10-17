@@ -9,17 +9,17 @@ import android.net.Uri;
 
 final class f
 {
-    public final Uri jB;
+    public final Uri mt;
     
-    public f(final Uri jb) {
-        this.jB = jb;
+    public f(final Uri mt) {
+        this.mt = mt;
     }
     
     public boolean equals(final Object o) {
-        return o instanceof f && (this == o || u.hH(((f)o).jB, this.jB));
+        return o instanceof f && (this == o || u.kv(((f)o).mt, this.mt));
     }
     
     public int hashCode() {
-        return u.hI(this.jB);
+        return u.kw(this.mt);
     }
 }

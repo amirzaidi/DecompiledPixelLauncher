@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method public static FT(I)I
+.method public static GM(I)I
     .locals 1
 
     packed-switch p0, :pswitch_data_0

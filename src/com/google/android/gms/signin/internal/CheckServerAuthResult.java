@@ -12,21 +12,21 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class CheckServerAuthResult extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final int JP;
-    final boolean JQ;
-    final List JR;
+    final int Lu;
+    final boolean Lv;
+    final List Lw;
     
     static {
         CREATOR = (Parcelable$Creator)new f();
     }
     
-    CheckServerAuthResult(final int jp, final boolean jq, final List jr) {
-        this.JP = jp;
-        this.JQ = jq;
-        this.JR = jr;
+    CheckServerAuthResult(final int lu, final boolean lv, final List lw) {
+        this.Lu = lu;
+        this.Lv = lv;
+        this.Lw = lw;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        f.Qc(this, parcel, n);
+        f.QV(this, parcel, n);
     }
 }

@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field private final nh:Ljava/util/ArrayList;
+.field private final gE:Ljava/util/ArrayList;
 
-.field private final ni:I
+.field private final gF:I
 
 
 # direct methods
@@ -30,27 +30,27 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->ni:I
+    iput p1, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->gF:I
 
-    iput-object p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->nh:Ljava/util/ArrayList;
+    iput-object p2, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->gE:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method rb()Ljava/util/ArrayList;
+.method fV()Ljava/util/ArrayList;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->nh:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->gE:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
-.method rc()I
+.method fW()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->ni:I
+    iget v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->gF:I
 
     return v0
 .end method
@@ -58,7 +58,7 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->nh:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->gE:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
 
@@ -68,7 +68,7 @@
     return-object v0
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->nh:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->gE:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->nh:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;->gE:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -118,7 +118,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/j;->qF(Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/awareness/snapshot/internal/j;->fx(Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl;Landroid/os/Parcel;I)V
 
     return-void
 .end method

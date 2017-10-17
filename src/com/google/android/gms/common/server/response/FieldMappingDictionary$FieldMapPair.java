@@ -10,28 +10,28 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class FieldMappingDictionary$FieldMapPair extends AbstractSafeParcelable
 {
     public static final a CREATOR;
-    final int hC;
-    final FastJsonResponse$Field hD;
-    final String hE;
+    final int ku;
+    final FastJsonResponse$Field kv;
+    final String kw;
     
     static {
         CREATOR = new a();
     }
     
-    FieldMappingDictionary$FieldMapPair(final int hc, final String he, final FastJsonResponse$Field hd) {
-        this.hC = hc;
-        this.hE = he;
-        this.hD = hd;
+    FieldMappingDictionary$FieldMapPair(final int ku, final String kw, final FastJsonResponse$Field kv) {
+        this.ku = ku;
+        this.kw = kw;
+        this.kv = kv;
     }
     
-    FieldMappingDictionary$FieldMapPair(final String he, final FastJsonResponse$Field hd) {
-        this.hC = 1;
-        this.hE = he;
-        this.hD = hd;
+    FieldMappingDictionary$FieldMapPair(final String kw, final FastJsonResponse$Field kv) {
+        this.ku = 1;
+        this.kw = kw;
+        this.kv = kv;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final a creator = FieldMappingDictionary$FieldMapPair.CREATOR;
-        a.kw(this, parcel, n);
+        a.nk(this, parcel, n);
     }
 }

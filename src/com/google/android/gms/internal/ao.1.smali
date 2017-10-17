@@ -1,47 +1,30 @@
-.class public Lcom/google/android/gms/internal/ao;
-.super Ljava/lang/Object;
+.class Lcom/google/android/gms/internal/ao;
+.super Lcom/google/android/gms/internal/zzqc$zza;
+
+
+# instance fields
+.field final synthetic sa:Lcom/google/android/gms/internal/ah;
 
 
 # direct methods
-.method public static ue(JJ)J
-    .locals 6
+.method constructor <init>(Lcom/google/android/gms/internal/ah;)V
+    .locals 0
 
-    const-wide v4, 0x7fffffffffffffffL
+    iput-object p1, p0, Lcom/google/android/gms/internal/ao;->sa:Lcom/google/android/gms/internal/ah;
 
-    const-wide/16 v0, 0x0
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqc$zza;-><init>()V
 
-    cmp-long v0, p0, v0
+    return-void
+.end method
 
-    if-gez v0, :cond_0
 
-    const/4 v0, 0x1
+# virtual methods
+.method public zzae(Lcom/google/android/gms/common/api/Status;)V
+    .locals 1
 
-    :goto_0
-    if-nez v0, :cond_1
+    iget-object v0, p0, Lcom/google/android/gms/internal/ao;->sa:Lcom/google/android/gms/internal/ah;
 
-    rem-long v0, p0, p2
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/internal/ah;->rV(Lcom/google/android/gms/common/api/m;)V
 
-    return-wide v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    rem-long v0, v4, p2
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    and-long v2, p0, v4
-
-    rem-long/2addr v2, p2
-
-    add-long/2addr v0, v2
-
-    rem-long/2addr v0, p2
-
-    return-wide v0
+    return-void
 .end method

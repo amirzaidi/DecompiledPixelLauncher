@@ -2,19 +2,19 @@
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/b;
+.implements Lcom/google/android/gms/common/api/m;
 
 
 # static fields
-.field public static final AD:Lcom/google/android/gms/location/internal/FusedLocationProviderResult;
-
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
+
+.field public static final Ci:Lcom/google/android/gms/location/internal/FusedLocationProviderResult;
 
 
 # instance fields
-.field private final AB:Lcom/google/android/gms/common/api/Status;
+.field private final Cg:Lcom/google/android/gms/common/api/Status;
 
-.field private final AC:I
+.field private final Ch:I
 
 
 # direct methods
@@ -23,11 +23,11 @@
 
     new-instance v0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;
 
-    sget-object v1, Lcom/google/android/gms/common/api/Status;->dU:Lcom/google/android/gms/common/api/Status;
+    sget-object v1, Lcom/google/android/gms/common/api/Status;->hn:Lcom/google/android/gms/common/api/Status;
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;-><init>(Lcom/google/android/gms/common/api/Status;)V
 
-    sput-object v0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->AD:Lcom/google/android/gms/location/internal/FusedLocationProviderResult;
+    sput-object v0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->Ci:Lcom/google/android/gms/location/internal/FusedLocationProviderResult;
 
     new-instance v0, Lcom/google/android/gms/location/internal/l;
 
@@ -43,9 +43,9 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->AC:I
+    iput p1, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->Ch:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->AB:Lcom/google/android/gms/common/api/Status;
+    iput-object p2, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->Cg:Lcom/google/android/gms/common/api/Status;
 
     return-void
 .end method
@@ -62,18 +62,18 @@
 
 
 # virtual methods
-.method public Fh()I
+.method public Ga()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->AC:I
+    iget v0, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->Ch:I
 
     return v0
 .end method
 
-.method public dr()Lcom/google/android/gms/common/api/Status;
+.method public gV()Lcom/google/android/gms/common/api/Status;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->AB:Lcom/google/android/gms/common/api/Status;
+    iget-object v0, p0, Lcom/google/android/gms/location/internal/FusedLocationProviderResult;->Cg:Lcom/google/android/gms/common/api/Status;
 
     return-object v0
 .end method
@@ -81,7 +81,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/internal/l;->FF(Lcom/google/android/gms/location/internal/FusedLocationProviderResult;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/internal/l;->Gy(Lcom/google/android/gms/location/internal/FusedLocationProviderResult;Landroid/os/Parcel;I)V
 
     return-void
 .end method

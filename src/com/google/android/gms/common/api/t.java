@@ -4,6 +4,7 @@
 
 package com.google.android.gms.common.api;
 
-public final class t implements m
+public interface t
 {
+    void hh(final Status p0);
 }

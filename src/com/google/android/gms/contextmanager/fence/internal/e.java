@@ -13,47 +13,47 @@ import android.os.Parcelable$Creator;
 
 public class e implements Parcelable$Creator
 {
-    static void NS(final FenceQueryRequestImpl$QueryFenceOperation fenceQueryRequestImpl$QueryFenceOperation, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, fenceQueryRequestImpl$QueryFenceOperation.OF());
-        a.fj(parcel, 2, fenceQueryRequestImpl$QueryFenceOperation.OE());
-        a.fr(parcel, 3, fenceQueryRequestImpl$QueryFenceOperation.OD(), false);
-        a.fe(parcel, ey);
+    static void OL(final FenceQueryRequestImpl$QueryFenceOperation fenceQueryRequestImpl$QueryFenceOperation, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, fenceQueryRequestImpl$QueryFenceOperation.Py());
+        a.hX(parcel, 2, fenceQueryRequestImpl$QueryFenceOperation.Px());
+        a.if(parcel, 3, fenceQueryRequestImpl$QueryFenceOperation.Pw(), false);
+        a.hS(parcel, hm);
     }
     
-    public FenceQueryRequestImpl$QueryFenceOperation NT(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        List fr = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public FenceQueryRequestImpl$QueryFenceOperation OM(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        List if1 = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fr = b.fR(parcel, fs);
+                    if1 = b.iF(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new FenceQueryRequestImpl$QueryFenceOperation(fn2, fn, fr);
+        if (parcel.dataPosition() == ix) {
+            return new FenceQueryRequestImpl$QueryFenceOperation(ib2, ib, if1);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public FenceQueryRequestImpl$QueryFenceOperation[] NU(final int n) {
+    public FenceQueryRequestImpl$QueryFenceOperation[] ON(final int n) {
         return new FenceQueryRequestImpl$QueryFenceOperation[n];
     }
 }

@@ -12,53 +12,53 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void MS(final QueryFilterParameters queryFilterParameters, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, queryFilterParameters.MO());
-        a.fj(parcel, 2, queryFilterParameters.MM());
-        a.fj(parcel, 3, queryFilterParameters.ML());
-        a.fn(parcel, 4, queryFilterParameters.MN(), false);
-        a.fe(parcel, ey);
+    static void NL(final QueryFilterParameters queryFilterParameters, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, queryFilterParameters.NE());
+        a.hX(parcel, 2, queryFilterParameters.NC());
+        a.hX(parcel, 3, queryFilterParameters.NB());
+        a.ib(parcel, 4, queryFilterParameters.ND(), false);
+        a.hS(parcel, hm);
     }
     
-    public QueryFilterParameters[] MQ(final int n) {
+    public QueryFilterParameters[] NJ(final int n) {
         return new QueryFilterParameters[n];
     }
     
-    public QueryFilterParameters MR(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        int[] fk = null;
-        int fn2 = 0;
-        int fn3 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public QueryFilterParameters NK(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        int[] iy = null;
+        int ib2 = 0;
+        int ib3 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn3 = b.fN(parcel, fs);
+                    ib3 = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fk = b.fK(parcel, fs);
+                    iy = b.iy(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new QueryFilterParameters(fn3, fn2, fn, fk);
+        if (parcel.dataPosition() == ix) {
+            return new QueryFilterParameters(ib3, ib2, ib, iy);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

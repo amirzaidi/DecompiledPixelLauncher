@@ -11,57 +11,57 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class LocationSettingsStates extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final boolean Db;
-    private final boolean Dc;
-    private final int Dd;
-    private final boolean De;
-    private final boolean Df;
-    private final boolean Dg;
-    private final boolean Dh;
+    private final boolean EG;
+    private final boolean EH;
+    private final int EI;
+    private final boolean EJ;
+    private final boolean EK;
+    private final boolean EL;
+    private final boolean EM;
     
     static {
         CREATOR = (Parcelable$Creator)new e();
     }
     
-    LocationSettingsStates(final int dd, final boolean db, final boolean df, final boolean de, final boolean dh, final boolean dg, final boolean dc) {
-        this.Dd = dd;
-        this.Db = db;
-        this.Df = df;
-        this.De = de;
-        this.Dh = dh;
-        this.Dg = dg;
-        this.Dc = dc;
+    LocationSettingsStates(final int ei, final boolean eg, final boolean ek, final boolean ej, final boolean em, final boolean el, final boolean eh) {
+        this.EI = ei;
+        this.EG = eg;
+        this.EK = ek;
+        this.EJ = ej;
+        this.EM = em;
+        this.EL = el;
+        this.EH = eh;
     }
     
-    public boolean HF() {
-        return this.Dh;
+    public int IA() {
+        return this.EI;
     }
     
-    public boolean HG() {
-        return this.Df;
+    public boolean IB() {
+        return this.EG;
     }
     
-    public int HH() {
-        return this.Dd;
+    public boolean IC() {
+        return this.EL;
     }
     
-    public boolean HI() {
-        return this.Db;
+    public boolean ID() {
+        return this.EJ;
     }
     
-    public boolean HJ() {
-        return this.Dg;
+    public boolean IE() {
+        return this.EH;
     }
     
-    public boolean HK() {
-        return this.De;
+    public boolean Iy() {
+        return this.EM;
     }
     
-    public boolean HL() {
-        return this.Dc;
+    public boolean Iz() {
+        return this.EK;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        e.GM(this, parcel, n);
+        e.HF(this, parcel, n);
     }
 }

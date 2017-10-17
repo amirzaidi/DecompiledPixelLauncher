@@ -12,19 +12,19 @@ import android.os.Parcelable;
 public final class BinderWrapper implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private IBinder gu;
+    private IBinder jm;
     
     static {
         CREATOR = (Parcelable$Creator)new k();
     }
     
     public BinderWrapper() {
-        this.gu = null;
+        this.jm = null;
     }
     
     private BinderWrapper(final Parcel parcel) {
-        this.gu = null;
-        this.gu = parcel.readStrongBinder();
+        this.jm = null;
+        this.jm = parcel.readStrongBinder();
     }
     
     public int describeContents() {
@@ -32,6 +32,6 @@ public final class BinderWrapper implements Parcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        parcel.writeStrongBinder(this.gu);
+        parcel.writeStrongBinder(this.jm);
     }
 }

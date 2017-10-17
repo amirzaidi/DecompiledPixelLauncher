@@ -8,250 +8,250 @@ import android.os.RemoteException;
 import android.util.Log;
 import java.util.Iterator;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.u;
+import com.google.android.gms.common.api.t;
 import com.google.android.gms.common.api.y;
 import com.google.android.gms.common.internal.l;
+import com.google.android.gms.common.api.a;
 import android.os.Looper;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import com.google.android.gms.common.internal.zzr;
-import com.google.android.gms.common.api.b;
+import com.google.android.gms.common.api.m;
 import java.lang.ref.WeakReference;
-import com.google.android.gms.common.api.a;
-import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.v;
 
-public abstract class f extends c
+public abstract class f extends com.google.android.gms.common.api.f
 {
-    static final ThreadLocal nA;
-    private volatile boolean nB;
-    private boolean nC;
-    private a nD;
-    private boolean nE;
-    private bu nF;
-    private Integer nG;
-    protected final WeakReference nH;
-    private boolean nI;
-    private volatile d nJ;
-    private b nK;
-    private zzr nL;
-    private final CountDownLatch nM;
-    private final ArrayList nN;
-    protected final bG nO;
-    private final Object nP;
+    static final ThreadLocal oc;
+    private volatile boolean od;
+    private boolean oe;
+    private v of;
+    private boolean og;
+    private bo oh;
+    private Integer oi;
+    protected final WeakReference oj;
+    private boolean ok;
+    private volatile d ol;
+    private m om;
+    private zzr on;
+    private final CountDownLatch oo;
+    private final ArrayList op;
+    protected final bA oq;
+    private final Object or;
     
     static {
-        nA = new cn();
+        oc = new ch();
     }
     
     f() {
-        this.nP = new Object();
-        this.nM = new CountDownLatch(1);
-        this.nN = new ArrayList();
-        this.nI = false;
-        this.nO = new bG(Looper.getMainLooper());
-        this.nH = new WeakReference(null);
+        this.or = new Object();
+        this.oo = new CountDownLatch(1);
+        this.op = new ArrayList();
+        this.ok = false;
+        this.oq = new bA(Looper.getMainLooper());
+        this.oj = new WeakReference(null);
     }
     
     protected f(final Looper looper) {
-        this.nP = new Object();
-        this.nM = new CountDownLatch(1);
-        this.nN = new ArrayList();
-        this.nI = false;
-        this.nO = new bG(looper);
-        this.nH = new WeakReference(null);
+        this.or = new Object();
+        this.oo = new CountDownLatch(1);
+        this.op = new ArrayList();
+        this.ok = false;
+        this.oq = new bA(looper);
+        this.oj = new WeakReference(null);
     }
     
-    protected f(final com.google.android.gms.common.api.d d) {
-        this.nP = new Object();
-        this.nM = new CountDownLatch(1);
-        this.nN = new ArrayList();
-        this.nI = false;
+    protected f(final a a) {
+        this.or = new Object();
+        this.oo = new CountDownLatch(1);
+        this.op = new ArrayList();
+        this.ok = false;
         Looper looper;
-        if (d == null) {
+        if (a == null) {
             looper = Looper.getMainLooper();
         }
         else {
-            looper = d.du();
+            looper = a.gf();
         }
-        this.nO = new bG(looper);
-        this.nH = new WeakReference((T)d);
+        this.oq = new bA(looper);
+        this.oj = new WeakReference((T)a);
     }
     
-    private b get() {
+    private m get() {
         final boolean b = true;
         boolean b2 = false;
-        synchronized (this.nP) {
-            if (!this.nB) {
+        synchronized (this.or) {
+            if (!this.od) {
                 b2 = b;
             }
-            l.hv(b2, "Result has already been consumed.");
-            l.hv(this.rU(), "Result is not ready.");
-            final b nk = this.nK;
-            this.nK = null;
-            this.nD = null;
-            this.nB = true;
-            // monitorexit(this.nP)
-            this.rr();
-            return nk;
+            l.kj(b2, "Result has already been consumed.");
+            l.kj(this.rW(), "Result is not ready.");
+            final m om = this.om;
+            this.om = null;
+            this.of = null;
+            this.od = true;
+            // monitorexit(this.or)
+            this.rt();
+            return om;
         }
     }
     
-    private void rP(final b nk) {
-        this.nK = nk;
-        this.nL = null;
-        this.nM.countDown();
-        final Status dr = this.nK.dr();
-        if (!this.nC) {
-            if (this.nD != null) {
-                this.nO.zV();
-                this.nO.zW(this.nD, this.get());
+    private void rR(final m om) {
+        this.om = om;
+        this.on = null;
+        this.oo.countDown();
+        final Status gv = this.om.gV();
+        if (!this.oe) {
+            if (this.of != null) {
+                this.oq.zU();
+                this.oq.zV(this.of, this.get());
             }
-            else if (this.nK instanceof y) {
-                this.nF = new bu(this, null);
+            else if (this.om instanceof y) {
+                this.oh = new bo(this, null);
             }
         }
         else {
-            this.nD = null;
+            this.of = null;
         }
-        final Iterator<u> iterator = (Iterator<u>)this.nN.iterator();
+        final Iterator<t> iterator = (Iterator<t>)this.op.iterator();
         while (iterator.hasNext()) {
-            iterator.next().eu(dr);
+            iterator.next().hh(gv);
         }
-        this.nN.clear();
+        this.op.clear();
     }
     
-    public static void rX(final b b) {
-        if (b instanceof y) {
+    public static void rZ(final m m) {
+        if (m instanceof y) {
             try {
-                ((y)b).eC();
+                ((y)m).hq();
             }
             catch (RuntimeException ex) {
-                final String value = String.valueOf(b);
+                final String value = String.valueOf(m);
                 Log.w("BasePendingResult", new StringBuilder(String.valueOf(value).length() + 18).append("Unable to release ").append(value).toString(), (Throwable)ex);
             }
         }
     }
     
     public void cancel() {
-        final Object np = this.nP;
-        // monitorenter(np)
+        final Object or = this.or;
+        // monitorenter(or)
         try {
-            if (!this.nC && !this.nB) {
-                if (this.nL != null) {
+            if (!this.oe && !this.od) {
+                if (this.on != null) {
                     try {
-                        final zzr nl = this.nL;
+                        final zzr on = this.on;
                         try {
-                            nl.cancel();
+                            on.cancel();
                         }
                         catch (RemoteException ex) {}
                         finally {
                         }
-                        // monitorexit(np)
+                        // monitorexit(or)
                     }
                     catch (RemoteException ex2) {}
                 }
-                rX(this.nK);
-                this.nC = true;
-                this.rP(this.rW(Status.dR));
+                rZ(this.om);
+                this.oe = true;
+                this.rR(this.rY(Status.hk));
             }
         }
         finally {}
     }
     
-    public final void ds(final a nd) {
+    public final void gF(final v of) {
         final boolean b = true;
         boolean b2 = false;
-        final Object np = this.nP;
-        // monitorenter(np)
+        final Object or = this.or;
+        // monitorenter(or)
         Label_0096: {
-            if (nd == null) {
+            if (of == null) {
                 break Label_0096;
             }
             try {
-                l.hv(!this.nB && b, "Result has already been consumed.");
-                if (this.nJ == null) {
+                l.kj(!this.od && b, "Result has already been consumed.");
+                if (this.ol == null) {
                     b2 = b;
                 }
-                l.hv(b2, "Cannot set callbacks if then() has been called.");
-                if (!this.rN()) {
-                    if (!this.rU()) {
-                        this.nD = nd;
+                l.kj(b2, "Cannot set callbacks if then() has been called.");
+                if (!this.rP()) {
+                    if (!this.rW()) {
+                        this.of = of;
                     }
                     else {
-                        this.nO.zW(nd, this.get());
+                        this.oq.zV(of, this.get());
                     }
                     return;
                 }
                 return;
-                this.nD = null;
+                this.of = null;
             }
             finally {
             }
-            // monitorexit(np)
+            // monitorexit(or)
         }
     }
     
-    public void rM() {
-        this.nI = (this.nI || f.nA.get());
+    public void rO() {
+        this.ok = (this.ok || f.oc.get());
     }
     
-    public boolean rN() {
-        synchronized (this.nP) {
-            return this.nC;
+    public boolean rP() {
+        synchronized (this.or) {
+            return this.oe;
         }
     }
     
-    public final void rO(final Status status) {
-        synchronized (this.nP) {
-            if (!this.rU()) {
-                this.rT(this.rW(status));
-                this.nE = true;
+    public final void rQ(final Status status) {
+        synchronized (this.or) {
+            if (!this.rW()) {
+                this.rV(this.rY(status));
+                this.og = true;
             }
         }
     }
     
-    public Integer rQ() {
-        return this.nG;
+    public Integer rS() {
+        return this.oi;
     }
     
-    public boolean rR() {
-        synchronized (this.nP) {
-            if (this.nH.get() == null || !this.nI) {
+    public boolean rT() {
+        synchronized (this.or) {
+            if (this.oj.get() == null || !this.ok) {
                 this.cancel();
             }
-            return this.rN();
+            return this.rP();
         }
     }
     
-    boolean rS() {
+    boolean rU() {
         return false;
     }
     
-    public final void rT(final b b) {
-        final boolean b2 = true;
-        boolean b3 = false;
-        synchronized (this.nP) {
-            if (!this.nE && !this.nC && (!this.rU() || !this.rS())) {
-                l.hv(!this.rU() && b2, "Results have already been set");
-                if (!this.nB) {
-                    b3 = b2;
+    public final void rV(final m m) {
+        final boolean b = true;
+        boolean b2 = false;
+        synchronized (this.or) {
+            if (!this.og && !this.oe && (!this.rW() || !this.rU())) {
+                l.kj(!this.rW() && b, "Results have already been set");
+                if (!this.od) {
+                    b2 = b;
                 }
-                l.hv(b3, "Result has already been consumed");
-                this.rP(b);
+                l.kj(b2, "Result has already been consumed");
+                this.rR(m);
                 return;
             }
-            rX(b);
+            rZ(m);
         }
     }
     
-    public final boolean rU() {
-        return this.nM.getCount() == 0L;
+    public final boolean rW() {
+        return this.oo.getCount() == 0L;
     }
     
-    public final void rV(final u u) {
+    public final void rX(final t t) {
         final boolean b = true;
         boolean b2 = false;
-        boolean b3 = this.nB;
+        boolean b3 = this.od;
         while (true) {
             while (true) {
                 Label_0024: {
@@ -262,14 +262,14 @@ public abstract class f extends c
                     Label_0087: {
                         break Label_0087;
                         while (true) {
-                            l.hq(b2, "Callback cannot be null.");
-                            synchronized (this.nP) {
-                                b3 = this.rU();
+                            l.ke(b2, "Callback cannot be null.");
+                            synchronized (this.or) {
+                                b3 = this.rW();
                                 if (!b3) {
-                                    this.nN.add(u);
+                                    this.op.add(t);
                                 }
                                 else {
-                                    u.eu(this.nK.dr());
+                                    t.hh(this.om.gV());
                                 }
                                 return;
                                 b3 = b;
@@ -279,8 +279,8 @@ public abstract class f extends c
                         }
                     }
                 }
-                l.hv(b3, "Result has already been consumed.");
-                if (u == null) {
+                l.kj(b3, "Result has already been consumed.");
+                if (t == null) {
                     continue;
                 }
                 break;
@@ -289,8 +289,8 @@ public abstract class f extends c
         }
     }
     
-    protected abstract b rW(final Status p0);
+    protected abstract m rY(final Status p0);
     
-    protected void rr() {
+    protected void rt() {
     }
 }

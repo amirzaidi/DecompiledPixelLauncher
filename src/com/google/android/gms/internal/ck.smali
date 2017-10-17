@@ -1,45 +1,43 @@
 .class Lcom/google/android/gms/internal/ck;
-.super Lcom/google/android/gms/internal/by;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/gms/common/internal/S;
 
 
 # instance fields
-.field private wO:Ljava/lang/ref/WeakReference;
+.field final synthetic wW:Lcom/google/android/gms/internal/cu;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/internal/cA;)V
-    .locals 1
+.method constructor <init>(Lcom/google/android/gms/internal/cu;)V
+    .locals 0
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/by;-><init>()V
+    iput-object p1, p0, Lcom/google/android/gms/internal/ck;->wW:Lcom/google/android/gms/internal/cu;
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/ck;->wO:Ljava/lang/ref/WeakReference;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public zq()V
+.method public gN()Z
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/ck;->wO:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/google/android/gms/internal/ck;->wW:Lcom/google/android/gms/internal/cu;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/cu;->Cp()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lcom/google/android/gms/internal/cA;
+    return v0
+.end method
 
-    if-eqz v0, :cond_0
+.method public kU()Landroid/os/Bundle;
+    .locals 1
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/cA;->Co(Lcom/google/android/gms/internal/cA;)V
+    const/4 v0, 0x0
 
-    return-void
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

@@ -11,37 +11,37 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class ScreenStateImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int nf;
-    private final int ng;
+    private final int gy;
+    private final int gz;
     
     static {
         CREATOR = (Parcelable$Creator)new g();
     }
     
-    ScreenStateImpl(final int ng, final int nf) {
-        this.ng = ng;
-        this.nf = nf;
+    ScreenStateImpl(final int gz, final int gy) {
+        this.gz = gz;
+        this.gy = gy;
     }
     
-    public int qZ() {
-        return this.nf;
+    public int fP() {
+        return this.gy;
     }
     
-    int ra() {
-        return this.ng;
+    int fQ() {
+        return this.gz;
     }
     
     public String toString() {
-        if (this.nf == 1) {
+        if (this.gy == 1) {
             return "ScreenState: SCREEN_OFF";
         }
-        if (this.nf != 2) {
+        if (this.gy != 2) {
             return "ScreenState: UNKNOWN";
         }
         return "ScreenState: SCREEN_ON";
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        g.qb(this, parcel, n);
+        g.eU(this, parcel, n);
     }
 }

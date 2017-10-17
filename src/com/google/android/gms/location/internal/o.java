@@ -9,14 +9,14 @@ import android.os.IBinder;
 
 class o implements zzg
 {
-    private IBinder Bh;
+    private IBinder CM;
     
-    o(final IBinder bh) {
-        this.Bh = bh;
+    o(final IBinder cm) {
+        this.CM = cm;
     }
     
     public IBinder asBinder() {
-        return this.Bh;
+        return this.CM;
     }
     
     public void zza(final FusedLocationProviderResult fusedLocationProviderResult) {
@@ -32,7 +32,7 @@ class o implements zzg
                 obtain.writeInt(1);
                 fusedLocationProviderResult.writeToParcel(obtain, 0);
             }
-            this.Bh.transact(1, obtain, (Parcel)null, 1);
+            this.CM.transact(1, obtain, (Parcel)null, 1);
         }
         finally {
             obtain.recycle();

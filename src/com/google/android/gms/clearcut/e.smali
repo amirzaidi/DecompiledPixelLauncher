@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract LI()[B
+.method public abstract MB()[B
 .end method

@@ -19,14 +19,14 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/k;->hm(Landroid/os/Parcel;)Lcom/google/android/gms/common/internal/BinderWrapper;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/k;->ka(Landroid/os/Parcel;)Lcom/google/android/gms/common/internal/BinderWrapper;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public hm(Landroid/os/Parcel;)Lcom/google/android/gms/common/internal/BinderWrapper;
+.method public ka(Landroid/os/Parcel;)Lcom/google/android/gms/common/internal/BinderWrapper;
     .locals 2
 
     new-instance v0, Lcom/google/android/gms/common/internal/BinderWrapper;
@@ -38,7 +38,7 @@
     return-object v0
 .end method
 
-.method public hn(I)[Lcom/google/android/gms/common/internal/BinderWrapper;
+.method public kb(I)[Lcom/google/android/gms/common/internal/BinderWrapper;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/common/internal/BinderWrapper;
@@ -49,7 +49,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/k;->hn(I)[Lcom/google/android/gms/common/internal/BinderWrapper;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/internal/k;->kb(I)[Lcom/google/android/gms/common/internal/BinderWrapper;
 
     move-result-object v0
 

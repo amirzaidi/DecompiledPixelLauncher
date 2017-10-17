@@ -12,40 +12,40 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class QueryFilterParameters extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int Hv;
-    private final int Hw;
-    private final int Hx;
-    private final int[] Hy;
+    private final int IX;
+    private final int IY;
+    private final int IZ;
+    private final int[] Ja;
     
     static {
         CREATOR = (Parcelable$Creator)new h();
     }
     
-    QueryFilterParameters(final int hx, final int hv, final int hw, final int[] hy) {
-        this.Hx = hx;
-        this.Hv = hv;
-        this.Hw = hw;
-        this.Hy = hy;
+    QueryFilterParameters(final int iz, final int ix, final int iy, final int[] ja) {
+        this.IZ = iz;
+        this.IX = ix;
+        this.IY = iy;
+        this.Ja = ja;
     }
     
-    public int ML() {
-        return this.Hw;
+    public int NB() {
+        return this.IY;
     }
     
-    public int MM() {
-        return this.Hv;
+    public int NC() {
+        return this.IX;
     }
     
-    public int[] MN() {
-        return this.Hy;
+    public int[] ND() {
+        return this.Ja;
     }
     
-    int MO() {
-        return this.Hx;
+    int NE() {
+        return this.IZ;
     }
     
-    public boolean MP() {
-        return this.Hy != null;
+    public boolean NF() {
+        return this.Ja != null;
     }
     
     public boolean equals(final Object o) {
@@ -57,32 +57,32 @@ public class QueryFilterParameters extends AbstractSafeParcelable
             return false;
         }
         final QueryFilterParameters queryFilterParameters = (QueryFilterParameters)o;
-        if (queryFilterParameters.Hw != this.Hw) {
+        if (queryFilterParameters.IY != this.IY) {
             return false;
         }
-        if (queryFilterParameters.Hv != this.Hv) {
+        if (queryFilterParameters.IX != this.IX) {
             return false;
         }
-        if (queryFilterParameters.Hx != this.Hx) {
+        if (queryFilterParameters.IZ != this.IZ) {
             return false;
         }
-        if (this.MP() == queryFilterParameters.MP()) {
-            if (this.MP()) {
-                if (this.Hy.length != queryFilterParameters.Hy.length) {
+        if (this.NF() == queryFilterParameters.NF()) {
+            if (this.NF()) {
+                if (this.Ja.length != queryFilterParameters.Ja.length) {
                     return false;
                 }
-                final int[] hy = queryFilterParameters.Hy;
-                final int length = hy.length;
+                final int[] ja = queryFilterParameters.Ja;
+                final int length = ja.length;
                 int i = 0;
             Label_0156:
                 while (i < length) {
-                    final int n = hy[i];
-                    final int[] hy2 = this.Hy;
-                    final int length2 = hy2.length;
+                    final int n = ja[i];
+                    final int[] ja2 = this.Ja;
+                    final int length2 = ja2.length;
                     int j = 0;
                     while (true) {
                         while (j < length2) {
-                            if (hy2[j] != n) {
+                            if (ja2[j] != n) {
                                 ++j;
                             }
                             else {
@@ -106,24 +106,24 @@ public class QueryFilterParameters extends AbstractSafeParcelable
     
     public int hashCode() {
         int n;
-        if (this.Hy == null) {
+        if (this.Ja == null) {
             n = 0;
         }
         else {
-            final int[] hy = this.Hy;
-            final int length = hy.length;
+            final int[] ja = this.Ja;
+            final int length = ja.length;
             int i = 0;
             n = 0;
             while (i < length) {
-                final int n2 = hy[i] * 13 + n;
+                final int n2 = ja[i] * 13 + n;
                 ++i;
                 n = n2;
             }
         }
-        return u.hI(n, this.Hv, this.Hw, this.Hx);
+        return u.kw(n, this.IX, this.IY, this.IZ);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        h.MS(this, parcel, n);
+        h.NL(this, parcel, n);
     }
 }

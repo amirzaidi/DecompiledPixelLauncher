@@ -6,36 +6,36 @@ package com.google.android.gms.location.internal;
 
 import android.util.Log;
 import android.location.Location;
-import com.google.android.gms.common.api.f;
-import com.google.android.gms.common.api.g;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.d;
 import android.os.Looper;
 import android.content.Context;
 
 public class a extends i
 {
-    private final h Ap;
+    private final h BU;
     
-    public a(final Context context, final Looper looper, final g g, final f f, final String s, final com.google.android.gms.common.internal.a a) {
-        super(context, looper, g, f, s, a);
-        this.Ap = new h(context, this.AK);
+    public a(final Context context, final Looper looper, final d d, final c c, final String s, final com.google.android.gms.common.internal.a a) {
+        super(context, looper, d, c, s, a);
+        this.BU = new h(context, this.Cp);
     }
     
-    public Location ER() {
-        return this.Ap.Fi();
+    public Location FK() {
+        return this.BU.Gb();
     }
     
-    public void ec() {
-        final h ap = this.Ap;
-        // monitorenter(ap)
+    public void gJ() {
+        final h bu = this.BU;
+        // monitorenter(bu)
         try {
-            if (this.eg()) {
+            if (this.gN()) {
                 try {
-                    final h ap2 = this.Ap;
+                    final h bu2 = this.BU;
                     try {
-                        ap2.Fk();
-                        final h ap3 = this.Ap;
+                        bu2.Gd();
+                        final h bu3 = this.BU;
                         try {
-                            ap3.Fj();
+                            bu3.Gc();
                         }
                         catch (Exception ex) {
                             Log.e("LocationClientImpl", "Client disconnected before listeners could be cleaned up", (Throwable)ex);
@@ -44,11 +44,11 @@ public class a extends i
                     catch (Exception ex2) {}
                     finally {
                     }
-                    // monitorexit(ap)
+                    // monitorexit(bu)
                 }
                 catch (Exception ex3) {}
             }
-            super.ec();
+            super.gJ();
         }
         finally {}
     }

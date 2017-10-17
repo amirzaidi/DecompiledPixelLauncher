@@ -4,7 +4,7 @@
 
 package com.google.android.gms.phenotype;
 
-public interface b extends com.google.android.gms.common.api.b
+public interface b
 {
-    Configurations oF();
+    void dV(final boolean p0);
 }

@@ -7,17 +7,17 @@
 
 
 # instance fields
-.field private final fP:I
+.field private final iH:I
 
-.field private final fQ:[Lcom/google/android/gms/common/api/Scope;
+.field private final iI:[Lcom/google/android/gms/common/api/Scope;
 
-.field private final fR:Landroid/os/Bundle;
+.field private final iJ:Landroid/os/Bundle;
 
-.field final fS:I
+.field final iK:I
 
-.field final fT:Landroid/os/IBinder;
+.field final iL:Landroid/os/IBinder;
 
-.field private final fU:Ljava/lang/String;
+.field private final iM:Ljava/lang/String;
 
 
 # direct methods
@@ -38,59 +38,59 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fS:I
+    iput p1, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iK:I
 
-    iput p2, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fP:I
+    iput p2, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iH:I
 
-    iput-object p3, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fT:Landroid/os/IBinder;
+    iput-object p3, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iL:Landroid/os/IBinder;
 
-    iput-object p4, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fQ:[Lcom/google/android/gms/common/api/Scope;
+    iput-object p4, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iI:[Lcom/google/android/gms/common/api/Scope;
 
-    iput-object p5, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fR:Landroid/os/Bundle;
+    iput-object p5, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iJ:Landroid/os/Bundle;
 
-    iput-object p6, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fU:Ljava/lang/String;
+    iput-object p6, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iM:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public hL()I
+.method public kA()[Lcom/google/android/gms/common/api/Scope;
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fP:I
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iI:[Lcom/google/android/gms/common/api/Scope;
+
+    return-object v0
+.end method
+
+.method public kB()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iM:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public kC()Landroid/os/Bundle;
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iJ:Landroid/os/Bundle;
+
+    return-object v0
+.end method
+
+.method public kz()I
+    .locals 1
+
+    iget v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->iH:I
 
     return v0
-.end method
-
-.method public hM()[Lcom/google/android/gms/common/api/Scope;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fQ:[Lcom/google/android/gms/common/api/Scope;
-
-    return-object v0
-.end method
-
-.method public hN()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fU:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public hO()Landroid/os/Bundle;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/ValidateAccountRequest;->fR:Landroid/os/Bundle;
-
-    return-object v0
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/E;->iw(Lcom/google/android/gms/common/internal/ValidateAccountRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/internal/E;->lk(Lcom/google/android/gms/common/internal/ValidateAccountRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

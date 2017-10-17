@@ -3,24 +3,7 @@
 
 
 # direct methods
-.method public static hA(Ljava/lang/Object;)V
-    .locals 2
-
-    if-eqz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public static hy(Ljava/lang/String;)V
+.method public static km(Ljava/lang/String;)V
     .locals 5
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -125,7 +108,7 @@
     throw v0
 .end method
 
-.method public static hz(Ljava/lang/String;)V
+.method public static kn(Ljava/lang/String;)V
     .locals 5
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -226,6 +209,23 @@
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static ko(Ljava/lang/Object;)V
+    .locals 2
+
+    if-eqz p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "null reference"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method

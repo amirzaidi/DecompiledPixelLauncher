@@ -11,39 +11,39 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ParcelableGeofence extends AbstractSafeParcelable
 {
     public static final n CREATOR;
-    private final long AX;
-    private final short AY;
-    private final String AZ;
-    private final int Ba;
-    private final int Bb;
-    private final float Bc;
-    private final int Bd;
-    private final double Be;
-    private final double Bf;
-    private final int Bg;
+    private final long CC;
+    private final short CD;
+    private final String CE;
+    private final int CF;
+    private final int CG;
+    private final float CH;
+    private final int CI;
+    private final double CJ;
+    private final double CK;
+    private final int CL;
     
     static {
         CREATOR = new n();
     }
     
-    public ParcelableGeofence(final int bd, final String az, final int n, final short n2, final double be, final double bf, final float bc, final long ax, final int ba, final int bb) {
-        Fv(az);
-        Fz(bc);
-        Fq(be, bf);
-        final int fs = Fs(n);
-        this.Bd = bd;
-        this.AY = n2;
-        this.AZ = az;
-        this.Be = be;
-        this.Bf = bf;
-        this.Bc = bc;
-        this.AX = ax;
-        this.Bg = fs;
-        this.Ba = ba;
-        this.Bb = bb;
+    public ParcelableGeofence(final int ci, final String ce, final int n, final short n2, final double cj, final double ck, final float ch, final long cc, final int cf, final int cg) {
+        Go(ce);
+        Gs(ch);
+        Gj(cj, ck);
+        final int gl = Gl(n);
+        this.CI = ci;
+        this.CD = n2;
+        this.CE = ce;
+        this.CJ = cj;
+        this.CK = ck;
+        this.CH = ch;
+        this.CC = cc;
+        this.CL = gl;
+        this.CF = cf;
+        this.CG = cg;
     }
     
-    private static void Fq(final double n, final double n2) {
+    private static void Gj(final double n, final double n2) {
         int n3 = 1;
         int n4;
         if (n > 90.0) {
@@ -63,7 +63,7 @@ public class ParcelableGeofence extends AbstractSafeParcelable
         }
     }
     
-    private static int Fs(final int n) {
+    private static int Gl(final int n) {
         final int n2 = n & 0x7;
         if (n2 != 0) {
             return n2;
@@ -71,7 +71,7 @@ public class ParcelableGeofence extends AbstractSafeParcelable
         throw new IllegalArgumentException(new StringBuilder(46).append("No supported transition specified: ").append(n).toString());
     }
     
-    private static void Fv(final String s) {
+    private static void Go(final String s) {
         if (s != null && s.length() <= 100) {
             return;
         }
@@ -88,7 +88,7 @@ public class ParcelableGeofence extends AbstractSafeParcelable
         throw new IllegalArgumentException(concat);
     }
     
-    private static String Fx(final int n) {
+    private static String Gq(final int n) {
         switch (n) {
             default: {
                 return null;
@@ -99,46 +99,46 @@ public class ParcelableGeofence extends AbstractSafeParcelable
         }
     }
     
-    private static void Fz(final float n) {
+    private static void Gs(final float n) {
         if (n <= 0.0f) {
             throw new IllegalArgumentException(new StringBuilder(31).append("invalid radius: ").append(n).toString());
         }
     }
     
-    public long FA() {
-        return this.AX;
+    public double Gi() {
+        return this.CK;
     }
     
-    public int FB() {
-        return this.Bb;
+    public String Gk() {
+        return this.CE;
     }
     
-    public int FC() {
-        return this.Bd;
+    public double Gm() {
+        return this.CJ;
     }
     
-    public double Fp() {
-        return this.Bf;
+    public short Gn() {
+        return this.CD;
     }
     
-    public String Fr() {
-        return this.AZ;
+    public int Gp() {
+        return this.CL;
     }
     
-    public double Ft() {
-        return this.Be;
+    public int Gr() {
+        return this.CF;
     }
     
-    public short Fu() {
-        return this.AY;
+    public long Gt() {
+        return this.CC;
     }
     
-    public int Fw() {
-        return this.Bg;
+    public int Gu() {
+        return this.CG;
     }
     
-    public int Fy() {
-        return this.Ba;
+    public int Gv() {
+        return this.CI;
     }
     
     public boolean equals(final Object o) {
@@ -151,29 +151,29 @@ public class ParcelableGeofence extends AbstractSafeParcelable
         }
         if (o instanceof ParcelableGeofence) {
             final ParcelableGeofence parcelableGeofence = (ParcelableGeofence)o;
-            return this.Bc == parcelableGeofence.Bc && this.Be == parcelableGeofence.Be && this.Bf == parcelableGeofence.Bf && this.AY == parcelableGeofence.AY && b;
+            return this.CH == parcelableGeofence.CH && this.CJ == parcelableGeofence.CJ && this.CK == parcelableGeofence.CK && this.CD == parcelableGeofence.CD && b;
         }
         return false;
     }
     
     public float getRadius() {
-        return this.Bc;
+        return this.CH;
     }
     
     public int hashCode() {
         final int n = 32;
-        final long doubleToLongBits = Double.doubleToLongBits(this.Be);
+        final long doubleToLongBits = Double.doubleToLongBits(this.CJ);
         final int n2 = (int)(doubleToLongBits ^ doubleToLongBits >>> n) + 31;
-        final long doubleToLongBits2 = Double.doubleToLongBits(this.Bf);
-        return (((n2 * 31 + (int)(doubleToLongBits2 ^ doubleToLongBits2 >>> n)) * 31 + Float.floatToIntBits(this.Bc)) * 31 + this.AY) * 31 + this.Bg;
+        final long doubleToLongBits2 = Double.doubleToLongBits(this.CK);
+        return (((n2 * 31 + (int)(doubleToLongBits2 ^ doubleToLongBits2 >>> n)) * 31 + Float.floatToIntBits(this.CH)) * 31 + this.CD) * 31 + this.CL;
     }
     
     public String toString() {
-        return String.format(Locale.US, "Geofence[%s id:%s transitions:%d %.6f, %.6f %.0fm, resp=%ds, dwell=%dms, @%d]", Fx(this.AY), this.AZ, this.Bg, this.Be, this.Bf, this.Bc, this.Ba / 1000, this.Bb, this.AX);
+        return String.format(Locale.US, "Geofence[%s id:%s transitions:%d %.6f, %.6f %.0fm, resp=%ds, dwell=%dms, @%d]", Gq(this.CD), this.CE, this.CL, this.CJ, this.CK, this.CH, this.CF / 1000, this.CG, this.CC);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final n creator = ParcelableGeofence.CREATOR;
-        n.FJ(this, parcel, n);
+        n.GC(this, parcel, n);
     }
 }

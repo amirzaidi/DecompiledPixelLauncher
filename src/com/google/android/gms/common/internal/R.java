@@ -10,14 +10,14 @@ import android.os.IBinder;
 
 class r implements zzq
 {
-    private IBinder fH;
+    private IBinder iz;
     
-    r(final IBinder fh) {
-        this.fH = fh;
+    r(final IBinder iz) {
+        this.iz = iz;
     }
     
     public IBinder asBinder() {
-        return this.fH;
+        return this.iz;
     }
     
     public Account getAccount() {
@@ -27,7 +27,7 @@ class r implements zzq
         final Parcel parcel = obtain;
         try {
             parcel.writeInterfaceToken(s);
-            this.fH.transact(2, obtain, obtain2, 0);
+            this.iz.transact(2, obtain, obtain2, 0);
             obtain2.readException();
             Account account;
             if (obtain2.readInt() == 0) {

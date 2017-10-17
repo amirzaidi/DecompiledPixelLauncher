@@ -8,30 +8,30 @@ import android.graphics.drawable.BitmapDrawable;
 import com.google.android.gms.common.internal.m;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import com.google.android.gms.internal.cE;
+import com.google.android.gms.internal.cy;
 import android.content.Context;
 
 public abstract class i
 {
-    protected int jN;
-    final f jO;
+    protected int mF;
+    final f mG;
     
-    private Drawable mU(final Context context, final cE ce, final int n) {
+    private Drawable pI(final Context context, final cy cy, final int n) {
         return context.getResources().getDrawable(n);
     }
     
-    protected abstract void mI(final Drawable p0, final boolean p1, final boolean p2, final boolean p3);
-    
-    void mT(final Context context, final cE ce, final boolean b) {
-        Drawable mu = null;
-        if (this.jN != 0) {
-            mu = this.mU(context, ce, this.jN);
+    void pH(final Context context, final cy cy, final boolean b) {
+        Drawable pi = null;
+        if (this.mF != 0) {
+            pi = this.pI(context, cy, this.mF);
         }
-        this.mI(mu, b, false, false);
+        this.pw(pi, b, false, false);
     }
     
-    void mV(final Context context, final Bitmap bitmap, final boolean b) {
-        m.hA(bitmap);
-        this.mI((Drawable)new BitmapDrawable(context.getResources(), bitmap), b, false, true);
+    void pJ(final Context context, final Bitmap bitmap, final boolean b) {
+        m.ko(bitmap);
+        this.pw((Drawable)new BitmapDrawable(context.getResources(), bitmap), b, false, true);
     }
+    
+    protected abstract void pw(final Drawable p0, final boolean p1, final boolean p2, final boolean p3);
 }

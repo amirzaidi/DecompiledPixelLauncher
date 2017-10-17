@@ -27,26 +27,26 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class BitmapTeleporter extends AbstractSafeParcelable implements ReflectedParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    ParcelFileDescriptor jS;
-    final int jT;
-    private boolean jU;
-    private File jV;
-    final int jW;
-    private Bitmap jX;
+    ParcelFileDescriptor mK;
+    final int mL;
+    private boolean mM;
+    private File mN;
+    final int mO;
+    private Bitmap mP;
     
     static {
         CREATOR = (Parcelable$Creator)new g();
     }
     
-    BitmapTeleporter(final int jt, final ParcelFileDescriptor js, final int jw) {
-        this.jT = jt;
-        this.jS = js;
-        this.jW = jw;
-        this.jX = null;
-        this.jU = false;
+    BitmapTeleporter(final int ml, final ParcelFileDescriptor mk, final int mo) {
+        this.mL = ml;
+        this.mK = mk;
+        this.mO = mo;
+        this.mP = null;
+        this.mM = false;
     }
     
-    private void mY(final Closeable closeable) {
+    private void pL(final Closeable closeable) {
         try {
             closeable.close();
         }
@@ -55,19 +55,19 @@ public class BitmapTeleporter extends AbstractSafeParcelable implements Reflecte
         }
     }
     
-    private FileOutputStream mZ() {
+    private FileOutputStream pM() {
         // 
         // This method could not be decompiled.
         // 
         // Original Bytecode:
         // 
         //     0: aload_0        
-        //     1: getfield        com/google/android/gms/common/data/BitmapTeleporter.jV:Ljava/io/File;
+        //     1: getfield        com/google/android/gms/common/data/BitmapTeleporter.mN:Ljava/io/File;
         //     4: astore_1       
         //     5: aload_1        
         //     6: ifnull          59
         //     9: aload_0        
-        //    10: getfield        com/google/android/gms/common/data/BitmapTeleporter.jV:Ljava/io/File;
+        //    10: getfield        com/google/android/gms/common/data/BitmapTeleporter.mN:Ljava/io/File;
         //    13: astore_1       
         //    14: ldc             "teleporter"
         //    16: astore_2       
@@ -91,7 +91,7 @@ public class BitmapTeleporter extends AbstractSafeParcelable implements Reflecte
         //    46: astore_3       
         //    47: aload_0        
         //    48: aload_3        
-        //    49: putfield        com/google/android/gms/common/data/BitmapTeleporter.jS:Landroid/os/ParcelFileDescriptor;
+        //    49: putfield        com/google/android/gms/common/data/BitmapTeleporter.mK:Landroid/os/ParcelFileDescriptor;
         //    52: aload_1        
         //    53: invokevirtual   java/io/File.delete:()Z
         //    56: pop            
@@ -158,8 +158,8 @@ public class BitmapTeleporter extends AbstractSafeParcelable implements Reflecte
     }
     
     public Bitmap get() {
-        if (!this.jU) {
-            Object bitmap = new DataInputStream((InputStream)new ParcelFileDescriptor$AutoCloseInputStream(this.jS));
+        if (!this.mM) {
+            Object bitmap = new DataInputStream((InputStream)new ParcelFileDescriptor$AutoCloseInputStream(this.mK));
             try {
                 final int int1 = ((DataInputStream)bitmap).readInt();
                 try {
@@ -173,12 +173,12 @@ public class BitmapTeleporter extends AbstractSafeParcelable implements Reflecte
                                 try {
                                     final Bitmap$Config value = Bitmap$Config.valueOf(utf);
                                     ((DataInputStream)bitmap).read(array);
-                                    this.mY((Closeable)bitmap);
+                                    this.pL((Closeable)bitmap);
                                     final ByteBuffer wrap = ByteBuffer.wrap(array);
                                     bitmap = Bitmap.createBitmap(int2, int3, value);
                                     ((Bitmap)bitmap).copyPixelsFromBuffer((Buffer)wrap);
-                                    this.jX = (Bitmap)bitmap;
-                                    this.jU = true;
+                                    this.mP = (Bitmap)bitmap;
+                                    this.mM = true;
                                 }
                                 catch (IOException ex) {
                                     throw new IllegalStateException("Could not read from parcel file descriptor", ex);
@@ -194,24 +194,24 @@ public class BitmapTeleporter extends AbstractSafeParcelable implements Reflecte
             }
             catch (IOException ex6) {}
             finally {
-                this.mY((Closeable)bitmap);
+                this.pL((Closeable)bitmap);
             }
         }
-        return this.jX;
+        return this.mP;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        if (this.jS == null) {
-            final Bitmap jx = this.jX;
-            final ByteBuffer allocate = ByteBuffer.allocate(jx.getRowBytes() * jx.getHeight());
-            jx.copyPixelsToBuffer((Buffer)allocate);
+        if (this.mK == null) {
+            final Bitmap mp = this.mP;
+            final ByteBuffer allocate = ByteBuffer.allocate(mp.getRowBytes() * mp.getHeight());
+            mp.copyPixelsToBuffer((Buffer)allocate);
             final byte[] array = allocate.array();
-            final DataOutputStream dataOutputStream = new DataOutputStream(this.mZ());
+            final DataOutputStream dataOutputStream = new DataOutputStream(this.pM());
             try {
                 dataOutputStream.writeInt(array.length);
-                dataOutputStream.writeInt(jx.getWidth());
-                dataOutputStream.writeInt(jx.getHeight());
-                final Bitmap$Config config = jx.getConfig();
+                dataOutputStream.writeInt(mp.getWidth());
+                dataOutputStream.writeInt(mp.getHeight());
+                final Bitmap$Config config = mp.getConfig();
                 try {
                     dataOutputStream.writeUTF(config.toString());
                     final DataOutputStream dataOutputStream2 = dataOutputStream;
@@ -226,10 +226,10 @@ public class BitmapTeleporter extends AbstractSafeParcelable implements Reflecte
             }
             catch (IOException ex3) {}
             finally {
-                this.mY(dataOutputStream);
+                this.pL(dataOutputStream);
             }
         }
-        g.np(this, parcel, n | 0x1);
-        this.jS = null;
+        g.qc(this, parcel, n | 0x1);
+        this.mK = null;
     }
 }

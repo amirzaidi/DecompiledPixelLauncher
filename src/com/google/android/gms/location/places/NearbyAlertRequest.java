@@ -12,84 +12,84 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class NearbyAlertRequest extends AbstractSafeParcelable
 {
     public static final j CREATOR;
-    private final NearbyAlertFilter Aa;
-    private final PlaceFilter Ab;
-    private final int Ac;
-    private final int Ad;
-    private int Ae;
-    private final boolean zX;
-    private final int zY;
-    private final int zZ;
+    private final boolean BC;
+    private final int BD;
+    private final int BE;
+    private final NearbyAlertFilter BF;
+    private final PlaceFilter BG;
+    private final int BH;
+    private final int BI;
+    private int BJ;
     
     static {
         CREATOR = new j();
     }
     
-    NearbyAlertRequest(final int zz, final int ad, final int ac, final PlaceFilter placeFilter, final NearbyAlertFilter aa, final boolean zx, final int zy, final int ae) {
-        this.Ae = 110;
-        this.zZ = zz;
-        this.Ad = ad;
-        this.Ac = ac;
+    NearbyAlertRequest(final int be, final int bi, final int bh, final PlaceFilter placeFilter, final NearbyAlertFilter bf, final boolean bc, final int bd, final int bj) {
+        this.BJ = 110;
+        this.BE = be;
+        this.BI = bi;
+        this.BH = bh;
         Label_0044: {
-            if (aa == null) {
+            if (bf == null) {
                 Label_0039: {
                     if (placeFilter != null) {
-                        NearbyAlertFilter aa2;
-                        if (placeFilter.DJ() != null && !placeFilter.DJ().isEmpty()) {
-                            aa2 = NearbyAlertFilter.DW(placeFilter.DJ());
+                        NearbyAlertFilter bf2;
+                        if (placeFilter.EC() != null && !placeFilter.EC().isEmpty()) {
+                            bf2 = NearbyAlertFilter.EP(placeFilter.EC());
                         }
                         else {
-                            if (placeFilter.DK() == null || placeFilter.DK().isEmpty()) {
+                            if (placeFilter.ED() == null || placeFilter.ED().isEmpty()) {
                                 break Label_0039;
                             }
-                            aa2 = NearbyAlertFilter.DY(placeFilter.DK());
+                            bf2 = NearbyAlertFilter.ER(placeFilter.ED());
                         }
-                        this.Aa = aa2;
+                        this.BF = bf2;
                         break Label_0044;
                     }
                 }
-                this.Aa = null;
+                this.BF = null;
             }
             else {
-                this.Aa = aa;
+                this.BF = bf;
             }
         }
-        this.Ab = null;
-        this.zX = zx;
-        this.zY = zy;
-        this.Ae = ae;
+        this.BG = null;
+        this.BC = bc;
+        this.BD = bd;
+        this.BJ = bj;
     }
     
-    public int Ek() {
-        return this.zY;
+    public int Fd() {
+        return this.BD;
     }
     
-    public int El() {
-        return this.Ad;
+    public int Fe() {
+        return this.BI;
     }
     
-    public NearbyAlertFilter Em() {
-        return this.Aa;
+    public NearbyAlertFilter Ff() {
+        return this.BF;
     }
     
-    public int En() {
-        return this.Ae;
+    public int Fg() {
+        return this.BJ;
     }
     
-    public boolean Eo() {
-        return this.zX;
+    public boolean Fh() {
+        return this.BC;
     }
     
-    public PlaceFilter Ep() {
+    public PlaceFilter Fi() {
         return null;
     }
     
-    public int Eq() {
-        return this.zZ;
+    public int Fj() {
+        return this.BE;
     }
     
-    public int Er() {
-        return this.Ac;
+    public int Fk() {
+        return this.BH;
     }
     
     public boolean equals(final Object o) {
@@ -99,7 +99,7 @@ public final class NearbyAlertRequest extends AbstractSafeParcelable
         }
         if (o instanceof NearbyAlertRequest) {
             final NearbyAlertRequest nearbyAlertRequest = (NearbyAlertRequest)o;
-            if (this.Ad != nearbyAlertRequest.Ad || this.Ac != nearbyAlertRequest.Ac || !u.hH(this.Aa, nearbyAlertRequest.Aa) || this.Ae != nearbyAlertRequest.Ae) {
+            if (this.BI != nearbyAlertRequest.BI || this.BH != nearbyAlertRequest.BH || !u.kv(this.BF, nearbyAlertRequest.BF) || this.BJ != nearbyAlertRequest.BJ) {
                 b = false;
             }
             return b;
@@ -108,14 +108,14 @@ public final class NearbyAlertRequest extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return u.hI(this.Ad, this.Ac, this.Aa, this.Ae);
+        return u.kw(this.BI, this.BH, this.BF, this.BJ);
     }
     
     public String toString() {
-        return u.hJ(this).hB("transitionTypes", this.Ad).hB("loiteringTimeMillis", this.Ac).hB("nearbyAlertFilter", this.Aa).hB("priority", this.Ae).toString();
+        return u.kx(this).kp("transitionTypes", this.BI).kp("loiteringTimeMillis", this.BH).kp("nearbyAlertFilter", this.BF).kp("priority", this.BJ).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        j.EG(this, parcel, n);
+        j.Fz(this, parcel, n);
     }
 }

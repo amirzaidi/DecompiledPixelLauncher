@@ -11,29 +11,29 @@ import android.os.Parcelable$Creator;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
-public final class Status extends AbstractSafeParcelable implements b, ReflectedParcelable
+public final class Status extends AbstractSafeParcelable implements m, ReflectedParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    public static final Status dR;
-    public static final Status dU;
-    public static final Status dV;
-    public static final Status dW;
-    public static final Status dY;
-    public static final Status ea;
-    public static final Status eb;
-    private final String dS;
-    private final int dT;
-    private final PendingIntent dX;
-    private final int dZ;
+    public static final Status hk;
+    public static final Status hn;
+    public static final Status ho;
+    public static final Status hp;
+    public static final Status hr;
+    public static final Status ht;
+    public static final Status hu;
+    private final String hl;
+    private final int hm;
+    private final PendingIntent hq;
+    private final int hs;
     
     static {
-        dU = new Status(0);
-        dW = new Status(14);
-        ea = new Status(8);
-        dV = new Status(15);
-        dR = new Status(16);
-        eb = new Status(17);
-        dY = new Status(18);
+        hn = new Status(0);
+        hp = new Status(14);
+        ht = new Status(8);
+        ho = new Status(15);
+        hk = new Status(16);
+        hu = new Status(17);
+        hr = new Status(18);
         CREATOR = (Parcelable$Creator)new z();
     }
     
@@ -41,11 +41,11 @@ public final class Status extends AbstractSafeParcelable implements b, Reflected
         this(n, null);
     }
     
-    Status(final int dz, final int dt, final String ds, final PendingIntent dx) {
-        this.dZ = dz;
-        this.dT = dt;
-        this.dS = ds;
-        this.dX = dx;
+    Status(final int hs, final int hm, final String hl, final PendingIntent hq) {
+        this.hs = hs;
+        this.hm = hm;
+        this.hl = hl;
+        this.hq = hq;
     }
     
     public Status(final int n, final String s) {
@@ -56,42 +56,18 @@ public final class Status extends AbstractSafeParcelable implements b, Reflected
         this(1, n, s, pendingIntent);
     }
     
-    private String dH() {
-        if (this.dS == null) {
-            return A.eG(this.dT);
+    private String ha() {
+        if (this.hl == null) {
+            return A.hu(this.hm);
         }
-        return this.dS;
-    }
-    
-    public int dD() {
-        return this.dT;
-    }
-    
-    public String dE() {
-        return this.dS;
-    }
-    
-    public boolean dF() {
-        boolean b = false;
-        if (this.dT <= 0) {
-            b = true;
-        }
-        return b;
-    }
-    
-    int dG() {
-        return this.dZ;
-    }
-    
-    public Status dr() {
-        return this;
+        return this.hl;
     }
     
     public boolean equals(final Object o) {
         boolean b = false;
         if (o instanceof Status) {
             final Status status = (Status)o;
-            if (this.dZ == status.dZ && this.dT == status.dT && u.hH(this.dS, status.dS) && u.hH(this.dX, status.dX)) {
+            if (this.hs == status.hs && this.hm == status.hm && u.kv(this.hl, status.hl) && u.kv(this.hq, status.hq)) {
                 b = true;
             }
             return b;
@@ -99,19 +75,43 @@ public final class Status extends AbstractSafeParcelable implements b, Reflected
         return false;
     }
     
+    public Status gV() {
+        return this;
+    }
+    
+    public int gW() {
+        return this.hm;
+    }
+    
+    public String gX() {
+        return this.hl;
+    }
+    
+    public boolean gY() {
+        boolean b = false;
+        if (this.hm <= 0) {
+            b = true;
+        }
+        return b;
+    }
+    
+    int gZ() {
+        return this.hs;
+    }
+    
     PendingIntent getPendingIntent() {
-        return this.dX;
+        return this.hq;
     }
     
     public int hashCode() {
-        return u.hI(this.dZ, this.dT, this.dS, this.dX);
+        return u.kw(this.hs, this.hm, this.hl, this.hq);
     }
     
     public String toString() {
-        return u.hJ(this).hB("statusCode", this.dH()).hB("resolution", this.dX).toString();
+        return u.kx(this).kp("statusCode", this.ha()).kp("resolution", this.hq).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        z.eF(this, parcel, n);
+        z.ht(this, parcel, n);
     }
 }

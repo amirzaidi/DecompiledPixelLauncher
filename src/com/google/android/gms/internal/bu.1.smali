@@ -1,44 +1,30 @@
-.class final Lcom/google/android/gms/internal/bu;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field final synthetic ui:Lcom/google/android/gms/internal/f;
+.class public Lcom/google/android/gms/internal/bu;
+.super Lcom/google/android/gms/internal/f;
 
 
 # direct methods
-.method private constructor <init>(Lcom/google/android/gms/internal/f;)V
+.method public constructor <init>(Landroid/os/Looper;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/bu;->ui:Lcom/google/android/gms/internal/f;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method synthetic constructor <init>(Lcom/google/android/gms/internal/f;Lcom/google/android/gms/internal/cn;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/bu;-><init>(Lcom/google/android/gms/internal/f;)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/f;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected finalize()V
+.method protected synthetic rY(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/m;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/bu;->ui:Lcom/google/android/gms/internal/f;
-
-    invoke-static {v0}, Lcom/google/android/gms/internal/f;->rY(Lcom/google/android/gms/internal/f;)Lcom/google/android/gms/common/api/b;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/bu;->zq(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Status;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/f;->rX(Lcom/google/android/gms/common/api/b;)V
+    return-object v0
+.end method
 
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+.method protected zq(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/Status;
+    .locals 0
 
-    return-void
+    return-object p1
 .end method

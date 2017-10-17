@@ -11,21 +11,21 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class NetworkStateImpl extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int mv;
-    private final int mw;
-    private final int mx;
+    private final int fS;
+    private final int fT;
+    private final int fU;
     
     static {
         CREATOR = (Parcelable$Creator)new l();
     }
     
-    NetworkStateImpl(final int mw, final int mv, final int mx) {
-        this.mw = mw;
-        this.mv = mv;
-        this.mx = mx;
+    NetworkStateImpl(final int ft, final int fs, final int fu) {
+        this.fT = ft;
+        this.fS = fs;
+        this.fU = fu;
     }
     
-    public static String pA(final int n) {
+    public static String eu(final int n) {
         switch (n) {
             default: {
                 return new StringBuilder(37).append("unknown connection state: ").append(n).toString();
@@ -42,7 +42,7 @@ public class NetworkStateImpl extends AbstractSafeParcelable
         }
     }
     
-    public static String pC(final int n) {
+    public static String ew(final int n) {
         switch (n) {
             default: {
                 return new StringBuilder(32).append("unknown meter state: ").append(n).toString();
@@ -56,25 +56,25 @@ public class NetworkStateImpl extends AbstractSafeParcelable
         }
     }
     
-    int pB() {
-        return this.mx;
+    int ev() {
+        return this.fU;
     }
     
-    public int pD() {
-        return this.mv;
+    public int ex() {
+        return this.fS;
     }
     
-    int pE() {
-        return this.mw;
+    int ey() {
+        return this.fT;
     }
     
     public String toString() {
-        final String value = String.valueOf(pA(this.mv));
-        final String value2 = String.valueOf(pC(this.mx));
+        final String value = String.valueOf(eu(this.fS));
+        final String value2 = String.valueOf(ew(this.fU));
         return new StringBuilder(String.valueOf(value).length() + 41 + String.valueOf(value2).length()).append("ConnectionState = ").append(value).append(" NetworkMeteredState = ").append(value2).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        l.ri(this, parcel, n);
+        l.gc(this, parcel, n);
     }
 }

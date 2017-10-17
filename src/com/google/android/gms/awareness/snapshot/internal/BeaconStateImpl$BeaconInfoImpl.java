@@ -12,52 +12,52 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class BeaconStateImpl$BeaconInfoImpl extends AbstractSafeParcelable implements a
 {
     public static final Parcelable$Creator CREATOR;
-    private final String nb;
-    private final byte[] nc;
-    private final int nd;
-    private final String ne;
+    private final String gA;
+    private final byte[] gB;
+    private final int gC;
+    private final String gD;
     
     static {
         CREATOR = (Parcelable$Creator)new f();
     }
     
-    BeaconStateImpl$BeaconInfoImpl(final int nd, final String nb, final String ne, final byte[] nc) {
-        this.nd = nd;
-        this.nb = nb;
-        this.ne = ne;
-        this.nc = nc;
+    BeaconStateImpl$BeaconInfoImpl(final int gc, final String ga, final String gd, final byte[] gb) {
+        this.gC = gc;
+        this.gA = ga;
+        this.gD = gd;
+        this.gB = gb;
     }
     
-    public byte[] qV() {
-        return this.nc;
+    public byte[] fR() {
+        return this.gB;
     }
     
-    public String qW() {
-        return this.nb;
+    public String fS() {
+        return this.gA;
     }
     
-    public String qX() {
-        return this.ne;
+    public String fT() {
+        return this.gD;
     }
     
-    int qY() {
-        return this.nd;
+    int fU() {
+        return this.gC;
     }
     
     public String toString() {
         String s;
-        if (this.nc != null) {
-            s = new String(this.nc);
+        if (this.gB != null) {
+            s = new String(this.gB);
         }
         else {
             s = "<null>";
         }
-        final String nb = this.nb;
-        final String ne = this.ne;
-        return new StringBuilder(String.valueOf(nb).length() + 6 + String.valueOf(ne).length() + String.valueOf(s).length()).append("(").append(nb).append(", ").append(ne).append(", ").append(s).append(")").toString();
+        final String ga = this.gA;
+        final String gd = this.gD;
+        return new StringBuilder(String.valueOf(ga).length() + 6 + String.valueOf(gd).length() + String.valueOf(s).length()).append("(").append(ga).append(", ").append(gd).append(", ").append(s).append(")").toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        f.pY(this, parcel, n);
+        f.eS(this, parcel, n);
     }
 }

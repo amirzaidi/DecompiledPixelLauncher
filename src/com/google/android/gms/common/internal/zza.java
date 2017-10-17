@@ -48,7 +48,7 @@ public class zza extends zzq$zza
         if (callingUid == this.zzajy) {
             return null;
         }
-        if (!k.og(null, callingUid)) {
+        if (!k.qS(null, callingUid)) {
             throw new SecurityException("Caller is not GooglePlayServices");
         }
         this.zzajy = callingUid;

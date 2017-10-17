@@ -4,25 +4,35 @@
 
 package com.google.android.gms.internal;
 
-import com.google.android.gms.common.api.i;
-import com.google.android.gms.signin.internal.e;
-import com.google.android.gms.common.api.f;
-import com.google.android.gms.common.api.g;
-import com.google.android.gms.common.internal.a;
-import android.os.Looper;
+import com.google.android.gms.common.api.Status;
+import android.os.Message;
+import com.google.android.gms.common.ConnectionResult;
+import android.util.Log;
+import java.util.Iterator;
+import com.google.android.gms.common.a;
+import java.util.Map;
+import java.util.Set;
+import android.util.SparseArray;
+import android.os.Handler;
 import android.content.Context;
-import com.google.android.gms.common.api.l;
+import android.os.Handler$Callback;
+import java.lang.ref.ReferenceQueue;
+import com.google.android.gms.common.api.C;
+import java.lang.ref.PhantomReference;
 
-class cp extends l
+final class cp extends PhantomReference
 {
-    public e Cf(final Context context, final Looper looper, final a a, final cd cd, final g g, final f f) {
-        cd wl;
-        if (cd != null) {
-            wl = cd;
-        }
-        else {
-            wl = cd.wl;
-        }
-        return new e(context, looper, true, a, wl, g, f);
+    private final int xd;
+    final /* synthetic */ bG xe;
+    
+    public cp(final bG xe, final C c, final int xd, final ReferenceQueue referenceQueue) {
+        this.xe = xe;
+        super(c, referenceQueue);
+        this.xd = xd;
+    }
+    
+    public void Cg() {
+        final int n = 2;
+        this.xe.mHandler.sendMessage(this.xe.mHandler.obtainMessage(n, this.xd, n));
     }
 }

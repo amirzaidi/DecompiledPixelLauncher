@@ -14,14 +14,14 @@ import android.os.IBinder;
 
 class d implements zze
 {
-    private IBinder JT;
+    private IBinder Ly;
     
-    d(final IBinder jt) {
-        this.JT = jt;
+    d(final IBinder ly) {
+        this.Ly = ly;
     }
     
     public IBinder asBinder() {
-        return this.JT;
+        return this.Ly;
     }
     
     public void zza(final int n, final Account account, final zzd zzd) {
@@ -44,7 +44,7 @@ class d implements zze
                     }
                     if (zzd == null) {
                         obtain.writeStrongBinder(binder);
-                        this.JT.transact(8, obtain, obtain2, 0);
+                        this.Ly.transact(8, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -78,7 +78,7 @@ class d implements zze
                     }
                     if (zzd == null) {
                         obtain.writeStrongBinder(binder);
-                        this.JT.transact(2, obtain, obtain2, 0);
+                        this.Ly.transact(2, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -112,7 +112,7 @@ class d implements zze
                     }
                     if (zzw == null) {
                         obtain.writeStrongBinder(binder);
-                        this.JT.transact(5, obtain, obtain2, 0);
+                        this.Ly.transact(5, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -148,7 +148,7 @@ class d implements zze
                 n2 = 1;
             }
             obtain.writeInt(n2);
-            this.JT.transact(9, obtain, obtain2, 0);
+            this.Ly.transact(9, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -171,7 +171,7 @@ class d implements zze
                 obtain.writeInt(1);
                 checkServerAuthResult.writeToParcel(obtain, 0);
             }
-            this.JT.transact(3, obtain, obtain2, 0);
+            this.Ly.transact(3, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -199,7 +199,7 @@ class d implements zze
                     }
                     if (zzd == null) {
                         obtain.writeStrongBinder(binder);
-                        this.JT.transact(10, obtain, obtain2, 0);
+                        this.Ly.transact(10, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -233,7 +233,7 @@ class d implements zze
                     }
                     if (zzd == null) {
                         obtain.writeStrongBinder(binder);
-                        this.JT.transact(12, obtain, obtain2, 0);
+                        this.Ly.transact(12, obtain, obtain2, 0);
                         obtain2.readException();
                         return;
                     }
@@ -256,7 +256,7 @@ class d implements zze
         try {
             parcel.writeInterfaceToken(s);
             obtain.writeInt(n);
-            this.JT.transact(7, obtain, obtain2, 0);
+            this.Ly.transact(7, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -277,7 +277,7 @@ class d implements zze
                 binder = zzd.asBinder();
             }
             obtain.writeStrongBinder(binder);
-            this.JT.transact(11, obtain, obtain2, 0);
+            this.Ly.transact(11, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {
@@ -298,7 +298,7 @@ class d implements zze
                 n = 1;
             }
             obtain.writeInt(n);
-            this.JT.transact(4, obtain, obtain2, 0);
+            this.Ly.transact(4, obtain, obtain2, 0);
             obtain2.readException();
         }
         finally {

@@ -13,59 +13,59 @@ import android.os.Parcelable$Creator;
 
 public class p implements Parcelable$Creator
 {
-    static void JW(final CameraPosition cameraPosition, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, cameraPosition.Ke());
-        a.eW(parcel, 2, (Parcelable)cameraPosition.Fg, n, false);
-        a.fs(parcel, 3, cameraPosition.Fh);
-        a.fs(parcel, 4, cameraPosition.Fe);
-        a.fs(parcel, 5, cameraPosition.Fi);
-        a.fe(parcel, ey);
+    static void KP(final CameraPosition cameraPosition, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, cameraPosition.KX());
+        a.hK(parcel, 2, (Parcelable)cameraPosition.GL, n, false);
+        a.ig(parcel, 3, cameraPosition.GM);
+        a.ig(parcel, 4, cameraPosition.GJ);
+        a.ig(parcel, 5, cameraPosition.GN);
+        a.hS(parcel, hm);
     }
     
-    public CameraPosition[] JV(final int n) {
+    public CameraPosition[] KO(final int n) {
         return new CameraPosition[n];
     }
     
-    public CameraPosition JX(final Parcel parcel) {
-        float gj = 0.0f;
-        final int fj = b.fJ(parcel);
-        int fn = 0;
+    public CameraPosition KQ(final Parcel parcel) {
+        float ix = 0.0f;
+        final int ix2 = b.ix(parcel);
+        int ib = 0;
         LatLng latLng = null;
-        float gj2 = 0.0f;
-        float gj3 = 0.0f;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        float ix3 = 0.0f;
+        float ix4 = 0.0f;
+        while (parcel.dataPosition() < ix2) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    latLng = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     continue;
                 }
                 case 3: {
-                    gj3 = b.gj(parcel, fs);
+                    ix4 = b.iX(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    gj2 = b.gj(parcel, fs);
+                    ix3 = b.iX(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    gj = b.gj(parcel, fs);
+                    ix = b.iX(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new CameraPosition(fn, latLng, gj3, gj2, gj);
+        if (parcel.dataPosition() == ix2) {
+            return new CameraPosition(ib, latLng, ix4, ix3, ix);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix2).toString(), parcel);
     }
 }

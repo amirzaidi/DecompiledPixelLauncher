@@ -5,7 +5,6 @@
 package com.google.android.gms.location.reporting;
 
 import android.os.Parcel;
-import com.google.android.gms.internal.A;
 import com.google.android.gms.common.internal.u;
 import android.accounts.Account;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
@@ -13,50 +12,50 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class UploadRequest extends AbstractSafeParcelable
 {
     public static final b CREATOR;
-    private final int BA;
-    private final String BB;
-    private final long BC;
-    private final long Bw;
-    private final Account Bx;
-    private final String By;
-    private final long Bz;
+    private final long Db;
+    private final Account Dc;
+    private final String Dd;
+    private final long De;
+    private final int Df;
+    private final String Dg;
+    private final long Dh;
     
     static {
         CREATOR = new b();
     }
     
-    public UploadRequest(final int ba, final Account bx, final String bb, final long bw, final long bc, final long bz, final String by) {
-        this.BA = ba;
-        this.Bx = bx;
-        this.BB = bb;
-        this.Bw = bw;
-        this.BC = bc;
-        this.Bz = bz;
-        this.By = by;
+    public UploadRequest(final int df, final Account dc, final String dg, final long db, final long dh, final long de, final String dd) {
+        this.Df = df;
+        this.Dc = dc;
+        this.Dg = dg;
+        this.Db = db;
+        this.Dh = dh;
+        this.De = de;
+        this.Dd = dd;
     }
     
-    public String Gk() {
-        return this.BB;
+    public String Hd() {
+        return this.Dg;
     }
     
-    public long Gl() {
-        return this.BC;
+    public long He() {
+        return this.Dh;
     }
     
-    public long Gm() {
-        return this.Bz;
+    public long Hf() {
+        return this.De;
     }
     
-    public String Gn() {
-        return this.By;
+    public String Hg() {
+        return this.Dd;
     }
     
-    public long Go() {
-        return this.Bw;
+    public long Hh() {
+        return this.Db;
     }
     
-    public int Gp() {
-        return this.BA;
+    public int Hi() {
+        return this.Df;
     }
     
     public boolean equals(final Object o) {
@@ -66,7 +65,7 @@ public class UploadRequest extends AbstractSafeParcelable
         }
         if (o instanceof UploadRequest) {
             final UploadRequest uploadRequest = (UploadRequest)o;
-            if (!this.Bx.equals((Object)uploadRequest.Bx) || !this.BB.equals(uploadRequest.BB) || !u.hH(this.Bw, uploadRequest.Bw) || this.BC != uploadRequest.BC || this.Bz != uploadRequest.Bz || u.hH(this.By, uploadRequest.By)) {
+            if (!this.Dc.equals((Object)uploadRequest.Dc) || !this.Dg.equals(uploadRequest.Dg) || !u.kv(this.Db, uploadRequest.Db) || this.Dh != uploadRequest.Dh || this.De != uploadRequest.De || u.kv(this.Dd, uploadRequest.Dd)) {
                 b = false;
             }
             return b;
@@ -75,26 +74,26 @@ public class UploadRequest extends AbstractSafeParcelable
     }
     
     public Account getAccount() {
-        return this.Bx;
+        return this.Dc;
     }
     
     public int hashCode() {
-        return u.hI(this.Bx, this.BB, this.Bw, this.BC, this.Bz, this.By);
+        return u.kw(this.Dc, this.Dg, this.Db, this.Dh, this.De, this.Dd);
     }
     
     public String toString() {
-        final int ba = this.BA;
-        final String value = String.valueOf(A.sA(this.Bx));
-        final String bb = this.BB;
-        final long bw = this.Bw;
-        final long bc = this.BC;
-        final long bz = this.Bz;
-        final String by = this.By;
-        return new StringBuilder(String.valueOf(value).length() + 210 + String.valueOf(bb).length() + String.valueOf(by).length()).append("UploadRequest{mVersionCode=").append(ba).append(", mAccount=").append(value).append(", mReason='").append(bb).append("'").append(", mDurationMillis=").append(bw).append(", mMovingLatencyMillis=").append(bc).append(", mStationaryLatencyMillis=").append(bz).append(", mAppSpecificKey='").append(by).append("'").append("}").toString();
+        final int df = this.Df;
+        final String value = String.valueOf(com.google.android.gms.internal.u.sz(this.Dc));
+        final String dg = this.Dg;
+        final long db = this.Db;
+        final long dh = this.Dh;
+        final long de = this.De;
+        final String dd = this.Dd;
+        return new StringBuilder(String.valueOf(value).length() + 210 + String.valueOf(dg).length() + String.valueOf(dd).length()).append("UploadRequest{mVersionCode=").append(df).append(", mAccount=").append(value).append(", mReason='").append(dg).append("'").append(", mDurationMillis=").append(db).append(", mMovingLatencyMillis=").append(dh).append(", mStationaryLatencyMillis=").append(de).append(", mAppSpecificKey='").append(dd).append("'").append("}").toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final b creator = UploadRequest.CREATOR;
-        b.FS(this, parcel, n);
+        b.GL(this, parcel, n);
     }
 }

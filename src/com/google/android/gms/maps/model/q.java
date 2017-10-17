@@ -13,64 +13,64 @@ import android.os.Parcelable$Creator;
 
 public class q implements Parcelable$Creator
 {
-    static void Kc(final LatLngBounds latLngBounds, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, latLngBounds.Iu());
-        a.eW(parcel, 2, (Parcelable)latLngBounds.DA, n, false);
-        a.eW(parcel, 3, (Parcelable)latLngBounds.DB, n, false);
-        a.fe(parcel, ey);
+    static void KV(final LatLngBounds latLngBounds, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, latLngBounds.Jn());
+        a.hK(parcel, 2, (Parcelable)latLngBounds.Ff, n, false);
+        a.hK(parcel, 3, (Parcelable)latLngBounds.Fg, n, false);
+        a.hS(parcel, hm);
     }
     
-    public LatLngBounds[] Ka(final int n) {
+    public LatLngBounds[] KT(final int n) {
         return new LatLngBounds[n];
     }
     
-    public LatLngBounds Kb(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
+    public LatLngBounds KU(final Parcel parcel) {
+        final int ix = b.ix(parcel);
         LatLng latLng = null;
-        int fn = 0;
+        int ib = 0;
         LatLng latLng2 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
             int n = 0;
             LatLng latLng5 = null;
             LatLng latLng6 = null;
             Label_0116: {
-                switch (b.ga(fs)) {
+                switch (b.iO(ig)) {
                     default: {
-                        b.fA(parcel, fs);
+                        b.io(parcel, ig);
                         break;
                     }
                     case 1: {
-                        fn = b.fN(parcel, fs);
+                        ib = b.iB(parcel, ig);
                         break;
                     }
                     case 2: {
-                        final LatLng latLng3 = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
-                        n = fn;
+                        final LatLng latLng3 = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
+                        n = ib;
                         final LatLng latLng4 = latLng3;
                         latLng5 = latLng2;
                         latLng6 = latLng4;
                         break Label_0116;
                     }
                     case 3: {
-                        latLng5 = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                        latLng5 = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                         latLng6 = latLng;
-                        n = fn;
+                        n = ib;
                         break Label_0116;
                     }
                 }
                 latLng5 = latLng2;
                 latLng6 = latLng;
-                n = fn;
+                n = ib;
             }
-            fn = n;
+            ib = n;
             latLng = latLng6;
             latLng2 = latLng5;
         }
-        if (parcel.dataPosition() == fj) {
-            return new LatLngBounds(fn, latLng, latLng2);
+        if (parcel.dataPosition() == ix) {
+            return new LatLngBounds(ib, latLng, latLng2);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

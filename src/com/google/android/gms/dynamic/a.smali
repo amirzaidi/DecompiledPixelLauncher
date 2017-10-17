@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private IY:Landroid/os/IBinder;
+.field private KD:Landroid/os/IBinder;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/dynamic/a;->IY:Landroid/os/IBinder;
+    iput-object p1, p0, Lcom/google/android/gms/dynamic/a;->KD:Landroid/os/IBinder;
 
     return-void
 .end method
@@ -25,7 +25,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/dynamic/a;->IY:Landroid/os/IBinder;
+    iget-object v0, p0, Lcom/google/android/gms/dynamic/a;->KD:Landroid/os/IBinder;
 
     return-object v0
 .end method

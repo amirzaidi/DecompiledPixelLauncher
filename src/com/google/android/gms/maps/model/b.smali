@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public DF:F
+.field public Fk:F
 
-.field public DG:F
+.field public Fl:F
 
 
 # direct methods
@@ -19,18 +19,18 @@
 
 
 # virtual methods
-.method public IA(F)Lcom/google/android/gms/maps/model/b;
+.method public Js(F)Lcom/google/android/gms/maps/model/b;
     .locals 0
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/b;->DF:F
+    iput p1, p0, Lcom/google/android/gms/maps/model/b;->Fl:F
 
     return-object p0
 .end method
 
-.method public Iz(F)Lcom/google/android/gms/maps/model/b;
+.method public Jt(F)Lcom/google/android/gms/maps/model/b;
     .locals 0
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/b;->DG:F
+    iput p1, p0, Lcom/google/android/gms/maps/model/b;->Fk:F
 
     return-object p0
 .end method
@@ -40,9 +40,9 @@
 
     new-instance v0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/b;->DG:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/b;->Fl:F
 
-    iget v2, p0, Lcom/google/android/gms/maps/model/b;->DF:F
+    iget v2, p0, Lcom/google/android/gms/maps/model/b;->Fk:F
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;-><init>(FF)V
 

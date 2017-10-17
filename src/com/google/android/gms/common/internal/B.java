@@ -4,40 +4,40 @@
 
 package com.google.android.gms.common.internal;
 
-import android.os.IBinder;
 import android.os.IInterface;
-import com.google.android.gms.common.api.f;
-import com.google.android.gms.common.api.g;
+import android.os.IBinder;
+import com.google.android.gms.common.api.c;
+import com.google.android.gms.common.api.d;
 import android.os.Looper;
 import android.content.Context;
-import com.google.android.gms.common.api.p;
+import com.google.android.gms.common.api.o;
 
 public class b extends R
 {
-    private final p eY;
+    private final o hR;
     
-    public b(final Context context, final Looper looper, final int n, final g g, final f f, final a a, final p ey) {
-        super(context, looper, n, a, g, f);
-        this.eY = ey;
+    public b(final Context context, final Looper looper, final int n, final d d, final c c, final a a, final o hr) {
+        super(context, looper, n, a, d, c);
+        this.hR = hr;
     }
     
-    protected void gA(final int n, final IInterface interface1) {
-        this.eY.er(n, interface1);
+    protected String jk() {
+        return this.hR.hb();
     }
     
-    protected String gw() {
-        return this.eY.eo();
+    protected String jl() {
+        return this.hR.hc();
     }
     
-    protected String gx() {
-        return this.eY.ep();
+    public o jm() {
+        return this.hR;
     }
     
-    public p gy() {
-        return this.eY;
+    protected IInterface jn(final IBinder binder) {
+        return this.hR.hd(binder);
     }
     
-    protected IInterface gz(final IBinder binder) {
-        return this.eY.eq(binder);
+    protected void jo(final int n, final IInterface interface1) {
+        this.hR.he(n, interface1);
     }
 }

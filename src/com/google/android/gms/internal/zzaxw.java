@@ -12,31 +12,31 @@ public class zzaxw extends IOException
         super(s);
     }
     
-    static zzaxw xA() {
-        return new zzaxw("CodedInputStream encountered a malformed varint.");
-    }
-    
-    static zzaxw xu() {
+    static zzaxw xt() {
         return new zzaxw("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
     }
     
-    static zzaxw xv() {
+    static zzaxw xu() {
         return new zzaxw("Protocol message end-group tag did not match expected tag.");
     }
     
-    static zzaxw xw() {
+    static zzaxw xv() {
         return new zzaxw("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
     }
     
-    static zzaxw xx() {
+    static zzaxw xw() {
         return new zzaxw("Protocol message contained an invalid tag (zero).");
     }
     
-    static zzaxw xy() {
+    static zzaxw xx() {
         return new zzaxw("Protocol message tag had invalid wire type.");
     }
     
-    static zzaxw xz() {
+    static zzaxw xy() {
         return new zzaxw("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either than the input has been truncated or that an embedded message misreported its own length.");
+    }
+    
+    static zzaxw xz() {
+        return new zzaxw("CodedInputStream encountered a malformed varint.");
     }
 }

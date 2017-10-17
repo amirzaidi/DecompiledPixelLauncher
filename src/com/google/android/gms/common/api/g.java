@@ -4,11 +4,35 @@
 
 package com.google.android.gms.common.api;
 
-import android.os.Bundle;
+import android.content.Intent;
+import com.google.android.gms.common.internal.c;
+import android.os.IBinder;
+import java.util.Set;
+import com.google.android.gms.common.internal.zzq;
+import java.io.PrintWriter;
+import java.io.FileDescriptor;
 
-public interface g
+public interface g extends n
 {
-    void dR(final int p0);
+    void dump(final String p0, final FileDescriptor p1, final PrintWriter p2, final String[] p3);
     
-    void dS(final Bundle p0);
+    boolean gG();
+    
+    boolean gH();
+    
+    void gI(final zzq p0, final Set p1);
+    
+    void gJ();
+    
+    IBinder gK();
+    
+    void gL(final c p0);
+    
+    Intent gM();
+    
+    boolean gN();
+    
+    boolean gO();
+    
+    boolean gP();
 }

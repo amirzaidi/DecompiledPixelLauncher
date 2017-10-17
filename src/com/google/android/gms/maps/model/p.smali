@@ -14,55 +14,55 @@
     return-void
 .end method
 
-.method static JW(Lcom/google/android/gms/maps/model/CameraPosition;Landroid/os/Parcel;I)V
+.method static KP(Lcom/google/android/gms/maps/model/CameraPosition;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/CameraPosition;->Ke()I
+    invoke-virtual {p0}, Lcom/google/android/gms/maps/model/CameraPosition;->KX()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    iget-object v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->Fg:Lcom/google/android/gms/maps/model/LatLng;
+    iget-object v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->GL:Lcom/google/android/gms/maps/model/LatLng;
 
     const/4 v2, 0x0
 
     const/4 v3, 0x2
 
-    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->eW(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
+    invoke-static {p1, v3, v1, p2, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->hK(Landroid/os/Parcel;ILandroid/os/Parcelable;IZ)V
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->Fh:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->GM:F
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->Fe:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->GJ:F
 
     const/4 v2, 0x4
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->Fi:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/CameraPosition;->GN:F
 
     const/4 v2, 0x5
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fs(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->ig(Landroid/os/Parcel;IF)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public JV(I)[Lcom/google/android/gms/maps/model/CameraPosition;
+.method public KO(I)[Lcom/google/android/gms/maps/model/CameraPosition;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/maps/model/CameraPosition;
@@ -70,12 +70,12 @@
     return-object v0
 .end method
 
-.method public JX(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/CameraPosition;
+.method public KQ(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/CameraPosition;
     .locals 8
 
     const/4 v5, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v6
 
@@ -107,22 +107,22 @@
     return-object v0
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v7
 
     packed-switch v7, :pswitch_data_0
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -131,7 +131,7 @@
     :pswitch_1
     sget-object v2, Lcom/google/android/gms/maps/model/LatLng;->CREATOR:Lcom/google/android/gms/maps/model/k;
 
-    invoke-static {p1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->fW(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {p1, v0, v2}, Lcom/google/android/gms/common/internal/safeparcel/b;->iK(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
     move-result-object v0
 
@@ -142,21 +142,21 @@
     goto :goto_0
 
     :pswitch_2
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v3
 
     goto :goto_0
 
     :pswitch_3
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v4
 
     goto :goto_0
 
     :pswitch_4
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->gj(Landroid/os/Parcel;I)F
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iX(Landroid/os/Parcel;I)F
 
     move-result v5
 
@@ -202,7 +202,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/p;->JX(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/CameraPosition;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/p;->KQ(Landroid/os/Parcel;)Lcom/google/android/gms/maps/model/CameraPosition;
 
     move-result-object v0
 
@@ -212,7 +212,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/p;->JV(I)[Lcom/google/android/gms/maps/model/CameraPosition;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/maps/model/p;->KO(I)[Lcom/google/android/gms/maps/model/CameraPosition;
 
     move-result-object v0
 

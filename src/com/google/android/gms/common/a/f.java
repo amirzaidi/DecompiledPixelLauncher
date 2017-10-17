@@ -8,13 +8,13 @@ import android.os.Binder;
 
 public class f
 {
-    private static String hw;
+    private static String ko;
     
     static {
-        f.hw = null;
+        f.ko = null;
     }
     
-    private static String jB(final int p0) {
+    private static String mp(final int p0) {
         // 
         // This method could not be decompiled.
         // 
@@ -199,7 +199,7 @@ public class f
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    public static String jC() {
-        return jB(Binder.getCallingPid());
+    public static String mq() {
+        return mp(Binder.getCallingPid());
     }
 }

@@ -1,242 +1,146 @@
-.class public final Lcom/google/android/gms/internal/ad;
-.super Lcom/google/android/gms/internal/ba;
+.class Lcom/google/android/gms/internal/ad;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public rx:J
+.field public final rR:J
 
-.field public ry:J
+.field public final rS:J
 
-.field public type:I
+.field public final rT:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;JJ)V
     .locals 0
 
-    invoke-direct {p0}, Lcom/google/android/gms/internal/ba;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/ad;->tM()Lcom/google/android/gms/internal/ad;
+    iput-object p1, p0, Lcom/google/android/gms/internal/ad;->rT:Ljava/lang/String;
+
+    iput-wide p2, p0, Lcom/google/android/gms/internal/ad;->rS:J
+
+    iput-wide p4, p0, Lcom/google/android/gms/internal/ad;->rR:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected computeSerializedSize()I
-    .locals 8
+.method public equals(Ljava/lang/Object;)Z
+    .locals 6
 
-    const-wide/16 v6, 0x0
+    const/4 v0, 0x1
 
-    const/4 v4, 0x3
+    const/4 v1, 0x0
 
-    invoke-super {p0}, Lcom/google/android/gms/internal/ba;->computeSerializedSize()I
+    if-eq p1, p0, :cond_2
 
-    move-result v0
+    instance-of v2, p1, Lcom/google/android/gms/internal/ad;
 
-    iget v1, p0, Lcom/google/android/gms/internal/ad;->type:I
+    if-eqz v2, :cond_3
 
-    if-ne v1, v4, :cond_2
+    check-cast p1, Lcom/google/android/gms/internal/ad;
 
-    :goto_0
-    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->ry:J
+    iget-object v2, p0, Lcom/google/android/gms/internal/ad;->rT:Ljava/lang/String;
 
-    cmp-long v1, v2, v6
+    iget-object v3, p1, Lcom/google/android/gms/internal/ad;->rT:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->ry:J
+    move-result v2
 
-    const/4 v1, 0x2
-
-    invoke-static {v1, v2, v3}, Lcom/google/android/gms/internal/aV;->wv(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
+    if-nez v2, :cond_4
 
     :cond_0
-    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->rx:J
-
-    cmp-long v1, v2, v6
-
-    if-eqz v1, :cond_1
-
-    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->rx:J
-
-    invoke-static {v4, v2, v3}, Lcom/google/android/gms/internal/aV;->wv(IJ)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
+    :goto_0
+    move v0, v1
 
     :cond_1
     return v0
 
     :cond_2
-    iget v1, p0, Lcom/google/android/gms/internal/ad;->type:I
+    return v0
 
-    const/4 v2, 0x1
+    :cond_3
+    return v1
 
-    invoke-static {v2, v1}, Lcom/google/android/gms/internal/aV;->wn(II)I
+    :cond_4
+    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->rS:J
 
-    move-result v1
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    add-int/2addr v0, v1
+    move-result-object v2
 
-    goto :goto_0
-.end method
+    iget-wide v4, p1, Lcom/google/android/gms/internal/ad;->rS:J
 
-.method public sa(Lcom/google/android/gms/internal/aV;)V
-    .locals 6
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const-wide/16 v4, 0x0
+    move-result-object v3
 
-    const/4 v3, 0x3
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget v0, p0, Lcom/google/android/gms/internal/ad;->type:I
+    move-result v2
 
-    if-ne v0, v3, :cond_2
+    if-eqz v2, :cond_0
 
-    :goto_0
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ad;->ry:J
+    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->rR:J
 
-    cmp-long v0, v0, v4
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    if-eqz v0, :cond_0
+    move-result-object v2
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ad;->ry:J
+    iget-wide v4, p1, Lcom/google/android/gms/internal/ad;->rR:J
 
-    const/4 v2, 0x2
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {p1, v2, v0, v1}, Lcom/google/android/gms/internal/aV;->vY(IJ)V
+    move-result-object v3
 
-    :cond_0
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ad;->rx:J
+    invoke-static {v2, v3}, Lcom/google/android/gms/common/internal/u;->kv(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    cmp-long v0, v0, v4
+    move-result v2
 
-    if-eqz v0, :cond_1
-
-    iget-wide v0, p0, Lcom/google/android/gms/internal/ad;->rx:J
-
-    invoke-virtual {p1, v3, v0, v1}, Lcom/google/android/gms/internal/aV;->vY(IJ)V
-
-    :cond_1
-    invoke-super {p0, p1}, Lcom/google/android/gms/internal/ba;->sa(Lcom/google/android/gms/internal/aV;)V
-
-    return-void
-
-    :cond_2
-    iget v0, p0, Lcom/google/android/gms/internal/ad;->type:I
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/android/gms/internal/aV;->vX(II)V
+    if-nez v2, :cond_1
 
     goto :goto_0
 .end method
 
-.method public synthetic sc(Lcom/google/android/gms/internal/be;)Lcom/google/android/gms/internal/aI;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/ad;->tN(Lcom/google/android/gms/internal/be;)Lcom/google/android/gms/internal/ad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public tM()Lcom/google/android/gms/internal/ad;
+.method public hashCode()I
     .locals 4
-
-    const-wide/16 v2, 0x0
 
     const/4 v0, 0x3
 
-    iput v0, p0, Lcom/google/android/gms/internal/ad;->type:I
+    new-array v0, v0, [Ljava/lang/Object;
 
-    iput-wide v2, p0, Lcom/google/android/gms/internal/ad;->ry:J
+    iget-object v1, p0, Lcom/google/android/gms/internal/ad;->rT:Ljava/lang/String;
 
-    iput-wide v2, p0, Lcom/google/android/gms/internal/ad;->rx:J
+    const/4 v2, 0x0
 
-    const/4 v0, 0x0
+    aput-object v1, v0, v2
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/ad;->tt:Lcom/google/android/gms/internal/aR;
+    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->rS:J
 
-    const/4 v0, -0x1
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iput v0, p0, Lcom/google/android/gms/internal/ad;->sB:I
+    move-result-object v1
 
-    return-object p0
-.end method
+    const/4 v2, 0x1
 
-.method public tN(Lcom/google/android/gms/internal/be;)Lcom/google/android/gms/internal/ad;
-    .locals 2
+    aput-object v1, v0, v2
 
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xG()I
+    iget-wide v2, p0, Lcom/google/android/gms/internal/ad;->rR:J
 
-    move-result v0
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sparse-switch v0, :sswitch_data_0
+    move-result-object v1
 
-    invoke-super {p0, p1, v0}, Lcom/google/android/gms/internal/ba;->xt(Lcom/google/android/gms/internal/be;I)Z
+    const/4 v2, 0x2
 
-    move-result v0
+    aput-object v1, v0, v2
 
-    if-nez v0, :cond_0
-
-    return-object p0
-
-    :sswitch_0
-    return-object p0
-
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xF()I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_0
-
-    :pswitch_0
-    iput v0, p0, Lcom/google/android/gms/internal/ad;->type:I
-
-    goto :goto_0
-
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xX()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ad;->ry:J
-
-    goto :goto_0
-
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/android/gms/internal/be;->xX()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/android/gms/internal/ad;->rx:J
-
-    goto :goto_0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0x8 -> :sswitch_1
-        0x10 -> :sswitch_2
-        0x18 -> :sswitch_3
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+    return v0
 .end method

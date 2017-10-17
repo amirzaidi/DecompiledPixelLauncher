@@ -16,36 +16,40 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class Configuration extends AbstractSafeParcelable implements Comparable
 {
     public static final Parcelable$Creator CREATOR;
-    public final int lK;
-    public final Flag[] lL;
-    final int lM;
-    public final String[] lN;
-    public final Map lO;
+    public final int xS;
+    public final Flag[] xT;
+    final int xU;
+    public final String[] xV;
+    public final Map xW;
     
     static {
-        CREATOR = (Parcelable$Creator)new n();
+        CREATOR = (Parcelable$Creator)new m();
     }
     
-    Configuration(final int lm, final int lk, final Flag[] ll, final String[] ln) {
-        this.lM = lm;
-        this.lK = lk;
-        this.lL = ll;
-        this.lO = new TreeMap();
-        for (int length = ll.length, i = 0; i < length; ++i) {
-            final Flag flag = ll[i];
-            this.lO.put(flag.name, flag);
+    Configuration(final int xu, final int xs, final Flag[] xt, final String[] xv) {
+        this.xU = xu;
+        this.xS = xs;
+        this.xT = xt;
+        this.xW = new TreeMap();
+        for (int length = xt.length, i = 0; i < length; ++i) {
+            final Flag flag = xt[i];
+            this.xW.put(flag.name, flag);
         }
-        this.lN = ln;
-        if (this.lN != null) {
-            Arrays.sort(this.lN);
+        this.xV = xv;
+        if (this.xV != null) {
+            Arrays.sort(this.xV);
         }
+    }
+    
+    public int CM(final Configuration configuration) {
+        return this.xS - configuration.xS;
     }
     
     public boolean equals(final Object o) {
         boolean b = false;
         if (o != null && o instanceof Configuration) {
             final Configuration configuration = (Configuration)o;
-            if (this.lM == configuration.lM && this.lK == configuration.lK && u.hH(this.lO, configuration.lO) && Arrays.equals(this.lN, configuration.lN)) {
+            if (this.xU == configuration.xU && this.xS == configuration.xS && u.kv(this.xW, configuration.xW) && Arrays.equals(this.xV, configuration.xV)) {
                 b = true;
             }
             return b;
@@ -53,18 +57,14 @@ public class Configuration extends AbstractSafeParcelable implements Comparable
         return false;
     }
     
-    public int pc(final Configuration configuration) {
-        return this.lK - configuration.lK;
-    }
-    
     public String toString() {
         final StringBuilder sb = new StringBuilder("Configuration(");
-        sb.append(this.lM);
+        sb.append(this.xU);
         sb.append(", ");
-        sb.append(this.lK);
+        sb.append(this.xS);
         sb.append(", ");
         sb.append("(");
-        final Iterator<Flag> iterator = this.lO.values().iterator();
+        final Iterator<Flag> iterator = this.xW.values().iterator();
         while (iterator.hasNext()) {
             sb.append(iterator.next());
             sb.append(", ");
@@ -72,13 +72,13 @@ public class Configuration extends AbstractSafeParcelable implements Comparable
         sb.append(")");
         sb.append(", ");
         sb.append("(");
-        if (this.lN == null) {
+        if (this.xV == null) {
             sb.append("null");
         }
         else {
-            final String[] ln = this.lN;
-            for (int length = ln.length, i = 0; i < length; ++i) {
-                sb.append(ln[i]);
+            final String[] xv = this.xV;
+            for (int length = xv.length, i = 0; i < length; ++i) {
+                sb.append(xv[i]);
                 sb.append(", ");
             }
         }
@@ -88,6 +88,6 @@ public class Configuration extends AbstractSafeParcelable implements Comparable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        n.pn(this, parcel, n);
+        m.Dh(this, parcel, n);
     }
 }

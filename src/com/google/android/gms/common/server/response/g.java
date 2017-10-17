@@ -14,15 +14,15 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 import java.util.Iterator;
 import com.google.android.gms.common.a.b;
 import com.google.android.gms.common.a.e;
+import java.util.Map;
 import com.google.android.gms.common.internal.l;
 import java.util.HashMap;
-import java.util.Map;
 import com.google.android.gms.common.a.h;
 import java.util.ArrayList;
 
 public abstract class g
 {
-    private void ld(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final ArrayList list) {
+    private void nR(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final ArrayList list) {
         int i = 0;
         sb.append("[");
         while (i < list.size()) {
@@ -31,94 +31,92 @@ public abstract class g
             }
             final Object value = list.get(i);
             if (value != null) {
-                this.le(sb, fastJsonResponse$Field, value);
+                this.nS(sb, fastJsonResponse$Field, value);
             }
             ++i;
         }
         sb.append("]");
     }
     
-    private void le(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Object o) {
-        if (fastJsonResponse$Field.kt() != 11) {
-            if (fastJsonResponse$Field.kt() != 7) {
+    private void nS(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Object o) {
+        if (fastJsonResponse$Field.nh() != 11) {
+            if (fastJsonResponse$Field.nh() != 7) {
                 sb.append(o);
             }
             else {
                 sb.append("\"");
-                sb.append(h.jF((String)o));
+                sb.append(h.mt((String)o));
                 sb.append("\"");
             }
         }
         else {
-            sb.append(fastJsonResponse$Field.ks().cast(o).toString());
+            sb.append(fastJsonResponse$Field.ng().cast(o).toString());
         }
     }
     
-    public abstract Map kB();
+    protected abstract boolean mR(final String p0);
     
-    public HashMap kX() {
+    protected abstract Object mS(final String p0);
+    
+    public HashMap nL() {
         return null;
     }
     
-    protected boolean kY(final String s) {
+    protected boolean nM(final String s) {
         throw new UnsupportedOperationException("Concrete type arrays not supported");
     }
     
-    public HashMap kZ() {
+    public HashMap nN() {
         return null;
     }
     
-    protected abstract boolean kd(final String p0);
-    
-    protected abstract Object ke(final String p0);
-    
-    protected boolean la(final FastJsonResponse$Field fastJsonResponse$Field) {
-        if (fastJsonResponse$Field.kf() != 11) {
-            return this.kd(fastJsonResponse$Field.kn());
+    protected boolean nO(final FastJsonResponse$Field fastJsonResponse$Field) {
+        if (fastJsonResponse$Field.mT() != 11) {
+            return this.mR(fastJsonResponse$Field.nb());
         }
-        if (!fastJsonResponse$Field.kh()) {
-            return this.lf(fastJsonResponse$Field.kn());
+        if (!fastJsonResponse$Field.mV()) {
+            return this.nT(fastJsonResponse$Field.nb());
         }
-        return this.kY(fastJsonResponse$Field.kn());
+        return this.nM(fastJsonResponse$Field.nb());
     }
     
-    protected Object lb(final FastJsonResponse$Field fastJsonResponse$Field, final Object o) {
-        if (fastJsonResponse$Field.hP == null) {
+    protected Object nP(final FastJsonResponse$Field fastJsonResponse$Field, final Object o) {
+        if (fastJsonResponse$Field.kH == null) {
             return o;
         }
-        return fastJsonResponse$Field.kl(o);
+        return fastJsonResponse$Field.mZ(o);
     }
     
-    protected Object lc(final FastJsonResponse$Field fastJsonResponse$Field) {
+    protected Object nQ(final FastJsonResponse$Field fastJsonResponse$Field) {
         final int n = 1;
-        final String kn = fastJsonResponse$Field.kn();
-        if (fastJsonResponse$Field.ks() == null) {
-            return this.ke(fastJsonResponse$Field.kn());
+        final String nb = fastJsonResponse$Field.nb();
+        if (fastJsonResponse$Field.ng() == null) {
+            return this.mS(fastJsonResponse$Field.nb());
         }
         Label_0267: {
-            if (this.ke(fastJsonResponse$Field.kn()) == null) {
+            if (this.mS(fastJsonResponse$Field.nb()) == null) {
                 break Label_0267;
             }
             boolean b = false;
             final Object[] array = new Object[n];
-            array[0] = fastJsonResponse$Field.kn();
-            l.hw(b, "Concrete field shouldn't be value object: %s", array);
+            array[0] = fastJsonResponse$Field.nb();
+            l.kk(b, "Concrete field shouldn't be value object: %s", array);
             Label_0273: {
-                if (fastJsonResponse$Field.kh()) {
+                if (fastJsonResponse$Field.mV()) {
                     break Label_0273;
                 }
-                HashMap hashMap = this.kZ();
+                HashMap hashMap = this.nN();
                 while (true) {
                     Label_0282: {
                         if (hashMap != null) {
                             break Label_0282;
                         }
-                        final String s = kn;
+                        final String s = nb;
                         try {
                             final char char1 = s.charAt(0);
                             try {
                                 final char upperCase = Character.toUpperCase(char1);
-                                final String substring = kn.substring(1);
+                                final String substring = nb.substring(1);
                                 try {
                                     final String value = String.valueOf(substring);
                                     try {
@@ -130,8 +128,8 @@ public abstract class g
                                                     final String string = append.toString();
                                                     try {
                                                         return this.getClass().getMethod(string, (Class<?>[])new Class[0]).invoke(this, new Object[0]);
-                                                        return hashMap.get(kn);
-                                                        hashMap = this.kX();
+                                                        return hashMap.get(nb);
+                                                        hashMap = this.nL();
                                                         continue;
                                                         b = (n != 0);
                                                     }
@@ -159,17 +157,19 @@ public abstract class g
         }
     }
     
-    protected boolean lf(final String s) {
+    protected boolean nT(final String s) {
         throw new UnsupportedOperationException("Concrete types not supported");
     }
     
+    public abstract Map np();
+    
     public String toString() {
-        final Map kb = this.kB();
+        final Map np = this.np();
         final StringBuilder sb = new StringBuilder(100);
-        for (final String s : kb.keySet()) {
-            final FastJsonResponse$Field fastJsonResponse$Field = (FastJsonResponse$Field)kb.get(s);
-            if (this.la(fastJsonResponse$Field)) {
-                final Object lb = this.lb(fastJsonResponse$Field, this.lc(fastJsonResponse$Field));
+        for (final String s : np.keySet()) {
+            final FastJsonResponse$Field fastJsonResponse$Field = (FastJsonResponse$Field)np.get(s);
+            if (this.nO(fastJsonResponse$Field)) {
+                final Object np2 = this.nP(fastJsonResponse$Field, this.nQ(fastJsonResponse$Field));
                 if (sb.length() != 0) {
                     sb.append(",");
                 }
@@ -177,26 +177,26 @@ public abstract class g
                     sb.append("{");
                 }
                 sb.append("\"").append(s).append("\":");
-                if (lb != null) {
-                    switch (fastJsonResponse$Field.kf()) {
+                if (np2 != null) {
+                    switch (fastJsonResponse$Field.mT()) {
                         default: {
-                            if (!fastJsonResponse$Field.ko()) {
-                                this.le(sb, fastJsonResponse$Field, lb);
+                            if (!fastJsonResponse$Field.nc()) {
+                                this.nS(sb, fastJsonResponse$Field, np2);
                                 continue;
                             }
-                            this.ld(sb, fastJsonResponse$Field, (ArrayList)lb);
+                            this.nR(sb, fastJsonResponse$Field, (ArrayList)np2);
                             continue;
                         }
                         case 8: {
-                            sb.append("\"").append(e.jz((byte[])lb)).append("\"");
+                            sb.append("\"").append(e.mn((byte[])np2)).append("\"");
                             continue;
                         }
                         case 9: {
-                            sb.append("\"").append(e.jA((byte[])lb)).append("\"");
+                            sb.append("\"").append(e.mo((byte[])np2)).append("\"");
                             continue;
                         }
                         case 10: {
-                            b.ju(sb, (HashMap)lb);
+                            b.mi(sb, (HashMap)np2);
                             continue;
                         }
                     }

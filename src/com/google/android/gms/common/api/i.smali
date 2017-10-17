@@ -1,40 +1,41 @@
-.class public interface abstract Lcom/google/android/gms/common/api/i;
+.class public abstract Lcom/google/android/gms/common/api/i;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcom/google/android/gms/common/api/o;
+
+# static fields
+.field private static final hg:Ljava/lang/Object;
+
+.field private static final hh:Ljava/util/Map;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/common/api/i;->hh:Ljava/util/Map;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lcom/google/android/gms/common/api/i;->hg:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract dZ()Z
-.end method
-
-.method public abstract dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-.end method
-
-.method public abstract ea()Z
-.end method
-
-.method public abstract eb(Lcom/google/android/gms/common/internal/zzq;Ljava/util/Set;)V
-.end method
-
-.method public abstract ec()V
-.end method
-
-.method public abstract ed()Landroid/os/IBinder;
-.end method
-
-.method public abstract ee(Lcom/google/android/gms/common/internal/c;)V
-.end method
-
-.method public abstract ef()Landroid/content/Intent;
-.end method
-
-.method public abstract eg()Z
-.end method
-
-.method public abstract eh()Z
-.end method
-
-.method public abstract ei()Z
+.method public abstract gQ(I)V
 .end method

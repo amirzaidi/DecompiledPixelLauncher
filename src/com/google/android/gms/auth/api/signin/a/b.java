@@ -6,19 +6,19 @@ package com.google.android.gms.auth.api.signin.a;
 
 public class b
 {
-    static int Jd;
-    private int Je;
+    static int KI;
+    private int KJ;
     
     static {
-        b.Jd = 31;
+        b.KI = 31;
     }
     
     public b() {
-        this.Je = 1;
+        this.KJ = 1;
     }
     
-    public b Pl(final Object o) {
-        final int n = this.Je * b.Jd;
+    public b Qe(final Object o) {
+        final int n = this.KJ * b.KI;
         int hashCode;
         if (o != null) {
             hashCode = o.hashCode();
@@ -26,21 +26,21 @@ public class b
         else {
             hashCode = 0;
         }
-        this.Je = hashCode + n;
+        this.KJ = hashCode + n;
         return this;
     }
     
-    public b Pm(final boolean b) {
+    public b Qf(final boolean b) {
         int n = 0;
-        final int n2 = b.Jd * this.Je;
+        final int n2 = b.KI * this.KJ;
         if (b) {
             n = 1;
         }
-        this.Je = n + n2;
+        this.KJ = n + n2;
         return this;
     }
     
-    public int Pn() {
-        return this.Je;
+    public int Qg() {
+        return this.KJ;
     }
 }

@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private fH:Landroid/os/IBinder;
+.field private iz:Landroid/os/IBinder;
 
 
 # direct methods
@@ -15,7 +15,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/r;->fH:Landroid/os/IBinder;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/r;->iz:Landroid/os/IBinder;
 
     return-void
 .end method
@@ -25,7 +25,7 @@
 .method public asBinder()Landroid/os/IBinder;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->fH:Landroid/os/IBinder;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->iz:Landroid/os/IBinder;
 
     return-object v0
 .end method
@@ -46,7 +46,7 @@
 
     invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->fH:Landroid/os/IBinder;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/r;->iz:Landroid/os/IBinder;
 
     const/4 v3, 0x2
 

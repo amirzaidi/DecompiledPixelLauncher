@@ -14,47 +14,47 @@ import android.os.Parcelable$Creator;
 
 public class l implements Parcelable$Creator
 {
-    static void Hr(final GeofencingRequest geofencingRequest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fc(parcel, 1, geofencingRequest.HY(), false);
-        a.fj(parcel, 2, geofencingRequest.HX());
-        a.fj(parcel, 1000, geofencingRequest.HZ());
-        a.fe(parcel, ey);
+    static void Ik(final GeofencingRequest geofencingRequest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hQ(parcel, 1, geofencingRequest.IR(), false);
+        a.hX(parcel, 2, geofencingRequest.IQ());
+        a.hX(parcel, 1000, geofencingRequest.IS());
+        a.hS(parcel, hm);
     }
     
-    public GeofencingRequest[] Hs(final int n) {
+    public GeofencingRequest[] Il(final int n) {
         return new GeofencingRequest[n];
     }
     
-    public GeofencingRequest Ht(final Parcel parcel) {
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        List fz = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public GeofencingRequest Im(final Parcel parcel) {
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        List in = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fz = b.fZ(parcel, fs, (Parcelable$Creator)ParcelableGeofence.CREATOR);
+                    in = b.iN(parcel, ig, (Parcelable$Creator)ParcelableGeofence.CREATOR);
                     continue;
                 }
                 case 2: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new GeofencingRequest(fn2, fz, fn);
+        if (parcel.dataPosition() == ix) {
+            return new GeofencingRequest(ib2, in, ib);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

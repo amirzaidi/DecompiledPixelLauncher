@@ -13,40 +13,40 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
 public class LocationRequestInternal extends AbstractSafeParcelable
 {
-    static final List AV;
     public static final s CREATOR;
-    boolean AP;
-    LocationRequest AQ;
-    String AR;
-    boolean AS;
-    private final int AT;
-    boolean AU;
-    List AW;
+    static final List Cz;
+    List CA;
+    boolean Ct;
+    LocationRequest Cu;
+    String Cv;
+    boolean Cw;
+    private final int Cx;
+    boolean Cy;
     
     static {
-        AV = Collections.emptyList();
+        Cz = Collections.emptyList();
         CREATOR = new s();
     }
     
-    LocationRequestInternal(final int at, final LocationRequest aq, final boolean ap, final List aw, final String ar, final boolean as, final boolean au) {
-        this.AT = at;
-        this.AQ = aq;
-        this.AP = ap;
-        this.AW = aw;
-        this.AR = ar;
-        this.AS = as;
-        this.AU = au;
+    LocationRequestInternal(final int cx, final LocationRequest cu, final boolean ct, final List ca, final String cv, final boolean cw, final boolean cy) {
+        this.Cx = cx;
+        this.Cu = cu;
+        this.Ct = ct;
+        this.CA = ca;
+        this.Cv = cv;
+        this.Cw = cw;
+        this.Cy = cy;
     }
     
-    int Fo() {
-        return this.AT;
+    int Gh() {
+        return this.Cx;
     }
     
     public boolean equals(final Object o) {
         boolean b = false;
         if (o instanceof LocationRequestInternal) {
             final LocationRequestInternal locationRequestInternal = (LocationRequestInternal)o;
-            if (u.hH(this.AQ, locationRequestInternal.AQ) && this.AP == locationRequestInternal.AP && this.AS == locationRequestInternal.AS && u.hH(this.AW, locationRequestInternal.AW) && this.AU == locationRequestInternal.AU) {
+            if (u.kv(this.Cu, locationRequestInternal.Cu) && this.Ct == locationRequestInternal.Ct && this.Cw == locationRequestInternal.Cw && u.kv(this.CA, locationRequestInternal.CA) && this.Cy == locationRequestInternal.Cy) {
                 b = true;
             }
             return b;
@@ -55,23 +55,23 @@ public class LocationRequestInternal extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return this.AQ.hashCode();
+        return this.Cu.hashCode();
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        sb.append(this.AQ.toString());
-        if (this.AR != null) {
-            sb.append(" tag=").append(this.AR);
+        sb.append(this.Cu.toString());
+        if (this.Cv != null) {
+            sb.append(" tag=").append(this.Cv);
         }
-        sb.append(" trigger=").append(this.AP);
-        sb.append(" hideAppOps=").append(this.AS);
-        sb.append(" clients=").append(this.AW);
-        sb.append(" forceCoarseLocation=").append(this.AU);
+        sb.append(" trigger=").append(this.Ct);
+        sb.append(" hideAppOps=").append(this.Cw);
+        sb.append(" clients=").append(this.CA);
+        sb.append(" forceCoarseLocation=").append(this.Cy);
         return sb.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        s.FO(this, parcel, n);
+        s.GH(this, parcel, n);
     }
 }

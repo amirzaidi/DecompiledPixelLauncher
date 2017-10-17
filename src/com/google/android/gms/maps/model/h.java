@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void Jg(final StreetViewPanoramaLink streetViewPanoramaLink, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, streetViewPanoramaLink.IF());
-        a.fo(parcel, 2, streetViewPanoramaLink.DM, false);
-        a.fs(parcel, 3, streetViewPanoramaLink.DN);
-        a.fe(parcel, ey);
+    static void Ka(final StreetViewPanoramaLink streetViewPanoramaLink, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, streetViewPanoramaLink.Jy());
+        a.ic(parcel, 2, streetViewPanoramaLink.Fr, false);
+        a.ig(parcel, 3, streetViewPanoramaLink.Fs);
+        a.hS(parcel, hm);
     }
     
-    public StreetViewPanoramaLink[] Je(final int n) {
+    public StreetViewPanoramaLink[] JY(final int n) {
         return new StreetViewPanoramaLink[n];
     }
     
-    public StreetViewPanoramaLink Jf(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        float gj = 0.0f;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public StreetViewPanoramaLink JZ(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        float ix2 = 0.0f;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new StreetViewPanoramaLink(fn, fq, gj);
+        if (parcel.dataPosition() == ix) {
+            return new StreetViewPanoramaLink(ib, ie, ix2);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

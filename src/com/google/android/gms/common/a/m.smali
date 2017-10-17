@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static hB:Lcom/google/android/gms/common/a/m;
+.field private static kt:Lcom/google/android/gms/common/a/m;
 
 
 # direct methods
@@ -18,7 +18,7 @@
     return-void
 .end method
 
-.method public static declared-synchronized jR()Lcom/google/android/gms/common/a/a;
+.method public static declared-synchronized mF()Lcom/google/android/gms/common/a/a;
     .locals 2
 
     const-class v1, Lcom/google/android/gms/common/a/m;
@@ -26,12 +26,12 @@
     monitor-enter v1
 
     :try_start_0
-    sget-object v0, Lcom/google/android/gms/common/a/m;->hB:Lcom/google/android/gms/common/a/m;
+    sget-object v0, Lcom/google/android/gms/common/a/m;->kt:Lcom/google/android/gms/common/a/m;
 
     if-eqz v0, :cond_0
 
     :goto_0
-    sget-object v0, Lcom/google/android/gms/common/a/m;->hB:Lcom/google/android/gms/common/a/m;
+    sget-object v0, Lcom/google/android/gms/common/a/m;->kt:Lcom/google/android/gms/common/a/m;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -45,7 +45,7 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/common/a/m;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/a/m;->hB:Lcom/google/android/gms/common/a/m;
+    sput-object v0, Lcom/google/android/gms/common/a/m;->kt:Lcom/google/android/gms/common/a/m;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public js()J
+.method public mg()J
     .locals 2
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -71,7 +71,7 @@
     return-wide v0
 .end method
 
-.method public jt()J
+.method public mh()J
     .locals 2
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J

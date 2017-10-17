@@ -13,58 +13,58 @@ import android.os.Parcelable$Creator;
 
 public class r implements Parcelable$Creator
 {
-    static void Kn(final PointOfInterest pointOfInterest, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, pointOfInterest.JZ());
-        a.eW(parcel, 2, (Parcelable)pointOfInterest.EZ, n, false);
-        a.fo(parcel, 3, pointOfInterest.EY, false);
-        a.fo(parcel, 4, pointOfInterest.name, false);
-        a.fe(parcel, ey);
+    static void Lg(final PointOfInterest pointOfInterest, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, pointOfInterest.KS());
+        a.hK(parcel, 2, (Parcelable)pointOfInterest.GE, n, false);
+        a.ic(parcel, 3, pointOfInterest.GD, false);
+        a.ic(parcel, 4, pointOfInterest.name, false);
+        a.hS(parcel, hm);
     }
     
-    public PointOfInterest Kl(final Parcel parcel) {
+    public PointOfInterest Le(final Parcel parcel) {
         LatLng latLng = null;
-        final int fj = b.fJ(parcel);
-        String fq = null;
-        int fn = 0;
-        String fq2 = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        final int ix = b.ix(parcel);
+        String ie = null;
+        int ib = 0;
+        String ie2 = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     break;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     break;
                 }
                 case 2: {
-                    latLng = (LatLng)b.fW(parcel, fs, (Parcelable$Creator)LatLng.CREATOR);
+                    latLng = (LatLng)b.iK(parcel, ig, (Parcelable$Creator)LatLng.CREATOR);
                     break;
                 }
                 case 3: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     break;
                 }
                 case 4: {
-                    fq2 = b.fQ(parcel, fs);
+                    ie2 = b.iE(parcel, ig);
                     break;
                 }
             }
-            final String s = fq2;
-            final String s2 = fq;
+            final String s = ie2;
+            final String s2 = ie;
             latLng = latLng;
-            fq = s2;
-            fq2 = s;
+            ie = s2;
+            ie2 = s;
         }
-        if (parcel.dataPosition() == fj) {
-            return new PointOfInterest(fn, latLng, fq, fq2);
+        if (parcel.dataPosition() == ix) {
+            return new PointOfInterest(ib, latLng, ie, ie2);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public PointOfInterest[] Km(final int n) {
+    public PointOfInterest[] Lf(final int n) {
         return new PointOfInterest[n];
     }
 }

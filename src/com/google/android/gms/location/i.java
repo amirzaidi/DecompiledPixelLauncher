@@ -14,64 +14,64 @@ import android.os.Parcelable$Creator;
 
 public class i implements Parcelable$Creator
 {
-    static void Hm(final LocationSettingsResult locationSettingsResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.eW(parcel, 1, (Parcelable)locationSettingsResult.dr(), n, false);
-        a.eW(parcel, 2, (Parcelable)locationSettingsResult.Hu(), n, false);
-        a.fj(parcel, 1000, locationSettingsResult.Hv());
-        a.fe(parcel, ey);
+    static void If(final LocationSettingsResult locationSettingsResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hK(parcel, 1, (Parcelable)locationSettingsResult.gV(), n, false);
+        a.hK(parcel, 2, (Parcelable)locationSettingsResult.In(), n, false);
+        a.hX(parcel, 1000, locationSettingsResult.Io());
+        a.hS(parcel, hm);
     }
     
-    public LocationSettingsResult[] Hk(final int n) {
+    public LocationSettingsResult[] Id(final int n) {
         return new LocationSettingsResult[n];
     }
     
-    public LocationSettingsResult Hl(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
+    public LocationSettingsResult Ie(final Parcel parcel) {
+        final int ix = b.ix(parcel);
         Status status = null;
-        int fn = 0;
+        int ib = 0;
         LocationSettingsStates locationSettingsStates = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
             int n = 0;
             LocationSettingsStates locationSettingsStates2 = null;
             Status status4 = null;
             Label_0124: {
-                switch (b.ga(fs)) {
+                switch (b.iO(ig)) {
                     default: {
-                        b.fA(parcel, fs);
+                        b.io(parcel, ig);
                         break;
                     }
                     case 1: {
-                        final Status status2 = (Status)b.fW(parcel, fs, Status.CREATOR);
-                        n = fn;
+                        final Status status2 = (Status)b.iK(parcel, ig, Status.CREATOR);
+                        n = ib;
                         final Status status3 = status2;
                         locationSettingsStates2 = locationSettingsStates;
                         status4 = status3;
                         break Label_0124;
                     }
                     case 2: {
-                        locationSettingsStates2 = (LocationSettingsStates)b.fW(parcel, fs, LocationSettingsStates.CREATOR);
+                        locationSettingsStates2 = (LocationSettingsStates)b.iK(parcel, ig, LocationSettingsStates.CREATOR);
                         status4 = status;
-                        n = fn;
+                        n = ib;
                         break Label_0124;
                     }
                     case 1000: {
-                        fn = b.fN(parcel, fs);
+                        ib = b.iB(parcel, ig);
                         break;
                     }
                 }
                 locationSettingsStates2 = locationSettingsStates;
                 status4 = status;
-                n = fn;
+                n = ib;
             }
-            fn = n;
+            ib = n;
             status = status4;
             locationSettingsStates = locationSettingsStates2;
         }
-        if (parcel.dataPosition() == fj) {
-            return new LocationSettingsResult(fn, status, locationSettingsStates);
+        if (parcel.dataPosition() == ix) {
+            return new LocationSettingsResult(ib, status, locationSettingsStates);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

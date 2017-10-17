@@ -14,60 +14,60 @@
     return-void
 .end method
 
-.method static Hp(Lcom/google/android/gms/location/SleepSegmentEvent;Landroid/os/Parcel;I)V
+.method static Ii(Lcom/google/android/gms/location/SleepSegmentEvent;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->Hj()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->Ic()J
 
     move-result-wide v2
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->Hh()J
+    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->Ia()J
 
     move-result-wide v2
 
     const/4 v1, 0x2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->fw(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/a;->ik(Landroid/os/Parcel;IJ)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->Hg()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->HZ()I
 
     move-result v1
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->Hi()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/SleepSegmentEvent;->Ib()I
 
     move-result v1
 
     const/16 v2, 0x3e8
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Ho(Landroid/os/Parcel;)Lcom/google/android/gms/location/SleepSegmentEvent;
+.method public Ih(Landroid/os/Parcel;)Lcom/google/android/gms/location/SleepSegmentEvent;
     .locals 9
 
     const-wide/16 v4, 0x0
 
     const/4 v6, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -95,43 +95,43 @@
     return-object v0
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v7
 
-    invoke-static {v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v8
 
     sparse-switch v8, :sswitch_data_0
 
-    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :sswitch_0
-    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v2
 
     goto :goto_0
 
     :sswitch_1
-    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->fL(Landroid/os/Parcel;I)J
+    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->iz(Landroid/os/Parcel;I)J
 
     move-result-wide v4
 
     goto :goto_0
 
     :sswitch_2
-    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v6
 
     goto :goto_0
 
     :sswitch_3
-    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v7}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -173,7 +173,7 @@
     .end sparse-switch
 .end method
 
-.method public Hq(I)[Lcom/google/android/gms/location/SleepSegmentEvent;
+.method public Ij(I)[Lcom/google/android/gms/location/SleepSegmentEvent;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/location/SleepSegmentEvent;
@@ -184,7 +184,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/k;->Ho(Landroid/os/Parcel;)Lcom/google/android/gms/location/SleepSegmentEvent;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/k;->Ih(Landroid/os/Parcel;)Lcom/google/android/gms/location/SleepSegmentEvent;
 
     move-result-object v0
 
@@ -194,7 +194,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/k;->Hq(I)[Lcom/google/android/gms/location/SleepSegmentEvent;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/k;->Ij(I)[Lcom/google/android/gms/location/SleepSegmentEvent;
 
     move-result-object v0
 

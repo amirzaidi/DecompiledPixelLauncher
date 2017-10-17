@@ -14,14 +14,14 @@
     return-void
 .end method
 
-.method static If(Lcom/google/android/gms/location/GestureRequest;Landroid/os/Parcel;I)V
+.method static IY(Lcom/google/android/gms/location/GestureRequest;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/GestureRequest;->HA()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/location/GestureRequest;->It()Ljava/util/List;
 
     move-result-object v1
 
@@ -29,24 +29,24 @@
 
     const/4 v3, 0x1
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->fb(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->hP(Landroid/os/Parcel;ILjava/util/List;Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/location/GestureRequest;->HB()I
+    invoke-virtual {p0}, Lcom/google/android/gms/location/GestureRequest;->Iu()I
 
     move-result v1
 
     const/16 v2, 0x3e8
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Id(I)[Lcom/google/android/gms/location/GestureRequest;
+.method public IW(I)[Lcom/google/android/gms/location/GestureRequest;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/location/GestureRequest;
@@ -54,10 +54,10 @@
     return-object v0
 .end method
 
-.method public Ie(Landroid/os/Parcel;)Lcom/google/android/gms/location/GestureRequest;
+.method public IX(Landroid/os/Parcel;)Lcom/google/android/gms/location/GestureRequest;
     .locals 5
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v2
 
@@ -85,29 +85,29 @@
     return-object v2
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v3
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v4
 
     sparse-switch v4, :sswitch_data_0
 
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :sswitch_0
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fH(Landroid/os/Parcel;I)Ljava/util/ArrayList;
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->iv(Landroid/os/Parcel;I)Ljava/util/ArrayList;
 
     move-result-object v0
 
     goto :goto_0
 
     :sswitch_1
-    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v3}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -152,7 +152,7 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/s;->Ie(Landroid/os/Parcel;)Lcom/google/android/gms/location/GestureRequest;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/s;->IX(Landroid/os/Parcel;)Lcom/google/android/gms/location/GestureRequest;
 
     move-result-object v0
 
@@ -162,7 +162,7 @@
 .method public synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/s;->Id(I)[Lcom/google/android/gms/location/GestureRequest;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/location/s;->IW(I)[Lcom/google/android/gms/location/GestureRequest;
 
     move-result-object v0
 

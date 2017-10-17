@@ -19,35 +19,35 @@ import android.content.ServiceConnection;
 
 public class z implements ServiceConnection
 {
-    final /* synthetic */ f gs;
+    final /* synthetic */ f jk;
     
-    public z(final f gs) {
-        this.gs = gs;
+    public z(final f jk) {
+        this.jk = jk;
     }
     
     public void onServiceConnected(final ComponentName componentName, final IBinder binder) {
-        final h fk = this.gs.fk;
-        synchronized (fk.fw) {
-            this.gs.fm = binder;
-            this.gs.fp = componentName;
-            final Iterator<ServiceConnection> iterator = this.gs.fo.iterator();
+        final h ic = this.jk.ic;
+        synchronized (ic.io) {
+            this.jk.ie = binder;
+            this.jk.ih = componentName;
+            final Iterator<ServiceConnection> iterator = this.jk.ig.iterator();
             while (iterator.hasNext()) {
                 iterator.next().onServiceConnected(componentName, binder);
             }
-            this.gs.mState = 1;
+            this.jk.mState = 1;
         }
     }
     
     public void onServiceDisconnected(final ComponentName componentName) {
-        final h fk = this.gs.fk;
-        synchronized (fk.fw) {
-            this.gs.fm = null;
-            this.gs.fp = componentName;
-            final Iterator<ServiceConnection> iterator = this.gs.fo.iterator();
+        final h ic = this.jk.ic;
+        synchronized (ic.io) {
+            this.jk.ie = null;
+            this.jk.ih = componentName;
+            final Iterator<ServiceConnection> iterator = this.jk.ig.iterator();
             while (iterator.hasNext()) {
                 iterator.next().onServiceDisconnected(componentName);
             }
-            this.gs.mState = 2;
+            this.jk.mState = 2;
         }
     }
 }

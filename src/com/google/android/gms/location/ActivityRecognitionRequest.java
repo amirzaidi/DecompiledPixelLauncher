@@ -12,63 +12,63 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ActivityRecognitionRequest extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private boolean Cf;
-    private long Cg;
-    private String Ch;
-    private WorkSource Ci;
-    private int[] Cj;
-    private String Ck;
-    private final int Cl;
-    private boolean Cm;
+    private boolean DK;
+    private long DL;
+    private String DM;
+    private WorkSource DN;
+    private int[] DO;
+    private String DP;
+    private final int DQ;
+    private boolean DR;
     
     static {
         CREATOR = (Parcelable$Creator)new q();
     }
     
-    ActivityRecognitionRequest(final int cl, final long cg, final boolean cf, final WorkSource ci, final String ck, final int[] cj, final boolean cm, final String ch) {
-        this.Cl = cl;
-        this.Cg = cg;
-        this.Cf = cf;
-        this.Ci = ci;
-        this.Ck = ck;
-        this.Cj = cj;
-        this.Cm = cm;
-        this.Ch = ch;
+    ActivityRecognitionRequest(final int dq, final long dl, final boolean dk, final WorkSource dn, final String dp, final int[] do1, final boolean dr, final String dm) {
+        this.DQ = dq;
+        this.DL = dl;
+        this.DK = dk;
+        this.DN = dn;
+        this.DP = dp;
+        this.DO = do1;
+        this.DR = dr;
+        this.DM = dm;
     }
     
-    public boolean GC() {
-        return this.Cm;
+    int HA() {
+        return this.DQ;
     }
     
-    public String GD() {
-        return this.Ch;
+    public int[] HB() {
+        return this.DO;
     }
     
-    public WorkSource GE() {
-        return this.Ci;
+    public boolean Hv() {
+        return this.DR;
     }
     
-    public long GF() {
-        return this.Cg;
+    public String Hw() {
+        return this.DM;
     }
     
-    public boolean GG() {
-        return this.Cf;
+    public WorkSource Hx() {
+        return this.DN;
     }
     
-    int GH() {
-        return this.Cl;
+    public long Hy() {
+        return this.DL;
     }
     
-    public int[] GI() {
-        return this.Cj;
+    public boolean Hz() {
+        return this.DK;
     }
     
     public String getTag() {
-        return this.Ck;
+        return this.DP;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        q.Ia(this, parcel, n);
+        q.IT(this, parcel, n);
     }
 }

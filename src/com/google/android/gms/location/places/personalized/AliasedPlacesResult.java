@@ -8,35 +8,35 @@ import android.os.Parcel;
 import java.util.List;
 import com.google.android.gms.common.api.Status;
 import android.os.Parcelable$Creator;
-import com.google.android.gms.common.api.b;
+import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 
-public class AliasedPlacesResult extends AbstractSafeParcelable implements b
+public class AliasedPlacesResult extends AbstractSafeParcelable implements m
 {
     public static final Parcelable$Creator CREATOR;
-    private final Status xH;
-    final int xI;
-    private final List xJ;
+    private final Status zm;
+    final int zn;
+    private final List zo;
     
     static {
         CREATOR = (Parcelable$Creator)new c();
     }
     
-    AliasedPlacesResult(final int xi, final Status xh, final List xj) {
-        this.xI = xi;
-        this.xH = xh;
-        this.xJ = xj;
+    AliasedPlacesResult(final int zn, final Status zm, final List zo) {
+        this.zn = zn;
+        this.zm = zm;
+        this.zo = zo;
     }
     
-    public List CG() {
-        return this.xJ;
+    public List Dz() {
+        return this.zo;
     }
     
-    public Status dr() {
-        return this.xH;
+    public Status gV() {
+        return this.zm;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        c.CM(this, parcel, n);
+        c.DF(this, parcel, n);
     }
 }

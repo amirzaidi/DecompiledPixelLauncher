@@ -3,12 +3,12 @@
 
 
 # direct methods
-.method public static gk([BLandroid/os/Parcelable$Creator;)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
+.method public static iY([BLandroid/os/Parcelable$Creator;)Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;
     .locals 3
 
     const/4 v2, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/l;->ht(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/l;->kh(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
@@ -31,7 +31,7 @@
     return-object v0
 .end method
 
-.method public static gl(Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;)[B
+.method public static iZ(Lcom/google/android/gms/common/internal/safeparcel/SafeParcelable;)[B
     .locals 2
 
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;

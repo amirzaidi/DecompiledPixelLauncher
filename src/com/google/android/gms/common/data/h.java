@@ -15,61 +15,61 @@ import android.os.Parcelable$Creator;
 
 public class h implements Parcelable$Creator
 {
-    static void ns(final DataHolder dataHolder, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fk(parcel, 1, dataHolder.nl(), false);
-        a.fp(parcel, 2, (Parcelable[])dataHolder.nj(), n, false);
-        a.fj(parcel, 3, dataHolder.ni());
-        a.eT(parcel, 4, dataHolder.nh(), false);
-        a.fj(parcel, 1000, dataHolder.ng());
-        a.fe(parcel, ey);
+    static void qf(final DataHolder dataHolder, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hY(parcel, 1, dataHolder.pY(), false);
+        a.id(parcel, 2, (Parcelable[])dataHolder.pW(), n, false);
+        a.hX(parcel, 3, dataHolder.pV());
+        a.hH(parcel, 4, dataHolder.pU(), false);
+        a.hX(parcel, 1000, dataHolder.pT());
+        a.hS(parcel, hm);
     }
     
-    public DataHolder nq(final Parcel parcel) {
-        int fn = 0;
-        Bundle fp = null;
-        final int fj = b.fJ(parcel);
+    public DataHolder qd(final Parcel parcel) {
+        int ib = 0;
+        Bundle id = null;
+        final int ix = b.ix(parcel);
         CursorWindow[] array = null;
-        String[] fu = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        String[] ii = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fu = b.fU(parcel, fs);
+                    ii = b.iI(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    array = (CursorWindow[])b.fM(parcel, fs, CursorWindow.CREATOR);
+                    array = (CursorWindow[])b.iA(parcel, ig, CursorWindow.CREATOR);
                     continue;
                 }
                 case 3: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fp = b.fP(parcel, fs);
+                    id = b.iD(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            final DataHolder dataHolder = new DataHolder(fn2, fu, array, fn, fp);
-            dataHolder.nk();
+        if (parcel.dataPosition() == ix) {
+            final DataHolder dataHolder = new DataHolder(ib2, ii, array, ib, id);
+            dataHolder.pX();
             return dataHolder;
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public DataHolder[] nr(final int n) {
+    public DataHolder[] qe(final int n) {
         return new DataHolder[n];
     }
 }

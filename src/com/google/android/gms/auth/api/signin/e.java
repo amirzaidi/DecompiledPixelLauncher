@@ -9,7 +9,7 @@ import java.util.Comparator;
 
 class e implements Comparator
 {
-    public int PR(final Scope scope, final Scope scope2) {
-        return scope.el().compareTo(scope2.el());
+    public int QK(final Scope scope, final Scope scope2) {
+        return scope.gS().compareTo(scope2.gS());
     }
 }

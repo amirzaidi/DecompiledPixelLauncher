@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field public final DC:F
+.field public final Fh:F
 
-.field private final DD:I
+.field private final Fi:I
 
-.field public final DE:F
+.field public final Fj:F
 
 
 # direct methods
@@ -61,15 +61,15 @@
     :goto_0
     const-string/jumbo v1, "Tilt needs to be between -90 and 90 inclusive"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/l;->hq(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/l;->ke(ZLjava/lang/Object;)V
 
-    iput p1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DD:I
+    iput p1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fi:I
 
     const/4 v0, 0x0
 
     add-float/2addr v0, p2
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DC:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fh:F
 
     float-to-double v0, p3
 
@@ -86,7 +86,7 @@
     :cond_0
     rem-float v0, p3, v4
 
-    iput v0, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DE:F
+    iput v0, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fj:F
 
     return-void
 
@@ -98,10 +98,10 @@
 
 
 # virtual methods
-.method Iv()I
+.method Jo()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DD:I
+    iget v0, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fi:I
 
     return v0
 .end method
@@ -121,13 +121,13 @@
 
     check-cast p1, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;
 
-    iget v2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DC:F
+    iget v2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fh:F
 
     invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v2
 
-    iget v3, p1, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DC:F
+    iget v3, p1, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fh:F
 
     invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
 
@@ -148,13 +148,13 @@
     return v1
 
     :cond_3
-    iget v2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DE:F
+    iget v2, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fj:F
 
     invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v2
 
-    iget v3, p1, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DE:F
+    iget v3, p1, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fj:F
 
     invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
 
@@ -172,7 +172,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DC:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fh:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -182,7 +182,7 @@
 
     aput-object v1, v0, v2
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DE:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fj:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -192,7 +192,7 @@
 
     aput-object v1, v0, v2
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->hI([Ljava/lang/Object;)I
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/u;->kw([Ljava/lang/Object;)I
 
     move-result v0
 
@@ -202,11 +202,11 @@
 .method public toString()Ljava/lang/String;
     .locals 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->hJ(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/u;->kx(Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DC:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fh:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -214,11 +214,11 @@
 
     const-string/jumbo v2, "tilt"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->DE:F
+    iget v1, p0, Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;->Fj:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -226,7 +226,7 @@
 
     const-string/jumbo v2, "bearing"
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->hB(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
+    invoke-virtual {v0, v2, v1}, Lcom/google/android/gms/common/internal/n;->kp(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/android/gms/common/internal/n;
 
     move-result-object v0
 
@@ -240,7 +240,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/t;->KA(Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/maps/model/t;->Lt(Lcom/google/android/gms/maps/model/StreetViewPanoramaOrientation;Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract uz(Landroid/content/Context;Lcom/google/android/gms/clearcut/LogEventParcelable;)Lcom/google/android/gms/common/api/c;
+.method public abstract uy(Landroid/content/Context;Lcom/google/android/gms/clearcut/LogEventParcelable;)Lcom/google/android/gms/common/api/f;
 .end method

@@ -4,30 +4,298 @@
 
 package com.google.android.gms.internal;
 
-import android.os.IInterface;
+import com.google.android.gms.phenotype.Flag;
+import com.google.android.gms.phenotype.ExperimentTokens;
+import com.google.android.gms.phenotype.DogfoodsToken;
+import android.os.Parcel;
+import com.google.android.gms.phenotype.Configurations;
+import com.google.android.gms.common.api.Status;
 import android.os.IBinder;
-import com.google.android.gms.common.api.f;
-import com.google.android.gms.common.api.g;
-import com.google.android.gms.common.internal.a;
-import android.os.Looper;
-import android.content.Context;
-import com.google.android.gms.common.internal.R;
 
-public class p extends R
+class p implements zzza
 {
-    public p(final Context context, final Looper looper, final a a, final g g, final f f) {
-        super(context, looper, 51, a, g, f);
+    private IBinder pa;
+    
+    p(final IBinder pa) {
+        this.pa = pa;
     }
     
-    protected String gw() {
-        return "com.google.android.gms.phenotype.service.START";
+    public IBinder asBinder() {
+        return this.pa;
     }
     
-    protected String gx() {
-        return "com.google.android.gms.phenotype.internal.IPhenotypeService";
+    public void zza(final Status status, final Configurations configurations) {
+        while (true) {
+            final Parcel obtain = Parcel.obtain();
+            final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+            final Parcel parcel = obtain;
+            while (true) {
+                try {
+                    parcel.writeInterfaceToken(s);
+                    if (status == null) {
+                        obtain.writeInt(0);
+                    }
+                    else {
+                        obtain.writeInt(1);
+                        status.writeToParcel(obtain, 0);
+                    }
+                    if (configurations == null) {
+                        obtain.writeInt(0);
+                        this.pa.transact(4, obtain, (Parcel)null, 1);
+                        return;
+                    }
+                }
+                finally {
+                    obtain.recycle();
+                }
+                obtain.writeInt(1);
+                configurations.writeToParcel(obtain, 0);
+                continue;
+            }
+        }
     }
     
-    protected zzzb su(final IBinder binder) {
-        return zzzb$zza.zzpe(binder);
+    public void zza(final Status status, final DogfoodsToken dogfoodsToken) {
+        while (true) {
+            final Parcel obtain = Parcel.obtain();
+            final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+            final Parcel parcel = obtain;
+            while (true) {
+                try {
+                    parcel.writeInterfaceToken(s);
+                    if (status == null) {
+                        obtain.writeInt(0);
+                    }
+                    else {
+                        obtain.writeInt(1);
+                        status.writeToParcel(obtain, 0);
+                    }
+                    if (dogfoodsToken == null) {
+                        obtain.writeInt(0);
+                        this.pa.transact(7, obtain, (Parcel)null, 1);
+                        return;
+                    }
+                }
+                finally {
+                    obtain.recycle();
+                }
+                obtain.writeInt(1);
+                dogfoodsToken.writeToParcel(obtain, 0);
+                continue;
+            }
+        }
+    }
+    
+    public void zza(final Status status, final ExperimentTokens experimentTokens) {
+        while (true) {
+            final Parcel obtain = Parcel.obtain();
+            final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+            final Parcel parcel = obtain;
+            while (true) {
+                try {
+                    parcel.writeInterfaceToken(s);
+                    if (status == null) {
+                        obtain.writeInt(0);
+                    }
+                    else {
+                        obtain.writeInt(1);
+                        status.writeToParcel(obtain, 0);
+                    }
+                    if (experimentTokens == null) {
+                        obtain.writeInt(0);
+                        this.pa.transact(6, obtain, (Parcel)null, 1);
+                        return;
+                    }
+                }
+                finally {
+                    obtain.recycle();
+                }
+                obtain.writeInt(1);
+                experimentTokens.writeToParcel(obtain, 0);
+                continue;
+            }
+        }
+    }
+    
+    public void zza(final Status status, final Flag flag) {
+        while (true) {
+            final Parcel obtain = Parcel.obtain();
+            final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+            final Parcel parcel = obtain;
+            while (true) {
+                try {
+                    parcel.writeInterfaceToken(s);
+                    if (status == null) {
+                        obtain.writeInt(0);
+                    }
+                    else {
+                        obtain.writeInt(1);
+                        status.writeToParcel(obtain, 0);
+                    }
+                    if (flag == null) {
+                        obtain.writeInt(0);
+                        this.pa.transact(9, obtain, (Parcel)null, 1);
+                        return;
+                    }
+                }
+                finally {
+                    obtain.recycle();
+                }
+                obtain.writeInt(1);
+                flag.writeToParcel(obtain, 0);
+                continue;
+            }
+        }
+    }
+    
+    public void zzb(final Status status, final Configurations configurations) {
+        while (true) {
+            final Parcel obtain = Parcel.obtain();
+            final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+            final Parcel parcel = obtain;
+            while (true) {
+                try {
+                    parcel.writeInterfaceToken(s);
+                    if (status == null) {
+                        obtain.writeInt(0);
+                    }
+                    else {
+                        obtain.writeInt(1);
+                        status.writeToParcel(obtain, 0);
+                    }
+                    if (configurations == null) {
+                        obtain.writeInt(0);
+                        this.pa.transact(10, obtain, (Parcel)null, 1);
+                        return;
+                    }
+                }
+                finally {
+                    obtain.recycle();
+                }
+                obtain.writeInt(1);
+                configurations.writeToParcel(obtain, 0);
+                continue;
+            }
+        }
+    }
+    
+    public void zzgo(final Status status) {
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (status == null) {
+                obtain.writeInt(0);
+            }
+            else {
+                obtain.writeInt(1);
+                status.writeToParcel(obtain, 0);
+            }
+            this.pa.transact(1, obtain, (Parcel)null, 1);
+        }
+        finally {
+            obtain.recycle();
+        }
+    }
+    
+    public void zzgp(final Status status) {
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (status == null) {
+                obtain.writeInt(0);
+            }
+            else {
+                obtain.writeInt(1);
+                status.writeToParcel(obtain, 0);
+            }
+            this.pa.transact(2, obtain, (Parcel)null, 1);
+        }
+        finally {
+            obtain.recycle();
+        }
+    }
+    
+    public void zzgq(final Status status) {
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (status == null) {
+                obtain.writeInt(0);
+            }
+            else {
+                obtain.writeInt(1);
+                status.writeToParcel(obtain, 0);
+            }
+            this.pa.transact(3, obtain, (Parcel)null, 1);
+        }
+        finally {
+            obtain.recycle();
+        }
+    }
+    
+    public void zzgr(final Status status) {
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (status == null) {
+                obtain.writeInt(0);
+            }
+            else {
+                obtain.writeInt(1);
+                status.writeToParcel(obtain, 0);
+            }
+            this.pa.transact(5, obtain, (Parcel)null, 1);
+        }
+        finally {
+            obtain.recycle();
+        }
+    }
+    
+    public void zzgs(final Status status) {
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (status == null) {
+                obtain.writeInt(0);
+            }
+            else {
+                obtain.writeInt(1);
+                status.writeToParcel(obtain, 0);
+            }
+            this.pa.transact(8, obtain, (Parcel)null, 1);
+        }
+        finally {
+            obtain.recycle();
+        }
+    }
+    
+    public void zzgt(final Status status) {
+        final Parcel obtain = Parcel.obtain();
+        final String s = "com.google.android.gms.phenotype.internal.IPhenotypeCallbacks";
+        final Parcel parcel = obtain;
+        try {
+            parcel.writeInterfaceToken(s);
+            if (status == null) {
+                obtain.writeInt(0);
+            }
+            else {
+                obtain.writeInt(1);
+                status.writeToParcel(obtain, 0);
+            }
+            this.pa.transact(11, obtain, (Parcel)null, 1);
+        }
+        finally {
+            obtain.recycle();
+        }
     }
 }

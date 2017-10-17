@@ -2,7 +2,7 @@
 .super Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;
 
 # interfaces
-.implements Lcom/google/android/gms/common/api/b;
+.implements Lcom/google/android/gms/common/api/m;
 
 
 # static fields
@@ -10,11 +10,11 @@
 
 
 # instance fields
-.field private final xH:Lcom/google/android/gms/common/api/Status;
+.field private final zm:Lcom/google/android/gms/common/api/Status;
 
-.field final xI:I
+.field final zn:I
 
-.field private final xJ:Ljava/util/List;
+.field private final zo:Ljava/util/List;
 
 
 # direct methods
@@ -35,29 +35,29 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->xI:I
+    iput p1, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->zn:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->xH:Lcom/google/android/gms/common/api/Status;
+    iput-object p2, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->zm:Lcom/google/android/gms/common/api/Status;
 
-    iput-object p3, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->xJ:Ljava/util/List;
+    iput-object p3, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->zo:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public CG()Ljava/util/List;
+.method public Dz()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->xJ:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->zo:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public dr()Lcom/google/android/gms/common/api/Status;
+.method public gV()Lcom/google/android/gms/common/api/Status;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->xH:Lcom/google/android/gms/common/api/Status;
+    iget-object v0, p0, Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;->zm:Lcom/google/android/gms/common/api/Status;
 
     return-object v0
 .end method
@@ -65,7 +65,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/personalized/c;->CM(Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/places/personalized/c;->DF(Lcom/google/android/gms/location/places/personalized/AliasedPlacesResult;Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -15,71 +15,71 @@ import android.os.Parcelable$Creator;
 
 public class s implements Parcelable$Creator
 {
-    static void FO(final LocationRequestInternal locationRequestInternal, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.eW(parcel, 1, (Parcelable)locationRequestInternal.AQ, n, false);
-        a.fa(parcel, 4, locationRequestInternal.AP);
-        a.fc(parcel, 5, locationRequestInternal.AW, false);
-        a.fo(parcel, 6, locationRequestInternal.AR, false);
-        a.fa(parcel, 7, locationRequestInternal.AS);
-        a.fj(parcel, 1000, locationRequestInternal.Fo());
-        a.fa(parcel, 8, locationRequestInternal.AU);
-        a.fe(parcel, ey);
+    static void GH(final LocationRequestInternal locationRequestInternal, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hK(parcel, 1, (Parcelable)locationRequestInternal.Cu, n, false);
+        a.hO(parcel, 4, locationRequestInternal.Ct);
+        a.hQ(parcel, 5, locationRequestInternal.CA, false);
+        a.ic(parcel, 6, locationRequestInternal.Cv, false);
+        a.hO(parcel, 7, locationRequestInternal.Cw);
+        a.hX(parcel, 1000, locationRequestInternal.Gh());
+        a.hO(parcel, 8, locationRequestInternal.Cy);
+        a.hS(parcel, hm);
     }
     
-    public LocationRequestInternal FP(final Parcel parcel) {
-        String fq = null;
-        boolean fx = false;
-        final int fj = b.fJ(parcel);
-        boolean fx2 = true;
-        List list = LocationRequestInternal.AV;
-        boolean fx3 = false;
+    public LocationRequestInternal GI(final Parcel parcel) {
+        String ie = null;
+        boolean il = false;
+        final int ix = b.ix(parcel);
+        boolean il2 = true;
+        List list = LocationRequestInternal.Cz;
+        boolean il3 = false;
         LocationRequest locationRequest = null;
-        int fn = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        int ib = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    locationRequest = (LocationRequest)b.fW(parcel, fs, (Parcelable$Creator)LocationRequest.CREATOR);
+                    locationRequest = (LocationRequest)b.iK(parcel, ig, (Parcelable$Creator)LocationRequest.CREATOR);
                     continue;
                 }
                 case 4: {
-                    fx2 = b.fX(parcel, fs);
+                    il2 = b.iL(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    list = b.fZ(parcel, fs, (Parcelable$Creator)ClientIdentity.CREATOR);
+                    list = b.iN(parcel, ig, (Parcelable$Creator)ClientIdentity.CREATOR);
                     continue;
                 }
                 case 6: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
                 case 7: {
-                    fx3 = b.fX(parcel, fs);
+                    il3 = b.iL(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 8: {
-                    fx = b.fX(parcel, fs);
+                    il = b.iL(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new LocationRequestInternal(fn, locationRequest, fx2, list, fq, fx3, fx);
+        if (parcel.dataPosition() == ix) {
+            return new LocationRequestInternal(ib, locationRequest, il2, list, ie, il3, il);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public LocationRequestInternal[] FQ(final int n) {
+    public LocationRequestInternal[] GJ(final int n) {
         return new LocationRequestInternal[n];
     }
 }

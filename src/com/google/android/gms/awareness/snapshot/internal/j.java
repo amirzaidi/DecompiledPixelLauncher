@@ -14,41 +14,41 @@ import android.os.Parcelable$Creator;
 
 public class j implements Parcelable$Creator
 {
-    static void qF(final BeaconStateImpl beaconStateImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, beaconStateImpl.rc());
-        a.fc(parcel, 2, beaconStateImpl.rb(), false);
-        a.fe(parcel, ey);
+    static void fx(final BeaconStateImpl beaconStateImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, beaconStateImpl.fW());
+        a.hQ(parcel, 2, beaconStateImpl.fV(), false);
+        a.hS(parcel, hm);
     }
     
-    public BeaconStateImpl[] qE(final int n) {
+    public BeaconStateImpl[] fw(final int n) {
         return new BeaconStateImpl[n];
     }
     
-    public BeaconStateImpl qG(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        ArrayList fz = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public BeaconStateImpl fy(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        ArrayList in = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fz = b.fZ(parcel, fs, BeaconStateImpl$BeaconInfoImpl.CREATOR);
+                    in = b.iN(parcel, ig, BeaconStateImpl$BeaconInfoImpl.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new BeaconStateImpl(fn, fz);
+        if (parcel.dataPosition() == ix) {
+            return new BeaconStateImpl(ib, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

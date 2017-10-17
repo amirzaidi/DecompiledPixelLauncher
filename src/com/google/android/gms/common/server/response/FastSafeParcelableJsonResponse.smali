@@ -24,7 +24,7 @@
     return v0
 .end method
 
-.method public kd(Ljava/lang/String;)Z
+.method public mR(Ljava/lang/String;)Z
     .locals 1
 
     const/4 v0, 0x0
@@ -32,7 +32,7 @@
     return v0
 .end method
 
-.method public ke(Ljava/lang/String;)Ljava/lang/Object;
+.method public mS(Ljava/lang/String;)Ljava/lang/Object;
     .locals 1
 
     const/4 v0, 0x0

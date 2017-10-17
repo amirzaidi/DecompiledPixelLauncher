@@ -14,30 +14,30 @@
     return-void
 .end method
 
-.method static pO(Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;Landroid/os/Parcel;I)V
+.method static eI(Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;Landroid/os/Parcel;I)V
     .locals 4
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->eY(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hM(Landroid/os/Parcel;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->qe()I
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fb()I
 
     move-result v1
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->qf()I
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fc()I
 
     move-result v1
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->fj(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lcom/google/android/gms/common/internal/safeparcel/a;->hX(Landroid/os/Parcel;II)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->qd()Ljava/util/ArrayList;
+    invoke-virtual {p0}, Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;->fa()Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -45,9 +45,9 @@
 
     const/4 v3, 0x3
 
-    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->fc(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v3, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/a;->hQ(Landroid/os/Parcel;ILjava/util/List;Z)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->fe(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/a;->hS(Landroid/os/Parcel;I)V
 
     return-void
 .end method
@@ -57,24 +57,14 @@
 .method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/c;->pP(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/c;->eJ(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/c;->pN(I)[Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public pN(I)[Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
+.method public eH(I)[Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
     .locals 1
 
     new-array v0, p1, [Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
@@ -82,12 +72,12 @@
     return-object v0
 .end method
 
-.method public pP(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
+.method public eJ(Landroid/os/Parcel;)Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
     .locals 6
 
     const/4 v1, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fJ(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->ix(Landroid/os/Parcel;)I
 
     move-result v3
 
@@ -115,29 +105,29 @@
     return-object v3
 
     :cond_0
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->fS(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/b;->iG(Landroid/os/Parcel;)I
 
     move-result v4
 
-    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->ga(I)I
+    invoke-static {v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iO(I)I
 
     move-result v5
 
     packed-switch v5, :pswitch_data_0
 
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fA(Landroid/os/Parcel;I)V
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->io(Landroid/os/Parcel;I)V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v2
 
     goto :goto_0
 
     :pswitch_1
-    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->fN(Landroid/os/Parcel;I)I
+    invoke-static {p1, v4}, Lcom/google/android/gms/common/internal/safeparcel/b;->iB(Landroid/os/Parcel;I)I
 
     move-result v1
 
@@ -146,7 +136,7 @@
     :pswitch_2
     sget-object v0, Lcom/google/android/gms/awareness/snapshot/internal/BeaconStateImpl$TypeFilterImpl;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-static {p1, v4, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->fZ(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+    invoke-static {p1, v4, v0}, Lcom/google/android/gms/common/internal/safeparcel/b;->iN(Landroid/os/Parcel;ILandroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -187,4 +177,14 @@
         :pswitch_1
         :pswitch_2
     .end packed-switch
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/awareness/snapshot/internal/c;->eH(I)[Lcom/google/android/gms/awareness/snapshot/internal/SnapshotRequest;
+
+    move-result-object v0
+
+    return-object v0
 .end method

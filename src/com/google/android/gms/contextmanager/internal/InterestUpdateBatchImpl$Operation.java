@@ -12,39 +12,39 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class InterestUpdateBatchImpl$Operation extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final String HP;
-    private final int HQ;
-    private final InterestRecordStub HR;
-    private final int HS;
+    private final String Ju;
+    private final int Jv;
+    private final InterestRecordStub Jw;
+    private final int Jx;
     
     static {
         CREATOR = (Parcelable$Creator)new i();
     }
     
-    InterestUpdateBatchImpl$Operation(final int hq, final int hs, final InterestRecordStub hr, final String hp) {
-        this.HQ = hq;
-        this.HS = hs;
-        this.HR = hr;
-        this.HP = hp;
+    InterestUpdateBatchImpl$Operation(final int jv, final int jx, final InterestRecordStub jw, final String ju) {
+        this.Jv = jv;
+        this.Jx = jx;
+        this.Jw = jw;
+        this.Ju = ju;
     }
     
-    int NA() {
-        return this.HQ;
+    InterestRecordStub Or() {
+        return this.Jw;
     }
     
-    String NB() {
-        return this.HP;
+    public int Os() {
+        return this.Jx;
     }
     
-    InterestRecordStub Ny() {
-        return this.HR;
+    int Ot() {
+        return this.Jv;
     }
     
-    public int Nz() {
-        return this.HS;
+    String Ou() {
+        return this.Ju;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        i.MU(this, parcel, n);
+        i.NN(this, parcel, n);
     }
 }

@@ -4,8 +4,8 @@
 
 package com.google.android.libraries.launcherclient;
 
-import android.os.Bundle;
 import android.view.WindowManager$LayoutParams;
+import android.os.Bundle;
 import android.os.IInterface;
 
 public interface ILauncherOverlay extends IInterface
@@ -33,6 +33,8 @@ public interface ILauncherOverlay extends IInterface
     void setActivityState(final int p0);
     
     void startScroll();
+    
+    boolean startSearch(final byte[] p0, final Bundle p1);
     
     void windowAttached(final WindowManager$LayoutParams p0, final ILauncherOverlayCallback p1, final int p2);
     

@@ -12,41 +12,41 @@ import android.os.Parcelable$Creator;
 
 public class x implements Parcelable$Creator
 {
-    static void eB(final Scope scope, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, scope.eB);
-        a.fo(parcel, 2, scope.el(), false);
-        a.fe(parcel, ey);
+    static void hp(final Scope scope, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, scope.hj);
+        a.ic(parcel, 2, scope.gS(), false);
+        a.hS(parcel, hm);
     }
     
-    public Scope eA(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        String fq = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public Scope[] hn(final int n) {
+        return new Scope[n];
+    }
+    
+    public Scope ho(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        String ie = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fq = b.fQ(parcel, fs);
+                    ie = b.iE(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new Scope(fn, fq);
+        if (parcel.dataPosition() == ix) {
+            return new Scope(ib, ie);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
-    }
-    
-    public Scope[] ez(final int n) {
-        return new Scope[n];
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

@@ -11,22 +11,22 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class ClientIdentity extends AbstractSafeParcelable
 {
     public static final c CREATOR;
-    private final int AL;
-    public final int AM;
+    private final int Cq;
+    public final int Cr;
     public final String packageName;
     
     static {
         CREATOR = new c();
     }
     
-    ClientIdentity(final int al, final int am, final String packageName) {
-        this.AL = al;
-        this.AM = am;
+    ClientIdentity(final int cq, final int cr, final String packageName) {
+        this.Cq = cq;
+        this.Cr = cr;
         this.packageName = packageName;
     }
     
-    int Fn() {
-        return this.AL;
+    int Gg() {
+        return this.Cq;
     }
     
     public boolean equals(final Object o) {
@@ -36,7 +36,7 @@ public class ClientIdentity extends AbstractSafeParcelable
         }
         if (o != null && o instanceof ClientIdentity) {
             final ClientIdentity clientIdentity = (ClientIdentity)o;
-            if (clientIdentity.AM != this.AM || u.hH(clientIdentity.packageName, this.packageName)) {
+            if (clientIdentity.Cr != this.Cr || u.kv(clientIdentity.packageName, this.packageName)) {
                 b = false;
             }
             return b;
@@ -45,14 +45,14 @@ public class ClientIdentity extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return this.AM;
+        return this.Cr;
     }
     
     public String toString() {
-        return String.format("%d:%s", this.AM, this.packageName);
+        return String.format("%d:%s", this.Cr, this.packageName);
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        c.Fa(this, parcel, n);
+        c.FT(this, parcel, n);
     }
 }

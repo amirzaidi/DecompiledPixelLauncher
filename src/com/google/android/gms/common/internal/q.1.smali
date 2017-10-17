@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract hC(Lcom/google/android/gms/common/ConnectionResult;)V
+.method public abstract kq(Lcom/google/android/gms/common/ConnectionResult;)V
 .end method

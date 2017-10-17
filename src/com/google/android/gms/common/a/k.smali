@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static hA:Ljava/util/regex/Pattern;
+.field private static ks:Ljava/util/regex/Pattern;
 
 
 # direct methods
@@ -12,12 +12,12 @@
 
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/google/android/gms/common/a/k;->hA:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/common/a/k;->ks:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method public static jJ(I)I
+.method public static mx(I)I
     .locals 1
 
     div-int/lit16 v0, p0, 0x3e8

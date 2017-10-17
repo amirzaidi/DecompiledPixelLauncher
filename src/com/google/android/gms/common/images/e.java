@@ -9,5 +9,5 @@ import android.net.Uri;
 
 public interface e
 {
-    void mG(final Uri p0, final Drawable p1, final boolean p2);
+    void pu(final Uri p0, final Drawable p1, final boolean p2);
 }

@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract kP(Ljava/lang/Object;)Ljava/lang/Object;
+.method public abstract nD(Ljava/lang/Object;)Ljava/lang/Object;
 .end method

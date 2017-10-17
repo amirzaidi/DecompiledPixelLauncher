@@ -14,41 +14,41 @@ import android.os.Parcelable$Creator;
 
 public class m implements Parcelable$Creator
 {
-    static void Nv(final KeyFilterImpl keyFilterImpl, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fj(parcel, 1, keyFilterImpl.Mc());
-        a.fc(parcel, 2, keyFilterImpl.Md(), false);
-        a.fe(parcel, ey);
+    static void Oo(final KeyFilterImpl keyFilterImpl, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hX(parcel, 1, keyFilterImpl.MV());
+        a.hQ(parcel, 2, keyFilterImpl.MW(), false);
+        a.hS(parcel, hm);
     }
     
-    public KeyFilterImpl[] Nw(final int n) {
+    public KeyFilterImpl[] Op(final int n) {
         return new KeyFilterImpl[n];
     }
     
-    public KeyFilterImpl Nx(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
-        ArrayList fz = null;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+    public KeyFilterImpl Oq(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
+        ArrayList in = null;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 2: {
-                    fz = b.fZ(parcel, fs, KeyFilterImpl$Inclusion.CREATOR);
+                    in = b.iN(parcel, ig, KeyFilterImpl$Inclusion.CREATOR);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new KeyFilterImpl(fn, fz);
+        if (parcel.dataPosition() == ix) {
+            return new KeyFilterImpl(ib, in);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
 }

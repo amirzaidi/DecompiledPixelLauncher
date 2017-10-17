@@ -4,39 +4,13 @@
 
 package com.google.android.gms.internal;
 
-import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
-import android.os.IBinder;
+import com.google.android.gms.common.api.b;
+import com.google.android.gms.common.api.a;
+import android.content.Context;
 
-class aj implements zzqc
+public class aj implements af
 {
-    private IBinder rN;
-    
-    aj(final IBinder rn) {
-        this.rN = rn;
-    }
-    
-    public IBinder asBinder() {
-        return this.rN;
-    }
-    
-    public void zzae(final Status status) {
-        final Parcel obtain = Parcel.obtain();
-        final String s = "com.google.android.gms.clearcut.internal.IClearcutLoggerCallbacks";
-        final Parcel parcel = obtain;
-        try {
-            parcel.writeInterfaceToken(s);
-            if (status == null) {
-                obtain.writeInt(0);
-            }
-            else {
-                obtain.writeInt(1);
-                status.writeToParcel(obtain, 0);
-            }
-            this.rN.transact(1, obtain, (Parcel)null, 1);
-        }
-        finally {
-            obtain.recycle();
-        }
+    public a ua(final Context context) {
+        return new b(context).gu(com.google.android.gms.clearcut.a.HH).build();
     }
 }

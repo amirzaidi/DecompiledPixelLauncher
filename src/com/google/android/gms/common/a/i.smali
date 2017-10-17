@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private final hz:Landroid/support/v4/a/t;
+.field private final kr:Landroid/support/v4/a/t;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/a/t;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iput-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     return-void
 .end method
@@ -30,7 +30,7 @@
 
     invoke-direct {v0, p1}, Landroid/support/v4/a/t;-><init>(I)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iput-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     return-void
 .end method
@@ -42,7 +42,7 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/a/t;->containsKey(Ljava/lang/Object;)Z
 
@@ -50,7 +50,7 @@
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0, p1, p1}, Landroid/support/v4/a/t;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -78,7 +78,7 @@
     :cond_0
     check-cast p1, Lcom/google/android/gms/common/a/i;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/a/i;->jG(Lcom/google/android/gms/common/a/i;)Z
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/a/i;->mu(Lcom/google/android/gms/common/a/i;)Z
 
     move-result v0
 
@@ -88,7 +88,7 @@
 .method public clear()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0}, Landroid/support/v4/a/t;->clear()V
 
@@ -98,7 +98,7 @@
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/a/t;->containsKey(Ljava/lang/Object;)Z
 
@@ -110,7 +110,7 @@
 .method public iterator()Ljava/util/Iterator;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0}, Landroid/support/v4/a/t;->keySet()Ljava/util/Set;
 
@@ -123,18 +123,18 @@
     return-object v0
 .end method
 
-.method public jG(Lcom/google/android/gms/common/a/i;)Z
+.method public mu(Lcom/google/android/gms/common/a/i;)Z
     .locals 3
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/a/i;->size()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v1, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
-    iget-object v2, p1, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v2, p1, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/a/t;->ahe(Landroid/support/v4/a/k;)V
+    invoke-virtual {v1, v2}, Landroid/support/v4/a/t;->ahW(Landroid/support/v4/a/b;)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/a/i;->size()I
 
@@ -158,7 +158,7 @@
 
     const/4 v1, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/a/t;->containsKey(Ljava/lang/Object;)Z
 
@@ -166,7 +166,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/a/t;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -181,7 +181,7 @@
 .method public size()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->hz:Landroid/support/v4/a/t;
+    iget-object v0, p0, Lcom/google/android/gms/common/a/i;->kr:Landroid/support/v4/a/t;
 
     invoke-virtual {v0}, Landroid/support/v4/a/t;->size()I
 

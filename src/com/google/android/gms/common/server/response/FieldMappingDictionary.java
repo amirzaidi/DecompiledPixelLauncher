@@ -15,68 +15,68 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class FieldMappingDictionary extends AbstractSafeParcelable
 {
     public static final c CREATOR;
-    private final HashMap ia;
-    private final int ib;
-    private final ArrayList ic;
-    private final String id;
+    private final HashMap kS;
+    private final int kT;
+    private final ArrayList kU;
+    private final String kV;
     
     static {
         CREATOR = new c();
     }
     
-    FieldMappingDictionary(final int ib, final ArrayList list, final String s) {
-        this.ib = ib;
-        this.ic = null;
-        this.ia = kS(list);
-        this.id = (String)l.ht(s);
-        this.kR();
+    FieldMappingDictionary(final int kt, final ArrayList list, final String s) {
+        this.kT = kt;
+        this.kU = null;
+        this.kS = nF(list);
+        this.kV = (String)l.kh(s);
+        this.nE();
     }
     
-    private static HashMap kS(final ArrayList list) {
+    private static HashMap nF(final ArrayList list) {
         final HashMap<String, HashMap> hashMap = new HashMap<String, HashMap>();
         for (int size = list.size(), i = 0; i < size; ++i) {
             final FieldMappingDictionary$Entry fieldMappingDictionary$Entry = list.get(i);
-            hashMap.put(fieldMappingDictionary$Entry.hR, fieldMappingDictionary$Entry.ku());
+            hashMap.put(fieldMappingDictionary$Entry.kJ, fieldMappingDictionary$Entry.ni());
         }
         return hashMap;
     }
     
-    public void kR() {
-        final Iterator<String> iterator = this.ia.keySet().iterator();
+    public void nE() {
+        final Iterator<String> iterator = this.kS.keySet().iterator();
         while (iterator.hasNext()) {
-            final Map<String, V> map = this.ia.get(iterator.next());
+            final Map<String, V> map = this.kS.get(iterator.next());
             final Iterator<String> iterator2 = map.keySet().iterator();
             while (iterator2.hasNext()) {
-                ((FastJsonResponse$Field)map.get(iterator2.next())).km(this);
+                ((FastJsonResponse$Field)map.get(iterator2.next())).na(this);
             }
         }
     }
     
-    int kT() {
-        return this.ib;
+    int nG() {
+        return this.kT;
     }
     
-    ArrayList kU() {
+    ArrayList nH() {
         final ArrayList<FieldMappingDictionary$Entry> list = new ArrayList<FieldMappingDictionary$Entry>();
-        for (final String s : this.ia.keySet()) {
-            list.add(new FieldMappingDictionary$Entry(s, (Map)this.ia.get(s)));
+        for (final String s : this.kS.keySet()) {
+            list.add(new FieldMappingDictionary$Entry(s, (Map)this.kS.get(s)));
         }
         return list;
     }
     
-    public Map kV(final String s) {
-        return this.ia.get(s);
+    public Map nI(final String s) {
+        return this.kS.get(s);
     }
     
-    public String kW() {
-        return this.id;
+    public String nJ() {
+        return this.kV;
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        for (final String s : this.ia.keySet()) {
+        for (final String s : this.kS.keySet()) {
             sb.append(s).append(":\n");
-            final Map<String, V> map = this.ia.get(s);
+            final Map<String, V> map = this.kS.get(s);
             for (final String s2 : map.keySet()) {
                 sb.append("  ").append(s2).append(": ");
                 sb.append(map.get(s2));
@@ -87,6 +87,6 @@ public class FieldMappingDictionary extends AbstractSafeParcelable
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final c creator = FieldMappingDictionary.CREATOR;
-        c.kN(this, parcel, n);
+        c.nB(this, parcel, n);
     }
 }

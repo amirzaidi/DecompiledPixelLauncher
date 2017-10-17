@@ -5,90 +5,256 @@
 package com.google.android.gms.common.server.response;
 
 import com.google.android.gms.common.internal.safeparcel.a;
+import java.util.ArrayList;
 import java.util.Set;
-import android.os.Bundle;
-import com.google.android.gms.common.internal.safeparcel.zza$zza;
-import java.util.HashMap;
 import com.google.android.gms.common.a.e;
 import com.google.android.gms.common.a.h;
 import java.util.Iterator;
+import java.util.HashMap;
+import android.os.Bundle;
 import android.util.SparseArray;
+import com.google.android.gms.common.internal.safeparcel.zza$zza;
 import java.util.Map;
-import java.util.ArrayList;
 import com.google.android.gms.common.internal.l;
 import android.os.Parcel;
 
 public class SafeParcelResponse extends FastSafeParcelableJsonResponse
 {
     public static final b CREATOR;
-    private final int hT;
-    private int hU;
-    private final Parcel hV;
-    private final FieldMappingDictionary hW;
-    private final int hX;
-    private int hY;
-    private final String hZ;
+    private final int kL;
+    private int kM;
+    private final Parcel kN;
+    private final FieldMappingDictionary kO;
+    private final int kP;
+    private int kQ;
+    private final String kR;
     
     static {
         CREATOR = new b();
     }
     
-    SafeParcelResponse(final int hx, final Parcel parcel, final FieldMappingDictionary hw) {
+    SafeParcelResponse(final int kp, final Parcel parcel, final FieldMappingDictionary ko) {
         final int n = 2;
-        this.hX = hx;
-        this.hV = (Parcel)l.ht(parcel);
-        this.hT = n;
-        this.hW = hw;
-        if (this.hW != null) {
-            this.hZ = this.hW.kW();
+        this.kP = kp;
+        this.kN = (Parcel)l.kh(parcel);
+        this.kL = n;
+        this.kO = ko;
+        if (this.kO != null) {
+            this.kR = this.kO.nJ();
         }
         else {
-            this.hZ = null;
+            this.kR = null;
         }
-        this.hU = n;
+        this.kM = n;
     }
     
-    private void kD(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final ArrayList list) {
+    private void nl(final StringBuilder sb, final Map map, final Parcel parcel) {
+        final SparseArray nv = nv(map);
+        sb.append('{');
+        final int ix = com.google.android.gms.common.internal.safeparcel.b.ix(parcel);
+        boolean b = false;
+        while (parcel.dataPosition() < ix) {
+            final int ig = com.google.android.gms.common.internal.safeparcel.b.iG(parcel);
+            final Map.Entry entry = (Map.Entry)nv.get(com.google.android.gms.common.internal.safeparcel.b.iO(ig));
+            if (entry != null) {
+                if (b) {
+                    sb.append(",");
+                }
+                this.nt(sb, entry.getKey(), entry.getValue(), parcel, ig);
+                b = true;
+            }
+        }
+        if (parcel.dataPosition() == ix) {
+            sb.append('}');
+            return;
+        }
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
+    }
+    
+    public static HashMap nm(final Bundle bundle) {
+        final HashMap<String, String> hashMap = new HashMap<String, String>();
+        for (final String s : bundle.keySet()) {
+            hashMap.put(s, bundle.getString(s));
+        }
+        return hashMap;
+    }
+    
+    private void nn(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
+        if (!fastJsonResponse$Field.mV()) {
+            switch (fastJsonResponse$Field.mT()) {
+                default: {
+                    throw new IllegalStateException("Unknown field type out");
+                }
+                case 0: {
+                    sb.append(com.google.android.gms.common.internal.safeparcel.b.iB(parcel, n));
+                    break;
+                }
+                case 1: {
+                    sb.append(com.google.android.gms.common.internal.safeparcel.b.it(parcel, n));
+                    break;
+                }
+                case 2: {
+                    sb.append(com.google.android.gms.common.internal.safeparcel.b.iz(parcel, n));
+                    break;
+                }
+                case 3: {
+                    sb.append(com.google.android.gms.common.internal.safeparcel.b.iX(parcel, n));
+                    break;
+                }
+                case 4: {
+                    sb.append(com.google.android.gms.common.internal.safeparcel.b.iP(parcel, n));
+                    break;
+                }
+                case 5: {
+                    sb.append(com.google.android.gms.common.internal.safeparcel.b.iW(parcel, n));
+                    break;
+                }
+                case 6: {
+                    sb.append(com.google.android.gms.common.internal.safeparcel.b.iL(parcel, n));
+                    break;
+                }
+                case 7: {
+                    sb.append("\"").append(h.mt(com.google.android.gms.common.internal.safeparcel.b.iE(parcel, n))).append("\"");
+                    break;
+                }
+                case 8: {
+                    sb.append("\"").append(e.mn(com.google.android.gms.common.internal.safeparcel.b.iT(parcel, n))).append("\"");
+                    break;
+                }
+                case 9: {
+                    sb.append("\"").append(e.mo(com.google.android.gms.common.internal.safeparcel.b.iT(parcel, n)));
+                    sb.append("\"");
+                    break;
+                }
+                case 10: {
+                    final Bundle id = com.google.android.gms.common.internal.safeparcel.b.iD(parcel, n);
+                    final Set keySet = id.keySet();
+                    keySet.size();
+                    sb.append("{");
+                    final boolean b = true;
+                    final Iterator<String> iterator = keySet.iterator();
+                    int n2 = b ? 1 : 0;
+                    while (iterator.hasNext()) {
+                        final String s = iterator.next();
+                        if (n2 == 0) {
+                            sb.append(",");
+                        }
+                        sb.append("\"").append(s).append("\"");
+                        sb.append(":");
+                        sb.append("\"").append(h.mt(id.getString(s))).append("\"");
+                        n2 = 0;
+                    }
+                    sb.append("}");
+                    break;
+                }
+                case 11: {
+                    final Parcel il = com.google.android.gms.common.internal.safeparcel.b.il(parcel, n);
+                    il.setDataPosition(0);
+                    this.nl(sb, fastJsonResponse$Field.nd(), il);
+                    break;
+                }
+            }
+        }
+        else {
+            sb.append("[");
+            switch (fastJsonResponse$Field.mT()) {
+                default: {
+                    throw new IllegalStateException("Unknown field type out.");
+                }
+                case 0: {
+                    com.google.android.gms.common.a.l.mA(sb, com.google.android.gms.common.internal.safeparcel.b.iy(parcel, n));
+                    break;
+                }
+                case 1: {
+                    com.google.android.gms.common.a.l.my(sb, com.google.android.gms.common.internal.safeparcel.b.iQ(parcel, n));
+                    break;
+                }
+                case 2: {
+                    com.google.android.gms.common.a.l.mB(sb, com.google.android.gms.common.internal.safeparcel.b.iH(parcel, n));
+                    break;
+                }
+                case 3: {
+                    com.google.android.gms.common.a.l.mE(sb, com.google.android.gms.common.internal.safeparcel.b.iq(parcel, n));
+                    break;
+                }
+                case 4: {
+                    com.google.android.gms.common.a.l.mD(sb, com.google.android.gms.common.internal.safeparcel.b.iU(parcel, n));
+                    break;
+                }
+                case 5: {
+                    com.google.android.gms.common.a.l.my(sb, com.google.android.gms.common.internal.safeparcel.b.iJ(parcel, n));
+                    break;
+                }
+                case 6: {
+                    com.google.android.gms.common.a.l.mC(sb, com.google.android.gms.common.internal.safeparcel.b.iR(parcel, n));
+                    break;
+                }
+                case 7: {
+                    com.google.android.gms.common.a.l.mz(sb, com.google.android.gms.common.internal.safeparcel.b.iI(parcel, n));
+                    break;
+                }
+                case 8:
+                case 9:
+                case 10: {
+                    throw new UnsupportedOperationException("List of type BASE64, BASE64_URL_SAFE, or STRING_MAP is not supported");
+                }
+                case 11: {
+                    final Parcel[] in = com.google.android.gms.common.internal.safeparcel.b.in(parcel, n);
+                    for (int length = in.length, i = 0; i < length; ++i) {
+                        if (i > 0) {
+                            sb.append(",");
+                        }
+                        in[i].setDataPosition(0);
+                        this.nl(sb, fastJsonResponse$Field.nd(), in[i]);
+                    }
+                    break;
+                }
+            }
+            sb.append("]");
+        }
+    }
+    
+    private void nr(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final ArrayList list) {
         int i = 0;
         sb.append("[");
         while (i < list.size()) {
             if (i != 0) {
                 sb.append(",");
             }
-            this.kI(sb, fastJsonResponse$Field.kt(), list.get(i));
+            this.nw(sb, fastJsonResponse$Field.nh(), list.get(i));
             ++i;
         }
         sb.append("]");
     }
     
-    private void kF(final StringBuilder sb, final String s, final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
+    private void nt(final StringBuilder sb, final String s, final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
         sb.append("\"").append(s).append("\":");
-        if (!fastJsonResponse$Field.kq()) {
-            this.kz(sb, fastJsonResponse$Field, parcel, n);
+        if (!fastJsonResponse$Field.ne()) {
+            this.nn(sb, fastJsonResponse$Field, parcel, n);
         }
         else {
-            this.kJ(sb, fastJsonResponse$Field, parcel, n);
+            this.nx(sb, fastJsonResponse$Field, parcel, n);
         }
     }
     
-    private void kG(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Object o) {
-        if (!fastJsonResponse$Field.ko()) {
-            this.kI(sb, fastJsonResponse$Field.kt(), o);
+    private void nu(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Object o) {
+        if (!fastJsonResponse$Field.nc()) {
+            this.nw(sb, fastJsonResponse$Field.nh(), o);
         }
         else {
-            this.kD(sb, fastJsonResponse$Field, (ArrayList)o);
+            this.nr(sb, fastJsonResponse$Field, (ArrayList)o);
         }
     }
     
-    private static SparseArray kH(final Map map) {
+    private static SparseArray nv(final Map map) {
         final SparseArray sparseArray = new SparseArray();
         for (final Map.Entry<K, FastJsonResponse$Field> entry : map.entrySet()) {
-            sparseArray.put(entry.getValue().kj(), (Object)entry);
+            sparseArray.put(entry.getValue().mX(), (Object)entry);
         }
         return sparseArray;
     }
     
-    private void kI(final StringBuilder sb, final int n, final Object o) {
+    private void nw(final StringBuilder sb, final int n, final Object o) {
         switch (n) {
             default: {
                 throw new IllegalArgumentException(new StringBuilder(26).append("Unknown type = ").append(n).toString());
@@ -104,20 +270,20 @@ public class SafeParcelResponse extends FastSafeParcelableJsonResponse
                 break;
             }
             case 7: {
-                sb.append("\"").append(h.jF(o.toString())).append("\"");
+                sb.append("\"").append(h.mt(o.toString())).append("\"");
                 break;
             }
             case 8: {
-                sb.append("\"").append(e.jz((byte[])o)).append("\"");
+                sb.append("\"").append(e.mn((byte[])o)).append("\"");
                 break;
             }
             case 9: {
-                sb.append("\"").append(e.jA((byte[])o));
+                sb.append("\"").append(e.mo((byte[])o));
                 sb.append("\"");
                 break;
             }
             case 10: {
-                com.google.android.gms.common.a.b.ju(sb, (HashMap)o);
+                com.google.android.gms.common.a.b.mi(sb, (HashMap)o);
                 break;
             }
             case 11: {
@@ -126,50 +292,50 @@ public class SafeParcelResponse extends FastSafeParcelableJsonResponse
         }
     }
     
-    private void kJ(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
-        switch (fastJsonResponse$Field.kf()) {
+    private void nx(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
+        switch (fastJsonResponse$Field.mT()) {
             default: {
-                throw new IllegalArgumentException(new StringBuilder(36).append("Unknown field out type = ").append(fastJsonResponse$Field.kf()).toString());
+                throw new IllegalArgumentException(new StringBuilder(36).append("Unknown field out type = ").append(fastJsonResponse$Field.mT()).toString());
             }
             case 0: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.fN(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iB(parcel, n)));
                 break;
             }
             case 1: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.fF(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.it(parcel, n)));
                 break;
             }
             case 2: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.fL(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iz(parcel, n)));
                 break;
             }
             case 3: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.gj(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iX(parcel, n)));
                 break;
             }
             case 4: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.gb(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iP(parcel, n)));
                 break;
             }
             case 5: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.gi(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iW(parcel, n)));
                 break;
             }
             case 6: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.fX(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iL(parcel, n)));
                 break;
             }
             case 7: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iE(parcel, n)));
                 break;
             }
             case 8:
             case 9: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.gf(parcel, n)));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, com.google.android.gms.common.internal.safeparcel.b.iT(parcel, n)));
                 break;
             }
             case 10: {
-                this.kG(sb, fastJsonResponse$Field, this.lb(fastJsonResponse$Field, ky(com.google.android.gms.common.internal.safeparcel.b.fP(parcel, n))));
+                this.nu(sb, fastJsonResponse$Field, this.nP(fastJsonResponse$Field, nm(com.google.android.gms.common.internal.safeparcel.b.iD(parcel, n))));
                 break;
             }
             case 11: {
@@ -178,239 +344,73 @@ public class SafeParcelResponse extends FastSafeParcelableJsonResponse
         }
     }
     
-    private void kx(final StringBuilder sb, final Map map, final Parcel parcel) {
-        final SparseArray kh = kH(map);
-        sb.append('{');
-        final int fj = com.google.android.gms.common.internal.safeparcel.b.fJ(parcel);
-        boolean b = false;
-        while (parcel.dataPosition() < fj) {
-            final int fs = com.google.android.gms.common.internal.safeparcel.b.fS(parcel);
-            final Map.Entry entry = (Map.Entry)kh.get(com.google.android.gms.common.internal.safeparcel.b.ga(fs));
-            if (entry != null) {
-                if (b) {
-                    sb.append(",");
-                }
-                this.kF(sb, entry.getKey(), entry.getValue(), parcel, fs);
-                b = true;
-            }
-        }
-        if (parcel.dataPosition() == fj) {
-            sb.append('}');
-            return;
-        }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+    public boolean mR(final String s) {
+        throw new UnsupportedOperationException("Converting to JSON does not require this method.");
     }
     
-    public static HashMap ky(final Bundle bundle) {
-        final HashMap<String, String> hashMap = new HashMap<String, String>();
-        for (final String s : bundle.keySet()) {
-            hashMap.put(s, bundle.getString(s));
-        }
-        return hashMap;
+    public Object mS(final String s) {
+        throw new UnsupportedOperationException("Converting to JSON does not require this method.");
     }
     
-    private void kz(final StringBuilder sb, final FastJsonResponse$Field fastJsonResponse$Field, final Parcel parcel, final int n) {
-        if (!fastJsonResponse$Field.kh()) {
-            switch (fastJsonResponse$Field.kf()) {
-                default: {
-                    throw new IllegalStateException("Unknown field type out");
-                }
-                case 0: {
-                    sb.append(com.google.android.gms.common.internal.safeparcel.b.fN(parcel, n));
-                    break;
-                }
-                case 1: {
-                    sb.append(com.google.android.gms.common.internal.safeparcel.b.fF(parcel, n));
-                    break;
-                }
-                case 2: {
-                    sb.append(com.google.android.gms.common.internal.safeparcel.b.fL(parcel, n));
-                    break;
-                }
-                case 3: {
-                    sb.append(com.google.android.gms.common.internal.safeparcel.b.gj(parcel, n));
-                    break;
-                }
-                case 4: {
-                    sb.append(com.google.android.gms.common.internal.safeparcel.b.gb(parcel, n));
-                    break;
-                }
-                case 5: {
-                    sb.append(com.google.android.gms.common.internal.safeparcel.b.gi(parcel, n));
-                    break;
-                }
-                case 6: {
-                    sb.append(com.google.android.gms.common.internal.safeparcel.b.fX(parcel, n));
-                    break;
-                }
-                case 7: {
-                    sb.append("\"").append(h.jF(com.google.android.gms.common.internal.safeparcel.b.fQ(parcel, n))).append("\"");
-                    break;
-                }
-                case 8: {
-                    sb.append("\"").append(e.jz(com.google.android.gms.common.internal.safeparcel.b.gf(parcel, n))).append("\"");
-                    break;
-                }
-                case 9: {
-                    sb.append("\"").append(e.jA(com.google.android.gms.common.internal.safeparcel.b.gf(parcel, n)));
-                    sb.append("\"");
-                    break;
-                }
-                case 10: {
-                    final Bundle fp = com.google.android.gms.common.internal.safeparcel.b.fP(parcel, n);
-                    final Set keySet = fp.keySet();
-                    keySet.size();
-                    sb.append("{");
-                    final boolean b = true;
-                    final Iterator<String> iterator = keySet.iterator();
-                    int n2 = b ? 1 : 0;
-                    while (iterator.hasNext()) {
-                        final String s = iterator.next();
-                        if (n2 == 0) {
-                            sb.append(",");
-                        }
-                        sb.append("\"").append(s).append("\"");
-                        sb.append(":");
-                        sb.append("\"").append(h.jF(fp.getString(s))).append("\"");
-                        n2 = 0;
-                    }
-                    sb.append("}");
-                    break;
-                }
-                case 11: {
-                    final Parcel fx = com.google.android.gms.common.internal.safeparcel.b.fx(parcel, n);
-                    fx.setDataPosition(0);
-                    this.kx(sb, fastJsonResponse$Field.kp(), fx);
-                    break;
-                }
-            }
-        }
-        else {
-            sb.append("[");
-            switch (fastJsonResponse$Field.kf()) {
-                default: {
-                    throw new IllegalStateException("Unknown field type out.");
-                }
-                case 0: {
-                    com.google.android.gms.common.a.l.jM(sb, com.google.android.gms.common.internal.safeparcel.b.fK(parcel, n));
-                    break;
-                }
-                case 1: {
-                    com.google.android.gms.common.a.l.jK(sb, com.google.android.gms.common.internal.safeparcel.b.gc(parcel, n));
-                    break;
-                }
-                case 2: {
-                    com.google.android.gms.common.a.l.jN(sb, com.google.android.gms.common.internal.safeparcel.b.fT(parcel, n));
-                    break;
-                }
-                case 3: {
-                    com.google.android.gms.common.a.l.jQ(sb, com.google.android.gms.common.internal.safeparcel.b.fC(parcel, n));
-                    break;
-                }
-                case 4: {
-                    com.google.android.gms.common.a.l.jP(sb, com.google.android.gms.common.internal.safeparcel.b.gg(parcel, n));
-                    break;
-                }
-                case 5: {
-                    com.google.android.gms.common.a.l.jK(sb, com.google.android.gms.common.internal.safeparcel.b.fV(parcel, n));
-                    break;
-                }
-                case 6: {
-                    com.google.android.gms.common.a.l.jO(sb, com.google.android.gms.common.internal.safeparcel.b.gd(parcel, n));
-                    break;
-                }
-                case 7: {
-                    com.google.android.gms.common.a.l.jL(sb, com.google.android.gms.common.internal.safeparcel.b.fU(parcel, n));
-                    break;
-                }
-                case 8:
-                case 9:
-                case 10: {
-                    throw new UnsupportedOperationException("List of type BASE64, BASE64_URL_SAFE, or STRING_MAP is not supported");
-                }
-                case 11: {
-                    final Parcel[] fz = com.google.android.gms.common.internal.safeparcel.b.fz(parcel, n);
-                    for (int length = fz.length, i = 0; i < length; ++i) {
-                        if (i > 0) {
-                            sb.append(",");
-                        }
-                        fz[i].setDataPosition(0);
-                        this.kx(sb, fastJsonResponse$Field.kp(), fz[i]);
-                    }
-                    break;
-                }
-            }
-            sb.append("]");
-        }
-    }
-    
-    FieldMappingDictionary kA() {
-        switch (this.hT) {
+    FieldMappingDictionary no() {
+        switch (this.kL) {
             default: {
-                throw new IllegalStateException(new StringBuilder(34).append("Invalid creation type: ").append(this.hT).toString());
+                throw new IllegalStateException(new StringBuilder(34).append("Invalid creation type: ").append(this.kL).toString());
             }
             case 0: {
                 return null;
             }
             case 1: {
-                return this.hW;
+                return this.kO;
             }
             case 2: {
-                return this.hW;
+                return this.kO;
             }
         }
     }
     
-    public Map kB() {
-        if (this.hW != null) {
-            return this.hW.kV(this.hZ);
+    public Map np() {
+        if (this.kO != null) {
+            return this.kO.nI(this.kR);
         }
         return null;
     }
     
-    public int kC() {
-        return this.hX;
+    public int nq() {
+        return this.kP;
     }
     
-    public Parcel kE() {
-        final int hu = 2;
-        switch (this.hU) {
+    public Parcel ns() {
+        final int km = 2;
+        switch (this.kM) {
             default: {
-                return this.hV;
+                return this.kN;
             }
             case 0: {
-                this.hY = a.eY(this.hV);
-                a.fe(this.hV, this.hY);
+                this.kQ = a.hM(this.kN);
+                a.hS(this.kN, this.kQ);
                 break;
             }
             case 1: {
-                a.fe(this.hV, this.hY);
+                a.hS(this.kN, this.kQ);
                 break;
             }
         }
-        this.hU = hu;
-        return this.hV;
-    }
-    
-    public boolean kd(final String s) {
-        throw new UnsupportedOperationException("Converting to JSON does not require this method.");
-    }
-    
-    public Object ke(final String s) {
-        throw new UnsupportedOperationException("Converting to JSON does not require this method.");
+        this.kM = km;
+        return this.kN;
     }
     
     public String toString() {
-        l.ho(this.hW, "Cannot convert to JSON on client side.");
-        final Parcel ke = this.kE();
-        ke.setDataPosition(0);
+        l.kc(this.kO, "Cannot convert to JSON on client side.");
+        final Parcel ns = this.ns();
+        ns.setDataPosition(0);
         final StringBuilder sb = new StringBuilder(100);
-        this.kx(sb, this.hW.kV(this.hZ), ke);
+        this.nl(sb, this.kO.nI(this.kR), ns);
         return sb.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         final b creator = SafeParcelResponse.CREATOR;
-        b.kM(this, parcel, n);
+        b.nA(this, parcel, n);
     }
 }

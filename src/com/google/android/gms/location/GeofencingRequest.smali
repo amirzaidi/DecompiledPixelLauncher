@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private final Dm:I
+.field private final ER:I
 
-.field private final Dn:I
+.field private final ES:I
 
-.field private final Do:Ljava/util/List;
+.field private final ET:Ljava/util/List;
 
 
 # direct methods
@@ -32,37 +32,37 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/safeparcel/AbstractSafeParcelable;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/location/GeofencingRequest;->Dm:I
+    iput p1, p0, Lcom/google/android/gms/location/GeofencingRequest;->ER:I
 
-    iput-object p2, p0, Lcom/google/android/gms/location/GeofencingRequest;->Do:Ljava/util/List;
+    iput-object p2, p0, Lcom/google/android/gms/location/GeofencingRequest;->ET:Ljava/util/List;
 
-    iput p3, p0, Lcom/google/android/gms/location/GeofencingRequest;->Dn:I
+    iput p3, p0, Lcom/google/android/gms/location/GeofencingRequest;->ES:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public HX()I
+.method public IQ()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/GeofencingRequest;->Dn:I
+    iget v0, p0, Lcom/google/android/gms/location/GeofencingRequest;->ES:I
 
     return v0
 .end method
 
-.method public HY()Ljava/util/List;
+.method public IR()Ljava/util/List;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/gms/location/GeofencingRequest;->Do:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/location/GeofencingRequest;->ET:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public HZ()I
+.method public IS()I
     .locals 1
 
-    iget v0, p0, Lcom/google/android/gms/location/GeofencingRequest;->Dm:I
+    iget v0, p0, Lcom/google/android/gms/location/GeofencingRequest;->ER:I
 
     return v0
 .end method
@@ -70,7 +70,7 @@
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/l;->Hr(Lcom/google/android/gms/location/GeofencingRequest;Landroid/os/Parcel;I)V
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/location/l;->Ik(Lcom/google/android/gms/location/GeofencingRequest;Landroid/os/Parcel;I)V
 
     return-void
 .end method

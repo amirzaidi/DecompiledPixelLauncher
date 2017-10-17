@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static KB(B)Ljava/lang/Boolean;
+.method public static Lu(B)Ljava/lang/Boolean;
     .locals 1
 
     packed-switch p0, :pswitch_data_0
@@ -31,7 +31,7 @@
     .end packed-switch
 .end method
 
-.method public static KC(Ljava/lang/Boolean;)B
+.method public static Lv(Ljava/lang/Boolean;)B
     .locals 2
 
     const/4 v0, 0x0

@@ -11,19 +11,19 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public class DogfoodsToken extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final int lg;
-    public final byte[] lh;
+    final int yO;
+    public final byte[] yP;
     
     static {
-        CREATOR = (Parcelable$Creator)new k();
+        CREATOR = (Parcelable$Creator)new j();
     }
     
-    DogfoodsToken(final int lg, final byte[] lh) {
-        this.lg = lg;
-        this.lh = lh;
+    DogfoodsToken(final int yo, final byte[] yp) {
+        this.yO = yo;
+        this.yP = yp;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        k.pl(this, parcel, n);
+        j.Df(this, parcel, n);
     }
 }

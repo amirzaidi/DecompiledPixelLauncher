@@ -12,47 +12,47 @@ import android.os.Parcelable$Creator;
 
 public class a implements Parcelable$Creator
 {
-    static void CV(final PlaceLikelihoodEntity placeLikelihoodEntity, final Parcel parcel, final int n) {
-        final int ey = com.google.android.gms.common.internal.safeparcel.a.eY(parcel);
-        com.google.android.gms.common.internal.safeparcel.a.eW(parcel, 1, (Parcelable)placeLikelihoodEntity.yh, n, false);
-        com.google.android.gms.common.internal.safeparcel.a.fs(parcel, 2, placeLikelihoodEntity.yi);
-        com.google.android.gms.common.internal.safeparcel.a.fj(parcel, 1000, placeLikelihoodEntity.yg);
-        com.google.android.gms.common.internal.safeparcel.a.fe(parcel, ey);
+    static void DO(final PlaceLikelihoodEntity placeLikelihoodEntity, final Parcel parcel, final int n) {
+        final int hm = com.google.android.gms.common.internal.safeparcel.a.hM(parcel);
+        com.google.android.gms.common.internal.safeparcel.a.hK(parcel, 1, (Parcelable)placeLikelihoodEntity.zM, n, false);
+        com.google.android.gms.common.internal.safeparcel.a.ig(parcel, 2, placeLikelihoodEntity.zN);
+        com.google.android.gms.common.internal.safeparcel.a.hX(parcel, 1000, placeLikelihoodEntity.zL);
+        com.google.android.gms.common.internal.safeparcel.a.hS(parcel, hm);
     }
     
-    public PlaceLikelihoodEntity CT(final Parcel parcel) {
-        final int fj = b.fJ(parcel);
-        int fn = 0;
+    public PlaceLikelihoodEntity DM(final Parcel parcel) {
+        final int ix = b.ix(parcel);
+        int ib = 0;
         PlaceEntity placeEntity = null;
-        float gj = 0.0f;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        float ix2 = 0.0f;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    placeEntity = (PlaceEntity)b.fW(parcel, fs, (Parcelable$Creator)PlaceEntity.CREATOR);
+                    placeEntity = (PlaceEntity)b.iK(parcel, ig, (Parcelable$Creator)PlaceEntity.CREATOR);
                     continue;
                 }
                 case 2: {
-                    gj = b.gj(parcel, fs);
+                    ix2 = b.iX(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new PlaceLikelihoodEntity(fn, placeEntity, gj);
+        if (parcel.dataPosition() == ix) {
+            return new PlaceLikelihoodEntity(ib, placeEntity, ix2);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
-    public PlaceLikelihoodEntity[] CU(final int n) {
+    public PlaceLikelihoodEntity[] DN(final int n) {
         return new PlaceLikelihoodEntity[n];
     }
 }

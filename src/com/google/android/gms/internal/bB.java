@@ -4,43 +4,20 @@
 
 package com.google.android.gms.internal;
 
-import java.util.Arrays;
+import android.os.Process;
 
-final class bb
+class bb implements Runnable
 {
-    final byte[] tu;
-    final int tv;
+    private final Runnable tV;
+    private final int tW;
     
-    bb(final int tv, final byte[] tu) {
-        this.tv = tv;
-        this.tu = tu;
+    public bb(final Runnable tv, final int tw) {
+        this.tV = tv;
+        this.tW = tw;
     }
     
-    int computeSerializedSize() {
-        return aV.vZ(this.tv) + 0 + this.tu.length;
-    }
-    
-    public boolean equals(final Object o) {
-        boolean b = true;
-        if (o == this) {
-            return b;
-        }
-        if (o instanceof bb) {
-            final bb bb = (bb)o;
-            if (this.tv != bb.tv || Arrays.equals(this.tu, bb.tu)) {
-                b = false;
-            }
-            return b;
-        }
-        return false;
-    }
-    
-    public int hashCode() {
-        return (this.tv + 527) * 31 + Arrays.hashCode(this.tu);
-    }
-    
-    void xB(final aV av) {
-        av.wb(this.tv);
-        av.vT(this.tu);
+    public void run() {
+        Process.setThreadPriority(this.tW);
+        this.tV.run();
     }
 }

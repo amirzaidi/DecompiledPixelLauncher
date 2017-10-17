@@ -14,62 +14,62 @@ import android.os.Parcelable$Creator;
 
 public class v implements Parcelable$Creator
 {
-    static void Ik(final ActivityRecognitionResult activityRecognitionResult, final Parcel parcel, final int n) {
-        final int ey = a.eY(parcel);
-        a.fc(parcel, 1, activityRecognitionResult.Cp, false);
-        a.fw(parcel, 2, activityRecognitionResult.Cs);
-        a.fw(parcel, 3, activityRecognitionResult.Cq);
-        a.fj(parcel, 4, activityRecognitionResult.Cr);
-        a.eT(parcel, 5, activityRecognitionResult.Cn, false);
-        a.fj(parcel, 1000, activityRecognitionResult.GJ());
-        a.fe(parcel, ey);
+    static void Jd(final ActivityRecognitionResult activityRecognitionResult, final Parcel parcel, final int n) {
+        final int hm = a.hM(parcel);
+        a.hQ(parcel, 1, activityRecognitionResult.DU, false);
+        a.ik(parcel, 2, activityRecognitionResult.DX);
+        a.ik(parcel, 3, activityRecognitionResult.DV);
+        a.hX(parcel, 4, activityRecognitionResult.DW);
+        a.hH(parcel, 5, activityRecognitionResult.DS, false);
+        a.hX(parcel, 1000, activityRecognitionResult.HC());
+        a.hS(parcel, hm);
     }
     
     public ActivityRecognitionResult createFromParcel(final Parcel parcel) {
-        long fl = 0L;
-        Bundle fp = null;
-        int fn = 0;
-        final int fj = b.fJ(parcel);
-        long fl2 = fl;
-        List fz = null;
-        int fn2 = 0;
-        while (parcel.dataPosition() < fj) {
-            final int fs = b.fS(parcel);
-            switch (b.ga(fs)) {
+        long iz = 0L;
+        Bundle id = null;
+        int ib = 0;
+        final int ix = b.ix(parcel);
+        long iz2 = iz;
+        List in = null;
+        int ib2 = 0;
+        while (parcel.dataPosition() < ix) {
+            final int ig = b.iG(parcel);
+            switch (b.iO(ig)) {
                 default: {
-                    b.fA(parcel, fs);
+                    b.io(parcel, ig);
                     continue;
                 }
                 case 1: {
-                    fz = b.fZ(parcel, fs, (Parcelable$Creator)DetectedActivity.CREATOR);
+                    in = b.iN(parcel, ig, (Parcelable$Creator)DetectedActivity.CREATOR);
                     continue;
                 }
                 case 2: {
-                    fl2 = b.fL(parcel, fs);
+                    iz2 = b.iz(parcel, ig);
                     continue;
                 }
                 case 3: {
-                    fl = b.fL(parcel, fs);
+                    iz = b.iz(parcel, ig);
                     continue;
                 }
                 case 4: {
-                    fn = b.fN(parcel, fs);
+                    ib = b.iB(parcel, ig);
                     continue;
                 }
                 case 5: {
-                    fp = b.fP(parcel, fs);
+                    id = b.iD(parcel, ig);
                     continue;
                 }
                 case 1000: {
-                    fn2 = b.fN(parcel, fs);
+                    ib2 = b.iB(parcel, ig);
                     continue;
                 }
             }
         }
-        if (parcel.dataPosition() == fj) {
-            return new ActivityRecognitionResult(fn2, fz, fl2, fl, fn, fp);
+        if (parcel.dataPosition() == ix) {
+            return new ActivityRecognitionResult(ib2, in, iz2, iz, ib, id);
         }
-        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(fj).toString(), parcel);
+        throw new zza$zza(new StringBuilder(37).append("Overread allowed size end=").append(ix).toString(), parcel);
     }
     
     public ActivityRecognitionResult[] newArray(final int n) {

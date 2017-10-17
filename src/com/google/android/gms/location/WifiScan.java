@@ -12,59 +12,59 @@ import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
 public final class WifiScan extends AbstractSafeParcelable
 {
     public static final Parcelable$Creator CREATOR;
-    static final long[] Dk;
-    private final long Di;
-    final long[] Dj;
-    private final int Dl;
+    static final long[] EP;
+    private final long EN;
+    final long[] EO;
+    private final int EQ;
     
     static {
-        Dk = new long[0];
+        EP = new long[0];
         CREATOR = (Parcelable$Creator)new o();
     }
     
-    WifiScan(final int dl, final long di, long[] dk) {
-        this.Di = di;
-        this.Dl = dl;
-        if (dk == null) {
-            dk = WifiScan.Dk;
+    WifiScan(final int eq, final long en, long[] ep) {
+        this.EN = en;
+        this.EQ = eq;
+        if (ep == null) {
+            ep = WifiScan.EP;
         }
-        this.Dj = dk;
+        this.EO = ep;
     }
     
-    private void HR(final int n) {
-        if (n >= 0 && n < this.HQ()) {
+    private void IK(final int n) {
+        if (n >= 0 && n < this.IJ()) {
             return;
         }
-        throw new IndexOutOfBoundsException(new StringBuilder(49).append("Index ").append(n).append(" out of bounds: [0, ").append(this.HQ()).append(")").toString());
+        throw new IndexOutOfBoundsException(new StringBuilder(49).append("Index ").append(n).append(" out of bounds: [0, ").append(this.IJ()).append(")").toString());
     }
     
-    public int HQ() {
-        return this.Dj.length;
+    public int IJ() {
+        return this.EO.length;
     }
     
-    public byte HS(final int n) {
-        this.HR(n);
-        return (byte)((this.Dj[n] & 0xFF000000000000L) >>> 48);
+    public byte IL(final int n) {
+        this.IK(n);
+        return (byte)((this.EO[n] & 0xFF000000000000L) >>> 48);
     }
     
-    public long HT() {
-        return this.Di;
+    public long IM() {
+        return this.EN;
     }
     
-    public long HU(final int n) {
-        this.HR(n);
-        return this.Dj[n] & 0xFFFFFFFFFFFFL;
+    public long IN(final int n) {
+        this.IK(n);
+        return this.EO[n] & 0xFFFFFFFFFFFFL;
     }
     
-    int HV() {
-        return this.Dl;
+    int IO() {
+        return this.EQ;
     }
     
     public boolean equals(final Object o) {
         boolean b = false;
         if (o instanceof WifiScan) {
             final WifiScan wifiScan = (WifiScan)o;
-            if (wifiScan.Di == this.Di && Arrays.equals(wifiScan.Dj, this.Dj)) {
+            if (wifiScan.EN == this.EN && Arrays.equals(wifiScan.EO, this.EO)) {
                 b = true;
             }
             return b;
@@ -73,16 +73,16 @@ public final class WifiScan extends AbstractSafeParcelable
     }
     
     public int hashCode() {
-        return Arrays.hashCode(this.Dj);
+        return Arrays.hashCode(this.EO);
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder("WifiScan[elapsed rt: ");
-        sb.append(this.Di);
-        for (int hq = this.HQ(), i = 0; i < hq; ++i) {
-            sb.append(", Device[mac: ").append(this.HU(i));
-            sb.append(", power [dbm]: ").append(this.HS(i));
-            if (i >= hq - 1) {
+        sb.append(this.EN);
+        for (int ij = this.IJ(), i = 0; i < ij; ++i) {
+            sb.append(", Device[mac: ").append(this.IN(i));
+            sb.append(", power [dbm]: ").append(this.IL(i));
+            if (i >= ij - 1) {
                 sb.append("]");
             }
             else {
@@ -94,6 +94,6 @@ public final class WifiScan extends AbstractSafeParcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        o.HO(this, parcel, n);
+        o.IH(this, parcel, n);
     }
 }

@@ -3,87 +3,7 @@
 
 
 # direct methods
-.method public static jK(Ljava/lang/StringBuilder;[Ljava/lang/Object;)V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    array-length v1, p1
-
-    :goto_0
-    if-lt v0, v1, :cond_0
-
-    return-void
-
-    :cond_0
-    if-nez v0, :cond_1
-
-    :goto_1
-    aget-object v2, p1, v0
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const-string/jumbo v2, ","
-
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_1
-.end method
-
-.method public static jL(Ljava/lang/StringBuilder;[Ljava/lang/String;)V
-    .locals 4
-
-    const/4 v0, 0x0
-
-    array-length v1, p1
-
-    :goto_0
-    if-lt v0, v1, :cond_0
-
-    return-void
-
-    :cond_0
-    if-nez v0, :cond_1
-
-    :goto_1
-    const-string/jumbo v2, "\""
-
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    aget-object v3, p1, v0
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "\""
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const-string/jumbo v2, ","
-
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_1
-.end method
-
-.method public static jM(Ljava/lang/StringBuilder;[I)V
+.method public static mA(Ljava/lang/StringBuilder;[I)V
     .locals 3
 
     const/4 v0, 0x0
@@ -119,7 +39,7 @@
     goto :goto_1
 .end method
 
-.method public static jN(Ljava/lang/StringBuilder;[J)V
+.method public static mB(Ljava/lang/StringBuilder;[J)V
     .locals 4
 
     const/4 v0, 0x0
@@ -155,7 +75,7 @@
     goto :goto_1
 .end method
 
-.method public static jO(Ljava/lang/StringBuilder;[Z)V
+.method public static mC(Ljava/lang/StringBuilder;[Z)V
     .locals 3
 
     const/4 v0, 0x0
@@ -191,7 +111,7 @@
     goto :goto_1
 .end method
 
-.method public static jP(Ljava/lang/StringBuilder;[D)V
+.method public static mD(Ljava/lang/StringBuilder;[D)V
     .locals 4
 
     const/4 v0, 0x0
@@ -227,7 +147,7 @@
     goto :goto_1
 .end method
 
-.method public static jQ(Ljava/lang/StringBuilder;[F)V
+.method public static mE(Ljava/lang/StringBuilder;[F)V
     .locals 3
 
     const/4 v0, 0x0
@@ -250,6 +170,86 @@
     move-result-object v2
 
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const-string/jumbo v2, ","
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+.end method
+
+.method public static my(Ljava/lang/StringBuilder;[Ljava/lang/Object;)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    array-length v1, p1
+
+    :goto_0
+    if-lt v0, v1, :cond_0
+
+    return-void
+
+    :cond_0
+    if-nez v0, :cond_1
+
+    :goto_1
+    aget-object v2, p1, v0
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const-string/jumbo v2, ","
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+.end method
+
+.method public static mz(Ljava/lang/StringBuilder;[Ljava/lang/String;)V
+    .locals 4
+
+    const/4 v0, 0x0
+
+    array-length v1, p1
+
+    :goto_0
+    if-lt v0, v1, :cond_0
+
+    return-void
+
+    :cond_0
+    if-nez v0, :cond_1
+
+    :goto_1
+    const-string/jumbo v2, "\""
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    aget-object v3, p1, v0
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "\""
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v0, v0, 0x1
 
