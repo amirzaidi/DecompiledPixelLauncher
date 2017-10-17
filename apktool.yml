@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: opixel.apk
+apkFileName: NexusLauncherPrebuilt.apk
 compressionType: false
 doNotCompress:
 - arsc
@@ -20,5 +20,5 @@ usesFramework:
   tag: null
 version: 2.2.4
 versionInfo:
-  versionCode: '204'
-  versionName: ODR-4023749
+  versionCode: '301'
+  versionName: P-4275643

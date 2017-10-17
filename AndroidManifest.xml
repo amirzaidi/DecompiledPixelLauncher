@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.apps.nexuslauncher" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.google.android.apps.nexuslauncher" platformBuildVersionCode="26" platformBuildVersionName="OMR1">
     <uses-feature android:glEsVersion="0x00020000" android:required="false"/>
     <application android:backupAgent="com.android.launcher3.LauncherBackupAgent" android:backupInForeground="true" android:fullBackupContent="@xml/backupscheme" android:fullBackupOnly="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_home" android:label="@string/app_name_pixel_launcher" android:largeHeap="@bool/config_largeHeap" android:restoreAnyVersion="true" android:supportsRtl="true">
         <activity android:clearTaskOnLaunch="true" android:configChanges="keyboard|keyboardHidden|navigation" android:enabled="true" android:launchMode="singleTask" android:name="com.google.android.apps.nexuslauncher.NexusLauncherActivity" android:resizeableActivity="true" android:resumeWhilePausing="true" android:screenOrientation="nosensor" android:stateNotNeeded="true" android:taskAffinity="" android:theme="@style/LauncherTheme" android:windowSoftInputMode="adjustPan">
@@ -15,7 +15,25 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <service android:exported="false" android:name="com.google.android.apps.nexuslauncher.qsb.ExperimentSetupService"/>
+        <activity android:name="com.google.android.apps.nexuslauncher.search.AppLaunchActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter android:priority="1">
+                <action android:name="com.google.android.apps.nexuslauncher.search.APP_LAUNCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.android.search.suggest" android:scheme="content"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="@bool/enable_install_shortcut_api" android:name="com.google.android.apps.nexuslauncher.reflection.NewAppInstallReceiver$V21">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="@bool/notification_badging_enabled" android:name="com.google.android.apps.nexuslauncher.reflection.NewAppInstallReceiver$V26">
+            <intent-filter>
+                <action android:name="android.content.pm.action.SESSION_COMMITTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.apps.nexuslauncher.qsb.LongClickReceiver"/>
         <receiver android:name="com.google.android.apps.nexuslauncher.qsb.OPAStatusReceiver" android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
             <intent-filter>
                 <action android:name="com.google.android.systemui.OPA_ENABLED"/>
@@ -26,16 +44,20 @@
                 <action android:name="com.google.android.setupwizard.SETUP_WIZARD_START"/>
             </intent-filter>
         </receiver>
+        <receiver android:name="com.google.android.apps.nexuslauncher.LauncherLayoutPreloadReceiver" android:permission="android.permission.REBOOT">
+            <intent-filter>
+                <action android:name="com.android.setupwizard.action.LOAD_LAUNCHER_LAYOUT"/>
+            </intent-filter>
+        </receiver>
         <receiver android:name="com.google.android.apps.nexuslauncher.qsb.WeatherUpdateReceiver" android:permission="android.permission.CAPTURE_AUDIO_HOTWORD">
             <intent-filter>
                 <action android:name="com.google.android.apps.nexuslauncher.updateweather"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="com.google.android.apps.nexuslauncher.util.DummyWidget">
+        <receiver android:name="com.google.android.apps.nexuslauncher.smartspace.SmartspaceBroadcastReceiver">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.google.android.apps.nexuslauncher.UPDATE_SMARTSPACE"/>
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/dummy_widget_info"/>
         </receiver>
         <receiver android:name="com.google.android.apps.nexuslauncher.experiment.PhenotypeUpdateReceiver">
             <intent-filter>
@@ -43,6 +65,7 @@
             </intent-filter>
         </receiver>
         <provider android:authorities="com.google.android.apps.nexuslauncher.settings" android:exported="true" android:name="com.android.launcher3.LauncherProvider" android:readPermission="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS" android:writePermission="com.google.android.apps.nexuslauncher.permission.WRITE_SETTINGS"/>
+        <provider android:authorities="com.google.android.apps.nexuslauncher.appssearch" android:exported="true" android:name="com.google.android.apps.nexuslauncher.search.AppSearchProvider"/>
         <meta-data android:name="com.google.android.gms.phenotype.registration.xml" android:resource="@xml/phenotype"/>
         <activity android:autoRemoveFromRecents="true" android:excludeFromRecents="true" android:label="@string/action_add_to_workspace" android:name="com.android.launcher3.dragndrop.AddItemActivity" android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.Alert">
             <intent-filter>
@@ -50,7 +73,8 @@
                 <action android:name="android.content.pm.action.CONFIRM_PIN_APPWIDGET"/>
             </intent-filter>
         </activity>
-        <service android:exported="false" android:name="com.android.launcher3.dynamicui.ColorExtractionService" android:process=":wallpaper_chooser"/>
+        <service android:exported="false" android:name="com.android.launcher3.dynamicui.ColorExtractionService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":wallpaper_chooser"/>
+        <service android:exported="false" android:name="com.android.launcher3.compat.WallpaperManagerCompatVL$ColorExtractionService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":wallpaper_chooser"/>
         <service android:enabled="@bool/notification_badging_enabled" android:name="com.android.launcher3.notification.NotificationListener" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService"/>
