@@ -1,0 +1,24 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: opixel.apk
+compressionType: false
+doNotCompress:
+- arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '21'
+  targetSdkVersion: '26'
+sharedLibrary: false
+unknownFiles:
+  build-data.properties: '8'
+  jsr305_annotations/Jsr305_annotations.gwt.xml: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.2.4
+versionInfo:
+  versionCode: '204'
+  versionName: ODR-4023749

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites
+  xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3">
+    <favorite launcher:className="com.google.android.dialer.extensions.GoogleDialtactsActivity" launcher:packageName="com.google.android.dialer" launcher:container="-101" launcher:screen="0" launcher:x="0" launcher:y="0" />
+    <favorite launcher:className="com.google.android.apps.messaging.ui.ConversationListActivity" launcher:packageName="com.google.android.apps.messaging" launcher:container="-101" launcher:screen="1" launcher:x="1" launcher:y="0" />
+    <favorite launcher:className="com.google.android.apps.chrome.Main" launcher:packageName="com.android.chrome" launcher:container="-101" launcher:screen="2" launcher:x="2" launcher:y="0" />
+    <favorite launcher:className="com.android.camera.CameraLauncher" launcher:packageName="com.google.android.GoogleCamera" launcher:container="-101" launcher:screen="3" launcher:x="3" launcher:y="0" />
+</favorites>

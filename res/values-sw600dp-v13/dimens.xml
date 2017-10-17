@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="all_apps_background_canvas_width">850.0dip</dimen>
+    <dimen name="all_apps_background_canvas_height">525.0dip</dimen>
+    <dimen name="widget_section_indent">56.0dip</dimen>
+    <dimen name="drag_flingToDeleteMinVelocity">-1000.0dip</dimen>
+</resources>

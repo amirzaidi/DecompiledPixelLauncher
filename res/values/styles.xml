@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BaseLauncherTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:colorEdgeEffect">#ff757575</item>
+    </style>
+    <style name="LauncherTheme" parent="@style/BaseLauncherTheme" />
+    <style name="WidgetContainerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+        <item name="android:textColorPrimary">?android:textColorPrimaryInverse</item>
+        <item name="android:textColorSecondary">?android:textColorSecondaryInverse</item>
+        <item name="android:colorEdgeEffect">?android:textColorSecondaryInverse</item>
+    </style>
+    <style name="FastScrollerPopup">
+        <item name="android:textSize">@dimen/container_fastscroll_popup_text_size</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/container_fastscroll_popup_bg</item>
+        <item name="android:saveEnabled">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/container_fastscroll_popup_size</item>
+        <item name="android:minWidth">@dimen/container_fastscroll_popup_size</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:alpha">0.0</item>
+        <item name="android:elevation">3.0dip</item>
+    </style>
+    <style name="AllAppsNavBarProtection">
+        <item name="android:background">@color/default_shadow_color_no_alpha</item>
+        <item name="android:alpha">?android:spotShadowAlpha</item>
+    </style>
+    <style name="BaseIcon">
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:focusable">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowRadius">0.0</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="customShadows">false</item>
+    </style>
+    <style name="BaseIcon.Workspace" parent="@style/BaseIcon">
+        <item name="android:textColor">@color/workspace_icon_text_color</item>
+        <item name="android:shadowColor">#b0000000</item>
+        <item name="android:shadowRadius">2.0</item>
+        <item name="customShadows">true</item>
+    </style>
+    <style name="DropTargetButtonBase">
+        <item name="android:textSize">@dimen/drop_target_text_size</item>
+        <item name="android:textColor">@color/workspace_icon_text_color</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingLeft">16.0dip</item>
+        <item name="android:paddingRight">16.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">@color/default_shadow_color_no_alpha</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">4.0</item>
+        <item name="android:drawablePadding">7.5dip</item>
+    </style>
+    <style name="DropTargetButton" parent="@style/DropTargetButtonBase" />
+</resources>

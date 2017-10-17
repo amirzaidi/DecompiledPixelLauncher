@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.shortcuts.DeepShortcutView android:layout_width="@dimen/bg_popup_item_width" android:layout_height="@dimen/bg_popup_item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    <com.android.launcher3.BubbleTextView android:textSize="14.0sp" android:textColor="?android:textColorPrimary" android:gravity="start|center" android:id="@id/bubble_text" android:background="?android:selectableItemBackground" android:focusable="false" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:paddingStart="@dimen/deep_shortcuts_text_padding_start" android:paddingEnd="@dimen/popup_padding_end" launcher:layoutHorizontal="true" launcher:iconDisplay="shortcut_popup" style="@style/BaseIcon" />
+    <View android:layout_gravity="start|center" android:id="@id/icon" android:layout_width="@dimen/system_shortcut_icon_size" android:layout_height="@dimen/system_shortcut_icon_size" android:layout_marginStart="@dimen/system_shortcut_margin_start" />
+    <View android:layout_gravity="end|bottom|center" android:id="@id/divider" android:background="?android:listDivider" android:visibility="gone" android:layout_width="@dimen/deep_shortcuts_divider_width" android:layout_height="@dimen/popup_item_divider_height" />
+</com.android.launcher3.shortcuts.DeepShortcutView>

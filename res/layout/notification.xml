@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.notification.NotificationItemView android:id="@id/notification_view" android:background="@drawable/bg_white_round_rect" android:layout_width="@dimen/bg_popup_item_width" android:layout_height="wrap_content" android:elevation="@dimen/deep_shortcuts_elevation" android:backgroundTint="@color/notification_color_beneath"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/header" android:background="@color/popup_header_background_color" android:layout_width="fill_parent" android:layout_height="@dimen/notification_header_height" android:paddingStart="@dimen/notification_padding_start" android:paddingEnd="@dimen/notification_padding_end" android:elevation="@dimen/notification_elevation">
+            <TextView android:textSize="@dimen/notification_header_text_size" android:textColor="?android:textColorSecondary" android:gravity="center_vertical" android:layout_gravity="start" android:id="@id/notification_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/notifications_header" />
+            <TextView android:textSize="@dimen/notification_header_count_text_size" android:textColor="?android:textColorPrimary" android:gravity="center" android:layout_gravity="end" android:id="@id/notification_count" android:layout_width="@dimen/notification_icon_size" android:layout_height="fill_parent" android:fontFamily="sans-serif-medium" />
+        </FrameLayout>
+        <include android:id="@id/main_view" android:layout_width="fill_parent" android:layout_height="@dimen/notification_main_height" android:layout_below="@id/header" layout="@layout/notification_main" />
+        <View android:id="@id/divider" android:background="?android:listDivider" android:layout_width="fill_parent" android:layout_height="@dimen/popup_item_divider_height" android:layout_below="@id/main_view" />
+        <include android:id="@id/footer" android:layout_width="fill_parent" android:layout_height="@dimen/notification_footer_height" android:layout_below="@id/divider" layout="@layout/notification_footer" />
+    </RelativeLayout>
+</com.android.launcher3.notification.NotificationItemView>

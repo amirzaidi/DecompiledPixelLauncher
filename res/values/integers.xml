@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="google_play_services_version">9452000</integer>
+    <integer name="config_dynamic_grid_overview_icon_zone_percentage">20</integer>
+    <integer name="config_workspaceScrimAlpha">30</integer>
+    <integer name="config_allAppsTransitionTime">100</integer>
+    <integer name="config_overviewTransitionTime">250</integer>
+    <integer name="config_workspaceSpringLoadShrinkPercentage">90</integer>
+    <integer name="config_workspaceOverviewShrinkPercentage">70</integer>
+    <integer name="config_overlayRevealTime">220</integer>
+    <integer name="config_overlaySlideRevealTime">320</integer>
+    <integer name="config_overlayTransitionTime">300</integer>
+    <integer name="config_overlayItemsAlphaStagger">60</integer>
+    <integer name="config_allAppsButtonPaddingPercent">17</integer>
+    <integer name="config_searchHintAnimationDuration">50</integer>
+    <integer name="config_dragOutlineFadeTime">900</integer>
+    <integer name="config_dragOutlineMaxAlpha">128</integer>
+    <integer name="config_dropAnimMinDuration">100</integer>
+    <integer name="config_dropAnimMaxDuration">500</integer>
+    <integer name="config_folderExpandDuration">120</integer>
+    <integer name="config_materialFolderExpandDuration">200</integer>
+    <integer name="config_materialFolderExpandStagger">60</integer>
+    <integer name="config_dropAnimMaxDist">800</integer>
+    <integer name="config_caretAnimationDuration">200</integer>
+    <integer name="config_deepShortcutOpenDuration">220</integer>
+    <integer name="config_deepShortcutArrowOpenDuration">80</integer>
+    <integer name="config_deepShortcutOpenStagger">40</integer>
+    <integer name="config_deepShortcutCloseDuration">150</integer>
+    <integer name="config_deepShortcutCloseStagger">20</integer>
+    <integer name="config_removeNotificationViewDuration">300</integer>
+</resources>

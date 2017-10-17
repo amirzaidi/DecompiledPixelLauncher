@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<folder launcher:title="@string/create_folder_name"
+  xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3">
+    <favorite launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity" launcher:packageName="com.google.android.apps.docs.editors.docs" />
+    <favorite launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity" launcher:packageName="com.google.android.apps.docs.editors.sheets" />
+    <favorite launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity" launcher:packageName="com.google.android.apps.docs.editors.slides" />
+    <favorite launcher:className="com.google.android.apps.docs.app.NewMainProxyActivity" launcher:packageName="com.google.android.apps.docs" />
+    <favorite launcher:className="com.google.android.keep.activities.BrowseActivity" launcher:packageName="com.google.android.keep" />
+</folder>

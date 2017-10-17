@@ -1,0 +1,102 @@
+.class Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
+
+
+# instance fields
+.field private final mContext:Landroid/content/Context;
+
+
+# direct methods
+.method private constructor <init>(Landroid/content/Context;)V
+    .locals 0
+
+    .prologue
+    .line 158
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 159
+    iput-object p1, p0, Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;->mContext:Landroid/content/Context;
+
+    .line 160
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroid/content/Context;Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;-><init>(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .locals 5
+
+    .prologue
+    const/4 v4, 0x0
+
+    const/4 v3, 0x0
+
+    .line 164
+    check-cast p2, Ljava/lang/String;
+
+    .line 165
+    iget-object v0, p0, Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;->mContext:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/android/launcher3/graphics/IconShapeOverride;->-wrap1(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 167
+    iget-object v0, p0, Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;->mContext:Landroid/content/Context;
+
+    .line 169
+    iget-object v1, p0, Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;->mContext:Landroid/content/Context;
+
+    const v2, 0x7f0c005c
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 170
+    const/4 v2, 0x1
+
+    .line 167
+    invoke-static {v0, v4, v1, v2, v3}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
+
+    .line 172
+    new-instance v0, Lcom/android/launcher3/util/LooperExecuter;
+
+    invoke-static {}, Lcom/android/launcher3/LauncherModel;->getWorkerLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/android/launcher3/util/LooperExecuter;-><init>(Landroid/os/Looper;)V
+
+    .line 173
+    new-instance v1, Lcom/android/launcher3/graphics/IconShapeOverride$OverrideApplyHandler;
+
+    iget-object v2, p0, Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;->mContext:Landroid/content/Context;
+
+    invoke-direct {v1, v2, p2, v4}, Lcom/android/launcher3/graphics/IconShapeOverride$OverrideApplyHandler;-><init>(Landroid/content/Context;Ljava/lang/String;Lcom/android/launcher3/graphics/IconShapeOverride$OverrideApplyHandler;)V
+
+    .line 172
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/util/LooperExecuter;->execute(Ljava/lang/Runnable;)V
+
+    .line 175
+    :cond_0
+    return v3
+.end method

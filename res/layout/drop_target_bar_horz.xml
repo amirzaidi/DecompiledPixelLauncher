@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.DropTargetBar android:layout_gravity="center|top" android:focusable="false" android:layout_width="fill_parent" android:layout_height="@dimen/dynamic_grid_drop_target_size"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.android.launcher3.DeleteDropTarget android:gravity="center" android:layout_gravity="center" android:id="@id/delete_target_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/remove_drop_target_label" launcher:hideParentOnDisable="true" style="@style/DropTargetButton" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.android.launcher3.InfoDropTarget android:gravity="center" android:layout_gravity="center" android:id="@id/info_target_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/app_info_drop_target_label" launcher:hideParentOnDisable="true" style="@style/DropTargetButton" />
+    </FrameLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.android.launcher3.UninstallDropTarget android:gravity="center" android:layout_gravity="center" android:id="@id/uninstall_target_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/uninstall_drop_target_label" launcher:hideParentOnDisable="true" style="@style/DropTargetButton" />
+    </FrameLayout>
+</com.android.launcher3.DropTargetBar>

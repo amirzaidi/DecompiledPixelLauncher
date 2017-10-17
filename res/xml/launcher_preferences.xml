@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference android:title="@string/title_app_suggestions" android:key="pref_show_predictions" android:defaultValue="true" />
+    <SwitchPreference android:title="@string/title_show_google_app" android:key="pref_enable_minus_one" android:summary="@string/pref_show_google_now_summary" android:defaultValue="true" />
+    <SwitchPreference android:persistent="true" android:title="@string/auto_add_shortcuts_label" android:key="pref_add_icon_to_home" android:summary="@string/auto_add_shortcuts_description" android:defaultValue="true" />
+    <ListPreference android:persistent="false" android:entries="@array/icon_shape_override_paths_names" android:title="@string/icon_shape_override_label" android:key="pref_override_icon_shape" android:summary="%s" android:defaultValue="" android:entryValues="@array/icon_shape_override_paths_values" />
+    <Preference android:persistent="false" android:title="@string/icon_badging_title" android:key="pref_icon_badging">
+        <intent android:action="android.settings.NOTIFICATION_SETTINGS">
+            <extra android:name=":settings:fragment_args_key" android:value="notification_badging" />
+        </intent>
+    </Preference>/>
+<SwitchPreference android:title="@string/allow_rotation_title" android:key="pref_allowRotation" android:defaultValue="@bool/allow_rotation" />
+    <PreferenceScreen android:title="@string/about">
+        <Preference android:persistent="false" android:title="@string/about_app_version" android:key="about_app_version" />
+        <Preference android:persistent="false" android:title="@string/pref_open_source_licenses_title" android:key="open_source_licenses" />
+    </PreferenceScreen>
+</PreferenceScreen>

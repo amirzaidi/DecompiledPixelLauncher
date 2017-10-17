@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.widget.WidgetsContainerView android:theme="@style/WidgetContainerTheme" android:id="@id/widgets_view" android:descendantFocusability="afterDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" launcher:revealBackground="@drawable/round_rect_primary"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto">
+    <View android:layout_gravity="center" android:id="@id/reveal_view" android:focusable="false" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:elevation="2.0dip" />
+    <FrameLayout android:layout_gravity="center" android:id="@id/main_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:elevation="15.0dip">
+        <com.android.launcher3.widget.WidgetsRecyclerView android:id="@id/widgets_list_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:layout_gravity="end|center|top" android:id="@id/fast_scroller_popup" android:layout_below="@id/search_container" android:layout_marginEnd="@dimen/container_fastscroll_popup_margin" style="@style/FastScrollerPopup" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/loader" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+</com.android.launcher3.widget.WidgetsContainerView>

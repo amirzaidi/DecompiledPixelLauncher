@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingLeft="@dimen/container_fastscroll_thumb_max_width" android:paddingRight="@dimen/container_fastscroll_thumb_max_width" android:layout_width="fill_parent" android:layout_height="6.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:layout_gravity="center" android:id="@id/loadingProgressBar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="6.0dip" android:indeterminate="true" android:minHeight="6.0dip" style="@android:style/Widget.Material.ProgressBar.Horizontal" />
+    <View android:layout_gravity="bottom" android:id="@id/loadedDivider" android:background="@drawable/all_apps_divider" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+</FrameLayout>

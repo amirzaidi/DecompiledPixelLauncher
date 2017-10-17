@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites
+  xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3">
+    <include launcher:workspace="@xml/dw_tablet_hotseat" />
+    <folder launcher:screen="0" launcher:x="0" launcher:y="-1" launcher:folderItems="@xml/dw_tablet_google_folder" />
+    <folder launcher:screen="0" launcher:x="1" launcher:y="-1" launcher:folderItems="@xml/dw_create_folder" />
+    <folder launcher:screen="0" launcher:x="-2" launcher:y="-1" launcher:folderItems="@xml/dw_tablet_play_folder" />
+    <favorite launcher:className="com.android.vending.AssetBrowserActivity" launcher:packageName="com.android.vending" launcher:screen="0" launcher:x="-1" launcher:y="-1" />
+    <partner-folder launcher:screen="0" launcher:x="-1" launcher:y="-2" />
+</favorites>

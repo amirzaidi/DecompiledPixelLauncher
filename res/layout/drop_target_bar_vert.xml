@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.DropTargetBar android:layout_gravity="left" android:orientation="vertical" android:paddingTop="@dimen/vert_drop_target_vertical_gap" android:focusable="false" android:layout_width="@dimen/dynamic_grid_drop_target_size" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.launcher3.DeleteDropTarget android:textColor="@android:color/white" android:gravity="center" android:id="@id/delete_target_text" android:paddingLeft="@dimen/vert_drop_target_horizontal_gap" android:paddingRight="@dimen/vert_drop_target_horizontal_gap" android:layout_width="fill_parent" android:layout_height="@dimen/dynamic_grid_drop_target_size" />
+    <com.android.launcher3.UninstallDropTarget android:textColor="@android:color/white" android:gravity="center" android:id="@id/uninstall_target_text" android:paddingLeft="@dimen/vert_drop_target_horizontal_gap" android:paddingRight="@dimen/vert_drop_target_horizontal_gap" android:layout_width="fill_parent" android:layout_height="@dimen/dynamic_grid_drop_target_size" android:layout_marginTop="@dimen/vert_drop_target_vertical_gap" />
+    <Space android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <com.android.launcher3.InfoDropTarget android:textColor="@android:color/white" android:gravity="center" android:id="@id/info_target_text" android:paddingLeft="@dimen/vert_drop_target_horizontal_gap" android:paddingRight="@dimen/vert_drop_target_horizontal_gap" android:layout_width="fill_parent" android:layout_height="@dimen/dynamic_grid_drop_target_size" android:layout_marginBottom="64.0dip" />
+</com.android.launcher3.DropTargetBar>

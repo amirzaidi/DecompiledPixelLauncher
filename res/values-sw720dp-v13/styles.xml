@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BaseLauncherTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:colorEdgeEffect">?android:textColorSecondary</item>
+    </style>
+    <style name="DropTargetButton" parent="@style/DropTargetButtonBase">
+        <item name="android:paddingLeft">60.0dip</item>
+        <item name="android:paddingRight">60.0dip</item>
+        <item name="android:shadowColor">#ff393939</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+</resources>

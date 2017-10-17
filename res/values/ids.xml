@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="item_touch_helper_previous_elevation" />
+    <item type="id" name="drag_event_parity" />
+    <item type="id" name="qsb_widget" />
+    <item type="id" name="workspace_blocked_row" />
+    <item type="id" name="cell_layout_jail_id" />
+    <item type="id" name="preview_image_id" />
+    <item type="id" name="action_remove" />
+    <item type="id" name="action_uninstall" />
+    <item type="id" name="action_info" />
+    <item type="id" name="action_add_to_workspace" />
+    <item type="id" name="action_move" />
+    <item type="id" name="action_move_to_workspace" />
+    <item type="id" name="action_move_screen_backwards" />
+    <item type="id" name="action_move_screen_forwards" />
+    <item type="id" name="action_resize" />
+    <item type="id" name="action_deep_shortcuts" />
+    <item type="id" name="action_dismiss_notification" />
+    <item type="id" name="widget_cell">false</item>
+    <item type="id" name="apps_view">false</item>
+    <item type="id" name="reveal_view">false</item>
+    <item type="id" name="main_content">false</item>
+    <item type="id" name="apps_list_view">false</item>
+    <item type="id" name="search_container">false</item>
+    <item type="id" name="fast_scroller_popup">false</item>
+    <item type="id" name="search_box_input">false</item>
+    <item type="id" name="nav_bar_bg">false</item>
+    <item type="id" name="image">false</item>
+    <item type="id" name="title">false</item>
+    <item type="id" name="rating">false</item>
+    <item type="id" name="rating_view">false</item>
+    <item type="id" name="review_count">false</item>
+    <item type="id" name="price">false</item>
+    <item type="id" name="loadingProgressBar">false</item>
+    <item type="id" name="loadedDivider">false</item>
+    <item type="id" name="empty_text">false</item>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="search_market_text">false</item>
+    <item type="id" name="date_text1">false</item>
+    <item type="id" name="date_text2">false</item>
+    <item type="id" name="bubble_text">false</item>
+    <item type="id" name="divider">false</item>
+    <item type="id" name="delete_target_text">false</item>
+    <item type="id" name="info_target_text">false</item>
+    <item type="id" name="uninstall_target_text">false</item>
+    <item type="id" name="folder_icon_name">false</item>
+    <item type="id" name="layout">false</item>
+    <item type="id" name="launcher">false</item>
+    <item type="id" name="drag_layer">false</item>
+    <item type="id" name="page_indicator">false</item>
+    <item type="id" name="overview_panel">false</item>
+    <item type="id" name="drop_target_bar">false</item>
+    <item type="id" name="qsb_container">false</item>
+    <item type="id" name="widgets_view">false</item>
+    <item type="id" name="notification_view">false</item>
+    <item type="id" name="header">false</item>
+    <item type="id" name="notification_text">false</item>
+    <item type="id" name="notification_count">false</item>
+    <item type="id" name="main_view">false</item>
+    <item type="id" name="footer">false</item>
+    <item type="id" name="icon_row">false</item>
+    <item type="id" name="overflow">false</item>
+    <item type="id" name="text_and_background">false</item>
+    <item type="id" name="text">false</item>
+    <item type="id" name="popup_item_icon">false</item>
+    <item type="id" name="wallpaper_button">false</item>
+    <item type="id" name="widget_button">false</item>
+    <item type="id" name="settings_button">false</item>
+    <item type="id" name="all_apps_handle">false</item>
+    <item type="id" name="place_autocomplete_search_button">false</item>
+    <item type="id" name="place_autocomplete_search_input">false</item>
+    <item type="id" name="place_autocomplete_clear_button">false</item>
+    <item type="id" name="place_autocomplete_separator">false</item>
+    <item type="id" name="place_autocomplete_powered_by_google">false</item>
+    <item type="id" name="place_autocomplete_progress">false</item>
+    <item type="id" name="place_autocomplete_prediction_primary_text">false</item>
+    <item type="id" name="place_autocomplete_prediction_secondary_text">false</item>
+    <item type="id" name="deep_shortcuts_container">false</item>
+    <item type="id" name="btn_qsb_search">false</item>
+    <item type="id" name="btn_qsb_setup">false</item>
+    <item type="id" name="g_icon">false</item>
+    <item type="id" name="mic_icon">false</item>
+    <item type="id" name="shortcuts_view">false</item>
+    <item type="id" name="deep_shortcuts">false</item>
+    <item type="id" name="system_shortcut_icons">false</item>
+    <item type="id" name="folder_content">false</item>
+    <item type="id" name="folder_page_indicator">false</item>
+    <item type="id" name="folder_footer">false</item>
+    <item type="id" name="folder_name">false</item>
+    <item type="id" name="widget_name">false</item>
+    <item type="id" name="widget_dims">false</item>
+    <item type="id" name="widget_preview">false</item>
+    <item type="id" name="widgets">false</item>
+    <item type="id" name="widgets_cell_list_container">false</item>
+    <item type="id" name="section">false</item>
+    <item type="id" name="widgets_scroll_container">false</item>
+    <item type="id" name="widgets_cell_list">false</item>
+    <item type="id" name="widgets_list_view">false</item>
+    <item type="id" name="loader">false</item>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phenotype-registrations>
+    <phenotype-registration>
+        <configuration-package>com.google.android.apps.nexuslauncher</configuration-package>
+        <log-sources>
+            <log-source>GOOGLE_NOW_LAUNCHER</log-source>
+        </log-sources>
+    </phenotype-registration>
+</phenotype-registrations>

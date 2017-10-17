@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<folder launcher:title="@string/google_folder_name"
+  xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3">
+    <favorite launcher:className="com.google.android.googlequicksearchbox.SearchActivity" launcher:packageName="com.google.android.googlequicksearchbox" />
+    <favorite launcher:className="com.google.android.maps.MapsActivity" launcher:packageName="com.google.android.apps.maps" />
+    <favorite launcher:className="com.google.android.apps.plus.phone.HomeActivity" launcher:packageName="com.google.android.apps.plus" />
+    <favorite launcher:className="com.android.calendar.AllInOneActivity" launcher:packageName="com.google.android.calendar" />
+    <favorite className="com.android.contacts.activities.PeopleActivity" packageName="com.google.android.contacts" />
+    <favorite launcher:className="com.google.android.apps.genie.geniewidget.activities.NewsActivity" launcher:packageName="com.google.android.apps.genie.geniewidget" />
+    <favorite launcher:className="com.google.android.apps.translate.TranslateActivity" launcher:packageName="com.google.android.apps.translate" />
+</folder>
