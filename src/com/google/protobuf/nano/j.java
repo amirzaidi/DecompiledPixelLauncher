@@ -8,11 +8,11 @@ import java.util.Arrays;
 
 final class j
 {
-    final int Lr;
-    final byte[] Ls;
+    final int PY;
+    final byte[] PZ;
     
     int computeSerializedSize() {
-        return b.RS(this.Lr) + 0 + this.Ls.length;
+        return b.VN(this.PY) + 0 + this.PZ.length;
     }
     
     public boolean equals(final Object o) {
@@ -24,18 +24,18 @@ final class j
             return false;
         }
         final j j = (j)o;
-        if (this.Lr == j.Lr) {
-            equals = Arrays.equals(this.Ls, j.Ls);
+        if (this.PY == j.PY) {
+            equals = Arrays.equals(this.PZ, j.PZ);
         }
         return equals;
     }
     
     public int hashCode() {
-        return (this.Lr + 527) * 31 + Arrays.hashCode(this.Ls);
+        return (this.PY + 527) * 31 + Arrays.hashCode(this.PZ);
     }
     
     void writeTo(final b b) {
-        b.RZ(this.Lr);
-        b.Rr(this.Ls);
+        b.VU(this.PY);
+        b.Vm(this.PZ);
     }
 }

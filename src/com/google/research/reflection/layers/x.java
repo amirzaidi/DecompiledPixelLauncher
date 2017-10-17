@@ -7,54 +7,53 @@ package com.google.research.reflection.layers;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Iterator;
-import com.google.research.reflection.common.d;
 import java.util.ArrayList;
 
 class x implements c
 {
-    final /* synthetic */ b Ot;
-    final /* synthetic */ b Ou;
-    final /* synthetic */ a Ov;
-    final /* synthetic */ b Ow;
-    final /* synthetic */ o Ox;
-    final /* synthetic */ ArrayList[] Oy;
+    final /* synthetic */ b Pn;
+    final /* synthetic */ b Po;
+    final /* synthetic */ a Pp;
+    final /* synthetic */ b Pq;
+    final /* synthetic */ o Pr;
+    final /* synthetic */ ArrayList[] Ps;
     
-    x(final o ox, final a ov, final ArrayList[] oy, final b ou, final b ot, final b ow) {
-        this.Ox = ox;
-        this.Ov = ov;
-        this.Oy = oy;
-        this.Ou = ou;
-        this.Ot = ot;
-        this.Ow = ow;
+    x(final o pr, final a pp, final ArrayList[] ps, final b po, final b pn, final b pq) {
+        this.Pr = pr;
+        this.Pp = pp;
+        this.Ps = ps;
+        this.Po = po;
+        this.Pn = pn;
+        this.Pq = pq;
     }
     
-    public Boolean Vo(final int n) {
-        final int n2 = n / this.Ox.Ol;
-        final int n3 = n % this.Ox.Ol;
-        final b vs = this.Ox.VS(this.Ov);
-        final int n4 = n2 * this.Ox.Ol;
-        final double n5 = this.Ox.NF.Mr[n3];
+    public Boolean Ub(final int n) {
+        final int n2 = n / this.Pr.Pf;
+        final int n3 = n % this.Pr.Pf;
+        final b ue = this.Pr.UE(this.Pp);
+        final int n4 = n2 * this.Pr.Pf;
+        final double n5 = this.Pr.Oz.Nl[n3];
         double n6;
-        if (!this.Ox.Oj) {
+        if (!this.Pr.Pd) {
             n6 = n5;
-            for (int i = 0; i < this.Ox.Ok; ++i) {
-                n6 += this.Ou.Vc(false, n2, i) * vs.Vc(this.Ox.ND, i, n3);
+            for (int i = 0; i < this.Pr.Pe; ++i) {
+                n6 += this.Po.TP(false, n2, i) * ue.TP(this.Pr.Ox, i, n3);
             }
         }
         else {
-            final Iterator iterator = this.Oy[n2].iterator();
+            final Iterator iterator = this.Ps[n2].iterator();
             n6 = n5;
             while (iterator.hasNext()) {
-                final d d = iterator.next();
-                n6 += vs.Vc(this.Ox.ND, d.Mb, n3) * d.Mc;
+                final com.google.research.reflection.common.c c = iterator.next();
+                n6 += ue.TP(this.Pr.Ox, c.MV, n3) * c.MW;
             }
         }
-        if (this.Ox.Oc && this.Ot != null) {
-            for (int j = 0; j < this.Ox.Ol; ++j) {
-                n6 += this.Ot.Vc(false, n2, j) * this.Ox.NE.Vc(false, j, n3);
+        if (this.Pr.OW && this.Pn != null) {
+            for (int j = 0; j < this.Pr.Pf; ++j) {
+                n6 += this.Pn.TP(false, n2, j) * this.Pr.Oy.TP(false, j, n3);
             }
         }
-        this.Ow.Mr[n4 + n3] = n6;
+        this.Pq.Nl[n4 + n3] = n6;
         return true;
     }
 }

@@ -4,19 +4,19 @@
 
 
 # instance fields
-.field protected Mg:J
+.field protected Na:J
 
-.field protected Mh:[Z
+.field protected Nb:[Z
 
-.field protected Mi:I
+.field protected Nc:I
 
-.field protected Mj:Ljava/util/HashMap;
+.field protected Nd:Ljava/util/HashMap;
 
-.field protected Mk:I
+.field protected Ne:I
 
-.field protected Ml:Ljava/util/HashMap;
+.field protected Nf:Ljava/util/HashMap;
 
-.field protected Mm:J
+.field protected Ng:J
 
 
 # direct methods
@@ -32,41 +32,41 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     .line 33
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
 
     .line 37
     const/16 v0, 0xc8
 
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     .line 39
     const-wide/32 v0, 0x927c0
 
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mg:J
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Na:J
 
     .line 41
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mm:J
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Ng:J
 
     .line 43
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mi:I
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Nc:I
 
     .line 46
-    iget v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iget v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     new-array v0, v0, [Z
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     .line 47
     return-void
@@ -84,44 +84,44 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     .line 33
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
 
     .line 37
     const/16 v0, 0xc8
 
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     .line 39
     const-wide/32 v0, 0x927c0
 
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mg:J
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Na:J
 
     .line 41
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mm:J
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Ng:J
 
     .line 43
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mi:I
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Nc:I
 
     .line 50
-    iput p1, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iput p1, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     .line 51
-    iget v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iget v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     new-array v0, v0, [Z
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     .line 52
     return-void
@@ -139,59 +139,59 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     .line 33
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
 
     .line 37
     const/16 v0, 0xc8
 
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     .line 39
     const-wide/32 v0, 0x927c0
 
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mg:J
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Na:J
 
     .line 41
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mm:J
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Ng:J
 
     .line 43
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mi:I
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Nc:I
 
     .line 56
-    iput p6, p0, Lcom/google/research/reflection/b/d;->Mi:I
+    iput p6, p0, Lcom/google/research/reflection/b/d;->Nc:I
 
     .line 57
-    iput-wide p2, p0, Lcom/google/research/reflection/b/d;->Mg:J
+    iput-wide p2, p0, Lcom/google/research/reflection/b/d;->Na:J
 
     .line 58
-    iput-wide p4, p0, Lcom/google/research/reflection/b/d;->Mm:J
+    iput-wide p4, p0, Lcom/google/research/reflection/b/d;->Ng:J
 
     .line 59
-    iput p1, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iput p1, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     .line 60
-    iget v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iget v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     new-array v0, v0, [Z
 
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     .line 61
     return-void
 .end method
 
-.method private UP()Ljava/lang/String;
+.method private TC()Ljava/lang/String;
     .locals 10
 
     .prologue
@@ -204,7 +204,7 @@
     const/4 v0, 0x0
 
     .line 89
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -237,7 +237,7 @@
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 90
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -296,330 +296,7 @@
 
 
 # virtual methods
-.method public UF()I
-    .locals 1
-
-    .prologue
-    .line 221
-    iget v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
-
-    return v0
-.end method
-
-.method public UG(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
-    .locals 9
-
-    .prologue
-    .line 250
-    iget-wide v4, p0, Lcom/google/research/reflection/b/d;->Mg:J
-
-    iget-wide v6, p0, Lcom/google/research/reflection/b/d;->Mm:J
-
-    iget v8, p0, Lcom/google/research/reflection/b/d;->Mi:I
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    .line 251
-    invoke-virtual/range {v1 .. v8}, Lcom/google/research/reflection/b/d;->UN(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;JJI)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    .line 252
-    new-instance v1, Lcom/google/research/reflection/layers/b;
-
-    iget v2, p0, Lcom/google/research/reflection/b/d;->Mk:I
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v3, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
-
-    .line 253
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_0
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 261
-    return-object v1
-
-    .line 253
-    :cond_1
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/research/reflection/common/d;
-
-    .line 254
-    iget v3, v0, Lcom/google/research/reflection/common/d;->Mc:F
-
-    const/4 v4, 0x0
-
-    cmpl-float v3, v3, v4
-
-    if-lez v3, :cond_0
-
-    .line 255
-    iget v3, v0, Lcom/google/research/reflection/common/d;->Mb:I
-
-    iget v4, p0, Lcom/google/research/reflection/b/d;->Mk:I
-
-    if-ge v3, v4, :cond_2
-
-    .line 258
-    iget-object v3, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
-
-    iget v0, v0, Lcom/google/research/reflection/common/d;->Mb:I
-
-    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
-
-    aput-wide v4, v3, v0
-
-    goto :goto_0
-
-    .line 256
-    :cond_2
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    iget v0, v0, Lcom/google/research/reflection/common/d;->Mb:I
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const/16 v3, 0x1a
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string/jumbo v3, "invalid index: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-.end method
-
-.method public UH(Ljava/util/List;)V
-    .locals 4
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 132
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 141
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 133
-    :cond_1
-    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 134
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
-
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    .line 135
-    if-eqz v0, :cond_0
-
-    .line 136
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
-
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 137
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    aput-boolean v3, v1, v2
-
-    .line 138
-    invoke-virtual {p0, v0}, Lcom/google/research/reflection/b/d;->UK(Ljava/lang/Integer;)V
-
-    goto :goto_0
-.end method
-
-.method public UI(Ljava/io/DataInputStream;)V
-    .locals 4
-
-    .prologue
-    .line 226
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
-
-    .line 227
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/research/reflection/b/d;->Mi:I
-
-    .line 228
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mg:J
-
-    .line 229
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Mm:J
-
-    .line 230
-    const-class v0, Ljava/lang/String;
-
-    const-class v1, Ljava/lang/Integer;
-
-    invoke-static {p1, v0, v1}, Lcom/google/research/reflection/common/c;->Uv(Ljava/io/DataInputStream;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/HashMap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
-
-    .line 231
-    const-class v0, Ljava/lang/Integer;
-
-    const-class v1, Ljava/lang/Long;
-
-    invoke-static {p1, v0, v1}, Lcom/google/research/reflection/common/c;->Uv(Ljava/io/DataInputStream;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/HashMap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
-
-    .line 232
-    iget v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
-
-    new-array v0, v0, [Z
-
-    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
-
-    .line 233
-    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 236
-    return-void
-
-    .line 233
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    .line 234
-    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    const/4 v3, 0x1
-
-    aput-boolean v3, v2, v0
-
-    goto :goto_0
-.end method
-
-.method public UJ(Ljava/io/DataOutputStream;)V
-    .locals 2
-
-    .prologue
-    .line 240
-    iget v0, p0, Lcom/google/research/reflection/b/d;->Mk:I
-
-    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 241
-    iget v0, p0, Lcom/google/research/reflection/b/d;->Mi:I
-
-    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 242
-    iget-wide v0, p0, Lcom/google/research/reflection/b/d;->Mg:J
-
-    invoke-virtual {p1, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
-
-    .line 243
-    iget-wide v0, p0, Lcom/google/research/reflection/b/d;->Mm:J
-
-    invoke-virtual {p1, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
-
-    .line 244
-    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
-
-    invoke-static {p1, v0}, Lcom/google/research/reflection/common/c;->Uu(Ljava/io/DataOutputStream;Ljava/util/Map;)V
-
-    .line 245
-    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
-
-    invoke-static {p1, v0}, Lcom/google/research/reflection/common/c;->Uu(Ljava/io/DataOutputStream;Ljava/util/Map;)V
-
-    .line 246
-    return-void
-.end method
-
-.method protected UN(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;JJI)Ljava/util/ArrayList;
+.method protected TA(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;JJI)Ljava/util/ArrayList;
     .locals 13
 
     .prologue
@@ -634,7 +311,7 @@
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
     .line 185
-    invoke-virtual {p1}, Lcom/google/research/reflection/common/a;->Ui()I
+    invoke-virtual {p1}, Lcom/google/research/reflection/common/a;->SV()I
 
     move-result v2
 
@@ -658,14 +335,14 @@
 
     .line 186
     :cond_1
-    invoke-virtual {p1, v6}, Lcom/google/research/reflection/common/a;->Ug(I)Ljava/lang/Object;
+    invoke-virtual {p1, v6}, Lcom/google/research/reflection/common/a;->ST(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/research/reflection/a/b;
 
     .line 187
-    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->aD()Ljava/util/List;
+    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->M()Ljava/util/List;
 
     move-result-object v3
 
@@ -674,7 +351,7 @@
     .line 192
     :cond_2
     :try_start_0
-    invoke-static {v2, p2}, Lcom/google/research/reflection/common/e;->UA(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/b;)J
+    invoke-static {v2, p2}, Lcom/google/research/reflection/common/e;->Tn(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/b;)J
     :try_end_0
     .catch Lcom/google/research/reflection/common/UncertaintyException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -682,7 +359,7 @@
 
     .line 196
     :goto_1
-    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->aB()Ljava/lang/Long;
+    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->K()Ljava/lang/Long;
 
     move-result-object v3
 
@@ -722,7 +399,7 @@
 
     .line 188
     :cond_3
-    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->aD()Ljava/util/List;
+    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->M()Ljava/util/List;
 
     move-result-object v3
 
@@ -733,7 +410,7 @@
     if-eqz v3, :cond_2
 
     .line 189
-    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->aD()Ljava/util/List;
+    invoke-interface {v2}, Lcom/google/research/reflection/a/b;->M()Ljava/util/List;
 
     move-result-object v3
 
@@ -782,7 +459,7 @@
 
     move-result-object v2
 
-    invoke-interface {p2}, Lcom/google/research/reflection/a/b;->ax()Ljava/lang/Long;
+    invoke-interface {p2}, Lcom/google/research/reflection/a/b;->F()Ljava/lang/Long;
 
     move-result-object v3
 
@@ -790,7 +467,7 @@
 
     move-result-wide v4
 
-    invoke-virtual {p0, v2, v4, v5}, Lcom/google/research/reflection/b/d;->UO(Ljava/lang/String;J)I
+    invoke-virtual {p0, v2, v4, v5}, Lcom/google/research/reflection/b/d;->TB(Ljava/lang/String;J)I
 
     move-result v3
 
@@ -803,20 +480,20 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/research/reflection/common/d;
+    check-cast v2, Lcom/google/research/reflection/common/c;
 
     .line 205
     if-eqz v2, :cond_7
 
     .line 212
     :goto_5
-    iget v3, v2, Lcom/google/research/reflection/common/d;->Mc:F
+    iget v3, v2, Lcom/google/research/reflection/common/c;->MW:F
 
     const/high16 v4, 0x3f800000    # 1.0f
 
     add-float/2addr v3, v4
 
-    iput v3, v2, Lcom/google/research/reflection/common/d;->Mc:F
+    iput v3, v2, Lcom/google/research/reflection/common/c;->MW:F
 
     goto :goto_4
 
@@ -831,9 +508,9 @@
     if-ge v2, v0, :cond_0
 
     .line 209
-    new-instance v2, Lcom/google/research/reflection/common/d;
+    new-instance v2, Lcom/google/research/reflection/common/c;
 
-    invoke-direct {v2, v3}, Lcom/google/research/reflection/common/d;-><init>(I)V
+    invoke-direct {v2, v3}, Lcom/google/research/reflection/common/c;-><init>(I)V
 
     .line 210
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -845,7 +522,7 @@
     goto :goto_5
 .end method
 
-.method protected UO(Ljava/lang/String;J)I
+.method protected TB(Ljava/lang/String;J)I
     .locals 6
 
     .prologue
@@ -854,7 +531,7 @@
     const/4 v1, 0x0
 
     .line 108
-    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -867,7 +544,7 @@
 
     .line 126
     :goto_0
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -884,19 +561,19 @@
 
     .line 110
     :cond_0
-    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->size()I
 
     move-result v2
 
-    iget v3, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iget v3, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
     if-eq v2, v3, :cond_1
 
     .line 116
     :goto_1
-    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     array-length v2, v2
 
@@ -904,7 +581,7 @@
 
     .line 124
     :goto_2
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -912,12 +589,12 @@
 
     .line 111
     :cond_1
-    invoke-direct {p0}, Lcom/google/research/reflection/b/d;->UP()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/research/reflection/b/d;->TC()Ljava/lang/String;
 
     move-result-object v2
 
     .line 112
-    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -934,10 +611,10 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/research/reflection/b/d;->UH(Ljava/util/List;)V
+    invoke-virtual {p0, v1}, Lcom/google/research/reflection/b/d;->Tu(Ljava/util/List;)V
 
     .line 114
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -949,7 +626,7 @@
 
     .line 117
     :cond_2
-    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     aget-boolean v2, v2, v1
 
@@ -967,11 +644,334 @@
     move-result-object v0
 
     .line 119
-    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     aput-boolean v4, v2, v1
 
     goto :goto_2
+.end method
+
+.method public Ts()I
+    .locals 1
+
+    .prologue
+    .line 221
+    iget v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
+
+    return v0
+.end method
+
+.method public Tt(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
+    .locals 9
+
+    .prologue
+    .line 250
+    iget-wide v4, p0, Lcom/google/research/reflection/b/d;->Na:J
+
+    iget-wide v6, p0, Lcom/google/research/reflection/b/d;->Ng:J
+
+    iget v8, p0, Lcom/google/research/reflection/b/d;->Nc:I
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    .line 251
+    invoke-virtual/range {v1 .. v8}, Lcom/google/research/reflection/b/d;->TA(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;JJI)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    .line 252
+    new-instance v1, Lcom/google/research/reflection/layers/b;
+
+    iget v2, p0, Lcom/google/research/reflection/b/d;->Ne:I
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v3, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
+
+    .line 253
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 261
+    return-object v1
+
+    .line 253
+    :cond_1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/research/reflection/common/c;
+
+    .line 254
+    iget v3, v0, Lcom/google/research/reflection/common/c;->MW:F
+
+    const/4 v4, 0x0
+
+    cmpl-float v3, v3, v4
+
+    if-lez v3, :cond_0
+
+    .line 255
+    iget v3, v0, Lcom/google/research/reflection/common/c;->MV:I
+
+    iget v4, p0, Lcom/google/research/reflection/b/d;->Ne:I
+
+    if-ge v3, v4, :cond_2
+
+    .line 258
+    iget-object v3, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
+
+    iget v0, v0, Lcom/google/research/reflection/common/c;->MV:I
+
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
+
+    aput-wide v4, v3, v0
+
+    goto :goto_0
+
+    .line 256
+    :cond_2
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    iget v0, v0, Lcom/google/research/reflection/common/c;->MV:I
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const/16 v3, 0x1a
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string/jumbo v3, "invalid index: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public Tu(Ljava/util/List;)V
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 132
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 141
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 133
+    :cond_1
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    .line 134
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 135
+    if-eqz v0, :cond_0
+
+    .line 136
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 137
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    aput-boolean v3, v1, v2
+
+    .line 138
+    invoke-virtual {p0, v0}, Lcom/google/research/reflection/b/d;->Tx(Ljava/lang/Integer;)V
+
+    goto :goto_0
+.end method
+
+.method public Tv(Ljava/io/DataInputStream;)V
+    .locals 4
+
+    .prologue
+    .line 226
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
+
+    .line 227
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/research/reflection/b/d;->Nc:I
+
+    .line 228
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Na:J
+
+    .line 229
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/google/research/reflection/b/d;->Ng:J
+
+    .line 230
+    const-class v0, Ljava/lang/String;
+
+    const-class v1, Ljava/lang/Integer;
+
+    invoke-static {p1, v0, v1}, Lcom/google/research/reflection/common/d;->Tj(Ljava/io/DataInputStream;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
+
+    .line 231
+    const-class v0, Ljava/lang/Integer;
+
+    const-class v1, Ljava/lang/Long;
+
+    invoke-static {p1, v0, v1}, Lcom/google/research/reflection/common/d;->Tj(Ljava/io/DataInputStream;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/HashMap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
+
+    .line 232
+    iget v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
+
+    new-array v0, v0, [Z
+
+    iput-object v0, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
+
+    .line 233
+    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 236
+    return-void
+
+    .line 233
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 234
+    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    const/4 v3, 0x1
+
+    aput-boolean v3, v2, v0
+
+    goto :goto_0
+.end method
+
+.method public Tw(Ljava/io/DataOutputStream;)V
+    .locals 2
+
+    .prologue
+    .line 240
+    iget v0, p0, Lcom/google/research/reflection/b/d;->Ne:I
+
+    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    .line 241
+    iget v0, p0, Lcom/google/research/reflection/b/d;->Nc:I
+
+    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    .line 242
+    iget-wide v0, p0, Lcom/google/research/reflection/b/d;->Na:J
+
+    invoke-virtual {p1, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
+
+    .line 243
+    iget-wide v0, p0, Lcom/google/research/reflection/b/d;->Ng:J
+
+    invoke-virtual {p1, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
+
+    .line 244
+    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
+
+    invoke-static {p1, v0}, Lcom/google/research/reflection/common/d;->Ti(Ljava/io/DataOutputStream;Ljava/util/Map;)V
+
+    .line 245
+    iget-object v0, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
+
+    invoke-static {p1, v0}, Lcom/google/research/reflection/common/d;->Ti(Ljava/io/DataOutputStream;Ljava/util/Map;)V
+
+    .line 246
+    return-void
 .end method
 
 .method public bridge synthetic clone()Lcom/google/research/reflection/b/b;
@@ -993,18 +993,18 @@
     .line 70
     new-instance v0, Lcom/google/research/reflection/b/d;
 
-    iget v1, p0, Lcom/google/research/reflection/b/d;->Mk:I
+    iget v1, p0, Lcom/google/research/reflection/b/d;->Ne:I
 
-    iget-wide v2, p0, Lcom/google/research/reflection/b/d;->Mg:J
+    iget-wide v2, p0, Lcom/google/research/reflection/b/d;->Na:J
 
-    iget-wide v4, p0, Lcom/google/research/reflection/b/d;->Mm:J
+    iget-wide v4, p0, Lcom/google/research/reflection/b/d;->Ng:J
 
-    iget v6, p0, Lcom/google/research/reflection/b/d;->Mi:I
+    iget v6, p0, Lcom/google/research/reflection/b/d;->Nc:I
 
     invoke-direct/range {v0 .. v6}, Lcom/google/research/reflection/b/d;-><init>(IJJI)V
 
     .line 72
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -1022,7 +1022,7 @@
     if-nez v1, :cond_0
 
     .line 75
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -1040,9 +1040,9 @@
     if-nez v1, :cond_1
 
     .line 78
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
-    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iget-object v2, p0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     array-length v2, v2
 
@@ -1050,12 +1050,12 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/google/research/reflection/b/d;->Mh:[Z
+    iput-object v1, v0, Lcom/google/research/reflection/b/d;->Nb:[Z
 
     .line 79
-    iget-object v1, p0, Lcom/google/research/reflection/b/d;->Md:Lcom/google/research/reflection/b/a;
+    iget-object v1, p0, Lcom/google/research/reflection/b/d;->MX:Lcom/google/research/reflection/b/a;
 
-    invoke-virtual {v0, v1}, Lcom/google/research/reflection/b/d;->UD(Lcom/google/research/reflection/b/a;)V
+    invoke-virtual {v0, v1}, Lcom/google/research/reflection/b/d;->Tq(Lcom/google/research/reflection/b/a;)V
 
     .line 80
     return-object v0
@@ -1069,7 +1069,7 @@
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 73
-    iget-object v4, v0, Lcom/google/research/reflection/b/d;->Ml:Ljava/util/HashMap;
+    iget-object v4, v0, Lcom/google/research/reflection/b/d;->Nf:Ljava/util/HashMap;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1096,7 +1096,7 @@
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 76
-    iget-object v4, v0, Lcom/google/research/reflection/b/d;->Mj:Ljava/util/HashMap;
+    iget-object v4, v0, Lcom/google/research/reflection/b/d;->Nd:Ljava/util/HashMap;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 

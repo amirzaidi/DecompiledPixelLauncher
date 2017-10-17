@@ -14,65 +14,72 @@ import java.util.List;
 
 public class c extends b implements a
 {
-    private List Me;
-    private int Mf;
+    private List MY;
+    private int MZ;
     
     public c() {
-        this.Me = new ArrayList();
-        this.Mf = 0;
+        this.MY = new ArrayList();
+        this.MZ = 0;
     }
     
-    private int UL(final b b) {
-        final Iterator<b> iterator = this.Me.iterator();
+    private int Ty(final b b) {
+        final Iterator<b> iterator = this.MY.iterator();
         int n = 0;
         while (iterator.hasNext()) {
             final b b2 = iterator.next();
             if (b2 == b) {
                 break;
             }
-            n += b2.UF();
+            n += b2.Ts();
         }
         return n;
     }
     
-    public int UF() {
-        return this.Mf;
+    public void SR(final b b, final int n) {
+        final int n2 = this.Ty(b) + n;
+        if (this.MX != null) {
+            this.MX.SR(this, n2);
+        }
     }
     
-    public com.google.research.reflection.layers.b UG(final com.google.research.reflection.common.a a, final com.google.research.reflection.a.b b) {
-        final com.google.research.reflection.layers.b b2 = new com.google.research.reflection.layers.b(1, this.Mf);
-        final Iterator<b> iterator = this.Me.iterator();
+    public int Ts() {
+        return this.MZ;
+    }
+    
+    public com.google.research.reflection.layers.b Tt(final com.google.research.reflection.common.a a, final com.google.research.reflection.a.b b) {
+        final com.google.research.reflection.layers.b b2 = new com.google.research.reflection.layers.b(1, this.MZ);
+        final Iterator<b> iterator = this.MY.iterator();
         int n = 0;
         while (iterator.hasNext()) {
             final b b3 = iterator.next();
-            final double[] mr = b3.UG(a, b).Mr;
-            for (int i = 0; i < mr.length; ++i) {
-                b2.Mr[i + n] = mr[i];
+            final double[] nl = b3.Tt(a, b).Nl;
+            for (int i = 0; i < nl.length; ++i) {
+                b2.Nl[i + n] = nl[i];
             }
-            n += b3.UF();
+            n += b3.Ts();
         }
         return b2;
     }
     
-    public void UH(final List list) {
+    public void Tu(final List list) {
         if (list.size() >= 2) {
             final Pattern compile = Pattern.compile(list.get(0));
-            for (final b b : this.Me) {
+            for (final b b : this.MY) {
                 if (compile.matcher(b.getClass().getName()).matches()) {
-                    b.UH(list.subList(1, list.size()));
+                    b.Tu(list.subList(1, list.size()));
                 }
             }
         }
     }
     
-    public void UI(final DataInputStream dataInputStream) {
+    public void Tv(final DataInputStream dataInputStream) {
         int i = 0;
-        this.Me.clear();
-        this.Mf = 0;
+        this.MY.clear();
+        this.MZ = 0;
         while (i < dataInputStream.readInt()) {
             final String utf = dataInputStream.readUTF();
-            final b uc = b.UC(utf);
-            if (uc == null) {
+            final b tp = b.Tp(utf);
+            if (tp == null) {
                 final String value = String.valueOf(utf);
                 final int length = value.length();
                 final String s = "Cannot find extractor with ";
@@ -85,46 +92,39 @@ public class c extends b implements a
                 }
                 throw new IOException(concat);
             }
-            uc.UI(dataInputStream);
-            this.UM(uc);
+            tp.Tv(dataInputStream);
+            this.Tz(tp);
             ++i;
         }
     }
     
-    public void UJ(final DataOutputStream dataOutputStream) {
-        dataOutputStream.writeInt(this.Me.size());
-        for (final b b : this.Me) {
-            dataOutputStream.writeUTF(b.UE(b));
-            b.UJ(dataOutputStream);
+    public void Tw(final DataOutputStream dataOutputStream) {
+        dataOutputStream.writeInt(this.MY.size());
+        for (final b b : this.MY) {
+            dataOutputStream.writeUTF(b.Tr(b));
+            b.Tw(dataOutputStream);
         }
     }
     
-    public void UM(final b b) {
-        this.Me.add(b);
-        b.UD(this);
-        this.Mf += b.UF();
-    }
-    
-    public void Ue(final b b, final int n) {
-        final int n2 = this.UL(b) + n;
-        if (this.Md != null) {
-            this.Md.Ue(this, n2);
-        }
+    public void Tz(final b b) {
+        this.MY.add(b);
+        b.Tq(this);
+        this.MZ += b.Ts();
     }
     
     public c clone() {
         final c c = new c();
-        final Iterator<b> iterator = this.Me.iterator();
+        final Iterator<b> iterator = this.MY.iterator();
         while (iterator.hasNext()) {
-            c.UM(iterator.next().clone());
+            c.Tz(iterator.next().clone());
         }
         return c;
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < this.Me.size(); ++i) {
-            sb.append(((b)this.Me.get(i)).toString());
+        for (int i = 0; i < this.MY.size(); ++i) {
+            sb.append(((b)this.MY.get(i)).toString());
         }
         return sb.toString();
     }

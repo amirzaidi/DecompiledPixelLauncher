@@ -13,17 +13,17 @@ import java.util.List;
 
 class k implements Cloneable
 {
-    private List Lt;
-    private g Lu;
-    private Object Lv;
+    private List Qa;
+    private g Qb;
+    private Object Qc;
     
     k() {
-        this.Lt = new ArrayList();
+        this.Qa = new ArrayList();
     }
     
-    private byte[] Tp() {
+    private byte[] Xk() {
         final byte[] array = new byte[this.computeSerializedSize()];
-        this.writeTo(b.RO(array));
+        this.writeTo(b.VJ(array));
         return array;
     }
     
@@ -31,103 +31,111 @@ class k implements Cloneable
         int n = 0;
         final k k = new k();
         while (true) {
-            a[] lv11 = null;
+            a[] qc11 = null;
             a a2 = null;
             try {
-                k.Lu = this.Lu;
+                k.Qb = this.Qb;
                 while (true) {
                     Label_0098: {
                         Label_0059: {
-                            if (this.Lt != null) {
+                            if (this.Qa != null) {
                                 break Label_0059;
                             }
-                            k.Lt = null;
-                            if (this.Lv != null) {
+                            k.Qa = null;
+                            if (this.Qc != null) {
                                 break Label_0098;
                             }
                             Label_0057: {
                                 return k;
                             }
                         }
-                        final List lt = k.Lt;
+                        final List qa = k.Qa;
                         try {
-                            lt.addAll(this.Lt);
+                            qa.addAll(this.Qa);
                             continue;
-                            final Object lv = this.Lv;
+                            final Object qc = this.Qc;
                             try {
-                                final a a = (a)lv;
+                                final a a = (a)qc;
                                 try {
-                                    k.Lv = a.clone();
+                                    k.Qc = a.clone();
                                     return k;
-                                    final Object lv2 = this.Lv;
+                                    final Object qc2 = this.Qc;
                                     try {
-                                        final byte[] array = (byte[])lv2;
+                                        final byte[] array = (byte[])qc2;
                                         try {
-                                            k.Lv = array.clone();
+                                            k.Qc = array.clone();
                                             return k;
-                                            final Object lv3 = this.Lv;
+                                            final Object qc3 = this.Qc;
                                             try {
-                                                final byte[][] array2 = (byte[][])lv3;
+                                                final byte[][] array2 = (byte[][])qc3;
                                                 try {
                                                     final int length = array2.length;
                                                     try {
-                                                        final byte[][] lv4 = new byte[length][];
-                                                        k.Lv = lv4;
+                                                        final byte[][] qc4 = new byte[length][];
+                                                        k.Qc = qc4;
                                                         int i = 0;
                                                         while (i < array2.length) {
                                                             final byte[] array3 = array2[i];
                                                             try {
                                                                 final byte[] clone = array3.clone();
                                                                 try {
-                                                                    lv4[i] = clone;
+                                                                    qc4[i] = clone;
                                                                     ++i;
                                                                     continue;
-                                                                    final Object lv5 = this.Lv;
+                                                                    final Object qc5;
+                                                                    Label_0290: {
+                                                                        qc5 = this.Qc;
+                                                                    }
+                                                                    // iftrue(Label_0337:, !this.Qc instanceof boolean[])
                                                                     try {
-                                                                        final boolean[] array4 = (boolean[])lv5;
+                                                                        final boolean[] array4 = (boolean[])qc5;
                                                                         try {
-                                                                            k.Lv = array4.clone();
+                                                                            k.Qc = array4.clone();
                                                                             return k;
-                                                                            final Object lv6 = this.Lv;
+                                                                            final Object qc6;
+                                                                            Label_0337: {
+                                                                                qc6 = this.Qc;
+                                                                            }
+                                                                            // iftrue(Label_0384:, !this.Qc instanceof int[])
                                                                             try {
-                                                                                final int[] array5 = (int[])lv6;
+                                                                                final int[] array5 = (int[])qc6;
                                                                                 try {
-                                                                                    k.Lv = array5.clone();
+                                                                                    k.Qc = array5.clone();
                                                                                     return k;
-                                                                                    final Object lv7;
+                                                                                    final Object qc7;
                                                                                     Label_0384: {
-                                                                                        lv7 = this.Lv;
+                                                                                        qc7 = this.Qc;
                                                                                     }
-                                                                                    // iftrue(Label_0431:, !this.Lv instanceof long[])
+                                                                                    // iftrue(Label_0431:, !this.Qc instanceof long[])
                                                                                     try {
-                                                                                        final long[] array6 = (long[])lv7;
+                                                                                        final long[] array6 = (long[])qc7;
                                                                                         try {
-                                                                                            k.Lv = array6.clone();
+                                                                                            k.Qc = array6.clone();
                                                                                             return k;
-                                                                                            final Object lv8 = this.Lv;
+                                                                                            final Object qc8 = this.Qc;
                                                                                             try {
-                                                                                                final float[] array7 = (float[])lv8;
+                                                                                                final float[] array7 = (float[])qc8;
                                                                                                 try {
-                                                                                                    k.Lv = array7.clone();
+                                                                                                    k.Qc = array7.clone();
                                                                                                     return k;
-                                                                                                    final Object lv9;
-                                                                                                    Label_0478: {
-                                                                                                        lv9 = this.Lv;
-                                                                                                    }
-                                                                                                    // iftrue(Label_0525:, !this.Lv instanceof double[])
+                                                                                                    final Object qc9 = this.Qc;
                                                                                                     try {
-                                                                                                        final double[] array8 = (double[])lv9;
+                                                                                                        final double[] array8 = (double[])qc9;
                                                                                                         try {
-                                                                                                            k.Lv = array8.clone();
+                                                                                                            k.Qc = array8.clone();
                                                                                                             return k;
-                                                                                                            final Object lv10 = this.Lv;
+                                                                                                            final Object qc10;
+                                                                                                            Label_0525: {
+                                                                                                                qc10 = this.Qc;
+                                                                                                            }
+                                                                                                            // iftrue(Label_0057:, !this.Qc instanceof a[])
                                                                                                             try {
-                                                                                                                final a[] array9 = (a[])lv10;
+                                                                                                                final a[] array9 = (a[])qc10;
                                                                                                                 try {
                                                                                                                     final int length2 = array9.length;
                                                                                                                     try {
-                                                                                                                        lv11 = new a[length2];
-                                                                                                                        k.Lv = lv11;
+                                                                                                                        qc11 = new a[length2];
+                                                                                                                        k.Qc = qc11;
                                                                                                                         if (n >= array9.length) {
                                                                                                                             return k;
                                                                                                                         }
@@ -138,19 +146,19 @@ class k implements Cloneable
                                                                                                                 catch (CloneNotSupportedException ex2) {}
                                                                                                             }
                                                                                                             catch (CloneNotSupportedException ex3) {}
-                                                                                                            Label_0525:;
                                                                                                         }
-                                                                                                        // iftrue(Label_0057:, !this.Lv instanceof a[])
                                                                                                         catch (CloneNotSupportedException ex4) {}
                                                                                                     }
                                                                                                     catch (CloneNotSupportedException ex5) {}
+                                                                                                    Label_0478:;
                                                                                                 }
+                                                                                                // iftrue(Label_0525:, !this.Qc instanceof double[])
                                                                                                 catch (CloneNotSupportedException ex6) {}
                                                                                             }
                                                                                             catch (CloneNotSupportedException ex7) {}
                                                                                             Label_0431:;
                                                                                         }
-                                                                                        // iftrue(Label_0478:, !this.Lv instanceof float[])
+                                                                                        // iftrue(Label_0478:, !this.Qc instanceof float[])
                                                                                         catch (CloneNotSupportedException ex8) {}
                                                                                     }
                                                                                     catch (CloneNotSupportedException ex9) {}
@@ -158,15 +166,11 @@ class k implements Cloneable
                                                                                 catch (CloneNotSupportedException ex10) {}
                                                                             }
                                                                             catch (CloneNotSupportedException ex11) {}
-                                                                            Label_0337:;
                                                                         }
-                                                                        // iftrue(Label_0384:, !this.Lv instanceof int[])
                                                                         catch (CloneNotSupportedException ex12) {}
                                                                     }
                                                                     catch (CloneNotSupportedException ex13) {}
-                                                                    Label_0290:;
                                                                 }
-                                                                // iftrue(Label_0337:, !this.Lv instanceof boolean[])
                                                                 catch (CloneNotSupportedException ex14) {}
                                                             }
                                                             catch (CloneNotSupportedException ex15) {}
@@ -179,43 +183,43 @@ class k implements Cloneable
                                             catch (CloneNotSupportedException ex18) {}
                                             Label_0192:;
                                         }
-                                        // iftrue(Label_0290:, !this.Lv instanceof byte[][])
+                                        // iftrue(Label_0290:, !this.Qc instanceof byte[][])
                                         catch (CloneNotSupportedException ex19) {}
                                     }
                                     catch (CloneNotSupportedException ex20) {}
                                     Label_0145:;
                                 }
-                                // iftrue(Label_0192:, !this.Lv instanceof byte[])
+                                // iftrue(Label_0192:, !this.Qc instanceof byte[])
                                 catch (CloneNotSupportedException ex21) {}
                             }
                             catch (CloneNotSupportedException ex22) {}
                         }
-                        // iftrue(Label_0145:, !this.Lv instanceof a)
+                        // iftrue(Label_0145:, !this.Qc instanceof a)
                         catch (CloneNotSupportedException ex23) {}
                     }
                     break;
                 }
             }
             catch (CloneNotSupportedException ex24) {}
-            lv11[n] = a2.clone();
+            qc11[n] = a2.clone();
             ++n;
             continue;
         }
     }
     
     int computeSerializedSize() {
-        int ta;
-        if (this.Lv != null) {
-            ta = this.Lu.Ta(this.Lv);
+        int wv;
+        if (this.Qc != null) {
+            wv = this.Qb.WV(this.Qc);
         }
         else {
-            final Iterator iterator = this.Lt.iterator();
-            ta = 0;
+            final Iterator iterator = this.Qa.iterator();
+            wv = 0;
             while (iterator.hasNext()) {
-                ta += iterator.next().computeSerializedSize();
+                wv += iterator.next().computeSerializedSize();
             }
         }
-        return ta;
+        return wv;
     }
     
     public boolean equals(final Object o) {
@@ -226,41 +230,41 @@ class k implements Cloneable
             return false;
         }
         final k k = (k)o;
-        if (this.Lv != null && k.Lv != null) {
-            if (this.Lu != k.Lu) {
+        if (this.Qc != null && k.Qc != null) {
+            if (this.Qb != k.Qb) {
                 return false;
             }
-            if (!this.Lu.Lm.isArray()) {
-                return this.Lv.equals(k.Lv);
+            if (!this.Qb.PT.isArray()) {
+                return this.Qc.equals(k.Qc);
             }
-            if (this.Lv instanceof byte[]) {
-                return Arrays.equals((byte[])this.Lv, (byte[])k.Lv);
+            if (this.Qc instanceof byte[]) {
+                return Arrays.equals((byte[])this.Qc, (byte[])k.Qc);
             }
-            if (this.Lv instanceof int[]) {
-                return Arrays.equals((int[])this.Lv, (int[])k.Lv);
+            if (this.Qc instanceof int[]) {
+                return Arrays.equals((int[])this.Qc, (int[])k.Qc);
             }
-            if (this.Lv instanceof long[]) {
-                return Arrays.equals((long[])this.Lv, (long[])k.Lv);
+            if (this.Qc instanceof long[]) {
+                return Arrays.equals((long[])this.Qc, (long[])k.Qc);
             }
-            if (this.Lv instanceof float[]) {
-                return Arrays.equals((float[])this.Lv, (float[])k.Lv);
+            if (this.Qc instanceof float[]) {
+                return Arrays.equals((float[])this.Qc, (float[])k.Qc);
             }
-            if (this.Lv instanceof double[]) {
-                return Arrays.equals((double[])this.Lv, (double[])k.Lv);
+            if (this.Qc instanceof double[]) {
+                return Arrays.equals((double[])this.Qc, (double[])k.Qc);
             }
-            if (this.Lv instanceof boolean[]) {
-                return Arrays.equals((boolean[])this.Lv, (boolean[])k.Lv);
+            if (this.Qc instanceof boolean[]) {
+                return Arrays.equals((boolean[])this.Qc, (boolean[])k.Qc);
             }
-            return Arrays.deepEquals((Object[])this.Lv, (Object[])k.Lv);
+            return Arrays.deepEquals((Object[])this.Qc, (Object[])k.Qc);
         }
         else {
-            if (this.Lt != null && k.Lt != null) {
-                return this.Lt.equals(k.Lt);
+            if (this.Qa != null && k.Qa != null) {
+                return this.Qa.equals(k.Qa);
             }
             try {
-                final byte[] tp = this.Tp();
+                final byte[] xk = this.Xk();
                 try {
-                    return Arrays.equals(tp, k.Tp());
+                    return Arrays.equals(xk, k.Xk());
                 }
                 catch (IOException ex) {
                     throw new IllegalStateException(ex);
@@ -272,9 +276,9 @@ class k implements Cloneable
     
     public int hashCode() {
         try {
-            final byte[] tp = this.Tp();
+            final byte[] xk = this.Xk();
             try {
-                return Arrays.hashCode(tp) + 527;
+                return Arrays.hashCode(xk) + 527;
             }
             catch (IOException ex) {
                 throw new IllegalStateException(ex);
@@ -284,11 +288,11 @@ class k implements Cloneable
     }
     
     void writeTo(final b b) {
-        if (this.Lv != null) {
-            this.Lu.SX(this.Lv, b);
+        if (this.Qc != null) {
+            this.Qb.WS(this.Qc, b);
         }
         else {
-            final Iterator iterator = this.Lt.iterator();
+            final Iterator iterator = this.Qa.iterator();
             while (iterator.hasNext()) {
                 iterator.next().writeTo(b);
             }

@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field Mn:Ljava/util/List;
+.field Nh:Ljava/util/List;
 
-.field Mo:Lcom/google/research/reflection/common/a;
+.field Ni:Lcom/google/research/reflection/common/a;
 
-.field Mp:Lcom/google/research/reflection/common/a;
+.field Nj:Lcom/google/research/reflection/common/a;
 
 
 # direct methods
@@ -26,27 +26,27 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     .line 29
     new-instance v0, Lcom/google/research/reflection/common/a;
 
     invoke-direct {v0, p1, v1}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
     .line 30
     new-instance v0, Lcom/google/research/reflection/common/a;
 
     invoke-direct {v0, p1, v1}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/a;->Mo:Lcom/google/research/reflection/common/a;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/a;->Ni:Lcom/google/research/reflection/common/a;
 
     .line 31
     return-void
 .end method
 
-.method private UT()V
+.method private TG()V
     .locals 2
 
     .prologue
@@ -56,7 +56,7 @@
     move v1, v0
 
     :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -69,7 +69,7 @@
 
     .line 137
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -77,7 +77,7 @@
 
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->VQ()V
+    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->UC()V
 
     .line 136
     add-int/lit8 v0, v1, 0x1
@@ -89,22 +89,22 @@
 
 
 # virtual methods
-.method public UR()V
+.method public TE()V
     .locals 2
 
     .prologue
     .line 214
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->clear()V
 
     .line 215
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mo:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Ni:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->clear()V
 
     .line 216
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -129,22 +129,22 @@
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
     .line 217
-    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->Wc()V
+    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->UO()V
 
     goto :goto_0
 .end method
 
-.method public US()Ljava/util/List;
+.method public TF()Ljava/util/List;
     .locals 1
 
     .prologue
     .line 34
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method public UU(Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;IZ)V
+.method public TH(Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;IZ)V
     .locals 9
 
     .prologue
@@ -158,34 +158,34 @@
     if-eqz p1, :cond_3
 
     .line 99
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0, p1}, Lcom/google/research/reflection/common/a;->add(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 100
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mo:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Ni:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0, p2}, Lcom/google/research/reflection/common/a;->add(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 101
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ul()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SY()I
 
     move-result v2
 
     .line 102
-    invoke-direct {p0}, Lcom/google/research/reflection/layers/a;->UT()V
+    invoke-direct {p0}, Lcom/google/research/reflection/layers/a;->TG()V
 
     .line 103
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ui()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SV()I
 
     move-result v7
 
     .line 104
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -212,9 +212,9 @@
 
     .line 88
     :cond_2
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -243,11 +243,11 @@
     :cond_3
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {p0}, Lcom/google/research/reflection/layers/a;->Va()Lcom/google/research/reflection/layers/v;
+    invoke-virtual {p0}, Lcom/google/research/reflection/layers/a;->TN()Lcom/google/research/reflection/layers/v;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/research/reflection/layers/v;->Wl()I
+    invoke-virtual {v1}, Lcom/google/research/reflection/layers/v;->UX()I
 
     move-result v1
 
@@ -256,23 +256,23 @@
     .line 94
     new-instance v1, Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {p0}, Lcom/google/research/reflection/layers/a;->Va()Lcom/google/research/reflection/layers/v;
+    invoke-virtual {p0}, Lcom/google/research/reflection/layers/a;->TN()Lcom/google/research/reflection/layers/v;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/google/research/reflection/layers/v;->Wl()I
+    invoke-virtual {v2}, Lcom/google/research/reflection/layers/v;->UX()I
 
     move-result v2
 
     invoke-direct {v1, v3, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
     .line 95
-    iget-object v2, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v2, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v2, v0}, Lcom/google/research/reflection/common/a;->add(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 96
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mo:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Ni:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0, v1}, Lcom/google/research/reflection/common/a;->add(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -281,7 +281,7 @@
 
     .line 107
     :cond_4
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -290,14 +290,14 @@
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
     .line 108
-    iget-boolean v3, v0, Lcom/google/research/reflection/layers/v;->Oj:Z
+    iget-boolean v3, v0, Lcom/google/research/reflection/layers/v;->Pd:Z
 
     if-nez v3, :cond_6
 
     .line 114
-    iget-object v3, v0, Lcom/google/research/reflection/layers/v;->Oh:Lcom/google/research/reflection/common/a;
+    iget-object v3, v0, Lcom/google/research/reflection/layers/v;->Pb:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v3}, Lcom/google/research/reflection/common/a;->Ul()I
+    invoke-virtual {v3}, Lcom/google/research/reflection/common/a;->SY()I
 
     move-result v3
 
@@ -313,9 +313,9 @@
 
     .line 109
     :cond_6
-    iget-object v0, v0, Lcom/google/research/reflection/layers/v;->Oi:Lcom/google/research/reflection/common/a;
+    iget-object v0, v0, Lcom/google/research/reflection/layers/v;->Pc:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ul()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SY()I
 
     move-result v0
 
@@ -334,10 +334,10 @@
     :cond_7
     new-instance v1, Ljava/lang/RuntimeException;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/v;->Oh:Lcom/google/research/reflection/common/a;
+    iget-object v0, v0, Lcom/google/research/reflection/layers/v;->Pb:Lcom/google/research/reflection/common/a;
 
     .line 117
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ul()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SY()I
 
     move-result v0
 
@@ -384,18 +384,18 @@
     if-ge v0, p3, :cond_1
 
     .line 124
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0, v2}, Lcom/google/research/reflection/common/a;->Ug(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lcom/google/research/reflection/common/a;->ST(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/research/reflection/layers/b;
 
     .line 125
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mo:Lcom/google/research/reflection/common/a;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Ni:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v1, v2}, Lcom/google/research/reflection/common/a;->Ug(I)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/google/research/reflection/common/a;->ST(I)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -418,7 +418,7 @@
 
     .line 127
     :cond_9
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -427,17 +427,17 @@
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
     .line 128
-    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->Wi()Lcom/google/research/reflection/layers/b;
+    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->UU()Lcom/google/research/reflection/layers/b;
 
     move-result-object v4
 
     move-object v1, p0
 
     .line 129
-    invoke-virtual/range {v0 .. v5}, Lcom/google/research/reflection/layers/v;->VR(Lcom/google/research/reflection/layers/a;ILcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/google/research/reflection/layers/v;->UD(Lcom/google/research/reflection/layers/a;ILcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;)V
 
     .line 130
-    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->Wm()Lcom/google/research/reflection/layers/b;
+    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->UY()Lcom/google/research/reflection/layers/b;
 
     move-result-object v3
 
@@ -449,12 +449,12 @@
     goto :goto_2
 .end method
 
-.method public UV()I
+.method public TI()I
     .locals 2
 
     .prologue
     .line 160
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     const/4 v1, 0x0
 
@@ -464,14 +464,14 @@
 
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->Wh()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->UT()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public UW(Z[Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;Z)Lcom/google/research/reflection/layers/b;
+.method public TJ(Z[Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;Z)Lcom/google/research/reflection/layers/b;
     .locals 4
 
     .prologue
@@ -489,7 +489,7 @@
 
     .line 73
     :goto_0
-    iget-object v3, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v3, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -502,9 +502,9 @@
 
     .line 69
     :cond_1
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
-    iget-object v3, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v3, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -531,7 +531,7 @@
 
     .line 74
     :cond_2
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -539,7 +539,7 @@
 
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
-    invoke-virtual {v0, p1, p0, p2, p3}, Lcom/google/research/reflection/layers/v;->VP(ZLcom/google/research/reflection/layers/a;[Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;)Lcom/google/research/reflection/layers/b;
+    invoke-virtual {v0, p1, p0, p2, p3}, Lcom/google/research/reflection/layers/v;->UB(ZLcom/google/research/reflection/layers/a;[Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;)Lcom/google/research/reflection/layers/b;
 
     move-result-object v3
 
@@ -557,18 +557,18 @@
     goto :goto_0
 .end method
 
-.method public UX(Lcom/google/research/reflection/layers/v;)V
+.method public TK(Lcom/google/research/reflection/layers/v;)V
     .locals 5
 
     .prologue
     .line 47
-    invoke-virtual {p1}, Lcom/google/research/reflection/layers/v;->Wg()I
+    invoke-virtual {p1}, Lcom/google/research/reflection/layers/v;->US()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v1}, Lcom/google/research/reflection/common/a;->Uk()I
+    invoke-virtual {v1}, Lcom/google/research/reflection/common/a;->SX()I
 
     move-result v1
 
@@ -581,7 +581,7 @@
 
     .line 57
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -592,14 +592,14 @@
     :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
     .line 49
-    invoke-virtual {v1}, Lcom/google/research/reflection/common/a;->Uk()I
+    invoke-virtual {v1}, Lcom/google/research/reflection/common/a;->SX()I
 
     move-result v1
 
-    invoke-virtual {p1}, Lcom/google/research/reflection/layers/v;->Wg()I
+    invoke-virtual {p1}, Lcom/google/research/reflection/layers/v;->US()I
 
     move-result v2
 
@@ -644,11 +644,11 @@
     check-cast v0, Lcom/google/research/reflection/layers/o;
 
     .line 53
-    invoke-virtual {v0}, Lcom/google/research/reflection/layers/o;->VO()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/layers/o;->UA()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -664,12 +664,12 @@
     throw v0
 .end method
 
-.method public UY(Ljava/io/DataOutputStream;)V
+.method public TL(Ljava/io/DataOutputStream;)V
     .locals 3
 
     .prologue
     .line 164
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -678,7 +678,7 @@
     invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
 
     .line 165
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -708,26 +708,26 @@
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
     .line 166
-    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->VI()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->Uu()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
 
     .line 167
-    invoke-virtual {v0, p1}, Lcom/google/research/reflection/layers/v;->VJ(Ljava/io/DataOutputStream;)V
+    invoke-virtual {v0, p1}, Lcom/google/research/reflection/layers/v;->Uv(Ljava/io/DataOutputStream;)V
 
     goto :goto_0
 .end method
 
-.method public UZ(Ljava/io/DataInputStream;)V
+.method public TM(Ljava/io/DataInputStream;)V
     .locals 4
 
     .prologue
     const/4 v0, 0x0
 
     .line 173
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
@@ -824,10 +824,10 @@
 
     .line 187
     :goto_2
-    invoke-virtual {v0, p1}, Lcom/google/research/reflection/layers/v;->VK(Ljava/io/DataInputStream;)V
+    invoke-virtual {v0, p1}, Lcom/google/research/reflection/layers/v;->Uw(Ljava/io/DataInputStream;)V
 
     .line 188
-    iget-object v3, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v3, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -905,14 +905,14 @@
     throw v1
 .end method
 
-.method public Va()Lcom/google/research/reflection/layers/v;
+.method public TN()Lcom/google/research/reflection/layers/v;
     .locals 2
 
     .prologue
     .line 210
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -936,16 +936,16 @@
     .line 39
     new-instance v1, Lcom/google/research/reflection/layers/a;
 
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mp:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nj:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Uk()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SX()I
 
     move-result v0
 
     invoke-direct {v1, v0}, Lcom/google/research/reflection/layers/a;-><init>(I)V
 
     .line 40
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -970,7 +970,7 @@
     check-cast v0, Lcom/google/research/reflection/layers/v;
 
     .line 41
-    iget-object v3, v1, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v3, v1, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-virtual {v0}, Lcom/google/research/reflection/layers/v;->clone()Lcom/google/research/reflection/layers/v;
 
@@ -998,7 +998,7 @@
 
     .prologue
     .line 142
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1017,7 +1017,7 @@
 
     .line 144
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Mn:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/a;->Nh:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 

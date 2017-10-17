@@ -14,7 +14,131 @@
     return-void
 .end method
 
-.method public static UA(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/b;)J
+.method public static Tk(Lcom/google/research/reflection/a/b;)I
+    .locals 2
+
+    .prologue
+    .line 97
+    invoke-static {p0}, Lcom/google/research/reflection/common/e;->Tm(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
+
+    move-result-object v0
+
+    const/16 v1, 0xb
+
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static Tl(Lcom/google/research/reflection/a/b;)I
+    .locals 2
+
+    .prologue
+    .line 106
+    invoke-static {p0}, Lcom/google/research/reflection/common/e;->Tm(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 107
+    const/16 v1, 0xc
+
+    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private static Tm(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
+    .locals 6
+
+    .prologue
+    .line 14
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->P()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    .line 19
+    :cond_0
+    const-string/jumbo v0, "UTC"
+
+    invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 20
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->F()Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->O()Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    add-long/2addr v2, v4
+
+    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    .line 21
+    return-object v0
+
+    .line 14
+    :cond_1
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->P()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 15
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->P()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
+
+    move-result-object v0
+
+    .line 16
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->F()Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
+
+    .line 17
+    return-object v0
+.end method
+
+.method public static Tn(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/b;)J
     .locals 8
 
     .prologue
@@ -25,7 +149,7 @@
     const/4 v1, 0x0
 
     .line 58
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->ax()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->F()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -33,7 +157,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->ax()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->F()Ljava/lang/Long;
 
     move-result-object v4
 
@@ -43,7 +167,7 @@
 
     sub-long/2addr v2, v4
 
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aB()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->K()Ljava/lang/Long;
 
     move-result-object v4
 
@@ -54,7 +178,7 @@
     sub-long v4, v2, v4
 
     .line 61
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aA()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->J()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -71,7 +195,7 @@
     :goto_0
     if-nez v2, :cond_4
 
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aA()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->J()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -89,11 +213,11 @@
     if-nez v2, :cond_4
 
     .line 62
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aA()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->J()Ljava/lang/Long;
 
     move-result-object v0
 
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aA()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->J()Ljava/lang/Long;
 
     move-result-object v1
 
@@ -104,7 +228,7 @@
     if-eqz v0, :cond_2
 
     .line 76
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aC()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->L()Ljava/lang/Long;
 
     move-result-object v0
 
@@ -112,7 +236,7 @@
 
     move-result-wide v0
 
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aC()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->L()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -122,7 +246,7 @@
 
     sub-long/2addr v0, v2
 
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aB()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->K()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -147,7 +271,7 @@
 
     .line 64
     :cond_2
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aA()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->J()Ljava/lang/Long;
 
     move-result-object v0
 
@@ -155,7 +279,7 @@
 
     move-result-wide v0
 
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aC()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->L()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -166,7 +290,7 @@
     add-long/2addr v0, v2
 
     .line 65
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aA()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->J()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -174,7 +298,7 @@
 
     move-result-wide v2
 
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aC()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->L()Ljava/lang/Long;
 
     move-result-object v6
 
@@ -187,7 +311,7 @@
     .line 66
     sub-long v0, v2, v0
 
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aB()Ljava/lang/Long;
+    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->K()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -242,12 +366,12 @@
     return-wide v4
 .end method
 
-.method public static UB(Lcom/google/research/reflection/a/b;)I
+.method public static To(Lcom/google/research/reflection/a/b;)I
     .locals 2
 
     .prologue
     .line 93
-    invoke-static {p0}, Lcom/google/research/reflection/common/e;->Uz(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
+    invoke-static {p0}, Lcom/google/research/reflection/common/e;->Tm(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
 
     move-result-object v0
 
@@ -258,128 +382,4 @@
     move-result v0
 
     return v0
-.end method
-
-.method public static Ux(Lcom/google/research/reflection/a/b;)I
-    .locals 2
-
-    .prologue
-    .line 97
-    invoke-static {p0}, Lcom/google/research/reflection/common/e;->Uz(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
-
-    move-result-object v0
-
-    const/16 v1, 0xb
-
-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static Uy(Lcom/google/research/reflection/a/b;)I
-    .locals 2
-
-    .prologue
-    .line 106
-    invoke-static {p0}, Lcom/google/research/reflection/common/e;->Uz(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
-
-    move-result-object v0
-
-    .line 107
-    const/16 v1, 0xc
-
-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private static Uz(Lcom/google/research/reflection/a/b;)Ljava/util/Calendar;
-    .locals 6
-
-    .prologue
-    .line 14
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aG()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    .line 19
-    :cond_0
-    const-string/jumbo v0, "UTC"
-
-    invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
-
-    move-result-object v0
-
-    .line 20
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->ax()Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aF()Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    add-long/2addr v2, v4
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    .line 21
-    return-object v0
-
-    .line 14
-    :cond_1
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aG()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 15
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->aG()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Calendar;->getInstance(Ljava/util/TimeZone;)Ljava/util/Calendar;
-
-    move-result-object v0
-
-    .line 16
-    invoke-interface {p0}, Lcom/google/research/reflection/a/b;->ax()Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    .line 17
-    return-object v0
 .end method

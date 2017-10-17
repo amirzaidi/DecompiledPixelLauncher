@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract Vo(I)Ljava/lang/Boolean;
+.method public abstract Ub(I)Ljava/lang/Boolean;
 .end method

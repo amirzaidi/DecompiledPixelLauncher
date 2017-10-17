@@ -6,25 +6,25 @@ package com.google.research.reflection.layers;
 
 class p implements c
 {
-    final /* synthetic */ b NL;
-    final /* synthetic */ b NM;
-    final /* synthetic */ boolean NN;
-    final /* synthetic */ b NO;
+    final /* synthetic */ b OF;
+    final /* synthetic */ b OG;
+    final /* synthetic */ boolean OH;
+    final /* synthetic */ b OI;
     
-    p(final boolean nn, final b no, final b nm, final b nl) {
-        this.NN = nn;
-        this.NO = no;
-        this.NM = nm;
-        this.NL = nl;
+    p(final boolean oh, final b oi, final b og, final b of) {
+        this.OH = oh;
+        this.OI = oi;
+        this.OG = og;
+        this.OF = of;
     }
     
-    public Boolean Vo(final int n) {
-        if (!this.NN) {
-            this.NO.Mr[n] = this.NM.Mr[n] + this.NL.Mr[n];
+    public Boolean Ub(final int n) {
+        if (!this.OH) {
+            this.OI.Nl[n] = this.OG.Nl[n] + this.OF.Nl[n];
         }
         else {
-            final double[] mr = this.NO.Mr;
-            mr[n] += this.NM.Mr[n] + this.NL.Mr[n];
+            final double[] nl = this.OI.Nl;
+            nl[n] += this.OG.Nl[n] + this.OF.Nl[n];
         }
         return true;
     }

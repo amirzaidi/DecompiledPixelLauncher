@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public UF()I
+.method public Ts()I
     .locals 1
 
     .prologue
@@ -26,7 +26,7 @@
     return v0
 .end method
 
-.method public UG(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
+.method public Tt(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
     .locals 8
 
     .prologue
@@ -47,7 +47,7 @@
     const-string/jumbo v0, "semantic_place"
 
     .line 32
-    invoke-static {p2, v0}, Lcom/google/research/reflection/common/b;->Up(Lcom/google/research/reflection/a/b;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {p2, v0}, Lcom/google/research/reflection/common/b;->Tc(Lcom/google/research/reflection/a/b;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v2
 
@@ -71,7 +71,7 @@
 
     check-cast v0, Lcom/google/research/reflection/a/a;
 
-    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->at()Ljava/util/List;
+    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->C()Ljava/util/List;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
 
     check-cast v0, Lcom/google/research/reflection/a/a;
 
-    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->at()Ljava/util/List;
+    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->C()Ljava/util/List;
 
     move-result-object v0
 
@@ -101,7 +101,7 @@
 
     check-cast v0, Lcom/google/research/reflection/a/a;
 
-    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->at()Ljava/util/List;
+    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->C()Ljava/util/List;
 
     move-result-object v0
 
@@ -126,7 +126,7 @@
 
     check-cast v0, Lcom/google/research/reflection/a/a;
 
-    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->at()Ljava/util/List;
+    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->C()Ljava/util/List;
 
     move-result-object v0
 
@@ -145,7 +145,7 @@
     if-eqz v0, :cond_0
 
     .line 40
-    iget-object v0, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aput-wide v6, v0, v5
 
@@ -153,7 +153,7 @@
 
     .line 38
     :cond_2
-    iget-object v0, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aput-wide v6, v0, v4
 

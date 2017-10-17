@@ -12,7 +12,7 @@ class h implements Comparator
     h(final k k) {
     }
     
-    public int UQ(final a a, final a a2) {
-        return Long.compare(a2.au(), a.au());
+    public int TD(final a a, final a a2) {
+        return Long.compare(a2.D(), a.D());
     }
 }

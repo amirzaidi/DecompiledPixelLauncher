@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field protected LH:Z
+.field protected MB:Z
 
-.field private LI:I
+.field private MC:I
 
-.field protected LJ:Lcom/google/research/reflection/common/a;
+.field protected MD:Lcom/google/research/reflection/common/a;
 
-.field private LK:J
+.field private ME:J
 
 
 # direct methods
@@ -24,29 +24,29 @@
     .line 22
     const-wide/32 v0, 0x36ee80
 
-    iput-wide v0, p0, Lcom/google/research/reflection/predictor/d;->LK:J
+    iput-wide v0, p0, Lcom/google/research/reflection/predictor/d;->ME:J
 
     .line 24
     const/16 v0, 0x64
 
-    iput v0, p0, Lcom/google/research/reflection/predictor/d;->LI:I
+    iput v0, p0, Lcom/google/research/reflection/predictor/d;->MC:I
 
     .line 31
     new-instance v0, Lcom/google/research/reflection/common/a;
 
-    iget v1, p0, Lcom/google/research/reflection/predictor/d;->LI:I
+    iget v1, p0, Lcom/google/research/reflection/predictor/d;->MC:I
 
     const/4 v2, 0x0
 
     invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
     .line 32
     return-void
 .end method
 
-.method public static TN(Ljava/lang/String;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/d;
+.method public static SA(Ljava/lang/String;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/d;
     .locals 1
 
     .prologue
@@ -71,14 +71,14 @@
     move-result-object v0
 
     .line 144
-    invoke-static {v0, p1}, Lcom/google/research/reflection/predictor/d;->TP([BLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/d;
+    invoke-static {v0, p1}, Lcom/google/research/reflection/predictor/d;->SC([BLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/d;
 
     move-result-object v0
 
     goto :goto_0
 .end method
 
-.method public static TP([BLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/d;
+.method public static SC([BLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/d;
     .locals 3
 
     .prologue
@@ -98,7 +98,7 @@
     invoke-direct {v0, v2}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
     .line 118
-    invoke-virtual {v1, v0, p1}, Lcom/google/research/reflection/predictor/d;->TO(Ljava/io/DataInputStream;Lcom/google/research/reflection/a/b;)V
+    invoke-virtual {v1, v0, p1}, Lcom/google/research/reflection/predictor/d;->SB(Ljava/io/DataInputStream;Lcom/google/research/reflection/a/b;)V
 
     .line 119
     invoke-virtual {v0}, Ljava/io/DataInputStream;->close()V
@@ -119,7 +119,7 @@
     goto :goto_0
 .end method
 
-.method public static TS(Lcom/google/research/reflection/predictor/d;)Ljava/lang/String;
+.method public static SF(Lcom/google/research/reflection/predictor/d;)Ljava/lang/String;
     .locals 3
 
     .prologue
@@ -133,7 +133,7 @@
 
     .line 151
     :cond_0
-    invoke-static {p0}, Lcom/google/research/reflection/predictor/d;->TU(Lcom/google/research/reflection/predictor/d;)[B
+    invoke-static {p0}, Lcom/google/research/reflection/predictor/d;->SH(Lcom/google/research/reflection/predictor/d;)[B
 
     move-result-object v0
 
@@ -147,7 +147,7 @@
     return-object v1
 .end method
 
-.method public static TU(Lcom/google/research/reflection/predictor/d;)[B
+.method public static SH(Lcom/google/research/reflection/predictor/d;)[B
     .locals 2
 
     .prologue
@@ -163,7 +163,7 @@
     invoke-direct {v1, v0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     .line 130
-    invoke-virtual {p0, v1}, Lcom/google/research/reflection/predictor/d;->TQ(Ljava/io/DataOutputStream;)V
+    invoke-virtual {p0, v1}, Lcom/google/research/reflection/predictor/d;->SD(Ljava/io/DataOutputStream;)V
 
     .line 131
     invoke-virtual {v1}, Ljava/io/DataOutputStream;->close()V
@@ -192,103 +192,7 @@
 
 
 # virtual methods
-.method public TM(Lcom/google/research/reflection/a/b;)V
-    .locals 6
-
-    .prologue
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    .line 41
-    invoke-virtual {p0, p1}, Lcom/google/research/reflection/predictor/d;->TT(Lcom/google/research/reflection/a/b;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 44
-    :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
-
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ui()I
-
-    move-result v0
-
-    if-gtz v0, :cond_2
-
-    .line 57
-    :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
-
-    invoke-virtual {v0, p1}, Lcom/google/research/reflection/common/a;->add(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 58
-    iput-boolean v2, p0, Lcom/google/research/reflection/predictor/d;->LH:Z
-
-    .line 59
-    return-void
-
-    .line 42
-    :cond_1
-    return-void
-
-    .line 47
-    :cond_2
-    :try_start_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/research/reflection/common/a;->Ug(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/research/reflection/a/b;
-
-    invoke-static {v0, p1}, Lcom/google/research/reflection/common/e;->UA(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/b;)J
-    :try_end_0
-    .catch Lcom/google/research/reflection/common/UncertaintyException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-wide v0
-
-    .line 51
-    :goto_1
-    iget-wide v4, p0, Lcom/google/research/reflection/predictor/d;->LK:J
-
-    cmp-long v0, v0, v4
-
-    if-gtz v0, :cond_3
-
-    move v0, v2
-
-    :goto_2
-    if-nez v0, :cond_0
-
-    .line 52
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
-
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Uj()V
-
-    goto :goto_0
-
-    .line 48
-    :catch_0
-    move-exception v0
-
-    .line 49
-    const-wide v0, 0x7fffffffffffffffL
-
-    goto :goto_1
-
-    :cond_3
-    move v0, v3
-
-    .line 51
-    goto :goto_2
-.end method
-
-.method public TO(Ljava/io/DataInputStream;Lcom/google/research/reflection/a/b;)V
+.method public SB(Ljava/io/DataInputStream;Lcom/google/research/reflection/a/b;)V
     .locals 6
 
     .prologue
@@ -331,12 +235,12 @@
     invoke-virtual {p1, v0, v2, v4}, Ljava/io/DataInputStream;->read([BII)I
 
     .line 106
-    invoke-interface {p2, v0, v2, v4}, Lcom/google/research/reflection/a/b;->az([BII)Lcom/google/research/reflection/a/b;
+    invoke-interface {p2, v0, v2, v4}, Lcom/google/research/reflection/a/b;->I([BII)Lcom/google/research/reflection/a/b;
 
     move-result-object v4
 
     .line 107
-    invoke-virtual {p0, v4}, Lcom/google/research/reflection/predictor/d;->TT(Lcom/google/research/reflection/a/b;)Z
+    invoke-virtual {p0, v4}, Lcom/google/research/reflection/predictor/d;->SG(Lcom/google/research/reflection/a/b;)Z
 
     move-result v5
 
@@ -358,12 +262,12 @@
 
     .line 108
     :cond_3
-    invoke-virtual {p0, v4}, Lcom/google/research/reflection/predictor/d;->TM(Lcom/google/research/reflection/a/b;)V
+    invoke-virtual {p0, v4}, Lcom/google/research/reflection/predictor/d;->Sz(Lcom/google/research/reflection/a/b;)V
 
     goto :goto_2
 .end method
 
-.method public TQ(Ljava/io/DataOutputStream;)V
+.method public SD(Ljava/io/DataOutputStream;)V
     .locals 5
 
     .prologue
@@ -384,23 +288,23 @@
     if-lt v1, v3, :cond_0
 
     .line 92
-    iput-boolean v2, p0, Lcom/google/research/reflection/predictor/d;->LH:Z
+    iput-boolean v2, p0, Lcom/google/research/reflection/predictor/d;->MB:Z
 
     .line 93
     return-void
 
     .line 87
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0, v1}, Lcom/google/research/reflection/common/a;->Ug(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/research/reflection/common/a;->ST(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/research/reflection/a/b;
 
     .line 88
-    invoke-interface {v0}, Lcom/google/research/reflection/a/b;->aI()[B
+    invoke-interface {v0}, Lcom/google/research/reflection/a/b;->R()[B
 
     move-result-object v0
 
@@ -422,24 +326,24 @@
     goto :goto_0
 .end method
 
-.method public TR()Lcom/google/research/reflection/common/a;
+.method public SE()Lcom/google/research/reflection/common/a;
     .locals 1
 
     .prologue
     .line 68
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
     return-object v0
 .end method
 
-.method protected TT(Lcom/google/research/reflection/a/b;)Z
+.method protected SG(Lcom/google/research/reflection/a/b;)Z
     .locals 3
 
     .prologue
     const/4 v0, 0x0
 
     .line 62
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aH()Ljava/lang/String;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->Q()Ljava/lang/String;
 
     move-result-object v1
 
@@ -455,7 +359,7 @@
 
     .line 63
     :cond_1
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aH()Ljava/lang/String;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->Q()Ljava/lang/String;
 
     move-result-object v1
 
@@ -468,7 +372,7 @@
     if-nez v1, :cond_0
 
     .line 64
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->aH()Ljava/lang/String;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->Q()Ljava/lang/String;
 
     move-result-object v1
 
@@ -483,12 +387,108 @@
     goto :goto_0
 .end method
 
+.method public Sz(Lcom/google/research/reflection/a/b;)V
+    .locals 6
+
+    .prologue
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    .line 41
+    invoke-virtual {p0, p1}, Lcom/google/research/reflection/predictor/d;->SG(Lcom/google/research/reflection/a/b;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 44
+    :goto_0
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
+
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SV()I
+
+    move-result v0
+
+    if-gtz v0, :cond_2
+
+    .line 57
+    :cond_0
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
+
+    invoke-virtual {v0, p1}, Lcom/google/research/reflection/common/a;->add(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 58
+    iput-boolean v2, p0, Lcom/google/research/reflection/predictor/d;->MB:Z
+
+    .line 59
+    return-void
+
+    .line 42
+    :cond_1
+    return-void
+
+    .line 47
+    :cond_2
+    :try_start_0
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/research/reflection/common/a;->ST(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/research/reflection/a/b;
+
+    invoke-static {v0, p1}, Lcom/google/research/reflection/common/e;->Tn(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/b;)J
+    :try_end_0
+    .catch Lcom/google/research/reflection/common/UncertaintyException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-wide v0
+
+    .line 51
+    :goto_1
+    iget-wide v4, p0, Lcom/google/research/reflection/predictor/d;->ME:J
+
+    cmp-long v0, v0, v4
+
+    if-gtz v0, :cond_3
+
+    move v0, v2
+
+    :goto_2
+    if-nez v0, :cond_0
+
+    .line 52
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
+
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SW()V
+
+    goto :goto_0
+
+    .line 48
+    :catch_0
+    move-exception v0
+
+    .line 49
+    const-wide v0, 0x7fffffffffffffffL
+
+    goto :goto_1
+
+    :cond_3
+    move v0, v3
+
+    .line 51
+    goto :goto_2
+.end method
+
 .method public clear()V
     .locals 1
 
     .prologue
     .line 76
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->clear()V
 
@@ -501,9 +501,9 @@
 
     .prologue
     .line 80
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ui()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SV()I
 
     move-result v0
 
@@ -525,9 +525,9 @@
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 162
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ui()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SV()I
 
     move-result v0
 
@@ -544,9 +544,9 @@
     move v1, v0
 
     :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Ui()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SV()I
 
     move-result v0
 
@@ -566,9 +566,9 @@
 
     .line 165
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->LJ:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/d;->MD:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0, v1}, Lcom/google/research/reflection/common/a;->Ug(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/research/reflection/common/a;->ST(I)Ljava/lang/Object;
 
     move-result-object v0
 

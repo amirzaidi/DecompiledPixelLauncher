@@ -10,9 +10,9 @@ import android.os.Parcelable$Creator;
 
 public final class a implements Parcelable$Creator
 {
-    private final Class KM;
+    private final Class Pt;
     
-    static void Re(final Class clazz, final com.google.protobuf.nano.a a, final Parcel parcel) {
+    static void UZ(final Class clazz, final com.google.protobuf.nano.a a, final Parcel parcel) {
         parcel.writeString(clazz.getName());
         parcel.writeByteArray(a.toByteArray(a));
     }
@@ -270,6 +270,6 @@ public final class a implements Parcelable$Creator
     }
     
     public com.google.protobuf.nano.a[] newArray(final int n) {
-        return (com.google.protobuf.nano.a[])Array.newInstance(this.KM, n);
+        return (com.google.protobuf.nano.a[])Array.newInstance(this.Pt, n);
     }
 }

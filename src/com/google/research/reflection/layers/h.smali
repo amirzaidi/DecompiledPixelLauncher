@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field final synthetic MM:Lcom/google/research/reflection/layers/b;
+.field final synthetic NG:Lcom/google/research/reflection/layers/b;
 
-.field final synthetic MN:Lcom/google/research/reflection/layers/b;
+.field final synthetic NH:Lcom/google/research/reflection/layers/b;
 
-.field final synthetic MO:Z
+.field final synthetic NI:Z
 
-.field final synthetic MP:Z
+.field final synthetic NJ:Z
 
-.field final synthetic MQ:Lcom/google/research/reflection/layers/b;
+.field final synthetic NK:Lcom/google/research/reflection/layers/b;
 
 
 # direct methods
@@ -24,31 +24,31 @@
 
     .prologue
     .line 71
-    iput-boolean p1, p0, Lcom/google/research/reflection/layers/h;->MO:Z
+    iput-boolean p1, p0, Lcom/google/research/reflection/layers/h;->NI:Z
 
-    iput-object p2, p0, Lcom/google/research/reflection/layers/h;->MQ:Lcom/google/research/reflection/layers/b;
+    iput-object p2, p0, Lcom/google/research/reflection/layers/h;->NK:Lcom/google/research/reflection/layers/b;
 
-    iput-object p3, p0, Lcom/google/research/reflection/layers/h;->MN:Lcom/google/research/reflection/layers/b;
+    iput-object p3, p0, Lcom/google/research/reflection/layers/h;->NH:Lcom/google/research/reflection/layers/b;
 
-    iput-object p4, p0, Lcom/google/research/reflection/layers/h;->MM:Lcom/google/research/reflection/layers/b;
+    iput-object p4, p0, Lcom/google/research/reflection/layers/h;->NG:Lcom/google/research/reflection/layers/b;
 
-    iput-boolean p5, p0, Lcom/google/research/reflection/layers/h;->MP:Z
+    iput-boolean p5, p0, Lcom/google/research/reflection/layers/h;->NJ:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private Vs(II)D
+.method private Ue(II)D
     .locals 10
 
     .prologue
     const/4 v1, 0x0
 
     .line 85
-    iget-object v0, p0, Lcom/google/research/reflection/layers/h;->MN:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/h;->NH:Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {v0, v1}, Lcom/google/research/reflection/layers/b;->Vh(Z)I
+    invoke-virtual {v0, v1}, Lcom/google/research/reflection/layers/b;->TU(Z)I
 
     move-result v4
 
@@ -66,18 +66,18 @@
 
     .line 88
     :cond_0
-    iget-object v5, p0, Lcom/google/research/reflection/layers/h;->MN:Lcom/google/research/reflection/layers/b;
+    iget-object v5, p0, Lcom/google/research/reflection/layers/h;->NH:Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {v5, v1, p1, v0}, Lcom/google/research/reflection/layers/b;->Vc(ZII)D
+    invoke-virtual {v5, v1, p1, v0}, Lcom/google/research/reflection/layers/b;->TP(ZII)D
 
     move-result-wide v6
 
     .line 89
-    iget-object v5, p0, Lcom/google/research/reflection/layers/h;->MM:Lcom/google/research/reflection/layers/b;
+    iget-object v5, p0, Lcom/google/research/reflection/layers/h;->NG:Lcom/google/research/reflection/layers/b;
 
-    iget-boolean v8, p0, Lcom/google/research/reflection/layers/h;->MP:Z
+    iget-boolean v8, p0, Lcom/google/research/reflection/layers/h;->NJ:Z
 
-    invoke-virtual {v5, v8, v0, p2}, Lcom/google/research/reflection/layers/b;->Vc(ZII)D
+    invoke-virtual {v5, v8, v0, p2}, Lcom/google/research/reflection/layers/b;->TP(ZII)D
 
     move-result-wide v8
 
@@ -94,41 +94,41 @@
 
 
 # virtual methods
-.method public Vo(I)Ljava/lang/Boolean;
+.method public Ub(I)Ljava/lang/Boolean;
     .locals 6
 
     .prologue
     const/4 v5, 0x0
 
     .line 74
-    iget-boolean v0, p0, Lcom/google/research/reflection/layers/h;->MO:Z
+    iget-boolean v0, p0, Lcom/google/research/reflection/layers/h;->NI:Z
 
     if-nez v0, :cond_0
 
     .line 78
-    iget-object v0, p0, Lcom/google/research/reflection/layers/h;->MQ:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/h;->NK:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/h;->MQ:Lcom/google/research/reflection/layers/b;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/h;->NK:Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {v1, v5}, Lcom/google/research/reflection/layers/b;->Vh(Z)I
+    invoke-virtual {v1, v5}, Lcom/google/research/reflection/layers/b;->TU(Z)I
 
     move-result v1
 
     div-int v1, p1, v1
 
-    iget-object v2, p0, Lcom/google/research/reflection/layers/h;->MQ:Lcom/google/research/reflection/layers/b;
+    iget-object v2, p0, Lcom/google/research/reflection/layers/h;->NK:Lcom/google/research/reflection/layers/b;
 
     .line 79
-    invoke-virtual {v2, v5}, Lcom/google/research/reflection/layers/b;->Vh(Z)I
+    invoke-virtual {v2, v5}, Lcom/google/research/reflection/layers/b;->TU(Z)I
 
     move-result v2
 
     rem-int v2, p1, v2
 
     .line 78
-    invoke-direct {p0, v1, v2}, Lcom/google/research/reflection/layers/h;->Vs(II)D
+    invoke-direct {p0, v1, v2}, Lcom/google/research/reflection/layers/h;->Ue(II)D
 
     move-result-wide v2
 
@@ -146,31 +146,31 @@
 
     .line 75
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/layers/h;->MQ:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/h;->NK:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v2, v0, p1
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/h;->MQ:Lcom/google/research/reflection/layers/b;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/h;->NK:Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {v1, v5}, Lcom/google/research/reflection/layers/b;->Vh(Z)I
+    invoke-virtual {v1, v5}, Lcom/google/research/reflection/layers/b;->TU(Z)I
 
     move-result v1
 
     div-int v1, p1, v1
 
-    iget-object v4, p0, Lcom/google/research/reflection/layers/h;->MQ:Lcom/google/research/reflection/layers/b;
+    iget-object v4, p0, Lcom/google/research/reflection/layers/h;->NK:Lcom/google/research/reflection/layers/b;
 
     .line 76
-    invoke-virtual {v4, v5}, Lcom/google/research/reflection/layers/b;->Vh(Z)I
+    invoke-virtual {v4, v5}, Lcom/google/research/reflection/layers/b;->TU(Z)I
 
     move-result v4
 
     rem-int v4, p1, v4
 
     .line 75
-    invoke-direct {p0, v1, v4}, Lcom/google/research/reflection/layers/h;->Vs(II)D
+    invoke-direct {p0, v1, v4}, Lcom/google/research/reflection/layers/h;->Ue(II)D
 
     move-result-wide v4
 

@@ -4,148 +4,95 @@
 
 package com.google.research.reflection.layers;
 
-import java.util.ArrayList;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.util.ArrayList;
 
 public class o extends v
 {
-    private b NA;
-    private b NB;
-    int NC;
-    private boolean ND;
-    private b NE;
-    private b NF;
-    private b NG;
-    private float NH;
-    private int NI;
-    private b NJ;
-    private int NK;
+    private b OA;
+    private float OB;
+    private int OC;
+    private b OD;
+    private int OE;
+    private b Ou;
+    private b Ov;
+    int Ow;
+    private boolean Ox;
+    private b Oy;
+    private b Oz;
     
     public o() {
     }
     
-    public o(final boolean b, final int n, final int nc, final int n2, final int n3, final int n4, final int nk, final int ni, final boolean nd, final boolean b2, final float nh) {
+    public o(final boolean b, final int n, final int ow, final int n2, final int n3, final int n4, final int oe, final int oc, final boolean ox, final boolean b2, final float ob) {
         super(b, n, n2, n3, n4);
-        this.NK = nk;
-        this.NH = nh;
-        this.NF = new b(1, n4);
-        this.NC = nc;
-        this.NB = new b(n3, n4);
-        this.NJ = new b(n4, n4);
-        this.NG = new b(1, n4);
-        this.ND = nd;
-        if (nk < 0) {
-            k.VC(this.NA = new b(n3, n4), b2);
-            k.VD(this.NF.Mr);
+        this.OE = oe;
+        this.OB = ob;
+        this.Oz = new b(1, n4);
+        this.Ow = ow;
+        this.Ov = new b(n3, n4);
+        this.OD = new b(n4, n4);
+        this.OA = new b(1, n4);
+        this.Ox = ox;
+        if (oe < 0) {
+            k.Uo(this.Ou = new b(n3, n4), b2);
+            k.Up(this.Oz.Nl);
         }
-        this.NI = ni;
-        k.VC(this.NE = new b(n4, n4), b2);
+        this.OC = oc;
+        k.Uo(this.Oy = new b(n4, n4), b2);
     }
     
-    private static void VU(final int n, final b b, final b b2) {
+    private static void UG(final int n, final b b, final b b2) {
         if (n != 1 && n != 0) {
             if (n != 2) {
                 throw new RuntimeException(new StringBuilder(44).append("Unsupported activation function: ").append(n).toString());
             }
-            e.Vq().Vp(b.Vj(false), new r(b, b2));
+            e.getInstance().Uc(b.TW(false), new r(b, b2));
         }
         else {
-            e.Vq().Vp(b.Mr.length, new g(n, b2, b));
+            e.getInstance().Uc(b.Nl.length, new g(n, b2, b));
         }
     }
     
-    public String VI() {
-        return "LinearLayer";
+    public int UA() {
+        return this.OE;
     }
     
-    public void VJ(final DataOutputStream dataOutputStream) {
-        super.VJ(dataOutputStream);
-        dataOutputStream.writeInt(this.NC);
-        dataOutputStream.writeBoolean(this.ND);
-        this.NE.Vl(dataOutputStream);
-        this.NF.Vl(dataOutputStream);
-        dataOutputStream.writeInt(this.NK);
-        if (this.NK < 0) {
-            this.NA.Vl(dataOutputStream);
-        }
-        dataOutputStream.writeInt(this.NI);
-        this.We(dataOutputStream);
-    }
-    
-    public void VK(final DataInputStream dataInputStream) {
-        super.VK(dataInputStream);
-        this.NC = dataInputStream.readInt();
-        this.ND = dataInputStream.readBoolean();
-        (this.NE = new b()).Vm(dataInputStream);
-        (this.NF = new b()).Vm(dataInputStream);
-        this.NK = dataInputStream.readInt();
-        if (this.NK < 0) {
-            (this.NA = new b()).Vm(dataInputStream);
-        }
-        this.NB = new b(this.Ok, this.Ol);
-        this.NJ = new b(this.Ol, this.Ol);
-        this.NG = new b(1, this.Ol);
-        this.NI = dataInputStream.readInt();
-        this.Wd(dataInputStream);
-    }
-    
-    void VL(final int n, final b b, final b b2, final b b3) {
-        e.Vq().Vp(b.Mr.length, new t(this, n, b2, b));
-    }
-    
-    public void VN(final o o) {
-        super.Wk(o);
-        o.ND = this.ND;
-        o.NC = this.NC;
-        o.NA = this.NA.clone();
-        o.NB = this.NB.clone();
-        o.NE = this.NE.clone();
-        o.NJ = this.NJ.clone();
-        o.NF = this.NF.clone();
-        o.NG = this.NG.clone();
-        o.NK = this.NK;
-        o.NI = this.NI;
-    }
-    
-    public int VO() {
-        return this.NK;
-    }
-    
-    public b VP(final boolean b, final a a, final ArrayList[] array, final b b2) {
+    public b UB(final boolean b, final a a, final ArrayList[] array, final b b2) {
         b b3 = null;
-        final int oj = 1;
+        final int pd = 1;
         int i = 0;
         if (array == null) {
-            this.Oj = false;
-            this.Oh.add(b2);
-            if (b2.Vh(false) != this.Wh() || b2.Vj(false) != this.Wf()) {
+            this.Pd = false;
+            this.Pb.add(b2);
+            if (b2.TU(false) != this.UT() || b2.TW(false) != this.UR()) {
                 throw new RuntimeException("Inconsistent input matrix");
             }
         }
         else {
-            this.Oj = (oj != 0);
-            this.Oi.add(array);
+            this.Pd = (pd != 0);
+            this.Pc.add(array);
         }
-        if (this.Om.Uk() > oj) {
-            b3 = (b)this.Om.Uh();
+        if (this.Pg.SX() > pd) {
+            b3 = (b)this.Pg.SU();
         }
-        final b b4 = new b(this.Og, this.Ol);
-        e.Vq().Vp(this.Og * this.Ol, new x(this, a, array, b2, b3, b4));
-        final b b5 = (b)this.Om.add(new b(this.Og, this.Ol));
-        VU(this.NC, b4, b5);
-        if (this.NH > 0.0f) {
+        final b b4 = new b(this.Pa, this.Pf);
+        e.getInstance().Uc(this.Pa * this.Pf, new x(this, a, array, b2, b3, b4));
+        final b b5 = (b)this.Pg.add(new b(this.Pa, this.Pf));
+        UG(this.Ow, b4, b5);
+        if (this.OB > 0.0f) {
             if (!b) {
-                while (i < b5.Mr.length) {
-                    final double[] mr = b5.Mr;
-                    mr[i] *= 1.0f - this.NH;
+                while (i < b5.Nl.length) {
+                    final double[] nl = b5.Nl;
+                    nl[i] *= 1.0f - this.OB;
                     ++i;
                 }
             }
             else {
-                for (int j = 0; j < b5.Mr.length; ++j) {
-                    if (Math.random() < this.NH) {
-                        b5.Mr[j] = 0.0;
+                for (int j = 0; j < b5.Nl.length; ++j) {
+                    if (Math.random() < this.OB) {
+                        b5.Nl[j] = 0.0;
                     }
                 }
             }
@@ -153,52 +100,105 @@ public class o extends v
         return b5;
     }
     
-    void VQ() {
-        super.VQ();
-        k.VD(this.NB.Mr);
-        k.VD(this.NJ.Mr);
-        k.VD(this.NG.Mr);
+    void UC() {
+        super.UC();
+        k.Up(this.Ov.Nl);
+        k.Up(this.OD.Nl);
+        k.Up(this.OA.Nl);
     }
     
-    public void VR(final a a, final int n, final b b, final b b2, final b b3) {
+    public void UD(final a a, final int n, final b b, final b b2, final b b3) {
         final boolean b4 = true;
-        b.Vg(b, b2, this.On, false);
-        this.VL(this.NC, this.On, (b)this.Om.Ug(n), b3);
-        b.Vb(this.On, this.VS(a), !this.ND && b4, this.Oe, false);
-        if (this.Oc) {
-            b.Vb(this.On, this.NE, b4, this.Of, false);
+        b.TT(b, b2, this.Ph, false);
+        this.Ux(this.Ow, this.Ph, (b)this.Pg.ST(n), b3);
+        b.TO(this.Ph, this.UE(a), !this.Ox && b4, this.OY, false);
+        if (this.OW) {
+            b.TO(this.Ph, this.Oy, b4, this.OZ, false);
         }
-        e.Vq().Vp(this.Og * this.Ol, new u(this, (ArrayList[])this.Oi.Ug(n), (b)this.Oh.Ug(n), (b)this.Om.Ug(n - 1)));
+        e.getInstance().Uc(this.Pa * this.Pf, new u(this, (ArrayList[])this.Pc.ST(n), (b)this.Pb.ST(n), (b)this.Pg.ST(n - 1)));
     }
     
-    public b VS(final a a) {
-        if (this.NK < 0) {
-            return this.NA;
+    public b UE(final a a) {
+        if (this.OE < 0) {
+            return this.Ou;
         }
-        return a.US().get(this.NK).NA;
+        return a.TF().get(this.OE).Ou;
     }
     
-    public b Wb() {
-        return this.NF;
+    public b UN() {
+        return this.Oz;
+    }
+    
+    public String Uu() {
+        return "LinearLayer";
+    }
+    
+    public void Uv(final DataOutputStream dataOutputStream) {
+        super.Uv(dataOutputStream);
+        dataOutputStream.writeInt(this.Ow);
+        dataOutputStream.writeBoolean(this.Ox);
+        this.Oy.TY(dataOutputStream);
+        this.Oz.TY(dataOutputStream);
+        dataOutputStream.writeInt(this.OE);
+        if (this.OE < 0) {
+            this.Ou.TY(dataOutputStream);
+        }
+        dataOutputStream.writeInt(this.OC);
+        this.UQ(dataOutputStream);
+    }
+    
+    public void Uw(final DataInputStream dataInputStream) {
+        super.Uw(dataInputStream);
+        this.Ow = dataInputStream.readInt();
+        this.Ox = dataInputStream.readBoolean();
+        (this.Oy = new b()).TZ(dataInputStream);
+        (this.Oz = new b()).TZ(dataInputStream);
+        this.OE = dataInputStream.readInt();
+        if (this.OE < 0) {
+            (this.Ou = new b()).TZ(dataInputStream);
+        }
+        this.Ov = new b(this.Pe, this.Pf);
+        this.OD = new b(this.Pf, this.Pf);
+        this.OA = new b(1, this.Pf);
+        this.OC = dataInputStream.readInt();
+        this.UP(dataInputStream);
+    }
+    
+    void Ux(final int n, final b b, final b b2, final b b3) {
+        e.getInstance().Uc(b.Nl.length, new t(this, n, b2, b));
+    }
+    
+    public void Uz(final o o) {
+        super.UW(o);
+        o.Ox = this.Ox;
+        o.Ow = this.Ow;
+        o.Ou = this.Ou.clone();
+        o.Ov = this.Ov.clone();
+        o.Oy = this.Oy.clone();
+        o.OD = this.OD.clone();
+        o.Oz = this.Oz.clone();
+        o.OA = this.OA.clone();
+        o.OE = this.OE;
+        o.OC = this.OC;
     }
     
     public o clone() {
         final o o = new o();
-        super.Wk(o);
-        o.ND = this.ND;
-        o.NC = this.NC;
-        o.NA = this.NA.clone();
-        o.NB = this.NB.clone();
-        o.NE = this.NE.clone();
-        o.NJ = this.NJ.clone();
-        o.NF = this.NF.clone();
-        o.NG = this.NG.clone();
-        o.NK = this.NK;
-        o.NI = this.NI;
+        super.UW(o);
+        o.Ox = this.Ox;
+        o.Ow = this.Ow;
+        o.Ou = this.Ou.clone();
+        o.Ov = this.Ov.clone();
+        o.Oy = this.Oy.clone();
+        o.OD = this.OD.clone();
+        o.Oz = this.Oz.clone();
+        o.OA = this.OA.clone();
+        o.OE = this.OE;
+        o.OC = this.OC;
         return o;
     }
     
     public void update() {
-        e.Vq().Vp(this.Ol, new l(this));
+        e.getInstance().Uc(this.Pf, new l(this));
     }
 }

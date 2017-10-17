@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field public LQ:F
+.field public MK:F
 
-.field public LR:Ljava/lang/String;
+.field public ML:Ljava/lang/String;
 
 
 # direct methods
@@ -21,10 +21,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 75
-    iput-object p1, p0, Lcom/google/research/reflection/predictor/f;->LR:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/research/reflection/predictor/f;->ML:Ljava/lang/String;
 
     .line 76
-    iput p2, p0, Lcom/google/research/reflection/predictor/f;->LQ:F
+    iput p2, p0, Lcom/google/research/reflection/predictor/f;->MK:F
 
     .line 77
     return-void
@@ -32,14 +32,14 @@
 
 
 # virtual methods
-.method public Ub(Lcom/google/research/reflection/predictor/f;)I
+.method public SO(Lcom/google/research/reflection/predictor/f;)I
     .locals 2
 
     .prologue
     .line 81
-    iget v0, p0, Lcom/google/research/reflection/predictor/f;->LQ:F
+    iget v0, p0, Lcom/google/research/reflection/predictor/f;->MK:F
 
-    iget v1, p1, Lcom/google/research/reflection/predictor/f;->LQ:F
+    iget v1, p1, Lcom/google/research/reflection/predictor/f;->MK:F
 
     invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
 
@@ -55,7 +55,7 @@
     .line 70
     check-cast p1, Lcom/google/research/reflection/predictor/f;
 
-    invoke-virtual {p0, p1}, Lcom/google/research/reflection/predictor/f;->Ub(Lcom/google/research/reflection/predictor/f;)I
+    invoke-virtual {p0, p1}, Lcom/google/research/reflection/predictor/f;->SO(Lcom/google/research/reflection/predictor/f;)I
 
     move-result v0
 

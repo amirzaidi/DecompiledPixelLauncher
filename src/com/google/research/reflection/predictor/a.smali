@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field protected LA:I
+.field protected Mq:Ljava/util/HashMap;
 
-.field protected LB:I
+.field protected Mr:Lcom/google/research/reflection/predictor/b;
 
-.field protected LC:Ljava/util/HashMap;
+.field protected Ms:Ljava/util/HashMap;
 
-.field private LD:Lcom/google/research/reflection/predictor/c;
+.field private Mt:[F
 
-.field private LE:Lcom/google/research/reflection/predictor/d;
+.field protected Mu:I
 
-.field protected LF:Ljava/util/HashMap;
+.field protected Mv:I
 
-.field protected Lw:Ljava/util/HashMap;
+.field protected Mw:Ljava/util/HashMap;
 
-.field protected Lx:Lcom/google/research/reflection/predictor/b;
+.field private Mx:Lcom/google/research/reflection/predictor/c;
 
-.field protected Ly:Ljava/util/HashMap;
+.field private My:Lcom/google/research/reflection/predictor/d;
 
-.field private Lz:[F
+.field protected Mz:Ljava/util/HashMap;
 
 
 # direct methods
@@ -38,38 +38,38 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->LC:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mw:Ljava/util/HashMap;
 
     .line 58
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     .line 64
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lw:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mq:Ljava/util/HashMap;
 
     .line 66
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->LF:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mz:Ljava/util/HashMap;
 
     .line 68
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
     .line 72
     const/16 v0, 0x64
 
-    iput v0, p0, Lcom/google/research/reflection/predictor/a;->LA:I
+    iput v0, p0, Lcom/google/research/reflection/predictor/a;->Mu:I
 
     .line 76
     return-void
@@ -87,50 +87,50 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->LC:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mw:Ljava/util/HashMap;
 
     .line 58
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     .line 64
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lw:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mq:Ljava/util/HashMap;
 
     .line 66
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->LF:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mz:Ljava/util/HashMap;
 
     .line 68
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
     .line 72
     const/16 v0, 0x64
 
-    iput v0, p0, Lcom/google/research/reflection/predictor/a;->LA:I
+    iput v0, p0, Lcom/google/research/reflection/predictor/a;->Mu:I
 
     .line 79
-    iput-object p1, p0, Lcom/google/research/reflection/predictor/a;->Lx:Lcom/google/research/reflection/predictor/b;
+    iput-object p1, p0, Lcom/google/research/reflection/predictor/a;->Mr:Lcom/google/research/reflection/predictor/b;
 
     .line 80
-    invoke-virtual {p1, p0}, Lcom/google/research/reflection/predictor/b;->TE(Lcom/google/research/reflection/predictor/a;)V
+    invoke-virtual {p1, p0}, Lcom/google/research/reflection/predictor/b;->Sr(Lcom/google/research/reflection/predictor/a;)V
 
     .line 81
     return-void
 .end method
 
-.method private Tr()Ljava/lang/String;
+.method private Se()Ljava/lang/String;
     .locals 10
 
     .prologue
@@ -142,7 +142,7 @@
     const-wide v0, 0x7fffffffffffffffL
 
     .line 136
-    iget-object v2, p0, Lcom/google/research/reflection/predictor/a;->LF:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/google/research/reflection/predictor/a;->Mz:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -164,7 +164,7 @@
     if-nez v0, :cond_1
 
     .line 142
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -280,12 +280,12 @@
     return-object v0
 .end method
 
-.method private Tt(Ljava/lang/String;Ljava/lang/String;)V
+.method private Sg(Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
 
     .prologue
     .line 187
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -294,7 +294,7 @@
     if-nez v0, :cond_0
 
     .line 190
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -307,9 +307,9 @@
 
     .line 194
     :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lx:Lcom/google/research/reflection/predictor/b;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mr:Lcom/google/research/reflection/predictor/b;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/research/reflection/predictor/b;->TB(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/research/reflection/predictor/b;->So(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 195
     return-void
@@ -320,21 +320,21 @@
 
     .line 192
     :cond_1
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v1, p2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
 
-.method private Tz(Ljava/lang/String;)V
+.method private Sm(Ljava/lang/String;)V
     .locals 6
 
     .prologue
     const/4 v2, 0x0
 
     .line 217
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -343,7 +343,7 @@
     if-nez v0, :cond_1
 
     .line 220
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
@@ -352,7 +352,7 @@
     add-int/lit8 v3, v0, -0x1
 
     .line 221
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -361,7 +361,7 @@
     check-cast v0, Ljava/lang/Integer;
 
     .line 224
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -373,12 +373,12 @@
     if-nez v0, :cond_3
 
     .line 253
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lx:Lcom/google/research/reflection/predictor/b;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mr:Lcom/google/research/reflection/predictor/b;
 
-    invoke-virtual {v1, v2, v2, p1}, Lcom/google/research/reflection/predictor/b;->TF(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
+    invoke-virtual {v1, v2, v2, p1}, Lcom/google/research/reflection/predictor/b;->Ss(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
 
     .line 254
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LD:Lcom/google/research/reflection/predictor/c;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mx:Lcom/google/research/reflection/predictor/c;
 
     if-nez v1, :cond_7
 
@@ -403,7 +403,7 @@
 
     .line 228
     :cond_3
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LC:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mw:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -416,19 +416,19 @@
     move-result v1
 
     .line 229
-    iget v2, p0, Lcom/google/research/reflection/predictor/a;->LB:I
+    iget v2, p0, Lcom/google/research/reflection/predictor/a;->Mv:I
 
     sub-int v1, v2, v1
 
-    iput v1, p0, Lcom/google/research/reflection/predictor/a;->LB:I
+    iput v1, p0, Lcom/google/research/reflection/predictor/a;->Mv:I
 
     .line 230
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lw:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mq:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 231
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LF:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mz:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -441,29 +441,29 @@
 
     .line 247
     :goto_1
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lx:Lcom/google/research/reflection/predictor/b;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mr:Lcom/google/research/reflection/predictor/b;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-virtual {v1, v0, v2, p1}, Lcom/google/research/reflection/predictor/b;->TF(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
+    invoke-virtual {v1, v0, v2, p1}, Lcom/google/research/reflection/predictor/b;->Ss(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
 
     .line 248
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LD:Lcom/google/research/reflection/predictor/c;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mx:Lcom/google/research/reflection/predictor/c;
 
     if-eqz v1, :cond_0
 
     .line 249
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LD:Lcom/google/research/reflection/predictor/c;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mx:Lcom/google/research/reflection/predictor/c;
 
-    invoke-interface {v1, v0, v3, p1}, Lcom/google/research/reflection/predictor/c;->TL(Ljava/lang/Integer;ILjava/lang/String;)V
+    invoke-interface {v1, v0, v3, p1}, Lcom/google/research/reflection/predictor/c;->Sy(Ljava/lang/Integer;ILjava/lang/String;)V
 
     goto :goto_0
 
     .line 234
     :cond_4
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -482,7 +482,7 @@
 
     .line 240
     :goto_2
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LC:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mw:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -499,7 +499,7 @@
     move-result v1
 
     .line 241
-    iget-object v2, p0, Lcom/google/research/reflection/predictor/a;->LC:Ljava/util/HashMap;
+    iget-object v2, p0, Lcom/google/research/reflection/predictor/a;->Mw:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -508,7 +508,7 @@
     invoke-virtual {v2, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 242
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lw:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mq:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -525,7 +525,7 @@
     move-result-wide v4
 
     .line 243
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lw:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mq:Ljava/util/HashMap;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -534,7 +534,7 @@
     invoke-virtual {v1, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 244
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LF:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mz:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -551,7 +551,7 @@
     move-result-wide v4
 
     .line 245
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LF:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mz:Ljava/util/HashMap;
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -589,47 +589,37 @@
 
     .line 255
     :cond_7
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->LD:Lcom/google/research/reflection/predictor/c;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mx:Lcom/google/research/reflection/predictor/c;
 
-    invoke-interface {v1, v0, v3, p1}, Lcom/google/research/reflection/predictor/c;->TL(Ljava/lang/Integer;ILjava/lang/String;)V
+    invoke-interface {v1, v0, v3, p1}, Lcom/google/research/reflection/predictor/c;->Sy(Ljava/lang/Integer;ILjava/lang/String;)V
 
     goto/16 :goto_0
 .end method
 
 
 # virtual methods
-.method public TA()Ljava/util/HashMap;
-    .locals 1
-
-    .prologue
-    .line 96
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
-
-    return-object v0
-.end method
-
-.method public Tq()Lcom/google/research/reflection/predictor/d;
+.method public Sd()Lcom/google/research/reflection/predictor/d;
     .locals 1
 
     .prologue
     .line 269
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->LE:Lcom/google/research/reflection/predictor/d;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->My:Lcom/google/research/reflection/predictor/d;
 
     return-object v0
 .end method
 
-.method public Ts(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
+.method public Sf(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
     .locals 7
 
     .prologue
     .line 155
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
     if-nez v0, :cond_1
 
     .line 156
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
@@ -637,11 +627,11 @@
 
     new-array v0, v0, [F
 
-    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iput-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
     .line 158
     :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
     array-length v0, v0
 
@@ -649,18 +639,18 @@
 
     .line 161
     :goto_1
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lx:Lcom/google/research/reflection/predictor/b;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mr:Lcom/google/research/reflection/predictor/b;
 
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
-    invoke-virtual {v0, v1, p1}, Lcom/google/research/reflection/predictor/b;->TI([FLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
+    invoke-virtual {v0, v1, p1}, Lcom/google/research/reflection/predictor/b;->Sv([FLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
 
     move-result-object v2
 
     .line 162
     new-instance v3, Ljava/util/ArrayList;
 
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
@@ -669,12 +659,12 @@
     invoke-direct {v3, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 163
-    invoke-virtual {v2}, Lcom/google/research/reflection/predictor/e;->TV()[F
+    invoke-virtual {v2}, Lcom/google/research/reflection/predictor/e;->SI()[F
 
     move-result-object v4
 
     .line 165
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -699,20 +689,20 @@
     invoke-static {v3, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 170
-    invoke-virtual {v2, v3}, Lcom/google/research/reflection/predictor/e;->TX(Ljava/util/ArrayList;)V
+    invoke-virtual {v2, v3}, Lcom/google/research/reflection/predictor/e;->SK(Ljava/util/ArrayList;)V
 
     .line 171
     return-object v2
 
     .line 155
     :cond_1
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
     array-length v1, v1
 
@@ -722,7 +712,7 @@
 
     .line 159
     :cond_2
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lz:[F
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mt:[F
 
     const/4 v1, 0x0
 
@@ -768,14 +758,14 @@
     goto :goto_2
 .end method
 
-.method public Tu(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
+.method public Sh(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
     .locals 5
 
     .prologue
     const/4 v4, 0x0
 
     .line 108
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-interface {p1}, Lcom/google/research/reflection/a/b;->getId()Ljava/lang/String;
 
@@ -790,19 +780,19 @@
     .line 120
     :cond_0
     :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Lx:Lcom/google/research/reflection/predictor/b;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mr:Lcom/google/research/reflection/predictor/b;
 
-    invoke-virtual {v0, p1}, Lcom/google/research/reflection/predictor/b;->TD(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
+    invoke-virtual {v0, p1}, Lcom/google/research/reflection/predictor/b;->Sq(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
 
     move-result-object v1
 
     .line 121
-    invoke-virtual {p0, p1}, Lcom/google/research/reflection/predictor/a;->Tv(Lcom/google/research/reflection/a/b;)I
+    invoke-virtual {p0, p1}, Lcom/google/research/reflection/predictor/a;->Si(Lcom/google/research/reflection/a/b;)I
 
     move-result v2
 
     .line 122
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->LC:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mw:Ljava/util/HashMap;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -830,7 +820,7 @@
     move-result-object v0
 
     .line 127
-    iget-object v3, p0, Lcom/google/research/reflection/predictor/a;->LC:Ljava/util/HashMap;
+    iget-object v3, p0, Lcom/google/research/reflection/predictor/a;->Mw:Ljava/util/HashMap;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -839,20 +829,20 @@
     invoke-virtual {v3, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 128
-    iget v0, p0, Lcom/google/research/reflection/predictor/a;->LB:I
+    iget v0, p0, Lcom/google/research/reflection/predictor/a;->Mv:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/research/reflection/predictor/a;->LB:I
+    iput v0, p0, Lcom/google/research/reflection/predictor/a;->Mv:I
 
     .line 129
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->LF:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Mz:Ljava/util/HashMap;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->ax()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->F()Ljava/lang/Long;
 
     move-result-object v3
 
@@ -863,7 +853,7 @@
 
     .line 109
     :cond_1
-    invoke-virtual {p0}, Lcom/google/research/reflection/predictor/a;->TA()Ljava/util/HashMap;
+    invoke-virtual {p0}, Lcom/google/research/reflection/predictor/a;->Sn()Ljava/util/HashMap;
 
     move-result-object v0
 
@@ -871,14 +861,14 @@
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/research/reflection/predictor/a;->Tx()I
+    invoke-virtual {p0}, Lcom/google/research/reflection/predictor/a;->Sk()I
 
     move-result v1
 
     if-ne v0, v1, :cond_0
 
     .line 110
-    invoke-direct {p0}, Lcom/google/research/reflection/predictor/a;->Tr()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/research/reflection/predictor/a;->Se()Ljava/lang/String;
 
     move-result-object v0
 
@@ -887,7 +877,7 @@
 
     .line 113
     :try_start_0
-    invoke-direct {p0, v0}, Lcom/google/research/reflection/predictor/a;->Tz(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/google/research/reflection/predictor/a;->Sm(Ljava/lang/String;)V
     :try_end_0
     .catch Lcom/google/research/reflection/predictor/PredictorWrapper$PredictorInvalidException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -908,7 +898,7 @@
     goto :goto_1
 .end method
 
-.method public Tv(Lcom/google/research/reflection/a/b;)I
+.method public Si(Lcom/google/research/reflection/a/b;)I
     .locals 5
 
     .prologue
@@ -918,7 +908,7 @@
     move-result-object v1
 
     .line 85
-    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->ax()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/b;->F()Ljava/lang/Long;
 
     move-result-object v0
 
@@ -927,7 +917,7 @@
     move-result-wide v2
 
     .line 86
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -948,7 +938,7 @@
 
     .line 88
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->size()I
 
@@ -959,12 +949,12 @@
     move-result-object v0
 
     .line 89
-    iget-object v4, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v4, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v4, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 90
-    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Lw:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/google/research/reflection/predictor/a;->Mq:Ljava/util/HashMap;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -975,28 +965,28 @@
     goto :goto_0
 .end method
 
-.method public Tw(Lcom/google/research/reflection/predictor/d;)V
+.method public Sj(Lcom/google/research/reflection/predictor/d;)V
     .locals 0
 
     .prologue
     .line 273
-    iput-object p1, p0, Lcom/google/research/reflection/predictor/a;->LE:Lcom/google/research/reflection/predictor/d;
+    iput-object p1, p0, Lcom/google/research/reflection/predictor/a;->My:Lcom/google/research/reflection/predictor/d;
 
     .line 274
     return-void
 .end method
 
-.method public Tx()I
+.method public Sk()I
     .locals 1
 
     .prologue
     .line 291
-    iget v0, p0, Lcom/google/research/reflection/predictor/a;->LA:I
+    iget v0, p0, Lcom/google/research/reflection/predictor/a;->Mu:I
 
     return v0
 .end method
 
-.method public Ty(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
+.method public Sl(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
     .locals 6
 
     .prologue
@@ -1008,7 +998,7 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 199
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -1071,7 +1061,7 @@
 
     .line 207
     :goto_2
-    iget-object v3, p0, Lcom/google/research/reflection/predictor/a;->Ly:Ljava/util/HashMap;
+    iget-object v3, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1136,7 +1126,7 @@
     invoke-interface {p3, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 212
-    invoke-direct {p0, v0, v3}, Lcom/google/research/reflection/predictor/a;->Tt(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v0, v3}, Lcom/google/research/reflection/predictor/a;->Sg(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -1145,4 +1135,14 @@
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
+.end method
+
+.method public Sn()Ljava/util/HashMap;
+    .locals 1
+
+    .prologue
+    .line 96
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/a;->Ms:Ljava/util/HashMap;
+
+    return-object v0
 .end method

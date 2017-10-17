@@ -6,23 +6,23 @@ package com.google.research.reflection.layers;
 
 class g implements c
 {
-    final /* synthetic */ int MJ;
-    final /* synthetic */ b MK;
-    final /* synthetic */ b ML;
+    final /* synthetic */ int ND;
+    final /* synthetic */ b NE;
+    final /* synthetic */ b NF;
     
-    g(final int mj, final b ml, final b mk) {
-        this.MJ = mj;
-        this.ML = ml;
-        this.MK = mk;
+    g(final int nd, final b nf, final b ne) {
+        this.ND = nd;
+        this.NF = nf;
+        this.NE = ne;
     }
     
-    public Boolean Vo(final int n) {
+    public Boolean Ub(final int n) {
         final boolean b = true;
-        if (this.MJ != (b ? 1 : 0)) {
-            this.ML.Mr[n] = k.VH(this.MK.Mr[n]);
+        if (this.ND != (b ? 1 : 0)) {
+            this.NF.Nl[n] = k.Ut(this.NE.Nl[n]);
         }
         else {
-            this.ML.Mr[n] = k.VE(this.MK.Mr[n]);
+            this.NF.Nl[n] = k.Uq(this.NE.Nl[n]);
         }
         return b;
     }

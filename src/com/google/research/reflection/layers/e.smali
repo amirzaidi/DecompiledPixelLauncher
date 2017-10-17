@@ -4,19 +4,19 @@
 
 
 # static fields
-.field public static MA:Z
+.field static Nt:Lcom/google/research/reflection/layers/e;
 
-.field static Mz:Lcom/google/research/reflection/layers/e;
+.field public static Nu:Z
 
 
 # instance fields
-.field private MB:Ljava/util/concurrent/ExecutorService;
+.field private Ns:I
 
-.field private MC:Z
+.field private Nv:Ljava/util/concurrent/ExecutorService;
 
-.field private MD:I
+.field private Nw:Z
 
-.field private My:I
+.field private Nx:I
 
 
 # direct methods
@@ -27,7 +27,7 @@
     .line 19
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/google/research/reflection/layers/e;->MA:Z
+    sput-boolean v0, Lcom/google/research/reflection/layers/e;->Nu:Z
 
     return-void
 .end method
@@ -42,7 +42,7 @@
     .line 16
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/research/reflection/layers/e;->MC:Z
+    iput-boolean v0, p0, Lcom/google/research/reflection/layers/e;->Nw:Z
 
     .line 24
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
@@ -56,48 +56,22 @@
     .line 25
     div-int/lit8 v0, v0, 0x2
 
-    iput v0, p0, Lcom/google/research/reflection/layers/e;->My:I
+    iput v0, p0, Lcom/google/research/reflection/layers/e;->Ns:I
 
     .line 26
-    iget v0, p0, Lcom/google/research/reflection/layers/e;->My:I
+    iget v0, p0, Lcom/google/research/reflection/layers/e;->Ns:I
 
     invoke-static {v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/e;->MB:Ljava/util/concurrent/ExecutorService;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/e;->Nv:Ljava/util/concurrent/ExecutorService;
 
     .line 27
     return-void
 .end method
 
-.method public static Vq()Lcom/google/research/reflection/layers/e;
-    .locals 1
-
-    .prologue
-    .line 36
-    sget-object v0, Lcom/google/research/reflection/layers/e;->Mz:Lcom/google/research/reflection/layers/e;
-
-    if-eqz v0, :cond_0
-
-    .line 39
-    :goto_0
-    sget-object v0, Lcom/google/research/reflection/layers/e;->Mz:Lcom/google/research/reflection/layers/e;
-
-    return-object v0
-
-    .line 37
-    :cond_0
-    new-instance v0, Lcom/google/research/reflection/layers/e;
-
-    invoke-direct {v0}, Lcom/google/research/reflection/layers/e;-><init>()V
-
-    sput-object v0, Lcom/google/research/reflection/layers/e;->Mz:Lcom/google/research/reflection/layers/e;
-
-    goto :goto_0
-.end method
-
-.method private declared-synchronized Vr(ILcom/google/research/reflection/layers/c;)V
+.method private declared-synchronized Ud(ILcom/google/research/reflection/layers/c;)V
     .locals 7
 
     .prologue
@@ -111,24 +85,24 @@
     const/4 v2, 0x1
 
     :try_start_0
-    iput-boolean v2, p0, Lcom/google/research/reflection/layers/e;->MC:Z
+    iput-boolean v2, p0, Lcom/google/research/reflection/layers/e;->Nw:Z
 
     .line 79
     new-instance v3, Ljava/util/concurrent/ExecutorCompletionService;
 
-    iget-object v2, p0, Lcom/google/research/reflection/layers/e;->MB:Ljava/util/concurrent/ExecutorService;
+    iget-object v2, p0, Lcom/google/research/reflection/layers/e;->Nv:Ljava/util/concurrent/ExecutorService;
 
     invoke-direct {v3, v2}, Ljava/util/concurrent/ExecutorCompletionService;-><init>(Ljava/util/concurrent/Executor;)V
 
     .line 82
-    iget v2, p0, Lcom/google/research/reflection/layers/e;->My:I
+    iget v2, p0, Lcom/google/research/reflection/layers/e;->Ns:I
 
     if-lt p1, v2, :cond_0
 
     .line 85
     int-to-float v1, p1
 
-    iget v2, p0, Lcom/google/research/reflection/layers/e;->My:I
+    iget v2, p0, Lcom/google/research/reflection/layers/e;->Ns:I
 
     int-to-float v2, v2
 
@@ -146,19 +120,19 @@
 
     .line 87
     :goto_0
-    iget v1, p0, Lcom/google/research/reflection/layers/e;->My:I
+    iget v1, p0, Lcom/google/research/reflection/layers/e;->Ns:I
 
     invoke-static {v1, p1}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    iput v1, p0, Lcom/google/research/reflection/layers/e;->MD:I
+    iput v1, p0, Lcom/google/research/reflection/layers/e;->Nx:I
 
     move v1, v0
 
     .line 88
     :goto_1
-    iget v4, p0, Lcom/google/research/reflection/layers/e;->MD:I
+    iget v4, p0, Lcom/google/research/reflection/layers/e;->Nx:I
 
     if-lt v1, v4, :cond_1
 
@@ -166,14 +140,14 @@
 
     .line 91
     :goto_2
-    iget v0, p0, Lcom/google/research/reflection/layers/e;->MD:I
+    iget v0, p0, Lcom/google/research/reflection/layers/e;->Nx:I
 
     if-lt v1, v0, :cond_2
 
     .line 101
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/research/reflection/layers/e;->MC:Z
+    iput-boolean v0, p0, Lcom/google/research/reflection/layers/e;->Nw:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -252,7 +226,7 @@
     :try_start_4
     sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    iget v4, p0, Lcom/google/research/reflection/layers/e;->MD:I
+    iget v4, p0, Lcom/google/research/reflection/layers/e;->Nx:I
 
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -294,16 +268,42 @@
     goto :goto_3
 .end method
 
+.method public static getInstance()Lcom/google/research/reflection/layers/e;
+    .locals 1
+
+    .prologue
+    .line 36
+    sget-object v0, Lcom/google/research/reflection/layers/e;->Nt:Lcom/google/research/reflection/layers/e;
+
+    if-eqz v0, :cond_0
+
+    .line 39
+    :goto_0
+    sget-object v0, Lcom/google/research/reflection/layers/e;->Nt:Lcom/google/research/reflection/layers/e;
+
+    return-object v0
+
+    .line 37
+    :cond_0
+    new-instance v0, Lcom/google/research/reflection/layers/e;
+
+    invoke-direct {v0}, Lcom/google/research/reflection/layers/e;-><init>()V
+
+    sput-object v0, Lcom/google/research/reflection/layers/e;->Nt:Lcom/google/research/reflection/layers/e;
+
+    goto :goto_0
+.end method
+
 
 # virtual methods
-.method public Vp(ILcom/google/research/reflection/layers/c;)V
+.method public Uc(ILcom/google/research/reflection/layers/c;)V
     .locals 2
 
     .prologue
     const/4 v0, 0x0
 
     .line 68
-    sget-boolean v1, Lcom/google/research/reflection/layers/e;->MA:Z
+    sget-boolean v1, Lcom/google/research/reflection/layers/e;->Nu:Z
 
     if-nez v1, :cond_1
 
@@ -318,7 +318,7 @@
 
     .line 68
     :cond_1
-    iget-boolean v1, p0, Lcom/google/research/reflection/layers/e;->MC:Z
+    iget-boolean v1, p0, Lcom/google/research/reflection/layers/e;->Nw:Z
 
     if-nez v1, :cond_0
 
@@ -327,13 +327,13 @@
     if-eq p1, v1, :cond_0
 
     .line 73
-    invoke-direct {p0, p1, p2}, Lcom/google/research/reflection/layers/e;->Vr(ILcom/google/research/reflection/layers/c;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/research/reflection/layers/e;->Ud(ILcom/google/research/reflection/layers/c;)V
 
     goto :goto_1
 
     .line 70
     :cond_2
-    invoke-interface {p2, v0}, Lcom/google/research/reflection/layers/c;->Vo(I)Ljava/lang/Boolean;
+    invoke-interface {p2, v0}, Lcom/google/research/reflection/layers/c;->Ub(I)Ljava/lang/Boolean;
 
     .line 69
     add-int/lit8 v0, v0, 0x1

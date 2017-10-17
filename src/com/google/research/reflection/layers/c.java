@@ -6,5 +6,5 @@ package com.google.research.reflection.layers;
 
 public interface c
 {
-    Boolean Vo(final int p0);
+    Boolean Ub(final int p0);
 }

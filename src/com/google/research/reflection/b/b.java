@@ -10,9 +10,9 @@ import java.util.List;
 
 public abstract class b
 {
-    a Md;
+    a MX;
     
-    public static b UC(final String s) {
+    public static b Tp(final String s) {
         if (s.equals("app_launch_extractor") || s.equals("com.google.research.reflection.a.d")) {
             return new d();
         }
@@ -40,7 +40,7 @@ public abstract class b
         return new j();
     }
     
-    public static String UE(final b b) {
+    public static String Tr(final b b) {
         if (b instanceof d && !(b instanceof k)) {
             return "app_launch_extractor";
         }
@@ -68,26 +68,26 @@ public abstract class b
         return "place_extractor";
     }
     
-    public void UD(final a md) {
-        this.Md = md;
+    public void Tq(final a mx) {
+        this.MX = mx;
     }
     
-    public abstract int UF();
+    public abstract int Ts();
     
-    public abstract com.google.research.reflection.layers.b UG(final com.google.research.reflection.common.a p0, final com.google.research.reflection.a.b p1);
+    public abstract com.google.research.reflection.layers.b Tt(final com.google.research.reflection.common.a p0, final com.google.research.reflection.a.b p1);
     
-    public void UH(final List list) {
+    public void Tu(final List list) {
     }
     
-    public void UI(final DataInputStream dataInputStream) {
+    public void Tv(final DataInputStream dataInputStream) {
     }
     
-    public void UJ(final DataOutputStream dataOutputStream) {
+    public void Tw(final DataOutputStream dataOutputStream) {
     }
     
-    void UK(final Integer n) {
-        if (this.Md != null) {
-            this.Md.Ue(this, n);
+    void Tx(final Integer n) {
+        if (this.MX != null) {
+            this.MX.SR(this, n);
         }
     }
     

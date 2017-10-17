@@ -6,27 +6,27 @@ package com.google.research.reflection.layers;
 
 class t implements c
 {
-    final /* synthetic */ int NV;
-    final /* synthetic */ b NW;
-    final /* synthetic */ b NX;
+    final /* synthetic */ int OP;
+    final /* synthetic */ b OQ;
+    final /* synthetic */ b OR;
     
-    t(final o o, final int nv, final b nw, final b nx) {
-        this.NV = nv;
-        this.NW = nw;
-        this.NX = nx;
+    t(final o o, final int op, final b oq, final b or) {
+        this.OP = op;
+        this.OQ = oq;
+        this.OR = or;
     }
     
-    public Boolean Vo(final int n) {
+    public Boolean Ub(final int n) {
         final boolean b = true;
         final double n2 = 0.0;
-        if (this.NV != (b ? 1 : 0)) {
-            if (this.NV != 0) {
-                throw new RuntimeException(new StringBuilder(44).append("Unsupported activation function: ").append(this.NV).toString());
+        if (this.OP != (b ? 1 : 0)) {
+            if (this.OP != 0) {
+                throw new RuntimeException(new StringBuilder(44).append("Unsupported activation function: ").append(this.OP).toString());
             }
-            this.NX.Mr[n] *= this.NW.Mr[n] * (1.0 - this.NW.Mr[n]);
+            this.OR.Nl[n] *= this.OQ.Nl[n] * (1.0 - this.OQ.Nl[n]);
         }
-        else if (this.NW.Mr[n] == n2) {
-            this.NX.Mr[n] = n2;
+        else if (this.OQ.Nl[n] == n2) {
+            this.OR.Nl[n] = n2;
         }
         return b;
     }

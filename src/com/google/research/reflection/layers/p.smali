@@ -7,13 +7,13 @@
 
 
 # instance fields
-.field final synthetic NL:Lcom/google/research/reflection/layers/b;
+.field final synthetic OF:Lcom/google/research/reflection/layers/b;
 
-.field final synthetic NM:Lcom/google/research/reflection/layers/b;
+.field final synthetic OG:Lcom/google/research/reflection/layers/b;
 
-.field final synthetic NN:Z
+.field final synthetic OH:Z
 
-.field final synthetic NO:Lcom/google/research/reflection/layers/b;
+.field final synthetic OI:Lcom/google/research/reflection/layers/b;
 
 
 # direct methods
@@ -22,13 +22,13 @@
 
     .prologue
     .line 47
-    iput-boolean p1, p0, Lcom/google/research/reflection/layers/p;->NN:Z
+    iput-boolean p1, p0, Lcom/google/research/reflection/layers/p;->OH:Z
 
-    iput-object p2, p0, Lcom/google/research/reflection/layers/p;->NO:Lcom/google/research/reflection/layers/b;
+    iput-object p2, p0, Lcom/google/research/reflection/layers/p;->OI:Lcom/google/research/reflection/layers/b;
 
-    iput-object p3, p0, Lcom/google/research/reflection/layers/p;->NM:Lcom/google/research/reflection/layers/b;
+    iput-object p3, p0, Lcom/google/research/reflection/layers/p;->OG:Lcom/google/research/reflection/layers/b;
 
-    iput-object p4, p0, Lcom/google/research/reflection/layers/p;->NL:Lcom/google/research/reflection/layers/b;
+    iput-object p4, p0, Lcom/google/research/reflection/layers/p;->OF:Lcom/google/research/reflection/layers/b;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,29 +37,29 @@
 
 
 # virtual methods
-.method public Vo(I)Ljava/lang/Boolean;
+.method public Ub(I)Ljava/lang/Boolean;
     .locals 8
 
     .prologue
     .line 50
-    iget-boolean v0, p0, Lcom/google/research/reflection/layers/p;->NN:Z
+    iget-boolean v0, p0, Lcom/google/research/reflection/layers/p;->OH:Z
 
     if-nez v0, :cond_0
 
     .line 53
-    iget-object v0, p0, Lcom/google/research/reflection/layers/p;->NO:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/p;->OI:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->NM:Lcom/google/research/reflection/layers/b;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->OG:Lcom/google/research/reflection/layers/b;
 
-    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v2, v1, p1
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->NL:Lcom/google/research/reflection/layers/b;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->OF:Lcom/google/research/reflection/layers/b;
 
-    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v4, v1, p1
 
@@ -79,21 +79,21 @@
 
     .line 51
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/layers/p;->NO:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/p;->OI:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v2, v0, p1
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->NM:Lcom/google/research/reflection/layers/b;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->OG:Lcom/google/research/reflection/layers/b;
 
-    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v4, v1, p1
 
-    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->NL:Lcom/google/research/reflection/layers/b;
+    iget-object v1, p0, Lcom/google/research/reflection/layers/p;->OF:Lcom/google/research/reflection/layers/b;
 
-    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v1, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v6, v1, p1
 

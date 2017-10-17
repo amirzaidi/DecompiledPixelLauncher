@@ -9,26 +9,26 @@ import java.io.IOException;
 
 public class g
 {
-    protected final boolean Lk;
-    public final int Ll;
-    protected final Class Lm;
+    protected final boolean PR;
+    public final int PS;
+    protected final Class PT;
     protected final int type;
     
-    void SX(final Object o, final b b) {
-        if (this.Lk) {
-            this.Tb(o, b);
+    void WS(final Object o, final b b) {
+        if (this.PR) {
+            this.WW(o, b);
         }
         else {
-            this.SY(o, b);
+            this.WT(o, b);
         }
     }
     
-    protected void SY(final Object o, final b b) {
+    protected void WT(final Object o, final b b) {
         Label_0148: {
             a a = null;
-            int ll = 0;
+            int ps = 0;
             try {
-                b.RZ(this.Ll);
+                b.VU(this.PS);
                 switch (this.type) {
                     default:
                     case 10: {
@@ -43,7 +43,7 @@ public class g
                                             throw new IllegalArgumentException(append2.toString());
                                             a = (a)o;
                                             try {
-                                                ll = this.Ll;
+                                                ps = this.PS;
                                             }
                                             catch (IOException ex) {}
                                         }
@@ -63,50 +63,50 @@ public class g
                 }
             }
             catch (IOException ex6) {}
-            final int st = f.ST(ll);
-            b.RI(a);
-            b.Sd(st, 4);
+            final int wo = f.WO(ps);
+            b.VD(a);
+            b.VY(wo, 4);
             return;
         }
-        b.RG((a)o);
+        b.VB((a)o);
     }
     
-    protected int SZ(final Object o) {
-        final int st = f.ST(this.Ll);
+    protected int WU(final Object o) {
+        final int wo = f.WO(this.PS);
         switch (this.type) {
             default: {
                 throw new IllegalArgumentException("Unknown type " + this.type);
             }
             case 10: {
-                return b.RR(st, (a)o);
+                return b.VM(wo, (a)o);
             }
             case 11: {
-                return b.Rt(st, (a)o);
+                return b.Vo(wo, (a)o);
             }
         }
     }
     
-    int Ta(final Object o) {
-        if (this.Lk) {
-            return this.Tc(o);
+    int WV(final Object o) {
+        if (this.PR) {
+            return this.WX(o);
         }
-        return this.SZ(o);
+        return this.WU(o);
     }
     
-    protected void Tb(final Object o, final b b) {
+    protected void WW(final Object o, final b b) {
         for (int length = Array.getLength(o), i = 0; i < length; ++i) {
             final Object value = Array.get(o, i);
             if (value != null) {
-                this.SY(value, b);
+                this.WT(value, b);
             }
         }
     }
     
-    protected int Tc(final Object o) {
+    protected int WX(final Object o) {
         int n = 0;
         for (int length = Array.getLength(o), i = 0; i < length; ++i) {
             if (Array.get(o, i) != null) {
-                n += this.SZ(Array.get(o, i));
+                n += this.WU(Array.get(o, i));
             }
         }
         return n;

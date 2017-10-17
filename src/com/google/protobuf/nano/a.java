@@ -20,11 +20,11 @@ public abstract class a
     
     public static final a mergeFrom(final a a, final byte[] array, final int n, final int n2) {
         try {
-            final c sh = c.SH(array, n, n2);
-            a.mergeFrom(sh);
-            final c c = sh;
+            final c wc = c.WC(array, n, n2);
+            a.mergeFrom(wc);
+            final c c = wc;
             try {
-                c.SP(0);
+                c.WK(0);
                 return a;
             }
             catch (IOException ex2) {
@@ -40,9 +40,9 @@ public abstract class a
     
     public static final void toByteArray(final a a, final byte[] array, final int n, final int n2) {
         try {
-            final b se = b.Se(array, n, n2);
-            a.writeTo(se);
-            se.RN();
+            final b vz = b.VZ(array, n, n2);
+            a.writeTo(vz);
+            vz.VI();
         }
         catch (IOException ex) {
             throw new RuntimeException("Serializing to a byte array threw an IOException (should never happen).", ex);
@@ -77,7 +77,7 @@ public abstract class a
     public abstract a mergeFrom(final c p0);
     
     public String toString() {
-        return i.Tm(this);
+        return i.Xh(this);
     }
     
     public void writeTo(final b b) {

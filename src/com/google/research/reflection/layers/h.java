@@ -6,36 +6,36 @@ package com.google.research.reflection.layers;
 
 class h implements c
 {
-    final /* synthetic */ b MM;
-    final /* synthetic */ b MN;
-    final /* synthetic */ boolean MO;
-    final /* synthetic */ boolean MP;
-    final /* synthetic */ b MQ;
+    final /* synthetic */ b NG;
+    final /* synthetic */ b NH;
+    final /* synthetic */ boolean NI;
+    final /* synthetic */ boolean NJ;
+    final /* synthetic */ b NK;
     
-    h(final boolean mo, final b mq, final b mn, final b mm, final boolean mp) {
-        this.MO = mo;
-        this.MQ = mq;
-        this.MN = mn;
-        this.MM = mm;
-        this.MP = mp;
+    h(final boolean ni, final b nk, final b nh, final b ng, final boolean nj) {
+        this.NI = ni;
+        this.NK = nk;
+        this.NH = nh;
+        this.NG = ng;
+        this.NJ = nj;
     }
     
-    private double Vs(final int n, final int n2) {
-        final int vh = this.MN.Vh(false);
+    private double Ue(final int n, final int n2) {
+        final int tu = this.NH.TU(false);
         double n3 = 0.0;
-        for (int i = 0; i < vh; ++i) {
-            n3 += this.MN.Vc(false, n, i) * this.MM.Vc(this.MP, i, n2);
+        for (int i = 0; i < tu; ++i) {
+            n3 += this.NH.TP(false, n, i) * this.NG.TP(this.NJ, i, n2);
         }
         return n3;
     }
     
-    public Boolean Vo(final int n) {
-        if (!this.MO) {
-            this.MQ.Mr[n] = this.Vs(n / this.MQ.Vh(false), n % this.MQ.Vh(false));
+    public Boolean Ub(final int n) {
+        if (!this.NI) {
+            this.NK.Nl[n] = this.Ue(n / this.NK.TU(false), n % this.NK.TU(false));
         }
         else {
-            final double[] mr = this.MQ.Mr;
-            mr[n] += this.Vs(n / this.MQ.Vh(false), n % this.MQ.Vh(false));
+            final double[] nl = this.NK.Nl;
+            nl[n] += this.Ue(n / this.NK.TU(false), n % this.NK.TU(false));
         }
         return true;
     }

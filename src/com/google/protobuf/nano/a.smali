@@ -46,7 +46,7 @@
     .prologue
     .line 142
     :try_start_0
-    invoke-static {p1, p2, p3}, Lcom/google/protobuf/nano/c;->SH([BII)Lcom/google/protobuf/nano/c;
+    invoke-static {p1, p2, p3}, Lcom/google/protobuf/nano/c;->WC([BII)Lcom/google/protobuf/nano/c;
 
     move-result-object v0
 
@@ -56,7 +56,7 @@
     .line 144
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/protobuf/nano/c;->SP(I)V
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/nano/c;->WK(I)V
     :try_end_0
     .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -91,7 +91,7 @@
     .prologue
     .line 116
     :try_start_0
-    invoke-static {p1, p2, p3}, Lcom/google/protobuf/nano/b;->Se([BII)Lcom/google/protobuf/nano/b;
+    invoke-static {p1, p2, p3}, Lcom/google/protobuf/nano/b;->VZ([BII)Lcom/google/protobuf/nano/b;
 
     move-result-object v0
 
@@ -99,7 +99,7 @@
     invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/a;->writeTo(Lcom/google/protobuf/nano/b;)V
 
     .line 118
-    invoke-virtual {v0}, Lcom/google/protobuf/nano/b;->RN()V
+    invoke-virtual {v0}, Lcom/google/protobuf/nano/b;->VI()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -223,7 +223,7 @@
 
     .prologue
     .line 188
-    invoke-static {p0}, Lcom/google/protobuf/nano/i;->Tm(Lcom/google/protobuf/nano/a;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/protobuf/nano/i;->Xh(Lcom/google/protobuf/nano/a;)Ljava/lang/String;
 
     move-result-object v0
 

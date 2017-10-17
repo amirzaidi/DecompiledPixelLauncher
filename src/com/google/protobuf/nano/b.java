@@ -11,53 +11,45 @@ import java.nio.ByteBuffer;
 
 public final class b
 {
-    private final ByteBuffer KN;
+    private final ByteBuffer Pu;
     
-    private b(final ByteBuffer kn) {
-        (this.KN = kn).order(ByteOrder.LITTLE_ENDIAN);
+    private b(final ByteBuffer pu) {
+        (this.Pu = pu).order(ByteOrder.LITTLE_ENDIAN);
     }
     
     private b(final byte[] array, final int n, final int n2) {
         this(ByteBuffer.wrap(array, n, n2));
     }
     
-    public static int RD(final int n, final float n2) {
-        return Rg(n) + Sa(n2);
+    public static int VA(final int n, final int n2) {
+        return Vb(n) + Vr(n2);
     }
     
-    public static int RE(final int n, final long n2) {
-        return Rg(n) + RH(n2);
+    public static int VC(final long n) {
+        return Vf(n);
     }
     
-    public static int RF(final int n, final int n2) {
-        return Rg(n) + Rw(n2);
+    public static int VE(final int n, final double n2) {
+        return Vb(n) + Vs(n2);
     }
     
-    public static int RH(final long n) {
-        return Rk(n);
-    }
-    
-    public static int RJ(final int n, final double n2) {
-        return Rg(n) + Rx(n2);
-    }
-    
-    public static int RM(final boolean b) {
+    public static int VH(final boolean b) {
         return 1;
     }
     
-    public static b RO(final byte[] array) {
-        return Se(array, 0, array.length);
+    public static b VJ(final byte[] array) {
+        return VZ(array, 0, array.length);
     }
     
-    public static int RQ(final int n, final boolean b) {
-        return Rg(n) + RM(b);
+    public static int VL(final int n, final boolean b) {
+        return Vb(n) + VH(b);
     }
     
-    public static int RR(final int n, final a a) {
-        return Rg(n) * 2 + Rh(a);
+    public static int VM(final int n, final a a) {
+        return Vb(n) * 2 + Vc(a);
     }
     
-    public static int RS(final int n) {
+    public static int VN(final int n) {
         if ((n & 0xFFFFFF80) == 0x0) {
             return 1;
         }
@@ -73,7 +65,7 @@ public final class b
         return 5;
     }
     
-    private static int RW(final CharSequence charSequence, final byte[] array, final int n, final int n2) {
+    private static int VR(final CharSequence charSequence, final byte[] array, final int n, final int n2) {
         final char c = '\u0080';
         int length;
         int i;
@@ -140,19 +132,31 @@ public final class b
         return n4;
     }
     
-    public static int Rf(final int n, final byte[] array) {
-        return Rg(n) + Rj(array);
+    public static int VV(final float n) {
+        return 4;
     }
     
-    public static int Rg(final int n) {
-        return RS(f.SV(n, 0));
+    public static int VW(final int n, final String s) {
+        return Vb(n) + Vq(s);
     }
     
-    public static int Rh(final a a) {
+    public static b VZ(final byte[] array, final int n, final int n2) {
+        return new b(array, n, n2);
+    }
+    
+    public static int Va(final int n, final byte[] array) {
+        return Vb(n) + Ve(array);
+    }
+    
+    public static int Vb(final int n) {
+        return VN(f.WQ(n, 0));
+    }
+    
+    public static int Vc(final a a) {
         return a.getSerializedSize();
     }
     
-    private static int Ri(final CharSequence charSequence) {
+    private static int Vd(final CharSequence charSequence) {
         int length;
         char c;
         for (length = charSequence.length(), c = '\0'; c < length && charSequence.charAt(c) < '\u0080'; ++c) {}
@@ -161,7 +165,7 @@ public final class b
         while (c2 < length) {
             final char char1 = charSequence.charAt(c2);
             if (char1 >= '\u0800') {
-                n += Rz(charSequence, c2);
+                n += Vu(charSequence, c2);
                 break;
             }
             final char c3 = (char)(('\u007f' - char1 >>> 31) + n);
@@ -174,11 +178,11 @@ public final class b
         return n;
     }
     
-    public static int Rj(final byte[] array) {
-        return RS(array.length) + array.length;
+    public static int Ve(final byte[] array) {
+        return VN(array.length) + array.length;
     }
     
-    public static int Rk(final long n) {
+    public static int Vf(final long n) {
         final long n2 = 0L;
         if ((0xFFFFFF80 & n) == n2) {
             return 1;
@@ -210,32 +214,32 @@ public final class b
         return 10;
     }
     
-    public static int Rm(final a a) {
+    public static int Vh(final a a) {
         final int serializedSize = a.getSerializedSize();
-        return serializedSize + RS(serializedSize);
+        return serializedSize + VN(serializedSize);
     }
     
-    public static int Rt(final int n, final a a) {
-        return Rg(n) + Rm(a);
+    public static int Vo(final int n, final a a) {
+        return Vb(n) + Vh(a);
     }
     
-    public static int Rv(final String s) {
-        final int ri = Ri(s);
-        return ri + RS(ri);
+    public static int Vq(final String s) {
+        final int vd = Vd(s);
+        return vd + VN(vd);
     }
     
-    public static int Rw(final int n) {
+    public static int Vr(final int n) {
         if (n >= 0) {
-            return RS(n);
+            return VN(n);
         }
         return 10;
     }
     
-    public static int Rx(final double n) {
+    public static int Vs(final double n) {
         return 8;
     }
     
-    private static int Rz(final CharSequence charSequence, final int n) {
+    private static int Vu(final CharSequence charSequence, final int n) {
         final int length = charSequence.length();
         char c = '\0';
         for (int i = n; i < length; ++i) {
@@ -256,19 +260,15 @@ public final class b
         return c;
     }
     
-    public static int Sa(final float n) {
-        return 4;
+    public static int Vy(final int n, final float n2) {
+        return Vb(n) + VV(n2);
     }
     
-    public static int Sb(final int n, final String s) {
-        return Rg(n) + Rv(s);
+    public static int Vz(final int n, final long n2) {
+        return Vb(n) + VC(n2);
     }
     
-    public static b Se(final byte[] array, final int n, final int n2) {
-        return new b(array, n, n2);
-    }
-    
-    private static void Sf(final CharSequence charSequence, final ByteBuffer byteBuffer) {
+    private static void Wa(final CharSequence charSequence, final ByteBuffer byteBuffer) {
         final char c = '\u0080';
         for (int length = charSequence.length(), i = 0; i < length; ++i) {
             final char char1 = charSequence.charAt(i);
@@ -302,7 +302,7 @@ public final class b
         }
     }
     
-    private static void Si(final CharSequence charSequence, final ByteBuffer byteBuffer) {
+    private static void Wd(final CharSequence charSequence, final ByteBuffer byteBuffer) {
         if (byteBuffer.isReadOnly()) {
             throw new ReadOnlyBufferException();
         }
@@ -315,9 +315,9 @@ public final class b
                 try {
                     final int arrayOffset = byteBuffer.arrayOffset();
                     try {
-                        final int rw = RW(charSequence, array, arrayOffset + byteBuffer.position(), byteBuffer.remaining());
+                        final int vr = VR(charSequence, array, arrayOffset + byteBuffer.position(), byteBuffer.remaining());
                         try {
-                            byteBuffer.position(rw - byteBuffer.arrayOffset());
+                            byteBuffer.position(vr - byteBuffer.arrayOffset());
                             return;
                         }
                         catch (ArrayIndexOutOfBoundsException ex2) {
@@ -332,65 +332,44 @@ public final class b
             }
             catch (ArrayIndexOutOfBoundsException ex5) {}
         }
-        Sf(charSequence, byteBuffer);
+        Wa(charSequence, byteBuffer);
     }
     
-    public void RA(final int n, final int n2) {
-        this.Sd(n, 0);
-        this.RB(n2);
-    }
-    
-    public void RB(final int n) {
-        if (n >= 0) {
-            this.RZ(n);
-        }
-        else {
-            this.Rl(n);
-        }
-    }
-    
-    public void RC(final long n) {
-        if (this.KN.remaining() < 8) {
-            throw new CodedOutputByteBufferNano$OutOfSpaceException(this.KN.position(), this.KN.limit());
-        }
-        this.KN.putLong(n);
-    }
-    
-    public void RG(final a a) {
-        this.RZ(a.getCachedSize());
+    public void VB(final a a) {
+        this.VU(a.getCachedSize());
         a.writeTo(this);
     }
     
-    public void RI(final a a) {
+    public void VD(final a a) {
         a.writeTo(this);
     }
     
-    public void RK(final byte[] array) {
-        this.RZ(array.length);
-        this.Rr(array);
+    public void VF(final byte[] array) {
+        this.VU(array.length);
+        this.Vm(array);
     }
     
-    public void RL(final int n, final boolean b) {
-        this.Sd(n, 0);
-        this.RU(b);
+    public void VG(final int n, final boolean b) {
+        this.VY(n, 0);
+        this.VP(b);
     }
     
-    public void RN() {
-        if (this.Ru() != 0) {
+    public void VI() {
+        if (this.Vp() != 0) {
             throw new IllegalStateException("Did not write as much data as expected.");
         }
     }
     
-    public void RP(final int n, final a a) {
-        this.Sd(n, 2);
-        this.RG(a);
+    public void VK(final int n, final a a) {
+        this.VY(n, 2);
+        this.VB(a);
     }
     
-    public void RT(final int n) {
-        this.Rn((byte)n);
+    public void VO(final int n) {
+        this.Vi((byte)n);
     }
     
-    public void RU(final boolean b) {
+    public void VP(final boolean b) {
         int n;
         if (b) {
             n = 1;
@@ -398,88 +377,96 @@ public final class b
         else {
             n = 0;
         }
-        this.RT(n);
+        this.VO(n);
     }
     
-    public void RV(final double n) {
-        this.RC(Double.doubleToLongBits(n));
+    public void VQ(final double n) {
+        this.Vx(Double.doubleToLongBits(n));
     }
     
-    public void RX(final int n, final float n2) {
-        this.Sd(n, 5);
-        this.Sc(n2);
+    public void VS(final int n, final float n2) {
+        this.VY(n, 5);
+        this.VX(n2);
     }
     
-    public void RY(final int n, final String s) {
-        this.Sd(n, 2);
-        this.Rq(s);
+    public void VT(final int n, final String s) {
+        this.VY(n, 2);
+        this.Vl(s);
     }
     
-    public void RZ(int n) {
+    public void VU(int n) {
         while ((n & 0xFFFFFF80) != 0x0) {
-            this.RT((n & 0x7F) | 0x80);
+            this.VO((n & 0x7F) | 0x80);
             n >>>= 7;
         }
-        this.RT(n);
+        this.VO(n);
     }
     
-    public void Rl(long n) {
+    public void VX(final float n) {
+        this.Vn(Float.floatToIntBits(n));
+    }
+    
+    public void VY(final int n, final int n2) {
+        this.VU(f.WQ(n, n2));
+    }
+    
+    public void Vg(long n) {
         while ((0xFFFFFF80 & n) != 0x0L) {
-            this.RT(((int)n & 0x7F) | 0x80);
+            this.VO(((int)n & 0x7F) | 0x80);
             n >>>= 7;
         }
-        this.RT((int)n);
+        this.VO((int)n);
     }
     
-    public void Rn(final byte b) {
-        if (!this.KN.hasRemaining()) {
-            throw new CodedOutputByteBufferNano$OutOfSpaceException(this.KN.position(), this.KN.limit());
+    public void Vi(final byte b) {
+        if (!this.Pu.hasRemaining()) {
+            throw new CodedOutputByteBufferNano$OutOfSpaceException(this.Pu.position(), this.Pu.limit());
         }
-        this.KN.put(b);
+        this.Pu.put(b);
     }
     
-    public void Ro(final int n, final byte[] array) {
-        this.Sd(n, 2);
-        this.RK(array);
+    public void Vj(final int n, final byte[] array) {
+        this.VY(n, 2);
+        this.VF(array);
     }
     
-    public void Rp(final int n, final double n2) {
-        this.Sd(n, 1);
-        this.RV(n2);
+    public void Vk(final int n, final double n2) {
+        this.VY(n, 1);
+        this.VQ(n2);
     }
     
-    public void Rq(final String s) {
+    public void Vl(final String s) {
         Label_0220: {
-            int rs = 0;
+            int vn = 0;
             int position = 0;
             int position2 = 0;
             try {
                 final int length = s.length();
                 try {
-                    rs = RS(length);
+                    vn = VN(length);
                     try {
-                        if (rs != RS(s.length() * 3)) {
+                        if (vn != VN(s.length() * 3)) {
                             break Label_0220;
                         }
-                        final ByteBuffer kn = this.KN;
+                        final ByteBuffer pu = this.Pu;
                         try {
-                            position = kn.position();
+                            position = pu.position();
                             try {
-                                final ByteBuffer kn2 = this.KN;
+                                final ByteBuffer pu2 = this.Pu;
                                 try {
                                     Label_0134: {
-                                        if (kn2.remaining() >= rs) {
+                                        if (pu2.remaining() >= vn) {
                                             break Label_0134;
                                         }
-                                        final int n = rs + position;
-                                        final ByteBuffer kn3 = this.KN;
+                                        final int n = vn + position;
+                                        final ByteBuffer pu3 = this.Pu;
                                         try {
-                                            throw new CodedOutputByteBufferNano$OutOfSpaceException(n, kn3.limit());
-                                            this.KN.position(position + rs);
-                                            Si(s, this.KN);
-                                            final ByteBuffer kn4 = this.KN;
+                                            throw new CodedOutputByteBufferNano$OutOfSpaceException(n, pu3.limit());
+                                            this.Pu.position(position + vn);
+                                            Wd(s, this.Pu);
+                                            final ByteBuffer pu4 = this.Pu;
                                             try {
-                                                position2 = kn4.position();
+                                                position2 = pu4.position();
                                             }
                                             catch (BufferOverflowException ex) {}
                                         }
@@ -497,52 +484,65 @@ public final class b
                 catch (BufferOverflowException ex7) {}
             }
             catch (BufferOverflowException ex8) {}
-            this.KN.position(position);
-            this.RZ(position2 - position - rs);
-            this.KN.position(position2);
+            this.Pu.position(position);
+            this.VU(position2 - position - vn);
+            this.Pu.position(position2);
             return;
         }
-        this.RZ(Ri(s));
-        Si(s, this.KN);
+        this.VU(Vd(s));
+        Wd(s, this.Pu);
     }
     
-    public void Rr(final byte[] array) {
-        this.Sg(array, 0, array.length);
+    public void Vm(final byte[] array) {
+        this.Wb(array, 0, array.length);
     }
     
-    public void Rs(final int n) {
-        if (this.KN.remaining() < 4) {
-            throw new CodedOutputByteBufferNano$OutOfSpaceException(this.KN.position(), this.KN.limit());
+    public void Vn(final int n) {
+        if (this.Pu.remaining() < 4) {
+            throw new CodedOutputByteBufferNano$OutOfSpaceException(this.Pu.position(), this.Pu.limit());
         }
-        this.KN.putInt(n);
+        this.Pu.putInt(n);
     }
     
-    public int Ru() {
-        return this.KN.remaining();
+    public int Vp() {
+        return this.Pu.remaining();
     }
     
-    public void Ry(final long n) {
-        this.Rl(n);
+    public void Vt(final long n) {
+        this.Vg(n);
     }
     
-    public void Sc(final float n) {
-        this.Rs(Float.floatToIntBits(n));
+    public void Vv(final int n, final int n2) {
+        this.VY(n, 0);
+        this.Vw(n2);
     }
     
-    public void Sd(final int n, final int n2) {
-        this.RZ(f.SV(n, n2));
+    public void Vw(final int n) {
+        if (n >= 0) {
+            this.VU(n);
+        }
+        else {
+            this.Vg(n);
+        }
     }
     
-    public void Sg(final byte[] array, final int n, final int n2) {
-        if (this.KN.remaining() >= n2) {
-            this.KN.put(array, n, n2);
+    public void Vx(final long n) {
+        if (this.Pu.remaining() < 8) {
+            throw new CodedOutputByteBufferNano$OutOfSpaceException(this.Pu.position(), this.Pu.limit());
+        }
+        this.Pu.putLong(n);
+    }
+    
+    public void Wb(final byte[] array, final int n, final int n2) {
+        if (this.Pu.remaining() >= n2) {
+            this.Pu.put(array, n, n2);
             return;
         }
-        throw new CodedOutputByteBufferNano$OutOfSpaceException(this.KN.position(), this.KN.limit());
+        throw new CodedOutputByteBufferNano$OutOfSpaceException(this.Pu.position(), this.Pu.limit());
     }
     
-    public void Sh(final int n, final long n2) {
-        this.Sd(n, 0);
-        this.Ry(n2);
+    public void Wc(final int n, final long n2) {
+        this.VY(n, 0);
+        this.Vt(n2);
     }
 }

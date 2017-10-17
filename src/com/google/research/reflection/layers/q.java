@@ -6,18 +6,18 @@ package com.google.research.reflection.layers;
 
 class q implements c
 {
-    final /* synthetic */ b NP;
-    final /* synthetic */ double NQ;
+    final /* synthetic */ b OJ;
+    final /* synthetic */ double OK;
     
-    q(final b np, final double nq) {
-        this.NP = np;
-        this.NQ = nq;
+    q(final b oj, final double ok) {
+        this.OJ = oj;
+        this.OK = ok;
     }
     
-    public Boolean Vo(final int n) {
-        if (this.NP.Mr[n] != 0.0) {
-            final double[] mr = this.NP.Mr;
-            mr[n] *= this.NQ;
+    public Boolean Ub(final int n) {
+        if (this.OJ.Nl[n] != 0.0) {
+            final double[] nl = this.OJ.Nl;
+            nl[n] *= this.OK;
         }
         return true;
     }

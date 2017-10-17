@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Collections;
+import com.google.research.reflection.common.c;
 import java.util.HashMap;
 import java.util.ArrayList;
 import com.google.research.reflection.a.b;
@@ -19,38 +20,38 @@ import com.google.research.reflection.common.a;
 public class k extends d
 {
     public k() {
-        this.Mi = 5;
+        this.Nc = 5;
     }
     
     public k(final int n) {
         super(n);
-        this.Mi = 5;
+        this.Nc = 5;
     }
     
-    protected ArrayList UN(final a a, final com.google.research.reflection.a.b b, final long n, final long n2, final int n3) {
+    protected ArrayList TA(final a a, final com.google.research.reflection.a.b b, final long n, final long n2, final int n3) {
         final ArrayList list = new ArrayList();
-        final HashMap<Object, com.google.research.reflection.common.d> hashMap = new HashMap<Object, com.google.research.reflection.common.d>();
-        final List up = com.google.research.reflection.common.b.Up(b, "app_usage");
-        Collections.sort((List<Object>)up, new h(this));
-        for (final com.google.research.reflection.a.a a2 : up) {
+        final HashMap<Object, c> hashMap = new HashMap<Object, c>();
+        final List tc = com.google.research.reflection.common.b.Tc(b, "app_usage");
+        Collections.sort((List<Object>)tc, new h(this));
+        for (final com.google.research.reflection.a.a a2 : tc) {
             int n4;
-            if (b.ax() - a2.au() > n) {
+            if (b.F() - a2.D() > n) {
                 n4 = 1;
             }
             else {
                 n4 = 0;
             }
             if (n4 == 0) {
-                final int uo = this.UO(a2.getId(), b.ax());
-                com.google.research.reflection.common.d d = hashMap.get(uo);
-                if (d == null) {
+                final int tb = this.TB(a2.getId(), b.F());
+                c c = hashMap.get(tb);
+                if (c == null) {
                     if (hashMap.size() >= n3) {
                         break;
                     }
-                    d = new com.google.research.reflection.common.d(uo);
-                    hashMap.put(uo, d);
+                    c = new c(tb);
+                    hashMap.put(tb, c);
                 }
-                ++d.Mc;
+                ++c.MW;
             }
         }
         list.addAll(hashMap.values());
@@ -58,15 +59,15 @@ public class k extends d
     }
     
     public k clone() {
-        final k k = new k(this.Mk);
-        for (final Map.Entry<String, V> entry : this.Ml.entrySet()) {
-            k.Ml.put(entry.getKey(), entry.getValue());
+        final k k = new k(this.Ne);
+        for (final Map.Entry<String, V> entry : this.Nf.entrySet()) {
+            k.Nf.put(entry.getKey(), entry.getValue());
         }
-        for (final Map.Entry<Integer, V> entry2 : this.Mj.entrySet()) {
-            k.Mj.put(entry2.getKey(), entry2.getValue());
+        for (final Map.Entry<Integer, V> entry2 : this.Nd.entrySet()) {
+            k.Nd.put(entry2.getKey(), entry2.getValue());
         }
-        k.Mh = Arrays.copyOf(this.Mh, this.Mh.length);
-        k.UD(this.Md);
+        k.Nb = Arrays.copyOf(this.Nb, this.Nb.length);
+        k.Tq(this.MX);
         return k;
     }
 }

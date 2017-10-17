@@ -9,39 +9,39 @@ import java.io.DataOutputStream;
 
 class d implements c
 {
-    final /* synthetic */ b Mt;
-    final /* synthetic */ m Mu;
-    final /* synthetic */ int Mv;
-    final /* synthetic */ b Mw;
-    final /* synthetic */ b Mx;
+    final /* synthetic */ b Nn;
+    final /* synthetic */ m No;
+    final /* synthetic */ int Np;
+    final /* synthetic */ b Nq;
+    final /* synthetic */ b Nr;
     
-    d(final m mu, final int mv, final b mx, final b mt, final b mw) {
-        this.Mu = mu;
-        this.Mv = mv;
-        this.Mx = mx;
-        this.Mt = mt;
-        this.Mw = mw;
+    d(final m no, final int np, final b nr, final b nn, final b nq) {
+        this.No = no;
+        this.Np = np;
+        this.Nr = nr;
+        this.Nn = nn;
+        this.Nq = nq;
     }
     
-    public Boolean Vo(final int n) {
+    public Boolean Ub(final int n) {
         final boolean b = true;
-        if (this.Mv != 0) {
-            if (this.Mv != 2) {
+        if (this.Np != 0) {
+            if (this.Np != 2) {
                 throw new RuntimeException("unsupported activation function for the output layer");
             }
-            this.Mx.Mr[n] = this.Mt.Mr[n] - this.Mx.Mr[n];
+            this.Nr.Nl[n] = this.Nn.Nl[n] - this.Nr.Nl[n];
         }
-        else if (this.Mu.Nv != 0) {
-            if (this.Mu.Nv == (b ? 1 : 0)) {
-                this.Mx.Mr[n] = this.Mt.Mr[n] - this.Mx.Mr[n];
+        else if (this.No.Op != 0) {
+            if (this.No.Op == (b ? 1 : 0)) {
+                this.Nr.Nl[n] = this.Nn.Nl[n] - this.Nr.Nl[n];
             }
         }
         else {
-            this.Mx.Mr[n] = this.Mt.Mr[n] * (1.0 - this.Mt.Mr[n]) * (this.Mt.Mr[n] - this.Mx.Mr[n]);
+            this.Nr.Nl[n] = this.Nn.Nl[n] * (1.0 - this.Nn.Nl[n]) * (this.Nn.Nl[n] - this.Nr.Nl[n]);
         }
-        if (this.Mw != null) {
-            final double[] mr = this.Mx.Mr;
-            mr[n] *= this.Mw.Mr[n];
+        if (this.Nq != null) {
+            final double[] nl = this.Nr.Nl;
+            nl[n] *= this.Nq.Nl[n];
         }
         return b;
     }

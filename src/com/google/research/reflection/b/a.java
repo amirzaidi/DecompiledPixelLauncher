@@ -6,5 +6,5 @@ package com.google.research.reflection.b;
 
 public interface a
 {
-    void Ue(final b p0, final int p1);
+    void SR(final b p0, final int p1);
 }

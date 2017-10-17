@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field protected Lb:Lcom/google/protobuf/nano/h;
+.field protected PI:Lcom/google/protobuf/nano/h;
 
 
 # direct methods
@@ -44,7 +44,7 @@
     check-cast v0, Lcom/google/protobuf/nano/e;
 
     .line 166
-    invoke-static {p0, v0}, Lcom/google/protobuf/nano/d;->SR(Lcom/google/protobuf/nano/e;Lcom/google/protobuf/nano/e;)V
+    invoke-static {p0, v0}, Lcom/google/protobuf/nano/d;->WM(Lcom/google/protobuf/nano/e;Lcom/google/protobuf/nano/e;)V
 
     .line 167
     return-object v0
@@ -69,7 +69,7 @@
     const/4 v0, 0x0
 
     .line 50
-    iget-object v1, p0, Lcom/google/protobuf/nano/e;->Lb:Lcom/google/protobuf/nano/h;
+    iget-object v1, p0, Lcom/google/protobuf/nano/e;->PI:Lcom/google/protobuf/nano/h;
 
     if-eqz v1, :cond_0
 
@@ -77,7 +77,7 @@
 
     .line 51
     :goto_0
-    iget-object v2, p0, Lcom/google/protobuf/nano/e;->Lb:Lcom/google/protobuf/nano/h;
+    iget-object v2, p0, Lcom/google/protobuf/nano/e;->PI:Lcom/google/protobuf/nano/h;
 
     invoke-virtual {v2}, Lcom/google/protobuf/nano/h;->size()I
 
@@ -86,9 +86,9 @@
     if-ge v0, v2, :cond_1
 
     .line 52
-    iget-object v2, p0, Lcom/google/protobuf/nano/e;->Lb:Lcom/google/protobuf/nano/h;
+    iget-object v2, p0, Lcom/google/protobuf/nano/e;->PI:Lcom/google/protobuf/nano/h;
 
-    invoke-virtual {v2, v0}, Lcom/google/protobuf/nano/h;->Tg(I)Lcom/google/protobuf/nano/k;
+    invoke-virtual {v2, v0}, Lcom/google/protobuf/nano/h;->Xb(I)Lcom/google/protobuf/nano/k;
 
     move-result-object v2
 
@@ -117,7 +117,7 @@
 
     .prologue
     .line 61
-    iget-object v0, p0, Lcom/google/protobuf/nano/e;->Lb:Lcom/google/protobuf/nano/h;
+    iget-object v0, p0, Lcom/google/protobuf/nano/e;->PI:Lcom/google/protobuf/nano/h;
 
     if-nez v0, :cond_0
 
@@ -129,7 +129,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    iget-object v1, p0, Lcom/google/protobuf/nano/e;->Lb:Lcom/google/protobuf/nano/h;
+    iget-object v1, p0, Lcom/google/protobuf/nano/e;->PI:Lcom/google/protobuf/nano/h;
 
     invoke-virtual {v1}, Lcom/google/protobuf/nano/h;->size()I
 
@@ -138,9 +138,9 @@
     if-ge v0, v1, :cond_1
 
     .line 65
-    iget-object v1, p0, Lcom/google/protobuf/nano/e;->Lb:Lcom/google/protobuf/nano/h;
+    iget-object v1, p0, Lcom/google/protobuf/nano/e;->PI:Lcom/google/protobuf/nano/h;
 
-    invoke-virtual {v1, v0}, Lcom/google/protobuf/nano/h;->Tg(I)Lcom/google/protobuf/nano/k;
+    invoke-virtual {v1, v0}, Lcom/google/protobuf/nano/h;->Xb(I)Lcom/google/protobuf/nano/k;
 
     move-result-object v1
 

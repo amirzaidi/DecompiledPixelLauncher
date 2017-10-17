@@ -6,14 +6,14 @@ package com.google.protobuf.nano;
 
 public final class h implements Cloneable
 {
-    private static final k Ln;
-    private int[] Lo;
-    private k[] Lp;
-    private boolean Lq;
+    private static final k PU;
+    private int[] PV;
+    private k[] PW;
+    private boolean PX;
     private int mSize;
     
     static {
-        Ln = new k();
+        PU = new k();
     }
     
     h() {
@@ -21,36 +21,36 @@ public final class h implements Cloneable
     }
     
     h(final int n) {
-        this.Lq = false;
-        final int tf = this.Tf(n);
-        this.Lo = new int[tf];
-        this.Lp = new k[tf];
+        this.PX = false;
+        final int xa = this.Xa(n);
+        this.PV = new int[xa];
+        this.PW = new k[xa];
         this.mSize = 0;
     }
     
-    private void Td() {
+    private void WY() {
         final int mSize = this.mSize;
-        final int[] lo = this.Lo;
-        final k[] lp = this.Lp;
+        final int[] pv = this.PV;
+        final k[] pw = this.PW;
         int i = 0;
         int mSize2 = 0;
         while (i < mSize) {
-            final k k = lp[i];
-            if (k != h.Ln) {
+            final k k = pw[i];
+            if (k != h.PU) {
                 if (i != mSize2) {
-                    lo[mSize2] = lo[i];
-                    lp[mSize2] = k;
-                    lp[i] = null;
+                    pv[mSize2] = pv[i];
+                    pw[mSize2] = k;
+                    pw[i] = null;
                 }
                 ++mSize2;
             }
             ++i;
         }
-        this.Lq = false;
+        this.PX = false;
         this.mSize = mSize2;
     }
     
-    private int Te(final int n) {
+    private int WZ(final int n) {
         final int n2 = 1;
         for (int i = 4; i < 32; ++i) {
             if (n <= (n2 << i) - 12) {
@@ -60,11 +60,11 @@ public final class h implements Cloneable
         return n;
     }
     
-    private int Tf(final int n) {
-        return this.Te(n * 4) / 4;
+    private int Xa(final int n) {
+        return this.WZ(n * 4) / 4;
     }
     
-    private boolean Th(final k[] array, final k[] array2, final int n) {
+    private boolean Xc(final k[] array, final k[] array2, final int n) {
         for (int i = 0; i < n; ++i) {
             if (!array[i].equals(array2[i])) {
                 return false;
@@ -73,7 +73,7 @@ public final class h implements Cloneable
         return true;
     }
     
-    private boolean Ti(final int[] array, final int[] array2, final int n) {
+    private boolean Xd(final int[] array, final int[] array2, final int n) {
         for (int i = 0; i < n; ++i) {
             if (array[i] != array2[i]) {
                 return false;
@@ -82,21 +82,21 @@ public final class h implements Cloneable
         return true;
     }
     
-    k Tg(final int n) {
-        if (this.Lq) {
-            this.Td();
+    k Xb(final int n) {
+        if (this.PX) {
+            this.WY();
         }
-        return this.Lp[n];
+        return this.PW[n];
     }
     
     public final h clone() {
         int i = 0;
         final int size = this.size();
         final h h = new h(size);
-        System.arraycopy(this.Lo, 0, h.Lo, 0, size);
+        System.arraycopy(this.PV, 0, h.PV, 0, size);
         while (i < size) {
-            if (this.Lp[i] != null) {
-                h.Lp[i] = this.Lp[i].clone();
+            if (this.PW[i] != null) {
+                h.PW[i] = this.PW[i].clone();
             }
             ++i;
         }
@@ -105,7 +105,7 @@ public final class h implements Cloneable
     }
     
     public boolean equals(final Object o) {
-        boolean th = false;
+        boolean xc = false;
         if (o == this) {
             return true;
         }
@@ -116,26 +116,26 @@ public final class h implements Cloneable
         if (this.size() != h.size()) {
             return false;
         }
-        if (this.Ti(this.Lo, h.Lo, this.mSize)) {
-            th = this.Th(this.Lp, h.Lp, this.mSize);
+        if (this.Xd(this.PV, h.PV, this.mSize)) {
+            xc = this.Xc(this.PW, h.PW, this.mSize);
         }
-        return th;
+        return xc;
     }
     
     public int hashCode() {
-        if (this.Lq) {
-            this.Td();
+        if (this.PX) {
+            this.WY();
         }
         int n = 17;
         for (int i = 0; i < this.mSize; ++i) {
-            n = (n * 31 + this.Lo[i]) * 31 + this.Lp[i].hashCode();
+            n = (n * 31 + this.PV[i]) * 31 + this.PW[i].hashCode();
         }
         return n;
     }
     
     int size() {
-        if (this.Lq) {
-            this.Td();
+        if (this.PX) {
+            this.WY();
         }
         return this.mSize;
     }

@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic NP:Lcom/google/research/reflection/layers/b;
+.field final synthetic OJ:Lcom/google/research/reflection/layers/b;
 
-.field final synthetic NQ:D
+.field final synthetic OK:D
 
 
 # direct methods
@@ -18,9 +18,9 @@
 
     .prologue
     .line 217
-    iput-object p1, p0, Lcom/google/research/reflection/layers/q;->NP:Lcom/google/research/reflection/layers/b;
+    iput-object p1, p0, Lcom/google/research/reflection/layers/q;->OJ:Lcom/google/research/reflection/layers/b;
 
-    iput-wide p2, p0, Lcom/google/research/reflection/layers/q;->NQ:D
+    iput-wide p2, p0, Lcom/google/research/reflection/layers/q;->OK:D
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,14 +29,14 @@
 
 
 # virtual methods
-.method public Vo(I)Ljava/lang/Boolean;
+.method public Ub(I)Ljava/lang/Boolean;
     .locals 6
 
     .prologue
     .line 220
-    iget-object v0, p0, Lcom/google/research/reflection/layers/q;->NP:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/q;->OJ:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v0, v0, p1
 
@@ -47,13 +47,13 @@
     if-eqz v0, :cond_0
 
     .line 221
-    iget-object v0, p0, Lcom/google/research/reflection/layers/q;->NP:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/q;->OJ:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget-wide v2, v0, p1
 
-    iget-wide v4, p0, Lcom/google/research/reflection/layers/q;->NQ:D
+    iget-wide v4, p0, Lcom/google/research/reflection/layers/q;->OK:D
 
     mul-double/2addr v2, v4
 

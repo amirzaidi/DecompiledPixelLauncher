@@ -4,38 +4,116 @@
 
 package com.google.research.reflection.common;
 
-public class d implements Comparable
+import java.util.Iterator;
+import java.io.DataInputStream;
+import java.util.Map;
+import java.util.HashMap;
+import java.io.DataOutputStream;
+
+public class d
 {
-    public int Mb;
-    public float Mc;
-    
-    public d(final int mb) {
-        this.Mb = mb;
-        this.Mc = 1.0f;
+    private static void Tf(final DataOutputStream dataOutputStream, final Object o) {
+        int i = 0;
+        if (!(o instanceof Integer)) {
+            if (!(o instanceof Long)) {
+                if (!(o instanceof Float)) {
+                    if (!(o instanceof String)) {
+                        if (!(o instanceof HashMap)) {
+                            if (!(o instanceof int[])) {
+                                if (o instanceof float[]) {
+                                    final float[] array = (float[])o;
+                                    dataOutputStream.writeInt(array.length);
+                                    while (i < array.length) {
+                                        dataOutputStream.writeFloat(array[i]);
+                                        ++i;
+                                    }
+                                }
+                            }
+                            else {
+                                final int[] array2 = (int[])o;
+                                dataOutputStream.writeInt(array2.length);
+                                while (i < array2.length) {
+                                    dataOutputStream.writeInt(array2[i]);
+                                    ++i;
+                                }
+                            }
+                        }
+                        else {
+                            Ti(dataOutputStream, (Map)o);
+                        }
+                    }
+                    else {
+                        dataOutputStream.writeUTF((String)o);
+                    }
+                }
+                else {
+                    dataOutputStream.writeFloat((float)o);
+                }
+            }
+            else {
+                dataOutputStream.writeLong((long)o);
+            }
+        }
+        else {
+            dataOutputStream.writeInt((int)o);
+        }
     }
     
-    public d(final int mb, final float mc) {
-        this.Mb = mb;
-        this.Mc = mc;
+    private static Object Tg(final DataInputStream dataInputStream, final Class clazz) {
+        int i = 0;
+        if (clazz == Integer.class) {
+            return dataInputStream.readInt();
+        }
+        if (clazz == Long.class) {
+            return dataInputStream.readLong();
+        }
+        if (clazz == Float.class) {
+            return dataInputStream.readFloat();
+        }
+        if (clazz == String.class) {
+            return dataInputStream.readUTF();
+        }
+        if (clazz == int[].class) {
+            final int int1 = dataInputStream.readInt();
+            final int[] array = new int[int1];
+            while (i < int1) {
+                array[i] = dataInputStream.readInt();
+                ++i;
+            }
+            return array;
+        }
+        if (clazz != float[].class) {
+            return null;
+        }
+        final int int2 = dataInputStream.readInt();
+        final float[] array2 = new float[int2];
+        while (i < int2) {
+            array2[i] = dataInputStream.readFloat();
+            ++i;
+        }
+        return array2;
     }
     
-    public int Uw(final d d) {
-        return Float.compare(this.Mc, d.Mc);
+    public static float[] Th(final double n, final double n2) {
+        final double radians = Math.toRadians(n);
+        final double radians2 = Math.toRadians(n2);
+        final double cos = Math.cos(radians);
+        return new float[] { (float)(Math.cos(radians2) * cos), (float)(Math.sin(radians2) * cos), (float)Math.sin(radians) };
     }
     
-    public d clone() {
-        return new d(this.Mb, this.Mc);
+    public static void Ti(final DataOutputStream dataOutputStream, final Map map) {
+        dataOutputStream.writeInt(map.size());
+        for (final Map.Entry<Object, V> entry : map.entrySet()) {
+            Tf(dataOutputStream, entry.getKey());
+            Tf(dataOutputStream, entry.getValue());
+        }
     }
     
-    public boolean equals(final Object o) {
-        return o instanceof d && (this.Mb == ((d)o).Mb && this.Mc == ((d)o).Mc);
-    }
-    
-    public int hashCode() {
-        return this.Mb * 31 + 17 + Float.floatToIntBits(this.Mc);
-    }
-    
-    public String toString() {
-        return new StringBuilder(27).append(this.Mb).append("=").append(this.Mc).toString();
+    public static HashMap Tj(final DataInputStream dataInputStream, final Class clazz, final Class clazz2) {
+        final HashMap<Object, Object> hashMap = new HashMap<Object, Object>();
+        for (int int1 = dataInputStream.readInt(), i = 0; i < int1; ++i) {
+            hashMap.put(Tg(dataInputStream, clazz), Tg(dataInputStream, clazz2));
+        }
+        return hashMap;
     }
 }

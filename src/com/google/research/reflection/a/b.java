@@ -8,29 +8,29 @@ import java.util.List;
 
 public interface b
 {
-    Long aA();
+    Long F();
     
-    Long aB();
+    b I(final byte[] p0, final int p1, final int p2);
     
-    Long aC();
+    Long J();
     
-    List aD();
+    Long K();
     
-    List aE();
+    Long L();
     
-    Long aF();
+    List M();
     
-    String aG();
+    List N();
     
-    String aH();
+    Long O();
     
-    byte[] aI();
+    String P();
     
-    b aK(final List p0);
+    String Q();
     
-    Long ax();
+    byte[] R();
     
-    b az(final byte[] p0, final int p1, final int p2);
+    b S(final List p0);
     
     String getId();
 }

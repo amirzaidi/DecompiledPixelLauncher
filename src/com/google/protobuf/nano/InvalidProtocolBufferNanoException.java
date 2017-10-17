@@ -14,31 +14,31 @@ public class InvalidProtocolBufferNanoException extends IOException
         super(s);
     }
     
-    static InvalidProtocolBufferNanoException Sj() {
+    static InvalidProtocolBufferNanoException We() {
         return new InvalidProtocolBufferNanoException("Protocol message tag had invalid wire type.");
     }
     
-    static InvalidProtocolBufferNanoException Sk() {
+    static InvalidProtocolBufferNanoException Wf() {
         return new InvalidProtocolBufferNanoException("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
     }
     
-    static InvalidProtocolBufferNanoException Sl() {
+    static InvalidProtocolBufferNanoException Wg() {
         return new InvalidProtocolBufferNanoException("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either than the input has been truncated or that an embedded message misreported its own length.");
     }
     
-    static InvalidProtocolBufferNanoException Sm() {
+    static InvalidProtocolBufferNanoException Wh() {
         return new InvalidProtocolBufferNanoException("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
     }
     
-    static InvalidProtocolBufferNanoException Sn() {
+    static InvalidProtocolBufferNanoException Wi() {
         return new InvalidProtocolBufferNanoException("CodedInputStream encountered a malformed varint.");
     }
     
-    static InvalidProtocolBufferNanoException So() {
+    static InvalidProtocolBufferNanoException Wj() {
         return new InvalidProtocolBufferNanoException("Protocol message contained an invalid tag (zero).");
     }
     
-    static InvalidProtocolBufferNanoException Sp() {
+    static InvalidProtocolBufferNanoException Wk() {
         return new InvalidProtocolBufferNanoException("Protocol message end-group tag did not match expected tag.");
     }
 }

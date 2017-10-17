@@ -19,12 +19,12 @@
 
 
 # virtual methods
-.method public UQ(Lcom/google/research/reflection/a/a;Lcom/google/research/reflection/a/a;)I
+.method public TD(Lcom/google/research/reflection/a/a;Lcom/google/research/reflection/a/a;)I
     .locals 4
 
     .prologue
     .line 74
-    invoke-interface {p2}, Lcom/google/research/reflection/a/a;->au()Ljava/lang/Long;
+    invoke-interface {p2}, Lcom/google/research/reflection/a/a;->D()Ljava/lang/Long;
 
     move-result-object v0
 
@@ -32,7 +32,7 @@
 
     move-result-wide v0
 
-    invoke-interface {p1}, Lcom/google/research/reflection/a/a;->au()Ljava/lang/Long;
+    invoke-interface {p1}, Lcom/google/research/reflection/a/a;->D()Ljava/lang/Long;
 
     move-result-object v2
 
@@ -56,7 +56,7 @@
 
     check-cast p2, Lcom/google/research/reflection/a/a;
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/research/reflection/b/h;->UQ(Lcom/google/research/reflection/a/a;Lcom/google/research/reflection/a/a;)I
+    invoke-virtual {p0, p1, p2}, Lcom/google/research/reflection/b/h;->TD(Lcom/google/research/reflection/a/a;Lcom/google/research/reflection/a/a;)I
 
     move-result v0
 

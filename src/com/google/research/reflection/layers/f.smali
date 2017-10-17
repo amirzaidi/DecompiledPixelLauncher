@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field final synthetic ME:Lcom/google/research/reflection/layers/s;
+.field final synthetic NA:Lcom/google/research/reflection/layers/b;
 
-.field final synthetic MF:Lcom/google/research/reflection/layers/b;
+.field final synthetic NB:Lcom/google/research/reflection/layers/b;
 
-.field final synthetic MG:Lcom/google/research/reflection/layers/b;
+.field final synthetic NC:[Ljava/util/ArrayList;
 
-.field final synthetic MH:Lcom/google/research/reflection/layers/b;
+.field final synthetic Ny:Lcom/google/research/reflection/layers/s;
 
-.field final synthetic MI:[Ljava/util/ArrayList;
+.field final synthetic Nz:Lcom/google/research/reflection/layers/b;
 
 
 # direct methods
@@ -24,15 +24,15 @@
 
     .prologue
     .line 107
-    iput-object p1, p0, Lcom/google/research/reflection/layers/f;->ME:Lcom/google/research/reflection/layers/s;
+    iput-object p1, p0, Lcom/google/research/reflection/layers/f;->Ny:Lcom/google/research/reflection/layers/s;
 
-    iput-object p2, p0, Lcom/google/research/reflection/layers/f;->MI:[Ljava/util/ArrayList;
+    iput-object p2, p0, Lcom/google/research/reflection/layers/f;->NC:[Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lcom/google/research/reflection/layers/f;->MH:Lcom/google/research/reflection/layers/b;
+    iput-object p3, p0, Lcom/google/research/reflection/layers/f;->NB:Lcom/google/research/reflection/layers/b;
 
-    iput-object p4, p0, Lcom/google/research/reflection/layers/f;->MF:Lcom/google/research/reflection/layers/b;
+    iput-object p4, p0, Lcom/google/research/reflection/layers/f;->Nz:Lcom/google/research/reflection/layers/b;
 
-    iput-object p5, p0, Lcom/google/research/reflection/layers/f;->MG:Lcom/google/research/reflection/layers/b;
+    iput-object p5, p0, Lcom/google/research/reflection/layers/f;->NA:Lcom/google/research/reflection/layers/b;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,7 +41,7 @@
 
 
 # virtual methods
-.method public Vo(I)Ljava/lang/Boolean;
+.method public Ub(I)Ljava/lang/Boolean;
     .locals 9
 
     .prologue
@@ -50,35 +50,35 @@
     .line 110
     new-instance v7, Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->ME:Lcom/google/research/reflection/layers/s;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->Ny:Lcom/google/research/reflection/layers/s;
 
-    iget v0, v0, Lcom/google/research/reflection/layers/s;->Og:I
+    iget v0, v0, Lcom/google/research/reflection/layers/s;->Pa:I
 
-    iget-object v2, p0, Lcom/google/research/reflection/layers/f;->ME:Lcom/google/research/reflection/layers/s;
+    iget-object v2, p0, Lcom/google/research/reflection/layers/f;->Ny:Lcom/google/research/reflection/layers/s;
 
-    iget v2, v2, Lcom/google/research/reflection/layers/s;->NU:I
+    iget v2, v2, Lcom/google/research/reflection/layers/s;->OO:I
 
     invoke-direct {v7, v0, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
     .line 111
-    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->ME:Lcom/google/research/reflection/layers/s;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->Ny:Lcom/google/research/reflection/layers/s;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/s;->NT:[Lcom/google/research/reflection/layers/j;
+    iget-object v0, v0, Lcom/google/research/reflection/layers/s;->ON:[Lcom/google/research/reflection/layers/i;
 
     aget-object v0, v0, p1
 
-    iget-object v2, p0, Lcom/google/research/reflection/layers/f;->MI:[Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/google/research/reflection/layers/f;->NC:[Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lcom/google/research/reflection/layers/f;->MH:Lcom/google/research/reflection/layers/b;
+    iget-object v3, p0, Lcom/google/research/reflection/layers/f;->NB:Lcom/google/research/reflection/layers/b;
 
-    iget-object v4, p0, Lcom/google/research/reflection/layers/f;->MF:Lcom/google/research/reflection/layers/b;
+    iget-object v4, p0, Lcom/google/research/reflection/layers/f;->Nz:Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {v0, v2, v3, v4, v7}, Lcom/google/research/reflection/layers/j;->Vy([Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;)V
+    invoke-virtual {v0, v2, v3, v4, v7}, Lcom/google/research/reflection/layers/i;->Uk([Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;)V
 
     .line 112
-    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->ME:Lcom/google/research/reflection/layers/s;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->Ny:Lcom/google/research/reflection/layers/s;
 
-    iget v0, v0, Lcom/google/research/reflection/layers/s;->NU:I
+    iget v0, v0, Lcom/google/research/reflection/layers/s;->OO:I
 
     mul-int v8, p1, v0
 
@@ -86,9 +86,9 @@
 
     .line 113
     :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->ME:Lcom/google/research/reflection/layers/s;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->Ny:Lcom/google/research/reflection/layers/s;
 
-    iget v0, v0, Lcom/google/research/reflection/layers/s;->Og:I
+    iget v0, v0, Lcom/google/research/reflection/layers/s;->Pa:I
 
     if-lt v2, v0, :cond_0
 
@@ -106,9 +106,9 @@
 
     .line 114
     :goto_1
-    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->ME:Lcom/google/research/reflection/layers/s;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->Ny:Lcom/google/research/reflection/layers/s;
 
-    iget v0, v0, Lcom/google/research/reflection/layers/s;->NU:I
+    iget v0, v0, Lcom/google/research/reflection/layers/s;->OO:I
 
     if-lt v6, v0, :cond_1
 
@@ -119,15 +119,15 @@
 
     .line 115
     :cond_1
-    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->MG:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/f;->NA:Lcom/google/research/reflection/layers/b;
 
     add-int v3, v8, v6
 
-    invoke-virtual {v7, v1, v2, v6}, Lcom/google/research/reflection/layers/b;->Vc(ZII)D
+    invoke-virtual {v7, v1, v2, v6}, Lcom/google/research/reflection/layers/b;->TP(ZII)D
 
     move-result-wide v4
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/research/reflection/layers/b;->Vd(ZIID)V
+    invoke-virtual/range {v0 .. v5}, Lcom/google/research/reflection/layers/b;->TQ(ZIID)V
 
     .line 114
     add-int/lit8 v0, v6, 0x1

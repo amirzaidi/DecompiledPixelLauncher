@@ -4,27 +4,27 @@
 
 
 # instance fields
-.field protected final Lk:Z
+.field protected final PR:Z
 
-.field public final Ll:I
+.field public final PS:I
 
-.field protected final Lm:Ljava/lang/Class;
+.field protected final PT:Ljava/lang/Class;
 
 .field protected final type:I
 
 
 # virtual methods
-.method SX(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
+.method WS(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
     .locals 1
 
     .prologue
     .line 253
-    iget-boolean v0, p0, Lcom/google/protobuf/nano/g;->Lk:Z
+    iget-boolean v0, p0, Lcom/google/protobuf/nano/g;->PR:Z
 
     if-eqz v0, :cond_0
 
     .line 254
-    invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/nano/g;->Tb(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/nano/g;->WW(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
 
     .line 258
     :goto_0
@@ -32,20 +32,20 @@
 
     .line 256
     :cond_0
-    invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/nano/g;->SY(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/nano/g;->WT(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
 
     goto :goto_0
 .end method
 
-.method protected SY(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
+.method protected WT(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
     .locals 3
 
     .prologue
     .line 263
     :try_start_0
-    iget v0, p0, Lcom/google/protobuf/nano/g;->Ll:I
+    iget v0, p0, Lcom/google/protobuf/nano/g;->PS:I
 
-    invoke-virtual {p2, v0}, Lcom/google/protobuf/nano/b;->RZ(I)V
+    invoke-virtual {p2, v0}, Lcom/google/protobuf/nano/b;->VU(I)V
 
     .line 264
     iget v0, p0, Lcom/google/protobuf/nano/g;->type:I
@@ -98,19 +98,19 @@
     check-cast p1, Lcom/google/protobuf/nano/a;
 
     .line 267
-    iget v0, p0, Lcom/google/protobuf/nano/g;->Ll:I
+    iget v0, p0, Lcom/google/protobuf/nano/g;->PS:I
 
-    invoke-static {v0}, Lcom/google/protobuf/nano/f;->ST(I)I
+    invoke-static {v0}, Lcom/google/protobuf/nano/f;->WO(I)I
 
     move-result v0
 
     .line 268
-    invoke-virtual {p2, p1}, Lcom/google/protobuf/nano/b;->RI(Lcom/google/protobuf/nano/a;)V
+    invoke-virtual {p2, p1}, Lcom/google/protobuf/nano/b;->VD(Lcom/google/protobuf/nano/a;)V
 
     .line 270
     const/4 v1, 0x4
 
-    invoke-virtual {p2, v0, v1}, Lcom/google/protobuf/nano/b;->Sd(II)V
+    invoke-virtual {p2, v0, v1}, Lcom/google/protobuf/nano/b;->VY(II)V
 
     .line 283
     :goto_0
@@ -121,7 +121,7 @@
     check-cast p1, Lcom/google/protobuf/nano/a;
 
     .line 274
-    invoke-virtual {p2, p1}, Lcom/google/protobuf/nano/b;->RG(Lcom/google/protobuf/nano/a;)V
+    invoke-virtual {p2, p1}, Lcom/google/protobuf/nano/b;->VB(Lcom/google/protobuf/nano/a;)V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -137,14 +137,14 @@
     .end packed-switch
 .end method
 
-.method protected SZ(Ljava/lang/Object;)I
+.method protected WU(Ljava/lang/Object;)I
     .locals 3
 
     .prologue
     .line 319
-    iget v0, p0, Lcom/google/protobuf/nano/g;->Ll:I
+    iget v0, p0, Lcom/google/protobuf/nano/g;->PS:I
 
-    invoke-static {v0}, Lcom/google/protobuf/nano/f;->ST(I)I
+    invoke-static {v0}, Lcom/google/protobuf/nano/f;->WO(I)I
 
     move-result v0
 
@@ -185,7 +185,7 @@
     check-cast p1, Lcom/google/protobuf/nano/a;
 
     .line 323
-    invoke-static {v0, p1}, Lcom/google/protobuf/nano/b;->RR(ILcom/google/protobuf/nano/a;)I
+    invoke-static {v0, p1}, Lcom/google/protobuf/nano/b;->VM(ILcom/google/protobuf/nano/a;)I
 
     move-result v0
 
@@ -196,7 +196,7 @@
     check-cast p1, Lcom/google/protobuf/nano/a;
 
     .line 326
-    invoke-static {v0, p1}, Lcom/google/protobuf/nano/b;->Rt(ILcom/google/protobuf/nano/a;)I
+    invoke-static {v0, p1}, Lcom/google/protobuf/nano/b;->Vo(ILcom/google/protobuf/nano/a;)I
 
     move-result v0
 
@@ -212,17 +212,17 @@
     .end packed-switch
 .end method
 
-.method Ta(Ljava/lang/Object;)I
+.method WV(Ljava/lang/Object;)I
     .locals 1
 
     .prologue
     .line 297
-    iget-boolean v0, p0, Lcom/google/protobuf/nano/g;->Lk:Z
+    iget-boolean v0, p0, Lcom/google/protobuf/nano/g;->PR:Z
 
     if-eqz v0, :cond_0
 
     .line 298
-    invoke-virtual {p0, p1}, Lcom/google/protobuf/nano/g;->Tc(Ljava/lang/Object;)I
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/nano/g;->WX(Ljava/lang/Object;)I
 
     move-result v0
 
@@ -230,14 +230,14 @@
 
     .line 300
     :cond_0
-    invoke-virtual {p0, p1}, Lcom/google/protobuf/nano/g;->SZ(Ljava/lang/Object;)I
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/nano/g;->WU(Ljava/lang/Object;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method protected Tb(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
+.method protected WW(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
     .locals 3
 
     .prologue
@@ -261,7 +261,7 @@
     if-eqz v2, :cond_0
 
     .line 291
-    invoke-virtual {p0, v2, p2}, Lcom/google/protobuf/nano/g;->SY(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
+    invoke-virtual {p0, v2, p2}, Lcom/google/protobuf/nano/g;->WT(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
 
     .line 288
     :cond_0
@@ -274,7 +274,7 @@
     return-void
 .end method
 
-.method protected Tc(Ljava/lang/Object;)I
+.method protected WX(Ljava/lang/Object;)I
     .locals 4
 
     .prologue
@@ -304,7 +304,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v3}, Lcom/google/protobuf/nano/g;->SZ(Ljava/lang/Object;)I
+    invoke-virtual {p0, v3}, Lcom/google/protobuf/nano/g;->WU(Ljava/lang/Object;)I
 
     move-result v3
 

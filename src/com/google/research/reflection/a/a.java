@@ -8,13 +8,13 @@ import java.util.List;
 
 public interface a
 {
-    List ar();
+    List B();
     
-    List at();
+    List C();
     
-    Long au();
+    Long D();
     
-    String av();
+    String E();
     
     String getId();
 }

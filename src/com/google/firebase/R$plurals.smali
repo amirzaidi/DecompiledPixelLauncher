@@ -1,10 +1,12 @@
-.class public final Lcom/google/firebase/R$fraction;
+.class public final Lcom/google/firebase/R$plurals;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final container_margin:I = 0x7f110000
+.field public static final smartspace_hours:I = 0x7f130001
+
+.field public static final smartspace_minutes:I = 0x7f130000
 
 
 # direct methods
@@ -12,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 1285
+    .line 1591
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

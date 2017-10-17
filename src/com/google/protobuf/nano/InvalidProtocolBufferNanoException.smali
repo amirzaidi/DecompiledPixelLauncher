@@ -19,7 +19,7 @@
     return-void
 .end method
 
-.method static Sj()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+.method static We()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
     .prologue
@@ -35,7 +35,7 @@
     return-object v0
 .end method
 
-.method static Sk()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+.method static Wf()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
     .prologue
@@ -51,7 +51,7 @@
     return-object v0
 .end method
 
-.method static Sl()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+.method static Wg()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
     .prologue
@@ -67,7 +67,7 @@
     return-object v0
 .end method
 
-.method static Sm()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+.method static Wh()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
     .prologue
@@ -83,7 +83,7 @@
     return-object v0
 .end method
 
-.method static Sn()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+.method static Wi()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
     .prologue
@@ -99,7 +99,7 @@
     return-object v0
 .end method
 
-.method static So()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+.method static Wj()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
     .prologue
@@ -115,7 +115,7 @@
     return-object v0
 .end method
 
-.method static Sp()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+.method static Wk()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
     .locals 2
 
     .prologue

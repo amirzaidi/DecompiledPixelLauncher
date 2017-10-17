@@ -38,7 +38,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p0, p1}, Lcom/google/protobuf/nano/android/a;->Re(Ljava/lang/Class;Lcom/google/protobuf/nano/a;Landroid/os/Parcel;)V
+    invoke-static {v0, p0, p1}, Lcom/google/protobuf/nano/android/a;->UZ(Ljava/lang/Class;Lcom/google/protobuf/nano/a;Landroid/os/Parcel;)V
 
     .line 51
     return-void

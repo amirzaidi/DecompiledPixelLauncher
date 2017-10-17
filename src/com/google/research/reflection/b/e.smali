@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public UF()I
+.method public Ts()I
     .locals 1
 
     .prologue
@@ -26,14 +26,14 @@
     return v0
 .end method
 
-.method public UG(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
+.method public Tt(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
     .locals 6
 
     .prologue
     .line 22
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {p0}, Lcom/google/research/reflection/b/e;->UF()I
+    invoke-virtual {p0}, Lcom/google/research/reflection/b/e;->Ts()I
 
     move-result v1
 
@@ -42,14 +42,14 @@
     invoke-direct {v0, v2, v1}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
     .line 23
-    invoke-static {p2}, Lcom/google/research/reflection/common/e;->UB(Lcom/google/research/reflection/a/b;)I
+    invoke-static {p2}, Lcom/google/research/reflection/common/e;->To(Lcom/google/research/reflection/a/b;)I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
     .line 24
-    iget-object v2, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v2, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
 

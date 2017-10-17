@@ -6,274 +6,245 @@ package com.google.protobuf.nano;
 
 public final class c
 {
-    private int KO;
-    private int KP;
-    private int KQ;
-    private int KR;
-    private int KS;
-    private int KT;
-    private int KU;
-    private int KV;
-    private final byte[] KW;
-    private int KX;
+    private int PA;
+    private int PB;
+    private int PC;
+    private final byte[] PD;
+    private int PE;
+    private int Pv;
+    private int Pw;
+    private int Px;
+    private int Py;
+    private int Pz;
     
-    private c(final byte[] kw, final int n, final int n2) {
-        this.KR = -1 >>> 1;
-        this.KV = 64;
-        this.KO = 67108864;
-        this.KW = kw;
-        this.KS = n;
-        this.KQ = n + n2;
-        this.KP = n;
+    private c(final byte[] pd, final int n, final int n2) {
+        this.Py = -1 >>> 1;
+        this.PC = 64;
+        this.Pv = 67108864;
+        this.PD = pd;
+        this.Pz = n;
+        this.Px = n + n2;
+        this.Pw = n;
     }
     
-    private void SC() {
-        this.KQ += this.KT;
-        final int kq = this.KQ;
-        if (kq > this.KR) {
-            this.KT = kq - this.KR;
-            this.KQ -= this.KT;
-        }
-        else {
-            this.KT = 0;
-        }
-    }
-    
-    public static c SH(final byte[] array, final int n, final int n2) {
+    public static c WC(final byte[] array, final int n, final int n2) {
         return new c(array, n, n2);
     }
     
-    public double SA() {
-        return Double.longBitsToDouble(this.SN());
-    }
-    
-    public void SB(final a a) {
-        final int sw = this.Sw();
-        if (this.KX >= this.KV) {
-            throw InvalidProtocolBufferNanoException.Sm();
+    private void Wx() {
+        this.Px += this.PA;
+        final int px = this.Px;
+        if (px > this.Py) {
+            this.PA = px - this.Py;
+            this.Px -= this.PA;
         }
-        final int st = this.St(sw);
-        ++this.KX;
-        a.mergeFrom(this);
-        this.SP(0);
-        --this.KX;
-        this.Sq(st);
-    }
-    
-    public boolean SD() {
-        boolean b = false;
-        if (this.Sw() != 0) {
-            b = true;
+        else {
+            this.PA = 0;
         }
-        return b;
     }
     
-    public long SE() {
-        return this.Sz();
-    }
-    
-    public byte SF() {
-        if (this.KP == this.KQ) {
-            throw InvalidProtocolBufferNanoException.Sl();
+    public byte WA() {
+        if (this.Pw == this.Px) {
+            throw InvalidProtocolBufferNanoException.Wg();
         }
-        return this.KW[this.KP++];
+        return this.PD[this.Pw++];
     }
     
-    public String SG() {
-        final int sw = this.Sw();
-        if (sw <= this.KQ - this.KP && sw > 0) {
-            final String s = new String(this.KW, this.KP, sw, d.KY);
-            this.KP += sw;
+    public String WB() {
+        final int wr = this.Wr();
+        if (wr <= this.Px - this.Pw && wr > 0) {
+            final String s = new String(this.PD, this.Pw, wr, d.PF);
+            this.Pw += wr;
             return s;
         }
-        return new String(this.SL(sw), d.KY);
+        return new String(this.WG(wr), d.PF);
     }
     
-    public void SI(final int n) {
+    public void WD(final int n) {
         if (n < 0) {
-            throw InvalidProtocolBufferNanoException.Sk();
+            throw InvalidProtocolBufferNanoException.Wf();
         }
-        if (this.KP + n > this.KR) {
-            this.SI(this.KR - this.KP);
-            throw InvalidProtocolBufferNanoException.Sl();
+        if (this.Pw + n > this.Py) {
+            this.WD(this.Py - this.Pw);
+            throw InvalidProtocolBufferNanoException.Wg();
         }
-        if (n <= this.KQ - this.KP) {
-            this.KP += n;
+        if (n <= this.Px - this.Pw) {
+            this.Pw += n;
             return;
         }
-        throw InvalidProtocolBufferNanoException.Sl();
+        throw InvalidProtocolBufferNanoException.Wg();
     }
     
-    public void SJ(final int n) {
-        if (n > this.KP - this.KS) {
-            throw new IllegalArgumentException("Position " + n + " is beyond current " + (this.KP - this.KS));
+    public void WE(final int n) {
+        if (n > this.Pw - this.Pz) {
+            throw new IllegalArgumentException("Position " + n + " is beyond current " + (this.Pw - this.Pz));
         }
         if (n < 0) {
             throw new IllegalArgumentException("Bad position " + n);
         }
-        this.KP = this.KS + n;
+        this.Pw = this.Pz + n;
     }
     
-    public int SK() {
-        return this.Sw();
+    public int WF() {
+        return this.Wr();
     }
     
-    public byte[] SL(final int n) {
+    public byte[] WG(final int n) {
         if (n < 0) {
-            throw InvalidProtocolBufferNanoException.Sk();
+            throw InvalidProtocolBufferNanoException.Wf();
         }
-        if (this.KP + n > this.KR) {
-            this.SI(this.KR - this.KP);
-            throw InvalidProtocolBufferNanoException.Sl();
+        if (this.Pw + n > this.Py) {
+            this.WD(this.Py - this.Pw);
+            throw InvalidProtocolBufferNanoException.Wg();
         }
-        if (n <= this.KQ - this.KP) {
+        if (n <= this.Px - this.Pw) {
             final byte[] array = new byte[n];
-            System.arraycopy(this.KW, this.KP, array, 0, n);
-            this.KP += n;
+            System.arraycopy(this.PD, this.Pw, array, 0, n);
+            this.Pw += n;
             return array;
         }
-        throw InvalidProtocolBufferNanoException.Sl();
+        throw InvalidProtocolBufferNanoException.Wg();
     }
     
-    public float SM() {
-        return Float.intBitsToFloat(this.Sy());
+    public float WH() {
+        return Float.intBitsToFloat(this.Wt());
     }
     
-    public long SN() {
+    public long WI() {
         final long n = 255L;
-        return (this.SF() & n) << 8 | (this.SF() & n) | (this.SF() & n) << 16 | (this.SF() & n) << 24 | (this.SF() & n) << 32 | (this.SF() & n) << 40 | (this.SF() & n) << 48 | (this.SF() & n) << 56;
+        return (this.WA() & n) << 8 | (this.WA() & n) | (this.WA() & n) << 16 | (this.WA() & n) << 24 | (this.WA() & n) << 32 | (this.WA() & n) << 40 | (this.WA() & n) << 48 | (this.WA() & n) << 56;
     }
     
-    public void SO() {
-        int sx;
+    public void WJ() {
+        int ws;
         do {
-            sx = this.Sx();
-        } while (sx != 0 && !(this.SQ(sx) ^ true));
+            ws = this.Ws();
+        } while (ws != 0 && !(this.WL(ws) ^ true));
     }
     
-    public void SP(final int n) {
-        if (this.KU != n) {
-            throw InvalidProtocolBufferNanoException.Sp();
+    public void WK(final int n) {
+        if (this.PB != n) {
+            throw InvalidProtocolBufferNanoException.Wk();
         }
     }
     
-    public boolean SQ(final int n) {
+    public boolean WL(final int n) {
         final boolean b = true;
-        switch (f.SU(n)) {
+        switch (f.WP(n)) {
             default: {
-                throw InvalidProtocolBufferNanoException.Sj();
+                throw InvalidProtocolBufferNanoException.We();
             }
             case 0: {
-                this.SK();
+                this.WF();
                 return b;
             }
             case 1: {
-                this.SN();
+                this.WI();
                 return b;
             }
             case 2: {
-                this.SI(this.Sw());
+                this.WD(this.Wr());
                 return b;
             }
             case 3: {
-                this.SO();
-                this.SP(f.SV(f.ST(n), 4));
+                this.WJ();
+                this.WK(f.WQ(f.WO(n), 4));
                 return b;
             }
             case 4: {
                 return false;
             }
             case 5: {
-                this.Sy();
+                this.Wt();
                 return b;
             }
         }
     }
     
-    public void Sq(final int kr) {
-        this.KR = kr;
-        this.SC();
+    public void Wl(final int py) {
+        this.Py = py;
+        this.Wx();
     }
     
-    public boolean Sr() {
-        return this.KP == this.KQ;
+    public boolean Wm() {
+        return this.Pw == this.Px;
     }
     
-    public int Ss() {
-        return this.KP - this.KS;
+    public int Wn() {
+        return this.Pw - this.Pz;
     }
     
-    public int St(final int n) {
+    public int Wo(final int n) {
         if (n < 0) {
-            throw InvalidProtocolBufferNanoException.Sk();
+            throw InvalidProtocolBufferNanoException.Wf();
         }
-        final int kr = this.KP + n;
-        final int kr2 = this.KR;
-        if (kr > kr2) {
-            throw InvalidProtocolBufferNanoException.Sl();
+        final int py = this.Pw + n;
+        final int py2 = this.Py;
+        if (py > py2) {
+            throw InvalidProtocolBufferNanoException.Wg();
         }
-        this.KR = kr;
-        this.SC();
-        return kr2;
+        this.Py = py;
+        this.Wx();
+        return py2;
     }
     
-    public byte[] Su() {
-        final int sw = this.Sw();
-        if (sw <= this.KQ - this.KP && sw > 0) {
-            final byte[] array = new byte[sw];
-            System.arraycopy(this.KW, this.KP, array, 0, sw);
-            this.KP += sw;
+    public byte[] Wp() {
+        final int wr = this.Wr();
+        if (wr <= this.Px - this.Pw && wr > 0) {
+            final byte[] array = new byte[wr];
+            System.arraycopy(this.PD, this.Pw, array, 0, wr);
+            this.Pw += wr;
             return array;
         }
-        if (sw == 0) {
-            return f.Li;
+        if (wr == 0) {
+            return f.PP;
         }
-        return this.SL(sw);
+        return this.WG(wr);
     }
     
-    public int Sv() {
-        if (this.KR == -1 >>> 1) {
+    public int Wq() {
+        if (this.Py == -1 >>> 1) {
             return -1;
         }
-        return this.KR - this.KP;
+        return this.Py - this.Pw;
     }
     
-    public int Sw() {
+    public int Wr() {
         int i = 0;
-        final byte sf = this.SF();
-        if (sf >= 0) {
-            return sf;
+        final byte wa = this.WA();
+        if (wa >= 0) {
+            return wa;
         }
-        final byte b = (byte)(sf & 0x7F);
-        final byte sf2 = this.SF();
+        final byte b = (byte)(wa & 0x7F);
+        final byte wa2 = this.WA();
         int n;
-        if (sf2 >= 0) {
-            n = (b | sf2 << 7);
+        if (wa2 >= 0) {
+            n = (b | wa2 << 7);
         }
         else {
-            final int n2 = b | (sf2 & 0x7F) << 7;
-            final byte sf3 = this.SF();
-            if (sf3 >= 0) {
-                n = (n2 | sf3 << 14);
+            final int n2 = b | (wa2 & 0x7F) << 7;
+            final byte wa3 = this.WA();
+            if (wa3 >= 0) {
+                n = (n2 | wa3 << 14);
             }
             else {
-                final int n3 = n2 | (sf3 & 0x7F) << 14;
-                final byte sf4 = this.SF();
-                if (sf4 >= 0) {
-                    n = (n3 | sf4 << 21);
+                final int n3 = n2 | (wa3 & 0x7F) << 14;
+                final byte wa4 = this.WA();
+                if (wa4 >= 0) {
+                    n = (n3 | wa4 << 21);
                 }
                 else {
-                    final int n4 = n3 | (sf4 & 0x7F) << 21;
-                    final byte sf5 = this.SF();
-                    n = (n4 | sf5 << 28);
-                    if (sf5 < 0) {
+                    final int n4 = n3 | (wa4 & 0x7F) << 21;
+                    final byte wa5 = this.WA();
+                    n = (n4 | wa5 << 28);
+                    if (wa5 < 0) {
                         while (i < 5) {
-                            if (this.SF() >= 0) {
+                            if (this.WA() >= 0) {
                                 return n;
                             }
                             ++i;
                         }
-                        throw InvalidProtocolBufferNanoException.Sn();
+                        throw InvalidProtocolBufferNanoException.Wi();
                     }
                 }
             }
@@ -281,32 +252,61 @@ public final class c
         return n;
     }
     
-    public int Sx() {
-        if (this.Sr()) {
-            return this.KU = 0;
+    public int Ws() {
+        if (this.Wm()) {
+            return this.PB = 0;
         }
-        this.KU = this.Sw();
-        if (this.KU == 0) {
-            throw InvalidProtocolBufferNanoException.So();
+        this.PB = this.Wr();
+        if (this.PB == 0) {
+            throw InvalidProtocolBufferNanoException.Wj();
         }
-        return this.KU;
+        return this.PB;
     }
     
-    public int Sy() {
-        return (this.SF() & 0xFF) | (this.SF() & 0xFF) << 8 | (this.SF() & 0xFF) << 16 | (this.SF() & 0xFF) << 24;
+    public int Wt() {
+        return (this.WA() & 0xFF) | (this.WA() & 0xFF) << 8 | (this.WA() & 0xFF) << 16 | (this.WA() & 0xFF) << 24;
     }
     
-    public long Sz() {
+    public long Wu() {
         int i = 0;
         long n = 0L;
         while (i < 64) {
-            final byte sf = this.SF();
-            n |= (sf & 0x7F) << i;
-            if ((sf & 0x80) == 0x0) {
+            final byte wa = this.WA();
+            n |= (wa & 0x7F) << i;
+            if ((wa & 0x80) == 0x0) {
                 return n;
             }
             i += 7;
         }
-        throw InvalidProtocolBufferNanoException.Sn();
+        throw InvalidProtocolBufferNanoException.Wi();
+    }
+    
+    public double Wv() {
+        return Double.longBitsToDouble(this.WI());
+    }
+    
+    public void Ww(final a a) {
+        final int wr = this.Wr();
+        if (this.PE >= this.PC) {
+            throw InvalidProtocolBufferNanoException.Wh();
+        }
+        final int wo = this.Wo(wr);
+        ++this.PE;
+        a.mergeFrom(this);
+        this.WK(0);
+        --this.PE;
+        this.Wl(wo);
+    }
+    
+    public boolean Wy() {
+        boolean b = false;
+        if (this.Wr() != 0) {
+            b = true;
+        }
+        return b;
+    }
+    
+    public long Wz() {
+        return this.Wu();
     }
 }

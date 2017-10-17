@@ -4,25 +4,25 @@
 
 
 # instance fields
-.field private KO:I
+.field private PA:I
 
-.field private KP:I
+.field private PB:I
 
-.field private KQ:I
+.field private PC:I
 
-.field private KR:I
+.field private final PD:[B
 
-.field private KS:I
+.field private PE:I
 
-.field private KT:I
+.field private Pv:I
 
-.field private KU:I
+.field private Pw:I
 
-.field private KV:I
+.field private Px:I
 
-.field private final KW:[B
+.field private Py:I
 
-.field private KX:I
+.field private Pz:I
 
 
 # direct methods
@@ -36,87 +36,37 @@
     .line 405
     const v0, 0x7fffffff
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     .line 409
     const/16 v0, 0x40
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KV:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->PC:I
 
     .line 412
     const/high16 v0, 0x4000000
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KO:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Pv:I
 
     .line 418
-    iput-object p1, p0, Lcom/google/protobuf/nano/c;->KW:[B
+    iput-object p1, p0, Lcom/google/protobuf/nano/c;->PD:[B
 
     .line 419
-    iput p2, p0, Lcom/google/protobuf/nano/c;->KS:I
+    iput p2, p0, Lcom/google/protobuf/nano/c;->Pz:I
 
     .line 420
     add-int v0, p2, p3
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
     .line 421
-    iput p2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iput p2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     .line 422
     return-void
 .end method
 
-.method private SC()V
-    .locals 2
-
-    .prologue
-    .line 495
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
-
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KT:I
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
-
-    .line 496
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
-
-    .line 497
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KR:I
-
-    if-le v0, v1, :cond_0
-
-    .line 499
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KR:I
-
-    sub-int/2addr v0, v1
-
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KT:I
-
-    .line 500
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
-
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KT:I
-
-    sub-int/2addr v0, v1
-
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
-
-    .line 504
-    :goto_0
-    return-void
-
-    .line 502
-    :cond_0
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KT:I
-
-    goto :goto_0
-.end method
-
-.method public static SH([BII)Lcom/google/protobuf/nano/c;
+.method public static WC([BII)Lcom/google/protobuf/nano/c;
     .locals 1
 
     .prologue
@@ -128,126 +78,71 @@
     return-object v0
 .end method
 
-
-# virtual methods
-.method public SA()D
+.method private Wx()V
     .locals 2
 
     .prologue
-    .line 149
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SN()J
+    .line 495
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    move-result-wide v0
+    iget v1, p0, Lcom/google/protobuf/nano/c;->PA:I
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D
+    add-int/2addr v0, v1
 
-    move-result-wide v0
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    return-wide v0
-.end method
+    .line 496
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-.method public SB(Lcom/google/protobuf/nano/a;)V
-    .locals 3
+    .line 497
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Py:I
 
-    .prologue
-    .line 217
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sw()I
+    if-le v0, v1, :cond_0
 
-    move-result v0
+    .line 499
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Py:I
 
-    .line 218
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KX:I
+    sub-int/2addr v0, v1
 
-    iget v2, p0, Lcom/google/protobuf/nano/c;->KV:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->PA:I
 
-    if-lt v1, v2, :cond_0
+    .line 500
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    .line 219
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sm()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    iget v1, p0, Lcom/google/protobuf/nano/c;->PA:I
 
-    move-result-object v0
+    sub-int/2addr v0, v1
 
-    throw v0
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    .line 221
-    :cond_0
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->St(I)I
-
-    move-result v0
-
-    .line 222
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KX:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, p0, Lcom/google/protobuf/nano/c;->KX:I
-
-    .line 223
-    invoke-virtual {p1, p0}, Lcom/google/protobuf/nano/a;->mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/protobuf/nano/a;
-
-    .line 224
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Lcom/google/protobuf/nano/c;->SP(I)V
-
-    .line 225
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KX:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, p0, Lcom/google/protobuf/nano/c;->KX:I
-
-    .line 226
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->Sq(I)V
-
-    .line 227
+    .line 504
+    :goto_0
     return-void
-.end method
 
-.method public SD()Z
-    .locals 2
-
-    .prologue
+    .line 502
+    :cond_0
     const/4 v0, 0x0
 
-    .line 184
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sw()I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->PA:I
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    return v0
+    goto :goto_0
 .end method
 
-.method public SE()J
-    .locals 2
 
-    .prologue
-    .line 164
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sz()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public SF()B
+# virtual methods
+.method public WA()B
     .locals 3
 
     .prologue
     .line 597
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KQ:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Px:I
 
     if-ne v0, v1, :cond_0
 
     .line 598
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sl()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wg()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -255,32 +150,32 @@
 
     .line 600
     :cond_0
-    iget-object v0, p0, Lcom/google/protobuf/nano/c;->KW:[B
+    iget-object v0, p0, Lcom/google/protobuf/nano/c;->PD:[B
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/lit8 v2, v1, 0x1
 
-    iput v2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iput v2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     aget-byte v0, v0, v1
 
     return v0
 .end method
 
-.method public SG()Ljava/lang/String;
+.method public WB()Ljava/lang/String;
     .locals 5
 
     .prologue
     .line 189
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sw()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wr()I
 
     move-result v0
 
     .line 190
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KQ:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    iget v2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     sub-int/2addr v1, v2
 
@@ -291,20 +186,20 @@
     .line 193
     new-instance v1, Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/protobuf/nano/c;->KW:[B
+    iget-object v2, p0, Lcom/google/protobuf/nano/c;->PD:[B
 
-    iget v3, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v3, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
-    sget-object v4, Lcom/google/protobuf/nano/d;->KY:Ljava/nio/charset/Charset;
+    sget-object v4, Lcom/google/protobuf/nano/d;->PF:Ljava/nio/charset/Charset;
 
     invoke-direct {v1, v2, v3, v0, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
 
     .line 194
-    iget v2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/2addr v0, v2
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     .line 195
     return-object v1
@@ -313,18 +208,18 @@
     :cond_0
     new-instance v1, Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->SL(I)[B
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->WG(I)[B
 
     move-result-object v0
 
-    sget-object v2, Lcom/google/protobuf/nano/d;->KY:Ljava/nio/charset/Charset;
+    sget-object v2, Lcom/google/protobuf/nano/d;->PF:Ljava/nio/charset/Charset;
 
     invoke-direct {v1, v0, v2}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
     return-object v1
 .end method
 
-.method public SI(I)V
+.method public WD(I)V
     .locals 2
 
     .prologue
@@ -332,7 +227,7 @@
     if-gez p1, :cond_0
 
     .line 640
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sk()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wf()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -340,25 +235,25 @@
 
     .line 643
     :cond_0
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/2addr v0, p1
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     if-le v0, v1, :cond_1
 
     .line 645
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Py:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     sub-int/2addr v0, v1
 
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->SI(I)V
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->WD(I)V
 
     .line 647
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sl()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wg()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -366,41 +261,41 @@
 
     .line 650
     :cond_1
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     sub-int/2addr v0, v1
 
     if-gt p1, v0, :cond_2
 
     .line 652
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/2addr v0, p1
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     .line 656
     return-void
 
     .line 654
     :cond_2
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sl()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wg()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
     throw v0
 .end method
 
-.method public SJ(I)V
+.method public WE(I)V
     .locals 4
 
     .prologue
     .line 580
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KS:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pz:I
 
     sub-int/2addr v0, v1
 
@@ -430,9 +325,9 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
-    iget v3, p0, Lcom/google/protobuf/nano/c;->KS:I
+    iget v3, p0, Lcom/google/protobuf/nano/c;->Pz:I
 
     sub-int/2addr v2, v3
 
@@ -480,29 +375,29 @@
 
     .line 587
     :cond_1
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KS:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pz:I
 
     add-int/2addr v0, p1
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     .line 588
     return-void
 .end method
 
-.method public SK()I
+.method public WF()I
     .locals 1
 
     .prologue
     .line 169
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sw()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wr()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public SL(I)[B
+.method public WG(I)[B
     .locals 4
 
     .prologue
@@ -512,7 +407,7 @@
     if-gez p1, :cond_0
 
     .line 611
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sk()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wf()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -520,25 +415,25 @@
 
     .line 614
     :cond_0
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/2addr v0, p1
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     if-le v0, v1, :cond_1
 
     .line 616
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Py:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     sub-int/2addr v0, v1
 
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->SI(I)V
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->WD(I)V
 
     .line 618
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sl()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wg()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -546,9 +441,9 @@
 
     .line 621
     :cond_1
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KQ:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     sub-int/2addr v0, v1
 
@@ -558,37 +453,37 @@
     new-array v0, p1, [B
 
     .line 624
-    iget-object v1, p0, Lcom/google/protobuf/nano/c;->KW:[B
+    iget-object v1, p0, Lcom/google/protobuf/nano/c;->PD:[B
 
-    iget v2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     invoke-static {v1, v2, v0, v3, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 625
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/2addr v1, p1
 
-    iput v1, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iput v1, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     .line 626
     return-object v0
 
     .line 628
     :cond_2
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sl()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wg()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
     throw v0
 .end method
 
-.method public SM()F
+.method public WH()F
     .locals 1
 
     .prologue
     .line 154
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sy()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wt()I
 
     move-result v0
 
@@ -599,49 +494,49 @@
     return v0
 .end method
 
-.method public SN()J
+.method public WI()J
     .locals 14
 
     .prologue
     const-wide/16 v12, 0xff
 
     .line 349
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v0
 
     .line 350
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v1
 
     .line 351
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v2
 
     .line 352
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v3
 
     .line 353
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v4
 
     .line 354
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v5
 
     .line 355
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v6
 
     .line 356
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v7
 
@@ -737,20 +632,20 @@
     return-wide v0
 .end method
 
-.method public SO()V
+.method public WJ()V
     .locals 1
 
     .prologue
     .line 138
     :cond_0
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sx()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Ws()I
 
     move-result v0
 
     .line 139
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->SQ(I)Z
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->WL(I)Z
 
     move-result v0
 
@@ -763,17 +658,17 @@
     return-void
 .end method
 
-.method public SP(I)V
+.method public WK(I)V
     .locals 1
 
     .prologue
     .line 94
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KU:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->PB:I
 
     if-eq v0, p1, :cond_0
 
     .line 95
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sp()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wk()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -784,21 +679,21 @@
     return-void
 .end method
 
-.method public SQ(I)Z
+.method public WL(I)Z
     .locals 3
 
     .prologue
     const/4 v2, 0x1
 
     .line 106
-    invoke-static {p1}, Lcom/google/protobuf/nano/f;->SU(I)I
+    invoke-static {p1}, Lcom/google/protobuf/nano/f;->WP(I)I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
     .line 128
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sj()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->We()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -806,35 +701,35 @@
 
     .line 108
     :pswitch_0
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WF()I
 
     .line 109
     return v2
 
     .line 111
     :pswitch_1
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SN()J
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WI()J
 
     .line 112
     return v2
 
     .line 114
     :pswitch_2
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sw()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wr()I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->SI(I)V
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->WD(I)V
 
     .line 115
     return v2
 
     .line 117
     :pswitch_3
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SO()V
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WJ()V
 
     .line 119
-    invoke-static {p1}, Lcom/google/protobuf/nano/f;->ST(I)I
+    invoke-static {p1}, Lcom/google/protobuf/nano/f;->WO(I)I
 
     move-result v0
 
@@ -842,12 +737,12 @@
     const/4 v1, 0x4
 
     .line 119
-    invoke-static {v0, v1}, Lcom/google/protobuf/nano/f;->SV(II)I
+    invoke-static {v0, v1}, Lcom/google/protobuf/nano/f;->WQ(II)I
 
     move-result v0
 
     .line 118
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->SP(I)V
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->WK(I)V
 
     .line 121
     return v2
@@ -860,7 +755,7 @@
 
     .line 125
     :pswitch_5
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sy()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wt()I
 
     .line 126
     return v2
@@ -879,28 +774,28 @@
     .end packed-switch
 .end method
 
-.method public Sq(I)V
+.method public Wl(I)V
     .locals 0
 
     .prologue
     .line 512
-    iput p1, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iput p1, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     .line 513
-    invoke-direct {p0}, Lcom/google/protobuf/nano/c;->SC()V
+    invoke-direct {p0}, Lcom/google/protobuf/nano/c;->Wx()V
 
     .line 514
     return-void
 .end method
 
-.method public Sr()Z
+.method public Wm()Z
     .locals 2
 
     .prologue
     .line 535
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KQ:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Px:I
 
     if-ne v0, v1, :cond_0
 
@@ -915,21 +810,21 @@
     goto :goto_0
 .end method
 
-.method public Ss()I
+.method public Wn()I
     .locals 2
 
     .prologue
     .line 542
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KS:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Pz:I
 
     sub-int/2addr v0, v1
 
     return v0
 .end method
 
-.method public St(I)I
+.method public Wo(I)I
     .locals 2
 
     .prologue
@@ -937,7 +832,7 @@
     if-gez p1, :cond_0
 
     .line 480
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sk()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wf()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -945,18 +840,18 @@
 
     .line 482
     :cond_0
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/2addr v0, p1
 
     .line 483
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     .line 484
     if-le v0, v1, :cond_1
 
     .line 485
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sl()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wg()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -964,30 +859,30 @@
 
     .line 487
     :cond_1
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     .line 489
-    invoke-direct {p0}, Lcom/google/protobuf/nano/c;->SC()V
+    invoke-direct {p0}, Lcom/google/protobuf/nano/c;->Wx()V
 
     .line 491
     return v1
 .end method
 
-.method public Su()[B
+.method public Wp()[B
     .locals 5
 
     .prologue
     const/4 v4, 0x0
 
     .line 231
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sw()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wr()I
 
     move-result v0
 
     .line 232
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KQ:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Px:I
 
-    iget v2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     sub-int/2addr v1, v2
 
@@ -999,18 +894,18 @@
     new-array v1, v0, [B
 
     .line 236
-    iget-object v2, p0, Lcom/google/protobuf/nano/c;->KW:[B
+    iget-object v2, p0, Lcom/google/protobuf/nano/c;->PD:[B
 
-    iget v3, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v3, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     invoke-static {v2, v3, v1, v4, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 237
-    iget v2, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v2, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     add-int/2addr v0, v2
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     .line 238
     return-object v1
@@ -1020,25 +915,25 @@
     if-nez v0, :cond_1
 
     .line 240
-    sget-object v0, Lcom/google/protobuf/nano/f;->Li:[B
+    sget-object v0, Lcom/google/protobuf/nano/f;->PP:[B
 
     return-object v0
 
     .line 243
     :cond_1
-    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->SL(I)[B
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->WG(I)[B
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public Sv()I
+.method public Wq()I
     .locals 2
 
     .prologue
     .line 521
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     const v1, 0x7fffffff
 
@@ -1051,24 +946,24 @@
 
     .line 525
     :cond_0
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KP:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->Pw:I
 
     .line 526
-    iget v1, p0, Lcom/google/protobuf/nano/c;->KR:I
+    iget v1, p0, Lcom/google/protobuf/nano/c;->Py:I
 
     sub-int v0, v1, v0
 
     return v0
 .end method
 
-.method public Sw()I
+.method public Wr()I
     .locals 4
 
     .prologue
     const/4 v1, 0x0
 
     .line 287
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v0
 
@@ -1083,7 +978,7 @@
     and-int/lit8 v0, v0, 0x7f
 
     .line 292
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v2
 
@@ -1108,7 +1003,7 @@
     or-int/2addr v0, v2
 
     .line 296
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v2
 
@@ -1130,7 +1025,7 @@
     or-int/2addr v0, v2
 
     .line 300
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v2
 
@@ -1152,7 +1047,7 @@
     or-int/2addr v0, v2
 
     .line 304
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v2
 
@@ -1170,7 +1065,7 @@
     if-ge v1, v2, :cond_6
 
     .line 308
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v2
 
@@ -1187,47 +1082,47 @@
 
     .line 312
     :cond_6
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sn()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wi()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
     throw v0
 .end method
 
-.method public Sx()I
+.method public Ws()I
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
     .line 71
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sr()Z
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wm()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 72
-    iput v1, p0, Lcom/google/protobuf/nano/c;->KU:I
+    iput v1, p0, Lcom/google/protobuf/nano/c;->PB:I
 
     .line 73
     return v1
 
     .line 76
     :cond_0
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Sw()I
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wr()I
 
     move-result v0
 
-    iput v0, p0, Lcom/google/protobuf/nano/c;->KU:I
+    iput v0, p0, Lcom/google/protobuf/nano/c;->PB:I
 
     .line 77
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KU:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->PB:I
 
     if-nez v0, :cond_1
 
     .line 79
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->So()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wj()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
@@ -1235,32 +1130,32 @@
 
     .line 81
     :cond_1
-    iget v0, p0, Lcom/google/protobuf/nano/c;->KU:I
+    iget v0, p0, Lcom/google/protobuf/nano/c;->PB:I
 
     return v0
 .end method
 
-.method public Sy()I
+.method public Wt()I
     .locals 4
 
     .prologue
     .line 337
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v0
 
     .line 338
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v1
 
     .line 339
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v2
 
     .line 340
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v3
 
@@ -1294,7 +1189,7 @@
     return v0
 .end method
 
-.method public Sz()J
+.method public Wu()J
     .locals 6
 
     .prologue
@@ -1310,7 +1205,7 @@
     if-ge v2, v3, :cond_1
 
     .line 325
-    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->SF()B
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WA()B
 
     move-result v3
 
@@ -1339,9 +1234,114 @@
 
     .line 332
     :cond_1
-    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Sn()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wi()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
 
     move-result-object v0
 
     throw v0
+.end method
+
+.method public Wv()D
+    .locals 2
+
+    .prologue
+    .line 149
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->WI()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public Ww(Lcom/google/protobuf/nano/a;)V
+    .locals 3
+
+    .prologue
+    .line 217
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wr()I
+
+    move-result v0
+
+    .line 218
+    iget v1, p0, Lcom/google/protobuf/nano/c;->PE:I
+
+    iget v2, p0, Lcom/google/protobuf/nano/c;->PC:I
+
+    if-lt v1, v2, :cond_0
+
+    .line 219
+    invoke-static {}, Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;->Wh()Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException;
+
+    move-result-object v0
+
+    throw v0
+
+    .line 221
+    :cond_0
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->Wo(I)I
+
+    move-result v0
+
+    .line 222
+    iget v1, p0, Lcom/google/protobuf/nano/c;->PE:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Lcom/google/protobuf/nano/c;->PE:I
+
+    .line 223
+    invoke-virtual {p1, p0}, Lcom/google/protobuf/nano/a;->mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/protobuf/nano/a;
+
+    .line 224
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1}, Lcom/google/protobuf/nano/c;->WK(I)V
+
+    .line 225
+    iget v1, p0, Lcom/google/protobuf/nano/c;->PE:I
+
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, p0, Lcom/google/protobuf/nano/c;->PE:I
+
+    .line 226
+    invoke-virtual {p0, v0}, Lcom/google/protobuf/nano/c;->Wl(I)V
+
+    .line 227
+    return-void
+.end method
+
+.method public Wy()Z
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 184
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wr()I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
+.method public Wz()J
+    .locals 2
+
+    .prologue
+    .line 164
+    invoke-virtual {p0}, Lcom/google/protobuf/nano/c;->Wu()J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

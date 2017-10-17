@@ -6,16 +6,16 @@ package com.google.research.reflection.layers;
 
 class r implements c
 {
-    final /* synthetic */ b NR;
-    final /* synthetic */ b NS;
+    final /* synthetic */ b OL;
+    final /* synthetic */ b OM;
     
-    r(final b nr, final b ns) {
-        this.NR = nr;
-        this.NS = ns;
+    r(final b ol, final b om) {
+        this.OL = ol;
+        this.OM = om;
     }
     
-    public Boolean Vo(final int n) {
-        k.VF(this.NR, n, this.NS);
+    public Boolean Ub(final int n) {
+        k.Ur(this.OL, n, this.OM);
         return true;
     }
 }

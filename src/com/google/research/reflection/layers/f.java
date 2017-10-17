@@ -8,27 +8,27 @@ import java.util.ArrayList;
 
 class f implements c
 {
-    final /* synthetic */ s ME;
-    final /* synthetic */ b MF;
-    final /* synthetic */ b MG;
-    final /* synthetic */ b MH;
-    final /* synthetic */ ArrayList[] MI;
+    final /* synthetic */ b NA;
+    final /* synthetic */ b NB;
+    final /* synthetic */ ArrayList[] NC;
+    final /* synthetic */ s Ny;
+    final /* synthetic */ b Nz;
     
-    f(final s me, final ArrayList[] mi, final b mh, final b mf, final b mg) {
-        this.ME = me;
-        this.MI = mi;
-        this.MH = mh;
-        this.MF = mf;
-        this.MG = mg;
+    f(final s ny, final ArrayList[] nc, final b nb, final b nz, final b na) {
+        this.Ny = ny;
+        this.NC = nc;
+        this.NB = nb;
+        this.Nz = nz;
+        this.NA = na;
     }
     
-    public Boolean Vo(final int n) {
-        final b b = new b(this.ME.Og, this.ME.NU);
-        this.ME.NT[n].Vy(this.MI, this.MH, this.MF, b);
-        final int n2 = n * this.ME.NU;
-        for (int i = 0; i < this.ME.Og; ++i) {
-            for (int j = 0; j < this.ME.NU; ++j) {
-                this.MG.Vd(false, i, n2 + j, b.Vc(false, i, j));
+    public Boolean Ub(final int n) {
+        final b b = new b(this.Ny.Pa, this.Ny.OO);
+        this.Ny.ON[n].Uk(this.NC, this.NB, this.Nz, b);
+        final int n2 = n * this.Ny.OO;
+        for (int i = 0; i < this.Ny.Pa; ++i) {
+            for (int j = 0; j < this.Ny.OO; ++j) {
+                this.NA.TQ(false, i, n2 + j, b.TP(false, i, j));
             }
         }
         return true;

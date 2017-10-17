@@ -4,31 +4,31 @@
 
 
 # static fields
-.field private static Od:D
+.field private static OX:D
 
 
 # instance fields
-.field Oc:Z
+.field OW:Z
 
-.field Oe:Lcom/google/research/reflection/layers/b;
+.field OY:Lcom/google/research/reflection/layers/b;
 
-.field Of:Lcom/google/research/reflection/layers/b;
+.field OZ:Lcom/google/research/reflection/layers/b;
 
-.field Og:I
+.field Pa:I
 
-.field Oh:Lcom/google/research/reflection/common/a;
+.field Pb:Lcom/google/research/reflection/common/a;
 
-.field Oi:Lcom/google/research/reflection/common/a;
+.field Pc:Lcom/google/research/reflection/common/a;
 
-.field Oj:Z
+.field Pd:Z
 
-.field Ok:I
+.field Pe:I
 
-.field Ol:I
+.field Pf:I
 
-.field Om:Lcom/google/research/reflection/common/a;
+.field Pg:Lcom/google/research/reflection/common/a;
 
-.field On:Lcom/google/research/reflection/layers/b;
+.field Ph:Lcom/google/research/reflection/layers/b;
 
 
 # direct methods
@@ -39,7 +39,7 @@
     .line 16
     const-wide v0, 0x3fb999999999999aL    # 0.1
 
-    sput-wide v0, Lcom/google/research/reflection/layers/v;->Od:D
+    sput-wide v0, Lcom/google/research/reflection/layers/v;->OX:D
 
     return-void
 .end method
@@ -69,301 +69,143 @@
 
     invoke-direct {v0, p2, v1}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Om:Lcom/google/research/reflection/common/a;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Pg:Lcom/google/research/reflection/common/a;
 
     .line 52
     new-instance v0, Lcom/google/research/reflection/common/a;
 
     invoke-direct {v0, p2, v1}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Oh:Lcom/google/research/reflection/common/a;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Pb:Lcom/google/research/reflection/common/a;
 
     .line 53
     new-instance v0, Lcom/google/research/reflection/common/a;
 
     invoke-direct {v0, p2, v1}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Oi:Lcom/google/research/reflection/common/a;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Pc:Lcom/google/research/reflection/common/a;
 
     .line 55
-    iput p3, p0, Lcom/google/research/reflection/layers/v;->Og:I
+    iput p3, p0, Lcom/google/research/reflection/layers/v;->Pa:I
 
     .line 56
-    iput p4, p0, Lcom/google/research/reflection/layers/v;->Ok:I
+    iput p4, p0, Lcom/google/research/reflection/layers/v;->Pe:I
 
     .line 57
-    iput p5, p0, Lcom/google/research/reflection/layers/v;->Ol:I
+    iput p5, p0, Lcom/google/research/reflection/layers/v;->Pf:I
 
     .line 58
-    iput-boolean p1, p0, Lcom/google/research/reflection/layers/v;->Oc:Z
+    iput-boolean p1, p0, Lcom/google/research/reflection/layers/v;->OW:Z
 
     .line 60
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
     invoke-direct {v0, p3, p5}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->On:Lcom/google/research/reflection/layers/b;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Ph:Lcom/google/research/reflection/layers/b;
 
     .line 61
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
     invoke-direct {v0, p3, p4}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
 
     .line 62
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
     invoke-direct {v0, p3, p5}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
 
     .line 63
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 64
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 65
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->On:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Ph:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 66
     return-void
 .end method
 
-.method public static Wj()D
+.method public static UV()D
     .locals 2
 
     .prologue
     .line 231
-    sget-wide v0, Lcom/google/research/reflection/layers/v;->Od:D
+    sget-wide v0, Lcom/google/research/reflection/layers/v;->OX:D
 
     return-wide v0
 .end method
 
 
 # virtual methods
-.method public abstract VI()Ljava/lang/String;
+.method public abstract UB(ZLcom/google/research/reflection/layers/a;[Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;)Lcom/google/research/reflection/layers/b;
 .end method
 
-.method public VJ(Ljava/io/DataOutputStream;)V
-    .locals 1
-
-    .prologue
-    .line 72
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Og:I
-
-    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 73
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Ol:I
-
-    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 74
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Ok:I
-
-    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 75
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Om:Lcom/google/research/reflection/common/a;
-
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Uk()I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 76
-    iget-boolean v0, p0, Lcom/google/research/reflection/layers/v;->Oc:Z
-
-    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeBoolean(Z)V
-
-    .line 77
-    return-void
-.end method
-
-.method public VK(Ljava/io/DataInputStream;)V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x1
-
-    .line 80
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/research/reflection/layers/v;->Og:I
-
-    .line 81
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/research/reflection/layers/v;->Ol:I
-
-    .line 82
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/research/reflection/layers/v;->Ok:I
-
-    .line 83
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v0
-
-    .line 84
-    invoke-virtual {p1}, Ljava/io/DataInputStream;->readBoolean()Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Lcom/google/research/reflection/layers/v;->Oc:Z
-
-    .line 86
-    new-instance v1, Lcom/google/research/reflection/common/a;
-
-    invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
-
-    iput-object v1, p0, Lcom/google/research/reflection/layers/v;->Om:Lcom/google/research/reflection/common/a;
-
-    .line 87
-    new-instance v1, Lcom/google/research/reflection/common/a;
-
-    invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
-
-    iput-object v1, p0, Lcom/google/research/reflection/layers/v;->Oh:Lcom/google/research/reflection/common/a;
-
-    .line 88
-    new-instance v1, Lcom/google/research/reflection/common/a;
-
-    invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
-
-    iput-object v1, p0, Lcom/google/research/reflection/layers/v;->Oi:Lcom/google/research/reflection/common/a;
-
-    .line 90
-    new-instance v0, Lcom/google/research/reflection/layers/b;
-
-    iget v1, p0, Lcom/google/research/reflection/layers/v;->Og:I
-
-    iget v2, p0, Lcom/google/research/reflection/layers/v;->Ol:I
-
-    invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
-
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->On:Lcom/google/research/reflection/layers/b;
-
-    .line 91
-    new-instance v0, Lcom/google/research/reflection/layers/b;
-
-    iget v1, p0, Lcom/google/research/reflection/layers/v;->Og:I
-
-    iget v2, p0, Lcom/google/research/reflection/layers/v;->Ok:I
-
-    invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
-
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
-
-    .line 92
-    new-instance v0, Lcom/google/research/reflection/layers/b;
-
-    iget v1, p0, Lcom/google/research/reflection/layers/v;->Og:I
-
-    iget v2, p0, Lcom/google/research/reflection/layers/v;->Ol:I
-
-    invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
-
-    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
-
-    .line 93
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
-
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
-
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
-
-    .line 94
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
-
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
-
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
-
-    .line 95
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->On:Lcom/google/research/reflection/layers/b;
-
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
-
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
-
-    .line 96
-    return-void
-.end method
-
-.method public abstract VP(ZLcom/google/research/reflection/layers/a;[Ljava/util/ArrayList;Lcom/google/research/reflection/layers/b;)Lcom/google/research/reflection/layers/b;
-.end method
-
-.method VQ()V
+.method UC()V
     .locals 1
 
     .prologue
     .line 173
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 174
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 175
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->On:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Ph:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 176
     return-void
 .end method
 
-.method public abstract VR(Lcom/google/research/reflection/layers/a;ILcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;)V
+.method public abstract UD(Lcom/google/research/reflection/layers/a;ILcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;Lcom/google/research/reflection/layers/b;)V
 .end method
 
-.method public Wc()V
+.method public UO()V
     .locals 1
 
     .prologue
     .line 167
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Om:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Pg:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->clear()V
 
     .line 168
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Oh:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Pb:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->clear()V
 
     .line 169
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Oi:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Pc:Lcom/google/research/reflection/common/a;
 
     invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->clear()V
 
@@ -371,7 +213,7 @@
     return-void
 .end method
 
-.method Wd(Ljava/io/DataInputStream;)V
+.method UP(Ljava/io/DataInputStream;)V
     .locals 5
 
     .prologue
@@ -381,7 +223,7 @@
     move-result-object v0
 
     .line 213
-    invoke-virtual {p0}, Lcom/google/research/reflection/layers/v;->VI()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/research/reflection/layers/v;->Uu()Ljava/lang/String;
 
     move-result-object v1
 
@@ -398,7 +240,7 @@
     :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
-    invoke-virtual {p0}, Lcom/google/research/reflection/layers/v;->VI()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/research/reflection/layers/v;->Uu()Ljava/lang/String;
 
     move-result-object v2
 
@@ -459,12 +301,12 @@
     throw v1
 .end method
 
-.method We(Ljava/io/DataOutputStream;)V
+.method UQ(Ljava/io/DataOutputStream;)V
     .locals 1
 
     .prologue
     .line 208
-    invoke-virtual {p0}, Lcom/google/research/reflection/layers/v;->VI()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/research/reflection/layers/v;->Uu()Ljava/lang/String;
 
     move-result-object v0
 
@@ -474,60 +316,60 @@
     return-void
 .end method
 
-.method public Wf()I
+.method public UR()I
     .locals 1
 
     .prologue
     .line 139
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Og:I
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pa:I
 
     return v0
 .end method
 
-.method public Wg()I
+.method public US()I
     .locals 1
 
     .prologue
     .line 155
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Om:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Pg:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Uk()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SX()I
 
     move-result v0
 
     return v0
 .end method
 
-.method public Wh()I
+.method public UT()I
     .locals 1
 
     .prologue
     .line 143
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Ok:I
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pe:I
 
     return v0
 .end method
 
-.method public Wi()Lcom/google/research/reflection/layers/b;
+.method public UU()Lcom/google/research/reflection/layers/b;
     .locals 1
 
     .prologue
     .line 183
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
 
     return-object v0
 .end method
 
-.method public Wk(Lcom/google/research/reflection/layers/v;)V
+.method public UW(Lcom/google/research/reflection/layers/v;)V
     .locals 3
 
     .prologue
     const/4 v2, 0x1
 
     .line 109
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Om:Lcom/google/research/reflection/common/a;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Pg:Lcom/google/research/reflection/common/a;
 
-    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->Uk()I
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SX()I
 
     move-result v0
 
@@ -536,118 +378,276 @@
 
     invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v1, p1, Lcom/google/research/reflection/layers/v;->Om:Lcom/google/research/reflection/common/a;
+    iput-object v1, p1, Lcom/google/research/reflection/layers/v;->Pg:Lcom/google/research/reflection/common/a;
 
     .line 111
     new-instance v1, Lcom/google/research/reflection/common/a;
 
     invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v1, p1, Lcom/google/research/reflection/layers/v;->Oh:Lcom/google/research/reflection/common/a;
+    iput-object v1, p1, Lcom/google/research/reflection/layers/v;->Pb:Lcom/google/research/reflection/common/a;
 
     .line 112
     new-instance v1, Lcom/google/research/reflection/common/a;
 
     invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
 
-    iput-object v1, p1, Lcom/google/research/reflection/layers/v;->Oi:Lcom/google/research/reflection/common/a;
+    iput-object v1, p1, Lcom/google/research/reflection/layers/v;->Pc:Lcom/google/research/reflection/common/a;
 
     .line 113
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Ok:I
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pe:I
 
-    iput v0, p1, Lcom/google/research/reflection/layers/v;->Ok:I
+    iput v0, p1, Lcom/google/research/reflection/layers/v;->Pe:I
 
     .line 114
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Ol:I
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pf:I
 
-    iput v0, p1, Lcom/google/research/reflection/layers/v;->Ol:I
+    iput v0, p1, Lcom/google/research/reflection/layers/v;->Pf:I
 
     .line 115
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Og:I
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pa:I
 
-    iput v0, p1, Lcom/google/research/reflection/layers/v;->Og:I
+    iput v0, p1, Lcom/google/research/reflection/layers/v;->Pa:I
 
     .line 116
-    iget-boolean v0, p0, Lcom/google/research/reflection/layers/v;->Oc:Z
+    iget-boolean v0, p0, Lcom/google/research/reflection/layers/v;->OW:Z
 
-    iput-boolean v0, p1, Lcom/google/research/reflection/layers/v;->Oc:Z
+    iput-boolean v0, p1, Lcom/google/research/reflection/layers/v;->OW:Z
 
     .line 118
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
-    iget v1, p0, Lcom/google/research/reflection/layers/v;->Og:I
+    iget v1, p0, Lcom/google/research/reflection/layers/v;->Pa:I
 
-    iget v2, p0, Lcom/google/research/reflection/layers/v;->Ol:I
+    iget v2, p0, Lcom/google/research/reflection/layers/v;->Pf:I
 
     invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
-    iput-object v0, p1, Lcom/google/research/reflection/layers/v;->On:Lcom/google/research/reflection/layers/b;
+    iput-object v0, p1, Lcom/google/research/reflection/layers/v;->Ph:Lcom/google/research/reflection/layers/b;
 
     .line 119
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
-    iget v1, p0, Lcom/google/research/reflection/layers/v;->Og:I
+    iget v1, p0, Lcom/google/research/reflection/layers/v;->Pa:I
 
-    iget v2, p0, Lcom/google/research/reflection/layers/v;->Ok:I
+    iget v2, p0, Lcom/google/research/reflection/layers/v;->Pe:I
 
     invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
-    iput-object v0, p1, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
+    iput-object v0, p1, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
 
     .line 120
     new-instance v0, Lcom/google/research/reflection/layers/b;
 
-    iget v1, p0, Lcom/google/research/reflection/layers/v;->Og:I
+    iget v1, p0, Lcom/google/research/reflection/layers/v;->Pa:I
 
-    iget v2, p0, Lcom/google/research/reflection/layers/v;->Ol:I
+    iget v2, p0, Lcom/google/research/reflection/layers/v;->Pf:I
 
     invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
 
-    iput-object v0, p1, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
+    iput-object v0, p1, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
 
     .line 121
-    iget-object v0, p1, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p1, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 122
-    iget-object v0, p1, Lcom/google/research/reflection/layers/v;->Of:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p1, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 123
-    iget-object v0, p1, Lcom/google/research/reflection/layers/v;->On:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p1, Lcom/google/research/reflection/layers/v;->Ph:Lcom/google/research/reflection/layers/b;
 
-    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
 
-    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->VD([D)V
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
 
     .line 124
     return-void
 .end method
 
-.method public Wl()I
+.method public UX()I
     .locals 1
 
     .prologue
     .line 147
-    iget v0, p0, Lcom/google/research/reflection/layers/v;->Ol:I
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pf:I
 
     return v0
 .end method
 
-.method public Wm()Lcom/google/research/reflection/layers/b;
+.method public UY()Lcom/google/research/reflection/layers/b;
     .locals 1
 
     .prologue
     .line 179
-    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Oe:Lcom/google/research/reflection/layers/b;
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
 
     return-object v0
+.end method
+
+.method public abstract Uu()Ljava/lang/String;
+.end method
+
+.method public Uv(Ljava/io/DataOutputStream;)V
+    .locals 1
+
+    .prologue
+    .line 72
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pa:I
+
+    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    .line 73
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pf:I
+
+    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    .line 74
+    iget v0, p0, Lcom/google/research/reflection/layers/v;->Pe:I
+
+    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    .line 75
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Pg:Lcom/google/research/reflection/common/a;
+
+    invoke-virtual {v0}, Lcom/google/research/reflection/common/a;->SX()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    .line 76
+    iget-boolean v0, p0, Lcom/google/research/reflection/layers/v;->OW:Z
+
+    invoke-virtual {p1, v0}, Ljava/io/DataOutputStream;->writeBoolean(Z)V
+
+    .line 77
+    return-void
+.end method
+
+.method public Uw(Ljava/io/DataInputStream;)V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 80
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/research/reflection/layers/v;->Pa:I
+
+    .line 81
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/research/reflection/layers/v;->Pf:I
+
+    .line 82
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/research/reflection/layers/v;->Pe:I
+
+    .line 83
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    move-result v0
+
+    .line 84
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readBoolean()Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/google/research/reflection/layers/v;->OW:Z
+
+    .line 86
+    new-instance v1, Lcom/google/research/reflection/common/a;
+
+    invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
+
+    iput-object v1, p0, Lcom/google/research/reflection/layers/v;->Pg:Lcom/google/research/reflection/common/a;
+
+    .line 87
+    new-instance v1, Lcom/google/research/reflection/common/a;
+
+    invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
+
+    iput-object v1, p0, Lcom/google/research/reflection/layers/v;->Pb:Lcom/google/research/reflection/common/a;
+
+    .line 88
+    new-instance v1, Lcom/google/research/reflection/common/a;
+
+    invoke-direct {v1, v0, v2}, Lcom/google/research/reflection/common/a;-><init>(IZ)V
+
+    iput-object v1, p0, Lcom/google/research/reflection/layers/v;->Pc:Lcom/google/research/reflection/common/a;
+
+    .line 90
+    new-instance v0, Lcom/google/research/reflection/layers/b;
+
+    iget v1, p0, Lcom/google/research/reflection/layers/v;->Pa:I
+
+    iget v2, p0, Lcom/google/research/reflection/layers/v;->Pf:I
+
+    invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
+
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->Ph:Lcom/google/research/reflection/layers/b;
+
+    .line 91
+    new-instance v0, Lcom/google/research/reflection/layers/b;
+
+    iget v1, p0, Lcom/google/research/reflection/layers/v;->Pa:I
+
+    iget v2, p0, Lcom/google/research/reflection/layers/v;->Pe:I
+
+    invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
+
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
+
+    .line 92
+    new-instance v0, Lcom/google/research/reflection/layers/b;
+
+    iget v1, p0, Lcom/google/research/reflection/layers/v;->Pa:I
+
+    iget v2, p0, Lcom/google/research/reflection/layers/v;->Pf:I
+
+    invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/layers/b;-><init>(II)V
+
+    iput-object v0, p0, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
+
+    .line 93
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OY:Lcom/google/research/reflection/layers/b;
+
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
+
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
+
+    .line 94
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->OZ:Lcom/google/research/reflection/layers/b;
+
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
+
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
+
+    .line 95
+    iget-object v0, p0, Lcom/google/research/reflection/layers/v;->Ph:Lcom/google/research/reflection/layers/b;
+
+    iget-object v0, v0, Lcom/google/research/reflection/layers/b;->Nl:[D
+
+    invoke-static {v0}, Lcom/google/research/reflection/layers/k;->Up([D)V
+
+    .line 96
+    return-void
 .end method
 
 .method public abstract clone()Lcom/google/research/reflection/layers/v;

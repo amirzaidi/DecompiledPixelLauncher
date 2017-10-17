@@ -15,6 +15,6 @@ public abstract class ParcelableMessageNano extends a implements Parcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        com.google.protobuf.nano.android.a.Re(this.getClass(), this, parcel);
+        com.google.protobuf.nano.android.a.UZ(this.getClass(), this, parcel);
     }
 }

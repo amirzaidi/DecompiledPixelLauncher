@@ -9,41 +9,41 @@ import java.util.Map;
 
 public class e
 {
-    private float LL;
-    private Map LM;
-    private double[] LN;
-    private ArrayList LO;
-    private float[] LP;
+    private float MF;
+    private Map MG;
+    private double[] MH;
+    private ArrayList MI;
+    private float[] MJ;
     
     public e() {
-        this.LM = null;
-        this.LN = null;
-        this.LP = null;
-        this.LL = -1.0f;
-        this.LO = null;
+        this.MG = null;
+        this.MH = null;
+        this.MJ = null;
+        this.MF = -1.0f;
+        this.MI = null;
     }
     
-    public float[] TV() {
-        return this.LP;
+    public float[] SI() {
+        return this.MJ;
     }
     
-    public double[] TW() {
-        return this.LN;
+    public double[] SJ() {
+        return this.MH;
     }
     
-    public void TX(final ArrayList lo) {
-        this.LO = lo;
+    public void SK(final ArrayList mi) {
+        this.MI = mi;
     }
     
-    public void TY(final double[] ln) {
-        this.LN = ln;
+    public void SL(final double[] mh) {
+        this.MH = mh;
     }
     
-    public void TZ(final float[] lp) {
-        this.LP = lp;
+    public void SM(final float[] mj) {
+        this.MJ = mj;
     }
     
-    public ArrayList Ua() {
-        return this.LO;
+    public ArrayList SN() {
+        return this.MI;
     }
 }

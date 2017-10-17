@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field Md:Lcom/google/research/reflection/b/a;
+.field MX:Lcom/google/research/reflection/b/a;
 
 
 # direct methods
@@ -18,7 +18,7 @@
     return-void
 .end method
 
-.method public static UC(Ljava/lang/String;)Lcom/google/research/reflection/b/b;
+.method public static Tp(Ljava/lang/String;)Lcom/google/research/reflection/b/b;
     .locals 1
 
     .prologue
@@ -252,7 +252,7 @@
     return-object v0
 .end method
 
-.method public static UE(Lcom/google/research/reflection/b/b;)Ljava/lang/String;
+.method public static Tr(Lcom/google/research/reflection/b/b;)Ljava/lang/String;
     .locals 1
 
     .prologue
@@ -358,24 +358,24 @@
 
 
 # virtual methods
-.method public UD(Lcom/google/research/reflection/b/a;)V
+.method public Tq(Lcom/google/research/reflection/b/a;)V
     .locals 0
 
     .prologue
     .line 118
-    iput-object p1, p0, Lcom/google/research/reflection/b/b;->Md:Lcom/google/research/reflection/b/a;
+    iput-object p1, p0, Lcom/google/research/reflection/b/b;->MX:Lcom/google/research/reflection/b/a;
 
     .line 119
     return-void
 .end method
 
-.method public abstract UF()I
+.method public abstract Ts()I
 .end method
 
-.method public abstract UG(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
+.method public abstract Tt(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
 .end method
 
-.method public UH(Ljava/util/List;)V
+.method public Tu(Ljava/util/List;)V
     .locals 0
 
     .prologue
@@ -383,7 +383,7 @@
     return-void
 .end method
 
-.method public UI(Ljava/io/DataInputStream;)V
+.method public Tv(Ljava/io/DataInputStream;)V
     .locals 0
 
     .prologue
@@ -391,7 +391,7 @@
     return-void
 .end method
 
-.method public UJ(Ljava/io/DataOutputStream;)V
+.method public Tw(Ljava/io/DataOutputStream;)V
     .locals 0
 
     .prologue
@@ -399,12 +399,12 @@
     return-void
 .end method
 
-.method UK(Ljava/lang/Integer;)V
+.method Tx(Ljava/lang/Integer;)V
     .locals 2
 
     .prologue
     .line 122
-    iget-object v0, p0, Lcom/google/research/reflection/b/b;->Md:Lcom/google/research/reflection/b/a;
+    iget-object v0, p0, Lcom/google/research/reflection/b/b;->MX:Lcom/google/research/reflection/b/a;
 
     if-nez v0, :cond_0
 
@@ -414,13 +414,13 @@
 
     .line 123
     :cond_0
-    iget-object v0, p0, Lcom/google/research/reflection/b/b;->Md:Lcom/google/research/reflection/b/a;
+    iget-object v0, p0, Lcom/google/research/reflection/b/b;->MX:Lcom/google/research/reflection/b/a;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    invoke-interface {v0, p0, v1}, Lcom/google/research/reflection/b/a;->Ue(Lcom/google/research/reflection/b/b;I)V
+    invoke-interface {v0, p0, v1}, Lcom/google/research/reflection/b/a;->SR(Lcom/google/research/reflection/b/b;I)V
 
     goto :goto_0
 .end method

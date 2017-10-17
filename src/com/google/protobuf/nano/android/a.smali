@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private final KM:Ljava/lang/Class;
+.field private final Pt:Ljava/lang/Class;
 
 
 # direct methods
-.method static Re(Ljava/lang/Class;Lcom/google/protobuf/nano/a;Landroid/os/Parcel;)V
+.method static UZ(Ljava/lang/Class;Lcom/google/protobuf/nano/a;Landroid/os/Parcel;)V
     .locals 1
 
     .prologue
@@ -294,7 +294,7 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcom/google/protobuf/nano/android/a;->KM:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/google/protobuf/nano/android/a;->Pt:Ljava/lang/Class;
 
     invoke-static {v0, p1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 

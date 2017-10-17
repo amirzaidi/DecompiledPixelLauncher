@@ -19,26 +19,26 @@ import com.google.research.reflection.common.a;
 
 public class d
 {
-    protected boolean LH;
-    private int LI;
-    protected a LJ;
-    private long LK;
+    protected boolean MB;
+    private int MC;
+    protected a MD;
+    private long ME;
     
     public d() {
-        this.LK = 3600000L;
-        this.LI = 100;
-        this.LJ = new a(this.LI, false);
+        this.ME = 3600000L;
+        this.MC = 100;
+        this.MD = new a(this.MC, false);
     }
     
-    public static d TN(final String s, final b b) {
-        d tp = new d();
+    public static d SA(final String s, final b b) {
+        d sc = new d();
         if (s != null) {
-            tp = TP(s.getBytes(StandardCharsets.ISO_8859_1), b);
+            sc = SC(s.getBytes(StandardCharsets.ISO_8859_1), b);
         }
-        return tp;
+        return sc;
     }
     
-    public static d TP(final byte[] array, final b b) {
+    public static d SC(final byte[] array, final b b) {
         final d d = new d();
         try {
             final DataInputStream dataInputStream = new(java.io.DataInputStream.class);
@@ -47,7 +47,7 @@ public class d
                 final DataInputStream dataInputStream2 = dataInputStream;
                 try {
                     new DataInputStream(byteArrayInputStream);
-                    d.TO(dataInputStream, b);
+                    d.SB(dataInputStream, b);
                     dataInputStream.close();
                     return d;
                 }
@@ -60,20 +60,20 @@ public class d
         catch (IOException ex3) {}
     }
     
-    public static String TS(final d d) {
+    public static String SF(final d d) {
         if (d == null) {
             return null;
         }
-        return new String(TU(d), StandardCharsets.ISO_8859_1);
+        return new String(SH(d), StandardCharsets.ISO_8859_1);
     }
     
-    public static byte[] TU(final d d) {
+    public static byte[] SH(final d d) {
         try {
             try {
                 final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 final DataOutputStream dataOutputStream = new DataOutputStream(byteArrayOutputStream);
                 try {
-                    d.TQ(dataOutputStream);
+                    d.SD(dataOutputStream);
                     dataOutputStream.close();
                     return byteArrayOutputStream.toByteArray();
                 }
@@ -87,30 +87,69 @@ public class d
         catch (IOException ex3) {}
     }
     
-    public void TM(final b b) {
-        final boolean lh = true;
-        if (this.TT(b)) {
+    public void SB(final DataInputStream dataInputStream, final b b) {
+        byte[] array = null;
+        this.clear();
+        for (int int1 = dataInputStream.readInt(), i = 0; i < int1; ++i) {
+            final int int2 = dataInputStream.readInt();
+            if (array == null || array.length < int2) {
+                array = new byte[int2];
+            }
+            dataInputStream.read(array, 0, int2);
+            final b j = b.I(array, 0, int2);
+            if (this.SG(j)) {
+                this.Sz(j);
+            }
+        }
+    }
+    
+    public void SD(final DataOutputStream dataOutputStream) {
+        final int size = this.size();
+        dataOutputStream.writeInt(size);
+        for (int i = 0; i < size; ++i) {
+            final byte[] r = ((b)this.MD.ST(i)).R();
+            dataOutputStream.writeInt(r.length);
+            dataOutputStream.write(r, 0, r.length);
+        }
+        this.MB = false;
+    }
+    
+    public a SE() {
+        return this.MD;
+    }
+    
+    protected boolean SG(final b b) {
+        boolean b2 = false;
+        if (b.Q() == null || b.Q().equals("") || b.Q().equals("app_launch")) {
+            b2 = true;
+        }
+        return b2;
+    }
+    
+    public void Sz(final b b) {
+        final boolean mb = true;
+        if (this.SG(b)) {
         Label_0028:
-            while (this.LJ.Ui() > 0) {
+            while (this.MD.SV() > 0) {
                 while (true) {
                     while (true) {
                         Label_0119: {
                             try {
-                                final Object ug = this.LJ.Ug(0);
+                                final Object st = this.MD.ST(0);
                                 try {
-                                    final long ua = e.UA((b)ug, b);
-                                    if (ua > this.LK) {
+                                    final long tn = e.Tn((b)st, b);
+                                    if (tn > this.ME) {
                                         break Label_0119;
                                     }
-                                    final int n = lh ? 1 : 0;
+                                    final int n = mb ? 1 : 0;
                                     if (n == 0) {
-                                        this.LJ.Uj();
+                                        this.MD.SW();
                                         break;
                                     }
                                     break Label_0028;
                                 }
                                 catch (UncertaintyException ex) {
-                                    final long ua = Long.MAX_VALUE;
+                                    final long tn = Long.MAX_VALUE;
                                 }
                             }
                             catch (UncertaintyException ex2) {}
@@ -120,65 +159,26 @@ public class d
                     }
                 }
             }
-            this.LJ.add(b);
-            this.LH = lh;
+            this.MD.add(b);
+            this.MB = mb;
         }
-    }
-    
-    public void TO(final DataInputStream dataInputStream, final b b) {
-        byte[] array = null;
-        this.clear();
-        for (int int1 = dataInputStream.readInt(), i = 0; i < int1; ++i) {
-            final int int2 = dataInputStream.readInt();
-            if (array == null || array.length < int2) {
-                array = new byte[int2];
-            }
-            dataInputStream.read(array, 0, int2);
-            final b az = b.az(array, 0, int2);
-            if (this.TT(az)) {
-                this.TM(az);
-            }
-        }
-    }
-    
-    public void TQ(final DataOutputStream dataOutputStream) {
-        final int size = this.size();
-        dataOutputStream.writeInt(size);
-        for (int i = 0; i < size; ++i) {
-            final byte[] ai = ((b)this.LJ.Ug(i)).aI();
-            dataOutputStream.writeInt(ai.length);
-            dataOutputStream.write(ai, 0, ai.length);
-        }
-        this.LH = false;
-    }
-    
-    public a TR() {
-        return this.LJ;
-    }
-    
-    protected boolean TT(final b b) {
-        boolean b2 = false;
-        if (b.aH() == null || b.aH().equals("") || b.aH().equals("app_launch")) {
-            b2 = true;
-        }
-        return b2;
     }
     
     public void clear() {
-        this.LJ.clear();
+        this.MD.clear();
     }
     
     public int size() {
-        return this.LJ.Ui();
+        return this.MD.SV();
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder();
         sb.append("(size ");
-        sb.append(this.LJ.Ui());
+        sb.append(this.MD.SV());
         sb.append("): ");
-        for (int i = 0; i < this.LJ.Ui(); ++i) {
-            sb.append(((b)this.LJ.Ug(i)).getId());
+        for (int i = 0; i < this.MD.SV(); ++i) {
+            sb.append(((b)this.MD.ST(i)).getId());
             sb.append(" ");
         }
         sb.append("\n");

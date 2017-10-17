@@ -8,103 +8,103 @@ import java.util.LinkedList;
 
 public class a
 {
-    private LinkedList LW;
-    private int LX;
-    private int LY;
-    private int LZ;
-    private Object[] Ma;
+    private LinkedList MQ;
+    private int MR;
+    private int MS;
+    private int MT;
+    private Object[] MU;
     
     public a(final int n, final boolean b) {
         final int n2 = -1;
-        this.LX = n2;
-        this.LY = 0;
-        this.LZ = n2;
+        this.MR = n2;
+        this.MS = 0;
+        this.MT = n2;
         if (n > 0) {
-            this.Ma = new Object[n];
+            this.MU = new Object[n];
             if (b) {
-                this.LW = new LinkedList();
+                this.MQ = new LinkedList();
             }
             return;
         }
         throw new RuntimeException();
     }
     
-    private boolean Um() {
-        return this.LW != null && this.LW.size() < this.Ma.length;
+    private boolean SZ() {
+        return this.MQ != null && this.MQ.size() < this.MU.length;
     }
     
-    public Object Uf() {
-        if (this.LW != null && !this.LW.isEmpty()) {
-            return this.LW.removeLast();
+    public Object SS() {
+        if (this.MQ != null && !this.MQ.isEmpty()) {
+            return this.MQ.removeLast();
         }
         return null;
     }
     
-    public Object Ug(final int n) {
-        if (n >= 0 && n < this.LY) {
-            int n2 = this.LX - (this.LY - n - 1);
+    public Object ST(final int n) {
+        if (n >= 0 && n < this.MS) {
+            int n2 = this.MR - (this.MS - n - 1);
             if (n2 < 0) {
-                n2 += this.Ma.length;
+                n2 += this.MU.length;
             }
-            return this.Ma[n2];
+            return this.MU[n2];
         }
         return null;
     }
     
-    public Object Uh() {
-        if (this.LY != 0) {
-            return this.Ma[this.LX];
+    public Object SU() {
+        if (this.MS != 0) {
+            return this.MU[this.MR];
         }
         return null;
     }
     
-    public int Ui() {
-        return this.LY;
+    public int SV() {
+        return this.MS;
     }
     
-    public void Uj() {
-        if (this.LY != 0) {
-            int n = this.LX - (this.LY - 1);
+    public void SW() {
+        if (this.MS != 0) {
+            int n = this.MR - (this.MS - 1);
             if (n < 0) {
-                n += this.Ma.length;
+                n += this.MU.length;
             }
-            if (this.Um()) {
-                this.LW.add(this.Ma[n]);
+            if (this.SZ()) {
+                this.MQ.add(this.MU[n]);
             }
-            this.Ma[n] = null;
-            --this.LY;
-            --this.LZ;
+            this.MU[n] = null;
+            --this.MS;
+            --this.MT;
         }
     }
     
-    public int Uk() {
-        return this.Ma.length;
+    public int SX() {
+        return this.MU.length;
     }
     
-    public int Ul() {
-        return this.LZ;
+    public int SY() {
+        return this.MT;
     }
     
     public Object add(final Object o) {
-        ++this.LX;
-        if (this.LX == this.Ma.length) {
-            this.LX = 0;
+        ++this.MR;
+        if (this.MR == this.MU.length) {
+            this.MR = 0;
         }
-        if (this.Ma[this.LX] != null && this.Um()) {
-            this.LW.add(this.Ma[this.LX]);
+        if (this.MU[this.MR] != null && this.SZ()) {
+            this.MQ.add(this.MU[this.MR]);
         }
-        this.Ma[this.LX] = o;
-        if (this.LY < this.Ma.length) {
-            ++this.LY;
+        this.MU[this.MR] = o;
+        if (this.MS < this.MU.length) {
+            ++this.MS;
         }
-        ++this.LZ;
+        ++this.MT;
         return o;
     }
     
     public void clear() {
         final int n = -1;
-        this.LX = n;
-        this.LZ = n;
-        this.LY = 0;
+        this.MR = n;
+        this.MT = n;
+        this.MS = 0;
     }
 }

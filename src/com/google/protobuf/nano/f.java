@@ -6,51 +6,51 @@ package com.google.protobuf.nano;
 
 public final class f
 {
-    public static final long[] Lc;
-    public static final float[] Ld;
-    public static final boolean[] Le;
-    public static final byte[][] Lf;
-    public static final String[] Lg;
-    public static final int[] Lh;
-    public static final byte[] Li;
-    public static final double[] Lj;
+    public static final long[] PJ;
+    public static final float[] PK;
+    public static final boolean[] PL;
+    public static final byte[][] PM;
+    public static final String[] PN;
+    public static final int[] PO;
+    public static final byte[] PP;
+    public static final double[] PQ;
     
     static {
-        Lh = new int[0];
-        Lc = new long[0];
-        Ld = new float[0];
-        Lj = new double[0];
-        Le = new boolean[0];
-        Lg = new String[0];
-        Lf = new byte[0][];
-        Li = new byte[0];
+        PO = new int[0];
+        PJ = new long[0];
+        PK = new float[0];
+        PQ = new double[0];
+        PL = new boolean[0];
+        PN = new String[0];
+        PM = new byte[0][];
+        PP = new byte[0];
     }
     
-    public static final int SS(final c c, final int n) {
+    public static final int WN(final c c, final int n) {
         int n2 = 1;
-        final int ss = c.Ss();
-        c.SQ(n);
-        while (c.Sx() == n) {
-            c.SQ(n);
+        final int wn = c.Wn();
+        c.WL(n);
+        while (c.Ws() == n) {
+            c.WL(n);
             ++n2;
         }
-        c.SJ(ss);
+        c.WE(wn);
         return n2;
     }
     
-    public static int ST(final int n) {
+    public static int WO(final int n) {
         return n >>> 3;
     }
     
-    static int SU(final int n) {
+    static int WP(final int n) {
         return n & 0x7;
     }
     
-    static int SV(final int n, final int n2) {
+    static int WQ(final int n, final int n2) {
         return n << 3 | n2;
     }
     
-    public static boolean SW(final c c, final int n) {
-        return c.SQ(n);
+    public static boolean WR(final c c, final int n) {
+        return c.WL(n);
     }
 }

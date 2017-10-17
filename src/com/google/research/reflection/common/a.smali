@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field private LW:Ljava/util/LinkedList;
+.field private MQ:Ljava/util/LinkedList;
 
-.field private LX:I
+.field private MR:I
 
-.field private LY:I
+.field private MS:I
 
-.field private LZ:I
+.field private MT:I
 
-.field private Ma:[Ljava/lang/Object;
+.field private MU:[Ljava/lang/Object;
 
 
 # direct methods
@@ -28,13 +28,13 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 9
-    iput v1, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iput v1, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     .line 10
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     .line 14
-    iput v1, p0, Lcom/google/research/reflection/common/a;->LZ:I
+    iput v1, p0, Lcom/google/research/reflection/common/a;->MT:I
 
     .line 17
     if-lez p1, :cond_0
@@ -42,7 +42,7 @@
     .line 20
     new-array v0, p1, [Ljava/lang/Object;
 
-    iput-object v0, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     .line 21
     if-nez p2, :cond_1
@@ -65,17 +65,17 @@
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iput-object v0, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
     goto :goto_0
 .end method
 
-.method private Um()Z
+.method private SZ()Z
     .locals 2
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
     if-nez v0, :cond_1
 
@@ -86,13 +86,13 @@
     return v0
 
     :cond_1
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->size()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     array-length v1, v1
 
@@ -105,14 +105,14 @@
 
 
 # virtual methods
-.method public Uf()Ljava/lang/Object;
+.method public SS()Ljava/lang/Object;
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
     .line 31
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
     if-nez v0, :cond_1
 
@@ -122,7 +122,7 @@
 
     .line 31
     :cond_1
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
 
@@ -131,7 +131,7 @@
     if-nez v0, :cond_0
 
     .line 34
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
     invoke-virtual {v0}, Ljava/util/LinkedList;->removeLast()Ljava/lang/Object;
 
@@ -140,7 +140,7 @@
     return-object v0
 .end method
 
-.method public Ug(I)Ljava/lang/Object;
+.method public ST(I)Ljava/lang/Object;
     .locals 2
 
     .prologue
@@ -155,19 +155,19 @@
 
     .line 62
     :cond_1
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     if-ge p1, v0, :cond_0
 
     .line 65
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     sub-int/2addr v0, p1
 
     add-int/lit8 v0, v0, -0x1
 
     .line 66
-    iget v1, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v1, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     sub-int v0, v1, v0
 
@@ -176,7 +176,7 @@
 
     .line 70
     :goto_0
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     aget-object v0, v1, v0
 
@@ -184,7 +184,7 @@
 
     .line 68
     :cond_2
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     array-length v1, v1
 
@@ -193,19 +193,19 @@
     goto :goto_0
 .end method
 
-.method public Uh()Ljava/lang/Object;
+.method public SU()Ljava/lang/Object;
     .locals 2
 
     .prologue
     .line 78
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     if-eqz v0, :cond_0
 
     .line 81
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v1, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     aget-object v0, v0, v1
 
@@ -218,32 +218,32 @@
     return-object v0
 .end method
 
-.method public Ui()I
+.method public SV()I
     .locals 1
 
     .prologue
     .line 58
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     return v0
 .end method
 
-.method public Uj()V
+.method public SW()V
     .locals 3
 
     .prologue
     .line 107
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     if-eqz v0, :cond_0
 
     .line 110
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     add-int/lit8 v0, v0, -0x1
 
     .line 111
-    iget v1, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v1, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     sub-int v0, v1, v0
 
@@ -252,7 +252,7 @@
 
     .line 115
     :goto_0
-    invoke-direct {p0}, Lcom/google/research/reflection/common/a;->Um()Z
+    invoke-direct {p0}, Lcom/google/research/reflection/common/a;->SZ()Z
 
     move-result v1
 
@@ -260,25 +260,25 @@
 
     .line 118
     :goto_1
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     const/4 v2, 0x0
 
     aput-object v2, v1, v0
 
     .line 119
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     .line 120
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LZ:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MT:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LZ:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MT:I
 
     .line 121
     return-void
@@ -289,7 +289,7 @@
 
     .line 113
     :cond_1
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     array-length v1, v1
 
@@ -299,9 +299,9 @@
 
     .line 116
     :cond_2
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
-    iget-object v2, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v2, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     aget-object v2, v2, v0
 
@@ -310,24 +310,24 @@
     goto :goto_1
 .end method
 
-.method public Uk()I
+.method public SX()I
     .locals 1
 
     .prologue
     .line 74
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     array-length v0, v0
 
     return v0
 .end method
 
-.method public Ul()I
+.method public SY()I
     .locals 1
 
     .prologue
     .line 27
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LZ:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MT:I
 
     return v0
 .end method
@@ -339,16 +339,16 @@
     const/4 v2, 0x0
 
     .line 42
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     .line 43
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MR:I
 
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     array-length v1, v1
 
@@ -356,9 +356,9 @@
 
     .line 46
     :goto_0
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v1, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     aget-object v0, v0, v1
 
@@ -367,16 +367,16 @@
     .line 49
     :cond_0
     :goto_1
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v1, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     aput-object p1, v0, v1
 
     .line 50
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
     array-length v1, v1
 
@@ -384,35 +384,35 @@
 
     .line 53
     :goto_2
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LZ:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MT:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LZ:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MT:I
 
     .line 54
     return-object p1
 
     .line 44
     :cond_1
-    iput v2, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iput v2, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     goto :goto_0
 
     .line 46
     :cond_2
-    invoke-direct {p0}, Lcom/google/research/reflection/common/a;->Um()Z
+    invoke-direct {p0}, Lcom/google/research/reflection/common/a;->SZ()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 47
-    iget-object v0, p0, Lcom/google/research/reflection/common/a;->LW:Ljava/util/LinkedList;
+    iget-object v0, p0, Lcom/google/research/reflection/common/a;->MQ:Ljava/util/LinkedList;
 
-    iget-object v1, p0, Lcom/google/research/reflection/common/a;->Ma:[Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/research/reflection/common/a;->MU:[Ljava/lang/Object;
 
-    iget v2, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iget v2, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     aget-object v1, v1, v2
 
@@ -422,11 +422,11 @@
 
     .line 51
     :cond_3
-    iget v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iget v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     goto :goto_2
 .end method
@@ -438,15 +438,15 @@
     const/4 v0, -0x1
 
     .line 85
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LX:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MR:I
 
     .line 86
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LZ:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MT:I
 
     .line 87
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/research/reflection/common/a;->LY:I
+    iput v0, p0, Lcom/google/research/reflection/common/a;->MS:I
 
     .line 88
     return-void

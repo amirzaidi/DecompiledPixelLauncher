@@ -14,52 +14,45 @@ import java.util.concurrent.ExecutorService;
 
 public class e
 {
-    public static boolean MA;
-    static e Mz;
-    private ExecutorService MB;
-    private boolean MC;
-    private int MD;
-    private int My;
+    static e Nt;
+    public static boolean Nu;
+    private int Ns;
+    private ExecutorService Nv;
+    private boolean Nw;
+    private int Nx;
     
     static {
-        e.MA = false;
+        e.Nu = false;
     }
     
     private e() {
-        this.MC = false;
-        this.My = Runtime.getRuntime().availableProcessors() / 2;
-        this.MB = Executors.newFixedThreadPool(this.My);
+        this.Nw = false;
+        this.Ns = Runtime.getRuntime().availableProcessors() / 2;
+        this.Nv = Executors.newFixedThreadPool(this.Ns);
     }
     
-    public static e Vq() {
-        if (e.Mz == null) {
-            e.Mz = new e();
-        }
-        return e.Mz;
-    }
-    
-    private void Vr(final int n, final c c) {
+    private void Ud(final int n, final c c) {
         int i = 1;
         // monitorenter(this)
-        final boolean mc = true;
+        final boolean nw = true;
         try {
-            this.MC = mc;
-            final ExecutorCompletionService executorCompletionService = new ExecutorCompletionService(this.MB);
+            this.Nw = nw;
+            final ExecutorCompletionService executorCompletionService = new ExecutorCompletionService(this.Nv);
             int n2;
-            if (n >= this.My) {
-                i = (n2 = (int)Math.ceil(n / this.My));
+            if (n >= this.Ns) {
+                i = (n2 = (int)Math.ceil(n / this.Ns));
             }
             else {
                 n2 = i;
             }
-            i = this.My;
+            i = this.Ns;
             i = Math.min(i, n);
-            this.MD = i;
-            for (i = 0; i < this.MD; ++i) {
+            this.Nx = i;
+            for (i = 0; i < this.Nx; ++i) {
                 executorCompletionService.submit(new n(i, n2, n, c));
             }
             i = 0;
-            while (i < this.MD) {
+            while (i < this.Nx) {
                 try {
                     final Future take = executorCompletionService.take();
                     try {
@@ -70,7 +63,7 @@ public class e
                         ex.printStackTrace();
                     }
                     catch (ExecutionException ex2) {
-                        System.err.println(new StringBuilder(48).append("threadCount: ").append(this.MD).append(" for length: ").append(n).toString());
+                        System.err.println(new StringBuilder(48).append("threadCount: ").append(this.Nx).append(" for length: ").append(n).toString());
                         ex2.printStackTrace();
                     }
                     finally {
@@ -80,19 +73,26 @@ public class e
                 catch (InterruptedException ex3) {}
                 catch (ExecutionException ex4) {}
             }
-            this.MC = false;
+            this.Nw = false;
         }
         finally {}
     }
     
-    public void Vp(final int n, final c c) {
+    public static e getInstance() {
+        if (e.Nt == null) {
+            e.Nt = new e();
+        }
+        return e.Nt;
+    }
+    
+    public void Uc(final int n, final c c) {
         int i = 0;
-        if (e.MA && !this.MC && n != 1) {
-            this.Vr(n, c);
+        if (e.Nu && !this.Nw && n != 1) {
+            this.Ud(n, c);
         }
         else {
             while (i < n) {
-                c.Vo(i);
+                c.Ub(i);
                 ++i;
             }
         }

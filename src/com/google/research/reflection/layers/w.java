@@ -8,29 +8,29 @@ import java.util.ArrayList;
 
 class w implements c
 {
-    final /* synthetic */ s Oo;
-    final /* synthetic */ b Op;
-    final /* synthetic */ b Oq;
-    final /* synthetic */ int Or;
-    final /* synthetic */ ArrayList[] Os;
+    final /* synthetic */ s Pi;
+    final /* synthetic */ b Pj;
+    final /* synthetic */ b Pk;
+    final /* synthetic */ int Pl;
+    final /* synthetic */ ArrayList[] Pm;
     
-    w(final s oo, final int or, final ArrayList[] os, final b oq, final b op) {
-        this.Oo = oo;
-        this.Or = or;
-        this.Os = os;
-        this.Oq = oq;
-        this.Op = op;
+    w(final s pi, final int pl, final ArrayList[] pm, final b pk, final b pj) {
+        this.Pi = pi;
+        this.Pl = pl;
+        this.Pm = pm;
+        this.Pk = pk;
+        this.Pj = pj;
     }
     
-    public Boolean Vo(final int n) {
-        final b b = new b(this.Oo.Og, this.Oo.NU);
-        final int n2 = n * this.Oo.NU;
-        for (int i = 0; i < this.Oo.Og; ++i) {
-            for (int j = 0; j < this.Oo.NU; ++j) {
-                b.Vd(false, i, j, this.Oo.On.Vc(false, i, n2 + j));
+    public Boolean Ub(final int n) {
+        final b b = new b(this.Pi.Pa, this.Pi.OO);
+        final int n2 = n * this.Pi.OO;
+        for (int i = 0; i < this.Pi.Pa; ++i) {
+            for (int j = 0; j < this.Pi.OO; ++j) {
+                b.TQ(false, i, j, this.Pi.Ph.TP(false, i, n2 + j));
             }
         }
-        this.Oo.NT[n].Vt(this.Or, this.Os, this.Oq, this.Op, b);
+        this.Pi.ON[n].Uf(this.Pl, this.Pm, this.Pk, this.Pj, b);
         return true;
     }
 }

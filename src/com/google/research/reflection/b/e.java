@@ -8,13 +8,13 @@ import com.google.research.reflection.common.a;
 
 public class e extends b
 {
-    public int UF() {
+    public int Ts() {
         return 7;
     }
     
-    public com.google.research.reflection.layers.b UG(final a a, final com.google.research.reflection.a.b b) {
-        final com.google.research.reflection.layers.b b2 = new com.google.research.reflection.layers.b(1, this.UF());
-        b2.Mr[com.google.research.reflection.common.e.UB(b) - 1] = 1.0;
+    public com.google.research.reflection.layers.b Tt(final a a, final com.google.research.reflection.a.b b) {
+        final com.google.research.reflection.layers.b b2 = new com.google.research.reflection.layers.b(1, this.Ts());
+        b2.Nl[com.google.research.reflection.common.e.To(b) - 1] = 1.0;
         return b2;
     }
     

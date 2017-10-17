@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public UF()I
+.method public Ts()I
     .locals 1
 
     .prologue
@@ -26,7 +26,7 @@
     return v0
 .end method
 
-.method public UG(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
+.method public Tt(Lcom/google/research/reflection/common/a;Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/layers/b;
     .locals 9
 
     .prologue
@@ -39,7 +39,7 @@
     .line 25
     new-instance v1, Lcom/google/research/reflection/layers/b;
 
-    invoke-virtual {p0}, Lcom/google/research/reflection/b/i;->UF()I
+    invoke-virtual {p0}, Lcom/google/research/reflection/b/i;->Ts()I
 
     move-result v0
 
@@ -49,7 +49,7 @@
     const-string/jumbo v0, "lat_long"
 
     .line 27
-    invoke-static {p2, v0}, Lcom/google/research/reflection/common/b;->Up(Lcom/google/research/reflection/a/b;Ljava/lang/String;)Ljava/util/List;
+    invoke-static {p2, v0}, Lcom/google/research/reflection/common/b;->Tc(Lcom/google/research/reflection/a/b;Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v2
 
@@ -72,7 +72,7 @@
 
     check-cast v0, Lcom/google/research/reflection/a/a;
 
-    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->ar()Ljava/util/List;
+    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->B()Ljava/util/List;
 
     move-result-object v0
 
@@ -93,7 +93,7 @@
 
     check-cast v0, Lcom/google/research/reflection/a/a;
 
-    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->ar()Ljava/util/List;
+    invoke-interface {v0}, Lcom/google/research/reflection/a/a;->B()Ljava/util/List;
 
     move-result-object v0
 
@@ -108,12 +108,12 @@
     move-result-wide v2
 
     .line 31
-    invoke-static {v4, v5, v2, v3}, Lcom/google/research/reflection/common/c;->Ut(DD)[F
+    invoke-static {v4, v5, v2, v3}, Lcom/google/research/reflection/common/d;->Th(DD)[F
 
     move-result-object v0
 
     .line 32
-    iget-object v2, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v2, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget v3, v0, v6
 
@@ -122,7 +122,7 @@
     aput-wide v4, v2, v6
 
     .line 33
-    iget-object v2, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v2, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget v3, v0, v7
 
@@ -131,7 +131,7 @@
     aput-wide v4, v2, v7
 
     .line 34
-    iget-object v2, v1, Lcom/google/research/reflection/layers/b;->Mr:[D
+    iget-object v2, v1, Lcom/google/research/reflection/layers/b;->Nl:[D
 
     aget v0, v0, v8
 

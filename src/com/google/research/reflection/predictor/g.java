@@ -25,70 +25,85 @@ import com.google.research.reflection.b.a;
 
 public class g extends b implements a
 {
-    protected com.google.research.reflection.b.b LS;
-    protected com.google.research.reflection.layers.a LT;
-    protected a LU;
-    protected com.google.research.reflection.layers.b LV;
+    protected com.google.research.reflection.b.b MM;
+    protected com.google.research.reflection.layers.a MN;
+    protected a MO;
+    protected com.google.research.reflection.layers.b MP;
     
     public g() {
-        this.Uc(100, Ud());
+        this.SP(100, SQ());
     }
     
-    private void Uc(final int n, final com.google.research.reflection.b.b ls) {
-        e.MA = false;
-        this.LV = new com.google.research.reflection.layers.b(1, n);
-        (this.LS = ls).UD(this);
-        (this.LT = new com.google.research.reflection.layers.a(1)).UX(new o(false, 1, 1, 1, ls.UF(), n, -1, -1, false, false, 0.0f));
-        this.LT.UX(new m(1, 1, 2, 1, n, n, -1, -1, false));
+    private void SP(final int n, final com.google.research.reflection.b.b mm) {
+        e.Nu = false;
+        this.MP = new com.google.research.reflection.layers.b(1, n);
+        (this.MM = mm).Tq(this);
+        (this.MN = new com.google.research.reflection.layers.a(1)).TK(new o(false, 1, 1, 1, mm.Ts(), n, -1, -1, false, false, 0.0f));
+        this.MN.TK(new m(1, 1, 2, 1, n, n, -1, -1, false));
     }
     
-    public static c Ud() {
+    public static c SQ() {
         final c c = new c();
-        c.UM(new d());
-        c.UM(new f());
-        c.UM(new com.google.research.reflection.b.e());
-        c.UM(new j());
-        c.UM(new i());
-        c.UM(new com.google.research.reflection.b.g());
-        c.UM(new k());
+        c.Tz(new d());
+        c.Tz(new f());
+        c.Tz(new com.google.research.reflection.b.e());
+        c.Tz(new j());
+        c.Tz(new i());
+        c.Tz(new com.google.research.reflection.b.g());
+        c.Tz(new k());
         return c;
     }
     
-    public void TB(final String s, final String s2) {
-        this.LS.UH(Arrays.asList(".*", s));
+    public void SR(final com.google.research.reflection.b.b b, final int n) {
+        if (this.MO != null) {
+            this.MO.SR(b, n);
+        }
+        final com.google.research.reflection.layers.b ue = this.MN.TF().get(0).UE(this.MN);
+        final int tw = ue.TW(false);
+        for (int i = 0; i < ue.TU(false); ++i) {
+            double n2 = 0.0;
+            for (int j = 0; j < tw; ++j) {
+                n2 += ue.TP(false, j, i);
+            }
+            ue.TQ(false, n, i, n2 / tw);
+        }
     }
     
-    public com.google.research.reflection.predictor.e TD(final com.google.research.reflection.a.b b) {
-        final Integer value = this.TK().Tv(b);
+    public void So(final String s, final String s2) {
+        this.MM.Tu(Arrays.asList(".*", s));
+    }
+    
+    public com.google.research.reflection.predictor.e Sq(final com.google.research.reflection.a.b b) {
+        final Integer value = this.Sx().Si(b);
         final com.google.research.reflection.predictor.e e = new com.google.research.reflection.predictor.e();
         try {
-            final com.google.research.reflection.b.b ls = this.LS;
+            final com.google.research.reflection.b.b mm = this.MM;
             try {
-                final com.google.research.reflection.predictor.a tk = this.TK();
+                final com.google.research.reflection.predictor.a sx = this.Sx();
                 try {
-                    final com.google.research.reflection.predictor.d tq = tk.Tq();
+                    final com.google.research.reflection.predictor.d sd = sx.Sd();
                     try {
-                        final com.google.research.reflection.layers.b ug = ls.UG(tq.TR(), b);
+                        final com.google.research.reflection.layers.b tt = mm.Tt(sd.SE(), b);
                         try {
-                            final com.google.research.reflection.layers.a lt = this.LT;
+                            final com.google.research.reflection.layers.a mn = this.MN;
                             try {
-                                lt.UR();
-                                this.LT.UW(true, null, ug, true);
-                                final com.google.research.reflection.layers.b lv = this.LV;
+                                mn.TE();
+                                this.MN.TJ(true, null, tt, true);
+                                final com.google.research.reflection.layers.b mp = this.MP;
                                 try {
-                                    final double[] mr = lv.Mr;
+                                    final double[] nl = mp.Nl;
                                     try {
-                                        com.google.research.reflection.layers.k.VD(mr);
-                                        final com.google.research.reflection.layers.b lv2 = this.LV;
+                                        com.google.research.reflection.layers.k.Up(nl);
+                                        final com.google.research.reflection.layers.b mp2 = this.MP;
                                         try {
-                                            lv2.Vd(false, 0, value, 1.0);
-                                            final com.google.research.reflection.layers.a lt2 = this.LT;
+                                            mp2.TQ(false, 0, value, 1.0);
+                                            final com.google.research.reflection.layers.a mn2 = this.MN;
                                             try {
-                                                lt2.UU(this.LV, null, 1, true);
-                                                final com.google.research.reflection.layers.a lt3 = this.LT;
+                                                mn2.TH(this.MP, null, 1, true);
+                                                final com.google.research.reflection.layers.a mn3 = this.MN;
                                                 try {
-                                                    lt3.update();
-                                                    e.TY(ug.Mr);
+                                                    mn3.update();
+                                                    e.SL(tt.Nl);
                                                     return e;
                                                 }
                                                 catch (InvalidValueException ex) {
@@ -116,59 +131,59 @@ public class g extends b implements a
         catch (InvalidValueException ex11) {}
     }
     
-    public void TF(final Integer n, final Integer n2, final String s) {
+    public void Ss(final Integer n, final Integer n2, final String s) {
         final double n3 = 0.0;
         int i = 0;
-        final m m = (m)this.LT.Va();
-        final com.google.research.reflection.layers.b vs = m.VS(this.LT);
-        final int vh = vs.Vh(false);
-        for (int j = 0; j < vs.Vj(false); ++j) {
+        final m m = (m)this.MN.TN();
+        final com.google.research.reflection.layers.b ue = m.UE(this.MN);
+        final int tu = ue.TU(false);
+        for (int j = 0; j < ue.TW(false); ++j) {
             int k = 0;
             double n4 = n3;
-            while (k < vh) {
-                n4 += vs.Vc(false, j, k);
+            while (k < tu) {
+                n4 += ue.TP(false, j, k);
                 ++k;
             }
-            final double n5 = n4 / vh;
+            final double n5 = n4 / tu;
             if (!n.equals(n2)) {
-                vs.Vd(false, j, n, vs.Vc(false, j, n2));
+                ue.TQ(false, j, n, ue.TP(false, j, n2));
             }
-            vs.Vd(false, j, n2, n5);
+            ue.TQ(false, j, n2, n5);
         }
-        final com.google.research.reflection.layers.b wb = m.Wb();
+        final com.google.research.reflection.layers.b un = m.UN();
         double n6 = n3;
-        while (i < vh) {
-            n6 += wb.Mr[i];
+        while (i < tu) {
+            n6 += un.Nl[i];
             ++i;
         }
-        final double n7 = n6 / vh;
+        final double n7 = n6 / tu;
         if (!n.equals(n2)) {
-            wb.Mr[n] = wb.Mr[n2];
+            un.Nl[n] = un.Nl[n2];
         }
-        wb.Mr[n2] = n7;
+        un.Nl[n2] = n7;
     }
     
-    public void TH(final DataOutputStream dataOutputStream) {
-        dataOutputStream.writeUTF(com.google.research.reflection.b.b.UE(this.LS));
-        this.LS.UJ(dataOutputStream);
-        this.LT.UY(dataOutputStream);
+    public void Su(final DataOutputStream dataOutputStream) {
+        dataOutputStream.writeUTF(com.google.research.reflection.b.b.Tr(this.MM));
+        this.MM.Tw(dataOutputStream);
+        this.MN.TL(dataOutputStream);
     }
     
-    public com.google.research.reflection.predictor.e TI(final float[] array, final com.google.research.reflection.a.b b) {
+    public com.google.research.reflection.predictor.e Sv(final float[] array, final com.google.research.reflection.a.b b) {
         final int n = 1;
-        final com.google.research.reflection.layers.b ug = this.LS.UG(this.TK().Tq().TR(), b);
-        if (this.TK().TA().size() != n) {
-            if (this.TK().TA().size() > n) {
+        final com.google.research.reflection.layers.b tt = this.MM.Tt(this.Sx().Sd().SE(), b);
+        if (this.Sx().Sn().size() != n) {
+            if (this.Sx().Sn().size() > n) {
                 while (true) {
                     try {
-                        final com.google.research.reflection.layers.b uw = this.LT.UW(false, null, ug, true);
+                        final com.google.research.reflection.layers.b tj = this.MN.TJ(false, null, tt, true);
                         for (int i = 0; i < array.length; ++i) {
-                            array[i] = (float)uw.Vc(false, 0, i);
+                            array[i] = (float)tj.TP(false, 0, i);
                         }
                     }
                     catch (InvalidValueException ex) {
                         ex.printStackTrace();
-                        final com.google.research.reflection.layers.b uw = null;
+                        final com.google.research.reflection.layers.b tj = null;
                         continue;
                     }
                     break;
@@ -179,15 +194,15 @@ public class g extends b implements a
             array[0] = 1.0f;
         }
         final com.google.research.reflection.predictor.e e = new com.google.research.reflection.predictor.e();
-        e.TY(ug.Mr);
-        e.TZ(array);
+        e.SL(tt.Nl);
+        e.SM(array);
         return e;
     }
     
-    public void TJ(final DataInputStream dataInputStream) {
+    public void Sw(final DataInputStream dataInputStream) {
         final String utf = dataInputStream.readUTF();
-        final com.google.research.reflection.b.b uc = com.google.research.reflection.b.b.UC(utf);
-        if (uc == null) {
+        final com.google.research.reflection.b.b tp = com.google.research.reflection.b.b.Tp(utf);
+        if (tp == null) {
             final String value = String.valueOf(utf);
             final int length = value.length();
             final String s = "Cannot find extractor with ";
@@ -200,39 +215,24 @@ public class g extends b implements a
             }
             throw new IOException(concat);
         }
-        uc.UI(dataInputStream);
-        uc.UD(this);
-        (this.LT = new com.google.research.reflection.layers.a(1)).UZ(dataInputStream);
-        if (this.LT.UV() != uc.UF()) {
-            throw new IOException(new StringBuilder(76).append("Model to be loaded has an inconsistent input size:").append(this.LT.UV()).append(" != ").append(uc.UF()).toString());
+        tp.Tv(dataInputStream);
+        tp.Tq(this);
+        (this.MN = new com.google.research.reflection.layers.a(1)).TM(dataInputStream);
+        if (this.MN.TI() != tp.Ts()) {
+            throw new IOException(new StringBuilder(76).append("Model to be loaded has an inconsistent input size:").append(this.MN.TI()).append(" != ").append(tp.Ts()).toString());
         }
-        if (this.LT.Va().Wl() == this.TK().Tx()) {
+        if (this.MN.TN().UX() == this.Sx().Sk()) {
             return;
         }
-        throw new IOException(new StringBuilder(57).append("Inconsistent model output size...").append(this.LT.Va().Wl()).append("!=").append(this.TK().Tx()).toString());
-    }
-    
-    public void Ue(final com.google.research.reflection.b.b b, final int n) {
-        if (this.LU != null) {
-            this.LU.Ue(b, n);
-        }
-        final com.google.research.reflection.layers.b vs = this.LT.US().get(0).VS(this.LT);
-        final int vj = vs.Vj(false);
-        for (int i = 0; i < vs.Vh(false); ++i) {
-            double n2 = 0.0;
-            for (int j = 0; j < vj; ++j) {
-                n2 += vs.Vc(false, j, i);
-            }
-            vs.Vd(false, n, i, n2 / vj);
-        }
+        throw new IOException(new StringBuilder(57).append("Inconsistent model output size...").append(this.MN.TN().UX()).append("!=").append(this.Sx().Sk()).toString());
     }
     
     public g clone() {
         final g g = new g();
-        g.TE(this.TK());
-        g.LT = this.LT.clone();
-        g.LV = this.LV.clone();
-        g.LS = this.LS.clone();
+        g.Sr(this.Sx());
+        g.MN = this.MN.clone();
+        g.MP = this.MP.clone();
+        g.MM = this.MM.clone();
         return g;
     }
 }

@@ -4,35 +4,35 @@
 
 package com.google.research.reflection.layers;
 
-import java.util.ArrayList;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.util.ArrayList;
 
 class l implements c
 {
-    final /* synthetic */ o Nu;
+    final /* synthetic */ o Oo;
     
-    l(final o nu) {
-        this.Nu = nu;
+    l(final o oo) {
+        this.Oo = oo;
     }
     
-    public Boolean Vo(final int n) {
+    public Boolean Ub(final int n) {
         int i = 0;
-        for (int j = 0; j < this.Nu.Ok; ++j) {
-            this.Nu.NA.Vk(this.Nu.ND, j, n, -v.Wj() * this.Nu.NB.Mr[j * this.Nu.Ol + n]);
+        for (int j = 0; j < this.Oo.Pe; ++j) {
+            this.Oo.Ou.TX(this.Oo.Ox, j, n, -v.UV() * this.Oo.Ov.Nl[j * this.Oo.Pf + n]);
         }
-        if (this.Nu.Oc) {
-            while (i < this.Nu.Ol) {
-                final int n2 = this.Nu.Ol * i;
-                final double[] mr = this.Nu.NE.Mr;
+        if (this.Oo.OW) {
+            while (i < this.Oo.Pf) {
+                final int n2 = this.Oo.Pf * i;
+                final double[] nl = this.Oo.Oy.Nl;
                 final int n3 = n2 + n;
-                mr[n3] -= v.Wj() * this.Nu.NJ.Mr[n2 + n];
+                nl[n3] -= v.UV() * this.Oo.OD.Nl[n2 + n];
                 ++i;
             }
         }
-        if (!Double.isNaN(this.Nu.NG.Mr[n])) {
-            final double[] mr2 = this.Nu.NF.Mr;
-            mr2[n] -= v.Wj() * this.Nu.NG.Mr[n];
+        if (!Double.isNaN(this.Oo.OA.Nl[n])) {
+            final double[] nl2 = this.Oo.Oz.Nl;
+            nl2[n] -= v.UV() * this.Oo.OA.Nl[n];
             return true;
         }
         throw new RuntimeException("NaN in bias gradients...");

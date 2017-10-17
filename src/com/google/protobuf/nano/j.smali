@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field final Lr:I
+.field final PY:I
 
-.field final Ls:[B
+.field final PZ:[B
 
 
 # virtual methods
@@ -15,16 +15,16 @@
 
     .prologue
     .line 58
-    iget v0, p0, Lcom/google/protobuf/nano/j;->Lr:I
+    iget v0, p0, Lcom/google/protobuf/nano/j;->PY:I
 
-    invoke-static {v0}, Lcom/google/protobuf/nano/b;->RS(I)I
+    invoke-static {v0}, Lcom/google/protobuf/nano/b;->VN(I)I
 
     move-result v0
 
     add-int/lit8 v0, v0, 0x0
 
     .line 59
-    iget-object v1, p0, Lcom/google/protobuf/nano/j;->Ls:[B
+    iget-object v1, p0, Lcom/google/protobuf/nano/j;->PZ:[B
 
     array-length v1, v1
 
@@ -62,15 +62,15 @@
     check-cast p1, Lcom/google/protobuf/nano/j;
 
     .line 78
-    iget v1, p0, Lcom/google/protobuf/nano/j;->Lr:I
+    iget v1, p0, Lcom/google/protobuf/nano/j;->PY:I
 
-    iget v2, p1, Lcom/google/protobuf/nano/j;->Lr:I
+    iget v2, p1, Lcom/google/protobuf/nano/j;->PY:I
 
     if-ne v1, v2, :cond_2
 
-    iget-object v0, p0, Lcom/google/protobuf/nano/j;->Ls:[B
+    iget-object v0, p0, Lcom/google/protobuf/nano/j;->PZ:[B
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/j;->Ls:[B
+    iget-object v1, p1, Lcom/google/protobuf/nano/j;->PZ:[B
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->equals([B[B)Z
 
@@ -85,14 +85,14 @@
 
     .prologue
     .line 84
-    iget v0, p0, Lcom/google/protobuf/nano/j;->Lr:I
+    iget v0, p0, Lcom/google/protobuf/nano/j;->PY:I
 
     add-int/lit16 v0, v0, 0x20f
 
     .line 85
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object v1, p0, Lcom/google/protobuf/nano/j;->Ls:[B
+    iget-object v1, p0, Lcom/google/protobuf/nano/j;->PZ:[B
 
     invoke-static {v1}, Ljava/util/Arrays;->hashCode([B)I
 
@@ -109,14 +109,14 @@
 
     .prologue
     .line 64
-    iget v0, p0, Lcom/google/protobuf/nano/j;->Lr:I
+    iget v0, p0, Lcom/google/protobuf/nano/j;->PY:I
 
-    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/b;->RZ(I)V
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/b;->VU(I)V
 
     .line 65
-    iget-object v0, p0, Lcom/google/protobuf/nano/j;->Ls:[B
+    iget-object v0, p0, Lcom/google/protobuf/nano/j;->PZ:[B
 
-    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/b;->Rr([B)V
+    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/b;->Vm([B)V
 
     .line 66
     return-void

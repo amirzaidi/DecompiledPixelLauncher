@@ -2,469 +2,216 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Comparable;
+
+
+# instance fields
+.field public MV:I
+
+.field public MW:F
+
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(I)V
+    .locals 1
+
+    .prologue
+    .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 11
+    iput p1, p0, Lcom/google/research/reflection/common/c;->MV:I
+
+    .line 12
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iput v0, p0, Lcom/google/research/reflection/common/c;->MW:F
+
+    .line 13
+    return-void
+.end method
+
+.method public constructor <init>(IF)V
     .locals 0
 
     .prologue
-    .line 12
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 16
+    iput p1, p0, Lcom/google/research/reflection/common/c;->MV:I
+
+    .line 17
+    iput p2, p0, Lcom/google/research/reflection/common/c;->MW:F
+
+    .line 18
     return-void
 .end method
 
-.method private static Ur(Ljava/io/DataOutputStream;Ljava/lang/Object;)V
+
+# virtual methods
+.method public Te(Lcom/google/research/reflection/common/c;)I
     .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    .line 44
+    iget v0, p0, Lcom/google/research/reflection/common/c;->MW:F
 
-    .line 99
-    instance-of v1, p1, Ljava/lang/Integer;
+    iget v1, p1, Lcom/google/research/reflection/common/c;->MW:F
 
-    if-nez v1, :cond_1
-
-    .line 101
-    instance-of v1, p1, Ljava/lang/Long;
-
-    if-nez v1, :cond_2
-
-    .line 103
-    instance-of v1, p1, Ljava/lang/Float;
-
-    if-nez v1, :cond_3
-
-    .line 105
-    instance-of v1, p1, Ljava/lang/String;
-
-    if-nez v1, :cond_4
-
-    .line 107
-    instance-of v1, p1, Ljava/util/HashMap;
-
-    if-nez v1, :cond_5
-
-    .line 109
-    instance-of v1, p1, [I
-
-    if-nez v1, :cond_6
-
-    .line 115
-    instance-of v1, p1, [F
-
-    if-nez v1, :cond_7
-
-    .line 122
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 100
-    :cond_1
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    goto :goto_0
-
-    .line 102
-    :cond_2
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0, v0, v1}, Ljava/io/DataOutputStream;->writeLong(J)V
-
-    goto :goto_0
-
-    .line 104
-    :cond_3
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeFloat(F)V
-
-    goto :goto_0
-
-    .line 106
-    :cond_4
-    check-cast p1, Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 108
-    :cond_5
-    check-cast p1, Ljava/util/HashMap;
-
-    invoke-static {p0, p1}, Lcom/google/research/reflection/common/c;->Uu(Ljava/io/DataOutputStream;Ljava/util/Map;)V
-
-    goto :goto_0
-
-    .line 110
-    :cond_6
-    check-cast p1, [I
-
-    .line 111
-    array-length v1, p1
-
-    invoke-virtual {p0, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 112
-    :goto_1
-    array-length v1, p1
-
-    if-ge v0, v1, :cond_0
-
-    .line 113
-    aget v1, p1, v0
-
-    invoke-virtual {p0, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 112
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 116
-    :cond_7
-    check-cast p1, [F
-
-    .line 117
-    array-length v1, p1
-
-    invoke-virtual {p0, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 118
-    :goto_2
-    array-length v1, p1
-
-    if-ge v0, v1, :cond_0
-
-    .line 119
-    aget v1, p1, v0
-
-    invoke-virtual {p0, v1}, Ljava/io/DataOutputStream;->writeFloat(F)V
-
-    .line 118
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
+    return v0
 .end method
 
-.method private static Us(Ljava/io/DataInputStream;Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 4
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 152
-    const-class v1, Ljava/lang/Integer;
-
-    if-eq p1, v1, :cond_0
-
-    .line 154
-    const-class v1, Ljava/lang/Long;
-
-    if-eq p1, v1, :cond_1
-
-    .line 156
-    const-class v1, Ljava/lang/Float;
-
-    if-eq p1, v1, :cond_2
-
-    .line 158
-    const-class v1, Ljava/lang/String;
-
-    if-eq p1, v1, :cond_3
-
-    .line 160
-    const-class v1, [I
-
-    if-eq p1, v1, :cond_4
-
-    .line 167
-    const-class v1, [F
-
-    if-eq p1, v1, :cond_6
-
-    .line 175
-    const/4 v0, 0x0
-
-    return-object v0
-
-    .line 153
-    :cond_0
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 155
-    :cond_1
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readLong()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 157
-    :cond_2
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readFloat()F
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 159
-    :cond_3
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readUTF()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    .line 161
-    :cond_4
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v1
-
-    .line 162
-    new-array v2, v1, [I
-
-    .line 163
-    :goto_0
-    if-lt v0, v1, :cond_5
-
-    .line 166
-    return-object v2
-
-    .line 164
-    :cond_5
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v3
-
-    aput v3, v2, v0
-
-    .line 163
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 168
-    :cond_6
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
-
-    move-result v1
-
-    .line 169
-    new-array v2, v1, [F
-
-    .line 170
-    :goto_1
-    if-lt v0, v1, :cond_7
-
-    .line 173
-    return-object v2
-
-    .line 171
-    :cond_7
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readFloat()F
-
-    move-result v3
-
-    aput v3, v2, v0
-
-    .line 170
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-.end method
-
-.method public static Ut(DD)[F
-    .locals 10
-
-    .prologue
-    .line 194
-    invoke-static {p0, p1}, Ljava/lang/Math;->toRadians(D)D
-
-    move-result-wide v0
-
-    .line 195
-    invoke-static {p2, p3}, Ljava/lang/Math;->toRadians(D)D
-
-    move-result-wide v2
-
-    .line 196
-    invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
-
-    move-result-wide v4
-
-    .line 197
-    const/4 v6, 0x3
-
-    new-array v6, v6, [F
-
-    const/4 v7, 0x0
-
-    .line 198
-    invoke-static {v2, v3}, Ljava/lang/Math;->cos(D)D
-
-    move-result-wide v8
-
-    mul-double/2addr v8, v4
-
-    double-to-float v8, v8
-
-    aput v8, v6, v7
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->sin(D)D
-
-    move-result-wide v2
-
-    mul-double/2addr v2, v4
-
-    double-to-float v2, v2
-
-    const/4 v3, 0x1
-
-    aput v2, v6, v3
-
-    const/4 v2, 0x2
-
-    .line 199
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
-
-    move-result-wide v0
-
-    double-to-float v0, v0
-
-    aput v0, v6, v2
-
-    .line 197
-    return-object v6
-.end method
-
-.method public static Uu(Ljava/io/DataOutputStream;Ljava/util/Map;)V
+.method public clone()Lcom/google/research/reflection/common/c;
     .locals 3
 
     .prologue
-    .line 79
-    invoke-interface {p1}, Ljava/util/Map;->size()I
+    .line 38
+    new-instance v0, Lcom/google/research/reflection/common/c;
 
-    move-result v0
+    iget v1, p0, Lcom/google/research/reflection/common/c;->MV:I
 
-    invoke-virtual {p0, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
+    iget v2, p0, Lcom/google/research/reflection/common/c;->MW:F
 
-    .line 80
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-direct {v0, v1, v2}, Lcom/google/research/reflection/common/c;-><init>(IF)V
+
+    .line 39
+    return-object v0
+.end method
+
+.method public bridge synthetic clone()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 6
+    invoke-virtual {p0}, Lcom/google/research/reflection/common/c;->clone()Lcom/google/research/reflection/common/c;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    return-object v0
+.end method
 
-    move-result-object v1
+.method public bridge synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    .prologue
+    .line 6
+    check-cast p1, Lcom/google/research/reflection/common/c;
+
+    invoke-virtual {p0, p1}, Lcom/google/research/reflection/common/c;->Te(Lcom/google/research/reflection/common/c;)I
 
     move-result v0
+
+    return v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 27
+    instance-of v0, p1, Lcom/google/research/reflection/common/c;
+
+    if-eqz v0, :cond_1
+
+    .line 30
+    iget v1, p0, Lcom/google/research/reflection/common/c;->MV:I
+
+    move-object v0, p1
+
+    check-cast v0, Lcom/google/research/reflection/common/c;
+
+    iget v0, v0, Lcom/google/research/reflection/common/c;->MV:I
+
+    if-eq v1, v0, :cond_2
+
+    .line 33
+    :cond_0
+    return v2
+
+    .line 28
+    :cond_1
+    return v2
+
+    .line 30
+    :cond_2
+    iget v0, p0, Lcom/google/research/reflection/common/c;->MW:F
+
+    check-cast p1, Lcom/google/research/reflection/common/c;
+
+    iget v1, p1, Lcom/google/research/reflection/common/c;->MW:F
+
+    cmpl-float v0, v0, v1
 
     if-nez v0, :cond_0
 
-    .line 84
-    return-void
+    .line 31
+    const/4 v0, 0x1
 
-    .line 80
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    .line 81
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-static {p0, v2}, Lcom/google/research/reflection/common/c;->Ur(Ljava/io/DataOutputStream;Ljava/lang/Object;)V
-
-    .line 82
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcom/google/research/reflection/common/c;->Ur(Ljava/io/DataOutputStream;Ljava/lang/Object;)V
-
-    goto :goto_0
+    return v0
 .end method
 
-.method public static Uv(Ljava/io/DataInputStream;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/HashMap;
-    .locals 5
+.method public hashCode()I
+    .locals 2
 
     .prologue
-    .line 126
-    new-instance v1, Ljava/util/HashMap;
+    .line 22
+    iget v0, p0, Lcom/google/research/reflection/common/c;->MV:I
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    mul-int/lit8 v0, v0, 0x1f
 
-    .line 127
-    invoke-virtual {p0}, Ljava/io/DataInputStream;->readInt()I
+    add-int/lit8 v0, v0, 0x11
 
-    move-result v2
+    iget v1, p0, Lcom/google/research/reflection/common/c;->MW:F
 
-    .line 128
-    const/4 v0, 0x0
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    :goto_0
-    if-lt v0, v2, :cond_0
+    move-result v1
 
-    .line 133
-    return-object v1
+    add-int/2addr v0, v1
 
-    .line 129
-    :cond_0
-    invoke-static {p0, p1}, Lcom/google/research/reflection/common/c;->Us(Ljava/io/DataInputStream;Ljava/lang/Class;)Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object v3
+.method public toString()Ljava/lang/String;
+    .locals 4
 
-    .line 130
-    invoke-static {p0, p2}, Lcom/google/research/reflection/common/c;->Us(Ljava/io/DataInputStream;Ljava/lang/Class;)Ljava/lang/Object;
+    .prologue
+    .line 49
+    iget v0, p0, Lcom/google/research/reflection/common/c;->MV:I
 
-    move-result-object v4
+    iget v1, p0, Lcom/google/research/reflection/common/c;->MW:F
 
-    .line 131
-    invoke-virtual {v1, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    .line 128
-    add-int/lit8 v0, v0, 0x1
+    const/16 v3, 0x1b
 
-    goto :goto_0
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

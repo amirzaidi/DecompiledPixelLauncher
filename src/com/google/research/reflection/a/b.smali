@@ -4,40 +4,40 @@
 
 
 # virtual methods
-.method public abstract aA()Ljava/lang/Long;
+.method public abstract F()Ljava/lang/Long;
 .end method
 
-.method public abstract aB()Ljava/lang/Long;
+.method public abstract I([BII)Lcom/google/research/reflection/a/b;
 .end method
 
-.method public abstract aC()Ljava/lang/Long;
+.method public abstract J()Ljava/lang/Long;
 .end method
 
-.method public abstract aD()Ljava/util/List;
+.method public abstract K()Ljava/lang/Long;
 .end method
 
-.method public abstract aE()Ljava/util/List;
+.method public abstract L()Ljava/lang/Long;
 .end method
 
-.method public abstract aF()Ljava/lang/Long;
+.method public abstract M()Ljava/util/List;
 .end method
 
-.method public abstract aG()Ljava/lang/String;
+.method public abstract N()Ljava/util/List;
 .end method
 
-.method public abstract aH()Ljava/lang/String;
+.method public abstract O()Ljava/lang/Long;
 .end method
 
-.method public abstract aI()[B
+.method public abstract P()Ljava/lang/String;
 .end method
 
-.method public abstract aK(Ljava/util/List;)Lcom/google/research/reflection/a/b;
+.method public abstract Q()Ljava/lang/String;
 .end method
 
-.method public abstract ax()Ljava/lang/Long;
+.method public abstract R()[B
 .end method
 
-.method public abstract az([BII)Lcom/google/research/reflection/a/b;
+.method public abstract S(Ljava/util/List;)Lcom/google/research/reflection/a/b;
 .end method
 
 .method public abstract getId()Ljava/lang/String;

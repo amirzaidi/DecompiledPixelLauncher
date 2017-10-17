@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field private Lt:Ljava/util/List;
+.field private Qa:Ljava/util/List;
 
-.field private Lu:Lcom/google/protobuf/nano/g;
+.field private Qb:Lcom/google/protobuf/nano/g;
 
-.field private Lv:Ljava/lang/Object;
+.field private Qc:Ljava/lang/Object;
 
 
 # direct methods
@@ -27,13 +27,13 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     .line 55
     return-void
 .end method
 
-.method private Tp()[B
+.method private Xk()[B
     .locals 2
 
     .prologue
@@ -45,7 +45,7 @@
     new-array v0, v0, [B
 
     .line 185
-    invoke-static {v0}, Lcom/google/protobuf/nano/b;->RO([B)Lcom/google/protobuf/nano/b;
+    invoke-static {v0}, Lcom/google/protobuf/nano/b;->VJ([B)Lcom/google/protobuf/nano/b;
 
     move-result-object v1
 
@@ -71,23 +71,23 @@
 
     .line 194
     :try_start_0
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lu:Lcom/google/protobuf/nano/g;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qb:Lcom/google/protobuf/nano/g;
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lu:Lcom/google/protobuf/nano/g;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qb:Lcom/google/protobuf/nano/g;
 
     .line 195
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     if-nez v0, :cond_1
 
     .line 196
     const/4 v0, 0x0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     .line 204
     :goto_0
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     if-nez v0, :cond_2
 
@@ -98,9 +98,9 @@
 
     .line 198
     :cond_1
-    iget-object v0, v3, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v0, v3, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v2, p0, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     invoke-interface {v0, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
     :try_end_0
@@ -122,14 +122,14 @@
     .line 206
     :cond_2
     :try_start_1
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, Lcom/google/protobuf/nano/a;
 
     if-eqz v0, :cond_3
 
     .line 207
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, Lcom/google/protobuf/nano/a;
 
@@ -137,20 +137,20 @@
 
     move-result-object v0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     goto :goto_1
 
     .line 208
     :cond_3
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [B
 
     if-eqz v0, :cond_4
 
     .line 209
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [B
 
@@ -158,20 +158,20 @@
 
     move-result-object v0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     goto :goto_1
 
     .line 210
     :cond_4
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [[B
 
     if-eqz v0, :cond_5
 
     .line 211
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [[B
 
@@ -181,7 +181,7 @@
     new-array v4, v2, [[B
 
     .line 213
-    iput-object v4, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v4, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     move v2, v1
 
@@ -211,14 +211,14 @@
 
     .line 217
     :cond_5
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [Z
 
     if-eqz v0, :cond_6
 
     .line 218
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [Z
 
@@ -226,20 +226,20 @@
 
     move-result-object v0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     goto :goto_1
 
     .line 219
     :cond_6
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [I
 
     if-eqz v0, :cond_7
 
     .line 220
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [I
 
@@ -247,20 +247,20 @@
 
     move-result-object v0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     goto :goto_1
 
     .line 221
     :cond_7
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [J
 
     if-eqz v0, :cond_8
 
     .line 222
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [J
 
@@ -268,20 +268,20 @@
 
     move-result-object v0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     goto/16 :goto_1
 
     .line 223
     :cond_8
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [F
 
     if-eqz v0, :cond_9
 
     .line 224
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [F
 
@@ -289,20 +289,20 @@
 
     move-result-object v0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     goto/16 :goto_1
 
     .line 225
     :cond_9
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [D
 
     if-eqz v0, :cond_a
 
     .line 226
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [D
 
@@ -310,20 +310,20 @@
 
     move-result-object v0
 
-    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v0, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     goto/16 :goto_1
 
     .line 227
     :cond_a
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [Lcom/google/protobuf/nano/a;
 
     if-eqz v0, :cond_0
 
     .line 228
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [Lcom/google/protobuf/nano/a;
 
@@ -333,7 +333,7 @@
     new-array v2, v2, [Lcom/google/protobuf/nano/a;
 
     .line 230
-    iput-object v2, v3, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iput-object v2, v3, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     .line 231
     :goto_3
@@ -378,16 +378,16 @@
     const/4 v0, 0x0
 
     .line 100
-    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     if-eqz v1, :cond_1
 
     .line 101
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lu:Lcom/google/protobuf/nano/g;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qb:Lcom/google/protobuf/nano/g;
 
-    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lcom/google/protobuf/nano/g;->Ta(Ljava/lang/Object;)I
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/nano/g;->WV(Ljava/lang/Object;)I
 
     move-result v1
 
@@ -397,7 +397,7 @@
 
     .line 103
     :cond_1
-    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -458,18 +458,18 @@
     check-cast p1, Lcom/google/protobuf/nano/k;
 
     .line 130
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     if-eqz v0, :cond_a
 
-    iget-object v0, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     if-eqz v0, :cond_a
 
     .line 134
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lu:Lcom/google/protobuf/nano/g;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qb:Lcom/google/protobuf/nano/g;
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lu:Lcom/google/protobuf/nano/g;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qb:Lcom/google/protobuf/nano/g;
 
     if-eq v0, v1, :cond_2
 
@@ -478,9 +478,9 @@
 
     .line 137
     :cond_2
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lu:Lcom/google/protobuf/nano/g;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qb:Lcom/google/protobuf/nano/g;
 
-    iget-object v0, v0, Lcom/google/protobuf/nano/g;->Lm:Ljava/lang/Class;
+    iget-object v0, v0, Lcom/google/protobuf/nano/g;->PT:Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
 
@@ -489,9 +489,9 @@
     if-nez v0, :cond_3
 
     .line 139
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -501,18 +501,18 @@
 
     .line 141
     :cond_3
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [B
 
     if-eqz v0, :cond_4
 
     .line 142
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [B
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v1, [B
 
@@ -524,18 +524,18 @@
 
     .line 143
     :cond_4
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [I
 
     if-eqz v0, :cond_5
 
     .line 144
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [I
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v1, [I
 
@@ -547,18 +547,18 @@
 
     .line 145
     :cond_5
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [J
 
     if-eqz v0, :cond_6
 
     .line 146
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [J
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v1, [J
 
@@ -570,18 +570,18 @@
 
     .line 147
     :cond_6
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [F
 
     if-eqz v0, :cond_7
 
     .line 148
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [F
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v1, [F
 
@@ -593,18 +593,18 @@
 
     .line 149
     :cond_7
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [D
 
     if-eqz v0, :cond_8
 
     .line 150
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [D
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v1, [D
 
@@ -616,18 +616,18 @@
 
     .line 151
     :cond_8
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     instance-of v0, v0, [Z
 
     if-eqz v0, :cond_9
 
     .line 152
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [Z
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v1, [Z
 
@@ -639,11 +639,11 @@
 
     .line 154
     :cond_9
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     check-cast v1, [Ljava/lang/Object;
 
@@ -655,18 +655,18 @@
 
     .line 157
     :cond_a
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     if-eqz v0, :cond_b
 
-    iget-object v0, p1, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v0, p1, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     if-eqz v0, :cond_b
 
     .line 159
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v1, p1, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
@@ -677,11 +677,11 @@
     .line 163
     :cond_b
     :try_start_0
-    invoke-direct {p0}, Lcom/google/protobuf/nano/k;->Tp()[B
+    invoke-direct {p0}, Lcom/google/protobuf/nano/k;->Xk()[B
 
     move-result-object v0
 
-    invoke-direct {p1}, Lcom/google/protobuf/nano/k;->Tp()[B
+    invoke-direct {p1}, Lcom/google/protobuf/nano/k;->Xk()[B
 
     move-result-object v1
 
@@ -711,7 +711,7 @@
     .prologue
     .line 175
     :try_start_0
-    invoke-direct {p0}, Lcom/google/protobuf/nano/k;->Tp()[B
+    invoke-direct {p0}, Lcom/google/protobuf/nano/k;->Xk()[B
 
     move-result-object v0
 
@@ -743,16 +743,16 @@
 
     .prologue
     .line 111
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
     if-eqz v0, :cond_1
 
     .line 112
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lu:Lcom/google/protobuf/nano/g;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qb:Lcom/google/protobuf/nano/g;
 
-    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Lv:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/protobuf/nano/k;->Qc:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, p1}, Lcom/google/protobuf/nano/g;->SX(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
+    invoke-virtual {v0, v1, p1}, Lcom/google/protobuf/nano/g;->WS(Ljava/lang/Object;Lcom/google/protobuf/nano/b;)V
 
     .line 118
     :cond_0
@@ -760,7 +760,7 @@
 
     .line 114
     :cond_1
-    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Lt:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/protobuf/nano/k;->Qa:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 

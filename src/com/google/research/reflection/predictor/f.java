@@ -6,15 +6,15 @@ package com.google.research.reflection.predictor;
 
 public class f implements Comparable
 {
-    public float LQ;
-    public String LR;
+    public float MK;
+    public String ML;
     
-    public f(final String lr, final float lq) {
-        this.LR = lr;
-        this.LQ = lq;
+    public f(final String ml, final float mk) {
+        this.ML = ml;
+        this.MK = mk;
     }
     
-    public int Ub(final f f) {
-        return Float.compare(this.LQ, f.LQ);
+    public int SO(final f f) {
+        return Float.compare(this.MK, f.MK);
     }
 }

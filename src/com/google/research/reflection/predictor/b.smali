@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private LG:Lcom/google/research/reflection/predictor/a;
+.field private MA:Lcom/google/research/reflection/predictor/a;
 
 
 # direct methods
@@ -18,7 +18,7 @@
     return-void
 .end method
 
-.method public static TC(Ljava/lang/String;)Lcom/google/research/reflection/predictor/b;
+.method public static Sp(Ljava/lang/String;)Lcom/google/research/reflection/predictor/b;
     .locals 1
 
     .prologue
@@ -56,7 +56,7 @@
     return-object v0
 .end method
 
-.method public static TG(Lcom/google/research/reflection/predictor/b;)Ljava/lang/String;
+.method public static St(Lcom/google/research/reflection/predictor/b;)Ljava/lang/String;
     .locals 1
 
     .prologue
@@ -79,7 +79,7 @@
 
 
 # virtual methods
-.method public TB(Ljava/lang/String;Ljava/lang/String;)V
+.method public So(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .prologue
@@ -87,38 +87,38 @@
     return-void
 .end method
 
-.method public abstract TD(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
+.method public abstract Sq(Lcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
 .end method
 
-.method public TE(Lcom/google/research/reflection/predictor/a;)V
+.method public Sr(Lcom/google/research/reflection/predictor/a;)V
     .locals 0
 
     .prologue
     .line 40
-    iput-object p1, p0, Lcom/google/research/reflection/predictor/b;->LG:Lcom/google/research/reflection/predictor/a;
+    iput-object p1, p0, Lcom/google/research/reflection/predictor/b;->MA:Lcom/google/research/reflection/predictor/a;
 
     .line 41
     return-void
 .end method
 
-.method public abstract TF(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
+.method public abstract Ss(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;)V
 .end method
 
-.method public abstract TH(Ljava/io/DataOutputStream;)V
+.method public abstract Su(Ljava/io/DataOutputStream;)V
 .end method
 
-.method public abstract TI([FLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
+.method public abstract Sv([FLcom/google/research/reflection/a/b;)Lcom/google/research/reflection/predictor/e;
 .end method
 
-.method public abstract TJ(Ljava/io/DataInputStream;)V
+.method public abstract Sw(Ljava/io/DataInputStream;)V
 .end method
 
-.method public final TK()Lcom/google/research/reflection/predictor/a;
+.method public final Sx()Lcom/google/research/reflection/predictor/a;
     .locals 1
 
     .prologue
     .line 44
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/b;->LG:Lcom/google/research/reflection/predictor/a;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/b;->MA:Lcom/google/research/reflection/predictor/a;
 
     return-object v0
 .end method

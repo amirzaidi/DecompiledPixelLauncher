@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field private LL:F
+.field private MF:F
 
-.field private LM:Ljava/util/Map;
+.field private MG:Ljava/util/Map;
 
-.field private LN:[D
+.field private MH:[D
 
-.field private LO:Ljava/util/ArrayList;
+.field private MI:Ljava/util/ArrayList;
 
-.field private LP:[F
+.field private MJ:[F
 
 
 # direct methods
@@ -26,86 +26,86 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
-    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->LM:Ljava/util/Map;
+    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->MG:Ljava/util/Map;
 
     .line 13
-    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->LN:[D
+    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->MH:[D
 
     .line 14
-    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->LP:[F
+    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->MJ:[F
 
     .line 15
     const/high16 v0, -0x40800000    # -1.0f
 
-    iput v0, p0, Lcom/google/research/reflection/predictor/e;->LL:F
+    iput v0, p0, Lcom/google/research/reflection/predictor/e;->MF:F
 
     .line 17
-    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->LO:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/google/research/reflection/predictor/e;->MI:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public TV()[F
+.method public SI()[F
     .locals 1
 
     .prologue
     .line 26
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/e;->LP:[F
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/e;->MJ:[F
 
     return-object v0
 .end method
 
-.method public TW()[D
+.method public SJ()[D
     .locals 1
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/e;->LN:[D
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/e;->MH:[D
 
     return-object v0
 .end method
 
-.method public TX(Ljava/util/ArrayList;)V
+.method public SK(Ljava/util/ArrayList;)V
     .locals 0
 
     .prologue
     .line 56
-    iput-object p1, p0, Lcom/google/research/reflection/predictor/e;->LO:Ljava/util/ArrayList;
+    iput-object p1, p0, Lcom/google/research/reflection/predictor/e;->MI:Ljava/util/ArrayList;
 
     .line 57
     return-void
 .end method
 
-.method public TY([D)V
+.method public SL([D)V
     .locals 0
 
     .prologue
     .line 40
-    iput-object p1, p0, Lcom/google/research/reflection/predictor/e;->LN:[D
+    iput-object p1, p0, Lcom/google/research/reflection/predictor/e;->MH:[D
 
     .line 41
     return-void
 .end method
 
-.method public TZ([F)V
+.method public SM([F)V
     .locals 0
 
     .prologue
     .line 34
-    iput-object p1, p0, Lcom/google/research/reflection/predictor/e;->LP:[F
+    iput-object p1, p0, Lcom/google/research/reflection/predictor/e;->MJ:[F
 
     .line 35
     return-void
 .end method
 
-.method public Ua()Ljava/util/ArrayList;
+.method public SN()Ljava/util/ArrayList;
     .locals 1
 
     .prologue
     .line 53
-    iget-object v0, p0, Lcom/google/research/reflection/predictor/e;->LO:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/google/research/reflection/predictor/e;->MI:Ljava/util/ArrayList;
 
     return-object v0
 .end method

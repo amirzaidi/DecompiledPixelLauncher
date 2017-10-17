@@ -7,15 +7,15 @@
 
 
 # static fields
-.field private static final Ln:Lcom/google/protobuf/nano/k;
+.field private static final PU:Lcom/google/protobuf/nano/k;
 
 
 # instance fields
-.field private Lo:[I
+.field private PV:[I
 
-.field private Lp:[Lcom/google/protobuf/nano/k;
+.field private PW:[Lcom/google/protobuf/nano/k;
 
-.field private Lq:Z
+.field private PX:Z
 
 .field private mSize:I
 
@@ -30,7 +30,7 @@
 
     invoke-direct {v0}, Lcom/google/protobuf/nano/k;-><init>()V
 
-    sput-object v0, Lcom/google/protobuf/nano/h;->Ln:Lcom/google/protobuf/nano/k;
+    sput-object v0, Lcom/google/protobuf/nano/h;->PU:Lcom/google/protobuf/nano/k;
 
     .line 43
     return-void
@@ -59,22 +59,22 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
-    iput-boolean v2, p0, Lcom/google/protobuf/nano/h;->Lq:Z
+    iput-boolean v2, p0, Lcom/google/protobuf/nano/h;->PX:Z
 
     .line 64
-    invoke-direct {p0, p1}, Lcom/google/protobuf/nano/h;->Tf(I)I
+    invoke-direct {p0, p1}, Lcom/google/protobuf/nano/h;->Xa(I)I
 
     move-result v0
 
     .line 65
     new-array v1, v0, [I
 
-    iput-object v1, p0, Lcom/google/protobuf/nano/h;->Lo:[I
+    iput-object v1, p0, Lcom/google/protobuf/nano/h;->PV:[I
 
     .line 66
     new-array v0, v0, [Lcom/google/protobuf/nano/k;
 
-    iput-object v0, p0, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iput-object v0, p0, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
     .line 67
     iput v2, p0, Lcom/google/protobuf/nano/h;->mSize:I
@@ -83,7 +83,7 @@
     return-void
 .end method
 
-.method private Td()V
+.method private WY()V
     .locals 8
 
     .prologue
@@ -93,10 +93,10 @@
     iget v3, p0, Lcom/google/protobuf/nano/h;->mSize:I
 
     .line 99
-    iget-object v4, p0, Lcom/google/protobuf/nano/h;->Lo:[I
+    iget-object v4, p0, Lcom/google/protobuf/nano/h;->PV:[I
 
     .line 100
-    iget-object v5, p0, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v5, p0, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
     move v1, v2
 
@@ -110,7 +110,7 @@
     aget-object v6, v5, v1
 
     .line 105
-    sget-object v7, Lcom/google/protobuf/nano/h;->Ln:Lcom/google/protobuf/nano/k;
+    sget-object v7, Lcom/google/protobuf/nano/h;->PU:Lcom/google/protobuf/nano/k;
 
     if-eq v6, v7, :cond_1
 
@@ -142,7 +142,7 @@
 
     .line 116
     :cond_2
-    iput-boolean v2, p0, Lcom/google/protobuf/nano/h;->Lq:Z
+    iput-boolean v2, p0, Lcom/google/protobuf/nano/h;->PX:Z
 
     .line 117
     iput v0, p0, Lcom/google/protobuf/nano/h;->mSize:I
@@ -151,7 +151,7 @@
     return-void
 .end method
 
-.method private Te(I)I
+.method private WZ(I)I
     .locals 3
 
     .prologue
@@ -190,14 +190,14 @@
     return p1
 .end method
 
-.method private Tf(I)I
+.method private Xa(I)I
     .locals 1
 
     .prologue
     .line 229
     mul-int/lit8 v0, p1, 0x4
 
-    invoke-direct {p0, v0}, Lcom/google/protobuf/nano/h;->Te(I)I
+    invoke-direct {p0, v0}, Lcom/google/protobuf/nano/h;->WZ(I)I
 
     move-result v0
 
@@ -206,7 +206,7 @@
     return v0
 .end method
 
-.method private Th([Lcom/google/protobuf/nano/k;[Lcom/google/protobuf/nano/k;I)Z
+.method private Xc([Lcom/google/protobuf/nano/k;[Lcom/google/protobuf/nano/k;I)Z
     .locals 4
 
     .prologue
@@ -245,7 +245,7 @@
     return v0
 .end method
 
-.method private Ti([I[II)Z
+.method private Xd([I[II)Z
     .locals 4
 
     .prologue
@@ -282,21 +282,21 @@
 
 
 # virtual methods
-.method Tg(I)Lcom/google/protobuf/nano/k;
+.method Xb(I)Lcom/google/protobuf/nano/k;
     .locals 1
 
     .prologue
     .line 191
-    iget-boolean v0, p0, Lcom/google/protobuf/nano/h;->Lq:Z
+    iget-boolean v0, p0, Lcom/google/protobuf/nano/h;->PX:Z
 
     if-eqz v0, :cond_0
 
     .line 192
-    invoke-direct {p0}, Lcom/google/protobuf/nano/h;->Td()V
+    invoke-direct {p0}, Lcom/google/protobuf/nano/h;->WY()V
 
     .line 195
     :cond_0
-    iget-object v0, p0, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v0, p0, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
     aget-object v0, v0, p1
 
@@ -320,9 +320,9 @@
     invoke-direct {v2, v1}, Lcom/google/protobuf/nano/h;-><init>(I)V
 
     .line 282
-    iget-object v3, p0, Lcom/google/protobuf/nano/h;->Lo:[I
+    iget-object v3, p0, Lcom/google/protobuf/nano/h;->PV:[I
 
-    iget-object v4, v2, Lcom/google/protobuf/nano/h;->Lo:[I
+    iget-object v4, v2, Lcom/google/protobuf/nano/h;->PV:[I
 
     invoke-static {v3, v0, v4, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
@@ -331,16 +331,16 @@
     if-ge v0, v1, :cond_1
 
     .line 284
-    iget-object v3, p0, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v3, p0, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
     aget-object v3, v3, v0
 
     if-eqz v3, :cond_0
 
     .line 285
-    iget-object v3, v2, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v3, v2, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
-    iget-object v4, p0, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v4, p0, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
     aget-object v4, v4, v0
 
@@ -419,26 +419,26 @@
 
     .line 211
     :cond_2
-    iget-object v1, p0, Lcom/google/protobuf/nano/h;->Lo:[I
+    iget-object v1, p0, Lcom/google/protobuf/nano/h;->PV:[I
 
-    iget-object v2, p1, Lcom/google/protobuf/nano/h;->Lo:[I
+    iget-object v2, p1, Lcom/google/protobuf/nano/h;->PV:[I
 
     iget v3, p0, Lcom/google/protobuf/nano/h;->mSize:I
 
-    invoke-direct {p0, v1, v2, v3}, Lcom/google/protobuf/nano/h;->Ti([I[II)Z
+    invoke-direct {p0, v1, v2, v3}, Lcom/google/protobuf/nano/h;->Xd([I[II)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
     .line 212
-    iget-object v0, p0, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v0, p0, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
-    iget-object v1, p1, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v1, p1, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
     iget v2, p0, Lcom/google/protobuf/nano/h;->mSize:I
 
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/protobuf/nano/h;->Th([Lcom/google/protobuf/nano/k;[Lcom/google/protobuf/nano/k;I)Z
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/protobuf/nano/h;->Xc([Lcom/google/protobuf/nano/k;[Lcom/google/protobuf/nano/k;I)Z
 
     move-result v0
 
@@ -452,12 +452,12 @@
 
     .prologue
     .line 217
-    iget-boolean v0, p0, Lcom/google/protobuf/nano/h;->Lq:Z
+    iget-boolean v0, p0, Lcom/google/protobuf/nano/h;->PX:Z
 
     if-eqz v0, :cond_0
 
     .line 218
-    invoke-direct {p0}, Lcom/google/protobuf/nano/h;->Td()V
+    invoke-direct {p0}, Lcom/google/protobuf/nano/h;->WY()V
 
     .line 220
     :cond_0
@@ -474,7 +474,7 @@
     .line 222
     mul-int/lit8 v1, v1, 0x1f
 
-    iget-object v2, p0, Lcom/google/protobuf/nano/h;->Lo:[I
+    iget-object v2, p0, Lcom/google/protobuf/nano/h;->PV:[I
 
     aget v2, v2, v0
 
@@ -483,7 +483,7 @@
     .line 223
     mul-int/lit8 v1, v1, 0x1f
 
-    iget-object v2, p0, Lcom/google/protobuf/nano/h;->Lp:[Lcom/google/protobuf/nano/k;
+    iget-object v2, p0, Lcom/google/protobuf/nano/h;->PW:[Lcom/google/protobuf/nano/k;
 
     aget-object v2, v2, v0
 
@@ -508,12 +508,12 @@
 
     .prologue
     .line 174
-    iget-boolean v0, p0, Lcom/google/protobuf/nano/h;->Lq:Z
+    iget-boolean v0, p0, Lcom/google/protobuf/nano/h;->PX:Z
 
     if-eqz v0, :cond_0
 
     .line 175
-    invoke-direct {p0}, Lcom/google/protobuf/nano/h;->Td()V
+    invoke-direct {p0}, Lcom/google/protobuf/nano/h;->WY()V
 
     .line 178
     :cond_0

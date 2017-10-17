@@ -6,21 +6,21 @@ package com.google.protobuf.nano;
 
 public abstract class e extends a
 {
-    protected h Lb;
+    protected h PI;
     
     public e clone() {
         final e e = (e)super.clone();
-        d.SR(this, e);
+        d.WM(this, e);
         return e;
     }
     
     protected int computeSerializedSize() {
         int i = 0;
         int n;
-        if (this.Lb != null) {
+        if (this.PI != null) {
             n = 0;
-            while (i < this.Lb.size()) {
-                n += this.Lb.Tg(i).computeSerializedSize();
+            while (i < this.PI.size()) {
+                n += this.PI.Xb(i).computeSerializedSize();
                 ++i;
             }
         }
@@ -31,11 +31,11 @@ public abstract class e extends a
     }
     
     public void writeTo(final b b) {
-        if (this.Lb == null) {
+        if (this.PI == null) {
             return;
         }
-        for (int i = 0; i < this.Lb.size(); ++i) {
-            this.Lb.Tg(i).writeTo(b);
+        for (int i = 0; i < this.PI.size(); ++i) {
+            this.PI.Xb(i).writeTo(b);
         }
     }
 }
