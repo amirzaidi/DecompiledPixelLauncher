@@ -26,7 +26,7 @@
 
     iput-object p4, p0, Lcom/android/launcher3/LauncherModel$2;->val$stackTrace:[Ljava/lang/StackTraceElement;
 
-    .line 318
+    .line 252
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -39,12 +39,12 @@
     .locals 5
 
     .prologue
-    .line 320
+    .line 254
     sget-object v1, Lcom/android/launcher3/LauncherModel;->sBgDataModel:Lcom/android/launcher3/model/BgDataModel;
 
     monitor-enter v1
 
-    .line 321
+    .line 255
     :try_start_0
     iget-wide v2, p0, Lcom/android/launcher3/LauncherModel$2;->val$itemId:J
 
@@ -58,10 +58,10 @@
 
     monitor-exit v1
 
-    .line 323
+    .line 257
     return-void
 
-    .line 320
+    .line 254
     :catchall_0
     move-exception v0
 

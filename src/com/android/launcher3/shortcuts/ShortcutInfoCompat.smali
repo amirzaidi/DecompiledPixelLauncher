@@ -12,13 +12,13 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 43
+    .line 39
     iput-object p1, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
-    .line 44
+    .line 40
     return-void
 .end method
 
@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 77
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getActivity()Landroid/content/ComponentName;
@@ -42,7 +42,7 @@
     .locals 1
 
     .prologue
-    .line 113
+    .line 109
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getDisabledMessage()Ljava/lang/CharSequence;
@@ -56,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 61
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getId()Ljava/lang/String;
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 69
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getLongLabel()Ljava/lang/CharSequence;
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 57
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getPackage()Ljava/lang/String;
@@ -98,7 +98,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 105
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getRank()I
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 69
+    .line 65
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getShortLabel()Ljava/lang/CharSequence;
@@ -126,7 +126,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 53
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     return-object v0
@@ -136,7 +136,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 81
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->getUserHandle()Landroid/os/UserHandle;
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 93
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->isDeclaredInManifest()Z
@@ -164,7 +164,7 @@
     .locals 1
 
     .prologue
-    .line 105
+    .line 101
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->isDynamic()Z
@@ -178,7 +178,7 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 97
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->isEnabled()Z
@@ -192,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 89
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->isPinned()Z
@@ -206,57 +206,57 @@
     .locals 3
 
     .prologue
-    .line 48
+    .line 44
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 49
+    .line 45
     const-string/jumbo v1, "com.android.launcher3.DEEP_SHORTCUT"
 
-    .line 48
+    .line 44
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 50
+    .line 46
     invoke-virtual {p0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getActivity()Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 48
+    .line 44
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 51
+    .line 47
     invoke-virtual {p0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getPackage()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 48
+    .line 44
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 52
+    .line 48
     const/high16 v1, 0x10200000
 
-    .line 48
+    .line 44
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 53
+    .line 49
     const-string/jumbo v1, "shortcut_id"
 
     invoke-virtual {p0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getId()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 48
+    .line 44
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
@@ -268,7 +268,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 114
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->mShortcutInfo:Landroid/content/pm/ShortcutInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/ShortcutInfo;->toString()Ljava/lang/String;

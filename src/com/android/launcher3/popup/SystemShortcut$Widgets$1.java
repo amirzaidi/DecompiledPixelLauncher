@@ -26,6 +26,7 @@ final class SystemShortcut$Widgets$1 implements View$OnClickListener
     
     public void onClick(final View view) {
         AbstractFloatingView.closeAllOpenViews(this.val$launcher);
-        ((WidgetsBottomSheet)this.val$launcher.getLayoutInflater().inflate(2130968628, (ViewGroup)this.val$launcher.getDragLayer(), false)).populateAndShow(this.val$itemInfo);
+        ((WidgetsBottomSheet)this.val$launcher.getLayoutInflater().inflate(2130968630, (ViewGroup)this.val$launcher.getDragLayer(), false)).populateAndShow(this.val$itemInfo);
+        this.val$launcher.getUserEventDispatcher().logActionOnControl(0, 2, view);
     }
 }

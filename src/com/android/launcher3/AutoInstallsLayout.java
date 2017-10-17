@@ -5,7 +5,7 @@
 package com.android.launcher3;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
@@ -57,7 +57,7 @@ public class AutoInstallsLayout
         this.mColumnCount = this.mIdp.numColumns;
     }
     
-    protected static final void beginDocument(final XmlPullParser xmlPullParser, final String s) {
+    protected static void beginDocument(final XmlPullParser xmlPullParser, final String s) {
         final int n = 2;
         int next;
         do {
@@ -155,22 +155,22 @@ public class AutoInstallsLayout
         return generateNewItemId;
     }
     
-    protected HashMap getFolderElementsMap() {
-        final HashMap<String, AutoInstallsLayout$AppShortcutParser> hashMap = new HashMap<String, AutoInstallsLayout$AppShortcutParser>();
-        hashMap.put("appicon", new AutoInstallsLayout$AppShortcutParser(this));
-        hashMap.put("autoinstall", (AutoInstallsLayout$AppShortcutParser)new AutoInstallsLayout$AutoInstallParser(this));
-        hashMap.put("shortcut", (AutoInstallsLayout$AppShortcutParser)new AutoInstallsLayout$ShortcutParser(this, this.mSourceRes));
-        return hashMap;
+    protected ArrayMap getFolderElementsMap() {
+        final ArrayMap arrayMap = new ArrayMap();
+        arrayMap.put((Object)"appicon", (Object)new AutoInstallsLayout$AppShortcutParser(this));
+        arrayMap.put((Object)"autoinstall", (Object)new AutoInstallsLayout$AutoInstallParser(this));
+        arrayMap.put((Object)"shortcut", (Object)new AutoInstallsLayout$ShortcutParser(this, this.mSourceRes));
+        return arrayMap;
     }
     
-    protected HashMap getLayoutElementsMap() {
-        final HashMap<String, AutoInstallsLayout$AppShortcutParser> hashMap = new HashMap<String, AutoInstallsLayout$AppShortcutParser>();
-        hashMap.put("appicon", new AutoInstallsLayout$AppShortcutParser(this));
-        hashMap.put("autoinstall", (AutoInstallsLayout$AppShortcutParser)new AutoInstallsLayout$AutoInstallParser(this));
-        hashMap.put("folder", (AutoInstallsLayout$AppShortcutParser)new AutoInstallsLayout$FolderParser(this));
-        hashMap.put("appwidget", (AutoInstallsLayout$AppShortcutParser)new AutoInstallsLayout$PendingWidgetParser(this));
-        hashMap.put("shortcut", (AutoInstallsLayout$AppShortcutParser)new AutoInstallsLayout$ShortcutParser(this, this.mSourceRes));
-        return hashMap;
+    protected ArrayMap getLayoutElementsMap() {
+        final ArrayMap arrayMap = new ArrayMap();
+        arrayMap.put((Object)"appicon", (Object)new AutoInstallsLayout$AppShortcutParser(this));
+        arrayMap.put((Object)"autoinstall", (Object)new AutoInstallsLayout$AutoInstallParser(this));
+        arrayMap.put((Object)"folder", (Object)new AutoInstallsLayout$FolderParser(this));
+        arrayMap.put((Object)"appwidget", (Object)new AutoInstallsLayout$PendingWidgetParser(this));
+        arrayMap.put((Object)"shortcut", (Object)new AutoInstallsLayout$ShortcutParser(this, this.mSourceRes));
+        return arrayMap;
     }
     
     public int loadLayout(final SQLiteDatabase mDb, final ArrayList list) {
@@ -184,7 +184,7 @@ public class AutoInstallsLayout
         }
     }
     
-    protected int parseAndAddNode(final XmlResourceParser xmlResourceParser, final HashMap hashMap, final ArrayList list) {
+    protected int parseAndAddNode(final XmlResourceParser xmlResourceParser, final ArrayMap arrayMap, final ArrayList list) {
         final int n = 1;
         if ("include".equals(xmlResourceParser.getName())) {
             final int attributeResourceValue = getAttributeResourceValue(xmlResourceParser, "workspace", 0);
@@ -202,7 +202,7 @@ public class AutoInstallsLayout
             this.mValues.put("screen", n3);
             this.mValues.put("cellX", convertToDistanceFromEnd(getAttributeValue(xmlResourceParser, "x"), this.mColumnCount));
             this.mValues.put("cellY", convertToDistanceFromEnd(getAttributeValue(xmlResourceParser, "y"), this.mRowCount));
-            final AutoInstallsLayout$TagParser autoInstallsLayout$TagParser = hashMap.get(xmlResourceParser.getName());
+            final AutoInstallsLayout$TagParser autoInstallsLayout$TagParser = (AutoInstallsLayout$TagParser)arrayMap.get((Object)xmlResourceParser.getName());
             if (autoInstallsLayout$TagParser == null) {
                 return 0;
             }
@@ -232,7 +232,7 @@ public class AutoInstallsLayout
         final XmlResourceParser xml = this.mSourceRes.getXml(n);
         beginDocument((XmlPullParser)xml, this.mRootTag);
         final int depth = xml.getDepth();
-        final HashMap layoutElementsMap = this.getLayoutElementsMap();
+        final ArrayMap layoutElementsMap = this.getLayoutElementsMap();
         int n2 = 0;
         while (true) {
             final int next = xml.next();

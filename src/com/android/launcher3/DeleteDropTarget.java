@@ -24,7 +24,7 @@ public class DeleteDropTarget extends ButtonDropTarget
     public static void removeWorkspaceOrFolderItem(final Launcher launcher, final ItemInfo itemInfo, final View view) {
         launcher.removeItem(view, itemInfo, true);
         launcher.getWorkspace().stripEmptyScreens();
-        launcher.getDragLayer().announceForAccessibility((CharSequence)launcher.getString(2131492968));
+        launcher.getDragLayer().announceForAccessibility((CharSequence)launcher.getString(2131492977));
     }
     
     public static boolean supportsAccessibleDrop(final ItemInfo itemInfo) {
@@ -46,14 +46,14 @@ public class DeleteDropTarget extends ButtonDropTarget
     protected void onFinishInflate() {
         super.onFinishInflate();
         this.mHoverColor = this.getResources().getColor(2131361814);
-        this.setDrawable(2130837570);
+        this.setDrawable(2130837571);
     }
     
     public void setTextBasedOnDragSource(final DragSource dragSource) {
         if (!TextUtils.isEmpty(this.getText())) {
             int text;
             if (dragSource.supportsDeleteDropTarget()) {
-                text = 2131492917;
+                text = 2131492919;
             }
             else {
                 text = 17039360;

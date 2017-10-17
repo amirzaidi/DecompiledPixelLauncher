@@ -9,20 +9,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Launcher;
 
-.field final synthetic val$updates:Ljava/util/HashSet;
+.field final synthetic val$widgets:Ljava/util/ArrayList;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;Ljava/util/HashSet;)V
+.method constructor <init>(Lcom/android/launcher3/Launcher;Ljava/util/ArrayList;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$35;->this$0:Lcom/android/launcher3/Launcher;
 
-    iput-object p2, p0, Lcom/android/launcher3/Launcher$35;->val$updates:Ljava/util/HashSet;
+    iput-object p2, p0, Lcom/android/launcher3/Launcher$35;->val$widgets:Ljava/util/ArrayList;
 
-    .line 3848
+    .line 3759
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,13 +35,13 @@
     .locals 2
 
     .prologue
-    .line 3850
+    .line 3761
     iget-object v0, p0, Lcom/android/launcher3/Launcher$35;->this$0:Lcom/android/launcher3/Launcher;
 
-    iget-object v1, p0, Lcom/android/launcher3/Launcher$35;->val$updates:Ljava/util/HashSet;
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$35;->val$widgets:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->bindRestoreItemsChange(Ljava/util/HashSet;)V
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->bindWidgetsRestored(Ljava/util/ArrayList;)V
 
-    .line 3851
+    .line 3762
     return-void
 .end method

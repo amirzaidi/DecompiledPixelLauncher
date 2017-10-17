@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/dragndrop/DragView$4;->this$0:Lcom/android/launcher3/dragndrop/DragView;
 
-    .line 286
+    .line 490
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -28,29 +28,23 @@
 
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 290
+    .line 493
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragView$4;->this$0:Lcom/android/launcher3/dragndrop/DragView;
 
-    iget-object v0, v0, Lcom/android/launcher3/dragndrop/DragView;->mPaint:Landroid/graphics/Paint;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    new-instance v1, Landroid/graphics/ColorMatrixColorFilter;
+    move-result v1
 
-    iget-object v2, p0, Lcom/android/launcher3/dragndrop/DragView$4;->this$0:Lcom/android/launcher3/dragndrop/DragView;
+    iput v1, v0, Lcom/android/launcher3/dragndrop/DragView;->mCrossFadeProgress:F
 
-    iget-object v2, v2, Lcom/android/launcher3/dragndrop/DragView;->mCurrentFilter:[F
-
-    invoke-direct {v1, v2}, Landroid/graphics/ColorMatrixColorFilter;-><init>([F)V
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
-
-    .line 291
+    .line 494
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragView$4;->this$0:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/dragndrop/DragView;->invalidate()V
 
-    .line 292
+    .line 495
     return-void
 .end method

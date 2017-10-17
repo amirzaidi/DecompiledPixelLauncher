@@ -36,7 +36,7 @@ public class WorkspaceAccessibilityHelper extends DragAndDropAccessibilityDelega
         if (itemInfo instanceof ShortcutInfo) {
             final Object[] array = new Object[n];
             array[0] = ((FolderInfo)itemInfo).title;
-            return context.getString(2131492977, array);
+            return context.getString(2131492986, array);
         }
         if (itemInfo instanceof FolderInfo) {
             if (TextUtils.isEmpty(((FolderInfo)itemInfo).title)) {
@@ -49,12 +49,12 @@ public class WorkspaceAccessibilityHelper extends DragAndDropAccessibilityDelega
                 if (shortcutInfo != null) {
                     final Object[] array2 = new Object[n];
                     array2[0] = shortcutInfo.title;
-                    return context.getString(2131492975, array2);
+                    return context.getString(2131492984, array2);
                 }
             }
             final Object[] array3 = new Object[n];
             array3[0] = ((FolderInfo)itemInfo).title;
-            return context.getString(2131492974, array3);
+            return context.getString(2131492983, array3);
         }
         return "";
     }
@@ -65,14 +65,14 @@ public class WorkspaceAccessibilityHelper extends DragAndDropAccessibilityDelega
         final LauncherAccessibilityDelegate$DragInfo dragInfo = this.mDelegate.getDragInfo();
         final View child = this.mView.getChildAt(n2, n3);
         if (child == null || child == dragInfo.item) {
-            return this.mContext.getString(2131492973);
+            return this.mContext.getString(2131492982);
         }
         final ItemInfo itemInfo = (ItemInfo)child.getTag();
         if (itemInfo instanceof AppInfo || itemInfo instanceof ShortcutInfo) {
-            return this.mContext.getString(2131492978);
+            return this.mContext.getString(2131492987);
         }
         if (itemInfo instanceof FolderInfo) {
-            return this.mContext.getString(2131492976);
+            return this.mContext.getString(2131492985);
         }
         return "";
     }
@@ -141,11 +141,11 @@ public class WorkspaceAccessibilityHelper extends DragAndDropAccessibilityDelega
         final DragLayer dragLayer = Launcher.getLauncher(this.mView.getContext()).getDragLayer();
         this.mTempCords[this.mTempCords[n2] = 0] = 0;
         final float descendantCoordRelativeToSelf = dragLayer.getDescendantCoordRelativeToSelf((View)this.mView, this.mTempCords);
-        a.adM(this.mTempRect);
+        a.aeO(this.mTempRect);
         this.mTempRect.left = this.mTempCords[0] + (int)(this.mTempRect.left * descendantCoordRelativeToSelf);
         this.mTempRect.right = this.mTempCords[0] + (int)(this.mTempRect.right * descendantCoordRelativeToSelf);
         this.mTempRect.top = this.mTempCords[n2] + (int)(this.mTempRect.top * descendantCoordRelativeToSelf);
         this.mTempRect.bottom = (int)(descendantCoordRelativeToSelf * this.mTempRect.bottom) + this.mTempCords[n2];
-        a.adV(this.mTempRect);
+        a.aeX(this.mTempRect);
     }
 }

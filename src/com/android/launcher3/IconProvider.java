@@ -16,7 +16,7 @@ public class IconProvider
         this.updateSystemStateString();
     }
     
-    public Drawable getIcon(final LauncherActivityInfo launcherActivityInfo, final int n) {
+    public Drawable getIcon(final LauncherActivityInfo launcherActivityInfo, final int n, final boolean b) {
         return launcherActivityInfo.getIcon(n);
     }
     

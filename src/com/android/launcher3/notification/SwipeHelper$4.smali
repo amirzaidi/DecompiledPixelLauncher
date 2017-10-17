@@ -26,7 +26,7 @@
 
     iput-boolean p3, p0, Lcom/android/launcher3/notification/SwipeHelper$4;->val$canBeDismissed:Z
 
-    .line 437
+    .line 434
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -39,7 +39,7 @@
     .locals 4
 
     .prologue
-    .line 439
+    .line 436
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper$4;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
     iget-object v2, p0, Lcom/android/launcher3/notification/SwipeHelper$4;->val$animView:Landroid/view/View;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v1, v2, v0, v3}, Lcom/android/launcher3/notification/SwipeHelper;->onTranslationUpdate(Landroid/view/View;FZ)V
 
-    .line 440
+    .line 437
     return-void
 .end method

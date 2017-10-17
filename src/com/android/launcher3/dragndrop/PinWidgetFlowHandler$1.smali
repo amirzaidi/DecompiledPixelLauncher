@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 71
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -24,7 +24,7 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 76
     new-instance v0, Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler;-><init>(Landroid/os/Parcel;)V
@@ -36,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 75
     invoke-virtual {p0, p1}, Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler;
 
     move-result-object v0
@@ -48,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 80
     new-array v0, p1, [Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler;
 
     return-object v0
@@ -58,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 79
     invoke-virtual {p0, p1}, Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler$1;->newArray(I)[Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler;
 
     move-result-object v0

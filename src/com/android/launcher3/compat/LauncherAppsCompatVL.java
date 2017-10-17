@@ -20,19 +20,18 @@ import android.content.pm.ApplicationInfo;
 import java.util.List;
 import android.os.UserHandle;
 import android.content.pm.LauncherApps$Callback;
-import java.util.HashMap;
 import android.content.pm.LauncherApps;
 import android.content.Context;
-import java.util.Map;
+import android.util.ArrayMap;
 
 public class LauncherAppsCompatVL extends LauncherAppsCompat
 {
-    private Map mCallbacks;
+    private final ArrayMap mCallbacks;
     protected final Context mContext;
     protected final LauncherApps mLauncherApps;
     
     LauncherAppsCompatVL(final Context mContext) {
-        this.mCallbacks = new HashMap();
+        this.mCallbacks = new ArrayMap();
         this.mContext = mContext;
         this.mLauncherApps = (LauncherApps)mContext.getSystemService("launcherapps");
     }
@@ -40,7 +39,7 @@ public class LauncherAppsCompatVL extends LauncherAppsCompat
     public void addOnAppsChangedCallback(final LauncherAppsCompat$OnAppsChangedCallbackCompat launcherAppsCompat$OnAppsChangedCallbackCompat) {
         final LauncherAppsCompatVL$WrappedCallback launcherAppsCompatVL$WrappedCallback = new LauncherAppsCompatVL$WrappedCallback(launcherAppsCompat$OnAppsChangedCallbackCompat);
         synchronized (this.mCallbacks) {
-            this.mCallbacks.put(launcherAppsCompat$OnAppsChangedCallbackCompat, launcherAppsCompatVL$WrappedCallback);
+            this.mCallbacks.put((Object)launcherAppsCompat$OnAppsChangedCallbackCompat, (Object)launcherAppsCompatVL$WrappedCallback);
             // monitorexit(this.mCallbacks)
             this.mLauncherApps.registerCallback((LauncherApps$Callback)launcherAppsCompatVL$WrappedCallback);
         }
@@ -101,7 +100,7 @@ public class LauncherAppsCompatVL extends LauncherAppsCompat
     public void removeOnAppsChangedCallback(final LauncherAppsCompat$OnAppsChangedCallbackCompat launcherAppsCompat$OnAppsChangedCallbackCompat) {
         Object o = this.mCallbacks;
         synchronized (o) {
-            final LauncherAppsCompatVL$WrappedCallback launcherAppsCompatVL$WrappedCallback = this.mCallbacks.remove(launcherAppsCompat$OnAppsChangedCallbackCompat);
+            final LauncherAppsCompatVL$WrappedCallback launcherAppsCompatVL$WrappedCallback = (LauncherAppsCompatVL$WrappedCallback)this.mCallbacks.remove((Object)launcherAppsCompat$OnAppsChangedCallbackCompat);
             // monitorexit(o)
             if (launcherAppsCompatVL$WrappedCallback != null) {
                 o = this.mLauncherApps;

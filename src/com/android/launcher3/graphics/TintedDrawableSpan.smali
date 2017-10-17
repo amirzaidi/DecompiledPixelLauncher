@@ -30,6 +30,11 @@
     iput v1, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mOldTint:I
 
     .line 37
+    iget-object v0, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
+    .line 38
     return-void
 .end method
 
@@ -39,31 +44,31 @@
     .locals 2
 
     .prologue
-    .line 50
+    .line 51
     invoke-virtual {p9}, Landroid/graphics/Paint;->getColor()I
 
     move-result v0
 
-    .line 51
+    .line 52
     iget v1, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mOldTint:I
 
     if-eq v1, v0, :cond_0
 
-    .line 52
+    .line 53
     iput v0, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mOldTint:I
 
-    .line 53
+    .line 54
     iget-object v0, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mOldTint:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 55
+    .line 56
     :cond_0
     invoke-super/range {p0 .. p9}, Landroid/text/style/DynamicDrawableSpan;->draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
 
-    .line 56
+    .line 57
     return-void
 .end method
 
@@ -71,7 +76,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 61
     iget-object v0, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -83,14 +88,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 41
+    .line 42
     if-nez p5, :cond_0
 
     invoke-virtual {p1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v5
 
-    .line 42
+    .line 43
     :goto_0
     iget v0, v5, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
@@ -98,7 +103,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 43
+    .line 44
     iget-object v1, p0, Lcom/android/launcher3/graphics/TintedDrawableSpan;->mDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v2, v2, v0, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
@@ -113,7 +118,7 @@
 
     move v4, p4
 
-    .line 44
+    .line 45
     invoke-super/range {v0 .. v5}, Landroid/text/style/DynamicDrawableSpan;->getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
 
     move-result v0
@@ -123,6 +128,6 @@
     :cond_0
     move-object v5, p5
 
-    .line 41
+    .line 42
     goto :goto_0
 .end method

@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Hotseat$1;->this$0:Lcom/android/launcher3/Hotseat;
 
-    .line 192
+    .line 197
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 2
 
     .prologue
-    .line 195
+    .line 200
     iget-object v0, p0, Lcom/android/launcher3/Hotseat$1;->this$0:Lcom/android/launcher3/Hotseat;
 
     invoke-static {v0}, Lcom/android/launcher3/Hotseat;->-get0(Lcom/android/launcher3/Hotseat;)Landroid/graphics/drawable/ColorDrawable;
@@ -50,6 +50,6 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/ColorDrawable;->setColor(I)V
 
-    .line 196
+    .line 201
     return-void
 .end method

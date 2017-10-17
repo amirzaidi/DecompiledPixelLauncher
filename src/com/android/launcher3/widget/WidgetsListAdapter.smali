@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0b004c
+    const v1, 0x7f0b0055
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -303,7 +303,7 @@
     .line 144
     iget-object v1, p0, Lcom/android/launcher3/widget/WidgetsListAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v7, 0x7f040033
+    const v7, 0x7f040035
 
     invoke-virtual {v1, v7, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -320,7 +320,7 @@
     iget-object v1, p0, Lcom/android/launcher3/widget/WidgetsListAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
     .line 148
-    const v7, 0x7f040031
+    const v7, 0x7f040033
 
     .line 147
     invoke-virtual {v1, v7, v6, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -461,7 +461,7 @@
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsListAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
     .line 185
-    const v1, 0x7f040035
+    const v1, 0x7f040037
 
     .line 184
     invoke-virtual {v0, v1, p1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -471,7 +471,7 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 189
-    const v1, 0x7f0e0072
+    const v1, 0x7f0e008c
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

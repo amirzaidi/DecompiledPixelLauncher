@@ -23,7 +23,7 @@
 
 .field private mStartTime:J
 
-.field private mTarget:Landroid/view/View;
+.field private final mTarget:Landroid/view/View;
 
 
 # direct methods

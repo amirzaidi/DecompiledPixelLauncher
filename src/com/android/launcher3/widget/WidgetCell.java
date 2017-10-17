@@ -71,13 +71,13 @@ public class WidgetCell extends LinearLayout implements View$OnLayoutChangeListe
         final Object[] array = new Object[n];
         array[0] = this.mItem.spanX;
         array[n2] = this.mItem.spanY;
-        mWidgetDims.setText((CharSequence)context.getString(2131492904, array));
+        mWidgetDims.setText((CharSequence)context.getString(2131492906, array));
         final TextView mWidgetDims2 = this.mWidgetDims;
         final Context context2 = this.getContext();
         final Object[] array2 = new Object[n];
         array2[0] = this.mItem.spanX;
         array2[n2] = this.mItem.spanY;
-        mWidgetDims2.setContentDescription((CharSequence)context2.getString(2131492905, array2));
+        mWidgetDims2.setContentDescription((CharSequence)context2.getString(2131492907, array2));
         this.mWidgetPreviewLoader = mWidgetPreviewLoader;
         if (mItem.activityInfo != null) {
             this.setTag((Object)new PendingAddShortcutInfo(mItem.activityInfo));
@@ -137,9 +137,9 @@ public class WidgetCell extends LinearLayout implements View$OnLayoutChangeListe
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        this.mWidgetImage = (WidgetImageView)this.findViewById(2131624045);
-        this.mWidgetName = (TextView)this.findViewById(2131624043);
-        this.mWidgetDims = (TextView)this.findViewById(2131624044);
+        this.mWidgetImage = (WidgetImageView)this.findViewById(2131624071);
+        this.mWidgetName = (TextView)this.findViewById(2131624069);
+        this.mWidgetDims = (TextView)this.findViewById(2131624070);
     }
     
     public void onLayoutChange(final View view, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {

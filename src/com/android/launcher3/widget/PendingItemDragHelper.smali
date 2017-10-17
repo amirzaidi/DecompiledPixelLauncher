@@ -636,7 +636,7 @@
     move-result-object v0
 
     .line 119
-    const/16 v2, 0x1a
+    const/4 v2, 0x0
 
     invoke-static {v0, v1, v2}, Lcom/android/launcher3/graphics/LauncherIcons;->createScaledBitmapWithoutShadow(Landroid/graphics/drawable/Drawable;Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
@@ -714,7 +714,7 @@
     move-result-object v5
 
     .line 132
-    const v7, 0x7f0b0047
+    const v7, 0x7f0b0050
 
     .line 131
     invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I

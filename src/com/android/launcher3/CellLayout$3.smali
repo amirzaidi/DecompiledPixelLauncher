@@ -42,7 +42,7 @@
 
     iput-object p7, p0, Lcom/android/launcher3/CellLayout$3;->val$child:Landroid/view/View;
 
-    .line 958
+    .line 953
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -57,7 +57,7 @@
     .prologue
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 961
+    .line 956
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     move-result v0
 
-    .line 962
+    .line 957
     iget-object v1, p0, Lcom/android/launcher3/CellLayout$3;->val$lp:Lcom/android/launcher3/CellLayout$LayoutParams;
 
     sub-float v2, v4, v0
@@ -91,7 +91,7 @@
 
     iput v2, v1, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
-    .line 963
+    .line 958
     iget-object v1, p0, Lcom/android/launcher3/CellLayout$3;->val$lp:Lcom/android/launcher3/CellLayout$LayoutParams;
 
     sub-float v2, v4, v0
@@ -114,11 +114,11 @@
 
     iput v0, v1, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
-    .line 964
+    .line 959
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$3;->val$child:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 965
+    .line 960
     return-void
 .end method

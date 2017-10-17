@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView$1;->this$0:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
-    .line 250
+    .line 212
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,10 +31,10 @@
     .locals 1
 
     .prologue
-    .line 253
+    .line 215
     if-eqz p2, :cond_0
 
-    .line 254
+    .line 216
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView$1;->this$0:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->-get0(Lcom/android/launcher3/allapps/AllAppsContainerView;)Lcom/android/launcher3/allapps/AllAppsRecyclerView;
@@ -43,7 +43,7 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->requestFocus()Z
 
-    .line 256
+    .line 218
     :cond_0
     return-void
 .end method

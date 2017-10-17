@@ -4,24 +4,26 @@
 
 package com.android.launcher3;
 
+import android.view.View;
+
 final class Workspace$11 implements Runnable
 {
     final /* synthetic */ Workspace this$0;
-    final /* synthetic */ long val$container;
-    final /* synthetic */ ItemInfo val$item;
-    final /* synthetic */ PendingAddItemInfo val$pendingInfo;
-    final /* synthetic */ long val$screenId;
+    final /* synthetic */ View val$finalView;
+    final /* synthetic */ Runnable val$onCompleteRunnable;
     
-    Workspace$11(final Workspace this$0, final PendingAddItemInfo val$pendingInfo, final long val$container, final long val$screenId, final ItemInfo val$item) {
+    Workspace$11(final Workspace this$0, final View val$finalView, final Runnable val$onCompleteRunnable) {
         this.this$0 = this$0;
-        this.val$pendingInfo = val$pendingInfo;
-        this.val$container = val$container;
-        this.val$screenId = val$screenId;
-        this.val$item = val$item;
+        this.val$finalView = val$finalView;
+        this.val$onCompleteRunnable = val$onCompleteRunnable;
     }
     
     public void run() {
-        this.this$0.deferRemoveExtraEmptyScreen();
-        this.this$0.mLauncher.addPendingItem(this.val$pendingInfo, this.val$container, this.val$screenId, this.this$0.mTargetCell, this.val$item.spanX, this.val$item.spanY);
+        if (this.val$finalView != null) {
+            this.val$finalView.setVisibility(0);
+        }
+        if (this.val$onCompleteRunnable != null) {
+            this.val$onCompleteRunnable.run();
+        }
     }
 }

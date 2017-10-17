@@ -4,31 +4,32 @@
 
 package com.android.launcher3.model;
 
-import android.content.pm.PackageManager;
+import android.content.Intent;
 import android.graphics.Bitmap;
-import com.android.launcher3.LauncherModel;
 import java.util.Iterator;
 import com.android.launcher3.IconCache;
 import android.content.Context;
 import com.android.launcher3.util.PackageUserKey;
-import com.android.launcher3.Utilities;
 import com.android.launcher3.InstallShortcutReceiver;
-import com.android.launcher3.compat.LauncherAppsCompat;
 import java.util.Collections;
 import android.content.ComponentName;
 import com.android.launcher3.ItemInfoWithIcon;
+import com.android.launcher3.util.PackageManagerHelper;
+import com.android.launcher3.compat.LauncherAppsCompat;
 import android.content.Intent$ShortcutIconResource;
 import com.android.launcher3.graphics.LauncherIcons;
 import com.android.launcher3.ItemInfo;
 import com.android.launcher3.LauncherAppWidgetInfo;
 import com.android.launcher3.ShortcutInfo;
 import com.android.launcher3.LauncherModel$CallbackTask;
-import android.content.Intent;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import com.android.launcher3.AppInfo;
 import java.util.ArrayList;
 import com.android.launcher3.compat.UserManagerCompat;
-import com.android.launcher3.util.ManagedProfileHeuristic;
+import com.android.launcher3.SessionCommitReceiver;
+import com.android.launcher3.Utilities;
+import android.os.Process;
+import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.util.ItemInfoMatcher;
 import java.util.Collection;
 import java.util.HashSet;
@@ -38,7 +39,7 @@ import com.android.launcher3.AllAppsList;
 import com.android.launcher3.LauncherAppState;
 import android.os.UserHandle;
 
-public class PackageUpdatedTask extends ExtendedModelTask
+public class PackageUpdatedTask extends BaseModelUpdateTask
 {
     private final int mOp;
     private final String[] mPackages;
@@ -69,11 +70,13 @@ public class PackageUpdatedTask extends ExtendedModelTask
             case 1: {
                 for (int i = 0; i < length; ++i) {
                     iconCache.updateIconsForPkg(mPackages[i], this.mUser);
+                    if (FeatureFlags.LAUNCHER3_PROMISE_APPS_IN_ALL_APPS) {
+                        list.removePackage(mPackages[i], Process.myUserHandle());
+                    }
                     list.addPackage(context, mPackages[i], this.mUser);
-                }
-                final ManagedProfileHeuristic value = ManagedProfileHeuristic.get(context, this.mUser);
-                if (value != null) {
-                    value.processPackageAdd(this.mPackages);
+                    if (!Utilities.isAtLeastO() && (Process.myUserHandle().equals((Object)this.mUser) ^ true)) {
+                        SessionCommitReceiver.queueAppIconAddition(context, mPackages[i], this.mUser);
+                    }
                 }
                 itemInfoMatcher = ofPackages;
                 flagOp = no_OP;
@@ -91,10 +94,6 @@ public class PackageUpdatedTask extends ExtendedModelTask
                 break;
             }
             case 3: {
-                final ManagedProfileHeuristic value2 = ManagedProfileHeuristic.get(context, this.mUser);
-                if (value2 != null) {
-                    value2.processPackageRemoved(this.mPackages);
-                }
                 for (int k = 0; k < length; ++k) {
                     iconCache.removeIconsForPkg(mPackages[k], this.mUser);
                 }
@@ -153,19 +152,19 @@ public class PackageUpdatedTask extends ExtendedModelTask
             list2.addAll(list.removed);
             list.removed.clear();
         }
-        final HashMap<Intent, AppInfo> hashMap = new HashMap<Intent, AppInfo>();
+        final ArrayMap arrayMap = new ArrayMap();
         Object intent = null;
         if (iterable != null) {
             this.scheduleCallbackTask(new PackageUpdatedTask$1(this, (ArrayList)iterable));
             for (final AppInfo appInfo : iterable) {
                 intent = appInfo.componentName;
-                hashMap.put((Intent)intent, appInfo);
+                arrayMap.put(intent, (Object)appInfo);
             }
         }
         if (iconBitmap != null) {
             for (final AppInfo appInfo2 : iconBitmap) {
                 intent = appInfo2.componentName;
-                hashMap.put((Intent)intent, appInfo2);
+                arrayMap.put(intent, (Object)appInfo2);
             }
             this.scheduleCallbackTask(new PackageUpdatedTask$2(this, (ArrayList)iconBitmap));
         }
@@ -173,33 +172,33 @@ public class PackageUpdatedTask extends ExtendedModelTask
             ArrayList<ShortcutInfo> list3 = null;
             ArrayList<ShortcutInfo> list4 = null;
             ArrayList<LauncherAppWidgetInfo> list5 = null;
-        Label_1551_Outer:
+        Label_1583_Outer:
             while (true) {
                 list3 = new ArrayList<ShortcutInfo>();
                 list4 = new ArrayList<ShortcutInfo>();
                 list5 = new ArrayList<LauncherAppWidgetInfo>();
-            Label_1551:
+            Label_1583:
                 while (true) {
-                    int hasStatusFlag = 0;
-                Label_2581:
+                    int n = 0;
+                Label_2615:
                     while (true) {
                         final LauncherAppWidgetInfo launcherAppWidgetInfo;
-                        Label_1791: {
-                            Label_1648: {
-                                Label_1597: {
-                                    Label_1590: {
-                                        Label_1541: {
+                        Label_1823: {
+                            Label_1680: {
+                                Label_1629: {
+                                    Label_1622: {
+                                        Label_1573: {
                                             synchronized (bgDataModel) {
                                                 for (final ItemInfo itemInfo : bgDataModel.itemsIdMap) {
                                                     if (!(itemInfo instanceof ShortcutInfo)) {
-                                                        break Label_1791;
+                                                        break Label_1823;
                                                     }
                                                     iconBitmap = this.mUser;
                                                     if (!((UserHandle)iconBitmap).equals(((ShortcutInfo)itemInfo).user)) {
-                                                        break Label_1791;
+                                                        break Label_1823;
                                                     }
                                                     final ShortcutInfo shortcutInfo = (ShortcutInfo)itemInfo;
-                                                    hasStatusFlag = 0;
+                                                    n = 0;
                                                     intent = null;
                                                     iconBitmap = shortcutInfo.iconResource;
                                                     if (iconBitmap != null) {
@@ -210,63 +209,65 @@ public class PackageUpdatedTask extends ExtendedModelTask
                                                             iconBitmap = LauncherIcons.createIconBitmap((Intent$ShortcutIconResource)iconBitmap, context);
                                                             if (iconBitmap != null) {
                                                                 shortcutInfo.iconBitmap = (Bitmap)iconBitmap;
-                                                                hasStatusFlag = 1;
+                                                                n = 1;
                                                             }
                                                         }
                                                     }
                                                     final ComponentName targetComponent = shortcutInfo.getTargetComponent();
                                                     if (targetComponent == null) {
-                                                        break Label_1541;
+                                                        break Label_1573;
                                                     }
                                                     if (!itemInfoMatcher.matches(shortcutInfo, targetComponent)) {
-                                                        break Label_2581;
+                                                        break Label_2615;
                                                     }
-                                                    iconBitmap = hashMap.get(targetComponent);
+                                                    iconBitmap = arrayMap.get((Object)targetComponent);
                                                     iconBitmap = iconBitmap;
-                                                    if (!shortcutInfo.isPromise() || this.mOp != 1) {
-                                                        break Label_1648;
+                                                    if (!shortcutInfo.isPromise() || (this.mOp != 1 && this.mOp != 2)) {
+                                                        break Label_1680;
                                                     }
-                                                    hasStatusFlag = 2;
-                                                    hasStatusFlag = (shortcutInfo.hasStatusFlag(hasStatusFlag) ? 1 : 0);
-                                                    if (hasStatusFlag == 0) {
-                                                        break Label_1597;
+                                                    n = 2;
+                                                    n = (shortcutInfo.hasStatusFlag(n) ? 1 : 0);
+                                                    if (n == 0) {
+                                                        break Label_1629;
                                                     }
-                                                    intent = context.getPackageManager();
-                                                    if (((PackageManager)intent).resolveActivity(new Intent("android.intent.action.MAIN").setComponent(targetComponent).addCategory("android.intent.category.LAUNCHER"), 65536) != null) {
-                                                        break Label_1597;
+                                                    intent = LauncherAppsCompat.getInstance(context);
+                                                    n = (((LauncherAppsCompat)intent).isActivityEnabledForProfile(targetComponent, this.mUser) ? 1 : 0);
+                                                    if (n != 0) {
+                                                        break Label_1629;
                                                     }
-                                                    intent = ((PackageManager)intent).getLaunchIntentForPackage(targetComponent.getPackageName());
+                                                    intent = new PackageManagerHelper(context);
+                                                    intent = ((PackageManagerHelper)intent).getAppLaunchIntent(targetComponent.getPackageName(), this.mUser);
                                                     if (intent != null) {
                                                         iconBitmap = ((Intent)intent).getComponent();
-                                                        iconBitmap = hashMap.get(iconBitmap);
+                                                        iconBitmap = arrayMap.get(iconBitmap);
                                                         iconBitmap = iconBitmap;
                                                     }
                                                     if (intent != null && iconBitmap != null) {
-                                                        break Label_1590;
+                                                        break Label_1622;
                                                     }
                                                     list4.add(shortcutInfo);
                                                 }
                                                 break;
                                             }
                                         }
-                                        final int n = 0;
+                                        final int n2 = 0;
                                         iconBitmap = null;
-                                        final int n2 = hasStatusFlag;
-                                        if (n2 != 0 || n != 0) {
+                                        final int n3 = n;
+                                        if (n3 != 0 || n2 != 0) {
                                             list3.add((ShortcutInfo)launcherAppWidgetInfo);
                                         }
-                                        if (n2 != 0) {
+                                        if (n3 != 0) {
                                             iconBitmap = this.getModelWriter();
                                             ((ModelWriter)iconBitmap).updateItemInDatabase(launcherAppWidgetInfo);
-                                            continue Label_1551_Outer;
+                                            continue Label_1583_Outer;
                                         }
-                                        continue Label_1551_Outer;
+                                        continue Label_1583_Outer;
                                     }
                                     ((ShortcutInfo)launcherAppWidgetInfo).intent = (Intent)intent;
                                 }
                                 intent = null;
                                 ((ShortcutInfo)launcherAppWidgetInfo).status = 0;
-                                hasStatusFlag = 1;
+                                n = 1;
                                 if (((ShortcutInfo)launcherAppWidgetInfo).itemType == 0) {
                                     iconCache.getTitleAndIcon((ItemInfoWithIcon)launcherAppWidgetInfo, ((ShortcutInfo)launcherAppWidgetInfo).usingLowResIcon);
                                 }
@@ -275,26 +276,26 @@ public class PackageUpdatedTask extends ExtendedModelTask
                                 iconBitmap = "android.intent.action.MAIN";
                                 if (((String)iconBitmap).equals(((ShortcutInfo)launcherAppWidgetInfo).intent.getAction()) && ((ShortcutInfo)launcherAppWidgetInfo).itemType == 0) {
                                     iconCache.getTitleAndIcon((ItemInfoWithIcon)launcherAppWidgetInfo, ((ShortcutInfo)launcherAppWidgetInfo).usingLowResIcon);
-                                    hasStatusFlag = 1;
+                                    n = 1;
                                 }
                             }
                             final int isDisabled = ((ShortcutInfo)launcherAppWidgetInfo).isDisabled;
                             ((ShortcutInfo)launcherAppWidgetInfo).isDisabled = flagOp.apply(((ShortcutInfo)launcherAppWidgetInfo).isDisabled);
                             final int isDisabled2;
                             if ((isDisabled2 = ((ShortcutInfo)launcherAppWidgetInfo).isDisabled) != isDisabled) {
-                                final int n = 1;
-                                final int n2 = hasStatusFlag;
-                                continue Label_1551;
+                                final int n2 = 1;
+                                final int n3 = n;
+                                continue Label_1583;
                             }
-                            break Label_2581;
+                            break Label_2615;
                         }
                         if (!(launcherAppWidgetInfo instanceof LauncherAppWidgetInfo) || this.mOp != 1) {
-                            continue Label_1551_Outer;
+                            continue Label_1583_Outer;
                         }
                         final LauncherAppWidgetInfo launcherAppWidgetInfo2 = launcherAppWidgetInfo;
                         iconBitmap = this.mUser;
                         if (!((UserHandle)iconBitmap).equals(launcherAppWidgetInfo2.user) || !launcherAppWidgetInfo2.hasRestoreFlag(2)) {
-                            continue Label_1551_Outer;
+                            continue Label_1583_Outer;
                         }
                         iconBitmap = launcherAppWidgetInfo2.providerName.getPackageName();
                         if (set.contains(iconBitmap)) {
@@ -303,14 +304,14 @@ public class PackageUpdatedTask extends ExtendedModelTask
                             list5.add(launcherAppWidgetInfo2);
                             iconBitmap = this.getModelWriter();
                             ((ModelWriter)iconBitmap).updateItemInDatabase(launcherAppWidgetInfo2);
-                            continue Label_1551_Outer;
+                            continue Label_1583_Outer;
                         }
-                        continue Label_1551_Outer;
+                        continue Label_1583_Outer;
                     }
-                    final int n = 0;
+                    final int n2 = 0;
                     iconBitmap = null;
-                    final int n2 = hasStatusFlag;
-                    continue Label_1551;
+                    final int n3 = n;
+                    continue Label_1583;
                 }
             }
             // monitorexit(bgDataModel)
@@ -329,9 +330,9 @@ public class PackageUpdatedTask extends ExtendedModelTask
         }
         else if (this.mOp == 2) {
             final LauncherAppsCompat instance = LauncherAppsCompat.getInstance(context);
-            for (int n3 = 0; n3 < length; ++n3) {
-                if (!instance.isPackageEnabledForProfile(mPackages[n3], this.mUser)) {
-                    set2.add(mPackages[n3]);
+            for (int n4 = 0; n4 < length; ++n4) {
+                if (!instance.isPackageEnabledForProfile(mPackages[n4], this.mUser)) {
+                    set2.add(mPackages[n4]);
                 }
             }
             final Iterator<AppInfo> iterator4 = list2.iterator();
@@ -350,10 +351,10 @@ public class PackageUpdatedTask extends ExtendedModelTask
         }
         if (Utilities.ATLEAST_MARSHMALLOW || (this.mOp != 1 && this.mOp != 3 && this.mOp != 2)) {
             if (Utilities.isAtLeastO() && this.mOp == 1) {
-                for (int n4 = 0; n4 < length; ++n4) {
-                    final LauncherModel model = launcherAppState.getModel();
-                    model.refreshAndBindWidgetsAndShortcuts(model.getCallback(), false, new PackageUserKey(mPackages[n4], this.mUser));
+                for (int n5 = 0; n5 < length; ++n5) {
+                    bgDataModel.widgetsModel.update(launcherAppState, new PackageUserKey(mPackages[n5], this.mUser));
                 }
+                this.bindUpdatedWidgets(bgDataModel);
             }
         }
         else {

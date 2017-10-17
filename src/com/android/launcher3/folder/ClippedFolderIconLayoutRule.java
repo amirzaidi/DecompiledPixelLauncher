@@ -4,17 +4,8 @@
 
 package com.android.launcher3.folder;
 
-import com.android.launcher3.config.FeatureFlags;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.List;
-
 public class ClippedFolderIconLayoutRule implements FolderIcon$PreviewLayoutRule
 {
-    final float ITEM_RADIUS_SCALE_FACTOR;
-    final float MAX_RADIUS_DILATION;
-    final float MAX_SCALE;
-    final float MIN_SCALE;
     private float mAvailableSpace;
     private float mBaselineIconScale;
     private float mIconSize;
@@ -23,11 +14,20 @@ public class ClippedFolderIconLayoutRule implements FolderIcon$PreviewLayoutRule
     private float[] mTmpPoint;
     
     public ClippedFolderIconLayoutRule() {
-        this.MIN_SCALE = 0.48f;
-        this.MAX_SCALE = 0.58f;
-        this.MAX_RADIUS_DILATION = 0.15f;
-        this.ITEM_RADIUS_SCALE_FACTOR = 1.33f;
         this.mTmpPoint = new float[2];
+    }
+    
+    private void getGridPosition(final int n, final int n2, final float[] array) {
+        final int n3 = 4;
+        final int n4 = 1;
+        this.getPosition(0, n3, array);
+        final float n5 = array[0];
+        final float n6 = array[n4];
+        this.getPosition(3, n3, array);
+        final float n7 = array[0] - n5;
+        final float n8 = array[n4] - n6;
+        array[0] = n5 + n7 * n2;
+        array[n4] = n * n8 + n6;
     }
     
     private void getPosition(int n, final int n2, final float[] array) {
@@ -71,47 +71,57 @@ public class ClippedFolderIconLayoutRule implements FolderIcon$PreviewLayoutRule
         return true;
     }
     
-    public FolderIcon$PreviewItemDrawingParams computePreviewItemDrawingParams(final int n, final int n2, FolderIcon$PreviewItemDrawingParams folderIcon$PreviewItemDrawingParams) {
-        final float n3 = 2.0f;
+    public PreviewItemDrawingParams computePreviewItemDrawingParams(final int n, final int n2, PreviewItemDrawingParams previewItemDrawingParams) {
+        final int n3 = 2;
+        final float n4 = 2.0f;
+        final int n5 = 1;
         final float scaleForItem = this.scaleForItem(n, n2);
-        float n5;
-        float n4;
-        if (n >= 4) {
-            n4 = (n5 = this.mAvailableSpace / n3 - this.mIconSize * scaleForItem / n3);
+        if (n == this.getExitIndex()) {
+            this.getGridPosition(0, n3, this.mTmpPoint);
+        }
+        else if (n == this.getEnterIndex()) {
+            this.getGridPosition(n5, n3, this.mTmpPoint);
+        }
+        else if (n >= 4) {
+            this.mTmpPoint[0] = (this.mTmpPoint[n5] = this.mAvailableSpace / n4 - this.mIconSize * scaleForItem / n4);
         }
         else {
             this.getPosition(n, n2, this.mTmpPoint);
-            n4 = this.mTmpPoint[0];
-            n5 = this.mTmpPoint[1];
         }
-        if (folderIcon$PreviewItemDrawingParams == null) {
-            folderIcon$PreviewItemDrawingParams = new FolderIcon$PreviewItemDrawingParams(n4, n5, scaleForItem, 0.0f);
+        final float n6 = this.mTmpPoint[0];
+        final float n7 = this.mTmpPoint[n5];
+        if (previewItemDrawingParams == null) {
+            previewItemDrawingParams = new PreviewItemDrawingParams(n6, n7, scaleForItem, 0.0f);
         }
         else {
-            folderIcon$PreviewItemDrawingParams.update(n4, n5, scaleForItem);
-            folderIcon$PreviewItemDrawingParams.overlayAlpha = 0.0f;
+            previewItemDrawingParams.update(n6, n7, scaleForItem);
+            previewItemDrawingParams.overlayAlpha = 0.0f;
         }
-        return folderIcon$PreviewItemDrawingParams;
+        return previewItemDrawingParams;
     }
     
-    public List getItemsToDisplay(final Folder folder) {
-        final int n = 4;
-        final ArrayList list = new ArrayList(folder.getItemsInReadingOrder());
-        final int size = list.size();
-        if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION && size > n) {
-            for (int i = folder.mContent.getPageAt(0).getCountX() - 2; i > 0; --i) {
-                list.remove(2);
-            }
-        }
-        return list.subList(0, Math.min(size, n));
+    public int getEnterIndex() {
+        return -3;
     }
     
-    public void init(final int n, final int n2, final boolean mIsRtl) {
+    public int getExitIndex() {
+        return -2;
+    }
+    
+    public float getIconSize() {
+        return this.mIconSize;
+    }
+    
+    public boolean hasEnterExitIndices() {
+        return true;
+    }
+    
+    public void init(final int n, final float mIconSize, final boolean mIsRtl) {
         this.mAvailableSpace = n;
         this.mRadius = n * 1.33f / 2.0f;
-        this.mIconSize = n2;
+        this.mIconSize = mIconSize;
         this.mIsRtl = mIsRtl;
-        this.mBaselineIconScale = n / (n2 * 1.0f);
+        this.mBaselineIconScale = n / (1.0f * mIconSize);
     }
     
     public int maxNumItems() {

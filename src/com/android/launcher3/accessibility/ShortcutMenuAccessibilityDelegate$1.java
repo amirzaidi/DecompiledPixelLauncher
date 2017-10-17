@@ -30,6 +30,6 @@ final class ShortcutMenuAccessibilityDelegate$1 implements Runnable
         list.add(this.val$info);
         this.this$0.mLauncher.bindItems(list, 0, list.size(), n != 0);
         AbstractFloatingView.closeAllOpenViews(this.this$0.mLauncher);
-        this.this$0.announceConfirmation(2131492967);
+        this.this$0.announceConfirmation(2131492976);
     }
 }

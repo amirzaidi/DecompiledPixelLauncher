@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/PagedView$3;->this$0:Lcom/android/launcher3/PagedView;
 
-    .line 2009
+    .line 2035
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -28,11 +28,11 @@
     .locals 1
 
     .prologue
-    .line 2012
+    .line 2038
     iget-object v0, p0, Lcom/android/launcher3/PagedView$3;->this$0:Lcom/android/launcher3/PagedView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/PagedView;->onPostReorderingAnimationCompleted()V
 
-    .line 2013
+    .line 2039
     return-void
 .end method

@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 1229
+    .line 1153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,24 +43,24 @@
     .locals 1
 
     .prologue
-    .line 1239
+    .line 1163
     iget-object v0, p0, Lcom/android/launcher3/LauncherProvider$ChangeListenerWrapper;->mListener:Lcom/android/launcher3/LauncherProviderChangeListener;
 
     if-eqz v0, :cond_0
 
-    .line 1240
+    .line 1164
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1252
+    .line 1176
     :cond_0
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 1242
+    .line 1166
     :pswitch_0
     iget-object v0, p0, Lcom/android/launcher3/LauncherProvider$ChangeListenerWrapper;->mListener:Lcom/android/launcher3/LauncherProviderChangeListener;
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 1245
+    .line 1169
     :pswitch_1
     iget-object v0, p0, Lcom/android/launcher3/LauncherProvider$ChangeListenerWrapper;->mListener:Lcom/android/launcher3/LauncherProviderChangeListener;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 1248
+    .line 1172
     :pswitch_2
     iget-object v0, p0, Lcom/android/launcher3/LauncherProvider$ChangeListenerWrapper;->mListener:Lcom/android/launcher3/LauncherProviderChangeListener;
 
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 1240
+    .line 1164
     nop
 
     :pswitch_data_0

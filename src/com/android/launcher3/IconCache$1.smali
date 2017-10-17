@@ -26,7 +26,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/IconCache$1;->val$caller:Lcom/android/launcher3/IconCache$ItemInfoUpdateReceiver;
 
-    .line 415
+    .line 397
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 419
+    .line 401
     iget-object v0, p0, Lcom/android/launcher3/IconCache$1;->val$info:Lcom/android/launcher3/ItemInfoWithIcon;
 
     instance-of v0, v0, Lcom/android/launcher3/AppInfo;
@@ -54,7 +54,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 420
+    .line 402
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/IconCache$1;->this$0:Lcom/android/launcher3/IconCache;
 
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/IconCache;->getTitleAndIcon(Lcom/android/launcher3/ItemInfoWithIcon;Z)V
 
-    .line 424
+    .line 406
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/IconCache$1;->this$0:Lcom/android/launcher3/IconCache;
@@ -79,10 +79,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/MainThreadExecutor;->execute(Ljava/lang/Runnable;)V
 
-    .line 431
+    .line 413
     return-void
 
-    .line 421
+    .line 403
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/IconCache$1;->val$info:Lcom/android/launcher3/ItemInfoWithIcon;
 
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 422
+    .line 404
     iget-object v1, p0, Lcom/android/launcher3/IconCache$1;->this$0:Lcom/android/launcher3/IconCache;
 
     iget-object v0, p0, Lcom/android/launcher3/IconCache$1;->val$info:Lcom/android/launcher3/ItemInfoWithIcon;

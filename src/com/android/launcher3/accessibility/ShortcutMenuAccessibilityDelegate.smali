@@ -19,7 +19,7 @@
     new-instance v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     .line 45
-    const v2, 0x7f0c0080
+    const v2, 0x7f0c0089
 
     invoke-virtual {p1, v2}, Lcom/android/launcher3/Launcher;->getText(I)Ljava/lang/CharSequence;
 
@@ -191,7 +191,7 @@
     invoke-virtual {p1, p1}, Lcom/android/launcher3/notification/NotificationMainView;->onChildDismissed(Landroid/view/View;)V
 
     .line 93
-    const v0, 0x7f0c0081
+    const v0, 0x7f0c008a
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/accessibility/ShortcutMenuAccessibilityDelegate;->announceConfirmation(I)V
 

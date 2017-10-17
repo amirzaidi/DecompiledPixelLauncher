@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/FolderIcon$2;->this$0:Lcom/android/launcher3/folder/FolderIcon;
 
-    .line 260
+    .line 250
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,20 +31,20 @@
     .locals 1
 
     .prologue
-    .line 262
+    .line 252
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderIcon$2;->this$0:Lcom/android/launcher3/folder/FolderIcon;
 
     iget-object v0, v0, Lcom/android/launcher3/folder/FolderIcon;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/Folder;->beginExternalDrag()V
 
-    .line 263
+    .line 253
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderIcon$2;->this$0:Lcom/android/launcher3/folder/FolderIcon;
 
     iget-object v0, v0, Lcom/android/launcher3/folder/FolderIcon;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/Folder;->animateOpen()V
 
-    .line 264
+    .line 254
     return-void
 .end method

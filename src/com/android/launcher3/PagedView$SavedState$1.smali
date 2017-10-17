@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 1988
+    .line 2014
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -24,7 +24,7 @@
     .locals 1
 
     .prologue
-    .line 1990
+    .line 2016
     new-instance v0, Lcom/android/launcher3/PagedView$SavedState;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/PagedView$SavedState;-><init>(Landroid/os/Parcel;)V
@@ -36,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 1989
+    .line 2015
     invoke-virtual {p0, p1}, Lcom/android/launcher3/PagedView$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/android/launcher3/PagedView$SavedState;
 
     move-result-object v0
@@ -48,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 1994
+    .line 2020
     new-array v0, p1, [Lcom/android/launcher3/PagedView$SavedState;
 
     return-object v0
@@ -58,7 +58,7 @@
     .locals 1
 
     .prologue
-    .line 1993
+    .line 2019
     invoke-virtual {p0, p1}, Lcom/android/launcher3/PagedView$SavedState$1;->newArray(I)[Lcom/android/launcher3/PagedView$SavedState;
 
     move-result-object v0

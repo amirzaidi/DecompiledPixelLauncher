@@ -16,6 +16,7 @@ import com.android.launcher3.userevent.nano.LauncherLogProto$ControlType;
 import com.android.launcher3.userevent.nano.LauncherLogProto$ItemType;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Action$Command;
+import com.android.launcher3.userevent.nano.LauncherLogProto$Action$Direction;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Action$Touch;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Action;
 import android.util.ArrayMap;
@@ -29,12 +30,17 @@ public class LoggerUtils
     }
     
     public static String getActionStr(final LauncherLogProto$Action launcherLogProto$Action) {
+        final String s = "";
         switch (launcherLogProto$Action.type) {
             default: {
                 return "UNKNOWN";
             }
             case 0: {
-                return getFieldName(launcherLogProto$Action.touch, LauncherLogProto$Action$Touch.class);
+                String s2 = s + getFieldName(launcherLogProto$Action.touch, LauncherLogProto$Action$Touch.class);
+                if (launcherLogProto$Action.touch == 3) {
+                    s2 = s2 + " direction=" + getFieldName(launcherLogProto$Action.dir, LauncherLogProto$Action$Direction.class);
+                }
+                return s2;
             }
             case 2: {
                 return getFieldName(launcherLogProto$Action.command, LauncherLogProto$Action$Command.class);

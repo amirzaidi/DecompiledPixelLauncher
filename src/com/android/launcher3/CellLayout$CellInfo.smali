@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public cell:Landroid/view/View;
+.field public final cell:Landroid/view/View;
 
-.field container:J
+.field final container:J
 
-.field screenId:J
+.field final screenId:J
 
 
 # direct methods
@@ -16,43 +16,43 @@
     .locals 2
 
     .prologue
-    .line 2788
+    .line 2782
     invoke-direct {p0}, Lcom/android/launcher3/util/CellAndSpan;-><init>()V
 
-    .line 2789
+    .line 2783
     iget v0, p2, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iput v0, p0, Lcom/android/launcher3/CellLayout$CellInfo;->cellX:I
 
-    .line 2790
+    .line 2784
     iget v0, p2, Lcom/android/launcher3/ItemInfo;->cellY:I
 
     iput v0, p0, Lcom/android/launcher3/CellLayout$CellInfo;->cellY:I
 
-    .line 2791
+    .line 2785
     iget v0, p2, Lcom/android/launcher3/ItemInfo;->spanX:I
 
     iput v0, p0, Lcom/android/launcher3/CellLayout$CellInfo;->spanX:I
 
-    .line 2792
+    .line 2786
     iget v0, p2, Lcom/android/launcher3/ItemInfo;->spanY:I
 
     iput v0, p0, Lcom/android/launcher3/CellLayout$CellInfo;->spanY:I
 
-    .line 2793
+    .line 2787
     iput-object p1, p0, Lcom/android/launcher3/CellLayout$CellInfo;->cell:Landroid/view/View;
 
-    .line 2794
+    .line 2788
     iget-wide v0, p2, Lcom/android/launcher3/ItemInfo;->screenId:J
 
     iput-wide v0, p0, Lcom/android/launcher3/CellLayout$CellInfo;->screenId:J
 
-    .line 2795
+    .line 2789
     iget-wide v0, p2, Lcom/android/launcher3/ItemInfo;->container:J
 
     iput-wide v0, p0, Lcom/android/launcher3/CellLayout$CellInfo;->container:J
 
-    .line 2796
+    .line 2790
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 2
 
     .prologue
-    .line 2800
+    .line 2794
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -84,42 +84,42 @@
 
     move-result-object v0
 
-    .line 2801
+    .line 2795
     const-string/jumbo v1, ", x="
 
-    .line 2800
+    .line 2794
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2801
+    .line 2795
     iget v1, p0, Lcom/android/launcher3/CellLayout$CellInfo;->cellX:I
 
-    .line 2800
+    .line 2794
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2801
+    .line 2795
     const-string/jumbo v1, ", y="
 
-    .line 2800
+    .line 2794
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2801
+    .line 2795
     iget v1, p0, Lcom/android/launcher3/CellLayout$CellInfo;->cellY:I
 
-    .line 2800
+    .line 2794
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 2801
+    .line 2795
     const-string/jumbo v1, "]"
 
-    .line 2800
+    .line 2794
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0

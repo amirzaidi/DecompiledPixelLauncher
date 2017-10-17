@@ -53,10 +53,6 @@ public class WidgetsRecyclerView extends BaseRecyclerView
         return this.getChildPosition(child) * child.getMeasuredHeight() + this.getPaddingTop() - this.getLayoutManager().getDecoratedTop(child);
     }
     
-    public int getFastScrollerTrackColor(final int n) {
-        return -1;
-    }
-    
     protected void onFinishInflate() {
         super.onFinishInflate();
         this.addOnItemTouchListener(this);

@@ -22,8 +22,8 @@ public class OverviewScreenAccessibilityDelegate extends View$AccessibilityDeleg
     public OverviewScreenAccessibilityDelegate(final Workspace mWorkspace) {
         final int n = 2131623949;
         final int n2 = 2131623948;
-        final int n3 = 2131492981;
-        int n4 = 2131492980;
+        final int n3 = 2131492990;
+        int n4 = 2131492989;
         this.mActions = new SparseArray();
         this.mWorkspace = mWorkspace;
         final Context context = this.mWorkspace.getContext();
@@ -49,7 +49,7 @@ public class OverviewScreenAccessibilityDelegate extends View$AccessibilityDeleg
         this.mWorkspace.removeView(view);
         this.mWorkspace.addView(view, n);
         this.mWorkspace.onEndReordering();
-        this.mWorkspace.announceForAccessibility(this.mWorkspace.getContext().getText(2131492982));
+        this.mWorkspace.announceForAccessibility(this.mWorkspace.getContext().getText(2131492991));
         this.mWorkspace.updateAccessibilityFlags();
         view.performAccessibilityAction(64, (Bundle)null);
     }

@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;->this$0:Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;
 
-    .line 73
+    .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -33,7 +33,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 77
+    .line 73
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;->this$0:Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;->this$0:Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;
@@ -42,21 +42,21 @@
 
     iput-object v1, v0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mCurrentFastScrollSection:Ljava/lang/String;
 
-    .line 78
+    .line 74
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;->this$0:Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;
 
     invoke-static {v0, v2}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->-set0(Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;Z)Z
 
-    .line 79
+    .line 75
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;->this$0:Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;
 
     invoke-static {v0, v2}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->-set1(Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;Z)Z
 
-    .line 80
+    .line 76
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;->this$0:Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;
 
     invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->-wrap0(Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;)V
 
-    .line 81
+    .line 77
     return-void
 .end method

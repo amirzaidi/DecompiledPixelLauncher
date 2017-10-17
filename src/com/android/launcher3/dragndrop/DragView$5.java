@@ -4,7 +4,12 @@
 
 package com.android.launcher3.dragndrop;
 
-final class DragView$5 implements Runnable
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrixColorFilter;
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator$AnimatorUpdateListener;
+
+final class DragView$5 implements ValueAnimator$AnimatorUpdateListener
 {
     final /* synthetic */ DragView this$0;
     
@@ -12,7 +17,8 @@ final class DragView$5 implements Runnable
         this.this$0 = this$0;
     }
     
-    public void run() {
-        this.this$0.mAnim.start();
+    public void onAnimationUpdate(final ValueAnimator valueAnimator) {
+        this.this$0.mPaint.setColorFilter((ColorFilter)new ColorMatrixColorFilter(this.this$0.mCurrentFilter));
+        this.this$0.invalidate();
     }
 }

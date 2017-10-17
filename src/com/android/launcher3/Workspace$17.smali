@@ -9,20 +9,24 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Workspace;
 
-.field final synthetic val$appWidgetId:I
+.field final synthetic val$operator:Lcom/android/launcher3/Workspace$ItemOperator;
+
+.field final synthetic val$value:[Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Workspace;I)V
+.method constructor <init>(Lcom/android/launcher3/Workspace;Lcom/android/launcher3/Workspace$ItemOperator;[Landroid/view/View;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$17;->this$0:Lcom/android/launcher3/Workspace;
 
-    iput p2, p0, Lcom/android/launcher3/Workspace$17;->val$appWidgetId:I
+    iput-object p2, p0, Lcom/android/launcher3/Workspace$17;->val$operator:Lcom/android/launcher3/Workspace$ItemOperator;
 
-    .line 3817
+    iput-object p3, p0, Lcom/android/launcher3/Workspace$17;->val$value:[Landroid/view/View;
+
+    .line 3729
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -32,28 +36,31 @@
 
 # virtual methods
 .method public evaluate(Lcom/android/launcher3/ItemInfo;Landroid/view/View;)Z
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    .line 3821
-    instance-of v1, p1, Lcom/android/launcher3/LauncherAppWidgetInfo;
+    .line 3732
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$17;->val$operator:Lcom/android/launcher3/Workspace$ItemOperator;
 
-    if-eqz v1, :cond_0
+    invoke-interface {v0, p1, p2}, Lcom/android/launcher3/Workspace$ItemOperator;->evaluate(Lcom/android/launcher3/ItemInfo;Landroid/view/View;)Z
 
-    .line 3822
-    check-cast p1, Lcom/android/launcher3/LauncherAppWidgetInfo;
+    move-result v0
 
-    iget v1, p1, Lcom/android/launcher3/LauncherAppWidgetInfo;->appWidgetId:I
+    if-eqz v0, :cond_0
 
-    iget v2, p0, Lcom/android/launcher3/Workspace$17;->val$appWidgetId:I
+    .line 3733
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$17;->val$value:[Landroid/view/View;
 
-    if-ne v1, v2, :cond_0
+    aput-object p2, v0, v1
 
+    .line 3734
     const/4 v0, 0x1
 
-    .line 3821
-    :cond_0
     return v0
+
+    .line 3736
+    :cond_0
+    return v1
 .end method

@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 236
+    .line 233
     iput-object p1, p0, Lcom/android/launcher3/DefaultLayoutParser$PartnerFolderParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
     .locals 5
 
     .prologue
-    .line 242
+    .line 239
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$PartnerFolderParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -38,63 +38,63 @@
 
     move-result-object v0
 
-    .line 243
+    .line 240
     if-eqz v0, :cond_0
 
-    .line 244
+    .line 241
     invoke-virtual {v0}, Lcom/android/launcher3/Partner;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 245
+    .line 242
     const-string/jumbo v2, "partner_folder"
 
-    .line 246
+    .line 243
     const-string/jumbo v3, "xml"
 
     invoke-virtual {v0}, Lcom/android/launcher3/Partner;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 245
+    .line 242
     invoke-virtual {v1, v2, v3, v0}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 247
+    .line 244
     if-eqz v0, :cond_0
 
-    .line 248
+    .line 245
     invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
 
     move-result-object v0
 
-    .line 249
+    .line 246
     const-string/jumbo v2, "folder"
 
     invoke-static {v0, v2}, Lcom/android/launcher3/DefaultLayoutParser;->beginDocument(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;)V
 
-    .line 251
+    .line 248
     new-instance v2, Lcom/android/launcher3/AutoInstallsLayout$FolderParser;
 
     iget-object v3, p0, Lcom/android/launcher3/DefaultLayoutParser$PartnerFolderParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v4, p0, Lcom/android/launcher3/DefaultLayoutParser$PartnerFolderParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
-    invoke-virtual {v4, v1}, Lcom/android/launcher3/DefaultLayoutParser;->getFolderElementsMap(Landroid/content/res/Resources;)Ljava/util/HashMap;
+    invoke-virtual {v4, v1}, Lcom/android/launcher3/DefaultLayoutParser;->getFolderElementsMap(Landroid/content/res/Resources;)Landroid/util/ArrayMap;
 
     move-result-object v1
 
-    invoke-direct {v2, v3, v1}, Lcom/android/launcher3/AutoInstallsLayout$FolderParser;-><init>(Lcom/android/launcher3/AutoInstallsLayout;Ljava/util/HashMap;)V
+    invoke-direct {v2, v3, v1}, Lcom/android/launcher3/AutoInstallsLayout$FolderParser;-><init>(Lcom/android/launcher3/AutoInstallsLayout;Landroid/util/ArrayMap;)V
 
-    .line 252
+    .line 249
     invoke-virtual {v2, v0}, Lcom/android/launcher3/AutoInstallsLayout$FolderParser;->parseAndAdd(Landroid/content/res/XmlResourceParser;)J
 
     move-result-wide v0
 
     return-wide v0
 
-    .line 255
+    .line 252
     :cond_0
     const-wide/16 v0, -0x1
 

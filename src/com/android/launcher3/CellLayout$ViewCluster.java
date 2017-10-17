@@ -13,7 +13,7 @@ import android.graphics.Bitmap;
 import com.android.launcher3.accessibility.FolderAccessibilityHelper;
 import com.android.launcher3.accessibility.WorkspaceAccessibilityHelper;
 import android.view.View$OnClickListener;
-import android.support.v4.view.a;
+import android.support.v4.view.c;
 import android.support.v4.view.f;
 import android.view.MotionEvent;
 import android.graphics.Canvas;
@@ -29,16 +29,17 @@ import android.content.res.TypedArray;
 import android.animation.Animator$AnimatorListener;
 import android.animation.ValueAnimator$AnimatorUpdateListener;
 import java.util.Arrays;
+import com.android.launcher3.util.Themes;
 import android.view.animation.DecelerateInterpolator;
 import android.graphics.drawable.Drawable$Callback;
 import android.util.AttributeSet;
 import android.content.Context;
 import com.android.launcher3.accessibility.DragAndDropAccessibilityDelegate;
 import java.util.Stack;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import com.android.launcher3.util.GridOccupancy;
 import android.view.View$OnTouchListener;
-import com.android.launcher3.folder.FolderIcon$PreviewBackground;
+import com.android.launcher3.folder.PreviewBackground;
 import android.animation.TimeInterpolator;
 import android.graphics.drawable.Drawable;
 import android.graphics.Paint;
@@ -54,17 +55,17 @@ import android.graphics.Rect;
 
 class CellLayout$ViewCluster
 {
-    int[] bottomEdge;
-    Rect boundingRect;
+    final int[] bottomEdge;
+    final Rect boundingRect;
     boolean boundingRectDirty;
-    CellLayout$ViewCluster$PositionComparator comparator;
-    CellLayout$ItemConfiguration config;
+    final CellLayout$ViewCluster$PositionComparator comparator;
+    final CellLayout$ItemConfiguration config;
     int dirtyEdges;
-    int[] leftEdge;
-    int[] rightEdge;
+    final int[] leftEdge;
+    final int[] rightEdge;
     final /* synthetic */ CellLayout this$0;
-    int[] topEdge;
-    ArrayList views;
+    final int[] topEdge;
+    final ArrayList views;
     
     public CellLayout$ViewCluster(final CellLayout this$0, final ArrayList list, final CellLayout$ItemConfiguration config) {
         this.this$0 = this$0;
@@ -86,7 +87,7 @@ class CellLayout$ViewCluster
     
     void computeEdge(final int n) {
         for (int size = this.views.size(), i = 0; i < size; ++i) {
-            final CellAndSpan cellAndSpan = this.config.map.get(this.views.get(i));
+            final CellAndSpan cellAndSpan = (CellAndSpan)this.config.map.get(this.views.get(i));
             switch (n) {
                 case 1: {
                     final int cellX = cellAndSpan.cellX;
@@ -137,7 +138,7 @@ class CellLayout$ViewCluster
     
     boolean isViewTouchingEdge(final View view, final int n) {
         final boolean b = true;
-        final CellAndSpan cellAndSpan = this.config.map.get(view);
+        final CellAndSpan cellAndSpan = (CellAndSpan)this.config.map.get((Object)view);
         if ((this.dirtyEdges & n) == n) {
             this.computeEdge(n);
             this.dirtyEdges &= ~n;
@@ -198,7 +199,7 @@ class CellLayout$ViewCluster
     void shift(final int n, final int n2) {
         final Iterator iterator = this.views.iterator();
         while (iterator.hasNext()) {
-            final CellAndSpan cellAndSpan = this.config.map.get(iterator.next());
+            final CellAndSpan cellAndSpan = (CellAndSpan)this.config.map.get((Object)iterator.next());
             switch (n) {
                 default: {
                     cellAndSpan.cellY += n2;

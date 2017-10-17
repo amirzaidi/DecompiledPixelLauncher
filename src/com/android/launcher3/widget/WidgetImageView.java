@@ -35,7 +35,7 @@ public class WidgetImageView extends View
         super(context, set, n);
         this.mPaint = new Paint(3);
         this.mDstRectF = new RectF();
-        this.mBadgeMargin = context.getResources().getDimensionPixelSize(2131427425);
+        this.mBadgeMargin = context.getResources().getDimensionPixelSize(2131427435);
     }
     
     private void updateDstRectF() {

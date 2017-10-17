@@ -92,8 +92,9 @@ public class DeepShortcutManager
     
     public static boolean supportsShortcuts(final ItemInfo itemInfo) {
         boolean b = false;
-        if (itemInfo.itemType == 0) {
-            b = (itemInfo.isDisabled() ^ true);
+        final boolean b2 = itemInfo instanceof com.android.launcher3.ShortcutInfo && ((com.android.launcher3.ShortcutInfo)itemInfo).isPromise();
+        if (itemInfo.itemType == 0 && (itemInfo.isDisabled() ^ true)) {
+            b = (b2 ^ true);
         }
         return b;
     }

@@ -126,73 +126,80 @@ public class AlphabeticalAppsList
         this.updateAdapterItems();
     }
     
+    private List processPredictedAppComponents(final List list) {
+        if (this.mComponentToAppMap.isEmpty()) {
+            return Collections.emptyList();
+        }
+        final ArrayList<AppInfo> list2 = new ArrayList<AppInfo>();
+        final Iterator<ComponentKey> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            final AppInfo appInfo = this.mComponentToAppMap.get(iterator.next());
+            if (appInfo != null) {
+                list2.add(appInfo);
+            }
+            if (list2.size() == this.mNumPredictedAppsPerRow) {
+                break;
+            }
+        }
+        return list2;
+    }
+    
     private void refillAdapterItems() {
-        final int n = 1;
-        final float n2 = 1.0f;
+        final float n = 1.0f;
         Object o = null;
         this.mFilteredApps.clear();
         this.mFastScrollerSections.clear();
         this.mAdapterItems.clear();
-        this.mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asSearchDivider(0));
         this.mPredictedApps.clear();
-        int n3 = 0;
-        int n7 = 0;
+        int n2 = 0;
+        int n6 = 0;
         AlphabeticalAppsList$FastScrollSectionInfo alphabeticalAppsList$FastScrollSectionInfo2 = null;
-        Label_0438: {
+        Label_0339: {
             if (this.mPredictedAppComponents != null && (this.mPredictedAppComponents.isEmpty() ^ true)) {
                 if (this.hasFilter() ^ true) {
-                    final Iterator iterator = this.mPredictedAppComponents.iterator();
-                    while (iterator.hasNext()) {
-                        final AppInfo appInfo = this.mComponentToAppMap.get(iterator.next());
-                        if (appInfo != null) {
-                            this.mPredictedApps.add(appInfo);
-                        }
-                        if (this.mPredictedApps.size() == this.mNumPredictedAppsPerRow) {
-                            break;
-                        }
-                    }
+                    this.mPredictedApps.addAll(this.processPredictedAppComponents(this.mPredictedAppComponents));
                     if (!this.mPredictedApps.isEmpty()) {
                         final AlphabeticalAppsList$FastScrollSectionInfo alphabeticalAppsList$FastScrollSectionInfo = new AlphabeticalAppsList$FastScrollSectionInfo("");
                         this.mFastScrollerSections.add(alphabeticalAppsList$FastScrollSectionInfo);
-                        final Iterator iterator2 = this.mPredictedApps.iterator();
-                        n3 = 0;
-                        int n4 = n;
-                        while (iterator2.hasNext()) {
-                            final AppInfo appInfo2 = iterator2.next();
-                            final int n5 = n4 + 1;
+                        final Iterator iterator = this.mPredictedApps.iterator();
+                        n2 = 0;
+                        int n3 = 0;
+                        while (iterator.hasNext()) {
+                            final AppInfo appInfo = iterator.next();
+                            final int n4 = n3 + 1;
                             final String s = "";
-                            final int n6 = n3 + 1;
-                            final AlphabeticalAppsList$AdapterItem predictedApp = AlphabeticalAppsList$AdapterItem.asPredictedApp(n4, s, appInfo2, n3);
+                            final int n5 = n2 + 1;
+                            final AlphabeticalAppsList$AdapterItem predictedApp = AlphabeticalAppsList$AdapterItem.asPredictedApp(n3, s, appInfo, n2);
                             if (alphabeticalAppsList$FastScrollSectionInfo.fastScrollToItem == null) {
                                 alphabeticalAppsList$FastScrollSectionInfo.fastScrollToItem = predictedApp;
                             }
                             this.mAdapterItems.add(predictedApp);
-                            this.mFilteredApps.add(appInfo2);
-                            n3 = n6;
-                            n4 = n5;
+                            this.mFilteredApps.add(appInfo);
+                            n2 = n5;
+                            n3 = n4;
                         }
                         final ArrayList mAdapterItems = this.mAdapterItems;
-                        n7 = n4 + 1;
-                        mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asPredictionDivider(n4));
+                        n6 = n3 + 1;
+                        mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asPredictionDivider(n3));
                         alphabeticalAppsList$FastScrollSectionInfo2 = alphabeticalAppsList$FastScrollSectionInfo;
-                        break Label_0438;
+                        break Label_0339;
                     }
                 }
-                n3 = 0;
-                n7 = n;
+                n2 = 0;
+                n6 = 0;
                 alphabeticalAppsList$FastScrollSectionInfo2 = null;
             }
             else {
-                n3 = 0;
-                n7 = n;
+                n2 = 0;
+                n6 = 0;
                 alphabeticalAppsList$FastScrollSectionInfo2 = null;
             }
         }
-        final Iterator iterator3 = this.getFiltersAppInfos().iterator();
-        int n8 = n7;
-        while (iterator3.hasNext()) {
-            final AppInfo appInfo3 = iterator3.next();
-            final String andUpdateCachedSectionName = this.getAndUpdateCachedSectionName(appInfo3.title);
+        final Iterator iterator2 = this.getFiltersAppInfos().iterator();
+        int n7 = n6;
+        while (iterator2.hasNext()) {
+            final AppInfo appInfo2 = iterator2.next();
+            final String andUpdateCachedSectionName = this.getAndUpdateCachedSectionName(appInfo2.title);
             AlphabeticalAppsList$FastScrollSectionInfo alphabeticalAppsList$FastScrollSectionInfo3;
             if (!andUpdateCachedSectionName.equals(o)) {
                 alphabeticalAppsList$FastScrollSectionInfo3 = new AlphabeticalAppsList$FastScrollSectionInfo(andUpdateCachedSectionName);
@@ -202,125 +209,125 @@ public class AlphabeticalAppsList
             else {
                 alphabeticalAppsList$FastScrollSectionInfo3 = alphabeticalAppsList$FastScrollSectionInfo2;
             }
-            final int n9 = n8 + 1;
-            final int n10 = n3 + 1;
-            final AlphabeticalAppsList$AdapterItem app = AlphabeticalAppsList$AdapterItem.asApp(n8, andUpdateCachedSectionName, appInfo3, n3);
+            final int n8 = n7 + 1;
+            final int n9 = n2 + 1;
+            final AlphabeticalAppsList$AdapterItem app = AlphabeticalAppsList$AdapterItem.asApp(n7, andUpdateCachedSectionName, appInfo2, n2);
             if (alphabeticalAppsList$FastScrollSectionInfo3.fastScrollToItem == null) {
                 alphabeticalAppsList$FastScrollSectionInfo3.fastScrollToItem = app;
             }
             this.mAdapterItems.add(app);
-            this.mFilteredApps.add(appInfo3);
-            n3 = n10;
-            n8 = n9;
+            this.mFilteredApps.add(appInfo2);
+            n2 = n9;
+            n7 = n8;
             alphabeticalAppsList$FastScrollSectionInfo2 = alphabeticalAppsList$FastScrollSectionInfo3;
         }
         if (this.hasFilter()) {
             if (this.isAppDiscoveryRunning() || this.mDiscoveredApps.size() > 0) {
                 final ArrayList mAdapterItems2 = this.mAdapterItems;
-                final int n11 = n8 + 1;
-                mAdapterItems2.add(AlphabeticalAppsList$AdapterItem.asLoadingDivider(n8));
-                int n12 = n3;
-                int n13 = n11;
+                final int n10 = n7 + 1;
+                mAdapterItems2.add(AlphabeticalAppsList$AdapterItem.asLoadingDivider(n7));
+                int n11 = n2;
+                int n12 = n10;
                 for (int i = 0; i < this.mDiscoveredApps.size(); ++i) {
                     final AppDiscoveryAppInfo appDiscoveryAppInfo = this.mDiscoveredApps.get(i);
                     if (!appDiscoveryAppInfo.isRecent) {
-                        final int n14 = n13 + 1;
+                        final int n13 = n12 + 1;
                         final String s2 = "";
-                        final int n15 = n12 + 1;
-                        this.mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asDiscoveryItem(n13, s2, appDiscoveryAppInfo, n12));
-                        n12 = n15;
-                        n13 = n14;
+                        final int n14 = n11 + 1;
+                        this.mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asDiscoveryItem(n12, s2, appDiscoveryAppInfo, n11));
+                        n11 = n14;
+                        n12 = n13;
                     }
                 }
                 if (!this.isAppDiscoveryRunning()) {
-                    this.mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asMarketSearch(n13));
+                    this.mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asMarketSearch(n12));
                 }
             }
             else {
-                int n16;
+                int n15;
                 if (this.hasNoFilteredResults()) {
                     final ArrayList mAdapterItems3 = this.mAdapterItems;
-                    n16 = n8 + 1;
-                    mAdapterItems3.add(AlphabeticalAppsList$AdapterItem.asEmptySearch(n8));
+                    n15 = n7 + 1;
+                    mAdapterItems3.add(AlphabeticalAppsList$AdapterItem.asEmptySearch(n7));
                 }
                 else {
                     final ArrayList mAdapterItems4 = this.mAdapterItems;
-                    n16 = n8 + 1;
-                    mAdapterItems4.add(AlphabeticalAppsList$AdapterItem.asMarketDivider(n8));
+                    n15 = n7 + 1;
+                    mAdapterItems4.add(AlphabeticalAppsList$AdapterItem.asMarketDivider(n7));
                 }
-                this.mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asMarketSearch(n16));
+                this.mAdapterItems.add(AlphabeticalAppsList$AdapterItem.asMarketSearch(n15));
             }
         }
         if (this.mNumAppsPerRow != 0) {
-            final int n17 = -1;
-            final Iterator iterator4 = this.mAdapterItems.iterator();
-            int rowIndex = n17;
+            final int n16 = -1;
+            final Iterator iterator3 = this.mAdapterItems.iterator();
+            int rowIndex = n16;
             int rowAppIndex = 0;
-            int n18 = 0;
-            while (iterator4.hasNext()) {
-                final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = iterator4.next();
+            int n17 = 0;
+            while (iterator3.hasNext()) {
+                final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = iterator3.next();
                 alphabeticalAppsList$AdapterItem.rowIndex = 0;
+                int n18;
                 int n19;
                 int n20;
-                int n21;
                 if (AllAppsGridAdapter.isDividerViewType(alphabeticalAppsList$AdapterItem.viewType)) {
-                    n19 = rowIndex;
-                    n20 = rowAppIndex;
-                    n21 = 0;
+                    n18 = rowIndex;
+                    n19 = rowAppIndex;
+                    n20 = 0;
                 }
                 else if (AllAppsGridAdapter.isIconViewType(alphabeticalAppsList$AdapterItem.viewType)) {
-                    if (n18 % this.mNumAppsPerRow == 0) {
+                    if (n17 % this.mNumAppsPerRow == 0) {
                         ++rowIndex;
                         rowAppIndex = 0;
                     }
                     alphabeticalAppsList$AdapterItem.rowIndex = rowIndex;
                     alphabeticalAppsList$AdapterItem.rowAppIndex = rowAppIndex;
-                    final int n22 = n18 + 1;
-                    final int n23 = rowAppIndex + 1;
-                    n19 = rowIndex;
-                    n20 = n23;
-                    n21 = n22;
+                    final int n21 = n17 + 1;
+                    final int n22 = rowAppIndex + 1;
+                    n18 = rowIndex;
+                    n19 = n22;
+                    n20 = n21;
                 }
                 else {
-                    n19 = rowIndex;
-                    n20 = rowAppIndex;
-                    n21 = n18;
+                    n18 = rowIndex;
+                    n19 = rowAppIndex;
+                    n20 = n17;
                 }
-                n18 = n21;
-                rowAppIndex = n20;
-                rowIndex = n19;
+                n17 = n20;
+                rowAppIndex = n19;
+                rowIndex = n18;
             }
             this.mNumAppRowsInAdapter = rowIndex + 1;
-            switch (n) {
+            switch (true) {
                 case 0: {
-                    final float n24 = n2 / this.mNumAppRowsInAdapter;
+                    final float n23 = n / this.mNumAppRowsInAdapter;
                     for (final AlphabeticalAppsList$FastScrollSectionInfo alphabeticalAppsList$FastScrollSectionInfo4 : this.mFastScrollerSections) {
                         final AlphabeticalAppsList$AdapterItem fastScrollToItem = alphabeticalAppsList$FastScrollSectionInfo4.fastScrollToItem;
                         if (!AllAppsGridAdapter.isIconViewType(fastScrollToItem.viewType)) {
                             alphabeticalAppsList$FastScrollSectionInfo4.touchFraction = 0.0f;
                         }
                         else {
-                            alphabeticalAppsList$FastScrollSectionInfo4.touchFraction = fastScrollToItem.rowIndex * n24 + fastScrollToItem.rowAppIndex * (n24 / this.mNumAppsPerRow);
+                            alphabeticalAppsList$FastScrollSectionInfo4.touchFraction = fastScrollToItem.rowIndex * n23 + fastScrollToItem.rowAppIndex * (n23 / this.mNumAppsPerRow);
                         }
                     }
                     break;
                 }
                 case 1: {
-                    final float n25 = n2 / this.mFastScrollerSections.size();
-                    final Iterator iterator6 = this.mFastScrollerSections.iterator();
+                    final float n24 = n / this.mFastScrollerSections.size();
+                    final Iterator iterator5 = this.mFastScrollerSections.iterator();
                     float touchFraction = 0.0f;
-                    while (iterator6.hasNext()) {
-                        final AlphabeticalAppsList$FastScrollSectionInfo alphabeticalAppsList$FastScrollSectionInfo5 = iterator6.next();
-                        float n26;
+                    while (iterator5.hasNext()) {
+                        final AlphabeticalAppsList$FastScrollSectionInfo alphabeticalAppsList$FastScrollSectionInfo5 = iterator5.next();
+                        float n25;
                         if (!AllAppsGridAdapter.isIconViewType(alphabeticalAppsList$FastScrollSectionInfo5.fastScrollToItem.viewType)) {
                             alphabeticalAppsList$FastScrollSectionInfo5.touchFraction = 0.0f;
-                            n26 = touchFraction;
+                            n25 = touchFraction;
                         }
                         else {
                             alphabeticalAppsList$FastScrollSectionInfo5.touchFraction = touchFraction;
-                            n26 = touchFraction + n25;
+                            n25 = touchFraction + n24;
                         }
-                        touchFraction = n26;
+                        touchFraction = n25;
                     }
                     break;
                 }
@@ -334,6 +341,19 @@ public class AlphabeticalAppsList
         }
     }
     
+    private void swapInNewPredictedApps(final List list) {
+        this.mPredictedApps.clear();
+        this.mPredictedApps.addAll(list);
+        for (int size = list.size(), i = 0; i < size; ++i) {
+            final AppInfo appInfo = list.get(i);
+            final AlphabeticalAppsList$AdapterItem predictedApp = AlphabeticalAppsList$AdapterItem.asPredictedApp(i, "", appInfo, i);
+            predictedApp.rowAppIndex = i;
+            this.mAdapterItems.set(i, predictedApp);
+            this.mFilteredApps.set(i, appInfo);
+            this.mAdapter.notifyItemChanged(i);
+        }
+    }
+    
     private void updateAdapterItems() {
         this.refillAdapterItems();
         this.refreshRecyclerView();
@@ -341,6 +361,10 @@ public class AlphabeticalAppsList
     
     public void addApps(final List list) {
         this.updateApps(list);
+    }
+    
+    public AppInfo findApp(final ComponentKey componentKey) {
+        return this.mComponentToAppMap.get(componentKey);
     }
     
     public List getAdapterItems() {
@@ -361,6 +385,10 @@ public class AlphabeticalAppsList
     
     public int getNumFilteredApps() {
         return this.mFilteredApps.size();
+    }
+    
+    public List getPredictedApps() {
+        return this.mPredictedApps;
     }
     
     public boolean hasFilter() {
@@ -418,7 +446,15 @@ public class AlphabeticalAppsList
     public void setPredictedApps(final List list) {
         this.mPredictedAppComponents.clear();
         this.mPredictedAppComponents.addAll(list);
-        this.onAppsUpdated();
+        final List processPredictedAppComponents = this.processPredictedAppComponents(list);
+        if (!processPredictedAppComponents.equals(this.mPredictedApps)) {
+            if (processPredictedAppComponents.size() == this.mPredictedApps.size()) {
+                this.swapInNewPredictedApps(processPredictedAppComponents);
+            }
+            else {
+                this.onAppsUpdated();
+            }
+        }
     }
     
     boolean shouldShowEmptySearch() {

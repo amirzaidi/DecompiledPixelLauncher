@@ -4,10 +4,11 @@
 
 package com.android.launcher3.compat;
 
-import java.lang.reflect.Method;
-import android.util.Log;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.IntentSender$SendIntentException;
+import android.content.Context;
+import android.widget.Toast;
 import android.content.pm.LauncherApps;
 import android.os.Process;
 import android.app.Activity;
@@ -15,7 +16,7 @@ import android.graphics.drawable.Drawable;
 import com.android.launcher3.IconCache;
 import android.content.pm.LauncherActivityInfo;
 
-class ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO extends ShortcutConfigActivityInfo
+public class ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO extends ShortcutConfigActivityInfo
 {
     private final LauncherActivityInfo mInfo;
     
@@ -33,33 +34,20 @@ class ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO extends ShortcutCo
     }
     
     public boolean startConfigActivity(final Activity activity, final int n) {
-        final boolean b = true;
         if (this.getUser().equals((Object)Process.myUserHandle())) {
             return super.startConfigActivity(activity, n);
         }
-        final Class<LauncherApps> clazz = LauncherApps.class;
-        final String s = "getShortcutConfigActivityIntent";
-        final int n2 = 1;
+        final IntentSender shortcutConfigActivityIntent = ((LauncherApps)activity.getSystemService((Class)LauncherApps.class)).getShortcutConfigActivityIntent(this.mInfo);
+        final Intent intent = null;
+        final int n2 = 0;
+        final int n3 = 0;
         try {
-            final Class[] array = new Class[n2];
-            array[0] = LauncherActivityInfo.class;
-            final Method declaredMethod = clazz.getDeclaredMethod(s, (Class[])array);
-            final Object systemService = activity.getSystemService((Class)LauncherApps.class);
-            final Object[] array2 = { null };
-            try {
-                array2[0] = this.mInfo;
-                final Object invoke = declaredMethod.invoke(systemService, array2);
-                try {
-                    activity.startIntentSenderForResult((IntentSender)invoke, n, (Intent)null, 0, 0, 0);
-                    return b;
-                }
-                catch (Exception ex) {
-                    Log.e("SCActivityInfo", "Error calling new API", (Throwable)ex);
-                    return false;
-                }
-            }
-            catch (Exception ex2) {}
+            activity.startIntentSenderForResult(shortcutConfigActivityIntent, n, intent, n2, n3, 0);
+            return true;
         }
-        catch (Exception ex3) {}
+        catch (IntentSender$SendIntentException ex) {
+            Toast.makeText((Context)activity, 2131492897, 0).show();
+            return false;
+        }
     }
 }

@@ -4,30 +4,21 @@
 
 package com.android.launcher3;
 
-import android.view.View$OnClickListener;
-import android.view.ViewGroup;
-import com.android.launcher3.accessibility.AccessibleDragListenerAdapter;
-
-final class Workspace$7 extends AccessibleDragListenerAdapter
+final class Workspace$7 implements Runnable
 {
     final /* synthetic */ Workspace this$0;
+    final /* synthetic */ CellLayout val$cellLayout;
+    final /* synthetic */ LauncherAppWidgetHostView val$hostView;
     
-    Workspace$7(final Workspace this$0, final ViewGroup viewGroup, final int n) {
+    Workspace$7(final Workspace this$0, final LauncherAppWidgetHostView val$hostView, final CellLayout val$cellLayout) {
         this.this$0 = this$0;
-        super(viewGroup, n);
+        this.val$hostView = val$hostView;
+        this.val$cellLayout = val$cellLayout;
     }
     
-    protected void enableAccessibleDrag(final boolean b) {
-        super.enableAccessibleDrag(b);
-        this.setEnableForLayout(this.this$0.mLauncher.getHotseat().getLayout(), b);
-        final Workspace this$0 = this.this$0;
-        Object mLauncher;
-        if (b) {
-            mLauncher = null;
+    public void run() {
+        if (!this.this$0.isPageInTransition()) {
+            this.this$0.mLauncher.getDragLayer().addResizeFrame(this.val$hostView, this.val$cellLayout);
         }
-        else {
-            mLauncher = this.this$0.mLauncher;
-        }
-        this$0.setOnClickListener((View$OnClickListener)mLauncher);
     }
 }

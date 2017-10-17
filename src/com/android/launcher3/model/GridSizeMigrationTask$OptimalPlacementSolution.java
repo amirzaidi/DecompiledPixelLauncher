@@ -27,7 +27,6 @@ import android.text.TextUtils;
 import com.android.launcher3.LauncherProvider;
 import android.graphics.Point;
 import com.android.launcher3.Utilities;
-import java.util.HashMap;
 import java.util.HashSet;
 import android.content.ContentValues;
 import com.android.launcher3.InvariantDeviceProfile;

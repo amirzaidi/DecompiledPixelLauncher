@@ -5,12 +5,12 @@
 package com.android.launcher3;
 
 import android.util.Log;
-import android.animation.ValueAnimator$AnimatorUpdateListener;
 import com.android.launcher3.allapps.AllAppsContainerView;
+import android.animation.ValueAnimator$AnimatorUpdateListener;
 import android.animation.ValueAnimator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.res.Resources;
-import com.android.launcher3.util.CircleRevealOutlineProvider;
+import com.android.launcher3.anim.CircleRevealOutlineProvider;
 import android.view.animation.AccelerateInterpolator;
 import android.animation.TimeInterpolator;
 import android.animation.ObjectAnimator;
@@ -148,7 +148,9 @@ public class LauncherStateTransitionAnimation
             this.mCurrentAnimation = animatorSet;
         }
         else if (n == 1) {
-            set.addView(contentView);
+            if (!FeatureFlags.LAUNCHER3_PHYSICS) {
+                set.addView(contentView);
+            }
             animatorSet.addListener((Animator$AnimatorListener)new LauncherStateTransitionAnimation$4(this, launcherStateTransitionAnimation$PrivateTransitionCallbacks));
             final boolean animateToAllApps = this.mAllAppsController.animateToAllApps(animatorSet, integer2);
             final LauncherStateTransitionAnimation$StartAnimRunnable launcherStateTransitionAnimation$StartAnimRunnable = new LauncherStateTransitionAnimation$StartAnimRunnable(this, animatorSet, (View)baseContainerView);
@@ -163,8 +165,7 @@ public class LauncherStateTransitionAnimation
     }
     
     private void startAnimationToWorkspaceFromAllApps(final Workspace$State workspace$State, final Workspace$State workspace$State2, final boolean b, final int n, final Runnable runnable) {
-        final AllAppsContainerView appsView = this.mLauncher.getAppsView();
-        this.startAnimationToWorkspaceFromOverlay(workspace$State, workspace$State2, this.mLauncher.getStartViewForAllAppsRevealAnimation(), appsView, b, n, runnable, new LauncherStateTransitionAnimation$5(this, 1.0f, appsView));
+        this.startAnimationToWorkspaceFromOverlay(workspace$State, workspace$State2, this.mLauncher.getStartViewForAllAppsRevealAnimation(), this.mLauncher.getAppsView(), b, n, runnable, new LauncherStateTransitionAnimation$5(this, 1.0f));
     }
     
     private void startAnimationToWorkspaceFromOverlay(final Workspace$State workspace$State, final Workspace$State workspace$State2, final View view, final BaseContainerView baseContainerView, final boolean b, final int n, final Runnable runnable, final LauncherStateTransitionAnimation$PrivateTransitionCallbacks launcherStateTransitionAnimation$PrivateTransitionCallbacks) {
@@ -281,10 +282,10 @@ public class LauncherStateTransitionAnimation
         this.mCurrentAnimation = null;
     }
     
-    public void startAnimationToAllApps(final boolean b, final boolean b2) {
+    public void startAnimationToAllApps(final boolean b) {
         final AllAppsContainerView appsView = this.mLauncher.getAppsView();
         final View startViewForAllAppsRevealAnimation = this.mLauncher.getStartViewForAllAppsRevealAnimation();
-        final LauncherStateTransitionAnimation$1 launcherStateTransitionAnimation$1 = new LauncherStateTransitionAnimation$1(this, 1.0f, b2, appsView);
+        final LauncherStateTransitionAnimation$1 launcherStateTransitionAnimation$1 = new LauncherStateTransitionAnimation$1(this, 1.0f);
         int n = 0;
         if (FeatureFlags.LAUNCHER3_ALL_APPS_PULL_UP) {
             n = 1;

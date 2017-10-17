@@ -4,13 +4,18 @@
 
 package com.android.launcher3.notification;
 
+import com.android.launcher3.util.Themes;
 import com.android.launcher3.graphics.IconPalette;
 import android.view.MotionEvent;
-import android.support.v4.c.a;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
 import com.android.launcher3.ItemInfo;
 import java.util.List;
-import com.android.launcher3.anim.PillHeightRevealOutlineProvider;
+import android.animation.AnimatorSet;
+import android.animation.Animator$AnimatorListener;
+import com.android.launcher3.anim.PropertyResetListener;
+import android.animation.ObjectAnimator;
+import com.android.launcher3.anim.RoundedRectRevealOutlineProvider;
+import com.android.launcher3.LauncherAnimUtils;
 import android.animation.Animator;
 import android.util.AttributeSet;
 import android.content.Context;

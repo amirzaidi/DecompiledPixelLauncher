@@ -4,16 +4,18 @@
 
 package com.android.launcher3.graphics;
 
+import android.graphics.Color;
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.v4.b.a;
 import com.android.launcher3.util.Themes;
 import android.graphics.ColorMatrix;
-import android.graphics.Color;
 import android.graphics.ColorMatrixColorFilter;
 
 public class IconPalette
 {
-    public static final IconPalette FOLDER_ICON_PALETTE;
+    private static IconPalette sBadgePalette;
+    private static IconPalette sFolderBadgePalette;
     public final int backgroundColor;
     public final ColorMatrixColorFilter backgroundColorMatrixFilter;
     public final int dominantColor;
@@ -21,96 +23,117 @@ public class IconPalette
     public final int secondaryColor;
     public final int textColor;
     
-    static {
-        FOLDER_ICON_PALETTE = new IconPalette(Color.parseColor("#BDC1C6"));
-    }
-    
-    private IconPalette(final int dominantColor) {
+    private IconPalette(final int dominantColor, final boolean b) {
         this.dominantColor = dominantColor;
-        this.backgroundColor = this.dominantColor;
+        int backgroundColor;
+        if (b) {
+            backgroundColor = getMutedColor(this.dominantColor, 0.87f);
+        }
+        else {
+            backgroundColor = this.dominantColor;
+        }
+        this.backgroundColor = backgroundColor;
         final ColorMatrix colorMatrix = new ColorMatrix();
         Themes.setColorScaleOnMatrix(this.backgroundColor, colorMatrix);
         this.backgroundColorMatrixFilter = new ColorMatrixColorFilter(colorMatrix);
-        Themes.setColorScaleOnMatrix(getMutedColor(this.dominantColor, 0.54f), colorMatrix);
-        this.saturatedBackgroundColorMatrixFilter = new ColorMatrixColorFilter(colorMatrix);
+        if (!b) {
+            this.saturatedBackgroundColorMatrixFilter = this.backgroundColorMatrixFilter;
+        }
+        else {
+            Themes.setColorScaleOnMatrix(getMutedColor(this.dominantColor, 0.54f), colorMatrix);
+            this.saturatedBackgroundColorMatrixFilter = new ColorMatrixColorFilter(colorMatrix);
+        }
         this.textColor = getTextColorForBackground(this.backgroundColor);
         this.secondaryColor = getLowContrastColor(this.backgroundColor);
     }
     
     private static int ensureTextContrast(final int n, final int n2) {
-        return findContrastColor(n, n2, true, 4.5);
+        return findContrastColor(n, n2, 4.5);
     }
     
-    private static int findContrastColor(final int n, int n2, final boolean b, final double n3) {
-        int n4;
-        if (b) {
-            n4 = n;
-        }
-        else {
-            n4 = n2;
-        }
-        if (!b) {
-            n2 = n;
-        }
-        if (a.aqN(n4, n2) >= n3) {
+    private static int findContrastColor(final int n, final int n2, final double n3) {
+        if (a.arL(n, n2) >= n3) {
             return n;
         }
         final double[] array = new double[3];
-        int n5;
+        a.arY(n2, array);
+        final double n4 = array[0];
+        a.arY(n, array);
+        double n5 = array[0];
+        final boolean b = n4 < 50.0 && true;
+        double n6;
         if (b) {
-            n5 = n4;
+            n6 = n5;
         }
         else {
-            n5 = n2;
+            n6 = 0.0;
         }
-        a.ara(n5, array);
-        double n6 = 0.0;
-        double n7 = array[0];
-        final double n8 = array[1];
-        final double n9 = array[2];
-        int n10 = 0;
-        int aqS = n2;
-        int aqS2 = n4;
-        while (n10 < 15 && n7 - n6 > 1.0E-5) {
-            double n11 = (n6 + n7) / 2.0;
-            if (b) {
-                aqS2 = a.aqS(n11, n8, n9);
+        if (b) {
+            n5 = 100.0;
+        }
+        final double n7 = array[1];
+        final double n8 = array[2];
+        int n9 = 0;
+        double n11;
+        double n12;
+        for (double n10 = n5; n9 < 15 && n10 - n6 > 1.0E-5; ++n9, n6 = n12, n10 = n11) {
+            n11 = (n6 + n10) / 2.0;
+            if (a.arL(a.arQ(n11, n7, n8), n2) > n3) {
+                if (b) {
+                    n12 = n6;
+                }
+                else {
+                    final double n13 = n10;
+                    n12 = n11;
+                    n11 = n13;
+                }
+            }
+            else if (b) {
+                final double n14 = n10;
+                n12 = n11;
+                n11 = n14;
             }
             else {
-                aqS = a.aqS(n11, n8, n9);
+                n12 = n6;
             }
-            double n13;
-            if (a.aqN(aqS2, aqS) > n3) {
-                final double n12 = n7;
-                n13 = n11;
-                n11 = n12;
-            }
-            else {
-                n13 = n6;
-            }
-            ++n10;
-            n6 = n13;
-            n7 = n11;
         }
-        return a.aqS(n6, n8, n9);
+        return a.arQ(n6, n7, n8);
     }
     
-    public static IconPalette fromDominantColor(final int n) {
-        return new IconPalette(n);
+    public static IconPalette fromDominantColor(final int n, final boolean b) {
+        return new IconPalette(n, b);
+    }
+    
+    public static IconPalette getBadgePalette(final Resources resources) {
+        final int color = resources.getColor(2131361821);
+        if (color == 0) {
+            return null;
+        }
+        if (IconPalette.sBadgePalette == null) {
+            IconPalette.sBadgePalette = fromDominantColor(color, false);
+        }
+        return IconPalette.sBadgePalette;
+    }
+    
+    public static IconPalette getFolderBadgePalette(final Resources resources) {
+        if (IconPalette.sFolderBadgePalette == null) {
+            IconPalette.sFolderBadgePalette = fromDominantColor(resources.getColor(2131361822), false);
+        }
+        return IconPalette.sFolderBadgePalette;
     }
     
     private static int getLighterOrDarkerVersionOfColor(final int n, final float n2) {
         final int n3 = -16777216;
         int n4 = -1;
-        final int arf = a.arf(n4, n, n2);
-        final int arf2 = a.arf(n3, n, n2);
-        if (arf >= 0) {
-            n4 = a.arc(n4, arf);
+        final int ase = a.ase(n4, n, n2);
+        final int ase2 = a.ase(n3, n, n2);
+        if (ase >= 0) {
+            n4 = a.asb(n4, ase);
         }
-        else if (arf2 >= 0) {
-            n4 = a.arc(n3, arf2);
+        else if (ase2 >= 0) {
+            n4 = a.asb(n3, ase2);
         }
-        return a.arg(n4, n);
+        return a.asf(n4, n);
     }
     
     private static int getLowContrastColor(final int n) {
@@ -118,7 +141,7 @@ public class IconPalette
     }
     
     private static int getMutedColor(final int n, final float n2) {
-        return a.arg(a.arc(-1, (int)(255.0f * n2)), n);
+        return a.asf(a.asb(-1, (int)(255.0f * n2)), n);
     }
     
     private static int getTextColorForBackground(final int n) {
@@ -127,7 +150,7 @@ public class IconPalette
     
     private static int resolveColor(final Context context, final int n) {
         if (n == 0) {
-            return context.getColor(2131361825);
+            return context.getColor(2131361820);
         }
         return n;
     }

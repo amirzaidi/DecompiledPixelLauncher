@@ -18,7 +18,7 @@ public class ShortcutMenuAccessibilityDelegate extends LauncherAccessibilityDele
     public ShortcutMenuAccessibilityDelegate(final Launcher launcher) {
         final int n = 2131623952;
         super(launcher);
-        this.mActions.put(n, (Object)new AccessibilityNodeInfo$AccessibilityAction(n, launcher.getText(2131492992)));
+        this.mActions.put(n, (Object)new AccessibilityNodeInfo$AccessibilityAction(n, launcher.getText(2131493001)));
     }
     
     public void addSupportedActions(final View view, final AccessibilityNodeInfo accessibilityNodeInfo, final boolean b) {
@@ -56,7 +56,7 @@ public class ShortcutMenuAccessibilityDelegate extends LauncherAccessibilityDele
             }
             final NotificationMainView notificationMainView = (NotificationMainView)view;
             notificationMainView.onChildDismissed((View)notificationMainView);
-            this.announceConfirmation(2131492993);
+            this.announceConfirmation(2131493002);
             return b;
         }
     }

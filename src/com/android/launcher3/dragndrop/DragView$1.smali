@@ -26,7 +26,7 @@
 
     iput p3, p0, Lcom/android/launcher3/dragndrop/DragView$1;->val$scale:F
 
-    .line 104
+    .line 154
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -41,7 +41,7 @@
     .prologue
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 107
+    .line 157
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -52,7 +52,7 @@
 
     move-result v0
 
-    .line 109
+    .line 159
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragView$1;->this$0:Lcom/android/launcher3/dragndrop/DragView;
 
     iget v2, p0, Lcom/android/launcher3/dragndrop/DragView$1;->val$initialScale:F
@@ -69,7 +69,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/launcher3/dragndrop/DragView;->setScaleX(F)V
 
-    .line 110
+    .line 160
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragView$1;->this$0:Lcom/android/launcher3/dragndrop/DragView;
 
     iget v2, p0, Lcom/android/launcher3/dragndrop/DragView$1;->val$initialScale:F
@@ -86,14 +86,14 @@
 
     invoke-virtual {v1, v2}, Lcom/android/launcher3/dragndrop/DragView;->setScaleY(F)V
 
-    .line 111
+    .line 161
     sget v1, Lcom/android/launcher3/dragndrop/DragView;->sDragAlpha:F
 
     cmpl-float v1, v1, v5
 
     if-eqz v1, :cond_0
 
-    .line 112
+    .line 162
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragView$1;->this$0:Lcom/android/launcher3/dragndrop/DragView;
 
     sget v2, Lcom/android/launcher3/dragndrop/DragView;->sDragAlpha:F
@@ -106,7 +106,7 @@
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/dragndrop/DragView;->setAlpha(F)V
 
-    .line 115
+    .line 165
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragView$1;->this$0:Lcom/android/launcher3/dragndrop/DragView;
 
@@ -116,10 +116,10 @@
 
     if-nez v0, :cond_1
 
-    .line 116
+    .line 166
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 118
+    .line 168
     :cond_1
     return-void
 .end method

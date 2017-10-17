@@ -21,7 +21,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
-    .locals 5
+    .locals 3
 
     .prologue
     .line 80
@@ -90,30 +90,22 @@
 
     iput-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mWidgetCache:Lcom/android/launcher3/WidgetPreviewLoader;
 
-    .line 97
-    new-instance v1, Lcom/android/launcher3/LauncherModel;
+    .line 96
+    new-instance v0, Lcom/android/launcher3/LauncherModel;
 
-    iget-object v2, p0, Lcom/android/launcher3/LauncherAppState;->mIconCache:Lcom/android/launcher3/IconCache;
+    iget-object v1, p0, Lcom/android/launcher3/LauncherAppState;->mIconCache:Lcom/android/launcher3/IconCache;
+
+    iget-object v2, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/android/launcher3/AppFilter;->newInstance(Landroid/content/Context;)Lcom/android/launcher3/AppFilter;
+
+    move-result-object v2
+
+    invoke-direct {v0, p0, v1, v2}, Lcom/android/launcher3/LauncherModel;-><init>(Lcom/android/launcher3/LauncherAppState;Lcom/android/launcher3/IconCache;Lcom/android/launcher3/AppFilter;)V
+
+    iput-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
 
     .line 98
-    const-class v0, Lcom/android/launcher3/AppFilter;
-
-    iget-object v3, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
-
-    const v4, 0x7f0c0017
-
-    invoke-static {v0, v3, v4}, Lcom/android/launcher3/Utilities;->getOverrideObject(Ljava/lang/Class;Landroid/content/Context;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/launcher3/AppFilter;
-
-    .line 97
-    invoke-direct {v1, p0, v2, v0}, Lcom/android/launcher3/LauncherModel;-><init>(Lcom/android/launcher3/LauncherAppState;Lcom/android/launcher3/IconCache;Lcom/android/launcher3/AppFilter;)V
-
-    iput-object v1, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
-
-    .line 100
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/LauncherAppsCompat;
@@ -124,52 +116,52 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/compat/LauncherAppsCompat;->addOnAppsChangedCallback(Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;)V
 
-    .line 103
+    .line 101
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 104
+    .line 102
     const-string/jumbo v1, "android.intent.action.LOCALE_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 106
+    .line 104
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_ADDED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 107
+    .line 105
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_REMOVED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 108
+    .line 106
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_AVAILABLE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 109
+    .line 107
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 110
+    .line 108
     const-string/jumbo v1, "android.intent.action.MANAGED_PROFILE_UNLOCKED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 112
+    .line 110
     sget-boolean v1, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT:Z
 
     if-eqz v1, :cond_1
 
-    .line 114
+    .line 112
     const-string/jumbo v1, "android.intent.action.WALLPAPER_CHANGED"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 117
+    .line 115
     :cond_1
     iget-object v1, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
 
@@ -177,7 +169,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 118
+    .line 116
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/UserManagerCompat;
@@ -186,7 +178,7 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/compat/UserManagerCompat;->enableAndResetCache()V
 
-    .line 119
+    .line 117
     new-instance v0, Lcom/android/launcher3/util/ConfigMonitor;
 
     iget-object v1, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
@@ -195,12 +187,12 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/ConfigMonitor;->register()V
 
-    .line 121
+    .line 119
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/dynamicui/ExtractionUtils;->startColorExtractionServiceIfNecessary(Landroid/content/Context;)V
 
-    .line 122
+    .line 120
     return-void
 .end method
 
@@ -208,7 +200,7 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 158
     invoke-static {p0}, Lcom/android/launcher3/LauncherAppState;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/LauncherAppState;
 
     move-result-object v0
@@ -311,16 +303,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 164
+    .line 162
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 165
+    .line 163
     sget-object v1, Lcom/android/launcher3/LauncherProvider;->AUTHORITY:Ljava/lang/String;
 
-    .line 164
+    .line 162
     invoke-virtual {v0, v1}, Landroid/content/ContentResolver;->acquireContentProviderClient(Ljava/lang/String;)Landroid/content/ContentProviderClient;
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_1
@@ -328,7 +320,7 @@
 
     move-result-object v1
 
-    .line 166
+    .line 164
     :try_start_1
     invoke-virtual {v1}, Landroid/content/ContentProviderClient;->getLocalContentProvider()Landroid/content/ContentProvider;
 
@@ -339,7 +331,7 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_3
     .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
-    .line 167
+    .line 165
     if-eqz v1, :cond_0
 
     :try_start_2
@@ -358,11 +350,11 @@
 
     goto :goto_0
 
-    .line 166
+    .line 164
     :cond_1
     return-object v0
 
-    .line 167
+    .line 165
     :catch_1
     move-exception v0
 
@@ -450,7 +442,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 139
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mIconCache:Lcom/android/launcher3/IconCache;
 
     return-object v0
@@ -460,7 +452,7 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 151
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mInvariantDeviceProfile:Lcom/android/launcher3/InvariantDeviceProfile;
 
     return-object v0
@@ -470,7 +462,7 @@
     .locals 1
 
     .prologue
-    .line 145
+    .line 143
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
 
     return-object v0
@@ -480,7 +472,7 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 147
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mWidgetCache:Lcom/android/launcher3/WidgetPreviewLoader;
 
     return-object v0
@@ -490,7 +482,7 @@
     .locals 1
 
     .prologue
-    .line 135
+    .line 133
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/LauncherAppState;->getLocalProvider(Landroid/content/Context;)Lcom/android/launcher3/LauncherProvider;
@@ -499,12 +491,12 @@
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/LauncherProvider;->setLauncherProviderChangeListener(Lcom/android/launcher3/LauncherProviderChangeListener;)V
 
-    .line 136
+    .line 134
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/LauncherModel;->initialize(Lcom/android/launcher3/LauncherModel$Callbacks;)V
 
-    .line 137
+    .line 135
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppState;->mModel:Lcom/android/launcher3/LauncherModel;
 
     return-object v0

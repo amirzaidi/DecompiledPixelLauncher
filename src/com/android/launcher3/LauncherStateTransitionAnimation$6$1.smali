@@ -19,7 +19,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$6$1;->val$revealView:Landroid/view/View;
 
-    .line 448
+    .line 441
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -32,13 +32,13 @@
     .locals 2
 
     .prologue
-    .line 451
+    .line 444
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$6$1;->val$revealView:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 452
+    .line 445
     return-void
 .end method

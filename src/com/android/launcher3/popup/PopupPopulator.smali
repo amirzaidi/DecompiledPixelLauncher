@@ -14,12 +14,12 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 112
     new-instance v0, Lcom/android/launcher3/popup/PopupPopulator$1;
 
     invoke-direct {v0}, Lcom/android/launcher3/popup/PopupPopulator$1;-><init>()V
 
-    .line 114
+    .line 111
     sput-object v0, Lcom/android/launcher3/popup/PopupPopulator;->SHORTCUT_RANK_COMPARATOR:Ljava/util/Comparator;
 
     .line 53
@@ -40,15 +40,15 @@
     .locals 13
 
     .prologue
-    .line 188
+    .line 185
     invoke-virtual {p1}, Lcom/android/launcher3/ItemInfo;->getTargetComponent()Landroid/content/ComponentName;
 
     move-result-object v5
 
-    .line 189
+    .line 186
     iget-object v7, p1, Lcom/android/launcher3/ItemInfo;->user:Landroid/os/UserHandle;
 
-    .line 190
+    .line 187
     new-instance v0, Lcom/android/launcher3/popup/PopupPopulator$2;
 
     move-object/from16 v1, p7
@@ -80,8 +80,6 @@
     .locals 6
 
     .prologue
-    const/4 v2, 0x2
-
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -89,15 +87,15 @@
     .line 77
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v2
 
-    if-lez v3, :cond_0
+    if-lez v2, :cond_0
 
-    move v4, v0
+    move v2, v0
 
     .line 78
     :goto_0
-    if-eqz v4, :cond_1
+    if-eqz v2, :cond_1
 
     .line 79
     :goto_1
@@ -106,49 +104,43 @@
     move-result v3
 
     .line 80
-    if-eqz v4, :cond_2
+    const/4 v4, 0x4
 
-    if-le v3, v2, :cond_2
+    invoke-static {v4, v3}, Ljava/lang/Math;->min(II)I
 
-    .line 83
-    :goto_2
-    add-int/2addr v0, v2
+    move-result v3
 
-    const/4 v2, 0x4
+    add-int/2addr v0, v3
 
-    invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    .line 84
+    .line 81
     invoke-interface {p2}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v3
 
-    .line 83
-    add-int/2addr v2, v0
+    .line 80
+    add-int/2addr v3, v0
 
-    .line 85
-    new-array v3, v2, [Lcom/android/launcher3/popup/PopupPopulator$Item;
+    .line 82
+    new-array v4, v3, [Lcom/android/launcher3/popup/PopupPopulator$Item;
 
     move v0, v1
 
-    .line 86
-    :goto_3
-    if-ge v0, v2, :cond_3
+    .line 83
+    :goto_2
+    if-ge v0, v3, :cond_2
 
-    .line 87
+    .line 84
     sget-object v5, Lcom/android/launcher3/popup/PopupPopulator$Item;->SHORTCUT:Lcom/android/launcher3/popup/PopupPopulator$Item;
 
-    aput-object v5, v3, v0
+    aput-object v5, v4, v0
 
-    .line 86
+    .line 83
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_0
-    move v4, v1
+    move v2, v1
 
     .line 77
     goto :goto_0
@@ -159,95 +151,85 @@
     .line 78
     goto :goto_1
 
+    .line 86
     :cond_2
-    move v2, v3
+    if-eqz v2, :cond_3
 
-    .line 80
-    goto :goto_2
-
-    .line 89
-    :cond_3
-    if-eqz v4, :cond_4
-
-    .line 91
+    .line 88
     sget-object v0, Lcom/android/launcher3/popup/PopupPopulator$Item;->NOTIFICATION:Lcom/android/launcher3/popup/PopupPopulator$Item;
 
-    aput-object v0, v3, v1
+    aput-object v0, v4, v1
 
-    .line 94
-    :cond_4
+    .line 91
+    :cond_3
     invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    xor-int/lit8 v4, v0, 0x1
+    xor-int/lit8 v2, v0, 0x1
 
-    .line 95
-    :goto_4
+    .line 92
+    :goto_3
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ge v1, v0, :cond_6
+    if-ge v1, v0, :cond_5
 
-    .line 96
-    add-int/lit8 v0, v2, -0x1
+    .line 93
+    add-int/lit8 v0, v3, -0x1
 
     sub-int v5, v0, v1
 
-    if-eqz v4, :cond_5
+    if-eqz v2, :cond_4
 
     sget-object v0, Lcom/android/launcher3/popup/PopupPopulator$Item;->SYSTEM_SHORTCUT_ICON:Lcom/android/launcher3/popup/PopupPopulator$Item;
 
-    :goto_5
-    aput-object v0, v3, v5
+    :goto_4
+    aput-object v0, v4, v5
 
-    .line 95
+    .line 92
     add-int/lit8 v1, v1, 0x1
+
+    goto :goto_3
+
+    .line 93
+    :cond_4
+    sget-object v0, Lcom/android/launcher3/popup/PopupPopulator$Item;->SYSTEM_SHORTCUT:Lcom/android/launcher3/popup/PopupPopulator$Item;
 
     goto :goto_4
 
-    .line 96
+    .line 95
     :cond_5
-    sget-object v0, Lcom/android/launcher3/popup/PopupPopulator$Item;->SYSTEM_SHORTCUT:Lcom/android/launcher3/popup/PopupPopulator$Item;
-
-    goto :goto_5
-
-    .line 98
-    :cond_6
-    return-object v3
+    return-object v4
 .end method
 
 .method public static initializeSystemShortcut(Landroid/content/Context;Landroid/view/View;Lcom/android/launcher3/popup/SystemShortcut;)V
     .locals 3
 
     .prologue
-    .line 305
+    .line 302
     instance-of v0, p1, Lcom/android/launcher3/shortcuts/DeepShortcutView;
 
     if-eqz v0, :cond_1
 
     move-object v0, p1
 
-    .line 307
+    .line 304
     check-cast v0, Lcom/android/launcher3/shortcuts/DeepShortcutView;
 
-    .line 308
+    .line 305
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/DeepShortcutView;->getIconView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 309
-    const v2, 0x1010212
-
-    .line 308
-    invoke-virtual {p2, p0, v2}, Lcom/android/launcher3/popup/SystemShortcut;->getIcon(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p2, p0}, Lcom/android/launcher3/popup/SystemShortcut;->getIcon(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 310
+    .line 306
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/DeepShortcutView;->getBubbleText()Lcom/android/launcher3/BubbleTextView;
 
     move-result-object v0
@@ -258,15 +240,15 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 318
+    .line 313
     :cond_0
     :goto_0
     invoke-virtual {p1, p2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 319
+    .line 314
     return-void
 
-    .line 311
+    .line 307
     :cond_1
     instance-of v0, p1, Landroid/widget/ImageView;
 
@@ -274,20 +256,17 @@
 
     move-object v0, p1
 
-    .line 313
+    .line 309
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 315
-    const v1, 0x101009a
-
-    .line 314
-    invoke-virtual {p2, p0, v1}, Lcom/android/launcher3/popup/SystemShortcut;->getIcon(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    .line 310
+    invoke-virtual {p2, p0}, Lcom/android/launcher3/popup/SystemShortcut;->getIcon(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 316
+    .line 311
     invoke-virtual {p2, p0}, Lcom/android/launcher3/popup/SystemShortcut;->getLabel(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -303,25 +282,25 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 102
+    .line 99
     if-nez p0, :cond_0
 
     return-object v0
 
-    .line 103
+    .line 100
     :cond_0
     array-length v1, p0
 
-    .line 104
+    .line 101
     new-array v2, v1, [Lcom/android/launcher3/popup/PopupPopulator$Item;
 
-    .line 105
+    .line 102
     const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 106
+    .line 103
     sub-int v3, v1, v0
 
     add-int/lit8 v3, v3, -0x1
@@ -330,12 +309,12 @@
 
     aput-object v3, v2, v0
 
-    .line 105
+    .line 102
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 108
+    .line 105
     :cond_1
     return-object v2
 .end method
@@ -348,15 +327,15 @@
 
     const/4 v7, 0x4
 
-    .line 139
+    .line 136
     if-eqz p1, :cond_1
 
-    .line 140
+    .line 137
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 141
+    .line 138
     :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -364,7 +343,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 142
+    .line 139
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -381,74 +360,74 @@
 
     if-eqz v0, :cond_0
 
-    .line 143
+    .line 140
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
-    .line 149
+    .line 146
     :cond_1
     sget-object v0, Lcom/android/launcher3/popup/PopupPopulator;->SHORTCUT_RANK_COMPARATOR:Ljava/util/Comparator;
 
     invoke-static {p0, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 150
+    .line 147
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
 
     if-gt v0, v7, :cond_2
 
-    .line 151
+    .line 148
     return-object p0
 
-    .line 156
+    .line 153
     :cond_2
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v7}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 158
+    .line 155
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v4
 
     move v2, v1
 
-    .line 159
+    .line 156
     :goto_0
     if-ge v2, v4, :cond_5
 
-    .line 160
+    .line 157
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 161
+    .line 158
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 162
+    .line 159
     if-ge v5, v7, :cond_4
 
-    .line 164
+    .line 161
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 165
+    .line 162
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->isDynamic()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 166
+    .line 163
     add-int/lit8 v0, v1, 0x1
 
     :goto_1
     move v1, v0
 
-    .line 159
+    .line 156
     :cond_3
     :goto_2
     add-int/lit8 v0, v2, 0x1
@@ -457,7 +436,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 169
     :cond_4
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->isDynamic()Z
 
@@ -469,21 +448,21 @@
 
     if-ge v1, v6, :cond_3
 
-    .line 173
+    .line 170
     add-int/lit8 v1, v1, 0x1
 
-    .line 174
+    .line 171
     sub-int/2addr v5, v1
 
-    .line 175
+    .line 172
     invoke-interface {v3, v5}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 176
+    .line 173
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 179
+    .line 176
     :cond_5
     return-object v3
 

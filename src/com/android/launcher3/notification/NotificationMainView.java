@@ -51,18 +51,22 @@ public class NotificationMainView extends FrameLayout implements SwipeHelper$Cal
         final int maxLines = 2;
         this.mNotificationInfo = mNotificationInfo;
         final CharSequence title = this.mNotificationInfo.title;
-        CharSequence text = this.mNotificationInfo.text;
+        final CharSequence text = this.mNotificationInfo.text;
         if (!TextUtils.isEmpty(title) && (TextUtils.isEmpty(text) ^ true)) {
-            this.mTitleView.setText(title);
-            this.mTextView.setText(text);
+            this.mTitleView.setText((CharSequence)title.toString());
+            this.mTextView.setText((CharSequence)text.toString());
         }
         else {
             this.mTitleView.setMaxLines(maxLines);
             final TextView mTitleView = this.mTitleView;
-            if (!TextUtils.isEmpty(title)) {
-                text = title;
+            String text2;
+            if (TextUtils.isEmpty(title)) {
+                text2 = text.toString();
             }
-            mTitleView.setText(text);
+            else {
+                text2 = title.toString();
+            }
+            mTitleView.setText((CharSequence)text2);
             this.mTextView.setVisibility(8);
         }
         view.setBackground(this.mNotificationInfo.getIconForBackground(this.getContext(), this.mBackgroundColor));
@@ -118,12 +122,12 @@ public class NotificationMainView extends FrameLayout implements SwipeHelper$Cal
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        this.mTextAndBackground = (ViewGroup)this.findViewById(2131624016);
+        this.mTextAndBackground = (ViewGroup)this.findViewById(2131624026);
         final ColorDrawable colorDrawable = (ColorDrawable)this.mTextAndBackground.getBackground();
         this.mBackgroundColor = colorDrawable.getColor();
         this.mTextAndBackground.setBackground((Drawable)new RippleDrawable(ColorStateList.valueOf(Themes.getAttrColor(this.getContext(), 16843820)), (Drawable)colorDrawable, (Drawable)null));
         this.mTitleView = (TextView)this.mTextAndBackground.findViewById(2131623982);
-        this.mTextView = (TextView)this.mTextAndBackground.findViewById(2131624017);
+        this.mTextView = (TextView)this.mTextAndBackground.findViewById(2131624027);
     }
     
     public boolean updateSwipeProgress(final View view, final boolean b, final float n) {

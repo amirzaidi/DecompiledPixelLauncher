@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$5;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    .line 617
+    .line 907
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -25,47 +25,41 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 620
-    iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$5;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
-
-    iget-object v1, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$5;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
-
-    invoke-static {v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->-get1(Lcom/android/launcher3/popup/PopupContainerWithArrow;)Lcom/android/launcher3/notification/NotificationItemView;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->removeView(Landroid/view/View;)V
-
-    .line 621
+    .line 910
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$5;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->-set0(Lcom/android/launcher3/popup/PopupContainerWithArrow;Lcom/android/launcher3/notification/NotificationItemView;)Lcom/android/launcher3/notification/NotificationItemView;
+    iput-object v1, v0, Lcom/android/launcher3/popup/PopupContainerWithArrow;->mOpenCloseAnimator:Landroid/animation/Animator;
 
-    .line 622
+    .line 911
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$5;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->getItemCount()I
+    invoke-static {v0}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->-get1(Lcom/android/launcher3/popup/PopupContainerWithArrow;)Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 623
+    .line 912
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$5;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    invoke-virtual {v0, v2}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->close(Z)V
+    const/4 v1, 0x4
 
-    .line 624
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->setVisibility(I)V
+
+    .line 916
+    :goto_0
     return-void
 
-    .line 626
+    .line 914
     :cond_0
-    return-void
+    iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$5;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->closeComplete()V
+
+    goto :goto_0
 .end method

@@ -11,7 +11,7 @@
 
 .field final synthetic val$appWidgetId:I
 
-.field final synthetic val$dropLayout:Lcom/android/launcher3/CellLayout;
+.field final synthetic val$layout:Landroid/appwidget/AppWidgetHostView;
 
 .field final synthetic val$requestArgs:Lcom/android/launcher3/util/PendingRequestArgs;
 
@@ -19,22 +19,22 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;IILcom/android/launcher3/util/PendingRequestArgs;Lcom/android/launcher3/CellLayout;)V
+.method constructor <init>(Lcom/android/launcher3/Launcher;ILcom/android/launcher3/util/PendingRequestArgs;Landroid/appwidget/AppWidgetHostView;I)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$8;->this$0:Lcom/android/launcher3/Launcher;
 
-    iput p2, p0, Lcom/android/launcher3/Launcher$8;->val$resultCode:I
+    iput p2, p0, Lcom/android/launcher3/Launcher$8;->val$appWidgetId:I
 
-    iput p3, p0, Lcom/android/launcher3/Launcher$8;->val$appWidgetId:I
+    iput-object p3, p0, Lcom/android/launcher3/Launcher$8;->val$requestArgs:Lcom/android/launcher3/util/PendingRequestArgs;
 
-    iput-object p4, p0, Lcom/android/launcher3/Launcher$8;->val$requestArgs:Lcom/android/launcher3/util/PendingRequestArgs;
+    iput-object p4, p0, Lcom/android/launcher3/Launcher$8;->val$layout:Landroid/appwidget/AppWidgetHostView;
 
-    iput-object p5, p0, Lcom/android/launcher3/Launcher$8;->val$dropLayout:Lcom/android/launcher3/CellLayout;
+    iput p5, p0, Lcom/android/launcher3/Launcher$8;->val$resultCode:I
 
-    .line 794
+    .line 860
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -44,27 +44,40 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 6
 
     .prologue
-    .line 797
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$8;->this$0:Lcom/android/launcher3/Launcher;
+    const/4 v5, 0x0
 
-    iget v1, p0, Lcom/android/launcher3/Launcher$8;->val$resultCode:I
+    const/4 v0, 0x0
+
+    .line 863
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$8;->this$0:Lcom/android/launcher3/Launcher;
 
     iget v2, p0, Lcom/android/launcher3/Launcher$8;->val$appWidgetId:I
 
     iget-object v3, p0, Lcom/android/launcher3/Launcher$8;->val$requestArgs:Lcom/android/launcher3/util/PendingRequestArgs;
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->completeTwoStageWidgetDrop(IILcom/android/launcher3/util/PendingRequestArgs;)V
+    iget-object v4, p0, Lcom/android/launcher3/Launcher$8;->val$layout:Landroid/appwidget/AppWidgetHostView;
 
-    .line 798
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$8;->val$dropLayout:Lcom/android/launcher3/CellLayout;
+    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/launcher3/Launcher;->completeAddAppWidget(ILcom/android/launcher3/ItemInfo;Landroid/appwidget/AppWidgetHostView;Lcom/android/launcher3/LauncherAppWidgetProviderInfo;)V
 
-    const/4 v1, 0x0
+    .line 864
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$8;->this$0:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/CellLayout;->setDropPending(Z)V
+    iget v2, p0, Lcom/android/launcher3/Launcher$8;->val$resultCode:I
 
-    .line 799
+    if-eqz v2, :cond_0
+
+    const/4 v0, 0x1
+
+    .line 865
+    :cond_0
+    const/16 v2, 0x1f4
+
+    .line 864
+    invoke-virtual {v1, v0, v2, v5}, Lcom/android/launcher3/Launcher;->exitSpringLoadedDragModeDelayed(ZILjava/lang/Runnable;)V
+
+    .line 866
     return-void
 .end method

@@ -44,7 +44,7 @@ public class WidgetsListAdapter extends q
         this.mIndexer = new AlphabeticIndexCompat(context);
         this.mIconClickListener = mIconClickListener;
         this.mIconLongClickListener = mIconLongClickListener;
-        this.mIndent = context.getResources().getDimensionPixelSize(2131427404);
+        this.mIndent = context.getResources().getDimensionPixelSize(2131427413);
     }
     
     public List copyWidgetsForPackageUser(final PackageUserKey packageUserKey) {
@@ -91,10 +91,10 @@ public class WidgetsListAdapter extends q
         if (n2 > i) {
             while (i < n2) {
                 if ((i & 0x1) == 0x1) {
-                    this.mLayoutInflater.inflate(2130968627, cellContainer);
+                    this.mLayoutInflater.inflate(2130968629, cellContainer);
                 }
                 else {
-                    final WidgetCell widgetCell = (WidgetCell)this.mLayoutInflater.inflate(2130968625, cellContainer, false);
+                    final WidgetCell widgetCell = (WidgetCell)this.mLayoutInflater.inflate(2130968627, cellContainer, false);
                     widgetCell.setOnClickListener(this.mIconClickListener);
                     widgetCell.setOnLongClickListener(this.mIconLongClickListener);
                     cellContainer.addView((View)widgetCell);
@@ -120,8 +120,8 @@ public class WidgetsListAdapter extends q
     }
     
     public WidgetsRowViewHolder onCreateViewHolder(final ViewGroup viewGroup, final int n) {
-        final ViewGroup viewGroup2 = (ViewGroup)this.mLayoutInflater.inflate(2130968629, viewGroup, false);
-        viewGroup2.findViewById(2131624050).setPaddingRelative(this.mIndent, 0, 1, 0);
+        final ViewGroup viewGroup2 = (ViewGroup)this.mLayoutInflater.inflate(2130968631, viewGroup, false);
+        viewGroup2.findViewById(2131624076).setPaddingRelative(this.mIndent, 0, 1, 0);
         return new WidgetsRowViewHolder(viewGroup2);
     }
     

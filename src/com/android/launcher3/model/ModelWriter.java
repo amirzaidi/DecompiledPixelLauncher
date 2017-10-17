@@ -14,7 +14,7 @@ import com.android.launcher3.LauncherSettings$Settings;
 import com.android.launcher3.util.ContentWriter;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.ShortcutInfo;
-import com.android.launcher3.util.LooperExecuter;
+import com.android.launcher3.util.LooperExecutor;
 import com.android.launcher3.LauncherModel;
 import com.android.launcher3.ItemInfo;
 import java.util.concurrent.Executor;
@@ -30,7 +30,7 @@ public class ModelWriter
     public ModelWriter(final Context mContext, final BgDataModel mBgDataModel, final boolean mHasVerticalHotseat) {
         this.mContext = mContext;
         this.mBgDataModel = mBgDataModel;
-        this.mWorkerExecutor = new LooperExecuter(LauncherModel.getWorkerLooper());
+        this.mWorkerExecutor = new LooperExecutor(LauncherModel.getWorkerLooper());
         this.mHasVerticalHotseat = mHasVerticalHotseat;
     }
     

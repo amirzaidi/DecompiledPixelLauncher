@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final sTempPosArray:[I
+.field private static final sTmpArray:[I
 
 
 # instance fields
@@ -32,7 +32,7 @@
 
 .field private mPageIndicator:Lcom/android/launcher3/pageindicators/PageIndicator;
 
-.field final mPendingAnimations:Ljava/util/HashMap;
+.field final mPendingAnimations:Landroid/util/ArrayMap;
 
 
 # direct methods
@@ -40,14 +40,14 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 69
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/android/launcher3/folder/FolderPagedView;->sTempPosArray:[I
+    sput-object v0, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
 
-    .line 56
+    .line 54
     return-void
 .end method
 
@@ -55,32 +55,32 @@
     .locals 2
 
     .prologue
-    .line 99
+    .line 97
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/PagedView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 78
-    new-instance v0, Ljava/util/HashMap;
+    .line 76
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Landroid/util/ArrayMap;
 
-    .line 100
+    .line 98
     invoke-static {p1}, Lcom/android/launcher3/LauncherAppState;->getIDP(Landroid/content/Context;)Lcom/android/launcher3/InvariantDeviceProfile;
 
     move-result-object v0
 
-    .line 101
+    .line 99
     iget v1, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderColumns:I
 
     iput v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountX:I
 
-    .line 102
+    .line 100
     iget v0, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderRows:I
 
     iput v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountY:I
 
-    .line 104
+    .line 102
     iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountX:I
 
     iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountY:I
@@ -89,14 +89,14 @@
 
     iput v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
-    .line 106
+    .line 104
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 108
+    .line 106
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -107,41 +107,32 @@
 
     iput-boolean v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mIsRtl:Z
 
-    .line 109
+    .line 107
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->setImportantForAccessibility(I)V
 
-    .line 111
-    const v0, 0x10104ce
-
-    invoke-static {p1, v0}, Lcom/android/launcher3/util/Themes;->getAttrColor(Landroid/content/Context;I)I
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->setEdgeGlowColor(I)V
-
-    .line 112
+    .line 109
     new-instance v0, Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFocusIndicatorHelper:Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
-    .line 113
+    .line 110
     return-void
 .end method
 
 .method private arrangeChildren(Ljava/util/ArrayList;IZ)V
-    .locals 17
+    .locals 18
 
     .prologue
-    .line 303
+    .line 324
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 304
+    .line 325
     const/4 v2, 0x0
 
     move v3, v2
@@ -153,7 +144,7 @@
 
     if-ge v3, v2, :cond_0
 
-    .line 305
+    .line 326
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Lcom/android/launcher3/folder/FolderPagedView;->getChildAt(I)Landroid/view/View;
@@ -162,42 +153,65 @@
 
     check-cast v2, Lcom/android/launcher3/CellLayout;
 
-    .line 306
+    .line 327
     invoke-virtual {v2}, Lcom/android/launcher3/CellLayout;->removeAllViews()V
 
-    .line 307
+    .line 328
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 304
+    .line 325
     add-int/lit8 v2, v3, 0x1
 
     move v3, v2
 
     goto :goto_0
 
-    .line 309
+    .line 330
     :cond_0
     move-object/from16 v0, p0
 
     move/from16 v1, p2
 
-    invoke-direct {v0, v1}, Lcom/android/launcher3/folder/FolderPagedView;->setupContentDimensions(I)V
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/folder/FolderPagedView;->setupContentDimensions(I)V
 
-    .line 311
+    .line 332
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v16
 
-    .line 312
+    .line 333
     const/4 v13, 0x0
 
-    .line 314
+    .line 335
     const/4 v4, 0x0
 
-    .line 317
+    .line 338
+    new-instance v17, Lcom/android/launcher3/folder/FolderIconPreviewVerifier;
+
+    .line 339
+    invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/folder/FolderPagedView;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/android/launcher3/Launcher;->getLauncher(Landroid/content/Context;)Lcom/android/launcher3/Launcher;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
+
+    .line 338
+    move-object/from16 v0, v17
+
+    invoke-direct {v0, v2}, Lcom/android/launcher3/folder/FolderIconPreviewVerifier;-><init>(Lcom/android/launcher3/InvariantDeviceProfile;)V
+
+    .line 340
     const/4 v3, 0x0
 
-    .line 318
+    .line 341
     const/4 v2, 0x0
 
     move v14, v2
@@ -213,7 +227,7 @@
 
     if-ge v14, v0, :cond_9
 
-    .line 319
+    .line 342
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -230,7 +244,7 @@
 
     move-object v11, v2
 
-    .line 320
+    .line 343
     :goto_2
     if-eqz v4, :cond_1
 
@@ -240,7 +254,7 @@
 
     if-lt v3, v2, :cond_6
 
-    .line 322
+    .line 345
     :cond_1
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
 
@@ -248,14 +262,14 @@
 
     if-eqz v2, :cond_7
 
-    .line 323
+    .line 346
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/launcher3/CellLayout;
 
-    .line 327
+    .line 350
     :goto_3
     const/4 v3, 0x0
 
@@ -263,11 +277,11 @@
 
     move-object v13, v2
 
-    .line 330
+    .line 353
     :goto_4
     if-eqz v11, :cond_4
 
-    .line 331
+    .line 354
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -276,28 +290,28 @@
 
     check-cast v10, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 332
+    .line 355
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     rem-int v2, v12, v2
 
-    .line 333
+    .line 356
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     div-int v4, v12, v3
 
-    .line 334
+    .line 357
     invoke-virtual {v11}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/launcher3/ItemInfo;
 
-    .line 335
+    .line 358
     iget v5, v3, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     if-ne v5, v2, :cond_2
@@ -306,21 +320,21 @@
 
     if-eq v5, v4, :cond_8
 
-    .line 336
+    .line 359
     :cond_2
     :goto_5
     iput v2, v3, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 337
+    .line 360
     iput v4, v3, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 338
+    .line 361
     iput v15, v3, Lcom/android/launcher3/ItemInfo;->rank:I
 
-    .line 339
+    .line 362
     if-eqz p3, :cond_3
 
-    .line 340
+    .line 363
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
@@ -331,7 +345,7 @@
 
     move-result-object v2
 
-    .line 341
+    .line 364
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
@@ -346,21 +360,21 @@
 
     iget v9, v3, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 340
+    .line 363
     invoke-virtual/range {v2 .. v9}, Lcom/android/launcher3/model/ModelWriter;->addOrMoveItemInDatabase(Lcom/android/launcher3/ItemInfo;JJII)V
 
-    .line 344
+    .line 367
     :cond_3
     iget v2, v3, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iput v2, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 345
+    .line 368
     iget v2, v3, Lcom/android/launcher3/ItemInfo;->cellY:I
 
     iput v2, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 347
+    .line 370
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
@@ -381,13 +395,17 @@
 
     move-object v6, v10
 
-    .line 346
+    .line 369
     invoke-virtual/range {v2 .. v7}, Lcom/android/launcher3/CellLayout;->addViewToCellLayout(Landroid/view/View;IILcom/android/launcher3/CellLayout$LayoutParams;Z)Z
 
-    .line 349
-    sget v2, Lcom/android/launcher3/folder/FolderIcon;->NUM_ITEMS_IN_PREVIEW:I
+    .line 372
+    move-object/from16 v0, v17
 
-    if-ge v15, v2, :cond_4
+    invoke-virtual {v0, v15}, Lcom/android/launcher3/folder/FolderIconPreviewVerifier;->isItemInPreview(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
 
     instance-of v2, v11, Lcom/android/launcher3/BubbleTextView;
 
@@ -395,19 +413,19 @@
 
     move-object v2, v11
 
-    .line 350
+    .line 373
     check-cast v2, Lcom/android/launcher3/BubbleTextView;
 
     invoke-virtual {v2}, Lcom/android/launcher3/BubbleTextView;->verifyHighRes()V
 
-    .line 354
+    .line 377
     :cond_4
     add-int/lit8 v3, v15, 0x1
 
-    .line 355
+    .line 378
     add-int/lit8 v4, v12, 0x1
 
-    .line 318
+    .line 341
     add-int/lit8 v2, v14, 0x1
 
     move v14, v2
@@ -420,7 +438,7 @@
 
     goto/16 :goto_1
 
-    .line 319
+    .line 342
     :cond_5
     const/4 v11, 0x0
 
@@ -431,10 +449,10 @@
 
     move-object v13, v4
 
-    .line 320
-    goto :goto_4
+    .line 343
+    goto/16 :goto_4
 
-    .line 325
+    .line 348
     :cond_7
     invoke-direct/range {p0 .. p0}, Lcom/android/launcher3/folder/FolderPagedView;->createAndAddNewPage()Lcom/android/launcher3/CellLayout;
 
@@ -442,7 +460,7 @@
 
     goto/16 :goto_3
 
-    .line 335
+    .line 358
     :cond_8
     iget v5, v3, Lcom/android/launcher3/ItemInfo;->rank:I
 
@@ -450,11 +468,11 @@
 
     goto :goto_5
 
-    .line 359
+    .line 382
     :cond_9
     const/4 v2, 0x0
 
-    .line 360
+    .line 383
     :goto_6
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
 
@@ -462,7 +480,7 @@
 
     if-eqz v3, :cond_a
 
-    .line 361
+    .line 384
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
@@ -473,23 +491,23 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/folder/FolderPagedView;->removeView(Landroid/view/View;)V
 
-    .line 362
+    .line 385
     const/4 v2, 0x1
 
     goto :goto_6
 
-    .line 364
+    .line 387
     :cond_a
     if-eqz v2, :cond_b
 
-    .line 365
+    .line 388
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/folder/FolderPagedView;->setCurrentPage(I)V
 
-    .line 368
+    .line 391
     :cond_b
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageCount()I
 
@@ -506,7 +524,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/folder/FolderPagedView;->setEnableOverscroll(Z)V
 
-    .line 371
+    .line 394
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/launcher3/folder/FolderPagedView;->mPageIndicator:Lcom/android/launcher3/pageindicators/PageIndicator;
@@ -524,7 +542,7 @@
     :goto_8
     invoke-virtual {v3, v2}, Lcom/android/launcher3/pageindicators/PageIndicator;->setVisibility(I)V
 
-    .line 373
+    .line 396
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
@@ -539,7 +557,7 @@
 
     if-le v2, v4, :cond_f
 
-    .line 374
+    .line 397
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mIsRtl:Z
@@ -548,26 +566,26 @@
 
     const/4 v2, 0x5
 
-    .line 373
+    .line 396
     :goto_9
     invoke-virtual {v3, v2}, Lcom/android/launcher3/ExtendedEditText;->setGravity(I)V
 
-    .line 375
+    .line 398
     return-void
 
-    .line 368
+    .line 391
     :cond_c
     const/4 v2, 0x0
 
     goto :goto_7
 
-    .line 371
+    .line 394
     :cond_d
     const/16 v2, 0x8
 
     goto :goto_8
 
-    .line 374
+    .line 397
     :cond_e
     const/4 v2, 0x3
 
@@ -579,13 +597,182 @@
     goto :goto_9
 .end method
 
+.method public static calculateGridSize(IIIIII[I)V
+    .locals 7
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 130
+    if-lt p0, p5, :cond_1
+
+    move v0, v1
+
+    move v4, p4
+
+    move v6, p3
+
+    .line 138
+    :goto_0
+    if-nez v0, :cond_6
+
+    .line 141
+    mul-int v0, v6, v4
+
+    if-ge v0, p0, :cond_3
+
+    .line 143
+    if-le v6, v4, :cond_0
+
+    if-ne v4, p4, :cond_2
+
+    .line 144
+    :cond_0
+    if-ge v6, p3, :cond_2
+
+    .line 145
+    add-int/lit8 v3, v6, 0x1
+
+    move v0, v4
+
+    .line 149
+    :goto_1
+    if-nez v0, :cond_8
+
+    add-int/lit8 v0, v0, 0x1
+
+    move v5, v3
+
+    move v3, v0
+
+    .line 155
+    :goto_2
+    if-ne v5, v6, :cond_5
+
+    if-ne v3, v4, :cond_5
+
+    move v0, v1
+
+    :goto_3
+    move v4, v3
+
+    move v6, v5
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    move v4, p2
+
+    move v6, p1
+
+    .line 135
+    goto :goto_0
+
+    .line 146
+    :cond_2
+    if-ge v4, p4, :cond_9
+
+    .line 147
+    add-int/lit8 v0, v4, 0x1
+
+    move v3, v6
+
+    goto :goto_1
+
+    .line 150
+    :cond_3
+    add-int/lit8 v0, v4, -0x1
+
+    mul-int/2addr v0, v6
+
+    if-lt v0, p0, :cond_4
+
+    if-lt v4, v6, :cond_4
+
+    .line 151
+    add-int/lit8 v0, v4, -0x1
+
+    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    move v3, v0
+
+    move v5, v6
+
+    .line 150
+    goto :goto_2
+
+    .line 152
+    :cond_4
+    add-int/lit8 v0, v6, -0x1
+
+    mul-int/2addr v0, v4
+
+    if-lt v0, p0, :cond_7
+
+    .line 153
+    add-int/lit8 v0, v6, -0x1
+
+    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    move v3, v4
+
+    move v5, v0
+
+    goto :goto_2
+
+    :cond_5
+    move v0, v2
+
+    .line 155
+    goto :goto_3
+
+    .line 158
+    :cond_6
+    aput v6, p6, v2
+
+    .line 159
+    aput v4, p6, v1
+
+    .line 160
+    return-void
+
+    :cond_7
+    move v3, v4
+
+    move v5, v6
+
+    goto :goto_2
+
+    :cond_8
+    move v5, v3
+
+    move v3, v0
+
+    goto :goto_2
+
+    :cond_9
+    move v0, v4
+
+    move v3, v6
+
+    goto :goto_1
+.end method
+
 .method private createAndAddNewPage()Lcom/android/launcher3/CellLayout;
     .locals 4
 
     .prologue
     const/4 v3, 0x0
 
-    .line 251
+    .line 272
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -598,10 +785,10 @@
 
     move-result-object v1
 
-    .line 252
+    .line 273
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mInflater:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040014
+    const v2, 0x7f040016
 
     invoke-virtual {v0, v2, p0, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -609,33 +796,33 @@
 
     check-cast v0, Lcom/android/launcher3/CellLayout;
 
-    .line 253
+    .line 274
     iget v2, v1, Lcom/android/launcher3/DeviceProfile;->folderCellWidthPx:I
 
     iget v1, v1, Lcom/android/launcher3/DeviceProfile;->folderCellHeightPx:I
 
     invoke-virtual {v0, v2, v1}, Lcom/android/launcher3/CellLayout;->setCellDimensions(II)V
 
-    .line 254
+    .line 275
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v1
 
     invoke-virtual {v1, v3}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setMotionEventSplittingEnabled(Z)V
 
-    .line 255
+    .line 276
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/CellLayout;->setInvertIfRtl(Z)V
 
-    .line 256
+    .line 277
     iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/CellLayout;->setGridSize(II)V
 
-    .line 258
+    .line 279
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->generateDefaultLayoutParams()Lcom/android/launcher3/PagedView$LayoutParams;
 
     move-result-object v1
@@ -644,227 +831,8 @@
 
     invoke-virtual {p0, v0, v2, v1}, Lcom/android/launcher3/folder/FolderPagedView;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 259
+    .line 280
     return-object v0
-.end method
-
-.method private setupContentDimensions(I)V
-    .locals 6
-
-    .prologue
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 128
-    iput p1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mAllocatedContentSize:I
-
-    .line 130
-    iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
-
-    if-lt p1, v0, :cond_3
-
-    .line 131
-    iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountX:I
-
-    iput v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    .line 132
-    iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountY:I
-
-    iput v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    move v0, v1
-
-    .line 138
-    :goto_0
-    if-nez v0, :cond_8
-
-    .line 139
-    iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    .line 140
-    iget v3, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    .line 141
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    mul-int/2addr v4, v5
-
-    if-ge v4, p1, :cond_5
-
-    .line 143
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    if-le v4, v5, :cond_0
-
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountY:I
-
-    if-ne v4, v5, :cond_4
-
-    :cond_0
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountX:I
-
-    if-ge v4, v5, :cond_4
-
-    .line 144
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    add-int/lit8 v4, v4, 0x1
-
-    iput v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    .line 148
-    :cond_1
-    :goto_1
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    if-nez v4, :cond_2
-
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    add-int/lit8 v4, v4, 0x1
-
-    iput v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    .line 154
-    :cond_2
-    :goto_2
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    if-ne v4, v0, :cond_7
-
-    iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    if-ne v0, v3, :cond_7
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_3
-    move v0, v2
-
-    .line 135
-    goto :goto_0
-
-    .line 145
-    :cond_4
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountY:I
-
-    if-ge v4, v5, :cond_1
-
-    .line 146
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    add-int/lit8 v4, v4, 0x1
-
-    iput v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    goto :goto_1
-
-    .line 149
-    :cond_5
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    add-int/lit8 v4, v4, -0x1
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    mul-int/2addr v4, v5
-
-    if-lt v4, p1, :cond_6
-
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    if-lt v4, v5, :cond_6
-
-    .line 150
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    add-int/lit8 v4, v4, -0x1
-
-    invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
-
-    move-result v4
-
-    iput v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    goto :goto_2
-
-    .line 151
-    :cond_6
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    add-int/lit8 v4, v4, -0x1
-
-    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    mul-int/2addr v4, v5
-
-    if-lt v4, p1, :cond_2
-
-    .line 152
-    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    add-int/lit8 v4, v4, -0x1
-
-    invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
-
-    move-result v4
-
-    iput v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    goto :goto_2
-
-    :cond_7
-    move v0, v2
-
-    .line 154
-    goto :goto_0
-
-    .line 158
-    :cond_8
-    invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageCount()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    :goto_3
-    if-ltz v0, :cond_9
-
-    .line 159
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
-
-    iget v3, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/launcher3/CellLayout;->setGridSize(II)V
-
-    .line 158
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_3
-
-    .line 161
-    :cond_9
-    return-void
 .end method
 
 
@@ -873,56 +841,56 @@
     .locals 6
 
     .prologue
-    .line 212
+    .line 232
     iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     rem-int v0, p3, v0
 
-    .line 213
+    .line 233
     iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     div-int v1, p3, v1
 
-    .line 215
+    .line 235
     iput p3, p2, Lcom/android/launcher3/ShortcutInfo;->rank:I
 
-    .line 216
+    .line 236
     iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     rem-int v2, v0, v2
 
     iput v2, p2, Lcom/android/launcher3/ShortcutInfo;->cellX:I
 
-    .line 217
+    .line 237
     iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     div-int/2addr v0, v2
 
     iput v0, p2, Lcom/android/launcher3/ShortcutInfo;->cellY:I
 
-    .line 219
+    .line 239
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 220
+    .line 240
     iget v0, p2, Lcom/android/launcher3/ShortcutInfo;->cellX:I
 
     iput v0, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 221
+    .line 241
     iget v0, p2, Lcom/android/launcher3/ShortcutInfo;->cellY:I
 
     iput v0, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 222
+    .line 242
     invoke-virtual {p0, v1}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v0
 
-    .line 223
+    .line 243
     iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     iget-object v1, v1, Lcom/android/launcher3/folder/Folder;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -937,68 +905,79 @@
 
     move-object v1, p1
 
-    .line 222
+    .line 242
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/CellLayout;->addViewToCellLayout(Landroid/view/View;IILcom/android/launcher3/CellLayout$LayoutParams;Z)Z
 
-    .line 224
+    .line 244
     return-void
 .end method
 
 .method public allocateRankForNewItem()I
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 193
+    .line 214
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getItemCount()I
 
     move-result v0
 
-    .line 194
-    new-instance v1, Ljava/util/ArrayList;
+    .line 215
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->allocateSpaceForRank(I)V
 
-    iget-object v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
-
-    invoke-virtual {v2}, Lcom/android/launcher3/folder/Folder;->getItemsInReadingOrder()Ljava/util/ArrayList;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    .line 195
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
-
-    .line 196
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    invoke-direct {p0, v1, v2, v3}, Lcom/android/launcher3/folder/FolderPagedView;->arrangeChildren(Ljava/util/ArrayList;IZ)V
-
-    .line 197
+    .line 216
     iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     div-int v1, v0, v1
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/folder/FolderPagedView;->setCurrentPage(I)V
 
-    .line 198
+    .line 217
     return v0
+.end method
+
+.method public allocateSpaceForRank(I)V
+    .locals 3
+
+    .prologue
+    .line 204
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
+
+    invoke-virtual {v1}, Lcom/android/launcher3/folder/Folder;->getItemsInReadingOrder()Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    .line 205
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
+    .line 206
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/android/launcher3/folder/FolderPagedView;->arrangeChildren(Ljava/util/ArrayList;IZ)V
+
+    .line 207
+    return-void
 .end method
 
 .method public arrangeChildren(Ljava/util/ArrayList;I)V
     .locals 1
 
     .prologue
-    .line 298
+    .line 319
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/launcher3/folder/FolderPagedView;->arrangeChildren(Ljava/util/ArrayList;IZ)V
 
-    .line 299
+    .line 320
     return-void
 .end method
 
@@ -1006,17 +985,17 @@
     .locals 4
 
     .prologue
-    .line 174
+    .line 189
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 175
+    .line 190
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 177
+    .line 192
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -1034,7 +1013,7 @@
 
     check-cast v0, Lcom/android/launcher3/ShortcutInfo;
 
-    .line 181
+    .line 196
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->createNewView(Lcom/android/launcher3/ShortcutInfo;)Landroid/view/View;
 
     move-result-object v0
@@ -1043,7 +1022,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 199
     :cond_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1053,7 +1032,7 @@
 
     invoke-direct {p0, v1, v0, v3}, Lcom/android/launcher3/folder/FolderPagedView;->arrangeChildren(Ljava/util/ArrayList;IZ)V
 
-    .line 185
+    .line 200
     return-object v2
 .end method
 
@@ -1061,7 +1040,7 @@
     .locals 2
 
     .prologue
-    .line 498
+    .line 521
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getScrollX()I
 
     move-result v0
@@ -1076,14 +1055,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 499
+    .line 522
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getNextPage()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->snapToPage(I)V
 
-    .line 501
+    .line 524
     :cond_0
     return-void
 .end method
@@ -1092,24 +1071,24 @@
     .locals 3
 
     .prologue
-    .line 507
-    iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Ljava/util/HashMap;
+    .line 530
+    iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 508
-    new-instance v0, Ljava/util/HashMap;
+    .line 531
+    new-instance v0, Landroid/util/ArrayMap;
 
-    iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Landroid/util/ArrayMap;
 
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+    invoke-direct {v0, v1}, Landroid/util/ArrayMap;-><init>(Landroid/util/ArrayMap;)V
 
-    .line 509
-    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    .line 532
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -1130,7 +1109,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 510
+    .line 533
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -1143,7 +1122,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 511
+    .line 534
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -1154,7 +1133,7 @@
 
     goto :goto_0
 
-    .line 514
+    .line 537
     :cond_0
     return-void
 .end method
@@ -1163,15 +1142,18 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 221
     invoke-virtual {p0, p1}, Lcom/android/launcher3/folder/FolderPagedView;->createNewView(Lcom/android/launcher3/ShortcutInfo;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 203
+    .line 222
+    invoke-virtual {p0, p2}, Lcom/android/launcher3/folder/FolderPagedView;->allocateSpaceForRank(I)V
+
+    .line 223
     invoke-virtual {p0, v0, p1, p2}, Lcom/android/launcher3/folder/FolderPagedView;->addViewForRank(Landroid/view/View;Lcom/android/launcher3/ShortcutInfo;I)V
 
-    .line 204
+    .line 224
     return-object v0
 .end method
 
@@ -1179,50 +1161,53 @@
     .locals 6
 
     .prologue
-    .line 228
+    const/4 v3, 0x0
+
+    .line 248
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mInflater:Landroid/view/LayoutInflater;
 
-    .line 229
-    const v1, 0x7f040012
+    .line 249
+    const v1, 0x7f040014
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
-
-    .line 228
+    .line 248
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/BubbleTextView;
 
-    .line 230
+    .line 250
     invoke-virtual {v0, p1}, Lcom/android/launcher3/BubbleTextView;->applyFromShortcutInfo(Lcom/android/launcher3/ShortcutInfo;)V
 
-    .line 231
+    .line 251
+    invoke-virtual {v0, v3}, Lcom/android/launcher3/BubbleTextView;->setHapticFeedbackEnabled(Z)V
+
+    .line 252
     iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 232
+    .line 253
     iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 233
+    .line 254
     iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFocusIndicatorHelper:Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 234
+    .line 255
     iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mKeyListener:Lcom/android/launcher3/FocusHelper$PagedFolderKeyEventListener;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 236
+    .line 257
     new-instance v1, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 237
+    .line 258
     iget v2, p1, Lcom/android/launcher3/ShortcutInfo;->cellX:I
 
     iget v3, p1, Lcom/android/launcher3/ShortcutInfo;->cellY:I
@@ -1231,12 +1216,12 @@
 
     iget v5, p1, Lcom/android/launcher3/ShortcutInfo;->spanY:I
 
-    .line 236
+    .line 257
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/android/launcher3/CellLayout$LayoutParams;-><init>(IIII)V
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 238
+    .line 259
     return-object v0
 .end method
 
@@ -1244,15 +1229,15 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 180
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFocusIndicatorHelper:Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;->draw(Landroid/graphics/Canvas;)V
 
-    .line 166
+    .line 181
     invoke-super {p0, p1}, Lcom/android/launcher3/PagedView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 167
+    .line 182
     return-void
 .end method
 
@@ -1264,18 +1249,18 @@
 
     const/4 v7, 0x0
 
-    .line 401
+    .line 424
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getNextPage()I
 
     move-result v6
 
-    .line 402
+    .line 425
     invoke-virtual {p0, v6}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v0
 
-    .line 403
-    sget-object v5, Lcom/android/launcher3/folder/FolderPagedView;->sTempPosArray:[I
+    .line 426
+    sget-object v5, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
 
     move v1, p1
 
@@ -1285,7 +1270,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/CellLayout;->findNearestArea(IIII[I)[I
 
-    .line 404
+    .line 427
     iget-object v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v1}, Lcom/android/launcher3/folder/Folder;->isLayoutRtl()Z
@@ -1294,14 +1279,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 405
-    sget-object v1, Lcom/android/launcher3/folder/FolderPagedView;->sTempPosArray:[I
+    .line 428
+    sget-object v1, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
 
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout;->getCountX()I
 
     move-result v0
 
-    sget-object v2, Lcom/android/launcher3/folder/FolderPagedView;->sTempPosArray:[I
+    sget-object v2, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
 
     aget v2, v2, v7
 
@@ -1311,18 +1296,18 @@
 
     aput v0, v1, v7
 
-    .line 407
+    .line 430
     :cond_0
     iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mAllocatedContentSize:I
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 408
+    .line 431
     iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     mul-int/2addr v1, v6
 
-    sget-object v2, Lcom/android/launcher3/folder/FolderPagedView;->sTempPosArray:[I
+    sget-object v2, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
 
     aget v2, v2, v3
 
@@ -1332,13 +1317,13 @@
 
     add-int/2addr v1, v2
 
-    sget-object v2, Lcom/android/launcher3/folder/FolderPagedView;->sTempPosArray:[I
+    sget-object v2, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
 
     aget v2, v2, v7
 
     add-int/2addr v1, v2
 
-    .line 407
+    .line 430
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -1350,7 +1335,7 @@
     .locals 4
 
     .prologue
-    .line 460
+    .line 483
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1379,7 +1364,7 @@
 
     aput-object v2, v1, v3
 
-    const v2, 0x7f0c0047
+    const v2, 0x7f0c0049
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1392,7 +1377,7 @@
     .locals 1
 
     .prologue
-    .line 543
+    .line 573
     iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mAllocatedContentSize:I
 
     return v0
@@ -1402,7 +1387,7 @@
     .locals 2
 
     .prologue
-    .line 264
+    .line 285
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPaddingLeft()I
 
     move-result v0
@@ -1420,7 +1405,7 @@
     .locals 1
 
     .prologue
-    .line 247
+    .line 268
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getNextPage()I
 
     move-result v0
@@ -1438,14 +1423,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 383
+    .line 406
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageCount()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    .line 384
+    .line 407
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v0
@@ -1466,7 +1451,7 @@
 
     add-int/2addr v0, v1
 
-    .line 383
+    .line 406
     :cond_0
     return v0
 .end method
@@ -1477,14 +1462,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 378
+    .line 401
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageCount()I
 
     move-result v1
 
     if-lez v1, :cond_0
 
-    .line 379
+    .line 402
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v0
@@ -1505,31 +1490,9 @@
 
     add-int/2addr v0, v1
 
-    .line 378
+    .line 401
     :cond_0
     return v0
-.end method
-
-.method protected getEdgeVerticalPosition([I)V
-    .locals 2
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 677
-    aput v0, p1, v0
-
-    .line 678
-    invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getViewportHeight()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    aput v0, p1, v1
-
-    .line 679
-    return-void
 .end method
 
 .method public getFirstItem()Landroid/view/View;
@@ -1538,7 +1501,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 416
+    .line 439
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getChildCount()I
 
     move-result v0
@@ -1547,12 +1510,12 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 417
+    .line 440
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 419
+    .line 442
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getCurrentCellLayout()Lcom/android/launcher3/CellLayout;
 
@@ -1562,19 +1525,19 @@
 
     move-result-object v0
 
-    .line 420
+    .line 443
     iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     if-lez v1, :cond_1
 
-    .line 421
+    .line 444
     invoke-virtual {v0, v2, v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(II)Landroid/view/View;
 
     move-result-object v0
 
     return-object v0
 
-    .line 423
+    .line 446
     :cond_1
     invoke-virtual {v0, v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
@@ -1589,20 +1552,20 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 388
+    .line 411
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getChildCount()I
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 389
+    .line 412
     if-gez v0, :cond_0
 
-    .line 391
+    .line 414
     return v1
 
-    .line 393
+    .line 416
     :cond_0
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
@@ -1616,12 +1579,12 @@
 
     move-result v1
 
-    .line 394
+    .line 417
     iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     mul-int/2addr v0, v2
 
-    .line 393
+    .line 416
     add-int/2addr v0, v1
 
     return v0
@@ -1631,7 +1594,7 @@
     .locals 4
 
     .prologue
-    .line 428
+    .line 451
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getChildCount()I
 
     move-result v0
@@ -1640,12 +1603,12 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 429
+    .line 452
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 431
+    .line 454
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getCurrentCellLayout()Lcom/android/launcher3/CellLayout;
 
@@ -1655,19 +1618,19 @@
 
     move-result-object v0
 
-    .line 432
+    .line 455
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 433
+    .line 456
     iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     if-lez v2, :cond_1
 
-    .line 434
+    .line 457
     iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     rem-int v2, v1, v2
@@ -1682,7 +1645,7 @@
 
     return-object v0
 
-    .line 436
+    .line 459
     :cond_1
     invoke-virtual {v0, v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
@@ -1695,7 +1658,7 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 262
     invoke-virtual {p0, p1}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v0
@@ -1707,7 +1670,7 @@
     .locals 1
 
     .prologue
-    .line 243
+    .line 264
     invoke-virtual {p0, p1}, Lcom/android/launcher3/folder/FolderPagedView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -1721,7 +1684,7 @@
     .locals 1
 
     .prologue
-    .line 412
+    .line 435
     const/4 v0, 0x0
 
     return v0
@@ -1731,7 +1694,7 @@
     .locals 1
 
     .prologue
-    .line 672
+    .line 702
     iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     return v0
@@ -1747,7 +1710,7 @@
 
     move v1, v2
 
-    .line 445
+    .line 468
     :goto_0
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getChildCount()I
 
@@ -1755,14 +1718,14 @@
 
     if-ge v1, v0, :cond_3
 
-    .line 446
+    .line 469
     invoke-virtual {p0, v1}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v5
 
     move v3, v2
 
-    .line 447
+    .line 470
     :goto_1
     invoke-virtual {v5}, Lcom/android/launcher3/CellLayout;->getCountY()I
 
@@ -1772,7 +1735,7 @@
 
     move v4, v2
 
-    .line 448
+    .line 471
     :goto_2
     invoke-virtual {v5}, Lcom/android/launcher3/CellLayout;->getCountX()I
 
@@ -1780,12 +1743,12 @@
 
     if-ge v4, v0, :cond_1
 
-    .line 449
+    .line 472
     invoke-virtual {v5, v4, v3}, Lcom/android/launcher3/CellLayout;->getChildAt(II)Landroid/view/View;
 
     move-result-object v6
 
-    .line 450
+    .line 473
     if-eqz v6, :cond_0
 
     invoke-virtual {v6}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -1800,10 +1763,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 451
+    .line 474
     return-object v6
 
-    .line 448
+    .line 471
     :cond_0
     add-int/lit8 v0, v4, 0x1
 
@@ -1811,7 +1774,7 @@
 
     goto :goto_2
 
-    .line 447
+    .line 470
     :cond_1
     add-int/lit8 v0, v3, 0x1
 
@@ -1819,7 +1782,7 @@
 
     goto :goto_1
 
-    .line 445
+    .line 468
     :cond_2
     add-int/lit8 v0, v1, 0x1
 
@@ -1827,29 +1790,29 @@
 
     goto :goto_0
 
-    .line 456
+    .line 479
     :cond_3
     return-object v7
 .end method
 
-.method protected notifyPageSwitchListener()V
+.method protected notifyPageSwitchListener(I)V
     .locals 1
 
     .prologue
-    .line 475
-    invoke-super {p0}, Lcom/android/launcher3/PagedView;->notifyPageSwitchListener()V
+    .line 498
+    invoke-super {p0, p1}, Lcom/android/launcher3/PagedView;->notifyPageSwitchListener(I)V
 
-    .line 476
+    .line 499
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     if-eqz v0, :cond_0
 
-    .line 477
+    .line 500
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/Folder;->updateTextViewFocus()V
 
-    .line 479
+    .line 502
     :cond_0
     return-void
 .end method
@@ -1858,10 +1821,10 @@
     .locals 1
 
     .prologue
-    .line 523
+    .line 546
     invoke-super {p0}, Lcom/android/launcher3/PagedView;->onPageBeginTransition()V
 
-    .line 525
+    .line 548
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getCurrentPage()I
 
     move-result v0
@@ -1870,7 +1833,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->verifyVisibleHighResIcons(I)V
 
-    .line 526
+    .line 549
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getCurrentPage()I
 
     move-result v0
@@ -1879,7 +1842,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->verifyVisibleHighResIcons(I)V
 
-    .line 527
+    .line 550
     return-void
 .end method
 
@@ -1887,17 +1850,17 @@
     .locals 2
 
     .prologue
-    .line 283
+    .line 304
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/launcher3/PagedView;->onScrollChanged(IIII)V
 
-    .line 284
+    .line 305
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPageIndicator:Lcom/android/launcher3/pageindicators/PageIndicator;
 
     iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxScrollX:I
 
     invoke-virtual {v0, p1, v1}, Lcom/android/launcher3/pageindicators/PageIndicator;->setScroll(II)V
 
-    .line 285
+    .line 306
     return-void
 .end method
 
@@ -1905,12 +1868,12 @@
     .locals 2
 
     .prologue
-    .line 517
+    .line 540
     iget v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     div-int v0, p1, v0
 
-    .line 518
+    .line 541
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getNextPage()I
 
     move-result v1
@@ -1932,45 +1895,45 @@
     .locals 16
 
     .prologue
-    .line 550
+    .line 580
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/folder/FolderPagedView;->completePendingPageChanges()V
 
-    .line 551
+    .line 581
     const/4 v7, 0x0
 
-    .line 552
+    .line 582
     const/high16 v10, 0x41f00000    # 30.0f
 
-    .line 555
+    .line 585
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/folder/FolderPagedView;->getNextPage()I
 
     move-result v6
 
-    .line 557
+    .line 587
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     div-int v2, p2, v2
 
-    .line 558
+    .line 588
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     rem-int v4, p2, v3
 
-    .line 560
+    .line 590
     if-eq v2, v6, :cond_0
 
-    .line 561
+    .line 591
     const-string/jumbo v2, "FolderPagedView"
 
     const-string/jumbo v3, "Cannot animate when the target cell is invisible"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 563
+    .line 593
     :cond_0
     move-object/from16 v0, p0
 
@@ -1978,24 +1941,24 @@
 
     rem-int v2, p1, v2
 
-    .line 564
+    .line 594
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     div-int v3, p1, v3
 
-    .line 570
+    .line 600
     move/from16 v0, p2
 
     move/from16 v1, p1
 
     if-ne v0, v1, :cond_1
 
-    .line 572
+    .line 602
     return-void
 
-    .line 573
+    .line 603
     :cond_1
     move/from16 v0, p2
 
@@ -2003,20 +1966,20 @@
 
     if-le v0, v1, :cond_4
 
-    .line 575
+    .line 605
     const/4 v5, 0x1
 
-    .line 578
+    .line 608
     if-ge v3, v6, :cond_3
 
-    .line 581
+    .line 611
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     mul-int v3, v6, v2
 
-    .line 584
+    .line 614
     const/4 v2, 0x0
 
     :goto_0
@@ -2028,65 +1991,65 @@
 
     move v3, v2
 
-    .line 612
+    .line 642
     :goto_1
     move/from16 v0, p1
 
     if-eq v0, v4, :cond_9
 
-    .line 613
+    .line 643
     add-int v5, p1, v13
 
-    .line 614
+    .line 644
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     div-int v2, v5, v2
 
-    .line 615
+    .line 645
     move-object/from16 v0, p0
 
     iget v8, v0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
 
     rem-int v8, v5, v8
 
-    .line 616
+    .line 646
     move-object/from16 v0, p0
 
     iget v9, v0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     rem-int v9, v8, v9
 
-    .line 617
+    .line 647
     move-object/from16 v0, p0
 
     iget v11, v0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
 
     div-int/2addr v8, v11
 
-    .line 619
+    .line 649
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v11
 
-    .line 620
+    .line 650
     invoke-virtual {v11, v9, v8}, Lcom/android/launcher3/CellLayout;->getChildAt(II)Landroid/view/View;
 
     move-result-object v8
 
-    .line 621
+    .line 651
     if-eqz v8, :cond_2
 
-    .line 622
+    .line 652
     if-eq v6, v2, :cond_6
 
-    .line 623
+    .line 653
     invoke-virtual {v11, v8}, Lcom/android/launcher3/CellLayout;->removeView(Landroid/view/View;)V
 
-    .line 624
+    .line 654
     invoke-virtual {v8}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
@@ -2105,23 +2068,23 @@
 
     goto :goto_1
 
-    .line 586
+    .line 616
     :cond_3
     const/4 v3, -0x1
 
     const/16 p1, -0x1
 
-    .line 587
+    .line 617
     goto :goto_0
 
-    .line 593
+    .line 623
     :cond_4
     const/4 v5, -0x1
 
-    .line 595
+    .line 625
     if-le v3, v6, :cond_5
 
-    .line 599
+    .line 629
     add-int/lit8 v2, v6, 0x1
 
     move-object/from16 v0, p0
@@ -2132,7 +2095,7 @@
 
     add-int/lit8 v3, v2, -0x1
 
-    .line 602
+    .line 632
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
@@ -2148,25 +2111,25 @@
 
     move v3, v2
 
-    .line 608
+    .line 638
     goto :goto_1
 
-    .line 604
+    .line 634
     :cond_5
     const/4 v3, -0x1
 
     const/16 p1, -0x1
 
-    .line 605
+    .line 635
     goto :goto_3
 
-    .line 628
+    .line 658
     :cond_6
     invoke-virtual {v8}, Landroid/view/View;->getTranslationX()F
 
     move-result v2
 
-    .line 630
+    .line 660
     new-instance v9, Lcom/android/launcher3/folder/FolderPagedView$1;
 
     move-object/from16 v0, p0
@@ -2175,12 +2138,12 @@
 
     invoke-direct {v9, v0, v8, v2, v1}, Lcom/android/launcher3/folder/FolderPagedView$1;-><init>(Lcom/android/launcher3/folder/FolderPagedView;Landroid/view/View;FI)V
 
-    .line 640
+    .line 670
     invoke-virtual {v8}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v11
 
-    .line 641
+    .line 671
     if-lez v13, :cond_7
 
     const/4 v2, 0x1
@@ -2203,39 +2166,39 @@
     :goto_5
     int-to-float v2, v2
 
-    .line 640
+    .line 670
     invoke-virtual {v11, v2}, Landroid/view/ViewPropertyAnimator;->translationXBy(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
 
-    .line 642
+    .line 672
     const-wide/16 v14, 0xe6
 
-    .line 640
+    .line 670
     invoke-virtual {v2, v14, v15}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
 
-    .line 643
+    .line 673
     const-wide/16 v14, 0x0
 
-    .line 640
+    .line 670
     invoke-virtual {v2, v14, v15}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
 
     invoke-virtual {v2, v9}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
-    .line 645
+    .line 675
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Ljava/util/HashMap;
+    iget-object v2, v0, Lcom/android/launcher3/folder/FolderPagedView;->mPendingAnimations:Landroid/util/ArrayMap;
 
-    invoke-virtual {v2, v8, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v8, v9}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
-    .line 641
+    .line 671
     :cond_7
     const/4 v2, 0x0
 
@@ -2248,7 +2211,7 @@
 
     goto :goto_5
 
-    .line 651
+    .line 681
     :cond_9
     sub-int v2, v12, v3
 
@@ -2256,10 +2219,10 @@
 
     if-gtz v2, :cond_a
 
-    .line 653
+    .line 683
     return-void
 
-    .line 656
+    .line 686
     :cond_a
     move-object/from16 v0, p0
 
@@ -2269,14 +2232,14 @@
 
     move v11, v3
 
-    .line 657
+    .line 687
     :goto_6
     if-eq v11, v12, :cond_c
 
-    .line 658
+    .line 688
     add-int v3, v11, v13
 
-    .line 659
+    .line 689
     move-object/from16 v0, p0
 
     iget v4, v0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
@@ -2293,10 +2256,10 @@
 
     move-result-object v3
 
-    .line 660
+    .line 690
     if-eqz v3, :cond_b
 
-    .line 661
+    .line 691
     invoke-virtual {v3}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v4
@@ -2309,7 +2272,7 @@
 
     iput v5, v4, Lcom/android/launcher3/ItemInfo;->rank:I
 
-    .line 663
+    .line 693
     :cond_b
     move-object/from16 v0, p0
 
@@ -2323,33 +2286,33 @@
 
     div-int v5, v11, v5
 
-    .line 664
+    .line 694
     const/16 v6, 0xe6
 
     const/4 v8, 0x1
 
     const/4 v9, 0x1
 
-    .line 663
+    .line 693
     invoke-virtual/range {v2 .. v9}, Lcom/android/launcher3/CellLayout;->animateChildToPosition(Landroid/view/View;IIIIZZ)Z
 
     move-result v3
 
     if-eqz v3, :cond_d
 
-    .line 665
+    .line 695
     int-to-float v3, v7
 
     add-float/2addr v3, v10
 
     float-to-int v7, v3
 
-    .line 666
+    .line 696
     const v3, 0x3f666666    # 0.9f
 
     mul-float/2addr v3, v10
 
-    .line 657
+    .line 687
     :goto_7
     add-int v4, v11, v13
 
@@ -2359,7 +2322,7 @@
 
     goto :goto_6
 
-    .line 669
+    .line 699
     :cond_c
     return-void
 
@@ -2373,7 +2336,7 @@
     .locals 2
 
     .prologue
-    .line 276
+    .line 297
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getChildCount()I
 
     move-result v0
@@ -2383,19 +2346,19 @@
     :goto_0
     if-ltz v0, :cond_0
 
-    .line 277
+    .line 298
     invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Lcom/android/launcher3/CellLayout;->removeView(Landroid/view/View;)V
 
-    .line 276
+    .line 297
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 279
+    .line 300
     :cond_0
     return-void
 .end method
@@ -2404,7 +2367,7 @@
     .locals 4
 
     .prologue
-    .line 268
+    .line 289
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPaddingLeft()I
 
     move-result v0
@@ -2417,7 +2380,7 @@
 
     sub-int v2, p1, v0
 
-    .line 269
+    .line 290
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPaddingTop()I
 
     move-result v0
@@ -2430,7 +2393,7 @@
 
     sub-int v3, p2, v0
 
-    .line 270
+    .line 291
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getChildCount()I
 
     move-result v0
@@ -2442,7 +2405,7 @@
     :goto_0
     if-ltz v1, :cond_0
 
-    .line 271
+    .line 292
     invoke-virtual {p0, v1}, Lcom/android/launcher3/folder/FolderPagedView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -2451,14 +2414,14 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/launcher3/CellLayout;->setFixedSize(II)V
 
-    .line 270
+    .line 291
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 273
+    .line 294
     :cond_0
     return-void
 .end method
@@ -2469,7 +2432,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 467
+    .line 490
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getCurrentCellLayout()Lcom/android/launcher3/CellLayout;
 
     move-result-object v0
@@ -2478,13 +2441,13 @@
 
     move-result-object v0
 
-    .line 468
+    .line 491
     if-eqz v0, :cond_0
 
-    .line 469
+    .line 492
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 471
+    .line 494
     :cond_0
     return-void
 .end method
@@ -2493,18 +2456,18 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 113
     iput-object p1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mFolder:Lcom/android/launcher3/folder/Folder;
 
-    .line 117
+    .line 114
     new-instance v0, Lcom/android/launcher3/FocusHelper$PagedFolderKeyEventListener;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/FocusHelper$PagedFolderKeyEventListener;-><init>(Lcom/android/launcher3/folder/Folder;)V
 
     iput-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mKeyListener:Lcom/android/launcher3/FocusHelper$PagedFolderKeyEventListener;
 
-    .line 118
-    const v0, 0x7f0e0068
+    .line 115
+    const v0, 0x7f0e0082
 
     invoke-virtual {p1, v0}, Lcom/android/launcher3/folder/Folder;->findViewById(I)Landroid/view/View;
 
@@ -2514,10 +2477,85 @@
 
     iput-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mPageIndicator:Lcom/android/launcher3/pageindicators/PageIndicator;
 
-    .line 119
+    .line 116
     invoke-virtual {p0, p1}, Lcom/android/launcher3/folder/FolderPagedView;->initParentViews(Landroid/view/View;)V
 
-    .line 120
+    .line 117
+    return-void
+.end method
+
+.method public setupContentDimensions(I)V
+    .locals 8
+
+    .prologue
+    const/4 v7, 0x0
+
+    .line 166
+    iput p1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mAllocatedContentSize:I
+
+    .line 167
+    iget v1, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
+
+    iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
+
+    iget v3, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountX:I
+
+    iget v4, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxCountY:I
+
+    iget v5, p0, Lcom/android/launcher3/folder/FolderPagedView;->mMaxItemsPerPage:I
+
+    .line 168
+    sget-object v6, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
+
+    move v0, p1
+
+    .line 167
+    invoke-static/range {v0 .. v6}, Lcom/android/launcher3/folder/FolderPagedView;->calculateGridSize(IIIIII[I)V
+
+    .line 169
+    sget-object v0, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
+
+    aget v0, v0, v7
+
+    iput v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
+
+    .line 170
+    sget-object v0, Lcom/android/launcher3/folder/FolderPagedView;->sTmpArray:[I
+
+    const/4 v1, 0x1
+
+    aget v0, v0, v1
+
+    iput v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
+
+    .line 173
+    invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageCount()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_0
+
+    .line 174
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
+
+    move-result-object v1
+
+    iget v2, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountX:I
+
+    iget v3, p0, Lcom/android/launcher3/folder/FolderPagedView;->mGridCountY:I
+
+    invoke-virtual {v1, v2, v3}, Lcom/android/launcher3/CellLayout;->setGridSize(II)V
+
+    .line 173
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    .line 176
+    :cond_0
     return-void
 .end method
 
@@ -2527,7 +2565,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 485
+    .line 508
     if-nez p1, :cond_1
 
     const/4 v0, 0x1
@@ -2539,10 +2577,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 486
+    .line 509
     const v0, -0x4270a3d7    # -0.07f
 
-    .line 487
+    .line 510
     :goto_1
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getWidth()I
 
@@ -2554,7 +2592,7 @@
 
     float-to-int v0, v0
 
-    .line 488
+    .line 511
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getNextPage()I
 
     move-result v1
@@ -2565,17 +2603,17 @@
 
     add-int/2addr v0, v1
 
-    .line 489
+    .line 512
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getScrollX()I
 
     move-result v1
 
     sub-int v3, v0, v1
 
-    .line 490
+    .line 513
     if-eqz v3, :cond_0
 
-    .line 491
+    .line 514
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mScroller:Lcom/android/launcher3/LauncherScroller;
 
     new-instance v1, Landroid/view/animation/DecelerateInterpolator;
@@ -2584,7 +2622,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/LauncherScroller;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 492
+    .line 515
     iget-object v0, p0, Lcom/android/launcher3/folder/FolderPagedView;->mScroller:Lcom/android/launcher3/LauncherScroller;
 
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->getScrollX()I
@@ -2597,20 +2635,20 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/LauncherScroller;->startScroll(IIIII)V
 
-    .line 493
+    .line 516
     invoke-virtual {p0}, Lcom/android/launcher3/folder/FolderPagedView;->invalidate()V
 
-    .line 495
+    .line 518
     :cond_0
     return-void
 
     :cond_1
     move v0, v2
 
-    .line 485
+    .line 508
     goto :goto_0
 
-    .line 486
+    .line 509
     :cond_2
     const v0, 0x3d8f5c29    # 0.07f
 
@@ -2618,23 +2656,23 @@
 .end method
 
 .method public verifyVisibleHighResIcons(I)V
-    .locals 3
+    .locals 5
 
     .prologue
-    .line 533
+    .line 556
     invoke-virtual {p0, p1}, Lcom/android/launcher3/folder/FolderPagedView;->getPageAt(I)Lcom/android/launcher3/CellLayout;
 
     move-result-object v0
 
-    .line 534
-    if-eqz v0, :cond_0
+    .line 557
+    if-eqz v0, :cond_1
 
-    .line 535
+    .line 558
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v2
 
-    .line 536
+    .line 559
     invoke-virtual {v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v0
@@ -2644,25 +2682,42 @@
     move v1, v0
 
     :goto_0
-    if-ltz v1, :cond_0
+    if-ltz v1, :cond_1
 
-    .line 537
+    .line 560
     invoke-virtual {v2, v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/BubbleTextView;
 
+    .line 561
     invoke-virtual {v0}, Lcom/android/launcher3/BubbleTextView;->verifyHighRes()V
 
-    .line 536
+    .line 564
+    invoke-virtual {v0}, Lcom/android/launcher3/BubbleTextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    aget-object v3, v3, v4
+
+    .line 565
+    if-eqz v3, :cond_0
+
+    .line 566
+    invoke-virtual {v3, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
+    .line 559
+    :cond_0
     add-int/lit8 v0, v1, -0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 540
-    :cond_0
+    .line 570
+    :cond_1
     return-void
 .end method

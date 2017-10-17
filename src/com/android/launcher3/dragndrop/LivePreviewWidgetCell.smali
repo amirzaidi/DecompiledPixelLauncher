@@ -12,12 +12,12 @@
     .locals 1
 
     .prologue
-    .line 25
+    .line 24
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 26
+    .line 25
     return-void
 .end method
 
@@ -25,12 +25,12 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 28
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 30
+    .line 29
     return-void
 .end method
 
@@ -38,10 +38,10 @@
     .locals 0
 
     .prologue
-    .line 33
+    .line 32
     invoke-direct {p0, p1, p2, p3}, Lcom/android/launcher3/widget/WidgetCell;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 34
+    .line 33
     return-void
 .end method
 
@@ -53,26 +53,26 @@
 
     const/4 v5, 0x0
 
-    .line 62
+    .line 61
     invoke-virtual {p0}, Lcom/android/launcher3/BaseActivity;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v0
 
-    .line 63
+    .line 62
     iget v1, v0, Lcom/android/launcher3/DeviceProfile;->cellWidthPx:I
 
     iget v2, p2, Lcom/android/launcher3/LauncherAppWidgetProviderInfo;->spanX:I
 
     mul-int/2addr v1, v2
 
-    .line 64
+    .line 63
     iget v0, v0, Lcom/android/launcher3/DeviceProfile;->cellHeightPx:I
 
     iget v2, p2, Lcom/android/launcher3/LauncherAppWidgetProviderInfo;->spanY:I
 
     mul-int/2addr v0, v2
 
-    .line 68
+    .line 67
     :try_start_0
     new-instance v2, Landroid/widget/FrameLayout;
 
@@ -82,34 +82,34 @@
 
     move-result-object v3
 
-    .line 69
+    .line 68
     const/high16 v2, 0x40000000    # 2.0f
 
     invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
 
-    .line 70
+    .line 69
     const/high16 v2, 0x40000000    # 2.0f
 
     invoke-static {v0, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    .line 69
+    .line 68
     invoke-virtual {v3, v1, v0}, Landroid/view/View;->measure(II)V
 
-    .line 72
+    .line 71
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 73
+    .line 72
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    .line 74
+    .line 73
     const/4 v2, 0x0
 
     const/4 v4, 0x0
@@ -118,27 +118,27 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 79
+    .line 78
     aput v1, p4, v5
 
-    .line 82
+    .line 81
     if-le v1, p3, :cond_0
 
-    .line 83
+    .line 82
     int-to-float v2, p3
 
     int-to-float v1, v1
 
     div-float v1, v2, v1
 
-    .line 85
+    .line 84
     int-to-float v0, v0
 
     mul-float/2addr v0, v1
 
     float-to-int v0, v0
 
-    .line 92
+    .line 91
     :goto_0
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -146,31 +146,31 @@
 
     move-result-object v0
 
-    .line 93
+    .line 92
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 94
+    .line 93
     invoke-virtual {v2, v1, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 95
+    .line 94
     invoke-virtual {v3, v2}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 96
+    .line 95
     invoke-virtual {v2, v6}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 97
+    .line 96
     return-object v0
 
-    .line 75
+    .line 74
     :catch_0
     move-exception v0
 
-    .line 76
+    .line 75
     return-object v6
 
-    .line 87
+    .line 86
     :cond_0
     const/high16 v2, 0x3f800000    # 1.0f
 
@@ -178,7 +178,7 @@
 
     move v1, v2
 
-    .line 89
+    .line 88
     goto :goto_0
 .end method
 
@@ -188,7 +188,7 @@
     .locals 5
 
     .prologue
-    .line 42
+    .line 41
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;->mPreview:Landroid/widget/RemoteViews;
 
     if-eqz v0, :cond_0
@@ -197,7 +197,7 @@
 
     if-nez v0, :cond_0
 
-    .line 44
+    .line 43
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;->mActivity:Lcom/android/launcher3/BaseActivity;
 
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;->mPreview:Landroid/widget/RemoteViews;
@@ -212,25 +212,25 @@
 
     new-array v4, v4, [I
 
-    .line 43
+    .line 42
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;->generateFromRemoteViews(Lcom/android/launcher3/BaseActivity;Landroid/widget/RemoteViews;Lcom/android/launcher3/LauncherAppWidgetProviderInfo;I[I)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 45
+    .line 44
     if-eqz v0, :cond_0
 
-    .line 46
+    .line 45
     invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;->applyPreview(Landroid/graphics/Bitmap;)V
 
-    .line 47
+    .line 46
     return-void
 
-    .line 50
+    .line 49
     :cond_0
     invoke-super {p0}, Lcom/android/launcher3/widget/WidgetCell;->ensurePreview()V
 
-    .line 51
+    .line 50
     return-void
 .end method
 
@@ -238,9 +238,9 @@
     .locals 0
 
     .prologue
-    .line 37
+    .line 36
     iput-object p1, p0, Lcom/android/launcher3/dragndrop/LivePreviewWidgetCell;->mPreview:Landroid/widget/RemoteViews;
 
-    .line 38
+    .line 37
     return-void
 .end method

@@ -35,7 +35,7 @@ public final class LauncherDumpProto$DumpTarget extends a
             if (LauncherDumpProto$DumpTarget._emptyArray != null) {
                 break Label_0035;
             }
-            synchronized (d.La) {
+            synchronized (d.PH) {
                 if (LauncherDumpProto$DumpTarget._emptyArray == null) {
                     LauncherDumpProto$DumpTarget._emptyArray = new LauncherDumpProto$DumpTarget[0];
                 }
@@ -66,50 +66,50 @@ public final class LauncherDumpProto$DumpTarget extends a
         final int n = 1;
         int computeSerializedSize = super.computeSerializedSize();
         if (this.type != 0) {
-            computeSerializedSize += b.RF(n, this.type);
+            computeSerializedSize += b.VA(n, this.type);
         }
         if (this.pageId != 0) {
-            computeSerializedSize += b.RF(2, this.pageId);
+            computeSerializedSize += b.VA(2, this.pageId);
         }
         if (this.gridX != 0) {
-            computeSerializedSize += b.RF(3, this.gridX);
+            computeSerializedSize += b.VA(3, this.gridX);
         }
         if (this.gridY != 0) {
-            computeSerializedSize += b.RF(4, this.gridY);
+            computeSerializedSize += b.VA(4, this.gridY);
         }
         if (this.containerType != 0) {
-            computeSerializedSize += b.RF(5, this.containerType);
+            computeSerializedSize += b.VA(5, this.containerType);
         }
         if (this.itemType != 0) {
-            computeSerializedSize += b.RF(6, this.itemType);
+            computeSerializedSize += b.VA(6, this.itemType);
         }
         if (!this.packageName.equals("")) {
-            computeSerializedSize += b.Sb(7, this.packageName);
+            computeSerializedSize += b.VW(7, this.packageName);
         }
         if (!this.component.equals("")) {
-            computeSerializedSize += b.Sb(8, this.component);
+            computeSerializedSize += b.VW(8, this.component);
         }
         if (!this.itemId.equals("")) {
-            computeSerializedSize += b.Sb(9, this.itemId);
+            computeSerializedSize += b.VW(9, this.itemId);
         }
         if (this.spanX != n) {
-            computeSerializedSize += b.RF(10, this.spanX);
+            computeSerializedSize += b.VA(10, this.spanX);
         }
         if (this.spanY != n) {
-            computeSerializedSize += b.RF(11, this.spanY);
+            computeSerializedSize += b.VA(11, this.spanY);
         }
         if (this.userType != 0) {
-            computeSerializedSize += b.RF(12, this.userType);
+            computeSerializedSize += b.VA(12, this.userType);
         }
         return computeSerializedSize;
     }
     
     public LauncherDumpProto$DumpTarget mergeFrom(final c c) {
         while (true) {
-            final int sx = c.Sx();
-            switch (sx) {
+            final int ws = c.Ws();
+            switch (ws) {
                 default: {
-                    if (!f.SW(c, sx)) {
+                    if (!f.WR(c, ws)) {
                         return this;
                     }
                     continue;
@@ -118,35 +118,35 @@ public final class LauncherDumpProto$DumpTarget extends a
                     return this;
                 }
                 case 8: {
-                    final int sk = c.SK();
-                    switch (sk) {
+                    final int wf = c.WF();
+                    switch (wf) {
                         default: {
                             continue;
                         }
                         case 0:
                         case 1:
                         case 2: {
-                            this.type = sk;
+                            this.type = wf;
                             continue;
                         }
                     }
                     break;
                 }
                 case 16: {
-                    this.pageId = c.SK();
+                    this.pageId = c.WF();
                     continue;
                 }
                 case 24: {
-                    this.gridX = c.SK();
+                    this.gridX = c.WF();
                     continue;
                 }
                 case 32: {
-                    this.gridY = c.SK();
+                    this.gridY = c.WF();
                     continue;
                 }
                 case 40: {
-                    final int sk2 = c.SK();
-                    switch (sk2) {
+                    final int wf2 = c.WF();
+                    switch (wf2) {
                         default: {
                             continue;
                         }
@@ -154,15 +154,15 @@ public final class LauncherDumpProto$DumpTarget extends a
                         case 1:
                         case 2:
                         case 3: {
-                            this.containerType = sk2;
+                            this.containerType = wf2;
                             continue;
                         }
                     }
                     break;
                 }
                 case 48: {
-                    final int sk3 = c.SK();
-                    switch (sk3) {
+                    final int wf3 = c.WF();
+                    switch (wf3) {
                         default: {
                             continue;
                         }
@@ -170,41 +170,41 @@ public final class LauncherDumpProto$DumpTarget extends a
                         case 1:
                         case 2:
                         case 3: {
-                            this.itemType = sk3;
+                            this.itemType = wf3;
                             continue;
                         }
                     }
                     break;
                 }
                 case 58: {
-                    this.packageName = c.SG();
+                    this.packageName = c.WB();
                     continue;
                 }
                 case 66: {
-                    this.component = c.SG();
+                    this.component = c.WB();
                     continue;
                 }
                 case 74: {
-                    this.itemId = c.SG();
+                    this.itemId = c.WB();
                     continue;
                 }
                 case 80: {
-                    this.spanX = c.SK();
+                    this.spanX = c.WF();
                     continue;
                 }
                 case 88: {
-                    this.spanY = c.SK();
+                    this.spanY = c.WF();
                     continue;
                 }
                 case 96: {
-                    final int sk4 = c.SK();
-                    switch (sk4) {
+                    final int wf4 = c.WF();
+                    switch (wf4) {
                         default: {
                             continue;
                         }
                         case 0:
                         case 1: {
-                            this.userType = sk4;
+                            this.userType = wf4;
                             continue;
                         }
                     }
@@ -217,40 +217,40 @@ public final class LauncherDumpProto$DumpTarget extends a
     public void writeTo(final b b) {
         final int n = 1;
         if (this.type != 0) {
-            b.RA(n, this.type);
+            b.Vv(n, this.type);
         }
         if (this.pageId != 0) {
-            b.RA(2, this.pageId);
+            b.Vv(2, this.pageId);
         }
         if (this.gridX != 0) {
-            b.RA(3, this.gridX);
+            b.Vv(3, this.gridX);
         }
         if (this.gridY != 0) {
-            b.RA(4, this.gridY);
+            b.Vv(4, this.gridY);
         }
         if (this.containerType != 0) {
-            b.RA(5, this.containerType);
+            b.Vv(5, this.containerType);
         }
         if (this.itemType != 0) {
-            b.RA(6, this.itemType);
+            b.Vv(6, this.itemType);
         }
         if (!this.packageName.equals("")) {
-            b.RY(7, this.packageName);
+            b.VT(7, this.packageName);
         }
         if (!this.component.equals("")) {
-            b.RY(8, this.component);
+            b.VT(8, this.component);
         }
         if (!this.itemId.equals("")) {
-            b.RY(9, this.itemId);
+            b.VT(9, this.itemId);
         }
         if (this.spanX != n) {
-            b.RA(10, this.spanX);
+            b.Vv(10, this.spanX);
         }
         if (this.spanY != n) {
-            b.RA(11, this.spanY);
+            b.Vv(11, this.spanY);
         }
         if (this.userType != 0) {
-            b.RA(12, this.userType);
+            b.Vv(12, this.userType);
         }
         super.writeTo(b);
     }

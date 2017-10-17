@@ -11,10 +11,10 @@
     .locals 0
 
     .prologue
-    .line 1833
+    .line 1859
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1834
+    .line 1860
     return-void
 .end method
 
@@ -26,10 +26,10 @@
     .prologue
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 1837
+    .line 1863
     sub-float v0, p1, v2
 
-    .line 1838
+    .line 1864
     mul-float v1, v0, v0
 
     mul-float/2addr v1, v0

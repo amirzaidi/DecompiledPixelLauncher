@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 49
+    .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 152
+    .line 151
     sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     const/4 v2, 0x2
@@ -39,23 +39,23 @@
 
     check-cast v0, [[I
 
-    .line 154
+    .line 153
     :goto_0
     if-ge v1, p0, :cond_0
 
-    .line 155
+    .line 154
     aget-object v2, v0, v1
 
     const/4 v3, -0x1
 
     invoke-static {v2, v3}, Ljava/util/Arrays;->fill([II)V
 
-    .line 154
+    .line 153
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 157
+    .line 156
     :cond_0
     return-object v0
 .end method
@@ -64,32 +64,32 @@
     .locals 8
 
     .prologue
-    .line 166
+    .line 165
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v3
 
-    .line 167
+    .line 166
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getCountX()I
 
     move-result v4
 
-    .line 168
+    .line 167
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getCountY()I
 
     move-result v0
 
-    .line 169
+    .line 168
     invoke-virtual {v3}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->invertLayoutHorizontally()Z
 
     move-result v5
 
-    .line 171
+    .line 170
     invoke-static {v4, v0}, Lcom/android/launcher3/util/FocusLogic;->createFullMatrix(II)[[I
 
     move-result-object v6
 
-    .line 174
+    .line 173
     const/4 v0, 0x0
 
     move v1, v0
@@ -101,19 +101,19 @@
 
     if-ge v1, v0, :cond_2
 
-    .line 175
+    .line 174
     invoke-virtual {v3, v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 176
+    .line 175
     invoke-virtual {v7}, Landroid/view/View;->isFocusable()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 174
+    .line 173
     :goto_1
     add-int/lit8 v0, v1, 0x1
 
@@ -121,7 +121,7 @@
 
     goto :goto_0
 
-    .line 179
+    .line 178
     :cond_0
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -131,7 +131,7 @@
 
     iget v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 180
+    .line 179
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -140,7 +140,7 @@
 
     iget v7, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 181
+    .line 180
     if-eqz v5, :cond_1
 
     sub-int v0, v4, v2
@@ -159,7 +159,7 @@
 
     goto :goto_2
 
-    .line 186
+    .line 185
     :cond_2
     return-object v6
 .end method
@@ -170,32 +170,32 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 198
+    .line 197
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v3
 
-    .line 199
+    .line 198
     invoke-virtual {p1}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v4
 
-    .line 201
+    .line 200
     invoke-virtual {p2}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
 
     move-result v0
 
     xor-int/lit8 v5, v0, 0x1
 
-    .line 208
+    .line 207
     if-eqz v5, :cond_0
 
-    .line 209
+    .line 208
     invoke-virtual {p1}, Lcom/android/launcher3/CellLayout;->getCountX()I
 
     move-result v1
 
-    .line 210
+    .line 209
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getCountY()I
 
     move-result v0
@@ -206,7 +206,7 @@
 
     add-int/2addr v0, v6
 
-    .line 215
+    .line 214
     :goto_0
     invoke-static {v1, v0}, Lcom/android/launcher3/util/FocusLogic;->createFullMatrix(II)[[I
 
@@ -214,7 +214,7 @@
 
     move v1, v2
 
-    .line 229
+    .line 228
     :goto_1
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -222,19 +222,19 @@
 
     if-ge v1, v0, :cond_2
 
-    .line 230
+    .line 229
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 231
+    .line 230
     invoke-virtual {v7}, Landroid/view/View;->isFocusable()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 229
+    .line 228
     :goto_2
     add-int/lit8 v0, v1, 0x1
 
@@ -242,7 +242,7 @@
 
     goto :goto_1
 
-    .line 212
+    .line 211
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getCountX()I
 
@@ -254,14 +254,14 @@
 
     add-int/2addr v1, v0
 
-    .line 213
+    .line 212
     invoke-virtual {p1}, Lcom/android/launcher3/CellLayout;->getCountY()I
 
     move-result v0
 
     goto :goto_0
 
-    .line 234
+    .line 233
     :cond_1
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -271,7 +271,7 @@
 
     iget v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 235
+    .line 234
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -280,14 +280,14 @@
 
     iget v0, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 247
+    .line 246
     aget-object v2, v6, v2
 
     aput v1, v2, v0
 
     goto :goto_2
 
-    .line 251
+    .line 250
     :cond_2
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -300,10 +300,10 @@
     :goto_3
     if-ltz v1, :cond_4
 
-    .line 252
+    .line 251
     if-eqz v5, :cond_3
 
-    .line 254
+    .line 253
     invoke-virtual {v4, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -312,12 +312,12 @@
 
     move-result-object v0
 
-    .line 253
+    .line 252
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
     iget v0, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 255
+    .line 254
     aget-object v0, v6, v0
 
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getCountY()I
@@ -332,7 +332,7 @@
 
     aput v7, v0, v2
 
-    .line 251
+    .line 250
     :goto_4
     add-int/lit8 v0, v1, -0x1
 
@@ -340,7 +340,7 @@
 
     goto :goto_3
 
-    .line 258
+    .line 257
     :cond_3
     invoke-virtual {v4, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -350,12 +350,12 @@
 
     move-result-object v0
 
-    .line 257
+    .line 256
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
     iget v0, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 259
+    .line 258
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getCountX()I
 
     move-result v2
@@ -372,7 +372,7 @@
 
     goto :goto_4
 
-    .line 265
+    .line 264
     :cond_4
     return-object v6
 .end method
@@ -385,12 +385,12 @@
 
     const/4 v2, 0x0
 
-    .line 282
+    .line 281
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v3
 
-    .line 284
+    .line 283
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getCountX()I
 
     move-result v0
@@ -407,7 +407,7 @@
 
     move v1, v2
 
-    .line 287
+    .line 286
     :goto_0
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -415,19 +415,19 @@
 
     if-ge v1, v0, :cond_2
 
-    .line 288
+    .line 287
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 289
+    .line 288
     invoke-virtual {v5}, Landroid/view/View;->isFocusable()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 287
+    .line 286
     :goto_1
     add-int/lit8 v0, v1, 0x1
 
@@ -435,7 +435,7 @@
 
     goto :goto_0
 
-    .line 292
+    .line 291
     :cond_0
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -445,7 +445,7 @@
 
     iget v6, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 293
+    .line 292
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -454,10 +454,10 @@
 
     iget v0, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 294
+    .line 293
     if-gez p1, :cond_1
 
-    .line 295
+    .line 294
     sub-int v5, v6, p1
 
     aget-object v5, v4, v5
@@ -466,7 +466,7 @@
 
     goto :goto_1
 
-    .line 297
+    .line 296
     :cond_1
     aget-object v5, v4, v6
 
@@ -474,20 +474,20 @@
 
     goto :goto_1
 
-    .line 301
+    .line 300
     :cond_2
     if-gez p1, :cond_3
 
-    .line 302
+    .line 301
     aget-object v0, v4, v2
 
     aput v7, v0, p2
 
-    .line 309
+    .line 308
     :goto_2
     return-object v4
 
-    .line 304
+    .line 303
     :cond_3
     aget-object v0, v4, p1
 
@@ -504,7 +504,7 @@
 
     const/4 v1, 0x0
 
-    .line 563
+    .line 562
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -513,7 +513,7 @@
 
     iget v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 565
+    .line 564
     const/16 v0, -0x9
 
     if-ne p2, v0, :cond_0
@@ -529,34 +529,34 @@
 
     if-eqz v0, :cond_1
 
-    .line 568
+    .line 567
     :goto_1
     if-ltz v1, :cond_4
 
     move v0, v2
 
-    .line 569
+    .line 568
     :goto_2
     if-ltz v0, :cond_3
 
-    .line 570
+    .line 569
     invoke-virtual {p0, v1, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(II)Landroid/view/View;
 
     move-result-object v3
 
-    .line 571
+    .line 570
     if-eqz v3, :cond_2
 
-    .line 572
+    .line 571
     return-object v3
 
     :cond_0
     move v0, v1
 
-    .line 565
+    .line 564
     goto :goto_0
 
-    .line 566
+    .line 565
     :cond_1
     invoke-virtual {p0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getParent()Landroid/view/ViewParent;
 
@@ -572,19 +572,19 @@
 
     goto :goto_1
 
-    .line 569
+    .line 568
     :cond_2
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_2
 
-    .line 568
+    .line 567
     :cond_3
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
-    .line 576
+    .line 575
     :cond_4
     return-object v4
 .end method
@@ -593,10 +593,10 @@
     .locals 13
 
     .prologue
-    .line 328
+    .line 327
     if-nez p3, :cond_0
 
-    .line 329
+    .line 328
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v2, "Dpad navigation requires a matrix."
@@ -605,23 +605,23 @@
 
     throw v1
 
-    .line 331
+    .line 330
     :cond_0
     const/4 v5, -0x1
 
-    .line 333
+    .line 332
     const/4 v8, -0x1
 
-    .line 334
+    .line 333
     const/4 v7, -0x1
 
-    .line 336
+    .line 335
     const/4 v4, 0x0
 
     :goto_0
     if-ge v4, p1, :cond_3
 
-    .line 337
+    .line 336
     const/4 v2, 0x0
 
     move v1, v7
@@ -631,7 +631,7 @@
     :goto_1
     if-ge v2, p2, :cond_2
 
-    .line 338
+    .line 337
     aget-object v6, p3, v4
 
     aget v6, v6, v2
@@ -642,13 +642,13 @@
 
     move v3, v4
 
-    .line 337
+    .line 336
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 336
+    .line 335
     :cond_2
     add-int/lit8 v4, v4, 0x1
 
@@ -658,7 +658,7 @@
 
     goto :goto_0
 
-    .line 350
+    .line 349
     :cond_3
     add-int v1, v8, p4
 
@@ -669,7 +669,7 @@
 
     if-ge v1, p1, :cond_5
 
-    .line 351
+    .line 350
     move-object/from16 v0, p3
 
     invoke-static {v1, v7, p1, p2, v0}, Lcom/android/launcher3/util/FocusLogic;->inspectMatrix(IIII[[I)I
@@ -680,28 +680,28 @@
 
     if-eq v4, v2, :cond_4
 
-    .line 352
+    .line 351
     const/16 v2, -0xb
 
     if-eq v4, v2, :cond_4
 
-    .line 353
+    .line 352
     return v4
 
-    .line 350
+    .line 349
     :cond_4
     add-int v1, v1, p4
 
     goto :goto_2
 
-    .line 361
+    .line 360
     :cond_5
     const/4 v2, 0x0
 
-    .line 362
+    .line 361
     const/4 v3, 0x0
 
-    .line 364
+    .line 363
     const/4 v1, 0x1
 
     move v6, v1
@@ -711,22 +711,22 @@
     :goto_3
     if-ge v6, p2, :cond_c
 
-    .line 365
+    .line 364
     mul-int v2, v6, p4
 
     add-int v9, v7, v2
 
-    .line 366
+    .line 365
     mul-int v2, v6, p4
 
     sub-int v10, v7, v2
 
-    .line 367
+    .line 366
     mul-int v2, p4, v6
 
     add-int/2addr v2, v8
 
-    .line 368
+    .line 367
     move-object/from16 v0, p3
 
     invoke-static {v2, v9, p1, p2, v0}, Lcom/android/launcher3/util/FocusLogic;->inspectMatrix(IIII[[I)I
@@ -737,10 +737,10 @@
 
     if-ne v5, v11, :cond_6
 
-    .line 369
+    .line 368
     const/4 v1, 0x1
 
-    .line 371
+    .line 370
     :cond_6
     move-object/from16 v0, p3
 
@@ -752,7 +752,7 @@
 
     if-ne v5, v11, :cond_11
 
-    .line 372
+    .line 371
     const/4 v3, 0x1
 
     move v12, v2
@@ -763,13 +763,13 @@
 
     move v3, v12
 
-    .line 374
+    .line 373
     :goto_4
     if-ltz v3, :cond_b
 
     if-ge v3, p1, :cond_b
 
-    .line 375
+    .line 374
     if-eqz v1, :cond_7
 
     add-int/lit8 v2, p1, -0x1
@@ -778,7 +778,7 @@
 
     move/from16 v2, p4
 
-    .line 376
+    .line 375
     :goto_5
     add-int/2addr v2, v9
 
@@ -788,21 +788,21 @@
 
     move-result v2
 
-    .line 377
+    .line 376
     const/4 v5, -0x1
 
     if-eq v2, v5, :cond_8
 
-    .line 378
+    .line 377
     return v2
 
-    .line 375
+    .line 374
     :cond_7
     const/4 v2, 0x0
 
     goto :goto_5
 
-    .line 380
+    .line 379
     :cond_8
     if-eqz v4, :cond_9
 
@@ -814,7 +814,7 @@
 
     neg-int v2, v0
 
-    .line 381
+    .line 380
     :goto_6
     add-int/2addr v2, v10
 
@@ -824,21 +824,21 @@
 
     move-result v5
 
-    .line 382
+    .line 381
     const/4 v2, -0x1
 
     if-eq v5, v2, :cond_a
 
-    .line 383
+    .line 382
     return v5
 
-    .line 380
+    .line 379
     :cond_9
     const/4 v2, 0x0
 
     goto :goto_6
 
-    .line 374
+    .line 373
     :cond_a
     add-int v2, v3, p4
 
@@ -848,7 +848,7 @@
 
     goto :goto_4
 
-    .line 364
+    .line 363
     :cond_b
     add-int/lit8 v3, v6, 0x1
 
@@ -860,16 +860,16 @@
 
     goto :goto_3
 
-    .line 390
+    .line 389
     :cond_c
     const/16 v1, 0x64
 
     if-ne p0, v1, :cond_10
 
-    .line 391
+    .line 390
     if-eqz p5, :cond_e
 
-    .line 392
+    .line 391
     if-gez p4, :cond_d
 
     const/4 v1, -0x8
@@ -882,7 +882,7 @@
 
     goto :goto_7
 
-    .line 394
+    .line 393
     :cond_e
     if-gez p4, :cond_f
 
@@ -896,7 +896,7 @@
 
     goto :goto_8
 
-    .line 396
+    .line 395
     :cond_10
     return v4
 
@@ -916,13 +916,13 @@
     .locals 13
 
     .prologue
-    .line 411
+    .line 410
     const/4 v5, -0x1
 
-    .line 412
+    .line 411
     if-nez p3, :cond_0
 
-    .line 413
+    .line 412
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v2, "Dpad navigation requires a matrix."
@@ -931,20 +931,20 @@
 
     throw v1
 
-    .line 416
+    .line 415
     :cond_0
     const/4 v8, -0x1
 
-    .line 417
+    .line 416
     const/4 v7, -0x1
 
-    .line 419
+    .line 418
     const/4 v4, 0x0
 
     :goto_0
     if-ge v4, p1, :cond_3
 
-    .line 420
+    .line 419
     const/4 v2, 0x0
 
     move v1, v7
@@ -954,7 +954,7 @@
     :goto_1
     if-ge v2, p2, :cond_2
 
-    .line 421
+    .line 420
     aget-object v6, p3, v4
 
     aget v6, v6, v2
@@ -965,13 +965,13 @@
 
     move v3, v4
 
-    .line 420
+    .line 419
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 419
+    .line 418
     :cond_2
     add-int/lit8 v4, v4, 0x1
 
@@ -981,7 +981,7 @@
 
     goto :goto_0
 
-    .line 434
+    .line 433
     :cond_3
     add-int v1, v7, p4
 
@@ -994,7 +994,7 @@
 
     if-ltz v1, :cond_5
 
-    .line 435
+    .line 434
     move-object/from16 v0, p3
 
     invoke-static {v8, v1, p1, p2, v0}, Lcom/android/launcher3/util/FocusLogic;->inspectMatrix(IIII[[I)I
@@ -1005,28 +1005,28 @@
 
     if-eq v4, v2, :cond_4
 
-    .line 436
+    .line 435
     const/16 v2, -0xb
 
     if-eq v4, v2, :cond_4
 
-    .line 437
+    .line 436
     return v4
 
-    .line 434
+    .line 433
     :cond_4
     add-int v1, v1, p4
 
     goto :goto_2
 
-    .line 445
+    .line 444
     :cond_5
     const/4 v2, 0x0
 
-    .line 446
+    .line 445
     const/4 v3, 0x0
 
-    .line 448
+    .line 447
     const/4 v1, 0x1
 
     move v6, v1
@@ -1036,22 +1036,22 @@
     :goto_3
     if-ge v6, p1, :cond_c
 
-    .line 449
+    .line 448
     mul-int v2, v6, p4
 
     add-int v9, v8, v2
 
-    .line 450
+    .line 449
     mul-int v2, v6, p4
 
     sub-int v10, v8, v2
 
-    .line 451
+    .line 450
     mul-int v2, p4, v6
 
     add-int/2addr v2, v7
 
-    .line 452
+    .line 451
     move-object/from16 v0, p3
 
     invoke-static {v9, v2, p1, p2, v0}, Lcom/android/launcher3/util/FocusLogic;->inspectMatrix(IIII[[I)I
@@ -1062,10 +1062,10 @@
 
     if-ne v5, v11, :cond_6
 
-    .line 453
+    .line 452
     const/4 v1, 0x1
 
-    .line 455
+    .line 454
     :cond_6
     move-object/from16 v0, p3
 
@@ -1077,7 +1077,7 @@
 
     if-ne v5, v11, :cond_d
 
-    .line 456
+    .line 455
     const/4 v3, 0x1
 
     move v12, v2
@@ -1088,13 +1088,13 @@
 
     move v3, v12
 
-    .line 458
+    .line 457
     :goto_4
     if-ltz v3, :cond_b
 
     if-ge v3, p2, :cond_b
 
-    .line 459
+    .line 458
     if-eqz v1, :cond_7
 
     add-int/lit8 v2, p2, -0x1
@@ -1103,7 +1103,7 @@
 
     move/from16 v2, p4
 
-    .line 460
+    .line 459
     :goto_5
     add-int/2addr v2, v9
 
@@ -1113,21 +1113,21 @@
 
     move-result v2
 
-    .line 461
+    .line 460
     const/4 v5, -0x1
 
     if-eq v2, v5, :cond_8
 
-    .line 462
+    .line 461
     return v2
 
-    .line 459
+    .line 458
     :cond_7
     const/4 v2, 0x0
 
     goto :goto_5
 
-    .line 464
+    .line 463
     :cond_8
     if-eqz v4, :cond_9
 
@@ -1139,7 +1139,7 @@
 
     neg-int v2, v0
 
-    .line 465
+    .line 464
     :goto_6
     add-int/2addr v2, v10
 
@@ -1149,21 +1149,21 @@
 
     move-result v5
 
-    .line 466
+    .line 465
     const/4 v2, -0x1
 
     if-eq v5, v2, :cond_a
 
-    .line 467
+    .line 466
     return v5
 
-    .line 464
+    .line 463
     :cond_9
     const/4 v2, 0x0
 
     goto :goto_6
 
-    .line 458
+    .line 457
     :cond_a
     add-int v2, v3, p4
 
@@ -1173,7 +1173,7 @@
 
     goto :goto_4
 
-    .line 448
+    .line 447
     :cond_b
     add-int/lit8 v3, v6, 0x1
 
@@ -1185,7 +1185,7 @@
 
     goto :goto_3
 
-    .line 471
+    .line 470
     :cond_c
     return v4
 
@@ -1205,36 +1205,36 @@
     .locals 6
 
     .prologue
-    .line 88
+    .line 87
     if-nez p1, :cond_1
 
     const/4 v1, -0x1
 
-    .line 89
+    .line 88
     :goto_0
     if-nez p1, :cond_2
 
     const/4 v2, -0x1
 
-    .line 97
+    .line 96
     :goto_1
     const/4 v0, -0x1
 
-    .line 98
+    .line 97
     sparse-switch p0, :sswitch_data_0
 
-    .line 141
+    .line 140
     :cond_0
     :goto_2
     return v0
 
-    .line 88
+    .line 87
     :cond_1
     array-length v1, p1
 
     goto :goto_0
 
-    .line 89
+    .line 88
     :cond_2
     const/4 v0, 0x0
 
@@ -1244,7 +1244,7 @@
 
     goto :goto_1
 
-    .line 100
+    .line 99
     :sswitch_0
     const/4 v4, -0x1
 
@@ -1258,7 +1258,7 @@
 
     move-result v0
 
-    .line 101
+    .line 100
     if-nez p5, :cond_3
 
     const/4 v1, -0x1
@@ -1267,13 +1267,13 @@
 
     if-lez p3, :cond_3
 
-    .line 102
+    .line 101
     const/4 v0, -0x2
 
-    .line 101
+    .line 100
     goto :goto_2
 
-    .line 103
+    .line 102
     :cond_3
     if-eqz p5, :cond_0
 
@@ -1285,12 +1285,12 @@
 
     if-ge p3, v1, :cond_0
 
-    .line 104
+    .line 103
     const/16 v0, -0xa
 
     goto :goto_2
 
-    .line 108
+    .line 107
     :sswitch_1
     const/4 v4, 0x1
 
@@ -1304,7 +1304,7 @@
 
     move-result v0
 
-    .line 109
+    .line 108
     if-nez p5, :cond_4
 
     const/4 v1, -0x1
@@ -1315,13 +1315,13 @@
 
     if-ge p3, v1, :cond_4
 
-    .line 110
+    .line 109
     const/16 v0, -0x9
 
-    .line 109
+    .line 108
     goto :goto_2
 
-    .line 111
+    .line 110
     :cond_4
     if-eqz p5, :cond_0
 
@@ -1331,12 +1331,12 @@
 
     if-lez p3, :cond_0
 
-    .line 112
+    .line 111
     const/4 v0, -0x5
 
     goto :goto_2
 
-    .line 116
+    .line 115
     :sswitch_2
     const/4 v0, 0x1
 
@@ -1346,7 +1346,7 @@
 
     goto :goto_2
 
-    .line 119
+    .line 118
     :sswitch_3
     const/4 v0, -0x1
 
@@ -1356,7 +1356,7 @@
 
     goto :goto_2
 
-    .line 122
+    .line 121
     :sswitch_4
     invoke-static {}, Lcom/android/launcher3/util/FocusLogic;->handleMoveHome()I
 
@@ -1364,7 +1364,7 @@
 
     goto :goto_2
 
-    .line 125
+    .line 124
     :sswitch_5
     invoke-static {}, Lcom/android/launcher3/util/FocusLogic;->handleMoveEnd()I
 
@@ -1372,7 +1372,7 @@
 
     goto :goto_2
 
-    .line 128
+    .line 127
     :sswitch_6
     invoke-static {p3, p4}, Lcom/android/launcher3/util/FocusLogic;->handlePageDown(II)I
 
@@ -1380,7 +1380,7 @@
 
     goto :goto_2
 
-    .line 131
+    .line 130
     :sswitch_7
     invoke-static {p3}, Lcom/android/launcher3/util/FocusLogic;->handlePageUp(I)I
 
@@ -1388,7 +1388,7 @@
 
     goto :goto_2
 
-    .line 98
+    .line 97
     :sswitch_data_0
     .sparse-switch
         0x13 -> :sswitch_3
@@ -1406,7 +1406,7 @@
     .locals 1
 
     .prologue
-    .line 479
+    .line 478
     const/4 v0, -0x7
 
     return v0
@@ -1416,7 +1416,7 @@
     .locals 1
 
     .prologue
-    .line 475
+    .line 474
     const/4 v0, -0x6
 
     return v0
@@ -1426,17 +1426,17 @@
     .locals 1
 
     .prologue
-    .line 483
+    .line 482
     add-int/lit8 v0, p1, -0x1
 
     if-ge p0, v0, :cond_0
 
-    .line 484
+    .line 483
     const/4 v0, -0x8
 
     return v0
 
-    .line 486
+    .line 485
     :cond_0
     const/4 v0, -0x7
 
@@ -1447,15 +1447,15 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 489
     if-lez p0, :cond_0
 
-    .line 491
+    .line 490
     const/4 v0, -0x3
 
     return v0
 
-    .line 493
+    .line 492
     :cond_0
     const/4 v0, -0x6
 
@@ -1468,29 +1468,29 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 507
+    .line 506
     invoke-static {p0, p1, p2, p3}, Lcom/android/launcher3/util/FocusLogic;->isValid(IIII)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 508
+    .line 507
     aget-object v0, p4, p0
 
     aget v0, v0, p1
 
     if-eq v0, v1, :cond_0
 
-    .line 509
+    .line 508
     aget-object v0, p4, p0
 
     aget v0, v0, p1
 
-    .line 514
+    .line 513
     return v0
 
-    .line 517
+    .line 516
     :cond_0
     return v1
 .end method
@@ -1501,7 +1501,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 502
+    .line 501
     if-ltz p0, :cond_0
 
     if-ge p0, p2, :cond_0
@@ -1522,7 +1522,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 79
+    .line 78
     const/16 v1, 0x15
 
     if-eq p0, v1, :cond_0
@@ -1535,7 +1535,7 @@
     :goto_0
     return v0
 
-    .line 80
+    .line 79
     :cond_1
     const/16 v1, 0x13
 
@@ -1545,7 +1545,7 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 81
+    .line 80
     const/16 v1, 0x7a
 
     if-eq p0, v1, :cond_0
@@ -1554,7 +1554,7 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 82
+    .line 81
     const/16 v1, 0x5c
 
     if-eq p0, v1, :cond_0

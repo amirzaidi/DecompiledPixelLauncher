@@ -31,8 +31,8 @@ final class CellLayout$4 extends AnimatorListenerAdapter
             this.val$lp.isLockedToGrid = true;
             this.val$child.requestLayout();
         }
-        if (this.this$0.mReorderAnimators.containsKey(this.val$lp)) {
-            this.this$0.mReorderAnimators.remove(this.val$lp);
+        if (this.this$0.mReorderAnimators.containsKey((Object)this.val$lp)) {
+            this.this$0.mReorderAnimators.remove((Object)this.val$lp);
         }
     }
 }

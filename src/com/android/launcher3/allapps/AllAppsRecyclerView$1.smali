@@ -1,22 +1,15 @@
 .class final Lcom/android/launcher3/allapps/AllAppsRecyclerView$1;
-.super Landroid/support/v7/widget/h;
+.super Landroid/util/Property;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic this$0:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
-
-
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/allapps/AllAppsRecyclerView;)V
+.method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
     .prologue
-    .line 1
-    iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerView$1;->this$0:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
-
-    .line 274
-    invoke-direct {p0}, Landroid/support/v7/widget/h;-><init>()V
+    .line 67
+    invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     .line 1
     return-void
@@ -24,19 +17,61 @@
 
 
 # virtual methods
-.method public onChanged()V
+.method public get(Lcom/android/launcher3/allapps/AllAppsRecyclerView;)Ljava/lang/Float;
     .locals 1
 
     .prologue
-    .line 276
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerView$1;->this$0:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+    .line 70
+    invoke-virtual {p1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getContentTranslationY()F
 
-    invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->-get0(Lcom/android/launcher3/allapps/AllAppsRecyclerView;)Landroid/util/SparseIntArray;
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
+    return-object v0
+.end method
 
-    .line 277
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 68
+    check-cast p1, Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    invoke-virtual {p0, p1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView$1;->get(Lcom/android/launcher3/allapps/AllAppsRecyclerView;)Ljava/lang/Float;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public set(Lcom/android/launcher3/allapps/AllAppsRecyclerView;Ljava/lang/Float;)V
+    .locals 1
+
+    .prologue
+    .line 75
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setContentTranslationY(F)V
+
+    .line 76
+    return-void
+.end method
+
+.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    .prologue
+    .line 73
+    check-cast p1, Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    check-cast p2, Ljava/lang/Float;
+
+    invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView$1;->set(Lcom/android/launcher3/allapps/AllAppsRecyclerView;Ljava/lang/Float;)V
+
     return-void
 .end method

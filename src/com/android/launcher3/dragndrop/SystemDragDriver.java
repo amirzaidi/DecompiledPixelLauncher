@@ -11,17 +11,13 @@ import android.content.Context;
 
 class SystemDragDriver extends DragDriver
 {
-    private final Context mContext;
-    private final DropTarget$DragObject mDragObject;
     float mLastX;
     float mLastY;
     
-    public SystemDragDriver(final DragController dragController, final Context mContext, final DropTarget$DragObject mDragObject) {
+    SystemDragDriver(final DragController dragController, final Context context, final DropTarget$DragObject dropTarget$DragObject) {
         super(dragController);
         this.mLastX = 0.0f;
         this.mLastY = 0.0f;
-        this.mDragObject = mDragObject;
-        this.mContext = mContext;
     }
     
     public boolean onDragEvent(final DragEvent dragEvent) {

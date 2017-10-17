@@ -84,7 +84,7 @@
     invoke-direct {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;-><init>()V
 
     .line 119
-    const/16 v1, 0x200
+    const/16 v1, 0x100
 
     iput v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
 
@@ -129,34 +129,13 @@
     .locals 2
 
     .prologue
-    .line 156
-    new-instance v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
-
-    invoke-direct {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;-><init>()V
-
-    .line 157
-    const/16 v1, 0x100
-
-    iput v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
-
-    .line 158
-    iput p0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
-
-    .line 159
-    return-object v0
-.end method
-
-.method public static asMarketDivider(I)Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
-    .locals 2
-
-    .prologue
     .line 149
     new-instance v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
 
     invoke-direct {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;-><init>()V
 
     .line 150
-    const/16 v1, 0x20
+    const/16 v1, 0x80
 
     iput v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
 
@@ -167,24 +146,45 @@
     return-object v0
 .end method
 
-.method public static asMarketSearch(I)Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
+.method public static asMarketDivider(I)Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
     .locals 2
 
     .prologue
-    .line 163
+    .line 142
     new-instance v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
 
     invoke-direct {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;-><init>()V
 
-    .line 164
+    .line 143
+    const/16 v1, 0x20
+
+    iput v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
+
+    .line 144
+    iput p0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
+
+    .line 145
+    return-object v0
+.end method
+
+.method public static asMarketSearch(I)Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
+    .locals 2
+
+    .prologue
+    .line 156
+    new-instance v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
+
+    invoke-direct {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;-><init>()V
+
+    .line 157
     const/16 v1, 0x10
 
     iput v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
 
-    .line 165
+    .line 158
     iput p0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
 
-    .line 166
+    .line 159
     return-object v0
 .end method
 
@@ -216,7 +216,7 @@
     invoke-direct {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;-><init>()V
 
     .line 136
-    const/16 v1, 0x80
+    const/16 v1, 0x40
 
     iput v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
 
@@ -224,26 +224,5 @@
     iput p0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
 
     .line 138
-    return-object v0
-.end method
-
-.method public static asSearchDivider(I)Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
-    .locals 2
-
-    .prologue
-    .line 142
-    new-instance v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
-
-    invoke-direct {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;-><init>()V
-
-    .line 143
-    const/16 v1, 0x40
-
-    iput v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
-
-    .line 144
-    iput p0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
-
-    .line 145
     return-object v0
 .end method

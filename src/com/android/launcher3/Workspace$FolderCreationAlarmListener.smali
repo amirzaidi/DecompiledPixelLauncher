@@ -7,92 +7,75 @@
 
 
 # instance fields
-.field bg:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+.field final bg:Lcom/android/launcher3/folder/PreviewBackground;
 
-.field cellX:I
+.field final cellX:I
 
-.field cellY:I
+.field final cellY:I
 
-.field layout:Lcom/android/launcher3/CellLayout;
+.field final layout:Lcom/android/launcher3/CellLayout;
 
 .field final synthetic this$0:Lcom/android/launcher3/Workspace;
 
 
 # direct methods
 .method public constructor <init>(Lcom/android/launcher3/Workspace;Lcom/android/launcher3/CellLayout;II)V
-    .locals 6
+    .locals 5
 
     .prologue
-    .line 3158
+    .line 3061
     iput-object p1, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3156
-    new-instance v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    .line 3059
+    new-instance v0, Lcom/android/launcher3/folder/PreviewBackground;
 
-    invoke-direct {v0}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;-><init>()V
+    invoke-direct {v0}, Lcom/android/launcher3/folder/PreviewBackground;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iput-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/PreviewBackground;
 
-    .line 3159
+    .line 3062
     iput-object p2, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->layout:Lcom/android/launcher3/CellLayout;
 
-    .line 3160
+    .line 3063
     iput p3, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->cellX:I
 
-    .line 3161
+    .line 3064
     iput p4, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->cellY:I
 
-    .line 3163
-    iget-object v0, p1, Lcom/android/launcher3/Workspace;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
-
-    move-result-object v2
-
-    .line 3164
+    .line 3066
     invoke-virtual {p2, p3, p4}, Lcom/android/launcher3/CellLayout;->getChildAt(II)Landroid/view/View;
 
     move-result-object v0
 
-    move-object v3, v0
+    check-cast v0, Lcom/android/launcher3/BubbleTextView;
 
-    check-cast v3, Lcom/android/launcher3/BubbleTextView;
+    .line 3067
+    iget-object v1, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/PreviewBackground;
 
-    .line 3166
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iget-object v2, p1, Lcom/android/launcher3/Workspace;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {p1}, Lcom/android/launcher3/Workspace;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Lcom/android/launcher3/BubbleTextView;->getMeasuredWidth()I
 
-    move-result-object v1
+    move-result v3
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v0}, Lcom/android/launcher3/BubbleTextView;->getPaddingTop()I
 
-    move-result-object v1
+    move-result v0
 
-    .line 3167
-    invoke-virtual {v3}, Lcom/android/launcher3/BubbleTextView;->getMeasuredWidth()I
+    const/4 v4, 0x0
 
-    move-result v4
+    invoke-virtual {v1, v2, v4, v3, v0}, Lcom/android/launcher3/folder/PreviewBackground;->setup(Lcom/android/launcher3/Launcher;Landroid/view/View;II)V
 
-    invoke-virtual {v3}, Lcom/android/launcher3/BubbleTextView;->getPaddingTop()I
-
-    move-result v5
-
-    .line 3166
-    const/4 v3, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->setup(Landroid/util/DisplayMetrics;Lcom/android/launcher3/DeviceProfile;Landroid/view/View;II)V
-
-    .line 3170
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    .line 3070
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/PreviewBackground;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->isClipping:Z
+    iput-boolean v1, v0, Lcom/android/launcher3/folder/PreviewBackground;->isClipping:Z
 
-    .line 3171
+    .line 3071
     return-void
 .end method
 
@@ -102,17 +85,17 @@
     .locals 4
 
     .prologue
-    .line 3174
+    .line 3074
     iget-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
-    iget-object v1, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iget-object v1, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->bg:Lcom/android/launcher3/folder/PreviewBackground;
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/Workspace;->-set2(Lcom/android/launcher3/Workspace;Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;)Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    invoke-static {v0, v1}, Lcom/android/launcher3/Workspace;->-set1(Lcom/android/launcher3/Workspace;Lcom/android/launcher3/folder/PreviewBackground;)Lcom/android/launcher3/folder/PreviewBackground;
 
-    .line 3175
+    .line 3075
     iget-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
-    invoke-static {v0}, Lcom/android/launcher3/Workspace;->-get0(Lcom/android/launcher3/Workspace;)Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    invoke-static {v0}, Lcom/android/launcher3/Workspace;->-get0(Lcom/android/launcher3/Workspace;)Lcom/android/launcher3/folder/PreviewBackground;
 
     move-result-object v0
 
@@ -122,20 +105,20 @@
 
     iget v3, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->cellY:I
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->animateToAccept(Lcom/android/launcher3/CellLayout;II)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/folder/PreviewBackground;->animateToAccept(Lcom/android/launcher3/CellLayout;II)V
 
-    .line 3176
+    .line 3076
     iget-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->layout:Lcom/android/launcher3/CellLayout;
 
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout;->clearDragOutlines()V
 
-    .line 3177
+    .line 3077
     iget-object v0, p0, Lcom/android/launcher3/Workspace$FolderCreationAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->setDragMode(I)V
 
-    .line 3178
+    .line 3078
     return-void
 .end method

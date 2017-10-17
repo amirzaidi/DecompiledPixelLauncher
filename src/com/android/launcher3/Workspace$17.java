@@ -9,18 +9,20 @@ import android.view.View;
 final class Workspace$17 implements Workspace$ItemOperator
 {
     final /* synthetic */ Workspace this$0;
-    final /* synthetic */ int val$appWidgetId;
+    final /* synthetic */ Workspace$ItemOperator val$operator;
+    final /* synthetic */ View[] val$value;
     
-    Workspace$17(final Workspace this$0, final int val$appWidgetId) {
+    Workspace$17(final Workspace this$0, final Workspace$ItemOperator val$operator, final View[] val$value) {
         this.this$0 = this$0;
-        this.val$appWidgetId = val$appWidgetId;
+        this.val$operator = val$operator;
+        this.val$value = val$value;
     }
     
     public boolean evaluate(final ItemInfo itemInfo, final View view) {
-        boolean b = false;
-        if (itemInfo instanceof LauncherAppWidgetInfo && ((LauncherAppWidgetInfo)itemInfo).appWidgetId == this.val$appWidgetId) {
-            b = true;
+        if (this.val$operator.evaluate(itemInfo, view)) {
+            this.val$value[0] = view;
+            return true;
         }
-        return b;
+        return false;
     }
 }

@@ -37,10 +37,32 @@
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    iget-object v1, p0, Lcom/android/launcher3/notification/NotificationFooterLayout$2;->this$0:Lcom/android/launcher3/notification/NotificationFooterLayout;
+    const v1, 0x7f0e0043
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
-    .line 209
+    move-result-object v0
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 211
+    iget-object v0, p0, Lcom/android/launcher3/notification/NotificationFooterLayout$2;->this$0:Lcom/android/launcher3/notification/NotificationFooterLayout;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/notification/NotificationFooterLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    .line 212
+    iget-object v0, p0, Lcom/android/launcher3/notification/NotificationFooterLayout$2;->this$0:Lcom/android/launcher3/notification/NotificationFooterLayout;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/notification/NotificationFooterLayout;->requestLayout()V
+
+    .line 213
     return-void
 .end method

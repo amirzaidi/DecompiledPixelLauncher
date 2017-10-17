@@ -9,9 +9,9 @@
 
     .prologue
     .line 52
-    const v0, 0x7f020048
+    const v0, 0x7f02004e
 
-    const v1, 0x7f0c004d
+    const v1, 0x7f0c004f
 
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/popup/SystemShortcut;-><init>(II)V
 

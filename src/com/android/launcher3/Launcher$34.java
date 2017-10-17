@@ -4,24 +4,17 @@
 
 package com.android.launcher3;
 
-import android.os.UserHandle;
-import java.util.ArrayList;
-
 final class Launcher$34 implements Runnable
 {
     final /* synthetic */ Launcher this$0;
-    final /* synthetic */ ArrayList val$removed;
-    final /* synthetic */ ArrayList val$updated;
-    final /* synthetic */ UserHandle val$user;
+    final /* synthetic */ PromiseAppInfo val$app;
     
-    Launcher$34(final Launcher this$0, final ArrayList val$updated, final ArrayList val$removed, final UserHandle val$user) {
+    Launcher$34(final Launcher this$0, final PromiseAppInfo val$app) {
         this.this$0 = this$0;
-        this.val$updated = val$updated;
-        this.val$removed = val$removed;
-        this.val$user = val$user;
+        this.val$app = val$app;
     }
     
     public void run() {
-        this.this$0.bindShortcutsChanged(this.val$updated, this.val$removed, this.val$user);
+        this.this$0.bindPromiseAppProgressUpdated(this.val$app);
     }
 }

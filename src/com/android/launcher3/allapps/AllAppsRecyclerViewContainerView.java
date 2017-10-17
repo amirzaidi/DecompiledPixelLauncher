@@ -42,7 +42,7 @@ public class AllAppsRecyclerViewContainerView extends RelativeLayout implements 
             this.mTouchFeedbackView.animate().cancel();
         }
         else if (this.mTouchFeedbackView.setBitmap(bitmap)) {
-            this.mTouchFeedbackView.alignWithIconView(bubbleTextView, (ViewGroup)bubbleTextView.getParent(), this.findViewById(2131623976));
+            this.mTouchFeedbackView.alignWithIconView(bubbleTextView, (ViewGroup)bubbleTextView.getParent(), this.findViewById(2131623979));
             this.mTouchFeedbackView.animateShadow();
         }
     }

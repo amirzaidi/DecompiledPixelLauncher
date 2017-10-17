@@ -1,41 +1,22 @@
 .class final Lcom/android/launcher3/folder/Folder$12;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/folder/Folder;
 
-.field final synthetic val$d:Lcom/android/launcher3/DropTarget$DragObject;
-
-.field final synthetic val$isFlingToDelete:Z
-
-.field final synthetic val$success:Z
-
-.field final synthetic val$target:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/folder/Folder;Landroid/view/View;Lcom/android/launcher3/DropTarget$DragObject;ZZ)V
+.method constructor <init>(Lcom/android/launcher3/folder/Folder;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$12;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iput-object p2, p0, Lcom/android/launcher3/folder/Folder$12;->val$target:Landroid/view/View;
-
-    iput-object p3, p0, Lcom/android/launcher3/folder/Folder$12;->val$d:Lcom/android/launcher3/DropTarget$DragObject;
-
-    iput-boolean p4, p0, Lcom/android/launcher3/folder/Folder$12;->val$isFlingToDelete:Z
-
-    iput-boolean p5, p0, Lcom/android/launcher3/folder/Folder$12;->val$success:Z
-
-    .line 914
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 767
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
     return-void
@@ -43,30 +24,47 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 5
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
     .prologue
-    .line 916
+    .line 770
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$12;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iget-object v1, p0, Lcom/android/launcher3/folder/Folder$12;->val$target:Landroid/view/View;
+    const/4 v1, 0x1
 
-    iget-object v2, p0, Lcom/android/launcher3/folder/Folder$12;->val$d:Lcom/android/launcher3/DropTarget$DragObject;
+    invoke-static {v0, v1}, Lcom/android/launcher3/folder/Folder;->-wrap0(Lcom/android/launcher3/folder/Folder;Z)V
 
-    iget-boolean v3, p0, Lcom/android/launcher3/folder/Folder$12;->val$isFlingToDelete:Z
+    .line 771
+    return-void
+.end method
 
-    iget-boolean v4, p0, Lcom/android/launcher3/folder/Folder$12;->val$success:Z
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 3
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/launcher3/folder/Folder;->onDropCompleted(Landroid/view/View;Lcom/android/launcher3/DropTarget$DragObject;ZZ)V
-
-    .line 917
+    .prologue
+    .line 775
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$12;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    const/4 v1, 0x0
+    .line 777
+    iget-object v1, p0, Lcom/android/launcher3/folder/Folder$12;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iput-object v1, v0, Lcom/android/launcher3/folder/Folder;->mDeferredAction:Ljava/lang/Runnable;
+    invoke-virtual {v1}, Lcom/android/launcher3/folder/Folder;->getContext()Landroid/content/Context;
 
-    .line 918
+    move-result-object v1
+
+    const v2, 0x7f0c004c
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 776
+    const/16 v2, 0x20
+
+    .line 774
+    invoke-static {v0, v2, v1}, Lcom/android/launcher3/Utilities;->sendCustomAccessibilityEvent(Landroid/view/View;ILjava/lang/String;)V
+
+    .line 778
     return-void
 .end method

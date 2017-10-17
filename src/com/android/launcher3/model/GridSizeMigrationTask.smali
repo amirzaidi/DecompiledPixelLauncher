@@ -38,8 +38,6 @@
 
 .field private final mValidPackages:Ljava/util/HashSet;
 
-.field private final mWidgetMinSize:Ljava/util/HashMap;
-
 
 # direct methods
 .method static synthetic -get0(Lcom/android/launcher3/model/GridSizeMigrationTask;)I
@@ -72,12 +70,12 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 42
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT:Z
 
     sput-boolean v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->ENABLED:Z
 
-    .line 43
+    .line 40
     return-void
 .end method
 
@@ -89,60 +87,53 @@
 
     const/4 v1, -0x1
 
-    .line 97
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mWidgetMinSize:Ljava/util/HashMap;
-
-    .line 65
+    .line 61
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTempValues:Landroid/content/ContentValues;
 
-    .line 66
+    .line 62
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
-    .line 67
+    .line 63
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mUpdateOperations:Ljava/util/ArrayList;
 
-    .line 68
+    .line 64
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
 
-    .line 100
+    .line 96
     iput-object p1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
-    .line 101
+    .line 97
     iput-object p2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mIdp:Lcom/android/launcher3/InvariantDeviceProfile;
 
-    .line 102
+    .line 98
     iput-object p3, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mValidPackages:Ljava/util/HashSet;
 
-    .line 104
+    .line 100
     iput p4, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcHotseatSize:I
 
-    .line 106
+    .line 102
     iput p5, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mDestHotseatSize:I
 
-    .line 109
+    .line 105
     iput v1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgY:I
 
     iput v1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgX:I
@@ -151,12 +142,12 @@
 
     iput v1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcX:I
 
-    .line 110
+    .line 106
     iput-boolean v2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mShouldRemoveY:Z
 
     iput-boolean v2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mShouldRemoveX:Z
 
-    .line 111
+    .line 107
     return-void
 .end method
 
@@ -170,74 +161,67 @@
 
     const/4 v4, -0x1
 
-    .line 78
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mWidgetMinSize:Ljava/util/HashMap;
-
-    .line 65
+    .line 61
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTempValues:Landroid/content/ContentValues;
 
-    .line 66
+    .line 62
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
-    .line 67
+    .line 63
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mUpdateOperations:Ljava/util/ArrayList;
 
-    .line 68
+    .line 64
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
 
-    .line 80
+    .line 76
     iput-object p1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
-    .line 81
+    .line 77
     iput-object p3, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mValidPackages:Ljava/util/HashSet;
 
-    .line 82
+    .line 78
     iput-object p2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mIdp:Lcom/android/launcher3/InvariantDeviceProfile;
 
-    .line 84
+    .line 80
     iget v0, p4, Landroid/graphics/Point;->x:I
 
     iput v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcX:I
 
-    .line 85
+    .line 81
     iget v0, p4, Landroid/graphics/Point;->y:I
 
     iput v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcY:I
 
-    .line 87
+    .line 83
     iget v0, p5, Landroid/graphics/Point;->x:I
 
     iput v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgX:I
 
-    .line 88
+    .line 84
     iget v0, p5, Landroid/graphics/Point;->y:I
 
     iput v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgY:I
 
-    .line 90
+    .line 86
     iget v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgX:I
 
     iget v3, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcX:I
@@ -249,7 +233,7 @@
     :goto_0
     iput-boolean v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mShouldRemoveX:Z
 
-    .line 91
+    .line 87
     iget v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgY:I
 
     iget v3, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcY:I
@@ -259,24 +243,24 @@
     :goto_1
     iput-boolean v1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mShouldRemoveY:Z
 
-    .line 94
+    .line 90
     iput v4, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mDestHotseatSize:I
 
     iput v4, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcHotseatSize:I
 
-    .line 95
+    .line 91
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 90
+    .line 86
     goto :goto_0
 
     :cond_1
     move v1, v2
 
-    .line 91
+    .line 87
     goto :goto_1
 .end method
 
@@ -284,7 +268,7 @@
     .locals 4
 
     .prologue
-    .line 119
+    .line 115
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mUpdateOperations:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -293,7 +277,7 @@
 
     if-nez v0, :cond_0
 
-    .line 120
+    .line 116
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -306,7 +290,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
 
-    .line 123
+    .line 119
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
@@ -316,7 +300,7 @@
 
     if-nez v0, :cond_1
 
-    .line 125
+    .line 121
     const-string/jumbo v0, "GridSizeMigrationTask"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -347,7 +331,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
+    .line 123
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -356,23 +340,23 @@
 
     sget-object v1, Lcom/android/launcher3/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 129
+    .line 125
     const-string/jumbo v2, "_id"
 
     iget-object v3, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
-    .line 128
+    .line 124
     invoke-static {v2, v3}, Lcom/android/launcher3/Utilities;->createDbSelectionQuery(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 129
+    .line 125
     const/4 v3, 0x0
 
-    .line 127
+    .line 123
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 132
+    .line 128
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mUpdateOperations:Ljava/util/ArrayList;
 
@@ -403,7 +387,7 @@
     .locals 3
 
     .prologue
-    .line 868
+    .line 866
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
@@ -412,7 +396,7 @@
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 869
+    .line 867
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -430,7 +414,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 870
+    .line 868
     invoke-virtual {v0}, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->copy()Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
     move-result-object v0
@@ -439,7 +423,7 @@
 
     goto :goto_0
 
-    .line 872
+    .line 870
     :cond_0
     return-object v1
 .end method
@@ -452,7 +436,7 @@
 
     const/4 v1, 0x0
 
-    .line 775
+    .line 773
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -465,7 +449,7 @@
 
     aput-object v2, v0, v3
 
-    .line 776
+    .line 774
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -484,14 +468,14 @@
 
     move-result-object v2
 
-    .line 774
+    .line 772
     invoke-virtual {p0, v0, v2}, Lcom/android/launcher3/model/GridSizeMigrationTask;->queryWorkspace([Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v2
 
     move v0, v1
 
-    .line 779
+    .line 777
     :goto_0
     invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -499,7 +483,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 781
+    .line 779
     const/4 v3, 0x1
 
     :try_start_0
@@ -511,16 +495,16 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 782
+    .line 780
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 783
+    .line 781
     :catch_0
     move-exception v3
 
-    .line 784
+    .line 782
     iget-object v3, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
     invoke-interface {v2, v1}, Landroid/database/Cursor;->getLong(I)J
@@ -535,11 +519,11 @@
 
     goto :goto_0
 
-    .line 787
+    .line 785
     :cond_0
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 788
+    .line 786
     return v0
 .end method
 
@@ -547,7 +531,7 @@
     .locals 5
 
     .prologue
-    .line 881
+    .line 879
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     const-string/jumbo v1, "%d,%d"
@@ -583,20 +567,20 @@
     .locals 3
 
     .prologue
-    .line 965
+    .line 963
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 966
+    .line 964
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 967
+    .line 965
     const/16 v2, 0x2000
 
-    .line 966
+    .line 964
     invoke-virtual {v0, v2}, Landroid/content/pm/PackageManager;->getInstalledPackages(I)Ljava/util/List;
 
     move-result-object v0
@@ -618,14 +602,14 @@
 
     check-cast v0, Landroid/content/pm/PackageInfo;
 
-    .line 968
+    .line 966
     iget-object v0, v0, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 970
+    .line 968
     :cond_0
     invoke-static {p0}, Lcom/android/launcher3/compat/PackageInstallerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/PackageInstallerCompat;
 
@@ -641,7 +625,7 @@
 
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
-    .line 972
+    .line 970
     return-object v1
 .end method
 
@@ -653,7 +637,7 @@
 
     const/4 v5, 0x0
 
-    .line 610
+    .line 606
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -662,83 +646,83 @@
 
     sget-object v1, Lcom/android/launcher3/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 611
+    .line 607
     const/4 v2, 0x4
 
     new-array v2, v2, [Ljava/lang/String;
 
-    .line 612
+    .line 608
     const-string/jumbo v3, "_id"
 
     aput-object v3, v2, v5
 
-    .line 613
+    .line 609
     const-string/jumbo v3, "itemType"
 
     const/4 v5, 0x1
 
     aput-object v3, v2, v5
 
-    .line 614
+    .line 610
     const-string/jumbo v3, "intent"
 
     const/4 v5, 0x2
 
     aput-object v3, v2, v5
 
-    .line 615
+    .line 611
     const-string/jumbo v3, "screen"
 
     const/4 v5, 0x3
 
     aput-object v3, v2, v5
 
-    .line 616
+    .line 612
     const-string/jumbo v3, "container = -101"
 
     move-object v5, v4
 
     move-object v6, v4
 
-    .line 610
+    .line 606
     invoke-virtual/range {v0 .. v6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;
 
     move-result-object v1
 
-    .line 618
+    .line 614
     const-string/jumbo v0, "_id"
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 619
+    .line 615
     const-string/jumbo v0, "itemType"
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 620
+    .line 616
     const-string/jumbo v0, "intent"
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v4
 
-    .line 621
+    .line 617
     const-string/jumbo v0, "screen"
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v5
 
-    .line 623
+    .line 619
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 624
+    .line 620
     :goto_0
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -746,33 +730,33 @@
 
     if-eqz v0, :cond_3
 
-    .line 625
+    .line 621
     new-instance v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
     invoke-direct {v7}, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;-><init>()V
 
-    .line 626
+    .line 622
     invoke-interface {v1, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v8
 
     iput-wide v8, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
 
-    .line 627
+    .line 623
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
     iput v0, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->itemType:I
 
-    .line 628
+    .line 624
     invoke-interface {v1, v5}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v8
 
     iput-wide v8, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
-    .line 630
+    .line 626
     iget-wide v8, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
     iget v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcHotseatSize:I
@@ -783,7 +767,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 631
+    .line 627
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
     iget-wide v8, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -796,14 +780,14 @@
 
     goto :goto_0
 
-    .line 637
+    .line 633
     :cond_0
     :try_start_0
     iget v0, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->itemType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 655
+    .line 651
     :pswitch_0
     new-instance v0, Ljava/lang/Exception;
 
@@ -815,11 +799,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 657
+    .line 653
     :catch_0
     move-exception v0
 
-    .line 659
+    .line 655
     const-string/jumbo v8, "GridSizeMigrationTask"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -844,7 +828,7 @@
 
     invoke-static {v8, v9, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 661
+    .line 657
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
     iget-wide v8, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -857,7 +841,7 @@
 
     goto :goto_0
 
-    .line 641
+    .line 637
     :pswitch_1
     :try_start_1
     invoke-interface {v1, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -866,33 +850,33 @@
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->verifyIntent(Ljava/lang/String;)V
 
-    .line 642
+    .line 638
     iget v0, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->itemType:I
 
     if-nez v0, :cond_1
 
-    .line 643
+    .line 639
     const v0, 0x3f4ccccd    # 0.8f
 
-    .line 642
+    .line 638
     :goto_1
     iput v0, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->weight:F
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 664
+    .line 660
     :goto_2
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 643
+    .line 639
     :cond_1
     const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_1
 
-    .line 647
+    .line 643
     :pswitch_2
     :try_start_2
     iget-wide v8, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -901,10 +885,10 @@
 
     move-result v0
 
-    .line 648
+    .line 644
     if-nez v0, :cond_2
 
-    .line 649
+    .line 645
     new-instance v0, Ljava/lang/Exception;
 
     const-string/jumbo v8, "Folder is empty"
@@ -913,7 +897,7 @@
 
     throw v0
 
-    .line 651
+    .line 647
     :cond_2
     int-to-float v0, v0
 
@@ -927,14 +911,14 @@
 
     goto :goto_2
 
-    .line 666
+    .line 662
     :cond_3
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 667
+    .line 663
     return-object v6
 
-    .line 637
+    .line 633
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -951,7 +935,7 @@
     .locals 3
 
     .prologue
-    .line 886
+    .line 884
     invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -960,29 +944,29 @@
 
     move-result-object v0
 
-    .line 887
+    .line 885
     const-string/jumbo v1, "migration_src_workspace_size"
 
     invoke-static {p1, p2}, Lcom/android/launcher3/model/GridSizeMigrationTask;->getPointString(II)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 886
+    .line 884
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 888
+    .line 886
     const-string/jumbo v1, "migration_src_hotseat_count"
 
-    .line 886
+    .line 884
     invoke-interface {v0, v1, p3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 890
+    .line 888
     return-void
 .end method
 
@@ -994,17 +978,17 @@
 
     const/4 v6, 0x1
 
-    .line 897
+    .line 895
     invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v8
 
-    .line 898
+    .line 896
     invoke-static {p0}, Lcom/android/launcher3/LauncherAppState;->getIDP(Landroid/content/Context;)Lcom/android/launcher3/InvariantDeviceProfile;
 
     move-result-object v9
 
-    .line 900
+    .line 898
     iget v0, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
     iget v1, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numRows:I
@@ -1013,7 +997,7 @@
 
     move-result-object v10
 
-    .line 902
+    .line 900
     const-string/jumbo v0, "migration_src_workspace_size"
 
     const-string/jumbo v1, ""
@@ -1028,7 +1012,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 903
+    .line 901
     iget v0, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
     const-string/jumbo v1, "migration_src_hotseat_count"
@@ -1041,22 +1025,22 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 905
+    .line 903
     return v6
 
-    .line 908
+    .line 906
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v12
 
-    .line 912
+    .line 910
     :try_start_0
     invoke-static {p0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->getValidPackages(Landroid/content/Context;)Ljava/util/HashSet;
 
     move-result-object v3
 
-    .line 914
+    .line 912
     const-string/jumbo v0, "migration_src_hotseat_count"
 
     iget v1, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
@@ -1065,31 +1049,31 @@
 
     move-result v4
 
-    .line 915
+    .line 913
     iget v0, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
     if-eq v4, v0, :cond_3
 
-    .line 918
+    .line 916
     new-instance v0, Lcom/android/launcher3/model/GridSizeMigrationTask;
 
     invoke-static {p0}, Lcom/android/launcher3/LauncherAppState;->getIDP(Landroid/content/Context;)Lcom/android/launcher3/InvariantDeviceProfile;
 
     move-result-object v2
 
-    .line 919
+    .line 917
     iget v5, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
     move-object v1, p0
 
-    .line 918
+    .line 916
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/model/GridSizeMigrationTask;-><init>(Landroid/content/Context;Lcom/android/launcher3/InvariantDeviceProfile;Ljava/util/HashSet;II)V
 
     invoke-virtual {v0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->migrateHotseat()Z
 
     move-result v0
 
-    .line 923
+    .line 921
     :goto_0
     new-instance v1, Landroid/graphics/Point;
 
@@ -1099,10 +1083,10 @@
 
     invoke-direct {v1, v2, v4}, Landroid/graphics/Point;-><init>(II)V
 
-    .line 925
+    .line 923
     const-string/jumbo v2, "migration_src_workspace_size"
 
-    .line 924
+    .line 922
     invoke-interface {v8, v2, v10}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -1111,7 +1095,7 @@
 
     move-result-object v2
 
-    .line 927
+    .line 925
     new-instance v4, Lcom/android/launcher3/model/GridSizeMigrationTask$MultiStepMigrationTask;
 
     invoke-direct {v4, v3, p0}, Lcom/android/launcher3/model/GridSizeMigrationTask$MultiStepMigrationTask;-><init>(Ljava/util/HashSet;Landroid/content/Context;)V
@@ -1124,16 +1108,16 @@
 
     move v0, v6
 
-    .line 931
+    .line 929
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 933
+    .line 931
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 934
+    .line 932
     sget-object v1, Lcom/android/launcher3/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
 
     const/4 v2, 0x0
@@ -1144,23 +1128,23 @@
 
     const/4 v5, 0x0
 
-    .line 933
+    .line 931
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 935
+    .line 933
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v1
 
-    .line 936
+    .line 934
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 937
+    .line 935
     if-nez v1, :cond_2
 
-    .line 938
+    .line 936
     new-instance v0, Ljava/lang/Exception;
 
     const-string/jumbo v1, "Removed every thing during grid resize"
@@ -1172,11 +1156,11 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 943
+    .line 941
     :catch_0
     move-exception v0
 
-    .line 944
+    .line 942
     :try_start_1
     const-string/jumbo v1, "GridSizeMigrationTask"
 
@@ -1186,7 +1170,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 948
+    .line 946
     const-string/jumbo v0, "GridSizeMigrationTask"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1199,14 +1183,14 @@
 
     move-result-object v1
 
-    .line 949
+    .line 947
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     sub-long/2addr v2, v12
 
-    .line 948
+    .line 946
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -1217,35 +1201,35 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 952
+    .line 950
     invoke-interface {v8}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 953
+    .line 951
     const-string/jumbo v1, "migration_src_workspace_size"
 
-    .line 952
+    .line 950
     invoke-interface {v0, v1, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 954
+    .line 952
     const-string/jumbo v1, "migration_src_hotseat_count"
 
     iget v2, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
-    .line 952
+    .line 950
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 946
+    .line 944
     return v7
 
-    .line 948
+    .line 946
     :cond_2
     const-string/jumbo v0, "GridSizeMigrationTask"
 
@@ -1259,14 +1243,14 @@
 
     move-result-object v1
 
-    .line 949
+    .line 947
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     sub-long/2addr v2, v12
 
-    .line 948
+    .line 946
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -1277,39 +1261,39 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 952
+    .line 950
     invoke-interface {v8}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 953
+    .line 951
     const-string/jumbo v1, "migration_src_workspace_size"
 
-    .line 952
+    .line 950
     invoke-interface {v0, v1, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 954
+    .line 952
     const-string/jumbo v1, "migration_src_hotseat_count"
 
     iget v2, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
-    .line 952
+    .line 950
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 942
+    .line 940
     return v6
 
-    .line 947
+    .line 945
     :catchall_0
     move-exception v0
 
-    .line 948
+    .line 946
     const-string/jumbo v1, "GridSizeMigrationTask"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1322,14 +1306,14 @@
 
     move-result-object v2
 
-    .line 949
+    .line 947
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
     sub-long/2addr v4, v12
 
-    .line 948
+    .line 946
     invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1340,32 +1324,32 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 952
+    .line 950
     invoke-interface {v8}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 953
+    .line 951
     const-string/jumbo v2, "migration_src_workspace_size"
 
-    .line 952
+    .line 950
     invoke-interface {v1, v2, v10}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
-    .line 954
+    .line 952
     const-string/jumbo v2, "migration_src_hotseat_count"
 
     iget v3, v9, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
-    .line 952
+    .line 950
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 947
+    .line 945
     throw v0
 
     :cond_3
@@ -1378,14 +1362,14 @@
     .locals 4
 
     .prologue
-    .line 876
+    .line 874
     const-string/jumbo v0, ","
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 877
+    .line 875
     new-instance v1, Landroid/graphics/Point;
 
     const/4 v2, 0x0
@@ -1415,10 +1399,10 @@
     .prologue
     const v4, 0x7fffffff
 
-    .line 980
+    .line 978
     new-instance v0, Lcom/android/launcher3/model/GridSizeMigrationTask;
 
-    .line 981
+    .line 979
     invoke-static {p0}, Lcom/android/launcher3/LauncherAppState;->getIDP(Landroid/content/Context;)Lcom/android/launcher3/InvariantDeviceProfile;
 
     move-result-object v2
@@ -1431,23 +1415,23 @@
 
     move v5, v4
 
-    .line 980
+    .line 978
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/model/GridSizeMigrationTask;-><init>(Landroid/content/Context;Lcom/android/launcher3/InvariantDeviceProfile;Ljava/util/HashSet;II)V
 
-    .line 985
+    .line 983
     invoke-direct {v0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->loadHotseatEntries()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 987
+    .line 985
     invoke-direct {v0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->applyOperations()Z
 
-    .line 988
+    .line 986
     new-instance v2, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v2}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
-    .line 989
+    .line 987
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1465,14 +1449,14 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 990
+    .line 988
     iget-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
     invoke-virtual {v2, v4, v5, v0}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
     goto :goto_0
 
-    .line 992
+    .line 990
     :cond_0
     return-object v2
 .end method
@@ -1487,7 +1471,7 @@
 
     const/4 v1, 0x0
 
-    .line 378
+    .line 374
     new-instance v0, Lcom/android/launcher3/util/GridOccupancy;
 
     iget v2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgX:I
@@ -1496,7 +1480,7 @@
 
     invoke-direct {v0, v2, v3}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
 
-    .line 379
+    .line 375
     iget v3, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgX:I
 
     move v2, v1
@@ -1505,29 +1489,29 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
 
-    .line 381
+    .line 377
     iget-boolean v2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mShouldRemoveX:Z
 
     if-eqz v2, :cond_3
 
-    .line 382
+    .line 378
     :goto_0
     iget-boolean v2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mShouldRemoveY:Z
 
     if-eqz v2, :cond_4
 
-    .line 384
+    .line 380
     :goto_1
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 385
+    .line 381
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 387
+    .line 383
     invoke-interface {p4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -1546,7 +1530,7 @@
 
     check-cast v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 388
+    .line 384
     iget v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
     if-gt v7, p1, :cond_5
@@ -1559,11 +1543,11 @@
 
     if-le v7, p1, :cond_5
 
-    .line 390
+    .line 386
     :cond_1
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 391
+    .line 387
     iget v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
     if-lt v7, p1, :cond_2
@@ -1574,7 +1558,7 @@
 
     iput v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
-    .line 392
+    .line 388
     :cond_2
     iget v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
@@ -1591,16 +1575,16 @@
     :cond_3
     move p1, v6
 
-    .line 381
+    .line 377
     goto :goto_0
 
     :cond_4
     move p2, v6
 
-    .line 382
+    .line 378
     goto :goto_1
 
-    .line 389
+    .line 385
     :cond_5
     iget v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
@@ -1614,7 +1598,7 @@
 
     if-gt v7, p2, :cond_1
 
-    .line 394
+    .line 390
     :cond_6
     iget v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
@@ -1626,7 +1610,7 @@
 
     iput v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
-    .line 395
+    .line 391
     :cond_7
     iget v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
@@ -1638,40 +1622,40 @@
 
     iput v7, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
-    .line 396
+    .line 392
     :cond_8
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 397
+    .line 393
     invoke-virtual {v0, v2, v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/ItemInfo;Z)V
 
     goto :goto_2
 
-    .line 402
+    .line 398
     :cond_9
     new-instance v2, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;
 
     invoke-direct {v2, p0, v0, v4, p3}, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;-><init>(Lcom/android/launcher3/model/GridSizeMigrationTask;Lcom/android/launcher3/util/GridOccupancy;Ljava/util/ArrayList;I)V
 
-    .line 403
+    .line 399
     invoke-virtual {v2}, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->find()V
 
-    .line 404
+    .line 400
     iget-object v0, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->finalPlacedItems:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 405
+    .line 401
     iget v0, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->lowestWeightLoss:F
 
     aput v0, p5, v1
 
-    .line 406
+    .line 402
     iget v0, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->lowestMoveCost:F
 
     aput v0, p5, v5
 
-    .line 407
+    .line 403
     return-object v3
 .end method
 
@@ -1679,21 +1663,21 @@
     .locals 2
 
     .prologue
-    .line 800
+    .line 798
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Landroid/content/Intent;->parseUri(Ljava/lang/String;I)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 801
+    .line 799
     invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 802
+    .line 800
     invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -1704,12 +1688,12 @@
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->verifyPackage(Ljava/lang/String;)V
 
-    .line 807
+    .line 805
     :cond_0
     :goto_0
     return-void
 
-    .line 803
+    .line 801
     :cond_1
     invoke-virtual {v0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
 
@@ -1717,7 +1701,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 805
+    .line 803
     invoke-virtual {v0}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
 
     move-result-object v0
@@ -1731,7 +1715,7 @@
     .locals 2
 
     .prologue
-    .line 813
+    .line 811
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mValidPackages:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -1740,7 +1724,7 @@
 
     if-nez v0, :cond_0
 
-    .line 814
+    .line 812
     new-instance v0, Ljava/lang/Exception;
 
     const-string/jumbo v1, "Package not available"
@@ -1749,7 +1733,7 @@
 
     throw v0
 
-    .line 816
+    .line 814
     :cond_0
     return-void
 .end method
@@ -1760,75 +1744,75 @@
     .locals 23
 
     .prologue
-    .line 676
+    .line 672
     const/16 v4, 0x9
 
     new-array v4, v4, [Ljava/lang/String;
 
-    .line 677
+    .line 673
     const-string/jumbo v5, "_id"
 
     const/4 v6, 0x0
 
     aput-object v5, v4, v6
 
-    .line 678
+    .line 674
     const-string/jumbo v5, "itemType"
 
     const/4 v6, 0x1
 
     aput-object v5, v4, v6
 
-    .line 679
+    .line 675
     const-string/jumbo v5, "cellX"
 
     const/4 v6, 0x2
 
     aput-object v5, v4, v6
 
-    .line 680
+    .line 676
     const-string/jumbo v5, "cellY"
 
     const/4 v6, 0x3
 
     aput-object v5, v4, v6
 
-    .line 681
+    .line 677
     const-string/jumbo v5, "spanX"
 
     const/4 v6, 0x4
 
     aput-object v5, v4, v6
 
-    .line 682
+    .line 678
     const-string/jumbo v5, "spanY"
 
     const/4 v6, 0x5
 
     aput-object v5, v4, v6
 
-    .line 683
+    .line 679
     const-string/jumbo v5, "intent"
 
     const/4 v6, 0x6
 
     aput-object v5, v4, v6
 
-    .line 684
+    .line 680
     const-string/jumbo v5, "appWidgetProvider"
 
     const/4 v6, 0x7
 
     aput-object v5, v4, v6
 
-    .line 685
+    .line 681
     const-string/jumbo v5, "appWidgetId"
 
     const/16 v6, 0x8
 
     aput-object v5, v4, v6
 
-    .line 686
+    .line 682
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1849,95 +1833,95 @@
 
     move-result-object v5
 
-    .line 675
+    .line 671
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4, v5}, Lcom/android/launcher3/model/GridSizeMigrationTask;->queryWorkspace([Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object v6
 
-    .line 689
+    .line 685
     const-string/jumbo v4, "_id"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v7
 
-    .line 690
+    .line 686
     const-string/jumbo v4, "itemType"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v8
 
-    .line 691
+    .line 687
     const-string/jumbo v4, "cellX"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v9
 
-    .line 692
+    .line 688
     const-string/jumbo v4, "cellY"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v10
 
-    .line 693
+    .line 689
     const-string/jumbo v4, "spanX"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v11
 
-    .line 694
+    .line 690
     const-string/jumbo v4, "spanY"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v12
 
-    .line 695
+    .line 691
     const-string/jumbo v4, "intent"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v13
 
-    .line 696
+    .line 692
     const-string/jumbo v4, "appWidgetProvider"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v14
 
-    .line 697
+    .line 693
     const-string/jumbo v4, "appWidgetId"
 
     invoke-interface {v6, v4}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v15
 
-    .line 699
+    .line 695
     new-instance v16, Ljava/util/ArrayList;
 
     invoke-direct/range {v16 .. v16}, Ljava/util/ArrayList;-><init>()V
 
-    .line 700
+    .line 696
     :goto_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_8
+    if-eqz v4, :cond_7
 
-    .line 701
+    .line 697
     new-instance v17, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
     invoke-direct/range {v17 .. v17}, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;-><init>()V
 
-    .line 702
+    .line 698
     invoke-interface {v6, v7}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v4
@@ -1946,7 +1930,7 @@
 
     iput-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
 
-    .line 703
+    .line 699
     invoke-interface {v6, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
@@ -1955,7 +1939,7 @@
 
     iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->itemType:I
 
-    .line 704
+    .line 700
     invoke-interface {v6, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
@@ -1964,7 +1948,7 @@
 
     iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
-    .line 705
+    .line 701
     invoke-interface {v6, v10}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
@@ -1973,7 +1957,7 @@
 
     iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
-    .line 706
+    .line 702
     invoke-interface {v6, v11}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
@@ -1982,7 +1966,7 @@
 
     iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanX:I
 
-    .line 707
+    .line 703
     invoke-interface {v6, v12}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
@@ -1991,14 +1975,14 @@
 
     iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanY:I
 
-    .line 708
+    .line 704
     move-wide/from16 v0, p1
 
     move-object/from16 v2, v17
 
     iput-wide v0, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
-    .line 712
+    .line 708
     :try_start_0
     move-object/from16 v0, v17
 
@@ -2006,7 +1990,7 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 755
+    .line 753
     :pswitch_0
     new-instance v4, Ljava/lang/Exception;
 
@@ -2018,11 +2002,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 757
+    .line 755
     :catch_0
     move-exception v4
 
-    .line 759
+    .line 757
     const-string/jumbo v5, "GridSizeMigrationTask"
 
     new-instance v18, Ljava/lang/StringBuilder;
@@ -2057,7 +2041,7 @@
 
     invoke-static {v5, v0, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 761
+    .line 759
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
@@ -2076,7 +2060,7 @@
 
     goto/16 :goto_0
 
-    .line 716
+    .line 712
     :pswitch_1
     :try_start_1
     invoke-interface {v6, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -2087,17 +2071,17 @@
 
     invoke-direct {v0, v4}, Lcom/android/launcher3/model/GridSizeMigrationTask;->verifyIntent(Ljava/lang/String;)V
 
-    .line 717
+    .line 713
     move-object/from16 v0, v17
 
     iget v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->itemType:I
 
     if-nez v4, :cond_1
 
-    .line 718
+    .line 714
     const v4, 0x3f4ccccd    # 0.8f
 
-    .line 717
+    .line 713
     :goto_1
     move-object/from16 v0, v17
 
@@ -2105,127 +2089,124 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 764
+    .line 762
     :cond_0
     :goto_2
     invoke-virtual/range {v16 .. v17}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
-    .line 718
+    .line 714
     :cond_1
     const/high16 v4, 0x3f800000    # 1.0f
 
     goto :goto_1
 
-    .line 722
+    .line 718
     :pswitch_2
     :try_start_2
     invoke-interface {v6, v14}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 723
+    .line 719
     invoke-static {v4}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
-    move-result-object v5
+    move-result-object v4
 
-    .line 724
-    invoke-virtual {v5}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    .line 720
+    invoke-virtual {v4}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v5}, Lcom/android/launcher3/model/GridSizeMigrationTask;->verifyPackage(Ljava/lang/String;)V
+    invoke-direct {v0, v4}, Lcom/android/launcher3/model/GridSizeMigrationTask;->verifyPackage(Ljava/lang/String;)V
 
-    .line 726
+    .line 722
     move-object/from16 v0, v17
 
-    iget v5, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanX:I
+    iget v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanX:I
+
+    int-to-float v4, v4
+
+    .line 721
+    const v5, 0x3f19999a    # 0.6f
+
+    mul-float/2addr v4, v5
+
+    .line 722
+    move-object/from16 v0, v17
+
+    iget v5, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanY:I
 
     int-to-float v5, v5
 
-    .line 725
-    const v18, 0x3f19999a    # 0.6f
+    .line 721
+    mul-float/2addr v4, v5
 
-    mul-float v5, v5, v18
+    const/high16 v5, 0x40000000    # 2.0f
 
-    .line 726
-    move-object/from16 v0, v17
+    invoke-static {v5, v4}, Ljava/lang/Math;->max(FF)F
 
-    iget v0, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanY:I
-
-    move/from16 v18, v0
-
-    move/from16 v0, v18
-
-    int-to-float v0, v0
-
-    move/from16 v18, v0
-
-    .line 725
-    mul-float v5, v5, v18
-
-    const/high16 v18, 0x40000000    # 2.0f
-
-    move/from16 v0, v18
-
-    invoke-static {v0, v5}, Ljava/lang/Math;->max(FF)F
-
-    move-result v5
+    move-result v4
 
     move-object/from16 v0, v17
 
-    iput v5, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->weight:F
+    iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->weight:F
 
-    .line 728
+    .line 724
     invoke-interface {v6, v15}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v5
+    move-result v4
 
-    .line 730
+    .line 726
+    move-object/from16 v0, p0
+
+    iget-object v5, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
+
+    .line 725
+    invoke-static {v5}, Lcom/android/launcher3/compat/AppWidgetManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/AppWidgetManagerCompat;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Lcom/android/launcher3/compat/AppWidgetManagerCompat;->getLauncherAppWidgetInfo(I)Lcom/android/launcher3/LauncherAppWidgetProviderInfo;
+
+    move-result-object v5
+
+    .line 727
+    const/4 v4, 0x0
+
+    .line 728
+    if-eqz v5, :cond_8
+
+    .line 729
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mIdp:Lcom/android/launcher3/InvariantDeviceProfile;
+
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
     move-object/from16 v18, v0
 
-    .line 729
-    invoke-static/range {v18 .. v18}, Lcom/android/launcher3/compat/AppWidgetManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/AppWidgetManagerCompat;
-
-    move-result-object v18
-
     move-object/from16 v0, v18
 
-    invoke-virtual {v0, v5}, Lcom/android/launcher3/compat/AppWidgetManagerCompat;->getLauncherAppWidgetInfo(I)Lcom/android/launcher3/LauncherAppWidgetProviderInfo;
-
-    move-result-object v5
-
-    .line 731
-    if-nez v5, :cond_3
-
-    .line 732
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mWidgetMinSize:Ljava/util/HashMap;
-
-    invoke-virtual {v5, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v4, v0}, Lcom/android/launcher3/LauncherAppWidgetProviderInfo;->getMinSpans(Lcom/android/launcher3/InvariantDeviceProfile;Landroid/content/Context;)Landroid/graphics/Point;
 
     move-result-object v4
 
-    check-cast v4, Landroid/graphics/Point;
-
     move-object v5, v4
 
-    .line 733
+    .line 731
     :goto_3
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_5
 
-    .line 734
+    .line 732
     iget v4, v5, Landroid/graphics/Point;->x:I
 
-    if-lez v4, :cond_4
+    if-lez v4, :cond_3
 
     iget v4, v5, Landroid/graphics/Point;->x:I
 
@@ -2234,10 +2215,10 @@
 
     iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->minSpanX:I
 
-    .line 735
+    .line 733
     iget v4, v5, Landroid/graphics/Point;->y:I
 
-    if-lez v4, :cond_5
+    if-lez v4, :cond_4
 
     iget v4, v5, Landroid/graphics/Point;->y:I
 
@@ -2246,7 +2227,7 @@
 
     iput v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->minSpanY:I
 
-    .line 741
+    .line 739
     :goto_6
     move-object/from16 v0, v17
 
@@ -2268,7 +2249,7 @@
 
     if-le v4, v5, :cond_0
 
-    .line 742
+    .line 740
     :cond_2
     new-instance v4, Ljava/lang/Exception;
 
@@ -2280,44 +2261,22 @@
 
     .line 732
     :cond_3
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mIdp:Lcom/android/launcher3/InvariantDeviceProfile;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    invoke-virtual {v5, v4, v0}, Lcom/android/launcher3/LauncherAppWidgetProviderInfo;->getMinSpans(Lcom/android/launcher3/InvariantDeviceProfile;Landroid/content/Context;)Landroid/graphics/Point;
-
-    move-result-object v4
-
-    move-object v5, v4
-
-    goto :goto_3
-
-    .line 734
-    :cond_4
     move-object/from16 v0, v17
 
     iget v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanX:I
 
     goto :goto_4
 
-    .line 735
-    :cond_5
+    .line 733
+    :cond_4
     move-object/from16 v0, v17
 
     iget v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanY:I
 
     goto :goto_5
 
-    .line 738
-    :cond_6
+    .line 736
+    :cond_5
     const/4 v4, 0x2
 
     move-object/from16 v0, v17
@@ -2332,7 +2291,7 @@
 
     goto :goto_6
 
-    .line 747
+    .line 745
     :pswitch_3
     move-object/from16 v0, v17
 
@@ -2344,10 +2303,10 @@
 
     move-result v4
 
-    .line 748
-    if-nez v4, :cond_7
+    .line 746
+    if-nez v4, :cond_6
 
-    .line 749
+    .line 747
     new-instance v4, Ljava/lang/Exception;
 
     const-string/jumbo v5, "Folder is empty"
@@ -2356,8 +2315,8 @@
 
     throw v4
 
-    .line 751
-    :cond_7
+    .line 749
+    :cond_6
     int-to-float v4, v4
 
     const/high16 v5, 0x3f000000    # 0.5f
@@ -2372,14 +2331,21 @@
 
     goto/16 :goto_2
 
-    .line 766
-    :cond_8
+    .line 764
+    :cond_7
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 767
+    .line 765
     return-object v16
 
-    .line 712
+    :cond_8
+    move-object v5, v4
+
+    goto :goto_3
+
+    .line 708
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -2398,15 +2364,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 144
+    .line 140
     invoke-direct {p0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->loadHotseatEntries()Ljava/util/ArrayList;
 
     move-result-object v3
 
-    .line 146
+    .line 142
     iget v4, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mDestHotseatSize:I
 
-    .line 148
+    .line 144
     :goto_0
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -2414,7 +2380,7 @@
 
     if-le v0, v4, :cond_1
 
-    .line 150
+    .line 146
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -2427,7 +2393,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 153
+    .line 149
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -2447,7 +2413,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 154
+    .line 150
     iget v6, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->weight:F
 
     iget v7, v1, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->weight:F
@@ -2461,7 +2427,7 @@
 
     goto :goto_1
 
-    .line 159
+    .line 155
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
@@ -2473,12 +2439,12 @@
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 160
+    .line 156
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 165
+    .line 161
     :cond_1
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -2499,7 +2465,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 166
+    .line 162
     iget-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
     int-to-long v6, v1
@@ -2508,21 +2474,21 @@
 
     if-eqz v4, :cond_2
 
-    .line 167
+    .line 163
     int-to-long v4, v1
 
     iput-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
-    .line 171
+    .line 167
     iput v1, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
-    .line 172
+    .line 168
     iput v2, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
-    .line 174
+    .line 170
     invoke-virtual {p0, v0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->update(Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;)V
 
-    .line 177
+    .line 173
     :cond_2
     add-int/lit8 v0, v1, 0x1
 
@@ -2530,7 +2496,7 @@
 
     goto :goto_3
 
-    .line 183
+    .line 179
     :cond_3
     invoke-direct {p0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->applyOperations()Z
 
@@ -2548,43 +2514,43 @@
     .locals 17
 
     .prologue
-    .line 264
+    .line 260
     const-wide/16 v2, 0x0
 
     cmp-long v2, p1, v2
 
     if-nez v2, :cond_1
 
-    .line 265
+    .line 261
     const/4 v5, 0x1
 
-    .line 267
+    .line 263
     :goto_0
     invoke-virtual/range {p0 .. p2}, Lcom/android/launcher3/model/GridSizeMigrationTask;->loadWorkspaceEntries(J)Ljava/util/ArrayList;
 
     move-result-object v14
 
-    .line 269
+    .line 265
     const v9, 0x7fffffff
 
-    .line 270
+    .line 266
     const v8, 0x7fffffff
 
-    .line 277
+    .line 273
     const v6, 0x7f7fffff    # Float.MAX_VALUE
 
-    .line 278
+    .line 274
     const v4, 0x7f7fffff    # Float.MAX_VALUE
 
-    .line 279
+    .line 275
     const/4 v2, 0x2
 
     new-array v7, v2, [F
 
-    .line 280
+    .line 276
     const/4 v2, 0x0
 
-    .line 283
+    .line 279
     const/4 v3, 0x0
 
     :goto_1
@@ -2594,7 +2560,7 @@
 
     if-ge v3, v10, :cond_f
 
-    .line 286
+    .line 282
     move-object/from16 v0, p0
 
     iget v10, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mSrcY:I
@@ -2618,7 +2584,7 @@
     :goto_2
     if-lt v4, v5, :cond_e
 
-    .line 289
+    .line 285
     invoke-static {v14}, Lcom/android/launcher3/model/GridSizeMigrationTask;->deepCopy(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
     move-result-object v6
@@ -2629,7 +2595,7 @@
 
     move-result-object v11
 
-    .line 291
+    .line 287
     const/4 v2, 0x0
 
     aget v2, v7, v2
@@ -2654,18 +2620,18 @@
 
     if-gez v2, :cond_2
 
-    .line 292
+    .line 288
     :cond_0
     const/4 v2, 0x0
 
     aget v12, v7, v2
 
-    .line 293
+    .line 289
     const/4 v2, 0x1
 
     aget v10, v7, v2
 
-    .line 294
+    .line 290
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mShouldRemoveX:Z
@@ -2674,7 +2640,7 @@
 
     move v2, v3
 
-    .line 295
+    .line 291
     :goto_3
     move-object/from16 v0, p0
 
@@ -2695,7 +2661,7 @@
 
     move-object v2, v11
 
-    .line 300
+    .line 296
     :goto_5
     move-object/from16 v0, p0
 
@@ -2711,7 +2677,7 @@
 
     move v9, v10
 
-    .line 305
+    .line 301
     :goto_6
     move-object/from16 v0, p0
 
@@ -2721,7 +2687,7 @@
 
     move-object v4, v2
 
-    .line 311
+    .line 307
     :goto_7
     const-string/jumbo v2, "GridSizeMigrationTask"
 
@@ -2731,7 +2697,7 @@
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    .line 312
+    .line 308
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -2756,19 +2722,19 @@
 
     aput-object v8, v7, v9
 
-    .line 311
+    .line 307
     invoke-static {v3, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 315
+    .line 311
     new-instance v7, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v7}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
-    .line 316
+    .line 312
     invoke-static {v14}, Lcom/android/launcher3/model/GridSizeMigrationTask;->deepCopy(Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
     move-result-object v2
@@ -2790,14 +2756,14 @@
 
     check-cast v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 317
+    .line 313
     iget-wide v8, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
 
     invoke-virtual {v7, v8, v9, v2}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
     goto :goto_8
 
-    .line 265
+    .line 261
     :cond_1
     const/4 v5, 0x0
 
@@ -2812,22 +2778,22 @@
 
     move v8, v13
 
-    .line 291
+    .line 287
     goto :goto_5
 
     :cond_3
     move v2, v8
 
-    .line 294
+    .line 290
     goto :goto_3
 
     :cond_4
     move v6, v9
 
-    .line 295
+    .line 291
     goto :goto_4
 
-    .line 286
+    .line 282
     :cond_5
     add-int/lit8 v4, v4, -0x1
 
@@ -2841,13 +2807,13 @@
 
     goto/16 :goto_2
 
-    .line 283
+    .line 279
     :cond_6
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_1
 
-    .line 320
+    .line 316
     :cond_7
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -2867,7 +2833,7 @@
 
     check-cast v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 321
+    .line 317
     iget-wide v10, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
 
     invoke-virtual {v7, v10, v11}, Lcom/android/launcher3/util/LongArrayMap;->get(J)Ljava/lang/Object;
@@ -2876,26 +2842,26 @@
 
     check-cast v3, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 322
+    .line 318
     iget-wide v10, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
 
     invoke-virtual {v7, v10, v11}, Lcom/android/launcher3/util/LongArrayMap;->remove(J)V
 
-    .line 325
+    .line 321
     invoke-virtual {v2, v3}, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->columnsSame(Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;)Z
 
     move-result v3
 
     if-nez v3, :cond_8
 
-    .line 326
+    .line 322
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/GridSizeMigrationTask;->update(Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;)V
 
     goto :goto_9
 
-    .line 331
+    .line 327
     :cond_9
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -2914,7 +2880,7 @@
 
     check-cast v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 332
+    .line 328
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
@@ -2923,7 +2889,7 @@
 
     goto :goto_a
 
-    .line 335
+    .line 331
     :cond_a
     move-object/from16 v0, p0
 
@@ -2941,7 +2907,7 @@
 
     if-nez v2, :cond_d
 
-    .line 337
+    .line 333
     new-instance v6, Lcom/android/launcher3/util/GridOccupancy;
 
     move-object/from16 v0, p0
@@ -2954,7 +2920,7 @@
 
     invoke-direct {v6, v2, v3}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
 
-    .line 338
+    .line 334
     move-object/from16 v0, p0
 
     iget v9, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgX:I
@@ -2969,7 +2935,7 @@
 
     invoke-virtual/range {v6 .. v11}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
 
-    .line 339
+    .line 335
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -2987,18 +2953,18 @@
 
     check-cast v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 340
+    .line 336
     const/4 v4, 0x1
 
     invoke-virtual {v6, v2, v4}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/ItemInfo;Z)V
 
     goto :goto_b
 
-    .line 343
+    .line 339
     :cond_b
     new-instance v7, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;
 
-    .line 344
+    .line 340
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
@@ -3015,13 +2981,13 @@
 
     move v11, v5
 
-    .line 343
+    .line 339
     invoke-direct/range {v7 .. v12}, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;-><init>(Lcom/android/launcher3/model/GridSizeMigrationTask;Lcom/android/launcher3/util/GridOccupancy;Ljava/util/ArrayList;IZ)V
 
-    .line 345
+    .line 341
     invoke-virtual {v7}, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->find()V
 
-    .line 346
+    .line 342
     iget v2, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->lowestWeightLoss:F
 
     const/4 v3, 0x0
@@ -3030,7 +2996,7 @@
 
     if-nez v2, :cond_d
 
-    .line 349
+    .line 345
     iget-object v2, v7, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->finalPlacedItems:Ljava/util/ArrayList;
 
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -3050,19 +3016,19 @@
 
     check-cast v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 350
+    .line 346
     move-wide/from16 v0, p1
 
     iput-wide v0, v2, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
-    .line 351
+    .line 347
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/GridSizeMigrationTask;->update(Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;)V
 
     goto :goto_c
 
-    .line 354
+    .line 350
     :cond_c
     move-object/from16 v0, p0
 
@@ -3070,7 +3036,7 @@
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 357
+    .line 353
     :cond_d
     return-void
 
@@ -3101,21 +3067,21 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 190
+    .line 186
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/LauncherModel;->loadWorkspaceScreensDb(Landroid/content/Context;)Ljava/util/ArrayList;
 
     move-result-object v6
 
-    .line 191
+    .line 187
     invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 192
+    .line 188
     new-instance v0, Ljava/lang/Exception;
 
     const-string/jumbo v1, "Unable to get workspace screens"
@@ -3124,7 +3090,7 @@
 
     throw v0
 
-    .line 195
+    .line 191
     :cond_0
     invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -3147,7 +3113,7 @@
 
     move-result-wide v2
 
-    .line 197
+    .line 193
     const-string/jumbo v0, "GridSizeMigrationTask"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -3170,12 +3136,12 @@
 
     invoke-static {v0, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
+    .line 195
     invoke-virtual {p0, v2, v3}, Lcom/android/launcher3/model/GridSizeMigrationTask;->migrateScreen(J)V
 
     goto :goto_0
 
-    .line 202
+    .line 198
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
 
@@ -3185,12 +3151,12 @@
 
     if-nez v0, :cond_7
 
-    .line 203
+    .line 199
     new-instance v7, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v7}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
-    .line 204
+    .line 200
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -3210,14 +3176,14 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 205
+    .line 201
     iget-wide v2, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
 
     invoke-virtual {v7, v2, v3, v0}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
     goto :goto_1
 
-    .line 235
+    .line 231
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
 
@@ -3227,11 +3193,11 @@
 
     if-nez v0, :cond_6
 
-    .line 214
+    .line 210
     :cond_3
     new-instance v0, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;
 
-    .line 215
+    .line 211
     new-instance v2, Lcom/android/launcher3/util/GridOccupancy;
 
     iget v1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTrgX:I
@@ -3250,13 +3216,13 @@
 
     move-object v1, p0
 
-    .line 214
+    .line 210
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;-><init>(Lcom/android/launcher3/model/GridSizeMigrationTask;Lcom/android/launcher3/util/GridOccupancy;Ljava/util/ArrayList;IZ)V
 
-    .line 216
+    .line 212
     invoke-virtual {v0}, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->find()V
 
-    .line 217
+    .line 213
     iget-object v1, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->finalPlacedItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -3265,37 +3231,37 @@
 
     if-lez v1, :cond_5
 
-    .line 219
+    .line 215
     iget-object v1, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 220
+    .line 216
     const-string/jumbo v2, "generate_new_screen_id"
 
-    .line 218
+    .line 214
     invoke-static {v1, v2}, Lcom/android/launcher3/LauncherSettings$Settings;->call(Landroid/content/ContentResolver;Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 221
+    .line 217
     const-string/jumbo v2, "value"
 
-    .line 218
+    .line 214
     invoke-virtual {v1, v2}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
     move-result-wide v2
 
-    .line 223
+    .line 219
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
 
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 224
+    .line 220
     iget-object v0, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$OptimalPlacementSolution;->finalPlacedItems:Ljava/util/ArrayList;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -3315,7 +3281,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 225
+    .line 221
     iget-object v5, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mCarryOver:Ljava/util/ArrayList;
 
     iget-wide v8, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -3330,7 +3296,7 @@
 
     if-nez v5, :cond_4
 
-    .line 226
+    .line 222
     new-instance v0, Ljava/lang/Exception;
 
     const-string/jumbo v1, "Unable to find matching items"
@@ -3339,16 +3305,16 @@
 
     throw v0
 
-    .line 228
+    .line 224
     :cond_4
     iput-wide v2, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->screenId:J
 
-    .line 229
+    .line 225
     invoke-virtual {p0, v0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->update(Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;)V
 
     goto :goto_2
 
-    .line 232
+    .line 228
     :cond_5
     new-instance v0, Ljava/lang/Exception;
 
@@ -3358,11 +3324,11 @@
 
     throw v0
 
-    .line 238
+    .line 234
     :cond_6
     sget-object v1, Lcom/android/launcher3/LauncherSettings$WorkspaceScreens;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 239
+    .line 235
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mUpdateOperations:Ljava/util/ArrayList;
 
     invoke-static {v1}, Landroid/content/ContentProviderOperation;->newDelete(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
@@ -3375,21 +3341,21 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 240
+    .line 236
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    .line 241
+    .line 237
     :goto_3
     if-ge v4, v2, :cond_7
 
-    .line 242
+    .line 238
     new-instance v3, Landroid/content/ContentValues;
 
     invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
 
-    .line 243
+    .line 239
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -3400,7 +3366,7 @@
 
     move-result-wide v8
 
-    .line 244
+    .line 240
     const-string/jumbo v0, "_id"
 
     invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3409,7 +3375,7 @@
 
     invoke-virtual {v3, v0, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 245
+    .line 241
     const-string/jumbo v0, "screenRank"
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3418,7 +3384,7 @@
 
     invoke-virtual {v3, v0, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 246
+    .line 242
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mUpdateOperations:Ljava/util/ArrayList;
 
     invoke-static {v1}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
@@ -3435,12 +3401,12 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 241
+    .line 237
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    .line 249
+    .line 245
     :cond_7
     invoke-direct {p0}, Lcom/android/launcher3/model/GridSizeMigrationTask;->applyOperations()Z
 
@@ -3455,7 +3421,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 792
+    .line 790
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3483,35 +3449,35 @@
     .locals 4
 
     .prologue
-    .line 363
+    .line 359
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTempValues:Landroid/content/ContentValues;
 
     invoke-virtual {v0}, Landroid/content/ContentValues;->clear()V
 
-    .line 364
+    .line 360
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTempValues:Landroid/content/ContentValues;
 
     invoke-virtual {p1, v0}, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->addToContentValues(Landroid/content/ContentValues;)V
 
-    .line 365
+    .line 361
     iget-object v0, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mUpdateOperations:Ljava/util/ArrayList;
 
-    .line 366
+    .line 362
     iget-wide v2, p1, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
 
     invoke-static {v2, v3}, Lcom/android/launcher3/LauncherSettings$Favorites;->getContentUri(J)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 365
+    .line 361
     invoke-static {v1}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v1
 
-    .line 367
+    .line 363
     iget-object v2, p0, Lcom/android/launcher3/model/GridSizeMigrationTask;->mTempValues:Landroid/content/ContentValues;
 
-    .line 365
+    .line 361
     invoke-virtual {v1, v2}, Landroid/content/ContentProviderOperation$Builder;->withValues(Landroid/content/ContentValues;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v1
@@ -3522,6 +3488,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 368
+    .line 364
     return-void
 .end method

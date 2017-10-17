@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/model/PackageUpdatedTask$6;->this$0:Lcom/android/launcher3/model/PackageUpdatedTask;
 
-    .line 368
+    .line 364
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,9 +31,9 @@
     .locals 0
 
     .prologue
-    .line 371
+    .line 367
     invoke-interface {p1}, Lcom/android/launcher3/LauncherModel$Callbacks;->notifyWidgetProvidersChanged()V
 
-    .line 372
+    .line 368
     return-void
 .end method

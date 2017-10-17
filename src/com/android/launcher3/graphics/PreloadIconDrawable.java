@@ -90,7 +90,7 @@ public class PreloadIconDrawable extends FastBitmapDrawable
     
     private void setInternalProgress(final float mInternalStateProgress) {
         final boolean b = true;
-        final float n = 0.75f;
+        final float n = 0.6f;
         final float mIconScale = 1.0f;
         this.mInternalStateProgress = mInternalStateProgress;
         if (mInternalStateProgress <= 0.0f) {
@@ -118,7 +118,7 @@ public class PreloadIconDrawable extends FastBitmapDrawable
             }
             else {
                 this.mTrackAlpha = Math.round((mIconScale - n2) * 255.0f);
-                this.mIconScale = n2 * 0.25f + n;
+                this.mIconScale = n2 * 0.39999998f + n;
             }
         }
         this.invalidateSelf();
@@ -162,7 +162,7 @@ public class PreloadIconDrawable extends FastBitmapDrawable
         final int save = canvas.save(1);
         final Rect bounds = this.getBounds();
         canvas.scale(this.mIconScale, this.mIconScale, bounds.exactCenterX(), bounds.exactCenterY());
-        this.drawInternal(canvas);
+        super.draw(canvas);
         canvas.restoreToCount(save);
     }
     
@@ -180,13 +180,13 @@ public class PreloadIconDrawable extends FastBitmapDrawable
     
     protected void onBoundsChange(final Rect rect) {
         final float n = 100.0f;
-        final float n2 = 4.0f;
-        final float n3 = 3.5f;
+        final float n2 = 14.0f;
+        final float n3 = 4.0f;
         final float n4 = 7.0f;
         final float n5 = 2.0f;
         super.onBoundsChange(rect);
-        this.mTmpMatrix.setScale((rect.width() - n4 - n2) / n, (rect.height() - n4 - n2) / n);
-        this.mTmpMatrix.postTranslate(rect.left + n3 + n5, rect.top + n3 + n5);
+        this.mTmpMatrix.setScale((rect.width() - n2 - n3) / n, (rect.height() - n2 - n3) / n);
+        this.mTmpMatrix.postTranslate(rect.left + n4 + n5, rect.top + n4 + n5);
         this.mProgressPath.transform(this.mTmpMatrix, this.mScaledTrackPath);
         final float n6 = rect.width() / 100;
         this.mProgressPaint.setStrokeWidth(n4 * n6);

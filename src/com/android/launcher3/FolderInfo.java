@@ -22,12 +22,17 @@ public class FolderInfo extends ItemInfo
         this.user = Process.myUserHandle();
     }
     
-    public void add(final ShortcutInfo shortcutInfo, final boolean b) {
-        this.contents.add(shortcutInfo);
+    public void add(final ShortcutInfo shortcutInfo, final int n, final boolean b) {
+        final int boundToRange = Utilities.boundToRange(n, 0, this.contents.size());
+        this.contents.add(boundToRange, shortcutInfo);
         for (int i = 0; i < this.listeners.size(); ++i) {
-            ((FolderInfo$FolderListener)this.listeners.get(i)).onAdd(shortcutInfo);
+            ((FolderInfo$FolderListener)this.listeners.get(i)).onAdd(shortcutInfo, boundToRange);
         }
         this.itemsChanged(b);
+    }
+    
+    public void add(final ShortcutInfo shortcutInfo, final boolean b) {
+        this.add(shortcutInfo, this.contents.size(), b);
     }
     
     public void addListener(final FolderInfo$FolderListener folderInfo$FolderListener) {

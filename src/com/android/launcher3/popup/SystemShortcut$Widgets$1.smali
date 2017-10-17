@@ -39,6 +39,8 @@
     .locals 4
 
     .prologue
+    const/4 v3, 0x0
+
     .line 66
     iget-object v0, p0, Lcom/android/launcher3/popup/SystemShortcut$Widgets$1;->val$launcher:Lcom/android/launcher3/Launcher;
 
@@ -58,9 +60,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040034
-
-    const/4 v3, 0x0
+    const v2, 0x7f040036
 
     .line 68
     invoke-virtual {v0, v2, v1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
@@ -75,5 +75,18 @@
     invoke-virtual {v0, v1}, Lcom/android/launcher3/widget/WidgetsBottomSheet;->populateAndShow(Lcom/android/launcher3/ItemInfo;)V
 
     .line 71
+    iget-object v0, p0, Lcom/android/launcher3/popup/SystemShortcut$Widgets$1;->val$launcher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
+
+    move-result-object v0
+
+    .line 72
+    const/4 v1, 0x2
+
+    .line 71
+    invoke-virtual {v0, v3, v1, p1}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionOnControl(IILandroid/view/View;)V
+
+    .line 73
     return-void
 .end method

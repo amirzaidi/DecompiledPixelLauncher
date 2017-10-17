@@ -25,5 +25,6 @@ final class SystemShortcut$AppInfo$1 implements View$OnClickListener
     
     public void onClick(final View view) {
         InfoDropTarget.startDetailsActivityForInfo(this.val$itemInfo, this.val$launcher, null, this.val$launcher.getViewBounds(view), this.val$launcher.getActivityLaunchOptions(view));
+        this.val$launcher.getUserEventDispatcher().logActionOnControl(0, 7, view);
     }
 }

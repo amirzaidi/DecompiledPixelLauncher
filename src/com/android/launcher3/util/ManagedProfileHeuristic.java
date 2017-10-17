@@ -4,124 +4,92 @@
 
 package com.android.launcher3.util;
 
-import com.android.launcher3.ItemInfo;
-import com.android.launcher3.ShortcutInfo;
 import android.content.SharedPreferences$Editor;
+import java.util.HashSet;
+import android.os.Handler;
+import com.android.launcher3.LauncherModel;
+import android.content.pm.LauncherActivityInfo;
+import com.android.launcher3.InstallShortcutReceiver;
+import com.android.launcher3.SessionCommitReceiver;
+import com.android.launcher3.Utilities;
+import com.android.launcher3.model.BgDataModel;
 import java.util.List;
 import android.content.SharedPreferences;
 import java.util.Iterator;
-import com.android.launcher3.compat.UserManagerCompat;
-import android.os.Process;
-import java.util.HashSet;
-import com.android.launcher3.SessionCommitReceiver;
-import android.support.v4.os.a;
-import com.android.launcher3.LauncherAppState;
-import java.util.ArrayList;
 import android.os.UserHandle;
-import com.android.launcher3.LauncherModel;
-import com.android.launcher3.IconCache;
+import android.os.Process;
+import com.android.launcher3.compat.UserManagerCompat;
 import android.content.Context;
 
 public class ManagedProfileHeuristic
 {
-    private final boolean mAddIconsToHomescreen;
-    private final Context mContext;
-    private final IconCache mIconCache;
-    private final LauncherModel mModel;
-    private final UserHandle mUser;
-    
-    private ManagedProfileHeuristic(final Context mContext, final UserHandle mUser) {
-        this.mContext = mContext;
-        this.mUser = mUser;
-        this.mModel = LauncherAppState.getInstance(mContext).getModel();
-        this.mIconCache = LauncherAppState.getInstance(mContext).getIconCache();
-        this.mAddIconsToHomescreen = (!a.isAtLeastO() || SessionCommitReceiver.isEnabled(mContext));
-    }
-    
-    private static void addAllUserKeys(final long n, final HashSet set) {
-        set.add("installed_packages_for_user_" + n);
-        set.add("user_folder_" + n);
-    }
-    
-    public static ManagedProfileHeuristic get(final Context context, final UserHandle userHandle) {
-        if (!Process.myUserHandle().equals((Object)userHandle)) {
-            return new ManagedProfileHeuristic(context, userHandle);
-        }
-        return null;
-    }
-    
     public static void markExistingUsersForNoFolderCreation(final Context context) {
         final UserManagerCompat instance = UserManagerCompat.getInstance(context);
         final UserHandle myUserHandle = Process.myUserHandle();
         final Iterator iterator = instance.getUserProfiles().iterator();
-        SharedPreferences sharedPreferences = null;
+        SharedPreferences prefs = null;
         while (iterator.hasNext()) {
             final UserHandle userHandle = iterator.next();
-            SharedPreferences sharedPreferences2;
+            SharedPreferences sharedPreferences;
             if (myUserHandle.equals((Object)userHandle)) {
-                sharedPreferences2 = sharedPreferences;
+                sharedPreferences = prefs;
             }
             else {
-                if (sharedPreferences == null) {
-                    sharedPreferences = context.getSharedPreferences("com.android.launcher3.managedusers.prefs", 0);
+                if (prefs == null) {
+                    prefs = prefs(context);
                 }
                 final String string = "user_folder_" + instance.getSerialNumberForUser(userHandle);
-                if (!sharedPreferences.contains(string)) {
-                    sharedPreferences.edit().putLong(string, (long)(-1)).apply();
-                    sharedPreferences2 = sharedPreferences;
+                if (!prefs.contains(string)) {
+                    prefs.edit().putLong(string, (long)(-1)).apply();
+                    sharedPreferences = prefs;
                 }
                 else {
-                    sharedPreferences2 = sharedPreferences;
+                    sharedPreferences = prefs;
                 }
             }
-            sharedPreferences = sharedPreferences2;
+            prefs = sharedPreferences;
         }
+    }
+    
+    public static void onAllAppsLoaded(final Context context, final List list, final UserHandle userHandle) {
+        if (Process.myUserHandle().equals((Object)userHandle)) {
+            return;
+        }
+        final ManagedProfileHeuristic$UserFolderInfo managedProfileHeuristic$UserFolderInfo = new ManagedProfileHeuristic$UserFolderInfo(context, userHandle, null);
+        if (managedProfileHeuristic$UserFolderInfo.folderAlreadyCreated) {
+            return;
+        }
+        if (Utilities.isAtLeastO() && (SessionCommitReceiver.isEnabled(context) ^ true)) {
+            managedProfileHeuristic$UserFolderInfo.prefs.edit().putLong(managedProfileHeuristic$UserFolderInfo.folderIdKey, (long)(-1)).apply();
+            return;
+        }
+        InstallShortcutReceiver.enableInstallQueue(4);
+        for (final LauncherActivityInfo launcherActivityInfo : list) {
+            if (launcherActivityInfo.getFirstInstallTime() < managedProfileHeuristic$UserFolderInfo.addIconToFolderTime) {
+                InstallShortcutReceiver.queueActivityInfo(launcherActivityInfo, context);
+            }
+        }
+        new Handler(LauncherModel.getWorkerLooper()).post((Runnable)new ManagedProfileHeuristic$1(context));
+    }
+    
+    public static SharedPreferences prefs(final Context context) {
+        return context.getSharedPreferences("com.android.launcher3.managedusers.prefs", 0);
     }
     
     public static void processAllUsers(final List list, final Context context) {
         final UserManagerCompat instance = UserManagerCompat.getInstance(context);
-        final HashSet set = new HashSet();
+        final HashSet<String> set = new HashSet<String>();
         final Iterator<UserHandle> iterator = list.iterator();
         while (iterator.hasNext()) {
-            addAllUserKeys(instance.getSerialNumberForUser(iterator.next()), set);
+            set.add("user_folder_" + instance.getSerialNumberForUser(iterator.next()));
         }
-        final SharedPreferences sharedPreferences = context.getSharedPreferences("com.android.launcher3.managedusers.prefs", 0);
-        final SharedPreferences$Editor edit = sharedPreferences.edit();
-        for (final String s : sharedPreferences.getAll().keySet()) {
+        final SharedPreferences prefs = prefs(context);
+        final SharedPreferences$Editor edit = prefs.edit();
+        for (final String s : prefs.getAll().keySet()) {
             if (!set.contains(s)) {
                 edit.remove(s);
             }
         }
         edit.apply();
-    }
-    
-    private void saveWorkFolderShortcuts(final long n, int rank, final ArrayList list) {
-        for (final ShortcutInfo shortcutInfo : list) {
-            final int n2 = rank + 1;
-            shortcutInfo.rank = rank;
-            this.mModel.getWriter(false).addItemToDatabase(shortcutInfo, n, 0L, 0, 0);
-            rank = n2;
-        }
-    }
-    
-    public void processPackageAdd(final String[] array) {
-        Preconditions.assertWorkerThread();
-        final ManagedProfileHeuristic$ManagedProfilePackageHandler managedProfileHeuristic$ManagedProfilePackageHandler = new ManagedProfileHeuristic$ManagedProfilePackageHandler(this, null);
-        for (int i = 0; i < array.length; ++i) {
-            managedProfileHeuristic$ManagedProfilePackageHandler.onPackageAdded(array[i], this.mUser);
-        }
-    }
-    
-    public void processPackageRemoved(final String[] array) {
-        Preconditions.assertWorkerThread();
-        final ManagedProfileHeuristic$ManagedProfilePackageHandler managedProfileHeuristic$ManagedProfilePackageHandler = new ManagedProfileHeuristic$ManagedProfilePackageHandler(this, null);
-        for (int i = 0; i < array.length; ++i) {
-            managedProfileHeuristic$ManagedProfilePackageHandler.onPackageRemoved(array[i], this.mUser);
-        }
-    }
-    
-    public void processUserApps(final List list) {
-        Preconditions.assertWorkerThread();
-        new ManagedProfileHeuristic$ManagedProfilePackageHandler(this, null).processUserApps(list, this.mUser);
     }
 }

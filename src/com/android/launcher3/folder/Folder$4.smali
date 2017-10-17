@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$4;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    .line 231
+    .line 235
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 233
+    .line 237
     const/4 v0, 0x0
 
     return v0
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 237
+    .line 241
     const/4 v0, 0x0
 
     return v0
@@ -51,7 +51,7 @@
     .locals 0
 
     .prologue
-    .line 241
+    .line 245
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .locals 1
 
     .prologue
-    .line 244
+    .line 248
     const/4 v0, 0x0
 
     return v0

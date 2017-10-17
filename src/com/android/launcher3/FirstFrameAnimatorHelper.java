@@ -20,7 +20,7 @@ public class FirstFrameAnimatorHelper extends AnimatorListenerAdapter implements
     private boolean mHandlingOnAnimationUpdate;
     private long mStartFrame;
     private long mStartTime;
-    private View mTarget;
+    private final View mTarget;
     
     public FirstFrameAnimatorHelper(final ValueAnimator valueAnimator, final View mTarget) {
         this.mStartTime = -1;

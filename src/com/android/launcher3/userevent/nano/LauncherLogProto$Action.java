@@ -34,29 +34,29 @@ public final class LauncherLogProto$Action extends a
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
         if (this.type != 0) {
-            computeSerializedSize += b.RF(1, this.type);
+            computeSerializedSize += b.VA(1, this.type);
         }
         if (this.touch != 0) {
-            computeSerializedSize += b.RF(2, this.touch);
+            computeSerializedSize += b.VA(2, this.touch);
         }
         if (this.dir != 0) {
-            computeSerializedSize += b.RF(3, this.dir);
+            computeSerializedSize += b.VA(3, this.dir);
         }
         if (this.command != 0) {
-            computeSerializedSize += b.RF(4, this.command);
+            computeSerializedSize += b.VA(4, this.command);
         }
         if (this.isOutside) {
-            computeSerializedSize += b.RQ(5, this.isOutside);
+            computeSerializedSize += b.VL(5, this.isOutside);
         }
         return computeSerializedSize;
     }
     
     public LauncherLogProto$Action mergeFrom(final c c) {
         while (true) {
-            final int sx = c.Sx();
-            switch (sx) {
+            final int ws = c.Ws();
+            switch (ws) {
                 default: {
-                    if (!f.SW(c, sx)) {
+                    if (!f.WR(c, ws)) {
                         return this;
                     }
                     continue;
@@ -65,23 +65,23 @@ public final class LauncherLogProto$Action extends a
                     return this;
                 }
                 case 8: {
-                    final int sk = c.SK();
-                    switch (sk) {
+                    final int wf = c.WF();
+                    switch (wf) {
                         default: {
                             continue;
                         }
                         case 0:
                         case 1:
                         case 2: {
-                            this.type = sk;
+                            this.type = wf;
                             continue;
                         }
                     }
                     break;
                 }
                 case 16: {
-                    final int sk2 = c.SK();
-                    switch (sk2) {
+                    final int wf2 = c.WF();
+                    switch (wf2) {
                         default: {
                             continue;
                         }
@@ -91,15 +91,15 @@ public final class LauncherLogProto$Action extends a
                         case 3:
                         case 4:
                         case 5: {
-                            this.touch = sk2;
+                            this.touch = wf2;
                             continue;
                         }
                     }
                     break;
                 }
                 case 24: {
-                    final int sk3 = c.SK();
-                    switch (sk3) {
+                    final int wf3 = c.WF();
+                    switch (wf3) {
                         default: {
                             continue;
                         }
@@ -108,15 +108,15 @@ public final class LauncherLogProto$Action extends a
                         case 2:
                         case 3:
                         case 4: {
-                            this.dir = sk3;
+                            this.dir = wf3;
                             continue;
                         }
                     }
                     break;
                 }
                 case 32: {
-                    final int sk4 = c.SK();
-                    switch (sk4) {
+                    final int wf4 = c.WF();
+                    switch (wf4) {
                         default: {
                             continue;
                         }
@@ -125,14 +125,14 @@ public final class LauncherLogProto$Action extends a
                         case 2:
                         case 3:
                         case 4: {
-                            this.command = sk4;
+                            this.command = wf4;
                             continue;
                         }
                     }
                     break;
                 }
                 case 40: {
-                    this.isOutside = c.SD();
+                    this.isOutside = c.Wy();
                     continue;
                 }
             }
@@ -141,19 +141,19 @@ public final class LauncherLogProto$Action extends a
     
     public void writeTo(final b b) {
         if (this.type != 0) {
-            b.RA(1, this.type);
+            b.Vv(1, this.type);
         }
         if (this.touch != 0) {
-            b.RA(2, this.touch);
+            b.Vv(2, this.touch);
         }
         if (this.dir != 0) {
-            b.RA(3, this.dir);
+            b.Vv(3, this.dir);
         }
         if (this.command != 0) {
-            b.RA(4, this.command);
+            b.Vv(4, this.command);
         }
         if (this.isOutside) {
-            b.RL(5, this.isOutside);
+            b.VG(5, this.isOutside);
         }
         super.writeTo(b);
     }

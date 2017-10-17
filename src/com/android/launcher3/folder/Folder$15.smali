@@ -3,22 +3,26 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnKeyListener;
 
 
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/folder/Folder;
 
+.field final synthetic val$lastChild:Landroid/view/View;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/folder/Folder;)V
+.method constructor <init>(Lcom/android/launcher3/folder/Folder;Landroid/view/View;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$15;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    .line 1267
+    iput-object p2, p0, Lcom/android/launcher3/folder/Folder$15;->val$lastChild:Landroid/view/View;
+
+    .line 1318
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -27,26 +31,52 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
+    .locals 2
 
     .prologue
-    .line 1270
+    const/4 v1, 0x0
+
+    .line 1321
+    const/16 v0, 0x3d
+
+    if-ne p2, v0, :cond_0
+
+    .line 1322
+    const/4 v0, 0x1
+
+    invoke-virtual {p3, v0}, Landroid/view/KeyEvent;->hasModifiers(I)Z
+
+    move-result v0
+
+    .line 1323
+    :goto_0
+    if-eqz v0, :cond_1
+
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$15;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mLauncher:Lcom/android/launcher3/Launcher;
+    invoke-virtual {v0}, Lcom/android/launcher3/folder/Folder;->isFocused()Z
 
-    const/4 v1, 0x1
+    move-result v0
 
-    .line 1271
-    const/16 v2, 0x1f4
+    if-eqz v0, :cond_1
 
-    .line 1272
-    const/4 v3, 0x0
+    .line 1324
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$15;->val$lastChild:Landroid/view/View;
 
-    .line 1270
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->exitSpringLoadedDragModeDelayed(ZILjava/lang/Runnable;)V
+    invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 1273
-    return-void
+    move-result v0
+
+    return v0
+
+    :cond_0
+    move v0, v1
+
+    .line 1321
+    goto :goto_0
+
+    .line 1326
+    :cond_1
+    return v1
 .end method

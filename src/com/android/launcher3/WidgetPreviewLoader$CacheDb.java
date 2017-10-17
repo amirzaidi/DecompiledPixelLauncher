@@ -11,7 +11,7 @@ import com.android.launcher3.util.SQLiteCacheHelper;
 class WidgetPreviewLoader$CacheDb extends SQLiteCacheHelper
 {
     public WidgetPreviewLoader$CacheDb(final Context context) {
-        super(context, "widgetpreviews.db", 6, "shortcut_and_widget_previews");
+        super(context, "widgetpreviews.db", 9, "shortcut_and_widget_previews");
     }
     
     public void onCreateTable(final SQLiteDatabase sqLiteDatabase) {

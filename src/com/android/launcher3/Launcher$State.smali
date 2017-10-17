@@ -36,7 +36,7 @@
 
     const/4 v3, 0x0
 
-    .line 198
+    .line 204
     new-instance v0, Lcom/android/launcher3/Launcher$State;
 
     const-string/jumbo v1, "NONE"
@@ -77,7 +77,7 @@
 
     sput-object v0, Lcom/android/launcher3/Launcher$State;->APPS_SPRING_LOADED:Lcom/android/launcher3/Launcher$State;
 
-    .line 199
+    .line 205
     new-instance v0, Lcom/android/launcher3/Launcher$State;
 
     const-string/jumbo v1, "WIDGETS"
@@ -98,7 +98,7 @@
 
     sput-object v0, Lcom/android/launcher3/Launcher$State;->WIDGETS_SPRING_LOADED:Lcom/android/launcher3/Launcher$State;
 
-    .line 198
+    .line 204
     const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/android/launcher3/Launcher$State;
@@ -144,7 +144,7 @@
     .locals 0
 
     .prologue
-    .line 198
+    .line 204
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -154,7 +154,7 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 204
     const-class v0, Lcom/android/launcher3/Launcher$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -170,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 204
     sget-object v0, Lcom/android/launcher3/Launcher$State;->$VALUES:[Lcom/android/launcher3/Launcher$State;
 
     return-object v0

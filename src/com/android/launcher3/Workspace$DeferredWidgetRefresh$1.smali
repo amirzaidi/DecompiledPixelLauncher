@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$DeferredWidgetRefresh$1;->this$1:Lcom/android/launcher3/Workspace$DeferredWidgetRefresh;
 
-    .line 4216
+    .line 4113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -33,7 +33,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 4219
+    .line 4116
     instance-of v0, p2, Lcom/android/launcher3/PendingAppWidgetHostView;
 
     if-eqz v0, :cond_0
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4220
+    .line 4117
     iget-object v0, p0, Lcom/android/launcher3/Workspace$DeferredWidgetRefresh$1;->this$1:Lcom/android/launcher3/Workspace$DeferredWidgetRefresh;
 
     iget-object v0, v0, Lcom/android/launcher3/Workspace$DeferredWidgetRefresh;->this$0:Lcom/android/launcher3/Workspace;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, p2, p1, v1}, Lcom/android/launcher3/Launcher;->removeItem(Landroid/view/View;Lcom/android/launcher3/ItemInfo;Z)Z
 
-    .line 4221
+    .line 4118
     iget-object v0, p0, Lcom/android/launcher3/Workspace$DeferredWidgetRefresh$1;->this$1:Lcom/android/launcher3/Workspace$DeferredWidgetRefresh;
 
     iget-object v0, v0, Lcom/android/launcher3/Workspace$DeferredWidgetRefresh;->this$0:Lcom/android/launcher3/Workspace;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/Launcher;->bindAppWidget(Lcom/android/launcher3/LauncherAppWidgetInfo;)V
 
-    .line 4224
+    .line 4121
     :cond_0
     return v1
 .end method

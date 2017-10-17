@@ -30,10 +30,10 @@ class SettingsActivity$SystemDisplayRotationLockObserver extends ContentObserver
         final Preference mRotationPref = this.mRotationPref;
         int summary;
         if (enabled != 0) {
-            summary = 2131492947;
+            summary = 2131492949;
         }
         else {
-            summary = 2131492948;
+            summary = 2131492950;
         }
         mRotationPref.setSummary(summary);
     }

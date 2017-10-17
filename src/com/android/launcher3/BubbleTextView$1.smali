@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 106
+    .line 97
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     .line 1
@@ -21,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 109
+    .line 100
     invoke-static {p1}, Lcom/android/launcher3/BubbleTextView;->-get0(Lcom/android/launcher3/BubbleTextView;)F
 
     move-result v0
@@ -37,7 +37,7 @@
     .locals 1
 
     .prologue
-    .line 107
+    .line 98
     check-cast p1, Lcom/android/launcher3/BubbleTextView;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/BubbleTextView$1;->get(Lcom/android/launcher3/BubbleTextView;)Ljava/lang/Float;
@@ -51,17 +51,17 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 105
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/android/launcher3/BubbleTextView;->-set0(Lcom/android/launcher3/BubbleTextView;F)F
 
-    .line 115
+    .line 106
     invoke-virtual {p1}, Lcom/android/launcher3/BubbleTextView;->invalidate()V
 
-    .line 116
+    .line 107
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .locals 0
 
     .prologue
-    .line 112
+    .line 103
     check-cast p1, Lcom/android/launcher3/BubbleTextView;
 
     check-cast p2, Ljava/lang/Float;

@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$5;->this$0:Lcom/android/launcher3/Workspace;
 
-    .line 1619
+    .line 1564
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 3
 
     .prologue
-    .line 1622
+    .line 1567
     iget-object v0, p0, Lcom/android/launcher3/Workspace$5;->this$0:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->getContext()Landroid/content/Context;
@@ -44,7 +44,7 @@
 
     iget-object v0, v0, Lcom/android/launcher3/InvariantDeviceProfile;->defaultWallpaperSize:Landroid/graphics/Point;
 
-    .line 1623
+    .line 1568
     iget v1, v0, Landroid/graphics/Point;->x:I
 
     iget-object v2, p0, Lcom/android/launcher3/Workspace$5;->this$0:Lcom/android/launcher3/Workspace;
@@ -57,7 +57,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 1624
+    .line 1569
     iget v1, v0, Landroid/graphics/Point;->y:I
 
     iget-object v2, p0, Lcom/android/launcher3/Workspace$5;->this$0:Lcom/android/launcher3/Workspace;
@@ -70,7 +70,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 1625
+    .line 1570
     :cond_0
     iget-object v1, p0, Lcom/android/launcher3/Workspace$5;->this$0:Lcom/android/launcher3/Workspace;
 
@@ -82,7 +82,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/app/WallpaperManager;->suggestDesiredDimensions(II)V
 
-    .line 1627
+    .line 1572
     :cond_1
     return-void
 .end method

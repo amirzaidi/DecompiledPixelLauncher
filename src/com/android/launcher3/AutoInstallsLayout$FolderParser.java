@@ -7,18 +7,18 @@ package com.android.launcher3;
 import java.util.ArrayList;
 import android.content.ContentValues;
 import android.content.res.XmlResourceParser;
-import java.util.HashMap;
+import android.util.ArrayMap;
 
 class AutoInstallsLayout$FolderParser implements AutoInstallsLayout$TagParser
 {
-    private final HashMap mFolderElements;
+    private final ArrayMap mFolderElements;
     final /* synthetic */ AutoInstallsLayout this$0;
     
     public AutoInstallsLayout$FolderParser(final AutoInstallsLayout autoInstallsLayout) {
         this(autoInstallsLayout, autoInstallsLayout.getFolderElementsMap());
     }
     
-    public AutoInstallsLayout$FolderParser(final AutoInstallsLayout this$0, final HashMap mFolderElements) {
+    public AutoInstallsLayout$FolderParser(final AutoInstallsLayout this$0, final ArrayMap mFolderElements) {
         this.this$0 = this$0;
         this.mFolderElements = mFolderElements;
     }
@@ -30,7 +30,7 @@ class AutoInstallsLayout$FolderParser implements AutoInstallsLayout$TagParser
             s = this.this$0.mSourceRes.getString(attributeResourceValue);
         }
         else {
-            s = this.this$0.mContext.getResources().getString(2131492893);
+            s = this.this$0.mContext.getResources().getString(2131492895);
         }
         this.this$0.mValues.put("title", s);
         this.this$0.mValues.put("itemType", 2);
@@ -74,7 +74,7 @@ class AutoInstallsLayout$FolderParser implements AutoInstallsLayout$TagParser
             this.this$0.mValues.clear();
             this.this$0.mValues.put("container", insertAndCheck);
             this.this$0.mValues.put("rank", n);
-            final AutoInstallsLayout$TagParser autoInstallsLayout$TagParser = this.mFolderElements.get(xmlResourceParser.getName());
+            final AutoInstallsLayout$TagParser autoInstallsLayout$TagParser = (AutoInstallsLayout$TagParser)this.mFolderElements.get((Object)xmlResourceParser.getName());
             if (autoInstallsLayout$TagParser == null) {
                 throw new RuntimeException("Invalid folder item " + xmlResourceParser.getName());
             }

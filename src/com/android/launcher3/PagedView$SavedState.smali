@@ -16,15 +16,15 @@
     .locals 1
 
     .prologue
-    .line 1988
+    .line 2014
     new-instance v0, Lcom/android/launcher3/PagedView$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/launcher3/PagedView$SavedState$1;-><init>()V
 
-    .line 1987
+    .line 2013
     sput-object v0, Lcom/android/launcher3/PagedView$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 1969
+    .line 1995
     return-void
 .end method
 
@@ -32,22 +32,22 @@
     .locals 1
 
     .prologue
-    .line 1977
+    .line 2003
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1970
+    .line 1996
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/launcher3/PagedView$SavedState;->currentPage:I
 
-    .line 1978
+    .line 2004
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/PagedView$SavedState;->currentPage:I
 
-    .line 1979
+    .line 2005
     return-void
 .end method
 
@@ -57,14 +57,14 @@
     .locals 1
 
     .prologue
-    .line 1983
+    .line 2009
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1984
+    .line 2010
     iget v0, p0, Lcom/android/launcher3/PagedView$SavedState;->currentPage:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1985
+    .line 2011
     return-void
 .end method

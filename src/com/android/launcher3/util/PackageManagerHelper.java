@@ -7,13 +7,15 @@ package com.android.launcher3.util;
 import android.content.pm.ResolveInfo;
 import android.content.pm.PackageManager$NameNotFoundException;
 import android.app.AppOpsManager;
-import android.text.TextUtils;
 import java.util.List;
 import com.android.launcher3.AppInfo;
 import android.content.pm.LauncherActivityInfo;
 import android.os.UserHandle;
 import com.android.launcher3.Utilities;
 import android.content.pm.ApplicationInfo;
+import android.net.Uri;
+import java.net.URISyntaxException;
+import android.text.TextUtils;
 import android.net.Uri$Builder;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -34,6 +36,32 @@ public class PackageManagerHelper
     
     public static Intent getMarketIntent(final String s) {
         return new Intent("android.intent.action.VIEW").setData(new Uri$Builder().scheme("market").authority("details").appendQueryParameter("id", s).build());
+    }
+    
+    public static Intent getMarketSearchIntent(final Context context, final String s) {
+        final int n = 2131492887;
+        try {
+            final Intent uri = Intent.parseUri(context.getString(n), 0);
+            try {
+                if (TextUtils.isEmpty((CharSequence)s)) {
+                    return uri;
+                }
+                final Uri data = uri.getData();
+                try {
+                    final Uri$Builder appendQueryParameter = data.buildUpon().appendQueryParameter("q", s);
+                    try {
+                        uri.setData(appendQueryParameter.build());
+                        return uri;
+                    }
+                    catch (URISyntaxException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                }
+                catch (URISyntaxException ex2) {}
+            }
+            catch (URISyntaxException ex3) {}
+        }
+        catch (URISyntaxException ex4) {}
     }
     
     public static boolean isAppSuspended(final ApplicationInfo applicationInfo) {

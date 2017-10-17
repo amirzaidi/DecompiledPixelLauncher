@@ -22,7 +22,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation$2;->val$dragLayer:Lcom/android/launcher3/dragndrop/DragLayer;
 
-    .line 476
+    .line 463
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,10 +35,10 @@
     .locals 2
 
     .prologue
-    .line 479
+    .line 466
     iget-object v1, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation$2;->val$dragLayer:Lcom/android/launcher3/dragndrop/DragLayer;
 
-    .line 480
+    .line 467
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -49,9 +49,9 @@
 
     move-result v0
 
-    .line 479
+    .line 466
     invoke-virtual {v1, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->setBackgroundAlpha(F)V
 
-    .line 481
+    .line 468
     return-void
 .end method

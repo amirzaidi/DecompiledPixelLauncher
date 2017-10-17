@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/LauncherModel$1;->this$0:Lcom/android/launcher3/LauncherModel;
 
-    .line 153
+    .line 123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,16 +31,16 @@
     .locals 2
 
     .prologue
-    .line 156
+    .line 126
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$1;->this$0:Lcom/android/launcher3/LauncherModel;
 
-    invoke-static {v0}, Lcom/android/launcher3/LauncherModel;->-get5(Lcom/android/launcher3/LauncherModel;)Z
+    invoke-static {v0}, Lcom/android/launcher3/LauncherModel;->-get0(Lcom/android/launcher3/LauncherModel;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 158
+    .line 128
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$1;->this$0:Lcom/android/launcher3/LauncherModel;
 
     iget-object v0, v0, Lcom/android/launcher3/LauncherModel;->mApp:Lcom/android/launcher3/LauncherAppState;
@@ -57,21 +57,19 @@
 
     move-result v0
 
-    .line 159
-    iget-object v1, p0, Lcom/android/launcher3/LauncherModel$1;->this$0:Lcom/android/launcher3/LauncherModel;
+    .line 129
+    sget-object v1, Lcom/android/launcher3/LauncherModel;->sBgDataModel:Lcom/android/launcher3/model/BgDataModel;
 
-    invoke-static {v1}, Lcom/android/launcher3/LauncherModel;->-get2(Lcom/android/launcher3/LauncherModel;)Z
-
-    move-result v1
+    iget-boolean v1, v1, Lcom/android/launcher3/model/BgDataModel;->hasShortcutHostPermission:Z
 
     if-eq v0, v1, :cond_0
 
-    .line 160
+    .line 130
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$1;->this$0:Lcom/android/launcher3/LauncherModel;
 
     invoke-virtual {v0}, Lcom/android/launcher3/LauncherModel;->forceReload()V
 
-    .line 163
+    .line 133
     :cond_0
     return-void
 .end method

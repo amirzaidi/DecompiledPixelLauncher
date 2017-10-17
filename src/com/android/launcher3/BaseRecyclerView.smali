@@ -7,17 +7,7 @@
 
 
 # instance fields
-.field private mDeltaThreshold:F
-
-.field private mDownX:I
-
-.field private mDownY:I
-
-.field mDy:I
-
-.field private mLastY:I
-
-.field protected final mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+.field protected mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
 
 # direct methods
@@ -25,12 +15,12 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 43
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/launcher3/BaseRecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 53
+    .line 44
     return-void
 .end method
 
@@ -38,64 +28,23 @@
     .locals 1
 
     .prologue
-    .line 56
+    .line 47
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/launcher3/BaseRecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 57
+    .line 48
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 60
+    .line 51
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/widget/RecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 42
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mDy:I
-
-    .line 61
-    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
-
-    const/high16 v1, 0x40800000    # 4.0f
-
-    mul-float/2addr v0, v1
-
-    iput v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mDeltaThreshold:F
-
-    .line 62
-    new-instance v0, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
-
-    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, v1}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;-><init>(Lcom/android/launcher3/BaseRecyclerView;Landroid/content/res/Resources;)V
-
-    iput-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
-
-    .line 64
-    new-instance v0, Lcom/android/launcher3/BaseRecyclerView$ScrollListener;
-
-    invoke-direct {v0, p0}, Lcom/android/launcher3/BaseRecyclerView$ScrollListener;-><init>(Lcom/android/launcher3/BaseRecyclerView;)V
-
-    .line 65
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/BaseRecyclerView;->setOnScrollListener(Landroid/support/v7/widget/m;)V
-
-    .line 66
+    .line 52
     return-void
 .end method
 
@@ -103,113 +52,80 @@
     .locals 4
 
     .prologue
-    .line 120
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    .line 88
+    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getLeft()I
 
     move-result v0
 
-    .line 121
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    iget-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
+
+    invoke-virtual {v1}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->getLeft()I
 
     move-result v1
 
-    float-to-int v1, v1
+    sub-int v1, v0, v1
 
-    .line 122
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+    .line 89
+    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getTop()I
+
+    move-result v0
+
+    iget-object v2, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->getTop()I
 
     move-result v2
 
-    float-to-int v2, v2
+    sub-int v2, v0, v2
 
-    .line 123
-    packed-switch v0, :pswitch_data_0
+    .line 90
+    int-to-float v0, v1
 
-    .line 143
-    :goto_0
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    int-to-float v3, v2
 
-    invoke-virtual {v0}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->isDraggingThumb()Z
+    invoke-virtual {p1, v0, v3}, Landroid/view/MotionEvent;->offsetLocation(FF)V
+
+    .line 92
+    :try_start_0
+    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
+
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->handleTouchEvent(Landroid/view/MotionEvent;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v0
 
+    .line 94
+    neg-int v1, v1
+
+    int-to-float v1, v1
+
+    neg-int v2, v2
+
+    int-to-float v2, v2
+
+    invoke-virtual {p1, v1, v2}, Landroid/view/MotionEvent;->offsetLocation(FF)V
+
+    .line 92
     return v0
 
-    .line 126
-    :pswitch_0
-    iput v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownX:I
+    .line 93
+    :catchall_0
+    move-exception v0
 
-    .line 127
-    iput v2, p0, Lcom/android/launcher3/BaseRecyclerView;->mLastY:I
+    .line 94
+    neg-int v1, v1
 
-    iput v2, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownY:I
+    int-to-float v1, v1
 
-    .line 128
-    invoke-virtual {p0, p1}, Lcom/android/launcher3/BaseRecyclerView;->shouldStopScroll(Landroid/view/MotionEvent;)Z
+    neg-int v2, v2
 
-    move-result v0
+    int-to-float v2, v2
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1, v1, v2}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 129
-    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->stopScroll()V
-
-    .line 131
-    :cond_0
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
-
-    iget v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownX:I
-
-    iget v2, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownY:I
-
-    iget v3, p0, Lcom/android/launcher3/BaseRecyclerView;->mLastY:I
-
-    invoke-virtual {v0, p1, v1, v2, v3}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->handleTouchEvent(Landroid/view/MotionEvent;III)V
-
-    goto :goto_0
-
-    .line 134
-    :pswitch_1
-    iput v2, p0, Lcom/android/launcher3/BaseRecyclerView;->mLastY:I
-
-    .line 135
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
-
-    iget v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownX:I
-
-    iget v2, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownY:I
-
-    iget v3, p0, Lcom/android/launcher3/BaseRecyclerView;->mLastY:I
-
-    invoke-virtual {v0, p1, v1, v2, v3}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->handleTouchEvent(Landroid/view/MotionEvent;III)V
-
-    goto :goto_0
-
-    .line 139
-    :pswitch_2
-    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->onFastScrollCompleted()V
-
-    .line 140
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
-
-    iget v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownX:I
-
-    iget v2, p0, Lcom/android/launcher3/BaseRecyclerView;->mDownY:I
-
-    iget v3, p0, Lcom/android/launcher3/BaseRecyclerView;->mLastY:I
-
-    invoke-virtual {v0, p1, v1, v2, v3}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->handleTouchEvent(Landroid/view/MotionEvent;III)V
-
-    goto :goto_0
-
-    .line 123
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_2
-    .end packed-switch
+    .line 93
+    throw v0
 .end method
 
 
@@ -218,20 +134,15 @@
     .locals 1
 
     .prologue
-    .line 203
-    invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView;->dispatchDraw(Landroid/graphics/Canvas;)V
-
-    .line 204
+    .line 133
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/BaseRecyclerView;->onUpdateScrollbar(I)V
 
-    .line 205
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    .line 134
+    invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->draw(Landroid/graphics/Canvas;)V
-
-    .line 206
+    .line 135
     return-void
 .end method
 
@@ -239,52 +150,56 @@
     .locals 2
 
     .prologue
-    .line 183
+    .line 120
     invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getScrollbarTrackHeight()I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    iget-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
-    invoke-virtual {v1}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->getThumbHeight()I
+    invoke-virtual {v1}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->getThumbHeight()I
 
     move-result v1
 
     sub-int/2addr v0, v1
 
-    .line 184
+    .line 121
     return v0
 .end method
 
 .method public abstract getCurrentScrollY()I
 .end method
 
-.method public getFastScrollerTrackColor(I)I
-    .locals 0
-
-    .prologue
-    .line 191
-    return p1
-.end method
-
-.method public getScrollBar()Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+.method public getScrollBar()Lcom/android/launcher3/views/RecyclerViewFastScroller;
     .locals 1
 
     .prologue
-    .line 198
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    .line 128
+    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
     return-object v0
 .end method
 
-.method protected getScrollbarTrackHeight()I
-    .locals 1
+.method public getScrollbarTrackHeight()I
+    .locals 2
 
     .prologue
-    .line 169
+    .line 106
     invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getHeight()I
 
     move-result v0
+
+    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getPaddingTop()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getPaddingBottom()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
 
     return v0
 .end method
@@ -293,35 +208,49 @@
     .locals 3
 
     .prologue
-    .line 97
+    .line 62
     invoke-super {p0}, Landroid/support/v7/widget/RecyclerView;->onAttachedToWindow()V
 
-    .line 98
-    iget-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
-
+    .line 63
     invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    const v2, 0x7f0e002a
+    .line 64
+    const v1, 0x7f0e0037
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/launcher3/views/RecyclerViewFastScroller;
+
+    iput-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
+
+    .line 65
+    iget-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
+
+    const v2, 0x7f0e0036
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->setPopupView(Landroid/view/View;)V
+    check-cast v0, Landroid/widget/TextView;
 
-    .line 99
+    invoke-virtual {v1, p0, v0}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->setRecyclerView(Lcom/android/launcher3/BaseRecyclerView;Landroid/widget/TextView;)V
+
+    .line 66
     return-void
 .end method
 
-.method protected onFastScrollCompleted()V
+.method public onFastScrollCompleted()V
     .locals 0
 
     .prologue
-    .line 263
+    .line 192
     return-void
 .end method
 
@@ -329,13 +258,13 @@
     .locals 0
 
     .prologue
-    .line 91
+    .line 56
     invoke-super {p0}, Landroid/support/v7/widget/RecyclerView;->onFinishInflate()V
 
-    .line 92
+    .line 57
     invoke-virtual {p0, p0}, Lcom/android/launcher3/BaseRecyclerView;->addOnItemTouchListener(Landroid/support/v7/widget/n;)V
 
-    .line 93
+    .line 58
     return-void
 .end method
 
@@ -343,7 +272,7 @@
     .locals 1
 
     .prologue
-    .line 107
+    .line 74
     invoke-direct {p0, p2}, Lcom/android/launcher3/BaseRecyclerView;->handleTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -355,7 +284,7 @@
     .locals 0
 
     .prologue
-    .line 148
+    .line 100
     return-void
 .end method
 
@@ -363,82 +292,24 @@
     .locals 0
 
     .prologue
-    .line 112
+    .line 79
     invoke-direct {p0, p2}, Lcom/android/launcher3/BaseRecyclerView;->handleTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 113
+    .line 80
     return-void
 .end method
 
-.method protected abstract onUpdateScrollbar(I)V
+.method public abstract onUpdateScrollbar(I)V
 .end method
 
-.method public reset()V
+.method public abstract scrollToPositionAtProgress(F)Ljava/lang/String;
+.end method
+
+.method public supportsFastScrolling()Z
     .locals 1
 
     .prologue
-    .line 86
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->reattachThumbToScroll()V
-
-    .line 87
-    return-void
-.end method
-
-.method protected abstract scrollToPositionAtProgress(F)Ljava/lang/String;
-.end method
-
-.method protected shouldStopScroll(Landroid/view/MotionEvent;)Z
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 154
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 155
-    iget v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mDy:I
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    iget v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mDeltaThreshold:F
-
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_0
-
-    .line 156
-    invoke-virtual {p0}, Lcom/android/launcher3/BaseRecyclerView;->getScrollState()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 159
-    const/4 v0, 0x1
-
-    return v0
-
-    .line 162
-    :cond_0
-    return v2
-.end method
-
-.method protected supportsFastScrolling()Z
-    .locals 1
-
-    .prologue
-    .line 237
+    .line 166
     const/4 v0, 0x1
 
     return v0
@@ -448,20 +319,20 @@
     .locals 2
 
     .prologue
-    .line 218
+    .line 147
     if-gtz p2, :cond_0
 
-    .line 219
-    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    .line 148
+    iget-object v0, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
     const/4 v1, -0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->setThumbOffsetY(I)V
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->setThumbOffsetY(I)V
 
-    .line 220
+    .line 149
     return-void
 
-    .line 227
+    .line 156
     :cond_0
     int-to-float v0, p1
 
@@ -479,11 +350,11 @@
 
     float-to-int v0, v0
 
-    .line 230
-    iget-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    .line 159
+    iget-object v1, p0, Lcom/android/launcher3/BaseRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
-    invoke-virtual {v1, v0}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->setThumbOffsetY(I)V
+    invoke-virtual {v1, v0}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->setThumbOffsetY(I)V
 
-    .line 231
+    .line 160
     return-void
 .end method

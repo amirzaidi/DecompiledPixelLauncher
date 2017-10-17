@@ -18,7 +18,7 @@ import com.android.launcher3.allapps.AllAppsBackgroundDrawable;
 import com.android.launcher3.Utilities;
 import android.content.Context;
 import android.os.Process;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.graphics.Path;
 import android.os.UserHandle;
 
@@ -28,7 +28,7 @@ public class DrawableFactory
     private static DrawableFactory sInstance;
     protected final UserHandle mMyUser;
     private Path mPreloadProgressPath;
-    protected final HashMap mUserBadges;
+    protected final ArrayMap mUserBadges;
     
     static {
         LOCK = new Object();
@@ -36,13 +36,13 @@ public class DrawableFactory
     
     public DrawableFactory() {
         this.mMyUser = Process.myUserHandle();
-        this.mUserBadges = new HashMap();
+        this.mUserBadges = new ArrayMap();
     }
     
     public static DrawableFactory get(final Context context) {
         synchronized (DrawableFactory.LOCK) {
             if (DrawableFactory.sInstance == null) {
-                DrawableFactory.sInstance = (DrawableFactory)Utilities.getOverrideObject(DrawableFactory.class, context.getApplicationContext(), 2131492889);
+                DrawableFactory.sInstance = (DrawableFactory)Utilities.getOverrideObject(DrawableFactory.class, context.getApplicationContext(), 2131492890);
             }
             return DrawableFactory.sInstance;
         }
@@ -88,12 +88,12 @@ public class DrawableFactory
     
     protected Bitmap getUserBadge(final UserHandle userHandle, final Context context) {
         synchronized (this) {
-            final Bitmap bitmap = this.mUserBadges.get(userHandle);
+            final Bitmap bitmap = (Bitmap)this.mUserBadges.get((Object)userHandle);
             if (bitmap != null) {
                 return bitmap;
             }
             final Resources resources = context.getApplicationContext().getResources();
-            final int dimensionPixelSize = resources.getDimensionPixelSize(2131427424);
+            final int dimensionPixelSize = resources.getDimensionPixelSize(2131427434);
             final Bitmap bitmap2 = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap$Config.ARGB_8888);
             final Drawable userBadgedDrawableForDensity = context.getPackageManager().getUserBadgedDrawableForDensity((Drawable)new BitmapDrawable(resources, bitmap2), userHandle, new Rect(0, 0, dimensionPixelSize, dimensionPixelSize), 0);
             Bitmap bitmap3;
@@ -108,7 +108,7 @@ public class DrawableFactory
                 canvas.setBitmap((Bitmap)null);
                 bitmap3 = bitmap2;
             }
-            this.mUserBadges.put(userHandle, bitmap3);
+            this.mUserBadges.put((Object)userHandle, (Object)bitmap3);
             return bitmap3;
         }
     }

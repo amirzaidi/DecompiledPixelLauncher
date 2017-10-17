@@ -19,7 +19,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/CellLayout$2;->val$anim:Lcom/android/launcher3/InterruptibleInOutAnimator;
 
-    .line 277
+    .line 275
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -32,7 +32,7 @@
     .locals 2
 
     .prologue
-    .line 280
+    .line 278
     check-cast p1, Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -51,14 +51,14 @@
 
     if-nez v0, :cond_0
 
-    .line 281
+    .line 279
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$2;->val$anim:Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/InterruptibleInOutAnimator;->setTag(Ljava/lang/Object;)V
 
-    .line 283
+    .line 281
     :cond_0
     return-void
 .end method

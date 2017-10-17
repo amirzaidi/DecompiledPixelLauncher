@@ -32,7 +32,7 @@
 
     const/4 v3, 0x0
 
-    .line 214
+    .line 212
     new-instance v0, Lcom/android/launcher3/Workspace$Direction;
 
     const-string/jumbo v1, "X"
@@ -43,7 +43,7 @@
 
     sput-object v0, Lcom/android/launcher3/Workspace$Direction;->X:Lcom/android/launcher3/Workspace$Direction;
 
-    .line 215
+    .line 213
     new-instance v0, Lcom/android/launcher3/Workspace$Direction;
 
     const-string/jumbo v1, "Y"
@@ -54,7 +54,7 @@
 
     sput-object v0, Lcom/android/launcher3/Workspace$Direction;->Y:Lcom/android/launcher3/Workspace$Direction;
 
-    .line 213
+    .line 211
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/android/launcher3/Workspace$Direction;
@@ -76,13 +76,13 @@
     .locals 0
 
     .prologue
-    .line 219
+    .line 217
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 220
+    .line 218
     iput-object p3, p0, Lcom/android/launcher3/Workspace$Direction;->viewProperty:Landroid/util/Property;
 
-    .line 221
+    .line 219
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 211
     const-class v0, Lcom/android/launcher3/Workspace$Direction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -106,7 +106,7 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 211
     sget-object v0, Lcom/android/launcher3/Workspace$Direction;->$VALUES:[Lcom/android/launcher3/Workspace$Direction;
 
     return-object v0

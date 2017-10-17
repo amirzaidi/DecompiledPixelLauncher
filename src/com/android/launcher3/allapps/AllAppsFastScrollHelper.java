@@ -94,7 +94,7 @@ public class AllAppsFastScrollHelper implements AllAppsGridAdapter$BindViewCallb
         for (final j j : this.mTrackedFastScrollViews) {
             final int adapterPosition = j.getAdapterPosition();
             boolean activated;
-            if (this.mCurrentFastScrollSection != null && adapterPosition > -1) {
+            if (this.mCurrentFastScrollSection != null && adapterPosition > -1 && adapterPosition < this.mApps.getAdapterItems().size()) {
                 final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = this.mApps.getAdapterItems().get(adapterPosition);
                 activated = (alphabeticalAppsList$AdapterItem != null && this.mCurrentFastScrollSection.equals(alphabeticalAppsList$AdapterItem.sectionName) && alphabeticalAppsList$AdapterItem.position == this.mTargetFastScrollPosition);
             }

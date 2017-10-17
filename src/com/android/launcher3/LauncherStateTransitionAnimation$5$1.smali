@@ -23,7 +23,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5$1;->val$revealView:Landroid/view/View;
 
-    .line 408
+    .line 402
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -36,21 +36,21 @@
     .locals 2
 
     .prologue
-    .line 417
+    .line 411
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5$1;->val$revealView:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 420
+    .line 414
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5$1;->val$allAppsButtonView:Landroid/view/View;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 421
+    .line 415
     return-void
 .end method
 
@@ -58,20 +58,20 @@
     .locals 2
 
     .prologue
-    .line 412
+    .line 406
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5$1;->val$allAppsButtonView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 413
+    .line 407
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5$1;->val$allAppsButtonView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 414
+    .line 408
     return-void
 .end method

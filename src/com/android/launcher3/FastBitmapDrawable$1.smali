@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 45
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -28,17 +28,17 @@
 
     const v1, 0x3d4ccccd    # 0.05f
 
-    .line 49
+    .line 47
     cmpg-float v0, p1, v1
 
     if-gez v0, :cond_0
 
-    .line 50
+    .line 48
     div-float v0, p1, v1
 
     return v0
 
-    .line 51
+    .line 49
     :cond_0
     const v0, 0x3e99999a    # 0.3f
 
@@ -46,10 +46,10 @@
 
     if-gez v0, :cond_1
 
-    .line 52
+    .line 50
     return v2
 
-    .line 54
+    .line 52
     :cond_1
     sub-float v0, v2, p1
 

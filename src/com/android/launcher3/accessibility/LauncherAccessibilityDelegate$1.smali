@@ -30,7 +30,7 @@
 
     iput-object p5, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$coordinates:[I
 
-    .line 165
+    .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -49,14 +49,14 @@
 
     const/4 v8, 0x0
 
-    .line 169
+    .line 168
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$item:Lcom/android/launcher3/ItemInfo;
 
     instance-of v0, v0, Lcom/android/launcher3/AppInfo;
 
     if-eqz v0, :cond_1
 
-    .line 170
+    .line 169
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$item:Lcom/android/launcher3/ItemInfo;
 
     check-cast v0, Lcom/android/launcher3/AppInfo;
@@ -65,7 +65,7 @@
 
     move-result-object v1
 
-    .line 171
+    .line 170
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->this$0:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
 
     iget-object v0, v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    .line 173
+    .line 172
     iget-wide v4, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$screenId:J
 
     iget-object v6, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$coordinates:[I
@@ -85,18 +85,18 @@
 
     aget v7, v7, v9
 
-    .line 171
+    .line 170
     invoke-virtual/range {v0 .. v7}, Lcom/android/launcher3/model/ModelWriter;->addItemToDatabase(Lcom/android/launcher3/ItemInfo;JJII)V
 
-    .line 175
+    .line 174
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 176
+    .line 175
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 177
+    .line 176
     iget-object v1, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->this$0:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
 
     iget-object v1, v1, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -107,19 +107,19 @@
 
     invoke-virtual {v1, v0, v8, v2, v9}, Lcom/android/launcher3/Launcher;->bindItems(Ljava/util/ArrayList;IIZ)V
 
-    .line 185
+    .line 184
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->this$0:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
 
-    const v1, 0x7f0c0067
+    const v1, 0x7f0c0070
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;->announceConfirmation(I)V
 
-    .line 186
+    .line 185
     return-void
 
-    .line 178
+    .line 177
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$item:Lcom/android/launcher3/ItemInfo;
 
@@ -127,12 +127,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 178
     iget-object v1, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$item:Lcom/android/launcher3/ItemInfo;
 
     check-cast v1, Lcom/android/launcher3/PendingAddItemInfo;
 
-    .line 180
+    .line 179
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->this$0:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
 
     iget-object v0, v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -141,7 +141,7 @@
 
     move-result-object v0
 
-    .line 181
+    .line 180
     iget-wide v4, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$screenId:J
 
     invoke-virtual {v0, v4, v5}, Lcom/android/launcher3/Workspace;->getPageIndexForScreenId(J)I
@@ -150,12 +150,12 @@
 
     invoke-virtual {v0, v4}, Lcom/android/launcher3/Workspace;->snapToPage(I)V
 
-    .line 182
+    .line 181
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->this$0:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
 
     iget-object v0, v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 183
+    .line 182
     iget-wide v4, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$screenId:J
 
     iget-object v6, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$1;->val$coordinates:[I
@@ -164,7 +164,7 @@
 
     iget v8, v1, Lcom/android/launcher3/PendingAddItemInfo;->spanY:I
 
-    .line 182
+    .line 181
     invoke-virtual/range {v0 .. v8}, Lcom/android/launcher3/Launcher;->addPendingItem(Lcom/android/launcher3/PendingAddItemInfo;JJ[III)V
 
     goto :goto_0

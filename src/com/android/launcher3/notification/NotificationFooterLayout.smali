@@ -109,7 +109,7 @@
     iput-boolean v1, p0, Lcom/android/launcher3/notification/NotificationFooterLayout;->mRtl:Z
 
     .line 83
-    const v1, 0x7f0b0090
+    const v1, 0x7f0b009b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -130,21 +130,21 @@
     iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 88
-    const v2, 0x7f0b0088
+    const v2, 0x7f0b0092
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
     .line 89
-    const v3, 0x7f0b0094
+    const v3, 0x7f0b009f
 
     invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v3
 
     .line 90
-    const v4, 0x7f0b0093
+    const v4, 0x7f0b009e
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -154,7 +154,7 @@
     add-int/2addr v3, v4
 
     .line 91
-    const v4, 0x7f0b006a
+    const v4, 0x7f0b0074
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -291,7 +291,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d001b
+    const v3, 0x7f0d0019
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -309,10 +309,10 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 211
+    .line 215
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 214
+    .line 218
     :cond_0
     return-void
 .end method
@@ -697,7 +697,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 100
-    const v0, 0x7f0e004f
+    const v0, 0x7f0e0059
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/NotificationFooterLayout;->findViewById(I)Landroid/view/View;
 
@@ -706,7 +706,7 @@
     iput-object v0, p0, Lcom/android/launcher3/notification/NotificationFooterLayout;->mOverflowEllipsis:Landroid/view/View;
 
     .line 101
-    const v0, 0x7f0e004e
+    const v0, 0x7f0e0058
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/NotificationFooterLayout;->findViewById(I)Landroid/view/View;
 
@@ -737,7 +737,7 @@
     .locals 3
 
     .prologue
-    .line 217
+    .line 221
     invoke-virtual {p0}, Lcom/android/launcher3/notification/NotificationFooterLayout;->isAttachedToWindow()Z
 
     move-result v0
@@ -752,11 +752,11 @@
 
     if-nez v0, :cond_1
 
-    .line 218
+    .line 222
     :cond_0
     return-void
 
-    .line 220
+    .line 224
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationFooterLayout;->mOverflowNotifications:Ljava/util/List;
 
@@ -764,7 +764,7 @@
 
     move-result-object v1
 
-    .line 221
+    .line 225
     :cond_2
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -773,7 +773,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 222
+    .line 226
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -788,12 +788,12 @@
 
     if-nez v0, :cond_2
 
-    .line 223
+    .line 227
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     goto :goto_0
 
-    .line 226
+    .line 230
     :cond_3
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationFooterLayout;->mIconRow:Landroid/widget/LinearLayout;
 
@@ -808,21 +808,21 @@
     :goto_1
     if-ltz v1, :cond_5
 
-    .line 227
+    .line 231
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationFooterLayout;->mIconRow:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 228
+    .line 232
     invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/notification/NotificationInfo;
 
-    .line 229
+    .line 233
     iget-object v0, v0, Lcom/android/launcher3/notification/NotificationInfo;->notificationKey:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
@@ -831,10 +831,10 @@
 
     if-nez v0, :cond_4
 
-    .line 230
+    .line 234
     invoke-direct {p0, v2}, Lcom/android/launcher3/notification/NotificationFooterLayout;->removeViewFromIconRow(Landroid/view/View;)V
 
-    .line 226
+    .line 230
     :cond_4
     add-int/lit8 v0, v1, -0x1
 
@@ -842,7 +842,7 @@
 
     goto :goto_1
 
-    .line 233
+    .line 237
     :cond_5
     return-void
 .end method

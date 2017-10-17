@@ -74,12 +74,12 @@
     .locals 3
 
     .prologue
-    .line 153
+    .line 151
     instance-of v0, p1, Lcom/android/launcher3/widget/WidgetCell;
 
     if-eqz v0, :cond_0
 
-    .line 154
+    .line 152
     check-cast p1, Lcom/android/launcher3/widget/WidgetCell;
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/widget/WidgetsContainerView;->beginDraggingWidget(Lcom/android/launcher3/widget/WidgetCell;)Z
@@ -88,12 +88,12 @@
 
     if-nez v0, :cond_1
 
-    .line 155
+    .line 153
     const/4 v0, 0x0
 
     return v0
 
-    .line 158
+    .line 156
     :cond_0
     const-string/jumbo v0, "WidgetsContainerView"
 
@@ -117,7 +117,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 162
+    .line 160
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -131,12 +131,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 164
+    .line 162
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->enterSpringLoadedDragMode()V
 
-    .line 167
+    .line 165
     :cond_2
     const/4 v0, 0x1
 
@@ -151,8 +151,8 @@
 
     const/4 v6, 0x0
 
-    .line 172
-    const v0, 0x7f0e006d
+    .line 170
+    const v0, 0x7f0e0087
 
     invoke-virtual {p1, v0}, Lcom/android/launcher3/widget/WidgetCell;->findViewById(I)Landroid/view/View;
 
@@ -162,23 +162,23 @@
 
     check-cast v3, Lcom/android/launcher3/widget/WidgetImageView;
 
-    .line 176
+    .line 174
     invoke-virtual {v3}, Lcom/android/launcher3/widget/WidgetImageView;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 177
+    .line 175
     return v6
 
-    .line 180
+    .line 178
     :cond_0
     const/4 v0, 0x2
 
     new-array v5, v0, [I
 
-    .line 181
+    .line 179
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
@@ -187,12 +187,12 @@
 
     invoke-virtual {v0, v3, v5}, Lcom/android/launcher3/dragndrop/DragLayer;->getLocationInDragLayer(Landroid/view/View;[I)F
 
-    .line 183
+    .line 181
     new-instance v0, Lcom/android/launcher3/widget/PendingItemDragHelper;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/widget/PendingItemDragHelper;-><init>(Landroid/view/View;)V
 
-    .line 184
+    .line 182
     invoke-virtual {v3}, Lcom/android/launcher3/widget/WidgetImageView;->getBitmapBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -209,7 +209,7 @@
 
     move-result v3
 
-    .line 185
+    .line 183
     new-instance v4, Landroid/graphics/Point;
 
     aget v6, v5, v6
@@ -224,10 +224,10 @@
 
     move-object v5, p0
 
-    .line 183
+    .line 181
     invoke-virtual/range {v0 .. v6}, Lcom/android/launcher3/widget/PendingItemDragHelper;->startDrag(Landroid/graphics/Rect;IILandroid/graphics/Point;Lcom/android/launcher3/DragSource;Lcom/android/launcher3/dragndrop/DragOptions;)V
 
-    .line 186
+    .line 184
     return v7
 .end method
 
@@ -237,12 +237,12 @@
     .locals 1
 
     .prologue
-    .line 255
+    .line 253
     const/4 v0, 0x5
 
     iput v0, p4, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->containerType:I
 
-    .line 256
+    .line 254
     return-void
 .end method
 
@@ -250,7 +250,7 @@
     .locals 1
 
     .prologue
-    .line 209
+    .line 207
     const/4 v0, 0x0
 
     return v0
@@ -270,7 +270,7 @@
     .locals 1
 
     .prologue
-    .line 250
+    .line 248
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/widget/WidgetsListAdapter;->copyWidgetsForPackageUser(Lcom/android/launcher3/util/PackageUserKey;)Ljava/util/List;
@@ -300,7 +300,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c0026
+    const v1, 0x7f0c0028
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -311,7 +311,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0c0027
+    const v2, 0x7f0c0029
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -351,16 +351,6 @@
     const/4 v1, 0x0
 
     .line 143
-    invoke-virtual {p1}, Landroid/view/View;->isInTouchMode()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return v1
-
-    .line 145
-    :cond_0
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getWorkspace()Lcom/android/launcher3/Workspace;
@@ -371,49 +361,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     return v1
 
-    .line 147
-    :cond_1
+    .line 145
+    :cond_0
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->isDraggingEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_1
 
     return v1
 
-    .line 149
-    :cond_2
+    .line 147
+    :cond_1
     invoke-direct {p0, p1}, Lcom/android/launcher3/widget/WidgetsContainerView;->beginDragging(Landroid/view/View;)Z
 
     move-result v0
 
-    return v0
-.end method
-
-.method public isEmpty()Z
-    .locals 2
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 246
-    iget-object v1, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
-
-    invoke-virtual {v1}, Lcom/android/launcher3/widget/WidgetsListAdapter;->getItemCount()I
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
     return v0
 .end method
 
@@ -470,7 +439,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 218
+    .line 216
     if-nez p3, :cond_0
 
     xor-int/lit8 v0, p4, 0x1
@@ -485,49 +454,49 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 219
+    .line 217
     instance-of v0, p1, Lcom/android/launcher3/DeleteDropTarget;
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 218
+    .line 216
     if-eqz v0, :cond_1
 
-    .line 219
+    .line 217
     instance-of v0, p1, Lcom/android/launcher3/folder/Folder;
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 218
+    .line 216
     if-eqz v0, :cond_1
 
-    .line 222
+    .line 220
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     const/4 v1, 0x1
 
-    .line 223
+    .line 221
     const/16 v2, 0x1f4
 
     const/4 v3, 0x0
 
-    .line 222
+    .line 220
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->exitSpringLoadedDragModeDelayed(ZILjava/lang/Runnable;)V
 
-    .line 225
+    .line 223
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0, v4}, Lcom/android/launcher3/Launcher;->unlockScreenOrientation(Z)V
 
-    .line 227
+    .line 225
     if-nez p4, :cond_2
 
-    .line 228
+    .line 226
     iput-boolean v4, p2, Lcom/android/launcher3/DropTarget$DragObject;->deferDragViewCleanupPostAnimation:Z
 
-    .line 230
+    .line 228
     :cond_2
     return-void
 .end method
@@ -544,7 +513,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0073
+    const v1, 0x7f0e008d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -623,31 +592,31 @@
     .locals 2
 
     .prologue
-    .line 236
+    .line 234
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/widget/WidgetsListAdapter;->setWidgets(Lcom/android/launcher3/util/MultiHashMap;)V
 
-    .line 237
+    .line 235
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsContainerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
 
     invoke-virtual {v0}, Lcom/android/launcher3/widget/WidgetsListAdapter;->notifyDataSetChanged()V
 
-    .line 239
+    .line 237
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsContainerView;->getContentView()Landroid/view/View;
 
     move-result-object v0
 
-    const v1, 0x7f0e0074
+    const v1, 0x7f0e008e
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 240
+    .line 238
     if-eqz v1, :cond_0
 
-    .line 241
+    .line 239
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsContainerView;->getContentView()Landroid/view/View;
 
     move-result-object v0
@@ -656,7 +625,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 243
+    .line 241
     :cond_0
     return-void
 .end method
@@ -665,7 +634,7 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 193
     const/4 v0, 0x1
 
     return v0
@@ -675,7 +644,7 @@
     .locals 1
 
     .prologue
-    .line 204
+    .line 202
     const/4 v0, 0x0
 
     return v0

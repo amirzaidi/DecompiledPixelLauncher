@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$6;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
-    .line 444
+    .line 437
     invoke-direct {p0, p2}, Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;-><init>(F)V
 
     .line 1
@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 448
+    .line 441
     new-instance v0, Lcom/android/launcher3/LauncherStateTransitionAnimation$6$1;
 
     invoke-direct {v0, p0, p1}, Lcom/android/launcher3/LauncherStateTransitionAnimation$6$1;-><init>(Lcom/android/launcher3/LauncherStateTransitionAnimation$6;Landroid/view/View;)V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 457
+    .line 450
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$6;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     iget-object v0, v0, Lcom/android/launcher3/LauncherStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/logging/UserEventDispatcher;->resetElapsedContainerMillis()V
 
-    .line 458
+    .line 451
     return-void
 .end method

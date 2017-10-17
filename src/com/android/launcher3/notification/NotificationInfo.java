@@ -7,7 +7,7 @@ package com.android.launcher3.notification;
 import com.android.launcher3.logging.UserEventDispatcher;
 import android.os.Bundle;
 import android.app.PendingIntent$CanceledException;
-import com.android.launcher3.popup.PopupContainerWithArrow;
+import com.android.launcher3.AbstractFloatingView;
 import android.os.Handler;
 import android.app.PendingIntent$OnFinished;
 import android.content.Intent;
@@ -100,7 +100,7 @@ public class NotificationInfo implements View$OnClickListener
                 if (this.autoCancel) {
                     launcher.getPopupDataProvider().cancelNotification(this.notificationKey);
                 }
-                PopupContainerWithArrow.getOpen(launcher).close(true);
+                AbstractFloatingView.closeOpenContainer(launcher, 2);
             }
             catch (PendingIntent$CanceledException ex) {
                 ex.printStackTrace();

@@ -33,30 +33,30 @@
     .locals 1
 
     .prologue
-    .line 545
+    .line 535
     iput-object p1, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 547
+    .line 537
     iput-object p2, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mKey:Lcom/android/launcher3/WidgetPreviewLoader$WidgetCacheKey;
 
-    .line 548
+    .line 538
     iput-object p3, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mInfo:Lcom/android/launcher3/model/WidgetItem;
 
-    .line 549
+    .line 539
     iput p5, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mPreviewHeight:I
 
-    .line 550
+    .line 540
     iput p4, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mPreviewWidth:I
 
-    .line 551
+    .line 541
     iput-object p6, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mCaller:Lcom/android/launcher3/widget/WidgetCell;
 
-    .line 552
+    .line 542
     iput-boolean p7, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mAnimatePreviewIn:Z
 
-    .line 553
+    .line 543
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mCaller:Lcom/android/launcher3/widget/WidgetCell;
 
     invoke-virtual {v0}, Lcom/android/launcher3/widget/WidgetCell;->getContext()Landroid/content/Context;
@@ -69,7 +69,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mActivity:Lcom/android/launcher3/BaseActivity;
 
-    .line 558
+    .line 548
     return-void
 .end method
 
@@ -81,17 +81,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 565
+    .line 555
     invoke-virtual {p0}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->isCancelled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 566
+    .line 556
     return-object v1
 
-    .line 568
+    .line 558
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
@@ -99,7 +99,7 @@
 
     monitor-enter v2
 
-    .line 570
+    .line 560
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
@@ -122,7 +122,7 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 571
+    .line 561
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->isMutable()Z
@@ -131,7 +131,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 572
+    .line 562
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
@@ -140,7 +140,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 573
+    .line 563
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v4
@@ -149,7 +149,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 575
+    .line 565
     iget-object v3, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
     iget-object v3, v3, Lcom/android/launcher3/WidgetPreviewLoader;->mUnusedBitmaps:Ljava/util/Set;
@@ -161,10 +161,10 @@
     :goto_0
     monitor-exit v2
 
-    .line 582
+    .line 572
     if-nez v0, :cond_6
 
-    .line 583
+    .line 573
     iget v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mPreviewWidth:I
 
     iget v2, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mPreviewHeight:I
@@ -175,7 +175,7 @@
 
     move-result-object v3
 
-    .line 586
+    .line 576
     :goto_1
     invoke-virtual {p0}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->isCancelled()Z
 
@@ -183,10 +183,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 587
+    .line 577
     return-object v3
 
-    .line 568
+    .line 558
     :catchall_0
     move-exception v0
 
@@ -194,7 +194,7 @@
 
     throw v0
 
-    .line 589
+    .line 579
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
@@ -204,7 +204,7 @@
 
     move-result-object v0
 
-    .line 591
+    .line 581
     invoke-virtual {p0}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->isCancelled()Z
 
     move-result v2
@@ -213,14 +213,14 @@
 
     if-nez v0, :cond_4
 
-    .line 595
+    .line 585
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mInfo:Lcom/android/launcher3/model/WidgetItem;
 
     iget-object v0, v0, Lcom/android/launcher3/model/WidgetItem;->activityInfo:Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;
 
     if-eqz v0, :cond_5
 
-    .line 596
+    .line 586
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mInfo:Lcom/android/launcher3/model/WidgetItem;
 
     iget-object v0, v0, Lcom/android/launcher3/model/WidgetItem;->activityInfo:Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;
@@ -229,7 +229,7 @@
 
     move-result v0
 
-    .line 597
+    .line 587
     :goto_2
     if-eqz v0, :cond_3
 
@@ -250,7 +250,7 @@
     :cond_3
     iput-object v1, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mVersions:[J
 
-    .line 601
+    .line 591
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
     iget-object v1, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mActivity:Lcom/android/launcher3/BaseActivity;
@@ -265,11 +265,11 @@
 
     move-result-object v0
 
-    .line 603
+    .line 593
     :cond_4
     return-object v0
 
-    .line 595
+    .line 585
     :cond_5
     const/4 v0, 0x1
 
@@ -290,7 +290,7 @@
     .locals 1
 
     .prologue
-    .line 560
+    .line 550
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->doInBackground([Ljava/lang/Void;)Landroid/graphics/Bitmap;
@@ -304,17 +304,17 @@
     .locals 2
 
     .prologue
-    .line 655
+    .line 645
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->cancel(Z)Z
 
-    .line 662
+    .line 652
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mBitmapToRecycle:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 663
+    .line 653
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
     iget-object v0, v0, Lcom/android/launcher3/WidgetPreviewLoader;->mWorkerHandler:Landroid/os/Handler;
@@ -325,7 +325,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 673
+    .line 663
     :cond_0
     return-void
 .end method
@@ -334,10 +334,10 @@
     .locals 2
 
     .prologue
-    .line 641
+    .line 631
     if-eqz p1, :cond_0
 
-    .line 642
+    .line 632
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
     iget-object v0, v0, Lcom/android/launcher3/WidgetPreviewLoader;->mWorkerHandler:Landroid/os/Handler;
@@ -348,7 +348,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 651
+    .line 641
     :cond_0
     return-void
 .end method
@@ -357,7 +357,7 @@
     .locals 0
 
     .prologue
-    .line 636
+    .line 626
     check-cast p1, Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->onCancelled(Landroid/graphics/Bitmap;)V
@@ -369,19 +369,19 @@
     .locals 2
 
     .prologue
-    .line 608
+    .line 598
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mCaller:Lcom/android/launcher3/widget/WidgetCell;
 
     iget-boolean v1, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mAnimatePreviewIn:Z
 
     invoke-virtual {v0, p1, v1}, Lcom/android/launcher3/widget/WidgetCell;->applyPreview(Landroid/graphics/Bitmap;Z)V
 
-    .line 611
+    .line 601
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mVersions:[J
 
     if-eqz v0, :cond_0
 
-    .line 612
+    .line 602
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
 
     iget-object v0, v0, Lcom/android/launcher3/WidgetPreviewLoader;->mWorkerHandler:Landroid/os/Handler;
@@ -392,11 +392,11 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 634
+    .line 624
     :goto_0
     return-void
 
-    .line 632
+    .line 622
     :cond_0
     iput-object p1, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mBitmapToRecycle:Landroid/graphics/Bitmap;
 
@@ -407,7 +407,7 @@
     .locals 0
 
     .prologue
-    .line 606
+    .line 596
     check-cast p1, Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->onPostExecute(Landroid/graphics/Bitmap;)V

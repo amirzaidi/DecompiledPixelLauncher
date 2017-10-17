@@ -30,7 +30,7 @@
 
     iput-object p4, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$3;->val$info:Lcom/android/launcher3/LauncherAppWidgetInfo;
 
-    .line 223
+    .line 222
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -43,7 +43,7 @@
     .locals 4
 
     .prologue
-    .line 227
+    .line 226
     iget-object v1, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$3;->this$0:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
 
     iget-object v0, p0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$3;->val$actions:Ljava/util/ArrayList;
@@ -64,9 +64,9 @@
 
     invoke-virtual {v1, v0, v2, v3}, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;->performResizeAction(ILandroid/view/View;Lcom/android/launcher3/LauncherAppWidgetInfo;)V
 
-    .line 228
+    .line 227
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 229
+    .line 228
     return-void
 .end method

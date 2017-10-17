@@ -4,17 +4,23 @@
 
 package com.android.launcher3.folder;
 
-import java.util.List;
-
-public interface FolderIcon$PreviewLayoutRule
+interface FolderIcon$PreviewLayoutRule
 {
     boolean clipToBackground();
     
-    FolderIcon$PreviewItemDrawingParams computePreviewItemDrawingParams(final int p0, final int p1, final FolderIcon$PreviewItemDrawingParams p2);
+    PreviewItemDrawingParams computePreviewItemDrawingParams(final int p0, final int p1, final PreviewItemDrawingParams p2);
     
-    List getItemsToDisplay(final Folder p0);
+    int getEnterIndex();
     
-    void init(final int p0, final int p1, final boolean p2);
+    int getExitIndex();
+    
+    float getIconSize();
+    
+    boolean hasEnterExitIndices();
+    
+    void init(final int p0, final float p1, final boolean p2);
     
     int maxNumItems();
+    
+    float scaleForItem(final int p0, final int p1);
 }

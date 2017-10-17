@@ -4,38 +4,28 @@
 
 
 # instance fields
-.field private final mContext:Landroid/content/Context;
-
-.field private final mDragObject:Lcom/android/launcher3/DropTarget$DragObject;
-
 .field mLastX:F
 
 .field mLastY:F
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/launcher3/dragndrop/DragController;Landroid/content/Context;Lcom/android/launcher3/DropTarget$DragObject;)V
+.method constructor <init>(Lcom/android/launcher3/dragndrop/DragController;Landroid/content/Context;Lcom/android/launcher3/DropTarget$DragObject;)V
     .locals 1
 
     .prologue
     const/4 v0, 0x0
 
-    .line 107
+    .line 103
     invoke-direct {p0, p1}, Lcom/android/launcher3/dragndrop/DragDriver;-><init>(Lcom/android/launcher3/dragndrop/DragDriver$EventListener;)V
 
-    .line 103
+    .line 99
     iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastX:F
 
-    .line 104
+    .line 100
     iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastY:F
 
-    .line 108
-    iput-object p3, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mDragObject:Lcom/android/launcher3/DropTarget$DragObject;
-
-    .line 109
-    iput-object p2, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mContext:Landroid/content/Context;
-
-    .line 110
+    .line 104
     return-void
 .end method
 
@@ -47,20 +37,20 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 124
+    .line 118
     invoke-virtual {p1}, Landroid/view/DragEvent;->getAction()I
 
     move-result v0
 
-    .line 126
+    .line 120
     packed-switch v0, :pswitch_data_0
 
-    .line 156
+    .line 150
     const/4 v0, 0x0
 
     return v0
 
-    .line 128
+    .line 122
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
 
@@ -68,22 +58,53 @@
 
     iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastX:F
 
-    .line 129
+    .line 123
     invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastY:F
 
-    .line 130
+    .line 124
     return v3
 
-    .line 133
+    .line 127
     :pswitch_1
     return v3
 
-    .line 136
+    .line 130
     :pswitch_2
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastX:F
+
+    .line 131
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
+
+    move-result v0
+
+    iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastY:F
+
+    .line 132
+    iget-object v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mEventListener:Lcom/android/launcher3/dragndrop/DragDriver$EventListener;
+
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
+
+    move-result v2
+
+    invoke-interface {v0, v1, v2}, Lcom/android/launcher3/dragndrop/DragDriver$EventListener;->onDriverDragMove(FF)V
+
+    .line 133
+    return v3
+
+    .line 136
+    :pswitch_3
     invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
 
     move-result v0
@@ -111,37 +132,6 @@
     invoke-interface {v0, v1, v2}, Lcom/android/launcher3/dragndrop/DragDriver$EventListener;->onDriverDragMove(FF)V
 
     .line 139
-    return v3
-
-    .line 142
-    :pswitch_3
-    invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastX:F
-
-    .line 143
-    invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastY:F
-
-    .line 144
-    iget-object v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mEventListener:Lcom/android/launcher3/dragndrop/DragDriver$EventListener;
-
-    invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
-
-    move-result v2
-
-    invoke-interface {v0, v1, v2}, Lcom/android/launcher3/dragndrop/DragDriver$EventListener;->onDriverDragMove(FF)V
-
-    .line 145
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mEventListener:Lcom/android/launcher3/dragndrop/DragDriver$EventListener;
 
     iget v1, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mLastX:F
@@ -150,28 +140,28 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/launcher3/dragndrop/DragDriver$EventListener;->onDriverDragEnd(FF)V
 
-    .line 146
+    .line 140
     return v3
 
-    .line 148
+    .line 142
     :pswitch_4
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mEventListener:Lcom/android/launcher3/dragndrop/DragDriver$EventListener;
 
     invoke-interface {v0}, Lcom/android/launcher3/dragndrop/DragDriver$EventListener;->onDriverDragExitWindow()V
 
-    .line 149
+    .line 143
     return v3
 
-    .line 152
+    .line 146
     :pswitch_5
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/SystemDragDriver;->mEventListener:Lcom/android/launcher3/dragndrop/DragDriver$EventListener;
 
     invoke-interface {v0}, Lcom/android/launcher3/dragndrop/DragDriver$EventListener;->onDriverDragCancel()V
 
-    .line 153
+    .line 147
     return v3
 
-    .line 126
+    .line 120
     nop
 
     :pswitch_data_0
@@ -189,7 +179,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 113
     const/4 v0, 0x0
 
     return v0
@@ -199,7 +189,7 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 108
     const/4 v0, 0x0
 
     return v0

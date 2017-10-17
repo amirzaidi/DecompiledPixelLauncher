@@ -9,7 +9,7 @@ import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Launcher;
 import android.os.Parcel;
 import android.appwidget.AppWidgetProviderInfo;
-import com.android.launcher3.compat.PinItemRequestCompat;
+import android.content.pm.LauncherApps$PinItemRequest;
 import android.os.Parcelable$Creator;
 import android.os.Parcelable;
 import com.android.launcher3.widget.WidgetAddFlowHandler;
@@ -17,20 +17,20 @@ import com.android.launcher3.widget.WidgetAddFlowHandler;
 public class PinWidgetFlowHandler extends WidgetAddFlowHandler implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final PinItemRequestCompat mRequest;
+    private final LauncherApps$PinItemRequest mRequest;
     
     static {
         CREATOR = (Parcelable$Creator)new PinWidgetFlowHandler$1();
     }
     
-    public PinWidgetFlowHandler(final AppWidgetProviderInfo appWidgetProviderInfo, final PinItemRequestCompat mRequest) {
+    public PinWidgetFlowHandler(final AppWidgetProviderInfo appWidgetProviderInfo, final LauncherApps$PinItemRequest mRequest) {
         super(appWidgetProviderInfo);
         this.mRequest = mRequest;
     }
     
     protected PinWidgetFlowHandler(final Parcel parcel) {
         super(parcel);
-        this.mRequest = (PinItemRequestCompat)PinItemRequestCompat.CREATOR.createFromParcel(parcel);
+        this.mRequest = (LauncherApps$PinItemRequest)LauncherApps$PinItemRequest.CREATOR.createFromParcel(parcel);
     }
     
     public boolean needsConfigure() {

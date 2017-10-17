@@ -17,8 +17,6 @@ final class Launcher$30 implements Runnable
     }
     
     public void run() {
-        if (this.val$executor != null) {
-            this.val$executor.onLoadAnimationCompleted();
-        }
+        this.this$0.finishFirstPageBind(this.val$executor);
     }
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup$LayoutParams;
 import android.widget.FrameLayout$LayoutParams;
 import android.view.ViewGroup;
+import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 import android.content.res.Resources;
 import android.appwidget.AppWidgetHostView;
@@ -22,6 +23,7 @@ import android.graphics.PointF;
 public class DeviceProfile
 {
     public int allAppsButtonVisualSize;
+    public int allAppsCellHeightPx;
     public int allAppsIconDrawablePaddingPx;
     public int allAppsIconSizePx;
     public float allAppsIconTextSizePx;
@@ -31,10 +33,12 @@ public class DeviceProfile
     public final int availableHeightPx;
     public final int availableWidthPx;
     public int cellHeightPx;
+    public final int cellLayoutBottomPaddingPx;
+    public final int cellLayoutPaddingLeftRightPx;
     public int cellWidthPx;
     private final int defaultPageSpacingPx;
     public final Rect defaultWidgetPadding;
-    private int desiredWorkspaceLeftRightMarginPx;
+    private final int desiredWorkspaceLeftRightMarginPx;
     public int dropTargetBarSizePx;
     public final int edgeMarginPx;
     public int folderBackgroundOffset;
@@ -46,13 +50,14 @@ public class DeviceProfile
     public int folderIconPreviewPadding;
     public int folderIconSizePx;
     public final int heightPx;
-    private int hotseatBarBottomPaddingPx;
-    public int hotseatBarHeightPx;
-    private int hotseatBarTopPaddingPx;
+    public int hotseatBarBottomPaddingPx;
+    public int hotseatBarLeftNavBarLeftPaddingPx;
+    public int hotseatBarLeftNavBarRightPaddingPx;
+    public int hotseatBarRightNavBarLeftPaddingPx;
+    public int hotseatBarRightNavBarRightPaddingPx;
+    public int hotseatBarSizePx;
+    public int hotseatBarTopPaddingPx;
     public int hotseatCellHeightPx;
-    public int hotseatCellWidthPx;
-    public int hotseatIconSizePx;
-    private int hotseatLandGutterPx;
     public int iconDrawablePaddingOriginalPx;
     public int iconDrawablePaddingPx;
     public int iconSizePx;
@@ -70,19 +75,21 @@ public class DeviceProfile
     private final float overviewModeIconZoneRatio;
     private final int overviewModeMaxIconZoneHeightPx;
     private final int overviewModeMinIconZoneHeightPx;
-    private final int pageIndicatorHeightPx;
-    private final int pageIndicatorLandGutterLeftNavBarPx;
-    private final int pageIndicatorLandGutterRightNavBarPx;
+    private final int pageIndicatorLandLeftNavBarGutterPx;
+    private final int pageIndicatorLandRightNavBarGutterPx;
     private final int pageIndicatorLandWorkspaceOffsetPx;
+    private int pageIndicatorSizePx;
     private final int topWorkspacePadding;
     public final boolean transposeLayoutWithOrientation;
     public final int widthPx;
+    public int workspaceCellPaddingXPx;
     public float workspaceSpringLoadShrinkFactor;
     public final int workspaceSpringLoadedBottomSpace;
     
     public DeviceProfile(final Context context, final InvariantDeviceProfile inv, final Point point, final Point point2, final int widthPx, final int heightPx, final boolean isLandscape) {
-        final float n = 1.0f;
-        this.appWidgetScale = new PointF(n, n);
+        int n = 1;
+        final float n2 = 1.0f;
+        this.appWidgetScale = new PointF(n2, n2);
         this.mInsets = new Rect();
         this.mListeners = new ArrayList();
         this.inv = inv;
@@ -93,27 +100,56 @@ public class DeviceProfile
         this.isLargeTablet = resources.getBoolean(2131689476);
         this.isPhone = (!this.isTablet && (this.isLargeTablet ^ true));
         this.transposeLayoutWithOrientation = resources.getBoolean(2131689478);
-        this.defaultWidgetPadding = AppWidgetHostView.getDefaultPaddingForWidget(context, new ComponentName(context.getPackageName(), this.getClass().getName()), (Rect)null);
-        this.edgeMarginPx = resources.getDimensionPixelSize(2131427344);
-        this.desiredWorkspaceLeftRightMarginPx = this.edgeMarginPx;
-        this.pageIndicatorHeightPx = resources.getDimensionPixelSize(2131427345);
-        this.pageIndicatorLandGutterLeftNavBarPx = resources.getDimensionPixelSize(2131427347);
-        this.pageIndicatorLandWorkspaceOffsetPx = resources.getDimensionPixelSize(2131427388);
-        this.pageIndicatorLandGutterRightNavBarPx = resources.getDimensionPixelSize(2131427348);
-        this.defaultPageSpacingPx = resources.getDimensionPixelSize(2131427358);
-        this.topWorkspacePadding = resources.getDimensionPixelSize(2131427357);
-        this.overviewModeMinIconZoneHeightPx = resources.getDimensionPixelSize(2131427350);
-        this.overviewModeMaxIconZoneHeightPx = resources.getDimensionPixelSize(2131427351);
-        this.overviewModeBarItemWidthPx = resources.getDimensionPixelSize(2131427352);
-        this.overviewModeBarSpacerWidthPx = resources.getDimensionPixelSize(2131427353);
-        this.overviewModeIconZoneRatio = resources.getInteger(2131558401) / 100.0f;
-        this.iconDrawablePaddingOriginalPx = resources.getDimensionPixelSize(2131427349);
-        this.dropTargetBarSizePx = resources.getDimensionPixelSize(2131427360);
-        this.workspaceSpringLoadedBottomSpace = resources.getDimensionPixelSize(2131427359);
-        this.hotseatBarHeightPx = resources.getDimensionPixelSize(2131427354);
-        this.hotseatBarTopPaddingPx = resources.getDimensionPixelSize(2131427355);
-        this.hotseatBarBottomPaddingPx = 0;
-        this.hotseatLandGutterPx = resources.getDimensionPixelSize(2131427356);
+        int n3;
+        if (this.isVerticalBarLayout()) {
+            n3 = 2;
+        }
+        else {
+            n3 = n;
+        }
+        final Context context2 = getContext(context, n3);
+        final Resources resources2 = context2.getResources();
+        this.defaultWidgetPadding = AppWidgetHostView.getDefaultPaddingForWidget(context2, new ComponentName(context2.getPackageName(), this.getClass().getName()), (Rect)null);
+        this.edgeMarginPx = resources2.getDimensionPixelSize(2131427344);
+        int edgeMarginPx;
+        if (this.isVerticalBarLayout()) {
+            edgeMarginPx = 0;
+        }
+        else {
+            edgeMarginPx = this.edgeMarginPx;
+        }
+        this.desiredWorkspaceLeftRightMarginPx = edgeMarginPx;
+        this.cellLayoutPaddingLeftRightPx = resources2.getDimensionPixelSize(2131427357);
+        this.cellLayoutBottomPaddingPx = resources2.getDimensionPixelSize(2131427358);
+        this.pageIndicatorSizePx = resources2.getDimensionPixelSize(2131427345);
+        this.pageIndicatorLandLeftNavBarGutterPx = resources2.getDimensionPixelSize(2131427347);
+        this.pageIndicatorLandRightNavBarGutterPx = resources2.getDimensionPixelSize(2131427348);
+        this.pageIndicatorLandWorkspaceOffsetPx = resources2.getDimensionPixelSize(2131427397);
+        this.defaultPageSpacingPx = resources2.getDimensionPixelSize(2131427355);
+        this.topWorkspacePadding = resources2.getDimensionPixelSize(2131427354);
+        this.overviewModeMinIconZoneHeightPx = resources2.getDimensionPixelSize(2131427350);
+        this.overviewModeMaxIconZoneHeightPx = resources2.getDimensionPixelSize(2131427351);
+        this.overviewModeBarItemWidthPx = resources2.getDimensionPixelSize(2131427352);
+        this.overviewModeBarSpacerWidthPx = resources2.getDimensionPixelSize(2131427353);
+        this.overviewModeIconZoneRatio = resources2.getInteger(2131558401) / 100.0f;
+        this.iconDrawablePaddingOriginalPx = resources2.getDimensionPixelSize(2131427349);
+        this.dropTargetBarSizePx = resources2.getDimensionPixelSize(2131427369);
+        this.workspaceSpringLoadedBottomSpace = resources2.getDimensionPixelSize(2131427356);
+        this.workspaceCellPaddingXPx = resources2.getDimensionPixelSize(2131427359);
+        this.hotseatBarTopPaddingPx = resources2.getDimensionPixelSize(2131427360);
+        this.hotseatBarBottomPaddingPx = resources2.getDimensionPixelSize(2131427361);
+        this.hotseatBarLeftNavBarRightPaddingPx = resources2.getDimensionPixelSize(2131427363);
+        this.hotseatBarRightNavBarRightPaddingPx = resources2.getDimensionPixelSize(2131427364);
+        this.hotseatBarLeftNavBarLeftPaddingPx = resources2.getDimensionPixelSize(2131427367);
+        this.hotseatBarRightNavBarLeftPaddingPx = resources2.getDimensionPixelSize(2131427368);
+        int pxFromDp;
+        if (this.isVerticalBarLayout()) {
+            pxFromDp = Utilities.pxFromDp(inv.iconSize, displayMetrics);
+        }
+        else {
+            pxFromDp = resources2.getDimensionPixelSize(2131427362) + this.hotseatBarTopPaddingPx + this.hotseatBarBottomPaddingPx;
+        }
+        this.hotseatBarSizePx = pxFromDp;
         this.widthPx = widthPx;
         this.heightPx = heightPx;
         if (isLandscape) {
@@ -124,9 +160,31 @@ public class DeviceProfile
             this.availableWidthPx = point.x;
             this.availableHeightPx = point2.y;
         }
-        this.updateAvailableDimensions(displayMetrics, resources);
-        this.computeAllAppsButtonSize(context);
-        this.mBadgeRenderer = new BadgeRenderer(context, this.iconSizePx);
+        this.updateAvailableDimensions(displayMetrics, resources2);
+        if (Float.compare(Math.max(this.widthPx, this.heightPx) / Math.min(this.widthPx, this.heightPx), 2.0f) < 0) {
+            n = 0;
+        }
+        if (!this.isVerticalBarLayout() && this.isPhone && n != 0) {
+            this.hotseatBarSizePx += this.getCellSize().y - this.iconSizePx - this.iconDrawablePaddingPx - this.pageIndicatorSizePx;
+            this.updateAvailableDimensions(displayMetrics, resources2);
+        }
+        this.computeAllAppsButtonSize(context2);
+        this.mBadgeRenderer = new BadgeRenderer(context2, this.iconSizePx);
+    }
+    
+    private void adjustToHideWorkspaceLabels() {
+        this.iconTextSizePx = 0;
+        this.iconDrawablePaddingPx = 0;
+        this.cellHeightPx = this.iconSizePx;
+        final int allAppsIconDrawablePaddingPx = this.allAppsIconDrawablePaddingPx;
+        int n;
+        if (this.isVerticalBarLayout()) {
+            n = 2;
+        }
+        else {
+            n = 1;
+        }
+        this.allAppsCellHeightPx = n * allAppsIconDrawablePaddingPx * 2 + (this.allAppsIconSizePx + this.allAppsIconDrawablePaddingPx + Utilities.calculateTextHeight(this.allAppsIconTextSizePx));
     }
     
     public static int calculateCellHeight(final int n, final int n2) {
@@ -138,7 +196,13 @@ public class DeviceProfile
     }
     
     private void computeAllAppsButtonSize(final Context context) {
-        this.allAppsButtonVisualSize = (int)((1.0f - context.getResources().getInteger(2131558411) / 100.0f) * this.hotseatIconSizePx) - context.getResources().getDimensionPixelSize(2131427375);
+        this.allAppsButtonVisualSize = (int)((1.0f - context.getResources().getInteger(2131558411) / 100.0f) * this.iconSizePx) - context.getResources().getDimensionPixelSize(2131427387);
+    }
+    
+    private static Context getContext(final Context context, final int orientation) {
+        final Configuration configuration = new Configuration(context.getResources().getConfiguration());
+        configuration.orientation = orientation;
+        return context.createConfigurationContext(configuration);
     }
     
     private int getCurrentHeight() {
@@ -183,21 +247,21 @@ public class DeviceProfile
     }
     
     private void updateAvailableDimensions(final DisplayMetrics displayMetrics, final Resources resources) {
-        this.updateIconSize(1.0f, this.iconDrawablePaddingOriginalPx, resources, displayMetrics);
+        this.updateIconSize(1.0f, resources, displayMetrics);
         final float n = this.cellHeightPx * this.inv.numRows;
         final int n2 = this.availableHeightPx - this.getTotalWorkspacePadding().y;
         if (n > n2) {
-            this.updateIconSize(n2 / n, 0, resources, displayMetrics);
+            this.updateIconSize(n2 / n, resources, displayMetrics);
         }
         this.updateAvailableFolderCellDimensions(displayMetrics, resources);
     }
     
     private void updateAvailableFolderCellDimensions(final DisplayMetrics displayMetrics, final Resources resources) {
         final float n = 1.0f;
-        final int n2 = resources.getDimensionPixelSize(2131427421) + resources.getDimensionPixelSize(2131427422) + Utilities.calculateTextHeight(resources.getDimension(2131427423));
+        final int n2 = resources.getDimensionPixelSize(2131427431) + resources.getDimensionPixelSize(2131427432) + Utilities.calculateTextHeight(resources.getDimension(2131427433));
         this.updateFolderCellSize(n, displayMetrics, resources);
-        final int n3 = this.edgeMarginPx * 4;
-        final float min = Math.min((this.availableWidthPx - this.getTotalWorkspacePadding().x - n3) / (this.folderCellWidthPx * this.inv.numFolderColumns), (this.availableHeightPx - this.getTotalWorkspacePadding().y - n3) / (n2 + this.folderCellHeightPx * this.inv.numFolderRows));
+        final int edgeMarginPx = this.edgeMarginPx;
+        final float min = Math.min((this.availableWidthPx - this.getTotalWorkspacePadding().x - edgeMarginPx) / (this.folderCellWidthPx * this.inv.numFolderColumns), (this.availableHeightPx - this.getTotalWorkspacePadding().y - edgeMarginPx) / (n2 + this.folderCellHeightPx * this.inv.numFolderRows));
         if (min < n) {
             this.updateFolderCellSize(min, displayMetrics, resources);
         }
@@ -205,38 +269,50 @@ public class DeviceProfile
     
     private void updateFolderCellSize(final float n, final DisplayMetrics displayMetrics, final Resources resources) {
         this.folderChildIconSizePx = (int)(Utilities.pxFromDp(this.inv.iconSize, displayMetrics) * n);
-        this.folderChildTextSizePx = (int)(resources.getDimensionPixelSize(2131427420) * n);
+        this.folderChildTextSizePx = (int)(resources.getDimensionPixelSize(2131427430) * n);
         final int calculateTextHeight = Utilities.calculateTextHeight(this.folderChildTextSizePx);
-        final int n2 = (int)(resources.getDimensionPixelSize(2131427418) * n);
-        final int n3 = (int)(resources.getDimensionPixelSize(2131427419) * n);
+        final int n2 = (int)(resources.getDimensionPixelSize(2131427428) * n);
+        final int n3 = (int)(resources.getDimensionPixelSize(2131427429) * n);
         this.folderCellWidthPx = n2 * 2 + this.folderChildIconSizePx;
         this.folderCellHeightPx = this.folderChildIconSizePx + n3 * 2 + calculateTextHeight;
         this.folderChildDrawablePaddingPx = Math.max(0, (this.folderCellHeightPx - this.folderChildIconSizePx - calculateTextHeight) / 3);
     }
     
-    private void updateIconSize(final float n, final int iconDrawablePaddingPx, final Resources resources, final DisplayMetrics displayMetrics) {
+    private void updateIconSize(final float n, final Resources resources, final DisplayMetrics displayMetrics) {
         final int n2 = 2131558405;
         final float n3 = 100.0f;
-        this.iconSizePx = (int)(Utilities.pxFromDp(this.inv.iconSize, displayMetrics) * n);
+        float n4;
+        if (this.isVerticalBarLayout()) {
+            n4 = this.inv.landscapeIconSize;
+        }
+        else {
+            n4 = this.inv.iconSize;
+        }
+        this.iconSizePx = (int)(Utilities.pxFromDp(n4, displayMetrics) * n);
         this.iconTextSizePx = (int)(Utilities.pxFromSp(this.inv.iconTextSize, displayMetrics) * n);
-        this.iconDrawablePaddingPx = iconDrawablePaddingPx;
-        this.hotseatIconSizePx = (int)(Utilities.pxFromDp(this.inv.hotseatIconSize, displayMetrics) * n);
+        this.iconDrawablePaddingPx = (int)(this.iconDrawablePaddingOriginalPx * n);
+        this.cellWidthPx = this.iconSizePx + this.iconDrawablePaddingPx;
+        this.cellHeightPx = this.iconSizePx + this.iconDrawablePaddingPx + Utilities.calculateTextHeight(this.iconTextSizePx);
+        this.allAppsIconTextSizePx = this.iconTextSizePx;
         this.allAppsIconSizePx = this.iconSizePx;
         this.allAppsIconDrawablePaddingPx = this.iconDrawablePaddingPx;
-        this.allAppsIconTextSizePx = this.iconTextSizePx;
-        this.cellWidthPx = this.iconSizePx;
-        this.cellHeightPx = this.iconSizePx + this.iconDrawablePaddingPx + Utilities.calculateTextHeight(this.iconTextSizePx);
-        this.hotseatCellWidthPx = this.iconSizePx;
-        this.hotseatCellHeightPx = this.iconSizePx;
+        this.allAppsCellHeightPx = this.getCellSize().y;
+        if (this.isVerticalBarLayout()) {
+            this.adjustToHideWorkspaceLabels();
+        }
+        if (this.isVerticalBarLayout()) {
+            this.hotseatBarSizePx = this.iconSizePx;
+        }
+        this.hotseatCellHeightPx = this.iconSizePx + this.iconDrawablePaddingPx;
         if (!this.isVerticalBarLayout()) {
-            this.workspaceSpringLoadShrinkFactor = Math.min(resources.getInteger(n2) / n3, 1.0f - (this.dropTargetBarSizePx + this.workspaceSpringLoadedBottomSpace) / (this.availableHeightPx - this.hotseatBarHeightPx - this.pageIndicatorHeightPx - this.topWorkspacePadding));
+            this.workspaceSpringLoadShrinkFactor = Math.min(resources.getInteger(n2) / n3, 1.0f - (this.dropTargetBarSizePx + this.workspaceSpringLoadedBottomSpace) / (this.availableHeightPx - this.hotseatBarSizePx - this.pageIndicatorSizePx - this.topWorkspacePadding));
         }
         else {
             this.workspaceSpringLoadShrinkFactor = resources.getInteger(n2) / n3;
         }
-        this.folderBackgroundOffset = -this.edgeMarginPx;
+        this.folderBackgroundOffset = -this.iconDrawablePaddingPx;
         this.folderIconSizePx = this.iconSizePx + -this.folderBackgroundOffset * 2;
-        this.folderIconPreviewPadding = resources.getDimensionPixelSize(2131427416);
+        this.folderIconPreviewPadding = resources.getDimensionPixelSize(2131427426);
     }
     
     public void addLauncherLayoutChangedListener(final DeviceProfile$LauncherLayoutChangeListener deviceProfile$LauncherLayoutChangeListener) {
@@ -247,9 +323,9 @@ public class DeviceProfile
     
     public Rect getAbsoluteOpenFolderBounds() {
         if (this.isVerticalBarLayout()) {
-            return new Rect(this.mInsets.left + this.dropTargetBarSizePx + this.edgeMarginPx, this.mInsets.top, this.mInsets.left + this.availableWidthPx - this.hotseatBarHeightPx - this.edgeMarginPx, this.mInsets.top + this.availableHeightPx);
+            return new Rect(this.mInsets.left + this.dropTargetBarSizePx + this.edgeMarginPx, this.mInsets.top, this.mInsets.left + this.availableWidthPx - this.hotseatBarSizePx - this.edgeMarginPx, this.mInsets.top + this.availableHeightPx);
         }
-        return new Rect(this.mInsets.left, this.mInsets.top + this.dropTargetBarSizePx + this.edgeMarginPx, this.mInsets.left + this.availableWidthPx, this.mInsets.top + this.availableHeightPx - this.hotseatBarHeightPx - this.pageIndicatorHeightPx - this.edgeMarginPx);
+        return new Rect(this.mInsets.left, this.mInsets.top + this.dropTargetBarSizePx + this.edgeMarginPx, this.mInsets.left + this.availableWidthPx, this.mInsets.top + this.availableHeightPx - this.hotseatBarSizePx - this.pageIndicatorSizePx - this.edgeMarginPx);
     }
     
     public int getCellHeight(final int n) {
@@ -272,8 +348,8 @@ public class DeviceProfile
     public Point getCellSize() {
         final Point point = new Point();
         final Point totalWorkspacePadding = this.getTotalWorkspacePadding();
-        point.x = calculateCellWidth(this.availableWidthPx - totalWorkspacePadding.x, this.inv.numColumns);
-        point.y = calculateCellHeight(this.availableHeightPx - totalWorkspacePadding.y, this.inv.numRows);
+        point.x = calculateCellWidth(this.availableWidthPx - totalWorkspacePadding.x - this.cellLayoutPaddingLeftRightPx * 2, this.inv.numColumns);
+        point.y = calculateCellHeight(this.availableHeightPx - totalWorkspacePadding.y - this.cellLayoutBottomPaddingPx, this.inv.numRows);
         return point;
     }
     
@@ -281,15 +357,13 @@ public class DeviceProfile
         if (this.isPhone && (this.isVerticalBarLayout() ^ true)) {
             return new int[] { 0, 0 };
         }
-        final int n = (this.pageIndicatorLandGutterRightNavBarPx + this.hotseatBarHeightPx + this.hotseatLandGutterPx + this.mInsets.left) / 2;
-        return new int[] { n, n };
+        final Rect workspacePadding = this.getWorkspacePadding(null);
+        return new int[] { workspacePadding.left - this.mInsets.left, workspacePadding.right + this.mInsets.left };
     }
     
     DeviceProfile getMultiWindowProfile(final Context context, final Point point) {
         final DeviceProfile deviceProfile = new DeviceProfile(context, this.inv, point, point, point.x, point.y, this.isLandscape);
-        deviceProfile.iconTextSizePx = 0;
-        deviceProfile.cellHeightPx = deviceProfile.iconSizePx + deviceProfile.iconDrawablePaddingPx + Utilities.calculateTextHeight(deviceProfile.iconTextSizePx);
-        deviceProfile.hotseatBarBottomPaddingPx = deviceProfile.hotseatBarTopPaddingPx;
+        deviceProfile.adjustToHideWorkspaceLabels();
         deviceProfile.appWidgetScale.set(deviceProfile.getCellSize().x / this.getCellSize().x, deviceProfile.getCellSize().y / this.getCellSize().y);
         return deviceProfile;
     }
@@ -323,14 +397,14 @@ public class DeviceProfile
         }
         if (this.isVerticalBarLayout()) {
             if (this.mInsets.left > 0) {
-                rect.set(this.mInsets.left + this.pageIndicatorLandGutterLeftNavBarPx, 0, this.hotseatBarHeightPx + this.hotseatLandGutterPx - this.mInsets.left, this.edgeMarginPx * 2);
+                rect.set(this.mInsets.left + this.pageIndicatorLandLeftNavBarGutterPx, 0, this.hotseatBarSizePx + this.hotseatBarLeftNavBarRightPaddingPx + this.hotseatBarLeftNavBarLeftPaddingPx - this.mInsets.left, this.edgeMarginPx);
             }
             else {
-                rect.set(this.pageIndicatorLandGutterRightNavBarPx, 0, this.hotseatBarHeightPx + this.hotseatLandGutterPx, this.edgeMarginPx * 2);
+                rect.set(this.pageIndicatorLandRightNavBarGutterPx, 0, this.hotseatBarSizePx + this.hotseatBarRightNavBarRightPaddingPx + this.hotseatBarRightNavBarLeftPaddingPx, this.edgeMarginPx);
             }
         }
         else {
-            final int n = this.hotseatBarHeightPx + this.pageIndicatorHeightPx;
+            final int n = this.hotseatBarSizePx + this.pageIndicatorSizePx;
             if (this.isTablet) {
                 final int currentWidth = this.getCurrentWidth();
                 final int currentHeight = this.getCurrentHeight();
@@ -360,64 +434,77 @@ public class DeviceProfile
         layoutParams.height = searchBarDimensForWidgetOpts.y;
         layoutParams.topMargin = this.mInsets.top + this.edgeMarginPx;
         ((View)dropTargetBar).setLayoutParams((ViewGroup$LayoutParams)layoutParams);
-        final PagedView pagedView = (PagedView)launcher.findViewById(2131623970);
+        final PagedView pagedView = (PagedView)launcher.findViewById(2131623973);
         final Rect workspacePadding = this.getWorkspacePadding(null);
         pagedView.setPadding(workspacePadding.left, workspacePadding.top, workspacePadding.right, workspacePadding.bottom);
         pagedView.setPageSpacing(this.getWorkspacePageSpacing());
-        final View qsbContainer = launcher.getQsbContainer();
-        final FrameLayout$LayoutParams layoutParams2 = (FrameLayout$LayoutParams)qsbContainer.getLayoutParams();
-        layoutParams2.topMargin = this.mInsets.top + workspacePadding.top;
-        qsbContainer.setLayoutParams((ViewGroup$LayoutParams)layoutParams2);
-        final Hotseat hotseat = (Hotseat)launcher.findViewById(2131623971);
-        final FrameLayout$LayoutParams layoutParams3 = (FrameLayout$LayoutParams)hotseat.getLayoutParams();
+        final Hotseat hotseat = (Hotseat)launcher.findViewById(2131623974);
+        final FrameLayout$LayoutParams layoutParams2 = (FrameLayout$LayoutParams)hotseat.getLayoutParams();
         final int round = Math.round((this.getCurrentWidth() / this.inv.numColumns - this.getCurrentWidth() / this.inv.numHotseatIcons) / 2.0f);
         if (verticalBarLayout) {
-            layoutParams3.gravity = 5;
-            layoutParams3.width = this.hotseatBarHeightPx + this.mInsets.left + this.mInsets.right;
-            layoutParams3.height = width;
-            hotseat.getLayout().setPadding(this.mInsets.left, this.mInsets.top, this.mInsets.right, workspacePadding.bottom);
-        }
-        else if (this.isTablet) {
-            layoutParams3.gravity = n;
-            layoutParams3.width = width;
-            layoutParams3.height = this.hotseatBarHeightPx + this.mInsets.bottom;
-            hotseat.getLayout().setPadding(workspacePadding.left + round, this.hotseatBarTopPaddingPx, round + workspacePadding.right, this.hotseatBarBottomPaddingPx + this.mInsets.bottom);
-        }
-        else {
-            layoutParams3.gravity = n;
-            layoutParams3.width = width;
-            layoutParams3.height = this.hotseatBarHeightPx + this.mInsets.bottom;
-            hotseat.getLayout().setPadding(workspacePadding.left + round, this.hotseatBarTopPaddingPx, round + workspacePadding.right, this.hotseatBarBottomPaddingPx + this.mInsets.bottom);
-        }
-        hotseat.setLayoutParams((ViewGroup$LayoutParams)layoutParams3);
-        final View viewById = launcher.findViewById(2131624003);
-        if (viewById != null) {
-            final FrameLayout$LayoutParams layoutParams4 = (FrameLayout$LayoutParams)viewById.getLayoutParams();
-            if (this.isVerticalBarLayout()) {
-                if (this.mInsets.left > 0) {
-                    layoutParams4.leftMargin = this.mInsets.left + this.pageIndicatorLandGutterLeftNavBarPx - layoutParams4.width - this.pageIndicatorLandWorkspaceOffsetPx;
-                }
-                else if (this.mInsets.right > 0) {
-                    layoutParams4.leftMargin = this.pageIndicatorLandGutterRightNavBarPx - layoutParams4.width - this.pageIndicatorLandWorkspaceOffsetPx;
-                }
-                layoutParams4.bottomMargin = workspacePadding.bottom;
+            int n2;
+            if (this.mInsets.left > 0) {
+                n2 = this.hotseatBarLeftNavBarRightPaddingPx;
             }
             else {
-                layoutParams4.gravity = 81;
-                layoutParams4.height = this.pageIndicatorHeightPx;
-                layoutParams4.bottomMargin = this.hotseatBarHeightPx + this.mInsets.bottom;
+                n2 = this.hotseatBarRightNavBarRightPaddingPx;
             }
-            viewById.setLayoutParams((ViewGroup$LayoutParams)layoutParams4);
+            int n3;
+            if (this.mInsets.left > 0) {
+                n3 = this.hotseatBarLeftNavBarLeftPaddingPx;
+            }
+            else {
+                n3 = this.hotseatBarRightNavBarLeftPaddingPx;
+            }
+            layoutParams2.gravity = 5;
+            layoutParams2.width = this.hotseatBarSizePx + this.mInsets.left + this.mInsets.right + n3 + n2;
+            layoutParams2.height = width;
+            hotseat.getLayout().setPadding(n3 + (this.mInsets.left + this.cellLayoutPaddingLeftRightPx), this.mInsets.top, n2 + (this.mInsets.right + this.cellLayoutPaddingLeftRightPx), workspacePadding.bottom + this.cellLayoutBottomPaddingPx);
+        }
+        else if (this.isTablet) {
+            layoutParams2.gravity = n;
+            layoutParams2.width = width;
+            layoutParams2.height = this.hotseatBarSizePx + this.mInsets.bottom;
+            hotseat.getLayout().setPadding(workspacePadding.left + round + this.cellLayoutPaddingLeftRightPx, this.hotseatBarTopPaddingPx, round + workspacePadding.right + this.cellLayoutPaddingLeftRightPx, this.hotseatBarBottomPaddingPx + this.mInsets.bottom + this.cellLayoutBottomPaddingPx);
+        }
+        else {
+            layoutParams2.gravity = n;
+            layoutParams2.width = width;
+            layoutParams2.height = this.hotseatBarSizePx + this.mInsets.bottom;
+            hotseat.getLayout().setPadding(workspacePadding.left + round + this.cellLayoutPaddingLeftRightPx, this.hotseatBarTopPaddingPx, round + workspacePadding.right + this.cellLayoutPaddingLeftRightPx, this.hotseatBarBottomPaddingPx + this.mInsets.bottom + this.cellLayoutBottomPaddingPx);
+        }
+        hotseat.setLayoutParams((ViewGroup$LayoutParams)layoutParams2);
+        final View viewById = launcher.findViewById(2131624012);
+        if (viewById != null) {
+            final FrameLayout$LayoutParams layoutParams3 = (FrameLayout$LayoutParams)viewById.getLayoutParams();
+            if (this.isVerticalBarLayout()) {
+                if (this.mInsets.left > 0) {
+                    layoutParams3.leftMargin = this.mInsets.left;
+                }
+                else {
+                    layoutParams3.leftMargin = this.pageIndicatorLandWorkspaceOffsetPx;
+                }
+                layoutParams3.bottomMargin = workspacePadding.bottom;
+            }
+            else {
+                layoutParams3.gravity = 81;
+                layoutParams3.height = this.pageIndicatorSizePx;
+                layoutParams3.bottomMargin = this.hotseatBarSizePx + this.mInsets.bottom;
+            }
+            viewById.setLayoutParams((ViewGroup$LayoutParams)layoutParams3);
         }
         final ViewGroup overviewPanel = launcher.getOverviewPanel();
         if (overviewPanel != null) {
             final int visibleChildCount = this.getVisibleChildCount(overviewPanel);
-            final int n2 = this.overviewModeBarItemWidthPx * visibleChildCount + (visibleChildCount - 1) * this.overviewModeBarSpacerWidthPx;
-            final FrameLayout$LayoutParams layoutParams5 = (FrameLayout$LayoutParams)overviewPanel.getLayoutParams();
-            layoutParams5.width = Math.min(this.availableWidthPx, n2);
-            layoutParams5.height = this.getOverviewModeButtonBarHeight() + this.mInsets.bottom;
-            overviewPanel.setLayoutParams((ViewGroup$LayoutParams)layoutParams5);
+            final int n4 = this.overviewModeBarItemWidthPx * visibleChildCount + (visibleChildCount - 1) * this.overviewModeBarSpacerWidthPx;
+            final FrameLayout$LayoutParams layoutParams4 = (FrameLayout$LayoutParams)overviewPanel.getLayoutParams();
+            layoutParams4.width = Math.min(this.availableWidthPx, n4);
+            layoutParams4.height = this.getOverviewModeButtonBarHeight() + this.mInsets.bottom;
+            overviewPanel.setLayoutParams((ViewGroup$LayoutParams)layoutParams4);
         }
+        final View viewById2 = launcher.findViewById(2131623979);
+        final int n5 = this.desiredWorkspaceLeftRightMarginPx + this.cellLayoutPaddingLeftRightPx;
+        viewById2.setPadding(n5, viewById2.getPaddingTop(), n5, viewById2.getPaddingBottom());
         if (b) {
             for (int i = this.mListeners.size() - 1; i >= 0; --i) {
                 ((DeviceProfile$LauncherLayoutChangeListener)this.mListeners.get(i)).onLauncherLayoutChanged();

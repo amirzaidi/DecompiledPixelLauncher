@@ -14,15 +14,15 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 102
+    .line 107
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
-    .line 103
+    .line 108
     const/4 v0, 0x0
 
     invoke-direct {p0, p2, v1, v1, v0}, Landroid/support/v7/widget/M;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 104
+    .line 109
     return-void
 .end method
 
@@ -32,7 +32,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 153
+    .line 158
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-static {v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->-get0(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)Lcom/android/launcher3/allapps/AlphabeticalAppsList;
@@ -43,7 +43,7 @@
 
     move-result-object v3
 
-    .line 154
+    .line 159
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-static {v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->-get0(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)Lcom/android/launcher3/allapps/AlphabeticalAppsList;
@@ -68,11 +68,11 @@
 
     move v1, v0
 
-    .line 156
+    .line 161
     :goto_0
     if-gt v2, v4, :cond_0
 
-    .line 157
+    .line 162
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -81,7 +81,7 @@
 
     iget v0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
 
-    const/16 v5, 0x206
+    const/16 v5, 0x106
 
     invoke-static {v0, v5}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->isViewType(II)Z
 
@@ -89,10 +89,10 @@
 
     if-nez v0, :cond_1
 
-    .line 158
+    .line 163
     add-int/lit8 v0, v1, 0x1
 
-    .line 156
+    .line 161
     :goto_1
     add-int/lit8 v1, v2, 0x1
 
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 161
+    .line 166
     :cond_0
     return v1
 
@@ -114,40 +114,16 @@
 
 
 # virtual methods
-.method public getPaddingBottom()I
-    .locals 1
-
-    .prologue
-    .line 166
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
-
-    invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->-get2(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)Lcom/android/launcher3/Launcher;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/launcher3/dragndrop/DragLayer;->getInsets()Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    return v0
-.end method
-
 .method public getRowCountForAccessibility(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;)I
     .locals 2
 
     .prologue
-    .line 124
+    .line 129
     invoke-super {p0, p1, p2}, Landroid/support/v7/widget/M;->getRowCountForAccessibility(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;)I
 
     move-result v0
 
-    .line 125
+    .line 130
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-static {v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->-get0(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)Lcom/android/launcher3/allapps/AlphabeticalAppsList;
@@ -168,7 +144,7 @@
 
     move-result v1
 
-    .line 124
+    .line 129
     sub-int/2addr v0, v1
 
     return v0
@@ -180,15 +156,15 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 108
+    .line 113
     invoke-super {p0, p1}, Landroid/support/v7/widget/M;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 112
-    invoke-static {p1}, Landroid/support/v4/view/a/r;->aeY(Landroid/view/accessibility/AccessibilityEvent;)Landroid/support/v4/view/a/v;
+    .line 117
+    invoke-static {p1}, Landroid/support/v4/view/a/n;->afZ(Landroid/view/accessibility/AccessibilityEvent;)Landroid/support/v4/view/a/r;
 
     move-result-object v0
 
-    .line 114
+    .line 119
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-static {v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->-get0(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)Lcom/android/launcher3/allapps/AlphabeticalAppsList;
@@ -199,14 +175,14 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/a/v;->afc(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/a/r;->agd(I)V
 
-    .line 116
-    invoke-virtual {v0}, Landroid/support/v4/view/a/v;->afd()I
+    .line 121
+    invoke-virtual {v0}, Landroid/support/v4/view/a/r;->age()I
 
     move-result v1
 
-    invoke-virtual {v0}, Landroid/support/v4/view/a/v;->afd()I
+    invoke-virtual {v0}, Landroid/support/v4/view/a/r;->age()I
 
     move-result v2
 
@@ -216,19 +192,19 @@
 
     sub-int/2addr v1, v2
 
-    .line 115
+    .line 120
     invoke-static {v3, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/a/v;->afb(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/a/r;->agc(I)V
 
-    .line 118
-    invoke-virtual {v0}, Landroid/support/v4/view/a/v;->afe()I
+    .line 123
+    invoke-virtual {v0}, Landroid/support/v4/view/a/r;->agf()I
 
     move-result v1
 
-    invoke-virtual {v0}, Landroid/support/v4/view/a/v;->afe()I
+    invoke-virtual {v0}, Landroid/support/v4/view/a/r;->agf()I
 
     move-result v2
 
@@ -238,14 +214,14 @@
 
     sub-int/2addr v1, v2
 
-    .line 117
+    .line 122
     invoke-static {v3, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/a/v;->afg(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/a/r;->agh(I)V
 
-    .line 119
+    .line 124
     return-void
 .end method
 
@@ -253,40 +229,40 @@
     .locals 6
 
     .prologue
-    .line 131
+    .line 136
     invoke-super {p0, p1, p2, p3, p4}, Landroid/support/v7/widget/M;->onInitializeAccessibilityNodeInfoForItem(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;Landroid/view/View;Landroid/support/v4/view/a/a;)V
 
-    .line 133
+    .line 138
     invoke-virtual {p3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 134
-    invoke-virtual {p4}, Landroid/support/v4/view/a/a;->adG()Landroid/support/v4/view/a/l;
+    .line 139
+    invoke-virtual {p4}, Landroid/support/v4/view/a/a;->aeI()Landroid/support/v4/view/a/l;
 
     move-result-object v5
 
-    .line 135
+    .line 140
     instance-of v1, v0, Landroid/support/v7/widget/O;
 
     if-eqz v1, :cond_0
 
     if-nez v5, :cond_1
 
-    .line 136
+    .line 141
     :cond_0
     return-void
 
-    .line 138
+    .line 143
     :cond_1
     check-cast v0, Landroid/support/v7/widget/O;
 
-    .line 140
-    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->aeQ()I
+    .line 145
+    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->afS()I
 
     move-result v1
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/O;->Xb()I
+    invoke-virtual {v0}, Landroid/support/v7/widget/O;->Yb()I
 
     move-result v0
 
@@ -296,38 +272,38 @@
 
     sub-int v0, v1, v0
 
-    .line 141
-    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->aeN()I
+    .line 146
+    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->afP()I
 
     move-result v1
 
-    .line 142
-    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->aeS()I
+    .line 147
+    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->afU()I
 
     move-result v2
 
-    .line 143
-    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->aeP()I
+    .line 148
+    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->afR()I
 
     move-result v3
 
-    .line 144
-    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->aeT()Z
+    .line 149
+    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->afV()Z
 
     move-result v4
 
-    .line 145
-    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->aeR()Z
+    .line 150
+    invoke-virtual {v5}, Landroid/support/v4/view/a/l;->afT()Z
 
     move-result v5
 
-    .line 139
-    invoke-static/range {v0 .. v5}, Landroid/support/v4/view/a/l;->aeO(IIIIZZ)Landroid/support/v4/view/a/l;
+    .line 144
+    invoke-static/range {v0 .. v5}, Landroid/support/v4/view/a/l;->afQ(IIIIZZ)Landroid/support/v4/view/a/l;
 
     move-result-object v0
 
-    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->adL(Ljava/lang/Object;)V
+    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->aeN(Ljava/lang/Object;)V
 
-    .line 146
+    .line 151
     return-void
 .end method

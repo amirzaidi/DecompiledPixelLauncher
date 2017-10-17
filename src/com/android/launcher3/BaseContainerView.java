@@ -84,19 +84,28 @@ public abstract class BaseContainerView extends FrameLayout implements DevicePro
     }
     
     private void updatePaddings() {
-        int n = 0;
+        int edgeMarginPx = 0;
         final DeviceProfile deviceProfile = Launcher.getLauncher(this.getContext()).getDeviceProfile();
         final int[] containerPadding = deviceProfile.getContainerPadding();
-        final int n2 = containerPadding[0] + deviceProfile.edgeMarginPx;
-        final int n3 = containerPadding[1] + deviceProfile.edgeMarginPx;
-        int edgeMarginPx;
+        final int n = containerPadding[0];
+        final int n2 = containerPadding[1];
+        int n5;
+        int n6;
+        int n7;
         if (!deviceProfile.isVerticalBarLayout()) {
-            n = (edgeMarginPx = deviceProfile.edgeMarginPx);
+            final int n3 = n + deviceProfile.edgeMarginPx;
+            final int n4 = n2 + deviceProfile.edgeMarginPx;
+            edgeMarginPx = deviceProfile.edgeMarginPx;
+            n5 = n3;
+            n6 = n4;
+            n7 = edgeMarginPx;
         }
         else {
-            edgeMarginPx = 0;
+            n5 = n;
+            n6 = n2;
+            n7 = 0;
         }
-        this.updateBackground(n2, n, n3, edgeMarginPx);
+        this.updateBackground(n5, n7, n6, edgeMarginPx);
     }
     
     public final View getContentView() {
@@ -126,8 +135,8 @@ public abstract class BaseContainerView extends FrameLayout implements DevicePro
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        this.mContent = this.findViewById(2131623975);
-        this.mRevealView = this.findViewById(2131623974);
+        this.mContent = this.findViewById(2131623978);
+        this.mRevealView = this.findViewById(2131623977);
         this.updatePaddings();
     }
     
@@ -150,10 +159,6 @@ public abstract class BaseContainerView extends FrameLayout implements DevicePro
     
     public boolean onTouchEvent(final MotionEvent motionEvent) {
         return this.handleTouchEvent(motionEvent);
-    }
-    
-    public void setRevealDrawableColor(final int color) {
-        ((ColorDrawable)this.mBaseDrawable).setColor(color);
     }
     
     protected void updateBackground(final int n, final int n2, final int n3, final int n4) {

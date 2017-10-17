@@ -13,7 +13,7 @@ import android.graphics.Bitmap;
 import com.android.launcher3.accessibility.FolderAccessibilityHelper;
 import com.android.launcher3.accessibility.WorkspaceAccessibilityHelper;
 import android.view.View$OnClickListener;
-import android.support.v4.view.a;
+import android.support.v4.view.c;
 import android.support.v4.view.f;
 import android.view.MotionEvent;
 import android.graphics.Canvas;
@@ -32,16 +32,17 @@ import android.animation.Animator$AnimatorListener;
 import android.animation.ValueAnimator$AnimatorUpdateListener;
 import android.view.View;
 import java.util.Arrays;
+import com.android.launcher3.util.Themes;
 import android.view.animation.DecelerateInterpolator;
 import android.graphics.drawable.Drawable$Callback;
 import android.util.AttributeSet;
 import android.content.Context;
 import com.android.launcher3.accessibility.DragAndDropAccessibilityDelegate;
 import java.util.Stack;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import com.android.launcher3.util.GridOccupancy;
 import android.view.View$OnTouchListener;
-import com.android.launcher3.folder.FolderIcon$PreviewBackground;
+import com.android.launcher3.folder.PreviewBackground;
 import java.util.ArrayList;
 import android.animation.TimeInterpolator;
 import android.graphics.Rect;
@@ -62,37 +63,37 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
     private final int mContainerType;
     private int mCountX;
     private int mCountY;
-    private int[] mDirectionVector;
+    private final int[] mDirectionVector;
     private final int[] mDragCell;
-    float[] mDragOutlineAlphas;
-    private InterruptibleInOutAnimator[] mDragOutlineAnims;
+    final float[] mDragOutlineAlphas;
+    private final InterruptibleInOutAnimator[] mDragOutlineAnims;
     private int mDragOutlineCurrent;
     private final Paint mDragOutlinePaint;
-    Rect[] mDragOutlines;
+    final Rect[] mDragOutlines;
     private boolean mDragging;
     private boolean mDropPending;
-    private TimeInterpolator mEaseOutInterpolator;
+    private final TimeInterpolator mEaseOutInterpolator;
     private int mFixedCellHeight;
     private int mFixedCellWidth;
     private int mFixedHeight;
     private int mFixedWidth;
-    private ArrayList mFolderBackgrounds;
-    FolderIcon$PreviewBackground mFolderLeaveBehind;
+    private final ArrayList mFolderBackgrounds;
+    final PreviewBackground mFolderLeaveBehind;
     private View$OnTouchListener mInterceptTouchListener;
-    private ArrayList mIntersectingViews;
+    private final ArrayList mIntersectingViews;
     private boolean mIsDragOverlapping;
     private boolean mIsDragTarget;
     private boolean mItemPlacementDirty;
     private boolean mJailContent;
-    private Launcher mLauncher;
+    private final Launcher mLauncher;
     private GridOccupancy mOccupied;
-    private Rect mOccupiedRect;
-    int[] mPreviousReorderDirection;
-    HashMap mReorderAnimators;
+    private final Rect mOccupiedRect;
+    final int[] mPreviousReorderDirection;
+    final ArrayMap mReorderAnimators;
     final float mReorderPreviewAnimationMagnitude;
-    HashMap mShakeAnimators;
-    private ShortcutAndWidgetContainer mShortcutsAndWidgets;
-    private StylusEventHelper mStylusEventHelper;
+    final ArrayMap mShakeAnimators;
+    private final ShortcutAndWidgetContainer mShortcutsAndWidgets;
+    private final StylusEventHelper mStylusEventHelper;
     final int[] mTempLocation;
     private final Rect mTempRect;
     private final Stack mTempRectStack;
@@ -117,17 +118,17 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
     }
     
     public CellLayout(final Context context, final AttributeSet set, final int n) {
-        final int n2 = 2;
-        final int n3 = 1;
+        final int n2 = 1;
+        final int n3 = 2;
         final int n4 = -1;
         super(context, set, n);
         this.mDropPending = false;
-        this.mIsDragTarget = (n3 != 0);
-        this.mJailContent = (n3 != 0);
-        this.mTmpPoint = new int[n2];
-        this.mTempLocation = new int[n2];
+        this.mIsDragTarget = (n2 != 0);
+        this.mJailContent = (n2 != 0);
+        this.mTmpPoint = new int[n3];
+        this.mTempLocation = new int[n3];
         this.mFolderBackgrounds = new ArrayList();
-        this.mFolderLeaveBehind = new FolderIcon$PreviewBackground();
+        this.mFolderLeaveBehind = new PreviewBackground();
         this.mFixedWidth = n4;
         this.mFixedHeight = n4;
         this.mIsDragOverlapping = false;
@@ -136,15 +137,16 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         this.mDragOutlineAnims = new InterruptibleInOutAnimator[this.mDragOutlines.length];
         this.mDragOutlineCurrent = 0;
         this.mDragOutlinePaint = new Paint();
-        this.mReorderAnimators = new HashMap();
-        this.mShakeAnimators = new HashMap();
+        this.mReorderAnimators = new ArrayMap();
+        this.mShakeAnimators = new ArrayMap();
         this.mItemPlacementDirty = false;
-        this.mDragCell = new int[n2];
+        this.mDragCell = new int[n3];
         this.mDragging = false;
+        this.mChildScale = 1.0f;
         this.mIntersectingViews = new ArrayList();
         this.mOccupiedRect = new Rect();
-        this.mDirectionVector = new int[n2];
-        this.mPreviousReorderDirection = new int[n2];
+        this.mDirectionVector = new int[n3];
+        this.mPreviousReorderDirection = new int[n3];
         this.mTempRect = new Rect();
         this.mUseTouchHelper = false;
         this.mTempRectStack = new Stack();
@@ -164,28 +166,20 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         this.mOccupied = new GridOccupancy(this.mCountX, this.mCountY);
         this.mTmpOccupied = new GridOccupancy(this.mCountX, this.mCountY);
         this.mPreviousReorderDirection[0] = -100;
-        this.mPreviousReorderDirection[n3] = -100;
+        this.mPreviousReorderDirection[n2] = -100;
         this.mFolderLeaveBehind.delegateCellX = n4;
         this.mFolderLeaveBehind.delegateCellY = n4;
-        float hotseatScale;
-        if (this.mContainerType == n3) {
-            hotseatScale = deviceProfile.inv.hotseatScale;
-        }
-        else {
-            hotseatScale = 1.0f;
-        }
-        this.mChildScale = hotseatScale;
         this.setAlwaysDrawnWithCacheEnabled(false);
         final Resources resources = this.getResources();
         (this.mBackground = resources.getDrawable(2130837509)).setCallback((Drawable$Callback)this);
         this.mBackground.setAlpha((int)(this.mBackgroundAlpha * 255.0f));
         this.mReorderPreviewAnimationMagnitude = deviceProfile.iconSizePx * 0.12f;
         this.mEaseOutInterpolator = (TimeInterpolator)new DecelerateInterpolator(2.5f);
-        this.mDragCell[0] = (this.mDragCell[n3] = n4);
+        this.mDragCell[0] = (this.mDragCell[n2] = n4);
         for (int i = 0; i < this.mDragOutlines.length; ++i) {
             this.mDragOutlines[i] = new Rect(n4, n4, n4, n4);
         }
-        this.mDragOutlinePaint.setColor(this.getResources().getColor(2131361820));
+        this.mDragOutlinePaint.setColor(Themes.getAttrColor(context, 2130772012));
         final int integer = resources.getInteger(2131558413);
         final float n5 = resources.getInteger(2131558414);
         Arrays.fill(this.mDragOutlineAlphas, 0.0f);
@@ -203,7 +197,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
     }
     
     private boolean addViewToTempLocation(final View view, final Rect rect, final int[] array, final CellLayout$ItemConfiguration cellLayout$ItemConfiguration) {
-        final CellAndSpan cellAndSpan = cellLayout$ItemConfiguration.map.get(view);
+        final CellAndSpan cellAndSpan = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)view);
         this.mTmpOccupied.markCells(cellAndSpan, false);
         this.mTmpOccupied.markCells(rect, true);
         this.findNearestArea(cellAndSpan.cellX, cellAndSpan.cellY, cellAndSpan.spanX, cellAndSpan.spanY, array, this.mTmpOccupied.cells, null, this.mTempLocation);
@@ -228,14 +222,14 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         cellLayout$ItemConfiguration.getBoundingRectForViews(list, rect2);
         final Iterator<View> iterator = (Iterator<View>)list.iterator();
         while (iterator.hasNext()) {
-            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get(iterator.next()), false);
+            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)iterator.next()), false);
         }
         final GridOccupancy gridOccupancy = new GridOccupancy(rect2.width(), rect2.height());
         final int top = rect2.top;
         final int left = rect2.left;
         final Iterator<View> iterator2 = (Iterator<View>)list.iterator();
         while (iterator2.hasNext()) {
-            final CellAndSpan cellAndSpan = cellLayout$ItemConfiguration.map.get(iterator2.next());
+            final CellAndSpan cellAndSpan = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)iterator2.next());
             gridOccupancy.markCells(cellAndSpan.cellX - left, cellAndSpan.cellY - top, cellAndSpan.spanX, cellAndSpan.spanY, true);
         }
         this.mTmpOccupied.markCells(rect, true);
@@ -246,7 +240,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
             final int n2 = this.mTempLocation[1] - rect2.top;
             final Iterator<View> iterator3 = (Iterator<View>)list.iterator();
             while (iterator3.hasNext()) {
-                final CellAndSpan cellAndSpan2 = cellLayout$ItemConfiguration.map.get(iterator3.next());
+                final CellAndSpan cellAndSpan2 = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)iterator3.next());
                 cellAndSpan2.cellX += n;
                 cellAndSpan2.cellY += n2;
             }
@@ -257,7 +251,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         }
         final Iterator<View> iterator4 = (Iterator<View>)list.iterator();
         while (iterator4.hasNext()) {
-            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get(iterator4.next()), true);
+            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)iterator4.next()), true);
         }
         return b;
     }
@@ -268,7 +262,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         for (int childCount = this.mShortcutsAndWidgets.getChildCount(), i = 0; i < childCount; ++i) {
             final View child = this.mShortcutsAndWidgets.getChildAt(i);
             if (child != view) {
-                final CellAndSpan cellAndSpan = cellLayout$ItemConfiguration.map.get(child);
+                final CellAndSpan cellAndSpan = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)child);
                 if (cellAndSpan != null) {
                     this.animateChildToPosition(child, cellAndSpan.cellX, cellAndSpan.cellY, 150, 0, false, false);
                     mTmpOccupied.markCells(cellAndSpan, true);
@@ -347,7 +341,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         for (int childCount = this.mShortcutsAndWidgets.getChildCount(), i = 0; i < childCount; ++i) {
             final View child = this.mShortcutsAndWidgets.getChildAt(i);
             if (child != view) {
-                final CellAndSpan cellAndSpan = cellLayout$ItemConfiguration.map.get(child);
+                final CellAndSpan cellAndSpan = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)child);
                 final boolean b = n2 == 0 && cellLayout$ItemConfiguration.intersectingViews != null && (cellLayout$ItemConfiguration.intersectingViews.contains(child) ^ true);
                 final CellLayout$LayoutParams cellLayout$LayoutParams = (CellLayout$LayoutParams)child.getLayoutParams();
                 if (cellAndSpan != null && (b ^ true)) {
@@ -440,7 +434,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
             final View child = this.mShortcutsAndWidgets.getChildAt(i);
             if (child != view) {
                 final CellLayout$LayoutParams cellLayout$LayoutParams = (CellLayout$LayoutParams)child.getLayoutParams();
-                final CellAndSpan cellAndSpan = cellLayout$ItemConfiguration.map.get(child);
+                final CellAndSpan cellAndSpan = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)child);
                 if (cellAndSpan != null) {
                     cellLayout$LayoutParams.tmpCellX = cellAndSpan.cellX;
                     cellLayout$LayoutParams.tmpCellY = cellAndSpan.cellY;
@@ -850,7 +844,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         }
         final Iterator<View> iterator = (Iterator<View>)list.iterator();
         while (iterator.hasNext()) {
-            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get(iterator.next()), false);
+            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)iterator.next()), false);
         }
         cellLayout$ItemConfiguration.save();
         cellLayout$ViewCluster.sortConfigurationForEdgePush(n4);
@@ -873,7 +867,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
                             continue Label_0288;
                         }
                         cellLayout$ViewCluster.addView(view2);
-                        this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get(view2), false);
+                        this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)view2), false);
                     }
                 }
                 final int n11 = n9;
@@ -892,7 +886,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         }
         final Iterator iterator3 = cellLayout$ViewCluster.views.iterator();
         while (iterator3.hasNext()) {
-            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get(iterator3.next()), n != 0);
+            this.mTmpOccupied.markCells((CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)iterator3.next()), n != 0);
         }
         return b;
     }
@@ -904,7 +898,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         this.mIntersectingViews.clear();
         this.mOccupiedRect.set(cellX, cellY, cellX + n, cellY + n2);
         if (view != null) {
-            final CellAndSpan cellAndSpan = cellLayout$ItemConfiguration.map.get(view);
+            final CellAndSpan cellAndSpan = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)view);
             if (cellAndSpan != null) {
                 cellAndSpan.cellX = cellX;
                 cellAndSpan.cellY = cellY;
@@ -914,7 +908,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         final Rect rect2 = new Rect();
         for (final View view2 : cellLayout$ItemConfiguration.map.keySet()) {
             if (view2 != view) {
-                final CellAndSpan cellAndSpan2 = cellLayout$ItemConfiguration.map.get(view2);
+                final CellAndSpan cellAndSpan2 = (CellAndSpan)cellLayout$ItemConfiguration.map.get((Object)view2);
                 final CellLayout$LayoutParams cellLayout$LayoutParams = (CellLayout$LayoutParams)view2.getLayoutParams();
                 rect2.set(cellAndSpan2.cellX, cellAndSpan2.cellY, cellAndSpan2.cellX + cellAndSpan2.spanX, cellAndSpan2.spanY + cellAndSpan2.cellY);
                 if (!Rect.intersects(rect, rect2)) {
@@ -962,17 +956,18 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         return b;
     }
     
-    public void addFolderBackground(final FolderIcon$PreviewBackground folderIcon$PreviewBackground) {
-        this.mFolderBackgrounds.add(folderIcon$PreviewBackground);
+    public void addFolderBackground(final PreviewBackground previewBackground) {
+        this.mFolderBackgrounds.add(previewBackground);
     }
     
     public boolean addViewToCellLayout(final View view, final int n, final int id, final CellLayout$LayoutParams cellLayout$LayoutParams, final boolean b) {
-        final boolean b2 = true;
+        final float n2 = 1.0f;
         if (view instanceof BubbleTextView) {
-            ((BubbleTextView)view).setTextVisibility(this.mContainerType != (b2 ? 1 : 0) && b2);
+            final BubbleTextView bubbleTextView = (BubbleTextView)view;
+            bubbleTextView.setTextVisibility(bubbleTextView.shouldTextBeVisible());
         }
-        view.setScaleX(this.mChildScale);
-        view.setScaleY(this.mChildScale);
+        view.setScaleX(n2);
+        view.setScaleY(n2);
         if (cellLayout$LayoutParams.cellX >= 0 && cellLayout$LayoutParams.cellX <= this.mCountX - 1 && cellLayout$LayoutParams.cellY >= 0 && cellLayout$LayoutParams.cellY <= this.mCountY - 1) {
             if (cellLayout$LayoutParams.cellHSpan < 0) {
                 cellLayout$LayoutParams.cellHSpan = this.mCountX;
@@ -985,7 +980,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
             if (b) {
                 this.markCellsAsOccupiedForView(view);
             }
-            return b2;
+            return true;
         }
         return false;
     }
@@ -997,9 +992,9 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         }
         final CellLayout$LayoutParams cellLayout$LayoutParams = (CellLayout$LayoutParams)view.getLayoutParams();
         final ItemInfo itemInfo = (ItemInfo)view.getTag();
-        if (this.mReorderAnimators.containsKey(cellLayout$LayoutParams)) {
-            ((Animator)this.mReorderAnimators.get(cellLayout$LayoutParams)).cancel();
-            this.mReorderAnimators.remove(cellLayout$LayoutParams);
+        if (this.mReorderAnimators.containsKey((Object)cellLayout$LayoutParams)) {
+            ((Animator)this.mReorderAnimators.get((Object)cellLayout$LayoutParams)).cancel();
+            this.mReorderAnimators.remove((Object)cellLayout$LayoutParams);
         }
         final int x = cellLayout$LayoutParams.x;
         final int y = cellLayout$LayoutParams.y;
@@ -1040,7 +1035,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         array2[1] = 1.0f;
         final ValueAnimator ofFloat = LauncherAnimUtils.ofFloat(array);
         ofFloat.setDuration((long)n);
-        this.mReorderAnimators.put(cellLayout$LayoutParams, ofFloat);
+        this.mReorderAnimators.put((Object)cellLayout$LayoutParams, (Object)ofFloat);
         ofFloat.addUpdateListener((ValueAnimator$AnimatorUpdateListener)new CellLayout$3(this, cellLayout$LayoutParams, x, x2, y, y2, view));
         ofFloat.addListener((Animator$AnimatorListener)new CellLayout$4(this, cellLayout$LayoutParams, view));
         ofFloat.setStartDelay((long)n2);
@@ -1133,12 +1128,12 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
     protected void dispatchDraw(final Canvas canvas) {
         super.dispatchDraw(canvas);
         for (int i = 0; i < this.mFolderBackgrounds.size(); ++i) {
-            final FolderIcon$PreviewBackground folderIcon$PreviewBackground = this.mFolderBackgrounds.get(i);
-            if (folderIcon$PreviewBackground.isClipping) {
-                this.cellToPoint(folderIcon$PreviewBackground.delegateCellX, folderIcon$PreviewBackground.delegateCellY, this.mTempLocation);
+            final PreviewBackground previewBackground = this.mFolderBackgrounds.get(i);
+            if (previewBackground.isClipping) {
+                this.cellToPoint(previewBackground.delegateCellX, previewBackground.delegateCellY, this.mTempLocation);
                 canvas.save();
                 canvas.translate((float)this.mTempLocation[0], (float)this.mTempLocation[1]);
-                folderIcon$PreviewBackground.drawBackgroundStroke(canvas);
+                previewBackground.drawBackgroundStroke(canvas);
                 canvas.restore();
             }
         }
@@ -1170,7 +1165,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         final int n2 = 2;
         final int n3 = 1;
         if (!(this.mUseTouchHelper = mUseTouchHelper)) {
-            f.aft((View)this, null);
+            f.agu((View)this, null);
             this.setImportantForAccessibility(n2);
             this.getShortcutsAndWidgets().setImportantForAccessibility(n2);
             this.setOnClickListener((View$OnClickListener)this.mLauncher);
@@ -1182,7 +1177,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
             else if (n == n3 && (this.mTouchHelper instanceof FolderAccessibilityHelper ^ true)) {
                 this.mTouchHelper = new FolderAccessibilityHelper(this);
             }
-            f.aft((View)this, this.mTouchHelper);
+            f.agu((View)this, this.mTouchHelper);
             this.setImportantForAccessibility(n3);
             this.getShortcutsAndWidgets().setImportantForAccessibility(n3);
             this.setOnClickListener((View$OnClickListener)this.mTouchHelper);
@@ -1271,12 +1266,12 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
             final Context context = this.getContext();
             final Object[] array = new Object[n3];
             array[0] = Math.max(n, n2) + 1;
-            return context.getString(2131492972, array);
+            return context.getString(2131492981, array);
         }
         final Context context2 = this.getContext();
         final Object[] array2 = { n2 + 1, null };
         array2[n3] = n + 1;
-        return context2.getString(2131492970, array2);
+        return context2.getString(2131492979, array2);
     }
     
     public ShortcutAndWidgetContainer getShortcutsAndWidgets() {
@@ -1375,13 +1370,13 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
             }
         }
         for (int j = 0; j < this.mFolderBackgrounds.size(); ++j) {
-            final FolderIcon$PreviewBackground folderIcon$PreviewBackground = this.mFolderBackgrounds.get(j);
-            this.cellToPoint(folderIcon$PreviewBackground.delegateCellX, folderIcon$PreviewBackground.delegateCellY, this.mTempLocation);
+            final PreviewBackground previewBackground = this.mFolderBackgrounds.get(j);
+            this.cellToPoint(previewBackground.delegateCellX, previewBackground.delegateCellY, this.mTempLocation);
             canvas.save();
             canvas.translate((float)this.mTempLocation[0], (float)this.mTempLocation[n]);
-            folderIcon$PreviewBackground.drawBackground(canvas);
-            if (!folderIcon$PreviewBackground.isClipping) {
-                folderIcon$PreviewBackground.drawBackgroundStroke(canvas);
+            previewBackground.drawBackground(canvas);
+            if (!previewBackground.isClipping) {
+                previewBackground.drawBackgroundStroke(canvas);
             }
             canvas.restore();
         }
@@ -1429,7 +1424,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         this.mTouchFeedbackView.layout(paddingLeft, paddingTop, this.mTouchFeedbackView.getMeasuredWidth() + paddingLeft, this.mTouchFeedbackView.getMeasuredHeight() + paddingTop);
         this.mShortcutsAndWidgets.layout(paddingLeft, paddingTop, n7, n8);
         this.mBackground.getPadding(this.mTempRect);
-        this.mBackground.setBounds(paddingLeft - this.mTempRect.left, paddingTop - this.mTempRect.top, n7 + this.mTempRect.right, n8 + this.mTempRect.bottom);
+        this.mBackground.setBounds(paddingLeft - this.mTempRect.left - this.getPaddingLeft(), paddingTop - this.mTempRect.top - this.getPaddingTop(), n7 + this.mTempRect.right + this.getPaddingRight(), n8 + this.mTempRect.bottom + this.getPaddingBottom());
     }
     
     protected void onMeasure(final int n, final int n2) {
@@ -1605,8 +1600,8 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
         }
     }
     
-    public void removeFolderBackground(final FolderIcon$PreviewBackground folderIcon$PreviewBackground) {
-        this.mFolderBackgrounds.remove(folderIcon$PreviewBackground);
+    public void removeFolderBackground(final PreviewBackground previewBackground) {
+        this.mFolderBackgrounds.remove(previewBackground);
     }
     
     public void removeView(final View view) {
@@ -1688,9 +1683,8 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
     }
     
     public void setFolderLeaveBehindCell(final int delegateCellX, final int delegateCellY) {
-        final DeviceProfile deviceProfile = this.mLauncher.getDeviceProfile();
         final View child = this.getChildAt(delegateCellX, delegateCellY);
-        this.mFolderLeaveBehind.setup(this.getResources().getDisplayMetrics(), deviceProfile, null, child.getMeasuredWidth(), child.getPaddingTop());
+        this.mFolderLeaveBehind.setup(this.mLauncher, null, child.getMeasuredWidth(), child.getPaddingTop());
         this.mFolderLeaveBehind.delegateCellX = delegateCellX;
         this.mFolderLeaveBehind.delegateCellY = delegateCellY;
         this.invalidate();
@@ -1807,7 +1801,7 @@ public class CellLayout extends ViewGroup implements BubbleTextView$BubbleTextSh
                 }
                 rect.set(n11, n10, generatedDragOutline.getWidth() + n11, generatedDragOutline.getHeight() + n10);
             }
-            Utilities.scaleRectAboutCenter(rect, this.mChildScale);
+            Utilities.scaleRectAboutCenter(rect, 1.0f);
             this.mDragOutlineAnims[this.mDragOutlineCurrent].setTag(generatedDragOutline);
             this.mDragOutlineAnims[this.mDragOutlineCurrent].animateIn();
             if (dropTarget$DragObject.stateAnnouncer != null) {

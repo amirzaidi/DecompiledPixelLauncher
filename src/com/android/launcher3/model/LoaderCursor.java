@@ -282,34 +282,40 @@ public class LoaderCursor extends CursorWrapper
     
     protected Bitmap loadIcon(final ShortcutInfo shortcutInfo) {
         while (true) {
-            Label_0179: {
+            Label_0270: {
                 if (this.itemType != 1) {
-                    break Label_0179;
+                    break Label_0270;
                 }
                 final String string = this.getString(this.iconPackageIndex);
                 final String string2 = this.getString(this.iconResourceIndex);
                 if (TextUtils.isEmpty((CharSequence)string) && !(TextUtils.isEmpty((CharSequence)string2) ^ true)) {
-                    break Label_0179;
+                    break Label_0270;
                 }
                 shortcutInfo.iconResource = new Intent$ShortcutIconResource();
                 shortcutInfo.iconResource.packageName = string;
                 shortcutInfo.iconResource.resourceName = string2;
                 Bitmap bitmap = LauncherIcons.createIconBitmap(shortcutInfo.iconResource, this.mContext);
-                if (bitmap != null) {
-                    return bitmap;
-                }
-                final byte[] blob = this.getBlob(this.iconIndex);
-                try {
-                    final Bitmap decodeByteArray = BitmapFactory.decodeByteArray(blob, 0, blob.length);
+                Label_0180: {
+                    if (bitmap != null) {
+                        break Label_0180;
+                    }
+                    final byte[] blob = this.getBlob(this.iconIndex);
                     try {
-                        bitmap = LauncherIcons.createIconBitmap(decodeByteArray, this.mContext);
-                        return bitmap;
+                        final Bitmap decodeByteArray = BitmapFactory.decodeByteArray(blob, 0, blob.length);
+                        try {
+                            bitmap = LauncherIcons.createIconBitmap(decodeByteArray, this.mContext);
+                            if (bitmap == null) {
+                                Log.e("LoaderCursor", "Failed to load icon for info " + shortcutInfo);
+                            }
+                            return bitmap;
+                        }
+                        catch (Exception ex) {
+                            Log.e("LoaderCursor", "Failed to load icon for info " + shortcutInfo, (Throwable)ex);
+                            return null;
+                        }
                     }
-                    catch (Exception ex) {
-                        return null;
-                    }
+                    catch (Exception ex2) {}
                 }
-                catch (Exception ex2) {}
             }
             Bitmap bitmap = null;
             continue;

@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 115
+    .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -24,7 +24,7 @@
     .locals 2
 
     .prologue
-    .line 118
+    .line 115
     invoke-virtual {p1}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->isDeclaredInManifest()Z
 
     move-result v0
@@ -39,12 +39,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 119
+    .line 116
     const/4 v0, -0x1
 
     return v0
 
-    .line 121
+    .line 118
     :cond_0
     invoke-virtual {p1}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->isDeclaredInManifest()Z
 
@@ -58,12 +58,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 122
+    .line 119
     const/4 v0, 0x1
 
     return v0
 
-    .line 124
+    .line 121
     :cond_1
     invoke-virtual {p1}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getRank()I
 
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 113
     check-cast p1, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
     check-cast p2, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;

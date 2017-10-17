@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$2;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
-    .line 181
+    .line 174
     invoke-direct {p0, p2}, Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;-><init>(F)V
 
     .line 1
@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 177
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$2;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     iget-object v0, v0, Lcom/android/launcher3/LauncherStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -39,6 +39,6 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/logging/UserEventDispatcher;->resetElapsedContainerMillis()V
 
-    .line 185
+    .line 178
     return-void
 .end method

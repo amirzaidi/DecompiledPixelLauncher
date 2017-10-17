@@ -12,6 +12,3 @@
 
 .method public abstract setLauncherCallbacks(Lcom/android/launcher3/LauncherCallbacks;)Z
 .end method
-
-.method public abstract setLauncherOverlay(Lcom/android/launcher3/Launcher$LauncherOverlay;)V
-.end method

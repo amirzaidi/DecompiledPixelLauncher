@@ -4,14 +4,6 @@
 
 package com.android.launcher3.graphics;
 
-import android.provider.Settings$Global;
-import android.preference.Preference$OnPreferenceChangeListener;
-import android.preference.ListPreference;
-import java.lang.reflect.Field;
-import android.content.res.Resources;
-import android.text.TextUtils;
-import com.android.launcher3.Utilities;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.os.Process;
 import android.app.PendingIntent;
@@ -19,6 +11,7 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.app.AlarmManager;
 import com.android.launcher3.LauncherAppState;
+import com.android.launcher3.Utilities;
 import android.content.Context;
 
 class IconShapeOverride$OverrideApplyHandler implements Runnable
@@ -32,7 +25,7 @@ class IconShapeOverride$OverrideApplyHandler implements Runnable
     }
     
     public void run() {
-        prefs(this.mContext).edit().putString("pref_override_icon_shape", this.mValue).commit();
+        Utilities.getDevicePrefs(this.mContext).edit().putString("pref_override_icon_shape", this.mValue).commit();
         LauncherAppState.getInstance(this.mContext).getIconCache().clear();
         final long n = 1000L;
         while (true) {

@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/notification/NotificationItemView$1;->this$0:Lcom/android/launcher3/notification/NotificationItemView;
 
-    .line 150
+    .line 175
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -33,10 +33,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 153
+    .line 178
     if-eqz p1, :cond_0
 
-    .line 154
+    .line 179
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationItemView$1;->this$0:Lcom/android/launcher3/notification/NotificationItemView;
 
     invoke-static {v0}, Lcom/android/launcher3/notification/NotificationItemView;->-get1(Lcom/android/launcher3/notification/NotificationItemView;)Lcom/android/launcher3/notification/NotificationMainView;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/launcher3/notification/NotificationMainView;->applyNotificationInfo(Lcom/android/launcher3/notification/NotificationInfo;Landroid/view/View;Z)V
 
-    .line 155
+    .line 180
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationItemView$1;->this$0:Lcom/android/launcher3/notification/NotificationItemView;
 
     invoke-static {v0}, Lcom/android/launcher3/notification/NotificationItemView;->-get1(Lcom/android/launcher3/notification/NotificationItemView;)Lcom/android/launcher3/notification/NotificationMainView;
@@ -62,12 +62,12 @@
 
     invoke-virtual {v0, v3}, Lcom/android/launcher3/notification/NotificationMainView;->setVisibility(I)V
 
-    .line 157
+    .line 182
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationItemView$1;->this$0:Lcom/android/launcher3/notification/NotificationItemView;
 
     invoke-static {v0, v3}, Lcom/android/launcher3/notification/NotificationItemView;->-set0(Lcom/android/launcher3/notification/NotificationItemView;Z)Z
 
-    .line 158
+    .line 183
     return-void
 .end method

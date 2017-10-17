@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$4;->this$0:Lcom/android/launcher3/Launcher;
 
-    .line 3910
+    .line 3890
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 2
 
     .prologue
-    .line 3912
+    .line 3892
     iget-object v0, p0, Lcom/android/launcher3/Launcher$4;->this$0:Lcom/android/launcher3/Launcher;
 
     iget-object v1, p0, Lcom/android/launcher3/Launcher$4;->this$0:Lcom/android/launcher3/Launcher;
@@ -40,6 +40,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->bindAllWidgets(Lcom/android/launcher3/util/MultiHashMap;)V
 
-    .line 3913
+    .line 3893
     return-void
 .end method

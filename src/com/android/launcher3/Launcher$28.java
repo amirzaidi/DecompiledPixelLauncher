@@ -7,14 +7,19 @@ package com.android.launcher3;
 final class Launcher$28 implements Runnable
 {
     final /* synthetic */ Launcher this$0;
-    final /* synthetic */ LauncherAppWidgetInfo val$item;
+    final /* synthetic */ int val$newScreenIndex;
+    final /* synthetic */ Runnable val$startBounceAnimRunnable;
     
-    Launcher$28(final Launcher this$0, final LauncherAppWidgetInfo val$item) {
+    Launcher$28(final Launcher this$0, final int val$newScreenIndex, final Runnable val$startBounceAnimRunnable) {
         this.this$0 = this$0;
-        this.val$item = val$item;
+        this.val$newScreenIndex = val$newScreenIndex;
+        this.val$startBounceAnimRunnable = val$startBounceAnimRunnable;
     }
     
     public void run() {
-        this.this$0.bindAppWidget(this.val$item);
+        if (this.this$0.mWorkspace != null) {
+            this.this$0.mWorkspace.snapToPage(this.val$newScreenIndex);
+            this.this$0.mWorkspace.postDelayed(this.val$startBounceAnimRunnable, 500L);
+        }
     }
 }

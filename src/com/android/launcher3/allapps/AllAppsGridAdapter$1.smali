@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$1;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
-    .line 304
+    .line 312
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 3
 
     .prologue
-    .line 307
+    .line 315
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$1;->this$0:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->-get2(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)Lcom/android/launcher3/Launcher;
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/launcher3/Launcher;->startActivitySafely(Landroid/view/View;Landroid/content/Intent;Lcom/android/launcher3/ItemInfo;)Z
 
-    .line 308
+    .line 316
     return-void
 .end method

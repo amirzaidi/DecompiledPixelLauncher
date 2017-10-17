@@ -6,20 +6,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/folder/Folder;
 
-.field final synthetic val$updateAnimationFlag:Z
+.field final synthetic val$onCompleteRunnable:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/folder/Folder;Z)V
+.method constructor <init>(Lcom/android/launcher3/folder/Folder;Ljava/lang/Runnable;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iput-boolean p2, p0, Lcom/android/launcher3/folder/Folder$10;->val$updateAnimationFlag:Z
+    iput-object p2, p0, Lcom/android/launcher3/folder/Folder$10;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
-    .line 631
+    .line 633
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -29,83 +29,88 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 4
+    .locals 2
+
+    .prologue
+    .line 650
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
+
+    const/4 v1, 0x2
+
+    iput v1, v0, Lcom/android/launcher3/folder/Folder;->mState:I
+
+    .line 652
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->val$onCompleteRunnable:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    .line 653
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
+
+    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mContent:Lcom/android/launcher3/folder/FolderPagedView;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/folder/FolderPagedView;->setFocusOnFirstChild()V
+
+    .line 654
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 3
 
     .prologue
     .line 636
-    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
-
-    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mFolderName:Lcom/android/launcher3/ExtendedEditText;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/ExtendedEditText;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    const-wide/16 v2, 0x279
-
-    invoke-virtual {v0, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 637
-    const/4 v1, 0x0
-
-    .line 636
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    .line 639
-    iget-object v1, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
-
-    iget-object v1, v1, Lcom/android/launcher3/folder/Folder;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    const v2, 0x10c000d
-
-    .line 638
-    invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
-
-    move-result-object v1
-
-    .line 636
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    .line 640
-    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
-
-    invoke-static {v0}, Lcom/android/launcher3/folder/Folder;->-get1(Lcom/android/launcher3/folder/Folder;)Lcom/android/launcher3/pageindicators/PageIndicatorDots;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/launcher3/pageindicators/PageIndicatorDots;->playEntryAnimation()V
-
-    .line 642
-    iget-boolean v0, p0, Lcom/android/launcher3/folder/Folder$10;->val$updateAnimationFlag:Z
+    sget-boolean v0, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_NEW_FOLDER_ANIMATION:Z
 
     if-eqz v0, :cond_0
 
-    .line 643
+    .line 637
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mInfo:Lcom/android/launcher3/FolderInfo;
+    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mFolderIcon:Lcom/android/launcher3/folder/FolderIcon;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/folder/FolderIcon;->setBackgroundVisible(Z)V
+
+    .line 638
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
+
+    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mFolderIcon:Lcom/android/launcher3/folder/FolderIcon;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/folder/FolderIcon;->drawLeaveBehindIfExists()V
 
     .line 644
+    :goto_0
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
+
+    .line 646
     iget-object v1, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iget-object v1, v1, Lcom/android/launcher3/folder/Folder;->mLauncher:Lcom/android/launcher3/Launcher;
+    iget-object v1, v1, Lcom/android/launcher3/folder/Folder;->mContent:Lcom/android/launcher3/folder/FolderPagedView;
 
-    invoke-virtual {v1}, Lcom/android/launcher3/Launcher;->getModelWriter()Lcom/android/launcher3/model/ModelWriter;
+    invoke-virtual {v1}, Lcom/android/launcher3/folder/FolderPagedView;->getAccessibilityDescription()Ljava/lang/String;
 
     move-result-object v1
 
+    .line 645
+    const/16 v2, 0x20
+
     .line 643
-    const/4 v2, 0x4
+    invoke-static {v0, v2, v1}, Lcom/android/launcher3/Utilities;->sendCustomAccessibilityEvent(Landroid/view/View;ILjava/lang/String;)V
 
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v2, v3, v1}, Lcom/android/launcher3/FolderInfo;->setOption(IZLcom/android/launcher3/model/ModelWriter;)V
-
-    .line 646
-    :cond_0
+    .line 647
     return-void
+
+    .line 640
+    :cond_0
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$10;->this$0:Lcom/android/launcher3/folder/Folder;
+
+    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mFolderIcon:Lcom/android/launcher3/folder/FolderIcon;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/folder/FolderIcon;->setVisibility(I)V
+
+    goto :goto_0
 .end method

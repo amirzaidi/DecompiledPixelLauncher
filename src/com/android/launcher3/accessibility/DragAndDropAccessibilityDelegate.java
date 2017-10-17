@@ -81,7 +81,7 @@ public abstract class DragAndDropAccessibilityDelegate extends a implements View
         if (n == -1 << -1) {
             throw new IllegalArgumentException("Invalid virtual view id");
         }
-        accessibilityEvent.setContentDescription((CharSequence)this.mContext.getString(2131492966));
+        accessibilityEvent.setContentDescription((CharSequence)this.mContext.getString(2131492975));
     }
     
     protected void onPopulateNodeForVirtualView(final int n, final android.support.v4.view.a.a a) {
@@ -90,9 +90,9 @@ public abstract class DragAndDropAccessibilityDelegate extends a implements View
             throw new IllegalArgumentException("Invalid virtual view id");
         }
         a.setContentDescription(this.getLocationDescriptionForIconDrop(n));
-        a.aeg(this.getItemBounds(n));
-        a.adW(16);
-        a.adX(b);
-        a.adR(b);
+        a.afi(this.getItemBounds(n));
+        a.aeY(16);
+        a.aeZ(b);
+        a.aeT(b);
     }
 }

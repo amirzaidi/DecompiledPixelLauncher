@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.os.Bundle;
 import android.content.Intent;
 import java.util.List;
-import com.android.launcher3.allapps.AllAppsSearchBarController;
 import java.io.PrintWriter;
 import java.io.FileDescriptor;
 import java.util.ArrayList;
@@ -20,8 +19,6 @@ public interface LauncherCallbacks
     void dump(final String p0, final FileDescriptor p1, final PrintWriter p2, final String[] p3);
     
     void finishBindingItems(final boolean p0);
-    
-    AllAppsSearchBarController getAllAppsSearchBarController();
     
     List getPredictedApps();
     
@@ -78,8 +75,6 @@ public interface LauncherCallbacks
     void preOnCreate();
     
     void preOnResume();
-    
-    void setLauncherSearchCallback(final Object p0);
     
     boolean shouldMoveToDefaultScreenOnHomeIntent();
     

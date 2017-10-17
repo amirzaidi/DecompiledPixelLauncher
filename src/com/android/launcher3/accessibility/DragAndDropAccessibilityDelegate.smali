@@ -363,7 +363,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/accessibility/DragAndDropAccessibilityDelegate;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0c0066
+    const v1, 0x7f0c006f
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -408,18 +408,18 @@
 
     move-result-object v0
 
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/a/a;->aeg(Landroid/graphics/Rect;)V
+    invoke-virtual {p2, v0}, Landroid/support/v4/view/a/a;->afi(Landroid/graphics/Rect;)V
 
     .line 120
     const/16 v0, 0x10
 
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/a/a;->adW(I)V
+    invoke-virtual {p2, v0}, Landroid/support/v4/view/a/a;->aeY(I)V
 
     .line 121
-    invoke-virtual {p2, v1}, Landroid/support/v4/view/a/a;->adX(Z)V
+    invoke-virtual {p2, v1}, Landroid/support/v4/view/a/a;->aeZ(Z)V
 
     .line 122
-    invoke-virtual {p2, v1}, Landroid/support/v4/view/a/a;->adR(Z)V
+    invoke-virtual {p2, v1}, Landroid/support/v4/view/a/a;->aeT(Z)V
 
     .line 123
     return-void

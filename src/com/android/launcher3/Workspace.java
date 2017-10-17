@@ -14,7 +14,6 @@ import com.android.launcher3.util.ItemInfoMatcher;
 import java.util.HashSet;
 import android.os.UserHandle;
 import android.os.Bundle;
-import android.animation.LayoutTransition$TransitionListener;
 import android.appwidget.AppWidgetProviderInfo;
 import android.os.IBinder;
 import android.view.View$OnClickListener;
@@ -42,8 +41,6 @@ import android.view.ViewGroup;
 import com.android.launcher3.widget.PendingAddShortcutInfo;
 import com.android.launcher3.accessibility.WorkspaceAccessibilityHelper;
 import com.android.launcher3.widget.PendingAddWidgetInfo;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
 import com.android.launcher3.dragndrop.DragView;
 import android.animation.Animator$AnimatorListener;
 import android.animation.ObjectAnimator;
@@ -63,11 +60,10 @@ import android.app.WallpaperManager;
 import com.android.launcher3.dragndrop.SpringLoadedDragController;
 import android.util.SparseArray;
 import java.util.ArrayList;
-import com.android.launcher3.util.MultiStateAlphaController;
 import android.view.View$AccessibilityDelegate;
 import com.android.launcher3.graphics.DragPreviewProvider;
 import android.animation.LayoutTransition;
-import com.android.launcher3.folder.FolderIcon$PreviewBackground;
+import com.android.launcher3.folder.PreviewBackground;
 import com.android.launcher3.folder.FolderIcon;
 import com.android.launcher3.dragndrop.DragController;
 import android.graphics.Canvas;
@@ -79,7 +75,6 @@ import android.view.View$OnTouchListener;
 
 public class Workspace extends PagedView implements DropTarget, DragSource, View$OnTouchListener, DragController$DragListener, ViewGroup$OnHierarchyChangeListener, Insettable, UninstallDropTarget$DropTargetSource
 {
-    private static boolean ENFORCE_DRAG_EVENT_ORDER;
     private static final Rect sTempRect;
     private boolean mAddToExistingFolderOnDrop;
     private final Interpolator mAlphaInterpolator;
@@ -108,56 +103,51 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     CellLayout mDragTargetLayout;
     float[] mDragViewVisualCenter;
     private CellLayout mDropToLayout;
-    private int mFirstPageScrollX;
-    private FolderIcon$PreviewBackground mFolderCreateBg;
+    private PreviewBackground mFolderCreateBg;
     private final Alarm mFolderCreationAlarm;
     private boolean mForceDrawAdjacentPages;
-    private float[] mHotseatAlpha;
-    private boolean mIgnoreQsbScroll;
+    private final float[] mHotseatAlpha;
     private boolean mIsSwitchingState;
     private float mLastCustomContentScrollProgress;
     float mLastOverlayScroll;
     int mLastReorderX;
     int mLastReorderY;
-    Launcher mLauncher;
+    final Launcher mLauncher;
     Launcher$LauncherOverlay mLauncherOverlay;
     private LayoutTransition mLayoutTransition;
     private float mMaxDistanceForFolderCreation;
-    private Workspace$OnStateChangeListener mOnStateChangeListener;
     private DragPreviewProvider mOutlineProvider;
+    boolean mOverlayShown;
     private float mOverlayTranslation;
-    private float mOverviewModeShrinkFactor;
-    private float[] mPageAlpha;
+    private final float mOverviewModeShrinkFactor;
+    private final float[] mPageAlpha;
     private View$AccessibilityDelegate mPagesAccessibilityDelegate;
-    MultiStateAlphaController mQsbAlphaController;
     Runnable mRemoveEmptyScreenRunnable;
     private final Alarm mReorderAlarm;
     private final ArrayList mRestoredPages;
     private SparseArray mSavedStates;
-    ArrayList mScreenOrder;
+    final ArrayList mScreenOrder;
     boolean mScrollInteractionBegan;
     private SpringLoadedDragController mSpringLoadedDragController;
     boolean mStartedSendingScrollEvents;
     private Workspace$State mState;
-    private WorkspaceStateTransitionAnimation mStateTransitionAnimation;
+    private final WorkspaceStateTransitionAnimation mStateTransitionAnimation;
     private boolean mStripScreensOnPageStopMoving;
     int[] mTargetCell;
-    private float[] mTempTouchCoordinates;
+    private final float[] mTempTouchCoordinates;
     private final int[] mTempXY;
     private long mTouchDownTime;
     private float mTransitionProgress;
-    private int mUnboundedScrollX;
     private boolean mUninstallSuccessful;
     private boolean mUnlockWallpaperFromDefaultPageOnLayout;
     final WallpaperManager mWallpaperManager;
     final WallpaperOffsetInterpolator mWallpaperOffset;
-    private boolean mWorkspaceFadeInAdjacentScreens;
-    LongArrayMap mWorkspaceScreens;
+    private final boolean mWorkspaceFadeInAdjacentScreens;
+    final LongArrayMap mWorkspaceScreens;
     private float mXDown;
     private float mYDown;
     
     static {
-        Workspace.ENFORCE_DRAG_EVENT_ORDER = false;
         sTempRect = new Rect();
     }
     
@@ -212,6 +202,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         this.mLastReorderY = n2;
         this.mRestoredPages = new ArrayList();
         this.mLastOverlayScroll = 0.0f;
+        this.mOverlayShown = false;
         this.mForceDrawAdjacentPages = false;
         this.mAlphaInterpolator = (Interpolator)new DecelerateInterpolator(3.0f);
         this.mLauncher = Launcher.getLauncher(context);
@@ -325,7 +316,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             this.mScreenOrder.remove(longValue);
             this.mWorkspaceScreens.put(n, (Object)cellLayout);
             this.mScreenOrder.add(n);
-            this.mLauncher.getModel();
             LauncherModel.updateWorkspaceScreenOrder((Context)this.mLauncher, this.mScreenOrder);
         }
     }
@@ -408,30 +398,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         }
     }
     
-    private void enforceDragParity(final View view, final String s, final int n, final int n2) {
-        final int n3 = 2131623937;
-        final Object tag = view.getTag(n3);
-        int intValue;
-        if (tag == null) {
-            intValue = 0;
-        }
-        else {
-            intValue = (int)tag;
-        }
-        final int n4 = intValue + n;
-        view.setTag(n3, (Object)n4);
-        if (n4 != n2) {
-            Log.e("Launcher.Workspace", s + ": Drag contract violated: " + n4);
-        }
-    }
-    
-    private void enforceDragParity(final String s, final int n, final int n2) {
-        this.enforceDragParity((View)this, s, n, n2);
-        for (int i = 0; i < this.getChildCount(); ++i) {
-            this.enforceDragParity(this.getChildAt(i), s, n, n2);
-        }
-    }
-    
     private void fadeAndRemoveEmptyScreen(final int n, final int n2, final Runnable runnable, final boolean b) {
         final int n3 = 1;
         final float[] array = new float[n3];
@@ -453,17 +419,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     
     private int getDefaultPage() {
         return this.numCustomPages();
-    }
-    
-    private int getEmbeddedQsbId() {
-        int n;
-        if (this.mLauncher.getDeviceProfile().isVerticalBarLayout()) {
-            n = 2131624006;
-        }
-        else {
-            n = 2131623939;
-        }
-        return n;
     }
     
     private void getFinalPositionForDropAnimation(final int[] array, final float[] array2, final DragView dragView, final CellLayout finalTransitionTransform, final ItemInfo itemInfo, final int[] array3, final boolean b) {
@@ -515,45 +470,27 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         final int index = this.mScreenOrder.indexOf(-201L);
         if (index >= 0 && n3 > n2) {
             if (n == index) {
-                return this.getContext().getString(2131492934);
+                return this.getContext().getString(2131492936);
             }
             --n3;
         }
         if (n3 == 0) {
-            return this.getContext().getString(2131492916);
+            return this.getContext().getString(2131492918);
         }
         final Context context = this.getContext();
         final Object[] array = { n + 1 - numCustomPages, null };
         array[n2] = n3;
-        return context.getString(2131492933, array);
-    }
-    
-    public static Drawable getTextViewIcon(final TextView textView) {
-        final Drawable[] compoundDrawables = textView.getCompoundDrawables();
-        for (int i = 0; i < compoundDrawables.length; ++i) {
-            if (compoundDrawables[i] != null) {
-                return compoundDrawables[i];
-            }
-        }
-        return null;
+        return context.getString(2131492935, array);
     }
     
     private boolean isDragWidget(final DropTarget$DragObject dropTarget$DragObject) {
         return dropTarget$DragObject.dragInfo instanceof LauncherAppWidgetInfo || dropTarget$DragObject.dragInfo instanceof PendingAddWidgetInfo;
     }
     
-    public static final boolean isQsbContainerPage(final int n) {
-        boolean b = false;
-        if (n == 0) {
-            b = true;
-        }
-        return b;
-    }
-    
     private boolean isScrollingOverlay() {
         boolean b = true;
         if (this.mLauncherOverlay != null) {
-            if ((!this.mIsRtl || this.mUnboundedScrollX <= this.mMaxScrollX) && (this.mIsRtl || this.mUnboundedScrollX >= 0)) {
+            if ((!this.mIsRtl || this.getUnboundedScrollX() <= this.mMaxScrollX) && (this.mIsRtl || this.getUnboundedScrollX() >= 0)) {
                 b = false;
             }
         }
@@ -606,23 +543,8 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         }
     }
     
-    private void moveToScreen(final int currentPage, final boolean b) {
-        if (!this.workspaceInModalState()) {
-            if (b) {
-                this.snapToPage(currentPage);
-            }
-            else {
-                this.setCurrentPage(currentPage);
-            }
-        }
-        final View child = this.getChildAt(currentPage);
-        if (child != null) {
-            child.requestFocus();
-        }
-    }
-    
     private void onDropExternal(final int[] array, final CellLayout finalTransitionTransform, final DropTarget$DragObject dropTarget$DragObject) {
-        final Workspace$10 postAnimationRunnable = new Workspace$10(this);
+        final Workspace$9 postAnimationRunnable = new Workspace$9(this);
         if (dropTarget$DragObject.dragInfo instanceof PendingAddShortcutInfo) {
             final ShortcutInfo shortcutInfo = ((PendingAddShortcutInfo)dropTarget$DragObject.dragInfo).activityInfo.createShortcutInfo();
             if (shortcutInfo != null) {
@@ -686,7 +608,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                         dragInfo2.spanY = array2[1];
                         n5 = n8;
                     }
-                    final Workspace$11 workspace$11 = new Workspace$11(this, pendingAddItemInfo, n4, idForScreen, dragInfo2);
+                    final Workspace$10 workspace$10 = new Workspace$10(this, pendingAddItemInfo, n4, idForScreen, dragInfo2);
                     final boolean b3 = pendingAddItemInfo.itemType == 4 || (pendingAddItemInfo.itemType == 5 && true);
                     AppWidgetHostView boundWidget;
                     if (b3) {
@@ -702,7 +624,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                     if (b3 && ((PendingAddWidgetInfo)pendingAddItemInfo).info != null && ((PendingAddWidgetInfo)pendingAddItemInfo).getHandler().needsConfigure()) {
                         n9 = 1;
                     }
-                    this.animateWidgetDrop(dragInfo, finalTransitionTransform, dropTarget$DragObject.dragView, workspace$11, n9, (View)boundWidget, true);
+                    this.animateWidgetDrop(dragInfo, finalTransitionTransform, dropTarget$DragObject.dragView, workspace$10, n9, (View)boundWidget, true);
                     return;
                 }
                 final boolean b2 = b;
@@ -736,7 +658,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                 break;
             }
             case 2: {
-                o = FolderIcon.fromXml(2130968595, this.mLauncher, finalTransitionTransform, (FolderInfo)dragInfo);
+                o = FolderIcon.fromXml(2130968597, this.mLauncher, finalTransitionTransform, (FolderInfo)dragInfo);
                 break;
             }
         }
@@ -765,12 +687,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             this.setFinalTransitionTransform(finalTransitionTransform);
             this.mLauncher.getDragLayer().animateViewIntoPosition(dropTarget$DragObject.dragView, (View)o, postAnimationRunnable, (View)this);
             this.resetTransitionTransform(finalTransitionTransform);
-        }
-    }
-    
-    private void onWorkspaceOverallScrollChanged() {
-        if (!this.mIgnoreQsbScroll) {
-            this.mLauncher.getQsbContainer().setTranslationX(this.mOverlayTranslation + this.mFirstPageScrollX - this.getScrollX());
         }
     }
     
@@ -859,10 +775,10 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     private void showOutOfSpaceMessage(final boolean b) {
         int n;
         if (b) {
-            n = 2131492914;
+            n = 2131492916;
         }
         else {
-            n = 2131492913;
+            n = 2131492915;
         }
         Toast.makeText((Context)this.mLauncher, (CharSequence)this.mLauncher.getString(n), 0).show();
     }
@@ -911,15 +827,25 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     private void updatePageAlphaValues() {
-        if (this.mWorkspaceFadeInAdjacentScreens && (this.workspaceInModalState() ^ true) && (this.mIsSwitchingState ^ true)) {
+        if (!this.workspaceInModalState() && (this.mIsSwitchingState ^ true)) {
             final int n = this.getScrollX() + this.getViewportWidth() / 2;
             for (int i = this.numCustomPages(); i < this.getChildCount(); ++i) {
                 final CellLayout cellLayout = (CellLayout)this.getChildAt(i);
                 if (cellLayout != null) {
                     final float alpha = 1.0f - Math.abs(this.getScrollProgress(n, (View)cellLayout, i));
-                    cellLayout.getShortcutsAndWidgets().setAlpha(alpha);
-                    if (isQsbContainerPage(i)) {
-                        this.mQsbAlphaController.setAlphaAtIndex(alpha, 2);
+                    if (this.mWorkspaceFadeInAdjacentScreens) {
+                        cellLayout.getShortcutsAndWidgets().setAlpha(alpha);
+                    }
+                    else {
+                        final ShortcutAndWidgetContainer shortcutsAndWidgets = cellLayout.getShortcutsAndWidgets();
+                        int importantForAccessibility;
+                        if (alpha > 0.0f) {
+                            importantForAccessibility = 0;
+                        }
+                        else {
+                            importantForAccessibility = 4;
+                        }
+                        shortcutsAndWidgets.setImportantForAccessibility(importantForAccessibility);
                     }
                 }
             }
@@ -1127,7 +1053,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     
     public void animateWidgetDrop(final ItemInfo itemInfo, final CellLayout cellLayout, final DragView dragView, final Runnable runnable, final int n, final View view, final boolean b) {
         final Rect rect = new Rect();
-        this.mLauncher.getDragLayer().getViewRectRelativeToSelf(dragView, rect);
+        this.mLauncher.getDragLayer().getViewRectRelativeToSelf((View)dragView, rect);
         final int[] array = new int[2];
         final float[] array2 = new float[2];
         this.getFinalPositionForDropAnimation(array, array2, dragView, cellLayout, itemInfo, this.mTargetCell, itemInfo instanceof PendingAddShortcutInfo ^ true);
@@ -1152,7 +1078,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             else {
                 n3 = 0;
             }
-            dragLayer.animateViewIntoPosition(dragView, rect.left, rect.top, array[0], array[1], 1.0f, 1.0f, 1.0f, array2[0], array2[1], new Workspace$12(this, view, runnable), n3, n2, (View)this);
+            dragLayer.animateViewIntoPosition(dragView, rect.left, rect.top, array[0], array[1], 1.0f, 1.0f, 1.0f, array2[0], array2[1], new Workspace$11(this, view, runnable), n3, n2, (View)this);
         }
     }
     
@@ -1223,22 +1149,14 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         final CellLayout insertNewWorkspaceScreen = this.insertNewWorkspaceScreen(0L, 0);
         View inflate;
         if (view == null) {
-            final LayoutInflater layoutInflater = this.mLauncher.getLayoutInflater();
-            int n;
-            if (this.mLauncher.getDeviceProfile().isVerticalBarLayout()) {
-                n = 2130968611;
-            }
-            else {
-                n = 2130968609;
-            }
-            inflate = layoutInflater.inflate(n, (ViewGroup)insertNewWorkspaceScreen, false);
+            inflate = LayoutInflater.from(this.getContext()).inflate(2130968618, (ViewGroup)insertNewWorkspaceScreen, false);
         }
         else {
             inflate = view;
         }
         final CellLayout$LayoutParams cellLayout$LayoutParams = new CellLayout$LayoutParams(0, 0, insertNewWorkspaceScreen.getCountX(), b ? 1 : 0);
         cellLayout$LayoutParams.canReorder = false;
-        if (!insertNewWorkspaceScreen.addViewToCellLayout(inflate, 0, this.getEmbeddedQsbId(), cellLayout$LayoutParams, b)) {
+        if (!insertNewWorkspaceScreen.addViewToCellLayout(inflate, 0, 2131623953, cellLayout$LayoutParams, b)) {
             Log.e("Launcher.Workspace", "Failed to add to item at (0, 0) to CellLayout");
         }
     }
@@ -1254,7 +1172,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     void clearDropTargets() {
-        this.mapOverItems(false, new Workspace$19(this));
+        this.mapOverItems(false, new Workspace$18(this));
     }
     
     public long commitExtraEmptyScreen() {
@@ -1262,14 +1180,12 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         if (this.mLauncher.isWorkspaceLoading()) {
             return -1;
         }
-        this.getPageIndexForScreenId(n);
         final CellLayout cellLayout = (CellLayout)this.mWorkspaceScreens.get(n);
         this.mWorkspaceScreens.remove(n);
         this.mScreenOrder.remove(n);
         final long long1 = LauncherSettings$Settings.call(this.getContext().getContentResolver(), "generate_new_screen_id").getLong("value");
         this.mWorkspaceScreens.put(long1, (Object)cellLayout);
         this.mScreenOrder.add(long1);
-        this.mLauncher.getModel();
         LauncherModel.updateWorkspaceScreenOrder((Context)this.mLauncher, this.mScreenOrder);
         return long1;
     }
@@ -1285,7 +1201,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     
     public void createCustomContentContainer() {
         final long n = -301L;
-        final CellLayout cellLayout = (CellLayout)this.mLauncher.getLayoutInflater().inflate(2130968632, (ViewGroup)this, false);
+        final CellLayout cellLayout = (CellLayout)LayoutInflater.from(this.getContext()).inflate(2130968634, (ViewGroup)this, false);
         cellLayout.disableDragTarget();
         cellLayout.disableJailContent();
         this.mWorkspaceScreens.put(n, (Object)cellLayout);
@@ -1364,11 +1280,11 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             }
             if (n3 != 0) {
                 addFolder.setFolderBackground(this.mFolderCreateBg);
-                this.mFolderCreateBg = new FolderIcon$PreviewBackground();
+                this.mFolderCreateBg = new PreviewBackground();
                 addFolder.performCreateAnimation(shortcutInfo2, child, shortcutInfo, dragView, rect, descendantRectRelativeToSelf, runnable);
             }
             else {
-                addFolder.prepareCreate(child);
+                addFolder.prepareCreateAnimation(child);
                 addFolder.addItem(shortcutInfo2);
                 addFolder.addItem(shortcutInfo);
             }
@@ -1591,15 +1507,9 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         return super.getDescendantFocusability();
     }
     
-    protected void getEdgeVerticalPosition(final int[] array) {
-        final View child = this.getChildAt(this.getPageCount() - 1);
-        array[0] = child.getTop();
-        array[1] = child.getBottom();
-    }
-    
     public View getFirstMatch(final Workspace$ItemOperator workspace$ItemOperator) {
         final View[] array = { null };
-        this.mapOverItems(false, new Workspace$18(this, workspace$ItemOperator, array));
+        this.mapOverItems(false, new Workspace$17(this, workspace$ItemOperator, array));
         return array[0];
     }
     
@@ -1612,7 +1522,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     public View getHomescreenIconByItemId(final long n) {
-        return this.getFirstMatch(new Workspace$15(this, n));
+        return this.getFirstMatch(new Workspace$14(this, n));
     }
     
     public long getIdForScreen(final CellLayout cellLayout) {
@@ -1660,7 +1570,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     protected String getPageIndicatorDescription() {
-        return this.getResources().getString(2131492915);
+        return this.getResources().getString(2131492917);
     }
     
     CellLayout getParentCellLayoutForView(final View view) {
@@ -1707,15 +1617,8 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         return this.mStateTransitionAnimation;
     }
     
-    protected int getUnboundedScrollX() {
-        if (this.isScrollingOverlay()) {
-            return this.mUnboundedScrollX;
-        }
-        return super.getUnboundedScrollX();
-    }
-    
     public LauncherAppWidgetHostView getWidgetForAppWidgetId(final int n) {
-        return (LauncherAppWidgetHostView)this.getFirstMatch(new Workspace$17(this, n));
+        return (LauncherAppWidgetHostView)this.getFirstMatch(new Workspace$16(this, n));
     }
     
     ArrayList getWorkspaceAndHotseatCellLayouts() {
@@ -1760,7 +1663,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     public void initParentViews(final View view) {
         super.initParentViews(view);
         this.mPageIndicator.setAccessibilityDelegate((View$AccessibilityDelegate)new OverviewAccessibilityDelegate());
-        this.mQsbAlphaController = new MultiStateAlphaController(this.mLauncher.getQsbContainer(), 4);
     }
     
     protected void initWorkspace() {
@@ -1773,17 +1675,18 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         this.setupLayoutTransition();
         this.mMaxDistanceForFolderCreation = deviceProfile.iconSizePx * 0.55f;
         this.setWallpaperDimension();
-        this.setEdgeGlowColor(this.getResources().getColor(2131361818));
     }
     
     public CellLayout insertNewWorkspaceScreen(final long n, final int n2) {
         if (this.mWorkspaceScreens.containsKey(n)) {
             throw new RuntimeException("Screen id " + n + " already exists!");
         }
-        final CellLayout cellLayout = (CellLayout)this.mLauncher.getLayoutInflater().inflate(2130968632, (ViewGroup)this, false);
+        final CellLayout cellLayout = (CellLayout)LayoutInflater.from(this.getContext()).inflate(2130968634, (ViewGroup)this, false);
         cellLayout.setOnLongClickListener(this.mLongClickListener);
         cellLayout.setOnClickListener((View$OnClickListener)this.mLauncher);
         cellLayout.setSoundEffectsEnabled(false);
+        final int cellLayoutPaddingLeftRightPx = this.mLauncher.getDeviceProfile().cellLayoutPaddingLeftRightPx;
+        cellLayout.setPadding(cellLayoutPaddingLeftRightPx, 0, cellLayoutPaddingLeftRightPx, 0);
         this.mWorkspaceScreens.put(n, (Object)cellLayout);
         this.mScreenOrder.add(n2, n);
         this.addView((View)cellLayout, n2);
@@ -1902,13 +1805,37 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     void moveToDefaultScreen(final boolean b) {
-        this.moveToScreen(this.getDefaultPage(), b);
+        final int defaultPage = this.getDefaultPage();
+        if (!this.workspaceInModalState() && this.getNextPage() != defaultPage) {
+            if (b) {
+                this.snapToPage(defaultPage);
+            }
+            else {
+                this.setCurrentPage(defaultPage);
+            }
+        }
+        final View child = this.getChildAt(defaultPage);
+        if (child != null) {
+            child.requestFocus();
+        }
     }
     
-    protected void notifyPageSwitchListener() {
-        super.notifyPageSwitchListener();
+    protected void notifyPageSwitchListener(final int n) {
+        final int n2 = 3;
+        final int mCustomContentShowing = 1;
+        super.notifyPageSwitchListener(n);
+        if (n != this.mCurrentPage) {
+            int n3;
+            if (n < this.mCurrentPage) {
+                n3 = 4;
+            }
+            else {
+                n3 = n2;
+            }
+            this.mLauncher.getUserEventDispatcher().logActionOnContainer(n2, n3, mCustomContentShowing, n);
+        }
         if (this.hasCustomContent() && this.getNextPage() == 0 && (this.mCustomContentShowing ^ true)) {
-            this.mCustomContentShowing = true;
+            this.mCustomContentShowing = (mCustomContentShowing != 0);
             if (this.mCustomContentCallbacks != null) {
                 this.mCustomContentCallbacks.onShow(false);
                 this.mCustomContentShowTime = System.currentTimeMillis();
@@ -1959,15 +1886,12 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     
     public void onDragEnd() {
         final boolean b = true;
-        if (Workspace.ENFORCE_DRAG_EVENT_ORDER) {
-            this.enforceDragParity("onDragEnd", 0, 0);
-        }
         if (!this.mDeferRemoveExtraEmptyScreen) {
             this.removeExtraEmptyScreen(b, this.mDragSourceInternal != null && b);
         }
         this.updateChildrenLayersEnabled(false);
         this.mLauncher.unlockScreenOrientation(false);
-        InstallShortcutReceiver.disableAndFlushInstallQueue(this.getContext());
+        InstallShortcutReceiver.disableAndFlushInstallQueue(4, this.getContext());
         this.mOutlineProvider = null;
         this.mDragInfo = null;
         this.mDragSourceInternal = null;
@@ -1975,22 +1899,15 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     public void onDragEnter(final DropTarget$DragObject dropTarget$DragObject) {
-        final int n = 1;
-        if (Workspace.ENFORCE_DRAG_EVENT_ORDER) {
-            this.enforceDragParity("onDragEnter", n, n);
-        }
         this.mCreateUserFolderOnDrop = false;
         this.mAddToExistingFolderOnDrop = false;
         this.mDropToLayout = null;
         this.mDragViewVisualCenter = dropTarget$DragObject.getVisualCenter(this.mDragViewVisualCenter);
-        this.setDropLayoutForDragObject(dropTarget$DragObject, this.mDragViewVisualCenter[0], this.mDragViewVisualCenter[n]);
+        this.setDropLayoutForDragObject(dropTarget$DragObject, this.mDragViewVisualCenter[0], this.mDragViewVisualCenter[1]);
     }
     
     public void onDragExit(final DropTarget$DragObject dropTarget$DragObject) {
         final boolean b = true;
-        if (Workspace.ENFORCE_DRAG_EVENT_ORDER) {
-            this.enforceDragParity("onDragExit", -1, 0);
-        }
         this.mDropToLayout = this.mDragTargetLayout;
         if (this.mDragMode == (b ? 1 : 0)) {
             this.mCreateUserFolderOnDrop = b;
@@ -2073,9 +1990,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     public void onDragStart(final DropTarget$DragObject dropTarget$DragObject, final DragOptions dragOptions) {
-        if (Workspace.ENFORCE_DRAG_EVENT_ORDER) {
-            this.enforceDragParity("onDragStart", 0, 0);
-        }
+        final int n = 4;
         if (this.mDragInfo != null && this.mDragInfo.cell != null) {
             ((CellLayout)this.mDragInfo.cell.getParent().getParent()).markCellsAsUnoccupiedForView(this.mDragInfo.cell);
         }
@@ -2086,7 +2001,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         this.mLauncher.onDragStarted();
         this.mLauncher.lockScreenOrientation();
         this.mLauncher.onInteractionBegin();
-        InstallShortcutReceiver.enableInstallQueue();
+        InstallShortcutReceiver.enableInstallQueue(n);
         boolean b;
         if (dragOptions.isAccessibleDrag && dropTarget$DragObject.dragSource != this) {
             b = true;
@@ -2097,7 +2012,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         if (b ^ true) {
             this.mDeferRemoveExtraEmptyScreen = false;
             this.addExtraEmptyScreenOnDrag();
-            if (dropTarget$DragObject.dragInfo.itemType == 4 && dropTarget$DragObject.dragSource != this) {
+            if (dropTarget$DragObject.dragInfo.itemType == n && dropTarget$DragObject.dragSource != this) {
                 for (int i = this.getPageNearestToCenterOfScreen(); i < this.getPageCount(); ++i) {
                     if (((CellLayout)this.getPageAt(i)).hasReorderSolution(dropTarget$DragObject.dragInfo)) {
                         this.setCurrentPage(i);
@@ -2251,7 +2166,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                             final LauncherAppWidgetHostView launcherAppWidgetHostView = (LauncherAppWidgetHostView)cell;
                             final AppWidgetProviderInfo appWidgetInfo = launcherAppWidgetHostView.getAppWidgetInfo();
                             if (appWidgetInfo != null && appWidgetInfo.resizeMode != 0 && (dropTarget$DragObject.accessibleDrag ^ true)) {
-                                this.mDelayedResizeRunnable = new Workspace$8(this, launcherAppWidgetHostView, mDropToLayout);
+                                this.mDelayedResizeRunnable = new Workspace$7(this, launcherAppWidgetHostView, mDropToLayout);
                             }
                         }
                         this.mLauncher.getModelWriter().modifyItemInDatabase(itemInfo2, n5, n6, cellLayout$LayoutParams.cellX, cellLayout$LayoutParams.cellY, dragInfo.spanX, dragInfo.spanY);
@@ -2281,7 +2196,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                 n14 = 0;
             }
             final CellLayout cellLayout = (CellLayout)cell.getParent().getParent();
-            final Workspace$9 workspace$9 = new Workspace$9(this);
+            final Workspace$8 workspace$8 = new Workspace$8(this);
             this.mAnimatingViewIntoPlace = true;
             if (dropTarget$DragObject.dragView.hasDrawn()) {
                 if (n3 != 0) {
@@ -2312,7 +2227,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                     else {
                         n17 = 0;
                     }
-                    this.animateWidgetDrop(itemInfo3, cellLayout, dropTarget$DragObject.dragView, workspace$9, n17, cell, false);
+                    this.animateWidgetDrop(itemInfo3, cellLayout, dropTarget$DragObject.dragView, workspace$8, n17, cell, false);
                 }
                 else {
                     int n18;
@@ -2322,7 +2237,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                     else {
                         n18 = 300;
                     }
-                    this.mLauncher.getDragLayer().animateViewIntoPosition(dropTarget$DragObject.dragView, cell, n18, workspace$9, (View)this);
+                    this.mLauncher.getDragLayer().animateViewIntoPosition(dropTarget$DragObject.dragView, cell, n18, workspace$8, (View)this);
                 }
             }
             else {
@@ -2333,13 +2248,13 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             n = n15;
         }
         if (dropTarget$DragObject.stateAnnouncer != null && (n ^ 0x1) != 0x0) {
-            dropTarget$DragObject.stateAnnouncer.completeAction(2131492973);
+            dropTarget$DragObject.stateAnnouncer.completeAction(2131492982);
         }
     }
     
     public void onDropCompleted(final View view, final DropTarget$DragObject dropTarget$DragObject, final boolean b, final boolean b2) {
         if (this.mDeferDropAfterUninstall) {
-            this.mDeferredAction = new Workspace$13(this, this.mDragInfo, view, dropTarget$DragObject, b, b2);
+            this.mDeferredAction = new Workspace$12(this, this.mDragInfo, view, dropTarget$DragObject, b, b2);
             return;
         }
         boolean b3;
@@ -2360,7 +2275,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                 cellLayout.onDropChild(this.mDragInfo.cell);
             }
         }
-        if ((dropTarget$DragObject.cancelled || (b3 && (this.mUninstallSuccessful ^ true))) && this.mDragInfo.cell != null) {
+        if ((dropTarget$DragObject.cancelled || (b3 && (this.mUninstallSuccessful ^ true))) && this.mDragInfo != null && this.mDragInfo.cell != null) {
             this.mDragInfo.cell.setVisibility(0);
         }
         this.mDragInfo = null;
@@ -2375,12 +2290,17 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         if (this.mLauncher.isWorkspaceLoading()) {
             return;
         }
+        final ArrayList list = (ArrayList)this.mScreenOrder.clone();
         this.mScreenOrder.clear();
         for (int childCount = this.getChildCount(), i = 0; i < childCount; ++i) {
             this.mScreenOrder.add(this.getIdForScreen((CellLayout)this.getChildAt(i)));
         }
-        this.mLauncher.getUserEventDispatcher().logOverviewReorder();
-        this.mLauncher.getModel();
+        for (int j = 0; j < list.size(); ++j) {
+            if (this.mScreenOrder.get(j) != list.get(j)) {
+                this.mLauncher.getUserEventDispatcher().logOverviewReorder();
+                break;
+            }
+        }
         LauncherModel.updateWorkspaceScreenOrder((Context)this.mLauncher, this.mScreenOrder);
         this.enableLayoutTransitions();
     }
@@ -2426,26 +2346,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             this.mWallpaperOffset.jumpToFinal();
         }
         super.onLayout(b, n, n2, n3, n4);
-        this.mFirstPageScrollX = this.getScrollForPage(0);
-        this.onWorkspaceOverallScrollChanged();
-        final LayoutTransition layoutTransition = this.getLayoutTransition();
-        if (layoutTransition != null && layoutTransition.isRunning()) {
-            layoutTransition.addTransitionListener((LayoutTransition$TransitionListener)new Workspace$6(this));
-        }
         this.updatePageAlphaValues();
-    }
-    
-    protected void onMeasure(final int n, final int n2) {
-        super.onMeasure(n, n2);
-        if (this.getChildCount() > 0) {
-            final int cellHeight = ((CellLayout)this.getChildAt(0)).getCellHeight();
-            final View qsbContainer = this.mLauncher.getQsbContainer();
-            final ViewGroup$LayoutParams layoutParams = qsbContainer.getLayoutParams();
-            if (cellHeight > 0 && layoutParams.height != cellHeight) {
-                layoutParams.height = cellHeight;
-                qsbContainer.setLayoutParams(layoutParams);
-            }
-        }
     }
     
     public void onNoCellFound(final View view) {
@@ -2459,18 +2360,30 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     public void onOverlayScrollChanged(final float n) {
-        final float n2 = 1.0f;
-        final float min = Math.min(n2, Math.max(n - 0.0f, 0.0f) / n2);
-        final float n3 = n2 - this.mAlphaInterpolator.getInterpolation(min);
-        float mOverlayTranslation = min * this.mLauncher.getDragLayer().getMeasuredWidth() * n2;
+        final int n2 = 3;
+        final int mOverlayShown = 1;
+        final float n3 = 1.0f;
+        if (Float.compare(n, n3) == 0) {
+            if (!this.mOverlayShown) {
+                this.mLauncher.getUserEventDispatcher().logActionOnContainer(n2, n2, mOverlayShown, 0);
+            }
+            this.mOverlayShown = (mOverlayShown != 0);
+        }
+        else if (Float.compare(n, 0.0f) == 0) {
+            if (this.mOverlayShown) {
+                this.mLauncher.getUserEventDispatcher().logActionOnContainer(n2, 4, mOverlayShown, -1);
+            }
+            this.mOverlayShown = false;
+        }
+        final float min = Math.min(n3, Math.max(n - 0.0f, 0.0f) / n3);
+        final float n4 = n3 - this.mAlphaInterpolator.getInterpolation(min);
+        float mOverlayTranslation = min * this.mLauncher.getDragLayer().getMeasuredWidth() * n3;
         if (this.mIsRtl) {
             mOverlayTranslation = -mOverlayTranslation;
         }
         this.mOverlayTranslation = mOverlayTranslation;
-        this.setWorkspaceTranslationAndAlpha(Workspace$Direction.X, mOverlayTranslation, n3);
-        this.setHotseatTranslationAndAlpha(Workspace$Direction.X, mOverlayTranslation, n3);
-        this.onWorkspaceOverallScrollChanged();
-        this.mQsbAlphaController.setAlphaAtIndex(n3, 3);
+        this.setWorkspaceTranslationAndAlpha(Workspace$Direction.X, mOverlayTranslation, n4);
+        this.setHotseatTranslationAndAlpha(Workspace$Direction.X, mOverlayTranslation, n4);
     }
     
     protected void onPageBeginTransition() {
@@ -2516,7 +2429,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     
     protected void onScrollChanged(final int n, final int n2, final int n3, final int n4) {
         super.onScrollChanged(n, n2, n3, n4);
-        this.onWorkspaceOverallScrollChanged();
         if (!this.mIsSwitchingState && (this.getLayoutTransition() == null || !this.getLayoutTransition().isRunning())) {
             this.showPageIndicatorAtCurrentScroll();
         }
@@ -2666,7 +2578,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         if (this.hasCustomContent()) {
             this.removeCustomContentPage();
         }
-        final View viewById = this.findViewById(this.getEmbeddedQsbId());
+        final View viewById = this.findViewById(2131623953);
         if (viewById != null) {
             ((ViewGroup)viewById.getParent()).removeView(viewById);
         }
@@ -2729,7 +2641,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     }
     
     public void removeFolderListeners() {
-        this.mapOverItems(false, new Workspace$14(this));
+        this.mapOverItems(false, new Workspace$13(this));
     }
     
     public void removeItemsByMatcher(final ItemInfoMatcher itemInfoMatcher) {
@@ -2826,10 +2738,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         if (open != null) {
             open.completeDragExit();
         }
-    }
-    
-    public void scrollTo(final int mUnboundedScrollX, final int n) {
-        super.scrollTo(this.mUnboundedScrollX = mUnboundedScrollX, n);
     }
     
     void setCurrentDragOverlappingLayout(final CellLayout mDragOverlappingLayout) {
@@ -2930,10 +2838,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         this.onOverlayScrollChanged(0.0f);
     }
     
-    public void setOnStateChangeListener(final Workspace$OnStateChangeListener mOnStateChangeListener) {
-        this.mOnStateChangeListener = mOnStateChangeListener;
-    }
-    
     public Animator setStateWithAnimation(final Workspace$State mState, final boolean b, final AnimationLayerSet set) {
         final Workspace$State mState2 = this.mState;
         this.mState = mState;
@@ -2942,17 +2846,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         this.updateAccessibilityFlags();
         if (b2) {
             this.mLauncher.notifyWidgetProvidersChanged();
-        }
-        if (this.mOnStateChangeListener != null) {
-            final Workspace$OnStateChangeListener mOnStateChangeListener = this.mOnStateChangeListener;
-            AnimatorSet set2;
-            if (b) {
-                set2 = animationToState;
-            }
-            else {
-                set2 = null;
-            }
-            mOnStateChangeListener.prepareStateChange(mState, set2);
         }
         this.onPrepareStateTransition(this.mState.hasMultipleVisiblePages);
         final Workspace$StateTransitionListener workspace$StateTransitionListener = new Workspace$StateTransitionListener(this, null);
@@ -2973,16 +2866,22 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
         Utilities.THREAD_POOL_EXECUTOR.execute(new Workspace$5(this));
     }
     
-    public void setWorkspaceYTranslationAndAlpha(final float translationY, final float n) {
-        this.setWorkspaceTranslationAndAlpha(Workspace$Direction.Y, translationY, n);
-        this.mLauncher.getQsbContainer().setTranslationY(translationY);
-        this.mQsbAlphaController.setAlphaAtIndex(n, 1);
+    public void setWorkspaceYTranslationAndAlpha(final float n, final float n2) {
+        this.setWorkspaceTranslationAndAlpha(Workspace$Direction.Y, n, n2);
     }
     
     void setup(final DragController mDragController) {
         this.mSpringLoadedDragController = new SpringLoadedDragController(this.mLauncher);
         this.mDragController = mDragController;
         this.updateChildrenLayersEnabled(false);
+    }
+    
+    protected boolean shouldFlingForVelocity(final int n) {
+        boolean shouldFlingForVelocity = false;
+        if (Float.compare(Math.abs(this.mOverlayTranslation), 0.0f) == 0) {
+            shouldFlingForVelocity = super.shouldFlingForVelocity(n);
+        }
+        return shouldFlingForVelocity;
     }
     
     void showCustomContentIfNecessary() {
@@ -3036,13 +2935,10 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     
     public void startDrag(final CellLayout$CellInfo mDragInfo, final DragOptions dragOptions) {
         final View cell = mDragInfo.cell;
-        if (!cell.isInTouchMode()) {
-            return;
-        }
         this.mDragInfo = mDragInfo;
         cell.setVisibility(4);
         if (dragOptions.isAccessibleDrag) {
-            this.mDragController.addDragListener(new Workspace$7(this, this, 2));
+            this.mDragController.addDragListener(new Workspace$6(this, this, 2));
         }
         this.beginDragShared(cell, this, dragOptions);
     }
@@ -3097,7 +2993,6 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             n3 = n5;
         }
         if (!list.isEmpty()) {
-            this.mLauncher.getModel();
             LauncherModel.updateWorkspaceScreenOrder((Context)this.mLauncher, this.mScreenOrder);
         }
         if (n3 >= 0) {
@@ -3175,12 +3070,12 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
     public void updateIconBadges(final Set set) {
         final PackageUserKey packageUserKey = new PackageUserKey(null, null);
         final HashSet set2 = new HashSet();
-        this.mapOverItems(true, new Workspace$22(this, packageUserKey, set, set2));
-        this.mapOverItems(false, new Workspace$23(this, set2));
+        this.mapOverItems(true, new Workspace$21(this, packageUserKey, set, set2));
+        this.mapOverItems(false, new Workspace$22(this, set2));
     }
     
     public void updateRestoreItems(final HashSet set) {
-        this.mapOverItems(true, new Workspace$24(this, set));
+        this.mapOverItems(true, new Workspace$23(this, set));
     }
     
     void updateShortcuts(final ArrayList list) {
@@ -3192,8 +3087,8 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
             set.add(shortcutInfo);
             set2.add(shortcutInfo.container);
         }
-        this.mapOverItems(true, new Workspace$20(this, set));
-        this.mapOverItems(false, new Workspace$21(this, set2));
+        this.mapOverItems(true, new Workspace$19(this, set));
+        this.mapOverItems(false, new Workspace$20(this, set2));
     }
     
     public void widgetsRestored(final ArrayList list) {
@@ -3211,7 +3106,7 @@ public class Workspace extends PagedView implements DropTarget, DragSource, View
                 workspace$DeferredWidgetRefresh.run();
             }
             else {
-                this.mapOverItems(false, new Workspace$25(this, list));
+                this.mapOverItems(false, new Workspace$24(this, list));
             }
         }
     }

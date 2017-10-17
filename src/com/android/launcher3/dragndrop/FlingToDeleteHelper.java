@@ -26,7 +26,7 @@ public class FlingToDeleteHelper
     
     public FlingToDeleteHelper(final Launcher mLauncher) {
         this.mLauncher = mLauncher;
-        this.mFlingToDeleteThresholdVelocity = mLauncher.getResources().getDimensionPixelSize(2131427414);
+        this.mFlingToDeleteThresholdVelocity = mLauncher.getResources().getDimensionPixelSize(2131427424);
     }
     
     private float getAngleBetweenVectors(final PointF pointF, final PointF pointF2) {
@@ -36,7 +36,7 @@ public class FlingToDeleteHelper
     private PointF isFlingingToDelete() {
         final float n = -1.0f;
         if (this.mDropTarget == null) {
-            this.mDropTarget = (ButtonDropTarget)this.mLauncher.findViewById(2131623996);
+            this.mDropTarget = (ButtonDropTarget)this.mLauncher.findViewById(2131624004);
         }
         if (this.mDropTarget == null || (this.mDropTarget.isDropEnabled() ^ true)) {
             return null;

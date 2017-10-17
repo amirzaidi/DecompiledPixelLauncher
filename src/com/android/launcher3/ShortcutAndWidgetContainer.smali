@@ -68,34 +68,34 @@
     .locals 3
 
     .prologue
-    .line 197
+    .line 199
     invoke-super {p0}, Landroid/view/ViewGroup;->cancelLongPress()V
 
-    .line 200
+    .line 202
     invoke-virtual {p0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v1
 
-    .line 201
+    .line 203
     const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 202
+    .line 204
     invoke-virtual {p0, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 203
+    .line 205
     invoke-virtual {v2}, Landroid/view/View;->cancelLongPress()V
 
-    .line 201
+    .line 203
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 205
+    .line 207
     :cond_0
     return-void
 .end method
@@ -207,7 +207,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 140
     iget-boolean v0, p0, Lcom/android/launcher3/ShortcutAndWidgetContainer;->mInvertIfRtl:Z
 
     if-eqz v0, :cond_0
@@ -249,7 +249,7 @@
     .line 111
     iget-boolean v1, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->isFullscreen:Z
 
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
     .line 112
     iget-object v1, p0, Lcom/android/launcher3/ShortcutAndWidgetContainer;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -286,7 +286,7 @@
     .line 115
     invoke-virtual/range {v0 .. v6}, Lcom/android/launcher3/CellLayout$LayoutParams;->setup(IIZIFF)V
 
-    .line 132
+    .line 134
     :goto_0
     iget v1, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->width:I
 
@@ -294,17 +294,17 @@
 
     move-result v1
 
-    .line 133
+    .line 135
     iget v0, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->height:I
 
     invoke-static {v0, v8}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    .line 134
+    .line 136
     invoke-virtual {p1, v1, v0}, Landroid/view/View;->measure(II)V
 
-    .line 135
+    .line 137
     return-void
 
     .line 119
@@ -341,37 +341,49 @@
 
     move-result v1
 
-    float-to-int v1, v1
+    float-to-int v2, v1
 
     .line 123
-    iget v2, v6, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
+    iget v1, p0, Lcom/android/launcher3/ShortcutAndWidgetContainer;->mContainerType:I
 
-    int-to-float v2, v2
-
-    div-float/2addr v2, v7
-
-    float-to-int v2, v2
+    if-nez v1, :cond_1
 
     .line 124
-    invoke-virtual {p1, v2, v1, v2, v5}, Landroid/view/View;->setPadding(IIII)V
+    iget v1, v6, Lcom/android/launcher3/DeviceProfile;->workspaceCellPaddingXPx:I
+
+    .line 126
+    :goto_1
+    invoke-virtual {p1, v1, v2, v1, v5}, Landroid/view/View;->setPadding(IIII)V
 
     goto :goto_0
 
-    .line 127
+    .line 125
     :cond_1
-    iput v5, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
+    iget v1, v6, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
 
-    .line 128
-    iput v5, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
+    int-to-float v1, v1
+
+    div-float/2addr v1, v7
+
+    float-to-int v1, v1
+
+    goto :goto_1
 
     .line 129
+    :cond_2
+    iput v5, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
+
+    .line 130
+    iput v5, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
+
+    .line 131
     invoke-virtual {p0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getMeasuredWidth()I
 
     move-result v1
 
     iput v1, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->width:I
 
-    .line 130
+    .line 132
     invoke-virtual {p0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getMeasuredHeight()I
 
     move-result v1
@@ -385,12 +397,12 @@
     .locals 10
 
     .prologue
-    .line 143
+    .line 145
     invoke-virtual {p0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v8
 
-    .line 144
+    .line 146
     const/4 v0, 0x0
 
     move v7, v0
@@ -398,12 +410,12 @@
     :goto_0
     if-ge v7, v8, :cond_2
 
-    .line 145
+    .line 147
     invoke-virtual {p0, v7}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 146
+    .line 148
     invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -412,7 +424,7 @@
 
     if-eq v0, v2, :cond_1
 
-    .line 147
+    .line 149
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -421,41 +433,41 @@
 
     check-cast v4, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 149
+    .line 151
     instance-of v0, v1, Lcom/android/launcher3/LauncherAppWidgetHostView;
 
     if-eqz v0, :cond_0
 
     move-object v0, v1
 
-    .line 150
+    .line 152
     check-cast v0, Lcom/android/launcher3/LauncherAppWidgetHostView;
 
-    .line 153
+    .line 155
     iget-object v2, p0, Lcom/android/launcher3/ShortcutAndWidgetContainer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v2
 
-    .line 154
+    .line 156
     iget-object v3, v2, Lcom/android/launcher3/DeviceProfile;->appWidgetScale:Landroid/graphics/PointF;
 
     iget v3, v3, Landroid/graphics/PointF;->x:F
 
-    .line 155
+    .line 157
     iget-object v2, v2, Lcom/android/launcher3/DeviceProfile;->appWidgetScale:Landroid/graphics/PointF;
 
     iget v2, v2, Landroid/graphics/PointF;->y:F
 
-    .line 157
+    .line 159
     invoke-static {v3, v2}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
     invoke-virtual {v0, v5}, Lcom/android/launcher3/LauncherAppWidgetHostView;->setScaleToFit(F)V
 
-    .line 158
+    .line 160
     iget v5, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->width:I
 
     int-to-float v5, v5
@@ -474,7 +486,7 @@
 
     div-float/2addr v3, v5
 
-    .line 159
+    .line 161
     iget v5, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->height:I
 
     int-to-float v5, v5
@@ -493,17 +505,17 @@
 
     div-float/2addr v2, v5
 
-    .line 158
+    .line 160
     invoke-virtual {v0, v3, v2}, Lcom/android/launcher3/LauncherAppWidgetHostView;->setTranslationForCentering(FF)V
 
-    .line 162
+    .line 164
     :cond_0
     iget v3, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
-    .line 163
+    .line 165
     iget v5, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
-    .line 164
+    .line 166
     iget v0, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->width:I
 
     add-int/2addr v0, v3
@@ -514,33 +526,33 @@
 
     invoke-virtual {v1, v3, v5, v0, v2}, Landroid/view/View;->layout(IIII)V
 
-    .line 166
+    .line 168
     iget-boolean v0, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->dropped:Z
 
     if-eqz v0, :cond_1
 
-    .line 167
+    .line 169
     const/4 v0, 0x0
 
     iput-boolean v0, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->dropped:Z
 
-    .line 169
+    .line 171
     iget-object v6, p0, Lcom/android/launcher3/ShortcutAndWidgetContainer;->mTmpCellXY:[I
 
-    .line 170
+    .line 172
     invoke-virtual {p0, v6}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getLocationOnScreen([I)V
 
-    .line 171
+    .line 173
     iget-object v0, p0, Lcom/android/launcher3/ShortcutAndWidgetContainer;->mWallpaperManager:Landroid/app/WallpaperManager;
 
     invoke-virtual {p0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v1
 
-    .line 172
+    .line 174
     const-string/jumbo v2, "android.home.drop"
 
-    .line 173
+    .line 175
     const/4 v9, 0x0
 
     aget v9, v6, v9
@@ -553,7 +565,7 @@
 
     add-int/2addr v3, v9
 
-    .line 174
+    .line 176
     const/4 v9, 0x1
 
     aget v6, v6, v9
@@ -570,10 +582,10 @@
 
     const/4 v6, 0x0
 
-    .line 171
+    .line 173
     invoke-virtual/range {v0 .. v6}, Landroid/app/WallpaperManager;->sendWallpaperCommand(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V
 
-    .line 144
+    .line 146
     :cond_1
     add-int/lit8 v0, v7, 0x1
 
@@ -581,7 +593,7 @@
 
     goto/16 :goto_0
 
-    .line 178
+    .line 180
     :cond_2
     return-void
 .end method
@@ -646,24 +658,24 @@
     .locals 1
 
     .prologue
-    .line 187
+    .line 189
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
 
-    .line 188
+    .line 190
     if-eqz p1, :cond_0
 
-    .line 189
+    .line 191
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 190
+    .line 192
     invoke-virtual {p1, v0}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
 
-    .line 191
+    .line 193
     invoke-virtual {p0, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->requestRectangleOnScreen(Landroid/graphics/Rect;)Z
 
-    .line 193
+    .line 195
     :cond_0
     return-void
 .end method
@@ -767,7 +779,7 @@
     .locals 1
 
     .prologue
-    .line 182
+    .line 184
     const/4 v0, 0x0
 
     return v0

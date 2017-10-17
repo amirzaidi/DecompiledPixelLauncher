@@ -8,11 +8,13 @@ import android.view.View$AccessibilityDelegate;
 import android.content.ContextWrapper;
 import android.content.Context;
 import com.android.launcher3.logging.UserEventDispatcher;
+import com.android.launcher3.util.SystemUiController;
 import android.app.Activity;
 
 public abstract class BaseActivity extends Activity
 {
     protected DeviceProfile mDeviceProfile;
+    protected SystemUiController mSystemUiController;
     protected UserEventDispatcher mUserEventDispatcher;
     
     public static BaseActivity fromContext(final Context context) {
@@ -28,6 +30,13 @@ public abstract class BaseActivity extends Activity
     
     public DeviceProfile getDeviceProfile() {
         return this.mDeviceProfile;
+    }
+    
+    public SystemUiController getSystemUiController() {
+        if (this.mSystemUiController == null) {
+            this.mSystemUiController = new SystemUiController(this.getWindow());
+        }
+        return this.mSystemUiController;
     }
     
     public final UserEventDispatcher getUserEventDispatcher() {

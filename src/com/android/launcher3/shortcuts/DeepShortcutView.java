@@ -97,8 +97,8 @@ public class DeepShortcutView extends FrameLayout
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        this.mBubbleText = (BubbleTextView)this.findViewById(2131623994);
-        this.mIconView = this.findViewById(2131623990);
+        this.mBubbleText = (BubbleTextView)this.findViewById(2131624002);
+        this.mIconView = this.findViewById(2131623992);
     }
     
     protected void onMeasure(final int n, final int n2) {

@@ -12,12 +12,12 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 36
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 38
+    .line 37
     return-void
 .end method
 
@@ -25,12 +25,12 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 40
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 42
+    .line 41
     return-void
 .end method
 
@@ -38,10 +38,10 @@
     .locals 0
 
     .prologue
-    .line 46
+    .line 45
     invoke-direct {p0, p1, p2, p3}, Lcom/android/launcher3/BaseRecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 47
+    .line 46
     return-void
 .end method
 
@@ -49,10 +49,10 @@
     .locals 0
 
     .prologue
-    .line 51
+    .line 50
     invoke-direct {p0, p1, p2, p3}, Lcom/android/launcher3/widget/WidgetsRecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 52
+    .line 51
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 145
+    .line 140
     iget-object v1, p0, Lcom/android/launcher3/widget/WidgetsRecyclerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
 
     invoke-virtual {v1}, Lcom/android/launcher3/widget/WidgetsListAdapter;->getItemCount()I
@@ -83,14 +83,14 @@
     .locals 2
 
     .prologue
-    .line 137
+    .line 132
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 138
+    .line 133
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -103,7 +103,7 @@
 
     mul-int/2addr v0, v1
 
-    .line 139
+    .line 134
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getPaddingTop()I
 
     move-result v1
@@ -116,14 +116,14 @@
 
     add-int/2addr v0, v1
 
-    .line 140
+    .line 135
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getScrollbarTrackHeight()I
 
     move-result v1
 
     sub-int/2addr v0, v1
 
-    .line 141
+    .line 136
     return v0
 .end method
 
@@ -133,7 +133,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 119
+    .line 114
     invoke-direct {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->isModelNotReady()Z
 
     move-result v0
@@ -146,31 +146,31 @@
 
     if-nez v0, :cond_1
 
-    .line 120
+    .line 115
     :cond_0
     const/4 v0, -0x1
 
     return v0
 
-    .line 123
+    .line 118
     :cond_1
     invoke-virtual {p0, v1}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 124
+    .line 119
     invoke-virtual {p0, v0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getChildPosition(Landroid/view/View;)I
 
     move-result v1
 
-    .line 125
+    .line 120
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
 
     mul-int/2addr v1, v2
 
-    .line 126
+    .line 121
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getLayoutManager()Landroid/support/v7/widget/p;
 
     move-result-object v2
@@ -179,7 +179,7 @@
 
     move-result v0
 
-    .line 128
+    .line 123
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getPaddingTop()I
 
     move-result v2
@@ -191,27 +191,17 @@
     return v0
 .end method
 
-.method public getFastScrollerTrackColor(I)I
-    .locals 1
-
-    .prologue
-    .line 64
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
 .method protected onFinishInflate()V
     .locals 2
 
     .prologue
-    .line 56
+    .line 55
     invoke-super {p0}, Lcom/android/launcher3/BaseRecyclerView;->onFinishInflate()V
 
-    .line 57
+    .line 56
     invoke-virtual {p0, p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->addOnItemTouchListener(Landroid/support/v7/widget/n;)V
 
-    .line 60
+    .line 59
     new-instance v0, Landroid/support/v7/widget/N;
 
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getContext()Landroid/content/Context;
@@ -222,7 +212,7 @@
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->setLayoutManager(Landroid/support/v7/widget/p;)V
 
-    .line 61
+    .line 60
     return-void
 .end method
 
@@ -230,36 +220,36 @@
     .locals 2
 
     .prologue
-    .line 102
+    .line 97
     invoke-direct {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->isModelNotReady()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 98
     return-void
 
-    .line 107
+    .line 102
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getCurrentScrollY()I
 
     move-result v0
 
-    .line 108
+    .line 103
     if-gez v0, :cond_1
 
-    .line 109
-    iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsRecyclerView;->mScrollbar:Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    .line 104
+    iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsRecyclerView;->mScrollbar:Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
     const/4 v1, -0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->setThumbOffsetY(I)V
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->setThumbOffsetY(I)V
 
-    .line 110
+    .line 105
     return-void
 
-    .line 113
+    .line 108
     :cond_1
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getAvailableScrollHeight()I
 
@@ -267,7 +257,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->synchronizeScrollBarThumbOffsetToViewScroll(II)V
 
-    .line 114
+    .line 109
     return-void
 .end method
 
@@ -277,47 +267,47 @@
     .prologue
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 79
+    .line 74
     invoke-direct {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->isModelNotReady()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 80
+    .line 75
     const-string/jumbo v0, ""
 
     return-object v0
 
-    .line 84
+    .line 79
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->stopScroll()V
 
-    .line 86
+    .line 81
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsRecyclerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
 
     invoke-virtual {v0}, Lcom/android/launcher3/widget/WidgetsListAdapter;->getItemCount()I
 
     move-result v0
 
-    .line 87
+    .line 82
     int-to-float v0, v0
 
     mul-float v1, v0, p1
 
-    .line 88
+    .line 83
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getAvailableScrollHeight()I
 
     move-result v2
 
-    .line 89
+    .line 84
     invoke-virtual {p0}, Lcom/android/launcher3/widget/WidgetsRecyclerView;->getLayoutManager()Landroid/support/v7/widget/p;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/N;
 
-    .line 90
+    .line 85
     int-to-float v2, v2
 
     mul-float/2addr v2, p1
@@ -330,7 +320,7 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/support/v7/widget/N;->scrollToPositionWithOffset(II)V
 
-    .line 92
+    .line 87
     cmpl-float v0, p1, v4
 
     if-nez v0, :cond_1
@@ -340,7 +330,7 @@
     :goto_0
     float-to-int v0, v0
 
-    .line 93
+    .line 88
     iget-object v1, p0, Lcom/android/launcher3/widget/WidgetsRecyclerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/widget/WidgetsListAdapter;->getSectionName(I)Ljava/lang/String;
@@ -352,7 +342,7 @@
     :cond_1
     move v0, v1
 
-    .line 92
+    .line 87
     goto :goto_0
 .end method
 
@@ -360,14 +350,14 @@
     .locals 0
 
     .prologue
-    .line 69
+    .line 64
     invoke-super {p0, p1}, Lcom/android/launcher3/BaseRecyclerView;->setAdapter(Landroid/support/v7/widget/q;)V
 
-    .line 70
+    .line 65
     check-cast p1, Lcom/android/launcher3/widget/WidgetsListAdapter;
 
     iput-object p1, p0, Lcom/android/launcher3/widget/WidgetsRecyclerView;->mAdapter:Lcom/android/launcher3/widget/WidgetsListAdapter;
 
-    .line 71
+    .line 66
     return-void
 .end method

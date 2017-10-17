@@ -23,7 +23,7 @@ public class AllAppsCaretController
     public AllAppsCaretController(final CaretDrawable mCaretDrawable, final Launcher mLauncher) {
         this.mLauncher = mLauncher;
         this.mCaretDrawable = mCaretDrawable;
-        final long duration = mLauncher.getResources().getInteger(2131558421);
+        final long duration = mLauncher.getResources().getInteger(2131558422);
         final Interpolator loadInterpolator = AnimationUtils.loadInterpolator((Context)mLauncher, 17563661);
         (this.mCaretAnimator = ObjectAnimator.ofFloat((Object)this.mCaretDrawable, "caretProgress", new float[] { 0.0f })).setDuration(duration);
         this.mCaretAnimator.setInterpolator((TimeInterpolator)loadInterpolator);

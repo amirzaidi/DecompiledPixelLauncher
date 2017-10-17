@@ -1,4 +1,4 @@
-.class Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;
+.class public Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;
 .super Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;
 .source "SourceFile"
 
@@ -12,7 +12,7 @@
     .locals 2
 
     .prologue
-    .line 135
+    .line 133
     invoke-virtual {p1}, Landroid/content/pm/LauncherActivityInfo;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -23,10 +23,10 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 136
+    .line 134
     iput-object p1, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;->mInfo:Landroid/content/pm/LauncherActivityInfo;
 
-    .line 137
+    .line 135
     return-void
 .end method
 
@@ -36,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 146
+    .line 144
     iget-object v0, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;->mInfo:Landroid/content/pm/LauncherActivityInfo;
 
     invoke-virtual {p1, v0}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/pm/LauncherActivityInfo;)Landroid/graphics/drawable/Drawable;
@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 139
     iget-object v0, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;->mInfo:Landroid/content/pm/LauncherActivityInfo;
 
     invoke-virtual {v0}, Landroid/content/pm/LauncherActivityInfo;->getLabel()Ljava/lang/CharSequence;
@@ -61,14 +61,12 @@
 .end method
 
 .method public startConfigActivity(Landroid/app/Activity;I)Z
-    .locals 9
+    .locals 8
 
     .prologue
-    const/4 v8, 0x1
-
     const/4 v7, 0x0
 
-    .line 151
+    .line 149
     invoke-virtual {p0}, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;->getUser()Landroid/os/UserHandle;
 
     move-result-object v0
@@ -83,65 +81,32 @@
 
     if-eqz v0, :cond_0
 
-    .line 152
+    .line 150
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;->startConfigActivity(Landroid/app/Activity;I)Z
 
     move-result v0
 
     return v0
 
-    .line 155
+    .line 152
     :cond_0
-    :try_start_0
     const-class v0, Landroid/content/pm/LauncherApps;
 
-    .line 156
-    const-string/jumbo v1, "getShortcutConfigActivityIntent"
-
-    .line 155
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Class;
-
-    .line 156
-    const-class v3, Landroid/content/pm/LauncherActivityInfo;
-
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    .line 155
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {p1, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 158
-    const-class v1, Landroid/content/pm/LauncherApps;
+    check-cast v0, Landroid/content/pm/LauncherApps;
 
-    invoke-virtual {p1, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    .line 153
+    iget-object v1, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;->mInfo:Landroid/content/pm/LauncherActivityInfo;
 
-    move-result-object v1
-
-    .line 157
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    .line 158
-    iget-object v3, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;->mInfo:Landroid/content/pm/LauncherActivityInfo;
-
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    .line 157
-    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .line 152
+    invoke-virtual {v0, v1}, Landroid/content/pm/LauncherApps;->getShortcutConfigActivityIntent(Landroid/content/pm/LauncherActivityInfo;)Landroid/content/IntentSender;
 
     move-result-object v1
 
-    check-cast v1, Landroid/content/IntentSender;
-
-    .line 159
+    .line 155
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -154,24 +119,29 @@
 
     move v2, p2
 
+    :try_start_0
     invoke-virtual/range {v0 .. v6}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;III)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 160
-    return v8
+    .line 156
+    const/4 v0, 0x1
 
-    .line 161
+    return v0
+
+    .line 157
     :catch_0
     move-exception v0
 
-    .line 162
-    const-string/jumbo v1, "SCActivityInfo"
+    .line 158
+    const v0, 0x7f0c0021
 
-    const-string/jumbo v2, "Error calling new API"
+    invoke-static {p1, v0, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-result-object v0
 
-    .line 163
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    .line 159
     return v7
 .end method

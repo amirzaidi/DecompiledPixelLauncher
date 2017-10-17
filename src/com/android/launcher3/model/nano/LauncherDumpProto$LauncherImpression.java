@@ -30,7 +30,7 @@ public final class LauncherDumpProto$LauncherImpression extends a
             while (i < this.targets.length) {
                 final LauncherDumpProto$DumpTarget launcherDumpProto$DumpTarget = this.targets[i];
                 if (launcherDumpProto$DumpTarget != null) {
-                    computeSerializedSize += b.Rt(1, launcherDumpProto$DumpTarget);
+                    computeSerializedSize += b.Vo(1, launcherDumpProto$DumpTarget);
                 }
                 ++i;
             }
@@ -40,10 +40,10 @@ public final class LauncherDumpProto$LauncherImpression extends a
     
     public LauncherDumpProto$LauncherImpression mergeFrom(final c c) {
         while (true) {
-            final int sx = c.Sx();
-            switch (sx) {
+            final int ws = c.Ws();
+            switch (ws) {
                 default: {
-                    if (!f.SW(c, sx)) {
+                    if (!f.WR(c, ws)) {
                         return this;
                     }
                     continue;
@@ -52,7 +52,7 @@ public final class LauncherDumpProto$LauncherImpression extends a
                     return this;
                 }
                 case 10: {
-                    final int ss = f.SS(c, 10);
+                    final int wn = f.WN(c, 10);
                     int i;
                     if (this.targets == null) {
                         i = 0;
@@ -60,16 +60,16 @@ public final class LauncherDumpProto$LauncherImpression extends a
                     else {
                         i = this.targets.length;
                     }
-                    final LauncherDumpProto$DumpTarget[] targets = new LauncherDumpProto$DumpTarget[ss + i];
+                    final LauncherDumpProto$DumpTarget[] targets = new LauncherDumpProto$DumpTarget[wn + i];
                     if (i != 0) {
                         System.arraycopy(this.targets, 0, targets, 0, i);
                     }
                     while (i < targets.length - 1) {
-                        c.SB(targets[i] = new LauncherDumpProto$DumpTarget());
-                        c.Sx();
+                        c.Ww(targets[i] = new LauncherDumpProto$DumpTarget());
+                        c.Ws();
                         ++i;
                     }
-                    c.SB(targets[i] = new LauncherDumpProto$DumpTarget());
+                    c.Ww(targets[i] = new LauncherDumpProto$DumpTarget());
                     this.targets = targets;
                     continue;
                 }
@@ -83,7 +83,7 @@ public final class LauncherDumpProto$LauncherImpression extends a
             while (i < this.targets.length) {
                 final LauncherDumpProto$DumpTarget launcherDumpProto$DumpTarget = this.targets[i];
                 if (launcherDumpProto$DumpTarget != null) {
-                    b.RP(1, launcherDumpProto$DumpTarget);
+                    b.VK(1, launcherDumpProto$DumpTarget);
                 }
                 ++i;
             }

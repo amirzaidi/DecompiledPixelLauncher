@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$5;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    .line 291
+    .line 292
     invoke-direct {p0, p2, p3}, Lcom/android/launcher3/accessibility/AccessibleDragListenerAdapter;-><init>(Landroid/view/ViewGroup;I)V
 
     .line 1
@@ -28,10 +28,10 @@
     .locals 2
 
     .prologue
-    .line 296
+    .line 297
     invoke-super {p0, p1}, Lcom/android/launcher3/accessibility/AccessibleDragListenerAdapter;->enableAccessibleDrag(Z)V
 
-    .line 297
+    .line 298
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$5;->this$0:Lcom/android/launcher3/folder/Folder;
 
     invoke-static {v0}, Lcom/android/launcher3/folder/Folder;->-get0(Lcom/android/launcher3/folder/Folder;)Landroid/view/View;
@@ -40,17 +40,17 @@
 
     if-eqz p1, :cond_0
 
-    .line 298
+    .line 299
     const/4 v0, 0x4
 
-    .line 297
+    .line 298
     :goto_0
     invoke-virtual {v1, v0}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    .line 300
+    .line 301
     return-void
 
-    .line 299
+    .line 300
     :cond_0
     const/4 v0, 0x0
 

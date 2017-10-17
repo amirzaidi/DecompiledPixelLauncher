@@ -81,14 +81,14 @@ public class DragController implements DragDriver$EventListener, TouchController
     }
     
     private void callOnDragStart() {
-        final Iterator<DragController$DragListener> iterator = new ArrayList<DragController$DragListener>(this.mListeners).iterator();
-        while (iterator.hasNext()) {
-            iterator.next().onDragStart(this.mDragObject, this.mOptions);
-        }
         if (this.mOptions.preDragCondition != null) {
             this.mOptions.preDragCondition.onPreDragEnd(this.mDragObject, true);
         }
         this.mIsInPreDrag = false;
+        final Iterator<DragController$DragListener> iterator = new ArrayList<DragController$DragListener>(this.mListeners).iterator();
+        while (iterator.hasNext()) {
+            iterator.next().onDragStart(this.mDragObject, this.mOptions);
+        }
     }
     
     private void checkTouchMove(final DropTarget mLastDropTarget) {
@@ -426,7 +426,7 @@ public class DragController implements DragDriver$EventListener, TouchController
         this.mWindowToken = mWindowToken;
     }
     
-    public DragView startDrag(final Bitmap bitmap, final int n, final int n2, final DragSource dragSource, final ItemInfo dragInfo, final Point point, final Rect rect, final float n3, final DragOptions mOptions) {
+    public DragView startDrag(final Bitmap bitmap, final int n, final int n2, final DragSource dragSource, final ItemInfo itemInfo, final Point point, final Rect rect, final float n3, final DragOptions mOptions) {
         ((InputMethodManager)this.mLauncher.getSystemService((Class)InputMethodManager.class)).hideSoftInputFromWindow(this.mWindowToken, 0);
         this.mOptions = mOptions;
         if (this.mOptions.systemDndStartPoint != null) {
@@ -455,13 +455,13 @@ public class DragController implements DragDriver$EventListener, TouchController
         final Resources resources = this.mLauncher.getResources();
         float n6;
         if (this.mIsInPreDrag) {
-            n6 = resources.getDimensionPixelSize(2131427437);
+            n6 = resources.getDimensionPixelSize(2131427447);
         }
         else {
             n6 = 0.0f;
         }
         final DragView dragView = new DragView(this.mLauncher, bitmap, n4, n5, n3, n6);
-        this.mDragObject.dragView = dragView;
+        (this.mDragObject.dragView = dragView).setItemInfo(itemInfo);
         this.mDragObject.dragComplete = false;
         if (this.mOptions.isAccessibleDrag) {
             this.mDragObject.xOffset = bitmap.getWidth() / 2;
@@ -471,12 +471,12 @@ public class DragController implements DragDriver$EventListener, TouchController
         else {
             this.mDragObject.xOffset = this.mMotionDownX - (n + left);
             this.mDragObject.yOffset = this.mMotionDownY - (n2 + top);
-            this.mDragObject.stateAnnouncer = DragViewStateAnnouncer.createFor(dragView);
+            this.mDragObject.stateAnnouncer = DragViewStateAnnouncer.createFor((View)dragView);
             this.mDragDriver = DragDriver.create((Context)this.mLauncher, this, this.mDragObject, this.mOptions);
         }
         this.mDragObject.dragSource = dragSource;
-        this.mDragObject.dragInfo = dragInfo;
-        (this.mDragObject.originalDragInfo = new ItemInfo()).copyFrom(dragInfo);
+        this.mDragObject.dragInfo = itemInfo;
+        (this.mDragObject.originalDragInfo = new ItemInfo()).copyFrom(itemInfo);
         if (point != null) {
             dragView.setDragVisualizeOffset(new Point(point));
         }

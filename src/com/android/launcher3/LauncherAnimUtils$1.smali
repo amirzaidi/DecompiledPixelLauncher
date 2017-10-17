@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 35
+    .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -24,12 +24,12 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 47
     sget-object v0, Lcom/android/launcher3/LauncherAnimUtils;->sAnimators:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 49
+    .line 48
     return-void
 .end method
 
@@ -37,12 +37,12 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 43
     sget-object v0, Lcom/android/launcher3/LauncherAnimUtils;->sAnimators:Ljava/util/WeakHashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 41
+    .line 40
     return-void
 .end method
 
@@ -58,13 +58,13 @@
     .locals 2
 
     .prologue
-    .line 37
+    .line 36
     sget-object v0, Lcom/android/launcher3/LauncherAnimUtils;->sAnimators:Ljava/util/WeakHashMap;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, p1, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 38
+    .line 37
     return-void
 .end method

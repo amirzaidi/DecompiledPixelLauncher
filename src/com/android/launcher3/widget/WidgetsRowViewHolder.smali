@@ -18,7 +18,7 @@
     invoke-direct {p0, p1}, Landroid/support/v7/widget/j;-><init>(Landroid/view/View;)V
 
     .line 32
-    const v0, 0x7f0e0072
+    const v0, 0x7f0e008c
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -29,7 +29,7 @@
     iput-object v0, p0, Lcom/android/launcher3/widget/WidgetsRowViewHolder;->cellContainer:Landroid/view/ViewGroup;
 
     .line 33
-    const v0, 0x7f0e0070
+    const v0, 0x7f0e008a
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

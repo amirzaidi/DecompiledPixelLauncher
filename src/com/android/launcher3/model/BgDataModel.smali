@@ -10,9 +10,13 @@
 
 .field public final folders:Lcom/android/launcher3/util/LongArrayMap;
 
+.field public hasShortcutHostPermission:Z
+
 .field public final itemsIdMap:Lcom/android/launcher3/util/LongArrayMap;
 
 .field public final pinnedShortcutCounts:Ljava/util/Map;
+
+.field public final widgetsModel:Lcom/android/launcher3/model/WidgetsModel;
 
 .field public final workspaceItems:Ljava/util/ArrayList;
 
@@ -24,59 +28,66 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 57
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
+    .line 65
     new-instance v0, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v0}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->itemsIdMap:Lcom/android/launcher3/util/LongArrayMap;
 
-    .line 73
+    .line 71
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
 
-    .line 78
+    .line 76
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->appWidgets:Ljava/util/ArrayList;
 
-    .line 83
+    .line 81
     new-instance v0, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v0}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
 
-    .line 88
+    .line 86
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceScreens:Ljava/util/ArrayList;
 
-    .line 93
+    .line 91
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->pinnedShortcutCounts:Ljava/util/Map;
 
-    .line 98
+    .line 101
     new-instance v0, Lcom/android/launcher3/util/MultiHashMap;
 
     invoke-direct {v0}, Lcom/android/launcher3/util/MultiHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->deepShortcutMap:Lcom/android/launcher3/util/MultiHashMap;
 
-    .line 59
+    .line 106
+    new-instance v0, Lcom/android/launcher3/model/WidgetsModel;
+
+    invoke-direct {v0}, Lcom/android/launcher3/model/WidgetsModel;-><init>()V
+
+    iput-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->widgetsModel:Lcom/android/launcher3/model/WidgetsModel;
+
+    .line 57
     return-void
 .end method
 
@@ -86,7 +97,7 @@
     .prologue
     monitor-enter p0
 
-    .line 158
+    .line 166
     :try_start_0
     new-instance v3, Lcom/android/launcher3/logging/DumpTargetWrapper;
 
@@ -96,12 +107,12 @@
 
     invoke-direct {v3, v0, v1}, Lcom/android/launcher3/logging/DumpTargetWrapper;-><init>(II)V
 
-    .line 159
+    .line 167
     new-instance v4, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v4}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
-    .line 160
+    .line 168
     const/4 v0, 0x0
 
     move v1, v0
@@ -115,9 +126,7 @@
 
     if-ge v1, v0, :cond_0
 
-    .line 161
-    new-instance v2, Ljava/lang/Long;
-
+    .line 169
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceScreens:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -130,30 +139,24 @@
 
     move-result-wide v6
 
-    invoke-direct {v2, v6, v7}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    .line 162
+    .line 170
     new-instance v0, Lcom/android/launcher3/logging/DumpTargetWrapper;
 
     const/4 v2, 0x1
 
     invoke-direct {v0, v2, v1}, Lcom/android/launcher3/logging/DumpTargetWrapper;-><init>(II)V
 
-    .line 161
+    .line 169
     invoke-virtual {v4, v6, v7, v0}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 160
+    .line 168
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 166
+    .line 174
     :cond_0
     const/4 v0, 0x0
 
@@ -168,7 +171,7 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 167
+    .line 175
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/util/LongArrayMap;->valueAt(I)Ljava/lang/Object;
@@ -177,7 +180,7 @@
 
     check-cast v0, Lcom/android/launcher3/FolderInfo;
 
-    .line 168
+    .line 176
     new-instance v5, Lcom/android/launcher3/logging/DumpTargetWrapper;
 
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
@@ -190,10 +193,10 @@
 
     invoke-direct {v5, v6, v1}, Lcom/android/launcher3/logging/DumpTargetWrapper;-><init>(II)V
 
-    .line 169
+    .line 177
     invoke-virtual {v5, v0}, Lcom/android/launcher3/logging/DumpTargetWrapper;->writeToDumpTarget(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/model/nano/LauncherDumpProto$DumpTarget;
 
-    .line 170
+    .line 178
     iget-object v1, v0, Lcom/android/launcher3/FolderInfo;->contents:Ljava/util/ArrayList;
 
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -213,15 +216,15 @@
 
     check-cast v1, Lcom/android/launcher3/ShortcutInfo;
 
-    .line 171
+    .line 179
     new-instance v7, Lcom/android/launcher3/logging/DumpTargetWrapper;
 
     invoke-direct {v7, v1}, Lcom/android/launcher3/logging/DumpTargetWrapper;-><init>(Lcom/android/launcher3/ItemInfo;)V
 
-    .line 172
+    .line 180
     invoke-virtual {v7, v1}, Lcom/android/launcher3/logging/DumpTargetWrapper;->writeToDumpTarget(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/model/nano/LauncherDumpProto$DumpTarget;
 
-    .line 173
+    .line 181
     invoke-virtual {v5, v7}, Lcom/android/launcher3/logging/DumpTargetWrapper;->add(Lcom/android/launcher3/logging/DumpTargetWrapper;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -235,7 +238,7 @@
 
     throw v0
 
-    .line 175
+    .line 183
     :cond_1
     :try_start_1
     iget-wide v6, v0, Lcom/android/launcher3/FolderInfo;->container:J
@@ -246,10 +249,10 @@
 
     if-nez v1, :cond_3
 
-    .line 176
+    .line 184
     invoke-virtual {v3, v5}, Lcom/android/launcher3/logging/DumpTargetWrapper;->add(Lcom/android/launcher3/logging/DumpTargetWrapper;)V
 
-    .line 166
+    .line 174
     :cond_2
     :goto_3
     add-int/lit8 v0, v2, 0x1
@@ -258,7 +261,7 @@
 
     goto :goto_1
 
-    .line 177
+    .line 185
     :cond_3
     iget-wide v6, v0, Lcom/android/launcher3/FolderInfo;->container:J
 
@@ -268,16 +271,8 @@
 
     if-nez v1, :cond_2
 
-    .line 178
-    new-instance v1, Ljava/lang/Long;
-
-    iget-wide v6, v0, Lcom/android/launcher3/FolderInfo;->screenId:J
-
-    invoke-direct {v1, v6, v7}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
+    .line 186
+    iget-wide v0, v0, Lcom/android/launcher3/FolderInfo;->screenId:J
 
     invoke-virtual {v4, v0, v1}, Lcom/android/launcher3/util/LongArrayMap;->get(J)Ljava/lang/Object;
 
@@ -289,7 +284,7 @@
 
     goto :goto_3
 
-    .line 182
+    .line 190
     :cond_4
     const/4 v0, 0x0
 
@@ -304,7 +299,7 @@
 
     if-ge v1, v0, :cond_8
 
-    .line 183
+    .line 191
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -313,12 +308,12 @@
 
     check-cast v0, Lcom/android/launcher3/ItemInfo;
 
-    .line 184
+    .line 192
     instance-of v2, v0, Lcom/android/launcher3/FolderInfo;
 
     if-eqz v2, :cond_6
 
-    .line 182
+    .line 190
     :cond_5
     :goto_5
     add-int/lit8 v0, v1, 0x1
@@ -327,16 +322,16 @@
 
     goto :goto_4
 
-    .line 187
+    .line 195
     :cond_6
     new-instance v2, Lcom/android/launcher3/logging/DumpTargetWrapper;
 
     invoke-direct {v2, v0}, Lcom/android/launcher3/logging/DumpTargetWrapper;-><init>(Lcom/android/launcher3/ItemInfo;)V
 
-    .line 188
+    .line 196
     invoke-virtual {v2, v0}, Lcom/android/launcher3/logging/DumpTargetWrapper;->writeToDumpTarget(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/model/nano/LauncherDumpProto$DumpTarget;
 
-    .line 189
+    .line 197
     iget-wide v6, v0, Lcom/android/launcher3/ItemInfo;->container:J
 
     const-wide/16 v8, -0x65
@@ -345,12 +340,12 @@
 
     if-nez v5, :cond_7
 
-    .line 190
+    .line 198
     invoke-virtual {v3, v2}, Lcom/android/launcher3/logging/DumpTargetWrapper;->add(Lcom/android/launcher3/logging/DumpTargetWrapper;)V
 
     goto :goto_5
 
-    .line 191
+    .line 199
     :cond_7
     iget-wide v6, v0, Lcom/android/launcher3/ItemInfo;->container:J
 
@@ -360,16 +355,8 @@
 
     if-nez v5, :cond_5
 
-    .line 192
-    new-instance v5, Ljava/lang/Long;
-
+    .line 200
     iget-wide v6, v0, Lcom/android/launcher3/ItemInfo;->screenId:J
-
-    invoke-direct {v5, v6, v7}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
 
     invoke-virtual {v4, v6, v7}, Lcom/android/launcher3/util/LongArrayMap;->get(J)Ljava/lang/Object;
 
@@ -381,7 +368,7 @@
 
     goto :goto_5
 
-    .line 195
+    .line 203
     :cond_8
     const/4 v0, 0x0
 
@@ -396,7 +383,7 @@
 
     if-ge v1, v0, :cond_b
 
-    .line 196
+    .line 204
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->appWidgets:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -405,15 +392,15 @@
 
     check-cast v0, Lcom/android/launcher3/ItemInfo;
 
-    .line 197
+    .line 205
     new-instance v2, Lcom/android/launcher3/logging/DumpTargetWrapper;
 
     invoke-direct {v2, v0}, Lcom/android/launcher3/logging/DumpTargetWrapper;-><init>(Lcom/android/launcher3/ItemInfo;)V
 
-    .line 198
+    .line 206
     invoke-virtual {v2, v0}, Lcom/android/launcher3/logging/DumpTargetWrapper;->writeToDumpTarget(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/model/nano/LauncherDumpProto$DumpTarget;
 
-    .line 199
+    .line 207
     iget-wide v6, v0, Lcom/android/launcher3/ItemInfo;->container:J
 
     const-wide/16 v8, -0x65
@@ -422,10 +409,10 @@
 
     if-nez v5, :cond_a
 
-    .line 200
+    .line 208
     invoke-virtual {v3, v2}, Lcom/android/launcher3/logging/DumpTargetWrapper;->add(Lcom/android/launcher3/logging/DumpTargetWrapper;)V
 
-    .line 195
+    .line 203
     :cond_9
     :goto_7
     add-int/lit8 v0, v1, 0x1
@@ -434,7 +421,7 @@
 
     goto :goto_6
 
-    .line 201
+    .line 209
     :cond_a
     iget-wide v6, v0, Lcom/android/launcher3/ItemInfo;->container:J
 
@@ -444,16 +431,8 @@
 
     if-nez v5, :cond_9
 
-    .line 202
-    new-instance v5, Ljava/lang/Long;
-
+    .line 210
     iget-wide v6, v0, Lcom/android/launcher3/ItemInfo;->screenId:J
-
-    invoke-direct {v5, v6, v7}, Ljava/lang/Long;-><init>(J)V
-
-    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
 
     invoke-virtual {v4, v6, v7}, Lcom/android/launcher3/util/LongArrayMap;->get(J)Ljava/lang/Object;
 
@@ -465,20 +444,20 @@
 
     goto :goto_7
 
-    .line 208
+    .line 216
     :cond_b
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 209
+    .line 217
     invoke-virtual {v3}, Lcom/android/launcher3/logging/DumpTargetWrapper;->getFlattenedList()Ljava/util/List;
 
     move-result-object v0
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 210
+    .line 218
     const/4 v0, 0x0
 
     move v1, v0
@@ -490,7 +469,7 @@
 
     if-ge v1, v0, :cond_c
 
-    .line 211
+    .line 219
     invoke-virtual {v4, v1}, Lcom/android/launcher3/util/LongArrayMap;->valueAt(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -503,14 +482,14 @@
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 210
+    .line 218
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_8
 
-    .line 214
+    .line 222
     :cond_c
     array-length v0, p4
 
@@ -530,7 +509,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 215
+    .line 223
     const/4 v0, 0x0
 
     move v1, v0
@@ -542,7 +521,7 @@
 
     if-ge v1, v0, :cond_d
 
-    .line 216
+    .line 224
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -573,7 +552,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 215
+    .line 223
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
@@ -583,17 +562,17 @@
     :cond_d
     monitor-exit p0
 
-    .line 218
+    .line 226
     return-void
 
-    .line 220
+    .line 228
     :cond_e
     :try_start_2
     new-instance v3, Lcom/android/launcher3/model/nano/LauncherDumpProto$LauncherImpression;
 
     invoke-direct {v3}, Lcom/android/launcher3/model/nano/LauncherDumpProto$LauncherImpression;-><init>()V
 
-    .line 221
+    .line 229
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -602,7 +581,7 @@
 
     iput-object v0, v3, Lcom/android/launcher3/model/nano/LauncherDumpProto$LauncherImpression;->targets:[Lcom/android/launcher3/model/nano/LauncherDumpProto$DumpTarget;
 
-    .line 222
+    .line 230
     const/4 v0, 0x0
 
     move v1, v0
@@ -614,7 +593,7 @@
 
     if-ge v1, v0, :cond_f
 
-    .line 223
+    .line 231
     iget-object v4, v3, Lcom/android/launcher3/model/nano/LauncherDumpProto$LauncherImpression;->targets:[Lcom/android/launcher3/model/nano/LauncherDumpProto$DumpTarget;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -625,14 +604,14 @@
 
     aput-object v0, v4, v1
 
-    .line 222
+    .line 230
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_a
 
-    .line 225
+    .line 233
     :cond_f
     new-instance v0, Ljava/io/FileOutputStream;
 
@@ -640,7 +619,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 228
+    .line 236
     :try_start_3
     invoke-static {v3}, Lcom/google/protobuf/nano/a;->toByteArray(Lcom/google/protobuf/nano/a;)[B
 
@@ -648,7 +627,7 @@
 
     invoke-virtual {v0, v1}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 229
+    .line 237
     const-string/jumbo v0, "BgDataModel"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -683,14 +662,14 @@
     :goto_b
     monitor-exit p0
 
-    .line 234
+    .line 242
     return-void
 
-    .line 230
+    .line 238
     :catch_0
     move-exception v0
 
-    .line 231
+    .line 239
     :try_start_4
     const-string/jumbo v1, "BgDataModel"
 
@@ -713,7 +692,7 @@
 
     monitor-enter p0
 
-    .line 283
+    .line 291
     :try_start_0
     iget-object v2, p0, Lcom/android/launcher3/model/BgDataModel;->itemsIdMap:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -721,7 +700,7 @@
 
     invoke-virtual {v2, v4, v5, p2}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 284
+    .line 292
     iget v2, p2, Lcom/android/launcher3/ItemInfo;->itemType:I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -733,10 +712,10 @@
     :pswitch_0
     monitor-exit p0
 
-    .line 330
+    .line 338
     return-void
 
-    .line 286
+    .line 294
     :pswitch_1
     :try_start_1
     iget-object v3, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
@@ -751,7 +730,7 @@
 
     invoke-virtual {v3, v4, v5, v2}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 287
+    .line 295
     iget-object v2, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -767,14 +746,14 @@
 
     throw v2
 
-    .line 291
+    .line 299
     :pswitch_2
     :try_start_2
     invoke-static {p2}, Lcom/android/launcher3/shortcuts/ShortcutKey;->fromItemInfo(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/shortcuts/ShortcutKey;
 
     move-result-object v3
 
-    .line 292
+    .line 300
     iget-object v2, p0, Lcom/android/launcher3/model/BgDataModel;->pinnedShortcutCounts:Ljava/util/Map;
 
     invoke-interface {v2, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -783,22 +762,22 @@
 
     check-cast v2, Landroid/util/MutableInt;
 
-    .line 293
+    .line 301
     if-nez v2, :cond_3
 
-    .line 294
+    .line 302
     new-instance v2, Landroid/util/MutableInt;
 
     const/4 v4, 0x1
 
     invoke-direct {v2, v4}, Landroid/util/MutableInt;-><init>(I)V
 
-    .line 295
+    .line 303
     iget-object v4, p0, Lcom/android/launcher3/model/BgDataModel;->pinnedShortcutCounts:Ljava/util/Map;
 
     invoke-interface {v4, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 301
+    .line 309
     :goto_1
     if-eqz p3, :cond_1
 
@@ -806,14 +785,14 @@
 
     if-ne v2, v6, :cond_1
 
-    .line 302
+    .line 310
     invoke-static {p1}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/shortcuts/DeepShortcutManager;
 
     move-result-object v2
 
     invoke-virtual {v2, v3}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->pinShortcut(Lcom/android/launcher3/shortcuts/ShortcutKey;)V
 
-    .line 308
+    .line 316
     :cond_1
     :pswitch_3
     iget-wide v2, p2, Lcom/android/launcher3/ItemInfo;->container:J
@@ -824,7 +803,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 309
+    .line 317
     iget-wide v2, p2, Lcom/android/launcher3/ItemInfo;->container:J
 
     const-wide/16 v4, -0x65
@@ -833,7 +812,7 @@
 
     if-nez v2, :cond_4
 
-    .line 310
+    .line 318
     :cond_2
     iget-object v2, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
 
@@ -841,7 +820,7 @@
 
     goto :goto_0
 
-    .line 297
+    .line 305
     :cond_3
     iget v4, v2, Landroid/util/MutableInt;->value:I
 
@@ -851,11 +830,11 @@
 
     goto :goto_1
 
-    .line 312
+    .line 320
     :cond_4
     if-eqz p3, :cond_5
 
-    .line 313
+    .line 321
     iget-object v2, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
 
     iget-wide v4, p2, Lcom/android/launcher3/ItemInfo;->container:J
@@ -866,7 +845,7 @@
 
     if-nez v2, :cond_0
 
-    .line 315
+    .line 323
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -887,10 +866,10 @@
 
     move-result-object v2
 
-    .line 316
+    .line 324
     const-string/jumbo v3, " doesn\'t exist"
 
-    .line 315
+    .line 323
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -899,14 +878,14 @@
 
     move-result-object v2
 
-    .line 317
+    .line 325
     const-string/jumbo v3, "BgDataModel"
 
     invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_0
 
-    .line 320
+    .line 328
     :cond_5
     iget-wide v2, p2, Lcom/android/launcher3/ItemInfo;->container:J
 
@@ -922,7 +901,7 @@
 
     goto/16 :goto_0
 
-    .line 327
+    .line 335
     :pswitch_4
     iget-object v2, p0, Lcom/android/launcher3/model/BgDataModel;->appWidgets:Ljava/util/ArrayList;
 
@@ -934,7 +913,7 @@
 
     goto/16 :goto_0
 
-    .line 284
+    .line 292
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_3
@@ -953,38 +932,38 @@
     .prologue
     monitor-enter p0
 
-    .line 104
+    .line 112
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 105
+    .line 113
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->appWidgets:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 106
+    .line 114
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/LongArrayMap;->clear()V
 
-    .line 107
+    .line 115
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->itemsIdMap:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/LongArrayMap;->clear()V
 
-    .line 108
+    .line 116
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceScreens:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 109
+    .line 117
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->pinnedShortcutCounts:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 110
+    .line 118
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->deepShortcutMap:Lcom/android/launcher3/util/MultiHashMap;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/MultiHashMap;->clear()V
@@ -993,7 +972,7 @@
 
     monitor-exit p0
 
-    .line 111
+    .line 119
     return-void
 
     :catchall_0
@@ -1012,7 +991,7 @@
 
     monitor-enter p0
 
-    .line 115
+    .line 123
     :try_start_0
     array-length v0, p4
 
@@ -1030,17 +1009,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 124
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/launcher3/model/BgDataModel;->dumpProto(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 117
+    .line 125
     return-void
 
-    .line 119
+    .line 127
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1063,7 +1042,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 120
+    .line 128
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1086,7 +1065,7 @@
 
     move v2, v1
 
-    .line 121
+    .line 129
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceScreens:Ljava/util/ArrayList;
 
@@ -1096,7 +1075,7 @@
 
     if-ge v2, v0, :cond_1
 
-    .line 122
+    .line 130
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1129,18 +1108,18 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 121
+    .line 129
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
     goto :goto_0
 
-    .line 124
+    .line 132
     :cond_1
     invoke-virtual {p3}, Ljava/io/PrintWriter;->println()V
 
-    .line 125
+    .line 133
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1163,7 +1142,7 @@
 
     move v2, v1
 
-    .line 126
+    .line 134
     :goto_1
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
 
@@ -1173,7 +1152,7 @@
 
     if-ge v2, v0, :cond_2
 
-    .line 127
+    .line 135
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1210,14 +1189,14 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 126
+    .line 134
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
     goto :goto_1
 
-    .line 129
+    .line 137
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1241,7 +1220,7 @@
 
     move v2, v1
 
-    .line 130
+    .line 138
     :goto_2
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->appWidgets:Ljava/util/ArrayList;
 
@@ -1251,7 +1230,7 @@
 
     if-ge v2, v0, :cond_3
 
-    .line 131
+    .line 139
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1288,14 +1267,14 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 130
+    .line 138
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
     goto :goto_2
 
-    .line 133
+    .line 141
     :cond_3
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1319,7 +1298,7 @@
 
     move v2, v1
 
-    .line 134
+    .line 142
     :goto_3
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -1329,7 +1308,7 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 135
+    .line 143
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1366,14 +1345,14 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 134
+    .line 142
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
     goto :goto_3
 
-    .line 137
+    .line 145
     :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1395,7 +1374,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 138
+    .line 146
     :goto_4
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->itemsIdMap:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -1405,7 +1384,7 @@
 
     if-ge v1, v0, :cond_5
 
-    .line 139
+    .line 147
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1442,14 +1421,14 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 138
+    .line 146
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_4
 
-    .line 142
+    .line 150
     :cond_5
     array-length v0, p4
 
@@ -1467,7 +1446,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 143
+    .line 151
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1488,7 +1467,7 @@
 
     invoke-virtual {p3, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 144
+    .line 152
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->deepShortcutMap:Lcom/android/launcher3/util/MultiHashMap;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/MultiHashMap;->values()Ljava/util/Collection;
@@ -1512,7 +1491,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 145
+    .line 153
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1533,7 +1512,7 @@
 
     invoke-virtual {p3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 146
+    .line 154
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1551,14 +1530,10 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 147
+    .line 155
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
-
-    move-result-object v0
 
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1587,7 +1562,7 @@
 
     throw v0
 
-    .line 149
+    .line 157
     :cond_6
     :try_start_2
     invoke-virtual {p3}, Ljava/io/PrintWriter;->println()V
@@ -1599,7 +1574,7 @@
     :cond_7
     monitor-exit p0
 
-    .line 152
+    .line 160
     return-void
 .end method
 
@@ -1609,7 +1584,7 @@
     .prologue
     monitor-enter p0
 
-    .line 338
+    .line 346
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -1619,15 +1594,15 @@
 
     check-cast v0, Lcom/android/launcher3/FolderInfo;
 
-    .line 339
+    .line 347
     if-nez v0, :cond_0
 
-    .line 341
+    .line 349
     new-instance v0, Lcom/android/launcher3/FolderInfo;
 
     invoke-direct {v0}, Lcom/android/launcher3/FolderInfo;-><init>()V
 
-    .line 342
+    .line 350
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v1, p1, p2, v0}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
@@ -1637,7 +1612,7 @@
     :cond_0
     monitor-exit p0
 
-    .line 344
+    .line 352
     return-object v0
 
     :catchall_0
@@ -1654,7 +1629,7 @@
     .prologue
     monitor-enter p0
 
-    .line 241
+    .line 249
     :try_start_0
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1673,12 +1648,12 @@
 
     check-cast v0, Lcom/android/launcher3/ItemInfo;
 
-    .line 242
+    .line 250
     iget v1, v0, Lcom/android/launcher3/ItemInfo;->itemType:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 278
+    .line 286
     :goto_1
     :pswitch_0
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->itemsIdMap:Lcom/android/launcher3/util/LongArrayMap;
@@ -1698,7 +1673,7 @@
 
     throw v0
 
-    .line 244
+    .line 252
     :pswitch_1
     :try_start_1
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->folders:Lcom/android/launcher3/util/LongArrayMap;
@@ -1707,20 +1682,20 @@
 
     invoke-virtual {v1, v4, v5}, Lcom/android/launcher3/util/LongArrayMap;->remove(J)V
 
-    .line 256
+    .line 264
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 260
+    .line 268
     :pswitch_2
     invoke-static {v0}, Lcom/android/launcher3/shortcuts/ShortcutKey;->fromItemInfo(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/shortcuts/ShortcutKey;
 
     move-result-object v3
 
-    .line 261
+    .line 269
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->pinnedShortcutCounts:Ljava/util/Map;
 
     invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1729,7 +1704,7 @@
 
     check-cast v1, Landroid/util/MutableInt;
 
-    .line 262
+    .line 270
     if-eqz v1, :cond_0
 
     iget v4, v1, Landroid/util/MutableInt;->value:I
@@ -1740,7 +1715,7 @@
 
     if-nez v4, :cond_1
 
-    .line 263
+    .line 271
     :cond_0
     invoke-static {p1}, Lcom/android/launcher3/InstallShortcutReceiver;->getPendingShortcuts(Landroid/content/Context;)Ljava/util/HashSet;
 
@@ -1752,17 +1727,17 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    .line 262
+    .line 270
     if-eqz v1, :cond_1
 
-    .line 265
+    .line 273
     invoke-static {p1}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/shortcuts/DeepShortcutManager;
 
     move-result-object v1
 
     invoke-virtual {v1, v3}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->unpinShortcut(Lcom/android/launcher3/shortcuts/ShortcutKey;)V
 
-    .line 271
+    .line 279
     :cond_1
     :pswitch_3
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->workspaceItems:Ljava/util/ArrayList;
@@ -1771,7 +1746,7 @@
 
     goto :goto_1
 
-    .line 275
+    .line 283
     :pswitch_4
     iget-object v1, p0, Lcom/android/launcher3/model/BgDataModel;->appWidgets:Ljava/util/ArrayList;
 
@@ -1784,10 +1759,10 @@
     :cond_2
     monitor-exit p0
 
-    .line 280
+    .line 288
     return-void
 
-    .line 242
+    .line 250
     nop
 
     :pswitch_data_0
@@ -1808,7 +1783,7 @@
     .prologue
     monitor-enter p0
 
-    .line 237
+    .line 245
     :try_start_0
     invoke-static {p2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -1820,7 +1795,7 @@
 
     monitor-exit p0
 
-    .line 238
+    .line 246
     return-void
 
     :catchall_0
@@ -1837,10 +1812,10 @@
     .prologue
     monitor-enter p0
 
-    .line 352
+    .line 360
     if-eqz p1, :cond_1
 
-    .line 353
+    .line 361
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/model/BgDataModel;->deepShortcutMap:Lcom/android/launcher3/util/MultiHashMap;
 
@@ -1852,7 +1827,7 @@
 
     move-result-object v1
 
-    .line 354
+    .line 362
     :cond_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -1861,14 +1836,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 355
+    .line 363
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/util/ComponentKey;
 
-    .line 356
+    .line 364
     iget-object v2, v0, Lcom/android/launcher3/util/ComponentKey;->componentName:Landroid/content/ComponentName;
 
     invoke-virtual {v2}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -1881,17 +1856,17 @@
 
     if-eqz v2, :cond_0
 
-    .line 357
+    .line 365
     iget-object v0, v0, Lcom/android/launcher3/util/ComponentKey;->user:Landroid/os/UserHandle;
 
     invoke-virtual {v0, p2}, Landroid/os/UserHandle;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 356
+    .line 364
     if-eqz v0, :cond_0
 
-    .line 358
+    .line 366
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1905,7 +1880,7 @@
 
     throw v0
 
-    .line 364
+    .line 372
     :cond_1
     :try_start_1
     invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -1926,14 +1901,14 @@
 
     check-cast v0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 365
+    .line 373
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->isEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_4
 
-    .line 366
+    .line 374
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->isDeclaredInManifest()Z
 
     move-result v1
@@ -1944,11 +1919,11 @@
 
     move-result v1
 
-    .line 367
+    .line 375
     :goto_2
     if-eqz v1, :cond_2
 
-    .line 369
+    .line 377
     new-instance v1, Lcom/android/launcher3/util/ComponentKey;
 
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getActivity()Landroid/content/ComponentName;
@@ -1961,7 +1936,7 @@
 
     invoke-direct {v1, v3, v4}, Lcom/android/launcher3/util/ComponentKey;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 370
+    .line 378
     iget-object v3, p0, Lcom/android/launcher3/model/BgDataModel;->deepShortcutMap:Lcom/android/launcher3/util/MultiHashMap;
 
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getId()Ljava/lang/String;
@@ -1974,13 +1949,13 @@
 
     goto :goto_1
 
-    .line 366
+    .line 374
     :cond_3
     const/4 v1, 0x1
 
     goto :goto_2
 
-    .line 365
+    .line 373
     :cond_4
     const/4 v1, 0x0
 
@@ -1989,6 +1964,6 @@
     :cond_5
     monitor-exit p0
 
-    .line 373
+    .line 381
     return-void
 .end method

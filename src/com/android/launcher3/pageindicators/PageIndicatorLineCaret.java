@@ -4,13 +4,10 @@
 
 package com.android.launcher3.pageindicators;
 
-import android.util.Log;
-import android.support.v4.b.a;
 import com.android.launcher3.dynamicui.ExtractedColors;
 import android.view.View$AccessibilityDelegate;
 import android.view.View;
 import android.view.View$OnFocusChangeListener;
-import android.view.View$OnLongClickListener;
 import android.view.View$OnClickListener;
 import android.graphics.drawable.Drawable;
 import com.android.launcher3.Utilities;
@@ -18,6 +15,7 @@ import android.graphics.Canvas;
 import android.animation.Animator$AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.content.res.Resources;
+import com.android.launcher3.dynamicui.WallpaperColorInfo;
 import android.os.Looper;
 import android.util.AttributeSet;
 import android.content.Context;
@@ -80,6 +78,24 @@ public class PageIndicatorLineCaret extends PageIndicator
         this.mLauncher = Launcher.getLauncher(context);
         this.mLineHeight = resources.getDimensionPixelSize(2131427346);
         this.setCaretDrawable(new CaretDrawable(context));
+        final boolean supportsDarkText = WallpaperColorInfo.getInstance(context).supportsDarkText();
+        int mActiveAlpha;
+        if (supportsDarkText) {
+            mActiveAlpha = 165;
+        }
+        else {
+            mActiveAlpha = 178;
+        }
+        this.mActiveAlpha = mActiveAlpha;
+        final Paint mLinePaint = this.mLinePaint;
+        int color;
+        if (supportsDarkText) {
+            color = -16777216;
+        }
+        else {
+            color = -1;
+        }
+        mLinePaint.setColor(color);
     }
     
     private void animateLineToAlpha(final int mToAlpha) {
@@ -129,10 +145,9 @@ public class PageIndicatorLineCaret extends PageIndicator
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        (this.mAllAppsHandle = (ImageView)this.findViewById(2131624022)).setImageDrawable((Drawable)this.getCaretDrawable());
+        (this.mAllAppsHandle = (ImageView)this.findViewById(2131624032)).setImageDrawable((Drawable)this.getCaretDrawable());
         this.mAllAppsHandle.setOnTouchListener(this.mLauncher.getHapticFeedbackTouchListener());
         this.mAllAppsHandle.setOnClickListener((View$OnClickListener)this.mLauncher);
-        this.mAllAppsHandle.setOnLongClickListener((View$OnLongClickListener)this.mLauncher);
         this.mAllAppsHandle.setOnFocusChangeListener((View$OnFocusChangeListener)this.mLauncher.mFocusHandler);
         this.mLauncher.setAllAppsButton((View)this.mAllAppsHandle);
     }
@@ -185,21 +200,5 @@ public class PageIndicatorLineCaret extends PageIndicator
     }
     
     public void updateColor(final ExtractedColors extractedColors) {
-        final int alpha = this.mLinePaint.getAlpha();
-        final int color = extractedColors.getColor(1, 0);
-        if (color != 0) {
-            final int arc = a.arc(color, 255);
-            if (arc == -16777216) {
-                this.mActiveAlpha = 165;
-            }
-            else if (arc == -1) {
-                this.mActiveAlpha = 178;
-            }
-            else {
-                Log.e("PageIndicatorLine", "Setting workspace page indicators to an unsupported color: #" + Integer.toHexString(arc));
-            }
-            this.mLinePaint.setColor(arc);
-            this.mLinePaint.setAlpha(alpha);
-        }
     }
 }

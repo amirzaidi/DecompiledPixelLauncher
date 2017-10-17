@@ -39,7 +39,7 @@
 
     const-string/jumbo v1, "SHORTCUT"
 
-    const v2, 0x7f04000f
+    const v2, 0x7f040011
 
     invoke-direct {v0, v1, v4, v2, v3}, Lcom/android/launcher3/popup/PopupPopulator$Item;-><init>(Ljava/lang/String;IIZ)V
 
@@ -50,7 +50,7 @@
 
     const-string/jumbo v1, "NOTIFICATION"
 
-    const v2, 0x7f040017
+    const v2, 0x7f04001a
 
     invoke-direct {v0, v1, v3, v2, v4}, Lcom/android/launcher3/popup/PopupPopulator$Item;-><init>(Ljava/lang/String;IIZ)V
 
@@ -61,7 +61,7 @@
 
     const-string/jumbo v1, "SYSTEM_SHORTCUT"
 
-    const v2, 0x7f04002c
+    const v2, 0x7f04002e
 
     invoke-direct {v0, v1, v5, v2, v3}, Lcom/android/launcher3/popup/PopupPopulator$Item;-><init>(Ljava/lang/String;IIZ)V
 
@@ -72,7 +72,7 @@
 
     const-string/jumbo v1, "SYSTEM_SHORTCUT_ICON"
 
-    const v2, 0x7f04002d
+    const v2, 0x7f04002f
 
     invoke-direct {v0, v1, v6, v2, v3}, Lcom/android/launcher3/popup/PopupPopulator$Item;-><init>(Ljava/lang/String;IIZ)V
 

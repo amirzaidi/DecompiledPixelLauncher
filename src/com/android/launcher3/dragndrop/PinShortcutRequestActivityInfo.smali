@@ -8,18 +8,18 @@
 
 .field private final mInfo:Landroid/content/pm/ShortcutInfo;
 
-.field private final mRequest:Lcom/android/launcher3/compat/PinItemRequestCompat;
+.field private final mRequest:Landroid/content/pm/LauncherApps$PinItemRequest;
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/launcher3/compat/PinItemRequestCompat;Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/pm/LauncherApps$PinItemRequest;Landroid/content/Context;)V
     .locals 3
 
     .prologue
     .line 53
     new-instance v0, Landroid/content/ComponentName;
 
-    invoke-virtual {p1}, Lcom/android/launcher3/compat/PinItemRequestCompat;->getShortcutInfo()Landroid/content/pm/ShortcutInfo;
+    invoke-virtual {p1}, Landroid/content/pm/LauncherApps$PinItemRequest;->getShortcutInfo()Landroid/content/pm/ShortcutInfo;
 
     move-result-object v1
 
@@ -32,7 +32,7 @@
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 54
-    invoke-virtual {p1}, Lcom/android/launcher3/compat/PinItemRequestCompat;->getShortcutInfo()Landroid/content/pm/ShortcutInfo;
+    invoke-virtual {p1}, Landroid/content/pm/LauncherApps$PinItemRequest;->getShortcutInfo()Landroid/content/pm/ShortcutInfo;
 
     move-result-object v1
 
@@ -44,10 +44,10 @@
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
     .line 55
-    iput-object p1, p0, Lcom/android/launcher3/dragndrop/PinShortcutRequestActivityInfo;->mRequest:Lcom/android/launcher3/compat/PinItemRequestCompat;
+    iput-object p1, p0, Lcom/android/launcher3/dragndrop/PinShortcutRequestActivityInfo;->mRequest:Landroid/content/pm/LauncherApps$PinItemRequest;
 
     .line 56
-    invoke-virtual {p1}, Lcom/android/launcher3/compat/PinItemRequestCompat;->getShortcutInfo()Landroid/content/pm/ShortcutInfo;
+    invoke-virtual {p1}, Landroid/content/pm/LauncherApps$PinItemRequest;->getShortcutInfo()Landroid/content/pm/ShortcutInfo;
 
     move-result-object v0
 
@@ -104,10 +104,10 @@
     .line 84
     iget-object v2, p0, Lcom/android/launcher3/dragndrop/PinShortcutRequestActivityInfo;->mContext:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/android/launcher3/dragndrop/PinShortcutRequestActivityInfo;->mRequest:Lcom/android/launcher3/compat/PinItemRequestCompat;
+    iget-object v3, p0, Lcom/android/launcher3/dragndrop/PinShortcutRequestActivityInfo;->mRequest:Landroid/content/pm/LauncherApps$PinItemRequest;
 
     .line 83
-    invoke-static {v2, v3, v0, v1}, Lcom/android/launcher3/compat/LauncherAppsCompat;->createShortcutInfoFromPinItemRequest(Landroid/content/Context;Lcom/android/launcher3/compat/PinItemRequestCompat;J)Lcom/android/launcher3/ShortcutInfo;
+    invoke-static {v2, v3, v0, v1}, Lcom/android/launcher3/compat/LauncherAppsCompatVO;->createShortcutInfoFromPinItemRequest(Landroid/content/Context;Landroid/content/pm/LauncherApps$PinItemRequest;J)Lcom/android/launcher3/ShortcutInfo;
 
     move-result-object v0
 

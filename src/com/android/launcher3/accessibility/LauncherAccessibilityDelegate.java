@@ -59,14 +59,14 @@ public class LauncherAccessibilityDelegate extends View$AccessibilityDelegate im
         this.mActions = new SparseArray();
         this.mDragInfo = null;
         this.mLauncher = mLauncher;
-        this.mActions.put(n5, (Object)new AccessibilityNodeInfo$AccessibilityAction(n5, mLauncher.getText(2131492917)));
-        this.mActions.put(n3, (Object)new AccessibilityNodeInfo$AccessibilityAction(n3, mLauncher.getText(2131492919)));
-        this.mActions.put(n4, (Object)new AccessibilityNodeInfo$AccessibilityAction(n4, mLauncher.getText(2131492918)));
-        this.mActions.put(n2, (Object)new AccessibilityNodeInfo$AccessibilityAction(n2, mLauncher.getText(2131492965)));
-        this.mActions.put(n, (Object)new AccessibilityNodeInfo$AccessibilityAction(n, mLauncher.getText(2131492969)));
-        this.mActions.put(2131623947, (Object)new AccessibilityNodeInfo$AccessibilityAction(2131623947, mLauncher.getText(2131492979)));
-        this.mActions.put(2131623950, (Object)new AccessibilityNodeInfo$AccessibilityAction(2131623950, mLauncher.getText(2131492983)));
-        this.mActions.put(2131623951, (Object)new AccessibilityNodeInfo$AccessibilityAction(2131623951, mLauncher.getText(2131492989)));
+        this.mActions.put(n5, (Object)new AccessibilityNodeInfo$AccessibilityAction(n5, mLauncher.getText(2131492919)));
+        this.mActions.put(n3, (Object)new AccessibilityNodeInfo$AccessibilityAction(n3, mLauncher.getText(2131492921)));
+        this.mActions.put(n4, (Object)new AccessibilityNodeInfo$AccessibilityAction(n4, mLauncher.getText(2131492920)));
+        this.mActions.put(n2, (Object)new AccessibilityNodeInfo$AccessibilityAction(n2, mLauncher.getText(2131492974)));
+        this.mActions.put(n, (Object)new AccessibilityNodeInfo$AccessibilityAction(n, mLauncher.getText(2131492978)));
+        this.mActions.put(2131623947, (Object)new AccessibilityNodeInfo$AccessibilityAction(2131623947, mLauncher.getText(2131492988)));
+        this.mActions.put(2131623950, (Object)new AccessibilityNodeInfo$AccessibilityAction(2131623950, mLauncher.getText(2131492992)));
+        this.mActions.put(2131623951, (Object)new AccessibilityNodeInfo$AccessibilityAction(2131623951, mLauncher.getText(2131492998)));
     }
     
     private ArrayList getSupportedResizeActions(final View view, final LauncherAppWidgetInfo launcherAppWidgetInfo) {
@@ -79,18 +79,18 @@ public class LauncherAccessibilityDelegate extends View$AccessibilityDelegate im
         final CellLayout cellLayout = (CellLayout)view.getParent().getParent();
         if ((appWidgetInfo.resizeMode & 0x1) != 0x0) {
             if (cellLayout.isRegionVacant(launcherAppWidgetInfo.cellX + launcherAppWidgetInfo.spanX, launcherAppWidgetInfo.cellY, n, launcherAppWidgetInfo.spanY) || cellLayout.isRegionVacant(launcherAppWidgetInfo.cellX - 1, launcherAppWidgetInfo.cellY, n, launcherAppWidgetInfo.spanY)) {
-                list.add(2131492984);
+                list.add(2131492993);
             }
             if (launcherAppWidgetInfo.spanX > launcherAppWidgetInfo.minSpanX && launcherAppWidgetInfo.spanX > n) {
-                list.add(2131492986);
+                list.add(2131492995);
             }
         }
         if ((appWidgetInfo.resizeMode & 0x2) != 0x0) {
             if (cellLayout.isRegionVacant(launcherAppWidgetInfo.cellX, launcherAppWidgetInfo.cellY + launcherAppWidgetInfo.spanY, launcherAppWidgetInfo.spanX, n) || cellLayout.isRegionVacant(launcherAppWidgetInfo.cellX, launcherAppWidgetInfo.cellY - 1, launcherAppWidgetInfo.spanX, n)) {
-                list.add(2131492985);
+                list.add(2131492994);
             }
             if (launcherAppWidgetInfo.spanY > launcherAppWidgetInfo.minSpanY && launcherAppWidgetInfo.spanY > n) {
-                list.add(2131492987);
+                list.add(2131492996);
             }
         }
         return list;
@@ -286,7 +286,7 @@ public class LauncherAccessibilityDelegate extends View$AccessibilityDelegate im
                     for (int i = 0; i < supportedResizeActions.size(); ++i) {
                         array3[i] = this.mLauncher.getText((int)supportedResizeActions.get(i));
                     }
-                    new AlertDialog$Builder((Context)this.mLauncher).setTitle(2131492983).setItems(array3, (DialogInterface$OnClickListener)new LauncherAccessibilityDelegate$3(this, supportedResizeActions, view, launcherAppWidgetInfo)).show();
+                    new AlertDialog$Builder((Context)this.mLauncher).setTitle(2131492992).setItems(array3, (DialogInterface$OnClickListener)new LauncherAccessibilityDelegate$3(this, supportedResizeActions, view, launcherAppWidgetInfo)).show();
                     return n4 != 0;
                 }
                 if (n == 2131623951) {
@@ -305,7 +305,7 @@ public class LauncherAccessibilityDelegate extends View$AccessibilityDelegate im
         final CellLayout$LayoutParams cellLayout$LayoutParams = (CellLayout$LayoutParams)view.getLayoutParams();
         final CellLayout cellLayout = (CellLayout)view.getParent().getParent();
         cellLayout.markCellsAsUnoccupiedForView(view);
-        if (n == 2131492984) {
+        if (n == 2131492993) {
             if ((view.getLayoutDirection() == n2 && cellLayout.isRegionVacant(launcherAppWidgetInfo.cellX - 1, launcherAppWidgetInfo.cellY, n2, launcherAppWidgetInfo.spanY)) || (cellLayout.isRegionVacant(launcherAppWidgetInfo.cellX + launcherAppWidgetInfo.spanX, launcherAppWidgetInfo.cellY, n2, launcherAppWidgetInfo.spanY) ^ true)) {
                 --cellLayout$LayoutParams.cellX;
                 --launcherAppWidgetInfo.cellX;
@@ -313,11 +313,11 @@ public class LauncherAccessibilityDelegate extends View$AccessibilityDelegate im
             ++cellLayout$LayoutParams.cellHSpan;
             ++launcherAppWidgetInfo.spanX;
         }
-        else if (n == 2131492986) {
+        else if (n == 2131492995) {
             --cellLayout$LayoutParams.cellHSpan;
             --launcherAppWidgetInfo.spanX;
         }
-        else if (n == 2131492985) {
+        else if (n == 2131492994) {
             if (!cellLayout.isRegionVacant(launcherAppWidgetInfo.cellX, launcherAppWidgetInfo.cellY + launcherAppWidgetInfo.spanY, launcherAppWidgetInfo.spanX, n2)) {
                 --cellLayout$LayoutParams.cellY;
                 --launcherAppWidgetInfo.cellY;
@@ -325,7 +325,7 @@ public class LauncherAccessibilityDelegate extends View$AccessibilityDelegate im
             ++cellLayout$LayoutParams.cellVSpan;
             ++launcherAppWidgetInfo.spanY;
         }
-        else if (n == 2131492987) {
+        else if (n == 2131492996) {
             --cellLayout$LayoutParams.cellVSpan;
             --launcherAppWidgetInfo.spanY;
         }
@@ -338,6 +338,6 @@ public class LauncherAccessibilityDelegate extends View$AccessibilityDelegate im
         final Launcher mLauncher = this.mLauncher;
         final Object[] array = { launcherAppWidgetInfo.spanX, null };
         array[n2] = launcherAppWidgetInfo.spanY;
-        this.announceConfirmation(mLauncher.getString(2131492988, array));
+        this.announceConfirmation(mLauncher.getString(2131492997, array));
     }
 }

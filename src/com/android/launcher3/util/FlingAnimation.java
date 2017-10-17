@@ -102,7 +102,7 @@ public class FlingAnimation implements ValueAnimator$AnimatorUpdateListener, Run
         final float n2 = 1.0f;
         this.mIconRect = this.mDropTarget.getIconRect(this.mDragObject);
         this.mFrom = new Rect();
-        this.mDragLayer.getViewRectRelativeToSelf(this.mDragObject.dragView, this.mFrom);
+        this.mDragLayer.getViewRectRelativeToSelf((View)this.mDragObject.dragView, this.mFrom);
         final float scaleX = this.mDragObject.dragView.getScaleX();
         final float n3 = (scaleX - n2) * this.mDragObject.dragView.getMeasuredWidth() / n;
         final float n4 = (scaleX - n2) * this.mDragObject.dragView.getMeasuredHeight() / n;

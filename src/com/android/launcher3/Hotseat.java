@@ -4,16 +4,11 @@
 
 package com.android.launcher3;
 
-import android.animation.Animator$AnimatorListener;
-import android.animation.ValueAnimator$AnimatorUpdateListener;
-import android.animation.TypeEvaluator;
-import android.animation.ArgbEvaluator;
 import com.android.launcher3.dynamicui.ExtractedColors;
 import android.view.View$OnLongClickListener;
 import android.view.MotionEvent;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
 import android.view.View;
-import android.graphics.drawable.Drawable;
 import android.support.v4.b.a;
 import com.android.launcher3.util.Themes;
 import android.util.AttributeSet;
@@ -44,8 +39,8 @@ public class Hotseat extends FrameLayout implements UserEventDispatcher$LogConta
         super(context, set, n);
         this.mLauncher = Launcher.getLauncher(context);
         this.mHasVerticalHotseat = this.mLauncher.getDeviceProfile().isVerticalBarLayout();
-        this.mBackgroundColor = a.arc(Themes.getAttrColor(context, 16843827), 0);
-        this.setBackground((Drawable)(this.mBackground = new ColorDrawable(this.mBackgroundColor)));
+        this.mBackgroundColor = a.asb(Themes.getAttrColor(context, 16843827), 0);
+        this.mBackground = new ColorDrawable(this.mBackgroundColor);
     }
     
     public void fillInLogContainerData(final View view, final ItemInfo itemInfo, final LauncherLogProto$Target launcherLogProto$Target, final LauncherLogProto$Target launcherLogProto$Target2) {
@@ -91,7 +86,7 @@ public class Hotseat extends FrameLayout implements UserEventDispatcher$LogConta
         final int n = 1;
         super.onFinishInflate();
         final DeviceProfile deviceProfile = this.mLauncher.getDeviceProfile();
-        this.mContent = (CellLayout)this.findViewById(2131624000);
+        this.mContent = (CellLayout)this.findViewById(2131624009);
         if (deviceProfile.isVerticalBarLayout()) {
             this.mContent.setGridSize(n, deviceProfile.inv.numHotseatIcons);
         }
@@ -123,24 +118,5 @@ public class Hotseat extends FrameLayout implements UserEventDispatcher$LogConta
     }
     
     public void updateColor(final ExtractedColors extractedColors, final boolean b) {
-        final int n = 1;
-        if (!this.mHasVerticalHotseat) {
-            final int color = extractedColors.getColor(n, 0);
-            if (this.mBackgroundColorAnimator != null) {
-                this.mBackgroundColorAnimator.cancel();
-            }
-            if (!b) {
-                this.setBackgroundColor(color);
-            }
-            else {
-                final int[] array = { this.mBackgroundColor, 0 };
-                array[n] = color;
-                (this.mBackgroundColorAnimator = ValueAnimator.ofInt(array)).setEvaluator((TypeEvaluator)new ArgbEvaluator());
-                this.mBackgroundColorAnimator.addUpdateListener((ValueAnimator$AnimatorUpdateListener)new Hotseat$1(this));
-                this.mBackgroundColorAnimator.addListener((Animator$AnimatorListener)new Hotseat$2(this));
-                this.mBackgroundColorAnimator.start();
-            }
-            this.mBackgroundColor = color;
-        }
     }
 }

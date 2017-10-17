@@ -7,18 +7,13 @@ package com.android.launcher3;
 final class Workspace$8 implements Runnable
 {
     final /* synthetic */ Workspace this$0;
-    final /* synthetic */ CellLayout val$cellLayout;
-    final /* synthetic */ LauncherAppWidgetHostView val$hostView;
     
-    Workspace$8(final Workspace this$0, final LauncherAppWidgetHostView val$hostView, final CellLayout val$cellLayout) {
+    Workspace$8(final Workspace this$0) {
         this.this$0 = this$0;
-        this.val$hostView = val$hostView;
-        this.val$cellLayout = val$cellLayout;
     }
     
     public void run() {
-        if (!this.this$0.isPageInTransition()) {
-            this.this$0.mLauncher.getDragLayer().addResizeFrame(this.val$hostView, this.val$cellLayout);
-        }
+        this.this$0.mAnimatingViewIntoPlace = false;
+        this.this$0.updateChildrenLayersEnabled(false);
     }
 }

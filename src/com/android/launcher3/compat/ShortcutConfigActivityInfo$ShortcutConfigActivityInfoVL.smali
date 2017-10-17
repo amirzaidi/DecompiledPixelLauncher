@@ -14,7 +14,7 @@
     .locals 3
 
     .prologue
-    .line 113
+    .line 111
     new-instance v0, Landroid/content/ComponentName;
 
     iget-object v1, p1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -29,13 +29,13 @@
 
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 114
+    .line 112
     iput-object p1, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVL;->mInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 115
+    .line 113
     iput-object p2, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVL;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 116
+    .line 114
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 123
     iget-object v0, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVL;->mInfo:Landroid/content/pm/ActivityInfo;
 
     invoke-virtual {p1, v0}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/pm/ActivityInfo;)Landroid/graphics/drawable/Drawable;
@@ -59,7 +59,7 @@
     .locals 2
 
     .prologue
-    .line 120
+    .line 118
     iget-object v0, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVL;->mInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v1, p0, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVL;->mPm:Landroid/content/pm/PackageManager;

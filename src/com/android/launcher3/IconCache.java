@@ -27,19 +27,15 @@ import android.content.pm.PackageManager$NameNotFoundException;
 import android.os.Process;
 import com.android.launcher3.util.Preconditions;
 import android.os.UserHandle;
-import android.graphics.Rect;
 import android.graphics.Bitmap;
 import android.content.pm.PackageInfo;
 import android.content.ComponentName;
 import android.content.ContentValues;
 import android.graphics.Bitmap$Config;
-import com.android.launcher3.util.Themes;
 import android.os.Handler;
 import com.android.launcher3.compat.UserManagerCompat;
 import android.content.pm.PackageManager;
-import android.graphics.Paint;
 import android.graphics.BitmapFactory$Options;
-import android.graphics.Canvas;
 import com.android.launcher3.compat.LauncherAppsCompat;
 import android.content.Context;
 import java.util.HashMap;
@@ -47,19 +43,15 @@ import java.util.HashMap;
 public class IconCache
 {
     static final Object ICON_UPDATE_TOKEN;
-    private final int mActivityBgColor;
     private final HashMap mCache;
     private final Context mContext;
     private final HashMap mDefaultIcons;
     final IconCache$IconDB mIconDb;
     private final int mIconDpi;
-    private IconProvider mIconProvider;
+    private final IconProvider mIconProvider;
     private final LauncherAppsCompat mLauncherApps;
-    private Canvas mLowResCanvas;
     private final BitmapFactory$Options mLowResOptions;
-    private Paint mLowResPaint;
     final MainThreadExecutor mMainThreadExecutor;
-    private final int mPackageBgColor;
     private final PackageManager mPackageManager;
     final UserManagerCompat mUserManager;
     final Handler mWorkerHandler;
@@ -78,12 +70,8 @@ public class IconCache
         this.mLauncherApps = LauncherAppsCompat.getInstance(this.mContext);
         this.mIconDpi = invariantDeviceProfile.fillResIconDpi;
         this.mIconDb = new IconCache$IconDB(mContext, invariantDeviceProfile.iconBitmapSize);
-        this.mLowResCanvas = new Canvas();
-        this.mLowResPaint = new Paint(3);
-        this.mIconProvider = (IconProvider)Utilities.getOverrideObject(IconProvider.class, mContext, 2131492888);
+        this.mIconProvider = (IconProvider)Utilities.getOverrideObject(IconProvider.class, mContext, 2131492889);
         this.mWorkerHandler = new Handler(LauncherModel.getWorkerLooper());
-        this.mActivityBgColor = Themes.getColorPrimary(mContext, 2131886081);
-        this.mPackageBgColor = Themes.getColorPrimary(mContext, 2131886082);
         this.mLowResOptions = new BitmapFactory$Options();
         this.mLowResOptions.inPreferredConfig = Bitmap$Config.RGB_565;
     }
@@ -110,18 +98,8 @@ public class IconCache
         itemInfoWithIcon.usingLowResIcon = iconCache$CacheEntry.isLowResIcon;
     }
     
-    private Bitmap generateLowResIcon(final Bitmap bitmap, final int n) {
-        if (n == 0) {
-            return Bitmap.createScaledBitmap(bitmap, bitmap.getWidth() / 5, bitmap.getHeight() / 5, true);
-        }
-        final Bitmap bitmap2 = Bitmap.createBitmap(bitmap.getWidth() / 5, bitmap.getHeight() / 5, Bitmap$Config.RGB_565);
-        synchronized (this) {
-            this.mLowResCanvas.setBitmap(bitmap2);
-            this.mLowResCanvas.drawColor(n);
-            this.mLowResCanvas.drawBitmap(bitmap, new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()), new Rect(0, 0, bitmap2.getWidth(), bitmap2.getHeight()), this.mLowResPaint);
-            this.mLowResCanvas.setBitmap((Bitmap)null);
-            return bitmap2;
-        }
+    private Bitmap generateLowResIcon(final Bitmap bitmap) {
+        return Bitmap.createScaledBitmap(bitmap, bitmap.getWidth() / 5, bitmap.getHeight() / 5, true);
     }
     
     private IconCache$CacheEntry getEntryForPackageLocked(final String s, final UserHandle userHandle, final boolean isLowResIcon) {
@@ -134,15 +112,14 @@ public class IconCache
         final IconCache$CacheEntry iconCache$CacheEntry2 = new IconCache$CacheEntry();
         final boolean b = true;
         while (true) {
-            Label_0386: {
+            Label_0378: {
                 if (this.getEntryFromDB(packageKey, iconCache$CacheEntry2, isLowResIcon)) {
-                    break Label_0386;
+                    break Label_0378;
                 }
-            Label_0308_Outer:
                 while (true) {
                     while (true) {
                         Bitmap badgedIconBitmap = null;
-                        Label_0393: {
+                        Label_0385: {
                             PackageInfo packageInfo = null;
                             ContentValues contentValues = null;
                             ComponentName componentName = null;
@@ -164,63 +141,60 @@ public class IconCache
                                                 final Context mContext = this.mContext;
                                                 try {
                                                     badgedIconBitmap = LauncherIcons.createBadgedIconBitmap(loadIcon, userHandle, mContext, applicationInfo.targetSdkVersion);
+                                                    final Bitmap generateLowResIcon = this.generateLowResIcon(badgedIconBitmap);
                                                     try {
-                                                        final Bitmap generateLowResIcon = this.generateLowResIcon(badgedIconBitmap, this.mPackageBgColor);
+                                                        iconCache$CacheEntry2.title = applicationInfo.loadLabel(this.mPackageManager);
+                                                        final UserManagerCompat mUserManager = this.mUserManager;
                                                         try {
-                                                            iconCache$CacheEntry2.title = applicationInfo.loadLabel(this.mPackageManager);
-                                                            final UserManagerCompat mUserManager = this.mUserManager;
-                                                            try {
-                                                                iconCache$CacheEntry2.contentDescription = mUserManager.getBadgedLabelForUser(iconCache$CacheEntry2.title, userHandle);
-                                                                if (!isLowResIcon) {
-                                                                    break Label_0393;
-                                                                }
-                                                                final Bitmap icon = generateLowResIcon;
-                                                                iconCache$CacheEntry2.icon = icon;
-                                                                final IconCache$CacheEntry iconCache$CacheEntry3 = iconCache$CacheEntry2;
-                                                                try {
-                                                                    iconCache$CacheEntry3.isLowResIcon = isLowResIcon;
-                                                                    final CharSequence title = iconCache$CacheEntry2.title;
-                                                                    try {
-                                                                        contentValues = this.newContentValues(badgedIconBitmap, generateLowResIcon, title.toString(), s);
-                                                                        try {
-                                                                            componentName = packageKey.componentName;
-                                                                        }
-                                                                        catch (PackageManager$NameNotFoundException ex) {}
-                                                                    }
-                                                                    catch (PackageManager$NameNotFoundException ex2) {}
-                                                                }
-                                                                catch (PackageManager$NameNotFoundException ex3) {}
+                                                            iconCache$CacheEntry2.contentDescription = mUserManager.getBadgedLabelForUser(iconCache$CacheEntry2.title, userHandle);
+                                                            if (!isLowResIcon) {
+                                                                break Label_0385;
                                                             }
-                                                            catch (PackageManager$NameNotFoundException ex4) {}
+                                                            final Bitmap icon = generateLowResIcon;
+                                                            iconCache$CacheEntry2.icon = icon;
+                                                            final IconCache$CacheEntry iconCache$CacheEntry3 = iconCache$CacheEntry2;
+                                                            try {
+                                                                iconCache$CacheEntry3.isLowResIcon = isLowResIcon;
+                                                                final CharSequence title = iconCache$CacheEntry2.title;
+                                                                try {
+                                                                    contentValues = this.newContentValues(badgedIconBitmap, generateLowResIcon, title.toString(), s);
+                                                                    try {
+                                                                        componentName = packageKey.componentName;
+                                                                    }
+                                                                    catch (PackageManager$NameNotFoundException ex) {}
+                                                                }
+                                                                catch (PackageManager$NameNotFoundException ex2) {}
+                                                            }
+                                                            catch (PackageManager$NameNotFoundException ex3) {}
                                                         }
-                                                        catch (PackageManager$NameNotFoundException ex5) {}
+                                                        catch (PackageManager$NameNotFoundException ex4) {}
                                                     }
-                                                    catch (PackageManager$NameNotFoundException ex6) {}
+                                                    catch (PackageManager$NameNotFoundException ex5) {}
                                                 }
-                                                catch (PackageManager$NameNotFoundException ex7) {}
+                                                catch (PackageManager$NameNotFoundException ex6) {}
                                             }
-                                            catch (PackageManager$NameNotFoundException ex8) {}
-                                            // iftrue(Label_0400:, !b2)
-                                            Block_10: {
-                                                break Block_10;
-                                                n = 8192;
-                                                continue Label_0308_Outer;
+                                            catch (PackageManager$NameNotFoundException ex7) {}
+                                            // iftrue(Label_0392:, !b2)
+                                            while (true) {
+                                                this.mCache.put(packageKey, iconCache$CacheEntry2);
+                                                iconCache$CacheEntry = iconCache$CacheEntry2;
+                                                return iconCache$CacheEntry;
+                                                continue;
                                             }
-                                            this.mCache.put(packageKey, iconCache$CacheEntry2);
-                                            iconCache$CacheEntry = iconCache$CacheEntry2;
+                                            n = 8192;
                                         }
-                                        catch (PackageManager$NameNotFoundException ex9) {}
+                                        catch (PackageManager$NameNotFoundException ex8) {}
                                     }
                                 }
                             }
-                            catch (PackageManager$NameNotFoundException ex10) {}
+                            catch (PackageManager$NameNotFoundException ex9) {}
                             this.addIconToDB(contentValues, componentName, packageInfo, this.mUserManager.getSerialNumberForUser(userHandle));
                             break;
                         }
                         final Bitmap icon = badgedIconBitmap;
                         continue;
                     }
-                    Label_0400: {
+                    Label_0392: {
                         iconCache$CacheEntry = iconCache$CacheEntry2;
                     }
                     return iconCache$CacheEntry;
@@ -517,7 +491,15 @@ public class IconCache
     }
     
     private Drawable getFullResDefaultActivityIcon() {
-        return this.getFullResIcon(Resources.getSystem(), 17629184);
+        final Resources system = Resources.getSystem();
+        int n;
+        if (Utilities.isAtLeastO()) {
+            n = 17301651;
+        }
+        else {
+            n = 17629184;
+        }
+        return this.getFullResIcon(system, n);
     }
     
     private Drawable getFullResIcon(final Resources resources, final int n) {
@@ -1161,7 +1143,7 @@ public class IconCache
                         iconCache$CacheEntry.title = launcherActivityInfo.getLabel();
                         iconCache$CacheEntry.contentDescription = this.mUserManager.getBadgedLabelForUser(iconCache$CacheEntry.title, launcherActivityInfo.getUser());
                         this.mCache.put(o, iconCache$CacheEntry);
-                        final Bitmap generateLowResIcon = this.generateLowResIcon(iconCache$CacheEntry.icon, this.mActivityBgColor);
+                        final Bitmap generateLowResIcon = this.generateLowResIcon(iconCache$CacheEntry.icon);
                         o = iconCache$CacheEntry.icon;
                         final ContentValues contentValues = this.newContentValues((Bitmap)o, generateLowResIcon, iconCache$CacheEntry.title.toString(), launcherActivityInfo.getApplicationInfo().packageName);
                         o = launcherActivityInfo.getComponentName();
@@ -1286,7 +1268,11 @@ public class IconCache
     }
     
     public Drawable getFullResIcon(final LauncherActivityInfo launcherActivityInfo) {
-        return this.mIconProvider.getIcon(launcherActivityInfo, this.mIconDpi);
+        return this.getFullResIcon(launcherActivityInfo, true);
+    }
+    
+    public Drawable getFullResIcon(final LauncherActivityInfo launcherActivityInfo, final boolean b) {
+        return this.mIconProvider.getIcon(launcherActivityInfo, this.mIconDpi, b);
     }
     
     public Drawable getFullResIcon(final String s, final int n) {

@@ -12,13 +12,13 @@
     .locals 0
 
     .prologue
-    .line 186
+    .line 183
     iput-object p1, p0, Lcom/android/launcher3/DefaultLayoutParser$UriShortcutParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
-    .line 187
+    .line 184
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/AutoInstallsLayout$ShortcutParser;-><init>(Lcom/android/launcher3/AutoInstallsLayout;Landroid/content/res/Resources;)V
 
-    .line 188
+    .line 185
     return-void
 .end method
 
@@ -40,7 +40,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 194
+    .line 191
     :try_start_0
     const-string/jumbo v0, "uri"
 
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    .line 195
+    .line 192
     const/4 v2, 0x0
 
     :try_start_1
@@ -62,13 +62,13 @@
 
     return-object v0
 
-    .line 196
+    .line 193
     :catch_0
     move-exception v0
 
     move-object v0, v1
 
-    .line 197
+    .line 194
     :goto_0
     const-string/jumbo v2, "DefaultLayoutParser"
 
@@ -92,10 +92,10 @@
 
     invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 198
+    .line 195
     return-object v1
 
-    .line 196
+    .line 193
     :catch_1
     move-exception v2
 

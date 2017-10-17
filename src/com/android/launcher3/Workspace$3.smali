@@ -19,7 +19,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/Workspace$3;->val$onComplete:Ljava/lang/Runnable;
 
-    .line 933
+    .line 889
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -32,32 +32,32 @@
     .locals 1
 
     .prologue
-    .line 936
+    .line 892
     iget-object v0, p0, Lcom/android/launcher3/Workspace$3;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v0, v0, Lcom/android/launcher3/Workspace;->mRemoveEmptyScreenRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 937
+    .line 893
     iget-object v0, p0, Lcom/android/launcher3/Workspace$3;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v0, v0, Lcom/android/launcher3/Workspace;->mRemoveEmptyScreenRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 939
+    .line 895
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/Workspace$3;->val$onComplete:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 940
+    .line 896
     iget-object v0, p0, Lcom/android/launcher3/Workspace$3;->val$onComplete:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 942
+    .line 898
     :cond_1
     return-void
 .end method

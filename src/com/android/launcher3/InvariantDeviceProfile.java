@@ -30,11 +30,10 @@ public class InvariantDeviceProfile
     int defaultLayoutId;
     public Point defaultWallpaperSize;
     public int fillResIconDpi;
-    float hotseatIconSize;
-    public float hotseatScale;
     public int iconBitmapSize;
     public float iconSize;
     public float iconTextSize;
+    public float landscapeIconSize;
     public DeviceProfile landscapeProfile;
     int minAllAppsPredictionColumns;
     float minHeightDps;
@@ -77,12 +76,11 @@ public class InvariantDeviceProfile
         this.numFolderColumns = invariantDeviceProfile.numFolderColumns;
         this.minAllAppsPredictionColumns = invariantDeviceProfile.minAllAppsPredictionColumns;
         this.iconSize = invDistWeightedInterpolate.iconSize;
+        this.landscapeIconSize = invDistWeightedInterpolate.landscapeIconSize;
         this.iconBitmapSize = Utilities.pxFromDp(this.iconSize, displayMetrics);
         this.iconTextSize = invDistWeightedInterpolate.iconTextSize;
-        this.hotseatIconSize = invDistWeightedInterpolate.hotseatIconSize;
         this.fillResIconDpi = this.getLauncherIconDensity(this.iconBitmapSize);
         this.applyPartnerDeviceProfileOverrides(context, displayMetrics);
-        this.hotseatScale = this.hotseatIconSize / this.iconSize;
         final Point point3 = new Point();
         defaultDisplay.getRealSize(point3);
         final int min = Math.min(point3.x, point3.y);
@@ -98,10 +96,10 @@ public class InvariantDeviceProfile
     }
     
     public InvariantDeviceProfile(final InvariantDeviceProfile invariantDeviceProfile) {
-        this(invariantDeviceProfile.name, invariantDeviceProfile.minWidthDps, invariantDeviceProfile.minHeightDps, invariantDeviceProfile.numRows, invariantDeviceProfile.numColumns, invariantDeviceProfile.numFolderRows, invariantDeviceProfile.numFolderColumns, invariantDeviceProfile.minAllAppsPredictionColumns, invariantDeviceProfile.iconSize, invariantDeviceProfile.iconTextSize, invariantDeviceProfile.numHotseatIcons, invariantDeviceProfile.hotseatIconSize, invariantDeviceProfile.defaultLayoutId);
+        this(invariantDeviceProfile.name, invariantDeviceProfile.minWidthDps, invariantDeviceProfile.minHeightDps, invariantDeviceProfile.numRows, invariantDeviceProfile.numColumns, invariantDeviceProfile.numFolderRows, invariantDeviceProfile.numFolderColumns, invariantDeviceProfile.minAllAppsPredictionColumns, invariantDeviceProfile.iconSize, invariantDeviceProfile.landscapeIconSize, invariantDeviceProfile.iconTextSize, invariantDeviceProfile.numHotseatIcons, invariantDeviceProfile.defaultLayoutId);
     }
     
-    InvariantDeviceProfile(final String name, final float minWidthDps, final float minHeightDps, final int numRows, final int numColumns, final int numFolderRows, final int numFolderColumns, final int minAllAppsPredictionColumns, final float iconSize, final float iconTextSize, final int numHotseatIcons, final float hotseatIconSize, final int defaultLayoutId) {
+    InvariantDeviceProfile(final String name, final float minWidthDps, final float minHeightDps, final int numRows, final int numColumns, final int numFolderRows, final int numFolderColumns, final int minAllAppsPredictionColumns, final float iconSize, final float landscapeIconSize, final float iconTextSize, final int numHotseatIcons, final int defaultLayoutId) {
         this.name = name;
         this.minWidthDps = minWidthDps;
         this.minHeightDps = minHeightDps;
@@ -111,17 +109,16 @@ public class InvariantDeviceProfile
         this.numFolderColumns = numFolderColumns;
         this.minAllAppsPredictionColumns = minAllAppsPredictionColumns;
         this.iconSize = iconSize;
+        this.landscapeIconSize = landscapeIconSize;
         this.iconTextSize = iconTextSize;
         this.numHotseatIcons = numHotseatIcons;
-        this.hotseatIconSize = hotseatIconSize;
         this.defaultLayoutId = defaultLayoutId;
-        this.hotseatScale = this.hotseatIconSize / this.iconSize;
     }
     
     private void add(final InvariantDeviceProfile invariantDeviceProfile) {
         this.iconSize += invariantDeviceProfile.iconSize;
+        this.landscapeIconSize += invariantDeviceProfile.landscapeIconSize;
         this.iconTextSize += invariantDeviceProfile.iconTextSize;
-        this.hotseatIconSize += invariantDeviceProfile.hotseatIconSize;
     }
     
     private void applyPartnerDeviceProfileOverrides(final Context context, final DisplayMetrics displayMetrics) {
@@ -153,8 +150,8 @@ public class InvariantDeviceProfile
     
     private InvariantDeviceProfile multiply(final float n) {
         this.iconSize *= n;
+        this.landscapeIconSize *= n;
         this.iconTextSize *= n;
-        this.hotseatIconSize *= n;
         return this;
     }
     
@@ -229,7 +226,7 @@ public class InvariantDeviceProfile
                             final float float1 = obtainStyledAttributes.getFloat(9, 0.0f);
                             o2 = null;
                             o2 = obtainStyledAttributes.getString(0);
-                            list.add(new InvariantDeviceProfile((String)o2, obtainStyledAttributes.getFloat(1, 0.0f), obtainStyledAttributes.getFloat(2, 0.0f), int1, int2, obtainStyledAttributes.getInt(5, int1), obtainStyledAttributes.getInt(6, int2), obtainStyledAttributes.getInt(7, int2), float1, obtainStyledAttributes.getFloat(10, 0.0f), obtainStyledAttributes.getInt(8, int2), obtainStyledAttributes.getFloat(11, float1), obtainStyledAttributes.getResourceId(12, 0)));
+                            list.add(new InvariantDeviceProfile((String)o2, obtainStyledAttributes.getFloat(1, 0.0f), obtainStyledAttributes.getFloat(2, 0.0f), int1, int2, obtainStyledAttributes.getInt(5, int1), obtainStyledAttributes.getInt(6, int2), obtainStyledAttributes.getInt(7, int2), float1, obtainStyledAttributes.getFloat(10, float1), obtainStyledAttributes.getFloat(11, 0.0f), obtainStyledAttributes.getInt(8, int2), obtainStyledAttributes.getResourceId(12, 0)));
                             obtainStyledAttributes.recycle();
                         }
                     }

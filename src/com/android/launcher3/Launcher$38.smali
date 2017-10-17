@@ -9,16 +9,28 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Launcher;
 
+.field final synthetic val$components:Ljava/util/HashSet;
+
+.field final synthetic val$packageNames:Ljava/util/HashSet;
+
+.field final synthetic val$user:Landroid/os/UserHandle;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;)V
+.method constructor <init>(Lcom/android/launcher3/Launcher;Ljava/util/HashSet;Ljava/util/HashSet;Landroid/os/UserHandle;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$38;->this$0:Lcom/android/launcher3/Launcher;
 
-    .line 3964
+    iput-object p2, p0, Lcom/android/launcher3/Launcher$38;->val$packageNames:Ljava/util/HashSet;
+
+    iput-object p3, p0, Lcom/android/launcher3/Launcher$38;->val$components:Ljava/util/HashSet;
+
+    iput-object p4, p0, Lcom/android/launcher3/Launcher$38;->val$user:Landroid/os/UserHandle;
+
+    .line 3851
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -28,16 +40,20 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 3966
+    .line 3853
     iget-object v0, p0, Lcom/android/launcher3/Launcher$38;->this$0:Lcom/android/launcher3/Launcher;
 
-    const/4 v1, -0x1
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$38;->val$packageNames:Ljava/util/HashSet;
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->setRequestedOrientation(I)V
+    iget-object v2, p0, Lcom/android/launcher3/Launcher$38;->val$components:Ljava/util/HashSet;
 
-    .line 3967
+    iget-object v3, p0, Lcom/android/launcher3/Launcher$38;->val$user:Landroid/os/UserHandle;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->bindWorkspaceComponentsRemoved(Ljava/util/HashSet;Ljava/util/HashSet;Landroid/os/UserHandle;)V
+
+    .line 3854
     return-void
 .end method

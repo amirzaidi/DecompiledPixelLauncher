@@ -29,7 +29,7 @@ public class RatingView extends View
     
     public RatingView(final Context context, final AttributeSet set, final int n) {
         super(context, set, n);
-        this.mStarDrawable = this.getResources().getDrawable(2130837572, (Resources$Theme)null);
+        this.mStarDrawable = this.getResources().getDrawable(2130837575, (Resources$Theme)null);
         this.mColorGray = 503316480;
         this.mColorHighlight = -1979711488;
     }

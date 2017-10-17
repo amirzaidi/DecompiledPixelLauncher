@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$6;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    .line 342
+    .line 344
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 2
 
     .prologue
-    .line 345
+    .line 347
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$6;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mFolderName:Lcom/android/launcher3/ExtendedEditText;
@@ -40,13 +40,13 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/ExtendedEditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 346
+    .line 348
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$6;->this$0:Lcom/android/launcher3/folder/Folder;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/folder/Folder;->-set0(Lcom/android/launcher3/folder/Folder;Z)Z
+    invoke-static {v0, v1}, Lcom/android/launcher3/folder/Folder;->-set1(Lcom/android/launcher3/folder/Folder;Z)Z
 
-    .line 347
+    .line 349
     return-void
 .end method

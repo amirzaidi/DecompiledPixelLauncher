@@ -1,5 +1,5 @@
 .class public Lcom/android/launcher3/model/UserLockStateChangedTask;
-.super Lcom/android/launcher3/model/ExtendedModelTask;
+.super Lcom/android/launcher3/model/BaseModelUpdateTask;
 .source "SourceFile"
 
 
@@ -12,13 +12,13 @@
     .locals 0
 
     .prologue
-    .line 46
-    invoke-direct {p0}, Lcom/android/launcher3/model/ExtendedModelTask;-><init>()V
+    .line 45
+    invoke-direct {p0}, Lcom/android/launcher3/model/BaseModelUpdateTask;-><init>()V
 
-    .line 47
+    .line 46
     iput-object p1, p0, Lcom/android/launcher3/model/UserLockStateChangedTask;->mUser:Landroid/os/UserHandle;
 
-    .line 48
+    .line 47
     return-void
 .end method
 
@@ -30,12 +30,12 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 52
+    .line 51
     invoke-virtual {p1}, Lcom/android/launcher3/LauncherAppState;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    .line 53
+    .line 52
     invoke-static {v3}, Lcom/android/launcher3/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/UserManagerCompat;
 
     move-result-object v0
@@ -46,34 +46,34 @@
 
     move-result v1
 
-    .line 54
+    .line 53
     invoke-static {v3}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/shortcuts/DeepShortcutManager;
 
     move-result-object v4
 
-    .line 56
+    .line 55
     new-instance v5, Ljava/util/HashMap;
 
     invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
-    .line 57
+    .line 56
     if-eqz v1, :cond_9
 
-    .line 59
+    .line 58
     iget-object v0, p0, Lcom/android/launcher3/model/UserLockStateChangedTask;->mUser:Landroid/os/UserHandle;
 
     invoke-virtual {v4, v10, v0}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->queryForPinnedShortcuts(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 60
+    .line 59
     invoke-virtual {v4}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->wasLastCallSuccess()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 61
+    .line 60
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -91,7 +91,7 @@
 
     check-cast v0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 62
+    .line 61
     invoke-static {v0}, Lcom/android/launcher3/shortcuts/ShortcutKey;->fromInfo(Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;)Lcom/android/launcher3/shortcuts/ShortcutKey;
 
     move-result-object v6
@@ -100,24 +100,24 @@
 
     goto :goto_0
 
-    .line 68
+    .line 67
     :cond_0
     const/4 v0, 0x0
 
     move v2, v0
 
-    .line 73
+    .line 72
     :goto_1
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    .line 74
+    .line 73
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 75
+    .line 74
     iget-object v0, p2, Lcom/android/launcher3/model/BgDataModel;->itemsIdMap:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -138,14 +138,14 @@
 
     check-cast v0, Lcom/android/launcher3/ItemInfo;
 
-    .line 76
+    .line 75
     iget v1, v0, Lcom/android/launcher3/ItemInfo;->itemType:I
 
     const/4 v9, 0x6
 
     if-ne v1, v9, :cond_1
 
-    .line 77
+    .line 76
     iget-object v1, p0, Lcom/android/launcher3/model/UserLockStateChangedTask;->mUser:Landroid/os/UserHandle;
 
     iget-object v9, v0, Lcom/android/launcher3/ItemInfo;->user:Landroid/os/UserHandle;
@@ -154,16 +154,16 @@
 
     move-result v1
 
-    .line 76
+    .line 75
     if-eqz v1, :cond_1
 
-    .line 78
+    .line 77
     check-cast v0, Lcom/android/launcher3/ShortcutInfo;
 
-    .line 79
+    .line 78
     if-eqz v2, :cond_3
 
-    .line 80
+    .line 79
     invoke-static {v0}, Lcom/android/launcher3/shortcuts/ShortcutKey;->fromItemInfo(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/shortcuts/ShortcutKey;
 
     move-result-object v1
@@ -174,15 +174,15 @@
 
     check-cast v1, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 83
+    .line 82
     if-nez v1, :cond_2
 
-    .line 84
+    .line 83
     invoke-virtual {v7, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 87
+    .line 86
     :cond_2
     iget v9, v0, Lcom/android/launcher3/ShortcutInfo;->isDisabled:I
 
@@ -190,11 +190,14 @@
 
     iput v9, v0, Lcom/android/launcher3/ShortcutInfo;->isDisabled:I
 
-    .line 88
+    .line 87
     invoke-virtual {v0, v1, v3}, Lcom/android/launcher3/ShortcutInfo;->updateFromDeepShortcutInfo(Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;Landroid/content/Context;)V
 
     .line 89
-    invoke-static {v1, v3}, Lcom/android/launcher3/graphics/LauncherIcons;->createShortcutIcon(Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;Landroid/content/Context;)Landroid/graphics/Bitmap;
+    iget-object v9, v0, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
+
+    .line 88
+    invoke-static {v1, v3, v9}, Lcom/android/launcher3/graphics/LauncherIcons;->createShortcutIcon(Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;Landroid/content/Context;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 

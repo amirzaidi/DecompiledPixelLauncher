@@ -9,19 +9,14 @@ import android.view.View;
 final class Workspace$18 implements Workspace$ItemOperator
 {
     final /* synthetic */ Workspace this$0;
-    final /* synthetic */ Workspace$ItemOperator val$operator;
-    final /* synthetic */ View[] val$value;
     
-    Workspace$18(final Workspace this$0, final Workspace$ItemOperator val$operator, final View[] val$value) {
+    Workspace$18(final Workspace this$0) {
         this.this$0 = this$0;
-        this.val$operator = val$operator;
-        this.val$value = val$value;
     }
     
     public boolean evaluate(final ItemInfo itemInfo, final View view) {
-        if (this.val$operator.evaluate(itemInfo, view)) {
-            this.val$value[0] = view;
-            return true;
+        if (view instanceof DropTarget) {
+            this.this$0.mDragController.removeDropTarget((DropTarget)view);
         }
         return false;
     }

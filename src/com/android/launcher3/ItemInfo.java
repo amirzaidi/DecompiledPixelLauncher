@@ -78,7 +78,7 @@ public class ItemInfo
     }
     
     protected String dumpProperties() {
-        return "id=" + this.id + " type=" + this.itemType + " container=" + this.container + " screen=" + this.screenId + " cellX=" + this.cellX + " cellY=" + this.cellY + " spanX=" + this.spanX + " spanY=" + this.spanY + " minSpanX=" + this.minSpanX + " minSpanY=" + this.minSpanY + " rank=" + this.rank + " user=" + this.user + " title=" + this.title;
+        return "id=" + this.id + " type=" + LauncherSettings$Favorites.itemTypeToString(this.itemType) + " container=" + LauncherSettings$Favorites.containerToString((int)this.container) + " screen=" + this.screenId + " cell(" + this.cellX + "," + this.cellY + ")" + " span(" + this.spanX + "," + this.spanY + ")" + " minSpan(" + this.minSpanX + "," + this.minSpanY + ")" + " rank=" + this.rank + " user=" + this.user + " title=" + this.title;
     }
     
     public Intent getIntent() {
@@ -86,9 +86,18 @@ public class ItemInfo
     }
     
     public ComponentName getTargetComponent() {
-        ComponentName component = null;
-        if (this.getIntent() != null) {
-            component = this.getIntent().getComponent();
+        ComponentName componentName = null;
+        final Intent intent = this.getIntent();
+        if (intent == null) {
+            return null;
+        }
+        final ComponentName component = intent.getComponent();
+        if (this.itemType == 1 && component == null) {
+            final String package1 = intent.getPackage();
+            if (package1 != null) {
+                componentName = new ComponentName(package1, ".");
+            }
+            return componentName;
         }
         return component;
     }

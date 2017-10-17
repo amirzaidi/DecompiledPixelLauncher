@@ -17,17 +17,17 @@
     .locals 1
 
     .prologue
-    .line 1500
+    .line 1495
     iput-object p1, p0, Lcom/android/launcher3/CellLayout$ViewCluster$PositionComparator;->this$1:Lcom/android/launcher3/CellLayout$ViewCluster;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1501
+    .line 1496
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/launcher3/CellLayout$ViewCluster$PositionComparator;->whichEdge:I
 
-    .line 1500
+    .line 1495
     return-void
 .end method
 
@@ -37,38 +37,38 @@
     .locals 3
 
     .prologue
-    .line 1503
+    .line 1498
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$ViewCluster$PositionComparator;->this$1:Lcom/android/launcher3/CellLayout$ViewCluster;
 
     iget-object v0, v0, Lcom/android/launcher3/CellLayout$ViewCluster;->config:Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
-    iget-object v0, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v0, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1504
+    .line 1499
     iget-object v1, p0, Lcom/android/launcher3/CellLayout$ViewCluster$PositionComparator;->this$1:Lcom/android/launcher3/CellLayout$ViewCluster;
 
     iget-object v1, v1, Lcom/android/launcher3/CellLayout$ViewCluster;->config:Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
-    iget-object v1, v1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v1, v1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v1, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, p2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1505
+    .line 1500
     iget v2, p0, Lcom/android/launcher3/CellLayout$ViewCluster$PositionComparator;->whichEdge:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 1514
+    .line 1509
     :pswitch_0
     iget v0, v0, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
 
@@ -78,7 +78,7 @@
 
     return v0
 
-    .line 1507
+    .line 1502
     :pswitch_1
     iget v2, v1, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
@@ -96,7 +96,7 @@
 
     return v0
 
-    .line 1509
+    .line 1504
     :pswitch_2
     iget v0, v0, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
@@ -106,7 +106,7 @@
 
     return v0
 
-    .line 1511
+    .line 1506
     :pswitch_3
     iget v2, v1, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
 
@@ -124,7 +124,7 @@
 
     return v0
 
-    .line 1505
+    .line 1500
     nop
 
     :pswitch_data_0
@@ -140,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 1502
+    .line 1497
     check-cast p1, Landroid/view/View;
 
     check-cast p2, Landroid/view/View;

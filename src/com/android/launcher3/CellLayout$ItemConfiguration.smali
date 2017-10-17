@@ -8,11 +8,11 @@
 
 .field isSolution:Z
 
-.field map:Ljava/util/HashMap;
+.field final map:Landroid/util/ArrayMap;
 
-.field private savedMap:Ljava/util/HashMap;
+.field private final savedMap:Landroid/util/ArrayMap;
 
-.field sortedViews:Ljava/util/ArrayList;
+.field final sortedViews:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -20,36 +20,36 @@
     .locals 1
 
     .prologue
-    .line 2419
+    .line 2414
     invoke-direct {p0}, Lcom/android/launcher3/util/CellAndSpan;-><init>()V
 
-    .line 2420
-    new-instance v0, Ljava/util/HashMap;
+    .line 2415
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    .line 2421
-    new-instance v0, Ljava/util/HashMap;
+    .line 2416
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Landroid/util/ArrayMap;
 
-    .line 2422
+    .line 2417
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->sortedViews:Ljava/util/ArrayList;
 
-    .line 2424
+    .line 2419
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
-    .line 2419
+    .line 2414
     return-void
 .end method
 
@@ -67,26 +67,26 @@
     .locals 2
 
     .prologue
-    .line 2441
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 2436
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, p2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2442
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Ljava/util/HashMap;
+    .line 2437
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Landroid/util/ArrayMap;
 
     new-instance v1, Lcom/android/launcher3/util/CellAndSpan;
 
     invoke-direct {v1}, Lcom/android/launcher3/util/CellAndSpan;-><init>()V
 
-    invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2443
+    .line 2438
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->sortedViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2444
+    .line 2439
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .locals 2
 
     .prologue
-    .line 2447
+    .line 2442
     iget v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanX:I
 
     iget v1, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanY:I
@@ -108,10 +108,10 @@
     .locals 7
 
     .prologue
-    .line 2451
+    .line 2446
     const/4 v0, 0x1
 
-    .line 2452
+    .line 2447
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -131,19 +131,19 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 2453
-    iget-object v3, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 2448
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 2454
+    .line 2449
     if-eqz v1, :cond_0
 
-    .line 2455
+    .line 2450
     iget v1, v0, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
     iget v3, v0, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
@@ -162,7 +162,7 @@
 
     invoke-virtual {p2, v1, v3, v4, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2456
+    .line 2451
     const/4 v0, 0x0
 
     :goto_1
@@ -170,7 +170,7 @@
 
     goto :goto_0
 
-    .line 2458
+    .line 2453
     :cond_0
     iget v3, v0, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
@@ -194,7 +194,7 @@
 
     goto :goto_1
 
-    .line 2461
+    .line 2456
     :cond_1
     return-void
 .end method
@@ -203,10 +203,10 @@
     .locals 4
 
     .prologue
-    .line 2435
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Ljava/util/HashMap;
+    .line 2430
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -227,18 +227,18 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 2436
-    iget-object v1, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 2431
+    iget-object v1, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    iget-object v3, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Ljava/util/HashMap;
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -248,7 +248,7 @@
 
     goto :goto_0
 
-    .line 2438
+    .line 2433
     :cond_0
     return-void
 .end method
@@ -257,10 +257,10 @@
     .locals 4
 
     .prologue
-    .line 2428
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 2423
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -281,18 +281,18 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 2429
-    iget-object v1, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Ljava/util/HashMap;
+    .line 2424
+    iget-object v1, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->savedMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    iget-object v3, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -302,7 +302,7 @@
 
     goto :goto_0
 
-    .line 2431
+    .line 2426
     :cond_0
     return-void
 .end method

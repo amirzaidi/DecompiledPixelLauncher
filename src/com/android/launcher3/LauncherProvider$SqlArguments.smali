@@ -18,10 +18,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1218
+    .line 1142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1219
+    .line 1143
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v0
@@ -34,7 +34,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1220
+    .line 1144
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v0
@@ -49,16 +49,16 @@
 
     iput-object v0, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->table:Ljava/lang/String;
 
-    .line 1221
+    .line 1145
     iput-object v2, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->where:Ljava/lang/String;
 
-    .line 1222
+    .line 1146
     iput-object v2, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->args:[Ljava/lang/String;
 
-    .line 1226
+    .line 1150
     return-void
 
-    .line 1224
+    .line 1148
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -91,10 +91,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1202
+    .line 1126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1203
+    .line 1127
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v0
@@ -107,7 +107,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1204
+    .line 1128
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
     move-result-object v0
@@ -120,17 +120,17 @@
 
     iput-object v0, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->table:Ljava/lang/String;
 
-    .line 1205
+    .line 1129
     iput-object p2, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->where:Ljava/lang/String;
 
-    .line 1206
+    .line 1130
     iput-object p3, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->args:[Ljava/lang/String;
 
-    .line 1216
+    .line 1140
     :goto_0
     return-void
 
-    .line 1207
+    .line 1131
     :cond_0
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
@@ -144,7 +144,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1208
+    .line 1132
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -169,7 +169,7 @@
 
     throw v0
 
-    .line 1209
+    .line 1133
     :cond_1
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -177,7 +177,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1210
+    .line 1134
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -202,7 +202,7 @@
 
     throw v0
 
-    .line 1212
+    .line 1136
     :cond_2
     invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
 
@@ -216,7 +216,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->table:Ljava/lang/String;
 
-    .line 1213
+    .line 1137
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -241,7 +241,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->where:Ljava/lang/String;
 
-    .line 1214
+    .line 1138
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/launcher3/LauncherProvider$SqlArguments;->args:[Ljava/lang/String;

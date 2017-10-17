@@ -20,10 +20,9 @@ import android.os.Bundle;
 import java.util.Collection;
 import android.os.DeadObjectException;
 import android.os.TransactionTooLargeException;
-import android.support.v4.os.a;
-import android.content.SharedPreferences;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.content.res.Resources;
 import android.content.Context;
@@ -308,6 +307,10 @@ public final class Utilities
         return n2;
     }
     
+    public static SharedPreferences getDevicePrefs(final Context context) {
+        return context.getSharedPreferences("com.android.launcher3.device.prefs", 0);
+    }
+    
     public static Object getOverrideObject(final Class clazz, final Context context, final int n) {
         final String string = context.getString(n);
         if (!TextUtils.isEmpty((CharSequence)string)) {
@@ -381,7 +384,7 @@ public final class Utilities
     }
     
     public static boolean isAtLeastO() {
-        return a.isAtLeastO();
+        return Build$VERSION.SDK_INT >= 26;
     }
     
     public static boolean isBinderSizeError(final Exception ex) {
@@ -424,7 +427,7 @@ public final class Utilities
         return b;
     }
     
-    static boolean isSystemApp(final Context context, final Intent intent) {
+    public static boolean isSystemApp(final Context context, final Intent intent) {
         boolean b = false;
         String s = null;
         final PackageManager packageManager = context.getPackageManager();

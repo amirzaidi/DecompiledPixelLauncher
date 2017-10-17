@@ -4,12 +4,12 @@
 
 package com.android.launcher3;
 
-import android.preference.Preference;
 import android.content.ContentResolver;
 import android.preference.ListPreference;
 import com.android.launcher3.graphics.IconShapeOverride;
 import android.provider.Settings$Secure;
-import android.support.v4.os.a;
+import android.preference.Preference;
+import com.android.launcher3.views.ButtonPreference;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.provider.Settings$System;
@@ -25,7 +25,7 @@ public class SettingsActivity$LauncherSettingsFragment extends PreferenceFragmen
         final boolean b = true;
         super.onCreate(bundle);
         this.getPreferenceManager().setSharedPreferencesName("com.android.launcher3.prefs");
-        this.addPreferencesFromResource(2131230736);
+        this.addPreferencesFromResource(2131230735);
         final ContentResolver contentResolver = this.getActivity().getContentResolver();
         final Preference preference = this.findPreference((CharSequence)"pref_allowRotation");
         if (this.getResources().getBoolean(2131689477)) {
@@ -37,23 +37,24 @@ public class SettingsActivity$LauncherSettingsFragment extends PreferenceFragmen
             this.mRotationLockObserver.onChange(b);
             preference.setDefaultValue((Object)Utilities.getAllowRotationDefaultValue((Context)this.getActivity()));
         }
-        final Preference preference2 = this.findPreference((CharSequence)"pref_icon_badging");
-        if (!a.isAtLeastO()) {
+        final ButtonPreference buttonPreference = (ButtonPreference)this.findPreference((CharSequence)"pref_icon_badging");
+        if (!Utilities.isAtLeastO()) {
             this.getPreferenceScreen().removePreference(this.findPreference((CharSequence)"pref_add_icon_to_home"));
-            this.getPreferenceScreen().removePreference(preference2);
+            this.getPreferenceScreen().removePreference((Preference)buttonPreference);
         }
         else {
-            this.mIconBadgingObserver = new SettingsActivity$IconBadgingObserver(preference2, contentResolver);
+            this.mIconBadgingObserver = new SettingsActivity$IconBadgingObserver(buttonPreference, contentResolver, this.getFragmentManager());
             contentResolver.registerContentObserver(Settings$Secure.getUriFor("notification_badging"), false, (ContentObserver)this.mIconBadgingObserver);
+            contentResolver.registerContentObserver(Settings$Secure.getUriFor("enabled_notification_listeners"), false, (ContentObserver)this.mIconBadgingObserver);
             this.mIconBadgingObserver.onChange(b);
         }
-        final Preference preference3 = this.findPreference((CharSequence)"pref_override_icon_shape");
-        if (preference3 != null) {
+        final Preference preference2 = this.findPreference((CharSequence)"pref_override_icon_shape");
+        if (preference2 != null) {
             if (IconShapeOverride.isSupported((Context)this.getActivity())) {
-                IconShapeOverride.handlePreferenceUi((ListPreference)preference3);
+                IconShapeOverride.handlePreferenceUi((ListPreference)preference2);
             }
             else {
-                this.getPreferenceScreen().removePreference(preference3);
+                this.getPreferenceScreen().removePreference(preference2);
             }
         }
     }

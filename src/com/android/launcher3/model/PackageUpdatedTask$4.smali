@@ -26,7 +26,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/model/PackageUpdatedTask$4;->val$removedComponents:Ljava/util/HashSet;
 
-    .line 345
+    .line 341
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -39,7 +39,7 @@
     .locals 3
 
     .prologue
-    .line 349
+    .line 345
     iget-object v0, p0, Lcom/android/launcher3/model/PackageUpdatedTask$4;->val$removedPackages:Ljava/util/HashSet;
 
     iget-object v1, p0, Lcom/android/launcher3/model/PackageUpdatedTask$4;->val$removedComponents:Ljava/util/HashSet;
@@ -50,9 +50,9 @@
 
     move-result-object v2
 
-    .line 348
+    .line 344
     invoke-interface {p1, v0, v1, v2}, Lcom/android/launcher3/LauncherModel$Callbacks;->bindWorkspaceComponentsRemoved(Ljava/util/HashSet;Ljava/util/HashSet;Landroid/os/UserHandle;)V
 
-    .line 350
+    .line 346
     return-void
 .end method

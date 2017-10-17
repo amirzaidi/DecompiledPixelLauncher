@@ -25,31 +25,31 @@
     .locals 2
 
     .prologue
-    .line 725
+    .line 707
     iput-object p1, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->this$0:Lcom/android/launcher3/IconCache;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 723
+    .line 705
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mUpdatedPackages:Ljava/util/HashSet;
 
-    .line 728
+    .line 710
     iput-wide p2, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mUserSerial:J
 
-    .line 729
+    .line 711
     iput-object p4, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mPkgInfoMap:Ljava/util/HashMap;
 
-    .line 730
+    .line 712
     iput-object p5, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToAdd:Ljava/util/Stack;
 
-    .line 731
+    .line 713
     iput-object p6, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToUpdate:Ljava/util/Stack;
 
-    .line 732
+    .line 714
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .locals 7
 
     .prologue
-    .line 736
+    .line 718
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToUpdate:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -68,7 +68,7 @@
 
     if-nez v0, :cond_2
 
-    .line 737
+    .line 719
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToUpdate:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
@@ -77,7 +77,7 @@
 
     check-cast v2, Landroid/content/pm/LauncherActivityInfo;
 
-    .line 738
+    .line 720
     invoke-virtual {v2}, Landroid/content/pm/LauncherActivityInfo;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 
     move-result-object v0
 
-    .line 739
+    .line 721
     iget-object v1, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mPkgInfoMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -95,7 +95,7 @@
 
     check-cast v3, Landroid/content/pm/PackageInfo;
 
-    .line 740
+    .line 722
     iget-object v1, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->this$0:Lcom/android/launcher3/IconCache;
 
     iget-wide v4, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mUserSerial:J
@@ -104,12 +104,12 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/launcher3/IconCache;->addIconToDBAndMemCache(Landroid/content/pm/LauncherActivityInfo;Landroid/content/pm/PackageInfo;JZ)V
 
-    .line 741
+    .line 723
     iget-object v1, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mUpdatedPackages:Ljava/util/HashSet;
 
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 743
+    .line 725
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToUpdate:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -128,7 +128,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 745
+    .line 727
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->this$0:Lcom/android/launcher3/IconCache;
 
     invoke-static {v0}, Lcom/android/launcher3/IconCache;->-get0(Lcom/android/launcher3/IconCache;)Landroid/content/Context;
@@ -143,7 +143,7 @@
 
     move-result-object v0
 
-    .line 746
+    .line 728
     iget-object v1, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mUpdatedPackages:Ljava/util/HashSet;
 
     iget-object v2, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->this$0:Lcom/android/launcher3/IconCache;
@@ -156,19 +156,19 @@
 
     move-result-object v2
 
-    .line 745
+    .line 727
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/LauncherModel;->onPackageIconsUpdated(Ljava/util/HashSet;Landroid/os/UserHandle;)V
 
-    .line 750
+    .line 732
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->scheduleNext()V
 
-    .line 764
+    .line 746
     :cond_1
     :goto_0
     return-void
 
-    .line 751
+    .line 733
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToAdd:Ljava/util/Stack;
 
@@ -178,7 +178,7 @@
 
     if-nez v0, :cond_1
 
-    .line 752
+    .line 734
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToAdd:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
@@ -187,7 +187,7 @@
 
     check-cast v2, Landroid/content/pm/LauncherActivityInfo;
 
-    .line 753
+    .line 735
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mPkgInfoMap:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Landroid/content/pm/LauncherActivityInfo;->getComponentName()Landroid/content/ComponentName;
@@ -204,10 +204,10 @@
 
     check-cast v3, Landroid/content/pm/PackageInfo;
 
-    .line 756
+    .line 738
     if-eqz v3, :cond_3
 
-    .line 757
+    .line 739
     iget-object v1, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->this$0:Lcom/android/launcher3/IconCache;
 
     iget-wide v4, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mUserSerial:J
@@ -216,7 +216,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lcom/android/launcher3/IconCache;->addIconToDBAndMemCache(Landroid/content/pm/LauncherActivityInfo;Landroid/content/pm/PackageInfo;JZ)V
 
-    .line 760
+    .line 742
     :cond_3
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->mAppsToAdd:Ljava/util/Stack;
 
@@ -226,7 +226,7 @@
 
     if-nez v0, :cond_1
 
-    .line 761
+    .line 743
     invoke-virtual {p0}, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->scheduleNext()V
 
     goto :goto_0
@@ -236,7 +236,7 @@
     .locals 6
 
     .prologue
-    .line 767
+    .line 749
     iget-object v0, p0, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->this$0:Lcom/android/launcher3/IconCache;
 
     iget-object v0, v0, Lcom/android/launcher3/IconCache;->mWorkerHandler:Landroid/os/Handler;
@@ -253,6 +253,6 @@
 
     invoke-virtual {v0, p0, v1, v2, v3}, Landroid/os/Handler;->postAtTime(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
 
-    .line 768
+    .line 750
     return-void
 .end method

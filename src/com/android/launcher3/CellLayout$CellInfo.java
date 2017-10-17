@@ -10,9 +10,9 @@ import com.android.launcher3.util.CellAndSpan;
 
 public final class CellLayout$CellInfo extends CellAndSpan
 {
-    public View cell;
-    long container;
-    long screenId;
+    public final View cell;
+    final long container;
+    final long screenId;
     
     public CellLayout$CellInfo(final View cell, final ItemInfo itemInfo) {
         this.cellX = itemInfo.cellX;

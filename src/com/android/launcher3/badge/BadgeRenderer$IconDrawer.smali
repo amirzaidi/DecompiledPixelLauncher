@@ -26,12 +26,12 @@
     .locals 5
 
     .prologue
-    .line 167
+    .line 166
     iput-object p1, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->this$0:Lcom/android/launcher3/badge/BadgeRenderer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 164
+    .line 163
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x7
@@ -40,10 +40,10 @@
 
     iput-object v0, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->mPaint:Landroid/graphics/Paint;
 
-    .line 168
+    .line 167
     iput p2, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->mPadding:I
 
-    .line 169
+    .line 168
     invoke-static {p1}, Lcom/android/launcher3/badge/BadgeRenderer;->-get0(Lcom/android/launcher3/badge/BadgeRenderer;)I
 
     move-result v0
@@ -60,17 +60,17 @@
 
     iput-object v0, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->mCircleClipBitmap:Landroid/graphics/Bitmap;
 
-    .line 170
+    .line 169
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
 
-    .line 171
+    .line 170
     iget-object v1, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->mCircleClipBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 172
+    .line 171
     invoke-static {p1}, Lcom/android/launcher3/badge/BadgeRenderer;->-get0(Lcom/android/launcher3/badge/BadgeRenderer;)I
 
     move-result v1
@@ -101,7 +101,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 173
+    .line 172
     return-void
 .end method
 
@@ -111,12 +111,12 @@
     .locals 4
 
     .prologue
-    .line 176
+    .line 175
     iget-object v0, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 177
+    .line 176
     iget-object v0, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->mCircleClipBitmap:Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->this$0:Lcom/android/launcher3/badge/BadgeRenderer;
@@ -147,13 +147,13 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 178
+    .line 177
     iget-object v0, p0, Lcom/android/launcher3/badge/BadgeRenderer$IconDrawer;->mPaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 179
+    .line 178
     return-void
 .end method

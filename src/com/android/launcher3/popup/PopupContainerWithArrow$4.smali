@@ -1,33 +1,26 @@
 .class final Lcom/android/launcher3/popup/PopupContainerWithArrow$4;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-.field final synthetic val$removeMarginView:Landroid/view/View;
-
-.field final synthetic val$spacing:I
+.field final synthetic val$translateYBy:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/popup/PopupContainerWithArrow;Landroid/view/View;I)V
+.method constructor <init>(Lcom/android/launcher3/popup/PopupContainerWithArrow;I)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    iput-object p2, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->val$removeMarginView:Landroid/view/View;
+    iput p2, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->val$translateYBy:I
 
-    iput p3, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->val$spacing:I
-
-    .line 606
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 782
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
     return-void
@@ -35,41 +28,53 @@
 
 
 # virtual methods
-.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
     .prologue
-    .line 609
-    iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->val$removeMarginView:Landroid/view/View;
+    .line 785
+    iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    iget-boolean v0, v0, Lcom/android/launcher3/popup/PopupContainerWithArrow;->mIsAboveIcon:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+    .line 789
+    iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    .line 610
-    iget v1, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->val$spacing:I
+    iget-object v1, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    int-to-float v2, v1
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->getTranslationY()F
 
     move-result v1
 
-    mul-float/2addr v1, v2
+    iget v2, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->val$translateYBy:I
 
-    float-to-int v1, v1
+    int-to-float v2, v2
 
-    .line 609
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    add-float/2addr v1, v2
 
-    .line 611
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->setTranslationY(F)V
+
+    .line 790
+    iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
+
+    invoke-static {v0}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->-get0(Lcom/android/launcher3/popup/PopupContainerWithArrow;)Landroid/view/View;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
+
+    .line 792
+    :cond_0
+    iget-object v0, p0, Lcom/android/launcher3/popup/PopupContainerWithArrow$4;->this$0:Lcom/android/launcher3/popup/PopupContainerWithArrow;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->-set1(Lcom/android/launcher3/popup/PopupContainerWithArrow;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
+    .line 793
     return-void
 .end method

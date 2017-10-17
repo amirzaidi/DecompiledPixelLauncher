@@ -11,8 +11,7 @@ import android.util.Log;
 import android.content.res.Resources;
 import android.text.TextUtils;
 import com.android.launcher3.Utilities;
-import android.content.SharedPreferences;
-import com.android.launcher3.util.LooperExecuter;
+import com.android.launcher3.util.LooperExecutor;
 import com.android.launcher3.LauncherModel;
 import android.app.ProgressDialog;
 import android.preference.Preference;
@@ -30,8 +29,8 @@ class IconShapeOverride$PreferenceChangeHandler implements Preference$OnPreferen
     public boolean onPreferenceChange(final Preference preference, final Object o) {
         final String s = (String)o;
         if (!getAppliedValue(this.mContext).equals(s)) {
-            ProgressDialog.show(this.mContext, (CharSequence)null, (CharSequence)this.mContext.getString(2131492956), true, false);
-            new LooperExecuter(LauncherModel.getWorkerLooper()).execute(new IconShapeOverride$OverrideApplyHandler(this.mContext, s, null));
+            ProgressDialog.show(this.mContext, (CharSequence)null, (CharSequence)this.mContext.getString(2131492965), true, false);
+            new LooperExecutor(LauncherModel.getWorkerLooper()).execute(new IconShapeOverride$OverrideApplyHandler(this.mContext, s, null));
         }
         return false;
     }

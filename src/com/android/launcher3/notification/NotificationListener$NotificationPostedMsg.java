@@ -4,13 +4,13 @@
 
 package com.android.launcher3.notification;
 
-import android.support.v4.a.b;
+import android.util.Pair;
 import java.util.Arrays;
 import java.util.Collections;
 import android.app.Notification;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashSet;
+import android.util.ArraySet;
 import android.os.Looper;
 import com.android.launcher3.LauncherModel;
 import java.util.List;
@@ -23,9 +23,9 @@ import com.android.launcher3.util.PackageUserKey;
 
 class NotificationListener$NotificationPostedMsg
 {
-    NotificationKeyData notificationKey;
-    PackageUserKey packageUserKey;
-    boolean shouldBeFilteredOut;
+    final NotificationKeyData notificationKey;
+    final PackageUserKey packageUserKey;
+    final boolean shouldBeFilteredOut;
     final /* synthetic */ NotificationListener this$0;
     
     NotificationListener$NotificationPostedMsg(final NotificationListener this$0, final StatusBarNotification statusBarNotification) {

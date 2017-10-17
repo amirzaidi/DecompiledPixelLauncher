@@ -26,7 +26,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/allapps/AllAppsContainerView$2;->val$dragController:Lcom/android/launcher3/dragndrop/DragController;
 
-    .line 381
+    .line 311
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -39,19 +39,19 @@
     .locals 2
 
     .prologue
-    .line 389
+    .line 319
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView$2;->val$v:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 390
+    .line 320
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView$2;->val$dragController:Lcom/android/launcher3/dragndrop/DragController;
 
     invoke-virtual {v0, p0}, Lcom/android/launcher3/dragndrop/DragController;->removeDragListener(Lcom/android/launcher3/dragndrop/DragController$DragListener;)V
 
-    .line 391
+    .line 321
     return-void
 .end method
 
@@ -59,13 +59,13 @@
     .locals 2
 
     .prologue
-    .line 384
+    .line 314
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView$2;->val$v:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 385
+    .line 315
     return-void
 .end method

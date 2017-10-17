@@ -100,7 +100,7 @@
     const/4 v1, 0x0
 
     .line 72
-    invoke-static {v0, v1}, Landroid/support/v4/b/a;->arc(II)I
+    invoke-static {v0, v1}, Landroid/support/v4/b/a;->asb(II)I
 
     move-result v0
 
@@ -115,12 +115,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/Hotseat;->mBackground:Landroid/graphics/drawable/ColorDrawable;
 
-    .line 75
-    iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mBackground:Landroid/graphics/drawable/ColorDrawable;
-
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/Hotseat;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 76
+    .line 78
     return-void
 .end method
 
@@ -130,22 +125,22 @@
     .locals 1
 
     .prologue
-    .line 176
+    .line 177
     iget v0, p2, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iput v0, p3, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->gridX:I
 
-    .line 177
+    .line 178
     iget v0, p2, Lcom/android/launcher3/ItemInfo;->cellY:I
 
     iput v0, p3, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->gridY:I
 
-    .line 178
+    .line 179
     const/4 v0, 0x2
 
     iput v0, p4, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->containerType:I
 
-    .line 179
+    .line 180
     return-void
 .end method
 
@@ -153,7 +148,7 @@
     .locals 1
 
     .prologue
-    .line 219
+    .line 224
     iget v0, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColor:I
 
     return v0
@@ -163,7 +158,7 @@
     .locals 1
 
     .prologue
-    .line 104
+    .line 106
     iget-boolean v0, p0, Lcom/android/launcher3/Hotseat;->mHasVerticalHotseat:Z
 
     if-eqz v0, :cond_0
@@ -178,7 +173,7 @@
     .locals 2
 
     .prologue
-    .line 108
+    .line 110
     iget-boolean v0, p0, Lcom/android/launcher3/Hotseat;->mHasVerticalHotseat:Z
 
     if-eqz v0, :cond_0
@@ -206,7 +201,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 81
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mContent:Lcom/android/launcher3/CellLayout;
 
     return-object v0
@@ -216,7 +211,7 @@
     .locals 1
 
     .prologue
-    .line 99
+    .line 101
     iget-boolean v0, p0, Lcom/android/launcher3/Hotseat;->mHasVerticalHotseat:Z
 
     if-eqz v0, :cond_0
@@ -241,18 +236,18 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 113
+    .line 115
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    .line 114
+    .line 116
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v1
 
-    .line 115
-    const v0, 0x7f0e0040
+    .line 117
+    const v0, 0x7f0e0049
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/Hotseat;->findViewById(I)Landroid/view/View;
 
@@ -262,14 +257,14 @@
 
     iput-object v0, p0, Lcom/android/launcher3/Hotseat;->mContent:Lcom/android/launcher3/CellLayout;
 
-    .line 116
+    .line 118
     invoke-virtual {v1}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 117
+    .line 119
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mContent:Lcom/android/launcher3/CellLayout;
 
     iget-object v1, v1, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
@@ -278,14 +273,14 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/android/launcher3/CellLayout;->setGridSize(II)V
 
-    .line 122
+    .line 124
     :goto_0
     invoke-virtual {p0}, Lcom/android/launcher3/Hotseat;->resetLayout()V
 
-    .line 123
+    .line 125
     return-void
 
-    .line 119
+    .line 121
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mContent:Lcom/android/launcher3/CellLayout;
 
@@ -302,7 +297,7 @@
     .locals 1
 
     .prologue
-    .line 170
+    .line 171
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getWorkspace()Lcom/android/launcher3/Workspace;
@@ -315,7 +310,7 @@
 
     if-nez v0, :cond_0
 
-    .line 171
+    .line 172
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getAccessibilityDelegate()Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
@@ -328,7 +323,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 170
+    .line 171
     :goto_0
     return v0
 
@@ -342,12 +337,12 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 128
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mContent:Lcom/android/launcher3/CellLayout;
 
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout;->removeAllViewsInLayout()V
 
-    .line 164
+    .line 165
     return-void
 .end method
 
@@ -355,21 +350,21 @@
     .locals 2
 
     .prologue
-    .line 211
+    .line 216
     if-eqz p1, :cond_0
 
-    .line 212
+    .line 217
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mBackground:Landroid/graphics/drawable/ColorDrawable;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 216
+    .line 221
     :goto_0
     return-void
 
-    .line 214
+    .line 219
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mBackground:Landroid/graphics/drawable/ColorDrawable;
 
@@ -384,107 +379,19 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 96
     iget-object v0, p0, Lcom/android/launcher3/Hotseat;->mContent:Lcom/android/launcher3/CellLayout;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/CellLayout;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 95
+    .line 97
     return-void
 .end method
 
 .method public updateColor(Lcom/android/launcher3/dynamicui/ExtractedColors;Z)V
-    .locals 5
+    .locals 0
 
     .prologue
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 182
-    iget-boolean v0, p0, Lcom/android/launcher3/Hotseat;->mHasVerticalHotseat:Z
-
-    if-nez v0, :cond_1
-
-    .line 183
-    invoke-virtual {p1, v4, v3}, Lcom/android/launcher3/dynamicui/ExtractedColors;->getColor(II)I
-
-    move-result v0
-
-    .line 184
-    iget-object v1, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColorAnimator:Landroid/animation/ValueAnimator;
-
-    if-eqz v1, :cond_0
-
     .line 185
-    iget-object v1, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColorAnimator:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
-
-    .line 187
-    :cond_0
-    if-nez p2, :cond_2
-
-    .line 188
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/Hotseat;->setBackgroundColor(I)V
-
-    .line 206
-    :goto_0
-    iput v0, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColor:I
-
-    .line 208
-    :cond_1
     return-void
-
-    .line 190
-    :cond_2
-    const/4 v1, 0x2
-
-    new-array v1, v1, [I
-
-    iget v2, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColor:I
-
-    aput v2, v1, v3
-
-    aput v0, v1, v4
-
-    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColorAnimator:Landroid/animation/ValueAnimator;
-
-    .line 191
-    iget-object v1, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColorAnimator:Landroid/animation/ValueAnimator;
-
-    new-instance v2, Landroid/animation/ArgbEvaluator;
-
-    invoke-direct {v2}, Landroid/animation/ArgbEvaluator;-><init>()V
-
-    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setEvaluator(Landroid/animation/TypeEvaluator;)V
-
-    .line 192
-    iget-object v1, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColorAnimator:Landroid/animation/ValueAnimator;
-
-    new-instance v2, Lcom/android/launcher3/Hotseat$1;
-
-    invoke-direct {v2, p0}, Lcom/android/launcher3/Hotseat$1;-><init>(Lcom/android/launcher3/Hotseat;)V
-
-    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    .line 198
-    iget-object v1, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColorAnimator:Landroid/animation/ValueAnimator;
-
-    new-instance v2, Lcom/android/launcher3/Hotseat$2;
-
-    invoke-direct {v2, p0}, Lcom/android/launcher3/Hotseat$2;-><init>(Lcom/android/launcher3/Hotseat;)V
-
-    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    .line 204
-    iget-object v1, p0, Lcom/android/launcher3/Hotseat;->mBackgroundColorAnimator:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
-
-    goto :goto_0
 .end method

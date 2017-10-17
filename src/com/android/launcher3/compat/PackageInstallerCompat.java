@@ -5,6 +5,7 @@
 package com.android.launcher3.compat;
 
 import java.util.HashMap;
+import java.util.List;
 import android.content.Context;
 
 public abstract class PackageInstallerCompat
@@ -27,6 +28,8 @@ public abstract class PackageInstallerCompat
             return PackageInstallerCompat.sInstance;
         }
     }
+    
+    public abstract List getAllVerifiedSessions();
     
     public abstract void onStop();
     

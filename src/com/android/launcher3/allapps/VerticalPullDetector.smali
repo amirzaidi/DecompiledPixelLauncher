@@ -20,7 +20,7 @@
 
 .field private mLastY:F
 
-.field mListener:Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;
+.field private mListener:Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;
 
 .field private mScrollConditions:I
 
@@ -28,7 +28,7 @@
 
 .field private mSubtractDisplacement:F
 
-.field private mTouchSlop:F
+.field private final mTouchSlop:F
 
 .field private mVelocity:F
 
@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 125
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 42
@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
-    .line 128
+    .line 126
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mTouchSlop:F
 
-    .line 129
+    .line 127
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .locals 1
 
     .prologue
-    .line 270
+    .line 268
     const v0, 0x417ea5dd
 
     add-float/2addr v0, p0
@@ -81,7 +81,7 @@
     .locals 4
 
     .prologue
-    .line 248
+    .line 246
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -107,7 +107,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 212
+    .line 210
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v1, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->SETTLING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
@@ -118,10 +118,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 213
+    .line 211
     iput v2, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mSubtractDisplacement:F
 
-    .line 215
+    .line 213
     :cond_0
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
 
@@ -129,16 +129,16 @@
 
     if-lez v0, :cond_1
 
-    .line 216
+    .line 214
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mTouchSlop:F
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mSubtractDisplacement:F
 
-    .line 220
+    .line 218
     :goto_0
     return-void
 
-    .line 218
+    .line 216
     :cond_1
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mTouchSlop:F
 
@@ -153,7 +153,7 @@
     .locals 2
 
     .prologue
-    .line 277
+    .line 275
     const/high16 v0, 0x3f800000    # 1.0f
 
     sub-float/2addr v0, p2
@@ -171,7 +171,7 @@
     .locals 4
 
     .prologue
-    .line 240
+    .line 238
     iget-object v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mListener:Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;
 
     iget v2, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mVelocity:F
@@ -193,10 +193,10 @@
     :goto_0
     invoke-interface {v1, v2, v0}, Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;->onDragEnd(FZ)V
 
-    .line 242
+    .line 240
     return-void
 
-    .line 240
+    .line 238
     :cond_0
     const/4 v0, 0x0
 
@@ -207,14 +207,14 @@
     .locals 2
 
     .prologue
-    .line 204
+    .line 202
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mListener:Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;
 
     xor-int/lit8 v1, p1, 0x1
 
     invoke-interface {v0, v1}, Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;->onDragStart(Z)V
 
-    .line 208
+    .line 206
     const/4 v0, 0x1
 
     return v0
@@ -224,21 +224,21 @@
     .locals 3
 
     .prologue
-    .line 223
+    .line 221
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
 
     iget v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mLastDisplacement:F
 
     sub-float/2addr v0, v1
 
-    .line 224
+    .line 222
     const/4 v1, 0x0
 
     cmpl-float v0, v0, v1
 
     if-eqz v0, :cond_0
 
-    .line 230
+    .line 228
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mListener:Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;
 
     iget v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
@@ -255,7 +255,7 @@
 
     return v0
 
-    .line 232
+    .line 230
     :cond_0
     const/4 v0, 0x1
 
@@ -266,44 +266,44 @@
     .locals 2
 
     .prologue
-    .line 64
+    .line 62
     sget-object v0, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->DRAGGING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     if-ne p1, v0, :cond_0
 
-    .line 65
+    .line 63
     invoke-direct {p0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->initializeDragging()V
 
-    .line 66
+    .line 64
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v1, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->IDLE:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     if-ne v0, v1, :cond_2
 
-    .line 67
+    .line 65
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->reportDragStart(Z)Z
 
-    .line 72
+    .line 70
     :cond_0
     :goto_0
     sget-object v0, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->SETTLING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     if-ne p1, v0, :cond_1
 
-    .line 73
+    .line 71
     invoke-direct {p0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->reportDragEnd()V
 
-    .line 76
+    .line 74
     :cond_1
     iput-object p1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
-    .line 77
+    .line 75
     return-void
 
-    .line 68
+    .line 66
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
@@ -311,7 +311,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 69
+    .line 67
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->reportDragStart(Z)Z
@@ -327,7 +327,7 @@
 
     const/4 v3, 0x0
 
-    .line 138
+    .line 136
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
 
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
@@ -340,10 +340,10 @@
 
     if-gez v0, :cond_0
 
-    .line 139
+    .line 137
     return v3
 
-    .line 143
+    .line 141
     :cond_0
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
 
@@ -351,7 +351,7 @@
 
     move-result v0
 
-    .line 144
+    .line 142
     iget v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementX:F
 
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
@@ -364,15 +364,15 @@
 
     move-result v1
 
-    .line 145
+    .line 143
     cmpl-float v0, v1, v0
 
     if-lez v0, :cond_1
 
-    .line 146
+    .line 144
     return v3
 
-    .line 149
+    .line 147
     :cond_1
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mScrollConditions:I
 
@@ -386,13 +386,13 @@
 
     if-lez v0, :cond_3
 
-    .line 151
+    .line 149
     :cond_2
     const/4 v0, 0x1
 
     return v0
 
-    .line 150
+    .line 148
     :cond_3
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mScrollConditions:I
 
@@ -406,7 +406,7 @@
 
     if-ltz v0, :cond_2
 
-    .line 153
+    .line 151
     :cond_4
     return v3
 .end method
@@ -417,7 +417,7 @@
     .locals 4
 
     .prologue
-    .line 282
+    .line 280
     const/high16 v0, 0x3f000000    # 0.5f
 
     mul-float/2addr v0, p1
@@ -432,14 +432,14 @@
 
     move-result v0
 
-    .line 283
+    .line 281
     const v1, 0x3e4ccccd    # 0.2f
 
     invoke-static {v1, p2}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    .line 284
+    .line 282
     const/high16 v2, 0x42c80000    # 100.0f
 
     const/high16 v3, 0x44960000    # 1200.0f
@@ -454,7 +454,7 @@
 
     float-to-long v0, v0
 
-    .line 288
+    .line 286
     return-wide v0
 .end method
 
@@ -464,27 +464,27 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 252
+    .line 250
     iget-wide v2, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mCurrentMillis:J
 
-    .line 253
+    .line 251
     iput-wide p2, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mCurrentMillis:J
 
-    .line 255
+    .line 253
     iget-wide v4, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mCurrentMillis:J
 
     sub-long v2, v4, v2
 
     long-to-float v1, v2
 
-    .line 256
+    .line 254
     cmpl-float v2, v1, v0
 
     if-lez v2, :cond_0
 
     div-float v0, p1, v1
 
-    .line 257
+    .line 255
     :cond_0
     iget v2, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mVelocity:F
 
@@ -498,22 +498,22 @@
 
     if-gez v2, :cond_1
 
-    .line 258
+    .line 256
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mVelocity:F
 
-    .line 263
+    .line 261
     :goto_0
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mVelocity:F
 
     return v0
 
-    .line 260
+    .line 258
     :cond_1
     invoke-static {v1}, Lcom/android/launcher3/allapps/VerticalPullDetector;->computeDampeningFactor(F)F
 
     move-result v1
 
-    .line 261
+    .line 259
     iget v2, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mVelocity:F
 
     invoke-static {v2, v0, v1}, Lcom/android/launcher3/allapps/VerticalPullDetector;->interpolate(FFF)F
@@ -529,12 +529,12 @@
     .locals 1
 
     .prologue
-    .line 200
+    .line 198
     sget-object v0, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->IDLE:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->setState(Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;)V
 
-    .line 201
+    .line 199
     return-void
 .end method
 
@@ -544,7 +544,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 80
+    .line 78
     iget-object v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v2, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->DRAGGING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
@@ -571,7 +571,7 @@
     .locals 2
 
     .prologue
-    .line 95
+    .line 93
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v1, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->DRAGGING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
@@ -593,7 +593,7 @@
     .locals 2
 
     .prologue
-    .line 87
+    .line 85
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v1, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->IDLE:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
@@ -615,7 +615,7 @@
     .locals 2
 
     .prologue
-    .line 91
+    .line 89
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v1, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->SETTLING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
@@ -639,33 +639,33 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 157
+    .line 155
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 194
+    .line 192
     :cond_0
     :goto_0
     iget v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mLastDisplacement:F
 
-    .line 195
+    .line 193
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mLastY:F
 
-    .line 196
+    .line 194
     const/4 v0, 0x1
 
     return v0
 
-    .line 159
+    .line 157
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -673,23 +673,23 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDownX:F
 
-    .line 160
+    .line 158
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDownY:F
 
-    .line 161
+    .line 159
     iput v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mLastDisplacement:F
 
-    .line 162
+    .line 160
     iput v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
 
-    .line 163
+    .line 161
     iput v1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mVelocity:F
 
-    .line 165
+    .line 163
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v1, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->SETTLING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
@@ -700,14 +700,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 166
+    .line 164
     sget-object v0, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->DRAGGING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->setState(Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;)V
 
     goto :goto_0
 
-    .line 170
+    .line 168
     :pswitch_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -719,7 +719,7 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementX:F
 
-    .line 171
+    .line 169
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -730,10 +730,10 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mDisplacementY:F
 
-    .line 172
+    .line 170
     invoke-direct {p0, p1}, Lcom/android/launcher3/allapps/VerticalPullDetector;->computeVelocity(Landroid/view/MotionEvent;)F
 
-    .line 175
+    .line 173
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     sget-object v1, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->DRAGGING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
@@ -746,12 +746,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 176
+    .line 174
     sget-object v0, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->DRAGGING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->setState(Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;)V
 
-    .line 178
+    .line 176
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
@@ -759,12 +759,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 179
+    .line 177
     invoke-direct {p0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->reportDragging()Z
 
     goto :goto_0
 
-    .line 185
+    .line 183
     :pswitch_2
     iget-object v0, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mState:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
@@ -772,14 +772,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 186
+    .line 184
     sget-object v0, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;->SETTLING:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->setState(Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollState;)V
 
     goto :goto_0
 
-    .line 157
+    .line 155
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -793,13 +793,13 @@
     .locals 0
 
     .prologue
-    .line 132
+    .line 130
     iput p1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mScrollConditions:I
 
-    .line 133
+    .line 131
     iput-boolean p2, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mIgnoreSlopWhenSettling:Z
 
-    .line 134
+    .line 132
     return-void
 .end method
 
@@ -807,9 +807,9 @@
     .locals 0
 
     .prologue
-    .line 116
+    .line 114
     iput-object p1, p0, Lcom/android/launcher3/allapps/VerticalPullDetector;->mListener:Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;
 
-    .line 117
+    .line 115
     return-void
 .end method

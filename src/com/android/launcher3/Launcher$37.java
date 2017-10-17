@@ -4,19 +4,19 @@
 
 package com.android.launcher3;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 final class Launcher$37 implements Runnable
 {
     final /* synthetic */ Launcher this$0;
-    final /* synthetic */ ArrayList val$appInfos;
+    final /* synthetic */ HashSet val$updates;
     
-    Launcher$37(final Launcher this$0, final ArrayList val$appInfos) {
+    Launcher$37(final Launcher this$0, final HashSet val$updates) {
         this.this$0 = this$0;
-        this.val$appInfos = val$appInfos;
+        this.val$updates = val$updates;
     }
     
     public void run() {
-        this.this$0.bindAppInfosRemoved(this.val$appInfos);
+        this.this$0.bindRestoreItemsChange(this.val$updates);
     }
 }

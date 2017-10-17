@@ -41,8 +41,10 @@ public class BgDataModel
     public final ArrayList appWidgets;
     public final MultiHashMap deepShortcutMap;
     public final LongArrayMap folders;
+    public boolean hasShortcutHostPermission;
     public final LongArrayMap itemsIdMap;
     public final Map pinnedShortcutCounts;
+    public final WidgetsModel widgetsModel;
     public final ArrayList workspaceItems;
     public final ArrayList workspaceScreens;
     
@@ -54,6 +56,7 @@ public class BgDataModel
         this.workspaceScreens = new ArrayList();
         this.pinnedShortcutCounts = new HashMap();
         this.deepShortcutMap = new MultiHashMap();
+        this.widgetsModel = new WidgetsModel();
     }
     
     private void dumpProto(final String s, final FileDescriptor fileDescriptor, final PrintWriter printWriter, final String[] array) {
@@ -64,7 +67,7 @@ public class BgDataModel
             final DumpTargetWrapper dumpTargetWrapper = new DumpTargetWrapper(2, 0);
             final LongArrayMap longArrayMap = new LongArrayMap();
             for (int i = 0; i < this.workspaceScreens.size(); ++i) {
-                final long longValue = new Long(this.workspaceScreens.get(i));
+                final long longValue = this.workspaceScreens.get(i);
                 final int j = 1;
                 longArrayMap.put(longValue, (Object)new DumpTargetWrapper(j, i));
             }
@@ -82,7 +85,7 @@ public class BgDataModel
                     dumpTargetWrapper.add(dumpTargetWrapper2);
                 }
                 else if (folderInfo2.container == -100) {
-                    ((DumpTargetWrapper)longArrayMap.get((long)new Long(folderInfo2.screenId))).add(dumpTargetWrapper2);
+                    ((DumpTargetWrapper)longArrayMap.get(folderInfo2.screenId)).add(dumpTargetWrapper2);
                 }
             }
             for (int k = 0; k < this.workspaceItems.size(); ++k) {
@@ -94,7 +97,7 @@ public class BgDataModel
                         dumpTargetWrapper.add(dumpTargetWrapper4);
                     }
                     else if (itemInfo.container == -100) {
-                        ((DumpTargetWrapper)longArrayMap.get((long)new Long(itemInfo.screenId))).add(dumpTargetWrapper4);
+                        ((DumpTargetWrapper)longArrayMap.get(itemInfo.screenId)).add(dumpTargetWrapper4);
                     }
                 }
             }
@@ -106,7 +109,7 @@ public class BgDataModel
                     dumpTargetWrapper.add(dumpTargetWrapper5);
                 }
                 else if (itemInfo2.container == -100) {
-                    ((DumpTargetWrapper)longArrayMap.get((long)new Long(itemInfo2.screenId))).add(dumpTargetWrapper5);
+                    ((DumpTargetWrapper)longArrayMap.get(itemInfo2.screenId)).add(dumpTargetWrapper5);
                 }
             }
             final ArrayList<LauncherDumpProto$DumpTarget> list = new ArrayList<LauncherDumpProto$DumpTarget>();
@@ -294,7 +297,7 @@ public class BgDataModel
                     printWriter.print(s + "  ");
                     final Iterator<String> iterator2 = list.iterator();
                     while (iterator2.hasNext()) {
-                        printWriter.print(iterator2.next().toString() + ", ");
+                        printWriter.print(iterator2.next() + ", ");
                     }
                 }
                 printWriter.println();

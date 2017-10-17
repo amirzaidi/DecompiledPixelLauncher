@@ -1,33 +1,30 @@
 .class final Lcom/android/launcher3/Launcher$18;
-.super Ljava/lang/Object;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Launcher;
 
-.field final synthetic val$packageName:Ljava/lang/String;
+.field final synthetic val$appWidgetHost:Lcom/android/launcher3/LauncherAppWidgetHost;
 
-.field final synthetic val$v:Landroid/view/View;
+.field final synthetic val$widgetInfo:Lcom/android/launcher3/LauncherAppWidgetInfo;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;Landroid/view/View;Ljava/lang/String;)V
+.method constructor <init>(Lcom/android/launcher3/Launcher;Lcom/android/launcher3/LauncherAppWidgetHost;Lcom/android/launcher3/LauncherAppWidgetInfo;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$18;->this$0:Lcom/android/launcher3/Launcher;
 
-    iput-object p2, p0, Lcom/android/launcher3/Launcher$18;->val$v:Landroid/view/View;
+    iput-object p2, p0, Lcom/android/launcher3/Launcher$18;->val$appWidgetHost:Lcom/android/launcher3/LauncherAppWidgetHost;
 
-    iput-object p3, p0, Lcom/android/launcher3/Launcher$18;->val$packageName:Ljava/lang/String;
+    iput-object p3, p0, Lcom/android/launcher3/Launcher$18;->val$widgetInfo:Lcom/android/launcher3/LauncherAppWidgetInfo;
 
-    .line 2389
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2168
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     .line 1
     return-void
@@ -35,19 +32,35 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 3
+.method public bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .prologue
-    .line 2392
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$18;->this$0:Lcom/android/launcher3/Launcher;
+    .line 2169
+    check-cast p1, [Ljava/lang/Void;
 
-    iget-object v1, p0, Lcom/android/launcher3/Launcher$18;->val$v:Landroid/view/View;
+    invoke-virtual {p0, p1}, Lcom/android/launcher3/Launcher$18;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
 
-    iget-object v2, p0, Lcom/android/launcher3/Launcher$18;->val$packageName:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-static {v0, v1, v2}, Lcom/android/launcher3/Launcher;->-wrap0(Lcom/android/launcher3/Launcher;Landroid/view/View;Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    .line 2393
-    return-void
+.method public varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
+    .locals 2
+
+    .prologue
+    .line 2170
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$18;->val$appWidgetHost:Lcom/android/launcher3/LauncherAppWidgetHost;
+
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$18;->val$widgetInfo:Lcom/android/launcher3/LauncherAppWidgetInfo;
+
+    iget v1, v1, Lcom/android/launcher3/LauncherAppWidgetInfo;->appWidgetId:I
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/LauncherAppWidgetHost;->deleteAppWidgetId(I)V
+
+    .line 2171
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

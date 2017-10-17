@@ -4,21 +4,23 @@
 
 package com.android.launcher3;
 
-import com.android.launcher3.folder.FolderIcon;
 import android.view.View;
 
 final class Workspace$14 implements Workspace$ItemOperator
 {
     final /* synthetic */ Workspace this$0;
+    final /* synthetic */ long val$id;
     
-    Workspace$14(final Workspace this$0) {
+    Workspace$14(final Workspace this$0, final long val$id) {
         this.this$0 = this$0;
+        this.val$id = val$id;
     }
     
     public boolean evaluate(final ItemInfo itemInfo, final View view) {
-        if (view instanceof FolderIcon) {
-            ((FolderIcon)view).removeListeners();
+        boolean b = false;
+        if (itemInfo != null && itemInfo.id == this.val$id) {
+            b = true;
         }
-        return false;
+        return b;
     }
 }

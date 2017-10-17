@@ -4,19 +4,21 @@
 
 package com.android.launcher3.allapps;
 
+import com.android.launcher3.util.PackageManagerHelper;
+import android.view.View$AccessibilityDelegate;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import com.android.launcher3.AppInfo;
 import android.widget.TextView;
 import com.android.launcher3.discovery.AppDiscoveryAppInfo;
 import com.android.launcher3.discovery.AppDiscoveryItemView;
-import android.view.View$AccessibilityDelegate;
 import com.android.launcher3.BubbleTextView;
 import android.support.v7.widget.j;
-import android.graphics.Point;
 import android.content.res.Resources;
+import com.android.launcher3.anim.SpringAnimationHandler$AnimationFactory;
+import com.android.launcher3.config.FeatureFlags;
 import android.content.Context;
+import com.android.launcher3.anim.SpringAnimationHandler;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import com.android.launcher3.Launcher;

@@ -26,7 +26,7 @@
 
     iput p3, p0, Lcom/android/launcher3/InvariantDeviceProfile$1;->val$height:F
 
-    .line 276
+    .line 270
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -39,7 +39,7 @@
     .locals 6
 
     .prologue
-    .line 278
+    .line 272
     iget-object v0, p0, Lcom/android/launcher3/InvariantDeviceProfile$1;->this$0:Lcom/android/launcher3/InvariantDeviceProfile;
 
     iget v1, p0, Lcom/android/launcher3/InvariantDeviceProfile$1;->val$width:F
@@ -54,7 +54,7 @@
 
     move-result v0
 
-    .line 279
+    .line 273
     iget-object v1, p0, Lcom/android/launcher3/InvariantDeviceProfile$1;->this$0:Lcom/android/launcher3/InvariantDeviceProfile;
 
     iget v2, p0, Lcom/android/launcher3/InvariantDeviceProfile$1;->val$width:F
@@ -69,7 +69,7 @@
 
     move-result v1
 
-    .line 278
+    .line 272
     invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
 
     move-result v0
@@ -81,7 +81,7 @@
     .locals 1
 
     .prologue
-    .line 277
+    .line 271
     check-cast p1, Lcom/android/launcher3/InvariantDeviceProfile;
 
     check-cast p2, Lcom/android/launcher3/InvariantDeviceProfile;

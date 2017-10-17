@@ -9,9 +9,9 @@ import com.android.launcher3.LauncherAppState;
 import android.content.pm.LauncherApps;
 import android.graphics.drawable.Drawable;
 import com.android.launcher3.IconCache;
-import com.android.launcher3.compat.LauncherAppsCompat;
+import com.android.launcher3.compat.LauncherAppsCompatVO;
 import android.content.ComponentName;
-import com.android.launcher3.compat.PinItemRequestCompat;
+import android.content.pm.LauncherApps$PinItemRequest;
 import android.content.pm.ShortcutInfo;
 import android.content.Context;
 import com.android.launcher3.compat.ShortcutConfigActivityInfo;
@@ -20,9 +20,9 @@ class PinShortcutRequestActivityInfo extends ShortcutConfigActivityInfo
 {
     private final Context mContext;
     private final ShortcutInfo mInfo;
-    private final PinItemRequestCompat mRequest;
+    private final LauncherApps$PinItemRequest mRequest;
     
-    public PinShortcutRequestActivityInfo(final PinItemRequestCompat mRequest, final Context mContext) {
+    public PinShortcutRequestActivityInfo(final LauncherApps$PinItemRequest mRequest, final Context mContext) {
         super(new ComponentName(mRequest.getShortcutInfo().getPackage(), "pinned-shortcut"), mRequest.getShortcutInfo().getUserHandle());
         this.mRequest = mRequest;
         this.mInfo = mRequest.getShortcutInfo();
@@ -30,7 +30,7 @@ class PinShortcutRequestActivityInfo extends ShortcutConfigActivityInfo
     }
     
     public com.android.launcher3.ShortcutInfo createShortcutInfo() {
-        return LauncherAppsCompat.createShortcutInfoFromPinItemRequest(this.mContext, this.mRequest, this.mContext.getResources().getInteger(2131558416) + 500 + this.mContext.getResources().getInteger(2131558409) / 2);
+        return LauncherAppsCompatVO.createShortcutInfoFromPinItemRequest(this.mContext, this.mRequest, this.mContext.getResources().getInteger(2131558416) + 500 + this.mContext.getResources().getInteger(2131558409) / 2);
     }
     
     public Drawable getFullResIcon(final IconCache iconCache) {

@@ -30,7 +30,7 @@
 
     iput-boolean p4, p0, Lcom/android/launcher3/Workspace$1;->val$stripEmptyScreens:Z
 
-    .line 873
+    .line 829
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -43,7 +43,7 @@
     .locals 5
 
     .prologue
-    .line 876
+    .line 832
     iget-object v0, p0, Lcom/android/launcher3/Workspace$1;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-boolean v1, p0, Lcom/android/launcher3/Workspace$1;->val$animate:Z
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0, v1, v2, v4, v3}, Lcom/android/launcher3/Workspace;->removeExtraEmptyScreenDelayed(ZLjava/lang/Runnable;IZ)V
 
-    .line 877
+    .line 833
     return-void
 .end method

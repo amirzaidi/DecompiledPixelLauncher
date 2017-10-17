@@ -5,23 +5,21 @@
 package com.android.launcher3;
 
 import android.view.View;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 final class Workspace$24 implements Workspace$ItemOperator
 {
     final /* synthetic */ Workspace this$0;
-    final /* synthetic */ HashSet val$updates;
+    final /* synthetic */ ArrayList val$changedInfo;
     
-    Workspace$24(final Workspace this$0, final HashSet val$updates) {
+    Workspace$24(final Workspace this$0, final ArrayList val$changedInfo) {
         this.this$0 = this$0;
-        this.val$updates = val$updates;
+        this.val$changedInfo = val$changedInfo;
     }
     
     public boolean evaluate(final ItemInfo itemInfo, final View view) {
-        if (itemInfo instanceof ShortcutInfo && view instanceof BubbleTextView && this.val$updates.contains(itemInfo)) {
-            ((BubbleTextView)view).applyPromiseState(false);
-        }
-        else if (view instanceof PendingAppWidgetHostView && itemInfo instanceof LauncherAppWidgetInfo && this.val$updates.contains(itemInfo)) {
+        if (view instanceof PendingAppWidgetHostView && this.val$changedInfo.contains(itemInfo)) {
+            ((LauncherAppWidgetInfo)itemInfo).installProgress = 100;
             ((PendingAppWidgetHostView)view).applyState();
         }
         return false;

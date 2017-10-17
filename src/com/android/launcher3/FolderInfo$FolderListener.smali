@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract onAdd(Lcom/android/launcher3/ShortcutInfo;)V
+.method public abstract onAdd(Lcom/android/launcher3/ShortcutInfo;I)V
 .end method
 
 .method public abstract onItemsChanged(Z)V

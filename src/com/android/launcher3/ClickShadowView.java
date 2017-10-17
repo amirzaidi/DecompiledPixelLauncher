@@ -22,8 +22,8 @@ public class ClickShadowView extends View
     public ClickShadowView(final Context context) {
         super(context);
         (this.mPaint = new Paint(2)).setColor(-16777216);
-        this.mShadowPadding = this.getResources().getDimension(2131427429);
-        this.mShadowOffset = this.getResources().getDimension(2131427430);
+        this.mShadowPadding = this.getResources().getDimension(2131427439);
+        this.mShadowOffset = this.getResources().getDimension(2131427440);
     }
     
     public void alignWithIconView(final BubbleTextView bubbleTextView, final ViewGroup viewGroup, final View view) {

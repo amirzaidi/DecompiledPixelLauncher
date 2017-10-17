@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
-    .line 2063
+    .line 2058
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -33,7 +33,7 @@
     .prologue
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 2066
+    .line 2061
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -44,7 +44,7 @@
 
     move-result v2
 
-    .line 2067
+    .line 2062
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget v0, v0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->mode:I
@@ -59,7 +59,7 @@
 
     move v0, v1
 
-    .line 2068
+    .line 2063
     :goto_0
     iget-object v3, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
@@ -77,7 +77,7 @@
 
     add-float/2addr v3, v4
 
-    .line 2069
+    .line 2064
     iget-object v4, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget v4, v4, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->finalDeltaY:F
@@ -94,21 +94,21 @@
 
     add-float/2addr v0, v4
 
-    .line 2070
+    .line 2065
     iget-object v4, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget-object v4, v4, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->child:Landroid/view/View;
 
     invoke-virtual {v4, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2071
+    .line 2066
     iget-object v3, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget-object v3, v3, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->child:Landroid/view/View;
 
     invoke-virtual {v3, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2072
+    .line 2067
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget v0, v0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->finalScale:F
@@ -125,26 +125,26 @@
 
     add-float/2addr v0, v1
 
-    .line 2073
+    .line 2068
     iget-object v1, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget-object v1, v1, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->child:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 2074
+    .line 2069
     iget-object v1, p0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation$1;->this$1:Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget-object v1, v1, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->child:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setScaleY(F)V
 
-    .line 2075
+    .line 2070
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 2067
+    .line 2062
     goto :goto_0
 .end method

@@ -4,17 +4,7 @@
 
 
 # direct methods
-.method static synthetic -wrap0(Landroid/content/Context;)Landroid/content/SharedPreferences;
-    .locals 1
-
-    invoke-static {p0}, Lcom/android/launcher3/graphics/IconShapeOverride;->prefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic -wrap1(Landroid/content/Context;)Ljava/lang/String;
+.method static synthetic -wrap0(Landroid/content/Context;)Ljava/lang/String;
     .locals 1
 
     invoke-static {p0}, Lcom/android/launcher3/graphics/IconShapeOverride;->getAppliedValue(Landroid/content/Context;)Ljava/lang/String;
@@ -117,7 +107,7 @@
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 104
-    invoke-static {p0}, Lcom/android/launcher3/graphics/IconShapeOverride;->prefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {p0}, Lcom/android/launcher3/Utilities;->getDevicePrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -141,7 +131,7 @@
 
     .prologue
     .line 119
-    invoke-static {p0}, Lcom/android/launcher3/graphics/IconShapeOverride;->prefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {p0}, Lcom/android/launcher3/Utilities;->getDevicePrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -204,19 +194,19 @@
     .locals 3
 
     .prologue
-    .line 127
+    .line 123
     invoke-virtual {p0}, Landroid/preference/ListPreference;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 128
+    .line 124
     invoke-static {v0}, Lcom/android/launcher3/graphics/IconShapeOverride;->getAppliedValue(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
-    .line 129
+    .line 125
     new-instance v1, Lcom/android/launcher3/graphics/IconShapeOverride$PreferenceChangeHandler;
 
     const/4 v2, 0x0
@@ -225,7 +215,7 @@
 
     invoke-virtual {p0, v1}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
-    .line 130
+    .line 126
     return-void
 .end method
 
@@ -312,20 +302,4 @@
     move v0, v1
 
     goto :goto_0
-.end method
-
-.method private static prefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
-    .locals 2
-
-    .prologue
-    .line 123
-    const-string/jumbo v0, "com.android.launcher3.device.prefs"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    return-object v0
 .end method

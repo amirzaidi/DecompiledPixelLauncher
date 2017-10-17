@@ -5,7 +5,6 @@
 # interfaces
 .implements Lcom/android/launcher3/DragSource;
 .implements Landroid/view/View$OnLongClickListener;
-.implements Lcom/android/launcher3/allapps/AllAppsSearchBarController$Callbacks;
 .implements Lcom/android/launcher3/Insettable;
 
 
@@ -16,25 +15,21 @@
 
 .field private mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-.field private mElevationController:Lcom/android/launcher3/allapps/HeaderElevationController;
-
 .field private final mLauncher:Lcom/android/launcher3/Launcher;
 
-.field private final mLayoutManager:Landroid/support/v7/widget/p;
+.field private final mLayoutManager:Landroid/support/v7/widget/N;
 
 .field private mNumAppsPerRow:I
 
 .field private mNumPredictedAppsPerRow:I
 
-.field private mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
 .field private mSearchContainer:Landroid/view/View;
 
-.field private mSearchContainerMinHeight:I
-
-.field private mSearchInput:Lcom/android/launcher3/ExtendedEditText;
-
 .field private mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
+
+.field private mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
+
+.field private mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
 
 
 # direct methods
@@ -50,12 +45,12 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 81
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 93
+    .line 82
     return-void
 .end method
 
@@ -63,12 +58,12 @@
     .locals 1
 
     .prologue
-    .line 96
+    .line 85
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 97
+    .line 86
     return-void
 .end method
 
@@ -76,29 +71,29 @@
     .locals 4
 
     .prologue
-    .line 100
+    .line 89
     invoke-direct {p0, p1, p2, p3}, Lcom/android/launcher3/BaseContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 86
+    .line 73
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
 
-    .line 102
+    .line 91
     invoke-static {p1}, Lcom/android/launcher3/Launcher;->getLauncher(Landroid/content/Context;)Lcom/android/launcher3/Launcher;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 103
+    .line 92
     new-instance v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
-    .line 104
+    .line 93
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -111,51 +106,46 @@
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
-    .line 105
+    .line 94
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->getSpringAnimationHandler()Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    .line 95
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setAdapter(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)V
 
-    .line 106
+    .line 96
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->getLayoutManager()Landroid/support/v7/widget/M;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLayoutManager:Landroid/support/v7/widget/p;
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLayoutManager:Landroid/support/v7/widget/N;
 
-    .line 107
+    .line 97
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
 
-    .line 109
-    invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f0b0031
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
-
-    .line 108
-    iput v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainerMinHeight:I
-
-    .line 111
+    .line 99
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 112
+    .line 100
     return-void
 .end method
 
@@ -165,148 +155,30 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 138
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->addApps(Ljava/util/List;)V
 
-    .line 151
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
+    .line 139
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->refreshSearchResult()V
+    invoke-interface {v0}, Lcom/android/launcher3/allapps/SearchUiManager;->refreshSearchResult()V
 
-    .line 152
-    return-void
-.end method
-
-.method public clearSearchResult()V
-    .locals 2
-
-    .prologue
-    .line 450
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setOrderedFilter(Ljava/util/ArrayList;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 451
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->onSearchResultsChanged()V
-
-    .line 455
-    :cond_0
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->clear()V
-
-    .line 456
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->clearSpans()V
-
-    .line 457
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
-
-    .line 458
+    .line 140
     return-void
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .locals 3
+    .locals 1
 
     .prologue
-    const/4 v0, 0x0
+    .line 296
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
 
-    .line 350
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
+    invoke-interface {v0, p1}, Lcom/android/launcher3/allapps/SearchUiManager;->preDispatchKeyEvent(Landroid/view/KeyEvent;)V
 
-    invoke-virtual {v1}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->isSearchFieldFocused()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 351
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    .line 352
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getUnicodeChar()I
-
-    move-result v1
-
-    .line 353
-    if-lez v1, :cond_0
-
-    .line 354
-    invoke-static {v1}, Ljava/lang/Character;->isWhitespace(I)Z
-
-    move-result v2
-
-    xor-int/lit8 v2, v2, 0x1
-
-    .line 353
-    if-eqz v2, :cond_0
-
-    .line 354
-    invoke-static {v1}, Ljava/lang/Character;->isSpaceChar(I)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    .line 355
-    :cond_0
-    if-eqz v0, :cond_1
-
-    .line 356
-    invoke-static {}, Landroid/text/method/TextKeyListener;->getInstance()Landroid/text/method/TextKeyListener;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
-
-    .line 357
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v2
-
-    .line 356
-    invoke-virtual {v0, p0, v1, v2, p1}, Landroid/text/method/TextKeyListener;->onKeyDown(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    .line 358
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchQueryBuilder:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    .line 359
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->focusSearchField()V
-
-    .line 364
-    :cond_1
+    .line 297
     invoke-super {p0, p1}, Lcom/android/launcher3/BaseContainerView;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
@@ -315,19 +187,10 @@
 .end method
 
 .method public fillInLogContainerData(Landroid/view/View;Lcom/android/launcher3/ItemInfo;Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;)V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 462
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
-
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getContainerType(Landroid/view/View;)I
-
-    move-result v0
-
-    iput v0, p4, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->containerType:I
-
-    .line 463
+    .line 363
     return-void
 .end method
 
@@ -335,14 +198,14 @@
     .locals 2
 
     .prologue
-    .line 409
+    .line 339
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v0
 
-    .line 410
+    .line 340
     iget v1, v0, Lcom/android/launcher3/DeviceProfile;->allAppsIconSizePx:I
 
     int-to-float v1, v1
@@ -356,11 +219,31 @@
     return v0
 .end method
 
+.method public getSearchUiManager()Lcom/android/launcher3/allapps/SearchUiManager;
+    .locals 1
+
+    .prologue
+    .line 251
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
+
+    return-object v0
+.end method
+
+.method public getSpringAnimationHandler()Lcom/android/launcher3/anim/SpringAnimationHandler;
+    .locals 1
+
+    .prologue
+    .line 404
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    return-object v0
+.end method
+
 .method public getTouchDelegateTargetView()Landroid/view/View;
     .locals 1
 
     .prologue
-    .line 296
+    .line 256
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     return-object v0
@@ -372,7 +255,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 416
+    .line 346
     if-nez p3, :cond_0
 
     xor-int/lit8 v0, p4, 0x1
@@ -387,65 +270,65 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 417
+    .line 347
     instance-of v0, p1, Lcom/android/launcher3/DeleteDropTarget;
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 416
+    .line 346
     if-eqz v0, :cond_1
 
-    .line 417
+    .line 347
     instance-of v0, p1, Lcom/android/launcher3/folder/Folder;
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 416
+    .line 346
     if-eqz v0, :cond_1
 
-    .line 420
+    .line 350
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     const/4 v1, 0x1
 
-    .line 421
+    .line 351
     const/16 v2, 0x1f4
 
     const/4 v3, 0x0
 
-    .line 420
+    .line 350
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->exitSpringLoadedDragModeDelayed(ZILjava/lang/Runnable;)V
 
-    .line 423
+    .line 353
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0, v4}, Lcom/android/launcher3/Launcher;->unlockScreenOrientation(Z)V
 
-    .line 425
+    .line 355
     if-nez p4, :cond_2
 
-    .line 426
+    .line 356
     iput-boolean v4, p2, Lcom/android/launcher3/DropTarget$DragObject;->deferDragViewCleanupPostAnimation:Z
 
-    .line 428
+    .line 358
     :cond_2
     return-void
 .end method
 
 .method protected onFinishInflate()V
-    .locals 6
+    .locals 5
 
     .prologue
-    const/4 v5, 0x1
-
     const/4 v4, 0x0
 
-    .line 246
+    const/4 v3, 0x0
+
+    .line 208
     invoke-super {p0}, Lcom/android/launcher3/BaseContainerView;->onFinishInflate()V
 
-    .line 250
+    .line 212
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getContentView()Landroid/view/View;
 
     move-result-object v0
@@ -456,88 +339,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 259
-    const v0, 0x7f0e0029
-
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
-
-    .line 260
+    .line 222
     const v0, 0x7f0e002b
-
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/launcher3/ExtendedEditText;
-
-    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchInput:Lcom/android/launcher3/ExtendedEditText;
-
-    .line 266
-    new-instance v0, Landroid/text/SpannableString;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "  "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchInput:Lcom/android/launcher3/ExtendedEditText;
-
-    invoke-virtual {v2}, Lcom/android/launcher3/ExtendedEditText;->getHint()Ljava/lang/CharSequence;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
-
-    .line 267
-    new-instance v1, Lcom/android/launcher3/graphics/TintedDrawableSpan;
-
-    invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v3, 0x7f02003d
-
-    invoke-direct {v1, v2, v3}, Lcom/android/launcher3/graphics/TintedDrawableSpan;-><init>(Landroid/content/Context;I)V
-
-    .line 268
-    const/16 v2, 0x22
-
-    .line 267
-    invoke-virtual {v0, v1, v4, v5, v2}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
-
-    .line 269
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchInput:Lcom/android/launcher3/ExtendedEditText;
-
-    invoke-virtual {v1, v0}, Lcom/android/launcher3/ExtendedEditText;->setHint(Ljava/lang/CharSequence;)V
-
-    .line 271
-    new-instance v0, Lcom/android/launcher3/allapps/HeaderElevationController;
-
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
-
-    invoke-direct {v0, v1}, Lcom/android/launcher3/allapps/HeaderElevationController;-><init>(Landroid/view/View;)V
-
-    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mElevationController:Lcom/android/launcher3/allapps/HeaderElevationController;
-
-    .line 274
-    const v0, 0x7f0e0028
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->findViewById(I)Landroid/view/View;
 
@@ -547,66 +350,97 @@
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    .line 275
+    .line 223
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setApps(Lcom/android/launcher3/allapps/AlphabeticalAppsList;)V
 
-    .line 276
+    .line 224
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLayoutManager:Landroid/support/v7/widget/N;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setLayoutManager(Landroid/support/v7/widget/p;)V
 
-    .line 277
+    .line 225
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setAdapter(Landroid/support/v7/widget/q;)V
 
-    .line 278
+    .line 226
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    invoke-virtual {v0, v5}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setHasFixedSize(Z)V
+    const/4 v1, 0x1
 
-    .line 279
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setHasFixedSize(Z)V
+
+    .line 228
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mElevationController:Lcom/android/launcher3/allapps/HeaderElevationController;
+    invoke-virtual {v0, v4}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setItemAnimator(Landroid/support/v7/widget/b;)V
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->addOnScrollListener(Landroid/support/v7/widget/m;)V
+    .line 229
+    sget-boolean v0, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_PHYSICS:Z
 
-    .line 280
+    if-eqz v0, :cond_0
+
+    .line 230
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mElevationController:Lcom/android/launcher3/allapps/HeaderElevationController;
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setElevationController(Lcom/android/launcher3/allapps/HeaderElevationController;)V
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setSpringAnimationHandler(Lcom/android/launcher3/anim/SpringAnimationHandler;)V
 
-    .line 282
+    .line 233
+    :cond_0
+    const v0, 0x7f0e0013
+
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
+
+    .line 234
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
+
+    check-cast v0, Lcom/android/launcher3/allapps/SearchUiManager;
+
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
+
+    .line 235
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
+
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
+
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    invoke-interface {v0, v1, v2}, Lcom/android/launcher3/allapps/SearchUiManager;->initialize(Lcom/android/launcher3/allapps/AlphabeticalAppsList;Lcom/android/launcher3/allapps/AllAppsRecyclerView;)V
+
+    .line 238
     new-instance v0, Lcom/android/launcher3/keyboard/FocusedItemDecorator;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     invoke-direct {v0, v1}, Lcom/android/launcher3/keyboard/FocusedItemDecorator;-><init>(Landroid/view/View;)V
 
-    .line 283
+    .line 239
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->addItemDecoration(Landroid/support/v7/widget/o;)V
 
-    .line 284
+    .line 240
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-virtual {v1, v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->preMeasureViews(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)V
 
-    .line 285
+    .line 241
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     invoke-virtual {v0}, Lcom/android/launcher3/keyboard/FocusedItemDecorator;->getFocusListener()Landroid/view/View$OnFocusChangeListener;
@@ -615,36 +449,34 @@
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->setIconFocusListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 287
+    .line 243
     sget-boolean v0, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 288
+    .line 244
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getRevealView()Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 289
+    .line 245
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getContentView()Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 290
+    .line 246
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getContentView()Landroid/view/View;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, v4}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 292
-    :cond_0
+    .line 248
+    :cond_1
     return-void
 .end method
 
@@ -654,26 +486,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 370
-    invoke-virtual {p1}, Landroid/view/View;->isInTouchMode()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return v2
-
-    .line 373
-    :cond_0
+    .line 303
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->isAppsViewVisible()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 374
+    .line 304
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getWorkspace()Lcom/android/launcher3/Workspace;
@@ -684,27 +506,27 @@
 
     move-result v0
 
-    .line 373
-    if-eqz v0, :cond_2
+    .line 303
+    if-eqz v0, :cond_1
 
-    .line 374
-    :cond_1
+    .line 304
+    :cond_0
     return v2
 
-    .line 376
-    :cond_2
+    .line 306
+    :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->isDraggingEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_2
 
     return v2
 
-    .line 377
-    :cond_3
+    .line 307
+    :cond_2
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDragController()Lcom/android/launcher3/dragndrop/DragController;
@@ -715,26 +537,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
     return v2
 
-    .line 380
-    :cond_4
+    .line 310
+    :cond_3
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDragController()Lcom/android/launcher3/dragndrop/DragController;
 
     move-result-object v0
 
-    .line 381
+    .line 311
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsContainerView$2;
 
     invoke-direct {v1, p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView$2;-><init>(Lcom/android/launcher3/allapps/AllAppsContainerView;Landroid/view/View;Lcom/android/launcher3/dragndrop/DragController;)V
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/dragndrop/DragController;->addDragListener(Lcom/android/launcher3/dragndrop/DragController$DragListener;)V
 
-    .line 393
+    .line 323
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getWorkspace()Lcom/android/launcher3/Workspace;
@@ -747,30 +569,30 @@
 
     invoke-virtual {v0, p1, p0, v1}, Lcom/android/launcher3/Workspace;->beginDragShared(Landroid/view/View;Lcom/android/launcher3/DragSource;Lcom/android/launcher3/dragndrop/DragOptions;)V
 
-    .line 394
+    .line 324
     return v2
 .end method
 
 .method protected onMeasure(II)V
-    .locals 4
+    .locals 3
 
     .prologue
-    .line 304
+    .line 261
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v0
 
-    .line 305
+    .line 263
     invoke-virtual {v0}, Lcom/android/launcher3/DeviceProfile;->updateAppsViewNumCols()V
 
-    .line 306
+    .line 265
     sget-boolean v1, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
-    .line 307
+    .line 266
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
 
     iget-object v2, v0, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
@@ -779,7 +601,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 308
+    .line 267
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
 
     iget-object v2, v0, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
@@ -788,7 +610,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 309
+    .line 268
     :cond_0
     iget-object v1, v0, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
 
@@ -796,130 +618,28 @@
 
     iput v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
 
-    .line 310
+    .line 269
     iget-object v1, v0, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
 
     iget v1, v1, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
     iput v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
 
-    .line 312
+    .line 271
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
 
     invoke-virtual {v1, v0, v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setNumAppsPerRow(Lcom/android/launcher3/DeviceProfile;I)V
 
-    .line 313
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
-
-    iget v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
-
-    invoke-virtual {v1, v2}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->setNumAppsPerRow(I)V
-
-    .line 314
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
-
-    iget v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
-
-    iget v3, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
-
-    invoke-virtual {v1, v2, v3}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setNumAppsPerRow(II)V
-
-    .line 316
-    :cond_1
-    invoke-virtual {v0}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    .line 318
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    .line 320
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v1}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/launcher3/dragndrop/DragLayer;->getInsets()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/graphics/Rect;->top:I
-
-    .line 321
-    iget v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainerMinHeight:I
-
-    .line 320
-    add-int/2addr v1, v2
-
-    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
-
-    .line 322
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 324
-    :cond_2
-    invoke-super {p0, p1, p2}, Lcom/android/launcher3/BaseContainerView;->onMeasure(II)V
-
-    .line 325
-    return-void
-
-    .line 331
-    :cond_3
-    invoke-virtual {v0}, Lcom/android/launcher3/DeviceProfile;->updateAppsViewNumCols()V
-
-    .line 332
-    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
-
-    iget v2, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumCols:I
-
-    if-ne v1, v2, :cond_4
-
-    .line 333
-    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
-
-    iget v2, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumPredictiveCols:I
-
-    if-eq v1, v2, :cond_5
-
-    .line 334
-    :cond_4
-    iget v1, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumCols:I
-
-    iput v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
-
-    .line 335
-    iget v1, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumPredictiveCols:I
-
-    iput v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
-
-    .line 337
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
-
-    iget v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
-
-    invoke-virtual {v1, v0, v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setNumAppsPerRow(Lcom/android/launcher3/DeviceProfile;I)V
-
-    .line 338
+    .line 272
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->setNumAppsPerRow(I)V
 
-    .line 339
+    .line 273
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
@@ -928,38 +648,67 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setNumAppsPerRow(II)V
 
-    .line 343
-    :cond_5
+    .line 275
+    :cond_1
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/BaseContainerView;->onMeasure(II)V
 
-    .line 344
+    .line 276
     return-void
-.end method
 
-.method public onSearchResult(Ljava/lang/String;Ljava/util/ArrayList;)V
-    .locals 1
+    .line 280
+    :cond_2
+    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
 
-    .prologue
-    .line 432
-    if-eqz p2, :cond_0
+    iget v2, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumCols:I
 
-    .line 433
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
+    if-ne v1, v2, :cond_3
 
-    invoke-virtual {v0, p2}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setOrderedFilter(Ljava/util/ArrayList;)Z
+    .line 281
+    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
 
-    .line 434
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+    iget v2, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumPredictiveCols:I
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->onSearchResultsChanged()V
+    if-eq v1, v2, :cond_4
 
-    .line 435
+    .line 282
+    :cond_3
+    iget v1, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumCols:I
+
+    iput v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
+
+    .line 283
+    iget v1, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumPredictiveCols:I
+
+    iput v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
+
+    .line 285
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    iget v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
+
+    invoke-virtual {v1, v0, v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setNumAppsPerRow(Lcom/android/launcher3/DeviceProfile;I)V
+
+    .line 286
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
 
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->setLastSearchQuery(Ljava/lang/String;)V
+    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
 
-    .line 437
-    :cond_0
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->setNumAppsPerRow(I)V
+
+    .line 287
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
+
+    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumAppsPerRow:I
+
+    iget v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mNumPredictedAppsPerRow:I
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setNumAppsPerRow(II)V
+
+    .line 291
+    :cond_4
+    invoke-super {p0, p1, p2}, Lcom/android/launcher3/BaseContainerView;->onMeasure(II)V
+
+    .line 292
     return-void
 .end method
 
@@ -967,17 +716,17 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 165
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->removeApps(Ljava/util/List;)V
 
+    .line 166
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
+
+    invoke-interface {v0}, Lcom/android/launcher3/allapps/SearchUiManager;->refreshSearchResult()V
+
     .line 167
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->refreshSearchResult()V
-
-    .line 168
     return-void
 .end method
 
@@ -985,33 +734,17 @@
     .locals 1
 
     .prologue
-    .line 239
-    invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->scrollToTop()V
-
-    .line 240
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->reset()V
-
-    .line 241
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->reset()V
-
-    .line 242
-    return-void
-.end method
-
-.method public scrollToTop()V
-    .locals 1
-
-    .prologue
-    .line 194
+    .line 202
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->scrollToTop()V
 
-    .line 195
+    .line 203
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
+
+    invoke-interface {v0}, Lcom/android/launcher3/allapps/SearchUiManager;->reset()V
+
+    .line 204
     return-void
 .end method
 
@@ -1019,63 +752,91 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 131
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setApps(Ljava/util/List;)V
 
-    .line 144
+    .line 132
     return-void
 .end method
 
 .method public setInsets(Landroid/graphics/Rect;)V
-    .locals 3
+    .locals 6
 
     .prologue
-    .line 471
+    .line 367
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v0
 
-    .line 472
+    .line 368
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    .line 369
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getPaddingLeft()I
+
+    move-result v2
+
+    iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    invoke-virtual {v3}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getPaddingTop()I
+
+    move-result v3
+
+    .line 370
+    iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    invoke-virtual {v4}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getPaddingRight()I
+
+    move-result v4
+
+    iget v5, p1, Landroid/graphics/Rect;->bottom:I
+
+    .line 368
+    invoke-virtual {v1, v2, v3, v4, v5}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->setPadding(IIII)V
+
+    .line 372
     invoke-virtual {v0}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 473
+    .line 373
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 474
+    .line 374
     iget v1, p1, Landroid/graphics/Rect;->left:I
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 475
+    .line 375
     iget v1, p1, Landroid/graphics/Rect;->top:I
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 476
+    .line 376
     iget v1, p1, Landroid/graphics/Rect;->right:I
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 477
+    .line 377
     invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 485
+    .line 386
     :goto_0
     return-void
 
-    .line 479
+    .line 379
     :cond_0
     const v0, 0x7f0e002c
 
@@ -1083,22 +844,23 @@
 
     move-result-object v0
 
-    .line 480
+    .line 380
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    .line 481
+    .line 381
     iget v2, p1, Landroid/graphics/Rect;->bottom:I
 
     iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 482
+    .line 382
     invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 483
-    const/4 v1, 0x0
+    .line 384
+    const/4 v1, 0x4
 
+    .line 383
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
@@ -1108,56 +870,12 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 124
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->setPredictedApps(Ljava/util/List;)V
 
-    .line 137
-    return-void
-.end method
-
-.method public setSearchBarController(Lcom/android/launcher3/allapps/AllAppsSearchBarController;)V
-    .locals 4
-
-    .prologue
-    .line 182
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    if-eqz v0, :cond_0
-
-    .line 183
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string/jumbo v1, "Expected search bar controller to only be set once"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 185
-    :cond_0
-    iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    .line 186
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
-
-    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchInput:Lcom/android/launcher3/ExtendedEditText;
-
-    iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0, v1, v2, v3, p0}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->initialize(Lcom/android/launcher3/allapps/AlphabeticalAppsList;Lcom/android/launcher3/ExtendedEditText;Lcom/android/launcher3/Launcher;Lcom/android/launcher3/allapps/AllAppsSearchBarController$Callbacks;)V
-
-    .line 187
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAdapter:Lcom/android/launcher3/allapps/AllAppsGridAdapter;
-
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->setSearchController(Lcom/android/launcher3/allapps/AllAppsSearchBarController;)V
-
-    .line 188
+    .line 125
     return-void
 .end method
 
@@ -1169,12 +887,31 @@
 
     const/4 v3, 0x0
 
-    .line 201
+    .line 175
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
+
+    invoke-virtual {v0, v1, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 176
+    return v4
+
+    .line 179
+    :cond_0
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    .line 202
+    .line 180
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -1183,7 +920,7 @@
 
     aput v1, v0, v3
 
-    .line 203
+    .line 181
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
@@ -1192,34 +929,26 @@
 
     aput v1, v0, v4
 
-    .line 204
+    .line 183
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    invoke-static {v1, p0, v0}, Lcom/android/launcher3/Utilities;->mapCoordInSelfToDescendant(Landroid/view/View;Landroid/view/View;[I)V
-
-    .line 208
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v1}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
+    invoke-virtual {v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getScrollBar()Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchContainer:Landroid/view/View;
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v1, v2, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
 
-    move-result v1
+    move-result-object v2
 
-    if-eqz v1, :cond_0
+    .line 182
+    invoke-static {v1, v2, v0}, Lcom/android/launcher3/Utilities;->mapCoordInSelfToDescendant(Landroid/view/View;Landroid/view/View;[I)V
 
-    .line 209
-    return v4
-
-    .line 213
-    :cond_0
+    .line 185
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    invoke-virtual {v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getScrollBar()Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;
+    invoke-virtual {v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getScrollBar()Lcom/android/launcher3/views/RecyclerViewFastScroller;
 
     move-result-object v1
 
@@ -1227,16 +956,16 @@
 
     aget v0, v0, v4
 
-    invoke-virtual {v1, v2, v0}, Lcom/android/launcher3/BaseRecyclerViewFastScrollBar;->isNearThumb(II)Z
+    invoke-virtual {v1, v2, v0}, Lcom/android/launcher3/views/RecyclerViewFastScroller;->shouldBlockIntercept(II)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 214
+    .line 186
     return v3
 
-    .line 219
+    .line 191
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
@@ -1246,58 +975,19 @@
 
     if-nez v0, :cond_2
 
-    .line 220
+    .line 192
     return v4
 
-    .line 222
+    .line 194
     :cond_2
     return v3
-.end method
-
-.method public shouldRestoreImeState()Z
-    .locals 1
-
-    .prologue
-    .line 466
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchInput:Lcom/android/launcher3/ExtendedEditText;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/ExtendedEditText;->getText()Landroid/text/Editable;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    return v0
-.end method
-
-.method public startAppsSearch()V
-    .locals 1
-
-    .prologue
-    .line 229
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    if-eqz v0, :cond_0
-
-    .line 230
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->focusSearchField()V
-
-    .line 232
-    :cond_0
-    return-void
 .end method
 
 .method public supportsAppInfoDropTarget()Z
     .locals 1
 
     .prologue
-    .line 399
+    .line 329
     const/4 v0, 0x1
 
     return v0
@@ -1307,7 +997,7 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 334
     const/4 v0, 0x0
 
     return v0
@@ -1317,17 +1007,17 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 146
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->updateApps(Ljava/util/List;)V
 
-    .line 159
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchBarController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
+    .line 147
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mSearchUiManager:Lcom/android/launcher3/allapps/SearchUiManager;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->refreshSearchResult()V
+    invoke-interface {v0}, Lcom/android/launcher3/allapps/SearchUiManager;->refreshSearchResult()V
 
-    .line 160
+    .line 148
     return-void
 .end method
 
@@ -1335,12 +1025,12 @@
     .locals 7
 
     .prologue
-    .line 117
+    .line 105
     sget-boolean v0, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
 
     if-eqz v0, :cond_1
 
-    .line 118
+    .line 106
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
@@ -1353,7 +1043,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 119
+    .line 107
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getRevealView()Landroid/view/View;
 
     move-result-object v6
@@ -1374,12 +1064,12 @@
 
     invoke-virtual {v6, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 121
+    .line 109
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getContentView()Landroid/view/View;
 
     move-result-object v6
 
-    .line 122
+    .line 110
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
@@ -1398,14 +1088,14 @@
 
     invoke-direct/range {v0 .. v5}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;IIII)V
 
-    .line 121
+    .line 109
     invoke-virtual {v6, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 130
+    .line 118
     :goto_0
     return-void
 
-    .line 125
+    .line 113
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getRevealView()Landroid/view/View;
 
@@ -1417,7 +1107,7 @@
 
     goto :goto_0
 
-    .line 128
+    .line 116
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Lcom/android/launcher3/BaseContainerView;->updateBackground(IIII)V
 
@@ -1430,19 +1120,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 488
+    .line 389
     new-instance v3, Lcom/android/launcher3/util/PackageUserKey;
 
     invoke-direct {v3, v0, v0}, Lcom/android/launcher3/util/PackageUserKey;-><init>(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 489
+    .line 390
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getChildCount()I
 
     move-result v4
 
-    .line 490
+    .line 391
     const/4 v0, 0x0
 
     move v2, v0
@@ -1450,14 +1140,14 @@
     :goto_0
     if-ge v2, v4, :cond_2
 
-    .line 491
+    .line 392
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 492
+    .line 393
     instance-of v0, v1, Lcom/android/launcher3/BubbleTextView;
 
     if-eqz v0, :cond_0
@@ -1472,7 +1162,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 490
+    .line 391
     :cond_0
     :goto_1
     add-int/lit8 v0, v2, 0x1
@@ -1481,7 +1171,7 @@
 
     goto :goto_0
 
-    .line 495
+    .line 396
     :cond_1
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -1489,7 +1179,7 @@
 
     check-cast v0, Lcom/android/launcher3/ItemInfo;
 
-    .line 496
+    .line 397
     invoke-virtual {v3, v0}, Lcom/android/launcher3/util/PackageUserKey;->updateFromItemInfo(Lcom/android/launcher3/ItemInfo;)Z
 
     move-result v5
@@ -1502,7 +1192,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 497
+    .line 398
     check-cast v1, Lcom/android/launcher3/BubbleTextView;
 
     const/4 v5, 0x1
@@ -1511,7 +1201,65 @@
 
     goto :goto_1
 
-    .line 500
+    .line 401
     :cond_2
+    return-void
+.end method
+
+.method public updatePromiseAppProgress(Lcom/android/launcher3/PromiseAppInfo;)V
+    .locals 4
+
+    .prologue
+    .line 151
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getChildCount()I
+
+    move-result v2
+
+    .line 152
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, v2, :cond_1
+
+    .line 153
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsContainerView;->mAppsRecyclerView:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 154
+    instance-of v3, v0, Lcom/android/launcher3/BubbleTextView;
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v3
+
+    if-ne v3, p1, :cond_0
+
+    .line 155
+    check-cast v0, Lcom/android/launcher3/BubbleTextView;
+
+    .line 156
+    iget v3, p1, Lcom/android/launcher3/PromiseAppInfo;->level:I
+
+    invoke-virtual {v0, v3}, Lcom/android/launcher3/BubbleTextView;->applyProgressLevel(I)Lcom/android/launcher3/graphics/PreloadIconDrawable;
+
+    .line 152
+    :cond_0
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_0
+
+    .line 159
+    :cond_1
     return-void
 .end method

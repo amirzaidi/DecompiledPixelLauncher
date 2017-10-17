@@ -45,11 +45,11 @@ public class HolographicOutlineHelper
         this.mErasePaint = new Paint(n);
         this.mBitmapCache = new SparseArray(4);
         final Resources resources = context.getResources();
-        final float dimension = resources.getDimension(2131427428);
+        final float dimension = resources.getDimension(2131427438);
         this.mMediumOuterBlurMaskFilter = new BlurMaskFilter(dimension, BlurMaskFilter$Blur.OUTER);
         this.mMediumInnerBlurMaskFilter = new BlurMaskFilter(dimension, BlurMaskFilter$Blur.NORMAL);
-        this.mThinOuterBlurMaskFilter = new BlurMaskFilter(resources.getDimension(2131427427), BlurMaskFilter$Blur.OUTER);
-        this.mShadowBitmapShift = resources.getDimension(2131427429);
+        this.mThinOuterBlurMaskFilter = new BlurMaskFilter(resources.getDimension(2131427437), BlurMaskFilter$Blur.OUTER);
+        this.mShadowBitmapShift = resources.getDimension(2131427439);
         this.mShadowBlurMaskFilter = new BlurMaskFilter(this.mShadowBitmapShift, BlurMaskFilter$Blur.NORMAL);
         this.mErasePaint.setXfermode((Xfermode)new PorterDuffXfermode(PorterDuff$Mode.DST_OUT));
     }

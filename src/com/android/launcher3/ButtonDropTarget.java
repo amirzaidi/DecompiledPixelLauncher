@@ -58,11 +58,11 @@ public abstract class ButtonDropTarget extends TextView implements DropTarget, D
         this.mHoverColor = 0;
         this.mLauncher = Launcher.getLauncher(context);
         final Resources resources = this.getResources();
-        this.mBottomDragPadding = resources.getDimensionPixelSize(2131427410);
+        this.mBottomDragPadding = resources.getDimensionPixelSize(2131427419);
         final TypedArray obtainStyledAttributes = context.obtainStyledAttributes(set, R$styleable.ButtonDropTarget, n, 0);
         this.mHideParentOnDisable = obtainStyledAttributes.getBoolean(0, false);
         obtainStyledAttributes.recycle();
-        this.mDragDistanceThreshold = resources.getDimensionPixelSize(2131427412);
+        this.mDragDistanceThreshold = resources.getDimensionPixelSize(2131427422);
     }
     
     private void animateTextColor(final int n) {
@@ -214,7 +214,7 @@ public abstract class ButtonDropTarget extends TextView implements DropTarget, D
     public void onDrop(final DropTarget$DragObject dropTarget$DragObject) {
         final DragLayer dragLayer = this.mLauncher.getDragLayer();
         final Rect rect = new Rect();
-        dragLayer.getViewRectRelativeToSelf(dropTarget$DragObject.dragView, rect);
+        dragLayer.getViewRectRelativeToSelf((View)dropTarget$DragObject.dragView, rect);
         final Rect iconRect = this.getIconRect(dropTarget$DragObject);
         final float n = iconRect.width() / rect.width();
         this.mDropTargetBar.deferOnDragEnd();
@@ -234,7 +234,8 @@ public abstract class ButtonDropTarget extends TextView implements DropTarget, D
     }
     
     protected void setDrawable(final int n) {
-        this.setCompoundDrawablesRelativeWithIntrinsicBounds(this.mDrawable = this.getResources().getDrawable(n), (Drawable)null, (Drawable)null, (Drawable)null);
+        this.setCompoundDrawablesRelativeWithIntrinsicBounds(n, 0, 0, 0);
+        this.mDrawable = this.getCompoundDrawablesRelative()[0];
     }
     
     public void setDropTargetBar(final DropTargetBar mDropTargetBar) {

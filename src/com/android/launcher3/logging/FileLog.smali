@@ -28,21 +28,21 @@
 
     const/4 v0, 0x3
 
-    .line 35
+    .line 34
     invoke-static {v0, v0}, Ljava/text/DateFormat;->getDateTimeInstance(II)Ljava/text/DateFormat;
 
     move-result-object v0
 
-    .line 34
+    .line 33
     sput-object v0, Lcom/android/launcher3/logging/FileLog;->DATE_FORMAT:Ljava/text/DateFormat;
 
-    .line 39
+    .line 38
     sput-object v1, Lcom/android/launcher3/logging/FileLog;->sHandler:Landroid/os/Handler;
 
-    .line 40
+    .line 39
     sput-object v1, Lcom/android/launcher3/logging/FileLog;->sLogsDirectory:Ljava/io/File;
 
-    .line 31
+    .line 30
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,13 +60,13 @@
     .locals 0
 
     .prologue
-    .line 61
+    .line 60
     invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
+    .line 61
     invoke-static {p0, p1}, Lcom/android/launcher3/logging/FileLog;->print(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 63
+    .line 62
     return-void
 .end method
 
@@ -74,13 +74,13 @@
     .locals 0
 
     .prologue
-    .line 56
+    .line 55
     invoke-static {p0, p1, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 57
+    .line 56
     invoke-static {p0, p1, p2}, Lcom/android/launcher3/logging/FileLog;->print(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
 
-    .line 58
+    .line 57
     return-void
 .end method
 
@@ -88,13 +88,13 @@
     .locals 0
 
     .prologue
-    .line 71
+    .line 70
     invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 72
+    .line 71
     invoke-static {p0, p1}, Lcom/android/launcher3/logging/FileLog;->print(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 73
+    .line 72
     return-void
 .end method
 
@@ -102,13 +102,13 @@
     .locals 0
 
     .prologue
-    .line 66
+    .line 65
     invoke-static {p0, p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 67
+    .line 66
     invoke-static {p0, p1, p2}, Lcom/android/launcher3/logging/FileLog;->print(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
 
-    .line 68
+    .line 67
     return-void
 .end method
 
@@ -116,7 +116,7 @@
     .locals 0
 
     .prologue
-    .line 107
+    .line 106
     return-void
 .end method
 
@@ -124,28 +124,28 @@
     .locals 5
 
     .prologue
-    .line 91
+    .line 90
     sget-object v1, Lcom/android/launcher3/logging/FileLog;->DATE_FORMAT:Ljava/text/DateFormat;
 
     monitor-enter v1
 
-    .line 92
+    .line 91
     :try_start_0
     sget-object v0, Lcom/android/launcher3/logging/FileLog;->sHandler:Landroid/os/Handler;
 
     if-nez v0, :cond_0
 
-    .line 93
+    .line 92
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string/jumbo v2, "file-logger"
 
     invoke-direct {v0, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 94
+    .line 93
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
-    .line 95
+    .line 94
     new-instance v2, Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
@@ -167,12 +167,12 @@
     :cond_0
     monitor-exit v1
 
-    .line 98
+    .line 97
     sget-object v0, Lcom/android/launcher3/logging/FileLog;->sHandler:Landroid/os/Handler;
 
     return-object v0
 
-    .line 91
+    .line 90
     :catchall_0
     move-exception v0
 
@@ -185,12 +185,12 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 75
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Lcom/android/launcher3/logging/FileLog;->print(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
 
-    .line 77
+    .line 76
     return-void
 .end method
 
@@ -198,7 +198,7 @@
     .locals 0
 
     .prologue
-    .line 81
+    .line 80
     return-void
 .end method
 
@@ -206,17 +206,17 @@
     .locals 2
 
     .prologue
-    .line 43
+    .line 42
     sget-boolean v0, Lcom/android/launcher3/Utilities;->IS_DEBUG_DEVICE:Z
 
     if-eqz v0, :cond_1
 
-    .line 44
+    .line 43
     sget-object v1, Lcom/android/launcher3/logging/FileLog;->DATE_FORMAT:Ljava/text/DateFormat;
 
     monitor-enter v1
 
-    .line 46
+    .line 45
     :try_start_0
     sget-object v0, Lcom/android/launcher3/logging/FileLog;->sHandler:Landroid/os/Handler;
 
@@ -232,7 +232,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 47
+    .line 46
     sget-object v0, Lcom/android/launcher3/logging/FileLog;->sHandler:Landroid/os/Handler;
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
@@ -247,7 +247,7 @@
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->quit()Z
 
-    .line 48
+    .line 47
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/launcher3/logging/FileLog;->sHandler:Landroid/os/Handler;
@@ -257,14 +257,14 @@
     :cond_0
     monitor-exit v1
 
-    .line 52
+    .line 51
     :cond_1
     sput-object p0, Lcom/android/launcher3/logging/FileLog;->sLogsDirectory:Ljava/io/File;
 
-    .line 53
+    .line 52
     return-void
 
-    .line 44
+    .line 43
     :catchall_0
     move-exception v0
 

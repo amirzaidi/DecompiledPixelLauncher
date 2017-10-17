@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/notification/NotificationListener$2;->this$0:Lcom/android/launcher3/notification/NotificationListener;
 
-    .line 83
+    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,19 +31,19 @@
     .locals 4
 
     .prologue
-    .line 86
+    .line 100
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 108
+    .line 122
     :cond_0
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 88
+    .line 102
     :pswitch_0
     invoke-static {}, Lcom/android/launcher3/notification/NotificationListener;->-get2()Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
@@ -51,29 +51,29 @@
 
     if-eqz v0, :cond_0
 
-    .line 89
+    .line 103
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/launcher3/notification/NotificationListener$NotificationPostedMsg;
 
-    .line 90
+    .line 104
     invoke-static {}, Lcom/android/launcher3/notification/NotificationListener;->-get2()Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
     move-result-object v1
 
     iget-object v2, v0, Lcom/android/launcher3/notification/NotificationListener$NotificationPostedMsg;->packageUserKey:Lcom/android/launcher3/util/PackageUserKey;
 
-    .line 91
+    .line 105
     iget-object v3, v0, Lcom/android/launcher3/notification/NotificationListener$NotificationPostedMsg;->notificationKey:Lcom/android/launcher3/notification/NotificationKeyData;
 
     iget-boolean v0, v0, Lcom/android/launcher3/notification/NotificationListener$NotificationPostedMsg;->shouldBeFilteredOut:Z
 
-    .line 90
+    .line 104
     invoke-interface {v1, v2, v3, v0}, Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;->onNotificationPosted(Lcom/android/launcher3/util/PackageUserKey;Lcom/android/launcher3/notification/NotificationKeyData;Z)V
 
     goto :goto_0
 
-    .line 95
+    .line 109
     :pswitch_1
     invoke-static {}, Lcom/android/launcher3/notification/NotificationListener;->-get2()Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
@@ -81,21 +81,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 97
+    .line 111
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v0, Landroid/support/v4/a/b;
+    check-cast v0, Landroid/util/Pair;
 
-    .line 98
+    .line 112
     invoke-static {}, Lcom/android/launcher3/notification/NotificationListener;->-get2()Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
     move-result-object v2
 
-    iget-object v1, v0, Landroid/support/v4/a/b;->UU:Ljava/lang/Object;
+    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Lcom/android/launcher3/util/PackageUserKey;
 
-    iget-object v0, v0, Landroid/support/v4/a/b;->UV:Ljava/lang/Object;
+    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v0, Lcom/android/launcher3/notification/NotificationKeyData;
 
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 102
+    .line 116
     :pswitch_2
     invoke-static {}, Lcom/android/launcher3/notification/NotificationListener;->-get2()Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
@@ -111,22 +111,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 103
+    .line 117
     invoke-static {}, Lcom/android/launcher3/notification/NotificationListener;->-get2()Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
     move-result-object v1
 
-    .line 104
+    .line 118
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Ljava/util/List;
 
-    .line 103
+    .line 117
     invoke-interface {v1, v0}, Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;->onNotificationFullRefresh(Ljava/util/List;)V
 
     goto :goto_0
 
-    .line 86
+    .line 100
     nop
 
     :pswitch_data_0

@@ -49,7 +49,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c0068
+    const v1, 0x7f0c0071
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/Launcher;->getString(I)Ljava/lang/String;
 
@@ -161,7 +161,7 @@
     iput v0, p0, Lcom/android/launcher3/DeleteDropTarget;->mHoverColor:I
 
     .line 43
-    const v0, 0x7f020042
+    const v0, 0x7f020043
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/DeleteDropTarget;->setDrawable(I)V
 
@@ -191,7 +191,7 @@
 
     if-eqz v0, :cond_1
 
-    const v0, 0x7f0c0035
+    const v0, 0x7f0c0037
 
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/launcher3/DeleteDropTarget;->setText(I)V

@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$16;->this$0:Lcom/android/launcher3/Launcher;
 
-    .line 2042
+    .line 1769
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -28,22 +28,26 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 2046
+    .line 1772
     iget-object v0, p0, Lcom/android/launcher3/Launcher$16;->this$0:Lcom/android/launcher3/Launcher;
+
+    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    if-eqz v0, :cond_0
+
+    .line 1773
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$16;->this$0:Lcom/android/launcher3/Launcher;
+
+    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     const/4 v1, 0x1
 
-    const/16 v2, 0x1f4
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->moveToDefaultScreen(Z)V
 
-    .line 2047
-    const/4 v3, 0x0
-
-    .line 2046
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->exitSpringLoadedDragModeDelayed(ZILjava/lang/Runnable;)V
-
-    .line 2048
+    .line 1775
+    :cond_0
     return-void
 .end method

@@ -31,66 +31,74 @@ public class InfoDropTarget extends UninstallDropTarget
     }
     
     public static boolean startDetailsActivityForInfo(final ItemInfo itemInfo, final Launcher launcher, final UninstallDropTarget$DropTargetResultCallback uninstallDropTarget$DropTargetResultCallback, final Rect rect, final Bundle bundle) {
+        final boolean b = true;
+        if (itemInfo instanceof PromiseAppInfo) {
+            launcher.startActivity(((PromiseAppInfo)itemInfo).getMarketIntent());
+            return b;
+        }
         while (true) {
             ComponentName componentName;
             LauncherAppsCompat instance;
-            boolean b;
+            boolean b2;
             final Object o;
             Throwable t;
-            Label_0234:Block_7_Outer:
+            Label_0264:Block_10_Outer:Block_8_Outer:
             while (true) {
-                Label_0098: {
+                Label_0128: {
                     if (!(itemInfo instanceof AppInfo)) {
-                        break Label_0098;
+                        break Label_0128;
                     }
                     componentName = ((AppInfo)itemInfo).componentName;
                     if (componentName == null) {
-                        break Label_0234;
+                        break Label_0264;
                     }
                     try {
                         instance = LauncherAppsCompat.getInstance((Context)launcher);
                         try {
                             instance.showAppDetailsForProfile(componentName, itemInfo.user, rect, bundle);
-                            b = true;
+                            b2 = b;
                             if (uninstallDropTarget$DropTargetResultCallback != null) {
-                                UninstallDropTarget.sendUninstallResult(launcher, b, componentName, itemInfo.user, uninstallDropTarget$DropTargetResultCallback);
+                                UninstallDropTarget.sendUninstallResult(launcher, b2, componentName, itemInfo.user, uninstallDropTarget$DropTargetResultCallback);
                             }
-                            return b;
-                        Label_0161:
+                            return b2;
+                            // iftrue(Label_0273:, !itemInfo instanceof LauncherAppWidgetInfo)
                             while (true) {
-                                Block_9: {
-                                    break Block_9;
-                                    componentName = ((ShortcutInfo)itemInfo).intent.getComponent();
-                                    continue Block_7_Outer;
-                                    componentName = ((PendingAddItemInfo)itemInfo).componentName;
-                                    continue Block_7_Outer;
-                                }
                                 componentName = ((LauncherAppWidgetInfo)itemInfo).providerName;
-                                continue Block_7_Outer;
+                                continue Block_10_Outer;
+                                Label_0191: {
+                                    continue Block_8_Outer;
+                                }
+                            }
+                            // iftrue(Label_0191:, !itemInfo instanceof PendingAddItemInfo)
+                            // iftrue(Label_0161:, !itemInfo instanceof ShortcutInfo)
+                        Block_9:
+                            while (true) {
+                                componentName = ((ShortcutInfo)itemInfo).intent.getComponent();
+                                continue Block_10_Outer;
+                                Label_0161: {
+                                    break Block_9;
+                                }
                                 continue;
                             }
-                            // iftrue(Label_0243:, !itemInfo instanceof LauncherAppWidgetInfo)
-                            // iftrue(Label_0131:, !itemInfo instanceof ShortcutInfo)
-                            Label_0131:;
+                            componentName = ((PendingAddItemInfo)itemInfo).componentName;
                         }
-                        // iftrue(Label_0161:, !itemInfo instanceof PendingAddItemInfo)
                         catch (SecurityException | ActivityNotFoundException ex) {
                             t = (Throwable)o;
-                            Toast.makeText((Context)launcher, 2131492895, 0).show();
+                            Toast.makeText((Context)launcher, 2131492897, 0).show();
                             Log.e("InfoDropTarget", "Unable to launch settings", t);
-                            b = false;
+                            b2 = false;
                         }
                     }
                     catch (SecurityException ex2) {}
                     catch (ActivityNotFoundException ex3) {}
                 }
-                break Label_0234;
-                Label_0243: {
+                break Label_0264;
+                Label_0273: {
                     componentName = null;
                 }
                 continue;
             }
-            b = false;
+            b2 = false;
             continue;
         }
     }
@@ -123,8 +131,7 @@ public class InfoDropTarget extends UninstallDropTarget
         startDetailsActivityForInfo(dropTarget$DragObject.dragInfo, this.mLauncher, uninstallDropTarget$DropTargetResultCallback);
     }
     
-    protected void onFinishInflate() {
-        super.onFinishInflate();
+    protected void setupUi() {
         this.mHoverColor = Themes.getColorAccent(this.getContext());
         this.setDrawable(2130837566);
     }

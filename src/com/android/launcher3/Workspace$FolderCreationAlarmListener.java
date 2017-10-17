@@ -14,7 +14,6 @@ import com.android.launcher3.util.ItemInfoMatcher;
 import java.util.HashSet;
 import android.os.UserHandle;
 import android.os.Bundle;
-import android.animation.LayoutTransition$TransitionListener;
 import android.appwidget.AppWidgetProviderInfo;
 import android.os.IBinder;
 import android.view.View$OnClickListener;
@@ -42,8 +41,6 @@ import android.view.ViewGroup;
 import com.android.launcher3.widget.PendingAddShortcutInfo;
 import com.android.launcher3.accessibility.WorkspaceAccessibilityHelper;
 import com.android.launcher3.widget.PendingAddWidgetInfo;
-import android.graphics.drawable.Drawable;
-import android.widget.TextView;
 import com.android.launcher3.dragndrop.DragView;
 import android.animation.Animator$AnimatorListener;
 import android.animation.ObjectAnimator;
@@ -62,7 +59,6 @@ import android.app.WallpaperManager;
 import com.android.launcher3.dragndrop.SpringLoadedDragController;
 import android.util.SparseArray;
 import java.util.ArrayList;
-import com.android.launcher3.util.MultiStateAlphaController;
 import android.view.View$AccessibilityDelegate;
 import com.android.launcher3.graphics.DragPreviewProvider;
 import android.animation.LayoutTransition;
@@ -75,25 +71,24 @@ import android.view.ViewGroup$OnHierarchyChangeListener;
 import com.android.launcher3.dragndrop.DragController$DragListener;
 import android.view.View$OnTouchListener;
 import android.view.View;
-import com.android.launcher3.folder.FolderIcon$PreviewBackground;
+import com.android.launcher3.folder.PreviewBackground;
 
 class Workspace$FolderCreationAlarmListener implements OnAlarmListener
 {
-    FolderIcon$PreviewBackground bg;
-    int cellX;
-    int cellY;
-    CellLayout layout;
+    final PreviewBackground bg;
+    final int cellX;
+    final int cellY;
+    final CellLayout layout;
     final /* synthetic */ Workspace this$0;
     
     public Workspace$FolderCreationAlarmListener(final Workspace this$0, final CellLayout layout, final int cellX, final int cellY) {
         this.this$0 = this$0;
-        this.bg = new FolderIcon$PreviewBackground();
+        this.bg = new PreviewBackground();
         this.layout = layout;
         this.cellX = cellX;
         this.cellY = cellY;
-        final DeviceProfile deviceProfile = this$0.mLauncher.getDeviceProfile();
         final BubbleTextView bubbleTextView = (BubbleTextView)layout.getChildAt(cellX, cellY);
-        this.bg.setup(this$0.getResources().getDisplayMetrics(), deviceProfile, null, bubbleTextView.getMeasuredWidth(), bubbleTextView.getPaddingTop());
+        this.bg.setup(this$0.mLauncher, null, bubbleTextView.getMeasuredWidth(), bubbleTextView.getPaddingTop());
         this.bg.isClipping = false;
     }
     

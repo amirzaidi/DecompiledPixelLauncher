@@ -59,10 +59,10 @@ public class NotificationFooterLayout extends FrameLayout
         this.mOverflowNotifications = new ArrayList();
         final Resources resources = this.getResources();
         this.mRtl = Utilities.isRtl(resources);
-        final int dimensionPixelSize = resources.getDimensionPixelSize(2131427472);
+        final int dimensionPixelSize = resources.getDimensionPixelSize(2131427483);
         this.mIconLayoutParams = new FrameLayout$LayoutParams(dimensionPixelSize, dimensionPixelSize);
         this.mIconLayoutParams.gravity = 16;
-        this.mIconLayoutParams.setMarginStart((resources.getDimensionPixelSize(2131427434) - resources.getDimensionPixelSize(2131427464) - (resources.getDimensionPixelSize(2131427476) + resources.getDimensionPixelSize(2131427475)) - dimensionPixelSize * 5) / 5);
+        this.mIconLayoutParams.setMarginStart((resources.getDimensionPixelSize(2131427444) - resources.getDimensionPixelSize(2131427474) - (resources.getDimensionPixelSize(2131427487) + resources.getDimensionPixelSize(2131427486)) - dimensionPixelSize * 5) / 5);
     }
     
     private View addNotificationIconForInfo(final NotificationInfo notificationInfo) {
@@ -82,7 +82,7 @@ public class NotificationFooterLayout extends FrameLayout
         if (this.mIconRow.getChildCount() == 0) {
             final PopupContainerWithArrow open = PopupContainerWithArrow.getOpen(Launcher.getLauncher(this.getContext()));
             if (open != null) {
-                final Animator reduceNotificationViewHeight = open.reduceNotificationViewHeight(this.getHeight(), this.getResources().getInteger(2131558427));
+                final Animator reduceNotificationViewHeight = open.reduceNotificationViewHeight(this.getHeight(), this.getResources().getInteger(2131558425));
                 reduceNotificationViewHeight.addListener((Animator$AnimatorListener)new NotificationFooterLayout$2(this));
                 reduceNotificationViewHeight.start();
             }
@@ -161,8 +161,8 @@ public class NotificationFooterLayout extends FrameLayout
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        this.mOverflowEllipsis = this.findViewById(2131624015);
-        this.mIconRow = (LinearLayout)this.findViewById(2131624014);
+        this.mOverflowEllipsis = this.findViewById(2131624025);
+        this.mIconRow = (LinearLayout)this.findViewById(2131624024);
         this.mBackgroundColor = ((ColorDrawable)this.getBackground()).getColor();
     }
     

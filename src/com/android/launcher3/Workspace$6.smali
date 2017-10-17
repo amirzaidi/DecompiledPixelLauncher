@@ -1,9 +1,6 @@
 .class final Lcom/android/launcher3/Workspace$6;
-.super Ljava/lang/Object;
+.super Lcom/android/launcher3/accessibility/AccessibleDragListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/LayoutTransition$TransitionListener;
 
 
 # instance fields
@@ -11,15 +8,15 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Workspace;)V
+.method constructor <init>(Lcom/android/launcher3/Workspace;Landroid/view/ViewGroup;I)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
 
-    .line 1808
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2106
+    invoke-direct {p0, p2, p3}, Lcom/android/launcher3/accessibility/AccessibleDragListenerAdapter;-><init>(Landroid/view/ViewGroup;I)V
 
     .line 1
     return-void
@@ -27,59 +24,46 @@
 
 
 # virtual methods
-.method public endTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 1820
-    invoke-virtual {p1}, Landroid/animation/LayoutTransition;->isRunning()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 1821
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
-
-    invoke-static {v0, v2}, Lcom/android/launcher3/Workspace;->-set3(Lcom/android/launcher3/Workspace;Z)Z
-
-    .line 1822
-    invoke-virtual {p1, p0}, Landroid/animation/LayoutTransition;->removeTransitionListener(Landroid/animation/LayoutTransition$TransitionListener;)V
-
-    .line 1823
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
-
-    iget-object v1, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
-
-    invoke-virtual {v1, v2}, Lcom/android/launcher3/Workspace;->getScrollForPage(I)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/android/launcher3/Workspace;->-set1(Lcom/android/launcher3/Workspace;I)I
-
-    .line 1824
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
-
-    invoke-static {v0}, Lcom/android/launcher3/Workspace;->-wrap0(Lcom/android/launcher3/Workspace;)V
-
-    .line 1826
-    :cond_0
-    return-void
-.end method
-
-.method public startTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
+.method protected enableAccessibleDrag(Z)V
     .locals 2
 
     .prologue
-    .line 1813
+    .line 2110
+    invoke-super {p0, p1}, Lcom/android/launcher3/accessibility/AccessibleDragListenerAdapter;->enableAccessibleDrag(Z)V
+
+    .line 2111
     iget-object v0, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lcom/android/launcher3/Workspace;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/Workspace;->-set3(Lcom/android/launcher3/Workspace;Z)Z
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getHotseat()Lcom/android/launcher3/Hotseat;
 
-    .line 1814
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/launcher3/Hotseat;->getLayout()Lcom/android/launcher3/CellLayout;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0, p1}, Lcom/android/launcher3/Workspace$6;->setEnableForLayout(Lcom/android/launcher3/CellLayout;Z)V
+
+    .line 2115
+    iget-object v1, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {v1, v0}, Lcom/android/launcher3/Workspace;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 2116
     return-void
+
+    .line 2115
+    :cond_0
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$6;->this$0:Lcom/android/launcher3/Workspace;
+
+    iget-object v0, v0, Lcom/android/launcher3/Workspace;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    goto :goto_0
 .end method

@@ -70,8 +70,14 @@ public class ShortcutAndWidgetContainer extends ViewGroup
             else {
                 cellLayout$LayoutParams.setup(this.mCellWidth, this.mCellHeight, this.invertLayoutHorizontally(), this.mCountX);
                 final int n3 = (int)Math.max(0.0f, (cellLayout$LayoutParams.height - this.getCellContentHeight()) / n2);
-                final int n4 = (int)(deviceProfile.edgeMarginPx / n2);
-                view.setPadding(n4, n3, n4, 0);
+                int workspaceCellPaddingXPx;
+                if (this.mContainerType == 0) {
+                    workspaceCellPaddingXPx = deviceProfile.workspaceCellPaddingXPx;
+                }
+                else {
+                    workspaceCellPaddingXPx = (int)(deviceProfile.edgeMarginPx / n2);
+                }
+                view.setPadding(workspaceCellPaddingXPx, n3, workspaceCellPaddingXPx, 0);
             }
         }
         else {

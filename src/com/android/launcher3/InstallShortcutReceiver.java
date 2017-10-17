@@ -35,12 +35,12 @@ import android.content.BroadcastReceiver;
 
 public class InstallShortcutReceiver extends BroadcastReceiver
 {
-    private static boolean mUseInstallQueue;
+    private static int sInstallQueueDisabledFlags;
     private static final Object sLock;
     
     static {
+        InstallShortcutReceiver.sInstallQueueDisabledFlags = 0;
         sLock = new Object();
-        InstallShortcutReceiver.mUseInstallQueue = false;
     }
     
     private static void addToInstallQueue(final SharedPreferences sharedPreferences, final InstallShortcutReceiver$PendingInstallShortcutInfo installShortcutReceiver$PendingInstallShortcutInfo) {
@@ -627,13 +627,13 @@ public class InstallShortcutReceiver extends BroadcastReceiver
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    static void disableAndFlushInstallQueue(final Context context) {
-        InstallShortcutReceiver.mUseInstallQueue = false;
+    public static void disableAndFlushInstallQueue(final int n, final Context context) {
+        InstallShortcutReceiver.sInstallQueueDisabledFlags &= ~n;
         flushInstallQueue(context);
     }
     
-    static void enableInstallQueue() {
-        InstallShortcutReceiver.mUseInstallQueue = true;
+    public static void enableInstallQueue(final int n) {
+        InstallShortcutReceiver.sInstallQueueDisabledFlags |= n;
     }
     
     static CharSequence ensureValidName(final Context context, final Intent intent, CharSequence loadLabel) {
@@ -654,17 +654,29 @@ public class InstallShortcutReceiver extends BroadcastReceiver
     }
     
     static void flushInstallQueue(final Context context) {
+        boolean b = false;
+        final LauncherModel model = LauncherAppState.getInstance(context).getModel();
+        if (model.getCallback() == null) {
+            b = true;
+        }
+        if (InstallShortcutReceiver.sInstallQueueDisabledFlags != 0 || b) {
+            return;
+        }
         final ArrayList andClearInstallQueue = getAndClearInstallQueue(context);
         if (!andClearInstallQueue.isEmpty()) {
-            LauncherAppState.getInstance(context).getModel().addAndBindAddedWorkspaceItems(new InstallShortcutReceiver$LazyShortcutsProvider(context.getApplicationContext(), andClearInstallQueue));
+            model.addAndBindAddedWorkspaceItems(new InstallShortcutReceiver$LazyShortcutsProvider(context.getApplicationContext(), andClearInstallQueue));
         }
+    }
+    
+    public static ShortcutInfo fromActivityInfo(final LauncherActivityInfo launcherActivityInfo, final Context context) {
+        return (ShortcutInfo)new InstallShortcutReceiver$PendingInstallShortcutInfo(launcherActivityInfo, context).getItemInfo().first;
     }
     
     public static ShortcutInfo fromShortcutIntent(final Context context, final Intent intent) {
         ShortcutInfo shortcutInfo = null;
         final InstallShortcutReceiver$PendingInstallShortcutInfo pendingInfo = createPendingInfo(context, intent);
         if (pendingInfo != null) {
-            shortcutInfo = (ShortcutInfo)pendingInfo.getItemInfo();
+            shortcutInfo = (ShortcutInfo)pendingInfo.getItemInfo().first;
         }
         return shortcutInfo;
     }
@@ -741,17 +753,8 @@ public class InstallShortcutReceiver extends BroadcastReceiver
     }
     
     private static void queuePendingShortcutInfo(final InstallShortcutReceiver$PendingInstallShortcutInfo installShortcutReceiver$PendingInstallShortcutInfo, final Context context) {
-        boolean b;
-        if (LauncherAppState.getInstance(context).getModel().getCallback() == null) {
-            b = true;
-        }
-        else {
-            b = false;
-        }
         addToInstallQueue(Utilities.getPrefs(context), installShortcutReceiver$PendingInstallShortcutInfo);
-        if (!InstallShortcutReceiver.mUseInstallQueue && (b ^ true)) {
-            flushInstallQueue(context);
-        }
+        flushInstallQueue(context);
     }
     
     public static void queueShortcut(final ShortcutInfoCompat shortcutInfoCompat, final Context context) {

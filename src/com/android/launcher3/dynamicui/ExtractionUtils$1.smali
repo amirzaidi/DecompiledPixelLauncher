@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/dynamicui/ExtractionUtils$1;->val$context:Landroid/content/Context;
 
-    .line 49
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 58
     iget-object v0, p0, Lcom/android/launcher3/dynamicui/ExtractionUtils$1;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/dynamicui/ExtractionUtils;->-wrap0(Landroid/content/Context;)Z
@@ -40,12 +40,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 53
+    .line 59
     iget-object v0, p0, Lcom/android/launcher3/dynamicui/ExtractionUtils$1;->val$context:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/dynamicui/ExtractionUtils;->startColorExtractionService(Landroid/content/Context;)V
 
-    .line 55
+    .line 61
     :cond_0
     return-void
 .end method

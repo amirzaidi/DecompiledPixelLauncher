@@ -4,27 +4,88 @@
 
 package com.android.launcher3.folder;
 
-import android.view.View;
+import android.view.View$OnKeyListener;
+import android.view.View$MeasureSpec;
+import android.view.ActionMode$Callback;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import com.android.launcher3.dragndrop.DragOptions;
+import com.android.launcher3.accessibility.DragViewStateAnnouncer;
+import android.text.Spannable;
+import android.text.Selection;
+import java.util.Collection;
+import com.android.launcher3.BubbleTextView;
+import android.view.FocusFinder;
+import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
+import android.view.accessibility.AccessibilityEvent;
+import java.util.Iterator;
+import android.view.ViewGroup$LayoutParams;
+import java.util.List;
+import java.util.Collections;
+import com.android.launcher3.ItemInfo;
+import com.android.launcher3.Workspace$ItemOperator;
+import com.android.launcher3.ShortcutInfo;
 import com.android.launcher3.DropTarget$DragObject;
+import android.animation.ValueAnimator;
+import android.util.Property;
+import android.view.animation.AccelerateInterpolator;
+import com.android.launcher3.anim.CircleRevealOutlineProvider;
+import android.animation.TimeInterpolator;
+import com.android.launcher3.LogDecelerateInterpolator;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import com.android.launcher3.anim.AnimationLayerSet;
+import com.android.launcher3.LauncherAnimUtils;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+import com.android.launcher3.DeviceProfile;
+import com.android.launcher3.dragndrop.DragLayer;
+import com.android.launcher3.dragndrop.DragLayer$LayoutParams;
+import android.animation.Animator$AnimatorListener;
+import com.android.launcher3.config.FeatureFlags;
+import android.content.res.Resources;
+import android.util.AttributeSet;
+import android.content.Context;
+import com.android.launcher3.pageindicators.PageIndicatorDots;
+import com.android.launcher3.OnAlarmListener;
+import com.android.launcher3.Alarm;
+import com.android.launcher3.Launcher;
+import java.util.ArrayList;
+import com.android.launcher3.FolderInfo;
+import com.android.launcher3.ExtendedEditText;
+import com.android.launcher3.dragndrop.DragController;
+import android.animation.AnimatorSet;
+import android.graphics.Rect;
+import java.util.Comparator;
+import com.android.launcher3.ExtendedEditText$OnBackKeyListener;
+import com.android.launcher3.UninstallDropTarget$DropTargetSource;
+import com.android.launcher3.dragndrop.DragController$DragListener;
+import android.view.View$OnFocusChangeListener;
+import android.widget.TextView$OnEditorActionListener;
+import com.android.launcher3.FolderInfo$FolderListener;
+import com.android.launcher3.DropTarget;
+import android.view.View$OnLongClickListener;
+import android.view.View$OnClickListener;
+import com.android.launcher3.DragSource;
+import com.android.launcher3.AbstractFloatingView;
+import android.view.View;
+import com.android.launcher3.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-final class Folder$12 implements Runnable
+final class Folder$12 extends AnimatorListenerAdapter
 {
     final /* synthetic */ Folder this$0;
-    final /* synthetic */ DropTarget$DragObject val$d;
-    final /* synthetic */ boolean val$isFlingToDelete;
-    final /* synthetic */ boolean val$success;
-    final /* synthetic */ View val$target;
     
-    Folder$12(final Folder this$0, final View val$target, final DropTarget$DragObject val$d, final boolean val$isFlingToDelete, final boolean val$success) {
+    Folder$12(final Folder this$0) {
         this.this$0 = this$0;
-        this.val$target = val$target;
-        this.val$d = val$d;
-        this.val$isFlingToDelete = val$isFlingToDelete;
-        this.val$success = val$success;
     }
     
-    public void run() {
-        this.this$0.onDropCompleted(this.val$target, this.val$d, this.val$isFlingToDelete, this.val$success);
-        this.this$0.mDeferredAction = null;
+    public void onAnimationEnd(final Animator animator) {
+        this.this$0.closeComplete(true);
+    }
+    
+    public void onAnimationStart(final Animator animator) {
+        Utilities.sendCustomAccessibilityEvent((View)this.this$0, 32, this.this$0.getContext().getString(2131492940));
     }
 }

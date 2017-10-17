@@ -4,7 +4,6 @@
 
 package com.android.launcher3.notification;
 
-import android.view.View;
 import android.view.ViewGroup;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -18,6 +17,8 @@ final class NotificationFooterLayout$2 extends AnimatorListenerAdapter
     }
     
     public void onAnimationEnd(final Animator animator) {
-        ((ViewGroup)this.this$0.getParent()).removeView((View)this.this$0);
+        ((ViewGroup)this.this$0.getParent()).findViewById(2131624003).setVisibility(8);
+        this.this$0.getLayoutParams().height = 0;
+        this.this$0.requestLayout();
     }
 }

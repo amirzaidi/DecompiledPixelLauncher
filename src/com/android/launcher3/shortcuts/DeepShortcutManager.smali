@@ -57,7 +57,7 @@
     .locals 3
 
     .prologue
-    .line 190
+    .line 192
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -66,7 +66,7 @@
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 191
+    .line 193
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -84,7 +84,7 @@
 
     check-cast v0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 192
+    .line 194
     invoke-virtual {v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getId()Ljava/lang/String;
 
     move-result-object v0
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 194
+    .line 196
     :cond_0
     return-object v1
 .end method
@@ -149,32 +149,32 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 206
+    .line 208
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT_MR1:Z
 
     if-eqz v0, :cond_3
 
-    .line 207
+    .line 209
     new-instance v0, Landroid/content/pm/LauncherApps$ShortcutQuery;
 
     invoke-direct {v0}, Landroid/content/pm/LauncherApps$ShortcutQuery;-><init>()V
 
-    .line 208
+    .line 210
     invoke-virtual {v0, p1}, Landroid/content/pm/LauncherApps$ShortcutQuery;->setQueryFlags(I)Landroid/content/pm/LauncherApps$ShortcutQuery;
 
-    .line 209
+    .line 211
     if-eqz p2, :cond_0
 
-    .line 210
+    .line 212
     invoke-virtual {v0, p2}, Landroid/content/pm/LauncherApps$ShortcutQuery;->setPackage(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;
 
-    .line 211
+    .line 213
     invoke-virtual {v0, p3}, Landroid/content/pm/LauncherApps$ShortcutQuery;->setActivity(Landroid/content/ComponentName;)Landroid/content/pm/LauncherApps$ShortcutQuery;
 
-    .line 212
+    .line 214
     invoke-virtual {v0, p4}, Landroid/content/pm/LauncherApps$ShortcutQuery;->setShortcutIds(Ljava/util/List;)Landroid/content/pm/LauncherApps$ShortcutQuery;
 
-    .line 216
+    .line 218
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mLauncherApps:Landroid/content/pm/LauncherApps;
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    .line 217
+    .line 219
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -191,34 +191,34 @@
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 222
+    .line 224
     :goto_0
     if-nez v1, :cond_1
 
-    .line 223
+    .line 225
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     return-object v0
 
-    .line 218
+    .line 220
     :catch_0
     move-exception v0
 
-    .line 219
+    .line 221
     const-string/jumbo v2, "DeepShortcutManager"
 
     const-string/jumbo v3, "Failed to query for shortcuts"
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 220
+    .line 222
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
 
     goto :goto_0
 
-    .line 225
+    .line 227
     :cond_1
     new-instance v2, Ljava/util/ArrayList;
 
@@ -228,7 +228,7 @@
 
     invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 226
+    .line 228
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -246,7 +246,7 @@
 
     check-cast v0, Landroid/content/pm/ShortcutInfo;
 
-    .line 227
+    .line 229
     new-instance v3, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
     invoke-direct {v3, v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;-><init>(Landroid/content/pm/ShortcutInfo;)V
@@ -255,11 +255,11 @@
 
     goto :goto_1
 
-    .line 229
+    .line 231
     :cond_2
     return-object v2
 
-    .line 231
+    .line 233
     :cond_3
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
@@ -267,26 +267,53 @@
 .end method
 
 .method public static supportsShortcuts(Lcom/android/launcher3/ItemInfo;)Z
-    .locals 2
+    .locals 3
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 68
-    iget v1, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
+    instance-of v0, p0, Lcom/android/launcher3/ShortcutInfo;
 
-    if-nez v1, :cond_0
+    if-eqz v0, :cond_1
+
+    move-object v0, p0
 
     .line 69
-    invoke-virtual {p0}, Lcom/android/launcher3/ItemInfo;->isDisabled()Z
+    check-cast v0, Lcom/android/launcher3/ShortcutInfo;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/ShortcutInfo;->isPromise()Z
 
     move-result v0
 
-    xor-int/lit8 v0, v0, 0x1
+    .line 70
+    :goto_0
+    iget v2, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
+
+    if-nez v2, :cond_0
+
+    .line 71
+    invoke-virtual {p0}, Lcom/android/launcher3/ItemInfo;->isDisabled()Z
+
+    move-result v2
+
+    xor-int/lit8 v2, v2, 0x1
+
+    .line 70
+    if-eqz v2, :cond_0
+
+    .line 71
+    xor-int/lit8 v1, v0, 0x1
+
+    .line 70
+    :cond_0
+    return v1
+
+    :cond_1
+    move v0, v1
 
     .line 68
-    :cond_0
-    return v0
+    goto :goto_0
 .end method
 
 
@@ -295,26 +322,26 @@
     .locals 3
 
     .prologue
-    .line 162
+    .line 164
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT_MR1:Z
 
     if-eqz v0, :cond_0
 
-    .line 164
+    .line 166
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
-    .line 165
+    .line 167
     invoke-virtual {p1}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;->getShortcutInfo()Landroid/content/pm/ShortcutInfo;
 
     move-result-object v1
 
-    .line 164
+    .line 166
     invoke-virtual {v0, v1, p2}, Landroid/content/pm/LauncherApps;->getShortcutIconDrawable(Landroid/content/pm/ShortcutInfo;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 166
+    .line 168
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -322,26 +349,26 @@
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 167
+    .line 169
     return-object v0
 
-    .line 168
+    .line 170
     :catch_0
     move-exception v0
 
-    .line 169
+    .line 171
     const-string/jumbo v1, "DeepShortcutManager"
 
     const-string/jumbo v2, "Failed to get shortcut icon"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 170
+    .line 172
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
 
-    .line 173
+    .line 175
     :cond_0
     const/4 v0, 0x0
 
@@ -352,12 +379,12 @@
     .locals 3
 
     .prologue
-    .line 237
+    .line 239
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT_MR1:Z
 
     if-eqz v0, :cond_0
 
-    .line 239
+    .line 241
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
@@ -370,18 +397,18 @@
 
     return v0
 
-    .line 240
+    .line 242
     :catch_0
     move-exception v0
 
-    .line 241
+    .line 243
     const-string/jumbo v1, "DeepShortcutManager"
 
     const-string/jumbo v2, "Failed to make shortcut manager call"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 244
+    .line 246
     :cond_0
     const/4 v0, 0x0
 
@@ -392,7 +419,7 @@
     .locals 0
 
     .prologue
-    .line 78
+    .line 80
     return-void
 .end method
 
@@ -400,27 +427,27 @@
     .locals 4
 
     .prologue
-    .line 129
+    .line 131
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT_MR1:Z
 
     if-eqz v0, :cond_0
 
-    .line 130
+    .line 132
     iget-object v0, p1, Lcom/android/launcher3/shortcuts/ShortcutKey;->componentName:Landroid/content/ComponentName;
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 131
+    .line 133
     invoke-virtual {p1}, Lcom/android/launcher3/shortcuts/ShortcutKey;->getId()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 132
+    .line 134
     iget-object v2, p1, Lcom/android/launcher3/shortcuts/ShortcutKey;->user:Landroid/os/UserHandle;
 
-    .line 133
+    .line 135
     invoke-virtual {p0, v0, v2}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->queryForPinnedShortcuts(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
 
     move-result-object v3
@@ -429,16 +456,16 @@
 
     move-result-object v3
 
-    .line 134
+    .line 136
     invoke-interface {v3, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 136
+    .line 138
     :try_start_0
     iget-object v1, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v1, v0, v3, v2}, Landroid/content/pm/LauncherApps;->pinShortcuts(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V
 
-    .line 137
+    .line 139
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -446,23 +473,23 @@
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 143
+    .line 145
     :cond_0
     :goto_0
     return-void
 
-    .line 138
+    .line 140
     :catch_0
     move-exception v0
 
-    .line 139
+    .line 141
     const-string/jumbo v1, "DeepShortcutManager"
 
     const-string/jumbo v2, "Failed to pin shortcut"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 140
+    .line 142
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -476,7 +503,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 186
+    .line 188
     const/16 v1, 0xb
 
     move-object v0, p0
@@ -498,7 +525,7 @@
     .locals 6
 
     .prologue
-    .line 88
+    .line 90
     const/16 v1, 0xb
 
     const/4 v3, 0x0
@@ -524,7 +551,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 182
+    .line 184
     const/4 v1, 0x2
 
     move-object v0, p0
@@ -546,12 +573,12 @@
     .locals 6
 
     .prologue
-    .line 98
+    .line 100
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 97
+    .line 99
     const/16 v1, 0x9
 
     move-object v0, p0
@@ -573,12 +600,12 @@
     .locals 6
 
     .prologue
-    .line 148
+    .line 150
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT_MR1:Z
 
     if-eqz v0, :cond_0
 
-    .line 150
+    .line 152
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
@@ -594,7 +621,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/pm/LauncherApps;->startShortcut(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Rect;Landroid/os/Bundle;Landroid/os/UserHandle;)V
 
-    .line 152
+    .line 154
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -602,23 +629,23 @@
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 158
+    .line 160
     :cond_0
     :goto_0
     return-void
 
-    .line 153
+    .line 155
     :catch_0
     move-exception v0
 
-    .line 154
+    .line 156
     const-string/jumbo v1, "DeepShortcutManager"
 
     const-string/jumbo v2, "Failed to start shortcut"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 155
+    .line 157
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -630,27 +657,27 @@
     .locals 4
 
     .prologue
-    .line 107
+    .line 109
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT_MR1:Z
 
     if-eqz v0, :cond_0
 
-    .line 108
+    .line 110
     iget-object v0, p1, Lcom/android/launcher3/shortcuts/ShortcutKey;->componentName:Landroid/content/ComponentName;
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 109
+    .line 111
     invoke-virtual {p1}, Lcom/android/launcher3/shortcuts/ShortcutKey;->getId()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 110
+    .line 112
     iget-object v2, p1, Lcom/android/launcher3/shortcuts/ShortcutKey;->user:Landroid/os/UserHandle;
 
-    .line 111
+    .line 113
     invoke-virtual {p0, v0, v2}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->queryForPinnedShortcuts(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
 
     move-result-object v3
@@ -659,16 +686,16 @@
 
     move-result-object v3
 
-    .line 112
+    .line 114
     invoke-interface {v3, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    .line 114
+    .line 116
     :try_start_0
     iget-object v1, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v1, v0, v3, v2}, Landroid/content/pm/LauncherApps;->pinShortcuts(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V
 
-    .line 115
+    .line 117
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -676,23 +703,23 @@
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 121
+    .line 123
     :cond_0
     :goto_0
     return-void
 
-    .line 116
+    .line 118
     :catch_0
     move-exception v0
 
-    .line 117
+    .line 119
     const-string/jumbo v1, "DeepShortcutManager"
 
     const-string/jumbo v2, "Failed to unpin shortcut"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 118
+    .line 120
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
@@ -704,7 +731,7 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 75
     iget-boolean v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->mWasLastCallSuccess:Z
 
     return v0

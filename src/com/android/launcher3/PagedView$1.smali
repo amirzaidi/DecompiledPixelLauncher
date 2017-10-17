@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/PagedView$1;->this$0:Lcom/android/launcher3/PagedView;
 
-    .line 844
+    .line 854
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,22 +31,22 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 864
     invoke-virtual {p1}, Landroid/animation/LayoutTransition;->isRunning()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 855
+    .line 865
     invoke-virtual {p1, p0}, Landroid/animation/LayoutTransition;->removeTransitionListener(Landroid/animation/LayoutTransition$TransitionListener;)V
 
-    .line 856
+    .line 866
     iget-object v0, p0, Lcom/android/launcher3/PagedView$1;->this$0:Lcom/android/launcher3/PagedView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/PagedView;->updateMaxScrollX()V
 
-    .line 858
+    .line 868
     :cond_0
     return-void
 .end method
@@ -55,6 +55,6 @@
     .locals 0
 
     .prologue
-    .line 848
+    .line 858
     return-void
 .end method

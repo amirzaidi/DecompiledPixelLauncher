@@ -16,15 +16,15 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 490
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout$LayoutParams;-><init>(II)V
 
-    .line 480
+    .line 483
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->customPosition:Z
 
-    .line 488
+    .line 491
     return-void
 .end method
 
@@ -32,15 +32,15 @@
     .locals 1
 
     .prologue
-    .line 483
+    .line 486
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 480
+    .line 483
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->customPosition:Z
 
-    .line 484
+    .line 487
     return-void
 .end method
 
@@ -48,15 +48,15 @@
     .locals 1
 
     .prologue
-    .line 491
+    .line 494
     invoke-direct {p0, p1}, Lcom/android/launcher3/InsettableFrameLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 480
+    .line 483
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->customPosition:Z
 
-    .line 492
+    .line 495
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 507
+    .line 510
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->height:I
 
     return v0
@@ -76,7 +76,7 @@
     .locals 1
 
     .prologue
-    .line 499
+    .line 502
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->width:I
 
     return v0
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 515
+    .line 518
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->x:I
 
     return v0
@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 523
+    .line 526
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->y:I
 
     return v0
@@ -106,10 +106,10 @@
     .locals 0
 
     .prologue
-    .line 503
+    .line 506
     iput p1, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->height:I
 
-    .line 504
+    .line 507
     return-void
 .end method
 
@@ -117,10 +117,10 @@
     .locals 0
 
     .prologue
-    .line 495
+    .line 498
     iput p1, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->width:I
 
-    .line 496
+    .line 499
     return-void
 .end method
 
@@ -128,10 +128,10 @@
     .locals 0
 
     .prologue
-    .line 511
+    .line 514
     iput p1, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->x:I
 
-    .line 512
+    .line 515
     return-void
 .end method
 
@@ -139,9 +139,9 @@
     .locals 0
 
     .prologue
-    .line 519
+    .line 522
     iput p1, p0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->y:I
 
-    .line 520
+    .line 523
     return-void
 .end method

@@ -5,12 +5,12 @@
 package com.android.launcher3.badge;
 
 import android.graphics.ColorFilter;
-import com.android.launcher3.graphics.ShadowGenerator;
+import com.android.launcher3.graphics.ShadowGenerator$Builder;
 import android.graphics.Point;
+import com.android.launcher3.graphics.IconPalette;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.graphics.Paint$Align;
-import com.android.launcher3.graphics.IconPalette;
 import android.content.Context;
 import android.util.SparseArray;
 import android.graphics.Shader;

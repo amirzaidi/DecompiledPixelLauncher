@@ -23,7 +23,7 @@
 
     iput p3, p0, Lcom/android/launcher3/dragndrop/DragLayer$3;->val$animationEndStyle:I
 
-    .line 772
+    .line 775
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -36,28 +36,28 @@
     .locals 1
 
     .prologue
-    .line 774
+    .line 777
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$3;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 775
+    .line 778
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$3;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 777
+    .line 780
     :cond_0
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$3;->val$animationEndStyle:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 784
+    .line 787
     :goto_0
     :pswitch_0
     return-void
 
-    .line 779
+    .line 782
     :pswitch_1
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$3;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
@@ -65,7 +65,7 @@
 
     goto :goto_0
 
-    .line 777
+    .line 780
     nop
 
     :pswitch_data_0

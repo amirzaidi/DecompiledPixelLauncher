@@ -23,7 +23,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/LauncherModel$6;->val$info:Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 1889
+    .line 637
     invoke-direct {p0}, Lcom/android/launcher3/util/Provider;-><init>()V
 
     .line 1
@@ -36,7 +36,7 @@
     .locals 3
 
     .prologue
-    .line 1892
+    .line 640
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$6;->val$si:Lcom/android/launcher3/ShortcutInfo;
 
     iget-object v1, p0, Lcom/android/launcher3/LauncherModel$6;->val$info:Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
@@ -51,7 +51,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/ShortcutInfo;->updateFromDeepShortcutInfo(Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;Landroid/content/Context;)V
 
-    .line 1893
+    .line 641
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$6;->val$si:Lcom/android/launcher3/ShortcutInfo;
 
     iget-object v1, p0, Lcom/android/launcher3/LauncherModel$6;->val$info:Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
@@ -70,7 +70,7 @@
 
     iput-object v1, v0, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
 
-    .line 1894
+    .line 642
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$6;->val$si:Lcom/android/launcher3/ShortcutInfo;
 
     return-object v0
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 1890
+    .line 638
     invoke-virtual {p0}, Lcom/android/launcher3/LauncherModel$6;->get()Lcom/android/launcher3/ShortcutInfo;
 
     move-result-object v0

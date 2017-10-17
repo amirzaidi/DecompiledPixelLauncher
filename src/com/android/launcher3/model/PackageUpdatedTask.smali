@@ -1,5 +1,5 @@
 .class public Lcom/android/launcher3/model/PackageUpdatedTask;
-.super Lcom/android/launcher3/model/ExtendedModelTask;
+.super Lcom/android/launcher3/model/BaseModelUpdateTask;
 .source "SourceFile"
 
 
@@ -24,19 +24,19 @@
     .locals 0
 
     .prologue
-    .line 77
-    invoke-direct {p0}, Lcom/android/launcher3/model/ExtendedModelTask;-><init>()V
+    .line 75
+    invoke-direct {p0}, Lcom/android/launcher3/model/BaseModelUpdateTask;-><init>()V
 
-    .line 78
+    .line 76
     iput p1, p0, Lcom/android/launcher3/model/PackageUpdatedTask;->mOp:I
 
-    .line 79
+    .line 77
     iput-object p2, p0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
 
-    .line 80
+    .line 78
     iput-object p3, p0, Lcom/android/launcher3/model/PackageUpdatedTask;->mPackages:[Ljava/lang/String;
 
-    .line 81
+    .line 79
     return-void
 .end method
 
@@ -46,28 +46,28 @@
     .locals 22
 
     .prologue
-    .line 85
+    .line 83
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/LauncherAppState;->getContext()Landroid/content/Context;
 
     move-result-object v8
 
-    .line 86
+    .line 84
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/LauncherAppState;->getIconCache()Lcom/android/launcher3/IconCache;
 
     move-result-object v9
 
-    .line 88
+    .line 86
     move-object/from16 v0, p0
 
     iget-object v10, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mPackages:[Ljava/lang/String;
 
-    .line 89
+    .line 87
     array-length v11, v10
 
-    .line 90
+    .line 88
     sget-object v2, Lcom/android/launcher3/util/FlagOp;->NO_OP:Lcom/android/launcher3/util/FlagOp;
 
-    .line 91
+    .line 89
     new-instance v12, Ljava/util/HashSet;
 
     invoke-static {v10}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -76,7 +76,7 @@
 
     invoke-direct {v12, v3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 92
+    .line 90
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
@@ -85,7 +85,7 @@
 
     move-result-object v3
 
-    .line 93
+    .line 91
     move-object/from16 v0, p0
 
     iget v4, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mOp:I
@@ -96,19 +96,19 @@
 
     move-object v5, v2
 
-    .line 153
+    .line 150
     :goto_0
     const/4 v2, 0x0
 
-    .line 154
+    .line 151
     const/4 v3, 0x0
 
-    .line 155
+    .line 152
     new-instance v13, Ljava/util/ArrayList;
 
     invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
 
-    .line 157
+    .line 154
     move-object/from16 v0, p3
 
     iget-object v6, v0, Lcom/android/launcher3/AllAppsList;->added:Ljava/util/ArrayList;
@@ -119,7 +119,7 @@
 
     if-lez v6, :cond_0
 
-    .line 158
+    .line 155
     new-instance v2, Ljava/util/ArrayList;
 
     move-object/from16 v0, p3
@@ -128,14 +128,14 @@
 
     invoke-direct {v2, v6}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 159
+    .line 156
     move-object/from16 v0, p3
 
     iget-object v6, v0, Lcom/android/launcher3/AllAppsList;->added:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 161
+    .line 158
     :cond_0
     move-object/from16 v0, p3
 
@@ -147,7 +147,7 @@
 
     if-lez v6, :cond_1
 
-    .line 162
+    .line 159
     new-instance v3, Ljava/util/ArrayList;
 
     move-object/from16 v0, p3
@@ -156,14 +156,14 @@
 
     invoke-direct {v3, v6}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 163
+    .line 160
     move-object/from16 v0, p3
 
     iget-object v6, v0, Lcom/android/launcher3/AllAppsList;->modified:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 165
+    .line 162
     :cond_1
     move-object/from16 v0, p3
 
@@ -175,30 +175,30 @@
 
     if-lez v6, :cond_2
 
-    .line 166
+    .line 163
     move-object/from16 v0, p3
 
     iget-object v6, v0, Lcom/android/launcher3/AllAppsList;->removed:Ljava/util/ArrayList;
 
     invoke-virtual {v13, v6}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 167
+    .line 164
     move-object/from16 v0, p3
 
     iget-object v6, v0, Lcom/android/launcher3/AllAppsList;->removed:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->clear()V
 
-    .line 170
+    .line 167
     :cond_2
-    new-instance v14, Ljava/util/HashMap;
+    new-instance v14, Landroid/util/ArrayMap;
 
-    invoke-direct {v14}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v14}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 172
+    .line 169
     if-eqz v2, :cond_b
 
-    .line 174
+    .line 171
     new-instance v6, Lcom/android/launcher3/model/PackageUpdatedTask$1;
 
     move-object/from16 v0, p0
@@ -209,7 +209,7 @@
 
     invoke-virtual {v0, v6}, Lcom/android/launcher3/model/PackageUpdatedTask;->scheduleCallbackTask(Lcom/android/launcher3/LauncherModel$CallbackTask;)V
 
-    .line 180
+    .line 177
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -227,21 +227,21 @@
 
     check-cast v2, Lcom/android/launcher3/AppInfo;
 
-    .line 181
+    .line 178
     iget-object v7, v2, Lcom/android/launcher3/AppInfo;->componentName:Landroid/content/ComponentName;
 
-    invoke-virtual {v14, v7, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v14, v7, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 95
+    .line 93
     :pswitch_0
     const/4 v4, 0x0
 
     :goto_2
-    if-ge v4, v11, :cond_3
+    if-ge v4, v11, :cond_5
 
-    .line 97
+    .line 95
     aget-object v5, v10, v4
 
     move-object/from16 v0, p0
@@ -250,7 +250,24 @@
 
     invoke-virtual {v9, v5, v6}, Lcom/android/launcher3/IconCache;->updateIconsForPkg(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 98
+    .line 96
+    sget-boolean v5, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_PROMISE_APPS_IN_ALL_APPS:Z
+
+    if-eqz v5, :cond_3
+
+    .line 97
+    aget-object v5, v10, v4
+
+    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
+
+    move-result-object v6
+
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v5, v6}, Lcom/android/launcher3/AllAppsList;->removePackage(Ljava/lang/String;Landroid/os/UserHandle;)V
+
+    .line 99
+    :cond_3
     aget-object v5, v10, v4
 
     move-object/from16 v0, p0
@@ -261,47 +278,60 @@
 
     invoke-virtual {v0, v8, v5, v6}, Lcom/android/launcher3/AllAppsList;->addPackage(Landroid/content/Context;Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 95
+    .line 102
+    invoke-static {}, Lcom/android/launcher3/Utilities;->isAtLeastO()Z
+
+    move-result v5
+
+    if-nez v5, :cond_4
+
+    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
+
+    move-result-object v5
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
+
+    invoke-virtual {v5, v6}, Landroid/os/UserHandle;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    xor-int/lit8 v5, v5, 0x1
+
+    if-eqz v5, :cond_4
+
+    .line 103
+    aget-object v5, v10, v4
+
+    move-object/from16 v0, p0
+
+    iget-object v6, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
+
+    invoke-static {v8, v5, v6}, Lcom/android/launcher3/SessionCommitReceiver;->queueAppIconAddition(Landroid/content/Context;Ljava/lang/String;Landroid/os/UserHandle;)V
+
+    .line 93
+    :cond_4
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
-    .line 101
-    :cond_3
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
-
-    invoke-static {v8, v4}, Lcom/android/launcher3/util/ManagedProfileHeuristic;->get(Landroid/content/Context;Landroid/os/UserHandle;)Lcom/android/launcher3/util/ManagedProfileHeuristic;
-
-    move-result-object v4
-
-    .line 102
-    if-eqz v4, :cond_4
-
-    .line 103
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mPackages:[Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Lcom/android/launcher3/util/ManagedProfileHeuristic;->processPackageAdd([Ljava/lang/String;)V
-
-    :cond_4
+    :cond_5
     move-object v4, v3
 
     move-object v5, v2
 
-    .line 105
+    .line 106
     goto/16 :goto_0
 
-    .line 108
+    .line 109
     :pswitch_1
     const/4 v2, 0x0
 
     :goto_3
-    if-ge v2, v11, :cond_5
+    if-ge v2, v11, :cond_6
 
-    .line 110
+    .line 111
     aget-object v4, v10, v2
 
     move-object/from16 v0, p0
@@ -310,7 +340,7 @@
 
     invoke-virtual {v9, v4, v5}, Lcom/android/launcher3/IconCache;->updateIconsForPkg(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 111
+    .line 112
     aget-object v4, v10, v2
 
     move-object/from16 v0, p0
@@ -321,7 +351,7 @@
 
     invoke-virtual {v0, v8, v4, v5}, Lcom/android/launcher3/AllAppsList;->updatePackage(Landroid/content/Context;Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 112
+    .line 113
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/LauncherAppState;->getWidgetCache()Lcom/android/launcher3/WidgetPreviewLoader;
 
     move-result-object v4
@@ -334,13 +364,13 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/launcher3/WidgetPreviewLoader;->removePackage(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 108
+    .line 109
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 115
-    :cond_5
+    .line 116
+    :cond_6
     const/4 v2, 0x2
 
     invoke-static {v2}, Lcom/android/launcher3/util/FlagOp;->removeFlag(I)Lcom/android/launcher3/util/FlagOp;
@@ -351,37 +381,17 @@
 
     move-object v5, v2
 
-    .line 116
+    .line 117
     goto/16 :goto_0
 
-    .line 118
-    :pswitch_2
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
-
-    invoke-static {v8, v2}, Lcom/android/launcher3/util/ManagedProfileHeuristic;->get(Landroid/content/Context;Landroid/os/UserHandle;)Lcom/android/launcher3/util/ManagedProfileHeuristic;
-
-    move-result-object v2
-
     .line 119
-    if-eqz v2, :cond_6
-
-    .line 120
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mPackages:[Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Lcom/android/launcher3/util/ManagedProfileHeuristic;->processPackageRemoved([Ljava/lang/String;)V
-
-    .line 122
-    :cond_6
+    :pswitch_2
     const/4 v2, 0x0
 
     :goto_4
     if-ge v2, v11, :cond_7
 
-    .line 123
+    .line 120
     aget-object v4, v10, v2
 
     move-object/from16 v0, p0
@@ -390,12 +400,12 @@
 
     invoke-virtual {v9, v4, v5}, Lcom/android/launcher3/IconCache;->removeIconsForPkg(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 122
+    .line 119
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 128
+    .line 125
     :cond_7
     :pswitch_3
     const/4 v2, 0x0
@@ -403,7 +413,7 @@
     :goto_5
     if-ge v2, v11, :cond_8
 
-    .line 130
+    .line 127
     aget-object v4, v10, v2
 
     move-object/from16 v0, p0
@@ -414,7 +424,7 @@
 
     invoke-virtual {v0, v4, v5}, Lcom/android/launcher3/AllAppsList;->removePackage(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 131
+    .line 128
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/LauncherAppState;->getWidgetCache()Lcom/android/launcher3/WidgetPreviewLoader;
 
     move-result-object v4
@@ -427,12 +437,12 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/android/launcher3/WidgetPreviewLoader;->removePackage(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 128
+    .line 125
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_5
 
-    .line 133
+    .line 130
     :cond_8
     const/4 v2, 0x2
 
@@ -444,10 +454,10 @@
 
     move-object v5, v2
 
-    .line 134
+    .line 131
     goto/16 :goto_0
 
-    .line 137
+    .line 134
     :pswitch_4
     move-object/from16 v0, p0
 
@@ -457,14 +467,14 @@
 
     if-ne v2, v4, :cond_9
 
-    .line 138
+    .line 135
     const/4 v2, 0x4
 
     invoke-static {v2}, Lcom/android/launcher3/util/FlagOp;->addFlag(I)Lcom/android/launcher3/util/FlagOp;
 
     move-result-object v2
 
-    .line 141
+    .line 138
     :goto_6
     move-object/from16 v0, p3
 
@@ -474,10 +484,10 @@
 
     move-object v5, v2
 
-    .line 142
+    .line 139
     goto/16 :goto_0
 
-    .line 139
+    .line 136
     :cond_9
     const/4 v2, 0x4
 
@@ -487,7 +497,7 @@
 
     goto :goto_6
 
-    .line 144
+    .line 141
     :pswitch_5
     invoke-static {v8}, Lcom/android/launcher3/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/UserManagerCompat;
 
@@ -503,14 +513,14 @@
 
     if-eqz v2, :cond_a
 
-    .line 145
+    .line 142
     const/16 v2, 0x8
 
     invoke-static {v2}, Lcom/android/launcher3/util/FlagOp;->addFlag(I)Lcom/android/launcher3/util/FlagOp;
 
     move-result-object v2
 
-    .line 148
+    .line 145
     :goto_7
     move-object/from16 v0, p0
 
@@ -520,7 +530,7 @@
 
     move-result-object v3
 
-    .line 149
+    .line 146
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v3, v2}, Lcom/android/launcher3/AllAppsList;->updateDisabledFlags(Lcom/android/launcher3/util/ItemInfoMatcher;Lcom/android/launcher3/util/FlagOp;)V
@@ -529,10 +539,10 @@
 
     move-object v5, v2
 
-    .line 150
+    .line 147
     goto/16 :goto_0
 
-    .line 146
+    .line 143
     :cond_a
     const/16 v2, 0x8
 
@@ -542,11 +552,11 @@
 
     goto :goto_7
 
-    .line 185
+    .line 182
     :cond_b
     if-eqz v3, :cond_d
 
-    .line 187
+    .line 184
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -564,14 +574,14 @@
 
     check-cast v2, Lcom/android/launcher3/AppInfo;
 
-    .line 188
+    .line 185
     iget-object v7, v2, Lcom/android/launcher3/AppInfo;->componentName:Landroid/content/ComponentName;
 
-    invoke-virtual {v14, v7, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v14, v7, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_8
 
-    .line 190
+    .line 187
     :cond_c
     new-instance v2, Lcom/android/launcher3/model/PackageUpdatedTask$2;
 
@@ -583,7 +593,7 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/PackageUpdatedTask;->scheduleCallbackTask(Lcom/android/launcher3/LauncherModel$CallbackTask;)V
 
-    .line 199
+    .line 196
     :cond_d
     move-object/from16 v0, p0
 
@@ -595,28 +605,28 @@
 
     sget-object v2, Lcom/android/launcher3/util/FlagOp;->NO_OP:Lcom/android/launcher3/util/FlagOp;
 
-    if-eq v5, v2, :cond_1d
+    if-eq v5, v2, :cond_1e
 
-    .line 200
+    .line 197
     :cond_e
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
-    .line 201
+    .line 198
     new-instance v16, Ljava/util/ArrayList;
 
     invoke-direct/range {v16 .. v16}, Ljava/util/ArrayList;-><init>()V
 
-    .line 202
+    .line 199
     new-instance v17, Ljava/util/ArrayList;
 
     invoke-direct/range {v17 .. v17}, Ljava/util/ArrayList;-><init>()V
 
-    .line 204
+    .line 201
     monitor-enter p2
 
-    .line 205
+    .line 202
     :try_start_0
     move-object/from16 v0, p2
 
@@ -632,7 +642,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_1c
 
     invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -640,10 +650,10 @@
 
     check-cast v2, Lcom/android/launcher3/ItemInfo;
 
-    .line 206
+    .line 203
     instance-of v3, v2, Lcom/android/launcher3/ShortcutInfo;
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1b
 
     move-object/from16 v0, p0
 
@@ -655,23 +665,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1b
 
-    .line 207
+    .line 204
     check-cast v2, Lcom/android/launcher3/ShortcutInfo;
 
-    .line 208
+    .line 205
     const/4 v7, 0x0
 
-    .line 209
+    .line 206
     const/4 v6, 0x0
 
-    .line 212
+    .line 209
     iget-object v3, v2, Lcom/android/launcher3/ShortcutInfo;->iconResource:Landroid/content/Intent$ShortcutIconResource;
 
     if-eqz v3, :cond_10
 
-    .line 213
+    .line 210
     iget-object v3, v2, Lcom/android/launcher3/ShortcutInfo;->iconResource:Landroid/content/Intent$ShortcutIconResource;
 
     iget-object v3, v3, Landroid/content/Intent$ShortcutIconResource;->packageName:Ljava/lang/String;
@@ -680,33 +690,33 @@
 
     move-result v3
 
-    .line 212
+    .line 209
     if-eqz v3, :cond_10
 
-    .line 214
+    .line 211
     iget-object v3, v2, Lcom/android/launcher3/ShortcutInfo;->iconResource:Landroid/content/Intent$ShortcutIconResource;
 
     invoke-static {v3, v8}, Lcom/android/launcher3/graphics/LauncherIcons;->createIconBitmap(Landroid/content/Intent$ShortcutIconResource;Landroid/content/Context;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 215
+    .line 212
     if-eqz v3, :cond_10
 
-    .line 216
+    .line 213
     iput-object v3, v2, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
 
-    .line 217
+    .line 214
     const/4 v7, 0x1
 
-    .line 221
+    .line 218
     :cond_10
     invoke-virtual {v2}, Lcom/android/launcher3/ShortcutInfo;->getTargetComponent()Landroid/content/ComponentName;
 
     move-result-object v19
 
-    .line 222
-    if-eqz v19, :cond_13
+    .line 219
+    if-eqz v19, :cond_14
 
     move-object/from16 v0, v19
 
@@ -714,23 +724,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_2b
 
-    .line 223
+    .line 220
     move-object/from16 v0, v19
 
-    invoke-virtual {v14, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v14, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/launcher3/AppInfo;
 
-    .line 225
+    .line 224
     invoke-virtual {v2}, Lcom/android/launcher3/ShortcutInfo;->isPromise()Z
 
     move-result v20
 
-    if-eqz v20, :cond_18
+    if-eqz v20, :cond_19
 
     move-object/from16 v0, p0
 
@@ -744,95 +754,102 @@
 
     move/from16 v1, v21
 
-    if-ne v0, v1, :cond_18
+    if-eq v0, v1, :cond_11
 
-    .line 226
+    move-object/from16 v0, p0
+
+    iget v0, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mOp:I
+
+    move/from16 v20, v0
+
+    const/16 v21, 0x2
+
+    move/from16 v0, v20
+
+    move/from16 v1, v21
+
+    if-ne v0, v1, :cond_19
+
+    .line 225
+    :cond_11
     const/4 v7, 0x2
 
     invoke-virtual {v2, v7}, Lcom/android/launcher3/ShortcutInfo;->hasStatusFlag(I)Z
 
     move-result v7
 
-    if-eqz v7, :cond_17
+    if-eqz v7, :cond_18
 
     .line 228
-    invoke-virtual {v8}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-static {v8}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/LauncherAppsCompat;
 
     move-result-object v7
 
-    .line 230
-    new-instance v20, Landroid/content/Intent;
+    .line 229
+    move-object/from16 v0, p0
 
-    const-string/jumbo v21, "android.intent.action.MAIN"
+    iget-object v0, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
 
-    invoke-direct/range {v20 .. v21}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    move-object/from16 v20, v0
 
-    move-object/from16 v0, v20
+    move-object/from16 v0, v19
 
-    move-object/from16 v1, v19
+    move-object/from16 v1, v20
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-virtual {v7, v0, v1}, Lcom/android/launcher3/compat/LauncherAppsCompat;->isActivityEnabledForProfile(Landroid/content/ComponentName;Landroid/os/UserHandle;)Z
 
-    move-result-object v20
+    move-result v7
+
+    if-nez v7, :cond_18
 
     .line 231
-    const-string/jumbo v21, "android.intent.category.LAUNCHER"
+    new-instance v7, Lcom/android/launcher3/util/PackageManagerHelper;
 
-    .line 230
-    invoke-virtual/range {v20 .. v21}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
-
-    move-result-object v20
+    invoke-direct {v7, v8}, Lcom/android/launcher3/util/PackageManagerHelper;-><init>(Landroid/content/Context;)V
 
     .line 232
-    const/high16 v21, 0x10000
-
-    .line 229
-    move-object/from16 v0, v20
-
-    move/from16 v1, v21
-
-    invoke-virtual {v7, v0, v1}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
-
-    move-result-object v20
-
-    .line 233
-    if-nez v20, :cond_17
-
-    .line 236
     invoke-virtual/range {v19 .. v19}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v19
 
-    .line 235
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
+
+    move-object/from16 v20, v0
+
+    .line 231
     move-object/from16 v0, v19
 
-    invoke-virtual {v7, v0}, Landroid/content/pm/PackageManager;->getLaunchIntentForPackage(Ljava/lang/String;)Landroid/content/Intent;
+    move-object/from16 v1, v20
+
+    invoke-virtual {v7, v0, v1}, Lcom/android/launcher3/util/PackageManagerHelper;->getAppLaunchIntent(Ljava/lang/String;Landroid/os/UserHandle;)Landroid/content/Intent;
 
     move-result-object v7
 
-    .line 237
-    if-eqz v7, :cond_11
+    .line 233
+    if-eqz v7, :cond_12
 
-    .line 238
+    .line 234
     invoke-virtual {v7}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v3
 
-    .line 239
-    invoke-virtual {v14, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 235
+    invoke-virtual {v14, v3}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/launcher3/AppInfo;
 
-    .line 242
-    :cond_11
-    if-eqz v7, :cond_12
-
-    if-nez v3, :cond_16
-
-    .line 243
+    .line 238
     :cond_12
+    if-eqz v7, :cond_13
+
+    if-nez v3, :cond_17
+
+    .line 239
+    :cond_13
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -841,7 +858,7 @@
 
     goto/16 :goto_9
 
-    .line 204
+    .line 201
     :catchall_0
     move-exception v2
 
@@ -849,27 +866,27 @@
 
     throw v2
 
-    :cond_13
+    :cond_14
     move v3, v6
 
     move v6, v7
 
-    .line 270
+    .line 266
     :goto_a
-    if-nez v6, :cond_14
+    if-nez v6, :cond_15
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_16
 
-    .line 271
-    :cond_14
+    .line 267
+    :cond_15
     :try_start_1
     invoke-virtual {v15, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 273
-    :cond_15
+    .line 269
+    :cond_16
     if-eqz v6, :cond_f
 
-    .line 274
+    .line 270
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/model/PackageUpdatedTask;->getModelWriter()Lcom/android/launcher3/model/ModelWriter;
 
     move-result-object v3
@@ -878,27 +895,27 @@
 
     goto/16 :goto_9
 
-    .line 246
-    :cond_16
+    .line 242
+    :cond_17
     iput-object v7, v2, Lcom/android/launcher3/ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 250
-    :cond_17
+    .line 246
+    :cond_18
     const/4 v7, 0x0
 
     iput v7, v2, Lcom/android/launcher3/ShortcutInfo;->status:I
 
-    .line 251
+    .line 247
     const/4 v7, 0x1
 
-    .line 252
+    .line 248
     iget v0, v2, Lcom/android/launcher3/ShortcutInfo;->itemType:I
 
     move/from16 v19, v0
 
-    if-nez v19, :cond_18
+    if-nez v19, :cond_19
 
-    .line 253
+    .line 249
     iget-boolean v0, v2, Lcom/android/launcher3/ShortcutInfo;->usingLowResIcon:Z
 
     move/from16 v19, v0
@@ -907,9 +924,9 @@
 
     invoke-virtual {v9, v2, v0}, Lcom/android/launcher3/IconCache;->getTitleAndIcon(Lcom/android/launcher3/ItemInfoWithIcon;Z)V
 
-    .line 257
-    :cond_18
-    if-eqz v3, :cond_19
+    .line 253
+    :cond_19
+    if-eqz v3, :cond_1a
 
     const-string/jumbo v3, "android.intent.action.MAIN"
 
@@ -927,26 +944,26 @@
 
     move-result v3
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_1a
 
-    .line 258
+    .line 254
     iget v3, v2, Lcom/android/launcher3/ShortcutInfo;->itemType:I
 
-    if-nez v3, :cond_19
+    if-nez v3, :cond_1a
 
-    .line 259
+    .line 255
     iget-boolean v3, v2, Lcom/android/launcher3/ShortcutInfo;->usingLowResIcon:Z
 
     invoke-virtual {v9, v2, v3}, Lcom/android/launcher3/IconCache;->getTitleAndIcon(Lcom/android/launcher3/ItemInfoWithIcon;Z)V
 
-    .line 260
+    .line 256
     const/4 v7, 0x1
 
-    .line 263
-    :cond_19
+    .line 259
+    :cond_1a
     iget v3, v2, Lcom/android/launcher3/ShortcutInfo;->isDisabled:I
 
-    .line 264
+    .line 260
     iget v0, v2, Lcom/android/launcher3/ShortcutInfo;->isDisabled:I
 
     move/from16 v19, v0
@@ -961,24 +978,24 @@
 
     iput v0, v2, Lcom/android/launcher3/ShortcutInfo;->isDisabled:I
 
-    .line 265
+    .line 261
     iget v0, v2, Lcom/android/launcher3/ShortcutInfo;->isDisabled:I
 
     move/from16 v19, v0
 
     move/from16 v0, v19
 
-    if-eq v0, v3, :cond_29
+    if-eq v0, v3, :cond_2b
 
-    .line 266
+    .line 262
     const/4 v3, 0x1
 
     move v6, v7
 
     goto :goto_a
 
-    .line 276
-    :cond_1a
+    .line 272
+    :cond_1b
     instance-of v3, v2, Lcom/android/launcher3/LauncherAppWidgetInfo;
 
     if-eqz v3, :cond_f
@@ -991,10 +1008,10 @@
 
     if-ne v3, v6, :cond_f
 
-    .line 277
+    .line 273
     check-cast v2, Lcom/android/launcher3/LauncherAppWidgetInfo;
 
-    .line 278
+    .line 274
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
@@ -1007,17 +1024,17 @@
 
     if-eqz v3, :cond_f
 
-    .line 279
+    .line 275
     const/4 v3, 0x2
 
     invoke-virtual {v2, v3}, Lcom/android/launcher3/LauncherAppWidgetInfo;->hasRestoreFlag(I)Z
 
     move-result v3
 
-    .line 278
+    .line 274
     if-eqz v3, :cond_f
 
-    .line 280
+    .line 276
     iget-object v3, v2, Lcom/android/launcher3/LauncherAppWidgetInfo;->providerName:Landroid/content/ComponentName;
 
     invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -1028,29 +1045,29 @@
 
     move-result v3
 
-    .line 278
+    .line 274
     if-eqz v3, :cond_f
 
-    .line 281
+    .line 277
     iget v3, v2, Lcom/android/launcher3/LauncherAppWidgetInfo;->restoreStatus:I
 
     and-int/lit8 v3, v3, -0xb
 
     iput v3, v2, Lcom/android/launcher3/LauncherAppWidgetInfo;->restoreStatus:I
 
-    .line 288
+    .line 284
     iget v3, v2, Lcom/android/launcher3/LauncherAppWidgetInfo;->restoreStatus:I
 
     or-int/lit8 v3, v3, 0x4
 
     iput v3, v2, Lcom/android/launcher3/LauncherAppWidgetInfo;->restoreStatus:I
 
-    .line 290
+    .line 286
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 291
+    .line 287
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/model/PackageUpdatedTask;->getModelWriter()Lcom/android/launcher3/model/ModelWriter;
 
     move-result-object v3
@@ -1061,10 +1078,10 @@
 
     goto/16 :goto_9
 
-    :cond_1b
+    :cond_1c
     monitor-exit p2
 
-    .line 297
+    .line 293
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
@@ -1075,14 +1092,14 @@
 
     invoke-virtual {v0, v15, v1, v2}, Lcom/android/launcher3/model/PackageUpdatedTask;->bindUpdatedShortcuts(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/os/UserHandle;)V
 
-    .line 298
+    .line 294
     invoke-virtual/range {v16 .. v16}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_1d
 
-    .line 299
+    .line 295
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/model/PackageUpdatedTask;->getModelWriter()Lcom/android/launcher3/model/ModelWriter;
 
     move-result-object v2
@@ -1091,15 +1108,15 @@
 
     invoke-virtual {v2, v0}, Lcom/android/launcher3/model/ModelWriter;->deleteItemsFromDatabase(Ljava/lang/Iterable;)V
 
-    .line 302
-    :cond_1c
+    .line 298
+    :cond_1d
     invoke-virtual/range {v17 .. v17}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1e
 
-    .line 303
+    .line 299
     new-instance v2, Lcom/android/launcher3/model/PackageUpdatedTask$3;
 
     move-object/from16 v0, p0
@@ -1112,36 +1129,36 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/PackageUpdatedTask;->scheduleCallbackTask(Lcom/android/launcher3/LauncherModel$CallbackTask;)V
 
-    .line 312
-    :cond_1d
+    .line 308
+    :cond_1e
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 313
+    .line 309
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
-    .line 314
+    .line 310
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mOp:I
 
     const/4 v5, 0x3
 
-    if-ne v2, v5, :cond_24
+    if-ne v2, v5, :cond_25
 
-    .line 316
+    .line 312
     invoke-static {v3, v10}, Ljava/util/Collections;->addAll(Ljava/util/Collection;[Ljava/lang/Object;)Z
 
-    .line 335
-    :cond_1e
+    .line 331
+    :cond_1f
     invoke-virtual {v3}, Ljava/util/HashSet;->isEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_20
 
     invoke-virtual {v4}, Ljava/util/HashSet;->isEmpty()Z
 
@@ -1149,15 +1166,15 @@
 
     xor-int/lit8 v2, v2, 0x1
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_21
 
-    .line 336
-    :cond_1f
+    .line 332
+    :cond_20
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/model/PackageUpdatedTask;->getModelWriter()Lcom/android/launcher3/model/ModelWriter;
 
     move-result-object v2
 
-    .line 337
+    .line 333
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
@@ -1166,15 +1183,15 @@
 
     move-result-object v5
 
-    .line 336
+    .line 332
     invoke-virtual {v2, v5}, Lcom/android/launcher3/model/ModelWriter;->deleteItemsFromDatabase(Lcom/android/launcher3/util/ItemInfoMatcher;)V
 
-    .line 338
+    .line 334
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/model/PackageUpdatedTask;->getModelWriter()Lcom/android/launcher3/model/ModelWriter;
 
     move-result-object v2
 
-    .line 339
+    .line 335
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
@@ -1183,17 +1200,17 @@
 
     move-result-object v5
 
-    .line 338
+    .line 334
     invoke-virtual {v2, v5}, Lcom/android/launcher3/model/ModelWriter;->deleteItemsFromDatabase(Lcom/android/launcher3/util/ItemInfoMatcher;)V
 
-    .line 342
+    .line 338
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
 
     invoke-static {v8, v3, v2}, Lcom/android/launcher3/InstallShortcutReceiver;->removeFromInstallQueue(Landroid/content/Context;Ljava/util/HashSet;Landroid/os/UserHandle;)V
 
-    .line 345
+    .line 341
     new-instance v2, Lcom/android/launcher3/model/PackageUpdatedTask$4;
 
     move-object/from16 v0, p0
@@ -1204,15 +1221,15 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/PackageUpdatedTask;->scheduleCallbackTask(Lcom/android/launcher3/LauncherModel$CallbackTask;)V
 
-    .line 354
-    :cond_20
+    .line 350
+    :cond_21
     invoke-virtual {v13}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
-    if-nez v2, :cond_21
+    if-nez v2, :cond_22
 
-    .line 356
+    .line 352
     new-instance v2, Lcom/android/launcher3/model/PackageUpdatedTask$5;
 
     move-object/from16 v0, p0
@@ -1223,20 +1240,20 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/PackageUpdatedTask;->scheduleCallbackTask(Lcom/android/launcher3/LauncherModel$CallbackTask;)V
 
-    .line 366
-    :cond_21
+    .line 362
+    :cond_22
     sget-boolean v2, Lcom/android/launcher3/Utilities;->ATLEAST_MARSHMALLOW:Z
 
-    if-nez v2, :cond_28
+    if-nez v2, :cond_29
 
-    .line 367
+    .line 363
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mOp:I
 
     const/4 v3, 0x1
 
-    if-eq v2, v3, :cond_22
+    if-eq v2, v3, :cond_23
 
     move-object/from16 v0, p0
 
@@ -1244,10 +1261,10 @@
 
     const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_27
+    if-ne v2, v3, :cond_28
 
-    .line 368
-    :cond_22
+    .line 364
+    :cond_23
     new-instance v2, Lcom/android/launcher3/model/PackageUpdatedTask$6;
 
     move-object/from16 v0, p0
@@ -1258,32 +1275,33 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/PackageUpdatedTask;->scheduleCallbackTask(Lcom/android/launcher3/LauncherModel$CallbackTask;)V
 
-    .line 383
-    :cond_23
+    .line 377
+    :cond_24
+    :goto_b
     return-void
 
-    .line 320
-    :cond_24
+    .line 316
+    :cond_25
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mOp:I
 
     const/4 v5, 0x2
 
-    if-ne v2, v5, :cond_1e
+    if-ne v2, v5, :cond_1f
 
-    .line 322
+    .line 318
     invoke-static {v8}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/LauncherAppsCompat;
 
     move-result-object v5
 
-    .line 323
+    .line 319
     const/4 v2, 0x0
 
-    :goto_b
-    if-ge v2, v11, :cond_26
+    :goto_c
+    if-ge v2, v11, :cond_27
 
-    .line 324
+    .line 320
     aget-object v6, v10, v2
 
     move-object/from16 v0, p0
@@ -1294,31 +1312,31 @@
 
     move-result v6
 
-    if-nez v6, :cond_25
+    if-nez v6, :cond_26
 
-    .line 325
+    .line 321
     aget-object v6, v10, v2
 
     invoke-virtual {v3, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 323
-    :cond_25
+    .line 319
+    :cond_26
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_c
 
-    .line 330
-    :cond_26
+    .line 326
+    :cond_27
     invoke-interface {v13}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
-    :goto_c
+    :goto_d
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1f
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1326,30 +1344,30 @@
 
     check-cast v2, Lcom/android/launcher3/AppInfo;
 
-    .line 331
+    .line 327
     iget-object v2, v2, Lcom/android/launcher3/AppInfo;->componentName:Landroid/content/ComponentName;
 
     invoke-virtual {v4, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_c
+    goto :goto_d
 
-    .line 367
-    :cond_27
+    .line 363
+    :cond_28
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mOp:I
 
     const/4 v3, 0x2
 
-    if-eq v2, v3, :cond_22
+    if-eq v2, v3, :cond_23
 
-    .line 374
-    :cond_28
+    .line 370
+    :cond_29
     invoke-static {}, Lcom/android/launcher3/Utilities;->isAtLeastO()Z
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_24
 
     move-object/from16 v0, p0
 
@@ -1357,56 +1375,56 @@
 
     const/4 v3, 0x1
 
-    if-ne v2, v3, :cond_23
+    if-ne v2, v3, :cond_24
 
-    .line 376
+    .line 372
     const/4 v2, 0x0
 
-    :goto_d
-    if-ge v2, v11, :cond_23
+    :goto_e
+    if-ge v2, v11, :cond_2a
 
-    .line 377
-    invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/LauncherAppState;->getModel()Lcom/android/launcher3/LauncherModel;
+    .line 373
+    move-object/from16 v0, p2
 
-    move-result-object v3
+    iget-object v3, v0, Lcom/android/launcher3/model/BgDataModel;->widgetsModel:Lcom/android/launcher3/model/WidgetsModel;
 
-    .line 379
-    invoke-virtual {v3}, Lcom/android/launcher3/LauncherModel;->getCallback()Lcom/android/launcher3/LauncherModel$Callbacks;
+    new-instance v4, Lcom/android/launcher3/util/PackageUserKey;
 
-    move-result-object v4
-
-    .line 380
-    new-instance v5, Lcom/android/launcher3/util/PackageUserKey;
-
-    aget-object v6, v10, v2
+    aget-object v5, v10, v2
 
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
+    iget-object v6, v0, Lcom/android/launcher3/model/PackageUpdatedTask;->mUser:Landroid/os/UserHandle;
 
-    invoke-direct {v5, v6, v7}, Lcom/android/launcher3/util/PackageUserKey;-><init>(Ljava/lang/String;Landroid/os/UserHandle;)V
+    invoke-direct {v4, v5, v6}, Lcom/android/launcher3/util/PackageUserKey;-><init>(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 379
-    const/4 v6, 0x0
+    move-object/from16 v0, p1
 
-    .line 378
-    invoke-virtual {v3, v4, v6, v5}, Lcom/android/launcher3/LauncherModel;->refreshAndBindWidgetsAndShortcuts(Lcom/android/launcher3/LauncherModel$Callbacks;ZLcom/android/launcher3/util/PackageUserKey;)V
+    invoke-virtual {v3, v0, v4}, Lcom/android/launcher3/model/WidgetsModel;->update(Lcom/android/launcher3/LauncherAppState;Lcom/android/launcher3/util/PackageUserKey;)V
 
-    .line 376
+    .line 372
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_d
+    goto :goto_e
 
-    :cond_29
+    .line 375
+    :cond_2a
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/model/PackageUpdatedTask;->bindUpdatedWidgets(Lcom/android/launcher3/model/BgDataModel;)V
+
+    goto :goto_b
+
+    :cond_2b
     move v3, v6
 
     move v6, v7
 
     goto/16 :goto_a
 
-    .line 93
-    nop
-
+    .line 91
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

@@ -30,6 +30,7 @@ import android.content.BroadcastReceiver;
 import java.util.Iterator;
 import android.text.TextUtils;
 import com.android.launcher3.compat.LauncherAppsCompat;
+import android.util.Pair;
 import com.android.launcher3.util.Preconditions;
 import java.util.ArrayList;
 import android.content.Context;
@@ -47,7 +48,7 @@ class InstallShortcutReceiver$LazyShortcutsProvider extends Provider
     
     public ArrayList get() {
         Preconditions.assertNonUiThread();
-        final ArrayList<ItemInfo> list = new ArrayList<ItemInfo>();
+        final ArrayList<Pair> list = new ArrayList<Pair>();
         final LauncherAppsCompat instance = LauncherAppsCompat.getInstance(this.mContext);
         for (final InstallShortcutReceiver$PendingInstallShortcutInfo installShortcutReceiver$PendingInstallShortcutInfo : this.mPendingItems) {
             final String -wrap1 = getIntentPackage(installShortcutReceiver$PendingInstallShortcutInfo.launchIntent);

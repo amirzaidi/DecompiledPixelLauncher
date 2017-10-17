@@ -5,12 +5,13 @@
 package com.android.launcher3.graphics;
 
 import android.content.ComponentName;
-import com.android.launcher3.IconCache;
 import com.android.launcher3.model.PackageItemInfo;
 import com.android.launcher3.ItemInfoWithIcon;
 import android.content.Intent;
 import com.android.launcher3.AppInfo;
+import com.android.launcher3.IconCache;
 import com.android.launcher3.shortcuts.DeepShortcutManager;
+import com.android.launcher3.util.Provider;
 import com.android.launcher3.shortcuts.ShortcutInfoCompat;
 import android.graphics.Bitmap$Config;
 import android.graphics.drawable.PaintDrawable;
@@ -62,7 +63,7 @@ public class LauncherIcons
     }
     
     public static Bitmap badgeWithBitmap(final Bitmap bitmap, final Bitmap bitmap2, final Context context) {
-        final int dimensionPixelSize = context.getResources().getDimensionPixelSize(2131427424);
+        final int dimensionPixelSize = context.getResources().getDimensionPixelSize(2131427434);
         synchronized (LauncherIcons.sCanvas) {
             LauncherIcons.sCanvas.setBitmap(bitmap);
             LauncherIcons.sCanvas.drawBitmap(bitmap2, new Rect(0, 0, bitmap2.getWidth(), bitmap2.getHeight()), new Rect(bitmap.getWidth() - dimensionPixelSize, bitmap.getHeight() - dimensionPixelSize, bitmap.getWidth(), bitmap.getHeight()), new Paint(2));
@@ -141,18 +142,18 @@ public class LauncherIcons
     }
     
     public static Bitmap createIconBitmap(final Drawable drawable, final Context context, final float n) {
-    Label_0269_Outer:
+    Label_0286_Outer:
         while (true) {
             while (true) {
                 int n2 = 0;
                 int n3 = 0;
-                int min = 0;
                 int n5 = 0;
-            Label_0481:
+                int n6 = 0;
+            Label_0498:
                 while (true) {
                     int iconBitmapSize = 0;
                     float n4 = 0.0f;
-                    Label_0454: {
+                    Label_0471: {
                         synchronized (LauncherIcons.sCanvas) {
                             iconBitmapSize = LauncherAppState.getIDP(context).iconBitmapSize;
                             n2 = ((drawable instanceof PaintDrawable) ? 1 : 0);
@@ -180,7 +181,7 @@ public class LauncherIcons
                                 n4 = n2;
                                 n4 /= n3;
                                 if (n2 <= n3) {
-                                    break Label_0454;
+                                    break Label_0471;
                                 }
                                 n2 = (int)(iconBitmapSize / n4);
                                 n3 = iconBitmapSize;
@@ -188,23 +189,23 @@ public class LauncherIcons
                                 bitmap2 = Bitmap.createBitmap(iconBitmapSize, iconBitmapSize, (Bitmap$Config)bitmap2);
                                 final Canvas sCanvas = LauncherIcons.sCanvas;
                                 sCanvas.setBitmap((Bitmap)bitmap2);
-                                min = iconBitmapSize - n3;
-                                min /= 2;
-                                n5 = iconBitmapSize - n2;
+                                n5 = iconBitmapSize - n3;
                                 n5 /= 2;
+                                n6 = iconBitmapSize - n2;
+                                n6 /= 2;
                                 LauncherIcons.sOldBounds.set(drawable.getBounds());
                                 if (Utilities.isAtLeastO() && drawable instanceof AdaptiveIconDrawable) {
-                                    min = Math.min(min, n5);
+                                    final int n7 = (int)(iconBitmapSize * 0.010416667f);
+                                    n5 = Math.min(n5, n6);
+                                    n5 = Math.max(n7, n5);
                                     n2 = Math.max(n3, n2);
-                                    n3 = min + n2;
-                                    n2 += min;
-                                    drawable.setBounds(min, min, n3, n2);
+                                    drawable.setBounds(n5, n5, n2, n2);
                                     n2 = 1;
                                     sCanvas.save(n2);
                                     n2 = iconBitmapSize / 2;
-                                    final float n6 = n2;
+                                    final float n8 = n2;
                                     iconBitmapSize /= 2;
-                                    sCanvas.scale(n, n, n6, (float)iconBitmapSize);
+                                    sCanvas.scale(n, n, n8, (float)iconBitmapSize);
                                     drawable.draw(sCanvas);
                                     sCanvas.restore();
                                     drawable.setBounds(LauncherIcons.sOldBounds);
@@ -212,25 +213,25 @@ public class LauncherIcons
                                     sCanvas.setBitmap((Bitmap)null);
                                     return (Bitmap)bitmap2;
                                 }
-                                break Label_0481;
+                                break Label_0498;
                             }
                         }
                         n2 = iconBitmapSize;
                         n3 = iconBitmapSize;
-                        continue Label_0269_Outer;
+                        continue Label_0286_Outer;
                     }
                     if (n3 > n2) {
                         n3 = (int)(iconBitmapSize * n4);
                         n2 = iconBitmapSize;
-                        continue Label_0269_Outer;
+                        continue Label_0286_Outer;
                     }
                     n2 = iconBitmapSize;
                     n3 = iconBitmapSize;
-                    continue Label_0269_Outer;
+                    continue Label_0286_Outer;
                 }
-                n3 += min;
-                n2 += n5;
-                drawable.setBounds(min, n5, n3, n2);
+                n3 += n5;
+                n2 += n6;
+                drawable.setBounds(n5, n6, n3, n2);
                 continue;
             }
         }
@@ -266,37 +267,53 @@ public class LauncherIcons
         return createShortcutIcon(shortcutInfoCompat, context, true);
     }
     
+    public static Bitmap createShortcutIcon(final ShortcutInfoCompat shortcutInfoCompat, final Context context, final Bitmap bitmap) {
+        return createShortcutIcon(shortcutInfoCompat, context, true, new LauncherIcons$1(bitmap));
+    }
+    
     public static Bitmap createShortcutIcon(final ShortcutInfoCompat shortcutInfoCompat, final Context context, final boolean b) {
+        return createShortcutIcon(shortcutInfoCompat, context, b, null);
+    }
+    
+    public static Bitmap createShortcutIcon(final ShortcutInfoCompat shortcutInfoCompat, final Context context, final boolean b, final Provider provider) {
+        Bitmap bitmap = null;
         final LauncherAppState instance = LauncherAppState.getInstance(context);
         final Drawable shortcutIconDrawable = DeepShortcutManager.getInstance(context).getShortcutIconDrawable(shortcutInfoCompat, instance.getInvariantDeviceProfile().fillResIconDpi);
         final IconCache iconCache = instance.getIconCache();
-        Bitmap bitmap;
-        if (shortcutIconDrawable == null) {
-            bitmap = iconCache.getDefaultIcon(Process.myUserHandle());
+        if (shortcutIconDrawable != null) {
+            bitmap = createScaledBitmapWithoutShadow(shortcutIconDrawable, context, 0);
         }
         else {
-            bitmap = createScaledBitmapWithoutShadow(shortcutIconDrawable, context, 26);
+            if (provider != null) {
+                bitmap = (Bitmap)provider.get();
+            }
+            if (bitmap == null) {
+                bitmap = iconCache.getDefaultIcon(Process.myUserHandle());
+            }
         }
         if (!b) {
             return bitmap;
         }
-        final Bitmap addShadowToIcon = addShadowToIcon(bitmap, context);
+        return badgeWithBitmap(addShadowToIcon(bitmap, context), getShortcutInfoBadge(shortcutInfoCompat, iconCache), context);
+    }
+    
+    public static Bitmap getShortcutInfoBadge(final ShortcutInfoCompat shortcutInfoCompat, final IconCache iconCache) {
         final ComponentName activity = shortcutInfoCompat.getActivity();
-        Bitmap bitmap2;
+        Bitmap bitmap;
         if (activity != null) {
             final AppInfo appInfo = new AppInfo();
             appInfo.user = shortcutInfoCompat.getUserHandle();
             appInfo.componentName = activity;
             appInfo.intent = new Intent("android.intent.action.MAIN").addCategory("android.intent.category.LAUNCHER").setComponent(activity);
             iconCache.getTitleAndIcon(appInfo, false);
-            bitmap2 = appInfo.iconBitmap;
+            bitmap = appInfo.iconBitmap;
         }
         else {
             final PackageItemInfo packageItemInfo = new PackageItemInfo(shortcutInfoCompat.getPackage());
             iconCache.getTitleAndIconForApp(packageItemInfo, false);
-            bitmap2 = packageItemInfo.iconBitmap;
+            bitmap = packageItemInfo.iconBitmap;
         }
-        return badgeWithBitmap(addShadowToIcon, bitmap2, context);
+        return bitmap;
     }
     
     static Drawable wrapToAdaptiveIconDrawable(final Context context, final Drawable drawable, final float scale) {

@@ -55,7 +55,7 @@ public class PageIndicatorDots extends PageIndicator
     public PageIndicatorDots(final Context context, final AttributeSet set, final int n) {
         super(context, set, n);
         (this.mCirclePaint = new Paint(1)).setStyle(Paint$Style.FILL);
-        this.mDotRadius = this.getResources().getDimension(2131427417) / 2.0f;
+        this.mDotRadius = this.getResources().getDimension(2131427427) / 2.0f;
         this.setOutlineProvider((ViewOutlineProvider)new PageIndicatorDots$MyOutlineProver(this, null));
         this.mActiveColor = Themes.getColorAccent(context);
         this.mInActiveColor = Themes.getAttrColor(context, 16843820);

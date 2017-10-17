@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 1149
+    .line 1116
     iput-object p1, p0, Lcom/android/launcher3/Launcher$LauncherOverlayCallbacksImpl;->this$0:Lcom/android/launcher3/Launcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,21 +29,21 @@
     .locals 1
 
     .prologue
-    .line 1152
+    .line 1119
     iget-object v0, p0, Lcom/android/launcher3/Launcher$LauncherOverlayCallbacksImpl;->this$0:Lcom/android/launcher3/Launcher;
 
     iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     if-eqz v0, :cond_0
 
-    .line 1153
+    .line 1120
     iget-object v0, p0, Lcom/android/launcher3/Launcher$LauncherOverlayCallbacksImpl;->this$0:Lcom/android/launcher3/Launcher;
 
     iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/Workspace;->onOverlayScrollChanged(F)V
 
-    .line 1155
+    .line 1122
     :cond_0
     return-void
 .end method

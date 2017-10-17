@@ -9,24 +9,36 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Workspace;
 
-.field final synthetic val$finalView:Landroid/view/View;
+.field final synthetic val$d:Lcom/android/launcher3/DropTarget$DragObject;
 
-.field final synthetic val$onCompleteRunnable:Ljava/lang/Runnable;
+.field final synthetic val$dragInfo:Lcom/android/launcher3/CellLayout$CellInfo;
+
+.field final synthetic val$isFlingToDelete:Z
+
+.field final synthetic val$success:Z
+
+.field final synthetic val$target:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Workspace;Landroid/view/View;Ljava/lang/Runnable;)V
+.method constructor <init>(Lcom/android/launcher3/Workspace;Lcom/android/launcher3/CellLayout$CellInfo;Landroid/view/View;Lcom/android/launcher3/DropTarget$DragObject;ZZ)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$12;->this$0:Lcom/android/launcher3/Workspace;
 
-    iput-object p2, p0, Lcom/android/launcher3/Workspace$12;->val$finalView:Landroid/view/View;
+    iput-object p2, p0, Lcom/android/launcher3/Workspace$12;->val$dragInfo:Lcom/android/launcher3/CellLayout$CellInfo;
 
-    iput-object p3, p0, Lcom/android/launcher3/Workspace$12;->val$onCompleteRunnable:Ljava/lang/Runnable;
+    iput-object p3, p0, Lcom/android/launcher3/Workspace$12;->val$target:Landroid/view/View;
 
-    .line 3516
+    iput-object p4, p0, Lcom/android/launcher3/Workspace$12;->val$d:Lcom/android/launcher3/DropTarget$DragObject;
+
+    iput-boolean p5, p0, Lcom/android/launcher3/Workspace$12;->val$isFlingToDelete:Z
+
+    iput-boolean p6, p0, Lcom/android/launcher3/Workspace$12;->val$success:Z
+
+    .line 3492
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -36,33 +48,36 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 5
 
     .prologue
-    .line 3519
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$12;->val$finalView:Landroid/view/View;
+    .line 3494
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$12;->this$0:Lcom/android/launcher3/Workspace;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lcom/android/launcher3/Workspace$12;->val$dragInfo:Lcom/android/launcher3/CellLayout$CellInfo;
 
-    .line 3520
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$12;->val$finalView:Landroid/view/View;
+    invoke-static {v0, v1}, Lcom/android/launcher3/Workspace;->-set0(Lcom/android/launcher3/Workspace;Lcom/android/launcher3/CellLayout$CellInfo;)Lcom/android/launcher3/CellLayout$CellInfo;
+
+    .line 3495
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$12;->this$0:Lcom/android/launcher3/Workspace;
+
+    iget-object v1, p0, Lcom/android/launcher3/Workspace$12;->val$target:Landroid/view/View;
+
+    iget-object v2, p0, Lcom/android/launcher3/Workspace$12;->val$d:Lcom/android/launcher3/DropTarget$DragObject;
+
+    iget-boolean v3, p0, Lcom/android/launcher3/Workspace$12;->val$isFlingToDelete:Z
+
+    iget-boolean v4, p0, Lcom/android/launcher3/Workspace$12;->val$success:Z
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/launcher3/Workspace;->onDropCompleted(Landroid/view/View;Lcom/android/launcher3/DropTarget$DragObject;ZZ)V
+
+    .line 3496
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$12;->this$0:Lcom/android/launcher3/Workspace;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    iput-object v1, v0, Lcom/android/launcher3/Workspace;->mDeferredAction:Ljava/lang/Runnable;
 
-    .line 3522
-    :cond_0
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$12;->val$onCompleteRunnable:Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_1
-
-    .line 3523
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$12;->val$onCompleteRunnable:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    .line 3525
-    :cond_1
+    .line 3497
     return-void
 .end method

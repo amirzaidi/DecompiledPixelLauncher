@@ -8,12 +8,12 @@
     .locals 1
 
     .prologue
-    .line 360
+    .line 392
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
-    .line 361
+    .line 393
     return-void
 .end method
 
@@ -23,7 +23,7 @@
     .locals 1
 
     .prologue
-    .line 365
+    .line 397
     invoke-virtual {p0}, Lcom/android/launcher3/graphics/LauncherIcons$FixedSizeBitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -39,7 +39,7 @@
     .locals 1
 
     .prologue
-    .line 370
+    .line 402
     invoke-virtual {p0}, Lcom/android/launcher3/graphics/LauncherIcons$FixedSizeBitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0

@@ -6,7 +6,6 @@ package com.android.launcher3;
 
 import android.os.Bundle;
 import android.content.ContentResolver;
-import com.android.launcher3.config.ProviderConfig;
 import android.net.Uri;
 
 public final class LauncherSettings$Settings
@@ -14,7 +13,7 @@ public final class LauncherSettings$Settings
     public static final Uri CONTENT_URI;
     
     static {
-        CONTENT_URI = Uri.parse("content://" + ProviderConfig.AUTHORITY + "/settings");
+        CONTENT_URI = Uri.parse("content://" + LauncherProvider.AUTHORITY + "/settings");
     }
     
     public static Bundle call(final ContentResolver contentResolver, final String s) {

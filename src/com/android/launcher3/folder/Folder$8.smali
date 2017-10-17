@@ -1,25 +1,26 @@
 .class final Lcom/android/launcher3/folder/Folder$8;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/folder/Folder;
 
+.field final synthetic val$a:Landroid/animation/AnimatorSet;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/folder/Folder;)V
+.method constructor <init>(Lcom/android/launcher3/folder/Folder;Landroid/animation/AnimatorSet;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$8;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    .line 592
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcom/android/launcher3/folder/Folder$8;->val$a:Landroid/animation/AnimatorSet;
+
+    .line 513
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
     return-void
@@ -27,41 +28,39 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
+    .line 522
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$8;->this$0:Lcom/android/launcher3/folder/Folder;
 
     const/4 v1, 0x0
 
-    .line 595
+    invoke-static {v0, v1}, Lcom/android/launcher3/folder/Folder;->-set0(Lcom/android/launcher3/folder/Folder;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
+    .line 523
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
+
+    .prologue
+    .line 516
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$8;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mContent:Lcom/android/launcher3/folder/FolderPagedView;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/folder/FolderPagedView;->setLayerType(ILandroid/graphics/Paint;)V
+    iput v1, v0, Lcom/android/launcher3/folder/Folder;->mState:I
 
-    .line 596
+    .line 517
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$8;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    invoke-static {v0}, Lcom/android/launcher3/folder/Folder;->-get0(Lcom/android/launcher3/folder/Folder;)Landroid/view/View;
+    iget-object v1, p0, Lcom/android/launcher3/folder/Folder$8;->val$a:Landroid/animation/AnimatorSet;
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lcom/android/launcher3/folder/Folder;->-set0(Lcom/android/launcher3/folder/Folder;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
-
-    .line 597
-    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$8;->this$0:Lcom/android/launcher3/folder/Folder;
-
-    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/launcher3/logging/UserEventDispatcher;->resetElapsedContainerMillis()V
-
-    .line 598
+    .line 518
     return-void
 .end method

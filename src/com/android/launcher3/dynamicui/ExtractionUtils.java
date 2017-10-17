@@ -4,7 +4,6 @@
 
 package com.android.launcher3.dynamicui;
 
-import android.content.Intent;
 import java.util.Iterator;
 import android.support.v7.a.d;
 import java.util.List;
@@ -38,7 +37,7 @@ public class ExtractionUtils
     }
     
     private static boolean isLegible(final int n, final int n2) {
-        return a.aqN(n, a.arc(n2, 255)) >= 2.0;
+        return a.arL(n, a.asb(n2, 255)) >= 2.0;
     }
     
     private static boolean isLegibleOnWallpaper(final int n, final List list) {
@@ -50,13 +49,13 @@ public class ExtractionUtils
             final d d = iterator.next();
             int n5;
             int n6;
-            if (isLegible(n, d.acI())) {
-                final int n4 = n3 + d.acG();
+            if (isLegible(n, d.adM())) {
+                final int n4 = n3 + d.adK();
                 n5 = n2;
                 n6 = n4;
             }
             else {
-                n5 = d.acG() + n2;
+                n5 = d.adK() + n2;
                 n6 = n3;
             }
             n3 = n6;
@@ -69,18 +68,16 @@ public class ExtractionUtils
     }
     
     public static boolean isSuperDark(final android.support.v7.a.a a) {
-        return isLegibleOnWallpaper(-16777216, a.acq()) ^ true;
+        return isLegibleOnWallpaper(-16777216, a.adr()) ^ true;
     }
     
     public static boolean isSuperLight(final android.support.v7.a.a a) {
-        return isLegibleOnWallpaper(-1, a.acq()) ^ true;
+        return isLegibleOnWallpaper(-1, a.adr()) ^ true;
     }
     
     public static void startColorExtractionService(final Context context) {
-        context.startService(new Intent(context, (Class)ColorExtractionService.class));
     }
     
     public static void startColorExtractionServiceIfNecessary(final Context context) {
-        Utilities.THREAD_POOL_EXECUTOR.execute(new ExtractionUtils$1(context));
     }
 }

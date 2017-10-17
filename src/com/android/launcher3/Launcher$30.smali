@@ -22,7 +22,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/Launcher$30;->val$executor:Lcom/android/launcher3/util/ViewOnDrawExecutor;
 
-    .line 3639
+    .line 3593
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -32,20 +32,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 3642
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$30;->val$executor:Lcom/android/launcher3/util/ViewOnDrawExecutor;
+    .line 3595
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$30;->this$0:Lcom/android/launcher3/Launcher;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$30;->val$executor:Lcom/android/launcher3/util/ViewOnDrawExecutor;
 
-    .line 3643
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$30;->val$executor:Lcom/android/launcher3/util/ViewOnDrawExecutor;
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->finishFirstPageBind(Lcom/android/launcher3/util/ViewOnDrawExecutor;)V
 
-    invoke-virtual {v0}, Lcom/android/launcher3/util/ViewOnDrawExecutor;->onLoadAnimationCompleted()V
-
-    .line 3645
-    :cond_0
+    .line 3596
     return-void
 .end method

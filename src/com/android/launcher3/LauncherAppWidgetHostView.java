@@ -18,9 +18,6 @@ import android.appwidget.AppWidgetProviderInfo;
 import android.widget.AdapterView;
 import android.view.ViewGroup;
 import android.widget.Advanceable;
-import java.lang.reflect.Method;
-import android.util.Log;
-import java.util.concurrent.Executor;
 import android.view.View$AccessibilityDelegate;
 import android.view.View;
 import android.graphics.PointF;
@@ -61,27 +58,10 @@ public class LauncherAppWidgetHostView extends AppWidgetHostView implements Drag
         this.mStylusEventHelper = new StylusEventHelper(new SimpleOnStylusPressListener((View)this), (View)this);
         this.mInflater = LayoutInflater.from(mContext);
         this.setAccessibilityDelegate((View$AccessibilityDelegate)Launcher.getLauncher(mContext).getAccessibilityDelegate());
-        this.setBackgroundResource(2130837584);
-        if (!Utilities.isAtLeastO()) {
-            return;
+        this.setBackgroundResource(2130837591);
+        if (Utilities.isAtLeastO()) {
+            this.setExecutor(Utilities.THREAD_POOL_EXECUTOR);
         }
-        final Class<AppWidgetHostView> clazz = AppWidgetHostView.class;
-        final String s = "setExecutor";
-        final int n = 1;
-        try {
-            final Class[] array = new Class[n];
-            array[0] = Executor.class;
-            final Method method = clazz.getMethod(s, (Class[])array);
-            final Object[] array2 = { null };
-            try {
-                array2[0] = Utilities.THREAD_POOL_EXECUTOR;
-                method.invoke(this, array2);
-            }
-            catch (Exception ex) {
-                Log.e("LauncherWidgetHostView", "Unable to set async executor", (Throwable)ex);
-            }
-        }
-        catch (Exception ex2) {}
     }
     
     private void checkIfAutoAdvance() {
@@ -225,7 +205,7 @@ public class LauncherAppWidgetHostView extends AppWidgetHostView implements Drag
     }
     
     protected View getErrorView() {
-        return this.mInflater.inflate(2130968588, (ViewGroup)this, false);
+        return this.mInflater.inflate(2130968591, (ViewGroup)this, false);
     }
     
     public float getScaleToFit() {

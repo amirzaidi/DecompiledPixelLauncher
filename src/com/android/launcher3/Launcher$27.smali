@@ -9,24 +9,24 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Launcher;
 
-.field final synthetic val$newScreenIndex:I
+.field final synthetic val$anim:Landroid/animation/AnimatorSet;
 
-.field final synthetic val$startBounceAnimRunnable:Ljava/lang/Runnable;
+.field final synthetic val$bounceAnims:Ljava/util/Collection;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;ILjava/lang/Runnable;)V
+.method constructor <init>(Lcom/android/launcher3/Launcher;Landroid/animation/AnimatorSet;Ljava/util/Collection;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$27;->this$0:Lcom/android/launcher3/Launcher;
 
-    iput p2, p0, Lcom/android/launcher3/Launcher$27;->val$newScreenIndex:I
+    iput-object p2, p0, Lcom/android/launcher3/Launcher$27;->val$anim:Landroid/animation/AnimatorSet;
 
-    iput-object p3, p0, Lcom/android/launcher3/Launcher$27;->val$startBounceAnimRunnable:Ljava/lang/Runnable;
+    iput-object p3, p0, Lcom/android/launcher3/Launcher$27;->val$bounceAnims:Ljava/util/Collection;
 
-    .line 3434
+    .line 3385
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -36,41 +36,21 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 3436
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$27;->this$0:Lcom/android/launcher3/Launcher;
+    .line 3387
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$27;->val$anim:Landroid/animation/AnimatorSet;
 
-    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$27;->val$bounceAnims:Ljava/util/Collection;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 3437
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$27;->this$0:Lcom/android/launcher3/Launcher;
+    .line 3388
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$27;->val$anim:Landroid/animation/AnimatorSet;
 
-    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    iget v1, p0, Lcom/android/launcher3/Launcher$27;->val$newScreenIndex:I
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->snapToPage(I)V
-
-    .line 3438
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$27;->this$0:Lcom/android/launcher3/Launcher;
-
-    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    iget-object v1, p0, Lcom/android/launcher3/Launcher$27;->val$startBounceAnimRunnable:Ljava/lang/Runnable;
-
-    .line 3439
-    sget v2, Lcom/android/launcher3/Launcher;->NEW_APPS_ANIMATION_DELAY:I
-
-    int-to-long v2, v2
-
-    .line 3438
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Workspace;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 3441
-    :cond_0
+    .line 3389
     return-void
 .end method

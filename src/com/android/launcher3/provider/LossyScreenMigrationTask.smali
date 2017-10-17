@@ -16,12 +16,12 @@
     .locals 6
 
     .prologue
-    .line 50
+    .line 48
     invoke-static {p1}, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->getValidPackages(Landroid/content/Context;)Ljava/util/HashSet;
 
     move-result-object v3
 
-    .line 51
+    .line 49
     new-instance v4, Landroid/graphics/Point;
 
     iget v0, p2, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
@@ -32,7 +32,7 @@
 
     invoke-direct {v4, v0, v1}, Landroid/graphics/Point;-><init>(II)V
 
-    .line 52
+    .line 50
     new-instance v5, Landroid/graphics/Point;
 
     iget v0, p2, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
@@ -47,27 +47,27 @@
 
     move-object v2, p2
 
-    .line 50
+    .line 48
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/model/GridSizeMigrationTask;-><init>(Landroid/content/Context;Lcom/android/launcher3/InvariantDeviceProfile;Ljava/util/HashSet;Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    .line 54
+    .line 52
     iput-object p3, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mDb:Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 55
+    .line 53
     new-instance v0, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v0}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mOriginalItems:Lcom/android/launcher3/util/LongArrayMap;
 
-    .line 56
+    .line 54
     new-instance v0, Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-direct {v0}, Lcom/android/launcher3/util/LongArrayMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mUpdates:Lcom/android/launcher3/util/LongArrayMap;
 
-    .line 57
+    .line 55
     return-void
 .end method
 
@@ -77,12 +77,12 @@
     .locals 7
 
     .prologue
-    .line 71
+    .line 69
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/model/GridSizeMigrationTask;->loadWorkspaceEntries(J)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 72
+    .line 70
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -100,7 +100,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 73
+    .line 71
     iget-object v3, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mOriginalItems:Lcom/android/launcher3/util/LongArrayMap;
 
     iget-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -111,14 +111,14 @@
 
     invoke-virtual {v3, v4, v5, v6}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 76
+    .line 74
     iget v3, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
     add-int/lit8 v3, v3, 0x1
 
     iput v3, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellY:I
 
-    .line 77
+    .line 75
     iget-object v3, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mUpdates:Lcom/android/launcher3/util/LongArrayMap;
 
     iget-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 80
+    .line 78
     :cond_0
     return-object v1
 .end method
@@ -140,17 +140,17 @@
     .locals 10
 
     .prologue
-    .line 84
+    .line 82
     const-wide/16 v0, 0x0
 
     invoke-virtual {p0, v0, v1}, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->migrateScreen(J)V
 
-    .line 86
+    .line 84
     new-instance v2, Landroid/content/ContentValues;
 
     invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
 
-    .line 87
+    .line 85
     iget-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mUpdates:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -171,7 +171,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 88
+    .line 86
     iget-object v1, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mOriginalItems:Lcom/android/launcher3/util/LongArrayMap;
 
     iget-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -182,7 +182,7 @@
 
     check-cast v1, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 90
+    .line 88
     iget v4, v1, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
 
     iget v5, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->cellX:I
@@ -195,22 +195,22 @@
 
     if-eq v4, v5, :cond_2
 
-    .line 92
+    .line 90
     :cond_1
     :goto_1
     invoke-virtual {v2}, Landroid/content/ContentValues;->clear()V
 
-    .line 93
+    .line 91
     invoke-virtual {v0, v2}, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->addToContentValues(Landroid/content/ContentValues;)V
 
-    .line 94
+    .line 92
     iget-object v1, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mDb:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string/jumbo v4, "favorites"
 
     const-string/jumbo v5, "_id = ?"
 
-    .line 95
+    .line 93
     const/4 v6, 0x1
 
     new-array v6, v6, [Ljava/lang/String;
@@ -225,12 +225,12 @@
 
     aput-object v0, v6, v7
 
-    .line 94
+    .line 92
     invoke-virtual {v1, v4, v2, v5, v6}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 91
+    .line 89
     :cond_2
     iget v4, v1, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->spanX:I
 
@@ -246,7 +246,7 @@
 
     goto :goto_1
 
-    .line 100
+    .line 98
     :cond_3
     iget-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mCarryOver:Ljava/util/ArrayList;
 
@@ -267,7 +267,7 @@
 
     check-cast v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;
 
-    .line 101
+    .line 99
     iget-object v2, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
     iget-wide v4, v0, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -280,7 +280,7 @@
 
     goto :goto_2
 
-    .line 104
+    .line 102
     :cond_4
     iget-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
 
@@ -290,12 +290,12 @@
 
     if-nez v0, :cond_5
 
-    .line 105
+    .line 103
     iget-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mDb:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string/jumbo v1, "favorites"
 
-    .line 106
+    .line 104
     const-string/jumbo v2, "_id"
 
     iget-object v3, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mEntryToRemove:Ljava/util/ArrayList;
@@ -306,10 +306,10 @@
 
     const/4 v3, 0x0
 
-    .line 105
+    .line 103
     invoke-virtual {v0, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 108
+    .line 106
     :cond_5
     return-void
 .end method
@@ -320,7 +320,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 61
+    .line 59
     iget-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mDb:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string/jumbo v1, "favorites"
@@ -346,7 +346,7 @@
     .locals 4
 
     .prologue
-    .line 66
+    .line 64
     iget-object v0, p0, Lcom/android/launcher3/provider/LossyScreenMigrationTask;->mUpdates:Lcom/android/launcher3/util/LongArrayMap;
 
     iget-wide v2, p1, Lcom/android/launcher3/model/GridSizeMigrationTask$DbEntry;->id:J
@@ -357,6 +357,6 @@
 
     invoke-virtual {v0, v2, v3, v1}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 67
+    .line 65
     return-void
 .end method

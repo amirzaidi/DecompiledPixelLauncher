@@ -38,7 +38,7 @@ public final class LauncherLogProto$Target extends a
             if (LauncherLogProto$Target._emptyArray != null) {
                 break Label_0035;
             }
-            synchronized (d.La) {
+            synchronized (d.PH) {
                 if (LauncherLogProto$Target._emptyArray == null) {
                     LauncherLogProto$Target._emptyArray = new LauncherLogProto$Target[0];
                 }
@@ -72,59 +72,59 @@ public final class LauncherLogProto$Target extends a
         final int n = 1;
         int computeSerializedSize = super.computeSerializedSize();
         if (this.type != 0) {
-            computeSerializedSize += b.RF(n, this.type);
+            computeSerializedSize += b.VA(n, this.type);
         }
         if (this.pageIndex != 0) {
-            computeSerializedSize += b.RF(2, this.pageIndex);
+            computeSerializedSize += b.VA(2, this.pageIndex);
         }
         if (this.rank != 0) {
-            computeSerializedSize += b.RF(3, this.rank);
+            computeSerializedSize += b.VA(3, this.rank);
         }
         if (this.gridX != 0) {
-            computeSerializedSize += b.RF(4, this.gridX);
+            computeSerializedSize += b.VA(4, this.gridX);
         }
         if (this.gridY != 0) {
-            computeSerializedSize += b.RF(5, this.gridY);
+            computeSerializedSize += b.VA(5, this.gridY);
         }
         if (this.containerType != 0) {
-            computeSerializedSize += b.RF(6, this.containerType);
+            computeSerializedSize += b.VA(6, this.containerType);
         }
         if (this.cardinality != 0) {
-            computeSerializedSize += b.RF(7, this.cardinality);
+            computeSerializedSize += b.VA(7, this.cardinality);
         }
         if (this.controlType != 0) {
-            computeSerializedSize += b.RF(8, this.controlType);
+            computeSerializedSize += b.VA(8, this.controlType);
         }
         if (this.itemType != 0) {
-            computeSerializedSize += b.RF(9, this.itemType);
+            computeSerializedSize += b.VA(9, this.itemType);
         }
         if (this.packageNameHash != 0) {
-            computeSerializedSize += b.RF(10, this.packageNameHash);
+            computeSerializedSize += b.VA(10, this.packageNameHash);
         }
         if (this.componentHash != 0) {
-            computeSerializedSize += b.RF(11, this.componentHash);
+            computeSerializedSize += b.VA(11, this.componentHash);
         }
         if (this.intentHash != 0) {
-            computeSerializedSize += b.RF(12, this.intentHash);
+            computeSerializedSize += b.VA(12, this.intentHash);
         }
         if (this.spanX != n) {
-            computeSerializedSize += b.RF(13, this.spanX);
+            computeSerializedSize += b.VA(13, this.spanX);
         }
         if (this.spanY != n) {
-            computeSerializedSize += b.RF(14, this.spanY);
+            computeSerializedSize += b.VA(14, this.spanY);
         }
         if (this.predictedRank != 0) {
-            computeSerializedSize += b.RF(15, this.predictedRank);
+            computeSerializedSize += b.VA(15, this.predictedRank);
         }
         return computeSerializedSize;
     }
     
     public LauncherLogProto$Target mergeFrom(final c c) {
         while (true) {
-            final int sx = c.Sx();
-            switch (sx) {
+            final int ws = c.Ws();
+            switch (ws) {
                 default: {
-                    if (!f.SW(c, sx)) {
+                    if (!f.WR(c, ws)) {
                         return this;
                     }
                     continue;
@@ -133,8 +133,8 @@ public final class LauncherLogProto$Target extends a
                     return this;
                 }
                 case 8: {
-                    final int sk = c.SK();
-                    switch (sk) {
+                    final int wf = c.WF();
+                    switch (wf) {
                         default: {
                             continue;
                         }
@@ -142,31 +142,31 @@ public final class LauncherLogProto$Target extends a
                         case 1:
                         case 2:
                         case 3: {
-                            this.type = sk;
+                            this.type = wf;
                             continue;
                         }
                     }
                     break;
                 }
                 case 16: {
-                    this.pageIndex = c.SK();
+                    this.pageIndex = c.WF();
                     continue;
                 }
                 case 24: {
-                    this.rank = c.SK();
+                    this.rank = c.WF();
                     continue;
                 }
                 case 32: {
-                    this.gridX = c.SK();
+                    this.gridX = c.WF();
                     continue;
                 }
                 case 40: {
-                    this.gridY = c.SK();
+                    this.gridY = c.WF();
                     continue;
                 }
                 case 48: {
-                    final int sk2 = c.SK();
-                    switch (sk2) {
+                    final int wf2 = c.WF();
+                    switch (wf2) {
                         default: {
                             continue;
                         }
@@ -181,19 +181,19 @@ public final class LauncherLogProto$Target extends a
                         case 8:
                         case 9:
                         case 10: {
-                            this.containerType = sk2;
+                            this.containerType = wf2;
                             continue;
                         }
                     }
                     break;
                 }
                 case 56: {
-                    this.cardinality = c.SK();
+                    this.cardinality = c.WF();
                     continue;
                 }
                 case 64: {
-                    final int sk3 = c.SK();
-                    switch (sk3) {
+                    final int wf3 = c.WF();
+                    switch (wf3) {
                         default: {
                             continue;
                         }
@@ -209,15 +209,15 @@ public final class LauncherLogProto$Target extends a
                         case 9:
                         case 10:
                         case 11: {
-                            this.controlType = sk3;
+                            this.controlType = wf3;
                             continue;
                         }
                     }
                     break;
                 }
                 case 72: {
-                    final int sk4 = c.SK();
-                    switch (sk4) {
+                    final int wf4 = c.WF();
+                    switch (wf4) {
                         default: {
                             continue;
                         }
@@ -230,34 +230,34 @@ public final class LauncherLogProto$Target extends a
                         case 6:
                         case 7:
                         case 8: {
-                            this.itemType = sk4;
+                            this.itemType = wf4;
                             continue;
                         }
                     }
                     break;
                 }
                 case 80: {
-                    this.packageNameHash = c.SK();
+                    this.packageNameHash = c.WF();
                     continue;
                 }
                 case 88: {
-                    this.componentHash = c.SK();
+                    this.componentHash = c.WF();
                     continue;
                 }
                 case 96: {
-                    this.intentHash = c.SK();
+                    this.intentHash = c.WF();
                     continue;
                 }
                 case 104: {
-                    this.spanX = c.SK();
+                    this.spanX = c.WF();
                     continue;
                 }
                 case 112: {
-                    this.spanY = c.SK();
+                    this.spanY = c.WF();
                     continue;
                 }
                 case 120: {
-                    this.predictedRank = c.SK();
+                    this.predictedRank = c.WF();
                     continue;
                 }
             }
@@ -267,49 +267,49 @@ public final class LauncherLogProto$Target extends a
     public void writeTo(final b b) {
         final int n = 1;
         if (this.type != 0) {
-            b.RA(n, this.type);
+            b.Vv(n, this.type);
         }
         if (this.pageIndex != 0) {
-            b.RA(2, this.pageIndex);
+            b.Vv(2, this.pageIndex);
         }
         if (this.rank != 0) {
-            b.RA(3, this.rank);
+            b.Vv(3, this.rank);
         }
         if (this.gridX != 0) {
-            b.RA(4, this.gridX);
+            b.Vv(4, this.gridX);
         }
         if (this.gridY != 0) {
-            b.RA(5, this.gridY);
+            b.Vv(5, this.gridY);
         }
         if (this.containerType != 0) {
-            b.RA(6, this.containerType);
+            b.Vv(6, this.containerType);
         }
         if (this.cardinality != 0) {
-            b.RA(7, this.cardinality);
+            b.Vv(7, this.cardinality);
         }
         if (this.controlType != 0) {
-            b.RA(8, this.controlType);
+            b.Vv(8, this.controlType);
         }
         if (this.itemType != 0) {
-            b.RA(9, this.itemType);
+            b.Vv(9, this.itemType);
         }
         if (this.packageNameHash != 0) {
-            b.RA(10, this.packageNameHash);
+            b.Vv(10, this.packageNameHash);
         }
         if (this.componentHash != 0) {
-            b.RA(11, this.componentHash);
+            b.Vv(11, this.componentHash);
         }
         if (this.intentHash != 0) {
-            b.RA(12, this.intentHash);
+            b.Vv(12, this.intentHash);
         }
         if (this.spanX != n) {
-            b.RA(13, this.spanX);
+            b.Vv(13, this.spanX);
         }
         if (this.spanY != n) {
-            b.RA(14, this.spanY);
+            b.Vv(14, this.spanY);
         }
         if (this.predictedRank != 0) {
-            b.RA(15, this.predictedRank);
+            b.Vv(15, this.predictedRank);
         }
         super.writeTo(b);
     }

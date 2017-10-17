@@ -9,7 +9,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Workspace;
 
-.field final synthetic val$folderIds:Ljava/util/HashSet;
+.field final synthetic val$updates:Ljava/util/HashSet;
 
 
 # direct methods
@@ -20,9 +20,9 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$23;->this$0:Lcom/android/launcher3/Workspace;
 
-    iput-object p2, p0, Lcom/android/launcher3/Workspace$23;->val$folderIds:Ljava/util/HashSet;
+    iput-object p2, p0, Lcom/android/launcher3/Workspace$23;->val$updates:Ljava/util/HashSet;
 
-    .line 4010
+    .line 3937
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -32,87 +32,66 @@
 
 # virtual methods
 .method public evaluate(Lcom/android/launcher3/ItemInfo;Landroid/view/View;)Z
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 4013
-    instance-of v0, p1, Lcom/android/launcher3/FolderInfo;
+    const/4 v1, 0x0
+
+    .line 3940
+    instance-of v0, p1, Lcom/android/launcher3/ShortcutInfo;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$23;->val$folderIds:Ljava/util/HashSet;
+    instance-of v0, p2, Lcom/android/launcher3/BubbleTextView;
 
-    iget-wide v2, p1, Lcom/android/launcher3/ItemInfo;->id:J
+    if-eqz v0, :cond_1
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 3941
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$23;->val$updates:Ljava/util/HashSet;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
+    .line 3940
     if-eqz v0, :cond_1
 
-    .line 4014
-    instance-of v0, p2, Lcom/android/launcher3/folder/FolderIcon;
+    .line 3942
+    check-cast p2, Lcom/android/launcher3/BubbleTextView;
 
-    .line 4013
-    if-eqz v0, :cond_1
+    invoke-virtual {p2, v1}, Lcom/android/launcher3/BubbleTextView;->applyPromiseState(Z)V
 
-    .line 4015
-    new-instance v1, Lcom/android/launcher3/badge/FolderBadgeInfo;
-
-    invoke-direct {v1}, Lcom/android/launcher3/badge/FolderBadgeInfo;-><init>()V
-
-    .line 4016
-    check-cast p1, Lcom/android/launcher3/FolderInfo;
-
-    iget-object v0, p1, Lcom/android/launcher3/FolderInfo;->contents:Ljava/util/ArrayList;
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
+    .line 3949
+    :cond_0
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    return v1
 
-    move-result v0
+    .line 3943
+    :cond_1
+    instance-of v0, p2, Lcom/android/launcher3/PendingAppWidgetHostView;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 3944
+    instance-of v0, p1, Lcom/android/launcher3/LauncherAppWidgetInfo;
 
-    move-result-object v0
+    .line 3943
+    if-eqz v0, :cond_0
 
-    check-cast v0, Lcom/android/launcher3/ShortcutInfo;
+    .line 3945
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$23;->val$updates:Ljava/util/HashSet;
 
-    .line 4017
-    iget-object v3, p0, Lcom/android/launcher3/Workspace$23;->this$0:Lcom/android/launcher3/Workspace;
+    invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
-    iget-object v3, v3, Lcom/android/launcher3/Workspace;->mLauncher:Lcom/android/launcher3/Launcher;
+    move-result v0
 
-    invoke-virtual {v3}, Lcom/android/launcher3/Launcher;->getPopupDataProvider()Lcom/android/launcher3/popup/PopupDataProvider;
+    .line 3943
+    if-eqz v0, :cond_0
 
-    move-result-object v3
+    .line 3946
+    check-cast p2, Lcom/android/launcher3/PendingAppWidgetHostView;
 
-    invoke-virtual {v3, v0}, Lcom/android/launcher3/popup/PopupDataProvider;->getBadgeInfoForItem(Lcom/android/launcher3/ItemInfo;)Lcom/android/launcher3/badge/BadgeInfo;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lcom/android/launcher3/badge/FolderBadgeInfo;->addBadgeInfo(Lcom/android/launcher3/badge/BadgeInfo;)V
+    invoke-virtual {p2}, Lcom/android/launcher3/PendingAppWidgetHostView;->applyState()V
 
     goto :goto_0
-
-    .line 4020
-    :cond_0
-    check-cast p2, Lcom/android/launcher3/folder/FolderIcon;
-
-    invoke-virtual {p2, v1}, Lcom/android/launcher3/folder/FolderIcon;->setBadgeInfo(Lcom/android/launcher3/badge/FolderBadgeInfo;)V
-
-    .line 4023
-    :cond_1
-    const/4 v0, 0x0
-
-    return v0
 .end method

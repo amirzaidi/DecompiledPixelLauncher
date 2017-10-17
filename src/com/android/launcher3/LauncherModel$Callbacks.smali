@@ -28,6 +28,9 @@
 .method public abstract bindItems(Ljava/util/ArrayList;IIZ)V
 .end method
 
+.method public abstract bindPromiseAppProgressUpdated(Lcom/android/launcher3/PromiseAppInfo;)V
+.end method
+
 .method public abstract bindRestoreItemsChange(Ljava/util/HashSet;)V
 .end method
 

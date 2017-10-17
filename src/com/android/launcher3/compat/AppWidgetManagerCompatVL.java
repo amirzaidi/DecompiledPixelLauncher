@@ -80,7 +80,7 @@ class AppWidgetManagerCompatVL extends AppWidgetManagerCompat
             appWidgetHost.startAppWidgetConfigureActivityForResult(activity, n, n3, n2, (Bundle)null);
         }
         catch (ActivityNotFoundException | SecurityException ex) {
-            Toast.makeText((Context)activity, 2131492895, 0).show();
+            Toast.makeText((Context)activity, 2131492897, 0).show();
         }
     }
 }

@@ -38,7 +38,7 @@ public class LauncherAppState
         this.mInvariantDeviceProfile = new InvariantDeviceProfile(this.mContext);
         this.mIconCache = new IconCache(this.mContext, this.mInvariantDeviceProfile);
         this.mWidgetCache = new WidgetPreviewLoader(this.mContext, this.mIconCache);
-        this.mModel = new LauncherModel(this, this.mIconCache, (AppFilter)Utilities.getOverrideObject(AppFilter.class, this.mContext, 2131492887));
+        this.mModel = new LauncherModel(this, this.mIconCache, AppFilter.newInstance(this.mContext));
         LauncherAppsCompat.getInstance(this.mContext).addOnAppsChangedCallback(this.mModel);
         final IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.intent.action.LOCALE_CHANGED");

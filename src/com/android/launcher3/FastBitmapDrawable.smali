@@ -8,8 +8,6 @@
 
 .field public static final CLICK_FEEDBACK_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
-.field private static final STATE_PRESSED:[I
-
 .field private static final sCachedFilter:Landroid/util/SparseArray;
 
 .field private static final sTempBrightnessMatrix:Landroid/graphics/ColorMatrix;
@@ -62,48 +60,35 @@
     .locals 3
 
     .prologue
-    .line 39
-    const/4 v0, 0x1
-
-    new-array v0, v0, [I
-
-    const v1, 0x10100a7
-
-    const/4 v2, 0x0
-
-    aput v1, v0, v2
-
-    sput-object v0, Lcom/android/launcher3/FastBitmapDrawable;->STATE_PRESSED:[I
-
-    .line 45
+    .line 43
     new-instance v0, Lcom/android/launcher3/FastBitmapDrawable$1;
 
     invoke-direct {v0}, Lcom/android/launcher3/FastBitmapDrawable$1;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/FastBitmapDrawable;->CLICK_FEEDBACK_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
-    .line 66
+    .line 64
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/FastBitmapDrawable;->sCachedFilter:Landroid/util/SparseArray;
 
-    .line 69
+    .line 67
     new-instance v0, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v0}, Landroid/graphics/ColorMatrix;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/FastBitmapDrawable;->sTempBrightnessMatrix:Landroid/graphics/ColorMatrix;
 
-    .line 70
+    .line 68
     new-instance v0, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v0}, Landroid/graphics/ColorMatrix;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/FastBitmapDrawable;->sTempFilterMatrix:Landroid/graphics/ColorMatrix;
 
-    .line 81
+    .line 79
     new-instance v0, Lcom/android/launcher3/FastBitmapDrawable$2;
 
     sget-object v1, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
@@ -112,7 +97,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/android/launcher3/FastBitmapDrawable$2;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    .line 80
+    .line 78
     sput-object v0, Lcom/android/launcher3/FastBitmapDrawable;->BRIGHTNESS:Landroid/util/Property;
 
     .line 37
@@ -125,10 +110,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 103
+    .line 101
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 72
+    .line 70
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x3
@@ -137,31 +122,31 @@
 
     iput-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPaint:Landroid/graphics/Paint;
 
-    .line 95
+    .line 93
     iput v2, p0, Lcom/android/launcher3/FastBitmapDrawable;->mDesaturation:I
 
-    .line 96
+    .line 94
     iput v2, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightness:I
 
-    .line 97
+    .line 95
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mAlpha:I
 
-    .line 98
+    .line 96
     const v0, 0x7fffffff
 
     iput v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPrevUpdateKey:I
 
-    .line 104
+    .line 102
     iput-object p1, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 105
+    .line 103
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/FastBitmapDrawable;->setFilterBitmap(Z)V
 
-    .line 106
+    .line 104
     return-void
 .end method
 
@@ -169,7 +154,7 @@
     .locals 2
 
     .prologue
-    .line 262
+    .line 254
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightness:I
 
     int-to-float v0, v0
@@ -185,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 224
+    .line 216
     iget-boolean v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsDisabled:Z
 
     if-eqz v0, :cond_0
@@ -195,7 +180,7 @@
     :goto_0
     return v0
 
-    .line 225
+    .line 217
     :cond_0
     iget-boolean v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsPressed:Z
 
@@ -215,7 +200,7 @@
     .locals 1
 
     .prologue
-    .line 219
+    .line 211
     iget-boolean v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsDisabled:Z
 
     if-eqz v0, :cond_0
@@ -225,17 +210,17 @@
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/launcher3/FastBitmapDrawable;->setDesaturation(F)V
 
-    .line 220
+    .line 212
     invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getExpectedBrightness()F
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/FastBitmapDrawable;->setBrightness(F)V
 
-    .line 221
+    .line 213
     return-void
 
-    .line 219
+    .line 211
     :cond_0
     const/4 v0, 0x0
 
@@ -246,7 +231,7 @@
     .locals 2
 
     .prologue
-    .line 254
+    .line 246
     const/high16 v0, 0x42400000    # 48.0f
 
     mul-float/2addr v0, p1
@@ -259,18 +244,18 @@
 
     double-to-int v0, v0
 
-    .line 255
+    .line 247
     iget v1, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightness:I
 
     if-eq v1, v0, :cond_0
 
-    .line 256
+    .line 248
     iput v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightness:I
 
-    .line 257
+    .line 249
     invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->updateFilter()V
 
-    .line 259
+    .line 251
     :cond_0
     return-void
 .end method
@@ -279,7 +264,7 @@
     .locals 2
 
     .prologue
-    .line 239
+    .line 231
     const/high16 v0, 0x42400000    # 48.0f
 
     mul-float/2addr v0, p1
@@ -292,18 +277,18 @@
 
     double-to-int v0, v0
 
-    .line 240
+    .line 232
     iget v1, p0, Lcom/android/launcher3/FastBitmapDrawable;->mDesaturation:I
 
     if-eq v1, v0, :cond_0
 
-    .line 241
+    .line 233
     iput v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mDesaturation:I
 
-    .line 242
+    .line 234
     invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->updateFilter()V
 
-    .line 244
+    .line 236
     :cond_0
     return-void
 .end method
@@ -322,12 +307,12 @@
 
     const/4 v4, 0x0
 
-    .line 271
+    .line 263
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mDesaturation:I
 
     if-lez v0, :cond_0
 
-    .line 272
+    .line 264
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mDesaturation:I
 
     shl-int/lit8 v0, v0, 0x10
@@ -340,29 +325,29 @@
 
     move v3, v4
 
-    .line 283
+    .line 275
     :goto_0
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPrevUpdateKey:I
 
     if-ne v1, v0, :cond_1
 
-    .line 284
+    .line 276
     return-void
 
-    .line 273
+    .line 265
     :cond_0
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightness:I
 
     if-lez v0, :cond_6
 
-    .line 275
+    .line 267
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightness:I
 
     const/high16 v1, 0x10000
 
     or-int/2addr v0, v1
 
-    .line 279
+    .line 271
     const/4 v1, 0x1
 
     move v3, v1
@@ -371,14 +356,14 @@
 
     goto :goto_0
 
-    .line 286
+    .line 278
     :cond_1
     iput v1, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPrevUpdateKey:I
 
-    .line 288
+    .line 280
     if-eq v1, v2, :cond_5
 
-    .line 289
+    .line 281
     sget-object v0, Lcom/android/launcher3/FastBitmapDrawable;->sCachedFilter:Landroid/util/SparseArray;
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -387,57 +372,57 @@
 
     check-cast v0, Landroid/graphics/ColorFilter;
 
-    .line 290
+    .line 282
     if-nez v0, :cond_2
 
-    .line 291
+    .line 283
     invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getBrightness()F
 
     move-result v0
 
-    .line 292
+    .line 284
     const/high16 v2, 0x437f0000    # 255.0f
 
     mul-float/2addr v2, v0
 
     float-to-int v2, v2
 
-    .line 293
+    .line 285
     if-eqz v3, :cond_3
 
-    .line 294
+    .line 286
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     invoke-static {v2, v5, v5, v5}, Landroid/graphics/Color;->argb(IIII)I
 
     move-result v2
 
-    .line 295
+    .line 287
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
 
-    .line 294
+    .line 286
     invoke-direct {v0, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 313
+    .line 305
     :goto_1
     sget-object v2, Lcom/android/launcher3/FastBitmapDrawable;->sCachedFilter:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1, v0}, Landroid/util/SparseArray;->append(ILjava/lang/Object;)V
 
-    .line 315
+    .line 307
     :cond_2
     iget-object v1, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 319
+    .line 311
     :goto_2
     invoke-virtual {p0}, Lcom/android/launcher3/FastBitmapDrawable;->invalidateSelf()V
 
-    .line 320
+    .line 312
     return-void
 
-    .line 297
+    .line 289
     :cond_3
     invoke-virtual {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getDesaturation()F
 
@@ -445,68 +430,68 @@
 
     sub-float v3, v6, v3
 
-    .line 298
+    .line 290
     sget-object v5, Lcom/android/launcher3/FastBitmapDrawable;->sTempFilterMatrix:Landroid/graphics/ColorMatrix;
 
     invoke-virtual {v5, v3}, Landroid/graphics/ColorMatrix;->setSaturation(F)V
 
-    .line 299
+    .line 291
     iget v3, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightness:I
 
     if-lez v3, :cond_4
 
-    .line 301
+    .line 293
     sub-float v0, v6, v0
 
-    .line 302
+    .line 294
     sget-object v3, Lcom/android/launcher3/FastBitmapDrawable;->sTempBrightnessMatrix:Landroid/graphics/ColorMatrix;
 
     invoke-virtual {v3}, Landroid/graphics/ColorMatrix;->getArray()[F
 
     move-result-object v3
 
-    .line 303
+    .line 295
     aput v0, v3, v4
 
-    .line 304
+    .line 296
     const/4 v4, 0x6
 
     aput v0, v3, v4
 
-    .line 305
+    .line 297
     const/16 v4, 0xc
 
     aput v0, v3, v4
 
-    .line 306
+    .line 298
     int-to-float v0, v2
 
     const/4 v4, 0x4
 
     aput v0, v3, v4
 
-    .line 307
+    .line 299
     int-to-float v0, v2
 
     const/16 v4, 0x9
 
     aput v0, v3, v4
 
-    .line 308
+    .line 300
     int-to-float v0, v2
 
     const/16 v2, 0xe
 
     aput v0, v3, v2
 
-    .line 309
+    .line 301
     sget-object v0, Lcom/android/launcher3/FastBitmapDrawable;->sTempFilterMatrix:Landroid/graphics/ColorMatrix;
 
     sget-object v2, Lcom/android/launcher3/FastBitmapDrawable;->sTempBrightnessMatrix:Landroid/graphics/ColorMatrix;
 
     invoke-virtual {v0, v2}, Landroid/graphics/ColorMatrix;->preConcat(Landroid/graphics/ColorMatrix;)V
 
-    .line 311
+    .line 303
     :cond_4
     new-instance v0, Landroid/graphics/ColorMatrixColorFilter;
 
@@ -516,7 +501,7 @@
 
     goto :goto_1
 
-    .line 317
+    .line 309
     :cond_5
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPaint:Landroid/graphics/Paint;
 
@@ -535,21 +520,10 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .locals 0
-
-    .prologue
-    .line 110
-    invoke-virtual {p0, p1}, Lcom/android/launcher3/FastBitmapDrawable;->drawInternal(Landroid/graphics/Canvas;)V
-
-    .line 111
-    return-void
-.end method
-
-.method protected drawInternal(Landroid/graphics/Canvas;)V
     .locals 4
 
     .prologue
-    .line 121
+    .line 108
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getBounds()Landroid/graphics/Rect;
@@ -562,29 +536,7 @@
 
     invoke-virtual {p1, v0, v3, v1, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 122
-    return-void
-.end method
-
-.method public drawWithBrightness(Landroid/graphics/Canvas;F)V
-    .locals 1
-
-    .prologue
-    .line 114
-    invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getBrightness()F
-
-    move-result v0
-
-    .line 115
-    invoke-direct {p0, p2}, Lcom/android/launcher3/FastBitmapDrawable;->setBrightness(F)V
-
-    .line 116
-    invoke-virtual {p0, p1}, Lcom/android/launcher3/FastBitmapDrawable;->drawInternal(Landroid/graphics/Canvas;)V
-
-    .line 117
-    invoke-direct {p0, v0}, Lcom/android/launcher3/FastBitmapDrawable;->setBrightness(F)V
-
-    .line 118
+    .line 109
     return-void
 .end method
 
@@ -592,17 +544,31 @@
     .locals 1
 
     .prologue
-    .line 155
+    .line 142
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mAlpha:I
 
     return v0
+.end method
+
+.method public getColorFilter()Landroid/graphics/ColorFilter;
+    .locals 1
+
+    .prologue
+    .line 176
+    iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {v0}, Landroid/graphics/Paint;->getColorFilter()Landroid/graphics/ColorFilter;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getDesaturation()F
     .locals 2
 
     .prologue
-    .line 247
+    .line 239
     iget v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mDesaturation:I
 
     int-to-float v0, v0
@@ -618,28 +584,32 @@
     .locals 2
 
     .prologue
-    .line 125
+    .line 112
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIconPalette:Lcom/android/launcher3/graphics/IconPalette;
 
     if-nez v0, :cond_0
 
-    .line 127
+    .line 114
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     const/16 v1, 0x14
 
-    .line 126
+    .line 113
     invoke-static {v0, v1}, Lcom/android/launcher3/Utilities;->findDominantColorByHue(Landroid/graphics/Bitmap;I)I
 
     move-result v0
 
-    invoke-static {v0}, Lcom/android/launcher3/graphics/IconPalette;->fromDominantColor(I)Lcom/android/launcher3/graphics/IconPalette;
+    .line 114
+    const/4 v1, 0x1
+
+    .line 113
+    invoke-static {v0, v1}, Lcom/android/launcher3/graphics/IconPalette;->fromDominantColor(IZ)Lcom/android/launcher3/graphics/IconPalette;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIconPalette:Lcom/android/launcher3/graphics/IconPalette;
 
-    .line 129
+    .line 116
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIconPalette:Lcom/android/launcher3/graphics/IconPalette;
 
@@ -650,7 +620,7 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 152
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
@@ -664,7 +634,7 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 147
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
@@ -678,7 +648,7 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 162
     invoke-virtual {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -694,7 +664,7 @@
     .locals 1
 
     .prologue
-    .line 170
+    .line 157
     invoke-virtual {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -710,7 +680,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 126
     const/4 v0, -0x3
 
     return v0
@@ -720,7 +690,7 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 171
     const/4 v0, 0x1
 
     return v0
@@ -734,7 +704,7 @@
 
     const/4 v2, 0x0
 
-    .line 190
+    .line 182
     array-length v3, p1
 
     move v0, v2
@@ -744,88 +714,88 @@
 
     aget v4, p1, v0
 
-    .line 191
+    .line 183
     const v5, 0x10100a7
 
     if-ne v4, v5, :cond_1
 
     move v0, v1
 
-    .line 196
+    .line 188
     :goto_1
     iget-boolean v3, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsPressed:Z
 
     if-eq v3, v0, :cond_3
 
-    .line 197
+    .line 189
     iput-boolean v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsPressed:Z
 
-    .line 199
+    .line 191
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightnessAnimator:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 200
+    .line 192
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightnessAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 203
+    .line 195
     :cond_0
     iget-boolean v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsPressed:Z
 
     if-eqz v0, :cond_2
 
-    .line 206
+    .line 198
     sget-object v0, Lcom/android/launcher3/FastBitmapDrawable;->BRIGHTNESS:Landroid/util/Property;
 
-    .line 205
+    .line 197
     new-array v3, v1, [F
 
-    .line 206
+    .line 198
     invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getExpectedBrightness()F
 
     move-result v4
 
     aput v4, v3, v2
 
-    .line 205
+    .line 197
     invoke-static {p0, v0, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightnessAnimator:Landroid/animation/ObjectAnimator;
 
-    .line 207
+    .line 199
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightnessAnimator:Landroid/animation/ObjectAnimator;
 
     const-wide/16 v2, 0x7d0
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 208
+    .line 200
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightnessAnimator:Landroid/animation/ObjectAnimator;
 
     sget-object v2, Lcom/android/launcher3/FastBitmapDrawable;->CLICK_FEEDBACK_INTERPOLATOR:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 209
+    .line 201
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mBrightnessAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
 
-    .line 213
+    .line 205
     :goto_2
     return v1
 
-    .line 190
+    .line 182
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 211
+    .line 203
     :cond_2
     invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->getExpectedBrightness()F
 
@@ -835,7 +805,7 @@
 
     goto :goto_2
 
-    .line 215
+    .line 207
     :cond_3
     return v2
 
@@ -849,15 +819,15 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 131
     iput p1, p0, Lcom/android/launcher3/FastBitmapDrawable;->mAlpha:I
 
-    .line 145
+    .line 132
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 146
+    .line 133
     return-void
 .end method
 
@@ -865,7 +835,7 @@
     .locals 0
 
     .prologue
-    .line 135
+    .line 122
     return-void
 .end method
 
@@ -873,17 +843,17 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 137
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 151
+    .line 138
     iget-object v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    .line 152
+    .line 139
     return-void
 .end method
 
@@ -891,18 +861,18 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 221
     iget-boolean v0, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsDisabled:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 230
+    .line 222
     iput-boolean p1, p0, Lcom/android/launcher3/FastBitmapDrawable;->mIsDisabled:Z
 
-    .line 231
+    .line 223
     invoke-direct {p0}, Lcom/android/launcher3/FastBitmapDrawable;->invalidateDesaturationAndBrightness()V
 
-    .line 233
+    .line 225
     :cond_0
     return-void
 .end method

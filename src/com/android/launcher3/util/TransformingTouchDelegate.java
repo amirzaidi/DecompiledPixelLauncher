@@ -36,11 +36,6 @@ public class TransformingTouchDelegate extends TouchDelegate
         this.mTouchCheckBounds.inset(-this.mTouchExtension, -this.mTouchExtension);
     }
     
-    public void extendTouchBounds(final float mTouchExtension) {
-        this.mTouchExtension = mTouchExtension;
-        this.updateTouchBounds();
-    }
-    
     public boolean onTouchEvent(final MotionEvent motionEvent) {
         boolean dispatchTouchEvent = false;
         int n = 0;
@@ -86,9 +81,5 @@ public class TransformingTouchDelegate extends TouchDelegate
     public void setBounds(final int n, final int n2, final int n3, final int n4) {
         this.mBounds.set((float)n, (float)n2, (float)n3, (float)n4);
         this.updateTouchBounds();
-    }
-    
-    public void setDelegateView(final View mDelegateView) {
-        this.mDelegateView = mDelegateView;
     }
 }

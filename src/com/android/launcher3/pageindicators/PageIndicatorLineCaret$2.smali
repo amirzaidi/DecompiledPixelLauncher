@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 79
+    .line 81
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     .line 1
@@ -21,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 84
     invoke-static {p1}, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;->-get2(Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;)F
 
     move-result v0
@@ -37,7 +37,7 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 82
     check-cast p1, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret$2;->get(Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;)Ljava/lang/Float;
@@ -51,17 +51,17 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 89
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;->-set0(Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;F)F
 
-    .line 88
+    .line 90
     invoke-virtual {p1}, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;->invalidate()V
 
-    .line 89
+    .line 91
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .locals 0
 
     .prologue
-    .line 85
+    .line 87
     check-cast p1, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;
 
     check-cast p2, Ljava/lang/Float;

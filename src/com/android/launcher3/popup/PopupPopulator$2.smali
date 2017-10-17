@@ -62,7 +62,7 @@
 
     iput-object p12, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$originalInfo:Lcom/android/launcher3/ItemInfo;
 
-    .line 190
+    .line 187
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -79,27 +79,27 @@
 
     const/4 v2, 0x0
 
-    .line 193
+    .line 190
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$notificationView:Lcom/android/launcher3/notification/NotificationItemView;
 
     if-eqz v0, :cond_1
 
-    .line 194
+    .line 191
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$launcher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getPopupDataProvider()Lcom/android/launcher3/popup/PopupDataProvider;
 
     move-result-object v0
 
-    .line 195
+    .line 192
     iget-object v1, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$notificationKeys:Ljava/util/List;
 
-    .line 194
+    .line 191
     invoke-virtual {v0, v1}, Lcom/android/launcher3/popup/PopupDataProvider;->getStatusBarNotificationsForKeys(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v4
 
-    .line 196
+    .line 193
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-interface {v4}, Ljava/util/List;->size()I
@@ -110,7 +110,7 @@
 
     move v1, v2
 
-    .line 197
+    .line 194
     :goto_0
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -118,14 +118,14 @@
 
     if-ge v1, v0, :cond_0
 
-    .line 198
+    .line 195
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/service/notification/StatusBarNotification;
 
-    .line 199
+    .line 196
     new-instance v6, Lcom/android/launcher3/notification/NotificationInfo;
 
     iget-object v7, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$launcher:Lcom/android/launcher3/Launcher;
@@ -134,14 +134,14 @@
 
     invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 197
+    .line 194
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 201
+    .line 198
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$uiHandler:Landroid/os/Handler;
 
@@ -153,7 +153,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 204
+    .line 201
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$launcher:Lcom/android/launcher3/Launcher;
 
@@ -161,19 +161,19 @@
 
     move-result-object v0
 
-    .line 205
+    .line 202
     iget-object v1, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$activity:Landroid/content/ComponentName;
 
     iget-object v4, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$shortcutIds:Ljava/util/List;
 
     iget-object v5, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$user:Landroid/os/UserHandle;
 
-    .line 204
+    .line 201
     invoke-virtual {v0, v1, v4, v5}, Lcom/android/launcher3/shortcuts/DeepShortcutManager;->queryForShortcutsContainer(Landroid/content/ComponentName;Ljava/util/List;Landroid/os/UserHandle;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 206
+    .line 203
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$notificationKeys:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -184,7 +184,7 @@
 
     move-object v0, v3
 
-    .line 208
+    .line 205
     :goto_1
     invoke-static {v1, v0}, Lcom/android/launcher3/popup/PopupPopulator;->sortAndFilterShortcuts(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
 
@@ -192,7 +192,7 @@
 
     move v3, v2
 
-    .line 209
+    .line 206
     :goto_2
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -208,34 +208,34 @@
 
     if-ge v3, v0, :cond_3
 
-    .line 210
+    .line 207
     invoke-interface {v4, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 211
+    .line 208
     new-instance v5, Lcom/android/launcher3/ShortcutInfo;
 
     iget-object v1, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$launcher:Lcom/android/launcher3/Launcher;
 
     invoke-direct {v5, v0, v1}, Lcom/android/launcher3/ShortcutInfo;-><init>(Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;Landroid/content/Context;)V
 
-    .line 214
+    .line 211
     iget-object v1, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$launcher:Lcom/android/launcher3/Launcher;
 
-    .line 213
+    .line 210
     invoke-static {v0, v1, v2}, Lcom/android/launcher3/graphics/LauncherIcons;->createShortcutIcon(Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;Landroid/content/Context;Z)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, v5, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
 
-    .line 215
+    .line 212
     iput v3, v5, Lcom/android/launcher3/ShortcutInfo;->rank:I
 
-    .line 216
+    .line 213
     iget-object v6, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$uiHandler:Landroid/os/Handler;
 
     new-instance v7, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;
@@ -254,14 +254,14 @@
 
     invoke-virtual {v6, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 209
+    .line 206
     add-int/lit8 v0, v3, 0x1
 
     move v3, v0
 
     goto :goto_2
 
-    .line 207
+    .line 204
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$notificationKeys:Ljava/util/List;
 
@@ -278,7 +278,7 @@
     :cond_3
     move v6, v2
 
-    .line 222
+    .line 219
     :goto_3
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$systemShortcuts:Ljava/util/List;
 
@@ -288,7 +288,7 @@
 
     if-ge v6, v0, :cond_4
 
-    .line 223
+    .line 220
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$systemShortcuts:Ljava/util/List;
 
     invoke-interface {v0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -297,14 +297,14 @@
 
     check-cast v3, Lcom/android/launcher3/popup/SystemShortcut;
 
-    .line 224
+    .line 221
     iget-object v7, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$uiHandler:Landroid/os/Handler;
 
     new-instance v0, Lcom/android/launcher3/popup/PopupPopulator$UpdateSystemShortcutChild;
 
     iget-object v1, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$container:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    .line 225
+    .line 222
     iget-object v2, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$systemShortcutViews:Ljava/util/List;
 
     invoke-interface {v2, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -317,19 +317,19 @@
 
     iget-object v5, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$originalInfo:Lcom/android/launcher3/ItemInfo;
 
-    .line 224
+    .line 221
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/popup/PopupPopulator$UpdateSystemShortcutChild;-><init>(Lcom/android/launcher3/popup/PopupContainerWithArrow;Landroid/view/View;Lcom/android/launcher3/popup/SystemShortcut;Lcom/android/launcher3/Launcher;Lcom/android/launcher3/ItemInfo;)V
 
     invoke-virtual {v7, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 222
+    .line 219
     add-int/lit8 v2, v6, 0x1
 
     move v6, v2
 
     goto :goto_3
 
-    .line 227
+    .line 224
     :cond_4
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$2;->val$uiHandler:Landroid/os/Handler;
 
@@ -343,6 +343,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 234
+    .line 231
     return-void
 .end method

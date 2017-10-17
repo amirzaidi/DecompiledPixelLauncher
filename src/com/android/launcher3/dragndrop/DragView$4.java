@@ -4,8 +4,6 @@
 
 package com.android.launcher3.dragndrop;
 
-import android.graphics.ColorFilter;
-import android.graphics.ColorMatrixColorFilter;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator$AnimatorUpdateListener;
 
@@ -18,7 +16,7 @@ final class DragView$4 implements ValueAnimator$AnimatorUpdateListener
     }
     
     public void onAnimationUpdate(final ValueAnimator valueAnimator) {
-        this.this$0.mPaint.setColorFilter((ColorFilter)new ColorMatrixColorFilter(this.this$0.mCurrentFilter));
+        this.this$0.mCrossFadeProgress = valueAnimator.getAnimatedFraction();
         this.this$0.invalidate();
     }
 }

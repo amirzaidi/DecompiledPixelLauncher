@@ -41,6 +41,6 @@ final class LauncherAccessibilityDelegate$1 implements Runnable
             workspace.snapToPage(workspace.getPageIndexForScreenId(this.val$screenId));
             this.this$0.mLauncher.addPendingItem(pendingAddItemInfo, n, this.val$screenId, this.val$coordinates, pendingAddItemInfo.spanX, pendingAddItemInfo.spanY);
         }
-        this.this$0.announceConfirmation(2131492967);
+        this.this$0.announceConfirmation(2131492976);
     }
 }

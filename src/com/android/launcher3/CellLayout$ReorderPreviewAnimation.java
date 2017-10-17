@@ -4,43 +4,6 @@
 
 package com.android.launcher3;
 
-import android.graphics.Point;
-import android.view.ViewGroup$MarginLayoutParams;
-import com.android.launcher3.graphics.DragPreviewProvider;
-import android.util.Log;
-import android.view.View$MeasureSpec;
-import android.graphics.Bitmap;
-import com.android.launcher3.accessibility.FolderAccessibilityHelper;
-import com.android.launcher3.accessibility.WorkspaceAccessibilityHelper;
-import android.view.View$OnClickListener;
-import android.support.v4.view.a;
-import android.support.v4.view.f;
-import android.view.MotionEvent;
-import android.graphics.Canvas;
-import android.view.ViewGroup$LayoutParams;
-import java.util.Collection;
-import android.os.Parcelable;
-import com.android.launcher3.util.ParcelableSparseArray;
-import android.util.SparseArray;
-import java.util.Iterator;
-import com.android.launcher3.util.CellAndSpan;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
-import java.util.Arrays;
-import android.graphics.drawable.Drawable$Callback;
-import android.util.AttributeSet;
-import android.content.Context;
-import com.android.launcher3.accessibility.DragAndDropAccessibilityDelegate;
-import java.util.Stack;
-import java.util.HashMap;
-import com.android.launcher3.util.GridOccupancy;
-import android.view.View$OnTouchListener;
-import com.android.launcher3.folder.FolderIcon$PreviewBackground;
-import java.util.ArrayList;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.Paint;
-import android.view.ViewGroup;
 import android.animation.TimeInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import com.android.launcher3.anim.PropertyListBuilder;
@@ -53,14 +16,14 @@ import android.animation.Animator;
 class CellLayout$ReorderPreviewAnimation
 {
     Animator a;
-    View child;
+    final View child;
     float finalDeltaX;
     float finalDeltaY;
-    float finalScale;
+    final float finalScale;
     float initDeltaX;
     float initDeltaY;
     float initScale;
-    int mode;
+    final int mode;
     boolean repeating;
     final /* synthetic */ CellLayout this$0;
     
@@ -78,7 +41,7 @@ class CellLayout$ReorderPreviewAnimation
         this.child = child;
         this.mode = mode;
         this.setInitialAnimationValues(false);
-        this.finalScale = (this$0.mChildScale - 4.0f / child.getWidth()) * this.initScale;
+        this.finalScale = (1.0f - 4.0f / child.getWidth()) * this.initScale;
         this.finalDeltaX = this.initDeltaX;
         this.finalDeltaY = this.initDeltaY;
         int n13;
@@ -112,9 +75,9 @@ class CellLayout$ReorderPreviewAnimation
     void animate() {
         final int repeatMode = 2;
         final boolean b = this.finalDeltaX == this.initDeltaX && this.finalDeltaY == this.initDeltaY && true;
-        if (this.this$0.mShakeAnimators.containsKey(this.child)) {
-            this.this$0.mShakeAnimators.get(this.child).cancel();
-            this.this$0.mShakeAnimators.remove(this.child);
+        if (this.this$0.mShakeAnimators.containsKey((Object)this.child)) {
+            ((CellLayout$ReorderPreviewAnimation)this.this$0.mShakeAnimators.get((Object)this.child)).cancel();
+            this.this$0.mShakeAnimators.remove((Object)this.child);
             if (b) {
                 this.completeAnimationImmediately();
                 return;
@@ -144,7 +107,7 @@ class CellLayout$ReorderPreviewAnimation
         ofFloat.setStartDelay((long)(int)(Math.random() * 60.0));
         ofFloat.addUpdateListener((ValueAnimator$AnimatorUpdateListener)new CellLayout$ReorderPreviewAnimation$1(this));
         ofFloat.addListener((Animator$AnimatorListener)new CellLayout$ReorderPreviewAnimation$2(this));
-        this.this$0.mShakeAnimators.put(this.child, this);
+        this.this$0.mShakeAnimators.put((Object)this.child, (Object)this);
         ofFloat.start();
     }
     
@@ -166,7 +129,7 @@ class CellLayout$ReorderPreviewAnimation
                 this.initDeltaY = launcherAppWidgetHostView.getTranslationForCentering().y;
             }
             else {
-                this.initScale = this.this$0.mChildScale;
+                this.initScale = 1.0f;
                 this.initDeltaX = 0.0f;
                 this.initDeltaY = 0.0f;
             }

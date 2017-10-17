@@ -13,6 +13,7 @@ import java.util.Map;
 import com.android.launcher3.util.PackageManagerHelper;
 import com.android.launcher3.compat.LauncherAppsCompat;
 import android.content.Intent;
+import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.util.MultiHashMap;
 import com.android.launcher3.LauncherModel;
 import android.content.Context;
@@ -24,9 +25,9 @@ public class SdCardAvailableReceiver extends BroadcastReceiver
     private final LauncherModel mModel;
     private final MultiHashMap mPackages;
     
-    public SdCardAvailableReceiver(final LauncherModel mModel, final Context mContext, final MultiHashMap mPackages) {
-        this.mModel = mModel;
-        this.mContext = mContext;
+    public SdCardAvailableReceiver(final LauncherAppState launcherAppState, final MultiHashMap mPackages) {
+        this.mModel = launcherAppState.getModel();
+        this.mContext = launcherAppState.getContext();
         this.mPackages = mPackages;
     }
     

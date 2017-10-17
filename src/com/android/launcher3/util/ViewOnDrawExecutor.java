@@ -7,7 +7,6 @@ package com.android.launcher3.util;
 import java.util.Iterator;
 import java.util.ArrayList;
 import com.android.launcher3.Launcher;
-import com.android.launcher3.DeferredHandler;
 import android.view.View;
 import android.view.View$OnAttachStateChangeListener;
 import android.view.ViewTreeObserver$OnDrawListener;
@@ -17,15 +16,15 @@ public class ViewOnDrawExecutor implements Executor, ViewTreeObserver$OnDrawList
 {
     private View mAttachedView;
     private boolean mCompleted;
+    private final Executor mExecutor;
     private boolean mFirstDrawCompleted;
-    private final DeferredHandler mHandler;
     private Launcher mLauncher;
     private boolean mLoadAnimationCompleted;
     private final ArrayList mTasks;
     
-    public ViewOnDrawExecutor(final DeferredHandler mHandler) {
+    public ViewOnDrawExecutor(final Executor mExecutor) {
         this.mTasks = new ArrayList();
-        this.mHandler = mHandler;
+        this.mExecutor = mExecutor;
     }
     
     private void attachObserver() {
@@ -79,7 +78,7 @@ public class ViewOnDrawExecutor implements Executor, ViewTreeObserver$OnDrawList
         if (this.mLoadAnimationCompleted && this.mFirstDrawCompleted && (this.mCompleted ^ true)) {
             final Iterator iterator = this.mTasks.iterator();
             while (iterator.hasNext()) {
-                this.mHandler.post(iterator.next());
+                this.mExecutor.execute(iterator.next());
             }
             this.markCompleted();
         }

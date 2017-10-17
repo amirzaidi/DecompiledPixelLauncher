@@ -32,7 +32,7 @@ public class DeepShortcutTextView extends BubbleTextView
         this.mDragHandleBounds = new Rect();
         this.mShouldPerformClick = true;
         final Resources resources = this.getResources();
-        this.mDragHandleWidth = resources.getDimensionPixelSize(2131427440) / 2 + (resources.getDimensionPixelSize(2131427443) + resources.getDimensionPixelSize(2131427441));
+        this.mDragHandleWidth = resources.getDimensionPixelSize(2131427450) / 2 + (resources.getDimensionPixelSize(2131427453) + resources.getDimensionPixelSize(2131427451));
     }
     
     protected void applyCompoundDrawables(final Drawable drawable) {

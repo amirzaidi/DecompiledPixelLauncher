@@ -14,14 +14,17 @@ import com.android.launcher3.dragndrop.DragOptions;
 import com.android.launcher3.DropTarget$DragObject;
 import com.android.launcher3.Utilities;
 import android.view.MotionEvent;
+import com.android.launcher3.util.SystemUiController;
 import android.animation.TimeInterpolator;
 import android.animation.Animator$AnimatorListener;
 import com.android.launcher3.anim.PropertyListBuilder;
+import com.android.launcher3.util.Themes;
 import android.view.LayoutInflater;
-import android.support.v4.view.b.a;
+import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.View;
 import com.android.launcher3.LauncherAnimUtils;
 import android.animation.PropertyValuesHolder;
-import android.view.ContextThemeWrapper;
 import android.util.AttributeSet;
 import android.content.Context;
 import com.android.launcher3.allapps.VerticalPullDetector;
@@ -30,6 +33,7 @@ import com.android.launcher3.ItemInfo;
 import android.animation.ObjectAnimator;
 import com.android.launcher3.Launcher;
 import android.graphics.Rect;
+import com.android.launcher3.graphics.GradientView;
 import android.view.animation.Interpolator;
 import com.android.launcher3.dragndrop.DragController$DragListener;
 import android.view.View$OnLongClickListener;
@@ -38,8 +42,6 @@ import com.android.launcher3.allapps.VerticalPullDetector$Listener;
 import com.android.launcher3.util.TouchController;
 import com.android.launcher3.Insettable;
 import com.android.launcher3.AbstractFloatingView;
-import android.view.View;
-import android.view.ViewGroup;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
@@ -52,9 +54,7 @@ final class WidgetsBottomSheet$2 extends AnimatorListenerAdapter
     }
     
     public void onAnimationEnd(final Animator animator) {
-        this.this$0.mIsOpen = false;
         this.this$0.mVerticalPullDetector.finishedScrolling();
-        ((ViewGroup)this.this$0.getParent()).removeView((View)this.this$0);
-        this.this$0.setLightNavBar(this.this$0.mWasNavBarLight);
+        this.this$0.onCloseComplete();
     }
 }

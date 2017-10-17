@@ -24,11 +24,11 @@
 
 
 # virtual methods
-.method public getIcon(Landroid/content/pm/LauncherActivityInfo;I)Landroid/graphics/drawable/Drawable;
+.method public getIcon(Landroid/content/pm/LauncherActivityInfo;IZ)Landroid/graphics/drawable/Drawable;
     .locals 1
 
     .prologue
-    .line 29
+    .line 32
     invoke-virtual {p1, p2}, Landroid/content/pm/LauncherActivityInfo;->getIcon(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

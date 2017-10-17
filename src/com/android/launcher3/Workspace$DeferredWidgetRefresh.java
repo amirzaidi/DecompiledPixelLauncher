@@ -15,7 +15,7 @@ class Workspace$DeferredWidgetRefresh implements Runnable
     private boolean mRefreshPending;
     final /* synthetic */ Workspace this$0;
     
-    public Workspace$DeferredWidgetRefresh(final Workspace this$0, final ArrayList mInfos, final LauncherAppWidgetHost mHost) {
+    Workspace$DeferredWidgetRefresh(final Workspace this$0, final ArrayList mInfos, final LauncherAppWidgetHost mHost) {
         this.this$0 = this$0;
         this.mInfos = mInfos;
         this.mHost = mHost;

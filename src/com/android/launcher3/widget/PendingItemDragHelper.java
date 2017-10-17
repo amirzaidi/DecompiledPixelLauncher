@@ -108,7 +108,7 @@ public class PendingItemDragHelper extends DragPreviewProvider
             mPreviewBitmap = bitmap;
         }
         else {
-            final Bitmap scaledBitmapWithoutShadow = LauncherIcons.createScaledBitmapWithoutShadow(((PendingAddShortcutInfo)this.mAddInfo).activityInfo.getFullResIcon(instance.getIconCache()), (Context)launcher, 26);
+            final Bitmap scaledBitmapWithoutShadow = LauncherIcons.createScaledBitmapWithoutShadow(((PendingAddShortcutInfo)this.mAddInfo).activityInfo.getFullResIcon(instance.getIconCache()), (Context)launcher, 0);
             final PendingAddItemInfo mAddInfo = this.mAddInfo;
             this.mAddInfo.spanY = 1;
             mAddInfo.spanX = 1;
@@ -117,7 +117,7 @@ public class PendingItemDragHelper extends DragPreviewProvider
             final int[] estimateItemSize = launcher.getWorkspace().estimateItemSize(this.mAddInfo, false, true);
             final DeviceProfile deviceProfile = launcher.getDeviceProfile();
             final int iconSizePx = deviceProfile.iconSizePx;
-            final int dimensionPixelSize = launcher.getResources().getDimensionPixelSize(2131427399);
+            final int dimensionPixelSize = launcher.getResources().getDimensionPixelSize(2131427408);
             rect.left += dimensionPixelSize;
             rect.top += dimensionPixelSize;
             rect2 = new Rect();

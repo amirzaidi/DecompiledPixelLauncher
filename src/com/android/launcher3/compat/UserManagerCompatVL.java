@@ -8,12 +8,12 @@ import java.util.Collections;
 import java.util.Collection;
 import java.util.ArrayList;
 import android.content.SharedPreferences;
-import com.android.launcher3.Utilities;
+import com.android.launcher3.util.ManagedProfileHeuristic;
 import java.util.Iterator;
 import java.util.List;
 import android.os.UserHandle;
 import com.android.launcher3.util.LongArrayMap;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.os.UserManager;
 import android.content.pm.PackageManager;
 import android.content.Context;
@@ -24,7 +24,7 @@ public class UserManagerCompatVL extends UserManagerCompat
     private final Context mContext;
     private final PackageManager mPm;
     protected final UserManager mUserManager;
-    protected HashMap mUserToSerialMap;
+    protected ArrayMap mUserToSerialMap;
     protected LongArrayMap mUsers;
     
     UserManagerCompatVL(final Context mContext) {
@@ -36,13 +36,13 @@ public class UserManagerCompatVL extends UserManagerCompat
     public void enableAndResetCache() {
         synchronized (this) {
             this.mUsers = new LongArrayMap();
-            this.mUserToSerialMap = new HashMap();
+            this.mUserToSerialMap = new ArrayMap();
             final List userProfiles = this.mUserManager.getUserProfiles();
             if (userProfiles != null) {
                 for (final UserHandle userHandle : userProfiles) {
                     final long serialNumberForUser = this.mUserManager.getSerialNumberForUser(userHandle);
                     this.mUsers.put(serialNumberForUser, (Object)userHandle);
-                    this.mUserToSerialMap.put(userHandle, serialNumberForUser);
+                    this.mUserToSerialMap.put((Object)userHandle, (Object)serialNumberForUser);
                 }
             }
         }
@@ -59,7 +59,7 @@ public class UserManagerCompatVL extends UserManagerCompat
     public long getSerialNumberForUser(final UserHandle userHandle) {
         synchronized (this) {
             if (this.mUserToSerialMap != null) {
-                final Long n = this.mUserToSerialMap.get(userHandle);
+                final Long n = (Long)this.mUserToSerialMap.get((Object)userHandle);
                 long longValue;
                 if (n == null) {
                     longValue = 0L;
@@ -74,7 +74,7 @@ public class UserManagerCompatVL extends UserManagerCompat
     }
     
     public long getUserCreationTime(final UserHandle userHandle) {
-        final SharedPreferences prefs = Utilities.getPrefs(this.mContext);
+        final SharedPreferences prefs = ManagedProfileHeuristic.prefs(this.mContext);
         final String string = "user_creation_time_" + this.getSerialNumberForUser(userHandle);
         if (!prefs.contains(string)) {
             prefs.edit().putLong(string, System.currentTimeMillis()).apply();

@@ -153,19 +153,19 @@
     .locals 5
 
     .prologue
-    .line 466
+    .line 453
     iget-object v0, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
 
     move-result-object v1
 
-    .line 467
+    .line 454
     invoke-virtual {v1}, Lcom/android/launcher3/dragndrop/DragLayer;->getBackgroundAlpha()F
 
     move-result v2
 
-    .line 468
+    .line 455
     iget-boolean v0, p1, Lcom/android/launcher3/TransitionStates;->stateIsNormal:Z
 
     if-nez v0, :cond_0
@@ -174,20 +174,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 469
+    .line 456
     :cond_0
     const/4 v0, 0x0
 
-    .line 471
+    .line 458
     :goto_0
     cmpl-float v3, v0, v2
 
     if-eqz v3, :cond_1
 
-    .line 472
+    .line 459
     if-eqz p2, :cond_3
 
-    .line 475
+    .line 462
     const/4 v3, 0x2
 
     new-array v3, v3, [F
@@ -204,14 +204,14 @@
 
     move-result-object v0
 
-    .line 476
+    .line 463
     new-instance v2, Lcom/android/launcher3/WorkspaceStateTransitionAnimation$2;
 
     invoke-direct {v2, p0, v1}, Lcom/android/launcher3/WorkspaceStateTransitionAnimation$2;-><init>(Lcom/android/launcher3/WorkspaceStateTransitionAnimation;Lcom/android/launcher3/dragndrop/DragLayer;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 483
+    .line 470
     new-instance v1, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v2, 0x3fc00000    # 1.5f
@@ -220,28 +220,28 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 484
+    .line 471
     int-to-long v2, p3
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 485
+    .line 472
     iget-object v1, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 490
+    .line 477
     :cond_1
     :goto_1
     return-void
 
-    .line 469
+    .line 456
     :cond_2
     iget v0, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspaceScrimAlpha:F
 
     goto :goto_0
 
-    .line 487
+    .line 474
     :cond_3
     invoke-virtual {v1, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->setBackgroundAlpha(F)V
 
@@ -249,7 +249,7 @@
 .end method
 
 .method private animateWorkspace(Lcom/android/launcher3/TransitionStates;ZILcom/android/launcher3/anim/AnimationLayerSet;Z)V
-    .locals 20
+    .locals 18
 
     .prologue
     .line 267
@@ -279,7 +279,7 @@
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverview:Z
 
-    if-eqz v4, :cond_d
+    if-eqz v4, :cond_c
 
     .line 274
     :cond_1
@@ -304,14 +304,14 @@
     .line 276
     sget-boolean v4, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
 
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_d
 
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormalHidden:Z
 
     .line 275
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_d
 
     .line 276
     :cond_2
@@ -323,58 +323,37 @@
     :goto_1
     move-object/from16 v0, p1
 
-    iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverview:Z
-
-    if-eqz v4, :cond_f
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    move v7, v4
-
-    .line 278
-    :goto_2
-    move-object/from16 v0, p1
-
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormal:Z
 
     if-nez v4, :cond_3
 
-    .line 279
+    .line 278
     sget-boolean v4, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
 
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_3
 
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormalHidden:Z
 
-    .line 278
-    if-eqz v4, :cond_10
-
-    .line 279
+    .line 280
     :cond_3
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    move v8, v4
-
-    .line 281
-    :goto_3
     const/4 v4, 0x0
 
+    .line 281
+    move-object/from16 v0, p1
+
+    iget-boolean v7, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverview:Z
+
+    if-nez v7, :cond_4
+
+    move-object/from16 v0, p1
+
+    iget-boolean v7, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverviewHidden:Z
+
+    if-eqz v7, :cond_e
+
     .line 282
-    move-object/from16 v0, p1
-
-    iget-boolean v9, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverview:Z
-
-    if-nez v9, :cond_4
-
-    move-object/from16 v0, p1
-
-    iget-boolean v9, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverviewHidden:Z
-
-    if-eqz v9, :cond_11
-
-    .line 283
     :cond_4
     move-object/from16 v0, p0
 
@@ -386,65 +365,65 @@
 
     int-to-float v4, v4
 
-    move v9, v4
+    move v7, v4
 
-    .line 288
-    :goto_4
+    .line 287
+    :goto_2
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->getChildCount()I
 
-    move-result v14
+    move-result v12
 
-    .line 289
+    .line 288
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->numCustomPages()I
 
-    move-result v15
+    move-result v13
 
-    .line 291
+    .line 290
     const/high16 v4, 0x3f800000    # 1.0f
 
     move-object/from16 v0, p0
 
     iput v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
 
-    .line 293
+    .line 292
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->oldStateIsOverview:Z
 
-    if-eqz v4, :cond_12
+    if-eqz v4, :cond_f
 
-    .line 294
+    .line 293
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->disableFreeScroll()V
 
-    .line 299
+    .line 298
     :cond_5
-    :goto_5
+    :goto_3
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormal:Z
 
     if-nez v4, :cond_6
 
-    .line 300
+    .line 299
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsSpringLoaded:Z
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_10
 
-    .line 301
+    .line 300
     move-object/from16 v0, p0
 
     iget v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mSpringLoadedShrinkFactor:F
@@ -453,335 +432,249 @@
 
     iput v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
 
-    .line 307
+    .line 306
     :cond_6
-    :goto_6
+    :goto_4
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->getPageNearestToCenterOfScreen()I
 
-    move-result v16
+    move-result v14
 
-    .line 309
+    .line 308
     const/4 v4, 0x0
 
-    move v13, v4
+    move v11, v4
 
-    :goto_7
-    if-ge v13, v14, :cond_1f
+    :goto_5
+    if-ge v11, v12, :cond_1b
 
-    .line 310
+    .line 309
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
-    invoke-virtual {v4, v13}, Lcom/android/launcher3/Workspace;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v4, v11}, Lcom/android/launcher3/Workspace;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/launcher3/CellLayout;
 
-    .line 311
+    .line 310
+    invoke-virtual {v4}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getAlpha()F
+
+    move-result v10
+
+    .line 312
+    move-object/from16 v0, p1
+
+    iget-boolean v8, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverviewHidden:Z
+
+    if-eqz v8, :cond_12
+
+    .line 313
+    const/4 v8, 0x0
+
+    .line 325
+    :goto_6
+    sget-boolean v9, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
+
+    if-nez v9, :cond_8
+
+    move-object/from16 v0, p0
+
+    iget-object v9, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    invoke-virtual {v9}, Lcom/android/launcher3/Workspace;->isSwitchingState()Z
+
+    move-result v9
+
+    xor-int/lit8 v9, v9, 0x1
+
+    if-eqz v9, :cond_8
+
+    .line 326
+    move-object/from16 v0, p1
+
+    iget-boolean v9, v0, Lcom/android/launcher3/TransitionStates;->workspaceToAllApps:Z
+
+    if-nez v9, :cond_7
+
+    move-object/from16 v0, p1
+
+    iget-boolean v9, v0, Lcom/android/launcher3/TransitionStates;->allAppsToWorkspace:Z
+
+    if-eqz v9, :cond_8
+
+    .line 327
+    :cond_7
+    if-ne v11, v14, :cond_18
+
+    const/4 v9, 0x1
+
+    .line 328
+    :goto_7
+    move-object/from16 v0, p1
+
+    iget-boolean v15, v0, Lcom/android/launcher3/TransitionStates;->allAppsToWorkspace:Z
+
+    if-eqz v15, :cond_19
+
+    if-eqz v9, :cond_19
+
+    .line 329
+    const/4 v9, 0x0
+
+    .line 333
+    :goto_8
+    invoke-virtual {v4, v9}, Lcom/android/launcher3/CellLayout;->setShortcutAndWidgetAlpha(F)V
+
+    move v10, v9
+
+    .line 337
+    :cond_8
+    if-eqz p2, :cond_1a
+
+    .line 338
+    invoke-virtual {v4}, Lcom/android/launcher3/CellLayout;->getBackgroundAlpha()F
+
+    move-result v9
+
+    .line 339
+    cmpl-float v10, v10, v8
+
+    if-eqz v10, :cond_9
+
+    .line 341
     invoke-virtual {v4}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v10
 
-    invoke-virtual {v10}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getAlpha()F
-
-    move-result v12
-
-    .line 313
-    move-object/from16 v0, p1
-
-    iget-boolean v10, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverviewHidden:Z
-
-    if-eqz v10, :cond_15
-
-    .line 314
-    const/4 v10, 0x0
-
-    .line 326
-    :goto_8
-    sget-boolean v11, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
-
-    if-nez v11, :cond_8
-
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    invoke-virtual {v11}, Lcom/android/launcher3/Workspace;->isSwitchingState()Z
-
-    move-result v11
-
-    xor-int/lit8 v11, v11, 0x1
-
-    if-eqz v11, :cond_8
-
-    .line 327
-    move-object/from16 v0, p1
-
-    iget-boolean v11, v0, Lcom/android/launcher3/TransitionStates;->workspaceToAllApps:Z
-
-    if-nez v11, :cond_7
-
-    move-object/from16 v0, p1
-
-    iget-boolean v11, v0, Lcom/android/launcher3/TransitionStates;->allAppsToWorkspace:Z
-
-    if-eqz v11, :cond_8
-
-    .line 328
-    :cond_7
-    move/from16 v0, v16
-
-    if-ne v13, v0, :cond_1b
-
-    const/4 v11, 0x1
-
-    .line 329
-    :goto_9
-    move-object/from16 v0, p1
-
-    iget-boolean v0, v0, Lcom/android/launcher3/TransitionStates;->allAppsToWorkspace:Z
-
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_1c
-
-    if-eqz v11, :cond_1c
-
-    .line 330
-    const/4 v11, 0x0
-
-    .line 334
-    :goto_a
-    invoke-virtual {v4, v11}, Lcom/android/launcher3/CellLayout;->setShortcutAndWidgetAlpha(F)V
-
-    move v12, v11
-
-    .line 338
-    :cond_8
-    if-eqz p2, :cond_1d
-
-    .line 339
-    invoke-virtual {v4}, Lcom/android/launcher3/CellLayout;->getBackgroundAlpha()F
-
-    move-result v11
+    sget-object v15, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     .line 340
-    cmpl-float v12, v12, v10
+    const/16 v16, 0x1
 
-    if-eqz v12, :cond_9
-
-    .line 342
-    invoke-virtual {v4}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
-
-    move-result-object v12
-
-    sget-object v17, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    .line 341
-    const/16 v18, 0x1
-
-    move/from16 v0, v18
+    move/from16 v0, v16
 
     new-array v0, v0, [F
 
-    move-object/from16 v18, v0
-
-    .line 342
-    const/16 v19, 0x0
-
-    aput v10, v18, v19
+    move-object/from16 v16, v0
 
     .line 341
-    move-object/from16 v0, v17
+    const/16 v17, 0x0
 
-    move-object/from16 v1, v18
+    aput v8, v16, v17
 
-    invoke-static {v12, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    .line 340
+    move-object/from16 v0, v16
 
-    move-result-object v12
+    invoke-static {v10, v15, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    .line 343
+    move-result-object v8
+
+    .line 342
     move/from16 v0, p3
 
     int-to-long v0, v0
 
-    move-wide/from16 v18, v0
+    move-wide/from16 v16, v0
 
-    move-wide/from16 v0, v18
+    move-wide/from16 v0, v16
 
-    invoke-virtual {v12, v0, v1}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+    invoke-virtual {v8, v0, v1}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    move-result-object v17
+    move-result-object v10
+
+    .line 343
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mZoomInInterpolator:Lcom/android/launcher3/ZoomInInterpolator;
+
+    .line 342
+    invoke-virtual {v10, v15}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     .line 344
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mZoomInInterpolator:Lcom/android/launcher3/ZoomInInterpolator;
-
-    move-object/from16 v18, v0
-
-    .line 343
-    invoke-virtual/range {v17 .. v18}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 345
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v0, v12}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    .line 347
-    :cond_9
-    const/4 v12, 0x0
-
-    cmpl-float v12, v11, v12
-
-    if-nez v12, :cond_a
-
-    const/4 v12, 0x0
-
-    cmpl-float v12, v5, v12
-
-    if-eqz v12, :cond_b
-
-    .line 348
-    :cond_a
-    const-string/jumbo v12, "backgroundAlpha"
-
-    const/16 v17, 0x2
-
-    move/from16 v0, v17
-
-    new-array v0, v0, [F
-
-    move-object/from16 v17, v0
-
-    .line 349
-    const/16 v18, 0x0
-
-    aput v11, v17, v18
-
-    const/4 v11, 0x1
-
-    aput v5, v17, v11
-
-    .line 348
-    move-object/from16 v0, v17
-
-    invoke-static {v4, v12, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v4
-
-    .line 350
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mZoomInInterpolator:Lcom/android/launcher3/ZoomInInterpolator;
-
-    invoke-virtual {v4, v11}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 351
-    move/from16 v0, p3
-
-    int-to-long v0, v0
-
-    move-wide/from16 v18, v0
-
-    move-wide/from16 v0, v18
-
-    invoke-virtual {v4, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    .line 352
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v11, v4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    .line 359
-    :cond_b
-    :goto_b
-    invoke-static {v13}, Lcom/android/launcher3/Workspace;->isQsbContainerPage(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_c
-
-    .line 360
-    move-object/from16 v0, p1
-
-    iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormal:Z
-
-    .line 359
-    if-eqz v4, :cond_c
-
-    .line 360
-    move-object/from16 v0, p0
-
-    iget-boolean v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspaceFadeInAdjacentScreens:Z
-
-    .line 359
-    if-eqz v4, :cond_c
-
-    .line 361
-    if-eqz p2, :cond_1e
-
-    .line 362
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    iget-object v4, v4, Lcom/android/launcher3/Workspace;->mQsbAlphaController:Lcom/android/launcher3/util/MultiStateAlphaController;
-
-    .line 363
-    const/4 v11, 0x2
-
-    .line 362
-    invoke-virtual {v4, v10, v11}, Lcom/android/launcher3/util/MultiStateAlphaController;->animateAlphaAtIndex(FI)Landroid/animation/Animator;
-
-    move-result-object v4
-
-    .line 364
-    move/from16 v0, p3
-
-    int-to-long v10, v0
-
-    invoke-virtual {v4, v10, v11}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
-
-    .line 365
-    move-object/from16 v0, p0
-
-    iget-object v10, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mZoomInInterpolator:Lcom/android/launcher3/ZoomInInterpolator;
-
-    invoke-virtual {v4, v10}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 366
-    move-object/from16 v0, p0
-
     iget-object v10, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v10, v4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    invoke-virtual {v10, v8}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 309
-    :cond_c
-    :goto_c
-    add-int/lit8 v4, v13, 0x1
+    .line 346
+    :cond_9
+    const/4 v8, 0x0
 
-    move v13, v4
+    cmpl-float v8, v9, v8
 
-    goto/16 :goto_7
+    if-nez v8, :cond_a
+
+    const/4 v8, 0x0
+
+    cmpl-float v8, v5, v8
+
+    if-eqz v8, :cond_b
+
+    .line 347
+    :cond_a
+    const-string/jumbo v8, "backgroundAlpha"
+
+    const/4 v10, 0x2
+
+    new-array v10, v10, [F
+
+    .line 348
+    const/4 v15, 0x0
+
+    aput v9, v10, v15
+
+    const/4 v9, 0x1
+
+    aput v5, v10, v9
+
+    .line 347
+    invoke-static {v4, v8, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v4
+
+    .line 349
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mZoomInInterpolator:Lcom/android/launcher3/ZoomInInterpolator;
+
+    invoke-virtual {v4, v8}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 350
+    move/from16 v0, p3
+
+    int-to-long v8, v0
+
+    invoke-virtual {v4, v8, v9}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    .line 351
+    move-object/from16 v0, p0
+
+    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v8, v4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+
+    .line 308
+    :cond_b
+    :goto_9
+    add-int/lit8 v4, v11, 0x1
+
+    move v11, v4
+
+    goto/16 :goto_5
 
     .line 274
-    :cond_d
+    :cond_c
     const/4 v4, 0x0
 
     move v5, v4
@@ -789,38 +682,22 @@
     goto/16 :goto_0
 
     .line 276
-    :cond_e
+    :cond_d
     const/4 v4, 0x0
 
     move v6, v4
 
     goto/16 :goto_1
 
-    .line 277
-    :cond_f
-    const/4 v4, 0x0
-
-    move v7, v4
-
-    goto/16 :goto_2
-
-    .line 279
-    :cond_10
-    const/4 v4, 0x0
-
-    move v8, v4
-
-    goto/16 :goto_3
-
-    .line 284
-    :cond_11
+    .line 283
+    :cond_e
     move-object/from16 v0, p1
 
-    iget-boolean v9, v0, Lcom/android/launcher3/TransitionStates;->stateIsSpringLoaded:Z
+    iget-boolean v7, v0, Lcom/android/launcher3/TransitionStates;->stateIsSpringLoaded:Z
 
-    if-eqz v9, :cond_25
+    if-eqz v7, :cond_25
 
-    .line 285
+    .line 284
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
@@ -829,34 +706,34 @@
 
     move-result v4
 
-    move v9, v4
+    move v7, v4
 
-    goto/16 :goto_4
+    goto/16 :goto_2
 
-    .line 295
-    :cond_12
+    .line 294
+    :cond_f
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverview:Z
 
     if-eqz v4, :cond_5
 
-    .line 296
+    .line 295
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->enableFreeScroll()Z
 
-    goto/16 :goto_5
+    goto/16 :goto_3
 
-    .line 302
-    :cond_13
+    .line 301
+    :cond_10
     move-object/from16 v0, p1
 
     iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverview:Z
 
-    if-nez v4, :cond_14
+    if-nez v4, :cond_11
 
     move-object/from16 v0, p1
 
@@ -864,8 +741,8 @@
 
     if-eqz v4, :cond_6
 
-    .line 303
-    :cond_14
+    .line 302
+    :cond_11
     move-object/from16 v0, p0
 
     iget v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mOverviewModeShrinkFactor:F
@@ -874,357 +751,330 @@
 
     iput v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
 
-    goto/16 :goto_6
+    goto/16 :goto_4
+
+    .line 314
+    :cond_12
+    move-object/from16 v0, p1
+
+    iget-boolean v8, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormalHidden:Z
+
+    if-eqz v8, :cond_14
 
     .line 315
-    :cond_15
-    move-object/from16 v0, p1
+    sget-boolean v8, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
 
-    iget-boolean v10, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormalHidden:Z
-
-    if-eqz v10, :cond_17
+    if-eqz v8, :cond_13
 
     .line 316
-    sget-boolean v10, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
-
-    if-eqz v10, :cond_16
-
-    .line 317
     move-object/from16 v0, p0
 
-    iget-object v10, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
-    invoke-virtual {v10}, Lcom/android/launcher3/Workspace;->getNextPage()I
+    invoke-virtual {v8}, Lcom/android/launcher3/Workspace;->getNextPage()I
 
-    move-result v10
+    move-result v8
 
-    if-ne v13, v10, :cond_16
+    if-ne v11, v8, :cond_13
 
-    const/4 v10, 0x1
+    const/4 v8, 0x1
+
+    .line 315
+    :goto_a
+    int-to-float v8, v8
+
+    goto/16 :goto_6
 
     .line 316
-    :goto_d
-    int-to-float v10, v10
+    :cond_13
+    const/4 v8, 0x0
 
-    goto/16 :goto_8
+    goto :goto_a
 
     .line 317
-    :cond_16
-    const/4 v10, 0x0
+    :cond_14
+    move-object/from16 v0, p1
 
-    goto :goto_d
+    iget-boolean v8, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormal:Z
+
+    if-eqz v8, :cond_17
+
+    move-object/from16 v0, p0
+
+    iget-boolean v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspaceFadeInAdjacentScreens:Z
+
+    if-eqz v8, :cond_17
 
     .line 318
+    if-eq v11, v14, :cond_15
+
+    if-ge v11, v13, :cond_16
+
+    :cond_15
+    const/high16 v8, 0x3f800000    # 1.0f
+
+    goto/16 :goto_6
+
+    :cond_16
+    const/4 v8, 0x0
+
+    goto/16 :goto_6
+
+    .line 320
     :cond_17
-    move-object/from16 v0, p1
+    const/high16 v8, 0x3f800000    # 1.0f
 
-    iget-boolean v10, v0, Lcom/android/launcher3/TransitionStates;->stateIsNormal:Z
+    goto/16 :goto_6
 
-    if-eqz v10, :cond_1a
-
-    move-object/from16 v0, p0
-
-    iget-boolean v10, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspaceFadeInAdjacentScreens:Z
-
-    if-eqz v10, :cond_1a
-
-    .line 319
-    move/from16 v0, v16
-
-    if-eq v13, v0, :cond_18
-
-    if-ge v13, v15, :cond_19
-
+    .line 327
     :cond_18
-    const/high16 v10, 0x3f800000    # 1.0f
+    const/4 v9, 0x0
 
-    goto/16 :goto_8
+    goto/16 :goto_7
 
+    .line 330
     :cond_19
-    const/4 v10, 0x0
+    if-nez v9, :cond_24
+
+    .line 331
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
 
     goto/16 :goto_8
 
-    .line 321
+    .line 354
     :cond_1a
-    const/high16 v10, 0x3f800000    # 1.0f
+    invoke-virtual {v4, v5}, Lcom/android/launcher3/CellLayout;->setBackgroundAlpha(F)V
 
-    goto/16 :goto_8
-
-    .line 328
-    :cond_1b
-    const/4 v11, 0x0
+    .line 355
+    invoke-virtual {v4, v8}, Lcom/android/launcher3/CellLayout;->setShortcutAndWidgetAlpha(F)V
 
     goto/16 :goto_9
 
-    .line 331
-    :cond_1c
-    if-nez v11, :cond_24
-
-    .line 332
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    goto/16 :goto_a
-
-    .line 355
-    :cond_1d
-    invoke-virtual {v4, v5}, Lcom/android/launcher3/CellLayout;->setBackgroundAlpha(F)V
-
-    .line 356
-    invoke-virtual {v4, v10}, Lcom/android/launcher3/CellLayout;->setShortcutAndWidgetAlpha(F)V
-
-    goto/16 :goto_b
-
-    .line 368
-    :cond_1e
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    iget-object v4, v4, Lcom/android/launcher3/Workspace;->mQsbAlphaController:Lcom/android/launcher3/util/MultiStateAlphaController;
-
-    .line 369
-    const/4 v11, 0x2
-
-    .line 368
-    invoke-virtual {v4, v10, v11}, Lcom/android/launcher3/util/MultiStateAlphaController;->setAlphaAtIndex(FI)V
-
-    goto/16 :goto_c
-
-    .line 374
-    :cond_1f
+    .line 359
+    :cond_1b
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v4}, Lcom/android/launcher3/Launcher;->getOverviewPanel()Landroid/view/ViewGroup;
 
-    move-result-object v4
-
-    .line 376
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    iget-object v5, v5, Lcom/android/launcher3/Workspace;->mQsbAlphaController:Lcom/android/launcher3/util/MultiStateAlphaController;
-
-    .line 377
-    const/4 v10, 0x0
-
-    .line 376
-    invoke-virtual {v5, v8, v10}, Lcom/android/launcher3/util/MultiStateAlphaController;->animateAlphaAtIndex(FI)Landroid/animation/Animator;
-
     move-result-object v5
 
-    .line 379
+    .line 361
+    move-object/from16 v0, p1
+
+    iget-boolean v4, v0, Lcom/android/launcher3/TransitionStates;->stateIsOverview:Z
+
+    if-eqz v4, :cond_20
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    .line 362
+    :goto_b
     if-eqz p2, :cond_23
 
-    .line 380
-    move-object/from16 v0, p0
+    .line 366
+    invoke-virtual {v5}, Landroid/view/ViewGroup;->getAlpha()F
 
-    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+    move-result v8
 
-    .line 381
-    new-instance v10, Lcom/android/launcher3/anim/PropertyListBuilder;
+    cmpl-float v8, v4, v8
 
-    invoke-direct {v10}, Lcom/android/launcher3/anim/PropertyListBuilder;-><init>()V
+    if-eqz v8, :cond_1d
 
-    move-object/from16 v0, p0
-
-    iget v11, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
-
-    invoke-virtual {v10, v11}, Lcom/android/launcher3/anim/PropertyListBuilder;->scale(F)Lcom/android/launcher3/anim/PropertyListBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, v9}, Lcom/android/launcher3/anim/PropertyListBuilder;->translationY(F)Lcom/android/launcher3/anim/PropertyListBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Lcom/android/launcher3/anim/PropertyListBuilder;->build()[Landroid/animation/PropertyValuesHolder;
-
-    move-result-object v9
-
-    .line 380
-    invoke-static {v8, v9}, Lcom/android/launcher3/LauncherAnimUtils;->ofPropertyValuesHolder(Landroid/view/View;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
-
-    move-result-object v8
-
-    .line 383
-    move/from16 v0, p3
-
-    int-to-long v10, v0
-
-    .line 380
-    invoke-virtual {v8, v10, v11}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    move-result-object v8
-
-    .line 384
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mZoomInInterpolator:Lcom/android/launcher3/ZoomInInterpolator;
-
-    invoke-virtual {v8, v9}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 385
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v9, v8}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    .line 386
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    invoke-virtual {v8, v6}, Lcom/android/launcher3/Workspace;->createHotseatAlphaAnimator(F)Landroid/animation/ValueAnimator;
-
-    move-result-object v6
-
-    .line 389
+    .line 368
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    .line 388
+    .line 367
     const/4 v9, 0x1
 
     new-array v9, v9, [F
 
-    .line 389
+    .line 368
     const/4 v10, 0x0
 
-    aput v7, v9, v10
+    aput v4, v9, v10
 
-    .line 388
-    invoke-static {v4, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    .line 367
+    invoke-static {v5, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v7
+    move-result-object v4
 
-    .line 390
+    .line 369
     new-instance v8, Lcom/android/launcher3/AlphaUpdateListener;
 
     move/from16 v0, p5
 
-    invoke-direct {v8, v4, v0}, Lcom/android/launcher3/AlphaUpdateListener;-><init>(Landroid/view/View;Z)V
+    invoke-direct {v8, v5, v0}, Lcom/android/launcher3/AlphaUpdateListener;-><init>(Landroid/view/View;Z)V
 
-    invoke-virtual {v7, v8}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v4, v8}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 395
+    .line 371
     move-object/from16 v0, p4
 
-    invoke-virtual {v0, v4}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
+    invoke-virtual {v0, v5}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
 
-    .line 396
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v8}, Lcom/android/launcher3/Launcher;->getQsbContainer()Landroid/view/View;
-
-    move-result-object v8
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v8}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
-
-    .line 397
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v8}, Lcom/android/launcher3/Launcher;->getHotseat()Lcom/android/launcher3/Hotseat;
-
-    move-result-object v8
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v8}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
-
-    .line 398
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    invoke-virtual {v8}, Lcom/android/launcher3/Workspace;->getPageIndicator()Lcom/android/launcher3/pageindicators/PageIndicator;
-
-    move-result-object v8
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v8}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
-
-    .line 400
+    .line 373
     move-object/from16 v0, p1
 
-    iget-boolean v8, v0, Lcom/android/launcher3/TransitionStates;->workspaceToOverview:Z
+    iget-boolean v8, v0, Lcom/android/launcher3/TransitionStates;->overviewToWorkspace:Z
 
-    if-eqz v8, :cond_22
+    if-eqz v8, :cond_21
 
-    .line 401
+    .line 374
     new-instance v8, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v9, 0x40000000    # 2.0f
 
     invoke-direct {v8, v9}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
-    invoke-virtual {v6, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v4, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 402
-    const/4 v8, 0x0
-
-    invoke-virtual {v7, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 408
-    :cond_20
-    :goto_e
+    .line 379
+    :cond_1c
+    :goto_c
     move/from16 v0, p3
 
     int-to-long v8, v0
 
-    invoke-virtual {v7, v8, v9}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+    invoke-virtual {v4, v8, v9}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 409
-    move/from16 v0, p3
-
-    int-to-long v8, v0
-
-    invoke-virtual {v6, v8, v9}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
-
-    .line 410
-    move/from16 v0, p3
-
-    int-to-long v8, v0
-
-    invoke-virtual {v5, v8, v9}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
-
-    .line 412
+    .line 380
     move-object/from16 v0, p0
 
     iget-object v8, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v8, v7}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    invoke-virtual {v8, v4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 413
+    .line 383
+    :cond_1d
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    .line 384
+    new-instance v8, Lcom/android/launcher3/anim/PropertyListBuilder;
+
+    invoke-direct {v8}, Lcom/android/launcher3/anim/PropertyListBuilder;-><init>()V
+
+    move-object/from16 v0, p0
+
+    iget v9, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
+
+    invoke-virtual {v8, v9}, Lcom/android/launcher3/anim/PropertyListBuilder;->scale(F)Lcom/android/launcher3/anim/PropertyListBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v7}, Lcom/android/launcher3/anim/PropertyListBuilder;->translationY(F)Lcom/android/launcher3/anim/PropertyListBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/android/launcher3/anim/PropertyListBuilder;->build()[Landroid/animation/PropertyValuesHolder;
+
+    move-result-object v7
+
+    .line 383
+    invoke-static {v4, v7}, Lcom/android/launcher3/LauncherAnimUtils;->ofPropertyValuesHolder(Landroid/view/View;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
+
+    move-result-object v4
+
+    .line 386
+    move/from16 v0, p3
+
+    int-to-long v8, v0
+
+    .line 383
+    invoke-virtual {v4, v8, v9}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    move-result-object v4
+
+    .line 387
+    move-object/from16 v0, p0
+
+    iget-object v7, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mZoomInInterpolator:Lcom/android/launcher3/ZoomInInterpolator;
+
+    invoke-virtual {v4, v7}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 388
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v7, v6}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    invoke-virtual {v7, v4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 414
+    .line 392
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v4}, Lcom/android/launcher3/Launcher;->getHotseat()Lcom/android/launcher3/Hotseat;
+
+    move-result-object v4
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v4}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
+
+    .line 393
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->getPageIndicator()Lcom/android/launcher3/pageindicators/PageIndicator;
+
+    move-result-object v4
+
+    move-object/from16 v0, p4
+
+    invoke-virtual {v0, v4}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
+
+    .line 395
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    invoke-virtual {v4, v6}, Lcom/android/launcher3/Workspace;->createHotseatAlphaAnimator(F)Landroid/animation/ValueAnimator;
+
+    move-result-object v4
+
+    .line 396
+    move-object/from16 v0, p1
+
+    iget-boolean v6, v0, Lcom/android/launcher3/TransitionStates;->workspaceToOverview:Z
+
+    if-eqz v6, :cond_22
+
+    .line 397
+    new-instance v6, Landroid/view/animation/DecelerateInterpolator;
+
+    const/high16 v7, 0x40000000    # 2.0f
+
+    invoke-direct {v6, v7}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
+
+    invoke-virtual {v4, v6}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 401
+    :cond_1e
+    :goto_d
+    move/from16 v0, p3
+
+    int-to-long v6, v0
+
+    invoke-virtual {v4, v6, v7}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+
+    .line 402
     move-object/from16 v0, p0
 
     iget-object v6, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v6, v5}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    invoke-virtual {v6, v4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 415
+    .line 403
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
     new-instance v6, Lcom/android/launcher3/WorkspaceStateTransitionAnimation$1;
 
@@ -1234,56 +1084,68 @@
 
     move/from16 v2, p5
 
-    invoke-direct {v6, v0, v1, v2, v4}, Lcom/android/launcher3/WorkspaceStateTransitionAnimation$1;-><init>(Lcom/android/launcher3/WorkspaceStateTransitionAnimation;Lcom/android/launcher3/TransitionStates;ZLandroid/view/ViewGroup;)V
+    invoke-direct {v6, v0, v1, v2, v5}, Lcom/android/launcher3/WorkspaceStateTransitionAnimation$1;-><init>(Lcom/android/launcher3/WorkspaceStateTransitionAnimation;Lcom/android/launcher3/TransitionStates;ZLandroid/view/ViewGroup;)V
 
-    invoke-virtual {v5, v6}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {v4, v6}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 454
-    :cond_21
-    :goto_f
+    .line 441
+    :cond_1f
+    :goto_e
     return-void
 
-    .line 403
+    .line 361
+    :cond_20
+    const/4 v4, 0x0
+
+    goto/16 :goto_b
+
+    .line 375
+    :cond_21
+    move-object/from16 v0, p1
+
+    iget-boolean v8, v0, Lcom/android/launcher3/TransitionStates;->workspaceToOverview:Z
+
+    if-eqz v8, :cond_1c
+
+    .line 376
+    const/4 v8, 0x0
+
+    invoke-virtual {v4, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    goto/16 :goto_c
+
+    .line 398
     :cond_22
     move-object/from16 v0, p1
 
-    iget-boolean v8, v0, Lcom/android/launcher3/TransitionStates;->overviewToWorkspace:Z
+    iget-boolean v6, v0, Lcom/android/launcher3/TransitionStates;->overviewToWorkspace:Z
 
-    if-eqz v8, :cond_20
+    if-eqz v6, :cond_1e
 
-    .line 404
-    const/4 v8, 0x0
+    .line 399
+    const/4 v6, 0x0
 
-    invoke-virtual {v6, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v4, v6}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 405
-    new-instance v8, Landroid/view/animation/DecelerateInterpolator;
+    goto :goto_d
 
-    const/high16 v9, 0x40000000    # 2.0f
-
-    invoke-direct {v8, v9}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
-
-    invoke-virtual {v7, v8}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    goto :goto_e
-
-    .line 438
+    .line 426
     :cond_23
-    invoke-virtual {v4, v7}, Landroid/view/ViewGroup;->setAlpha(F)V
+    invoke-virtual {v5, v4}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 439
+    .line 427
     move/from16 v0, p5
 
-    invoke-static {v4, v0}, Lcom/android/launcher3/AlphaUpdateListener;->updateVisibility(Landroid/view/View;Z)V
+    invoke-static {v5, v0}, Lcom/android/launcher3/AlphaUpdateListener;->updateVisibility(Landroid/view/View;Z)V
 
-    .line 440
+    .line 428
     move-object/from16 v0, p0
 
-    iget-object v7, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
-    invoke-virtual {v7}, Lcom/android/launcher3/Workspace;->getPageIndicator()Lcom/android/launcher3/pageindicators/PageIndicator;
+    invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->getPageIndicator()Lcom/android/launcher3/pageindicators/PageIndicator;
 
-    move-result-object v7
+    move-result-object v4
 
     move-object/from16 v0, p1
 
@@ -1291,93 +1153,90 @@
 
     xor-int/lit8 v8, v8, 0x1
 
-    invoke-virtual {v7, v8}, Lcom/android/launcher3/pageindicators/PageIndicator;->setShouldAutoHide(Z)V
+    invoke-virtual {v4, v8}, Lcom/android/launcher3/pageindicators/PageIndicator;->setShouldAutoHide(Z)V
 
-    .line 442
-    invoke-virtual {v5}, Landroid/animation/Animator;->end()V
-
-    .line 443
+    .line 430
     move-object/from16 v0, p0
 
-    iget-object v5, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
 
-    invoke-virtual {v5, v6}, Lcom/android/launcher3/Workspace;->createHotseatAlphaAnimator(F)Landroid/animation/ValueAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/animation/ValueAnimator;->end()V
-
-    .line 444
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    invoke-virtual {v5}, Lcom/android/launcher3/Workspace;->updateCustomContentVisibility()V
-
-    .line 445
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
-
-    invoke-virtual {v5, v6}, Lcom/android/launcher3/Workspace;->setScaleX(F)V
-
-    .line 446
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
-
-    invoke-virtual {v5, v6}, Lcom/android/launcher3/Workspace;->setScaleY(F)V
-
-    .line 447
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    invoke-virtual {v5, v9}, Lcom/android/launcher3/Workspace;->setTranslationY(F)V
-
-    .line 449
-    if-eqz p5, :cond_21
-
-    invoke-virtual {v4}, Landroid/view/ViewGroup;->getVisibility()I
-
-    move-result v5
-
-    if-nez v5, :cond_21
-
-    .line 450
-    const/4 v5, 0x0
-
-    invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v4, v6}, Lcom/android/launcher3/Workspace;->createHotseatAlphaAnimator(F)Landroid/animation/ValueAnimator;
 
     move-result-object v4
 
-    .line 451
+    invoke-virtual {v4}, Landroid/animation/ValueAnimator;->end()V
+
+    .line 431
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    invoke-virtual {v4}, Lcom/android/launcher3/Workspace;->updateCustomContentVisibility()V
+
+    .line 432
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    move-object/from16 v0, p0
+
+    iget v6, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
+
+    invoke-virtual {v4, v6}, Lcom/android/launcher3/Workspace;->setScaleX(F)V
+
+    .line 433
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    move-object/from16 v0, p0
+
+    iget v6, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mNewScale:F
+
+    invoke-virtual {v4, v6}, Lcom/android/launcher3/Workspace;->setScaleY(F)V
+
+    .line 434
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    invoke-virtual {v4, v7}, Lcom/android/launcher3/Workspace;->setTranslationY(F)V
+
+    .line 436
+    if-eqz p5, :cond_1f
+
+    invoke-virtual {v5}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v4
+
+    if-nez v4, :cond_1f
+
+    .line 437
+    const/4 v4, 0x0
+
+    invoke-virtual {v5, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    .line 438
     const/16 v5, 0x40
 
     const/4 v6, 0x0
 
-    .line 450
+    .line 437
     invoke-virtual {v4, v5, v6}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
 
-    goto :goto_f
+    goto :goto_e
 
     :cond_24
-    move v11, v12
+    move v9, v10
 
-    goto/16 :goto_a
+    goto/16 :goto_8
 
     :cond_25
-    move v9, v4
+    move v7, v4
 
-    goto/16 :goto_4
+    goto/16 :goto_2
 .end method
 
 .method private cancelAnimation()V
@@ -1386,28 +1245,28 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 496
+    .line 483
     iget-object v0, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 497
+    .line 484
     iget-object v0, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 498
+    .line 485
     iget-object v0, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 500
+    .line 487
     :cond_0
     iput-object v1, p0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mStateAnimator:Landroid/animation/AnimatorSet;
 
-    .line 501
+    .line 488
     return-void
 .end method
 

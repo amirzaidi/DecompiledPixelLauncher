@@ -8,14 +8,14 @@
     .locals 2
 
     .prologue
-    .line 78
-    const v0, 0x7f02003f
+    .line 80
+    const v0, 0x7f02003d
 
-    const v1, 0x7f0c0037
+    const v1, 0x7f0c0039
 
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/popup/SystemShortcut;-><init>(II)V
 
-    .line 79
+    .line 81
     return-void
 .end method
 
@@ -25,7 +25,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 86
     new-instance v0, Lcom/android/launcher3/popup/SystemShortcut$AppInfo$1;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/launcher3/popup/SystemShortcut$AppInfo$1;-><init>(Lcom/android/launcher3/popup/SystemShortcut$AppInfo;Lcom/android/launcher3/Launcher;Lcom/android/launcher3/ItemInfo;)V

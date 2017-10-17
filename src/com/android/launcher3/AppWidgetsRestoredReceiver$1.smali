@@ -34,7 +34,7 @@
 
     iput-object p5, p0, Lcom/android/launcher3/AppWidgetsRestoredReceiver$1;->val$newIds:[I
 
-    .line 29
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -47,7 +47,7 @@
     .locals 4
 
     .prologue
-    .line 32
+    .line 41
     iget-object v0, p0, Lcom/android/launcher3/AppWidgetsRestoredReceiver$1;->val$context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/launcher3/AppWidgetsRestoredReceiver$1;->val$asyncResult:Landroid/content/BroadcastReceiver$PendingResult;
@@ -58,6 +58,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/android/launcher3/AppWidgetsRestoredReceiver;->restoreAppWidgetIds(Landroid/content/Context;Landroid/content/BroadcastReceiver$PendingResult;[I[I)V
 
-    .line 33
+    .line 42
     return-void
 .end method

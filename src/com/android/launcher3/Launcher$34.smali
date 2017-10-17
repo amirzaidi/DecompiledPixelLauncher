@@ -9,28 +9,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Launcher;
 
-.field final synthetic val$removed:Ljava/util/ArrayList;
-
-.field final synthetic val$updated:Ljava/util/ArrayList;
-
-.field final synthetic val$user:Landroid/os/UserHandle;
+.field final synthetic val$app:Lcom/android/launcher3/PromiseAppInfo;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/os/UserHandle;)V
+.method constructor <init>(Lcom/android/launcher3/Launcher;Lcom/android/launcher3/PromiseAppInfo;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$34;->this$0:Lcom/android/launcher3/Launcher;
 
-    iput-object p2, p0, Lcom/android/launcher3/Launcher$34;->val$updated:Ljava/util/ArrayList;
+    iput-object p2, p0, Lcom/android/launcher3/Launcher$34;->val$app:Lcom/android/launcher3/PromiseAppInfo;
 
-    iput-object p3, p0, Lcom/android/launcher3/Launcher$34;->val$removed:Ljava/util/ArrayList;
-
-    iput-object p4, p0, Lcom/android/launcher3/Launcher$34;->val$user:Landroid/os/UserHandle;
-
-    .line 3802
+    .line 3743
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -40,20 +32,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 3804
+    .line 3745
     iget-object v0, p0, Lcom/android/launcher3/Launcher$34;->this$0:Lcom/android/launcher3/Launcher;
 
-    iget-object v1, p0, Lcom/android/launcher3/Launcher$34;->val$updated:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$34;->val$app:Lcom/android/launcher3/PromiseAppInfo;
 
-    iget-object v2, p0, Lcom/android/launcher3/Launcher$34;->val$removed:Ljava/util/ArrayList;
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->bindPromiseAppProgressUpdated(Lcom/android/launcher3/PromiseAppInfo;)V
 
-    iget-object v3, p0, Lcom/android/launcher3/Launcher$34;->val$user:Landroid/os/UserHandle;
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->bindShortcutsChanged(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/os/UserHandle;)V
-
-    .line 3805
+    .line 3746
     return-void
 .end method

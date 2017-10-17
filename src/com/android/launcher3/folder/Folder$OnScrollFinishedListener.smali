@@ -17,15 +17,15 @@
     .locals 0
 
     .prologue
-    .line 1490
+    .line 1604
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$OnScrollFinishedListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1491
+    .line 1605
     iput-object p2, p0, Lcom/android/launcher3/folder/Folder$OnScrollFinishedListener;->mDragObject:Lcom/android/launcher3/DropTarget$DragObject;
 
-    .line 1492
+    .line 1606
     return-void
 .end method
 
@@ -35,7 +35,7 @@
     .locals 3
 
     .prologue
-    .line 1500
+    .line 1614
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollFinishedListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iget-object v1, p0, Lcom/android/launcher3/folder/Folder$OnScrollFinishedListener;->mDragObject:Lcom/android/launcher3/DropTarget$DragObject;
@@ -44,6 +44,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/folder/Folder;->onDragOver(Lcom/android/launcher3/DropTarget$DragObject;I)V
 
-    .line 1501
+    .line 1615
     return-void
 .end method

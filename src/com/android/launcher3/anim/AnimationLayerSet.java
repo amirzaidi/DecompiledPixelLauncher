@@ -9,24 +9,24 @@ import android.graphics.Paint;
 import java.util.Map;
 import android.animation.Animator;
 import android.view.View;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.animation.AnimatorListenerAdapter;
 
 public class AnimationLayerSet extends AnimatorListenerAdapter
 {
-    private final HashMap mViewsToLayerTypeMap;
+    private final ArrayMap mViewsToLayerTypeMap;
     
     public AnimationLayerSet() {
-        this.mViewsToLayerTypeMap = new HashMap();
+        this.mViewsToLayerTypeMap = new ArrayMap();
     }
     
     public AnimationLayerSet(final View view) {
-        this.mViewsToLayerTypeMap = new HashMap(1);
+        this.mViewsToLayerTypeMap = new ArrayMap(1);
         this.addView(view);
     }
     
     public void addView(final View view) {
-        this.mViewsToLayerTypeMap.put(view, view.getLayerType());
+        this.mViewsToLayerTypeMap.put((Object)view, (Object)view.getLayerType());
     }
     
     public void onAnimationEnd(final Animator animator) {

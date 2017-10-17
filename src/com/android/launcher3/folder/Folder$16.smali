@@ -3,26 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcom/android/launcher3/Workspace$ItemOperator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/folder/Folder;
 
-.field final synthetic val$item:Lcom/android/launcher3/ShortcutInfo;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/folder/Folder;Lcom/android/launcher3/ShortcutInfo;)V
+.method constructor <init>(Lcom/android/launcher3/folder/Folder;)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$16;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    iput-object p2, p0, Lcom/android/launcher3/folder/Folder$16;->val$item:Lcom/android/launcher3/ShortcutInfo;
-
-    .line 1392
+    .line 1338
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,22 +27,26 @@
 
 
 # virtual methods
-.method public evaluate(Lcom/android/launcher3/ItemInfo;Landroid/view/View;)Z
-    .locals 1
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 1396
-    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$16;->val$item:Lcom/android/launcher3/ShortcutInfo;
+    .line 1341
+    iget-object v0, p0, Lcom/android/launcher3/folder/Folder$16;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    if-ne p1, v0, :cond_0
+    iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    :goto_0
-    return v0
+    .line 1342
+    const/16 v2, 0x1f4
 
-    :cond_0
-    const/4 v0, 0x0
+    .line 1343
+    const/4 v3, 0x0
 
-    goto :goto_0
+    .line 1341
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->exitSpringLoadedDragModeDelayed(ZILjava/lang/Runnable;)V
+
+    .line 1344
+    return-void
 .end method

@@ -25,10 +25,10 @@
 
     iput-object p3, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->val$pCb:Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;
 
-    .line 668
+    .line 661
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    .line 669
+    .line 662
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->canceled:Z
@@ -43,12 +43,12 @@
     .locals 1
 
     .prologue
-    .line 672
+    .line 665
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->canceled:Z
 
-    .line 673
+    .line 666
     return-void
 .end method
 
@@ -56,35 +56,35 @@
     .locals 1
 
     .prologue
-    .line 677
+    .line 670
     iget-boolean v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->canceled:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 679
+    .line 672
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 680
+    .line 673
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 683
+    .line 676
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     invoke-virtual {v0}, Lcom/android/launcher3/LauncherStateTransitionAnimation;->cleanupAnimation()V
 
-    .line 684
+    .line 677
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$10;->val$pCb:Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;
 
     invoke-virtual {v0}, Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;->onTransitionComplete()V
 
-    .line 685
+    .line 678
     return-void
 .end method

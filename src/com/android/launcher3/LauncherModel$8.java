@@ -4,24 +4,22 @@
 
 package com.android.launcher3;
 
-import com.android.launcher3.util.MultiHashMap;
+import com.android.launcher3.model.BgDataModel;
+import com.android.launcher3.util.PackageUserKey;
+import com.android.launcher3.model.BaseModelUpdateTask;
 
-final class LauncherModel$8 implements Runnable
+final class LauncherModel$8 extends BaseModelUpdateTask
 {
     final /* synthetic */ LauncherModel this$0;
-    final /* synthetic */ LauncherModel$Callbacks val$callbacks;
-    final /* synthetic */ MultiHashMap val$widgets;
+    final /* synthetic */ PackageUserKey val$packageUser;
     
-    LauncherModel$8(final LauncherModel this$0, final LauncherModel$Callbacks val$callbacks, final MultiHashMap val$widgets) {
+    LauncherModel$8(final LauncherModel this$0, final PackageUserKey val$packageUser) {
         this.this$0 = this$0;
-        this.val$callbacks = val$callbacks;
-        this.val$widgets = val$widgets;
+        this.val$packageUser = val$packageUser;
     }
     
-    public void run() {
-        final LauncherModel$Callbacks callback = this.this$0.getCallback();
-        if (this.val$callbacks == callback && callback != null) {
-            this.val$callbacks.bindAllWidgets(this.val$widgets);
-        }
+    public void execute(final LauncherAppState launcherAppState, final BgDataModel bgDataModel, final AllAppsList list) {
+        bgDataModel.widgetsModel.update(launcherAppState, this.val$packageUser);
+        this.bindUpdatedWidgets(bgDataModel);
     }
 }

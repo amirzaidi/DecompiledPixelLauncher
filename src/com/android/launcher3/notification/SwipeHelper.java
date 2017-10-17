@@ -17,51 +17,43 @@ import android.view.ViewConfiguration;
 import android.content.Context;
 import android.view.VelocityTracker;
 import android.os.Handler;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.view.View;
 
 public class SwipeHelper
 {
-    private int DEFAULT_ESCAPE_ANIMATION_DURATION;
-    private int MAX_DISMISS_VELOCITY;
-    private int MAX_ESCAPE_ANIMATION_DURATION;
-    private float SWIPE_ESCAPE_VELOCITY;
-    private SwipeHelper$Callback mCallback;
+    private final SwipeHelper$Callback mCallback;
     private boolean mCanCurrViewBeDimissed;
     private View mCurrView;
     private float mDensityScale;
     private boolean mDisableHwLayers;
-    private HashMap mDismissPendingMap;
+    private final ArrayMap mDismissPendingMap;
     private boolean mDragging;
-    private int mFalsingThreshold;
-    private FlingAnimationUtils mFlingAnimationUtils;
-    private Handler mHandler;
+    private final int mFalsingThreshold;
+    private final FlingAnimationUtils mFlingAnimationUtils;
+    private final Handler mHandler;
     private float mInitialTouchPos;
     private SwipeHelper$LongPressListener mLongPressListener;
     private boolean mLongPressSent;
-    private long mLongPressTimeout;
+    private final long mLongPressTimeout;
     private float mMaxSwipeProgress;
     private float mMinSwipeProgress;
     private float mPagingTouchSlop;
     private float mPerpendicularInitialTouchPos;
     private boolean mSnappingChild;
-    private int mSwipeDirection;
+    private final int mSwipeDirection;
     private final int[] mTmpPos;
     private boolean mTouchAboveFalsingThreshold;
     private float mTranslation;
-    private VelocityTracker mVelocityTracker;
+    private final VelocityTracker mVelocityTracker;
     private Runnable mWatchLongPress;
     
     public SwipeHelper(final int mSwipeDirection, final SwipeHelper$Callback mCallback, final Context context) {
-        this.SWIPE_ESCAPE_VELOCITY = 100.0f;
-        this.DEFAULT_ESCAPE_ANIMATION_DURATION = 200;
-        this.MAX_ESCAPE_ANIMATION_DURATION = 400;
-        this.MAX_DISMISS_VELOCITY = 4000;
         this.mMinSwipeProgress = 0.0f;
         this.mMaxSwipeProgress = 1.0f;
         this.mTranslation = 0.0f;
         this.mTmpPos = new int[2];
-        this.mDismissPendingMap = new HashMap();
+        this.mDismissPendingMap = new ArrayMap();
         this.mCallback = mCallback;
         this.mHandler = new Handler();
         this.mSwipeDirection = mSwipeDirection;
@@ -69,7 +61,7 @@ public class SwipeHelper
         this.mDensityScale = context.getResources().getDisplayMetrics().density;
         this.mPagingTouchSlop = ViewConfiguration.get(context).getScaledPagingTouchSlop();
         this.mLongPressTimeout = (long)(ViewConfiguration.getLongPressTimeout() * 1.5f);
-        this.mFalsingThreshold = context.getResources().getDimensionPixelSize(2131427478);
+        this.mFalsingThreshold = context.getResources().getDimensionPixelSize(2131427489);
         this.mFlingAnimationUtils = new FlingAnimationUtils(context, this.getMaxEscapeAnimDuration() / 1000.0f);
     }
     
@@ -78,7 +70,7 @@ public class SwipeHelper
     }
     
     private float getMaxVelocity() {
-        return this.MAX_DISMISS_VELOCITY * this.mDensityScale;
+        return this.mDensityScale * 4000.0f;
     }
     
     private float getPerpendicularPos(final MotionEvent motionEvent) {
@@ -191,12 +183,12 @@ public class SwipeHelper
             size = this.getSize(view);
         }
         if (min == 0L) {
-            final long n4 = this.MAX_ESCAPE_ANIMATION_DURATION;
+            final long n4 = 400L;
             if (n != 0.0f) {
                 min = Math.min(n4, (int)(Math.abs(size - this.getTranslation(view)) * 1000.0f / Math.abs(n)));
             }
             else {
-                min = this.DEFAULT_ESCAPE_ANIMATION_DURATION;
+                min = 200L;
             }
         }
         if (!this.mDisableHwLayers) {
@@ -218,7 +210,7 @@ public class SwipeHelper
         }
         viewTranslationAnimator.addListener((Animator$AnimatorListener)new SwipeHelper$3(this, view, canChildBeDismissed, runnable));
         this.prepareDismissAnimation(view, viewTranslationAnimator);
-        this.mDismissPendingMap.put(view, viewTranslationAnimator);
+        this.mDismissPendingMap.put((Object)view, (Object)viewTranslationAnimator);
         viewTranslationAnimator.start();
     }
     
@@ -232,7 +224,7 @@ public class SwipeHelper
     }
     
     protected long getMaxEscapeAnimDuration() {
-        return this.MAX_ESCAPE_ANIMATION_DURATION;
+        return 400L;
     }
     
     protected float getSize(final View view) {
@@ -258,7 +250,7 @@ public class SwipeHelper
     }
     
     protected float getUnscaledEscapeVelocity() {
-        return this.SWIPE_ESCAPE_VELOCITY;
+        return 100.0f;
     }
     
     protected Animator getViewTranslationAnimator(final View view, final float n, final ValueAnimator$AnimatorUpdateListener valueAnimator$AnimatorUpdateListener) {

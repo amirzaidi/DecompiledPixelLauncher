@@ -18,19 +18,19 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 82
     const-string/jumbo v0, ""
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 90
+    .line 83
     const-string/jumbo v0, ""
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache$CacheEntry;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 87
+    .line 80
     return-void
 .end method

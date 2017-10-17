@@ -28,7 +28,7 @@
 
 .field private mMarketSearchIntent:Landroid/content/Intent;
 
-.field private mSearchController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
+.field private mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
 
 
 # direct methods
@@ -65,25 +65,25 @@
 .end method
 
 .method public constructor <init>(Lcom/android/launcher3/Launcher;Lcom/android/launcher3/allapps/AlphabeticalAppsList;Landroid/view/View$OnClickListener;Landroid/view/View$OnLongClickListener;)V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 210
+    .line 211
     invoke-direct {p0}, Landroid/support/v7/widget/q;-><init>()V
 
-    .line 212
+    .line 213
     invoke-virtual {p1}, Lcom/android/launcher3/Launcher;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 213
+    .line 214
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 214
+    .line 215
     iput-object p2, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
-    .line 215
-    const v1, 0x7f0c002d
+    .line 216
+    const v1, 0x7f0c002f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -91,68 +91,73 @@
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mEmptySearchMessage:Ljava/lang/String;
 
-    .line 216
+    .line 217
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$GridSpanSizer;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$GridSpanSizer;-><init>(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mGridSizer:Lcom/android/launcher3/allapps/AllAppsGridAdapter$GridSpanSizer;
 
-    .line 217
+    .line 218
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;
 
     invoke-direct {v0, p0, p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AppsGridLayoutManager;-><init>(Lcom/android/launcher3/allapps/AllAppsGridAdapter;Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mGridLayoutMgr:Landroid/support/v7/widget/M;
 
-    .line 218
+    .line 219
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mGridLayoutMgr:Landroid/support/v7/widget/M;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mGridSizer:Lcom/android/launcher3/allapps/AllAppsGridAdapter$GridSpanSizer;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/M;->setSpanSizeLookup(Landroid/support/v7/widget/Q;)V
 
-    .line 219
+    .line 220
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 220
+    .line 221
     iput-object p3, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconClickListener:Landroid/view/View$OnClickListener;
 
-    .line 221
+    .line 222
     iput-object p4, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconLongClickListener:Landroid/view/View$OnLongClickListener;
 
-    .line 222
+    .line 223
+    sget-boolean v0, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_PHYSICS:Z
+
+    if-eqz v0, :cond_0
+
+    .line 224
+    new-instance v0, Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    .line 225
+    new-instance v1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AllAppsSpringAnimationFactory;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$AllAppsSpringAnimationFactory;-><init>(Lcom/android/launcher3/allapps/AllAppsGridAdapter;Lcom/android/launcher3/allapps/AllAppsGridAdapter$AllAppsSpringAnimationFactory;)V
+
+    const/4 v2, 0x0
+
+    .line 224
+    invoke-direct {v0, v2, v1}, Lcom/android/launcher3/anim/SpringAnimationHandler;-><init>(ILcom/android/launcher3/anim/SpringAnimationHandler$AnimationFactory;)V
+
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    .line 227
+    :cond_0
     return-void
-.end method
-
-.method private getCellSize()Landroid/graphics/Point;
-    .locals 1
-
-    .prologue
-    .line 328
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/launcher3/DeviceProfile;->getCellSize()Landroid/graphics/Point;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public static isDividerViewType(I)Z
     .locals 1
 
     .prologue
-    .line 225
-    const/16 v0, 0xe0
+    .line 234
+    const/16 v0, 0x60
 
     invoke-static {p0, v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->isViewType(II)Z
 
@@ -165,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 238
     const/4 v0, 0x6
 
     invoke-static {p0, v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->isViewType(II)Z
@@ -181,7 +186,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 233
+    .line 242
     and-int v1, p0, p1
 
     if-eqz v1, :cond_0
@@ -198,7 +203,7 @@
     .locals 1
 
     .prologue
-    .line 384
+    .line 400
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->getAdapterItems()Ljava/util/List;
@@ -216,7 +221,7 @@
     .locals 1
 
     .prologue
-    .line 389
+    .line 405
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->getAdapterItems()Ljava/util/List;
@@ -229,7 +234,7 @@
 
     check-cast v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
 
-    .line 390
+    .line 406
     iget v0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->viewType:I
 
     return v0
@@ -239,8 +244,18 @@
     .locals 1
 
     .prologue
-    .line 273
+    .line 282
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mGridLayoutMgr:Landroid/support/v7/widget/M;
+
+    return-object v0
+.end method
+
+.method public getSpringAnimationHandler()Lcom/android/launcher3/anim/SpringAnimationHandler;
+    .locals 1
+
+    .prologue
+    .line 230
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
 
     return-object v0
 .end method
@@ -249,7 +264,7 @@
     .locals 0
 
     .prologue
-    .line 331
+    .line 332
     check-cast p1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->onBindViewHolder(Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;I)V
@@ -265,7 +280,7 @@
 
     const/4 v1, 0x0
 
-    .line 333
+    .line 334
     invoke-virtual {p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -288,7 +303,7 @@
     :cond_0
     return-void
 
-    .line 336
+    .line 337
     :sswitch_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
@@ -304,22 +319,13 @@
 
     iget-object v1, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->appInfo:Lcom/android/launcher3/AppInfo;
 
-    .line 337
+    .line 338
     iget-object v0, p1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v0, Lcom/android/launcher3/BubbleTextView;
 
-    .line 338
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->applyFromApplicationInfo(Lcom/android/launcher3/AppInfo;)V
-
     .line 339
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v1}, Lcom/android/launcher3/Launcher;->getAccessibilityDelegate()Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->applyFromApplicationInfo(Lcom/android/launcher3/AppInfo;)V
 
     goto :goto_0
 
@@ -466,9 +472,7 @@
     .line 363
     goto :goto_3
 
-    .line 333
-    nop
-
+    .line 334
     :sswitch_data_0
     .sparse-switch
         0x2 -> :sswitch_1
@@ -476,8 +480,8 @@
         0x8 -> :sswitch_3
         0x10 -> :sswitch_4
         0x20 -> :sswitch_0
-        0x100 -> :sswitch_5
-        0x200 -> :sswitch_2
+        0x80 -> :sswitch_5
+        0x100 -> :sswitch_2
     .end sparse-switch
 .end method
 
@@ -485,7 +489,7 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 285
     invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     move-result-object v0
@@ -499,10 +503,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 278
+    .line 287
     sparse-switch p2, :sswitch_data_0
 
-    .line 323
+    .line 328
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Unexpected view type"
@@ -511,83 +515,79 @@
 
     throw v0
 
-    .line 281
+    .line 290
     :sswitch_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 282
-    const v1, 0x7f040007
+    .line 291
+    const v1, 0x7f040009
 
-    .line 281
+    .line 290
     invoke-virtual {v0, v1, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/BubbleTextView;
 
-    .line 283
+    .line 292
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 284
+    .line 293
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconLongClickListener:Landroid/view/View$OnLongClickListener;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 285
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
+    .line 294
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setLongPressTimeout(I)V
 
-    .line 287
+    .line 295
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconFocusListener:Landroid/view/View$OnFocusChangeListener;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
-    .line 290
+    .line 298
     invoke-virtual {v0}, Lcom/android/launcher3/BubbleTextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->getCellSize()Landroid/graphics/Point;
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v2
 
-    iget v2, v2, Landroid/graphics/Point;->y:I
+    iget v2, v2, Lcom/android/launcher3/DeviceProfile;->allAppsCellHeightPx:I
 
     iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 291
+    .line 299
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     invoke-direct {v1, v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;-><init>(Landroid/view/View;)V
 
     return-object v1
 
-    .line 293
+    .line 301
     :sswitch_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 294
+    .line 302
     const v1, 0x7f040003
 
-    .line 293
+    .line 301
     invoke-virtual {v0, v1, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/discovery/AppDiscoveryItemView;
 
-    .line 295
+    .line 303
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconClickListener:Landroid/view/View$OnClickListener;
 
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -596,20 +596,20 @@
 
     move-result-object v2
 
-    .line 296
+    .line 304
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconLongClickListener:Landroid/view/View$OnLongClickListener;
 
-    .line 295
+    .line 303
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/discovery/AppDiscoveryItemView;->init(Landroid/view/View$OnClickListener;Landroid/view/View$AccessibilityDelegate;Landroid/view/View$OnLongClickListener;)V
 
-    .line 297
+    .line 305
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     invoke-direct {v1, v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;-><init>(Landroid/view/View;)V
 
     return-object v1
 
-    .line 299
+    .line 307
     :sswitch_2
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
@@ -625,77 +625,59 @@
 
     return-object v0
 
-    .line 302
+    .line 310
     :sswitch_3
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040009
+    const v1, 0x7f04000a
 
     invoke-virtual {v0, v1, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 304
+    .line 312
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$1;
 
     invoke-direct {v1, p0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$1;-><init>(Lcom/android/launcher3/allapps/AllAppsGridAdapter;)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 310
+    .line 318
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     invoke-direct {v1, v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;-><init>(Landroid/view/View;)V
 
     return-object v1
 
-    .line 312
+    .line 320
     :sswitch_4
-    new-instance v0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
-
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
-
-    .line 313
-    const v2, 0x7f040008
-
-    .line 312
-    invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;-><init>(Landroid/view/View;)V
-
-    return-object v0
-
-    .line 315
-    :sswitch_5
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 316
+    .line 321
     const v1, 0x7f040004
 
-    .line 315
+    .line 320
     invoke-virtual {v0, v1, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 317
+    .line 322
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     invoke-direct {v1, v0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;-><init>(Landroid/view/View;)V
 
     return-object v1
 
-    .line 320
-    :sswitch_6
+    .line 325
+    :sswitch_5
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    .line 321
+    .line 326
     const v2, 0x7f040005
 
-    .line 320
+    .line 325
     invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
@@ -704,18 +686,17 @@
 
     return-object v0
 
-    .line 278
+    .line 287
     :sswitch_data_0
     .sparse-switch
         0x2 -> :sswitch_0
         0x4 -> :sswitch_0
         0x8 -> :sswitch_2
         0x10 -> :sswitch_3
-        0x20 -> :sswitch_6
-        0x40 -> :sswitch_4
-        0x80 -> :sswitch_6
-        0x100 -> :sswitch_5
-        0x200 -> :sswitch_1
+        0x20 -> :sswitch_5
+        0x40 -> :sswitch_5
+        0x80 -> :sswitch_4
+        0x100 -> :sswitch_1
     .end sparse-switch
 .end method
 
@@ -723,7 +704,7 @@
     .locals 1
 
     .prologue
-    .line 376
+    .line 392
     check-cast p1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->onFailedToRecycleView(Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;)Z
@@ -737,20 +718,112 @@
     .locals 1
 
     .prologue
-    .line 379
+    .line 395
     const/4 v0, 0x1
 
     return v0
+.end method
+
+.method public bridge synthetic onViewAttachedToWindow(Landroid/support/v7/widget/j;)V
+    .locals 0
+
+    .prologue
+    .line 376
+    check-cast p1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
+
+    invoke-virtual {p0, p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->onViewAttachedToWindow(Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;)V
+
+    return-void
+.end method
+
+.method public onViewAttachedToWindow(Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;)V
+    .locals 2
+
+    .prologue
+    .line 378
+    invoke-virtual {p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;->getItemViewType()I
+
+    move-result v0
+
+    .line 379
+    sget-boolean v1, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_PHYSICS:Z
+
+    if-eqz v1, :cond_0
+
+    const/16 v1, 0x46
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->isViewType(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 380
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    iget-object v1, p1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v0, v1, p1}, Lcom/android/launcher3/anim/SpringAnimationHandler;->add(Landroid/view/View;Ljava/lang/Object;)V
+
+    .line 382
+    :cond_0
+    return-void
+.end method
+
+.method public bridge synthetic onViewDetachedFromWindow(Landroid/support/v7/widget/j;)V
+    .locals 0
+
+    .prologue
+    .line 384
+    check-cast p1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;
+
+    invoke-virtual {p0, p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->onViewDetachedFromWindow(Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;)V
+
+    return-void
+.end method
+
+.method public onViewDetachedFromWindow(Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;)V
+    .locals 2
+
+    .prologue
+    .line 386
+    invoke-virtual {p1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;->getItemViewType()I
+
+    move-result v0
+
+    .line 387
+    sget-boolean v1, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_PHYSICS:Z
+
+    if-eqz v1, :cond_0
+
+    const/16 v1, 0x46
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->isViewType(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 388
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    iget-object v1, p1, Lcom/android/launcher3/allapps/AllAppsGridAdapter$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/anim/SpringAnimationHandler;->remove(Landroid/view/View;)V
+
+    .line 390
+    :cond_0
+    return-void
 .end method
 
 .method public setBindViewCallback(Lcom/android/launcher3/allapps/AllAppsGridAdapter$BindViewCallback;)V
     .locals 0
 
     .prologue
-    .line 266
+    .line 275
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mBindViewCallback:Lcom/android/launcher3/allapps/AllAppsGridAdapter$BindViewCallback;
 
-    .line 267
+    .line 276
     return-void
 .end method
 
@@ -758,10 +831,10 @@
     .locals 0
 
     .prologue
-    .line 249
+    .line 258
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mIconFocusListener:Landroid/view/View$OnFocusChangeListener;
 
-    .line 250
+    .line 259
     return-void
 .end method
 
@@ -769,14 +842,14 @@
     .locals 3
 
     .prologue
-    .line 257
+    .line 266
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 258
+    .line 267
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -785,7 +858,7 @@
 
     aput-object p1, v1, v2
 
-    const v2, 0x7f0c002e
+    const v2, 0x7f0c0030
 
     invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -793,16 +866,16 @@
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mEmptySearchMessage:Ljava/lang/String;
 
-    .line 259
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSearchController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
+    .line 268
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/AllAppsSearchBarController;->createMarketSearchIntent(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v0, p1}, Lcom/android/launcher3/util/PackageManagerHelper;->getMarketSearchIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mMarketSearchIntent:Landroid/content/Intent;
 
-    .line 260
+    .line 269
     return-void
 .end method
 
@@ -810,25 +883,14 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 249
     iput p1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mAppsPerRow:I
 
-    .line 241
+    .line 250
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mGridLayoutMgr:Landroid/support/v7/widget/M;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/M;->setSpanCount(I)V
 
-    .line 242
-    return-void
-.end method
-
-.method public setSearchController(Lcom/android/launcher3/allapps/AllAppsSearchBarController;)V
-    .locals 0
-
-    .prologue
-    .line 245
-    iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->mSearchController:Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-
-    .line 246
+    .line 251
     return-void
 .end method

@@ -14,40 +14,15 @@ import android.content.pm.ApplicationInfo;
 import java.util.List;
 import android.os.UserHandle;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.graphics.LauncherIcons;
-import com.android.launcher3.shortcuts.ShortcutInfoCompat;
-import com.android.launcher3.util.LooperExecuter;
-import com.android.launcher3.LauncherModel;
-import com.android.launcher3.ShortcutInfo;
 import android.content.Context;
 
 public abstract class LauncherAppsCompat
 {
     private static LauncherAppsCompat sInstance;
-    private static Object sInstanceLock;
+    private static final Object sInstanceLock;
     
     static {
-        LauncherAppsCompat.sInstanceLock = new Object();
-    }
-    
-    public static ShortcutInfo createShortcutInfoFromPinItemRequest(final Context context, final PinItemRequestCompat pinItemRequestCompat, final long n) {
-        if (pinItemRequestCompat != null && pinItemRequestCompat.getRequestType() == 1 && pinItemRequestCompat.isValid()) {
-            if (n <= 0L) {
-                if (!pinItemRequestCompat.accept()) {
-                    return null;
-                }
-            }
-            else {
-                new LooperExecuter(LauncherModel.getWorkerLooper()).execute(new LauncherAppsCompat$1(n, pinItemRequestCompat));
-            }
-            final ShortcutInfoCompat shortcutInfoCompat = new ShortcutInfoCompat(pinItemRequestCompat.getShortcutInfo());
-            final ShortcutInfo shortcutInfo = new ShortcutInfo(shortcutInfoCompat, context);
-            shortcutInfo.iconBitmap = LauncherIcons.createShortcutIcon(shortcutInfoCompat, context, false);
-            LauncherAppState.getInstance(context).getModel().updateAndBindShortcutInfo(shortcutInfo, shortcutInfoCompat);
-            return shortcutInfo;
-        }
-        return null;
+        sInstanceLock = new Object();
     }
     
     public static LauncherAppsCompat getInstance(final Context context) {

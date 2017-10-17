@@ -4,15 +4,11 @@
 
 package com.android.launcher3;
 
-import android.animation.Animator$AnimatorListener;
-import android.animation.TypeEvaluator;
-import android.animation.ArgbEvaluator;
 import com.android.launcher3.dynamicui.ExtractedColors;
 import android.view.View$OnLongClickListener;
 import android.view.MotionEvent;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
 import android.view.View;
-import android.graphics.drawable.Drawable;
 import android.support.v4.b.a;
 import com.android.launcher3.util.Themes;
 import android.util.AttributeSet;

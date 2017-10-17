@@ -8,7 +8,7 @@
     .locals 6
 
     .prologue
-    .line 395
+    .line 390
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
@@ -27,31 +27,31 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/DefaultLayoutParser;-><init>(Landroid/content/Context;Landroid/appwidget/AppWidgetHost;Lcom/android/launcher3/AutoInstallsLayout$LayoutParserCallback;Landroid/content/res/Resources;I)V
 
-    .line 396
+    .line 391
     return-void
 .end method
 
 
 # virtual methods
-.method protected getLayoutElementsMap()Ljava/util/HashMap;
+.method protected getLayoutElementsMap()Landroid/util/ArrayMap;
     .locals 4
 
     .prologue
-    .line 401
-    new-instance v0, Ljava/util/HashMap;
+    .line 396
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    .line 402
+    .line 397
     const-string/jumbo v1, "favorite"
 
     new-instance v2, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;
 
     invoke-direct {v2, p0}, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;-><init>(Lcom/android/launcher3/DefaultLayoutParser;)V
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 403
+    .line 398
     const-string/jumbo v1, "shortcut"
 
     new-instance v2, Lcom/android/launcher3/DefaultLayoutParser$UriShortcutParser;
@@ -60,17 +60,17 @@
 
     invoke-direct {v2, p0, v3}, Lcom/android/launcher3/DefaultLayoutParser$UriShortcutParser;-><init>(Lcom/android/launcher3/DefaultLayoutParser;Landroid/content/res/Resources;)V
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 404
+    .line 399
     const-string/jumbo v1, "resolve"
 
     new-instance v2, Lcom/android/launcher3/DefaultLayoutParser$ResolveParser;
 
     invoke-direct {v2, p0}, Lcom/android/launcher3/DefaultLayoutParser$ResolveParser;-><init>(Lcom/android/launcher3/DefaultLayoutParser;)V
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 405
+    .line 400
     return-object v0
 .end method

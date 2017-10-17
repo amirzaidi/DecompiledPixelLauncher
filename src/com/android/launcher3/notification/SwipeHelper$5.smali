@@ -27,7 +27,7 @@
 
     iput p4, p0, Lcom/android/launcher3/notification/SwipeHelper$5;->val$targetLeft:F
 
-    .line 449
+    .line 446
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -40,14 +40,14 @@
     .locals 3
 
     .prologue
-    .line 451
+    .line 448
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$5;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/launcher3/notification/SwipeHelper;->-set1(Lcom/android/launcher3/notification/SwipeHelper;Z)Z
 
-    .line 452
+    .line 449
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$5;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper$5;->val$animView:Landroid/view/View;
@@ -56,7 +56,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/launcher3/notification/SwipeHelper;->-wrap0(Lcom/android/launcher3/notification/SwipeHelper;Landroid/view/View;Z)V
 
-    .line 453
+    .line 450
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$5;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
     invoke-static {v0}, Lcom/android/launcher3/notification/SwipeHelper;->-get0(Lcom/android/launcher3/notification/SwipeHelper;)Lcom/android/launcher3/notification/SwipeHelper$Callback;
@@ -69,6 +69,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->onChildSnappedBack(Landroid/view/View;F)V
 
-    .line 454
+    .line 451
     return-void
 .end method

@@ -17,10 +17,10 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;->this$0:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
-    .line 346
+    .line 393
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    .line 347
+    .line 394
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;->canceled:Z
@@ -35,12 +35,12 @@
     .locals 1
 
     .prologue
-    .line 351
+    .line 398
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;->canceled:Z
 
-    .line 352
+    .line 399
     return-void
 .end method
 
@@ -48,26 +48,26 @@
     .locals 1
 
     .prologue
-    .line 356
+    .line 403
     iget-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;->canceled:Z
 
     if-eqz v0, :cond_0
 
-    .line 357
+    .line 404
     return-void
 
-    .line 359
+    .line 406
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;->this$0:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->finishPullUp()V
 
-    .line 360
+    .line 407
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;->this$0:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
     invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->-wrap0(Lcom/android/launcher3/allapps/AllAppsTransitionController;)V
 
-    .line 361
+    .line 408
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;->this$0:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
     invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->-get0(Lcom/android/launcher3/allapps/AllAppsTransitionController;)Lcom/android/launcher3/allapps/VerticalPullDetector;
@@ -76,6 +76,6 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->finishedScrolling()V
 
-    .line 363
+    .line 410
     return-void
 .end method

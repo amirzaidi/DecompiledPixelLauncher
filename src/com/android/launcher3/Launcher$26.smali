@@ -9,24 +9,32 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Launcher;
 
-.field final synthetic val$anim:Landroid/animation/AnimatorSet;
+.field final synthetic val$end:I
 
-.field final synthetic val$bounceAnims:Ljava/util/Collection;
+.field final synthetic val$forceAnimateIcons:Z
+
+.field final synthetic val$items:Ljava/util/ArrayList;
+
+.field final synthetic val$start:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;Landroid/animation/AnimatorSet;Ljava/util/Collection;)V
+.method constructor <init>(Lcom/android/launcher3/Launcher;Ljava/util/ArrayList;IIZ)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$26;->this$0:Lcom/android/launcher3/Launcher;
 
-    iput-object p2, p0, Lcom/android/launcher3/Launcher$26;->val$anim:Landroid/animation/AnimatorSet;
+    iput-object p2, p0, Lcom/android/launcher3/Launcher$26;->val$items:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lcom/android/launcher3/Launcher$26;->val$bounceAnims:Ljava/util/Collection;
+    iput p3, p0, Lcom/android/launcher3/Launcher$26;->val$start:I
 
-    .line 3425
+    iput p4, p0, Lcom/android/launcher3/Launcher$26;->val$end:I
+
+    iput-boolean p5, p0, Lcom/android/launcher3/Launcher$26;->val$forceAnimateIcons:Z
+
+    .line 3291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -36,21 +44,22 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 5
 
     .prologue
-    .line 3427
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$26;->val$anim:Landroid/animation/AnimatorSet;
+    .line 3293
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$26;->this$0:Lcom/android/launcher3/Launcher;
 
-    iget-object v1, p0, Lcom/android/launcher3/Launcher$26;->val$bounceAnims:Ljava/util/Collection;
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$26;->val$items:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
+    iget v2, p0, Lcom/android/launcher3/Launcher$26;->val$start:I
 
-    .line 3428
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$26;->val$anim:Landroid/animation/AnimatorSet;
+    iget v3, p0, Lcom/android/launcher3/Launcher$26;->val$end:I
 
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
+    iget-boolean v4, p0, Lcom/android/launcher3/Launcher$26;->val$forceAnimateIcons:Z
 
-    .line 3429
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/launcher3/Launcher;->bindItems(Ljava/util/ArrayList;IIZ)V
+
+    .line 3294
     return-void
 .end method

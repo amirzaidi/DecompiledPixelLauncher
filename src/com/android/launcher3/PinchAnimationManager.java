@@ -13,7 +13,6 @@ import android.animation.Animator$AnimatorListener;
 import com.android.launcher3.anim.AnimationLayerSet;
 import android.animation.ObjectAnimator;
 import android.view.View;
-import com.android.launcher3.util.MultiStateAlphaController;
 import android.animation.Animator;
 import android.view.animation.LinearInterpolator;
 
@@ -33,7 +32,7 @@ public class PinchAnimationManager
     }
     
     public PinchAnimationManager(final Launcher mLauncher) {
-        this.mAnimators = new Animator[4];
+        this.mAnimators = new Animator[3];
         this.mLauncher = mLauncher;
         this.mWorkspace = mLauncher.mWorkspace;
         this.mOverviewScale = this.mWorkspace.getOverviewModeShrinkFactor();
@@ -42,30 +41,19 @@ public class PinchAnimationManager
     }
     
     private void animateHotseatAndQsb(final boolean b) {
-        final long n = 150L;
-        final int n2 = 1;
         final Workspace mWorkspace = this.mWorkspace;
-        int n3;
+        boolean b2;
         if (b) {
-            n3 = n2;
+            b2 = true;
         }
         else {
-            n3 = 0;
+            b2 = false;
         }
-        this.startAnimator(0, (Animator)mWorkspace.createHotseatAlphaAnimator(n3), n);
-        final MultiStateAlphaController mQsbAlphaController = this.mWorkspace.mQsbAlphaController;
-        int n4;
-        if (b) {
-            n4 = n2;
-        }
-        else {
-            n4 = 0;
-        }
-        this.startAnimator(n2, mQsbAlphaController.animateAlphaAtIndex(n4, 0), n);
+        this.startAnimator(0, (Animator)mWorkspace.createHotseatAlphaAnimator(b2 ? 1 : 0), 150L);
     }
     
     private void animateOverviewPanelButtons(final boolean b) {
-        this.animateShowHideView(2, (View)this.mLauncher.getOverviewPanel(), b);
+        this.animateShowHideView(1, (View)this.mLauncher.getOverviewPanel(), b);
     }
     
     private void animateScrim(final boolean b) {
@@ -76,7 +64,7 @@ public class PinchAnimationManager
         else {
             mWorkspaceScrimAlpha = 0.0f;
         }
-        this.startAnimator(3, (Animator)ObjectAnimator.ofFloat((Object)this.mLauncher.getDragLayer(), "backgroundAlpha", new float[] { mWorkspaceScrimAlpha }), this.mNormalOverviewTransitionDuration);
+        this.startAnimator(2, (Animator)ObjectAnimator.ofFloat((Object)this.mLauncher.getDragLayer(), "backgroundAlpha", new float[] { mWorkspaceScrimAlpha }), this.mNormalOverviewTransitionDuration);
     }
     
     private void animateShowHideView(final int n, final View view, final boolean b) {

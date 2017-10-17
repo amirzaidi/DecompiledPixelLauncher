@@ -12,7 +12,6 @@ import android.util.Log;
 import android.content.res.Resources;
 import android.text.TextUtils;
 import com.android.launcher3.Utilities;
-import android.content.SharedPreferences;
 import android.content.Context;
 
 public class IconShapeOverride
@@ -36,7 +35,7 @@ public class IconShapeOverride
                 }
                 catch (Exception ex) {
                     Log.e("IconShapeOverride", "Unable to override icon shape", (Throwable)ex);
-                    prefs(context).edit().remove("pref_override_icon_shape").apply();
+                    Utilities.getDevicePrefs(context).edit().remove("pref_override_icon_shape").apply();
                 }
             }
             catch (Exception ex2) {}
@@ -45,7 +44,7 @@ public class IconShapeOverride
     }
     
     private static String getAppliedValue(final Context context) {
-        return prefs(context).getString("pref_override_icon_shape", "");
+        return Utilities.getDevicePrefs(context).getString("pref_override_icon_shape", "");
     }
     
     private static int getConfigResId() {
@@ -88,9 +87,5 @@ public class IconShapeOverride
             b = false;
         }
         return b;
-    }
-    
-    private static SharedPreferences prefs(final Context context) {
-        return context.getSharedPreferences("com.android.launcher3.device.prefs", 0);
     }
 }

@@ -15,7 +15,7 @@ import android.view.ViewConfiguration;
 import android.content.Context;
 import android.view.VelocityTracker;
 import android.os.Handler;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.graphics.Paint;
 import android.animation.Animator;
 import android.view.View;
@@ -42,7 +42,7 @@ final class SwipeHelper$3 extends AnimatorListenerAdapter
     
     public void onAnimationEnd(final Animator animator) {
         this.this$0.updateSwipeProgressFromOffset(this.val$animView, this.val$canBeDismissed);
-        this.this$0.mDismissPendingMap.remove(this.val$animView);
+        this.this$0.mDismissPendingMap.remove((Object)this.val$animView);
         if (!this.mCancelled) {
             this.this$0.mCallback.onChildDismissed(this.val$animView);
         }

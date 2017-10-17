@@ -16,7 +16,7 @@ public class WidgetsRowViewHolder extends j
     
     public WidgetsRowViewHolder(final ViewGroup viewGroup) {
         super((View)viewGroup);
-        this.cellContainer = (ViewGroup)viewGroup.findViewById(2131624050);
-        this.title = (BubbleTextView)viewGroup.findViewById(2131624048);
+        this.cellContainer = (ViewGroup)viewGroup.findViewById(2131624076);
+        this.title = (BubbleTextView)viewGroup.findViewById(2131624074);
     }
 }

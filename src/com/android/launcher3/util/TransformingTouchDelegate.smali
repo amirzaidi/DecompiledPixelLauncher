@@ -97,20 +97,6 @@
 
 
 # virtual methods
-.method public extendTouchBounds(F)V
-    .locals 0
-
-    .prologue
-    .line 57
-    iput p1, p0, Lcom/android/launcher3/util/TransformingTouchDelegate;->mTouchExtension:F
-
-    .line 58
-    invoke-direct {p0}, Lcom/android/launcher3/util/TransformingTouchDelegate;->updateTouchBounds()V
-
-    .line 59
-    return-void
-.end method
-
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
@@ -287,16 +273,5 @@
     invoke-direct {p0}, Lcom/android/launcher3/util/TransformingTouchDelegate;->updateTouchBounds()V
 
     .line 54
-    return-void
-.end method
-
-.method public setDelegateView(Landroid/view/View;)V
-    .locals 0
-
-    .prologue
-    .line 67
-    iput-object p1, p0, Lcom/android/launcher3/util/TransformingTouchDelegate;->mDelegateView:Landroid/view/View;
-
-    .line 68
     return-void
 .end method

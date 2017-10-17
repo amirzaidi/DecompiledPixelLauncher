@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
+.field private final mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
 
 # direct methods
@@ -12,13 +12,13 @@
     .locals 0
 
     .prologue
-    .line 136
+    .line 135
     invoke-direct {p0}, Landroid/content/pm/LauncherApps$Callback;-><init>()V
 
-    .line 137
+    .line 136
     iput-object p1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
-    .line 138
+    .line 137
     return-void
 .end method
 
@@ -28,12 +28,12 @@
     .locals 1
 
     .prologue
-    .line 145
+    .line 146
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
     invoke-interface {v0, p1, p2}, Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;->onPackageAdded(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 146
+    .line 147
     return-void
 .end method
 
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 151
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
     invoke-interface {v0, p1, p2}, Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;->onPackageChanged(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 150
+    .line 152
     return-void
 .end method
 
@@ -67,12 +67,12 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 156
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;->onPackagesAvailable([Ljava/lang/String;Landroid/os/UserHandle;Z)V
 
-    .line 154
+    .line 157
     return-void
 .end method
 
@@ -80,12 +80,12 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 167
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
     invoke-interface {v0, p1, p2}, Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;->onPackagesSuspended([Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 163
+    .line 168
     return-void
 .end method
 
@@ -93,12 +93,12 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 162
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;->onPackagesUnavailable([Ljava/lang/String;Landroid/os/UserHandle;Z)V
 
-    .line 159
+    .line 163
     return-void
 .end method
 
@@ -106,12 +106,12 @@
     .locals 1
 
     .prologue
-    .line 166
+    .line 172
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
     invoke-interface {v0, p1, p2}, Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;->onPackagesUnsuspended([Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 167
+    .line 173
     return-void
 .end method
 
@@ -119,7 +119,7 @@
     .locals 4
 
     .prologue
-    .line 171
+    .line 179
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -128,7 +128,7 @@
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 172
+    .line 180
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -146,7 +146,7 @@
 
     check-cast v0, Landroid/content/pm/ShortcutInfo;
 
-    .line 173
+    .line 181
     new-instance v3, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
     invoke-direct {v3, v0}, Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;-><init>(Landroid/content/pm/ShortcutInfo;)V
@@ -155,12 +155,12 @@
 
     goto :goto_0
 
-    .line 176
+    .line 184
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;->mCallback:Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;
 
     invoke-interface {v0, p1, v1, p3}, Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;->onShortcutsChanged(Ljava/lang/String;Ljava/util/List;Landroid/os/UserHandle;)V
 
-    .line 177
+    .line 185
     return-void
 .end method

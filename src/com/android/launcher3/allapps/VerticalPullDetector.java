@@ -18,11 +18,11 @@ public class VerticalPullDetector
     private boolean mIgnoreSlopWhenSettling;
     private float mLastDisplacement;
     private float mLastY;
-    VerticalPullDetector$Listener mListener;
+    private VerticalPullDetector$Listener mListener;
     private int mScrollConditions;
     private VerticalPullDetector$ScrollState mState;
     private float mSubtractDisplacement;
-    private float mTouchSlop;
+    private final float mTouchSlop;
     private float mVelocity;
     
     public VerticalPullDetector(final Context context) {

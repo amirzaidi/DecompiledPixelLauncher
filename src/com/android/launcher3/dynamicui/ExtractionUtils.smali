@@ -18,7 +18,7 @@
     .locals 0
 
     .prologue
-    .line 36
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -28,23 +28,23 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 90
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT:Z
 
     if-eqz v0, :cond_0
 
-    .line 78
+    .line 91
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->getWallpaperId(I)I
 
     move-result v0
 
-    .line 77
+    .line 90
     :goto_0
     return v0
 
-    .line 78
+    .line 91
     :cond_0
     const/4 v0, -0x1
 
@@ -57,21 +57,21 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 65
+    .line 78
     sget-boolean v1, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT:Z
 
     if-nez v1, :cond_0
 
-    .line 67
+    .line 80
     return v0
 
-    .line 69
+    .line 82
     :cond_0
     invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
-    .line 70
+    .line 83
     invoke-static {p0}, Landroid/app/WallpaperManager;->getInstance(Landroid/content/Context;)Landroid/app/WallpaperManager;
 
     move-result-object v2
@@ -80,7 +80,7 @@
 
     move-result v2
 
-    .line 71
+    .line 84
     const-string/jumbo v3, "pref_wallpaperId"
 
     const/4 v4, -0x1
@@ -89,7 +89,7 @@
 
     move-result v1
 
-    .line 72
+    .line 85
     if-eq v2, v1, :cond_1
 
     const/4 v0, 0x1
@@ -102,15 +102,15 @@
     .locals 4
 
     .prologue
-    .line 108
+    .line 121
     const/16 v0, 0xff
 
-    invoke-static {p1, v0}, Landroid/support/v4/b/a;->arc(II)I
+    invoke-static {p1, v0}, Landroid/support/v4/b/a;->asb(II)I
 
     move-result v0
 
-    .line 109
-    invoke-static {p0, v0}, Landroid/support/v4/b/a;->aqN(II)D
+    .line 122
+    invoke-static {p0, v0}, Landroid/support/v4/b/a;->arL(II)D
 
     move-result-wide v0
 
@@ -137,7 +137,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 96
+    .line 109
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -159,8 +159,8 @@
 
     check-cast v0, Landroid/support/v7/a/d;
 
-    .line 97
-    invoke-virtual {v0}, Landroid/support/v7/a/d;->acI()I
+    .line 110
+    invoke-virtual {v0}, Landroid/support/v7/a/d;->adM()I
 
     move-result v5
 
@@ -170,8 +170,8 @@
 
     if-eqz v5, :cond_0
 
-    .line 98
-    invoke-virtual {v0}, Landroid/support/v7/a/d;->acG()I
+    .line 111
+    invoke-virtual {v0}, Landroid/support/v7/a/d;->adK()I
 
     move-result v0
 
@@ -188,9 +188,9 @@
 
     goto :goto_0
 
-    .line 100
+    .line 113
     :cond_0
-    invoke-virtual {v0}, Landroid/support/v7/a/d;->acG()I
+    invoke-virtual {v0}, Landroid/support/v7/a/d;->adK()I
 
     move-result v0
 
@@ -200,7 +200,7 @@
 
     goto :goto_1
 
-    .line 103
+    .line 116
     :cond_1
     if-le v3, v1, :cond_2
 
@@ -214,8 +214,8 @@
     .locals 2
 
     .prologue
-    .line 86
-    invoke-virtual {p0}, Landroid/support/v7/a/a;->acq()Ljava/util/List;
+    .line 99
+    invoke-virtual {p0}, Landroid/support/v7/a/a;->adr()Ljava/util/List;
 
     move-result-object v0
 
@@ -234,8 +234,8 @@
     .locals 2
 
     .prologue
-    .line 82
-    invoke-virtual {p0}, Landroid/support/v7/a/a;->acq()Ljava/util/List;
+    .line 95
+    invoke-virtual {p0}, Landroid/support/v7/a/a;->adr()Ljava/util/List;
 
     move-result-object v0
 
@@ -251,35 +251,17 @@
 .end method
 
 .method public static startColorExtractionService(Landroid/content/Context;)V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 61
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/android/launcher3/dynamicui/ColorExtractionService;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    .line 62
+    .line 68
     return-void
 .end method
 
 .method public static startColorExtractionServiceIfNecessary(Landroid/content/Context;)V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 49
-    sget-object v0, Lcom/android/launcher3/Utilities;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lcom/android/launcher3/dynamicui/ExtractionUtils$1;
-
-    invoke-direct {v1, p0}, Lcom/android/launcher3/dynamicui/ExtractionUtils$1;-><init>(Landroid/content/Context;)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    .line 57
+    .line 52
     return-void
 .end method

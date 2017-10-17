@@ -19,7 +19,7 @@ import com.android.launcher3.LauncherAppState;
 import android.os.UserHandle;
 import java.util.List;
 
-public class ShortcutsChangedTask extends ExtendedModelTask
+public class ShortcutsChangedTask extends BaseModelUpdateTask
 {
     private final String mPackageName;
     private final List mShortcuts;
@@ -58,7 +58,7 @@ public class ShortcutsChangedTask extends ExtendedModelTask
                 else {
                     for (final ShortcutInfo shortcutInfo2 : list4) {
                         shortcutInfo2.updateFromDeepShortcutInfo(shortcutInfoCompat, context);
-                        shortcutInfo2.iconBitmap = LauncherIcons.createShortcutIcon(shortcutInfoCompat, context);
+                        shortcutInfo2.iconBitmap = LauncherIcons.createShortcutIcon(shortcutInfoCompat, context, shortcutInfo2.iconBitmap);
                         list3.add(shortcutInfo2);
                     }
                 }

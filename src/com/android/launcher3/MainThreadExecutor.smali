@@ -1,5 +1,5 @@
 .class public Lcom/android/launcher3/MainThreadExecutor;
-.super Lcom/android/launcher3/util/LooperExecuter;
+.super Lcom/android/launcher3/util/LooperExecutor;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/android/launcher3/util/LooperExecuter;-><init>(Landroid/os/Looper;)V
+    invoke-direct {p0, v0}, Lcom/android/launcher3/util/LooperExecutor;-><init>(Landroid/os/Looper;)V
 
     .line 32
     return-void

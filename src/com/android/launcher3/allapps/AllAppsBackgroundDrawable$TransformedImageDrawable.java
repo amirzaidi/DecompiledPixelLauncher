@@ -6,7 +6,7 @@ package com.android.launcher3.allapps;
 
 import android.graphics.Rect;
 import android.graphics.Canvas;
-import android.content.res.Resources;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 class AllAppsBackgroundDrawable$TransformedImageDrawable
@@ -17,8 +17,8 @@ class AllAppsBackgroundDrawable$TransformedImageDrawable
     private float mXPercent;
     private float mYPercent;
     
-    public AllAppsBackgroundDrawable$TransformedImageDrawable(final Resources resources, final int n, final float mxPercent, final float myPercent, final int mGravity) {
-        this.mImage = resources.getDrawable(n);
+    public AllAppsBackgroundDrawable$TransformedImageDrawable(final Context context, final int n, final float mxPercent, final float myPercent, final int mGravity) {
+        this.mImage = context.getDrawable(n);
         this.mXPercent = mxPercent;
         this.mYPercent = myPercent;
         this.mGravity = mGravity;

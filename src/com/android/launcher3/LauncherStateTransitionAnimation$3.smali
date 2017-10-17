@@ -23,7 +23,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$3;->val$pCb:Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;
 
-    .line 328
+    .line 321
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -36,23 +36,23 @@
     .locals 2
 
     .prologue
-    .line 332
+    .line 325
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$3;->val$revealView:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 335
+    .line 328
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$3;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     invoke-virtual {v0}, Lcom/android/launcher3/LauncherStateTransitionAnimation;->cleanupAnimation()V
 
-    .line 336
+    .line 329
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$3;->val$pCb:Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;
 
     invoke-virtual {v0}, Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;->onTransitionComplete()V
 
-    .line 337
+    .line 330
     return-void
 .end method

@@ -4,22 +4,21 @@
 
 package com.android.launcher3;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.View$OnTouchListener;
+import android.os.Process;
+import android.content.DialogInterface;
+import android.content.DialogInterface$OnClickListener;
 
-final class Launcher$20 implements View$OnTouchListener
+final class Launcher$20 implements DialogInterface$OnClickListener
 {
     final /* synthetic */ Launcher this$0;
+    final /* synthetic */ String val$packageName;
     
-    Launcher$20(final Launcher this$0) {
+    Launcher$20(final Launcher this$0, final String val$packageName) {
         this.this$0 = this$0;
+        this.val$packageName = val$packageName;
     }
     
-    public boolean onTouch(final View view, final MotionEvent motionEvent) {
-        if ((motionEvent.getAction() & 0xFF) == 0x0) {
-            view.performHapticFeedback(1);
-        }
-        return false;
+    public void onClick(final DialogInterface dialogInterface, final int n) {
+        this.this$0.mWorkspace.removeAbandonedPromise(this.val$packageName, Process.myUserHandle());
     }
 }

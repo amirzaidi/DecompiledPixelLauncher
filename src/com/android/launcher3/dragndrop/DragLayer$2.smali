@@ -66,7 +66,7 @@
 
     iput-object p13, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$to:Landroid/graphics/Rect;
 
-    .line 708
+    .line 711
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -83,7 +83,7 @@
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    .line 711
+    .line 714
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -94,28 +94,28 @@
 
     move-result v1
 
-    .line 712
+    .line 715
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$view:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredWidth()I
 
     move-result v3
 
-    .line 713
+    .line 716
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$view:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredHeight()I
 
     move-result v4
 
-    .line 715
+    .line 718
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$alphaInterpolator:Landroid/view/animation/Interpolator;
 
     if-nez v0, :cond_0
 
     move v0, v1
 
-    .line 717
+    .line 720
     :goto_0
     iget-object v2, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$motionInterpolator:Landroid/view/animation/Interpolator;
 
@@ -123,7 +123,7 @@
 
     move v2, v1
 
-    .line 720
+    .line 723
     :goto_1
     iget v5, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$initScaleX:F
 
@@ -131,14 +131,14 @@
 
     mul-float/2addr v5, v6
 
-    .line 721
+    .line 724
     iget v6, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$initScaleY:F
 
     iget v7, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$dropViewScale:F
 
     mul-float/2addr v6, v7
 
-    .line 722
+    .line 725
     iget v7, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$finalScaleX:F
 
     mul-float/2addr v7, v1
@@ -149,7 +149,7 @@
 
     add-float/2addr v7, v8
 
-    .line 723
+    .line 726
     iget v8, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$finalScaleY:F
 
     mul-float/2addr v8, v1
@@ -160,7 +160,7 @@
 
     add-float/2addr v1, v8
 
-    .line 724
+    .line 727
     iget v8, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$finalAlpha:F
 
     mul-float/2addr v8, v0
@@ -173,7 +173,7 @@
 
     add-float/2addr v8, v0
 
-    .line 726
+    .line 729
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$from:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->left:I
@@ -190,7 +190,7 @@
 
     add-float/2addr v0, v3
 
-    .line 727
+    .line 730
     iget-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$from:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->top:I
@@ -207,7 +207,7 @@
 
     add-float/2addr v3, v4
 
-    .line 729
+    .line 732
     iget-object v4, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$to:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->left:I
@@ -228,7 +228,7 @@
 
     float-to-int v4, v0
 
-    .line 730
+    .line 733
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$to:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
@@ -249,7 +249,7 @@
 
     float-to-int v2, v0
 
-    .line 732
+    .line 735
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget-object v0, v0, Lcom/android/launcher3/dragndrop/DragLayer;->mAnchorView:Landroid/view/View;
@@ -258,7 +258,7 @@
 
     const/4 v0, 0x0
 
-    .line 735
+    .line 738
     :goto_2
     iget-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
@@ -272,7 +272,7 @@
 
     add-int/2addr v0, v3
 
-    .line 736
+    .line 739
     iget-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget-object v3, v3, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
@@ -283,7 +283,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 738
+    .line 741
     iget-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget-object v3, v3, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
@@ -292,7 +292,7 @@
 
     invoke-virtual {v3, v0}, Lcom/android/launcher3/dragndrop/DragView;->setTranslationX(F)V
 
-    .line 739
+    .line 742
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget-object v0, v0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
@@ -301,31 +301,31 @@
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/dragndrop/DragView;->setTranslationY(F)V
 
-    .line 740
+    .line 743
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget-object v0, v0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0, v7}, Lcom/android/launcher3/dragndrop/DragView;->setScaleX(F)V
 
-    .line 741
+    .line 744
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget-object v0, v0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/dragndrop/DragView;->setScaleY(F)V
 
-    .line 742
+    .line 745
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget-object v0, v0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0, v8}, Lcom/android/launcher3/dragndrop/DragView;->setAlpha(F)V
 
-    .line 743
+    .line 746
     return-void
 
-    .line 716
+    .line 719
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$alphaInterpolator:Landroid/view/animation/Interpolator;
 
@@ -335,7 +335,7 @@
 
     goto/16 :goto_0
 
-    .line 718
+    .line 721
     :cond_1
     iget-object v2, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->val$motionInterpolator:Landroid/view/animation/Interpolator;
 
@@ -345,7 +345,7 @@
 
     goto/16 :goto_1
 
-    .line 732
+    .line 735
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
@@ -355,7 +355,7 @@
 
     move-result v0
 
-    .line 733
+    .line 736
     iget-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer$2;->this$0:Lcom/android/launcher3/dragndrop/DragLayer;
 
     iget v3, v3, Lcom/android/launcher3/dragndrop/DragLayer;->mAnchorViewInitialScrollX:I
@@ -372,7 +372,7 @@
 
     int-to-float v3, v3
 
-    .line 732
+    .line 735
     mul-float/2addr v0, v3
 
     float-to-int v0, v0

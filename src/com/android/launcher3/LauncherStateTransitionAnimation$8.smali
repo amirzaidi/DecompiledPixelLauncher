@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$8;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
-    .line 616
+    .line 609
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 619
+    .line 612
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$8;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     iget-object v0, v0, Lcom/android/launcher3/LauncherStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -42,6 +42,6 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/dragndrop/DragLayer;->invalidateScrim()V
 
-    .line 620
+    .line 613
     return-void
 .end method

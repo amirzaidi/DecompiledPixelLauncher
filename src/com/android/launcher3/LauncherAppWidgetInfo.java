@@ -8,6 +8,7 @@ import android.appwidget.AppWidgetHostView;
 import com.android.launcher3.util.ContentWriter;
 import android.os.Process;
 import android.content.ComponentName;
+import com.android.launcher3.model.PackageItemInfo;
 import android.content.Intent;
 
 public class LauncherAppWidgetInfo extends ItemInfo
@@ -16,6 +17,7 @@ public class LauncherAppWidgetInfo extends ItemInfo
     public Intent bindOptions;
     public int installProgress;
     private boolean mHasNotifiedInitialWidgetSizeChanged;
+    public PackageItemInfo pendingItemInfo;
     public ComponentName providerName;
     public int restoreStatus;
     

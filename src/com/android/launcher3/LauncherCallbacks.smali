@@ -13,9 +13,6 @@
 .method public abstract finishBindingItems(Z)V
 .end method
 
-.method public abstract getAllAppsSearchBarController()Lcom/android/launcher3/allapps/AllAppsSearchBarController;
-.end method
-
 .method public abstract getPredictedApps()Ljava/util/List;
 .end method
 
@@ -98,9 +95,6 @@
 .end method
 
 .method public abstract preOnResume()V
-.end method
-
-.method public abstract setLauncherSearchCallback(Ljava/lang/Object;)V
 .end method
 
 .method public abstract shouldMoveToDefaultScreenOnHomeIntent()Z

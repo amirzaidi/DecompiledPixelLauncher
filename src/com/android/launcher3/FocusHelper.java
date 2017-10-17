@@ -77,7 +77,7 @@ public class FocusHelper
             return shouldConsume;
         }
         final DeviceProfile deviceProfile = Launcher.getLauncher(view.getContext()).getDeviceProfile();
-        final Workspace workspace = (Workspace)view.getRootView().findViewById(2131623970);
+        final Workspace workspace = (Workspace)view.getRootView().findViewById(2131623973);
         final ShortcutAndWidgetContainer shortcutAndWidgetContainer = (ShortcutAndWidgetContainer)view.getParent();
         final CellLayout cellLayout = (CellLayout)shortcutAndWidgetContainer.getParent();
         final ItemInfo itemInfo = (ItemInfo)view.getTag();
@@ -191,8 +191,8 @@ public class FocusHelper
         final CellLayout cellLayout = (CellLayout)shortcutAndWidgetContainer.getParent();
         final Workspace workspace = (Workspace)cellLayout.getParent();
         final ViewGroup viewGroup = (ViewGroup)workspace.getParent();
-        Object o = viewGroup.findViewById(2131624005);
-        final Hotseat hotseat = (Hotseat)viewGroup.findViewById(2131623971);
+        Object o = viewGroup.findViewById(2131624014);
+        final Hotseat hotseat = (Hotseat)viewGroup.findViewById(2131623974);
         final ItemInfo itemInfo = (ItemInfo)view.getTag();
         final int indexOfChild = shortcutAndWidgetContainer.indexOfChild(view);
         final int indexOfChild2 = workspace.indexOfChild((View)cellLayout);

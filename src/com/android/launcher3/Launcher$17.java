@@ -4,22 +4,15 @@
 
 package com.android.launcher3;
 
-import android.os.AsyncTask;
-
-final class Launcher$17 extends AsyncTask
+final class Launcher$17 implements Runnable
 {
     final /* synthetic */ Launcher this$0;
-    final /* synthetic */ LauncherAppWidgetHost val$appWidgetHost;
-    final /* synthetic */ LauncherAppWidgetInfo val$widgetInfo;
     
-    Launcher$17(final Launcher this$0, final LauncherAppWidgetHost val$appWidgetHost, final LauncherAppWidgetInfo val$widgetInfo) {
+    Launcher$17(final Launcher this$0) {
         this.this$0 = this$0;
-        this.val$appWidgetHost = val$appWidgetHost;
-        this.val$widgetInfo = val$widgetInfo;
     }
     
-    public Void doInBackground(final Void... array) {
-        this.val$appWidgetHost.deleteAppWidgetId(this.val$widgetInfo.appWidgetId);
-        return null;
+    public void run() {
+        this.this$0.exitSpringLoadedDragModeDelayed(true, 500, null);
     }
 }

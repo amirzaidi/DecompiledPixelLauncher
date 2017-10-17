@@ -17,12 +17,12 @@
     .locals 2
 
     .prologue
-    .line 206
+    .line 203
     iput-object p1, p0, Lcom/android/launcher3/DefaultLayoutParser$ResolveParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 208
+    .line 205
     new-instance v0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;
 
     iget-object v1, p0, Lcom/android/launcher3/DefaultLayoutParser$ResolveParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
@@ -31,7 +31,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$ResolveParser;->mChildParser:Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;
 
-    .line 206
+    .line 203
     return-void
 .end method
 
@@ -43,14 +43,14 @@
     .prologue
     const-wide/16 v2, -0x1
 
-    .line 213
+    .line 210
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v4
 
     move-wide v0, v2
 
-    .line 216
+    .line 213
     :cond_0
     :goto_0
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->next()I
@@ -61,14 +61,14 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 217
+    .line 214
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v6
 
     if-le v6, v4, :cond_3
 
-    .line 218
+    .line 215
     :cond_1
     const/4 v6, 0x2
 
@@ -78,12 +78,12 @@
 
     if-gtz v5, :cond_0
 
-    .line 221
+    .line 218
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 222
+    .line 219
     const-string/jumbo v6, "favorite"
 
     invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -92,7 +92,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 223
+    .line 220
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$ResolveParser;->mChildParser:Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->parseAndAdd(Landroid/content/res/XmlResourceParser;)J
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 225
+    .line 222
     :cond_2
     const-string/jumbo v6, "DefaultLayoutParser"
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 229
+    .line 226
     :cond_3
     return-wide v0
 .end method

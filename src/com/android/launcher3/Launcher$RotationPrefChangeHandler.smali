@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 4123
+    .line 4100
     iput-object p1, p0, Lcom/android/launcher3/Launcher$RotationPrefChangeHandler;->this$0:Lcom/android/launcher3/Launcher;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
     .locals 1
 
     .prologue
-    .line 4128
+    .line 4105
     const-string/jumbo v0, "pref_allowRotation"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -46,12 +46,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 4131
+    .line 4107
     iget-object v0, p0, Lcom/android/launcher3/Launcher$RotationPrefChangeHandler;->this$0:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->finish()V
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->recreate()V
 
-    .line 4133
+    .line 4109
     :cond_0
     return-void
 .end method

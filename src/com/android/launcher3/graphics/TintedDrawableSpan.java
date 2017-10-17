@@ -20,6 +20,7 @@ public class TintedDrawableSpan extends DynamicDrawableSpan
         super(0);
         this.mDrawable = context.getDrawable(n);
         this.mOldTint = 0;
+        this.mDrawable.setTint(0);
     }
     
     public void draw(final Canvas canvas, final CharSequence charSequence, final int n, final int n2, final float n3, final int n4, final int n5, final int n6, final Paint paint) {

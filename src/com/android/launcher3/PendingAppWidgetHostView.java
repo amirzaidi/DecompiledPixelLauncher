@@ -44,7 +44,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView implemen
     private final int mStartState;
     
     public PendingAppWidgetHostView(final Context context, final LauncherAppWidgetInfo mInfo, final IconCache iconCache, final boolean mDisabledForSafeMode) {
-        super((Context)new ContextThemeWrapper(context, 2131886082));
+        super((Context)new ContextThemeWrapper(context, 2131886086));
         this.mRect = new Rect();
         this.mLauncher = Launcher.getLauncher(context);
         this.mInfo = mInfo;
@@ -52,14 +52,19 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView implemen
         this.mDisabledForSafeMode = mDisabledForSafeMode;
         (this.mPaint = new TextPaint()).setColor(Themes.getAttrColor(this.getContext(), 16842806));
         this.mPaint.setTextSize(TypedValue.applyDimension(0, (float)this.mLauncher.getDeviceProfile().iconTextSizePx, this.getResources().getDisplayMetrics()));
-        this.setBackgroundResource(2130837578);
+        this.setBackgroundResource(2130837584);
         this.setWillNotDraw(false);
-        this.setElevation(this.getResources().getDimension(2131427432));
+        this.setElevation(this.getResources().getDimension(2131427442));
         this.updateAppWidget(null);
         this.setOnClickListener((View$OnClickListener)this.mLauncher);
-        final PackageItemInfo packageItemInfo = new PackageItemInfo(mInfo.providerName.getPackageName());
-        packageItemInfo.user = mInfo.user;
-        iconCache.updateIconInBackground(this, packageItemInfo);
+        if (mInfo.pendingItemInfo == null) {
+            mInfo.pendingItemInfo = new PackageItemInfo(mInfo.providerName.getPackageName());
+            mInfo.pendingItemInfo.user = mInfo.user;
+            iconCache.updateIconInBackground(this, mInfo.pendingItemInfo);
+        }
+        else {
+            this.reapplyItemInfo(mInfo.pendingItemInfo);
+        }
     }
     
     private void updateDrawableBounds() {
@@ -68,7 +73,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView implemen
         final int paddingBottom = this.getPaddingBottom();
         final int paddingLeft = this.getPaddingLeft();
         final int paddingRight = this.getPaddingRight();
-        final int dimensionPixelSize = this.getResources().getDimensionPixelSize(2131427431);
+        final int dimensionPixelSize = this.getResources().getDimensionPixelSize(2131427441);
         final int n = this.getWidth() - paddingLeft - paddingRight - dimensionPixelSize * 2;
         final int n2 = this.getHeight() - paddingTop - paddingBottom - dimensionPixelSize * 2;
         if (this.mSettingIconDrawable == null) {
@@ -88,7 +93,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView implemen
             this.mSetupTextLayout = null;
             int n6;
             if (n > 0) {
-                this.mSetupTextLayout = (Layout)new StaticLayout(this.getResources().getText(2131492928), this.mPaint, n, Layout$Alignment.ALIGN_CENTER, 1.0f, 0.0f, true);
+                this.mSetupTextLayout = (Layout)new StaticLayout(this.getResources().getText(2131492930), this.mPaint, n, Layout$Alignment.ALIGN_CENTER, 1.0f, 0.0f, true);
                 final int height = this.mSetupTextLayout.getHeight();
                 if (height + n4 * 1.8f + deviceProfile.iconDrawablePaddingPx < n2) {
                     n6 = (this.getHeight() - height - deviceProfile.iconDrawablePaddingPx - n4) / 2;
@@ -134,7 +139,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView implemen
     
     protected View getDefaultView() {
         if (this.mDefaultView == null) {
-            (this.mDefaultView = this.mInflater.inflate(2130968589, (ViewGroup)this, false)).setOnClickListener((View$OnClickListener)this);
+            (this.mDefaultView = this.mInflater.inflate(2130968592, (ViewGroup)this, false)).setOnClickListener((View$OnClickListener)this);
             this.applyState();
         }
         return this.mDefaultView;
@@ -209,7 +214,7 @@ public class PendingAppWidgetHostView extends LauncherAppWidgetHostView implemen
             }
             else if (this.isReadyForClickSetup()) {
                 this.mCenterDrawable = value.newIcon(this.mIcon, this.mInfo);
-                this.mSettingIconDrawable = this.getResources().getDrawable(2130837571).mutate();
+                this.mSettingIconDrawable = this.getResources().getDrawable(2130837572).mutate();
                 this.updateSettingColor();
             }
             else {

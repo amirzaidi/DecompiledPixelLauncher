@@ -13,7 +13,6 @@ import android.animation.Animator$AnimatorListener;
 import com.android.launcher3.anim.AnimationLayerSet;
 import android.animation.ObjectAnimator;
 import android.view.View;
-import com.android.launcher3.util.MultiStateAlphaController;
 import android.view.animation.LinearInterpolator;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;

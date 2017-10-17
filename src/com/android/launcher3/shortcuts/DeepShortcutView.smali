@@ -335,7 +335,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 66
-    const v0, 0x7f0e003a
+    const v0, 0x7f0e0042
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/shortcuts/DeepShortcutView;->findViewById(I)Landroid/view/View;
 
@@ -346,7 +346,7 @@
     iput-object v0, p0, Lcom/android/launcher3/shortcuts/DeepShortcutView;->mBubbleText:Lcom/android/launcher3/BubbleTextView;
 
     .line 67
-    const v0, 0x7f0e0036
+    const v0, 0x7f0e0038
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/shortcuts/DeepShortcutView;->findViewById(I)Landroid/view/View;
 

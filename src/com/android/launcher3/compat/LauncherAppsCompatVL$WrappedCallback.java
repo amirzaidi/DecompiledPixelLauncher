@@ -14,7 +14,7 @@ import android.content.pm.LauncherApps$Callback;
 
 class LauncherAppsCompatVL$WrappedCallback extends LauncherApps$Callback
 {
-    private LauncherAppsCompat$OnAppsChangedCallbackCompat mCallback;
+    private final LauncherAppsCompat$OnAppsChangedCallbackCompat mCallback;
     
     public LauncherAppsCompatVL$WrappedCallback(final LauncherAppsCompat$OnAppsChangedCallbackCompat mCallback) {
         this.mCallback = mCallback;

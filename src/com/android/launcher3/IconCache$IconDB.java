@@ -21,7 +21,7 @@ final class IconCache$IconDB extends SQLiteCacheHelper
         else {
             n = 1;
         }
-        RELEASE_VERSION = n + 13;
+        RELEASE_VERSION = n + 17;
     }
     
     public IconCache$IconDB(final Context context, final int n) {

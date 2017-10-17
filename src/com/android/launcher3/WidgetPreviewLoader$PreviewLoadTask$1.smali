@@ -22,7 +22,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$1;->val$preview:Landroid/graphics/Bitmap;
 
-    .line 612
+    .line 602
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,7 +35,7 @@
     .locals 4
 
     .prologue
-    .line 615
+    .line 605
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$1;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
     invoke-virtual {v0}, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->isCancelled()Z
@@ -44,7 +44,7 @@
 
     if-nez v0, :cond_0
 
-    .line 618
+    .line 608
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$1;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
     iget-object v0, v0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
@@ -61,18 +61,18 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/WidgetPreviewLoader;->writeToDb(Lcom/android/launcher3/WidgetPreviewLoader$WidgetCacheKey;[JLandroid/graphics/Bitmap;)V
 
-    .line 619
+    .line 609
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$1;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
     iget-object v1, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$1;->val$preview:Landroid/graphics/Bitmap;
 
     iput-object v1, v0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mBitmapToRecycle:Landroid/graphics/Bitmap;
 
-    .line 627
+    .line 617
     :goto_0
     return-void
 
-    .line 623
+    .line 613
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$1;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
@@ -82,7 +82,7 @@
 
     monitor-enter v1
 
-    .line 624
+    .line 614
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$1;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
@@ -100,7 +100,7 @@
 
     goto :goto_0
 
-    .line 623
+    .line 613
     :catchall_0
     move-exception v0
 

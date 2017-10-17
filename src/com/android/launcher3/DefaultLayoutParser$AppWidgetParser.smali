@@ -12,7 +12,7 @@
     .locals 0
 
     .prologue
-    .line 280
+    .line 277
     iput-object p1, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;-><init>(Lcom/android/launcher3/AutoInstallsLayout;)V
@@ -30,7 +30,7 @@
 
     const/4 v5, 0x0
 
-    .line 285
+    .line 282
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
@@ -42,7 +42,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 298
+    .line 295
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
@@ -52,7 +52,7 @@
 
     move-result-object v0
 
-    .line 301
+    .line 298
     :try_start_1
     iget-object v1, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
@@ -62,14 +62,14 @@
 
     move-result v1
 
-    .line 303
+    .line 300
     invoke-virtual {v0, v1, p1}, Landroid/appwidget/AppWidgetManager;->bindAppWidgetIdIfAllowed(ILandroid/content/ComponentName;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 304
+    .line 301
     const-string/jumbo v0, "DefaultLayoutParser"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -92,7 +92,7 @@
 
     invoke-static {v0, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 305
+    .line 302
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mAppWidgetHost:Landroid/appwidget/AppWidgetHost;
@@ -101,19 +101,19 @@
     :try_end_1
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 306
+    .line 303
     return-wide v2
 
-    .line 286
+    .line 283
     :catch_0
     move-exception v0
 
-    .line 287
+    .line 284
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 288
+    .line 285
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/String;
@@ -124,12 +124,12 @@
 
     aput-object v4, v1, v5
 
-    .line 287
+    .line 284
     invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->currentToCanonicalPackageNames([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 289
+    .line 286
     new-instance v0, Landroid/content/ComponentName;
 
     aget-object v1, v1, v5
@@ -140,7 +140,7 @@
 
     invoke-direct {v0, v1, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 291
+    .line 288
     :try_start_2
     iget-object v1, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
@@ -156,11 +156,11 @@
 
     goto :goto_0
 
-    .line 292
+    .line 289
     :catch_1
     move-exception v1
 
-    .line 293
+    .line 290
     const-string/jumbo v1, "DefaultLayoutParser"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -187,10 +187,10 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 294
+    .line 291
     return-wide v2
 
-    .line 309
+    .line 306
     :cond_0
     :try_start_3
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
@@ -205,7 +205,7 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 310
+    .line 307
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mValues:Landroid/content/ContentValues;
@@ -218,7 +218,7 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 311
+    .line 308
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mValues:Landroid/content/ContentValues;
@@ -239,7 +239,7 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 312
+    .line 309
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mCallback:Lcom/android/launcher3/AutoInstallsLayout$LayoutParserCallback;
@@ -256,24 +256,24 @@
 
     move-result-wide v2
 
-    .line 313
+    .line 310
     const-wide/16 v4, 0x0
 
     cmp-long v0, v2, v4
 
     if-gez v0, :cond_1
 
-    .line 314
+    .line 311
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mAppWidgetHost:Landroid/appwidget/AppWidgetHost;
 
     invoke-virtual {v0, v1}, Landroid/appwidget/AppWidgetHost;->deleteAppWidgetId(I)V
 
-    .line 315
+    .line 312
     return-wide v2
 
-    .line 319
+    .line 316
     :cond_1
     invoke-virtual {p2}, Landroid/os/Bundle;->isEmpty()Z
 
@@ -281,25 +281,25 @@
 
     if-nez v0, :cond_2
 
-    .line 320
+    .line 317
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v4, "com.android.launcher.action.APPWIDGET_DEFAULT_WORKSPACE_CONFIGURE"
 
     invoke-direct {v0, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 321
+    .line 318
     invoke-virtual {v0, p1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 322
+    .line 319
     invoke-virtual {v0, p2}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 323
+    .line 320
     const-string/jumbo v4, "appWidgetId"
 
     invoke-virtual {v0, v4, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 324
+    .line 321
     iget-object v1, p0, Lcom/android/launcher3/DefaultLayoutParser$AppWidgetParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v1, v1, Lcom/android/launcher3/DefaultLayoutParser;->mContext:Landroid/content/Context;
@@ -308,16 +308,16 @@
     :try_end_3
     .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 329
+    .line 326
     :cond_2
     :goto_1
     return-wide v2
 
-    .line 326
+    .line 323
     :catch_2
     move-exception v0
 
-    .line 327
+    .line 324
     const-string/jumbo v1, "DefaultLayoutParser"
 
     const-string/jumbo v4, "Problem allocating appWidgetId"

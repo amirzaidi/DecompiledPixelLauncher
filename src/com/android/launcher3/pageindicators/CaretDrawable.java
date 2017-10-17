@@ -7,10 +7,10 @@ package com.android.launcher3.pageindicators;
 import android.graphics.ColorFilter;
 import android.graphics.Canvas;
 import android.content.res.Resources;
-import com.android.launcher3.util.Themes;
 import android.graphics.Paint$Join;
 import android.graphics.Paint$Cap;
 import android.graphics.Paint$Style;
+import com.android.launcher3.util.Themes;
 import android.content.Context;
 import android.graphics.Path;
 import android.graphics.Paint;
@@ -23,6 +23,7 @@ public class CaretDrawable extends Drawable
     private final int mCaretSizePx;
     private Path mPath;
     private Paint mShadowPaint;
+    private final boolean mUseShadow;
     
     public CaretDrawable(final Context context) {
         final boolean b = true;
@@ -31,22 +32,23 @@ public class CaretDrawable extends Drawable
         this.mCaretPaint = new Paint();
         this.mPath = new Path();
         final Resources resources = context.getResources();
-        final int dimensionPixelSize = resources.getDimensionPixelSize(2131427385);
-        final int dimensionPixelSize2 = resources.getDimensionPixelSize(2131427386);
-        this.mCaretPaint.setColor(resources.getColor(2131361817));
+        final int dimensionPixelSize = resources.getDimensionPixelSize(2131427394);
+        final int dimensionPixelSize2 = resources.getDimensionPixelSize(2131427395);
+        this.mCaretPaint.setColor(Themes.getAttrColor(context, 2130772012));
         this.mCaretPaint.setAntiAlias(b);
         this.mCaretPaint.setStrokeWidth((float)dimensionPixelSize);
         this.mCaretPaint.setStyle(Paint$Style.STROKE);
-        this.mCaretPaint.setStrokeCap(Paint$Cap.SQUARE);
-        this.mCaretPaint.setStrokeJoin(Paint$Join.MITER);
-        this.mShadowPaint.setColor(resources.getColor(2131361819));
+        this.mCaretPaint.setStrokeCap(Paint$Cap.ROUND);
+        this.mCaretPaint.setStrokeJoin(Paint$Join.ROUND);
+        this.mShadowPaint.setColor(resources.getColor(2131361817));
         this.mShadowPaint.setAlpha(Themes.getAlpha(context, 16843967));
         this.mShadowPaint.setAntiAlias(b);
         this.mShadowPaint.setStrokeWidth((float)(dimensionPixelSize + dimensionPixelSize2 * 2));
         this.mShadowPaint.setStyle(Paint$Style.STROKE);
         this.mShadowPaint.setStrokeCap(Paint$Cap.ROUND);
         this.mShadowPaint.setStrokeJoin(Paint$Join.ROUND);
-        this.mCaretSizePx = resources.getDimensionPixelSize(2131427387);
+        this.mUseShadow = (Themes.getAttrBoolean(context, 2130772011) ^ true);
+        this.mCaretSizePx = resources.getDimensionPixelSize(2131427396);
     }
     
     public void draw(final Canvas canvas) {
@@ -64,7 +66,9 @@ public class CaretDrawable extends Drawable
         this.mPath.moveTo(n5, (n - this.getNormalizedCaretProgress()) * n7 + n6);
         this.mPath.lineTo(n3 / n2 + n5, this.getNormalizedCaretProgress() * n7 + n6);
         this.mPath.lineTo(n3 + n5, n7 * (n - this.getNormalizedCaretProgress()) + n6);
-        canvas.drawPath(this.mPath, this.mShadowPaint);
+        if (this.mUseShadow) {
+            canvas.drawPath(this.mPath, this.mShadowPaint);
+        }
         canvas.drawPath(this.mPath, this.mCaretPaint);
     }
     

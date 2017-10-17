@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private final mExisitingApps:Ljava/util/HashSet;
+.field private final mExistingApps:Ljava/util/HashSet;
 
 .field private final mExistingItems:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -23,25 +23,25 @@
     .locals 0
 
     .prologue
-    .line 419
+    .line 414
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 422
-    iput-object p1, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExisitingApps:Ljava/util/HashSet;
+    .line 417
+    iput-object p1, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExistingApps:Ljava/util/HashSet;
 
-    .line 423
+    .line 418
     iput-object p2, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExistingItems:Lcom/android/launcher3/util/LongArrayMap;
 
-    .line 424
+    .line 419
     iput-object p3, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mOutOps:Ljava/util/ArrayList;
 
-    .line 425
+    .line 420
     iput p5, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mRequiredSize:I
 
-    .line 426
+    .line 421
     iput p4, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mStartItemId:I
 
-    .line 427
+    .line 422
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .locals 2
 
     .prologue
-    .line 431
+    .line 426
     iget v0, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mStartItemId:I
 
     add-int/lit8 v1, v0, 0x1
@@ -69,7 +69,7 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 436
+    .line 431
     iget-object v0, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExistingItems:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/LongArrayMap;->size()I
@@ -80,10 +80,10 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 438
+    .line 433
     return-wide v2
 
-    .line 442
+    .line 437
     :cond_0
     :try_start_0
     const-string/jumbo v0, "intent"
@@ -100,15 +100,15 @@
 
     move-result-object v4
 
-    .line 446
+    .line 441
     invoke-static {v4}, Lcom/android/launcher3/provider/ImportDataTask;->-wrap1(Landroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 447
+    .line 442
     if-eqz v0, :cond_1
 
-    iget-object v1, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExisitingApps:Ljava/util/HashSet;
+    iget-object v1, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExistingApps:Ljava/util/HashSet;
 
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -116,26 +116,26 @@
 
     if-eqz v1, :cond_2
 
-    .line 449
+    .line 444
     :cond_1
     return-wide v2
 
-    .line 443
+    .line 438
     :catch_0
     move-exception v0
 
-    .line 444
+    .line 439
     return-wide v2
 
-    .line 451
+    .line 446
     :cond_2
-    iget-object v1, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExisitingApps:Ljava/util/HashSet;
+    iget-object v1, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExistingApps:Ljava/util/HashSet;
 
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     move-wide v0, v2
 
-    .line 455
+    .line 450
     :goto_0
     iget-object v5, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExistingItems:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -145,20 +145,20 @@
 
     if-eqz v5, :cond_3
 
-    .line 456
+    .line 451
     const-wide/16 v6, 0x1
 
     add-long/2addr v0, v6
 
     goto :goto_0
 
-    .line 458
+    .line 453
     :cond_3
     iget-object v5, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mExistingItems:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v5, v0, v1, v4}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 459
+    .line 454
     const-string/jumbo v4, "screen"
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -167,7 +167,7 @@
 
     invoke-virtual {p2, v4, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 460
+    .line 455
     iget-object v0, p0, Lcom/android/launcher3/provider/ImportDataTask$HotseatParserCallback;->mOutOps:Ljava/util/ArrayList;
 
     sget-object v1, Lcom/android/launcher3/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
@@ -186,6 +186,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 461
+    .line 456
     return-wide v2
 .end method

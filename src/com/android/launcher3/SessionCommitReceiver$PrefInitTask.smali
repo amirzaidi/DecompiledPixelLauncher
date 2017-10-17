@@ -12,13 +12,13 @@
     .locals 0
 
     .prologue
-    .line 114
+    .line 115
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 115
+    .line 116
     iput-object p1, p0, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;->mContext:Landroid/content/Context;
 
-    .line 116
+    .line 117
     return-void
 .end method
 
@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 119
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
@@ -42,12 +42,12 @@
     .locals 3
 
     .prologue
-    .line 120
+    .line 121
     invoke-virtual {p0}, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;->readValueFromMarketApp()Z
 
     move-result v0
 
-    .line 121
+    .line 122
     iget-object v1, p0, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -58,27 +58,27 @@
 
     move-result-object v1
 
-    .line 122
+    .line 123
     const-string/jumbo v2, "pref_add_icon_to_home"
 
-    .line 121
+    .line 122
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 123
+    .line 124
     const-string/jumbo v1, "pref_add_icon_to_home_initialized"
 
     const/4 v2, 0x1
 
-    .line 121
+    .line 122
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 125
+    .line 126
     const/4 v0, 0x0
 
     return-object v0
@@ -94,14 +94,14 @@
 
     const/4 v6, 0x0
 
-    .line 130
+    .line 131
     iget-object v0, p0, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 131
+    .line 132
     new-instance v1, Landroid/content/Intent;
 
     const-string/jumbo v2, "android.intent.action.MAIN"
@@ -114,21 +114,21 @@
 
     move-result-object v1
 
-    .line 132
+    .line 133
     const/high16 v2, 0x110000
 
-    .line 130
+    .line 131
     invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v1
 
-    .line 133
+    .line 134
     if-nez v1, :cond_0
 
-    .line 134
+    .line 135
     return v7
 
-    .line 139
+    .line 140
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;->mContext:Landroid/content/Context;
@@ -137,7 +137,7 @@
 
     move-result-object v0
 
-    .line 140
+    .line 141
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -156,10 +156,10 @@
 
     move-result-object v1
 
-    .line 141
+    .line 142
     const-string/jumbo v2, ".addtohomescreen"
 
-    .line 140
+    .line 141
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -172,7 +172,7 @@
 
     move-result-object v1
 
-    .line 142
+    .line 143
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -181,7 +181,7 @@
 
     const/4 v5, 0x0
 
-    .line 139
+    .line 140
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -189,7 +189,7 @@
 
     move-result-object v1
 
-    .line 143
+    .line 144
     :try_start_1
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -197,7 +197,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 144
+    .line 145
     const-string/jumbo v0, "value"
 
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -215,14 +215,14 @@
 
     move v0, v7
 
-    .line 149
+    .line 150
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 150
+    .line 151
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 144
+    .line 145
     :cond_1
     return v0
 
@@ -231,25 +231,25 @@
 
     goto :goto_0
 
-    .line 149
+    .line 150
     :cond_3
     if-eqz v1, :cond_4
 
-    .line 150
+    .line 151
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 153
+    .line 154
     :cond_4
     :goto_1
     return v7
 
-    .line 146
+    .line 147
     :catch_0
     move-exception v0
 
     move-object v1, v6
 
-    .line 147
+    .line 148
     :goto_2
     :try_start_2
     const-string/jumbo v2, "SessionCommitReceiver"
@@ -260,26 +260,26 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 149
+    .line 150
     if-eqz v1, :cond_4
 
-    .line 150
+    .line 151
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
     goto :goto_1
 
-    .line 148
+    .line 149
     :catchall_0
     move-exception v0
 
-    .line 149
+    .line 150
     :goto_3
     if-eqz v6, :cond_5
 
-    .line 150
+    .line 151
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 148
+    .line 149
     :cond_5
     throw v0
 
@@ -290,7 +290,7 @@
 
     goto :goto_3
 
-    .line 146
+    .line 147
     :catch_1
     move-exception v0
 

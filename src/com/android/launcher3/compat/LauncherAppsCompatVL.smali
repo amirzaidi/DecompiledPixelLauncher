@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private mCallbacks:Ljava/util/Map;
+.field private final mCallbacks:Landroid/util/ArrayMap;
 
 .field protected final mContext:Landroid/content/Context;
 
@@ -16,20 +16,21 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 49
     invoke-direct {p0}, Lcom/android/launcher3/compat/LauncherAppsCompat;-><init>()V
 
-    .line 48
-    new-instance v0, Ljava/util/HashMap;
+    .line 47
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Ljava/util/Map;
+    .line 46
+    iput-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Landroid/util/ArrayMap;
 
-    .line 51
+    .line 50
     iput-object p1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mContext:Landroid/content/Context;
 
-    .line 52
+    .line 51
     const-string/jumbo v0, "launcherapps"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -40,7 +41,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
-    .line 53
+    .line 52
     return-void
 .end method
 
@@ -50,35 +51,35 @@
     .locals 3
 
     .prologue
-    .line 105
+    .line 104
     new-instance v0, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/compat/LauncherAppsCompatVL$WrappedCallback;-><init>(Lcom/android/launcher3/compat/LauncherAppsCompat$OnAppsChangedCallbackCompat;)V
 
-    .line 106
-    iget-object v1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Ljava/util/Map;
+    .line 105
+    iget-object v1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 107
+    .line 106
     :try_start_0
-    iget-object v2, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Ljava/util/Map;
+    iget-object v2, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Landroid/util/ArrayMap;
 
-    invoke-interface {v2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v0}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit v1
 
-    .line 109
+    .line 108
     iget-object v1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v1, v0}, Landroid/content/pm/LauncherApps;->registerCallback(Landroid/content/pm/LauncherApps$Callback;)V
 
-    .line 110
+    .line 109
     return-void
 
-    .line 106
+    .line 105
     :catchall_0
     move-exception v0
 
@@ -91,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 56
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/LauncherApps;->getActivityList(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
@@ -109,7 +110,7 @@
 
     const/4 v3, 0x0
 
-    .line 73
+    .line 72
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object v1
@@ -118,19 +119,19 @@
 
     move-result v1
 
-    .line 74
+    .line 73
     if-nez v1, :cond_1
 
     if-nez p2, :cond_1
 
-    .line 78
+    .line 77
     iget-object v1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v1, p1, p3}, Landroid/content/pm/LauncherApps;->getActivityList(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 79
+    .line 78
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -150,7 +151,7 @@
     :cond_0
     return-object v0
 
-    .line 83
+    .line 82
     :cond_1
     :try_start_0
     iget-object v2, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mContext:Landroid/content/Context;
@@ -163,7 +164,7 @@
 
     move-result-object v2
 
-    .line 86
+    .line 85
     if-eqz v1, :cond_3
 
     iget v1, v2, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -174,11 +175,11 @@
 
     if-nez v1, :cond_3
 
-    .line 88
+    .line 87
     :cond_2
     return-object v0
 
-    .line 87
+    .line 86
     :cond_3
     iget-boolean v1, v2, Landroid/content/pm/ApplicationInfo;->enabled:Z
     :try_end_0
@@ -186,17 +187,17 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    .line 86
+    .line 85
     if-nez v1, :cond_2
 
-    .line 90
+    .line 89
     return-object v2
 
-    .line 91
+    .line 90
     :catch_0
     move-exception v1
 
-    .line 93
+    .line 92
     return-object v0
 .end method
 
@@ -204,12 +205,12 @@
     .locals 6
 
     .prologue
-    .line 183
+    .line 191
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 184
+    .line 192
     if-eqz p1, :cond_0
 
     iget-object v0, p1, Lcom/android/launcher3/util/PackageUserKey;->mUser:Landroid/os/UserHandle;
@@ -226,10 +227,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 185
+    .line 193
     return-object v1
 
-    .line 187
+    .line 195
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mContext:Landroid/content/Context;
 
@@ -237,7 +238,7 @@
 
     move-result-object v2
 
-    .line 189
+    .line 197
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v3, "android.intent.action.CREATE_SHORTCUT"
@@ -250,7 +251,7 @@
 
     move-result-object v0
 
-    .line 188
+    .line 196
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -269,24 +270,24 @@
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    .line 190
+    .line 198
     if-eqz p1, :cond_2
 
     iget-object v4, p1, Lcom/android/launcher3/util/PackageUserKey;->mPackageName:Ljava/lang/String;
 
-    .line 191
+    .line 199
     iget-object v5, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v5, v5, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 190
+    .line 198
     invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 192
+    .line 200
     :cond_2
     new-instance v4, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVL;
 
@@ -298,7 +299,7 @@
 
     goto :goto_0
 
-    .line 195
+    .line 203
     :cond_3
     return-object v1
 .end method
@@ -307,7 +308,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 129
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/LauncherApps;->isActivityEnabled(Landroid/content/ComponentName;Landroid/os/UserHandle;)Z
@@ -321,7 +322,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 124
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/LauncherApps;->isPackageEnabled(Ljava/lang/String;Landroid/os/UserHandle;)Z
@@ -335,16 +336,16 @@
     .locals 2
 
     .prologue
-    .line 115
-    iget-object v1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Ljava/util/Map;
+    .line 114
+    iget-object v1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Landroid/util/ArrayMap;
 
     monitor-enter v1
 
-    .line 116
+    .line 115
     :try_start_0
-    iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Ljava/util/Map;
+    iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mCallbacks:Landroid/util/ArrayMap;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -354,19 +355,19 @@
 
     monitor-exit v1
 
-    .line 118
+    .line 117
     if-eqz v0, :cond_0
 
-    .line 119
+    .line 118
     iget-object v1, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v1, v0}, Landroid/content/pm/LauncherApps;->unregisterCallback(Landroid/content/pm/LauncherApps$Callback;)V
 
-    .line 121
+    .line 120
     :cond_0
     return-void
 
-    .line 115
+    .line 114
     :catchall_0
     move-exception v0
 
@@ -379,7 +380,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 61
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v0, p1, p2}, Landroid/content/pm/LauncherApps;->resolveActivity(Landroid/content/Intent;Landroid/os/UserHandle;)Landroid/content/pm/LauncherActivityInfo;
@@ -393,12 +394,12 @@
     .locals 1
 
     .prologue
-    .line 100
+    .line 99
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/content/pm/LauncherApps;->startAppDetailsActivity(Landroid/content/ComponentName;Landroid/os/UserHandle;Landroid/graphics/Rect;Landroid/os/Bundle;)V
 
-    .line 101
+    .line 100
     return-void
 .end method
 
@@ -406,11 +407,11 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 67
     iget-object v0, p0, Lcom/android/launcher3/compat/LauncherAppsCompatVL;->mLauncherApps:Landroid/content/pm/LauncherApps;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/content/pm/LauncherApps;->startMainActivity(Landroid/content/ComponentName;Landroid/os/UserHandle;Landroid/graphics/Rect;Landroid/os/Bundle;)V
 
-    .line 69
+    .line 68
     return-void
 .end method

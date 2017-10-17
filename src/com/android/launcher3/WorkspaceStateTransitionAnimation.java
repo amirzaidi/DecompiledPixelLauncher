@@ -6,10 +6,9 @@ package com.android.launcher3;
 
 import android.view.accessibility.AccessibilityManager;
 import android.view.ViewGroup;
-import android.util.Property;
 import android.os.Bundle;
-import android.animation.Animator$AnimatorListener;
 import com.android.launcher3.anim.PropertyListBuilder;
+import android.animation.Animator$AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.view.View;
 import com.android.launcher3.config.FeatureFlags;
@@ -99,19 +98,8 @@ public class WorkspaceStateTransitionAnimation
         else {
             n2 = 0.0f;
         }
-        float alpha;
-        if (transitionStates.stateIsOverview) {
-            alpha = 1.0f;
-        }
-        else {
-            alpha = 0.0f;
-        }
-        float n3;
-        if (transitionStates.stateIsNormal || (FeatureFlags.LAUNCHER3_ALL_APPS_PULL_UP && transitionStates.stateIsNormalHidden)) {
-            n3 = 1.0f;
-        }
-        else {
-            n3 = 0.0f;
+        if (!transitionStates.stateIsNormal && FeatureFlags.LAUNCHER3_ALL_APPS_PULL_UP) {
+            final boolean stateIsNormalHidden = transitionStates.stateIsNormalHidden;
         }
         float springLoadedTranslationY;
         if (transitionStates.stateIsOverview || transitionStates.stateIsOverviewHidden) {
@@ -143,20 +131,20 @@ public class WorkspaceStateTransitionAnimation
         final int pageNearestToCenterOfScreen = this.mWorkspace.getPageNearestToCenterOfScreen();
         for (int i = 0; i < childCount; ++i) {
             final CellLayout cellLayout = (CellLayout)this.mWorkspace.getChildAt(i);
-            float alpha2 = cellLayout.getShortcutsAndWidgets().getAlpha();
+            float alpha = cellLayout.getShortcutsAndWidgets().getAlpha();
             float shortcutAndWidgetAlpha;
             if (transitionStates.stateIsOverviewHidden) {
                 shortcutAndWidgetAlpha = 0.0f;
             }
             else if (transitionStates.stateIsNormalHidden) {
-                int n4;
+                int n3;
                 if (FeatureFlags.LAUNCHER3_ALL_APPS_PULL_UP && i == this.mWorkspace.getNextPage()) {
-                    n4 = 1;
+                    n3 = 1;
                 }
                 else {
-                    n4 = 0;
+                    n3 = 0;
                 }
-                shortcutAndWidgetAlpha = n4;
+                shortcutAndWidgetAlpha = n3;
             }
             else if (transitionStates.stateIsNormal && this.mWorkspaceFadeInAdjacentScreens) {
                 if (i == pageNearestToCenterOfScreen || i < numCustomPages) {
@@ -170,9 +158,8 @@ public class WorkspaceStateTransitionAnimation
                 shortcutAndWidgetAlpha = 1.0f;
             }
             if (!FeatureFlags.LAUNCHER3_ALL_APPS_PULL_UP && (this.mWorkspace.isSwitchingState() ^ true) && (transitionStates.workspaceToAllApps || transitionStates.allAppsToWorkspace)) {
-                final int n5;
                 boolean b3;
-                if (i == (n5 = pageNearestToCenterOfScreen)) {
+                if (i == pageNearestToCenterOfScreen) {
                     b3 = true;
                 }
                 else {
@@ -187,19 +174,15 @@ public class WorkspaceStateTransitionAnimation
                     shortcutAndWidgetAlpha2 = 0.0f;
                 }
                 else {
-                    shortcutAndWidgetAlpha2 = alpha2;
+                    shortcutAndWidgetAlpha2 = alpha;
                 }
                 cellLayout.setShortcutAndWidgetAlpha(shortcutAndWidgetAlpha2);
-                alpha2 = shortcutAndWidgetAlpha2;
+                alpha = shortcutAndWidgetAlpha2;
             }
             if (b) {
                 final float backgroundAlpha2 = cellLayout.getBackgroundAlpha();
-                if (alpha2 != shortcutAndWidgetAlpha) {
-                    final ShortcutAndWidgetContainer shortcutsAndWidgets = cellLayout.getShortcutsAndWidgets();
-                    final Property alpha3 = View.ALPHA;
-                    final float[] array;
-                    (array = new float[1])[0] = shortcutAndWidgetAlpha;
-                    final ObjectAnimator ofFloat = ObjectAnimator.ofFloat((Object)shortcutsAndWidgets, alpha3, array);
+                if (alpha != shortcutAndWidgetAlpha) {
+                    final ObjectAnimator ofFloat = ObjectAnimator.ofFloat((Object)cellLayout.getShortcutsAndWidgets(), View.ALPHA, new float[] { shortcutAndWidgetAlpha });
                     ((Animator)ofFloat).setDuration((long)n).setInterpolator((TimeInterpolator)this.mZoomInInterpolator);
                     this.mStateAnimator.play((Animator)ofFloat);
                 }
@@ -214,52 +197,49 @@ public class WorkspaceStateTransitionAnimation
                 cellLayout.setBackgroundAlpha(backgroundAlpha);
                 cellLayout.setShortcutAndWidgetAlpha(shortcutAndWidgetAlpha);
             }
-            if (Workspace.isQsbContainerPage(i) && transitionStates.stateIsNormal && this.mWorkspaceFadeInAdjacentScreens) {
-                if (b) {
-                    final Animator animateAlphaAtIndex = this.mWorkspace.mQsbAlphaController.animateAlphaAtIndex(shortcutAndWidgetAlpha, 2);
-                    animateAlphaAtIndex.setDuration((long)n);
-                    animateAlphaAtIndex.setInterpolator((TimeInterpolator)this.mZoomInInterpolator);
-                    this.mStateAnimator.play(animateAlphaAtIndex);
-                }
-                else {
-                    this.mWorkspace.mQsbAlphaController.setAlphaAtIndex(shortcutAndWidgetAlpha, 2);
-                }
-            }
         }
         final ViewGroup overviewPanel = this.mLauncher.getOverviewPanel();
-        final Animator animateAlphaAtIndex2 = this.mWorkspace.mQsbAlphaController.animateAlphaAtIndex(n3, 0);
+        float alpha2;
+        if (transitionStates.stateIsOverview) {
+            alpha2 = 1.0f;
+        }
+        else {
+            alpha2 = 0.0f;
+        }
         if (b) {
+            if (alpha2 != overviewPanel.getAlpha()) {
+                final ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat((Object)overviewPanel, View.ALPHA, new float[] { alpha2 });
+                ((Animator)ofFloat3).addListener((Animator$AnimatorListener)new AlphaUpdateListener((View)overviewPanel, b2));
+                set.addView((View)overviewPanel);
+                if (transitionStates.overviewToWorkspace) {
+                    ((Animator)ofFloat3).setInterpolator((TimeInterpolator)new DecelerateInterpolator(2.0f));
+                }
+                else if (transitionStates.workspaceToOverview) {
+                    ((Animator)ofFloat3).setInterpolator((TimeInterpolator)null);
+                }
+                ((Animator)ofFloat3).setDuration((long)n);
+                this.mStateAnimator.play((Animator)ofFloat3);
+            }
             final ObjectAnimator setDuration = LauncherAnimUtils.ofPropertyValuesHolder((View)this.mWorkspace, new PropertyListBuilder().scale(this.mNewScale).translationY(springLoadedTranslationY).build()).setDuration((long)n);
             ((Animator)setDuration).setInterpolator((TimeInterpolator)this.mZoomInInterpolator);
             this.mStateAnimator.play((Animator)setDuration);
-            final ValueAnimator hotseatAlphaAnimator = this.mWorkspace.createHotseatAlphaAnimator(n2);
-            final ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat((Object)overviewPanel, View.ALPHA, new float[] { alpha });
-            ((Animator)ofFloat3).addListener((Animator$AnimatorListener)new AlphaUpdateListener((View)overviewPanel, b2));
-            set.addView((View)overviewPanel);
-            set.addView(this.mLauncher.getQsbContainer());
             set.addView((View)this.mLauncher.getHotseat());
             set.addView((View)this.mWorkspace.getPageIndicator());
+            final ValueAnimator hotseatAlphaAnimator = this.mWorkspace.createHotseatAlphaAnimator(n2);
             if (transitionStates.workspaceToOverview) {
                 ((Animator)hotseatAlphaAnimator).setInterpolator((TimeInterpolator)new DecelerateInterpolator(2.0f));
-                ((Animator)ofFloat3).setInterpolator((TimeInterpolator)null);
             }
             else if (transitionStates.overviewToWorkspace) {
                 ((Animator)hotseatAlphaAnimator).setInterpolator((TimeInterpolator)null);
-                ((Animator)ofFloat3).setInterpolator((TimeInterpolator)new DecelerateInterpolator(2.0f));
             }
-            ((Animator)ofFloat3).setDuration((long)n);
             ((Animator)hotseatAlphaAnimator).setDuration((long)n);
-            animateAlphaAtIndex2.setDuration((long)n);
-            this.mStateAnimator.play((Animator)ofFloat3);
             this.mStateAnimator.play((Animator)hotseatAlphaAnimator);
-            this.mStateAnimator.play(animateAlphaAtIndex2);
             this.mStateAnimator.addListener((Animator$AnimatorListener)new WorkspaceStateTransitionAnimation$1(this, transitionStates, b2, overviewPanel));
         }
         else {
-            overviewPanel.setAlpha(alpha);
+            overviewPanel.setAlpha(alpha2);
             AlphaUpdateListener.updateVisibility((View)overviewPanel, b2);
             this.mWorkspace.getPageIndicator().setShouldAutoHide(transitionStates.stateIsSpringLoaded ^ true);
-            animateAlphaAtIndex2.end();
             this.mWorkspace.createHotseatAlphaAnimator(n2).end();
             this.mWorkspace.updateCustomContentVisibility();
             this.mWorkspace.setScaleX(this.mNewScale);

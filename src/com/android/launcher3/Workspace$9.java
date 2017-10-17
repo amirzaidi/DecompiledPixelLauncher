@@ -13,7 +13,6 @@ final class Workspace$9 implements Runnable
     }
     
     public void run() {
-        this.this$0.mAnimatingViewIntoPlace = false;
-        this.this$0.updateChildrenLayersEnabled(false);
+        this.this$0.mLauncher.exitSpringLoadedDragModeDelayed(true, 500, null);
     }
 }

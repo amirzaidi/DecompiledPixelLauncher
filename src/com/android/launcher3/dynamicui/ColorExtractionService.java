@@ -4,19 +4,16 @@
 
 package com.android.launcher3.dynamicui;
 
-import com.android.launcher3.LauncherSettings$Settings;
-import android.os.Bundle;
-import android.content.Context;
-import android.app.WallpaperManager;
-import android.content.Intent;
+import android.app.job.JobParameters;
 import android.support.v7.a.a;
-import android.app.IntentService;
+import android.os.HandlerThread;
+import android.os.Handler;
+import android.app.job.JobService;
 
-public class ColorExtractionService extends IntentService
+public class ColorExtractionService extends JobService
 {
-    public ColorExtractionService() {
-        super("ColorExtractionService");
-    }
+    private Handler mWorkerHandler;
+    private HandlerThread mWorkerThread;
     
     private a getHotseatPalette() {
         // 
@@ -90,13 +87,13 @@ public class ColorExtractionService extends IntentService
         //   120: aload           9
         //   122: ifnull          249
         //   125: aload           9
-        //   127: invokestatic    android/support/v7/a/a.acs:(Landroid/graphics/Bitmap;)Landroid/support/v7/a/c;
+        //   127: invokestatic    android/support/v7/a/a.adu:(Landroid/graphics/Bitmap;)Landroid/support/v7/a/c;
         //   130: astore          7
         //   132: aload           7
-        //   134: invokevirtual   android/support/v7/a/c.acC:()Landroid/support/v7/a/c;
+        //   134: invokevirtual   android/support/v7/a/c.adG:()Landroid/support/v7/a/c;
         //   137: astore          7
         //   139: aload           7
-        //   141: invokevirtual   android/support/v7/a/c.acD:()Landroid/support/v7/a/a;
+        //   141: invokevirtual   android/support/v7/a/c.adH:()Landroid/support/v7/a/a;
         //   144: astore          7
         //   146: aload           6
         //   148: ifnull          156
@@ -122,7 +119,7 @@ public class ColorExtractionService extends IntentService
         //   188: invokevirtual   android/graphics/drawable/BitmapDrawable.getBitmap:()Landroid/graphics/Bitmap;
         //   191: astore          7
         //   193: aload           7
-        //   195: invokestatic    android/support/v7/a/a.acs:(Landroid/graphics/Bitmap;)Landroid/support/v7/a/c;
+        //   195: invokestatic    android/support/v7/a/a.adu:(Landroid/graphics/Bitmap;)Landroid/support/v7/a/c;
         //   198: astore          6
         //   200: aload           7
         //   202: invokevirtual   android/graphics/Bitmap.getHeight:()I
@@ -142,9 +139,9 @@ public class ColorExtractionService extends IntentService
         //   227: iload_2        
         //   228: iload           14
         //   230: iload           5
-        //   232: invokevirtual   android/support/v7/a/c.acA:(IIII)Landroid/support/v7/a/c;
-        //   235: invokevirtual   android/support/v7/a/c.acC:()Landroid/support/v7/a/c;
-        //   238: invokevirtual   android/support/v7/a/c.acD:()Landroid/support/v7/a/a;
+        //   232: invokevirtual   android/support/v7/a/c.adE:(IIII)Landroid/support/v7/a/c;
+        //   235: invokevirtual   android/support/v7/a/c.adG:()Landroid/support/v7/a/c;
+        //   238: invokevirtual   android/support/v7/a/c.adH:()Landroid/support/v7/a/a;
         //   241: areturn        
         //   242: astore_3       
         //   243: goto            156
@@ -251,20 +248,187 @@ public class ColorExtractionService extends IntentService
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    protected void onHandleIntent(final Intent intent) {
-        final WallpaperManager instance = WallpaperManager.getInstance((Context)this);
-        final int wallpaperId = ExtractionUtils.getWallpaperId(instance);
-        final ExtractedColors extractedColors = new ExtractedColors();
-        if (instance.getWallpaperInfo() != null) {
-            extractedColors.updateHotseatPalette(null);
-        }
-        else {
-            extractedColors.updateHotseatPalette(this.getHotseatPalette());
-        }
-        final String encodeAsString = extractedColors.encodeAsString();
-        final Bundle bundle = new Bundle();
-        bundle.putInt("extra_wallpaperId", wallpaperId);
-        bundle.putString("extra_extractedColors", encodeAsString);
-        this.getContentResolver().call(LauncherSettings$Settings.CONTENT_URI, "set_extracted_colors_and_wallpaper_id_setting", (String)null, bundle);
+    private a getWallpaperPalette() {
+        // 
+        // This method could not be decompiled.
+        // 
+        // Original Bytecode:
+        // 
+        //     0: aconst_null    
+        //     1: astore_1       
+        //     2: aload_0        
+        //     3: invokestatic    android/app/WallpaperManager.getInstance:(Landroid/content/Context;)Landroid/app/WallpaperManager;
+        //     6: astore_2       
+        //     7: getstatic       com/android/launcher3/Utilities.ATLEAST_NOUGAT:Z
+        //    10: istore_3       
+        //    11: iload_3        
+        //    12: ifeq            98
+        //    15: iconst_1       
+        //    16: istore_3       
+        //    17: aload_2        
+        //    18: iload_3        
+        //    19: invokevirtual   android/app/WallpaperManager.getWallpaperFile:(I)Landroid/os/ParcelFileDescriptor;
+        //    22: astore          4
+        //    24: aload           4
+        //    26: invokevirtual   android/os/ParcelFileDescriptor.getFileDescriptor:()Ljava/io/FileDescriptor;
+        //    29: astore          5
+        //    31: aload           5
+        //    33: invokestatic    android/graphics/BitmapFactory.decodeFileDescriptor:(Ljava/io/FileDescriptor;)Landroid/graphics/Bitmap;
+        //    36: astore          5
+        //    38: aload           5
+        //    40: ifnull          125
+        //    43: aload           5
+        //    45: invokestatic    android/support/v7/a/a.adu:(Landroid/graphics/Bitmap;)Landroid/support/v7/a/c;
+        //    48: astore          5
+        //    50: aload           5
+        //    52: invokevirtual   android/support/v7/a/c.adG:()Landroid/support/v7/a/c;
+        //    55: astore          5
+        //    57: aload           5
+        //    59: invokevirtual   android/support/v7/a/c.adH:()Landroid/support/v7/a/a;
+        //    62: astore          5
+        //    64: aload           4
+        //    66: ifnull          74
+        //    69: aload           4
+        //    71: invokevirtual   android/os/ParcelFileDescriptor.close:()V
+        //    74: aload_1        
+        //    75: ifnull          122
+        //    78: aload_1        
+        //    79: athrow         
+        //    80: astore          5
+        //    82: ldc             "ColorExtractionService"
+        //    84: astore          4
+        //    86: ldc             "Fetching partial bitmap failed, trying old method"
+        //    88: astore_1       
+        //    89: aload           4
+        //    91: aload_1        
+        //    92: aload           5
+        //    94: invokestatic    android/util/Log.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+        //    97: pop            
+        //    98: aload_2        
+        //    99: invokevirtual   android/app/WallpaperManager.getDrawable:()Landroid/graphics/drawable/Drawable;
+        //   102: checkcast       Landroid/graphics/drawable/BitmapDrawable;
+        //   105: invokevirtual   android/graphics/drawable/BitmapDrawable.getBitmap:()Landroid/graphics/Bitmap;
+        //   108: invokestatic    android/support/v7/a/a.adu:(Landroid/graphics/Bitmap;)Landroid/support/v7/a/c;
+        //   111: invokevirtual   android/support/v7/a/c.adG:()Landroid/support/v7/a/c;
+        //   114: invokevirtual   android/support/v7/a/c.adH:()Landroid/support/v7/a/a;
+        //   117: areturn        
+        //   118: astore_1       
+        //   119: goto            74
+        //   122: aload           5
+        //   124: areturn        
+        //   125: aload           4
+        //   127: ifnull          135
+        //   130: aload           4
+        //   132: invokevirtual   android/os/ParcelFileDescriptor.close:()V
+        //   135: aload_1        
+        //   136: ifnull          98
+        //   139: aload_1        
+        //   140: athrow         
+        //   141: astore_1       
+        //   142: goto            135
+        //   145: astore          5
+        //   147: aconst_null    
+        //   148: astore          4
+        //   150: aload           5
+        //   152: athrow         
+        //   153: astore          6
+        //   155: aload           5
+        //   157: astore_1       
+        //   158: aload           6
+        //   160: astore          5
+        //   162: aload           4
+        //   164: ifnull          172
+        //   167: aload           4
+        //   169: invokevirtual   android/os/ParcelFileDescriptor.close:()V
+        //   172: aload_1        
+        //   173: ifnull          205
+        //   176: aload_1        
+        //   177: athrow         
+        //   178: astore          4
+        //   180: aload_1        
+        //   181: ifnonnull       190
+        //   184: aload           4
+        //   186: astore_1       
+        //   187: goto            172
+        //   190: aload_1        
+        //   191: aload           4
+        //   193: if_acmpeq       172
+        //   196: aload_1        
+        //   197: aload           4
+        //   199: invokevirtual   java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+        //   202: goto            172
+        //   205: aload           5
+        //   207: athrow         
+        //   208: astore          5
+        //   210: goto            150
+        //    Exceptions:
+        //  Try           Handler
+        //  Start  End    Start  End    Type                            
+        //  -----  -----  -----  -----  --------------------------------
+        //  18     22     145    150    Any
+        //  24     29     208    213    Any
+        //  31     36     208    213    Any
+        //  43     48     208    213    Any
+        //  50     55     208    213    Any
+        //  57     62     208    213    Any
+        //  69     74     118    122    Any
+        //  78     80     80     98     Ljava/io/IOException;
+        //  78     80     80     98     Ljava/lang/NullPointerException;
+        //  130    135    141    145    Any
+        //  139    141    80     98     Ljava/io/IOException;
+        //  139    141    80     98     Ljava/lang/NullPointerException;
+        //  150    153    153    208    Any
+        //  167    172    178    205    Any
+        //  176    178    80     98     Ljava/io/IOException;
+        //  176    178    80     98     Ljava/lang/NullPointerException;
+        //  197    202    80     98     Ljava/io/IOException;
+        //  197    202    80     98     Ljava/lang/NullPointerException;
+        //  205    208    80     98     Ljava/io/IOException;
+        //  205    208    80     98     Ljava/lang/NullPointerException;
+        // 
+        // The error that occurred was:
+        // 
+        // java.lang.IllegalStateException: Expression is linked from several locations: Label_0074:
+        //     at com.strobel.decompiler.ast.Error.expressionLinkedFromMultipleLocations(Error.java:27)
+        //     at com.strobel.decompiler.ast.AstOptimizer.mergeDisparateObjectInitializations(AstOptimizer.java:2592)
+        //     at com.strobel.decompiler.ast.AstOptimizer.optimize(AstOptimizer.java:235)
+        //     at com.strobel.decompiler.ast.AstOptimizer.optimize(AstOptimizer.java:42)
+        //     at com.strobel.decompiler.languages.java.ast.AstMethodBodyBuilder.createMethodBody(AstMethodBodyBuilder.java:214)
+        //     at com.strobel.decompiler.languages.java.ast.AstMethodBodyBuilder.createMethodBody(AstMethodBodyBuilder.java:99)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createMethodBody(AstBuilder.java:757)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createMethod(AstBuilder.java:655)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.addTypeMembers(AstBuilder.java:532)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createTypeCore(AstBuilder.java:499)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createTypeNoCache(AstBuilder.java:141)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createType(AstBuilder.java:130)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.addType(AstBuilder.java:105)
+        //     at com.strobel.decompiler.languages.java.JavaLanguage.buildAst(JavaLanguage.java:71)
+        //     at com.strobel.decompiler.languages.java.JavaLanguage.decompileType(JavaLanguage.java:59)
+        //     at com.strobel.decompiler.DecompilerDriver.decompileType(DecompilerDriver.java:317)
+        //     at com.strobel.decompiler.DecompilerDriver.decompileJar(DecompilerDriver.java:238)
+        //     at com.strobel.decompiler.DecompilerDriver.main(DecompilerDriver.java:123)
+        // 
+        throw new IllegalStateException("An error occurred while decompiling this method.");
+    }
+    
+    public void onCreate() {
+        super.onCreate();
+        (this.mWorkerThread = new HandlerThread("ColorExtractionService")).start();
+        this.mWorkerHandler = new Handler(this.mWorkerThread.getLooper());
+    }
+    
+    public void onDestroy() {
+        super.onDestroy();
+        this.mWorkerThread.quit();
+    }
+    
+    public boolean onStartJob(final JobParameters jobParameters) {
+        this.mWorkerHandler.post((Runnable)new ColorExtractionService$1(this, jobParameters));
+        return true;
+    }
+    
+    public boolean onStopJob(final JobParameters jobParameters) {
+        this.mWorkerHandler.removeCallbacksAndMessages((Object)null);
+        return true;
     }
 }

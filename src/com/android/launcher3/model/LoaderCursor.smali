@@ -250,14 +250,14 @@
     .locals 2
 
     .prologue
-    .line 197
+    .line 201
     iget v0, p0, Lcom/android/launcher3/model/LoaderCursor;->titleIndex:I
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/model/LoaderCursor;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 198
+    .line 202
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -283,17 +283,17 @@
     .locals 2
 
     .prologue
-    .line 364
+    .line 368
     iget-wide v0, p0, Lcom/android/launcher3/model/LoaderCursor;->id:J
 
     iput-wide v0, p1, Lcom/android/launcher3/ItemInfo;->id:J
 
-    .line 365
+    .line 369
     iget-wide v0, p0, Lcom/android/launcher3/model/LoaderCursor;->container:J
 
     iput-wide v0, p1, Lcom/android/launcher3/ItemInfo;->container:J
 
-    .line 366
+    .line 370
     iget v0, p0, Lcom/android/launcher3/model/LoaderCursor;->screenIndex:I
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/model/LoaderCursor;->getInt(I)I
@@ -304,7 +304,7 @@
 
     iput-wide v0, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 367
+    .line 371
     iget v0, p0, Lcom/android/launcher3/model/LoaderCursor;->cellXIndex:I
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/model/LoaderCursor;->getInt(I)I
@@ -313,7 +313,7 @@
 
     iput v0, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 368
+    .line 372
     iget v0, p0, Lcom/android/launcher3/model/LoaderCursor;->cellYIndex:I
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/model/LoaderCursor;->getInt(I)I
@@ -322,7 +322,7 @@
 
     iput v0, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 369
+    .line 373
     return-void
 .end method
 
@@ -330,7 +330,7 @@
     .locals 2
 
     .prologue
-    .line 376
+    .line 380
     iget-object v0, p2, Lcom/android/launcher3/model/BgDataModel;->workspaceScreens:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1, v0}, Lcom/android/launcher3/model/LoaderCursor;->checkItemPlacement(Lcom/android/launcher3/ItemInfo;Ljava/util/ArrayList;)Z
@@ -339,18 +339,18 @@
 
     if-eqz v0, :cond_0
 
-    .line 377
+    .line 381
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->mContext:Landroid/content/Context;
 
     const/4 v1, 0x0
 
     invoke-virtual {p2, v0, p1, v1}, Lcom/android/launcher3/model/BgDataModel;->addItem(Landroid/content/Context;Lcom/android/launcher3/ItemInfo;Z)V
 
-    .line 381
+    .line 385
     :goto_0
     return-void
 
-    .line 379
+    .line 383
     :cond_0
     const-string/jumbo v0, "Item position overlap"
 
@@ -371,17 +371,17 @@
 
     const/4 v1, 0x0
 
-    .line 387
+    .line 391
     iget-wide v6, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 388
+    .line 392
     iget-wide v2, p1, Lcom/android/launcher3/ItemInfo;->container:J
 
     cmp-long v0, v2, v8
 
     if-nez v0, :cond_3
 
-    .line 399
+    .line 403
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->occupied:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v0, v8, v9}, Lcom/android/launcher3/util/LongArrayMap;->get(J)Ljava/lang/Object;
@@ -390,7 +390,7 @@
 
     check-cast v0, Lcom/android/launcher3/util/GridOccupancy;
 
-    .line 401
+    .line 405
     iget-wide v2, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
     iget-object v5, p0, Lcom/android/launcher3/model/LoaderCursor;->mIDP:Lcom/android/launcher3/InvariantDeviceProfile;
@@ -403,7 +403,7 @@
 
     if-ltz v2, :cond_0
 
-    .line 402
+    .line 406
     const-string/jumbo v0, "LoaderCursor"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -420,46 +420,46 @@
 
     move-result-object v2
 
-    .line 403
+    .line 407
     const-string/jumbo v3, " into hotseat position "
 
-    .line 402
+    .line 406
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 403
+    .line 407
     iget-wide v4, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 402
+    .line 406
     invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 404
+    .line 408
     const-string/jumbo v3, ", position out of bounds: (0 to "
 
-    .line 402
+    .line 406
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 404
+    .line 408
     iget-object v3, p0, Lcom/android/launcher3/model/LoaderCursor;->mIDP:Lcom/android/launcher3/InvariantDeviceProfile;
 
     iget v3, v3, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
     add-int/lit8 v3, v3, -0x1
 
-    .line 402
+    .line 406
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 405
+    .line 409
     const-string/jumbo v3, ")"
 
-    .line 402
+    .line 406
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -470,14 +470,14 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
+    .line 410
     return v1
 
-    .line 409
+    .line 413
     :cond_0
     if-eqz v0, :cond_2
 
-    .line 410
+    .line 414
     iget-object v2, v0, Lcom/android/launcher3/util/GridOccupancy;->cells:[[Z
 
     iget-wide v6, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
@@ -490,7 +490,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 411
+    .line 415
     const-string/jumbo v0, "LoaderCursor"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -507,58 +507,58 @@
 
     move-result-object v2
 
-    .line 412
+    .line 416
     const-string/jumbo v3, " into position ("
 
-    .line 411
+    .line 415
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 412
+    .line 416
     iget-wide v4, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 411
+    .line 415
     invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 412
+    .line 416
     const-string/jumbo v3, ":"
 
-    .line 411
+    .line 415
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 412
+    .line 416
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 411
+    .line 415
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 412
+    .line 416
     const-string/jumbo v3, ","
 
-    .line 411
+    .line 415
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 413
+    .line 417
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 411
+    .line 415
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 413
+    .line 417
     const-string/jumbo v3, ") already occupied"
 
-    .line 411
+    .line 415
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -569,10 +569,10 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 414
+    .line 418
     return v1
 
-    .line 416
+    .line 420
     :cond_1
     iget-object v0, v0, Lcom/android/launcher3/util/GridOccupancy;->cells:[[Z
 
@@ -584,10 +584,10 @@
 
     aput-boolean v4, v0, v1
 
-    .line 417
+    .line 421
     return v4
 
-    .line 420
+    .line 424
     :cond_2
     new-instance v0, Lcom/android/launcher3/util/GridOccupancy;
 
@@ -597,7 +597,7 @@
 
     invoke-direct {v0, v2, v4}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
 
-    .line 421
+    .line 425
     iget-object v2, v0, Lcom/android/launcher3/util/GridOccupancy;->cells:[[Z
 
     iget-wide v6, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
@@ -608,15 +608,15 @@
 
     aput-boolean v4, v2, v1
 
-    .line 422
+    .line 426
     iget-object v1, p0, Lcom/android/launcher3/model/LoaderCursor;->occupied:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v1, v8, v9, v0}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 423
+    .line 427
     return v4
 
-    .line 425
+    .line 429
     :cond_3
     iget-wide v2, p1, Lcom/android/launcher3/ItemInfo;->container:J
 
@@ -624,7 +624,7 @@
 
     if-nez v0, :cond_4
 
-    .line 426
+    .line 430
     iget-wide v2, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -637,37 +637,37 @@
 
     if-nez v0, :cond_5
 
-    .line 428
+    .line 432
     return v1
 
-    .line 432
+    .line 436
     :cond_4
     return v4
 
-    .line 435
+    .line 439
     :cond_5
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->mIDP:Lcom/android/launcher3/InvariantDeviceProfile;
 
     iget v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
-    .line 436
+    .line 440
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->mIDP:Lcom/android/launcher3/InvariantDeviceProfile;
 
     iget v3, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numRows:I
 
-    .line 437
+    .line 441
     iget-wide v8, p1, Lcom/android/launcher3/ItemInfo;->container:J
 
     cmp-long v0, v8, v10
 
     if-nez v0, :cond_7
 
-    .line 438
+    .line 442
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     if-gez v0, :cond_7
 
-    .line 440
+    .line 444
     :cond_6
     const-string/jumbo v0, "LoaderCursor"
 
@@ -685,10 +685,10 @@
 
     move-result-object v4
 
-    .line 441
+    .line 445
     const-string/jumbo v5, " into cell ("
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -697,58 +697,58 @@
 
     move-result-object v4
 
-    .line 441
+    .line 445
     const-string/jumbo v5, "-"
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 441
+    .line 445
     iget-wide v6, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 441
+    .line 445
     const-string/jumbo v5, ":"
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 442
+    .line 446
     iget v5, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 442
+    .line 446
     const-string/jumbo v5, ","
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 442
+    .line 446
     iget v5, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .line 443
+    .line 447
     const-string/jumbo v5, ") out of screen bounds ( "
 
-    .line 440
+    .line 444
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
@@ -757,10 +757,10 @@
 
     move-result-object v2
 
-    .line 443
+    .line 447
     const-string/jumbo v4, "x"
 
-    .line 440
+    .line 444
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -769,10 +769,10 @@
 
     move-result-object v2
 
-    .line 443
+    .line 447
     const-string/jumbo v3, ")"
 
-    .line 440
+    .line 444
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -783,16 +783,16 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 444
+    .line 448
     return v1
 
-    .line 438
+    .line 442
     :cond_7
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
     if-ltz v0, :cond_6
 
-    .line 439
+    .line 443
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iget v5, p1, Lcom/android/launcher3/ItemInfo;->spanX:I
@@ -809,7 +809,7 @@
 
     if-gt v0, v3, :cond_6
 
-    .line 447
+    .line 451
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->occupied:Lcom/android/launcher3/util/LongArrayMap;
 
     iget-wide v8, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
@@ -820,7 +820,7 @@
 
     if-nez v0, :cond_9
 
-    .line 448
+    .line 452
     new-instance v0, Lcom/android/launcher3/util/GridOccupancy;
 
     add-int/lit8 v5, v2, 0x1
@@ -829,7 +829,7 @@
 
     invoke-direct {v0, v5, v3}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
 
-    .line 449
+    .line 453
     iget-wide v8, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
     const-wide/16 v10, 0x0
@@ -838,7 +838,7 @@
 
     if-nez v3, :cond_8
 
-    .line 452
+    .line 456
     add-int/lit8 v3, v2, 0x1
 
     move v2, v1
@@ -847,7 +847,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
 
-    .line 454
+    .line 458
     :cond_8
     iget-object v2, p0, Lcom/android/launcher3/model/LoaderCursor;->occupied:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -855,7 +855,7 @@
 
     invoke-virtual {v2, v8, v9, v0}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 456
+    .line 460
     :cond_9
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->occupied:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -867,7 +867,7 @@
 
     check-cast v0, Lcom/android/launcher3/util/GridOccupancy;
 
-    .line 459
+    .line 463
     iget v2, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
@@ -882,13 +882,13 @@
 
     if-eqz v2, :cond_a
 
-    .line 460
+    .line 464
     invoke-virtual {v0, p1, v4}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/ItemInfo;Z)V
 
-    .line 461
+    .line 465
     return v4
 
-    .line 463
+    .line 467
     :cond_a
     const-string/jumbo v0, "LoaderCursor"
 
@@ -906,10 +906,10 @@
 
     move-result-object v2
 
-    .line 464
+    .line 468
     const-string/jumbo v3, " into cell ("
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -918,90 +918,90 @@
 
     move-result-object v2
 
-    .line 464
+    .line 468
     const-string/jumbo v3, "-"
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 464
+    .line 468
     iget-wide v4, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 464
+    .line 468
     const-string/jumbo v3, ":"
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 465
+    .line 469
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 465
+    .line 469
     const-string/jumbo v3, ","
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 465
+    .line 469
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 465
+    .line 469
     const-string/jumbo v3, ","
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 465
+    .line 469
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->spanX:I
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 465
+    .line 469
     const-string/jumbo v3, ","
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 465
+    .line 469
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    .line 466
+    .line 470
     const-string/jumbo v3, ") already occupied"
 
-    .line 463
+    .line 467
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -1012,7 +1012,7 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 467
+    .line 471
     return v1
 .end method
 
@@ -1022,7 +1022,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 312
+    .line 316
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->itemsToRemove:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1031,7 +1031,7 @@
 
     if-lez v0, :cond_0
 
-    .line 314
+    .line 318
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1040,28 +1040,28 @@
 
     sget-object v1, Lcom/android/launcher3/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 316
+    .line 320
     const-string/jumbo v2, "_id"
 
     iget-object v3, p0, Lcom/android/launcher3/model/LoaderCursor;->itemsToRemove:Ljava/util/ArrayList;
 
-    .line 315
+    .line 319
     invoke-static {v2, v3}, Lcom/android/launcher3/Utilities;->createDbSelectionQuery(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 316
+    .line 320
     const/4 v3, 0x0
 
-    .line 314
+    .line 318
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 317
+    .line 321
     const/4 v0, 0x1
 
     return v0
 
-    .line 319
+    .line 323
     :cond_0
     return v1
 .end method
@@ -1072,7 +1072,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 337
+    .line 341
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->restoredRows:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1081,12 +1081,12 @@
 
     if-lez v0, :cond_0
 
-    .line 339
+    .line 343
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 340
+    .line 344
     const-string/jumbo v1, "restored"
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1095,7 +1095,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 341
+    .line 345
     iget-object v1, p0, Lcom/android/launcher3/model/LoaderCursor;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -1104,23 +1104,23 @@
 
     sget-object v2, Lcom/android/launcher3/LauncherSettings$Favorites;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 343
+    .line 347
     const-string/jumbo v3, "_id"
 
     iget-object v4, p0, Lcom/android/launcher3/model/LoaderCursor;->restoredRows:Ljava/util/ArrayList;
 
-    .line 342
+    .line 346
     invoke-static {v3, v4}, Lcom/android/launcher3/Utilities;->createDbSelectionQuery(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 343
+    .line 347
     const/4 v4, 0x0
 
-    .line 341
+    .line 345
     invoke-virtual {v1, v2, v0, v3, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 345
+    .line 349
     :cond_0
     return-void
 .end method
@@ -1131,41 +1131,41 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 241
+    .line 245
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->user:Landroid/os/UserHandle;
 
     if-nez v0, :cond_0
 
-    .line 242
+    .line 246
     const-string/jumbo v0, "LoaderCursor"
 
     const-string/jumbo v1, "Null user found in getShortcutInfo"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 243
+    .line 247
     return-object v4
 
-    .line 246
+    .line 250
     :cond_0
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 247
+    .line 251
     if-nez v1, :cond_1
 
-    .line 248
+    .line 252
     const-string/jumbo v0, "LoaderCursor"
 
     const-string/jumbo v1, "Missing component found in getShortcutInfo"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 249
+    .line 253
     return-object v4
 
-    .line 252
+    .line 256
     :cond_1
     new-instance v0, Landroid/content/Intent;
 
@@ -1173,37 +1173,37 @@
 
     invoke-direct {v0, v2, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 253
+    .line 257
     const-string/jumbo v2, "android.intent.category.LAUNCHER"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 254
+    .line 258
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 255
+    .line 259
     iget-object v2, p0, Lcom/android/launcher3/model/LoaderCursor;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/LauncherAppsCompat;
 
     move-result-object v2
 
-    .line 256
+    .line 260
     iget-object v3, p0, Lcom/android/launcher3/model/LoaderCursor;->user:Landroid/os/UserHandle;
 
-    .line 255
+    .line 259
     invoke-virtual {v2, v0, v3}, Lcom/android/launcher3/compat/LauncherAppsCompat;->resolveActivity(Landroid/content/Intent;Landroid/os/UserHandle;)Landroid/content/pm/LauncherActivityInfo;
 
     move-result-object v2
 
-    .line 257
+    .line 261
     if-nez v2, :cond_2
 
     xor-int/lit8 v3, p2, 0x1
 
     if-eqz v3, :cond_2
 
-    .line 258
+    .line 262
     const-string/jumbo v0, "LoaderCursor"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1226,34 +1226,34 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 259
+    .line 263
     return-object v4
 
-    .line 262
+    .line 266
     :cond_2
     new-instance v3, Lcom/android/launcher3/ShortcutInfo;
 
     invoke-direct {v3}, Lcom/android/launcher3/ShortcutInfo;-><init>()V
 
-    .line 263
+    .line 267
     const/4 v4, 0x0
 
     iput v4, v3, Lcom/android/launcher3/ShortcutInfo;->itemType:I
 
-    .line 264
+    .line 268
     iget-object v4, p0, Lcom/android/launcher3/model/LoaderCursor;->user:Landroid/os/UserHandle;
 
     iput-object v4, v3, Lcom/android/launcher3/ShortcutInfo;->user:Landroid/os/UserHandle;
 
-    .line 265
+    .line 269
     iput-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 267
+    .line 271
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->mIconCache:Lcom/android/launcher3/IconCache;
 
     invoke-virtual {v0, v3, v2, p3}, Lcom/android/launcher3/IconCache;->getTitleAndIcon(Lcom/android/launcher3/ItemInfoWithIcon;Landroid/content/pm/LauncherActivityInfo;Z)V
 
-    .line 268
+    .line 272
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->mIconCache:Lcom/android/launcher3/IconCache;
 
     iget-object v4, v3, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
@@ -1266,18 +1266,18 @@
 
     if-eqz v0, :cond_3
 
-    .line 269
+    .line 273
     invoke-virtual {p0, v3}, Lcom/android/launcher3/model/LoaderCursor;->loadIcon(Lcom/android/launcher3/ShortcutInfo;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 270
+    .line 274
     if-eqz v0, :cond_7
 
     :goto_0
     iput-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
 
-    .line 273
+    .line 277
     :cond_3
     if-eqz v2, :cond_4
 
@@ -1291,12 +1291,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 274
+    .line 278
     const/4 v0, 0x4
 
     iput v0, v3, Lcom/android/launcher3/ShortcutInfo;->isDisabled:I
 
-    .line 278
+    .line 282
     :cond_4
     iget-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->title:Ljava/lang/CharSequence;
 
@@ -1306,27 +1306,27 @@
 
     if-eqz v0, :cond_5
 
-    .line 279
+    .line 283
     invoke-direct {p0}, Lcom/android/launcher3/model/LoaderCursor;->getTitle()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->title:Ljava/lang/CharSequence;
 
-    .line 283
+    .line 287
     :cond_5
     iget-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->title:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_6
 
-    .line 284
+    .line 288
     invoke-virtual {v1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->title:Ljava/lang/CharSequence;
 
-    .line 287
+    .line 291
     :cond_6
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
@@ -1340,10 +1340,10 @@
 
     iput-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 288
+    .line 292
     return-object v3
 
-    .line 270
+    .line 274
     :cond_7
     iget-object v0, v3, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
 
@@ -1354,39 +1354,39 @@
     .locals 4
 
     .prologue
-    .line 207
+    .line 211
     new-instance v0, Lcom/android/launcher3/ShortcutInfo;
 
     invoke-direct {v0}, Lcom/android/launcher3/ShortcutInfo;-><init>()V
 
-    .line 208
+    .line 212
     iget-object v1, p0, Lcom/android/launcher3/model/LoaderCursor;->user:Landroid/os/UserHandle;
 
     iput-object v1, v0, Lcom/android/launcher3/ShortcutInfo;->user:Landroid/os/UserHandle;
 
-    .line 209
+    .line 213
     iput-object p1, v0, Lcom/android/launcher3/ShortcutInfo;->intent:Landroid/content/Intent;
 
-    .line 211
+    .line 215
     invoke-virtual {p0, v0}, Lcom/android/launcher3/model/LoaderCursor;->loadIcon(Lcom/android/launcher3/ShortcutInfo;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
 
-    .line 213
+    .line 217
     iget-object v1, v0, Lcom/android/launcher3/ShortcutInfo;->iconBitmap:Landroid/graphics/Bitmap;
 
     if-nez v1, :cond_0
 
-    .line 214
+    .line 218
     iget-object v1, p0, Lcom/android/launcher3/model/LoaderCursor;->mIconCache:Lcom/android/launcher3/IconCache;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v0, v2}, Lcom/android/launcher3/IconCache;->getTitleAndIcon(Lcom/android/launcher3/ItemInfoWithIcon;Z)V
 
-    .line 217
+    .line 221
     :cond_0
     const/4 v1, 0x1
 
@@ -1396,26 +1396,26 @@
 
     if-eqz v1, :cond_2
 
-    .line 218
+    .line 222
     invoke-direct {p0}, Lcom/android/launcher3/model/LoaderCursor;->getTitle()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 219
+    .line 223
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 220
+    .line 224
     invoke-static {v1}, Lcom/android/launcher3/Utilities;->trim(Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/launcher3/ShortcutInfo;->title:Ljava/lang/CharSequence;
 
-    .line 230
+    .line 234
     :cond_1
     :goto_0
     iget-object v1, p0, Lcom/android/launcher3/model/LoaderCursor;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
@@ -1430,20 +1430,20 @@
 
     iput-object v1, v0, Lcom/android/launcher3/ShortcutInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 231
+    .line 235
     iget v1, p0, Lcom/android/launcher3/model/LoaderCursor;->itemType:I
 
     iput v1, v0, Lcom/android/launcher3/ShortcutInfo;->itemType:I
 
-    .line 232
+    .line 236
     iget v1, p0, Lcom/android/launcher3/model/LoaderCursor;->restoreFlag:I
 
     iput v1, v0, Lcom/android/launcher3/ShortcutInfo;->status:I
 
-    .line 233
+    .line 237
     return-object v0
 
-    .line 222
+    .line 226
     :cond_2
     const/4 v1, 0x2
 
@@ -1453,7 +1453,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 223
+    .line 227
     iget-object v1, v0, Lcom/android/launcher3/ShortcutInfo;->title:Ljava/lang/CharSequence;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1462,7 +1462,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 224
+    .line 228
     invoke-direct {p0}, Lcom/android/launcher3/model/LoaderCursor;->getTitle()Ljava/lang/String;
 
     move-result-object v1
@@ -1471,7 +1471,7 @@
 
     goto :goto_0
 
-    .line 227
+    .line 231
     :cond_3
     new-instance v0, Ljava/security/InvalidParameterException;
 
@@ -1506,7 +1506,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 333
+    .line 337
     iget v1, p0, Lcom/android/launcher3/model/LoaderCursor;->restoreFlag:I
 
     and-int/2addr v1, p1
@@ -1525,7 +1525,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 351
+    .line 355
     iget-wide v2, p0, Lcom/android/launcher3/model/LoaderCursor;->container:J
 
     const-wide/16 v4, -0x64
@@ -1534,7 +1534,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 352
+    .line 356
     iget-wide v2, p0, Lcom/android/launcher3/model/LoaderCursor;->container:J
 
     const-wide/16 v4, -0x65
@@ -1543,12 +1543,12 @@
 
     if-nez v1, :cond_1
 
-    .line 351
+    .line 355
     :cond_0
     :goto_0
     return v0
 
-    .line 352
+    .line 356
     :cond_1
     const/4 v0, 0x0
 
@@ -1556,7 +1556,7 @@
 .end method
 
 .method protected loadIcon(Lcom/android/launcher3/ShortcutInfo;)Landroid/graphics/Bitmap;
-    .locals 4
+    .locals 5
 
     .prologue
     const/4 v1, 0x0
@@ -1566,7 +1566,7 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_2
+    if-ne v0, v2, :cond_3
 
     .line 171
     iget v0, p0, Lcom/android/launcher3/model/LoaderCursor;->iconPackageIndex:I
@@ -1595,7 +1595,7 @@
 
     xor-int/lit8 v3, v3, 0x1
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
     .line 174
     :cond_0
@@ -1654,8 +1654,35 @@
 
     move-result-object v0
 
-    .line 190
+    .line 191
     :cond_1
+    if-nez v0, :cond_2
+
+    .line 192
+    const-string/jumbo v1, "LoaderCursor"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Failed to load icon for info "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 194
+    :cond_2
     return-object v0
 
     .line 186
@@ -1663,9 +1690,32 @@
     move-exception v0
 
     .line 187
+    const-string/jumbo v2, "LoaderCursor"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Failed to load icon for info "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 188
     return-object v1
 
-    :cond_2
+    :cond_3
     move-object v0, v1
 
     goto :goto_0
@@ -1729,12 +1779,12 @@
     .locals 4
 
     .prologue
-    .line 303
+    .line 307
     const-string/jumbo v0, "LoaderCursor"
 
     invoke-static {v0, p1}, Lcom/android/launcher3/logging/FileLog;->e(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 304
+    .line 308
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->itemsToRemove:Ljava/util/ArrayList;
 
     iget-wide v2, p0, Lcom/android/launcher3/model/LoaderCursor;->id:J
@@ -1745,7 +1795,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 305
+    .line 309
     return-void
 .end method
 
@@ -1755,12 +1805,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 326
+    .line 330
     iget v0, p0, Lcom/android/launcher3/model/LoaderCursor;->restoreFlag:I
 
     if-eqz v0, :cond_0
 
-    .line 327
+    .line 331
     iget-object v0, p0, Lcom/android/launcher3/model/LoaderCursor;->restoredRows:Ljava/util/ArrayList;
 
     iget-wide v2, p0, Lcom/android/launcher3/model/LoaderCursor;->id:J
@@ -1771,10 +1821,10 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 328
+    .line 332
     iput v4, p0, Lcom/android/launcher3/model/LoaderCursor;->restoreFlag:I
 
-    .line 330
+    .line 334
     :cond_0
     return-void
 .end method
@@ -1913,14 +1963,14 @@
     .locals 8
 
     .prologue
-    .line 295
+    .line 299
     new-instance v0, Lcom/android/launcher3/util/ContentWriter;
 
     iget-object v1, p0, Lcom/android/launcher3/model/LoaderCursor;->mContext:Landroid/content/Context;
 
     new-instance v2, Lcom/android/launcher3/util/ContentWriter$CommitParams;
 
-    .line 296
+    .line 300
     const-string/jumbo v3, "_id= ?"
 
     const/4 v4, 0x1
@@ -1937,7 +1987,7 @@
 
     aput-object v5, v4, v6
 
-    .line 295
+    .line 299
     invoke-direct {v2, v3, v4}, Lcom/android/launcher3/util/ContentWriter$CommitParams;-><init>(Ljava/lang/String;[Ljava/lang/String;)V
 
     invoke-direct {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;-><init>(Landroid/content/Context;Lcom/android/launcher3/util/ContentWriter$CommitParams;)V

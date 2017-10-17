@@ -21,22 +21,22 @@
     .locals 0
 
     .prologue
-    .line 245
+    .line 242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 247
+    .line 244
     iput-object p1, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mContainer:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
-    .line 248
+    .line 245
     iput-object p2, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mShortcutChild:Lcom/android/launcher3/shortcuts/DeepShortcutView;
 
-    .line 249
+    .line 246
     iput-object p3, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mShortcutChildInfo:Lcom/android/launcher3/ShortcutInfo;
 
-    .line 250
+    .line 247
     iput-object p4, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mDetail:Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 251
+    .line 248
     return-void
 .end method
 
@@ -46,21 +46,21 @@
     .locals 4
 
     .prologue
-    .line 255
+    .line 252
     iget-object v0, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mShortcutChild:Lcom/android/launcher3/shortcuts/DeepShortcutView;
 
     iget-object v1, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mShortcutChildInfo:Lcom/android/launcher3/ShortcutInfo;
 
     iget-object v2, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mDetail:Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;
 
-    .line 256
+    .line 253
     iget-object v3, p0, Lcom/android/launcher3/popup/PopupPopulator$UpdateShortcutChild;->mContainer:Lcom/android/launcher3/popup/PopupContainerWithArrow;
 
     iget-object v3, v3, Lcom/android/launcher3/popup/PopupContainerWithArrow;->mShortcutsItemView:Lcom/android/launcher3/shortcuts/ShortcutsItemView;
 
-    .line 255
+    .line 252
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/shortcuts/DeepShortcutView;->applyShortcutInfo(Lcom/android/launcher3/ShortcutInfo;Lcom/android/launcher3/shortcuts/ShortcutInfoCompat;Lcom/android/launcher3/shortcuts/ShortcutsItemView;)V
 
-    .line 257
+    .line 254
     return-void
 .end method

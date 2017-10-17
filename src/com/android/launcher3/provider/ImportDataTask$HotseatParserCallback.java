@@ -5,17 +5,18 @@
 package com.android.launcher3.provider;
 
 import com.android.launcher3.model.GridSizeMigrationTask;
-import com.android.launcher3.config.ProviderConfig;
+import com.android.launcher3.LauncherProvider;
 import com.android.launcher3.LauncherSettings$WorkspaceScreens;
 import com.android.launcher3.logging.FileLog;
 import java.util.Iterator;
+import android.content.SharedPreferences;
 import android.os.Process;
 import android.content.pm.ProviderInfo;
 import com.android.launcher3.LauncherSettings$Settings;
 import android.text.TextUtils;
+import com.android.launcher3.Utilities;
 import android.util.LongSparseArray;
 import com.android.launcher3.LauncherAppState;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.content.Context;
 import android.content.ContentProviderOperation;
@@ -31,14 +32,14 @@ import com.android.launcher3.AutoInstallsLayout$LayoutParserCallback;
 
 class ImportDataTask$HotseatParserCallback implements AutoInstallsLayout$LayoutParserCallback
 {
-    private final HashSet mExisitingApps;
+    private final HashSet mExistingApps;
     private final LongArrayMap mExistingItems;
     private final ArrayList mOutOps;
     private final int mRequiredSize;
     private int mStartItemId;
     
-    ImportDataTask$HotseatParserCallback(final HashSet mExisitingApps, final LongArrayMap mExistingItems, final ArrayList mOutOps, final int mStartItemId, final int mRequiredSize) {
-        this.mExisitingApps = mExisitingApps;
+    ImportDataTask$HotseatParserCallback(final HashSet mExistingApps, final LongArrayMap mExistingItems, final ArrayList mOutOps, final int mStartItemId, final int mRequiredSize) {
+        this.mExistingApps = mExistingApps;
         this.mExistingItems = mExistingItems;
         this.mOutOps = mOutOps;
         this.mRequiredSize = mRequiredSize;
@@ -60,14 +61,14 @@ class ImportDataTask$HotseatParserCallback implements AutoInstallsLayout$LayoutP
         try {
             uri = Intent.parseUri(contentValues.getAsString(s), 0);
             -wrap1 = getPackage(uri);
-            if (-wrap1 == null || this.mExisitingApps.contains(-wrap1)) {
+            if (-wrap1 == null || this.mExistingApps.contains(-wrap1)) {
                 return n;
             }
         }
         catch (URISyntaxException ex) {
             return n;
         }
-        this.mExisitingApps.add(-wrap1);
+        this.mExistingApps.add(-wrap1);
         long n2;
         for (n2 = n; this.mExistingItems.get(n2) != null; ++n2) {}
         this.mExistingItems.put(n2, (Object)uri);

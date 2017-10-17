@@ -4,15 +4,7 @@
 
 
 # instance fields
-.field private DEFAULT_ESCAPE_ANIMATION_DURATION:I
-
-.field private MAX_DISMISS_VELOCITY:I
-
-.field private MAX_ESCAPE_ANIMATION_DURATION:I
-
-.field private SWIPE_ESCAPE_VELOCITY:F
-
-.field private mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
+.field private final mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
 .field private mCanCurrViewBeDimissed:Z
 
@@ -22,15 +14,15 @@
 
 .field private mDisableHwLayers:Z
 
-.field private mDismissPendingMap:Ljava/util/HashMap;
+.field private final mDismissPendingMap:Landroid/util/ArrayMap;
 
 .field private mDragging:Z
 
-.field private mFalsingThreshold:I
+.field private final mFalsingThreshold:I
 
-.field private mFlingAnimationUtils:Lcom/android/launcher3/notification/FlingAnimationUtils;
+.field private final mFlingAnimationUtils:Lcom/android/launcher3/notification/FlingAnimationUtils;
 
-.field private mHandler:Landroid/os/Handler;
+.field private final mHandler:Landroid/os/Handler;
 
 .field private mInitialTouchPos:F
 
@@ -38,7 +30,7 @@
 
 .field private mLongPressSent:Z
 
-.field private mLongPressTimeout:J
+.field private final mLongPressTimeout:J
 
 .field private mMaxSwipeProgress:F
 
@@ -50,7 +42,7 @@
 
 .field private mSnappingChild:Z
 
-.field private mSwipeDirection:I
+.field private final mSwipeDirection:I
 
 .field private final mTmpPos:[I
 
@@ -58,7 +50,7 @@
 
 .field private mTranslation:F
 
-.field private mVelocityTracker:Landroid/view/VelocityTracker;
+.field private final mVelocityTracker:Landroid/view/VelocityTracker;
 
 .field private mWatchLongPress:Ljava/lang/Runnable;
 
@@ -88,10 +80,10 @@
     return v0
 .end method
 
-.method static synthetic -get3(Lcom/android/launcher3/notification/SwipeHelper;)Ljava/util/HashMap;
+.method static synthetic -get3(Lcom/android/launcher3/notification/SwipeHelper;)Landroid/util/ArrayMap;
     .locals 1
 
-    iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDismissPendingMap:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDismissPendingMap:Landroid/util/ArrayMap;
 
     return-object v0
 .end method
@@ -150,75 +142,55 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 92
+    .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
-    const/high16 v0, 0x42c80000    # 100.0f
-
-    iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->SWIPE_ESCAPE_VELOCITY:F
-
-    .line 54
-    const/16 v0, 0xc8
-
-    iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->DEFAULT_ESCAPE_ANIMATION_DURATION:I
-
-    .line 55
-    const/16 v0, 0x190
-
-    iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->MAX_ESCAPE_ANIMATION_DURATION:I
-
-    .line 56
-    const/16 v0, 0xfa0
-
-    iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->MAX_DISMISS_VELOCITY:I
-
-    .line 61
+    .line 58
     iput v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mMinSwipeProgress:F
 
-    .line 62
+    .line 59
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mMaxSwipeProgress:F
 
-    .line 78
+    .line 75
     iput v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mTranslation:F
 
-    .line 85
+    .line 82
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mTmpPos:[I
 
+    .line 87
+    new-instance v0, Landroid/util/ArrayMap;
+
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
+
+    iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDismissPendingMap:Landroid/util/ArrayMap;
+
     .line 90
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDismissPendingMap:Ljava/util/HashMap;
-
-    .line 93
     iput-object p2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
-    .line 94
+    .line 91
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mHandler:Landroid/os/Handler;
 
-    .line 95
+    .line 92
     iput p1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
-    .line 96
+    .line 93
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 97
+    .line 94
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -231,7 +203,7 @@
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDensityScale:F
 
-    .line 98
+    .line 95
     invoke-static {p3}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -244,7 +216,7 @@
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mPagingTouchSlop:F
 
-    .line 100
+    .line 97
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v0
@@ -259,22 +231,22 @@
 
     iput-wide v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mLongPressTimeout:J
 
-    .line 101
+    .line 98
     invoke-virtual {p3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 102
-    const v1, 0x7f0b0096
+    .line 99
+    const v1, 0x7f0b00a1
 
-    .line 101
+    .line 98
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mFalsingThreshold:I
 
-    .line 103
+    .line 100
     new-instance v0, Lcom/android/launcher3/notification/FlingAnimationUtils;
 
     invoke-virtual {p0}, Lcom/android/launcher3/notification/SwipeHelper;->getMaxEscapeAnimDuration()J
@@ -291,7 +263,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mFlingAnimationUtils:Lcom/android/launcher3/notification/FlingAnimationUtils;
 
-    .line 104
+    .line 101
     return-void
 .end method
 
@@ -299,14 +271,14 @@
     .locals 2
 
     .prologue
-    .line 601
+    .line 598
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     invoke-interface {v0}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->getFalsingThresholdFactor()F
 
     move-result v0
 
-    .line 602
+    .line 599
     iget v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mFalsingThreshold:I
 
     int-to-float v1, v1
@@ -322,12 +294,10 @@
     .locals 2
 
     .prologue
-    .line 606
-    iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->MAX_DISMISS_VELOCITY:I
+    .line 603
+    iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDensityScale:F
 
-    int-to-float v0, v0
-
-    iget v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDensityScale:F
+    const/high16 v1, 0x457a0000    # 4000.0f
 
     mul-float/2addr v0, v1
 
@@ -338,7 +308,7 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 124
     iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
     if-nez v0, :cond_0
@@ -362,7 +332,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 120
     iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
     if-nez v0, :cond_0
@@ -386,7 +356,7 @@
     .locals 3
 
     .prologue
-    .line 190
+    .line 187
     const/4 v0, 0x0
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -410,19 +380,19 @@
     .locals 2
 
     .prologue
-    .line 184
+    .line 181
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getSize(Landroid/view/View;)F
 
     move-result v0
 
-    .line 185
+    .line 182
     div-float v0, p2, v0
 
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
 
-    .line 186
+    .line 183
     iget v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mMinSwipeProgress:F
 
     invoke-static {v1, v0}, Ljava/lang/Math;->max(FF)F
@@ -442,7 +412,7 @@
     .locals 1
 
     .prologue
-    .line 135
+    .line 132
     iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
     if-nez v0, :cond_0
@@ -454,7 +424,7 @@
     :goto_0
     return v0
 
-    .line 136
+    .line 133
     :cond_0
     invoke-virtual {p1}, Landroid/view/VelocityTracker;->getYVelocity()F
 
@@ -467,7 +437,7 @@
     .locals 5
 
     .prologue
-    .line 220
+    .line 217
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getLeft()I
@@ -496,10 +466,10 @@
 
     invoke-direct {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 218
+    .line 215
     invoke-static {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->invalidateGlobalRegion(Landroid/view/View;Landroid/graphics/RectF;)V
 
-    .line 221
+    .line 218
     return-void
 .end method
 
@@ -507,7 +477,7 @@
     .locals 6
 
     .prologue
-    .line 229
+    .line 226
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -523,21 +493,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 230
+    .line 227
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
-    .line 231
+    .line 228
     invoke-virtual {v0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    .line 232
+    .line 229
     iget v1, p1, Landroid/graphics/RectF;->left:F
 
     float-to-double v2, v1
@@ -548,7 +518,7 @@
 
     double-to-int v1, v2
 
-    .line 233
+    .line 230
     iget v2, p1, Landroid/graphics/RectF;->top:F
 
     float-to-double v2, v2
@@ -559,7 +529,7 @@
 
     double-to-int v2, v2
 
-    .line 234
+    .line 231
     iget v3, p1, Landroid/graphics/RectF;->right:F
 
     float-to-double v4, v3
@@ -570,7 +540,7 @@
 
     double-to-int v3, v4
 
-    .line 235
+    .line 232
     iget v4, p1, Landroid/graphics/RectF;->bottom:F
 
     float-to-double v4, v4
@@ -581,14 +551,14 @@
 
     double-to-int v4, v4
 
-    .line 232
+    .line 229
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->invalidate(IIII)V
 
     move-object p0, v0
 
     goto :goto_0
 
-    .line 243
+    .line 240
     :cond_0
     return-void
 .end method
@@ -597,14 +567,14 @@
     .locals 1
 
     .prologue
-    .line 194
+    .line 191
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getTranslation(Landroid/view/View;)F
 
     move-result v0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/launcher3/notification/SwipeHelper;->updateSwipeProgressFromOffset(Landroid/view/View;ZF)V
 
-    .line 195
+    .line 192
     return-void
 .end method
 
@@ -614,12 +584,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 199
+    .line 196
     invoke-direct {p0, p1, p3}, Lcom/android/launcher3/notification/SwipeHelper;->getSwipeProgressForOffset(Landroid/view/View;F)F
 
     move-result v0
 
-    .line 200
+    .line 197
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     invoke-interface {v1, p1, p2, v0}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->updateSwipeProgress(Landroid/view/View;ZF)Z
@@ -628,15 +598,15 @@
 
     if-nez v1, :cond_1
 
-    .line 201
+    .line 198
     if-eqz p2, :cond_1
 
-    .line 203
+    .line 200
     iget-boolean v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDisableHwLayers:Z
 
     if-nez v1, :cond_0
 
-    .line 204
+    .line 201
     const/4 v1, 0x0
 
     cmpl-float v1, v0, v1
@@ -649,12 +619,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 205
+    .line 202
     const/4 v1, 0x2
 
     invoke-virtual {p1, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 210
+    .line 207
     :cond_0
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->getSwipeAlpha(F)F
@@ -663,14 +633,14 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 213
+    .line 210
     :cond_1
     invoke-static {p1}, Lcom/android/launcher3/notification/SwipeHelper;->invalidateGlobalRegion(Landroid/view/View;)V
 
-    .line 214
+    .line 211
     return-void
 
-    .line 207
+    .line 204
     :cond_2
     const/4 v1, 0x0
 
@@ -687,31 +657,31 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 141
+    .line 138
     iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
     if-nez v0, :cond_0
 
     sget-object v0, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
 
-    .line 140
+    .line 137
     :goto_0
     const/4 v1, 0x1
 
     new-array v1, v1, [F
 
-    .line 141
+    .line 138
     aput p2, v1, v2
 
-    .line 140
+    .line 137
     invoke-static {p1, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
-    .line 142
+    .line 139
     return-object v0
 
-    .line 141
+    .line 138
     :cond_0
     sget-object v0, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
@@ -722,14 +692,14 @@
     .locals 7
 
     .prologue
-    .line 345
+    .line 342
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->canChildBeDismissed(Landroid/view/View;)Z
 
     move-result v6
 
-    .line 347
+    .line 344
     invoke-virtual {p1}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v0
@@ -740,7 +710,7 @@
 
     const/4 v0, 0x1
 
-    .line 350
+    .line 347
     :goto_0
     const/4 v1, 0x0
 
@@ -760,7 +730,7 @@
 
     if-eqz p9, :cond_7
 
-    .line 351
+    .line 348
     :cond_0
     iget v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
@@ -772,7 +742,7 @@
 
     move v2, v1
 
-    .line 353
+    .line 350
     :goto_1
     const/4 v1, 0x0
 
@@ -795,7 +765,7 @@
     :cond_1
     move v1, v0
 
-    .line 355
+    .line 352
     :goto_2
     const/4 v0, 0x0
 
@@ -803,7 +773,7 @@
 
     if-ltz v0, :cond_9
 
-    .line 356
+    .line 353
     const/4 v0, 0x0
 
     cmpl-float v0, p2, v0
@@ -822,7 +792,7 @@
 
     xor-int/lit8 v0, p9, 0x1
 
-    .line 358
+    .line 355
     :goto_3
     if-nez v0, :cond_2
 
@@ -830,7 +800,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 359
+    .line 356
     :cond_2
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getSize(Landroid/view/View;)F
 
@@ -838,7 +808,7 @@
 
     neg-float v3, v0
 
-    .line 364
+    .line 361
     :goto_4
     const-wide/16 v0, 0x0
 
@@ -846,19 +816,17 @@
 
     if-nez v0, :cond_3
 
-    .line 365
-    iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->MAX_ESCAPE_ANIMATION_DURATION:I
+    .line 362
+    const-wide/16 v0, 0x190
 
-    int-to-long v0, v0
-
-    .line 366
+    .line 363
     const/4 v2, 0x0
 
     cmpl-float v2, p2, v2
 
     if-eqz v2, :cond_c
 
-    .line 368
+    .line 365
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getTranslation(Landroid/view/View;)F
 
     move-result v2
@@ -883,49 +851,49 @@
 
     int-to-long v4, v2
 
-    .line 367
+    .line 364
     invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p7
 
-    .line 378
+    .line 375
     :cond_3
     :goto_5
     iget-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDisableHwLayers:Z
 
     if-nez v0, :cond_4
 
-    .line 379
+    .line 376
     const/4 v0, 0x2
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 381
+    .line 378
     :cond_4
     new-instance v0, Lcom/android/launcher3/notification/SwipeHelper$2;
 
     invoke-direct {v0, p0, p1, v6}, Lcom/android/launcher3/notification/SwipeHelper$2;-><init>(Lcom/android/launcher3/notification/SwipeHelper;Landroid/view/View;Z)V
 
-    .line 387
+    .line 384
     invoke-virtual {p0, p1, v3, v0}, Lcom/android/launcher3/notification/SwipeHelper;->getViewTranslationAnimator(Landroid/view/View;FLandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/Animator;
 
     move-result-object v1
 
-    .line 388
+    .line 385
     if-nez v1, :cond_d
 
-    .line 389
+    .line 386
     return-void
 
-    .line 347
+    .line 344
     :cond_5
     const/4 v0, 0x0
 
     goto/16 :goto_0
 
-    .line 351
+    .line 348
     :cond_6
     const/4 v1, 0x0
 
@@ -933,7 +901,7 @@
 
     goto :goto_1
 
-    .line 350
+    .line 347
     :cond_7
     const/4 v1, 0x0
 
@@ -941,7 +909,7 @@
 
     goto :goto_1
 
-    .line 353
+    .line 350
     :cond_8
     const/4 v0, 0x0
 
@@ -949,19 +917,19 @@
 
     goto :goto_2
 
-    .line 355
+    .line 352
     :cond_9
     const/4 v0, 0x1
 
     goto :goto_3
 
-    .line 356
+    .line 353
     :cond_a
     const/4 v0, 0x0
 
     goto :goto_3
 
-    .line 361
+    .line 358
     :cond_b
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getSize(Landroid/view/View;)F
 
@@ -969,27 +937,25 @@
 
     goto :goto_4
 
-    .line 372
+    .line 369
     :cond_c
-    iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->DEFAULT_ESCAPE_ANIMATION_DURATION:I
-
-    int-to-long p7, v0
+    const-wide/16 p7, 0xc8
 
     goto :goto_5
 
-    .line 391
+    .line 388
     :cond_d
     if-eqz p6, :cond_f
 
-    .line 392
+    .line 389
     sget-object v0, Lcom/android/launcher3/notification/Interpolators;->FAST_OUT_LINEAR_IN:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 393
+    .line 390
     invoke-virtual {v1, p7, p8}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 398
+    .line 395
     :goto_6
     const-wide/16 v2, 0x0
 
@@ -997,10 +963,10 @@
 
     if-lez v0, :cond_e
 
-    .line 399
+    .line 396
     invoke-virtual {v1, p4, p5}, Landroid/animation/Animator;->setStartDelay(J)V
 
-    .line 401
+    .line 398
     :cond_e
     new-instance v0, Lcom/android/launcher3/notification/SwipeHelper$3;
 
@@ -1008,21 +974,21 @@
 
     invoke-virtual {v1, v0}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 423
+    .line 420
     invoke-virtual {p0, p1, v1}, Lcom/android/launcher3/notification/SwipeHelper;->prepareDismissAnimation(Landroid/view/View;Landroid/animation/Animator;)V
 
-    .line 424
-    iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDismissPendingMap:Ljava/util/HashMap;
+    .line 421
+    iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDismissPendingMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 425
+    .line 422
     invoke-virtual {v1}, Landroid/animation/Animator;->start()V
 
-    .line 426
+    .line 423
     return-void
 
-    .line 395
+    .line 392
     :cond_f
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mFlingAnimationUtils:Lcom/android/launcher3/notification/FlingAnimationUtils;
 
@@ -1030,14 +996,14 @@
 
     move-result v2
 
-    .line 396
+    .line 393
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getSize(Landroid/view/View;)F
 
     move-result v5
 
     move v4, p2
 
-    .line 395
+    .line 392
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/notification/FlingAnimationUtils;->applyDismissing(Landroid/animation/Animator;FFFF)V
 
     goto :goto_6
@@ -1049,10 +1015,10 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 330
+    .line 327
     const/4 v3, 0x0
 
-    .line 331
+    .line 328
     const/4 v9, 0x0
 
     move-object v0, p0
@@ -1065,10 +1031,10 @@
 
     move-wide v7, v4
 
-    .line 330
+    .line 327
     invoke-virtual/range {v0 .. v9}, Lcom/android/launcher3/notification/SwipeHelper;->dismissChild(Landroid/view/View;FLjava/lang/Runnable;JZJZ)V
 
-    .line 332
+    .line 329
     return-void
 .end method
 
@@ -1076,7 +1042,7 @@
     .locals 2
 
     .prologue
-    .line 610
+    .line 607
     invoke-virtual {p0}, Lcom/android/launcher3/notification/SwipeHelper;->getUnscaledEscapeVelocity()F
 
     move-result v0
@@ -1092,10 +1058,8 @@
     .locals 2
 
     .prologue
-    .line 618
-    iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->MAX_ESCAPE_ANIMATION_DURATION:I
-
-    int-to-long v0, v0
+    .line 615
+    const-wide/16 v0, 0x190
 
     return-wide v0
 .end method
@@ -1104,7 +1068,7 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 168
     iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
     if-nez v0, :cond_0
@@ -1118,7 +1082,7 @@
 
     return v0
 
-    .line 172
+    .line 169
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -1131,7 +1095,7 @@
     .locals 1
 
     .prologue
-    .line 131
+    .line 128
     iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
     if-nez v0, :cond_0
@@ -1155,8 +1119,8 @@
     .locals 1
 
     .prologue
-    .line 614
-    iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->SWIPE_ESCAPE_VELOCITY:F
+    .line 611
+    const/high16 v0, 0x42c80000    # 100.0f
 
     return v0
 .end method
@@ -1165,18 +1129,18 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 149
     invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/notification/SwipeHelper;->createTranslationAnimation(Landroid/view/View;F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
-    .line 153
+    .line 150
     if-eqz p3, :cond_0
 
-    .line 154
+    .line 151
     invoke-virtual {v0, p3}, Landroid/animation/ObjectAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 156
+    .line 153
     :cond_0
     return-object v0
 .end method
@@ -1185,7 +1149,7 @@
     .locals 1
 
     .prologue
-    .line 643
+    .line 640
     const/4 v0, 0x0
 
     return v0
@@ -1197,7 +1161,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 627
+    .line 624
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     invoke-interface {v1}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->isAntiFalsingNeeded()Z
@@ -1210,7 +1174,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    .line 628
+    .line 625
     :goto_0
     if-nez v1, :cond_1
 
@@ -1226,7 +1190,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 629
+    .line 626
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -1236,7 +1200,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 630
+    .line 627
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
@@ -1245,14 +1209,14 @@
 
     move-result v0
 
-    .line 628
+    .line 625
     :cond_1
     return v0
 
     :cond_2
     move v1, v0
 
-    .line 627
+    .line 624
     goto :goto_0
 .end method
 
@@ -1260,7 +1224,7 @@
     .locals 0
 
     .prologue
-    .line 473
+    .line 470
     return-void
 .end method
 
@@ -1274,15 +1238,15 @@
 
     const/4 v2, 0x0
 
-    .line 253
+    .line 250
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 255
+    .line 252
     packed-switch v0, :pswitch_data_0
 
-    .line 321
+    .line 318
     :cond_0
     :goto_0
     iget-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDragging:Z
@@ -1294,25 +1258,25 @@
     :cond_1
     return v1
 
-    .line 257
+    .line 254
     :pswitch_0
     iput-boolean v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mTouchAboveFalsingThreshold:Z
 
-    .line 258
+    .line 255
     iput-boolean v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDragging:Z
 
-    .line 259
+    .line 256
     iput-boolean v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSnappingChild:Z
 
-    .line 260
+    .line 257
     iput-boolean v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mLongPressSent:Z
 
-    .line 261
+    .line 258
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->clear()V
 
-    .line 262
+    .line 259
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->getChildAtPosition(Landroid/view/MotionEvent;)Landroid/view/View;
@@ -1321,17 +1285,17 @@
 
     iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
-    .line 264
+    .line 261
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 265
+    .line 262
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->onDownUpdate(Landroid/view/View;)V
 
-    .line 266
+    .line 263
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     iget-object v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
@@ -1342,26 +1306,26 @@
 
     iput-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCanCurrViewBeDimissed:Z
 
-    .line 267
+    .line 264
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 268
+    .line 265
     invoke-direct {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getPos(Landroid/view/MotionEvent;)F
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mInitialTouchPos:F
 
-    .line 269
+    .line 266
     invoke-direct {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getPerpendicularPos(Landroid/view/MotionEvent;)F
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mPerpendicularInitialTouchPos:F
 
-    .line 270
+    .line 267
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->getTranslation(Landroid/view/View;)F
@@ -1370,24 +1334,24 @@
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mTranslation:F
 
-    .line 271
+    .line 268
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mLongPressListener:Lcom/android/launcher3/notification/SwipeHelper$LongPressListener;
 
     if-eqz v0, :cond_0
 
-    .line 272
+    .line 269
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mWatchLongPress:Ljava/lang/Runnable;
 
     if-nez v0, :cond_2
 
-    .line 273
+    .line 270
     new-instance v0, Lcom/android/launcher3/notification/SwipeHelper$1;
 
     invoke-direct {v0, p0, p1}, Lcom/android/launcher3/notification/SwipeHelper$1;-><init>(Lcom/android/launcher3/notification/SwipeHelper;Landroid/view/MotionEvent;)V
 
     iput-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mWatchLongPress:Ljava/lang/Runnable;
 
-    .line 288
+    .line 285
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mHandler:Landroid/os/Handler;
 
@@ -1399,7 +1363,7 @@
 
     goto :goto_0
 
-    .line 294
+    .line 291
     :pswitch_1
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
@@ -1411,32 +1375,32 @@
 
     if-eqz v0, :cond_0
 
-    .line 295
+    .line 292
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 296
+    .line 293
     invoke-direct {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getPos(Landroid/view/MotionEvent;)F
 
     move-result v0
 
-    .line 297
+    .line 294
     invoke-direct {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getPerpendicularPos(Landroid/view/MotionEvent;)F
 
     move-result v2
 
-    .line 298
+    .line 295
     iget v3, p0, Lcom/android/launcher3/notification/SwipeHelper;->mInitialTouchPos:F
 
     sub-float/2addr v0, v3
 
-    .line 299
+    .line 296
     iget v3, p0, Lcom/android/launcher3/notification/SwipeHelper;->mPerpendicularInitialTouchPos:F
 
     sub-float/2addr v2, v3
 
-    .line 300
+    .line 297
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -1447,7 +1411,7 @@
 
     if-lez v3, :cond_0
 
-    .line 301
+    .line 298
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -1460,24 +1424,24 @@
 
     if-lez v0, :cond_0
 
-    .line 302
+    .line 299
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     iget-object v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-interface {v0, v2}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->onBeginDrag(Landroid/view/View;)V
 
-    .line 303
+    .line 300
     iput-boolean v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDragging:Z
 
-    .line 304
+    .line 301
     invoke-direct {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getPos(Landroid/view/MotionEvent;)F
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mInitialTouchPos:F
 
-    .line 305
+    .line 302
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->getTranslation(Landroid/view/View;)F
@@ -1486,12 +1450,12 @@
 
     iput v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mTranslation:F
 
-    .line 306
+    .line 303
     invoke-virtual {p0}, Lcom/android/launcher3/notification/SwipeHelper;->removeLongPressCallback()V
 
     goto/16 :goto_0
 
-    .line 313
+    .line 310
     :pswitch_2
     iget-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDragging:Z
 
@@ -1499,20 +1463,20 @@
 
     iget-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mLongPressSent:Z
 
-    .line 314
+    .line 311
     :goto_1
     iput-boolean v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDragging:Z
 
-    .line 315
+    .line 312
     iput-object v3, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
-    .line 316
+    .line 313
     iput-boolean v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mLongPressSent:Z
 
-    .line 317
+    .line 314
     invoke-virtual {p0}, Lcom/android/launcher3/notification/SwipeHelper;->removeLongPressCallback()V
 
-    .line 318
+    .line 315
     if-eqz v0, :cond_0
 
     return v1
@@ -1520,10 +1484,10 @@
     :cond_3
     move v0, v1
 
-    .line 313
+    .line 310
     goto :goto_1
 
-    .line 255
+    .line 252
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -1537,7 +1501,7 @@
     .locals 0
 
     .prologue
-    .line 480
+    .line 477
     return-void
 .end method
 
@@ -1553,21 +1517,21 @@
 
     const/4 v6, 0x1
 
-    .line 526
+    .line 523
     iget-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mLongPressSent:Z
 
     if-eqz v0, :cond_0
 
-    .line 527
+    .line 524
     return v6
 
-    .line 530
+    .line 527
     :cond_0
     iget-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDragging:Z
 
     if-nez v0, :cond_2
 
-    .line 531
+    .line 528
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->getChildAtPosition(Landroid/view/MotionEvent;)Landroid/view/View;
@@ -1576,45 +1540,45 @@
 
     if-eqz v0, :cond_1
 
-    .line 535
+    .line 532
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 536
+    .line 533
     return v6
 
-    .line 541
+    .line 538
     :cond_1
     invoke-virtual {p0}, Lcom/android/launcher3/notification/SwipeHelper;->removeLongPressCallback()V
 
-    .line 542
+    .line 539
     return v5
 
-    .line 546
+    .line 543
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 547
+    .line 544
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 548
+    .line 545
     packed-switch v0, :pswitch_data_0
 
-    .line 597
+    .line 594
     :cond_3
     :goto_0
     return v6
 
-    .line 551
+    .line 548
     :pswitch_0
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     if-eqz v0, :cond_3
 
-    .line 552
+    .line 549
     invoke-direct {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->getPos(Landroid/view/MotionEvent;)F
 
     move-result v0
@@ -1623,12 +1587,12 @@
 
     sub-float v1, v0, v1
 
-    .line 553
+    .line 550
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
 
-    .line 554
+    .line 551
     invoke-direct {p0}, Lcom/android/launcher3/notification/SwipeHelper;->getFalsingThreshold()I
 
     move-result v0
@@ -1639,10 +1603,10 @@
 
     if-ltz v0, :cond_4
 
-    .line 555
+    .line 552
     iput-boolean v6, p0, Lcom/android/launcher3/notification/SwipeHelper;->mTouchAboveFalsingThreshold:Z
 
-    .line 559
+    .line 556
     :cond_4
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
@@ -1656,29 +1620,29 @@
 
     if-eqz v0, :cond_9
 
-    .line 560
+    .line 557
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->getSize(Landroid/view/View;)F
 
     move-result v3
 
-    .line 561
+    .line 558
     const/high16 v0, 0x3e800000    # 0.25f
 
     mul-float/2addr v0, v3
 
-    .line 562
+    .line 559
     cmpl-float v2, v2, v3
 
     if-ltz v2, :cond_6
 
-    .line 563
+    .line 560
     cmpl-float v1, v1, v4
 
     if-lez v1, :cond_5
 
-    .line 569
+    .line 566
     :goto_1
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
@@ -1688,14 +1652,14 @@
 
     invoke-virtual {p0, v1, v2}, Lcom/android/launcher3/notification/SwipeHelper;->setTranslation(Landroid/view/View;F)V
 
-    .line 570
+    .line 567
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     iget-boolean v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCanCurrViewBeDimissed:Z
 
     invoke-direct {p0, v1, v2}, Lcom/android/launcher3/notification/SwipeHelper;->updateSwipeProgressFromOffset(Landroid/view/View;Z)V
 
-    .line 571
+    .line 568
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     iget v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mTranslation:F
@@ -1706,13 +1670,13 @@
 
     goto :goto_0
 
-    .line 563
+    .line 560
     :cond_5
     neg-float v0, v0
 
     goto :goto_1
 
-    .line 565
+    .line 562
     :cond_6
     div-float/2addr v1, v3
 
@@ -1732,13 +1696,13 @@
 
     goto :goto_1
 
-    .line 576
+    .line 573
     :pswitch_1
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     if-eqz v0, :cond_3
 
-    .line 579
+    .line 576
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-direct {p0}, Lcom/android/launcher3/notification/SwipeHelper;->getMaxVelocity()F
@@ -1749,14 +1713,14 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/view/VelocityTracker;->computeCurrentVelocity(IF)V
 
-    .line 580
+    .line 577
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->getVelocity(Landroid/view/VelocityTracker;)F
 
     move-result v0
 
-    .line 582
+    .line 579
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     iget-object v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
@@ -1771,37 +1735,37 @@
 
     if-nez v1, :cond_7
 
-    .line 583
+    .line 580
     invoke-virtual {p0, p1}, Lcom/android/launcher3/notification/SwipeHelper;->isDismissGesture(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
     if-eqz v1, :cond_8
 
-    .line 585
+    .line 582
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
-    .line 586
+    .line 583
     invoke-virtual {p0}, Lcom/android/launcher3/notification/SwipeHelper;->swipedFastEnough()Z
 
     move-result v2
 
     xor-int/lit8 v2, v2, 0x1
 
-    .line 585
+    .line 582
     invoke-virtual {p0, v1, v0, v2}, Lcom/android/launcher3/notification/SwipeHelper;->dismissChild(Landroid/view/View;FZ)V
 
-    .line 592
+    .line 589
     :goto_2
     iput-object v3, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
-    .line 594
+    .line 591
     :cond_7
     iput-boolean v5, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDragging:Z
 
     goto/16 :goto_0
 
-    .line 589
+    .line 586
     :cond_8
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
@@ -1809,7 +1773,7 @@
 
     invoke-interface {v1, v2}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->onDragCancelled(Landroid/view/View;)V
 
-    .line 590
+    .line 587
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-virtual {p0, v1, v4, v0}, Lcom/android/launcher3/notification/SwipeHelper;->snapChild(Landroid/view/View;FF)V
@@ -1821,7 +1785,7 @@
 
     goto :goto_1
 
-    .line 548
+    .line 545
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1835,10 +1799,10 @@
     .locals 0
 
     .prologue
-    .line 487
+    .line 484
     invoke-direct {p0, p1, p3, p2}, Lcom/android/launcher3/notification/SwipeHelper;->updateSwipeProgressFromOffset(Landroid/view/View;ZF)V
 
-    .line 488
+    .line 485
     return-void
 .end method
 
@@ -1846,7 +1810,7 @@
     .locals 0
 
     .prologue
-    .line 433
+    .line 430
     return-void
 .end method
 
@@ -1854,7 +1818,7 @@
     .locals 0
 
     .prologue
-    .line 466
+    .line 463
     return-void
 .end method
 
@@ -1864,22 +1828,22 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 246
+    .line 243
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mWatchLongPress:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 244
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mWatchLongPress:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 248
+    .line 245
     iput-object v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mWatchLongPress:Ljava/lang/Runnable;
 
-    .line 250
+    .line 247
     :cond_0
     return-void
 .end method
@@ -1888,10 +1852,10 @@
     .locals 0
 
     .prologue
-    .line 119
+    .line 116
     iput-boolean p1, p0, Lcom/android/launcher3/notification/SwipeHelper;->mDisableHwLayers:Z
 
-    .line 120
+    .line 117
     return-void
 .end method
 
@@ -1899,26 +1863,26 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 157
     if-nez p1, :cond_0
 
-    .line 161
+    .line 158
     return-void
 
-    .line 163
+    .line 160
     :cond_0
     iget v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSwipeDirection:I
 
     if-nez v0, :cond_1
 
-    .line 164
+    .line 161
     invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 168
+    .line 165
     :goto_0
     return-void
 
-    .line 166
+    .line 163
     :cond_1
     invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
 
@@ -1929,54 +1893,54 @@
     .locals 4
 
     .prologue
-    .line 436
+    .line 433
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCallback:Lcom/android/launcher3/notification/SwipeHelper$Callback;
 
     invoke-interface {v0, p1}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->canChildBeDismissed(Landroid/view/View;)Z
 
     move-result v0
 
-    .line 437
+    .line 434
     new-instance v1, Lcom/android/launcher3/notification/SwipeHelper$4;
 
     invoke-direct {v1, p0, p1, v0}, Lcom/android/launcher3/notification/SwipeHelper$4;-><init>(Lcom/android/launcher3/notification/SwipeHelper;Landroid/view/View;Z)V
 
-    .line 443
+    .line 440
     invoke-virtual {p0, p1, p2, v1}, Lcom/android/launcher3/notification/SwipeHelper;->getViewTranslationAnimator(Landroid/view/View;FLandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/Animator;
 
     move-result-object v1
 
-    .line 444
+    .line 441
     if-nez v1, :cond_0
 
-    .line 445
+    .line 442
     return-void
 
-    .line 448
+    .line 445
     :cond_0
     const-wide/16 v2, 0x96
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 449
+    .line 446
     new-instance v2, Lcom/android/launcher3/notification/SwipeHelper$5;
 
     invoke-direct {v2, p0, p1, v0, p2}, Lcom/android/launcher3/notification/SwipeHelper$5;-><init>(Lcom/android/launcher3/notification/SwipeHelper;Landroid/view/View;ZF)V
 
     invoke-virtual {v1, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 456
+    .line 453
     invoke-virtual {p0, p1, v1}, Lcom/android/launcher3/notification/SwipeHelper;->prepareSnapBackAnimation(Landroid/view/View;Landroid/animation/Animator;)V
 
-    .line 457
+    .line 454
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mSnappingChild:Z
 
-    .line 458
+    .line 455
     invoke-virtual {v1}, Landroid/animation/Animator;->start()V
 
-    .line 459
+    .line 456
     return-void
 .end method
 
@@ -1984,14 +1948,14 @@
     .locals 6
 
     .prologue
-    .line 622
+    .line 619
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/SwipeHelper;->getTranslation(Landroid/view/View;)F
 
     move-result v0
 
-    .line 623
+    .line 620
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -2035,21 +1999,21 @@
 
     const/4 v1, 0x0
 
-    .line 634
+    .line 631
     iget-object v2, p0, Lcom/android/launcher3/notification/SwipeHelper;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-direct {p0, v2}, Lcom/android/launcher3/notification/SwipeHelper;->getVelocity(Landroid/view/VelocityTracker;)F
 
     move-result v2
 
-    .line 635
+    .line 632
     iget-object v3, p0, Lcom/android/launcher3/notification/SwipeHelper;->mCurrView:Landroid/view/View;
 
     invoke-virtual {p0, v3}, Lcom/android/launcher3/notification/SwipeHelper;->getTranslation(Landroid/view/View;)F
 
     move-result v4
 
-    .line 636
+    .line 633
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -2062,7 +2026,7 @@
 
     if-lez v3, :cond_3
 
-    .line 637
+    .line 634
     cmpl-float v2, v2, v6
 
     if-lez v2, :cond_0
@@ -2079,14 +2043,14 @@
     :goto_1
     if-ne v3, v2, :cond_2
 
-    .line 638
+    .line 635
     :goto_2
     return v0
 
     :cond_0
     move v3, v1
 
-    .line 637
+    .line 634
     goto :goto_0
 
     :cond_1
@@ -2102,6 +2066,6 @@
     :cond_3
     move v0, v1
 
-    .line 636
+    .line 633
     goto :goto_2
 .end method

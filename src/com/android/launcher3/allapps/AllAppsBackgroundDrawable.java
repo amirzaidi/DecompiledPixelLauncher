@@ -7,7 +7,10 @@ package com.android.launcher3.allapps;
 import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.Canvas;
+import com.android.launcher3.LauncherAnimUtils;
 import android.content.res.Resources;
+import android.view.ContextThemeWrapper;
+import com.android.launcher3.util.Themes;
 import android.content.Context;
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.Drawable;
@@ -23,13 +26,21 @@ public class AllAppsBackgroundDrawable extends Drawable
     public AllAppsBackgroundDrawable(final Context context) {
         final int n = 1;
         final Resources resources = context.getResources();
-        this.mHand = new AllAppsBackgroundDrawable$TransformedImageDrawable(resources, 2130837558, 0.575f, 0.0f, n);
-        (this.mIcons = new AllAppsBackgroundDrawable$TransformedImageDrawable[4])[0] = new AllAppsBackgroundDrawable$TransformedImageDrawable(resources, 2130837559, 0.375f, 0.0f, n);
-        this.mIcons[n] = new AllAppsBackgroundDrawable$TransformedImageDrawable(resources, 2130837560, 0.3125f, 0.2f, n);
-        this.mIcons[2] = new AllAppsBackgroundDrawable$TransformedImageDrawable(resources, 2130837561, 0.475f, 0.26f, n);
-        this.mIcons[3] = new AllAppsBackgroundDrawable$TransformedImageDrawable(resources, 2130837562, 0.7f, 0.125f, n);
-        this.mWidth = resources.getDimensionPixelSize(2131427383);
-        this.mHeight = resources.getDimensionPixelSize(2131427384);
+        this.mWidth = resources.getDimensionPixelSize(2131427392);
+        this.mHeight = resources.getDimensionPixelSize(2131427393);
+        int n2;
+        if (Themes.getAttrBoolean(context, 2130772010)) {
+            n2 = 2131886098;
+        }
+        else {
+            n2 = 2131886097;
+        }
+        final ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(context, n2);
+        this.mHand = new AllAppsBackgroundDrawable$TransformedImageDrawable((Context)contextThemeWrapper, 2130837557, 0.575f, 0.0f, n);
+        (this.mIcons = new AllAppsBackgroundDrawable$TransformedImageDrawable[4])[0] = new AllAppsBackgroundDrawable$TransformedImageDrawable((Context)contextThemeWrapper, 2130837558, 0.375f, 0.0f, n);
+        this.mIcons[n] = new AllAppsBackgroundDrawable$TransformedImageDrawable((Context)contextThemeWrapper, 2130837559, 0.3125f, 0.2f, n);
+        this.mIcons[2] = new AllAppsBackgroundDrawable$TransformedImageDrawable((Context)contextThemeWrapper, 2130837560, 0.475f, 0.26f, n);
+        this.mIcons[3] = new AllAppsBackgroundDrawable$TransformedImageDrawable((Context)contextThemeWrapper, 2130837561, 0.7f, 0.125f, n);
     }
     
     private ObjectAnimator cancelAnimator(final ObjectAnimator objectAnimator) {
@@ -43,7 +54,7 @@ public class AllAppsBackgroundDrawable extends Drawable
         final int n3 = (int)(255.0f * n);
         if (this.getAlpha() != n3) {
             this.mBackgroundAnim = this.cancelAnimator(this.mBackgroundAnim);
-            (this.mBackgroundAnim = ObjectAnimator.ofInt((Object)this, "alpha", new int[] { n3 })).setDuration((long)n2);
+            (this.mBackgroundAnim = ObjectAnimator.ofInt((Object)this, LauncherAnimUtils.DRAWABLE_ALPHA, new int[] { n3 })).setDuration((long)n2);
             this.mBackgroundAnim.start();
         }
     }

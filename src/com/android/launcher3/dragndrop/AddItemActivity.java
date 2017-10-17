@@ -15,6 +15,7 @@ import android.content.ClipDescription;
 import android.app.ActivityOptions;
 import com.android.launcher3.Utilities;
 import android.os.Parcelable;
+import com.android.launcher3.compat.LauncherAppsCompatVO;
 import com.android.launcher3.widget.WidgetHostViewLoader;
 import com.android.launcher3.LauncherAppWidgetProviderInfo;
 import com.android.launcher3.widget.PendingAddShortcutInfo;
@@ -27,7 +28,7 @@ import com.android.launcher3.logging.LoggerUtils;
 import com.android.launcher3.InstallShortcutReceiver;
 import android.content.Context;
 import android.os.Bundle;
-import com.android.launcher3.compat.PinItemRequestCompat;
+import android.content.pm.LauncherApps$PinItemRequest;
 import com.android.launcher3.widget.PendingAddWidgetInfo;
 import android.graphics.PointF;
 import com.android.launcher3.InvariantDeviceProfile;
@@ -43,16 +44,18 @@ public class AddItemActivity extends BaseActivity implements View$OnLongClickLis
     private LauncherAppState mApp;
     private AppWidgetHost mAppWidgetHost;
     private AppWidgetManagerCompat mAppWidgetManager;
+    private boolean mFinishOnPause;
     private InvariantDeviceProfile mIdp;
     private final PointF mLastTouchPos;
     private int mPendingBindWidgetId;
     private PendingAddWidgetInfo mPendingWidgetInfo;
-    private PinItemRequestCompat mRequest;
+    private LauncherApps$PinItemRequest mRequest;
     private LivePreviewWidgetCell mWidgetCell;
     private Bundle mWidgetOptions;
     
     public AddItemActivity() {
         this.mLastTouchPos = new PointF();
+        this.mFinishOnPause = false;
     }
     
     private void acceptWidget(final int n) {
@@ -128,7 +131,7 @@ public class AddItemActivity extends BaseActivity implements View$OnLongClickLis
     
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
-        this.mRequest = PinItemRequestCompat.getPinItemRequest(this.getIntent());
+        this.mRequest = LauncherAppsCompatVO.getPinItemRequest(this.getIntent());
         if (this.mRequest == null) {
             this.finish();
             return;
@@ -137,7 +140,7 @@ public class AddItemActivity extends BaseActivity implements View$OnLongClickLis
         this.mIdp = this.mApp.getInvariantDeviceProfile();
         this.mDeviceProfile = this.mIdp.getDeviceProfile(this.getApplicationContext());
         this.setContentView(2130968576);
-        this.mWidgetCell = (LivePreviewWidgetCell)this.findViewById(2131623972);
+        this.mWidgetCell = (LivePreviewWidgetCell)this.findViewById(2131623975);
         if (this.mRequest.getRequestType() == 1) {
             this.setupShortcut();
         }
@@ -152,6 +155,7 @@ public class AddItemActivity extends BaseActivity implements View$OnLongClickLis
     }
     
     public boolean onLongClick(final View view) {
+        final int mFinishOnPause = 1;
         final WidgetImageView widgetView = this.mWidgetCell.getWidgetView();
         if (widgetView.getBitmap() == null) {
             return false;
@@ -164,8 +168,18 @@ public class AddItemActivity extends BaseActivity implements View$OnLongClickLis
             putExtra.addFlags(32768);
         }
         this.startActivity(putExtra, ActivityOptions.makeCustomAnimation((Context)this, 0, 17432577).toBundle());
-        view.startDragAndDrop(new ClipData(new ClipDescription((CharSequence)"", new String[] { pinItemDragListener.getMimeType() }), new ClipData$Item((CharSequence)"")), (View$DragShadowBuilder)new AddItemActivity$1(this, view), (Object)null, 256);
+        this.mFinishOnPause = (mFinishOnPause != 0);
+        final String[] array = new String[mFinishOnPause];
+        array[0] = pinItemDragListener.getMimeType();
+        view.startDragAndDrop(new ClipData(new ClipDescription((CharSequence)"", array), new ClipData$Item((CharSequence)"")), (View$DragShadowBuilder)new AddItemActivity$1(this, view), (Object)null, 256);
         return false;
+    }
+    
+    protected void onPause() {
+        super.onPause();
+        if (this.mFinishOnPause) {
+            this.finish();
+        }
     }
     
     public void onPlaceAutomaticallyClick(final View view) {

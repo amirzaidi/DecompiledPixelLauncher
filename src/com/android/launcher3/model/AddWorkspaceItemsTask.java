@@ -4,18 +4,23 @@
 
 package com.android.launcher3.model;
 
+import com.android.launcher3.Utilities;
 import android.os.UserHandle;
-import android.content.Intent;
 import com.android.launcher3.LauncherSettings$Settings;
 import android.util.LongSparseArray;
-import android.util.Pair;
 import android.content.Context;
 import com.android.launcher3.LauncherModel$CallbackTask;
 import com.android.launcher3.LauncherAppWidgetInfo;
 import com.android.launcher3.FolderInfo;
 import com.android.launcher3.ShortcutInfo;
-import com.android.launcher3.LauncherModel;
+import com.android.launcher3.util.ManagedProfileHeuristic$UserFolderInfo;
+import android.content.pm.LauncherActivityInfo;
+import android.os.Process;
 import com.android.launcher3.AppInfo;
+import android.content.Intent;
+import android.util.Pair;
+import com.android.launcher3.LauncherModel;
+import android.util.ArrayMap;
 import java.util.List;
 import com.android.launcher3.AllAppsList;
 import java.util.Iterator;
@@ -26,7 +31,7 @@ import java.util.ArrayList;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.util.Provider;
 
-public class AddWorkspaceItemsTask extends ExtendedModelTask
+public class AddWorkspaceItemsTask extends BaseModelUpdateTask
 {
     private final Provider mAppsProvider;
     
@@ -51,46 +56,106 @@ public class AddWorkspaceItemsTask extends ExtendedModelTask
         if (list2.isEmpty()) {
             return;
         }
+        Context context = null;
+        ArrayList<ItemInfo> list3 = null;
+        ArrayList list4 = null;
+        ArrayMap arrayMap = null;
+        ArrayList loadWorkspaceScreensDb = null;
+        ArrayList<ItemInfo> list5 = null;
+        Object o = null;
+        Object o2;
+        ManagedProfileHeuristic$UserFolderInfo managedProfileHeuristic$UserFolderInfo;
+        Label_0238_Outer:Label_0406_Outer:
         while (true) {
-            final Context context = launcherAppState.getContext();
-            final ArrayList<AppInfo> list3 = new ArrayList<AppInfo>();
-            final ArrayList list4 = new ArrayList();
-            final ArrayList loadWorkspaceScreensDb = LauncherModel.loadWorkspaceScreensDb(context);
-            Label_0402: {
-                while (true) {
-                    ItemInfo shortcut = null;
-                    Label_0354: {
-                        synchronized (bgDataModel) {
-                            final Iterator<ItemInfo> iterator = list2.iterator();
-                            while (iterator.hasNext()) {
-                                final ItemInfo itemInfo = shortcut = iterator.next();
-                                if ((itemInfo.itemType != 0 && itemInfo.itemType != 1) || !this.shortcutExists(bgDataModel, shortcut.getIntent(), shortcut.user)) {
-                                    final Pair spaceForItem = this.findSpaceForItem(launcherAppState, bgDataModel, loadWorkspaceScreensDb, list4, shortcut.spanX, shortcut.spanY);
-                                    final long longValue = (long)spaceForItem.first;
-                                    final int[] array = (int[])spaceForItem.second;
-                                    if (!(shortcut instanceof ShortcutInfo) && !(shortcut instanceof FolderInfo) && !(shortcut instanceof LauncherAppWidgetInfo)) {
-                                        break Label_0354;
+            context = launcherAppState.getContext();
+            list3 = new ArrayList<ItemInfo>();
+            list4 = new ArrayList();
+            arrayMap = new ArrayMap();
+            loadWorkspaceScreensDb = LauncherModel.loadWorkspaceScreensDb(context);
+            while (true) {
+                Label_0821: {
+                    while (true) {
+                        Label_0814: {
+                            while (true) {
+                                Label_0807: {
+                                    synchronized (bgDataModel) {
+                                        list5 = new ArrayList<ItemInfo>();
+                                        for (final Pair pair : list2) {
+                                            o = pair.first;
+                                            o = o;
+                                            if (((ItemInfo)o).itemType == 0 || ((ItemInfo)o).itemType == 1) {
+                                                o2 = ((ItemInfo)o).getIntent();
+                                                if (this.shortcutExists(bgDataModel, (Intent)o2, ((ItemInfo)o).user)) {
+                                                    continue Label_0238_Outer;
+                                                }
+                                            }
+                                            if (((ItemInfo)o).itemType != 0) {
+                                                break Label_0821;
+                                            }
+                                            if (!(o instanceof AppInfo)) {
+                                                break Label_0814;
+                                            }
+                                            o = o;
+                                            o2 = ((AppInfo)o).makeShortcut();
+                                            o = Process.myUserHandle();
+                                            if (!((UserHandle)o).equals(((ItemInfo)o2).user)) {
+                                                o = pair.second;
+                                                if (!(o instanceof LauncherActivityInfo)) {
+                                                    continue Label_0238_Outer;
+                                                }
+                                                o = ((ItemInfo)o2).user;
+                                                o = arrayMap.get(o);
+                                                o = o;
+                                                if (o != null) {
+                                                    break Label_0807;
+                                                }
+                                                o = new ManagedProfileHeuristic$UserFolderInfo(context, ((ItemInfo)o2).user, bgDataModel);
+                                                arrayMap.put((Object)((ItemInfo)o2).user, o);
+                                                managedProfileHeuristic$UserFolderInfo = (ManagedProfileHeuristic$UserFolderInfo)o;
+                                                o2 = managedProfileHeuristic$UserFolderInfo.convertToWorkspaceItem((ShortcutInfo)(o = o2), (LauncherActivityInfo)pair.second);
+                                            }
+                                            if (o2 == null) {
+                                                continue Label_0238_Outer;
+                                            }
+                                            list5.add((ShortcutInfo)o2);
+                                        }
                                     }
-                                    this.getModelWriter().addItemToDatabase(shortcut, -100, longValue, array[0], array[1]);
-                                    list3.add((AppInfo)shortcut);
+                                    break;
                                 }
+                                managedProfileHeuristic$UserFolderInfo = (ManagedProfileHeuristic$UserFolderInfo)o;
+                                continue Label_0406_Outer;
                             }
-                            break Label_0402;
                         }
+                        o2 = o;
+                        continue Label_0406_Outer;
                     }
-                    if (shortcut instanceof AppInfo) {
-                        shortcut = ((AppInfo)shortcut).makeShortcut();
-                        continue;
-                    }
-                    break;
                 }
-                throw new RuntimeException("Unexpected info type");
+                o2 = o;
+                continue;
             }
-            // monitorexit(bgDataModel)
-            this.updateScreens(context, loadWorkspaceScreensDb);
-            if (!list3.isEmpty()) {
-                this.scheduleCallbackTask(new AddWorkspaceItemsTask$1(this, list3, list4));
+        }
+        for (ItemInfo shortcut : list5) {
+            final ItemInfo itemInfo = shortcut;
+            final Pair spaceForItem = this.findSpaceForItem(launcherAppState, bgDataModel, loadWorkspaceScreensDb, list4, itemInfo.spanX, itemInfo.spanY);
+            final long longValue = (long)spaceForItem.first;
+            final int[] array = (int[])spaceForItem.second;
+            if (!(itemInfo instanceof ShortcutInfo) && !(itemInfo instanceof FolderInfo) && !(itemInfo instanceof LauncherAppWidgetInfo)) {
+                if (!(itemInfo instanceof AppInfo)) {
+                    throw new RuntimeException("Unexpected info type");
+                }
+                shortcut = ((AppInfo)itemInfo).makeShortcut();
             }
+            this.getModelWriter().addItemToDatabase(shortcut, -100, longValue, array[0], array[1]);
+            list3.add(shortcut);
+        }
+        // monitorexit(bgDataModel)
+        this.updateScreens(context, loadWorkspaceScreensDb);
+        if (!list3.isEmpty()) {
+            this.scheduleCallbackTask(new AddWorkspaceItemsTask$1(this, list3, list4));
+        }
+        final Iterator iterator3 = arrayMap.values().iterator();
+        while (iterator3.hasNext()) {
+            iterator3.next().applyPendingState(this.getModelWriter());
         }
     }
     
@@ -138,8 +203,8 @@ public class AddWorkspaceItemsTask extends ExtendedModelTask
                     }
                 }
             }
-            Label_0477: {
-                break Label_0477;
+            Label_0479: {
+                break Label_0479;
                 final boolean b;
                 if (!b) {
                     final long long1 = LauncherSettings$Settings.call(launcherAppState.getContext().getContentResolver(), "generate_new_screen_id").getLong("value");
@@ -163,19 +228,22 @@ public class AddWorkspaceItemsTask extends ExtendedModelTask
         if (intent == null) {
             return b;
         }
-        Label_0315: {
+        Label_0329: {
             if (intent.getComponent() == null) {
-                break Label_0315;
+                break Label_0329;
             }
-            final String packageName = intent.getComponent().getPackageName();
-            Label_0273: {
+            String package1 = intent.getComponent().getPackageName();
+            Label_0283: {
                 if (intent.getPackage() == null) {
-                    break Label_0273;
+                    break Label_0283;
                 }
                 final String uri = intent.toUri(0);
-                s = new Intent(intent).setPackage((String)null).toUri(0);
-                String s2 = uri;
+                final String uri2 = new Intent(intent).setPackage((String)null).toUri(0);
+                s = uri;
+                String s2 = package1;
+                package1 = uri2;
                 while (true) {
+                    final boolean launcherAppTarget = Utilities.isLauncherAppTarget(intent);
                     synchronized (bgDataModel) {
                         for (final ItemInfo itemInfo : bgDataModel.itemsIdMap) {
                             if (itemInfo instanceof ShortcutInfo) {
@@ -185,21 +253,27 @@ public class AddWorkspaceItemsTask extends ExtendedModelTask
                                 }
                                 final Intent intent2 = new Intent(((ShortcutInfo)itemInfo).getIntent());
                                 intent2.setSourceBounds(intent.getSourceBounds());
-                                final String uri2 = intent2.toUri(0);
-                                if (s2.equals(uri2) || s.equals(uri2)) {
+                                final String uri3 = intent2.toUri(0);
+                                if (s.equals(uri3) || package1.equals(uri3)) {
+                                    return b;
+                                }
+                                if (launcherAppTarget && shortcutInfo.isPromise() && shortcutInfo.hasStatusFlag(2) && shortcutInfo.getTargetComponent() != null && s2 != null && s2.equals(shortcutInfo.getTargetComponent().getPackageName())) {
                                     return b;
                                 }
                                 continue;
                             }
                         }
                         return false;
-                        final String uri3 = intent.toUri(0);
-                        s = intent.toUri(0);
-                        s2 = uri3;
+                        final String uri4 = new Intent(intent).setPackage(package1).toUri(0);
+                        final String uri5 = intent.toUri(0);
+                        s = uri4;
+                        s2 = package1;
+                        package1 = uri5;
                         continue;
-                        final String uri4 = new Intent(intent).setPackage(packageName).toUri(0);
-                        s = intent.toUri(0);
-                        s2 = uri4;
+                        final String uri6 = intent.toUri(0);
+                        package1 = intent.toUri(0);
+                        s2 = null;
+                        s = uri6;
                     }
                 }
             }

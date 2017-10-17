@@ -15,12 +15,12 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 42
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 44
+    .line 43
     return-void
 .end method
 
@@ -28,12 +28,12 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 46
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 48
+    .line 47
     return-void
 .end method
 
@@ -41,27 +41,27 @@
     .locals 2
 
     .prologue
-    .line 51
+    .line 50
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 53
+    .line 52
     invoke-static {p1}, Lcom/android/launcher3/Launcher;->getLauncher(Landroid/content/Context;)Lcom/android/launcher3/Launcher;
 
     move-result-object v0
 
-    .line 54
+    .line 53
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v0
 
-    .line 56
+    .line 55
     new-instance v1, Lcom/android/launcher3/ClickShadowView;
 
     invoke-direct {v1, p1}, Lcom/android/launcher3/ClickShadowView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
-    .line 59
+    .line 58
     iget v0, v0, Lcom/android/launcher3/DeviceProfile;->allAppsIconSizePx:I
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
@@ -72,12 +72,12 @@
 
     add-int/2addr v0, v1
 
-    .line 60
+    .line 59
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {p0, v1, v0, v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->addView(Landroid/view/View;II)V
 
-    .line 61
+    .line 60
     return-void
 .end method
 
@@ -89,18 +89,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 65
+    .line 64
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_2
 
-    .line 66
+    .line 65
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/ClickShadowView;->setBitmap(Landroid/graphics/Bitmap;)Z
 
-    .line 67
+    .line 66
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ClickShadowView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -109,12 +109,12 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 73
+    .line 72
     :cond_1
     :goto_0
     return-void
 
-    .line 68
+    .line 67
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
@@ -124,14 +124,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 69
-    const v0, 0x7f0e0028
+    .line 68
+    const v0, 0x7f0e002b
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 70
+    .line 69
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {p1}, Lcom/android/launcher3/BubbleTextView;->getParent()Landroid/view/ViewParent;
@@ -142,7 +142,7 @@
 
     invoke-virtual {v2, p1, v0, v1}, Lcom/android/launcher3/ClickShadowView;->alignWithIconView(Lcom/android/launcher3/BubbleTextView;Landroid/view/ViewGroup;Landroid/view/View;)V
 
-    .line 71
+    .line 70
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsRecyclerViewContainerView;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ClickShadowView;->animateShadow()V

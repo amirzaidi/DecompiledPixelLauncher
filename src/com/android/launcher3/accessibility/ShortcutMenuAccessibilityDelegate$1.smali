@@ -106,7 +106,7 @@
     .line 79
     iget-object v0, p0, Lcom/android/launcher3/accessibility/ShortcutMenuAccessibilityDelegate$1;->this$0:Lcom/android/launcher3/accessibility/ShortcutMenuAccessibilityDelegate;
 
-    const v1, 0x7f0c0067
+    const v1, 0x7f0c0070
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/accessibility/ShortcutMenuAccessibilityDelegate;->announceConfirmation(I)V
 

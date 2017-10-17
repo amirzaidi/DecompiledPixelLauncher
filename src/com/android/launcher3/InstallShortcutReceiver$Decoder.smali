@@ -14,10 +14,10 @@
     .locals 4
 
     .prologue
-    .line 556
+    .line 569
     invoke-direct {p0, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 557
+    .line 570
     const-string/jumbo v0, "intent.launch"
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/InstallShortcutReceiver$Decoder;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -32,7 +32,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/InstallShortcutReceiver$Decoder;->launcherIntent:Landroid/content/Intent;
 
-    .line 558
+    .line 571
     const-string/jumbo v0, "userHandle"
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/InstallShortcutReceiver$Decoder;->has(Ljava/lang/String;)Z
@@ -45,14 +45,14 @@
 
     move-result-object v0
 
-    .line 559
+    .line 572
     const-string/jumbo v1, "userHandle"
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/InstallShortcutReceiver$Decoder;->getLong(Ljava/lang/String;)J
 
     move-result-wide v2
 
-    .line 558
+    .line 571
     invoke-virtual {v0, v2, v3}, Lcom/android/launcher3/compat/UserManagerCompat;->getUserForSerialNumber(J)Landroid/os/UserHandle;
 
     move-result-object v0
@@ -60,12 +60,12 @@
     :goto_0
     iput-object v0, p0, Lcom/android/launcher3/InstallShortcutReceiver$Decoder;->user:Landroid/os/UserHandle;
 
-    .line 561
+    .line 574
     iget-object v0, p0, Lcom/android/launcher3/InstallShortcutReceiver$Decoder;->user:Landroid/os/UserHandle;
 
     if-nez v0, :cond_1
 
-    .line 562
+    .line 575
     new-instance v0, Lorg/json/JSONException;
 
     const-string/jumbo v1, "Invalid user"
@@ -74,7 +74,7 @@
 
     throw v0
 
-    .line 560
+    .line 573
     :cond_0
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
@@ -82,7 +82,7 @@
 
     goto :goto_0
 
-    .line 564
+    .line 577
     :cond_1
     return-void
 .end method

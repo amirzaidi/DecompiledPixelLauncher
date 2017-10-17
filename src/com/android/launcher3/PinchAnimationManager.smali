@@ -59,25 +59,25 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
-    const/4 v0, 0x4
+    .line 62
+    const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/animation/Animator;
 
     iput-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mAnimators:[Landroid/animation/Animator;
 
-    .line 74
+    .line 73
     iput-object p1, p0, Lcom/android/launcher3/PinchAnimationManager;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 75
+    .line 74
     iget-object v0, p1, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     iput-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
-    .line 77
+    .line 76
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->getOverviewModeShrinkFactor()F
@@ -86,7 +86,7 @@
 
     iput v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mOverviewScale:F
 
-    .line 78
+    .line 77
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->getOverviewModeTranslationY()I
@@ -97,7 +97,7 @@
 
     iput v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mOverviewTranslationY:F
 
-    .line 79
+    .line 78
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->getStateTransitionAnimation()Lcom/android/launcher3/WorkspaceStateTransitionAnimation;
@@ -108,89 +108,61 @@
 
     iput v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mNormalOverviewTransitionDuration:I
 
-    .line 81
+    .line 80
     return-void
 .end method
 
 .method private animateHotseatAndQsb(Z)V
-    .locals 6
+    .locals 4
 
     .prologue
-    const-wide/16 v4, 0x96
+    const/4 v1, 0x0
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    .line 198
-    iget-object v3, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
+    .line 197
+    iget-object v2, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     if-eqz p1, :cond_0
 
-    move v0, v1
+    const/4 v0, 0x1
 
     :goto_0
     int-to-float v0, v0
 
-    invoke-virtual {v3, v0}, Lcom/android/launcher3/Workspace;->createHotseatAlphaAnimator(F)Landroid/animation/ValueAnimator;
+    invoke-virtual {v2, v0}, Lcom/android/launcher3/Workspace;->createHotseatAlphaAnimator(F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 197
-    invoke-direct {p0, v2, v0, v4, v5}, Lcom/android/launcher3/PinchAnimationManager;->startAnimator(ILandroid/animation/Animator;J)V
+    const-wide/16 v2, 0x96
 
-    .line 199
-    iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
+    .line 196
+    invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/launcher3/PinchAnimationManager;->startAnimator(ILandroid/animation/Animator;J)V
 
-    iget-object v3, v0, Lcom/android/launcher3/Workspace;->mQsbAlphaController:Lcom/android/launcher3/util/MultiStateAlphaController;
-
-    .line 200
-    if-eqz p1, :cond_1
-
-    move v0, v1
-
-    :goto_1
-    int-to-float v0, v0
-
-    .line 199
-    invoke-virtual {v3, v0, v2}, Lcom/android/launcher3/util/MultiStateAlphaController;->animateAlphaAtIndex(FI)Landroid/animation/Animator;
-
-    move-result-object v0
-
-    invoke-direct {p0, v1, v0, v4, v5}, Lcom/android/launcher3/PinchAnimationManager;->startAnimator(ILandroid/animation/Animator;J)V
-
-    .line 201
+    .line 198
     return-void
 
     :cond_0
-    move v0, v2
+    move v0, v1
 
-    .line 198
+    .line 197
     goto :goto_0
-
-    :cond_1
-    move v0, v2
-
-    .line 200
-    goto :goto_1
 .end method
 
 .method private animateOverviewPanelButtons(Z)V
     .locals 2
 
     .prologue
-    .line 204
+    .line 201
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getOverviewPanel()Landroid/view/ViewGroup;
 
     move-result-object v0
 
-    const/4 v1, 0x2
+    const/4 v1, 0x1
 
     invoke-direct {p0, v1, v0, p1}, Lcom/android/launcher3/PinchAnimationManager;->animateShowHideView(ILandroid/view/View;Z)V
 
-    .line 205
+    .line 202
     return-void
 .end method
 
@@ -198,7 +170,7 @@
     .locals 5
 
     .prologue
-    .line 208
+    .line 205
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
@@ -209,7 +181,7 @@
 
     iget v0, v0, Lcom/android/launcher3/WorkspaceStateTransitionAnimation;->mWorkspaceScrimAlpha:F
 
-    .line 210
+    .line 207
     :goto_0
     iget-object v1, p0, Lcom/android/launcher3/PinchAnimationManager;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -231,20 +203,20 @@
 
     move-result-object v0
 
-    .line 211
+    .line 208
     iget v1, p0, Lcom/android/launcher3/PinchAnimationManager;->mNormalOverviewTransitionDuration:I
 
     int-to-long v2, v1
 
-    .line 209
-    const/4 v1, 0x3
+    .line 206
+    const/4 v1, 0x2
 
     invoke-direct {p0, v1, v0, v2, v3}, Lcom/android/launcher3/PinchAnimationManager;->startAnimator(ILandroid/animation/Animator;J)V
 
-    .line 212
+    .line 209
     return-void
 
-    .line 208
+    .line 205
     :cond_0
     const/4 v0, 0x0
 
@@ -259,7 +231,7 @@
 
     const/4 v1, 0x0
 
-    .line 215
+    .line 212
     sget-object v2, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v3, v0, [F
@@ -275,35 +247,35 @@
 
     move-result-object v0
 
-    .line 216
+    .line 213
     new-instance v2, Lcom/android/launcher3/anim/AnimationLayerSet;
 
     invoke-direct {v2, p2}, Lcom/android/launcher3/anim/AnimationLayerSet;-><init>(Landroid/view/View;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 217
+    .line 214
     if-eqz p3, :cond_1
 
-    .line 218
+    .line 215
     invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 236
+    .line 233
     :goto_1
     const-wide/16 v2, 0x96
 
     invoke-direct {p0, p1, v0, v2, v3}, Lcom/android/launcher3/PinchAnimationManager;->startAnimator(ILandroid/animation/Animator;J)V
 
-    .line 237
+    .line 234
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 215
+    .line 212
     goto :goto_0
 
-    .line 220
+    .line 217
     :cond_1
     new-instance v1, Lcom/android/launcher3/PinchAnimationManager$3;
 
@@ -320,7 +292,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 185
+    .line 184
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->getChildCount()I
@@ -329,11 +301,11 @@
 
     move v1, v2
 
-    .line 186
+    .line 185
     :goto_0
     if-ge v1, v3, :cond_1
 
-    .line 187
+    .line 186
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->getChildAt(I)Landroid/view/View;
@@ -342,13 +314,13 @@
 
     check-cast v0, Lcom/android/launcher3/CellLayout;
 
-    .line 188
+    .line 187
     if-nez p2, :cond_0
 
-    .line 189
+    .line 188
     invoke-virtual {v0, p1}, Lcom/android/launcher3/CellLayout;->setBackgroundAlpha(F)V
 
-    .line 186
+    .line 185
     :goto_1
     add-int/lit8 v0, v1, 0x1
 
@@ -356,7 +328,7 @@
 
     goto :goto_0
 
-    .line 191
+    .line 190
     :cond_0
     const-string/jumbo v4, "backgroundAlpha"
 
@@ -380,7 +352,7 @@
 
     goto :goto_1
 
-    .line 194
+    .line 193
     :cond_1
     return-void
 .end method
@@ -389,27 +361,27 @@
     .locals 3
 
     .prologue
-    .line 240
+    .line 237
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mAnimators:[Landroid/animation/Animator;
 
     aget-object v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 241
+    .line 238
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mAnimators:[Landroid/animation/Animator;
 
     aget-object v0, v0, p1
 
     invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
-    .line 243
+    .line 240
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mAnimators:[Landroid/animation/Animator;
 
     aput-object p2, v0, p1
 
-    .line 244
+    .line 241
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mAnimators:[Landroid/animation/Animator;
 
     aget-object v0, v0, p1
@@ -418,7 +390,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 245
+    .line 242
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mAnimators:[Landroid/animation/Animator;
 
     aget-object v0, v0, p1
@@ -429,7 +401,7 @@
 
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 246
+    .line 243
     return-void
 .end method
 
@@ -445,19 +417,19 @@
 
     const/4 v0, 0x1
 
-    .line 151
+    .line 150
     const v2, 0x3ecccccd    # 0.4f
 
     cmpl-float v2, p1, v2
 
     if-nez v2, :cond_4
 
-    .line 152
+    .line 151
     sget-object v2, Lcom/android/launcher3/Workspace$State;->OVERVIEW:Lcom/android/launcher3/Workspace$State;
 
     if-ne p2, v2, :cond_2
 
-    .line 153
+    .line 152
     sget-object v2, Lcom/android/launcher3/Workspace$State;->OVERVIEW:Lcom/android/launcher3/Workspace$State;
 
     if-ne p3, v2, :cond_1
@@ -465,7 +437,7 @@
     :goto_0
     invoke-direct {p0, v0}, Lcom/android/launcher3/PinchAnimationManager;->animateOverviewPanelButtons(Z)V
 
-    .line 182
+    .line 181
     :cond_0
     :goto_1
     return-void
@@ -473,16 +445,16 @@
     :cond_1
     move v0, v1
 
-    .line 153
+    .line 152
     goto :goto_0
 
-    .line 154
+    .line 153
     :cond_2
     sget-object v2, Lcom/android/launcher3/Workspace$State;->NORMAL:Lcom/android/launcher3/Workspace$State;
 
     if-ne p2, v2, :cond_0
 
-    .line 155
+    .line 154
     sget-object v2, Lcom/android/launcher3/Workspace$State;->NORMAL:Lcom/android/launcher3/Workspace$State;
 
     if-ne p3, v2, :cond_3
@@ -497,7 +469,7 @@
 
     goto :goto_2
 
-    .line 157
+    .line 156
     :cond_4
     const v2, 0x3f333333    # 0.7f
 
@@ -505,12 +477,12 @@
 
     if-nez v2, :cond_a
 
-    .line 158
+    .line 157
     sget-object v2, Lcom/android/launcher3/Workspace$State;->OVERVIEW:Lcom/android/launcher3/Workspace$State;
 
     if-ne p2, v2, :cond_7
 
-    .line 159
+    .line 158
     sget-object v2, Lcom/android/launcher3/Workspace$State;->NORMAL:Lcom/android/launcher3/Workspace$State;
 
     if-ne p3, v2, :cond_5
@@ -520,7 +492,7 @@
     :goto_3
     invoke-direct {p0, v2}, Lcom/android/launcher3/PinchAnimationManager;->animateHotseatAndQsb(Z)V
 
-    .line 160
+    .line 159
     sget-object v2, Lcom/android/launcher3/Workspace$State;->OVERVIEW:Lcom/android/launcher3/Workspace$State;
 
     if-ne p3, v2, :cond_6
@@ -533,22 +505,22 @@
     :cond_5
     move v2, v1
 
-    .line 159
+    .line 158
     goto :goto_3
 
     :cond_6
     move v0, v1
 
-    .line 160
+    .line 159
     goto :goto_4
 
-    .line 161
+    .line 160
     :cond_7
     sget-object v2, Lcom/android/launcher3/Workspace$State;->NORMAL:Lcom/android/launcher3/Workspace$State;
 
     if-ne p2, v2, :cond_0
 
-    .line 162
+    .line 161
     sget-object v2, Lcom/android/launcher3/Workspace$State;->OVERVIEW:Lcom/android/launcher3/Workspace$State;
 
     if-ne p3, v2, :cond_8
@@ -558,7 +530,7 @@
     :goto_5
     invoke-direct {p0, v2}, Lcom/android/launcher3/PinchAnimationManager;->animateOverviewPanelButtons(Z)V
 
-    .line 163
+    .line 162
     sget-object v2, Lcom/android/launcher3/Workspace$State;->OVERVIEW:Lcom/android/launcher3/Workspace$State;
 
     if-ne p3, v2, :cond_9
@@ -571,16 +543,16 @@
     :cond_8
     move v2, v1
 
-    .line 162
+    .line 161
     goto :goto_5
 
     :cond_9
     move v0, v1
 
-    .line 163
+    .line 162
     goto :goto_6
 
-    .line 165
+    .line 164
     :cond_a
     const v2, 0x3f733333    # 0.95f
 
@@ -588,7 +560,7 @@
 
     if-nez v2, :cond_c
 
-    .line 167
+    .line 166
     sget-object v2, Lcom/android/launcher3/Workspace$State;->OVERVIEW:Lcom/android/launcher3/Workspace$State;
 
     if-ne p2, v2, :cond_b
@@ -597,14 +569,14 @@
 
     if-ne p3, v2, :cond_b
 
-    .line 168
+    .line 167
     iget-object v2, p0, Lcom/android/launcher3/PinchAnimationManager;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
 
     move-result-object v2
 
-    .line 170
+    .line 169
     iget-object v3, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v3}, Lcom/android/launcher3/Workspace;->getCurrentPage()I
@@ -613,15 +585,15 @@
 
     const/4 v4, 0x6
 
-    .line 168
+    .line 167
     invoke-virtual {v2, v5, v1, v4, v3}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionOnContainer(IIII)V
 
-    .line 171
+    .line 170
     iget-object v1, p0, Lcom/android/launcher3/PinchAnimationManager;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/Launcher;->showWorkspace(Z)Z
 
-    .line 172
+    .line 171
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     iget-object v1, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
@@ -634,7 +606,7 @@
 
     goto :goto_1
 
-    .line 173
+    .line 172
     :cond_b
     sget-object v2, Lcom/android/launcher3/Workspace$State;->NORMAL:Lcom/android/launcher3/Workspace$State;
 
@@ -644,31 +616,31 @@
 
     if-ne p3, v2, :cond_0
 
-    .line 174
+    .line 173
     iget-object v2, p0, Lcom/android/launcher3/PinchAnimationManager;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
 
     move-result-object v2
 
-    .line 176
+    .line 175
     iget-object v3, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v3}, Lcom/android/launcher3/Workspace;->getCurrentPage()I
 
     move-result v3
 
-    .line 174
+    .line 173
     invoke-virtual {v2, v5, v1, v0, v3}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionOnContainer(IIII)V
 
-    .line 177
+    .line 176
     iget-object v1, p0, Lcom/android/launcher3/PinchAnimationManager;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/Launcher;->showOverviewMode(Z)V
 
     goto/16 :goto_1
 
-    .line 180
+    .line 179
     :cond_c
     const-string/jumbo v0, "PinchAnimationManager"
 
@@ -701,15 +673,15 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 94
+    .line 93
     const/4 v0, -0x1
 
     if-ne p3, v0, :cond_0
 
-    .line 95
+    .line 94
     iget p3, p0, Lcom/android/launcher3/PinchAnimationManager;->mNormalOverviewTransitionDuration:I
 
-    .line 97
+    .line 96
     :cond_0
     const/4 v0, 0x2
 
@@ -725,21 +697,21 @@
 
     move-result-object v0
 
-    .line 98
+    .line 97
     new-instance v1, Lcom/android/launcher3/PinchAnimationManager$1;
 
     invoke-direct {v1, p0, p4}, Lcom/android/launcher3/PinchAnimationManager$1;-><init>(Lcom/android/launcher3/PinchAnimationManager;Lcom/android/launcher3/PinchThresholdManager;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 108
+    .line 107
     new-instance v1, Lcom/android/launcher3/PinchAnimationManager$2;
 
     invoke-direct {v1, p0, p4}, Lcom/android/launcher3/PinchAnimationManager$2;-><init>(Lcom/android/launcher3/PinchAnimationManager;Lcom/android/launcher3/PinchThresholdManager;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 116
+    .line 115
     int-to-long v2, p3
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
@@ -748,10 +720,10 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 117
+    .line 116
     iput-boolean v4, p0, Lcom/android/launcher3/PinchAnimationManager;->mIsAnimating:Z
 
-    .line 118
+    .line 117
     return-void
 .end method
 
@@ -759,7 +731,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 83
     iget v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mNormalOverviewTransitionDuration:I
 
     return v0
@@ -769,7 +741,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 120
     iget-boolean v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mIsAnimating:Z
 
     return v0
@@ -781,7 +753,7 @@
     .prologue
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 130
+    .line 129
     iget v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mOverviewScale:F
 
     sub-float v0, v3, v0
@@ -792,35 +764,35 @@
 
     add-float/2addr v0, v1
 
-    .line 131
+    .line 130
     sub-float v1, v3, p1
 
     iget v2, p0, Lcom/android/launcher3/PinchAnimationManager;->mOverviewTranslationY:F
 
     mul-float/2addr v1, v2
 
-    .line 132
+    .line 131
     iget-object v2, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v2, v0}, Lcom/android/launcher3/Workspace;->setScaleX(F)V
 
-    .line 133
+    .line 132
     iget-object v2, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v2, v0}, Lcom/android/launcher3/Workspace;->setScaleY(F)V
 
-    .line 134
+    .line 133
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->setTranslationY(F)V
 
-    .line 135
+    .line 134
     sub-float v0, v3, p1
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/PinchAnimationManager;->setOverviewPanelsAlpha(FI)V
 
-    .line 136
+    .line 135
     return-void
 .end method

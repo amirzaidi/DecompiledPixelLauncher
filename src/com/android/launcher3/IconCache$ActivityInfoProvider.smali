@@ -16,18 +16,18 @@
     .locals 0
 
     .prologue
-    .line 859
+    .line 827
     iput-object p1, p0, Lcom/android/launcher3/IconCache$ActivityInfoProvider;->this$0:Lcom/android/launcher3/IconCache;
 
     invoke-direct {p0}, Lcom/android/launcher3/util/Provider;-><init>()V
 
-    .line 860
+    .line 828
     iput-object p2, p0, Lcom/android/launcher3/IconCache$ActivityInfoProvider;->mIntent:Landroid/content/Intent;
 
-    .line 861
+    .line 829
     iput-object p3, p0, Lcom/android/launcher3/IconCache$ActivityInfoProvider;->mUser:Landroid/os/UserHandle;
 
-    .line 862
+    .line 830
     return-void
 .end method
 
@@ -37,7 +37,7 @@
     .locals 3
 
     .prologue
-    .line 866
+    .line 834
     iget-object v0, p0, Lcom/android/launcher3/IconCache$ActivityInfoProvider;->this$0:Lcom/android/launcher3/IconCache;
 
     invoke-static {v0}, Lcom/android/launcher3/IconCache;->-get1(Lcom/android/launcher3/IconCache;)Lcom/android/launcher3/compat/LauncherAppsCompat;
@@ -59,7 +59,7 @@
     .locals 1
 
     .prologue
-    .line 864
+    .line 832
     invoke-virtual {p0}, Lcom/android/launcher3/IconCache$ActivityInfoProvider;->get()Landroid/content/pm/LauncherActivityInfo;
 
     move-result-object v0

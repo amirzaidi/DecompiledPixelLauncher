@@ -18,23 +18,23 @@
     .locals 3
 
     .prologue
-    .line 94
+    .line 95
     invoke-static {}, Lcom/android/launcher3/Utilities;->isAtLeastO()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 95
+    .line 96
     return-void
 
-    .line 97
+    .line 98
     :cond_0
     invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 98
+    .line 99
     invoke-interface {v0}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
 
     move-result-object v1
@@ -45,7 +45,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 105
+    .line 106
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -60,12 +60,12 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 109
+    .line 110
     :cond_1
     :goto_0
     return-void
 
-    .line 106
+    .line 107
     :cond_2
     const-string/jumbo v1, "pref_add_icon_to_home_initialized"
 
@@ -75,7 +75,7 @@
 
     if-nez v0, :cond_1
 
-    .line 107
+    .line 108
     new-instance v0, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/SessionCommitReceiver$PrefInitTask;-><init>(Landroid/content/Context;)V
@@ -95,7 +95,7 @@
     .locals 3
 
     .prologue
-    .line 90
+    .line 91
     invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -109,6 +109,48 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static queueAppIconAddition(Landroid/content/Context;Ljava/lang/String;Landroid/os/UserHandle;)V
+    .locals 2
+
+    .prologue
+    .line 81
+    invoke-static {p0}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/LauncherAppsCompat;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getActivityList(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 83
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 85
+    :cond_0
+    return-void
+
+    .line 87
+    :cond_1
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/pm/LauncherActivityInfo;
+
+    invoke-static {v0, p0}, Lcom/android/launcher3/InstallShortcutReceiver;->queueActivityInfo(Landroid/content/pm/LauncherActivityInfo;Landroid/content/Context;)V
+
+    .line 88
+    return-void
 .end method
 
 
@@ -156,6 +198,17 @@
     check-cast v1, Landroid/os/UserHandle;
 
     .line 70
+    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Landroid/os/UserHandle;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 71
     invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getAppPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -166,7 +219,7 @@
 
     if-nez v2, :cond_2
 
-    .line 71
+    .line 72
     invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getInstallReason()I
 
     move-result v2
@@ -175,66 +228,18 @@
 
     if-eq v2, v3, :cond_3
 
-    .line 72
+    .line 73
     :cond_2
     return-void
 
-    .line 75
-    :cond_3
-    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Landroid/os/UserHandle;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
     .line 77
-    return-void
-
-    .line 80
-    :cond_4
-    invoke-static {p1}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/LauncherAppsCompat;
-
-    move-result-object v2
-
-    .line 81
+    :cond_3
     invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getAppPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 80
-    invoke-virtual {v2, v0, v1}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getActivityList(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
+    invoke-static {p1, v0, v1}, Lcom/android/launcher3/SessionCommitReceiver;->queueAppIconAddition(Landroid/content/Context;Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    move-result-object v0
-
-    .line 82
-    if-eqz v0, :cond_5
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    .line 84
-    :cond_5
-    return-void
-
-    .line 86
-    :cond_6
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/pm/LauncherActivityInfo;
-
-    invoke-static {v0, p1}, Lcom/android/launcher3/InstallShortcutReceiver;->queueActivityInfo(Landroid/content/pm/LauncherActivityInfo;Landroid/content/Context;)V
-
-    .line 87
+    .line 78
     return-void
 .end method

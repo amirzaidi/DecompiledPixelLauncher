@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 81
+    .line 79
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     .line 1
@@ -21,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 82
     invoke-static {p1}, Lcom/android/launcher3/FastBitmapDrawable;->-wrap0(Lcom/android/launcher3/FastBitmapDrawable;)F
 
     move-result v0
@@ -37,7 +37,7 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 80
     check-cast p1, Lcom/android/launcher3/FastBitmapDrawable;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/FastBitmapDrawable$2;->get(Lcom/android/launcher3/FastBitmapDrawable;)Ljava/lang/Float;
@@ -51,14 +51,14 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 87
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/android/launcher3/FastBitmapDrawable;->-wrap1(Lcom/android/launcher3/FastBitmapDrawable;F)V
 
-    .line 90
+    .line 88
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 0
 
     .prologue
-    .line 87
+    .line 85
     check-cast p1, Lcom/android/launcher3/FastBitmapDrawable;
 
     check-cast p2, Ljava/lang/Float;

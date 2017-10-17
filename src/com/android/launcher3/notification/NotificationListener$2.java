@@ -9,7 +9,7 @@ import java.util.Collections;
 import android.app.Notification;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashSet;
+import android.util.ArraySet;
 import android.os.Looper;
 import com.android.launcher3.LauncherModel;
 import android.service.notification.StatusBarNotification;
@@ -18,7 +18,7 @@ import android.service.notification.NotificationListenerService$Ranking;
 import android.service.notification.NotificationListenerService;
 import java.util.List;
 import com.android.launcher3.util.PackageUserKey;
-import android.support.v4.a.b;
+import android.util.Pair;
 import android.os.Message;
 import android.os.Handler$Callback;
 
@@ -42,8 +42,8 @@ final class NotificationListener$2 implements Handler$Callback
             }
             case 2: {
                 if (NotificationListener.sNotificationsChangedListener != null) {
-                    final b b = (b)message.obj;
-                    NotificationListener.sNotificationsChangedListener.onNotificationRemoved((PackageUserKey)b.UU, (NotificationKeyData)b.UV);
+                    final Pair pair = (Pair)message.obj;
+                    NotificationListener.sNotificationsChangedListener.onNotificationRemoved((PackageUserKey)pair.first, (NotificationKeyData)pair.second);
                     break;
                 }
                 break;

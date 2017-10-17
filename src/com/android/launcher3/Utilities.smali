@@ -46,46 +46,46 @@
 
     const/4 v2, 0x0
 
-    .line 80
+    .line 78
     const-string/jumbo v0, "^[\\s|\\p{javaSpaceChar}]*(.*)[\\s|\\p{javaSpaceChar}]*$"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    .line 79
+    .line 77
     sput-object v0, Lcom/android/launcher3/Utilities;->sTrimPattern:Ljava/util/regex/Pattern;
 
-    .line 82
+    .line 80
     new-array v0, v3, [I
 
     sput-object v0, Lcom/android/launcher3/Utilities;->sLoc0:[I
 
-    .line 83
+    .line 81
     new-array v0, v3, [I
 
     sput-object v0, Lcom/android/launcher3/Utilities;->sLoc1:[I
 
-    .line 84
+    .line 82
     new-array v0, v3, [F
 
     sput-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
-    .line 85
+    .line 83
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/Utilities;->sMatrix:Landroid/graphics/Matrix;
 
-    .line 86
+    .line 84
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/Utilities;->sInverseMatrix:Landroid/graphics/Matrix;
 
-    .line 93
+    .line 91
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x19
@@ -94,11 +94,11 @@
 
     move v0, v1
 
-    .line 92
+    .line 90
     :goto_0
     sput-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT_MR1:Z
 
-    .line 96
+    .line 94
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x18
@@ -107,11 +107,11 @@
 
     move v0, v1
 
-    .line 95
+    .line 93
     :goto_1
     sput-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT:Z
 
-    .line 99
+    .line 97
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x17
@@ -120,22 +120,22 @@
 
     move v0, v1
 
-    .line 98
+    .line 96
     :goto_2
     sput-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_MARSHMALLOW:Z
 
-    .line 102
+    .line 100
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x16
 
     if-lt v0, v3, :cond_3
 
-    .line 101
+    .line 99
     :goto_3
     sput-boolean v1, Lcom/android/launcher3/Utilities;->ATLEAST_LOLLIPOP_MR1:Z
 
-    .line 108
+    .line 106
     sget-object v0, Landroid/os/Build;->TYPE:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -150,7 +150,7 @@
 
     sput-boolean v0, Lcom/android/launcher3/Utilities;->IS_DEBUG_DEVICE:Z
 
-    .line 114
+    .line 115
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
@@ -161,14 +161,14 @@
 
     sput v0, Lcom/android/launcher3/Utilities;->CPU_COUNT:I
 
-    .line 115
+    .line 116
     sget v0, Lcom/android/launcher3/Utilities;->CPU_COUNT:I
 
     add-int/lit8 v0, v0, 0x1
 
     sput v0, Lcom/android/launcher3/Utilities;->CORE_POOL_SIZE:I
 
-    .line 116
+    .line 117
     sget v0, Lcom/android/launcher3/Utilities;->CPU_COUNT:I
 
     mul-int/lit8 v0, v0, 0x2
@@ -177,53 +177,53 @@
 
     sput v0, Lcom/android/launcher3/Utilities;->MAXIMUM_POOL_SIZE:I
 
-    .line 121
+    .line 122
     new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    .line 122
+    .line 123
     sget v2, Lcom/android/launcher3/Utilities;->CORE_POOL_SIZE:I
 
     sget v3, Lcom/android/launcher3/Utilities;->MAXIMUM_POOL_SIZE:I
 
     const-wide/16 v4, 0x1
 
-    .line 123
+    .line 124
     sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
-    .line 121
+    .line 122
     invoke-direct/range {v1 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
     sput-object v1, Lcom/android/launcher3/Utilities;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
-    .line 75
+    .line 73
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 93
+    .line 91
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 96
+    .line 94
     goto :goto_1
 
     :cond_2
     move v0, v2
 
-    .line 99
+    .line 97
     goto :goto_2
 
     :cond_3
     move v1, v2
 
-    .line 102
+    .line 100
     goto :goto_3
 .end method
 
@@ -231,7 +231,7 @@
     .locals 0
 
     .prologue
-    .line 75
+    .line 73
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -241,7 +241,7 @@
     .locals 1
 
     .prologue
-    .line 524
+    .line 525
     invoke-static {p0, p2}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
@@ -257,7 +257,7 @@
     .locals 1
 
     .prologue
-    .line 517
+    .line 518
     invoke-static {p0, p2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -273,20 +273,20 @@
     .locals 2
 
     .prologue
-    .line 425
+    .line 426
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    .line 426
+    .line 427
     invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 427
+    .line 428
     invoke-virtual {v0}, Landroid/graphics/Paint;->getFontMetrics()Landroid/graphics/Paint$FontMetrics;
 
     move-result-object v0
 
-    .line 428
+    .line 429
     iget v1, v0, Landroid/graphics/Paint$FontMetrics;->bottom:F
 
     iget v0, v0, Landroid/graphics/Paint$FontMetrics;->top:F
@@ -308,21 +308,21 @@
     .locals 1
 
     .prologue
-    .line 569
+    .line 575
     if-eqz p0, :cond_0
 
-    .line 571
+    .line 577
     :try_start_0
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 578
+    .line 584
     :cond_0
     :goto_0
     return-void
 
-    .line 572
+    .line 578
     :catch_0
     move-exception v0
 
@@ -333,7 +333,7 @@
     .locals 5
 
     .prologue
-    .line 490
+    .line 491
     sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     const-string/jumbo v1, "%s IN (%s)"
@@ -367,7 +367,7 @@
     .locals 2
 
     .prologue
-    .line 477
+    .line 478
     iget v0, p1, Landroid/util/DisplayMetrics;->densityDpi:I
 
     int-to-float v0, v0
@@ -376,7 +376,7 @@
 
     div-float/2addr v0, v1
 
-    .line 478
+    .line 479
     int-to-float v1, p0
 
     div-float v0, v1, v0
@@ -388,17 +388,17 @@
     .locals 18
 
     .prologue
-    .line 293
+    .line 294
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v11
 
-    .line 294
+    .line 295
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v12
 
-    .line 295
+    .line 296
     mul-int v2, v11, v12
 
     div-int v2, v2, p1
@@ -411,34 +411,34 @@
 
     double-to-int v2, v2
 
-    .line 296
+    .line 297
     const/4 v3, 0x1
 
     if-ge v2, v3, :cond_a
 
-    .line 297
+    .line 298
     const/4 v2, 0x1
 
     move v3, v2
 
-    .line 301
+    .line 302
     :goto_0
     const/4 v2, 0x3
 
     new-array v13, v2, [F
 
-    .line 305
+    .line 306
     const/16 v2, 0x168
 
     new-array v8, v2, [F
 
-    .line 306
+    .line 307
     const/high16 v5, -0x40800000    # -1.0f
 
-    .line 307
+    .line 308
     const/4 v10, -0x1
 
-    .line 309
+    .line 310
     const/4 v2, 0x0
 
     move v7, v2
@@ -446,7 +446,7 @@
     :goto_1
     if-ge v7, v11, :cond_4
 
-    .line 310
+    .line 311
     const/4 v2, 0x0
 
     move v6, v2
@@ -456,26 +456,26 @@
     :goto_2
     if-ge v6, v12, :cond_3
 
-    .line 311
+    .line 312
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v6, v7}, Landroid/graphics/Bitmap;->getPixel(II)I
 
     move-result v4
 
-    .line 312
+    .line 313
     shr-int/lit8 v9, v4, 0x18
 
     and-int/lit16 v9, v9, 0xff
 
-    .line 313
+    .line 314
     const/16 v10, 0x80
 
     if-ge v9, v10, :cond_0
 
     move v4, v5
 
-    .line 310
+    .line 311
     :goto_3
     add-int v5, v6, v3
 
@@ -485,23 +485,23 @@
 
     goto :goto_2
 
-    .line 318
+    .line 319
     :cond_0
     const/high16 v9, -0x1000000
 
     or-int/2addr v4, v9
 
-    .line 319
+    .line 320
     invoke-static {v4, v13}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 321
+    .line 322
     const/4 v4, 0x0
 
     aget v4, v13, v4
 
     float-to-int v4, v4
 
-    .line 322
+    .line 323
     if-ltz v4, :cond_1
 
     array-length v9, v8
@@ -511,10 +511,10 @@
     :cond_1
     move v4, v5
 
-    .line 324
+    .line 325
     goto :goto_3
 
-    .line 326
+    .line 327
     :cond_2
     const/4 v9, 0x1
 
@@ -526,21 +526,21 @@
 
     mul-float/2addr v9, v10
 
-    .line 327
+    .line 328
     aget v10, v8, v4
 
     add-float/2addr v9, v10
 
     aput v9, v8, v4
 
-    .line 328
+    .line 329
     aget v9, v8, v4
 
     cmpl-float v9, v9, v5
 
     if-lez v9, :cond_9
 
-    .line 329
+    .line 330
     aget v2, v8, v4
 
     move/from16 v17, v4
@@ -549,10 +549,10 @@
 
     move/from16 v2, v17
 
-    .line 330
+    .line 331
     goto :goto_3
 
-    .line 309
+    .line 310
     :cond_3
     add-int v4, v7, v3
 
@@ -562,19 +562,19 @@
 
     goto :goto_1
 
-    .line 335
+    .line 336
     :cond_4
     new-instance v14, Landroid/util/SparseArray;
 
     invoke-direct {v14}, Landroid/util/SparseArray;-><init>()V
 
-    .line 336
+    .line 337
     const/high16 v6, -0x1000000
 
-    .line 337
+    .line 338
     const/high16 v7, -0x40800000    # -1.0f
 
-    .line 341
+    .line 342
     const/4 v2, 0x0
 
     move v9, v2
@@ -582,7 +582,7 @@
     :goto_4
     if-ge v9, v11, :cond_7
 
-    .line 342
+    .line 343
     const/4 v2, 0x0
 
     move v8, v2
@@ -590,7 +590,7 @@
     :goto_5
     if-ge v8, v12, :cond_6
 
-    .line 343
+    .line 344
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8, v9}, Landroid/graphics/Bitmap;->getPixel(II)I
@@ -601,30 +601,30 @@
 
     or-int v5, v2, v4
 
-    .line 344
+    .line 345
     invoke-static {v5, v13}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 345
+    .line 346
     const/4 v2, 0x0
 
     aget v2, v13, v2
 
     float-to-int v2, v2
 
-    .line 346
+    .line 347
     if-ne v2, v10, :cond_8
 
-    .line 347
+    .line 348
     const/4 v2, 0x1
 
     aget v2, v13, v2
 
-    .line 348
+    .line 349
     const/4 v4, 0x2
 
     aget v4, v13, v4
 
-    .line 349
+    .line 350
     const/high16 v15, 0x42c80000    # 100.0f
 
     mul-float/2addr v15, v2
@@ -643,22 +643,22 @@
 
     add-int v15, v15, v16
 
-    .line 351
+    .line 352
     mul-float/2addr v4, v2
 
-    .line 352
+    .line 353
     invoke-virtual {v14, v15}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/Float;
 
-    .line 353
+    .line 354
     if-nez v2, :cond_5
 
     move v2, v4
 
-    .line 354
+    .line 355
     :goto_6
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -666,7 +666,7 @@
 
     invoke-virtual {v14, v15, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 355
+    .line 356
     cmpl-float v4, v2, v7
 
     if-lez v4, :cond_8
@@ -675,7 +675,7 @@
 
     move v2, v5
 
-    .line 342
+    .line 343
     :goto_7
     add-int v5, v8, v3
 
@@ -687,7 +687,7 @@
 
     goto :goto_5
 
-    .line 353
+    .line 354
     :cond_5
     invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
 
@@ -697,7 +697,7 @@
 
     goto :goto_6
 
-    .line 341
+    .line 342
     :cond_6
     add-int v2, v9, v3
 
@@ -705,7 +705,7 @@
 
     goto :goto_4
 
-    .line 363
+    .line 364
     :cond_7
     return v6
 
@@ -735,12 +735,12 @@
 
     const/4 v1, 0x0
 
-    .line 372
+    .line 373
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 373
+    .line 374
     invoke-virtual {p1, v0, v1}, Landroid/content/pm/PackageManager;->queryBroadcastReceivers(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v0
@@ -763,12 +763,12 @@
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    .line 374
+    .line 375
     iget-object v2, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     if-eqz v2, :cond_0
 
-    .line 375
+    .line 376
     iget-object v2, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v2, v2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -779,18 +779,18 @@
 
     if-eqz v2, :cond_0
 
-    .line 376
+    .line 377
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 378
+    .line 379
     :try_start_0
     invoke-virtual {p1, v0}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 379
+    .line 380
     invoke-static {v0, v2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
@@ -799,11 +799,11 @@
 
     return-object v0
 
-    .line 380
+    .line 381
     :catch_0
     move-exception v2
 
-    .line 381
+    .line 382
     const-string/jumbo v2, "Launcher.Utilities"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -828,7 +828,7 @@
 
     goto :goto_0
 
-    .line 385
+    .line 386
     :cond_1
     return-object v5
 .end method
@@ -837,7 +837,7 @@
     .locals 3
 
     .prologue
-    .line 394
+    .line 395
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -850,12 +850,12 @@
 
     mul-int/lit8 v0, v0, 0x4
 
-    .line 395
+    .line 396
     new-instance v1, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v1, v0}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
-    .line 397
+    .line 398
     :try_start_0
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -863,13 +863,13 @@
 
     invoke-virtual {p0, v0, v2, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 398
+    .line 399
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->flush()V
 
-    .line 399
+    .line 400
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
 
-    .line 400
+    .line 401
     invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -878,18 +878,18 @@
 
     return-object v0
 
-    .line 401
+    .line 402
     :catch_0
     move-exception v0
 
-    .line 402
+    .line 403
     const-string/jumbo v0, "Launcher.Utilities"
 
     const-string/jumbo v1, "Could not write bitmap"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
+    .line 404
     const/4 v0, 0x0
 
     return-object v0
@@ -901,40 +901,40 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 137
+    .line 138
     sget-boolean v1, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT:Z
 
     if-eqz v1, :cond_1
 
-    .line 140
+    .line 141
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 141
+    .line 142
     invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v2
 
     iget v2, v2, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
 
-    .line 142
+    .line 143
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v1
 
     iget v1, v1, Landroid/util/DisplayMetrics;->densityDpi:I
 
-    .line 141
+    .line 142
     mul-int/2addr v1, v2
 
-    .line 142
+    .line 143
     sget v2, Landroid/util/DisplayMetrics;->DENSITY_DEVICE_STABLE:I
 
-    .line 141
+    .line 142
     div-int/2addr v1, v2
 
-    .line 143
+    .line 144
     const/16 v2, 0x258
 
     if-lt v1, v2, :cond_0
@@ -944,7 +944,7 @@
     :cond_0
     return v0
 
-    .line 145
+    .line 146
     :cond_1
     return v0
 .end method
@@ -959,17 +959,17 @@
 
     const/4 v4, 0x0
 
-    .line 223
+    .line 224
     sget-object v0, Lcom/android/launcher3/Utilities;->sLoc0:[I
 
     invoke-virtual {p0, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 224
+    .line 225
     sget-object v0, Lcom/android/launcher3/Utilities;->sLoc1:[I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 226
+    .line 227
     sget-object v0, Lcom/android/launcher3/Utilities;->sLoc0:[I
 
     aget v1, v0, v4
@@ -996,7 +996,7 @@
 
     aput v1, v0, v4
 
-    .line 227
+    .line 228
     sget-object v0, Lcom/android/launcher3/Utilities;->sLoc0:[I
 
     aget v1, v0, v5
@@ -1023,7 +1023,7 @@
 
     aput v1, v0, v5
 
-    .line 228
+    .line 229
     sget-object v0, Lcom/android/launcher3/Utilities;->sLoc1:[I
 
     aget v1, v0, v4
@@ -1050,7 +1050,7 @@
 
     aput v1, v0, v4
 
-    .line 229
+    .line 230
     sget-object v0, Lcom/android/launcher3/Utilities;->sLoc1:[I
 
     aget v1, v0, v5
@@ -1077,7 +1077,7 @@
 
     aput v1, v0, v5
 
-    .line 230
+    .line 231
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1117,7 +1117,7 @@
 
     const/4 v5, 0x0
 
-    .line 163
+    .line 164
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v1, p2, v5
@@ -1126,7 +1126,7 @@
 
     aput v1, v0, v5
 
-    .line 164
+    .line 165
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v1, p2, v6
@@ -1135,25 +1135,25 @@
 
     aput v1, v0, v6
 
-    .line 166
+    .line 167
     const/high16 v0, 0x3f800000    # 1.0f
 
     move v1, v0
 
     move-object v0, p0
 
-    .line 168
+    .line 169
     :goto_0
     if-eq v0, p1, :cond_2
 
     if-eqz v0, :cond_2
 
-    .line 171
+    .line 172
     if-ne v0, p0, :cond_0
 
     if-eqz p3, :cond_1
 
-    .line 172
+    .line 173
     :cond_0
     sget-object v2, Lcom/android/launcher3/Utilities;->sPoint:[F
 
@@ -1169,7 +1169,7 @@
 
     aput v3, v2, v5
 
-    .line 173
+    .line 174
     sget-object v2, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v3, v2, v6
@@ -1184,7 +1184,7 @@
 
     aput v3, v2, v6
 
-    .line 176
+    .line 177
     :cond_1
     invoke-virtual {v0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
 
@@ -1194,7 +1194,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 177
+    .line 178
     sget-object v2, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v3, v2, v5
@@ -1209,7 +1209,7 @@
 
     aput v3, v2, v5
 
-    .line 178
+    .line 179
     sget-object v2, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v3, v2, v6
@@ -1224,14 +1224,14 @@
 
     aput v3, v2, v6
 
-    .line 179
+    .line 180
     invoke-virtual {v0}, Landroid/view/View;->getScaleX()F
 
     move-result v2
 
     mul-float/2addr v1, v2
 
-    .line 181
+    .line 182
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -1240,7 +1240,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 185
     :cond_2
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
@@ -1252,7 +1252,7 @@
 
     aput v0, p2, v5
 
-    .line 185
+    .line 186
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v0, v0, v6
@@ -1263,33 +1263,50 @@
 
     aput v0, p2, v6
 
-    .line 186
+    .line 187
     return v1
+.end method
+
+.method public static getDevicePrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    .locals 2
+
+    .prologue
+    .line 555
+    const-string/jumbo v0, "com.android.launcher3.device.prefs"
+
+    const/4 v1, 0x0
+
+    .line 554
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public static getOverrideObject(Ljava/lang/Class;Landroid/content/Context;I)Ljava/lang/Object;
     .locals 4
 
     .prologue
-    .line 622
+    .line 628
     invoke-virtual {p1, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 623
+    .line 629
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 625
+    .line 631
     :try_start_0
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 626
+    .line 632
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/Class;
@@ -1325,18 +1342,18 @@
 
     return-object v0
 
-    .line 628
+    .line 634
     :catch_0
     move-exception v0
 
-    .line 629
+    .line 635
     const-string/jumbo v1, "Launcher.Utilities"
 
     const-string/jumbo v2, "Bad overriden class"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 634
+    .line 640
     :cond_0
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
@@ -1348,11 +1365,11 @@
 
     return-object v0
 
-    .line 635
+    .line 641
     :catch_1
     move-exception v0
 
-    .line 636
+    .line 642
     new-instance v1, Ljava/lang/RuntimeException;
 
     invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -1364,12 +1381,12 @@
     .locals 2
 
     .prologue
-    .line 549
+    .line 550
     const-string/jumbo v0, "com.android.launcher3.prefs"
 
     const/4 v1, 0x0
 
-    .line 548
+    .line 549
     invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1381,7 +1398,7 @@
     .locals 5
 
     .prologue
-    .line 499
+    .line 500
     :try_start_0
     const-string/jumbo v0, "android.os.SystemProperties"
 
@@ -1389,7 +1406,7 @@
 
     move-result-object v0
 
-    .line 500
+    .line 501
     const-string/jumbo v1, "get"
 
     const/4 v2, 0x1
@@ -1406,7 +1423,7 @@
 
     move-result-object v0
 
-    .line 501
+    .line 502
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -1423,7 +1440,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 502
+    .line 503
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1432,21 +1449,21 @@
 
     if-nez v1, :cond_0
 
-    .line 503
+    .line 504
     return-object v0
 
-    .line 505
+    .line 506
     :catch_0
     move-exception v0
 
-    .line 506
+    .line 507
     const-string/jumbo v0, "Launcher.Utilities"
 
     const-string/jumbo v1, "Unable to read system properties"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 508
+    .line 509
     :cond_0
     return-object p1
 .end method
@@ -1455,19 +1472,19 @@
     .locals 3
 
     .prologue
-    .line 132
+    .line 133
     invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     const-string/jumbo v1, "pref_allowRotation"
 
-    .line 133
+    .line 134
     invoke-static {p0}, Lcom/android/launcher3/Utilities;->getAllowRotationDefaultValue(Landroid/content/Context;)Z
 
     move-result v2
 
-    .line 132
+    .line 133
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
@@ -1476,22 +1493,32 @@
 .end method
 
 .method public static isAtLeastO()Z
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 89
-    invoke-static {}, Landroid/support/v4/os/a;->isAtLeastO()Z
+    .line 87
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-result v0
+    const/16 v1, 0x1a
 
+    if-lt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public static isBinderSizeError(Ljava/lang/Exception;)Z
     .locals 1
 
     .prologue
-    .line 617
+    .line 623
     invoke-virtual {p0}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
@@ -1500,14 +1527,14 @@
 
     if-nez v0, :cond_0
 
-    .line 618
+    .line 624
     invoke-virtual {p0}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
     instance-of v0, v0, Landroid/os/DeadObjectException;
 
-    .line 617
+    .line 623
     :goto_0
     return v0
 
@@ -1521,7 +1548,7 @@
     .locals 3
 
     .prologue
-    .line 494
+    .line 495
     const-string/jumbo v0, "1"
 
     const-string/jumbo v1, "sys.boot_completed"
@@ -1543,7 +1570,7 @@
     .locals 1
 
     .prologue
-    .line 602
+    .line 608
     if-eqz p0, :cond_0
 
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
@@ -1565,10 +1592,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 462
+    .line 463
     if-eqz p0, :cond_1
 
-    .line 463
+    .line 464
     const-string/jumbo v1, "android.intent.action.MAIN"
 
     invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -1579,18 +1606,11 @@
 
     move-result v1
 
-    .line 462
-    if-eqz v1, :cond_1
-
-    .line 464
-    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v1
-
+    .line 463
     if-eqz v1, :cond_1
 
     .line 465
-    invoke-virtual {p0}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+    invoke-virtual {p0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v1
 
@@ -1601,23 +1621,30 @@
 
     move-result-object v1
 
+    if-eqz v1, :cond_1
+
+    .line 467
+    invoke-virtual {p0}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+
+    move-result-object v1
+
     invoke-interface {v1}, Ljava/util/Set;->size()I
 
     move-result v1
 
     if-ne v1, v0, :cond_1
 
-    .line 467
+    .line 468
     const-string/jumbo v1, "android.intent.category.LAUNCHER"
 
     invoke-virtual {p0, v1}, Landroid/content/Intent;->hasCategory(Ljava/lang/String;)Z
 
     move-result v1
 
-    .line 462
+    .line 463
     if-eqz v1, :cond_1
 
-    .line 468
+    .line 469
     invoke-virtual {p0}, Landroid/content/Intent;->getDataString()Ljava/lang/String;
 
     move-result-object v1
@@ -1626,15 +1653,15 @@
 
     move-result v1
 
-    .line 462
+    .line 463
     if-eqz v1, :cond_1
 
-    .line 470
+    .line 471
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v1
 
-    .line 471
+    .line 472
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
@@ -1648,7 +1675,7 @@
     :cond_0
     return v0
 
-    .line 473
+    .line 474
     :cond_1
     const/4 v0, 0x0
 
@@ -1659,7 +1686,7 @@
     .locals 1
 
     .prologue
-    .line 553
+    .line 559
     const-string/jumbo v0, "power"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1668,7 +1695,7 @@
 
     check-cast v0, Landroid/os/PowerManager;
 
-    .line 554
+    .line 560
     invoke-virtual {v0}, Landroid/os/PowerManager;->isPowerSaveMode()Z
 
     move-result v0
@@ -1680,7 +1707,7 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 129
     const/4 v0, 0x2
 
     invoke-static {p0, v0}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
@@ -1696,7 +1723,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 451
+    .line 452
     invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object v1
@@ -1716,7 +1743,7 @@
     goto :goto_0
 .end method
 
-.method static isSystemApp(Landroid/content/Context;Landroid/content/Intent;)Z
+.method public static isSystemApp(Landroid/content/Context;Landroid/content/Intent;)Z
     .locals 5
 
     .prologue
@@ -1724,44 +1751,44 @@
 
     const/4 v1, 0x0
 
-    .line 263
+    .line 264
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 264
+    .line 265
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v3
 
-    .line 266
+    .line 267
     if-nez v3, :cond_2
 
-    .line 267
+    .line 268
     const/high16 v3, 0x10000
 
     invoke-virtual {v2, p1, v3}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
     move-result-object v3
 
-    .line 268
+    .line 269
     if-eqz v3, :cond_0
 
     iget-object v4, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     if-eqz v4, :cond_0
 
-    .line 269
+    .line 270
     iget-object v1, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v1, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    .line 274
+    .line 275
     :cond_0
     :goto_0
     if-eqz v1, :cond_3
 
-    .line 276
+    .line 277
     const/4 v3, 0x0
 
     :try_start_0
@@ -1769,14 +1796,14 @@
 
     move-result-object v1
 
-    .line 277
+    .line 278
     if-eqz v1, :cond_1
 
     iget-object v2, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     if-eqz v2, :cond_1
 
-    .line 278
+    .line 279
     iget-object v1, v1, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v1, v1, Landroid/content/pm/ApplicationInfo;->flags:I
@@ -1789,11 +1816,11 @@
 
     const/4 v0, 0x1
 
-    .line 277
+    .line 278
     :cond_1
     return v0
 
-    .line 272
+    .line 273
     :cond_2
     invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
@@ -1801,14 +1828,14 @@
 
     goto :goto_0
 
-    .line 279
+    .line 280
     :catch_0
     move-exception v1
 
-    .line 280
+    .line 281
     return v0
 
-    .line 283
+    .line 284
     :cond_3
     return v0
 .end method
@@ -1817,12 +1844,12 @@
     .locals 4
 
     .prologue
-    .line 558
+    .line 564
     sget-boolean v0, Lcom/android/launcher3/Utilities;->ATLEAST_NOUGAT:Z
 
     if-eqz v0, :cond_0
 
-    .line 560
+    .line 566
     :try_start_0
     const-class v0, Landroid/app/WallpaperManager;
 
@@ -1832,7 +1859,7 @@
 
     check-cast v0, Landroid/app/WallpaperManager;
 
-    .line 561
+    .line 567
     invoke-virtual {v0}, Landroid/app/WallpaperManager;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -1865,11 +1892,11 @@
 
     return v0
 
-    .line 563
+    .line 569
     :catch_0
     move-exception v0
 
-    .line 565
+    .line 571
     :cond_0
     const/4 v0, 0x1
 
@@ -1880,7 +1907,7 @@
     .locals 2
 
     .prologue
-    .line 544
+    .line 545
     cmp-long v0, p0, p2
 
     if-gez v0, :cond_0
@@ -1913,16 +1940,16 @@
 
     const/4 v3, 0x0
 
-    .line 193
+    .line 194
     sget-object v0, Lcom/android/launcher3/Utilities;->sMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 195
+    .line 196
     :goto_0
     if-eq p0, p1, :cond_0
 
-    .line 196
+    .line 197
     sget-object v0, Lcom/android/launcher3/Utilities;->sMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Landroid/view/View;->getScrollX()I
@@ -1943,7 +1970,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 197
+    .line 198
     sget-object v0, Lcom/android/launcher3/Utilities;->sMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
@@ -1952,7 +1979,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
 
-    .line 198
+    .line 199
     sget-object v0, Lcom/android/launcher3/Utilities;->sMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p0}, Landroid/view/View;->getLeft()I
@@ -1969,7 +1996,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 199
+    .line 200
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -1980,7 +2007,7 @@
 
     goto :goto_0
 
-    .line 201
+    .line 202
     :cond_0
     sget-object v0, Lcom/android/launcher3/Utilities;->sMatrix:Landroid/graphics/Matrix;
 
@@ -2002,14 +2029,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 202
+    .line 203
     sget-object v0, Lcom/android/launcher3/Utilities;->sMatrix:Landroid/graphics/Matrix;
 
     sget-object v1, Lcom/android/launcher3/Utilities;->sInverseMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-    .line 204
+    .line 205
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v1, p2, v3
@@ -2018,7 +2045,7 @@
 
     aput v1, v0, v3
 
-    .line 205
+    .line 206
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v1, p2, v4
@@ -2027,14 +2054,14 @@
 
     aput v1, v0, v4
 
-    .line 206
+    .line 207
     sget-object v0, Lcom/android/launcher3/Utilities;->sInverseMatrix:Landroid/graphics/Matrix;
 
     sget-object v1, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->mapPoints([F)V
 
-    .line 207
+    .line 208
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v0, v0, v3
@@ -2045,7 +2072,7 @@
 
     aput v0, p2, v3
 
-    .line 208
+    .line 209
     sget-object v0, Lcom/android/launcher3/Utilities;->sPoint:[F
 
     aget v0, v0, v4
@@ -2056,7 +2083,7 @@
 
     aput v0, p2, v4
 
-    .line 209
+    .line 210
     return-void
 .end method
 
@@ -2066,7 +2093,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 218
+    .line 219
     neg-float v1, p3
 
     cmpl-float v1, p1, v1
@@ -2091,7 +2118,7 @@
 
     if-gez v1, :cond_0
 
-    .line 219
+    .line 220
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v1
@@ -2106,7 +2133,7 @@
 
     const/4 v0, 0x1
 
-    .line 218
+    .line 219
     :cond_0
     return v0
 .end method
@@ -2115,7 +2142,7 @@
     .locals 1
 
     .prologue
-    .line 481
+    .line 482
     const/4 v0, 0x1
 
     invoke-static {v0, p0, p1}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
@@ -2133,7 +2160,7 @@
     .locals 1
 
     .prologue
-    .line 485
+    .line 486
     const/4 v0, 0x2
 
     invoke-static {v0, p0, p1}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
@@ -2153,31 +2180,31 @@
     .prologue
     const/high16 v4, 0x3f000000    # 0.5f
 
-    .line 234
+    .line 235
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p1, v0
 
     if-eqz v0, :cond_0
 
-    .line 235
+    .line 236
     invoke-virtual {p0}, Landroid/graphics/Rect;->centerX()I
 
     move-result v0
 
-    .line 236
+    .line 237
     invoke-virtual {p0}, Landroid/graphics/Rect;->centerY()I
 
     move-result v1
 
-    .line 237
+    .line 238
     neg-int v2, v0
 
     neg-int v3, v1
 
     invoke-virtual {p0, v2, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 239
+    .line 240
     iget v2, p0, Landroid/graphics/Rect;->left:I
 
     int-to-float v2, v2
@@ -2190,7 +2217,7 @@
 
     iput v2, p0, Landroid/graphics/Rect;->left:I
 
-    .line 240
+    .line 241
     iget v2, p0, Landroid/graphics/Rect;->top:I
 
     int-to-float v2, v2
@@ -2203,7 +2230,7 @@
 
     iput v2, p0, Landroid/graphics/Rect;->top:I
 
-    .line 241
+    .line 242
     iget v2, p0, Landroid/graphics/Rect;->right:I
 
     int-to-float v2, v2
@@ -2216,7 +2243,7 @@
 
     iput v2, p0, Landroid/graphics/Rect;->right:I
 
-    .line 242
+    .line 243
     iget v2, p0, Landroid/graphics/Rect;->bottom:I
 
     int-to-float v2, v2
@@ -2229,10 +2256,10 @@
 
     iput v2, p0, Landroid/graphics/Rect;->bottom:I
 
-    .line 244
+    .line 245
     invoke-virtual {p0, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 246
+    .line 247
     :cond_0
     return-void
 .end method
@@ -2241,7 +2268,7 @@
     .locals 3
 
     .prologue
-    .line 607
+    .line 613
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2252,35 +2279,35 @@
 
     move-result-object v0
 
-    .line 606
+    .line 612
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 608
+    .line 614
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 609
+    .line 615
     invoke-static {p1}, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
 
     move-result-object v1
 
-    .line 610
+    .line 616
     invoke-virtual {p0, v1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 611
+    .line 617
     invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v2
 
     invoke-interface {v2, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 612
+    .line 618
     invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 614
+    .line 620
     :cond_0
     return-void
 .end method
@@ -2293,7 +2320,7 @@
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    .line 249
+    .line 250
     invoke-static {p1, p2}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
@@ -2302,12 +2329,12 @@
 
     move-result v0
 
-    .line 250
+    .line 251
     cmpg-float v1, v0, v1
 
     if-gez v1, :cond_0
 
-    .line 251
+    .line 252
     invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -2322,21 +2349,21 @@
 
     float-to-int v1, v1
 
-    .line 252
+    .line 253
     iget v2, p0, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v2, v1
 
     iput v2, p0, Landroid/graphics/Rect;->left:I
 
-    .line 253
+    .line 254
     iget v2, p0, Landroid/graphics/Rect;->right:I
 
     sub-int v1, v2, v1
 
     iput v1, p0, Landroid/graphics/Rect;->right:I
 
-    .line 255
+    .line 256
     invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
 
     move-result v1
@@ -2351,21 +2378,21 @@
 
     float-to-int v1, v1
 
-    .line 256
+    .line 257
     iget v2, p0, Landroid/graphics/Rect;->top:I
 
     add-int/2addr v2, v1
 
     iput v2, p0, Landroid/graphics/Rect;->top:I
 
-    .line 257
+    .line 258
     iget v2, p0, Landroid/graphics/Rect;->bottom:I
 
     sub-int v1, v2, v1
 
     iput v1, p0, Landroid/graphics/Rect;->bottom:I
 
-    .line 259
+    .line 260
     :cond_0
     return v0
 .end method
@@ -2374,17 +2401,17 @@
     .locals 2
 
     .prologue
-    .line 645
+    .line 651
     new-instance v0, Ljava/util/HashSet;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 646
+    .line 652
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 647
+    .line 653
     return-object v0
 .end method
 
@@ -2394,13 +2421,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 412
+    .line 413
     if-nez p0, :cond_0
 
-    .line 413
+    .line 414
     return-object v0
 
-    .line 417
+    .line 418
     :cond_0
     sget-object v0, Lcom/android/launcher3/Utilities;->sTrimPattern:Ljava/util/regex/Pattern;
 
@@ -2408,7 +2435,7 @@
 
     move-result-object v0
 
-    .line 418
+    .line 419
     const-string/jumbo v1, "$1"
 
     invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
@@ -2422,12 +2449,12 @@
     .locals 5
 
     .prologue
-    .line 534
+    .line 535
     new-instance v0, Landroid/text/SpannableString;
 
     invoke-direct {v0, p0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 535
+    .line 536
     new-instance v1, Landroid/text/style/TtsSpan$TextBuilder;
 
     invoke-direct {v1, p1}, Landroid/text/style/TtsSpan$TextBuilder;-><init>(Ljava/lang/String;)V
@@ -2436,7 +2463,7 @@
 
     move-result-object v1
 
-    .line 536
+    .line 537
     invoke-virtual {v0}, Landroid/text/SpannableString;->length()I
 
     move-result v2
@@ -2445,9 +2472,9 @@
 
     const/16 v4, 0x12
 
-    .line 535
+    .line 536
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 537
+    .line 538
     return-object v0
 .end method

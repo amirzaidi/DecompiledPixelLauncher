@@ -14,16 +14,16 @@
     .locals 0
 
     .prologue
-    .line 703
+    .line 685
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 704
+    .line 686
     iput-object p1, p0, Lcom/android/launcher3/IconCache$IconLoadRequest;->mRunnable:Ljava/lang/Runnable;
 
-    .line 705
+    .line 687
     iput-object p2, p0, Lcom/android/launcher3/IconCache$IconLoadRequest;->mHandler:Landroid/os/Handler;
 
-    .line 706
+    .line 688
     return-void
 .end method
 
@@ -33,13 +33,13 @@
     .locals 2
 
     .prologue
-    .line 709
+    .line 691
     iget-object v0, p0, Lcom/android/launcher3/IconCache$IconLoadRequest;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/launcher3/IconCache$IconLoadRequest;->mRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 710
+    .line 692
     return-void
 .end method

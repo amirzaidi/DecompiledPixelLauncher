@@ -14,7 +14,7 @@
 
 .field protected final mUserManager:Landroid/os/UserManager;
 
-.field protected mUserToSerialMap:Ljava/util/HashMap;
+.field protected mUserToSerialMap:Landroid/util/ArrayMap;
 
 .field protected mUsers:Lcom/android/launcher3/util/LongArrayMap;
 
@@ -24,10 +24,10 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 43
     invoke-direct {p0}, Lcom/android/launcher3/compat/UserManagerCompat;-><init>()V
 
-    .line 46
+    .line 44
     const-string/jumbo v0, "user"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -38,17 +38,17 @@
 
     iput-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserManager:Landroid/os/UserManager;
 
-    .line 47
+    .line 45
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mPm:Landroid/content/pm/PackageManager;
 
-    .line 48
+    .line 46
     iput-object p1, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mContext:Landroid/content/Context;
 
-    .line 49
+    .line 47
     return-void
 .end method
 
@@ -58,10 +58,10 @@
     .locals 5
 
     .prologue
-    .line 89
+    .line 87
     monitor-enter p0
 
-    .line 90
+    .line 88
     :try_start_0
     new-instance v0, Lcom/android/launcher3/util/LongArrayMap;
 
@@ -69,24 +69,24 @@
 
     iput-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUsers:Lcom/android/launcher3/util/LongArrayMap;
 
-    .line 91
-    new-instance v0, Ljava/util/HashMap;
+    .line 89
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Landroid/util/ArrayMap;
 
-    .line 92
+    .line 90
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserManager:Landroid/os/UserManager;
 
     invoke-virtual {v0}, Landroid/os/UserManager;->getUserProfiles()Ljava/util/List;
 
     move-result-object v0
 
-    .line 93
+    .line 91
     if-eqz v0, :cond_0
 
-    .line 94
+    .line 92
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -104,32 +104,32 @@
 
     check-cast v0, Landroid/os/UserHandle;
 
-    .line 95
+    .line 93
     iget-object v2, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserManager:Landroid/os/UserManager;
 
     invoke-virtual {v2, v0}, Landroid/os/UserManager;->getSerialNumberForUser(Landroid/os/UserHandle;)J
 
     move-result-wide v2
 
-    .line 96
+    .line 94
     iget-object v4, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUsers:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v4, v2, v3, v0}, Lcom/android/launcher3/util/LongArrayMap;->put(JLjava/lang/Object;)V
 
-    .line 97
-    iget-object v4, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Ljava/util/HashMap;
+    .line 95
+    iget-object v4, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Landroid/util/ArrayMap;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    invoke-virtual {v4, v0, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v0, v2}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 89
+    .line 87
     :catchall_0
     move-exception v0
 
@@ -140,7 +140,7 @@
     :cond_0
     monitor-exit p0
 
-    .line 101
+    .line 99
     return-void
 .end method
 
@@ -148,13 +148,13 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 115
     if-nez p2, :cond_0
 
-    .line 118
+    .line 116
     return-object p1
 
-    .line 120
+    .line 118
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mPm:Landroid/content/pm/PackageManager;
 
@@ -169,19 +169,19 @@
     .locals 2
 
     .prologue
-    .line 53
+    .line 51
     monitor-enter p0
 
-    .line 54
+    .line 52
     :try_start_0
-    iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Landroid/util/ArrayMap;
 
     if-eqz v0, :cond_1
 
-    .line 55
-    iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Ljava/util/HashMap;
+    .line 53
+    iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -189,7 +189,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 56
+    .line 54
     if-nez v0, :cond_0
 
     const-wide/16 v0, 0x0
@@ -212,7 +212,7 @@
     :cond_1
     monitor-exit p0
 
-    .line 59
+    .line 57
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserManager:Landroid/os/UserManager;
 
     invoke-virtual {v0, p1}, Landroid/os/UserManager;->getSerialNumberForUser(Landroid/os/UserHandle;)J
@@ -221,7 +221,7 @@
 
     return-wide v0
 
-    .line 53
+    .line 51
     :catchall_0
     move-exception v0
 
@@ -234,14 +234,14 @@
     .locals 6
 
     .prologue
-    .line 125
+    .line 123
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mContext:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lcom/android/launcher3/util/ManagedProfileHeuristic;->prefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 126
+    .line 124
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -264,14 +264,14 @@
 
     move-result-object v1
 
-    .line 127
+    .line 125
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 128
+    .line 126
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v2
@@ -286,7 +286,7 @@
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 130
+    .line 128
     :cond_0
     const-wide/16 v2, 0x0
 
@@ -301,16 +301,16 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 62
     monitor-enter p0
 
-    .line 65
+    .line 63
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUsers:Lcom/android/launcher3/util/LongArrayMap;
 
     if-eqz v0, :cond_0
 
-    .line 66
+    .line 64
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUsers:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/launcher3/util/LongArrayMap;->get(J)Ljava/lang/Object;
@@ -328,7 +328,7 @@
     :cond_0
     monitor-exit p0
 
-    .line 69
+    .line 67
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserManager:Landroid/os/UserManager;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/UserManager;->getUserForSerialNumber(J)Landroid/os/UserHandle;
@@ -337,7 +337,7 @@
 
     return-object v0
 
-    .line 64
+    .line 62
     :catchall_0
     move-exception v0
 
@@ -350,21 +350,21 @@
     .locals 2
 
     .prologue
-    .line 105
+    .line 103
     monitor-enter p0
 
-    .line 106
+    .line 104
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUsers:Lcom/android/launcher3/util/LongArrayMap;
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 105
     new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserToSerialMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+    invoke-virtual {v1}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
     move-result-object v1
 
@@ -379,14 +379,14 @@
     :cond_0
     monitor-exit p0
 
-    .line 111
+    .line 109
     iget-object v0, p0, Lcom/android/launcher3/compat/UserManagerCompatVL;->mUserManager:Landroid/os/UserManager;
 
     invoke-virtual {v0}, Landroid/os/UserManager;->getUserProfiles()Ljava/util/List;
 
     move-result-object v0
 
-    .line 112
+    .line 110
     if-nez v0, :cond_1
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -396,7 +396,7 @@
     :cond_1
     return-object v0
 
-    .line 105
+    .line 103
     :catchall_0
     move-exception v0
 
@@ -409,7 +409,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 82
     const/4 v0, 0x0
 
     return v0
@@ -419,7 +419,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 72
     const/4 v0, 0x0
 
     return v0
@@ -429,7 +429,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 77
     const/4 v0, 0x1
 
     return v0

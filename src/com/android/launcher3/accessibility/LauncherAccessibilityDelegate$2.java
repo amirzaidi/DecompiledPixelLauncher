@@ -21,6 +21,6 @@ final class LauncherAccessibilityDelegate$2 implements Runnable
         final ArrayList<ItemInfo> list = new ArrayList<ItemInfo>();
         list.add(this.val$item);
         this.this$0.mLauncher.bindItems(list, 0, list.size(), true);
-        this.this$0.announceConfirmation(2131492973);
+        this.this$0.announceConfirmation(2131492982);
     }
 }

@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$2;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    .line 858
+    .line 926
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,11 +31,11 @@
     .locals 1
 
     .prologue
-    .line 860
+    .line 928
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$2;->this$0:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/Folder;->completeDragExit()V
 
-    .line 861
+    .line 929
     return-void
 .end method

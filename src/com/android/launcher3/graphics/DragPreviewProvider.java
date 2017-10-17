@@ -11,8 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.Region$Op;
 import com.android.launcher3.folder.FolderIcon;
 import android.graphics.Canvas;
-import com.android.launcher3.Workspace;
-import android.widget.TextView;
+import com.android.launcher3.BubbleTextView;
 import android.content.Context;
 import android.view.View;
 import android.graphics.Rect;
@@ -33,9 +32,9 @@ public class DragPreviewProvider
     public DragPreviewProvider(final View mView, final Context context) {
         this.mTempRect = new Rect();
         this.mView = mView;
-        this.blurSizeOutline = context.getResources().getDimensionPixelSize(2131427428);
-        if (this.mView instanceof TextView) {
-            final Rect drawableBounds = getDrawableBounds(Workspace.getTextViewIcon((TextView)this.mView));
+        this.blurSizeOutline = context.getResources().getDimensionPixelSize(2131427438);
+        if (this.mView instanceof BubbleTextView) {
+            final Rect drawableBounds = getDrawableBounds(((BubbleTextView)this.mView).getIcon());
             this.previewPadding = this.blurSizeOutline - drawableBounds.left - drawableBounds.top;
         }
         else {
@@ -46,11 +45,11 @@ public class DragPreviewProvider
     private void drawDragView(final Canvas canvas) {
         final boolean textVisible = true;
         canvas.save();
-        if (this.mView instanceof TextView) {
-            final Drawable textViewIcon = Workspace.getTextViewIcon((TextView)this.mView);
-            final Rect drawableBounds = getDrawableBounds(textViewIcon);
+        if (this.mView instanceof BubbleTextView) {
+            final Drawable icon = ((BubbleTextView)this.mView).getIcon();
+            final Rect drawableBounds = getDrawableBounds(icon);
             canvas.translate((float)(this.blurSizeOutline / 2 - drawableBounds.left), (float)(this.blurSizeOutline / 2 - drawableBounds.top));
-            textViewIcon.draw(canvas);
+            icon.draw(canvas);
         }
         else {
             final Rect mTempRect = this.mTempRect;
@@ -89,8 +88,8 @@ public class DragPreviewProvider
         float scaleToFit = 1.0f;
         int n = this.mView.getWidth();
         int n2 = this.mView.getHeight();
-        if (this.mView instanceof TextView) {
-            final Rect drawableBounds = getDrawableBounds(Workspace.getTextViewIcon((TextView)this.mView));
+        if (this.mView instanceof BubbleTextView) {
+            final Rect drawableBounds = getDrawableBounds(((BubbleTextView)this.mView).getIcon());
             n = drawableBounds.width();
             n2 = drawableBounds.height();
         }

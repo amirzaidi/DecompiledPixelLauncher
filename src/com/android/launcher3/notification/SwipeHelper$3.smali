@@ -29,7 +29,7 @@
 
     iput-object p4, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->val$endAction:Ljava/lang/Runnable;
 
-    .line 401
+    .line 398
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -42,12 +42,12 @@
     .locals 1
 
     .prologue
-    .line 405
+    .line 402
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->mCancelled:Z
 
-    .line 406
+    .line 403
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 409
+    .line 406
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->val$animView:Landroid/view/View;
@@ -66,23 +66,23 @@
 
     invoke-static {v0, v1, v2}, Lcom/android/launcher3/notification/SwipeHelper;->-wrap0(Lcom/android/launcher3/notification/SwipeHelper;Landroid/view/View;Z)V
 
-    .line 410
+    .line 407
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
-    invoke-static {v0}, Lcom/android/launcher3/notification/SwipeHelper;->-get3(Lcom/android/launcher3/notification/SwipeHelper;)Ljava/util/HashMap;
+    invoke-static {v0}, Lcom/android/launcher3/notification/SwipeHelper;->-get3(Lcom/android/launcher3/notification/SwipeHelper;)Landroid/util/ArrayMap;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->val$animView:Landroid/view/View;
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 411
+    .line 408
     iget-boolean v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->mCancelled:Z
 
     if-nez v0, :cond_0
 
-    .line 412
+    .line 409
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
     invoke-static {v0}, Lcom/android/launcher3/notification/SwipeHelper;->-get0(Lcom/android/launcher3/notification/SwipeHelper;)Lcom/android/launcher3/notification/SwipeHelper$Callback;
@@ -93,18 +93,18 @@
 
     invoke-interface {v0, v1}, Lcom/android/launcher3/notification/SwipeHelper$Callback;->onChildDismissed(Landroid/view/View;)V
 
-    .line 414
+    .line 411
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->val$endAction:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 415
+    .line 412
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->val$endAction:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 417
+    .line 414
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->this$0:Lcom/android/launcher3/notification/SwipeHelper;
 
@@ -114,14 +114,14 @@
 
     if-nez v0, :cond_2
 
-    .line 418
+    .line 415
     iget-object v0, p0, Lcom/android/launcher3/notification/SwipeHelper$3;->val$animView:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1, v3}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 420
+    .line 417
     :cond_2
     return-void
 .end method

@@ -75,7 +75,7 @@ public class UninstallDropTarget extends ButtonDropTarget
         boolean b = false;
         final ComponentName uninstallTarget = getUninstallTarget((Context)launcher, itemInfo);
         if (uninstallTarget == null) {
-            Toast.makeText((Context)launcher, 2131492929, 0).show();
+            Toast.makeText((Context)launcher, 2131492931, 0).show();
         }
         else {
             final Intent setFlags = new Intent("android.intent.action.DELETE", Uri.fromParts("package", uninstallTarget.getPackageName(), uninstallTarget.getClassName())).setFlags(276824064);
@@ -114,8 +114,12 @@ public class UninstallDropTarget extends ButtonDropTarget
     
     protected void onFinishInflate() {
         super.onFinishInflate();
+        this.setupUi();
+    }
+    
+    protected void setupUi() {
         this.mHoverColor = this.getResources().getColor(2131361815);
-        this.setDrawable(2130837574);
+        this.setDrawable(2130837579);
     }
     
     protected boolean supportsDrop(final DragSource dragSource, final ItemInfo itemInfo) {

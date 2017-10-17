@@ -12,7 +12,7 @@ import com.android.launcher3.Launcher;
 public class SystemShortcut$Widgets extends SystemShortcut
 {
     public SystemShortcut$Widgets() {
-        super(2130837576, 2131492941);
+        super(2130837582, 2131492943);
     }
     
     public View$OnClickListener getOnClickListener(final Launcher launcher, final ItemInfo itemInfo) {

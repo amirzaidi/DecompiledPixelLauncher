@@ -17,15 +17,15 @@
     .locals 0
 
     .prologue
-    .line 1459
+    .line 1573
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1460
+    .line 1574
     iput-object p2, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->mDragObject:Lcom/android/launcher3/DropTarget$DragObject;
 
-    .line 1461
+    .line 1575
     return-void
 .end method
 
@@ -37,32 +37,32 @@
     .prologue
     const/4 v2, -0x1
 
-    .line 1468
+    .line 1582
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iget v0, v0, Lcom/android/launcher3/folder/Folder;->mCurrentScrollDir:I
 
     if-nez v0, :cond_0
 
-    .line 1469
+    .line 1583
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mContent:Lcom/android/launcher3/folder/FolderPagedView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/FolderPagedView;->scrollLeft()V
 
-    .line 1470
+    .line 1584
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iput v2, v0, Lcom/android/launcher3/folder/Folder;->mScrollHintDir:I
 
-    .line 1478
+    .line 1592
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iput v2, v0, Lcom/android/launcher3/folder/Folder;->mCurrentScrollDir:I
 
-    .line 1481
+    .line 1595
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mScrollPauseAlarm:Lcom/android/launcher3/Alarm;
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Alarm;->setOnAlarmListener(Lcom/android/launcher3/OnAlarmListener;)V
 
-    .line 1482
+    .line 1596
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mScrollPauseAlarm:Lcom/android/launcher3/Alarm;
@@ -86,10 +86,10 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/android/launcher3/Alarm;->setAlarm(J)V
 
-    .line 1483
+    .line 1597
     return-void
 
-    .line 1471
+    .line 1585
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
@@ -99,21 +99,21 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1472
+    .line 1586
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iget-object v0, v0, Lcom/android/launcher3/folder/Folder;->mContent:Lcom/android/launcher3/folder/FolderPagedView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/FolderPagedView;->scrollRight()V
 
-    .line 1473
+    .line 1587
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$OnScrollHintListener;->this$0:Lcom/android/launcher3/folder/Folder;
 
     iput v2, v0, Lcom/android/launcher3/folder/Folder;->mScrollHintDir:I
 
     goto :goto_0
 
-    .line 1476
+    .line 1590
     :cond_1
     return-void
 .end method

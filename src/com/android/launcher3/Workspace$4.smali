@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$4;->this$0:Lcom/android/launcher3/Workspace;
 
-    .line 1570
+    .line 1518
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 3
 
     .prologue
-    .line 1573
+    .line 1521
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -42,13 +42,13 @@
 
     move-result v0
 
-    .line 1574
+    .line 1522
     iget-object v1, p0, Lcom/android/launcher3/Workspace$4;->this$0:Lcom/android/launcher3/Workspace;
 
     const/4 v2, 0x2
 
-    invoke-static {v1, v0, v2}, Lcom/android/launcher3/Workspace;->-wrap1(Lcom/android/launcher3/Workspace;FI)V
+    invoke-static {v1, v0, v2}, Lcom/android/launcher3/Workspace;->-wrap0(Lcom/android/launcher3/Workspace;FI)V
 
-    .line 1575
+    .line 1523
     return-void
 .end method

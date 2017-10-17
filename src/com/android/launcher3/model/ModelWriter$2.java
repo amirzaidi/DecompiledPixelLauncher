@@ -14,7 +14,7 @@ import com.android.launcher3.LauncherSettings$Settings;
 import com.android.launcher3.util.ContentWriter;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.ShortcutInfo;
-import com.android.launcher3.util.LooperExecuter;
+import com.android.launcher3.util.LooperExecutor;
 import com.android.launcher3.LauncherModel;
 import java.util.concurrent.Executor;
 import android.content.Context;

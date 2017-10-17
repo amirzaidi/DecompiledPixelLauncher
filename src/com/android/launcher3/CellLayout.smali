@@ -31,25 +31,25 @@
 
 .field private mCountY:I
 
-.field private mDirectionVector:[I
+.field private final mDirectionVector:[I
 
 .field private final mDragCell:[I
 
-.field mDragOutlineAlphas:[F
+.field final mDragOutlineAlphas:[F
 
-.field private mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
+.field private final mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
 .field private mDragOutlineCurrent:I
 
 .field private final mDragOutlinePaint:Landroid/graphics/Paint;
 
-.field mDragOutlines:[Landroid/graphics/Rect;
+.field final mDragOutlines:[Landroid/graphics/Rect;
 
 .field private mDragging:Z
 
 .field private mDropPending:Z
 
-.field private mEaseOutInterpolator:Landroid/animation/TimeInterpolator;
+.field private final mEaseOutInterpolator:Landroid/animation/TimeInterpolator;
 
 .field private mFixedCellHeight:I
 
@@ -59,13 +59,13 @@
 
 .field private mFixedWidth:I
 
-.field private mFolderBackgrounds:Ljava/util/ArrayList;
+.field private final mFolderBackgrounds:Ljava/util/ArrayList;
 
-.field mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+.field final mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
 .field private mInterceptTouchListener:Landroid/view/View$OnTouchListener;
 
-.field private mIntersectingViews:Ljava/util/ArrayList;
+.field private final mIntersectingViews:Ljava/util/ArrayList;
 
 .field private mIsDragOverlapping:Z
 
@@ -75,23 +75,23 @@
 
 .field private mJailContent:Z
 
-.field private mLauncher:Lcom/android/launcher3/Launcher;
+.field private final mLauncher:Lcom/android/launcher3/Launcher;
 
 .field private mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
-.field private mOccupiedRect:Landroid/graphics/Rect;
+.field private final mOccupiedRect:Landroid/graphics/Rect;
 
-.field mPreviousReorderDirection:[I
+.field final mPreviousReorderDirection:[I
 
-.field mReorderAnimators:Ljava/util/HashMap;
+.field final mReorderAnimators:Landroid/util/ArrayMap;
 
 .field final mReorderPreviewAnimationMagnitude:F
 
-.field mShakeAnimators:Ljava/util/HashMap;
+.field final mShakeAnimators:Landroid/util/ArrayMap;
 
-.field private mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
+.field private final mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
-.field private mStylusEventHelper:Lcom/android/launcher3/StylusEventHelper;
+.field private final mStylusEventHelper:Lcom/android/launcher3/StylusEventHelper;
 
 .field final mTempLocation:[I
 
@@ -111,15 +111,7 @@
 
 
 # direct methods
-.method static synthetic -get0(Lcom/android/launcher3/CellLayout;)F
-    .locals 1
-
-    iget v0, p0, Lcom/android/launcher3/CellLayout;->mChildScale:F
-
-    return v0
-.end method
-
-.method static synthetic -get1(Lcom/android/launcher3/CellLayout;)I
+.method static synthetic -get0(Lcom/android/launcher3/CellLayout;)I
     .locals 1
 
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
@@ -127,7 +119,7 @@
     return v0
 .end method
 
-.method static synthetic -get2(Lcom/android/launcher3/CellLayout;)I
+.method static synthetic -get1(Lcom/android/launcher3/CellLayout;)I
     .locals 1
 
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
@@ -200,9 +192,9 @@
     .prologue
     const/4 v4, 0x0
 
-    const/4 v2, 0x2
-
     const/4 v8, 0x1
+
+    const/4 v2, 0x2
 
     const/4 v7, -0x1
 
@@ -238,11 +230,11 @@
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderBackgrounds:Ljava/util/ArrayList;
 
     .line 107
-    new-instance v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    new-instance v0, Lcom/android/launcher3/folder/PreviewBackground;
 
-    invoke-direct {v0}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;-><init>()V
+    invoke-direct {v0}, Lcom/android/launcher3/folder/PreviewBackground;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
     .line 116
     iput v7, p0, Lcom/android/launcher3/CellLayout;->mFixedWidth:I
@@ -290,18 +282,18 @@
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlinePaint:Landroid/graphics/Paint;
 
     .line 135
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Landroid/util/ArrayMap;
 
     .line 136
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Landroid/util/ArrayMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mShakeAnimators:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mShakeAnimators:Landroid/util/ArrayMap;
 
     .line 138
     iput-boolean v1, p0, Lcom/android/launcher3/CellLayout;->mItemPlacementDirty:Z
@@ -313,6 +305,11 @@
 
     .line 143
     iput-boolean v1, p0, Lcom/android/launcher3/CellLayout;->mDragging:Z
+
+    .line 157
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iput v0, p0, Lcom/android/launcher3/CellLayout;->mChildScale:F
 
     .line 171
     new-instance v0, Ljava/util/ArrayList;
@@ -348,7 +345,7 @@
     .line 183
     iput-boolean v1, p0, Lcom/android/launcher3/CellLayout;->mUseTouchHelper:Z
 
-    .line 1105
+    .line 1100
     new-instance v0, Ljava/util/Stack;
 
     invoke-direct {v0}, Ljava/util/Stack;-><init>()V
@@ -390,7 +387,7 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 207
     iput v7, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
@@ -403,101 +400,89 @@
     iput v7, p0, Lcom/android/launcher3/CellLayout;->mFixedCellWidth:I
 
     .line 210
-    iget-object v0, v2, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
+    iget-object v2, v0, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
 
-    iget v0, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
+    iget v2, v2, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
-    iput v0, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
+    iput v2, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
     .line 211
-    iget-object v0, v2, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
+    iget-object v2, v0, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
 
-    iget v0, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numRows:I
+    iget v2, v2, Lcom/android/launcher3/InvariantDeviceProfile;->numRows:I
 
-    iput v0, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
+    iput v2, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
     .line 212
-    new-instance v0, Lcom/android/launcher3/util/GridOccupancy;
+    new-instance v2, Lcom/android/launcher3/util/GridOccupancy;
 
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
     iget v5, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
-    invoke-direct {v0, v3, v5}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
+    invoke-direct {v2, v3, v5}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
 
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
+    iput-object v2, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     .line 213
-    new-instance v0, Lcom/android/launcher3/util/GridOccupancy;
+    new-instance v2, Lcom/android/launcher3/util/GridOccupancy;
 
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
     iget v5, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
-    invoke-direct {v0, v3, v5}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
+    invoke-direct {v2, v3, v5}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
 
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
+    iput-object v2, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     .line 215
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
 
     const/16 v3, -0x64
 
-    aput v3, v0, v1
+    aput v3, v2, v1
 
     .line 216
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
 
     const/16 v3, -0x64
 
-    aput v3, v0, v8
+    aput v3, v2, v8
 
     .line 218
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
-    iput v7, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellX:I
+    iput v7, v2, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellX:I
 
     .line 219
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
-    iput v7, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellY:I
+    iput v7, v2, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellY:I
 
     .line 221
-    iget v0, p0, Lcom/android/launcher3/CellLayout;->mContainerType:I
-
-    if-ne v0, v8, :cond_0
-
-    iget-object v0, v2, Lcom/android/launcher3/DeviceProfile;->inv:Lcom/android/launcher3/InvariantDeviceProfile;
-
-    iget v0, v0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatScale:F
-
-    :goto_0
-    iput v0, p0, Lcom/android/launcher3/CellLayout;->mChildScale:F
-
-    .line 223
     invoke-virtual {p0, v1}, Lcom/android/launcher3/CellLayout;->setAlwaysDrawnWithCacheEnabled(Z)V
 
-    .line 224
+    .line 222
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    .line 224
+    const v3, 0x7f020005
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
+    iput-object v3, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
+
+    .line 225
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v3, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+
     .line 226
-    const v0, 0x7f020005
-
-    invoke-virtual {v3, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    .line 227
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    .line 228
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
 
     iget v5, p0, Lcom/android/launcher3/CellLayout;->mBackgroundAlpha:F
 
@@ -507,115 +492,105 @@
 
     float-to-int v5, v5
 
-    invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+    invoke-virtual {v3, v5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 230
-    iget v0, v2, Lcom/android/launcher3/DeviceProfile;->iconSizePx:I
+    .line 228
+    iget v0, v0, Lcom/android/launcher3/DeviceProfile;->iconSizePx:I
 
     int-to-float v0, v0
 
-    const v2, 0x3df5c28f    # 0.12f
+    const v3, 0x3df5c28f    # 0.12f
 
-    mul-float/2addr v0, v2
+    mul-float/2addr v0, v3
 
     iput v0, p0, Lcom/android/launcher3/CellLayout;->mReorderPreviewAnimationMagnitude:F
 
-    .line 233
+    .line 231
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v2, 0x40200000    # 2.5f
+    const/high16 v3, 0x40200000    # 2.5f
 
-    invoke-direct {v0, v2}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
+    invoke-direct {v0, v3}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mEaseOutInterpolator:Landroid/animation/TimeInterpolator;
 
-    .line 234
+    .line 232
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
-    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
-    aput v7, v2, v8
+    aput v7, v3, v8
 
     aput v7, v0, v1
 
     move v0, v1
 
-    .line 235
-    :goto_1
-    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
+    .line 233
+    :goto_0
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
 
-    array-length v2, v2
+    array-length v3, v3
 
-    if-ge v0, v2, :cond_1
+    if-ge v0, v3, :cond_0
 
-    .line 236
-    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
+    .line 234
+    iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
 
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-direct {v5, v7, v7, v7, v7}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    aput-object v5, v2, v0
+    aput-object v5, v3, v0
 
-    .line 235
+    .line 233
     add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 221
-    :cond_0
-    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 
-    .line 238
-    :cond_1
+    .line 236
+    :cond_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlinePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getResources()Landroid/content/res/Resources;
+    const v3, 0x7f01002c
 
-    move-result-object v2
+    invoke-static {p1, v3}, Lcom/android/launcher3/util/Themes;->getAttrColor(Landroid/content/Context;I)I
 
-    const v5, 0x7f0a001c
+    move-result v3
 
-    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    move-result v2
-
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 244
+    .line 242
     const v0, 0x7f0d000d
 
-    invoke-virtual {v3, v0}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v7
 
-    .line 246
+    .line 244
     const v0, 0x7f0d000e
 
-    invoke-virtual {v3, v0}, Landroid/content/res/Resources;->getInteger(I)I
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v0
 
     int-to-float v5, v0
 
-    .line 248
+    .line 246
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAlphas:[F
 
     invoke-static {v0, v4}, Ljava/util/Arrays;->fill([FF)V
 
     move v6, v1
 
-    .line 250
-    :goto_2
+    .line 248
+    :goto_1
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     array-length v0, v0
 
-    if-ge v6, v0, :cond_2
+    if-ge v6, v0, :cond_1
 
-    .line 252
+    .line 250
     new-instance v0, Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     int-to-long v2, v7
@@ -624,7 +599,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/InterruptibleInOutAnimator;-><init>(Landroid/view/View;JFF)V
 
-    .line 253
+    .line 251
     invoke-virtual {v0}, Lcom/android/launcher3/InterruptibleInOutAnimator;->getAnimator()Landroid/animation/ValueAnimator;
 
     move-result-object v1
@@ -633,7 +608,7 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 255
+    .line 253
     invoke-virtual {v0}, Lcom/android/launcher3/InterruptibleInOutAnimator;->getAnimator()Landroid/animation/ValueAnimator;
 
     move-result-object v1
@@ -644,7 +619,7 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 277
+    .line 275
     invoke-virtual {v0}, Lcom/android/launcher3/InterruptibleInOutAnimator;->getAnimator()Landroid/animation/ValueAnimator;
 
     move-result-object v1
@@ -655,20 +630,20 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 285
+    .line 283
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     aput-object v0, v1, v6
 
-    .line 250
+    .line 248
     add-int/lit8 v1, v6, 0x1
 
     move v6, v1
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 288
-    :cond_2
+    .line 286
+    :cond_1
     new-instance v0, Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mContainerType:I
@@ -677,7 +652,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
-    .line 289
+    .line 287
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
@@ -690,7 +665,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setCellDimensions(IIII)V
 
-    .line 291
+    .line 289
     new-instance v0, Lcom/android/launcher3/StylusEventHelper;
 
     new-instance v1, Lcom/android/launcher3/SimpleOnStylusPressListener;
@@ -701,24 +676,24 @@
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mStylusEventHelper:Lcom/android/launcher3/StylusEventHelper;
 
-    .line 293
+    .line 291
     new-instance v0, Lcom/android/launcher3/ClickShadowView;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/ClickShadowView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
-    .line 294
+    .line 292
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/CellLayout;->addView(Landroid/view/View;)V
 
-    .line 295
+    .line 293
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/CellLayout;->addView(Landroid/view/View;)V
 
-    .line 296
+    .line 294
     return-void
 .end method
 
@@ -726,10 +701,10 @@
     .locals 11
 
     .prologue
-    .line 1323
-    iget-object v0, p4, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 1318
+    iget-object v0, p4, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -737,24 +712,24 @@
 
     check-cast v9, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1324
+    .line 1319
     const/4 v10, 0x0
 
-    .line 1325
+    .line 1320
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v9, v1}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
-    .line 1326
+    .line 1321
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p2, v1}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Landroid/graphics/Rect;Z)V
 
-    .line 1328
+    .line 1323
     iget v1, v9, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
     iget v2, v9, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
@@ -763,7 +738,7 @@
 
     iget v4, v9, Lcom/android/launcher3/util/CellAndSpan;->spanY:I
 
-    .line 1329
+    .line 1324
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     iget-object v6, v0, Lcom/android/launcher3/util/GridOccupancy;->cells:[[Z
@@ -776,10 +751,10 @@
 
     move-object v5, p3
 
-    .line 1328
+    .line 1323
     invoke-direct/range {v0 .. v8}, Lcom/android/launcher3/CellLayout;->findNearestArea(IIII[I[[Z[[Z[I)[I
 
-    .line 1331
+    .line 1326
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     const/4 v1, 0x0
@@ -796,7 +771,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 1332
+    .line 1327
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     const/4 v1, 0x0
@@ -805,7 +780,7 @@
 
     iput v0, v9, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
-    .line 1333
+    .line 1328
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     const/4 v1, 0x1
@@ -814,10 +789,10 @@
 
     iput v0, v9, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
 
-    .line 1334
+    .line 1329
     const/4 v0, 0x1
 
-    .line 1336
+    .line 1331
     :goto_0
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
@@ -825,13 +800,13 @@
 
     invoke-virtual {v1, v9, v2}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
-    .line 1337
+    .line 1332
     return v0
 
     :cond_0
     move v0, v10
 
-    .line 1331
+    .line 1326
     goto :goto_0
 .end method
 
@@ -839,7 +814,7 @@
     .locals 12
 
     .prologue
-    .line 1622
+    .line 1617
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -850,21 +825,21 @@
 
     return v1
 
-    .line 1624
+    .line 1619
     :cond_0
     const/4 v10, 0x0
 
-    .line 1625
+    .line 1620
     new-instance v11, Landroid/graphics/Rect;
 
     invoke-direct {v11}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1627
+    .line 1622
     move-object/from16 v0, p5
 
     invoke-virtual {v0, p1, v11}, Lcom/android/launcher3/CellLayout$ItemConfiguration;->getBoundingRectForViews(Ljava/util/ArrayList;Landroid/graphics/Rect;)V
 
-    .line 1630
+    .line 1625
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -882,18 +857,18 @@
 
     check-cast v1, Landroid/view/View;
 
-    .line 1631
+    .line 1626
     move-object/from16 v0, p5
 
-    iget-object v3, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v3, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1632
+    .line 1627
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     const/4 v4, 0x0
@@ -902,7 +877,7 @@
 
     goto :goto_0
 
-    .line 1635
+    .line 1630
     :cond_1
     new-instance v1, Lcom/android/launcher3/util/GridOccupancy;
 
@@ -916,13 +891,13 @@
 
     invoke-direct {v1, v2, v3}, Lcom/android/launcher3/util/GridOccupancy;-><init>(II)V
 
-    .line 1636
+    .line 1631
     iget v7, v11, Landroid/graphics/Rect;->top:I
 
-    .line 1637
+    .line 1632
     iget v8, v11, Landroid/graphics/Rect;->left:I
 
-    .line 1640
+    .line 1635
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v9
@@ -940,12 +915,12 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 1641
+    .line 1636
     move-object/from16 v0, p5
 
-    iget-object v3, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v3, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -953,7 +928,7 @@
 
     check-cast v5, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1642
+    .line 1637
     iget v2, v5, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
     sub-int/2addr v2, v8
@@ -972,7 +947,7 @@
 
     goto :goto_1
 
-    .line 1645
+    .line 1640
     :cond_2
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
@@ -980,7 +955,7 @@
 
     invoke-virtual {v2, p2, v3}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Landroid/graphics/Rect;Z)V
 
-    .line 1647
+    .line 1642
     iget v2, v11, Landroid/graphics/Rect;->left:I
 
     iget v3, v11, Landroid/graphics/Rect;->top:I
@@ -989,12 +964,12 @@
 
     move-result v4
 
-    .line 1648
+    .line 1643
     invoke-virtual {v11}, Landroid/graphics/Rect;->height()I
 
     move-result v5
 
-    .line 1649
+    .line 1644
     iget-object v6, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     iget-object v7, v6, Lcom/android/launcher3/util/GridOccupancy;->cells:[[Z
@@ -1007,10 +982,10 @@
 
     move-object v6, p3
 
-    .line 1647
+    .line 1642
     invoke-direct/range {v1 .. v9}, Lcom/android/launcher3/CellLayout;->findNearestArea(IIII[I[[Z[[Z[I)[I
 
-    .line 1652
+    .line 1647
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     const/4 v2, 0x0
@@ -1027,7 +1002,7 @@
 
     if-ltz v1, :cond_3
 
-    .line 1653
+    .line 1648
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     const/4 v2, 0x0
@@ -1038,7 +1013,7 @@
 
     sub-int v2, v1, v2
 
-    .line 1654
+    .line 1649
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     const/4 v3, 0x1
@@ -1049,7 +1024,7 @@
 
     sub-int v3, v1, v3
 
-    .line 1655
+    .line 1650
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -1067,25 +1042,25 @@
 
     check-cast v1, Landroid/view/View;
 
-    .line 1656
+    .line 1651
     move-object/from16 v0, p5
 
-    iget-object v5, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v5, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v5, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1657
+    .line 1652
     iget v5, v1, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
     add-int/2addr v5, v2
 
     iput v5, v1, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
-    .line 1658
+    .line 1653
     iget v5, v1, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
 
     add-int/2addr v5, v3
@@ -1097,7 +1072,7 @@
     :cond_3
     move v2, v10
 
-    .line 1664
+    .line 1659
     :goto_3
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1116,18 +1091,18 @@
 
     check-cast v1, Landroid/view/View;
 
-    .line 1665
+    .line 1660
     move-object/from16 v0, p5
 
-    iget-object v4, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v4, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1666
+    .line 1661
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     const/4 v5, 0x1
@@ -1136,7 +1111,7 @@
 
     goto :goto_4
 
-    .line 1660
+    .line 1655
     :cond_4
     const/4 v1, 0x1
 
@@ -1144,7 +1119,7 @@
 
     goto :goto_3
 
-    .line 1668
+    .line 1663
     :cond_5
     return v2
 .end method
@@ -1153,20 +1128,20 @@
     .locals 12
 
     .prologue
-    .line 1920
+    .line 1915
     iget-object v10, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
-    .line 1921
+    .line 1916
     invoke-virtual {v10}, Lcom/android/launcher3/util/GridOccupancy;->clear()V
 
-    .line 1923
+    .line 1918
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v11
 
-    .line 1924
+    .line 1919
     const/4 v0, 0x0
 
     move v9, v0
@@ -1174,17 +1149,17 @@
     :goto_0
     if-ge v9, v11, :cond_2
 
-    .line 1925
+    .line 1920
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, v9}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1926
+    .line 1921
     if-ne v1, p2, :cond_1
 
-    .line 1924
+    .line 1919
     :cond_0
     :goto_1
     add-int/lit8 v0, v9, 0x1
@@ -1193,11 +1168,11 @@
 
     goto :goto_0
 
-    .line 1927
+    .line 1922
     :cond_1
-    iget-object v0, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v0, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1205,10 +1180,10 @@
 
     check-cast v8, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1928
+    .line 1923
     if-eqz v8, :cond_0
 
-    .line 1929
+    .line 1924
     iget v2, v8, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
     iget v3, v8, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
@@ -1217,33 +1192,33 @@
 
     const/4 v5, 0x0
 
-    .line 1930
+    .line 1925
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
     move-object v0, p0
 
-    .line 1929
+    .line 1924
     invoke-virtual/range {v0 .. v7}, Lcom/android/launcher3/CellLayout;->animateChildToPosition(Landroid/view/View;IIIIZZ)Z
 
-    .line 1931
+    .line 1926
     const/4 v0, 0x1
 
     invoke-virtual {v10, v8, v0}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
     goto :goto_1
 
-    .line 1934
+    .line 1929
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 1935
+    .line 1930
     const/4 v0, 0x1
 
     invoke-virtual {v10, p1, v0}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
-    .line 1937
+    .line 1932
     :cond_3
     return-void
 .end method
@@ -1256,7 +1231,7 @@
 
     const/4 v2, 0x1
 
-    .line 1676
+    .line 1671
     aget v0, p3, v3
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
@@ -1273,119 +1248,119 @@
 
     if-le v0, v2, :cond_4
 
-    .line 1679
+    .line 1674
     aget v0, p3, v2
 
-    .line 1680
+    .line 1675
     aput v3, p3, v2
 
-    .line 1682
+    .line 1677
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1684
+    .line 1679
     return v2
 
-    .line 1686
+    .line 1681
     :cond_0
     aput v0, p3, v2
 
-    .line 1687
+    .line 1682
     aget v0, p3, v3
 
-    .line 1688
+    .line 1683
     aput v3, p3, v3
 
-    .line 1690
+    .line 1685
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1692
+    .line 1687
     return v2
 
-    .line 1695
+    .line 1690
     :cond_1
     aput v0, p3, v3
 
-    .line 1698
+    .line 1693
     aget v0, p3, v3
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v3
 
-    .line 1699
+    .line 1694
     aget v0, p3, v2
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v2
 
-    .line 1700
+    .line 1695
     aget v0, p3, v2
 
-    .line 1701
+    .line 1696
     aput v3, p3, v2
 
-    .line 1702
+    .line 1697
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 1704
+    .line 1699
     return v2
 
-    .line 1707
+    .line 1702
     :cond_2
     aput v0, p3, v2
 
-    .line 1708
+    .line 1703
     aget v0, p3, v3
 
-    .line 1709
+    .line 1704
     aput v3, p3, v3
 
-    .line 1710
+    .line 1705
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 1712
+    .line 1707
     return v2
 
-    .line 1715
+    .line 1710
     :cond_3
     aput v0, p3, v3
 
-    .line 1716
+    .line 1711
     aget v0, p3, v3
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v3
 
-    .line 1717
+    .line 1712
     aget v0, p3, v2
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v2
 
-    .line 1765
+    .line 1760
     :goto_0
     return v3
 
-    .line 1722
+    .line 1717
     :cond_4
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
@@ -1393,10 +1368,10 @@
 
     if-eqz v0, :cond_5
 
-    .line 1724
+    .line 1719
     return v2
 
-    .line 1727
+    .line 1722
     :cond_5
     aget v0, p3, v3
 
@@ -1404,24 +1379,24 @@
 
     aput v0, p3, v3
 
-    .line 1728
+    .line 1723
     aget v0, p3, v2
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v2
 
-    .line 1729
+    .line 1724
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 1731
+    .line 1726
     return v2
 
-    .line 1734
+    .line 1729
     :cond_6
     aget v0, p3, v3
 
@@ -1429,35 +1404,35 @@
 
     aput v0, p3, v3
 
-    .line 1735
+    .line 1730
     aget v0, p3, v2
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v2
 
-    .line 1741
+    .line 1736
     aget v0, p3, v2
 
-    .line 1742
+    .line 1737
     aget v1, p3, v3
 
     aput v1, p3, v2
 
-    .line 1743
+    .line 1738
     aput v0, p3, v3
 
-    .line 1744
+    .line 1739
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
     move-result v0
 
     if-eqz v0, :cond_7
 
-    .line 1746
+    .line 1741
     return v2
 
-    .line 1750
+    .line 1745
     :cond_7
     aget v0, p3, v3
 
@@ -1465,24 +1440,24 @@
 
     aput v0, p3, v3
 
-    .line 1751
+    .line 1746
     aget v0, p3, v2
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v2
 
-    .line 1752
+    .line 1747
     invoke-direct/range {p0 .. p5}, Lcom/android/launcher3/CellLayout;->pushViewsToTempLocation(Ljava/util/ArrayList;Landroid/graphics/Rect;[ILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 1754
+    .line 1749
     return v2
 
-    .line 1757
+    .line 1752
     :cond_8
     aget v0, p3, v3
 
@@ -1490,22 +1465,22 @@
 
     aput v0, p3, v3
 
-    .line 1758
+    .line 1753
     aget v0, p3, v2
 
     mul-int/lit8 v0, v0, -0x1
 
     aput v0, p3, v2
 
-    .line 1761
+    .line 1756
     aget v0, p3, v2
 
-    .line 1762
+    .line 1757
     aget v1, p3, v3
 
     aput v1, p3, v2
 
-    .line 1763
+    .line 1758
     aput v0, p3, v3
 
     goto :goto_0
@@ -1515,14 +1490,14 @@
     .locals 12
 
     .prologue
-    .line 1943
+    .line 1938
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v11
 
-    .line 1944
+    .line 1939
     const/4 v0, 0x0
 
     move v10, v0
@@ -1530,17 +1505,17 @@
     :goto_0
     if-ge v10, v11, :cond_3
 
-    .line 1945
+    .line 1940
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, v10}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1946
+    .line 1941
     if-ne v2, p2, :cond_1
 
-    .line 1944
+    .line 1939
     :cond_0
     :goto_1
     add-int/lit8 v0, v10, 0x1
@@ -1549,11 +1524,11 @@
 
     goto :goto_0
 
-    .line 1947
+    .line 1942
     :cond_1
-    iget-object v0, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v0, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1561,14 +1536,14 @@
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1948
+    .line 1943
     if-nez p4, :cond_2
 
     iget-object v0, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->intersectingViews:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_2
 
-    .line 1949
+    .line 1944
     iget-object v0, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->intersectingViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -1579,7 +1554,7 @@
 
     move v4, v0
 
-    .line 1951
+    .line 1946
     :goto_2
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -1589,19 +1564,19 @@
 
     check-cast v3, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 1952
+    .line 1947
     if-eqz v1, :cond_0
 
     xor-int/lit8 v0, v4, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 1953
+    .line 1948
     new-instance v0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
     iget v4, v3, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 1954
+    .line 1949
     iget v5, v3, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
     iget v6, v1, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
@@ -1616,15 +1591,15 @@
 
     move/from16 v3, p4
 
-    .line 1953
+    .line 1948
     invoke-direct/range {v0 .. v9}, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;-><init>(Lcom/android/launcher3/CellLayout;Landroid/view/View;IIIIIII)V
 
-    .line 1955
+    .line 1950
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->animate()V
 
     goto :goto_1
 
-    .line 1948
+    .line 1943
     :cond_2
     const/4 v0, 0x0
 
@@ -1632,7 +1607,7 @@
 
     goto :goto_2
 
-    .line 1958
+    .line 1953
     :cond_3
     return-void
 .end method
@@ -1645,14 +1620,14 @@
 
     const/4 v11, 0x1
 
-    .line 2120
+    .line 2115
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/util/GridOccupancy;->copyTo(Lcom/android/launcher3/util/GridOccupancy;)V
 
-    .line 2122
+    .line 2117
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getWorkspace()Lcom/android/launcher3/Workspace;
@@ -1663,23 +1638,23 @@
 
     move-result-wide v4
 
-    .line 2123
+    .line 2118
     const/16 v0, -0x64
 
-    .line 2125
+    .line 2120
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mContainerType:I
 
     if-ne v1, v11, :cond_5
 
-    .line 2126
+    .line 2121
     const-wide/16 v4, -0x1
 
-    .line 2127
+    .line 2122
     const/16 v0, -0x65
 
     move v10, v0
 
-    .line 2130
+    .line 2125
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
@@ -1689,42 +1664,42 @@
 
     move v13, v12
 
-    .line 2131
+    .line 2126
     :goto_1
     if-ge v13, v14, :cond_4
 
-    .line 2132
+    .line 2127
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, v13}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2133
+    .line 2128
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 2134
+    .line 2129
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/ItemInfo;
 
-    .line 2137
+    .line 2132
     if-eqz v1, :cond_1
 
-    .line 2138
+    .line 2133
     iget v2, v1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
 
     if-ne v2, v3, :cond_0
 
-    .line 2139
+    .line 2134
     iget v2, v1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellY:I
@@ -1734,7 +1709,7 @@
     :cond_0
     move v2, v11
 
-    .line 2142
+    .line 2137
     :goto_2
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
 
@@ -1742,27 +1717,27 @@
 
     iput v3, v1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 2143
+    .line 2138
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellY:I
 
     iput v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
     iput v3, v1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 2144
+    .line 2139
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
     iput v3, v1, Lcom/android/launcher3/ItemInfo;->spanX:I
 
-    .line 2145
+    .line 2140
     iget v0, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
 
     iput v0, v1, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 2147
+    .line 2142
     if-eqz v2, :cond_1
 
-    .line 2148
+    .line 2143
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getModelWriter()Lcom/android/launcher3/model/ModelWriter;
@@ -1771,7 +1746,7 @@
 
     int-to-long v2, v10
 
-    .line 2149
+    .line 2144
     iget v6, v1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iget v7, v1, Lcom/android/launcher3/ItemInfo;->cellY:I
@@ -1780,10 +1755,10 @@
 
     iget v9, v1, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 2148
+    .line 2143
     invoke-virtual/range {v0 .. v9}, Lcom/android/launcher3/model/ModelWriter;->modifyItemInDatabase(Lcom/android/launcher3/ItemInfo;JJIIII)V
 
-    .line 2131
+    .line 2126
     :cond_1
     add-int/lit8 v0, v13, 0x1
 
@@ -1791,7 +1766,7 @@
 
     goto :goto_1
 
-    .line 2139
+    .line 2134
     :cond_2
     iget v2, v1, Lcom/android/launcher3/ItemInfo;->spanX:I
 
@@ -1799,7 +1774,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 2140
+    .line 2135
     iget v2, v1, Lcom/android/launcher3/ItemInfo;->spanY:I
 
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
@@ -1815,7 +1790,7 @@
 
     goto :goto_2
 
-    .line 2153
+    .line 2148
     :cond_4
     return-void
 
@@ -1829,10 +1804,10 @@
     .locals 2
 
     .prologue
-    .line 2113
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShakeAnimators:Ljava/util/HashMap;
+    .line 2108
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShakeAnimators:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->values()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -1853,18 +1828,18 @@
 
     check-cast v0, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;
 
-    .line 2114
+    .line 2109
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout$ReorderPreviewAnimation;->completeAnimationImmediately()V
 
     goto :goto_0
 
-    .line 2116
+    .line 2111
     :cond_0
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShakeAnimators:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShakeAnimators:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->clear()V
 
-    .line 2117
+    .line 2112
     return-void
 .end method
 
@@ -1878,7 +1853,7 @@
 
     const/4 v4, 0x0
 
-    .line 1829
+    .line 1824
     div-float v0, p2, p1
 
     float-to-double v0, v0
@@ -1887,13 +1862,13 @@
 
     move-result-wide v0
 
-    .line 1831
+    .line 1826
     aput v4, p3, v4
 
-    .line 1832
+    .line 1827
     aput v4, p3, v5
 
-    .line 1833
+    .line 1828
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v2
@@ -1906,7 +1881,7 @@
 
     if-lez v2, :cond_0
 
-    .line 1834
+    .line 1829
     invoke-static {p1}, Ljava/lang/Math;->signum(F)F
 
     move-result v2
@@ -1915,7 +1890,7 @@
 
     aput v2, p3, v4
 
-    .line 1836
+    .line 1831
     :cond_0
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
@@ -1929,7 +1904,7 @@
 
     if-lez v0, :cond_1
 
-    .line 1837
+    .line 1832
     invoke-static {p2}, Ljava/lang/Math;->signum(F)F
 
     move-result v0
@@ -1938,7 +1913,7 @@
 
     aput v0, p3, v5
 
-    .line 1839
+    .line 1834
     :cond_1
     return-void
 .end method
@@ -1947,14 +1922,14 @@
     .locals 8
 
     .prologue
-    .line 1883
+    .line 1878
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v3
 
-    .line 1884
+    .line 1879
     const/4 v0, 0x0
 
     move v2, v0
@@ -1962,24 +1937,24 @@
     :goto_0
     if-ge v2, v3, :cond_1
 
-    .line 1885
+    .line 1880
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 1886
+    .line 1881
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 1888
+    .line 1883
     if-eqz p2, :cond_0
 
-    .line 1889
+    .line 1884
     new-instance v1, Lcom/android/launcher3/util/CellAndSpan;
 
     iget v5, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
@@ -1994,18 +1969,18 @@
 
     move-object v0, v1
 
-    .line 1893
+    .line 1888
     :goto_1
     invoke-virtual {p1, v4, v0}, Lcom/android/launcher3/CellLayout$ItemConfiguration;->add(Landroid/view/View;Lcom/android/launcher3/util/CellAndSpan;)V
 
-    .line 1884
+    .line 1879
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
     goto :goto_0
 
-    .line 1891
+    .line 1886
     :cond_0
     new-instance v1, Lcom/android/launcher3/util/CellAndSpan;
 
@@ -2023,7 +1998,7 @@
 
     goto :goto_1
 
-    .line 1895
+    .line 1890
     :cond_1
     return-void
 .end method
@@ -2034,19 +2009,19 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1898
+    .line 1893
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/GridOccupancy;->clear()V
 
-    .line 1900
+    .line 1895
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v3
 
-    .line 1901
+    .line 1896
     const/4 v0, 0x0
 
     move v2, v0
@@ -2054,17 +2029,17 @@
     :goto_0
     if-ge v2, v3, :cond_2
 
-    .line 1902
+    .line 1897
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1903
+    .line 1898
     if-ne v1, p2, :cond_1
 
-    .line 1901
+    .line 1896
     :cond_0
     :goto_1
     add-int/lit8 v0, v2, 0x1
@@ -2073,7 +2048,7 @@
 
     goto :goto_0
 
-    .line 1904
+    .line 1899
     :cond_1
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2081,52 +2056,52 @@
 
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 1905
-    iget-object v4, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 1900
+    iget-object v4, p1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v4, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1906
+    .line 1901
     if-eqz v1, :cond_0
 
-    .line 1907
+    .line 1902
     iget v4, v1, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
     iput v4, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
 
-    .line 1908
+    .line 1903
     iget v4, v1, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
 
     iput v4, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellY:I
 
-    .line 1909
+    .line 1904
     iget v4, v1, Lcom/android/launcher3/util/CellAndSpan;->spanX:I
 
     iput v4, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
-    .line 1910
+    .line 1905
     iget v4, v1, Lcom/android/launcher3/util/CellAndSpan;->spanY:I
 
     iput v4, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
 
-    .line 1911
+    .line 1906
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v0, v1, v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
     goto :goto_1
 
-    .line 1914
+    .line 1909
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v0, p1, v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
-    .line 1915
+    .line 1910
     return-void
 .end method
 
@@ -2134,12 +2109,12 @@
     .locals 10
 
     .prologue
-    .line 2165
+    .line 2160
     const/4 v1, 0x2
 
     new-array v8, v1, [I
 
-    .line 2166
+    .line 2161
     const/4 v1, 0x2
 
     new-array v9, v1, [I
@@ -2158,10 +2133,10 @@
 
     move/from16 v7, p6
 
-    .line 2167
+    .line 2162
     invoke-virtual/range {v1 .. v9}, Lcom/android/launcher3/CellLayout;->findNearestVacantArea(IIIIII[I[I)[I
 
-    .line 2169
+    .line 2164
     const/4 v1, 0x0
 
     aget v1, v8, v1
@@ -2174,14 +2149,14 @@
 
     if-ltz v1, :cond_0
 
-    .line 2170
+    .line 2165
     const/4 v1, 0x0
 
     move-object/from16 v0, p8
 
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/CellLayout;->copyCurrentStateToSolution(Lcom/android/launcher3/CellLayout$ItemConfiguration;Z)V
 
-    .line 2171
+    .line 2166
     const/4 v1, 0x0
 
     aget v1, v8, v1
@@ -2190,7 +2165,7 @@
 
     iput v1, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellX:I
 
-    .line 2172
+    .line 2167
     const/4 v1, 0x1
 
     aget v1, v8, v1
@@ -2199,7 +2174,7 @@
 
     iput v1, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellY:I
 
-    .line 2173
+    .line 2168
     const/4 v1, 0x0
 
     aget v1, v9, v1
@@ -2208,7 +2183,7 @@
 
     iput v1, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanX:I
 
-    .line 2174
+    .line 2169
     const/4 v1, 0x1
 
     aget v1, v9, v1
@@ -2217,18 +2192,18 @@
 
     iput v1, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanY:I
 
-    .line 2175
+    .line 2170
     const/4 v1, 0x1
 
     move-object/from16 v0, p8
 
     iput-boolean v1, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
-    .line 2179
+    .line 2174
     :goto_0
     return-object p8
 
-    .line 2177
+    .line 2172
     :cond_0
     const/4 v1, 0x0
 
@@ -2243,10 +2218,10 @@
     .locals 22
 
     .prologue
-    .line 1138
+    .line 1133
     invoke-direct/range {p0 .. p0}, Lcom/android/launcher3/CellLayout;->lazyInitTempRectStack()V
 
-    .line 1143
+    .line 1138
     move/from16 v0, p1
 
     int-to-float v2, v0
@@ -2269,7 +2244,7 @@
 
     float-to-int v12, v2
 
-    .line 1144
+    .line 1139
     move/from16 v0, p2
 
     int-to-float v2, v0
@@ -2292,14 +2267,14 @@
 
     float-to-int v13, v2
 
-    .line 1147
+    .line 1142
     if-eqz p8, :cond_1
 
-    .line 1148
+    .line 1143
     :goto_0
     const-wide v8, 0x7fefffffffffffffL    # Double.MAX_VALUE
 
-    .line 1149
+    .line 1144
     new-instance v14, Landroid/graphics/Rect;
 
     const/4 v2, -0x1
@@ -2312,35 +2287,35 @@
 
     invoke-direct {v14, v2, v3, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1150
+    .line 1145
     new-instance v15, Ljava/util/Stack;
 
     invoke-direct {v15}, Ljava/util/Stack;-><init>()V
 
-    .line 1152
+    .line 1147
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
     move/from16 v16, v0
 
-    .line 1153
+    .line 1148
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
     move/from16 v17, v0
 
-    .line 1155
+    .line 1150
     if-lez p3, :cond_0
 
     if-gtz p4, :cond_2
 
-    .line 1157
+    .line 1152
     :cond_0
     return-object p8
 
-    .line 1147
+    .line 1142
     :cond_1
     const/4 v2, 0x2
 
@@ -2350,13 +2325,13 @@
 
     goto :goto_0
 
-    .line 1155
+    .line 1150
     :cond_2
     if-lez p5, :cond_0
 
     if-lez p6, :cond_0
 
-    .line 1156
+    .line 1151
     move/from16 v0, p5
 
     move/from16 v1, p3
@@ -2369,7 +2344,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 1160
+    .line 1155
     const/4 v2, 0x0
 
     move v11, v2
@@ -2381,7 +2356,7 @@
 
     if-ge v11, v2, :cond_19
 
-    .line 1162
+    .line 1157
     const/4 v2, 0x0
 
     move v10, v2
@@ -2393,16 +2368,16 @@
 
     if-ge v10, v2, :cond_18
 
-    .line 1163
+    .line 1158
     const/4 v3, -0x1
 
-    .line 1164
+    .line 1159
     const/4 v2, -0x1
 
-    .line 1165
+    .line 1160
     if-eqz p7, :cond_20
 
-    .line 1167
+    .line 1162
     const/4 v2, 0x0
 
     move v3, v2
@@ -2412,7 +2387,7 @@
 
     if-ge v3, v0, :cond_5
 
-    .line 1168
+    .line 1163
     const/4 v2, 0x0
 
     :goto_4
@@ -2420,7 +2395,7 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 1169
+    .line 1164
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
@@ -2439,7 +2414,7 @@
 
     move-wide v2, v8
 
-    .line 1162
+    .line 1157
     :goto_5
     add-int/lit8 v4, v10, 0x1
 
@@ -2449,13 +2424,13 @@
 
     goto :goto_2
 
-    .line 1168
+    .line 1163
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 1167
+    .line 1162
     :cond_4
     add-int/lit8 v2, v3, 0x1
 
@@ -2463,11 +2438,11 @@
 
     goto :goto_3
 
-    .line 1180
+    .line 1175
     :cond_5
     const/4 v2, 0x1
 
-    .line 1181
+    .line 1176
     move/from16 v0, p3
 
     move/from16 v1, p5
@@ -2476,7 +2451,7 @@
 
     const/4 v6, 0x1
 
-    .line 1182
+    .line 1177
     :goto_6
     move/from16 v0, p4
 
@@ -2492,7 +2467,7 @@
 
     move/from16 v4, p4
 
-    .line 1183
+    .line 1178
     :goto_7
     if-eqz v6, :cond_a
 
@@ -2501,14 +2476,14 @@
     :goto_8
     if-nez v2, :cond_12
 
-    .line 1184
+    .line 1179
     if-eqz v7, :cond_c
 
     xor-int/lit8 v2, v6, 0x1
 
     if-eqz v2, :cond_c
 
-    .line 1185
+    .line 1180
     const/4 v2, 0x0
 
     move/from16 v20, v2
@@ -2520,7 +2495,7 @@
     :goto_9
     if-ge v6, v4, :cond_b
 
-    .line 1186
+    .line 1181
     add-int v18, v10, v3
 
     add-int/lit8 v19, v16, -0x1
@@ -2553,23 +2528,23 @@
 
     if-eqz v18, :cond_7
 
-    .line 1188
+    .line 1183
     :cond_6
     const/4 v2, 0x1
 
-    .line 1185
+    .line 1180
     :cond_7
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_9
 
-    .line 1181
+    .line 1176
     :cond_8
     const/4 v6, 0x0
 
     goto :goto_6
 
-    .line 1182
+    .line 1177
     :cond_9
     const/4 v5, 0x0
 
@@ -2581,17 +2556,17 @@
 
     goto :goto_7
 
-    .line 1183
+    .line 1178
     :cond_a
     const/4 v2, 0x0
 
     goto :goto_8
 
-    .line 1191
+    .line 1186
     :cond_b
     if-nez v2, :cond_1f
 
-    .line 1192
+    .line 1187
     add-int/lit8 v3, v3, 0x1
 
     move v6, v4
@@ -2604,7 +2579,7 @@
 
     move/from16 v5, v20
 
-    .line 1205
+    .line 1200
     :goto_a
     move/from16 v0, p5
 
@@ -2615,7 +2590,7 @@
     :goto_b
     or-int/2addr v4, v2
 
-    .line 1206
+    .line 1201
     move/from16 v0, p6
 
     if-lt v6, v0, :cond_11
@@ -2625,7 +2600,7 @@
     :goto_c
     or-int/2addr v2, v3
 
-    .line 1207
+    .line 1202
     xor-int/lit8 v3, v7, 0x1
 
     move v7, v3
@@ -2642,11 +2617,11 @@
 
     goto :goto_7
 
-    .line 1194
+    .line 1189
     :cond_c
     if-nez v5, :cond_1e
 
-    .line 1195
+    .line 1190
     const/4 v2, 0x0
 
     move/from16 v20, v2
@@ -2658,7 +2633,7 @@
     :goto_d
     if-ge v5, v3, :cond_f
 
-    .line 1196
+    .line 1191
     add-int v18, v11, v4
 
     add-int/lit8 v19, v17, -0x1
@@ -2691,21 +2666,21 @@
 
     if-eqz v18, :cond_e
 
-    .line 1198
+    .line 1193
     :cond_d
     const/4 v2, 0x1
 
-    .line 1195
+    .line 1190
     :cond_e
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_d
 
-    .line 1201
+    .line 1196
     :cond_f
     if-nez v2, :cond_1d
 
-    .line 1202
+    .line 1197
     add-int/lit8 v4, v4, 0x1
 
     move v5, v3
@@ -2720,19 +2695,19 @@
 
     goto :goto_a
 
-    .line 1205
+    .line 1200
     :cond_10
     const/4 v2, 0x0
 
     goto :goto_b
 
-    .line 1206
+    .line 1201
     :cond_11
     const/4 v2, 0x0
 
     goto :goto_c
 
-    .line 1211
+    .line 1206
     :cond_12
     move/from16 v0, p6
 
@@ -2743,18 +2718,18 @@
 
     move v4, v3
 
-    .line 1213
+    .line 1208
     :goto_e
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/launcher3/CellLayout;->mTmpPoint:[I
 
-    .line 1214
+    .line 1209
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v10, v11, v7}, Lcom/android/launcher3/CellLayout;->cellToCenterPoint(II[I)V
 
-    .line 1219
+    .line 1214
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/launcher3/CellLayout;->mTempRectStack:Ljava/util/Stack;
@@ -2765,17 +2740,17 @@
 
     check-cast v2, Landroid/graphics/Rect;
 
-    .line 1220
+    .line 1215
     add-int v3, v10, v4
 
     add-int v6, v11, v5
 
     invoke-virtual {v2, v10, v11, v3, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1221
+    .line 1216
     const/4 v6, 0x0
 
-    .line 1222
+    .line 1217
     invoke-interface {v15}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v18
@@ -2793,21 +2768,21 @@
 
     check-cast v3, Landroid/graphics/Rect;
 
-    .line 1223
+    .line 1218
     invoke-virtual {v3, v2}, Landroid/graphics/Rect;->contains(Landroid/graphics/Rect;)Z
 
     move-result v3
 
     if-eqz v3, :cond_14
 
-    .line 1224
+    .line 1219
     const/4 v3, 0x1
 
-    .line 1228
+    .line 1223
     :goto_f
     invoke-virtual {v15, v2}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1229
+    .line 1224
     const/4 v6, 0x0
 
     aget v6, v7, v6
@@ -2832,7 +2807,7 @@
 
     move-result-wide v6
 
-    .line 1231
+    .line 1226
     cmpg-double v18, v6, v8
 
     if-gtz v18, :cond_15
@@ -2841,40 +2816,40 @@
 
     if-nez v3, :cond_16
 
-    .line 1232
+    .line 1227
     :cond_15
     invoke-virtual {v2, v14}, Landroid/graphics/Rect;->contains(Landroid/graphics/Rect;)Z
 
     move-result v3
 
-    .line 1231
+    .line 1226
     if-eqz v3, :cond_1b
 
-    .line 1234
+    .line 1229
     :cond_16
     const/4 v3, 0x0
 
     aput v10, p8, v3
 
-    .line 1235
+    .line 1230
     const/4 v3, 0x1
 
     aput v11, p8, v3
 
-    .line 1236
+    .line 1231
     if-eqz p9, :cond_17
 
-    .line 1237
+    .line 1232
     const/4 v3, 0x0
 
     aput v4, p9, v3
 
-    .line 1238
+    .line 1233
     const/4 v3, 0x1
 
     aput v5, p9, v3
 
-    .line 1240
+    .line 1235
     :cond_17
     invoke-virtual {v14, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
@@ -2882,7 +2857,7 @@
 
     goto/16 :goto_5
 
-    .line 1160
+    .line 1155
     :cond_18
     add-int/lit8 v2, v11, 0x1
 
@@ -2890,7 +2865,7 @@
 
     goto/16 :goto_1
 
-    .line 1246
+    .line 1241
     :cond_19
     const-wide v2, 0x7fefffffffffffffL    # Double.MAX_VALUE
 
@@ -2898,27 +2873,27 @@
 
     if-nez v2, :cond_1a
 
-    .line 1247
+    .line 1242
     const/4 v2, -0x1
 
     const/4 v3, 0x0
 
     aput v2, p8, v3
 
-    .line 1248
+    .line 1243
     const/4 v2, -0x1
 
     const/4 v3, 0x1
 
     aput v2, p8, v3
 
-    .line 1250
+    .line 1245
     :cond_1a
     move-object/from16 v0, p0
 
     invoke-direct {v0, v15}, Lcom/android/launcher3/CellLayout;->recycleTempRects(Ljava/util/Stack;)V
 
-    .line 1251
+    .line 1246
     return-object p8
 
     :cond_1b
@@ -2984,23 +2959,23 @@
     .locals 14
 
     .prologue
-    .line 1276
+    .line 1271
     if-eqz p8, :cond_1
 
-    .line 1277
+    .line 1272
     :goto_0
     const v4, 0x7f7fffff    # Float.MAX_VALUE
 
-    .line 1278
+    .line 1273
     const/high16 v3, -0x80000000
 
-    .line 1280
+    .line 1275
     iget v8, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
-    .line 1281
+    .line 1276
     iget v9, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
-    .line 1283
+    .line 1278
     const/4 v2, 0x0
 
     move v7, v2
@@ -3012,7 +2987,7 @@
 
     if-ge v7, v2, :cond_8
 
-    .line 1285
+    .line 1280
     const/4 v2, 0x0
 
     move v6, v2
@@ -3026,7 +3001,7 @@
 
     if-ge v6, v3, :cond_7
 
-    .line 1287
+    .line 1282
     const/4 v3, 0x0
 
     move v5, v3
@@ -3036,7 +3011,7 @@
 
     if-ge v5, v0, :cond_4
 
-    .line 1288
+    .line 1283
     const/4 v3, 0x0
 
     :goto_4
@@ -3044,7 +3019,7 @@
 
     if-ge v3, v0, :cond_3
 
-    .line 1289
+    .line 1284
     add-int v10, v6, v5
 
     aget-object v10, p6, v10
@@ -3066,7 +3041,7 @@
     :cond_0
     move v3, v4
 
-    .line 1285
+    .line 1280
     :goto_5
     add-int/lit8 v4, v6, 0x1
 
@@ -3076,7 +3051,7 @@
 
     goto :goto_2
 
-    .line 1276
+    .line 1271
     :cond_1
     const/4 v2, 0x2
 
@@ -3086,13 +3061,13 @@
 
     goto :goto_0
 
-    .line 1288
+    .line 1283
     :cond_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_4
 
-    .line 1287
+    .line 1282
     :cond_3
     add-int/lit8 v3, v5, 0x1
 
@@ -3100,7 +3075,7 @@
 
     goto :goto_3
 
-    .line 1295
+    .line 1290
     :cond_4
     sub-int v3, v6, p1
 
@@ -3116,10 +3091,10 @@
 
     double-to-float v5, v10
 
-    .line 1296
+    .line 1291
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mTmpPoint:[I
 
-    .line 1297
+    .line 1292
     sub-int v10, v6, p1
 
     int-to-float v10, v10
@@ -3130,7 +3105,7 @@
 
     invoke-direct {p0, v10, v11, v3}, Lcom/android/launcher3/CellLayout;->computeDirectionVector(FF[I)V
 
-    .line 1300
+    .line 1295
     const/4 v10, 0x0
 
     aget v10, p5, v10
@@ -3141,7 +3116,7 @@
 
     mul-int/2addr v10, v11
 
-    .line 1301
+    .line 1296
     const/4 v11, 0x1
 
     aget v11, p5, v11
@@ -3152,33 +3127,33 @@
 
     mul-int/2addr v3, v11
 
-    .line 1300
+    .line 1295
     add-int/2addr v3, v10
 
-    .line 1302
+    .line 1297
     invoke-static {v5, v4}, Ljava/lang/Float;->compare(FF)I
 
     move-result v10
 
     if-ltz v10, :cond_5
 
-    .line 1303
+    .line 1298
     invoke-static {v5, v4}, Ljava/lang/Float;->compare(FF)I
 
     move-result v10
 
     if-nez v10, :cond_6
 
-    .line 1304
+    .line 1299
     if-le v3, v2, :cond_6
 
-    .line 1307
+    .line 1302
     :cond_5
     const/4 v2, 0x0
 
     aput v6, p8, v2
 
-    .line 1308
+    .line 1303
     const/4 v2, 0x1
 
     aput v7, p8, v2
@@ -3192,10 +3167,10 @@
     :cond_6
     move v3, v4
 
-    .line 1304
+    .line 1299
     goto :goto_5
 
-    .line 1283
+    .line 1278
     :cond_7
     add-int/lit8 v3, v7, 0x1
 
@@ -3205,7 +3180,7 @@
 
     goto/16 :goto_1
 
-    .line 1314
+    .line 1309
     :cond_8
     const v2, 0x7f7fffff    # Float.MAX_VALUE
 
@@ -3213,21 +3188,21 @@
 
     if-nez v2, :cond_9
 
-    .line 1315
+    .line 1310
     const/4 v2, -0x1
 
     const/4 v3, 0x0
 
     aput v2, p8, v3
 
-    .line 1316
+    .line 1311
     const/4 v2, -0x1
 
     const/4 v3, 0x1
 
     aput v2, p8, v3
 
-    .line 1318
+    .line 1313
     :cond_9
     return-object p8
 .end method
@@ -3236,21 +3211,21 @@
     .locals 13
 
     .prologue
-    .line 1845
+    .line 1840
     const/4 v2, 0x0
 
     move-object/from16 v0, p10
 
     invoke-direct {p0, v0, v2}, Lcom/android/launcher3/CellLayout;->copyCurrentStateToSolution(Lcom/android/launcher3/CellLayout$ItemConfiguration;Z)V
 
-    .line 1848
+    .line 1843
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v2, v3}, Lcom/android/launcher3/util/GridOccupancy;->copyTo(Lcom/android/launcher3/util/GridOccupancy;)V
 
-    .line 1852
+    .line 1847
     const/4 v2, 0x2
 
     new-array v7, v2, [I
@@ -3265,12 +3240,12 @@
 
     move/from16 v6, p6
 
-    .line 1853
+    .line 1848
     invoke-virtual/range {v2 .. v7}, Lcom/android/launcher3/CellLayout;->findNearestArea(IIII[I)[I
 
     move-result-object v10
 
-    .line 1858
+    .line 1853
     const/4 v2, 0x0
 
     aget v3, v10, v2
@@ -3295,10 +3270,10 @@
 
     move-result v2
 
-    .line 1861
+    .line 1856
     if-nez v2, :cond_3
 
-    .line 1864
+    .line 1859
     move/from16 v0, p5
 
     move/from16 v1, p3
@@ -3313,11 +3288,11 @@
 
     if-eqz p9, :cond_1
 
-    .line 1865
+    .line 1860
     :cond_0
     add-int/lit8 v7, p5, -0x1
 
-    .line 1866
+    .line 1861
     const/4 v11, 0x0
 
     move-object v2, p0
@@ -3338,14 +3313,14 @@
 
     move-object/from16 v12, p10
 
-    .line 1865
+    .line 1860
     invoke-direct/range {v2 .. v12}, Lcom/android/launcher3/CellLayout;->findReorderSolution(IIIIII[ILandroid/view/View;ZLcom/android/launcher3/CellLayout$ItemConfiguration;)Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     move-result-object v2
 
     return-object v2
 
-    .line 1867
+    .line 1862
     :cond_1
     move/from16 v0, p6
 
@@ -3353,10 +3328,10 @@
 
     if-le v0, v1, :cond_2
 
-    .line 1868
+    .line 1863
     add-int/lit8 v8, p6, -0x1
 
-    .line 1869
+    .line 1864
     const/4 v11, 0x1
 
     move-object v2, p0
@@ -3377,14 +3352,14 @@
 
     move-object/from16 v12, p10
 
-    .line 1868
+    .line 1863
     invoke-direct/range {v2 .. v12}, Lcom/android/launcher3/CellLayout;->findReorderSolution(IIIIII[ILandroid/view/View;ZLcom/android/launcher3/CellLayout$ItemConfiguration;)Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     move-result-object v2
 
     return-object v2
 
-    .line 1871
+    .line 1866
     :cond_2
     const/4 v2, 0x0
 
@@ -3392,11 +3367,11 @@
 
     iput-boolean v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
-    .line 1879
+    .line 1874
     :goto_0
     return-object p10
 
-    .line 1873
+    .line 1868
     :cond_3
     const/4 v2, 0x1
 
@@ -3404,7 +3379,7 @@
 
     iput-boolean v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
-    .line 1874
+    .line 1869
     const/4 v2, 0x0
 
     aget v2, v10, v2
@@ -3413,7 +3388,7 @@
 
     iput v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellX:I
 
-    .line 1875
+    .line 1870
     const/4 v2, 0x1
 
     aget v2, v10, v2
@@ -3422,14 +3397,14 @@
 
     iput v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellY:I
 
-    .line 1876
+    .line 1871
     move/from16 v0, p5
 
     move-object/from16 v1, p10
 
     iput v0, v1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanX:I
 
-    .line 1877
+    .line 1872
     move/from16 v0, p6
 
     move-object/from16 v1, p10
@@ -3443,7 +3418,7 @@
     .locals 13
 
     .prologue
-    .line 2192
+    .line 2187
     const/4 v1, 0x2
 
     new-array v6, v1, [I
@@ -3458,15 +3433,15 @@
 
     move/from16 v5, p4
 
-    .line 2194
+    .line 2189
     invoke-virtual/range {v1 .. v6}, Lcom/android/launcher3/CellLayout;->findNearestArea(IIII[I)[I
 
-    .line 2195
+    .line 2190
     new-instance v12, Landroid/graphics/Rect;
 
     invoke-direct {v12}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2196
+    .line 2191
     const/4 v1, 0x0
 
     aget v8, v6, v1
@@ -3483,7 +3458,7 @@
 
     invoke-virtual/range {v7 .. v12}, Lcom/android/launcher3/CellLayout;->regionToRect(IIIILandroid/graphics/Rect;)V
 
-    .line 2197
+    .line 2192
     invoke-virtual {v12}, Landroid/graphics/Rect;->centerX()I
 
     move-result v1
@@ -3498,12 +3473,12 @@
 
     invoke-virtual {v12, v1, v2}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 2199
+    .line 2194
     new-instance v7, Landroid/graphics/Rect;
 
     invoke-direct {v7}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2200
+    .line 2195
     const/4 v1, 0x0
 
     aget v2, v6, v1
@@ -3512,7 +3487,7 @@
 
     aget v3, v6, v1
 
-    .line 2201
+    .line 2196
     iget-object v8, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
     move-object v1, p0
@@ -3523,20 +3498,20 @@
 
     move-object/from16 v6, p5
 
-    .line 2200
+    .line 2195
     invoke-direct/range {v1 .. v8}, Lcom/android/launcher3/CellLayout;->getViewsIntersectingRegion(IIIILandroid/view/View;Landroid/graphics/Rect;Ljava/util/ArrayList;)V
 
-    .line 2203
+    .line 2198
     invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
 
     move-result v8
 
-    .line 2204
+    .line 2199
     invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
 
     move-result v9
 
-    .line 2206
+    .line 2201
     iget v3, v7, Landroid/graphics/Rect;->left:I
 
     iget v4, v7, Landroid/graphics/Rect;->top:I
@@ -3545,17 +3520,17 @@
 
     move-result v5
 
-    .line 2207
+    .line 2202
     invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
 
     move-result v6
 
     move-object v2, p0
 
-    .line 2206
+    .line 2201
     invoke-virtual/range {v2 .. v7}, Lcom/android/launcher3/CellLayout;->regionToRect(IIIILandroid/graphics/Rect;)V
 
-    .line 2209
+    .line 2204
     invoke-virtual {v7}, Landroid/graphics/Rect;->centerX()I
 
     move-result v1
@@ -3564,7 +3539,7 @@
 
     div-int v1, v1, p3
 
-    .line 2210
+    .line 2205
     invoke-virtual {v7}, Landroid/graphics/Rect;->centerY()I
 
     move-result v2
@@ -3573,7 +3548,7 @@
 
     div-int v2, v2, p4
 
-    .line 2212
+    .line 2207
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
     if-eq v8, v3, :cond_0
@@ -3584,11 +3559,11 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 2213
+    .line 2208
     :cond_0
     const/4 v1, 0x0
 
-    .line 2215
+    .line 2210
     :cond_1
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
@@ -3600,35 +3575,35 @@
 
     if-ne v0, v3, :cond_3
 
-    .line 2216
+    .line 2211
     :cond_2
     const/4 v2, 0x0
 
-    .line 2219
+    .line 2214
     :cond_3
     if-nez v1, :cond_4
 
     if-nez v2, :cond_4
 
-    .line 2221
+    .line 2216
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
     aput v1, p6, v2
 
-    .line 2222
+    .line 2217
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
     aput v1, p6, v2
 
-    .line 2226
+    .line 2221
     :goto_0
     return-void
 
-    .line 2224
+    .line 2219
     :cond_4
     int-to-float v1, v1
 
@@ -3645,7 +3620,7 @@
     .locals 2
 
     .prologue
-    .line 447
+    .line 445
     const v0, 0x7f0e0004
 
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -3654,19 +3629,19 @@
 
     check-cast v0, Landroid/os/Parcelable;
 
-    .line 448
+    .line 446
     instance-of v1, v0, Lcom/android/launcher3/util/ParcelableSparseArray;
 
     if-eqz v1, :cond_0
 
-    .line 449
+    .line 447
     check-cast v0, Lcom/android/launcher3/util/ParcelableSparseArray;
 
-    .line 448
+    .line 446
     :goto_0
     return-object v0
 
-    .line 449
+    .line 447
     :cond_0
     new-instance v0, Lcom/android/launcher3/util/ParcelableSparseArray;
 
@@ -3679,10 +3654,10 @@
     .locals 11
 
     .prologue
-    .line 2231
+    .line 2226
     if-eqz p6, :cond_0
 
-    .line 2232
+    .line 2227
     add-int v1, p1, p3
 
     add-int v2, p2, p4
@@ -3691,11 +3666,11 @@
 
     invoke-virtual {v0, p1, p2, v1, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2234
+    .line 2229
     :cond_0
     invoke-virtual/range {p7 .. p7}, Ljava/util/ArrayList;->clear()V
 
-    .line 2235
+    .line 2230
     new-instance v3, Landroid/graphics/Rect;
 
     add-int v1, p1, p3
@@ -3704,19 +3679,19 @@
 
     invoke-direct {v3, p1, p2, v1, v2}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 2236
+    .line 2231
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
-    .line 2237
+    .line 2232
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v5
 
-    .line 2238
+    .line 2233
     const/4 v1, 0x0
 
     move v2, v1
@@ -3724,19 +3699,19 @@
     :goto_0
     if-ge v2, v5, :cond_3
 
-    .line 2239
+    .line 2234
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1, v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    .line 2240
+    .line 2235
     move-object/from16 v0, p5
 
     if-ne v6, v0, :cond_2
 
-    .line 2238
+    .line 2233
     :cond_1
     :goto_1
     add-int/lit8 v1, v2, 0x1
@@ -3745,7 +3720,7 @@
 
     goto :goto_0
 
-    .line 2241
+    .line 2236
     :cond_2
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3753,7 +3728,7 @@
 
     check-cast v1, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 2242
+    .line 2237
     iget v7, v1, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
     iget v8, v1, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
@@ -3772,29 +3747,29 @@
 
     invoke-virtual {v4, v7, v8, v9, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2243
+    .line 2238
     invoke-static {v3, v4}, Landroid/graphics/Rect;->intersects(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 2244
+    .line 2239
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2245
+    .line 2240
     if-eqz p6, :cond_1
 
-    .line 2246
+    .line 2241
     move-object/from16 v0, p6
 
     invoke-virtual {v0, v4}, Landroid/graphics/Rect;->union(Landroid/graphics/Rect;)V
 
     goto :goto_1
 
-    .line 2250
+    .line 2245
     :cond_3
     return-void
 .end method
@@ -3803,7 +3778,7 @@
     .locals 3
 
     .prologue
-    .line 1107
+    .line 1102
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTempRectStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -3812,7 +3787,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1108
+    .line 1103
     const/4 v0, 0x0
 
     :goto_0
@@ -3824,7 +3799,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1109
+    .line 1104
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mTempRectStack:Ljava/util/Stack;
 
     new-instance v2, Landroid/graphics/Rect;
@@ -3833,12 +3808,12 @@
 
     invoke-virtual {v1, v2}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1108
+    .line 1103
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1112
+    .line 1107
     :cond_0
     return-void
 .end method
@@ -3851,22 +3826,22 @@
 
     const/4 v4, 0x0
 
-    .line 1528
+    .line 1523
     new-instance v7, Lcom/android/launcher3/CellLayout$ViewCluster;
 
     invoke-direct {v7, p0, p1, p5}, Lcom/android/launcher3/CellLayout$ViewCluster;-><init>(Lcom/android/launcher3/CellLayout;Ljava/util/ArrayList;Lcom/android/launcher3/CellLayout$ItemConfiguration;)V
 
-    .line 1529
+    .line 1524
     invoke-virtual {v7}, Lcom/android/launcher3/CellLayout$ViewCluster;->getBoundingRect()Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 1536
+    .line 1531
     aget v0, p3, v4
 
     if-gez v0, :cond_0
 
-    .line 1538
+    .line 1533
     iget v0, v1, Landroid/graphics/Rect;->right:I
 
     iget v1, p2, Landroid/graphics/Rect;->left:I
@@ -3875,23 +3850,23 @@
 
     move v6, v2
 
-    .line 1551
+    .line 1546
     :goto_0
     if-gtz v1, :cond_3
 
-    .line 1552
+    .line 1547
     return v4
 
-    .line 1539
+    .line 1534
     :cond_0
     aget v0, p3, v4
 
     if-lez v0, :cond_1
 
-    .line 1540
+    .line 1535
     const/4 v0, 0x4
 
-    .line 1541
+    .line 1536
     iget v3, p2, Landroid/graphics/Rect;->right:I
 
     iget v1, v1, Landroid/graphics/Rect;->left:I
@@ -3902,16 +3877,16 @@
 
     goto :goto_0
 
-    .line 1542
+    .line 1537
     :cond_1
     aget v0, p3, v2
 
     if-gez v0, :cond_2
 
-    .line 1543
+    .line 1538
     const/4 v0, 0x2
 
-    .line 1544
+    .line 1539
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
 
     iget v3, p2, Landroid/graphics/Rect;->top:I
@@ -3922,11 +3897,11 @@
 
     goto :goto_0
 
-    .line 1546
+    .line 1541
     :cond_2
     const/16 v0, 0x8
 
-    .line 1547
+    .line 1542
     iget v3, p2, Landroid/graphics/Rect;->bottom:I
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
@@ -3937,7 +3912,7 @@
 
     goto :goto_0
 
-    .line 1556
+    .line 1551
     :cond_3
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -3956,34 +3931,34 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 1557
-    iget-object v5, p5, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 1552
+    iget-object v5, p5, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v5, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1558
+    .line 1553
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v5, v0, v4}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
     goto :goto_1
 
-    .line 1564
+    .line 1559
     :cond_4
     invoke-virtual {p5}, Lcom/android/launcher3/CellLayout$ItemConfiguration;->save()V
 
-    .line 1569
+    .line 1564
     invoke-virtual {v7, v6}, Lcom/android/launcher3/CellLayout$ViewCluster;->sortConfigurationForEdgePush(I)V
 
     move v5, v1
 
     move v3, v4
 
-    .line 1571
+    .line 1566
     :goto_2
     if-lez v5, :cond_7
 
@@ -3991,7 +3966,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 1572
+    .line 1567
     iget-object v0, p5, Lcom/android/launcher3/CellLayout$ItemConfiguration;->sortedViews:Ljava/util/ArrayList;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -4012,7 +3987,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 1576
+    .line 1571
     iget-object v1, v7, Lcom/android/launcher3/CellLayout$ViewCluster;->views:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -4023,32 +3998,32 @@
 
     if-eq v0, p4, :cond_5
 
-    .line 1577
+    .line 1572
     invoke-virtual {v7, v0, v6}, Lcom/android/launcher3/CellLayout$ViewCluster;->isViewTouchingEdge(Landroid/view/View;I)Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    .line 1578
+    .line 1573
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 1579
+    .line 1574
     iget-boolean v1, v1, Lcom/android/launcher3/CellLayout$LayoutParams;->canReorder:Z
 
     if-nez v1, :cond_6
 
     move v0, v2
 
-    .line 1592
+    .line 1587
     :goto_4
     add-int/lit8 v1, v5, -0x1
 
-    .line 1596
+    .line 1591
     invoke-virtual {v7, v6, v2}, Lcom/android/launcher3/CellLayout$ViewCluster;->shift(II)V
 
     move v5, v1
@@ -4057,33 +4032,33 @@
 
     goto :goto_2
 
-    .line 1584
+    .line 1579
     :cond_6
     invoke-virtual {v7, v0}, Lcom/android/launcher3/CellLayout$ViewCluster;->addView(Landroid/view/View;)V
 
-    .line 1585
-    iget-object v1, p5, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 1580
+    iget-object v1, p5, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1588
+    .line 1583
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v1, v0, v4}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
     goto :goto_3
 
-    .line 1600
+    .line 1595
     :cond_7
     invoke-virtual {v7}, Lcom/android/launcher3/CellLayout$ViewCluster;->getBoundingRect()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 1604
+    .line 1599
     if-nez v3, :cond_8
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
@@ -4100,7 +4075,7 @@
 
     if-ltz v1, :cond_8
 
-    .line 1605
+    .line 1600
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
@@ -4109,7 +4084,7 @@
 
     move v1, v2
 
-    .line 1612
+    .line 1607
     :goto_5
     iget-object v0, v7, Lcom/android/launcher3/CellLayout$ViewCluster;->views:Ljava/util/ArrayList;
 
@@ -4130,23 +4105,23 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 1613
-    iget-object v4, p5, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    .line 1608
+    iget-object v4, p5, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v4, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1614
+    .line 1609
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v4, v0, v2}, Lcom/android/launcher3/util/GridOccupancy;->markCells(Lcom/android/launcher3/util/CellAndSpan;Z)V
 
     goto :goto_6
 
-    .line 1608
+    .line 1603
     :cond_8
     invoke-virtual {p5}, Lcom/android/launcher3/CellLayout$ItemConfiguration;->restore()V
 
@@ -4154,7 +4129,7 @@
 
     goto :goto_5
 
-    .line 1617
+    .line 1612
     :cond_9
     return v1
 
@@ -4168,7 +4143,7 @@
     .locals 12
 
     .prologue
-    .line 1771
+    .line 1766
     if-ltz p1, :cond_0
 
     if-gez p2, :cond_1
@@ -4178,13 +4153,13 @@
 
     return v2
 
-    .line 1773
+    .line 1768
     :cond_1
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 1774
+    .line 1769
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mOccupiedRect:Landroid/graphics/Rect;
 
     add-int v3, p1, p3
@@ -4193,32 +4168,32 @@
 
     invoke-virtual {v2, p1, p2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1777
+    .line 1772
     if-eqz p6, :cond_2
 
-    .line 1778
+    .line 1773
     move-object/from16 v0, p7
 
-    iget-object v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
     move-object/from16 v0, p6
 
-    invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v0}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1779
+    .line 1774
     if-eqz v2, :cond_2
 
-    .line 1780
+    .line 1775
     iput p1, v2, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
-    .line 1781
+    .line 1776
     iput p2, v2, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
 
-    .line 1784
+    .line 1779
     :cond_2
     new-instance v5, Landroid/graphics/Rect;
 
@@ -4228,17 +4203,17 @@
 
     invoke-direct {v5, p1, p2, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1785
+    .line 1780
     new-instance v6, Landroid/graphics/Rect;
 
     invoke-direct {v6}, Landroid/graphics/Rect;-><init>()V
 
-    .line 1786
+    .line 1781
     move-object/from16 v0, p7
 
-    iget-object v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+    invoke-virtual {v2}, Landroid/util/ArrayMap;->keySet()Ljava/util/Set;
 
     move-result-object v2
 
@@ -4260,30 +4235,30 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 1787
+    .line 1782
     move-object/from16 v0, p6
 
     if-eq v2, v0, :cond_3
 
-    .line 1788
+    .line 1783
     move-object/from16 v0, p7
 
-    iget-object v3, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Ljava/util/HashMap;
+    iget-object v3, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->map:Landroid/util/ArrayMap;
 
-    invoke-virtual {v3, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/launcher3/util/CellAndSpan;
 
-    .line 1789
+    .line 1784
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 1790
+    .line 1785
     iget v8, v3, Lcom/android/launcher3/util/CellAndSpan;->cellX:I
 
     iget v9, v3, Lcom/android/launcher3/util/CellAndSpan;->cellY:I
@@ -4302,24 +4277,24 @@
 
     invoke-virtual {v6, v8, v9, v10, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1791
+    .line 1786
     invoke-static {v5, v6}, Landroid/graphics/Rect;->intersects(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 1792
+    .line 1787
     iget-boolean v3, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->canReorder:Z
 
     if-nez v3, :cond_4
 
-    .line 1793
+    .line 1788
     const/4 v2, 0x0
 
     return v2
 
-    .line 1795
+    .line 1790
     :cond_4
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
@@ -4327,7 +4302,7 @@
 
     goto :goto_0
 
-    .line 1799
+    .line 1794
     :cond_5
     new-instance v2, Ljava/util/ArrayList;
 
@@ -4339,7 +4314,7 @@
 
     iput-object v2, v0, Lcom/android/launcher3/CellLayout$ItemConfiguration;->intersectingViews:Ljava/util/ArrayList;
 
-    .line 1804
+    .line 1799
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mOccupiedRect:Landroid/graphics/Rect;
@@ -4358,12 +4333,12 @@
 
     if-eqz v2, :cond_6
 
-    .line 1806
+    .line 1801
     const/4 v2, 0x1
 
     return v2
 
-    .line 1810
+    .line 1805
     :cond_6
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
@@ -4383,12 +4358,12 @@
 
     if-eqz v2, :cond_7
 
-    .line 1812
+    .line 1807
     const/4 v2, 0x1
 
     return v2
 
-    .line 1816
+    .line 1811
     :cond_7
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
@@ -4409,7 +4384,7 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 1817
+    .line 1812
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mOccupiedRect:Landroid/graphics/Rect;
 
     move-object/from16 v0, p5
@@ -4422,12 +4397,12 @@
 
     if-nez v2, :cond_8
 
-    .line 1818
+    .line 1813
     const/4 v2, 0x0
 
     return v2
 
-    .line 1821
+    .line 1816
     :cond_9
     const/4 v2, 0x1
 
@@ -4438,7 +4413,7 @@
     .locals 2
 
     .prologue
-    .line 1115
+    .line 1110
     :goto_0
     invoke-virtual {p1}, Ljava/util/Stack;->isEmpty()Z
 
@@ -4446,7 +4421,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1116
+    .line 1111
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mTempRectStack:Ljava/util/Stack;
 
     invoke-virtual {p1}, Ljava/util/Stack;->pop()Ljava/lang/Object;
@@ -4459,7 +4434,7 @@
 
     goto :goto_0
 
-    .line 1118
+    .line 1113
     :cond_0
     return-void
 .end method
@@ -4468,14 +4443,14 @@
     .locals 3
 
     .prologue
-    .line 2156
+    .line 2151
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
 
     move-result v2
 
-    .line 2157
+    .line 2152
     const/4 v0, 0x0
 
     move v1, v0
@@ -4483,7 +4458,7 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 2158
+    .line 2153
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
@@ -4496,17 +4471,17 @@
 
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 2159
+    .line 2154
     iput-boolean p1, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->useTmpCoords:Z
 
-    .line 2157
+    .line 2152
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_0
 
-    .line 2161
+    .line 2156
     :cond_0
     return-void
 .end method
@@ -4519,7 +4494,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 604
+    .line 599
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mContainerType:I
 
     if-nez v1, :cond_0
@@ -4530,16 +4505,16 @@
     return v0
 .end method
 
-.method public addFolderBackground(Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;)V
+.method public addFolderBackground(Lcom/android/launcher3/folder/PreviewBackground;)V
     .locals 1
 
     .prologue
-    .line 537
+    .line 535
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderBackgrounds:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 538
+    .line 536
     return-void
 .end method
 
@@ -4547,45 +4522,38 @@
     .locals 4
 
     .prologue
-    const/4 v2, 0x1
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 612
+    .line 607
     instance-of v0, p1, Lcom/android/launcher3/BubbleTextView;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
-    .line 613
+    .line 608
     check-cast v0, Lcom/android/launcher3/BubbleTextView;
 
-    .line 614
-    iget v1, p0, Lcom/android/launcher3/CellLayout;->mContainerType:I
+    .line 609
+    invoke-virtual {v0}, Lcom/android/launcher3/BubbleTextView;->shouldTextBeVisible()Z
 
-    if-eq v1, v2, :cond_4
+    move-result v1
 
-    move v1, v2
-
-    :goto_0
     invoke-virtual {v0, v1}, Lcom/android/launcher3/BubbleTextView;->setTextVisibility(Z)V
 
-    .line 617
+    .line 612
     :cond_0
-    iget v0, p0, Lcom/android/launcher3/CellLayout;->mChildScale:F
+    invoke-virtual {p1, v3}, Landroid/view/View;->setScaleX(F)V
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setScaleX(F)V
+    .line 613
+    invoke-virtual {p1, v3}, Landroid/view/View;->setScaleY(F)V
 
-    .line 618
-    iget v0, p0, Lcom/android/launcher3/CellLayout;->mChildScale:F
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setScaleY(F)V
-
-    .line 622
+    .line 617
     iget v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    if-ltz v0, :cond_5
+    if-ltz v0, :cond_4
 
     iget v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
@@ -4593,11 +4561,11 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    if-gt v0, v1, :cond_5
+    if-gt v0, v1, :cond_4
 
     iget v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    if-ltz v0, :cond_5
+    if-ltz v0, :cond_4
 
     iget v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
@@ -4605,9 +4573,9 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    if-gt v0, v1, :cond_5
+    if-gt v0, v1, :cond_4
 
-    .line 625
+    .line 620
     iget v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
     if-gez v0, :cond_1
@@ -4616,7 +4584,7 @@
 
     iput v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
-    .line 626
+    .line 621
     :cond_1
     iget v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
 
@@ -4626,45 +4594,41 @@
 
     iput v0, p4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
 
-    .line 628
+    .line 623
     :cond_2
     invoke-virtual {p1, p3}, Landroid/view/View;->setId(I)V
 
-    .line 632
+    .line 627
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1, p2, p4}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 634
+    .line 629
     if-eqz p5, :cond_3
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/CellLayout;->markCellsAsOccupiedForView(Landroid/view/View;)V
 
-    .line 636
+    .line 631
     :cond_3
-    return v2
+    const/4 v0, 0x1
 
+    return v0
+
+    .line 633
     :cond_4
-    move v1, v3
-
-    .line 614
-    goto :goto_0
-
-    .line 638
-    :cond_5
-    return v3
+    return v2
 .end method
 
 .method public animateChildToPosition(Landroid/view/View;IIIIZZ)Z
     .locals 14
 
     .prologue
-    .line 913
+    .line 908
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v9
 
-    .line 915
+    .line 910
     invoke-virtual {v9, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->indexOfChild(Landroid/view/View;)I
 
     move-result v2
@@ -4673,7 +4637,7 @@
 
     if-eq v2, v3, :cond_5
 
-    .line 916
+    .line 911
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -4682,7 +4646,7 @@
 
     check-cast v10, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 917
+    .line 912
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
@@ -4691,19 +4655,19 @@
 
     check-cast v8, Lcom/android/launcher3/ItemInfo;
 
-    .line 920
-    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Ljava/util/HashMap;
+    .line 915
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Landroid/util/ArrayMap;
 
-    invoke-virtual {v2, v10}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v10}, Landroid/util/ArrayMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 921
-    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Ljava/util/HashMap;
+    .line 916
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Landroid/util/ArrayMap;
 
-    invoke-virtual {v2, v10}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v10}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -4711,27 +4675,27 @@
 
     invoke-virtual {v2}, Landroid/animation/Animator;->cancel()V
 
-    .line 922
-    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Ljava/util/HashMap;
+    .line 917
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Landroid/util/ArrayMap;
 
-    invoke-virtual {v2, v10}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v10}, Landroid/util/ArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 925
+    .line 920
     :cond_0
     iget v11, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
-    .line 926
+    .line 921
     iget v12, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
-    .line 927
+    .line 922
     if-eqz p7, :cond_1
 
-    .line 928
+    .line 923
     if-eqz p6, :cond_2
 
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
-    .line 929
+    .line 924
     :goto_0
     iget v3, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
@@ -4745,7 +4709,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
 
-    .line 930
+    .line 925
     iget v5, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
     iget v6, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
@@ -4758,16 +4722,16 @@
 
     invoke-virtual/range {v2 .. v7}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
 
-    .line 932
+    .line 927
     :cond_1
     const/4 v2, 0x1
 
     iput-boolean v2, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
 
-    .line 933
+    .line 928
     if-eqz p6, :cond_3
 
-    .line 934
+    .line 929
     move/from16 v0, p2
 
     iput v0, v8, Lcom/android/launcher3/ItemInfo;->cellX:I
@@ -4776,7 +4740,7 @@
 
     iput v0, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 935
+    .line 930
     move/from16 v0, p3
 
     iput v0, v8, Lcom/android/launcher3/ItemInfo;->cellY:I
@@ -4785,62 +4749,62 @@
 
     iput v0, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 940
+    .line 935
     :goto_1
     invoke-virtual {v9, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setupLp(Landroid/view/View;)V
 
-    .line 941
+    .line 936
     const/4 v2, 0x0
 
     iput-boolean v2, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
 
-    .line 942
+    .line 937
     iget v6, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
-    .line 943
+    .line 938
     iget v8, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
-    .line 945
+    .line 940
     iput v11, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
-    .line 946
+    .line 941
     iput v12, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
-    .line 949
+    .line 944
     if-ne v11, v6, :cond_4
 
     if-ne v12, v8, :cond_4
 
-    .line 950
+    .line 945
     const/4 v2, 0x1
 
     iput-boolean v2, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
 
-    .line 951
+    .line 946
     const/4 v2, 0x1
 
     return v2
 
-    .line 928
+    .line 923
     :cond_2
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     goto :goto_0
 
-    .line 937
+    .line 932
     :cond_3
     move/from16 v0, p2
 
     iput v0, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
 
-    .line 938
+    .line 933
     move/from16 v0, p3
 
     iput v0, v10, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellY:I
 
     goto :goto_1
 
-    .line 954
+    .line 949
     :cond_4
     const/4 v2, 0x2
 
@@ -4852,19 +4816,19 @@
 
     move-result-object v13
 
-    .line 955
+    .line 950
     move/from16 v0, p4
 
     int-to-long v2, v0
 
     invoke-virtual {v13, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 956
-    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Ljava/util/HashMap;
+    .line 951
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mReorderAnimators:Landroid/util/ArrayMap;
 
-    invoke-virtual {v2, v10, v13}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v10, v13}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 958
+    .line 953
     new-instance v2, Lcom/android/launcher3/CellLayout$3;
 
     move-object v3, p0
@@ -4881,35 +4845,35 @@
 
     invoke-virtual {v13, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 967
+    .line 962
     new-instance v2, Lcom/android/launcher3/CellLayout$4;
 
     invoke-direct {v2, p0, v10, p1}, Lcom/android/launcher3/CellLayout$4;-><init>(Lcom/android/launcher3/CellLayout;Lcom/android/launcher3/CellLayout$LayoutParams;Landroid/view/View;)V
 
     invoke-virtual {v13, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 985
+    .line 980
     move/from16 v0, p5
 
     int-to-long v2, v0
 
     invoke-virtual {v13, v2, v3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 986
+    .line 981
     invoke-virtual {v13}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 987
+    .line 982
     const/4 v2, 0x1
 
     return v2
 
-    .line 989
+    .line 984
     :cond_5
     const/4 v2, 0x0
 
     return v2
 
-    .line 954
+    .line 949
     :array_0
     .array-data 4
         0x0
@@ -4921,12 +4885,12 @@
     .locals 1
 
     .prologue
-    .line 363
+    .line 361
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->buildLayer()V
 
-    .line 364
+    .line 362
     return-void
 .end method
 
@@ -4934,34 +4898,34 @@
     .locals 3
 
     .prologue
-    .line 581
+    .line 576
     invoke-super {p0}, Landroid/view/ViewGroup;->cancelLongPress()V
 
-    .line 584
+    .line 579
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getChildCount()I
 
     move-result v1
 
-    .line 585
+    .line 580
     const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 586
+    .line 581
     invoke-virtual {p0, v0}, Lcom/android/launcher3/CellLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 587
+    .line 582
     invoke-virtual {v2}, Landroid/view/View;->cancelLongPress()V
 
-    .line 585
+    .line 580
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 589
+    .line 584
     :cond_0
     return-void
 .end method
@@ -4982,10 +4946,10 @@
 
     move-object v5, p3
 
-    .line 746
+    .line 741
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/CellLayout;->regionToCenterPoint(IIII[I)V
 
-    .line 747
+    .line 742
     return-void
 .end method
 
@@ -4993,17 +4957,17 @@
     .locals 3
 
     .prologue
-    .line 730
+    .line 725
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v0
 
-    .line 731
+    .line 726
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v1
 
-    .line 733
+    .line 728
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     mul-int/2addr v2, p1
@@ -5014,7 +4978,7 @@
 
     aput v0, p3, v2
 
-    .line 734
+    .line 729
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     mul-int/2addr v0, p2
@@ -5025,7 +4989,7 @@
 
     aput v0, p3, v1
 
-    .line 735
+    .line 730
     return-void
 .end method
 
@@ -5033,46 +4997,46 @@
     .locals 6
 
     .prologue
-    .line 2559
+    .line 2553
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
-    .line 2560
+    .line 2554
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
-    .line 2562
+    .line 2556
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v2
 
-    .line 2563
+    .line 2557
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v3
 
-    .line 2565
+    .line 2559
     mul-int v4, p3, v0
 
-    .line 2566
+    .line 2560
     mul-int v5, p4, v1
 
-    .line 2567
+    .line 2561
     mul-int/2addr v0, p1
 
     add-int/2addr v0, v2
 
-    .line 2568
+    .line 2562
     mul-int/2addr v1, p2
 
     add-int/2addr v1, v3
 
-    .line 2570
+    .line 2564
     add-int v2, v0, v4
 
     add-int v3, v1, v5
 
     invoke-virtual {p5, v0, v1, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2571
+    .line 2565
     return-void
 .end method
 
@@ -5080,7 +5044,7 @@
     .locals 1
 
     .prologue
-    .line 2608
+    .line 2602
     instance-of v0, p1, Lcom/android/launcher3/CellLayout$LayoutParams;
 
     return v0
@@ -5092,17 +5056,17 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 1079
+    .line 1074
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
 
-    .line 1080
+    .line 1075
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     aget-object v0, v1, v0
 
     invoke-virtual {v0}, Lcom/android/launcher3/InterruptibleInOutAnimator;->animateOut()V
 
-    .line 1081
+    .line 1076
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
@@ -5115,7 +5079,7 @@
 
     aput v3, v0, v1
 
-    .line 1082
+    .line 1077
     return-void
 .end method
 
@@ -5125,20 +5089,20 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 557
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    .line 552
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
-    iput v1, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellX:I
+    iput v1, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellX:I
 
-    .line 558
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    .line 553
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
-    iput v1, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellY:I
+    iput v1, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellY:I
 
-    .line 559
+    .line 554
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->invalidate()V
 
-    .line 560
+    .line 555
     return-void
 .end method
 
@@ -5146,7 +5110,7 @@
     .locals 13
 
     .prologue
-    .line 2280
+    .line 2275
     const/4 v2, 0x2
 
     new-array v7, v2, [I
@@ -5161,10 +5125,10 @@
 
     move/from16 v6, p4
 
-    .line 2281
+    .line 2276
     invoke-virtual/range {v2 .. v7}, Lcom/android/launcher3/CellLayout;->regionToCenterPoint(IIII[I)V
 
-    .line 2284
+    .line 2279
     const/4 v2, 0x0
 
     aget v3, v7, v2
@@ -5173,7 +5137,7 @@
 
     aget v4, v7, v2
 
-    .line 2285
+    .line 2280
     new-instance v12, Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     const/4 v2, 0x0
@@ -5196,73 +5160,73 @@
 
     move-object/from16 v10, p5
 
-    .line 2284
+    .line 2279
     invoke-direct/range {v2 .. v12}, Lcom/android/launcher3/CellLayout;->findReorderSolution(IIIIII[ILandroid/view/View;ZLcom/android/launcher3/CellLayout$ItemConfiguration;)Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     move-result-object v2
 
-    .line 2287
+    .line 2282
     const/4 v3, 0x1
 
     invoke-direct {p0, v3}, Lcom/android/launcher3/CellLayout;->setUseTempCoords(Z)V
 
-    .line 2288
+    .line 2283
     if-eqz v2, :cond_0
 
     iget-boolean v3, v2, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
     if-eqz v3, :cond_0
 
-    .line 2292
+    .line 2287
     move-object/from16 v0, p5
 
     invoke-direct {p0, v2, v0}, Lcom/android/launcher3/CellLayout;->copySolutionToTempState(Lcom/android/launcher3/CellLayout$ItemConfiguration;Landroid/view/View;)V
 
-    .line 2293
+    .line 2288
     const/4 v3, 0x1
 
     invoke-virtual {p0, v3}, Lcom/android/launcher3/CellLayout;->setItemPlacementDirty(Z)V
 
-    .line 2294
+    .line 2289
     move-object/from16 v0, p5
 
     move/from16 v1, p7
 
     invoke-direct {p0, v2, v0, v1}, Lcom/android/launcher3/CellLayout;->animateItemsToSolution(Lcom/android/launcher3/CellLayout$ItemConfiguration;Landroid/view/View;Z)V
 
-    .line 2296
+    .line 2291
     if-eqz p7, :cond_1
 
-    .line 2297
+    .line 2292
     invoke-direct {p0}, Lcom/android/launcher3/CellLayout;->commitTempPlacement()V
 
-    .line 2298
+    .line 2293
     invoke-direct {p0}, Lcom/android/launcher3/CellLayout;->completeAndClearReorderPreviewAnimations()V
 
-    .line 2299
+    .line 2294
     const/4 v3, 0x0
 
     invoke-virtual {p0, v3}, Lcom/android/launcher3/CellLayout;->setItemPlacementDirty(Z)V
 
-    .line 2304
+    .line 2299
     :goto_0
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v3}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->requestLayout()V
 
-    .line 2306
+    .line 2301
     :cond_0
     iget-boolean v2, v2, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
     return v2
 
-    .line 2302
+    .line 2297
     :cond_1
     const/16 v3, 0x96
 
     const/4 v4, 0x1
 
-    .line 2301
+    .line 2296
     move-object/from16 v0, p5
 
     invoke-direct {p0, v2, v0, v3, v4}, Lcom/android/launcher3/CellLayout;->beginOrAdjustReorderPreviewAnimations(Lcom/android/launcher3/CellLayout$ItemConfiguration;Landroid/view/View;II)V
@@ -5274,12 +5238,12 @@
     .locals 1
 
     .prologue
-    .line 410
+    .line 408
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mIsDragTarget:Z
 
-    .line 411
+    .line 409
     return-void
 .end method
 
@@ -5287,12 +5251,12 @@
     .locals 1
 
     .prologue
-    .line 427
+    .line 425
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mJailContent:Z
 
-    .line 428
+    .line 426
     return-void
 .end method
 
@@ -5302,12 +5266,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 522
+    .line 520
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     move v1, v2
 
-    .line 524
+    .line 522
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderBackgrounds:Ljava/util/ArrayList;
 
@@ -5317,33 +5281,33 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 525
+    .line 523
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderBackgrounds:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    check-cast v0, Lcom/android/launcher3/folder/PreviewBackground;
 
-    .line 526
-    iget-boolean v3, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->isClipping:Z
+    .line 524
+    iget-boolean v3, v0, Lcom/android/launcher3/folder/PreviewBackground;->isClipping:Z
 
     if-eqz v3, :cond_0
 
-    .line 527
-    iget v3, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellX:I
+    .line 525
+    iget v3, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellX:I
 
-    iget v4, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellY:I
+    iget v4, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellY:I
 
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     invoke-virtual {p0, v3, v4, v5}, Lcom/android/launcher3/CellLayout;->cellToPoint(II[I)V
 
-    .line 528
+    .line 526
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 529
+    .line 527
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     aget v3, v3, v2
@@ -5360,13 +5324,13 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 530
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->drawBackgroundStroke(Landroid/graphics/Canvas;)V
+    .line 528
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/PreviewBackground;->drawBackgroundStroke(Landroid/graphics/Canvas;)V
 
-    .line 531
+    .line 529
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 524
+    .line 522
     :cond_0
     add-int/lit8 v0, v1, 0x1
 
@@ -5374,7 +5338,7 @@
 
     goto :goto_0
 
-    .line 534
+    .line 532
     :cond_1
     return-void
 .end method
@@ -5383,7 +5347,7 @@
     .locals 1
 
     .prologue
-    .line 329
+    .line 327
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mUseTouchHelper:Z
 
     if-eqz v0, :cond_0
@@ -5396,12 +5360,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 330
+    .line 328
     const/4 v0, 0x1
 
     return v0
 
-    .line 332
+    .line 330
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
 
@@ -5414,7 +5378,7 @@
     .locals 1
 
     .prologue
-    .line 443
+    .line 441
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mJailContent:Z
 
     if-eqz v0, :cond_0
@@ -5426,7 +5390,7 @@
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
 
-    .line 444
+    .line 442
     return-void
 .end method
 
@@ -5434,29 +5398,29 @@
     .locals 2
 
     .prologue
-    .line 432
+    .line 430
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mJailContent:Z
 
     if-eqz v0, :cond_0
 
-    .line 433
+    .line 431
     invoke-direct {p0, p1}, Lcom/android/launcher3/CellLayout;->getJailedArray(Landroid/util/SparseArray;)Lcom/android/launcher3/util/ParcelableSparseArray;
 
     move-result-object v0
 
-    .line 434
+    .line 432
     invoke-super {p0, v0}, Landroid/view/ViewGroup;->dispatchSaveInstanceState(Landroid/util/SparseArray;)V
 
-    .line 435
+    .line 433
     const v1, 0x7f0e0004
 
     invoke-virtual {p1, v1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 439
+    .line 437
     :goto_0
     return-void
 
-    .line 437
+    .line 435
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchSaveInstanceState(Landroid/util/SparseArray;)V
 
@@ -5473,31 +5437,31 @@
 
     const/4 v1, 0x1
 
-    .line 299
+    .line 297
     iput-boolean p1, p0, Lcom/android/launcher3/CellLayout;->mUseTouchHelper:Z
 
-    .line 300
+    .line 298
     if-nez p1, :cond_1
 
-    .line 301
-    invoke-static {p0, v0}, Landroid/support/v4/view/f;->aft(Landroid/view/View;Landroid/support/v4/view/a;)V
+    .line 299
+    invoke-static {p0, v0}, Landroid/support/v4/view/f;->agu(Landroid/view/View;Landroid/support/v4/view/c;)V
 
-    .line 302
+    .line 300
     invoke-virtual {p0, v2}, Lcom/android/launcher3/CellLayout;->setImportantForAccessibility(I)V
 
-    .line 303
+    .line 301
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setImportantForAccessibility(I)V
 
-    .line 304
+    .line 302
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/CellLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 320
+    .line 318
     :goto_0
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getParent()Landroid/view/ViewParent;
 
@@ -5505,77 +5469,77 @@
 
     if-eqz v0, :cond_0
 
-    .line 321
+    .line 319
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     invoke-interface {v0, p0, p0, v1}, Landroid/view/ViewParent;->notifySubtreeAccessibilityStateChanged(Landroid/view/View;Landroid/view/View;I)V
 
-    .line 324
+    .line 322
     :cond_0
     return-void
 
-    .line 306
+    .line 304
     :cond_1
     if-ne p2, v2, :cond_3
 
-    .line 307
+    .line 305
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchHelper:Lcom/android/launcher3/accessibility/DragAndDropAccessibilityDelegate;
 
     instance-of v0, v0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 306
+    .line 304
     if-eqz v0, :cond_3
 
-    .line 308
+    .line 306
     new-instance v0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;-><init>(Lcom/android/launcher3/CellLayout;)V
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchHelper:Lcom/android/launcher3/accessibility/DragAndDropAccessibilityDelegate;
 
-    .line 313
+    .line 311
     :cond_2
     :goto_1
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchHelper:Lcom/android/launcher3/accessibility/DragAndDropAccessibilityDelegate;
 
-    invoke-static {p0, v0}, Landroid/support/v4/view/f;->aft(Landroid/view/View;Landroid/support/v4/view/a;)V
+    invoke-static {p0, v0}, Landroid/support/v4/view/f;->agu(Landroid/view/View;Landroid/support/v4/view/c;)V
 
-    .line 314
+    .line 312
     invoke-virtual {p0, v1}, Lcom/android/launcher3/CellLayout;->setImportantForAccessibility(I)V
 
-    .line 315
+    .line 313
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setImportantForAccessibility(I)V
 
-    .line 316
+    .line 314
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchHelper:Lcom/android/launcher3/accessibility/DragAndDropAccessibilityDelegate;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/CellLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
 
-    .line 309
+    .line 307
     :cond_3
     if-ne p2, v1, :cond_2
 
-    .line 310
+    .line 308
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchHelper:Lcom/android/launcher3/accessibility/DragAndDropAccessibilityDelegate;
 
     instance-of v0, v0, Lcom/android/launcher3/accessibility/FolderAccessibilityHelper;
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 309
+    .line 307
     if-eqz v0, :cond_2
 
-    .line 311
+    .line 309
     new-instance v0, Lcom/android/launcher3/accessibility/FolderAccessibilityHelper;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/accessibility/FolderAccessibilityHelper;-><init>(Lcom/android/launcher3/CellLayout;)V
@@ -5589,7 +5553,7 @@
     .locals 3
 
     .prologue
-    .line 359
+    .line 357
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     if-eqz p1, :cond_0
@@ -5601,10 +5565,10 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 360
+    .line 358
     return-void
 
-    .line 359
+    .line 357
     :cond_0
     const/4 v0, 0x0
 
@@ -5615,15 +5579,15 @@
     .locals 1
 
     .prologue
-    .line 2499
+    .line 2493
     if-nez p1, :cond_0
 
-    .line 2500
+    .line 2494
     const/4 v0, 0x2
 
     new-array p1, v0, [I
 
-    .line 2502
+    .line 2496
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
@@ -5638,7 +5602,7 @@
     .locals 10
 
     .prologue
-    .line 2478
+    .line 2472
     const/4 v7, 0x0
 
     const/4 v9, 0x0
@@ -5670,7 +5634,7 @@
     .locals 10
 
     .prologue
-    .line 1101
+    .line 1096
     const/4 v7, 0x1
 
     move-object v0, p0
@@ -5702,7 +5666,7 @@
     .locals 2
 
     .prologue
-    .line 2603
+    .line 2597
     new-instance v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getContext()Landroid/content/Context;
@@ -5718,7 +5682,7 @@
     .locals 1
 
     .prologue
-    .line 2613
+    .line 2607
     new-instance v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/CellLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -5730,7 +5694,7 @@
     .locals 1
 
     .prologue
-    .line 884
+    .line 879
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mBackgroundAlpha:F
 
     return v0
@@ -5740,7 +5704,7 @@
     .locals 1
 
     .prologue
-    .line 789
+    .line 784
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     return v0
@@ -5750,7 +5714,7 @@
     .locals 1
 
     .prologue
-    .line 785
+    .line 780
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     return v0
@@ -5760,7 +5724,7 @@
     .locals 1
 
     .prologue
-    .line 908
+    .line 903
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(II)Landroid/view/View;
@@ -5774,7 +5738,7 @@
     .locals 1
 
     .prologue
-    .line 596
+    .line 591
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
     return v0
@@ -5784,7 +5748,7 @@
     .locals 1
 
     .prologue
-    .line 600
+    .line 595
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
     return v0
@@ -5794,7 +5758,7 @@
     .locals 3
 
     .prologue
-    .line 2590
+    .line 2584
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v0
@@ -5820,7 +5784,7 @@
     .locals 3
 
     .prologue
-    .line 2586
+    .line 2580
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v0
@@ -5850,7 +5814,7 @@
 
     const/4 v3, 0x0
 
-    .line 780
+    .line 775
     aget v0, p3, v3
 
     aget v1, p3, v4
@@ -5859,7 +5823,7 @@
 
     invoke-virtual {p0, v0, v1, v2}, Lcom/android/launcher3/CellLayout;->cellToCenterPoint(II[I)V
 
-    .line 781
+    .line 776
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpPoint:[I
 
     aget v0, v0, v3
@@ -5897,19 +5861,19 @@
 
     const/4 v3, 0x1
 
-    .line 1069
+    .line 1064
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mContainerType:I
 
     if-ne v0, v3, :cond_0
 
-    .line 1070
+    .line 1065
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    .line 1071
+    .line 1066
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
     move-result v2
@@ -5922,8 +5886,8 @@
 
     aput-object v2, v1, v4
 
-    .line 1070
-    const v2, 0x7f0c006c
+    .line 1065
+    const v2, 0x7f0c0075
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -5931,7 +5895,7 @@
 
     return-object v0
 
-    .line 1073
+    .line 1068
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getContext()Landroid/content/Context;
 
@@ -5941,7 +5905,7 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 1074
+    .line 1069
     add-int/lit8 v2, p2, 0x1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5958,8 +5922,8 @@
 
     aput-object v2, v1, v3
 
-    .line 1073
-    const v2, 0x7f0c006a
+    .line 1068
+    const v2, 0x7f0c0073
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -5972,7 +5936,7 @@
     .locals 1
 
     .prologue
-    .line 904
+    .line 899
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     return-object v0
@@ -5982,7 +5946,7 @@
     .locals 3
 
     .prologue
-    .line 880
+    .line 875
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -6014,12 +5978,12 @@
     .locals 14
 
     .prologue
-    .line 2810
+    .line 2804
     const/4 v0, 0x2
 
     new-array v13, v0, [I
 
-    .line 2812
+    .line 2806
     const/4 v0, 0x0
 
     move v11, v0
@@ -6031,7 +5995,7 @@
 
     if-ge v11, v0, :cond_2
 
-    .line 2813
+    .line 2807
     const/4 v0, 0x0
 
     move v12, v0
@@ -6043,10 +6007,10 @@
 
     if-ge v12, v0, :cond_1
 
-    .line 2814
+    .line 2808
     invoke-virtual {p0, v11, v12, v13}, Lcom/android/launcher3/CellLayout;->cellToPoint(II[I)V
 
-    .line 2815
+    .line 2809
     const/4 v0, 0x0
 
     aget v1, v13, v0
@@ -6057,7 +6021,7 @@
 
     iget v3, p1, Lcom/android/launcher3/ItemInfo;->minSpanX:I
 
-    .line 2816
+    .line 2810
     iget v4, p1, Lcom/android/launcher3/ItemInfo;->minSpanY:I
 
     iget v5, p1, Lcom/android/launcher3/ItemInfo;->spanX:I
@@ -6066,22 +6030,22 @@
 
     iget-object v7, p0, Lcom/android/launcher3/CellLayout;->mDirectionVector:[I
 
-    .line 2817
+    .line 2811
     new-instance v10, Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     const/4 v0, 0x0
 
     invoke-direct {v10, v0}, Lcom/android/launcher3/CellLayout$ItemConfiguration;-><init>(Lcom/android/launcher3/CellLayout$ItemConfiguration;)V
 
-    .line 2816
+    .line 2810
     const/4 v8, 0x0
 
-    .line 2817
+    .line 2811
     const/4 v9, 0x1
 
     move-object v0, p0
 
-    .line 2815
+    .line 2809
     invoke-direct/range {v0 .. v10}, Lcom/android/launcher3/CellLayout;->findReorderSolution(IIIIII[ILandroid/view/View;ZLcom/android/launcher3/CellLayout$ItemConfiguration;)Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     move-result-object v0
@@ -6090,12 +6054,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 2818
+    .line 2812
     const/4 v0, 0x1
 
     return v0
 
-    .line 2813
+    .line 2807
     :cond_0
     add-int/lit8 v0, v12, 0x1
 
@@ -6103,7 +6067,7 @@
 
     goto :goto_1
 
-    .line 2812
+    .line 2806
     :cond_1
     add-int/lit8 v0, v11, 0x1
 
@@ -6111,7 +6075,7 @@
 
     goto :goto_0
 
-    .line 2822
+    .line 2816
     :cond_2
     const/4 v0, 0x0
 
@@ -6122,7 +6086,7 @@
     .locals 1
 
     .prologue
-    .line 392
+    .line 390
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mDropPending:Z
 
     return v0
@@ -6132,7 +6096,7 @@
     .locals 1
 
     .prologue
-    .line 2416
+    .line 2411
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mItemPlacementDirty:Z
 
     return v0
@@ -6154,12 +6118,12 @@
 
     move-object v5, p6
 
-    .line 2254
+    .line 2249
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/CellLayout;->findNearestArea(IIII[I)[I
 
     move-result-object v0
 
-    .line 2255
+    .line 2250
     const/4 v1, 0x0
 
     aget v1, v0, v1
@@ -6168,10 +6132,10 @@
 
     aget v2, v0, v2
 
-    .line 2256
+    .line 2251
     iget-object v7, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
-    .line 2255
+    .line 2250
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -6184,7 +6148,7 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/launcher3/CellLayout;->getViewsIntersectingRegion(IIIILandroid/view/View;Landroid/graphics/Rect;Ljava/util/ArrayList;)V
 
-    .line 2257
+    .line 2252
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mIntersectingViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -6200,7 +6164,7 @@
     .locals 2
 
     .prologue
-    .line 2594
+    .line 2588
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
     if-ge p1, v0, :cond_0
@@ -6209,7 +6173,7 @@
 
     if-ge p2, v0, :cond_0
 
-    .line 2595
+    .line 2589
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     iget-object v0, v0, Lcom/android/launcher3/util/GridOccupancy;->cells:[[Z
@@ -6220,7 +6184,7 @@
 
     return v0
 
-    .line 2597
+    .line 2591
     :cond_0
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -6235,7 +6199,7 @@
     .locals 1
 
     .prologue
-    .line 2826
+    .line 2820
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/android/launcher3/util/GridOccupancy;->isRegionVacant(IIII)Z
@@ -6246,6 +6210,53 @@
 .end method
 
 .method public markCellsAsOccupiedForView(Landroid/view/View;)V
+    .locals 6
+
+    .prologue
+    .line 2568
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
+
+    if-eq v0, v1, :cond_1
+
+    :cond_0
+    return-void
+
+    .line 2569
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lcom/android/launcher3/CellLayout$LayoutParams;
+
+    .line 2570
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
+
+    iget v1, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
+
+    iget v2, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
+
+    iget v3, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
+
+    iget v4, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
+
+    const/4 v5, 0x1
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
+
+    .line 2571
+    return-void
+.end method
+
+.method public markCellsAsUnoccupiedForView(Landroid/view/View;)V
     .locals 6
 
     .prologue
@@ -6284,7 +6295,7 @@
 
     iget v4, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
 
-    const/4 v5, 0x1
+    const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
 
@@ -6292,63 +6303,16 @@
     return-void
 .end method
 
-.method public markCellsAsUnoccupiedForView(Landroid/view/View;)V
-    .locals 6
-
-    .prologue
-    .line 2580
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
-
-    if-eq v0, v1, :cond_1
-
-    :cond_0
-    return-void
-
-    .line 2581
-    :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lcom/android/launcher3/CellLayout$LayoutParams;
-
-    .line 2582
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
-
-    iget v1, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
-
-    iget v2, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
-
-    iget v3, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
-
-    iget v4, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/util/GridOccupancy;->markCells(IIIIZ)V
-
-    .line 2583
-    return-void
-.end method
-
 .method onDragEnter()V
     .locals 1
 
     .prologue
-    .line 2511
+    .line 2505
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mDragging:Z
 
-    .line 2512
+    .line 2506
     return-void
 .end method
 
@@ -6360,15 +6324,15 @@
 
     const/4 v3, 0x0
 
-    .line 2521
+    .line 2515
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mDragging:Z
 
     if-eqz v0, :cond_0
 
-    .line 2522
+    .line 2516
     iput-boolean v3, p0, Lcom/android/launcher3/CellLayout;->mDragging:Z
 
-    .line 2526
+    .line 2520
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
@@ -6380,7 +6344,7 @@
 
     aput v4, v0, v3
 
-    .line 2527
+    .line 2521
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
@@ -6389,7 +6353,7 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/InterruptibleInOutAnimator;->animateOut()V
 
-    .line 2528
+    .line 2522
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
 
     add-int/lit8 v0, v0, 0x1
@@ -6402,13 +6366,13 @@
 
     iput v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
 
-    .line 2529
+    .line 2523
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->revertTempState()V
 
-    .line 2530
+    .line 2524
     invoke-virtual {p0, v3}, Lcom/android/launcher3/CellLayout;->setIsDragOverlapping(Z)V
 
-    .line 2531
+    .line 2525
     return-void
 .end method
 
@@ -6422,15 +6386,15 @@
 
     const/4 v2, 0x0
 
-    .line 458
+    .line 456
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mIsDragTarget:Z
 
     if-nez v0, :cond_0
 
-    .line 459
+    .line 457
     return-void
 
-    .line 467
+    .line 465
     :cond_0
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mBackgroundAlpha:F
 
@@ -6438,18 +6402,18 @@
 
     if-lez v0, :cond_1
 
-    .line 468
+    .line 466
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 471
+    .line 469
     :cond_1
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mDragOutlinePaint:Landroid/graphics/Paint;
 
     move v1, v2
 
-    .line 472
+    .line 470
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
 
@@ -6457,17 +6421,17 @@
 
     if-ge v1, v0, :cond_3
 
-    .line 473
+    .line 471
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAlphas:[F
 
     aget v4, v0, v1
 
-    .line 474
+    .line 472
     cmpl-float v0, v4, v6
 
     if-lez v0, :cond_2
 
-    .line 475
+    .line 473
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     aget-object v0, v0, v1
@@ -6478,7 +6442,7 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 476
+    .line 474
     const/high16 v5, 0x3f000000    # 0.5f
 
     add-float/2addr v4, v5
@@ -6487,7 +6451,7 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 477
+    .line 475
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
 
     aget-object v4, v4, v1
@@ -6496,7 +6460,7 @@
 
     invoke-virtual {p1, v0, v5, v4, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 472
+    .line 470
     :cond_2
     add-int/lit8 v0, v1, 0x1
 
@@ -6507,7 +6471,7 @@
     :cond_3
     move v1, v2
 
-    .line 498
+    .line 496
     :goto_1
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderBackgrounds:Ljava/util/ArrayList;
 
@@ -6517,28 +6481,28 @@
 
     if-ge v1, v0, :cond_5
 
-    .line 499
+    .line 497
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderBackgrounds:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    check-cast v0, Lcom/android/launcher3/folder/PreviewBackground;
 
-    .line 500
-    iget v3, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellX:I
+    .line 498
+    iget v3, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellX:I
 
-    iget v4, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellY:I
+    iget v4, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellY:I
 
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     invoke-virtual {p0, v3, v4, v5}, Lcom/android/launcher3/CellLayout;->cellToPoint(II[I)V
 
-    .line 501
+    .line 499
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 502
+    .line 500
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     aget v3, v3, v2
@@ -6553,61 +6517,61 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 503
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->drawBackground(Landroid/graphics/Canvas;)V
+    .line 501
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/PreviewBackground;->drawBackground(Landroid/graphics/Canvas;)V
 
-    .line 504
-    iget-boolean v3, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->isClipping:Z
+    .line 502
+    iget-boolean v3, v0, Lcom/android/launcher3/folder/PreviewBackground;->isClipping:Z
 
     if-nez v3, :cond_4
 
-    .line 505
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->drawBackgroundStroke(Landroid/graphics/Canvas;)V
+    .line 503
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/PreviewBackground;->drawBackgroundStroke(Landroid/graphics/Canvas;)V
 
-    .line 507
+    .line 505
     :cond_4
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 498
+    .line 496
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_1
 
-    .line 510
+    .line 508
     :cond_5
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
-    iget v0, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellX:I
-
-    if-ltz v0, :cond_6
-
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
-
-    iget v0, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellY:I
+    iget v0, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellX:I
 
     if-ltz v0, :cond_6
 
-    .line 511
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
-    iget v0, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellX:I
+    iget v0, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellY:I
 
-    .line 512
-    iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    if-ltz v0, :cond_6
 
-    iget v1, v1, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellY:I
+    .line 509
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
+
+    iget v0, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellX:I
+
+    .line 510
+    iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
+
+    iget v1, v1, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellY:I
 
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
-    .line 511
+    .line 509
     invoke-virtual {p0, v0, v1, v3}, Lcom/android/launcher3/CellLayout;->cellToPoint(II[I)V
 
-    .line 513
+    .line 511
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 514
+    .line 512
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTempLocation:[I
 
     aget v0, v0, v2
@@ -6622,15 +6586,15 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 515
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
+    .line 513
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
 
-    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->drawLeaveBehind(Landroid/graphics/Canvas;)V
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/folder/PreviewBackground;->drawLeaveBehind(Landroid/graphics/Canvas;)V
 
-    .line 516
+    .line 514
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 518
+    .line 516
     :cond_6
     return-void
 .end method
@@ -6639,28 +6603,28 @@
     .locals 2
 
     .prologue
-    .line 2541
+    .line 2535
     if-eqz p1, :cond_0
 
-    .line 2542
+    .line 2536
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 2543
+    .line 2537
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->dropped:Z
 
-    .line 2544
+    .line 2538
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
-    .line 2545
+    .line 2539
     invoke-virtual {p0, p1}, Lcom/android/launcher3/CellLayout;->markCellsAsOccupiedForView(Landroid/view/View;)V
 
-    .line 2547
+    .line 2541
     :cond_0
     return-void
 .end method
@@ -6669,12 +6633,12 @@
     .locals 1
 
     .prologue
-    .line 337
+    .line 335
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mUseTouchHelper:Z
 
     if-nez v0, :cond_0
 
-    .line 338
+    .line 336
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mInterceptTouchListener:Landroid/view/View$OnTouchListener;
 
     if-eqz v0, :cond_1
@@ -6685,16 +6649,16 @@
 
     move-result v0
 
-    .line 337
+    .line 335
     if-eqz v0, :cond_1
 
-    .line 339
+    .line 337
     :cond_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 341
+    .line 339
     :cond_1
     const/4 v0, 0x0
 
@@ -6709,7 +6673,7 @@
 
     const/4 v0, 0x0
 
-    .line 846
+    .line 841
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
@@ -6718,7 +6682,7 @@
 
     if-lez v1, :cond_0
 
-    .line 847
+    .line 842
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
@@ -6733,16 +6697,16 @@
 
     iget-boolean v0, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->isFullscreen:Z
 
-    .line 848
+    .line 843
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v1
 
-    .line 849
+    .line 844
     if-nez v0, :cond_1
 
-    .line 850
+    .line 845
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getUnusedHorizontalSpace()I
 
     move-result v2
@@ -6761,7 +6725,7 @@
 
     add-int/2addr v1, v2
 
-    .line 852
+    .line 847
     :cond_1
     sub-int v2, p4, p2
 
@@ -6771,10 +6735,10 @@
 
     sub-int/2addr v2, v3
 
-    .line 853
+    .line 848
     if-nez v0, :cond_2
 
-    .line 854
+    .line 849
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getUnusedHorizontalSpace()I
 
     move-result v0
@@ -6793,13 +6757,13 @@
 
     sub-int v0, v2, v0
 
-    .line 857
+    .line 852
     :goto_0
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v2
 
-    .line 858
+    .line 853
     sub-int v3, p5, p3
 
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingBottom()I
@@ -6808,10 +6772,10 @@
 
     sub-int/2addr v3, v4
 
-    .line 860
+    .line 855
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
-    .line 861
+    .line 856
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v5}, Lcom/android/launcher3/ClickShadowView;->getMeasuredWidth()I
@@ -6820,7 +6784,7 @@
 
     add-int/2addr v5, v1
 
-    .line 862
+    .line 857
     iget-object v6, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v6}, Lcom/android/launcher3/ClickShadowView;->getMeasuredHeight()I
@@ -6829,56 +6793,80 @@
 
     add-int/2addr v6, v2
 
-    .line 860
+    .line 855
     invoke-virtual {v4, v1, v2, v5, v6}, Lcom/android/launcher3/ClickShadowView;->layout(IIII)V
 
-    .line 863
+    .line 858
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v4, v1, v2, v0, v3}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->layout(IIII)V
 
-    .line 866
+    .line 861
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
 
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 867
+    .line 862
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
 
-    .line 868
+    .line 863
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTempRect:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v1, v5
 
-    .line 869
+    invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
+
+    move-result v5
+
+    sub-int/2addr v1, v5
+
+    .line 864
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTempRect:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr v2, v5
 
-    .line 870
+    invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
+
+    move-result v5
+
+    sub-int/2addr v2, v5
+
+    .line 865
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTempRect:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->right:I
 
     add-int/2addr v0, v5
 
-    .line 871
+    invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingRight()I
+
+    move-result v5
+
+    add-int/2addr v0, v5
+
+    .line 866
     iget-object v5, p0, Lcom/android/launcher3/CellLayout;->mTempRect:Landroid/graphics/Rect;
 
     iget v5, v5, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr v3, v5
 
-    .line 867
+    invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingBottom()I
+
+    move-result v5
+
+    add-int/2addr v3, v5
+
+    .line 862
     invoke-virtual {v4, v1, v2, v0, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 872
+    .line 867
     return-void
 
     :cond_2
@@ -6893,27 +6881,27 @@
     .prologue
     const/high16 v11, 0x40000000    # 2.0f
 
-    .line 799
+    .line 794
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v2
 
-    .line 800
+    .line 795
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v3
 
-    .line 801
+    .line 796
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v4
 
-    .line 802
+    .line 797
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v5
 
-    .line 803
+    .line 798
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v0
@@ -6926,7 +6914,7 @@
 
     sub-int v1, v4, v0
 
-    .line 804
+    .line 799
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v0
@@ -6939,7 +6927,7 @@
 
     sub-int v0, v5, v0
 
-    .line 805
+    .line 800
     iget v6, p0, Lcom/android/launcher3/CellLayout;->mFixedCellWidth:I
 
     if-ltz v6, :cond_0
@@ -6948,7 +6936,7 @@
 
     if-gez v6, :cond_2
 
-    .line 806
+    .line 801
     :cond_0
     iget v6, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
@@ -6956,14 +6944,14 @@
 
     move-result v6
 
-    .line 807
+    .line 802
     iget v7, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
     invoke-static {v0, v7}, Lcom/android/launcher3/DeviceProfile;->calculateCellHeight(II)I
 
     move-result v7
 
-    .line 808
+    .line 803
     iget v8, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     if-ne v6, v8, :cond_1
@@ -6972,14 +6960,14 @@
 
     if-eq v7, v8, :cond_2
 
-    .line 809
+    .line 804
     :cond_1
     iput v6, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
-    .line 810
+    .line 805
     iput v7, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
-    .line 811
+    .line 806
     iget-object v6, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     iget v7, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
@@ -6992,7 +6980,7 @@
 
     invoke-virtual {v6, v7, v8, v9, v10}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setCellDimensions(IIII)V
 
-    .line 817
+    .line 812
     :cond_2
     iget v6, p0, Lcom/android/launcher3/CellLayout;->mFixedWidth:I
 
@@ -7002,17 +6990,17 @@
 
     if-lez v6, :cond_4
 
-    .line 818
+    .line 813
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mFixedWidth:I
 
-    .line 819
+    .line 814
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mFixedHeight:I
 
-    .line 825
+    .line 820
     :cond_3
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
-    .line 826
+    .line 821
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     iget-object v6, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
@@ -7027,7 +7015,7 @@
 
     move-result v3
 
-    .line 828
+    .line 823
     iget v6, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     iget-object v7, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
@@ -7042,40 +7030,40 @@
 
     move-result v6
 
-    .line 825
+    .line 820
     invoke-virtual {v2, v3, v6}, Lcom/android/launcher3/ClickShadowView;->measure(II)V
 
-    .line 831
+    .line 826
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
-    .line 832
+    .line 827
     invoke-static {v1, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
 
-    .line 833
+    .line 828
     invoke-static {v0, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    .line 831
+    .line 826
     invoke-virtual {v2, v1, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->measure(II)V
 
-    .line 835
+    .line 830
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getMeasuredWidth()I
 
     move-result v0
 
-    .line 836
+    .line 831
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getMeasuredHeight()I
 
     move-result v1
 
-    .line 837
+    .line 832
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mFixedWidth:I
 
     if-lez v2, :cond_6
@@ -7084,20 +7072,20 @@
 
     if-lez v2, :cond_6
 
-    .line 838
+    .line 833
     invoke-virtual {p0, v0, v1}, Lcom/android/launcher3/CellLayout;->setMeasuredDimension(II)V
 
-    .line 842
+    .line 837
     :goto_0
     return-void
 
-    .line 820
+    .line 815
     :cond_4
     if-eqz v2, :cond_5
 
     if-nez v3, :cond_3
 
-    .line 821
+    .line 816
     :cond_5
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -7107,7 +7095,7 @@
 
     throw v0
 
-    .line 840
+    .line 835
     :cond_6
     invoke-virtual {p0, v4, v5}, Lcom/android/launcher3/CellLayout;->setMeasuredDimension(II)V
 
@@ -7118,12 +7106,12 @@
     .locals 2
 
     .prologue
-    .line 346
+    .line 344
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 351
+    .line 349
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mLauncher:Lcom/android/launcher3/Launcher;
 
     iget-object v1, v1, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
@@ -7134,22 +7122,22 @@
 
     if-eqz v1, :cond_0
 
-    .line 352
+    .line 350
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mStylusEventHelper:Lcom/android/launcher3/StylusEventHelper;
 
     invoke-virtual {v1, p1}, Lcom/android/launcher3/StylusEventHelper;->onMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
-    .line 351
+    .line 349
     if-eqz v1, :cond_0
 
-    .line 353
+    .line 351
     const/4 v0, 0x1
 
     return v0
 
-    .line 355
+    .line 353
     :cond_0
     return v0
 .end method
@@ -7170,22 +7158,22 @@
 
     move-object/from16 v6, p8
 
-    .line 2312
+    .line 2307
     invoke-virtual/range {v1 .. v6}, Lcom/android/launcher3/CellLayout;->findNearestArea(IIII[I)[I
 
     move-result-object v12
 
-    .line 2314
+    .line 2309
     if-nez p9, :cond_0
 
-    .line 2315
+    .line 2310
     const/4 v1, 0x2
 
     new-array v0, v1, [I
 
     move-object/from16 p9, v0
 
-    .line 2321
+    .line 2316
     :cond_0
     const/4 v1, 0x2
 
@@ -7199,7 +7187,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 2322
+    .line 2317
     :cond_1
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
 
@@ -7211,7 +7199,7 @@
 
     if-eq v1, v2, :cond_5
 
-    .line 2323
+    .line 2318
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDirectionVector:[I
 
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
@@ -7224,7 +7212,7 @@
 
     aput v2, v1, v3
 
-    .line 2324
+    .line 2319
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDirectionVector:[I
 
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
@@ -7237,7 +7225,7 @@
 
     aput v2, v1, v3
 
-    .line 2326
+    .line 2321
     const/4 v1, 0x2
 
     move/from16 v0, p10
@@ -7250,7 +7238,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 2327
+    .line 2322
     :cond_2
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
 
@@ -7260,7 +7248,7 @@
 
     aput v2, v1, v3
 
-    .line 2328
+    .line 2323
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
 
     const/16 v2, -0x64
@@ -7269,7 +7257,7 @@
 
     aput v2, v1, v3
 
-    .line 2338
+    .line 2333
     :cond_3
     :goto_0
     iget-object v8, p0, Lcom/android/launcher3/CellLayout;->mDirectionVector:[I
@@ -7298,12 +7286,12 @@
 
     move-object/from16 v9, p7
 
-    .line 2337
+    .line 2332
     invoke-direct/range {v1 .. v11}, Lcom/android/launcher3/CellLayout;->findReorderSolution(IIIIII[ILandroid/view/View;ZLcom/android/launcher3/CellLayout$ItemConfiguration;)Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     move-result-object v10
 
-    .line 2342
+    .line 2337
     new-instance v9, Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     const/4 v1, 0x0
@@ -7326,15 +7314,15 @@
 
     move-object/from16 v8, p7
 
-    .line 2341
+    .line 2336
     invoke-direct/range {v1 .. v9}, Lcom/android/launcher3/CellLayout;->findConfigurationNoShuffle(IIIIIILandroid/view/View;Lcom/android/launcher3/CellLayout$ItemConfiguration;)Lcom/android/launcher3/CellLayout$ItemConfiguration;
 
     move-result-object v1
 
-    .line 2344
+    .line 2339
     const/4 v2, 0x0
 
-    .line 2348
+    .line 2343
     iget-boolean v3, v10, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
     if-eqz v3, :cond_6
@@ -7351,57 +7339,57 @@
 
     move-object v3, v10
 
-    .line 2354
+    .line 2349
     :goto_1
     if-nez p10, :cond_8
 
-    .line 2355
+    .line 2350
     if-eqz v3, :cond_7
 
-    .line 2356
+    .line 2351
     const/4 v1, 0x0
 
-    .line 2357
+    .line 2352
     const/4 v2, 0x0
 
-    .line 2356
+    .line 2351
     move-object/from16 v0, p7
 
     invoke-direct {p0, v3, v0, v1, v2}, Lcom/android/launcher3/CellLayout;->beginOrAdjustReorderPreviewAnimations(Lcom/android/launcher3/CellLayout$ItemConfiguration;Landroid/view/View;II)V
 
-    .line 2358
+    .line 2353
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellX:I
 
     const/4 v2, 0x0
 
     aput v1, v12, v2
 
-    .line 2359
+    .line 2354
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellY:I
 
     const/4 v2, 0x1
 
     aput v1, v12, v2
 
-    .line 2360
+    .line 2355
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanX:I
 
     const/4 v2, 0x0
 
     aput v1, p9, v2
 
-    .line 2361
+    .line 2356
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanY:I
 
     const/4 v2, 0x1
 
     aput v1, p9, v2
 
-    .line 2365
+    .line 2360
     :goto_2
     return-object v12
 
-    .line 2321
+    .line 2316
     :cond_4
     const/4 v1, 0x4
 
@@ -7409,7 +7397,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 2331
+    .line 2326
     :cond_5
     iget-object v7, p0, Lcom/android/launcher3/CellLayout;->mDirectionVector:[I
 
@@ -7427,7 +7415,7 @@
 
     invoke-direct/range {v1 .. v7}, Lcom/android/launcher3/CellLayout;->getDirectionVectorForDrop(IIIILandroid/view/View;[I)V
 
-    .line 2332
+    .line 2327
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
 
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mDirectionVector:[I
@@ -7440,7 +7428,7 @@
 
     aput v2, v1, v3
 
-    .line 2333
+    .line 2328
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mPreviousReorderDirection:[I
 
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mDirectionVector:[I
@@ -7455,7 +7443,7 @@
 
     goto/16 :goto_0
 
-    .line 2350
+    .line 2345
     :cond_6
     iget-boolean v3, v1, Lcom/android/launcher3/CellLayout$ItemConfiguration;->isSolution:Z
 
@@ -7463,10 +7451,10 @@
 
     move-object v3, v1
 
-    .line 2351
+    .line 2346
     goto :goto_1
 
-    .line 2363
+    .line 2358
     :cond_7
     const/4 v1, -0x1
 
@@ -7494,47 +7482,47 @@
 
     goto :goto_2
 
-    .line 2368
+    .line 2363
     :cond_8
     const/4 v2, 0x1
 
-    .line 2370
+    .line 2365
     const/4 v1, 0x1
 
     invoke-direct {p0, v1}, Lcom/android/launcher3/CellLayout;->setUseTempCoords(Z)V
 
-    .line 2373
+    .line 2368
     if-eqz v3, :cond_10
 
-    .line 2374
+    .line 2369
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellX:I
 
     const/4 v4, 0x0
 
     aput v1, v12, v4
 
-    .line 2375
+    .line 2370
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->cellY:I
 
     const/4 v4, 0x1
 
     aput v1, v12, v4
 
-    .line 2376
+    .line 2371
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanX:I
 
     const/4 v4, 0x0
 
     aput v1, p9, v4
 
-    .line 2377
+    .line 2372
     iget v1, v3, Lcom/android/launcher3/CellLayout$ItemConfiguration;->spanY:I
 
     const/4 v4, 0x1
 
     aput v1, p9, v4
 
-    .line 2382
+    .line 2377
     const/4 v1, 0x1
 
     move/from16 v0, p10
@@ -7547,18 +7535,18 @@
 
     if-ne v0, v1, :cond_d
 
-    .line 2384
+    .line 2379
     :cond_9
     move-object/from16 v0, p7
 
     invoke-direct {p0, v3, v0}, Lcom/android/launcher3/CellLayout;->copySolutionToTempState(Lcom/android/launcher3/CellLayout$ItemConfiguration;Landroid/view/View;)V
 
-    .line 2386
+    .line 2381
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/CellLayout;->setItemPlacementDirty(Z)V
 
-    .line 2387
+    .line 2382
     const/4 v1, 0x2
 
     move/from16 v0, p10
@@ -7572,7 +7560,7 @@
 
     invoke-direct {p0, v3, v0, v1}, Lcom/android/launcher3/CellLayout;->animateItemsToSolution(Lcom/android/launcher3/CellLayout$ItemConfiguration;Landroid/view/View;Z)V
 
-    .line 2390
+    .line 2385
     const/4 v1, 0x2
 
     move/from16 v0, p10
@@ -7585,21 +7573,21 @@
 
     if-ne v0, v1, :cond_f
 
-    .line 2391
+    .line 2386
     :cond_a
     invoke-direct {p0}, Lcom/android/launcher3/CellLayout;->commitTempPlacement()V
 
-    .line 2392
+    .line 2387
     invoke-direct {p0}, Lcom/android/launcher3/CellLayout;->completeAndClearReorderPreviewAnimations()V
 
-    .line 2393
+    .line 2388
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/CellLayout;->setItemPlacementDirty(Z)V
 
     move v1, v2
 
-    .line 2404
+    .line 2399
     :goto_4
     const/4 v2, 0x2
 
@@ -7611,22 +7599,22 @@
 
     if-eqz v1, :cond_c
 
-    .line 2405
+    .line 2400
     :cond_b
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Lcom/android/launcher3/CellLayout;->setUseTempCoords(Z)V
 
-    .line 2408
+    .line 2403
     :cond_c
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->requestLayout()V
 
-    .line 2409
+    .line 2404
     return-object v12
 
-    .line 2382
+    .line 2377
     :cond_d
     const/4 v1, 0x3
 
@@ -7638,19 +7626,19 @@
 
     goto :goto_4
 
-    .line 2387
+    .line 2382
     :cond_e
     const/4 v1, 0x0
 
     goto :goto_3
 
-    .line 2396
+    .line 2391
     :cond_f
     const/16 v1, 0x96
 
     const/4 v4, 0x1
 
-    .line 2395
+    .line 2390
     move-object/from16 v0, p7
 
     invoke-direct {p0, v3, v0, v1, v4}, Lcom/android/launcher3/CellLayout;->beginOrAdjustReorderPreviewAnimations(Lcom/android/launcher3/CellLayout$ItemConfiguration;Landroid/view/View;II)V
@@ -7659,11 +7647,11 @@
 
     goto :goto_4
 
-    .line 2400
+    .line 2395
     :cond_10
     const/4 v1, 0x0
 
-    .line 2401
+    .line 2396
     const/4 v2, -0x1
 
     const/4 v3, 0x1
@@ -7704,17 +7692,17 @@
 
     const/4 v3, 0x0
 
-    .line 696
+    .line 691
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v0
 
-    .line 697
+    .line 692
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v1
 
-    .line 699
+    .line 694
     sub-int v0, p1, v0
 
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
@@ -7723,7 +7711,7 @@
 
     aput v0, p3, v3
 
-    .line 700
+    .line 695
     sub-int v0, p2, v1
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
@@ -7732,20 +7720,20 @@
 
     aput v0, p3, v4
 
-    .line 702
+    .line 697
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
-    .line 703
+    .line 698
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
-    .line 705
+    .line 700
     aget v2, p3, v3
 
     if-gez v2, :cond_0
 
     aput v3, p3, v3
 
-    .line 706
+    .line 701
     :cond_0
     aget v2, p3, v3
 
@@ -7755,7 +7743,7 @@
 
     aput v0, p3, v3
 
-    .line 707
+    .line 702
     :cond_1
     aget v0, p3, v4
 
@@ -7763,7 +7751,7 @@
 
     aput v3, p3, v4
 
-    .line 708
+    .line 703
     :cond_2
     aget v0, p3, v4
 
@@ -7773,7 +7761,7 @@
 
     aput v0, p3, v4
 
-    .line 709
+    .line 704
     :cond_3
     return-void
 .end method
@@ -7782,17 +7770,17 @@
     .locals 3
 
     .prologue
-    .line 758
+    .line 753
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v0
 
-    .line 759
+    .line 754
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v1
 
-    .line 760
+    .line 755
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     mul-int/2addr v2, p1
@@ -7811,7 +7799,7 @@
 
     aput v0, p5, v2
 
-    .line 761
+    .line 756
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     mul-int/2addr v0, p2
@@ -7830,7 +7818,7 @@
 
     aput v0, p5, v1
 
-    .line 762
+    .line 757
     return-void
 .end method
 
@@ -7838,31 +7826,31 @@
     .locals 4
 
     .prologue
-    .line 772
+    .line 767
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingLeft()I
 
     move-result v0
 
-    .line 773
+    .line 768
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getPaddingTop()I
 
     move-result v1
 
-    .line 774
+    .line 769
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     mul-int/2addr v2, p1
 
     add-int/2addr v0, v2
 
-    .line 775
+    .line 770
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     mul-int/2addr v2, p2
 
     add-int/2addr v1, v2
 
-    .line 776
+    .line 771
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     mul-int/2addr v2, p3
@@ -7877,7 +7865,7 @@
 
     invoke-virtual {p5, v0, v1, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 777
+    .line 772
     return-void
 .end method
 
@@ -7885,17 +7873,17 @@
     .locals 1
 
     .prologue
-    .line 643
+    .line 638
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/GridOccupancy;->clear()V
 
-    .line 644
+    .line 639
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->removeAllViews()V
 
-    .line 645
+    .line 640
     return-void
 .end method
 
@@ -7903,7 +7891,7 @@
     .locals 1
 
     .prologue
-    .line 649
+    .line 644
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
@@ -7912,31 +7900,31 @@
 
     if-lez v0, :cond_0
 
-    .line 650
+    .line 645
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/GridOccupancy;->clear()V
 
-    .line 651
+    .line 646
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->removeAllViewsInLayout()V
 
-    .line 653
+    .line 648
     :cond_0
     return-void
 .end method
 
-.method public removeFolderBackground(Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;)V
+.method public removeFolderBackground(Lcom/android/launcher3/folder/PreviewBackground;)V
     .locals 1
 
     .prologue
-    .line 540
+    .line 538
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderBackgrounds:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 541
+    .line 539
     return-void
 .end method
 
@@ -7944,15 +7932,15 @@
     .locals 1
 
     .prologue
-    .line 657
+    .line 652
     invoke-virtual {p0, p1}, Lcom/android/launcher3/CellLayout;->markCellsAsUnoccupiedForView(Landroid/view/View;)V
 
-    .line 658
+    .line 653
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->removeView(Landroid/view/View;)V
 
-    .line 659
+    .line 654
     return-void
 .end method
 
@@ -7960,7 +7948,7 @@
     .locals 1
 
     .prologue
-    .line 663
+    .line 658
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
@@ -7969,12 +7957,12 @@
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/CellLayout;->markCellsAsUnoccupiedForView(Landroid/view/View;)V
 
-    .line 664
+    .line 659
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->removeViewAt(I)V
 
-    .line 665
+    .line 660
     return-void
 .end method
 
@@ -7982,15 +7970,15 @@
     .locals 1
 
     .prologue
-    .line 669
+    .line 664
     invoke-virtual {p0, p1}, Lcom/android/launcher3/CellLayout;->markCellsAsUnoccupiedForView(Landroid/view/View;)V
 
-    .line 670
+    .line 665
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->removeViewInLayout(Landroid/view/View;)V
 
-    .line 671
+    .line 666
     return-void
 .end method
 
@@ -8000,13 +7988,13 @@
     .prologue
     move v0, p1
 
-    .line 675
+    .line 670
     :goto_0
     add-int v1, p1, p2
 
     if-ge v0, v1, :cond_0
 
-    .line 676
+    .line 671
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
@@ -8015,18 +8003,18 @@
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/CellLayout;->markCellsAsUnoccupiedForView(Landroid/view/View;)V
 
-    .line 675
+    .line 670
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 678
+    .line 673
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->removeViews(II)V
 
-    .line 679
+    .line 674
     return-void
 .end method
 
@@ -8036,13 +8024,13 @@
     .prologue
     move v0, p1
 
-    .line 683
+    .line 678
     :goto_0
     add-int v1, p1, p2
 
     if-ge v0, v1, :cond_0
 
-    .line 684
+    .line 679
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v1, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
@@ -8051,18 +8039,18 @@
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/CellLayout;->markCellsAsUnoccupiedForView(Landroid/view/View;)V
 
-    .line 683
+    .line 678
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 686
+    .line 681
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->removeViewsInLayout(II)V
 
-    .line 687
+    .line 682
     return-void
 .end method
 
@@ -8070,21 +8058,21 @@
     .locals 3
 
     .prologue
-    .line 569
+    .line 564
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/launcher3/CellLayout;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 577
+    .line 572
     :goto_0
     return-void
 
-    .line 570
+    .line 565
     :catch_0
     move-exception v0
 
-    .line 575
+    .line 570
     const-string/jumbo v1, "CellLayout"
 
     const-string/jumbo v2, "Ignoring an error while restoring a view instance state"
@@ -8100,17 +8088,17 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 2261
+    .line 2256
     invoke-direct {p0}, Lcom/android/launcher3/CellLayout;->completeAndClearReorderPreviewAnimations()V
 
-    .line 2262
+    .line 2257
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->isItemPlacementDirty()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 2263
+    .line 2258
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildCount()I
@@ -8119,25 +8107,25 @@
 
     move v8, v5
 
-    .line 2264
+    .line 2259
     :goto_0
     if-ge v8, v9, :cond_2
 
-    .line 2265
+    .line 2260
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, v8}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 2266
+    .line 2261
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 2267
+    .line 2262
     iget v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
 
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
@@ -8150,18 +8138,18 @@
 
     if-eq v2, v3, :cond_1
 
-    .line 2268
+    .line 2263
     :cond_0
     iget v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
     iput v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
 
-    .line 2269
+    .line 2264
     iget v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
     iput v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellY:I
 
-    .line 2270
+    .line 2265
     iget v2, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
     iget v3, v0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
@@ -8176,7 +8164,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/android/launcher3/CellLayout;->animateChildToPosition(Landroid/view/View;IIIIZZ)Z
 
-    .line 2264
+    .line 2259
     :cond_1
     add-int/lit8 v0, v8, 0x1
 
@@ -8184,11 +8172,11 @@
 
     goto :goto_0
 
-    .line 2274
+    .line 2269
     :cond_2
     invoke-virtual {p0, v5}, Lcom/android/launcher3/CellLayout;->setItemPlacementDirty(Z)V
 
-    .line 2276
+    .line 2271
     :cond_3
     return-void
 .end method
@@ -8197,17 +8185,17 @@
     .locals 3
 
     .prologue
-    .line 888
+    .line 883
     iget v0, p0, Lcom/android/launcher3/CellLayout;->mBackgroundAlpha:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 889
+    .line 884
     iput p1, p0, Lcom/android/launcher3/CellLayout;->mBackgroundAlpha:F
 
-    .line 890
+    .line 885
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mBackgroundAlpha:F
@@ -8220,7 +8208,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 892
+    .line 887
     :cond_0
     return-void
 .end method
@@ -8229,17 +8217,17 @@
     .locals 5
 
     .prologue
-    .line 367
+    .line 365
     iput p1, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     iput p1, p0, Lcom/android/launcher3/CellLayout;->mFixedCellWidth:I
 
-    .line 368
+    .line 366
     iput p2, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     iput p2, p0, Lcom/android/launcher3/CellLayout;->mFixedCellHeight:I
 
-    .line 369
+    .line 367
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
@@ -8252,7 +8240,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setCellDimensions(IIII)V
 
-    .line 370
+    .line 368
     return-void
 .end method
 
@@ -8260,10 +8248,10 @@
     .locals 0
 
     .prologue
-    .line 388
+    .line 386
     iput-boolean p1, p0, Lcom/android/launcher3/CellLayout;->mDropPending:Z
 
-    .line 389
+    .line 387
     return-void
 .end method
 
@@ -8271,71 +8259,58 @@
     .locals 0
 
     .prologue
-    .line 793
+    .line 788
     iput p1, p0, Lcom/android/launcher3/CellLayout;->mFixedWidth:I
 
-    .line 794
+    .line 789
     iput p2, p0, Lcom/android/launcher3/CellLayout;->mFixedHeight:I
 
-    .line 795
+    .line 790
     return-void
 .end method
 
 .method public setFolderLeaveBehindCell(II)V
-    .locals 6
+    .locals 5
 
     .prologue
-    .line 545
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
-
-    move-result-object v2
-
-    .line 546
+    .line 542
     invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/CellLayout;->getChildAt(II)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v0
+
+    .line 543
+    iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
+
+    iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    .line 544
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v0
+
+    .line 543
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v2, v4, v3, v0}, Lcom/android/launcher3/folder/PreviewBackground;->setup(Lcom/android/launcher3/Launcher;Landroid/view/View;II)V
+
+    .line 546
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
+
+    iput p1, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellX:I
+
+    .line 547
+    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/PreviewBackground;
+
+    iput p2, v0, Lcom/android/launcher3/folder/PreviewBackground;->delegateCellY:I
 
     .line 548
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
-
-    invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    .line 549
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v4
-
-    invoke-virtual {v3}, Landroid/view/View;->getPaddingTop()I
-
-    move-result v5
-
-    .line 548
-    const/4 v3, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->setup(Landroid/util/DisplayMetrics;Lcom/android/launcher3/DeviceProfile;Landroid/view/View;II)V
-
-    .line 551
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
-
-    iput p1, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellX:I
-
-    .line 552
-    iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mFolderLeaveBehind:Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;
-
-    iput p2, v0, Lcom/android/launcher3/folder/FolderIcon$PreviewBackground;->delegateCellY:I
-
-    .line 553
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->invalidate()V
 
-    .line 554
+    .line 549
     return-void
 .end method
 
@@ -8343,13 +8318,13 @@
     .locals 5
 
     .prologue
-    .line 373
+    .line 371
     iput p1, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
 
-    .line 374
+    .line 372
     iput p2, p0, Lcom/android/launcher3/CellLayout;->mCountY:I
 
-    .line 375
+    .line 373
     new-instance v0, Lcom/android/launcher3/util/GridOccupancy;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
@@ -8360,7 +8335,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
-    .line 376
+    .line 374
     new-instance v0, Lcom/android/launcher3/util/GridOccupancy;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCountX:I
@@ -8371,12 +8346,12 @@
 
     iput-object v0, p0, Lcom/android/launcher3/CellLayout;->mTmpOccupied:Lcom/android/launcher3/util/GridOccupancy;
 
-    .line 377
+    .line 375
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTempRectStack:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->clear()V
 
-    .line 378
+    .line 376
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
@@ -8389,10 +8364,10 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setCellDimensions(IIII)V
 
-    .line 379
+    .line 377
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->requestLayout()V
 
-    .line 380
+    .line 378
     return-void
 .end method
 
@@ -8400,12 +8375,12 @@
     .locals 1
 
     .prologue
-    .line 384
+    .line 382
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setInvertIfRtl(Z)V
 
-    .line 385
+    .line 383
     return-void
 .end method
 
@@ -8413,36 +8388,36 @@
     .locals 2
 
     .prologue
-    .line 418
+    .line 416
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mIsDragOverlapping:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 419
+    .line 417
     iput-boolean p1, p0, Lcom/android/launcher3/CellLayout;->mIsDragOverlapping:Z
 
-    .line 420
+    .line 418
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mBackground:Landroid/graphics/drawable/Drawable;
 
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout;->mIsDragOverlapping:Z
 
     if-eqz v0, :cond_1
 
-    .line 421
+    .line 419
     sget-object v0, Lcom/android/launcher3/CellLayout;->BACKGROUND_STATE_ACTIVE:[I
 
-    .line 420
+    .line 418
     :goto_0
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 422
+    .line 420
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->invalidate()V
 
-    .line 424
+    .line 422
     :cond_0
     return-void
 
-    .line 421
+    .line 419
     :cond_1
     sget-object v0, Lcom/android/launcher3/CellLayout;->BACKGROUND_STATE_DEFAULT:[I
 
@@ -8453,10 +8428,10 @@
     .locals 0
 
     .prologue
-    .line 2413
+    .line 2408
     iput-boolean p1, p0, Lcom/android/launcher3/CellLayout;->mItemPlacementDirty:Z
 
-    .line 2414
+    .line 2409
     return-void
 .end method
 
@@ -8464,10 +8439,10 @@
     .locals 0
 
     .prologue
-    .line 592
+    .line 587
     iput-object p1, p0, Lcom/android/launcher3/CellLayout;->mInterceptTouchListener:Landroid/view/View$OnTouchListener;
 
-    .line 593
+    .line 588
     return-void
 .end method
 
@@ -8477,18 +8452,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 397
+    .line 395
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_2
 
-    .line 398
+    .line 396
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/ClickShadowView;->setBitmap(Landroid/graphics/Bitmap;)Z
 
-    .line 399
+    .line 397
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ClickShadowView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -8497,12 +8472,12 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 407
+    .line 405
     :cond_1
     :goto_0
     return-void
 
-    .line 401
+    .line 399
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
@@ -8512,14 +8487,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 402
+    .line 400
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/android/launcher3/ClickShadowView;->alignWithIconView(Lcom/android/launcher3/BubbleTextView;Landroid/view/ViewGroup;Landroid/view/View;)V
 
-    .line 404
+    .line 402
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mTouchFeedbackView:Lcom/android/launcher3/ClickShadowView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/ClickShadowView;->animateShadow()V
@@ -8531,12 +8506,12 @@
     .locals 1
 
     .prologue
-    .line 900
+    .line 895
     iget-object v0, p0, Lcom/android/launcher3/CellLayout;->mShortcutsAndWidgets:Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->setAlpha(F)V
 
-    .line 901
+    .line 896
     return-void
 .end method
 
@@ -8544,7 +8519,7 @@
     .locals 1
 
     .prologue
-    .line 564
+    .line 559
     const/4 v0, 0x0
 
     return v0
@@ -8558,7 +8533,7 @@
 
     const/4 v1, 0x0
 
-    .line 896
+    .line 891
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v2
@@ -8587,41 +8562,41 @@
     .locals 9
 
     .prologue
-    .line 994
+    .line 989
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
     const/4 v2, 0x0
 
     aget v1, v1, v2
 
-    .line 995
+    .line 990
     iget-object v2, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
     const/4 v3, 0x1
 
     aget v2, v2, v3
 
-    .line 997
+    .line 992
     if-eqz p2, :cond_0
 
     iget-object v3, p2, Lcom/android/launcher3/graphics/DragPreviewProvider;->generatedDragOutline:Landroid/graphics/Bitmap;
 
     if-nez v3, :cond_1
 
-    .line 998
+    .line 993
     :cond_0
     return-void
 
-    .line 1001
+    .line 996
     :cond_1
     iget-object v7, p2, Lcom/android/launcher3/graphics/DragPreviewProvider;->generatedDragOutline:Landroid/graphics/Bitmap;
 
-    .line 1002
+    .line 997
     if-ne p3, v1, :cond_2
 
     if-eq p4, v2, :cond_4
 
-    .line 1003
+    .line 998
     :cond_2
     move-object/from16 v0, p8
 
@@ -8631,7 +8606,7 @@
 
     move-result-object v1
 
-    .line 1004
+    .line 999
     move-object/from16 v0, p8
 
     iget-object v2, v0, Lcom/android/launcher3/DropTarget$DragObject;->dragView:Lcom/android/launcher3/dragndrop/DragView;
@@ -8640,31 +8615,31 @@
 
     move-result-object v2
 
-    .line 1006
+    .line 1001
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
     const/4 v4, 0x0
 
     aput p3, v3, v4
 
-    .line 1007
+    .line 1002
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mDragCell:[I
 
     const/4 v4, 0x1
 
     aput p4, v3, v4
 
-    .line 1009
+    .line 1004
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
 
-    .line 1010
+    .line 1005
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     aget-object v4, v4, v3
 
     invoke-virtual {v4}, Lcom/android/launcher3/InterruptibleInOutAnimator;->animateOut()V
 
-    .line 1011
+    .line 1006
     add-int/lit8 v3, v3, 0x1
 
     iget-object v4, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
@@ -8675,14 +8650,14 @@
 
     iput v3, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
 
-    .line 1012
+    .line 1007
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mDragOutlines:[Landroid/graphics/Rect;
 
     iget v4, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
 
     aget-object v6, v3, v4
 
-    .line 1014
+    .line 1009
     if-eqz p7, :cond_5
 
     move-object v1, p0
@@ -8695,22 +8670,22 @@
 
     move v5, p6
 
-    .line 1015
+    .line 1010
     invoke-virtual/range {v1 .. v6}, Lcom/android/launcher3/CellLayout;->cellToRect(IIIILandroid/graphics/Rect;)V
 
-    .line 1016
+    .line 1011
     instance-of v1, p1, Lcom/android/launcher3/LauncherAppWidgetHostView;
 
     if-eqz v1, :cond_3
 
-    .line 1017
+    .line 1012
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v1}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
     move-result-object v1
 
-    .line 1018
+    .line 1013
     iget-object v2, v1, Lcom/android/launcher3/DeviceProfile;->appWidgetScale:Landroid/graphics/PointF;
 
     iget v2, v2, Landroid/graphics/PointF;->x:F
@@ -8721,14 +8696,14 @@
 
     invoke-static {v6, v2, v1}, Lcom/android/launcher3/Utilities;->shrinkRect(Landroid/graphics/Rect;FF)F
 
-    .line 1058
+    .line 1053
     :cond_3
     :goto_0
-    iget v1, p0, Lcom/android/launcher3/CellLayout;->mChildScale:F
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-static {v6, v1}, Lcom/android/launcher3/Utilities;->scaleRectAboutCenter(Landroid/graphics/Rect;F)V
 
-    .line 1059
+    .line 1054
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
@@ -8737,7 +8712,7 @@
 
     invoke-virtual {v1, v7}, Lcom/android/launcher3/InterruptibleInOutAnimator;->setTag(Ljava/lang/Object;)V
 
-    .line 1060
+    .line 1055
     iget-object v1, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineAnims:[Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     iget v2, p0, Lcom/android/launcher3/CellLayout;->mDragOutlineCurrent:I
@@ -8746,14 +8721,14 @@
 
     invoke-virtual {v1}, Lcom/android/launcher3/InterruptibleInOutAnimator;->animateIn()V
 
-    .line 1062
+    .line 1057
     move-object/from16 v0, p8
 
     iget-object v1, v0, Lcom/android/launcher3/DropTarget$DragObject;->stateAnnouncer:Lcom/android/launcher3/accessibility/DragViewStateAnnouncer;
 
     if-eqz v1, :cond_4
 
-    .line 1063
+    .line 1058
     move-object/from16 v0, p8
 
     iget-object v1, v0, Lcom/android/launcher3/DropTarget$DragObject;->stateAnnouncer:Lcom/android/launcher3/accessibility/DragViewStateAnnouncer;
@@ -8764,50 +8739,50 @@
 
     invoke-virtual {v1, v2}, Lcom/android/launcher3/accessibility/DragViewStateAnnouncer;->announce(Ljava/lang/CharSequence;)V
 
-    .line 1066
+    .line 1061
     :cond_4
     return-void
 
-    .line 1022
+    .line 1017
     :cond_5
     iget-object v3, p0, Lcom/android/launcher3/CellLayout;->mTmpPoint:[I
 
-    .line 1023
+    .line 1018
     invoke-virtual {p0, p3, p4, v3}, Lcom/android/launcher3/CellLayout;->cellToPoint(II[I)V
 
-    .line 1025
+    .line 1020
     const/4 v4, 0x0
 
     aget v4, v3, v4
 
-    .line 1026
+    .line 1021
     const/4 v5, 0x1
 
     aget v3, v3, v5
 
-    .line 1028
+    .line 1023
     if-eqz p1, :cond_6
 
     if-nez v1, :cond_6
 
-    .line 1031
+    .line 1026
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 1032
+    .line 1027
     iget v2, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     add-int/2addr v2, v4
 
-    .line 1033
+    .line 1028
     iget v1, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     add-int/2addr v1, v3
 
-    .line 1038
+    .line 1033
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     mul-int/2addr v3, p6
@@ -8822,7 +8797,7 @@
 
     add-int/2addr v1, v3
 
-    .line 1040
+    .line 1035
     iget v3, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
     mul-int/2addr v3, p5
@@ -8837,7 +8812,7 @@
 
     add-int/2addr v2, v3
 
-    .line 1055
+    .line 1050
     :goto_1
     invoke-virtual {v7}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -8855,13 +8830,13 @@
 
     goto :goto_0
 
-    .line 1042
+    .line 1037
     :cond_6
     if-eqz v1, :cond_7
 
     if-eqz v2, :cond_7
 
-    .line 1045
+    .line 1040
     iget v5, v1, Landroid/graphics/Point;->x:I
 
     iget v8, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
@@ -8880,7 +8855,7 @@
 
     add-int/2addr v2, v4
 
-    .line 1046
+    .line 1041
     invoke-virtual {p0}, Lcom/android/launcher3/CellLayout;->getShortcutsAndWidgets()Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
     move-result-object v4
@@ -8889,7 +8864,7 @@
 
     move-result v4
 
-    .line 1047
+    .line 1042
     const/4 v5, 0x0
 
     iget v8, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
@@ -8908,17 +8883,17 @@
 
     float-to-int v4, v4
 
-    .line 1048
+    .line 1043
     iget v1, v1, Landroid/graphics/Point;->y:I
 
     add-int/2addr v1, v4
 
     add-int/2addr v1, v3
 
-    .line 1042
+    .line 1037
     goto :goto_1
 
-    .line 1051
+    .line 1046
     :cond_7
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCellWidth:I
 
@@ -8934,7 +8909,7 @@
 
     add-int v2, v4, v1
 
-    .line 1052
+    .line 1047
     iget v1, p0, Lcom/android/launcher3/CellLayout;->mCellHeight:I
 
     mul-int/2addr v1, p6

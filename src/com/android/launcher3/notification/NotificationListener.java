@@ -4,14 +4,15 @@
 
 package com.android.launcher3.notification;
 
-import android.support.v4.a.b;
+import java.util.Set;
+import android.util.Pair;
 import com.android.launcher3.util.PackageUserKey;
 import java.util.Arrays;
 import java.util.Collections;
 import android.app.Notification;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashSet;
+import android.util.ArraySet;
 import android.os.Looper;
 import com.android.launcher3.LauncherModel;
 import java.util.List;
@@ -26,10 +27,10 @@ public class NotificationListener extends NotificationListenerService
     private static boolean sIsConnected;
     private static NotificationListener sNotificationListenerInstance;
     private static NotificationListener$NotificationsChangedListener sNotificationsChangedListener;
-    private NotificationListenerService$Ranking mTempRanking;
-    private Handler$Callback mUiCallback;
+    private final NotificationListenerService$Ranking mTempRanking;
+    private final Handler$Callback mUiCallback;
     private final Handler mUiHandler;
-    private Handler$Callback mWorkerCallback;
+    private final Handler$Callback mWorkerCallback;
     private final Handler mWorkerHandler;
     
     static {
@@ -50,15 +51,15 @@ public class NotificationListener extends NotificationListenerService
         if (array == null) {
             return null;
         }
-        final HashSet<Integer> set = new HashSet<Integer>();
+        final ArraySet set = new ArraySet();
         for (int j = 0; j < array.length; ++j) {
             if (this.shouldBeFilteredOut(array[j])) {
-                set.add(j);
+                ((Set<Integer>)set).add(j);
             }
         }
-        final ArrayList list = new ArrayList<StatusBarNotification>(array.length - set.size());
+        final ArrayList list = new ArrayList<StatusBarNotification>(array.length - ((Set)set).size());
         while (i < array.length) {
-            if (!set.contains(i)) {
+            if (!((Set)set).contains(i)) {
                 list.add(array[i]);
             }
             ++i;
@@ -87,8 +88,9 @@ public class NotificationListener extends NotificationListenerService
     
     public static void setNotificationsChangedListener(final NotificationListener$NotificationsChangedListener sNotificationsChangedListener) {
         NotificationListener.sNotificationsChangedListener = sNotificationsChangedListener;
-        if (NotificationListener.sNotificationListenerInstance != null) {
-            NotificationListener.sNotificationListenerInstance.onNotificationFullRefresh();
+        final NotificationListener instanceIfConnected = getInstanceIfConnected();
+        if (instanceIfConnected != null) {
+            instanceIfConnected.onNotificationFullRefresh();
         }
     }
     
@@ -117,14 +119,14 @@ public class NotificationListener extends NotificationListenerService
     
     public List getNotificationsForKeys(final List list) {
         final StatusBarNotification[] activeNotifications = this.getActiveNotifications((String[])NotificationKeyData.extractKeysOnly(list).toArray(new String[list.size()]));
-        List<StatusBarNotification> list2;
+        Object o;
         if (activeNotifications == null) {
-            list2 = (List<StatusBarNotification>)Collections.EMPTY_LIST;
+            o = Collections.emptyList();
         }
         else {
-            list2 = Arrays.asList(activeNotifications);
+            o = Arrays.asList(activeNotifications);
         }
-        return list2;
+        return (List)o;
     }
     
     public void onListenerConnected() {
@@ -145,6 +147,6 @@ public class NotificationListener extends NotificationListenerService
     
     public void onNotificationRemoved(final StatusBarNotification statusBarNotification) {
         super.onNotificationRemoved(statusBarNotification);
-        this.mWorkerHandler.obtainMessage(2, (Object)new b(PackageUserKey.fromNotification(statusBarNotification), NotificationKeyData.fromNotification(statusBarNotification))).sendToTarget();
+        this.mWorkerHandler.obtainMessage(2, (Object)new Pair((Object)PackageUserKey.fromNotification(statusBarNotification), (Object)NotificationKeyData.fromNotification(statusBarNotification))).sendToTarget();
     }
 }

@@ -5,7 +5,6 @@
 package com.android.launcher3;
 
 import android.database.sqlite.SQLiteDatabase;
-import com.android.launcher3.config.ProviderConfig;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
@@ -14,7 +13,7 @@ public final class LauncherSettings$Favorites implements BaseColumns
     public static final Uri CONTENT_URI;
     
     static {
-        CONTENT_URI = Uri.parse("content://" + ProviderConfig.AUTHORITY + "/" + "favorites");
+        CONTENT_URI = Uri.parse("content://" + LauncherProvider.AUTHORITY + "/" + "favorites");
     }
     
     public static void addTableToDb(final SQLiteDatabase sqLiteDatabase, final long n, final boolean b) {
@@ -43,6 +42,32 @@ public final class LauncherSettings$Favorites implements BaseColumns
     }
     
     public static Uri getContentUri(final long n) {
-        return Uri.parse("content://" + ProviderConfig.AUTHORITY + "/" + "favorites" + "/" + n);
+        return Uri.parse("content://" + LauncherProvider.AUTHORITY + "/" + "favorites" + "/" + n);
+    }
+    
+    static final String itemTypeToString(final int n) {
+        switch (n) {
+            default: {
+                return String.valueOf(n);
+            }
+            case 0: {
+                return "APP";
+            }
+            case 1: {
+                return "SHORTCUT";
+            }
+            case 2: {
+                return "FOLDER";
+            }
+            case 4: {
+                return "WIDGET";
+            }
+            case 5: {
+                return "CUSTOMWIDGET";
+            }
+            case 6: {
+                return "DEEPSHORTCUT";
+            }
+        }
     }
 }

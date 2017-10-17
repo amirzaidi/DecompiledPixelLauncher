@@ -24,7 +24,7 @@
 
     const/4 v2, 0x0
 
-    .line 59
+    .line 58
     new-instance v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
     const-string/jumbo v1, "ICON"
@@ -33,7 +33,7 @@
 
     sput-object v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;->ICON:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
-    .line 60
+    .line 59
     new-instance v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
     const-string/jumbo v1, "FOLDER"
@@ -42,7 +42,7 @@
 
     sput-object v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;->FOLDER:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
-    .line 61
+    .line 60
     new-instance v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
     const-string/jumbo v1, "WIDGET"
@@ -51,7 +51,7 @@
 
     sput-object v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;->WIDGET:Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
-    .line 58
+    .line 57
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
@@ -77,7 +77,7 @@
     .locals 0
 
     .prologue
-    .line 58
+    .line 57
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -87,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 57
     const-class v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 57
     sget-object v0, Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;->$VALUES:[Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate$DragType;
 
     return-object v0

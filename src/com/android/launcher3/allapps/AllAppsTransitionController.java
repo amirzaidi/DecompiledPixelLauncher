@@ -8,7 +8,6 @@ import android.animation.AnimatorInflater;
 import com.android.launcher3.Workspace$Direction;
 import android.graphics.Color;
 import com.android.launcher3.Utilities;
-import android.view.View;
 import com.android.launcher3.LauncherAnimUtils;
 import com.android.launcher3.AbstractFloatingView;
 import android.view.MotionEvent;
@@ -16,23 +15,24 @@ import android.animation.Animator$AnimatorListener;
 import android.animation.Animator;
 import android.animation.TimeInterpolator;
 import android.animation.ObjectAnimator;
+import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.util.Themes;
 import android.content.Context;
 import android.support.v4.view.b.a;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import com.android.launcher3.Workspace;
+import com.android.launcher3.anim.SpringAnimationHandler;
 import com.android.launcher3.Launcher;
 import com.android.launcher3.Hotseat;
+import com.android.launcher3.graphics.GradientView;
 import android.animation.ArgbEvaluator;
-import android.animation.AnimatorSet;
 import android.view.animation.Interpolator;
-import android.view.View$OnLayoutChangeListener;
+import android.animation.AnimatorSet;
 import com.android.launcher3.util.TouchController;
 
-public class AllAppsTransitionController implements TouchController, VerticalPullDetector$Listener, View$OnLayoutChangeListener
+public class AllAppsTransitionController implements TouchController, VerticalPullDetector$Listener, SearchUiManager$OnScrollRangeChangeListener
 {
-    private final Interpolator mAccelInterpolator;
     private int mAllAppsBackgroundColor;
     private long mAnimationDuration;
     private AllAppsContainerView mAppsView;
@@ -44,8 +44,11 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
     private AnimatorSet mDiscoBounceAnimation;
     private final ArgbEvaluator mEvaluator;
     private final Interpolator mFastOutSlowInInterpolator;
+    private GradientView mGradientView;
     private Hotseat mHotseat;
+    private final Interpolator mHotseatAccelInterpolator;
     private int mHotseatBackgroundColor;
+    private final boolean mIsDarkTheme;
     private boolean mIsTranslateWithoutWorkspace;
     private final Launcher mLauncher;
     private boolean mNoIntercept;
@@ -53,11 +56,15 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
     private final VerticalPullDetector$ScrollInterpolator mScrollInterpolator;
     private float mShiftRange;
     private float mShiftStart;
+    private SpringAnimationHandler mSpringAnimationHandler;
     private float mStatusBarHeight;
+    private boolean mTouchEventStartedOnHotseat;
     private Workspace mWorkspace;
+    private final Interpolator mWorkspaceAccelnterpolator;
     
     public AllAppsTransitionController(final Launcher mLauncher) {
-        this.mAccelInterpolator = (Interpolator)new AccelerateInterpolator(2.0f);
+        this.mWorkspaceAccelnterpolator = (Interpolator)new AccelerateInterpolator(2.0f);
+        this.mHotseatAccelInterpolator = (Interpolator)new AccelerateInterpolator(1.5f);
         this.mDecelInterpolator = (Interpolator)new DecelerateInterpolator(3.0f);
         this.mFastOutSlowInInterpolator = (Interpolator)new a();
         this.mScrollInterpolator = new VerticalPullDetector$ScrollInterpolator();
@@ -68,6 +75,7 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         this.mProgress = 1.0f;
         this.mEvaluator = new ArgbEvaluator();
         this.mAllAppsBackgroundColor = Themes.getAttrColor((Context)mLauncher, 16843827);
+        this.mIsDarkTheme = Themes.getAttrBoolean((Context)this.mLauncher, 2130772010);
     }
     
     private void calculateDuration(final float n, final float n2) {
@@ -86,6 +94,14 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         this.mCurrentAnimation = null;
     }
     
+    private boolean hasSpringAnimationHandler() {
+        boolean b = false;
+        if (FeatureFlags.LAUNCHER3_PHYSICS && this.mSpringAnimationHandler != null) {
+            b = true;
+        }
+        return b;
+    }
+    
     private boolean isInDisallowRecatchBottomZone() {
         return this.mProgress > 0.9125f;
     }
@@ -94,12 +110,28 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         return this.mProgress < 0.0875f;
     }
     
-    private void updateLightStatusBar(final float n) {
-        final boolean b = true;
-        if (this.mLauncher.getDeviceProfile().isVerticalBarLayout()) {
-            return;
+    private void updateAllAppsBg(final float progress) {
+        if (this.mGradientView == null) {
+            (this.mGradientView = (GradientView)this.mLauncher.findViewById(2131624008)).setVisibility(0);
         }
-        this.mLauncher.activateLightSystemBars(n <= this.mStatusBarHeight / 2.0f && b, b, b);
+        this.mGradientView.setProgress(progress);
+    }
+    
+    private void updateLightStatusBar(final float n) {
+        final int n2 = 1;
+        int n3;
+        if (n <= this.mShiftRange / 4.0f) {
+            n3 = n2;
+        }
+        else {
+            n3 = 0;
+        }
+        if (n3 != 0) {
+            this.mLauncher.getSystemUiController().updateUiState(n2, this.mIsDarkTheme ^ true);
+        }
+        else {
+            this.mLauncher.getSystemUiController().updateUiState(n2, 0);
+        }
     }
     
     public boolean animateToAllApps(final AnimatorSet mCurrentAnimation, final long mAnimationDuration) {
@@ -184,11 +216,17 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         this.mHotseat.setBackgroundTransparent(false);
         this.mHotseat.setVisibility(0);
         this.mAppsView.reset();
+        if (this.hasSpringAnimationHandler()) {
+            this.mSpringAnimationHandler.reset();
+        }
         this.setProgress(1.0f);
     }
     
     public void finishPullUp() {
         this.mHotseat.setVisibility(4);
+        if (this.hasSpringAnimationHandler()) {
+            this.mSpringAnimationHandler.reset();
+        }
         this.setProgress(0.0f);
     }
     
@@ -201,6 +239,7 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         int mNoIntercept = 1;
         if (motionEvent.getAction() == 0) {
             this.mNoIntercept = false;
+            this.mTouchEventStartedOnHotseat = this.mLauncher.getDragLayer().isEventOverHotseat(motionEvent);
             if (!this.mLauncher.isAllAppsVisible() && this.mLauncher.getWorkspace().workspaceInModalState()) {
                 this.mNoIntercept = (mNoIntercept != 0);
             }
@@ -241,6 +280,9 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
     }
     
     public boolean onControllerTouchEvent(final MotionEvent motionEvent) {
+        if (this.hasSpringAnimationHandler()) {
+            this.mSpringAnimationHandler.addMovement(motionEvent);
+        }
         return this.mDetector.onTouchEvent(motionEvent);
     }
     
@@ -254,34 +296,43 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
     }
     
     public void onDragEnd(final float n, final boolean b) {
-        final int n2 = 2;
-        final int n3 = 1;
+        final int n2 = 1;
         if (this.mAppsView == null) {
             return;
+        }
+        int n3;
+        if (this.mTouchEventStartedOnHotseat) {
+            n3 = 2;
+        }
+        else {
+            n3 = n2;
         }
         if (b) {
             if (n < 0.0f) {
                 this.calculateDuration(n, this.mAppsView.getTranslationY());
                 if (!this.mLauncher.isAllAppsVisible()) {
-                    this.mLauncher.getUserEventDispatcher().logActionOnContainer(4, n3, n2);
+                    this.mLauncher.getUserEventDispatcher().logActionOnContainer(4, n2, n3);
                 }
-                this.mLauncher.showAppsView(n3 != 0, false, false);
+                this.mLauncher.showAppsView(n2 != 0, false);
+                if (this.hasSpringAnimationHandler()) {
+                    this.mSpringAnimationHandler.animateToFinalPosition(0.0f, n2);
+                }
             }
             else {
                 this.calculateDuration(n, Math.abs(this.mShiftRange - this.mAppsView.getTranslationY()));
-                this.mLauncher.showWorkspace(n3 != 0);
+                this.mLauncher.showWorkspace(n2 != 0);
             }
         }
         else if (this.mAppsView.getTranslationY() > this.mShiftRange / 2.0f) {
             this.calculateDuration(n, Math.abs(this.mShiftRange - this.mAppsView.getTranslationY()));
-            this.mLauncher.showWorkspace(n3 != 0);
+            this.mLauncher.showWorkspace(n2 != 0);
         }
         else {
             this.calculateDuration(n, Math.abs(this.mAppsView.getTranslationY()));
             if (!this.mLauncher.isAllAppsVisible()) {
-                this.mLauncher.getUserEventDispatcher().logActionOnContainer(3, n3, n2);
+                this.mLauncher.getUserEventDispatcher().logActionOnContainer(3, n2, n3);
             }
-            this.mLauncher.showAppsView(n3 != 0, false, false);
+            this.mLauncher.showAppsView(n2 != 0, false);
         }
     }
     
@@ -291,15 +342,13 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         this.mCurrentAnimation = LauncherAnimUtils.createAnimatorSet();
         this.mShiftStart = this.mAppsView.getTranslationY();
         this.preparePull(b);
+        if (this.hasSpringAnimationHandler()) {
+            this.mSpringAnimationHandler.skipToEnd();
+        }
     }
     
-    public void onLayoutChange(final View view, final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int n7, final int n8) {
-        if (!this.mLauncher.getDeviceProfile().isVerticalBarLayout()) {
-            this.mShiftRange = n2;
-        }
-        else {
-            this.mShiftRange = n4;
-        }
+    public void onScrollRangeChanged(final int n) {
+        this.mShiftRange = n;
         this.setProgress(this.mProgress);
     }
     
@@ -312,7 +361,6 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
             if (!this.mLauncher.isAllAppsVisible()) {
                 this.mLauncher.tryAndUpdatePredictedApps();
                 this.mAppsView.setVisibility(0);
-                this.mAppsView.setRevealDrawableColor(this.mHotseatBackgroundColor);
             }
         }
     }
@@ -325,15 +373,18 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         final float translationY = mProgress * this.mShiftRange;
         final float boundToRange = Utilities.boundToRange(mProgress, 0.0f, n);
         final float alpha = n - boundToRange;
-        final float interpolation = this.mAccelInterpolator.getInterpolation(boundToRange);
-        this.mAppsView.setRevealDrawableColor(android.support.v4.b.a.arc((int)this.mEvaluator.evaluate(this.mDecelInterpolator.getInterpolation(alpha), (Object)this.mHotseatBackgroundColor, (Object)this.mAllAppsBackgroundColor), Color.alpha((int)this.mEvaluator.evaluate(alpha, (Object)this.mHotseatBackgroundColor, (Object)this.mAllAppsBackgroundColor))));
+        final float interpolation = this.mWorkspaceAccelnterpolator.getInterpolation(boundToRange);
+        final float interpolation2 = this.mHotseatAccelInterpolator.getInterpolation(boundToRange);
+        (int)this.mEvaluator.evaluate(this.mDecelInterpolator.getInterpolation(alpha), (Object)this.mHotseatBackgroundColor, (Object)this.mAllAppsBackgroundColor);
+        Color.alpha((int)this.mEvaluator.evaluate(alpha, (Object)this.mHotseatBackgroundColor, (Object)this.mAllAppsBackgroundColor));
+        this.updateAllAppsBg(alpha);
         this.mAppsView.getContentView().setAlpha(alpha);
         this.mAppsView.setTranslationY(translationY);
         if (!this.mLauncher.getDeviceProfile().isVerticalBarLayout()) {
-            this.mWorkspace.setHotseatTranslationAndAlpha(Workspace$Direction.Y, -this.mShiftRange + translationY, interpolation);
+            this.mWorkspace.setHotseatTranslationAndAlpha(Workspace$Direction.Y, -this.mShiftRange + translationY, interpolation2);
         }
         else {
-            this.mWorkspace.setHotseatTranslationAndAlpha(Workspace$Direction.Y, (-this.mShiftRange + translationY) * n2, interpolation);
+            this.mWorkspace.setHotseatTranslationAndAlpha(Workspace$Direction.Y, (-this.mShiftRange + translationY) * n2, interpolation2);
         }
         if (this.mIsTranslateWithoutWorkspace) {
             return;
@@ -350,9 +401,10 @@ public class AllAppsTransitionController implements TouchController, VerticalPul
         this.mAppsView = mAppsView;
         this.mHotseat = mHotseat;
         this.mWorkspace = mWorkspace;
-        this.mHotseat.addOnLayoutChangeListener((View$OnLayoutChangeListener)this);
         this.mHotseat.bringToFront();
         this.mCaretController = new AllAppsCaretController(this.mWorkspace.getPageIndicator().getCaretDrawable(), this.mLauncher);
+        this.mAppsView.getSearchUiManager().addOnScrollRangeChangeListener(this);
+        this.mSpringAnimationHandler = this.mAppsView.getSpringAnimationHandler();
     }
     
     public void showDiscoveryBounce() {

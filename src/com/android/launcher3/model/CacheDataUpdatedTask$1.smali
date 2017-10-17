@@ -22,7 +22,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/model/CacheDataUpdatedTask$1;->val$updatedApps:Ljava/util/ArrayList;
 
-    .line 78
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,11 +35,11 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 80
     iget-object v0, p0, Lcom/android/launcher3/model/CacheDataUpdatedTask$1;->val$updatedApps:Ljava/util/ArrayList;
 
     invoke-interface {p1, v0}, Lcom/android/launcher3/LauncherModel$Callbacks;->bindAppsUpdated(Ljava/util/ArrayList;)V
 
-    .line 82
+    .line 81
     return-void
 .end method

@@ -12,6 +12,8 @@ public class SettingsActivity extends Activity
 {
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
-        this.getFragmentManager().beginTransaction().replace(16908290, (Fragment)new SettingsActivity$LauncherSettingsFragment()).commit();
+        if (bundle == null) {
+            this.getFragmentManager().beginTransaction().replace(16908290, (Fragment)new SettingsActivity$LauncherSettingsFragment()).commit();
+        }
     }
 }

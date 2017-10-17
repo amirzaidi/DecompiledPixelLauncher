@@ -21,7 +21,7 @@ import com.android.launcher3.AllAppsList;
 import com.android.launcher3.LauncherAppState;
 import android.os.UserHandle;
 
-public class UserLockStateChangedTask extends ExtendedModelTask
+public class UserLockStateChangedTask extends BaseModelUpdateTask
 {
     private final UserHandle mUser;
     
@@ -35,16 +35,16 @@ public class UserLockStateChangedTask extends ExtendedModelTask
         final DeepShortcutManager instance = DeepShortcutManager.getInstance(context);
         final HashMap<ShortcutKey, ShortcutInfoCompat> hashMap = new HashMap<ShortcutKey, ShortcutInfoCompat>();
         while (true) {
-            Label_0530: {
+            Label_0539: {
                 if (!userUnlocked) {
-                    break Label_0530;
+                    break Label_0539;
                 }
                 final List queryForPinnedShortcuts = instance.queryForPinnedShortcuts(null, this.mUser);
                 if (instance.wasLastCallSuccess()) {
                     for (final ShortcutInfoCompat shortcutInfoCompat : queryForPinnedShortcuts) {
                         hashMap.put(ShortcutKey.fromInfo(shortcutInfoCompat), shortcutInfoCompat);
                     }
-                    break Label_0530;
+                    break Label_0539;
                 }
                 final boolean b = false;
                 final ArrayList<ShortcutInfo> list2 = new ArrayList<ShortcutInfo>();
@@ -60,7 +60,7 @@ public class UserLockStateChangedTask extends ExtendedModelTask
                             }
                             shortcutInfo.isDisabled &= 0xFFFFFFDF;
                             shortcutInfo.updateFromDeepShortcutInfo(shortcutInfoCompat2, context);
-                            shortcutInfo.iconBitmap = LauncherIcons.createShortcutIcon(shortcutInfoCompat2, context);
+                            shortcutInfo.iconBitmap = LauncherIcons.createShortcutIcon(shortcutInfoCompat2, context, shortcutInfo.iconBitmap);
                         }
                         else {
                             shortcutInfo.isDisabled |= 0x20;

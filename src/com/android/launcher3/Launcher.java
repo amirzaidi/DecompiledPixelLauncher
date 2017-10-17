@@ -12,6 +12,7 @@ import android.content.IntentSender;
 import android.app.SearchManager;
 import android.view.ViewTreeObserver$OnDrawListener;
 import android.database.sqlite.SQLiteDatabase;
+import android.animation.Animator$AnimatorListener;
 import android.os.Parcelable;
 import android.view.KeyboardShortcutGroup;
 import android.view.KeyboardShortcutInfo;
@@ -21,22 +22,23 @@ import com.android.launcher3.keyboard.CustomActionsPopup;
 import android.text.Editable;
 import android.text.method.TextKeyListener;
 import android.view.Display;
+import com.android.launcher3.util.Themes;
+import android.content.IntentFilter;
 import com.android.launcher3.dragndrop.PinItemDragListener;
 import android.content.SharedPreferences$OnSharedPreferenceChangeListener;
 import android.view.accessibility.AccessibilityManager;
 import android.graphics.Point;
+import com.android.launcher3.dynamicui.WallpaperColorInfo;
 import android.content.ActivityNotFoundException;
 import android.widget.Toast;
 import com.android.launcher3.pageindicators.PageIndicator;
 import com.android.launcher3.logging.UserEventDispatcher;
 import com.android.launcher3.folder.Folder;
 import com.android.launcher3.popup.PopupContainerWithArrow;
-import android.content.IntentFilter;
 import com.android.launcher3.util.PackageUserKey;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.app.ActivityOptions;
-import android.widget.TextView;
 import android.view.View$AccessibilityDelegate;
 import com.android.launcher3.notification.NotificationListener$NotificationsChangedListener;
 import com.android.launcher3.notification.NotificationListener;
@@ -46,6 +48,7 @@ import java.io.FileDescriptor;
 import android.view.MotionEvent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.text.Spannable;
 import android.text.Selection;
 import java.util.Iterator;
@@ -59,14 +62,11 @@ import java.util.Collection;
 import com.android.launcher3.logging.FileLog;
 import com.android.launcher3.widget.WidgetHostViewLoader;
 import java.util.List;
-import com.android.launcher3.folder.FolderIcon;
 import android.os.StrictMode$VmPolicy;
 import com.android.launcher3.shortcuts.DeepShortcutManager;
 import android.os.StrictMode$VmPolicy$Builder;
 import android.os.StrictMode;
 import com.android.launcher3.config.FeatureFlags;
-import com.android.launcher3.allapps.AllAppsSearchBarController;
-import com.android.launcher3.allapps.DefaultAppSearchController;
 import com.android.launcher3.dragndrop.DragController$DragListener;
 import android.os.Bundle;
 import android.app.Activity;
@@ -75,17 +75,16 @@ import android.view.View$OnFocusChangeListener;
 import android.content.DialogInterface$OnClickListener;
 import android.app.AlertDialog$Builder;
 import android.content.ContextWrapper;
-import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.animation.ValueAnimator;
+import com.android.launcher3.folder.FolderIcon;
 import com.android.launcher3.dragndrop.DragView;
 import com.android.launcher3.util.PackageManagerHelper;
 import android.util.Log;
 import android.os.Process;
 import android.content.Context;
-import com.android.launcher3.compat.LauncherAppsCompat;
-import com.android.launcher3.compat.PinItemRequestCompat;
+import com.android.launcher3.compat.LauncherAppsCompatVO;
 import android.content.Intent;
 import com.android.launcher3.widget.WidgetAddFlowHandler;
 import android.appwidget.AppWidgetHostView;
@@ -94,6 +93,7 @@ import com.android.launcher3.widget.PendingAddWidgetInfo;
 import android.view.inputmethod.InputMethodManager;
 import com.android.launcher3.widget.WidgetsContainerView;
 import android.content.SharedPreferences;
+import android.animation.ObjectAnimator;
 import android.content.BroadcastReceiver;
 import com.android.launcher3.popup.PopupDataProvider;
 import com.android.launcher3.util.PendingRequestArgs;
@@ -115,17 +115,15 @@ import com.android.launcher3.allapps.AllAppsTransitionController;
 import android.view.View;
 import com.android.launcher3.accessibility.LauncherAccessibilityDelegate;
 import java.util.HashMap;
+import com.android.launcher3.dynamicui.WallpaperColorInfo$OnThemeChangeListener;
 import android.view.accessibility.AccessibilityManager$AccessibilityStateChangeListener;
 import android.view.View$OnTouchListener;
 import android.view.View$OnLongClickListener;
 import android.view.View$OnClickListener;
 
-public class Launcher extends BaseActivity implements LauncherExterns, View$OnClickListener, View$OnLongClickListener, LauncherModel$Callbacks, View$OnTouchListener, LauncherProviderChangeListener, AccessibilityManager$AccessibilityStateChangeListener
+public class Launcher extends BaseActivity implements LauncherExterns, View$OnClickListener, View$OnLongClickListener, LauncherModel$Callbacks, View$OnTouchListener, LauncherProviderChangeListener, AccessibilityManager$AccessibilityStateChangeListener, WallpaperColorInfo$OnThemeChangeListener
 {
-    static int NEW_APPS_ANIMATION_DELAY;
-    private static int NEW_APPS_ANIMATION_INACTIVE_TIMEOUT_SECONDS;
-    private static int NEW_APPS_PAGE_MOVE_DELAY;
-    protected static HashMap sCustomAppWidgets;
+    protected static final HashMap sCustomAppWidgets;
     private LauncherAccessibilityDelegate mAccessibilityDelegate;
     private View mAllAppsButton;
     AllAppsTransitionController mAllAppsController;
@@ -133,19 +131,18 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     private LauncherAppWidgetHost mAppWidgetHost;
     private AppWidgetManagerCompat mAppWidgetManager;
     AllAppsContainerView mAppsView;
-    private boolean mAttached;
-    private Runnable mBindAllApplicationsRunnable;
-    private Runnable mBindAllWidgetsRunnable;
-    private ArrayList mBindOnResumeCallbacks;
-    Runnable mBuildLayersRunnable;
+    private final Runnable mBindAllApplicationsRunnable;
+    private final Runnable mBindAllWidgetsRunnable;
+    private final ArrayList mBindOnResumeCallbacks;
+    final Runnable mBuildLayersRunnable;
     private SpannableStringBuilder mDefaultKeySsb;
     private DragController mDragController;
     DragLayer mDragLayer;
     private DropTargetBar mDropTargetBar;
     private Runnable mExitSpringLoadedModeRunnable;
-    private ExtractedColors mExtractedColors;
+    private final ExtractedColors mExtractedColors;
     public ViewGroupFocusHelper mFocusHandler;
-    private Handler mHandler;
+    private final Handler mHandler;
     private View$OnTouchListener mHapticFeedbackTouchListener;
     private boolean mHasFocus;
     Hotseat mHotseat;
@@ -158,7 +155,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     private LauncherModel mModel;
     private ModelWriter mModelWriter;
     private boolean mMoveToDefaultScreenFromNewIntent;
-    private ArrayList mOnResumeCallbacks;
+    private final ArrayList mOnResumeCallbacks;
     private boolean mOnResumeNeedsLoad;
     private Launcher$State mOnResumeState;
     private ViewGroup mOverviewPanel;
@@ -167,15 +164,16 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     private ViewOnDrawExecutor mPendingExecutor;
     private PendingRequestArgs mPendingRequestArgs;
     private PopupDataProvider mPopupDataProvider;
-    private View mQsbContainer;
     private final BroadcastReceiver mReceiver;
     private boolean mRotationEnabled;
     private Launcher$RotationPrefChangeHandler mRotationPrefChangeHandler;
+    private ObjectAnimator mScrimAnimator;
     private SharedPreferences mSharedPrefs;
+    private boolean mShouldFadeInScrim;
     Launcher$State mState;
     LauncherStateTransitionAnimation mStateTransitionAnimation;
     private final ArrayList mSynchronouslyBoundPages;
-    private int[] mTmpAddItemCellCoordinates;
+    private final int[] mTmpAddItemCellCoordinates;
     ArrayList mTmpAppsList;
     private BubbleTextView mWaitingForResume;
     private View mWidgetsButton;
@@ -184,15 +182,13 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     boolean mWorkspaceLoading;
     
     static {
-        final int new_APPS_ANIMATION_DELAY = Launcher.NEW_APPS_PAGE_MOVE_DELAY = 500;
-        Launcher.NEW_APPS_ANIMATION_INACTIVE_TIMEOUT_SECONDS = 5;
-        Launcher.NEW_APPS_ANIMATION_DELAY = new_APPS_ANIMATION_DELAY;
-        Launcher.sCustomAppWidgets = new HashMap();
+        sCustomAppWidgets = new HashMap();
     }
     
     public Launcher() {
         final boolean b = true;
         this.mState = Launcher$State.WORKSPACE;
+        this.mExtractedColors = new ExtractedColors();
         this.mTmpAddItemCellCoordinates = new int[2];
         this.mOnResumeState = Launcher$State.NONE;
         this.mDefaultKeySsb = null;
@@ -202,7 +198,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         this.mOnResumeCallbacks = new ArrayList();
         this.mHandler = new Handler();
         this.mHasFocus = false;
-        this.mAttached = false;
         this.mSynchronouslyBoundPages = new ArrayList();
         this.mBuildLayersRunnable = new Launcher$1(this);
         this.mLastDispatchTouchEventX = 0.0f;
@@ -245,7 +240,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     private boolean canRunNewAppsAnimation() {
-        return System.currentTimeMillis() - this.mDragController.getLastGestureUpTime() > Launcher.NEW_APPS_ANIMATION_INACTIVE_TIMEOUT_SECONDS * 1000;
+        return System.currentTimeMillis() - this.mDragController.getLastGestureUpTime() > 5000L;
     }
     
     private long completeAdd(final int n, final Intent intent, final int n2, final PendingRequestArgs pendingRequestArgs) {
@@ -262,18 +257,18 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                 this.completeAddAppWidget(n2, pendingRequestArgs, null, null);
                 break;
             }
-            case 12: {
+            case 13: {
                 this.completeRestoreAppWidget(n2, 0);
                 break;
             }
-            case 14: {
+            case 12: {
                 final LauncherAppWidgetInfo completeRestoreAppWidget = this.completeRestoreAppWidget(n2, 4);
                 if (completeRestoreAppWidget == null) {
                     break;
                 }
                 final LauncherAppWidgetProviderInfo launcherAppWidgetInfo = this.mAppWidgetManager.getLauncherAppWidgetInfo(n2);
                 if (launcherAppWidgetInfo != null) {
-                    new WidgetAddFlowHandler(launcherAppWidgetInfo).startConfigActivity(this, completeRestoreAppWidget, 12);
+                    new WidgetAddFlowHandler(launcherAppWidgetInfo).startConfigActivity(this, completeRestoreAppWidget, 13);
                     break;
                 }
                 break;
@@ -283,14 +278,14 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     private void completeAddShortcut(final Intent intent, final long n, final long n2, final int n3, final int n4, final PendingRequestArgs pendingRequestArgs) {
-        final int[] mTmpAddItemCellCoordinates = this.mTmpAddItemCellCoordinates;
-        final CellLayout cellLayout = this.getCellLayout(n, n2);
         if (pendingRequestArgs.getRequestCode() != 1 || pendingRequestArgs.getPendingIntent().getComponent() == null) {
             return;
         }
+        final int[] mTmpAddItemCellCoordinates = this.mTmpAddItemCellCoordinates;
+        final CellLayout cellLayout = this.getCellLayout(n, n2);
         ShortcutInfo shortcutInfo = null;
         if (Utilities.isAtLeastO()) {
-            shortcutInfo = LauncherAppsCompat.createShortcutInfoFromPinItemRequest((Context)this, PinItemRequestCompat.getPinItemRequest(intent), 0L);
+            shortcutInfo = LauncherAppsCompatVO.createShortcutInfoFromPinItemRequest((Context)this, LauncherAppsCompatVO.getPinItemRequest(intent), 0L);
         }
         if (shortcutInfo == null) {
             if (Process.myUserHandle().equals((Object)pendingRequestArgs.user)) {
@@ -309,31 +304,42 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             }
         }
         final ShortcutInfo dragInfo = shortcutInfo;
-        final View shortcut = this.createShortcut(shortcutInfo);
-        boolean cellForSpan;
-        if (n3 >= 0 && n4 >= 0) {
-            mTmpAddItemCellCoordinates[0] = n3;
-            mTmpAddItemCellCoordinates[1] = n4;
-            final boolean b = true;
-            if (this.mWorkspace.createUserFolderIfNecessary(shortcut, n, cellLayout, mTmpAddItemCellCoordinates, 0.0f, true, null, null)) {
+        if (n < 0L) {
+            final View shortcut = this.createShortcut(shortcutInfo);
+            boolean cellForSpan;
+            if (n3 >= 0 && n4 >= 0) {
+                mTmpAddItemCellCoordinates[0] = n3;
+                mTmpAddItemCellCoordinates[1] = n4;
+                final boolean b = true;
+                if (this.mWorkspace.createUserFolderIfNecessary(shortcut, n, cellLayout, mTmpAddItemCellCoordinates, 0.0f, true, null, null)) {
+                    return;
+                }
+                final DropTarget$DragObject dropTarget$DragObject = new DropTarget$DragObject();
+                dropTarget$DragObject.dragInfo = dragInfo;
+                if (this.mWorkspace.addToExistingFolderIfNecessary(shortcut, cellLayout, mTmpAddItemCellCoordinates, 0.0f, dropTarget$DragObject, true)) {
+                    return;
+                }
+                cellForSpan = b;
+            }
+            else {
+                cellForSpan = cellLayout.findCellForSpan(mTmpAddItemCellCoordinates, 1, 1);
+            }
+            if (!cellForSpan) {
+                this.mWorkspace.onNoCellFound((View)cellLayout);
                 return;
             }
-            final DropTarget$DragObject dropTarget$DragObject = new DropTarget$DragObject();
-            dropTarget$DragObject.dragInfo = dragInfo;
-            if (this.mWorkspace.addToExistingFolderIfNecessary(shortcut, cellLayout, mTmpAddItemCellCoordinates, 0.0f, dropTarget$DragObject, true)) {
-                return;
-            }
-            cellForSpan = b;
+            this.getModelWriter().addItemToDatabase(dragInfo, n, n2, mTmpAddItemCellCoordinates[0], mTmpAddItemCellCoordinates[1]);
+            this.mWorkspace.addInScreen(shortcut, dragInfo);
         }
         else {
-            cellForSpan = cellLayout.findCellForSpan(mTmpAddItemCellCoordinates, 1, 1);
+            final FolderIcon folderIcon = (FolderIcon)this.mWorkspace.getFirstMatch(new Launcher$13(this, n));
+            if (folderIcon != null) {
+                ((FolderInfo)folderIcon.getTag()).add(dragInfo, pendingRequestArgs.rank, false);
+            }
+            else {
+                Log.e("Launcher", "Could not find folder with id " + n + " to add shortcut.");
+            }
         }
-        if (!cellForSpan) {
-            this.mWorkspace.onNoCellFound((View)cellLayout);
-            return;
-        }
-        this.getModelWriter().addItemToDatabase(dragInfo, n, n2, mTmpAddItemCellCoordinates[0], mTmpAddItemCellCoordinates[1]);
-        this.mWorkspace.addInScreen(shortcut, dragInfo);
     }
     
     private LauncherAppWidgetInfo completeRestoreAppWidget(final int n, final int restoreStatus) {
@@ -344,6 +350,9 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         }
         final LauncherAppWidgetInfo launcherAppWidgetInfo = (LauncherAppWidgetInfo)widgetForAppWidgetId.getTag();
         launcherAppWidgetInfo.restoreStatus = restoreStatus;
+        if (launcherAppWidgetInfo.restoreStatus == 0) {
+            launcherAppWidgetInfo.pendingItemInfo = null;
+        }
         this.mWorkspace.reinflateWidgetsIfNecessary();
         this.getModelWriter().updateItemInDatabase(launcherAppWidgetInfo);
         return launcherAppWidgetInfo;
@@ -361,7 +370,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     private void deleteWidgetInfo(final LauncherAppWidgetInfo launcherAppWidgetInfo) {
         final LauncherAppWidgetHost appWidgetHost = this.getAppWidgetHost();
         if (appWidgetHost != null && (launcherAppWidgetInfo.isCustomWidget() ^ true) && launcherAppWidgetInfo.isWidgetIdAllocated()) {
-            new Launcher$17(this, appWidgetHost, launcherAppWidgetInfo).executeOnExecutor(Utilities.THREAD_POOL_EXECUTOR, (Object[])new Void[0]);
+            new Launcher$18(this, appWidgetHost, launcherAppWidgetInfo).executeOnExecutor(Utilities.THREAD_POOL_EXECUTOR, (Object[])new Void[0]);
         }
         this.getModelWriter().deleteItemFromDatabase(launcherAppWidgetInfo);
     }
@@ -397,7 +406,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             return;
         }
         int widgetId = mPendingRequestArgs.getWidgetId();
-        final Launcher$6 launcher$6 = new Launcher$6(this, n2);
+        final Launcher$5 launcher$5 = new Launcher$5(this, n2);
         if (n == 11) {
             int intExtra;
             if (intent != null) {
@@ -408,7 +417,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             }
             if (n2 == 0) {
                 this.completeTwoStageWidgetDrop(0, intExtra, mPendingRequestArgs);
-                this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$6, 500, false);
+                this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$5, 500, false);
             }
             else if (n2 == -1) {
                 this.addAppWidgetImpl(intExtra, mPendingRequestArgs, null, mPendingRequestArgs.getWidgetHandler(), 500);
@@ -448,7 +457,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             if (widgetId < 0 || n2 == 0) {
                 Log.e("Launcher", "Error: appWidgetId (EXTRA_APPWIDGET_ID) was not returned from the widget configuration activity.");
                 this.completeTwoStageWidgetDrop(0, widgetId, mPendingRequestArgs);
-                this.mWorkspace.removeExtraEmptyScreenDelayed(true, new Launcher$7(this), 500, false);
+                this.mWorkspace.removeExtraEmptyScreenDelayed(true, new Launcher$6(this), 500, false);
             }
             else {
                 if (mPendingRequestArgs.container == -100) {
@@ -456,11 +465,11 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                 }
                 final CellLayout screenWithId = this.mWorkspace.getScreenWithId(mPendingRequestArgs.screenId);
                 screenWithId.setDropPending(true);
-                this.mWorkspace.removeExtraEmptyScreenDelayed(true, new Launcher$8(this, n2, widgetId, mPendingRequestArgs, screenWithId), 500, false);
+                this.mWorkspace.removeExtraEmptyScreenDelayed(true, new Launcher$7(this, n2, widgetId, mPendingRequestArgs, screenWithId), 500, false);
             }
             return;
         }
-        if (n == 12 || n == 14) {
+        if (n == 13 || n == 12) {
             if (n2 == -1) {
                 this.completeAdd(n, intent, widgetId, mPendingRequestArgs);
             }
@@ -469,10 +478,10 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (n == 1) {
             if (n2 == -1 && mPendingRequestArgs.container != -1) {
                 this.completeAdd(n, intent, -1, mPendingRequestArgs);
-                this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$6, 500, false);
+                this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$5, 500, false);
             }
             else if (n2 == 0) {
-                this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$6, 500, false);
+                this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$5, 500, false);
             }
         }
         this.mDragLayer.clearAnimatedView();
@@ -483,7 +492,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.mExtractedColors.load((Context)this);
             this.mHotseat.updateColor(this.mExtractedColors, this.mPaused ^ true);
             this.mWorkspace.getPageIndicator().updateColor(this.mExtractedColors);
-            this.activateLightSystemBars(this.isAllAppsVisible(), true, this.isAllAppsVisible());
         }
     }
     
@@ -499,7 +507,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.startMarketIntentForPackage(view, s);
             return;
         }
-        new AlertDialog$Builder((Context)this).setTitle(2131492960).setMessage(2131492961).setPositiveButton(2131492959, (DialogInterface$OnClickListener)new Launcher$18(this, view, s)).setNeutralButton(2131492958, (DialogInterface$OnClickListener)new Launcher$19(this, s)).create().show();
+        new AlertDialog$Builder((Context)this).setTitle(2131492969).setMessage(2131492970).setPositiveButton(2131492968, (DialogInterface$OnClickListener)new Launcher$19(this, view, s)).setNeutralButton(2131492967, (DialogInterface$OnClickListener)new Launcher$20(this, s)).create().show();
     }
     
     private void prepareAppWidget(final AppWidgetHostView appWidgetHostView, final LauncherAppWidgetInfo tag) {
@@ -554,14 +562,14 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     private void setupOverviewPanel() {
-        this.mOverviewPanel = (ViewGroup)this.findViewById(2131624004);
-        final View viewById = this.findViewById(2131624019);
+        this.mOverviewPanel = (ViewGroup)this.findViewById(2131624013);
+        final View viewById = this.findViewById(2131624029);
         new Launcher$10(this, 3).attachTo(viewById);
         viewById.setOnTouchListener(this.getHapticFeedbackTouchListener());
-        this.mWidgetsButton = this.findViewById(2131624020);
+        this.mWidgetsButton = this.findViewById(2131624030);
         new Launcher$11(this, 2).attachTo(this.mWidgetsButton);
         this.mWidgetsButton.setOnTouchListener(this.getHapticFeedbackTouchListener());
-        final View viewById2 = this.findViewById(2131624021);
+        final View viewById2 = this.findViewById(2131624031);
         if (this.hasSettings()) {
             new Launcher$12(this, 4).attachTo(viewById2);
             viewById2.setOnTouchListener(this.getHapticFeedbackTouchListener());
@@ -573,22 +581,12 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     private void setupViews() {
-        this.mDragLayer = (DragLayer)this.findViewById(2131624002);
+        this.mDragLayer = (DragLayer)this.findViewById(2131624011);
         this.mFocusHandler = this.mDragLayer.getFocusIndicatorHelper();
-        this.mWorkspace = (Workspace)this.mDragLayer.findViewById(2131623970);
-        final DragLayer mDragLayer = this.mDragLayer;
-        int n;
-        if (this.mDeviceProfile.isVerticalBarLayout()) {
-            n = 2131623939;
-        }
-        else {
-            n = 2131624006;
-        }
-        this.mQsbContainer = mDragLayer.findViewById(n);
-        this.mWorkspace.initParentViews((View)this.mDragLayer);
+        (this.mWorkspace = (Workspace)this.mDragLayer.findViewById(2131623973)).initParentViews((View)this.mDragLayer);
         this.mLauncherView.setSystemUiVisibility(1792);
         this.mDragLayer.setup(this, this.mDragController, this.mAllAppsController);
-        this.mHotseat = (Hotseat)this.findViewById(2131623971);
+        this.mHotseat = (Hotseat)this.findViewById(2131623974);
         if (this.mHotseat != null) {
             this.mHotseat.setOnLongClickListener((View$OnLongClickListener)this);
         }
@@ -599,15 +597,9 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         this.mWorkspace.lockWallpaperToDefaultPage();
         this.mWorkspace.bindAndInitFirstWorkspaceScreen(null);
         this.mDragController.addDragListener(this.mWorkspace);
-        this.mDropTargetBar = (DropTargetBar)this.mDragLayer.findViewById(2131624005);
-        this.mAppsView = (AllAppsContainerView)this.findViewById(2131623973);
-        this.mWidgetsView = (WidgetsContainerView)this.findViewById(2131624007);
-        if (this.mLauncherCallbacks != null && this.mLauncherCallbacks.getAllAppsSearchBarController() != null) {
-            this.mAppsView.setSearchBarController(this.mLauncherCallbacks.getAllAppsSearchBarController());
-        }
-        else {
-            this.mAppsView.setSearchBarController(new DefaultAppSearchController());
-        }
+        this.mDropTargetBar = (DropTargetBar)this.mDragLayer.findViewById(2131624014);
+        this.mAppsView = (AllAppsContainerView)this.findViewById(2131623976);
+        this.mWidgetsView = (WidgetsContainerView)this.findViewById(2131624015);
         this.mDragController.setMoveTarget((View)this.mWorkspace);
         this.mDragController.addDropTarget(this.mWorkspace);
         this.mDropTargetBar.setup(this.mDragController);
@@ -617,28 +609,19 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     private boolean shouldShowDiscoveryBounce() {
-        final boolean b = true;
-        final Launcher$State mState = this.mState;
-        final Launcher$State mState2 = this.mState;
-        if (mState != Launcher$State.WORKSPACE) {
-            return false;
-        }
-        if (this.mLauncherCallbacks != null && this.mLauncherCallbacks.shouldShowDiscoveryBounce()) {
-            return b;
-        }
-        return this.mIsResumeFromActionScreenOff && !this.mSharedPrefs.getBoolean("launcher.apps_view_shown", false) && b;
+        return this.mState == Launcher$State.WORKSPACE && ((this.mLauncherCallbacks != null && this.mLauncherCallbacks.shouldShowDiscoveryBounce()) || (this.mIsResumeFromActionScreenOff && (this.mSharedPrefs.getBoolean("launcher.apps_view_shown", false) ^ true)));
     }
     
-    private boolean showAppsOrWidgets(final Launcher$State state, final boolean b, final boolean b2) {
-        final boolean b3 = true;
-        boolean b4;
+    private boolean showAppsOrWidgets(final Launcher$State state, final boolean b) {
+        final boolean b2 = true;
+        boolean b3;
         if (this.mState != Launcher$State.WORKSPACE && this.mState != Launcher$State.APPS_SPRING_LOADED && this.mState != Launcher$State.WIDGETS_SPRING_LOADED) {
-            b4 = (this.mState == Launcher$State.APPS && this.mAllAppsController.isTransitioning());
+            b3 = (this.mState == Launcher$State.APPS && this.mAllAppsController.isTransitioning());
         }
         else {
-            b4 = b3;
+            b3 = b2;
         }
-        if (!b4) {
+        if (!b3) {
             return false;
         }
         if (state != Launcher$State.APPS && state != Launcher$State.WIDGETS) {
@@ -649,7 +632,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.mExitSpringLoadedModeRunnable = null;
         }
         if (state == Launcher$State.APPS) {
-            this.mStateTransitionAnimation.startAnimationToAllApps(b, b2);
+            this.mStateTransitionAnimation.startAnimationToAllApps(b);
         }
         else {
             this.mStateTransitionAnimation.startAnimationToWidgets(b);
@@ -657,12 +640,18 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         this.setState(state);
         AbstractFloatingView.closeAllOpenViews(this);
         this.getWindow().getDecorView().sendAccessibilityEvent(32);
-        return b3;
+        return b2;
     }
     
     private void startAppShortcutOrInfoActivity(final View view) {
         final ItemInfo itemInfo = (ItemInfo)view.getTag();
-        final Intent intent = itemInfo.getIntent();
+        Intent intent;
+        if (itemInfo instanceof PromiseAppInfo) {
+            intent = ((PromiseAppInfo)itemInfo).getMarketIntent();
+        }
+        else {
+            intent = itemInfo.getIntent();
+        }
         if (intent == null) {
             throw new IllegalArgumentException("Input must have a valid intent");
         }
@@ -680,7 +669,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     private void startShortcutIntentSafely(final Intent intent, final Bundle bundle, final ItemInfo itemInfo) {
-        final int n = 13;
+        final int n = 14;
         try {
             final StrictMode$VmPolicy vmPolicy = StrictMode.getVmPolicy();
             try {
@@ -723,53 +712,23 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         return this.waitUntilResume(runnable, false);
     }
     
-    public void activateLightSystemBars(final boolean b, final boolean b2, final boolean b3) {
-        final int systemUiVisibility = this.getWindow().getDecorView().getSystemUiVisibility();
-        int systemUiVisibility2;
-        if (b) {
-            if (b2) {
-                systemUiVisibility2 = (systemUiVisibility | 0x2000);
-            }
-            else {
-                systemUiVisibility2 = systemUiVisibility;
-            }
-            if (b3 && Utilities.isAtLeastO()) {
-                systemUiVisibility2 |= 0x10;
-            }
-        }
-        else {
-            if (b2) {
-                systemUiVisibility2 = (systemUiVisibility & 0xFFFFDFFF);
-            }
-            else {
-                systemUiVisibility2 = systemUiVisibility;
-            }
-            if (b3 && Utilities.isAtLeastO()) {
-                systemUiVisibility2 &= 0xFFFFFFEF;
-            }
-        }
-        if (systemUiVisibility2 != systemUiVisibility) {
-            this.getWindow().getDecorView().setSystemUiVisibility(systemUiVisibility2);
-        }
-    }
-    
     void addAppWidgetFromDropImpl(final int n, final ItemInfo itemInfo, final AppWidgetHostView appWidgetHostView, final WidgetAddFlowHandler widgetAddFlowHandler) {
         this.addAppWidgetImpl(n, itemInfo, appWidgetHostView, widgetAddFlowHandler, 0);
     }
     
     void addAppWidgetImpl(final int n, final ItemInfo itemInfo, final AppWidgetHostView appWidgetHostView, final WidgetAddFlowHandler widgetAddFlowHandler, final int n2) {
         if (!widgetAddFlowHandler.startConfigActivity(this, n, itemInfo, 5)) {
-            final Launcher$16 launcher$16 = new Launcher$16(this);
+            final Launcher$17 launcher$17 = new Launcher$17(this);
             this.completeAddAppWidget(n, itemInfo, appWidgetHostView, widgetAddFlowHandler.getProviderInfo((Context)this));
-            this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$16, n2, false);
+            this.mWorkspace.removeExtraEmptyScreenDelayed(true, launcher$17, n2, false);
         }
     }
     
     FolderIcon addFolder(final CellLayout cellLayout, final long n, final long n2, final int n3, final int n4) {
         final FolderInfo folderInfo = new FolderInfo();
-        folderInfo.title = this.getText(2131492893);
+        folderInfo.title = this.getText(2131492895);
         this.getModelWriter().addItemToDatabase(folderInfo, n, n2, n3, n4);
-        final FolderIcon fromXml = FolderIcon.fromXml(2130968595, this, cellLayout, folderInfo);
+        final FolderIcon fromXml = FolderIcon.fromXml(2130968597, this, cellLayout, folderInfo);
         this.mWorkspace.addInScreen((View)fromXml, folderInfo);
         this.mWorkspace.getParentCellLayoutForView((View)fromXml).getShortcutsAndWidgets().measureChild((View)fromXml);
         return fromXml;
@@ -833,7 +792,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void bindAppInfosRemoved(final ArrayList list) {
-        if (this.waitUntilResume(new Launcher$37(this, list))) {
+        if (this.waitUntilResume(new Launcher$39(this, list))) {
             return;
         }
         if (this.mAppsView != null) {
@@ -846,7 +805,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         final int n = 4;
         final int n2 = 2;
         final int n3 = 1;
-        if (this.waitUntilResume(new Launcher$28(this, launcherAppWidgetInfo))) {
+        if (this.waitUntilResume(new Launcher$29(this, launcherAppWidgetInfo))) {
             return;
         }
         if (this.mIsSafeModeEnabled) {
@@ -933,7 +892,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void bindAppsAdded(final ArrayList list, final ArrayList list2, final ArrayList list3, final ArrayList list4) {
-        if (this.waitUntilResume(new Launcher$24(this, list, list2, list3, list4))) {
+        if (this.waitUntilResume(new Launcher$25(this, list, list2, list3, list4))) {
             return;
         }
         if (list != null) {
@@ -952,7 +911,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void bindAppsUpdated(final ArrayList list) {
-        if (this.waitUntilResume(new Launcher$32(this, list))) {
+        if (this.waitUntilResume(new Launcher$33(this, list))) {
             return;
         }
         if (this.mAppsView != null) {
@@ -965,7 +924,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void bindItems(final ArrayList list, int i, final int n, final boolean b) {
-        if (this.waitUntilResume(new Launcher$25(this, list, i, n, b))) {
+        if (this.waitUntilResume(new Launcher$26(this, list, i, n, b))) {
             return;
         }
         final AnimatorSet animatorSet = LauncherAnimUtils.createAnimatorSet();
@@ -993,7 +952,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                             break;
                         }
                         case 2: {
-                            o = FolderIcon.fromXml(2130968595, this, (ViewGroup)mWorkspace.getChildAt(mWorkspace.getCurrentPage()), (FolderInfo)itemInfo);
+                            o = FolderIcon.fromXml(2130968597, this, (ViewGroup)mWorkspace.getChildAt(mWorkspace.getCurrentPage()), (FolderInfo)itemInfo);
                             break;
                         }
                         case 4: {
@@ -1042,19 +1001,28 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (b2 && n2 > -1) {
             final long screenIdForPageIndex = this.mWorkspace.getScreenIdForPageIndex(this.mWorkspace.getNextPage());
             final int pageIndexForScreenId = this.mWorkspace.getPageIndexForScreenId(n2);
-            final Launcher$26 launcher$26 = new Launcher$26(this, animatorSet, list2);
+            final Launcher$27 launcher$27 = new Launcher$27(this, animatorSet, list2);
             if (n2 != screenIdForPageIndex) {
-                this.mWorkspace.postDelayed((Runnable)new Launcher$27(this, pageIndexForScreenId, launcher$26), (long)Launcher.NEW_APPS_PAGE_MOVE_DELAY);
+                this.mWorkspace.postDelayed((Runnable)new Launcher$28(this, pageIndexForScreenId, launcher$27), 500L);
             }
             else {
-                this.mWorkspace.postDelayed((Runnable)launcher$26, (long)Launcher.NEW_APPS_ANIMATION_DELAY);
+                this.mWorkspace.postDelayed((Runnable)launcher$27, 500L);
             }
         }
         mWorkspace.requestLayout();
     }
     
+    public void bindPromiseAppProgressUpdated(final PromiseAppInfo promiseAppInfo) {
+        if (this.waitUntilResume(new Launcher$34(this, promiseAppInfo))) {
+            return;
+        }
+        if (this.mAppsView != null) {
+            this.mAppsView.updatePromiseAppProgress(promiseAppInfo);
+        }
+    }
+    
     public void bindRestoreItemsChange(final HashSet set) {
-        if (this.waitUntilResume(new Launcher$35(this, set))) {
+        if (this.waitUntilResume(new Launcher$37(this, set))) {
             return;
         }
         this.mWorkspace.updateRestoreItems(set);
@@ -1065,7 +1033,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (list.indexOf(n) != 0) {
             list.remove(n);
             list.add(0, n);
-            final LauncherModel mModel = this.mModel;
             LauncherModel.updateWorkspaceScreenOrder((Context)this, list);
         }
         this.bindAddScreens(list);
@@ -1077,7 +1044,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void bindShortcutsChanged(final ArrayList list, final ArrayList list2, final UserHandle userHandle) {
-        if (this.waitUntilResume(new Launcher$34(this, list, list2, userHandle))) {
+        if (this.waitUntilResume(new Launcher$36(this, list, list2, userHandle))) {
             return;
         }
         if (!list.isEmpty()) {
@@ -1108,14 +1075,14 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void bindWidgetsRestored(final ArrayList list) {
-        if (this.waitUntilResume(new Launcher$33(this, list))) {
+        if (this.waitUntilResume(new Launcher$35(this, list))) {
             return;
         }
         this.mWorkspace.widgetsRestored(list);
     }
     
     public void bindWorkspaceComponentsRemoved(final HashSet set, final HashSet set2, final UserHandle userHandle) {
-        if (this.waitUntilResume(new Launcher$36(this, set, set2, userHandle))) {
+        if (this.waitUntilResume(new Launcher$38(this, set, set2, userHandle))) {
             return;
         }
         if (!set.isEmpty()) {
@@ -1180,10 +1147,10 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (n == -1) {
             final int n4 = 3;
             final AppWidgetHostView view = this.mAppWidgetHost.createView((Context)this, n2, pendingRequestArgs.getWidgetHandler().getProviderInfo((Context)this));
-            final Launcher$9 launcher$9 = new Launcher$9(this, n2, pendingRequestArgs, view, n);
+            final Launcher$8 launcher$8 = new Launcher$8(this, n2, pendingRequestArgs, view, n);
             n3 = n4;
             o = view;
-            runnable = launcher$9;
+            runnable = launcher$8;
         }
         else if (n == 0) {
             this.mAppWidgetHost.deleteAppWidgetId(n2);
@@ -1202,9 +1169,8 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public View createShortcut(final ViewGroup viewGroup, final ShortcutInfo shortcutInfo) {
-        final BubbleTextView bubbleTextView = (BubbleTextView)this.getLayoutInflater().inflate(2130968586, viewGroup, false);
+        final BubbleTextView bubbleTextView = (BubbleTextView)LayoutInflater.from(viewGroup.getContext()).inflate(2130968587, viewGroup, false);
         bubbleTextView.applyFromShortcutInfo(shortcutInfo);
-        bubbleTextView.setCompoundDrawablePadding(this.mDeviceProfile.iconDrawablePaddingPx);
         bubbleTextView.setOnClickListener((View$OnClickListener)this);
         bubbleTextView.setOnFocusChangeListener((View$OnFocusChangeListener)this.mFocusHandler);
         return (View)bubbleTextView;
@@ -1223,16 +1189,16 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         final List text = accessibilityEvent.getText();
         text.clear();
         if (this.mState == Launcher$State.APPS) {
-            text.add(this.getString(2131492915));
+            text.add(this.getString(2131492917));
         }
         else if (this.mState == Launcher$State.WIDGETS) {
-            text.add(this.getString(2131492941));
+            text.add(this.getString(2131492943));
         }
         else if (this.mWorkspace != null) {
             text.add(this.mWorkspace.getCurrentPageDescription());
         }
         else {
-            text.add(this.getString(2131492916));
+            text.add(this.getString(2131492918));
         }
         return dispatchPopulateAccessibilityEvent;
     }
@@ -1303,7 +1269,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     public void exitSpringLoadedDragMode() {
         final boolean b = true;
         if (this.mState == Launcher$State.APPS_SPRING_LOADED) {
-            this.showAppsView(b, false, false);
+            this.showAppsView(b, false);
         }
         else if (this.mState == Launcher$State.WIDGETS_SPRING_LOADED) {
             this.showWidgetsView(b, false);
@@ -1320,7 +1286,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (this.mExitSpringLoadedModeRunnable != null) {
             this.mHandler.removeCallbacks(this.mExitSpringLoadedModeRunnable);
         }
-        this.mExitSpringLoadedModeRunnable = new Launcher$23(this, b, runnable);
+        this.mExitSpringLoadedModeRunnable = new Launcher$24(this, b, runnable);
         this.mHandler.postDelayed(this.mExitSpringLoadedModeRunnable, (long)n);
     }
     
@@ -1329,7 +1295,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void finishBindingItems() {
-        if (this.waitUntilResume(new Launcher$31(this))) {
+        if (this.waitUntilResume(new Launcher$32(this))) {
             return;
         }
         this.mWorkspace.restoreInstanceStateForRemainingPages();
@@ -1338,7 +1304,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.handleActivityResult(this.mPendingActivityResult.requestCode, this.mPendingActivityResult.resultCode, this.mPendingActivityResult.data);
             this.mPendingActivityResult = null;
         }
-        InstallShortcutReceiver.disableAndFlushInstallQueue((Context)this);
+        InstallShortcutReceiver.disableAndFlushInstallQueue(2, (Context)this);
         NotificationListener.setNotificationsChangedListener(this.mPopupDataProvider);
         if (this.mLauncherCallbacks != null) {
             this.mLauncherCallbacks.finishBindingItems(false);
@@ -1347,15 +1313,15 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public void finishFirstPageBind(final ViewOnDrawExecutor viewOnDrawExecutor) {
         final float n = 1.0f;
-        if (this.waitUntilResume(new Launcher$29(this, viewOnDrawExecutor))) {
+        if (this.waitUntilResume(new Launcher$30(this, viewOnDrawExecutor))) {
             return;
         }
-        final Launcher$30 launcher$30 = new Launcher$30(this, viewOnDrawExecutor);
+        final Launcher$31 launcher$31 = new Launcher$31(this, viewOnDrawExecutor);
         if (this.mDragLayer.getAlpha() < n) {
-            this.mDragLayer.animate().alpha(n).withEndAction((Runnable)launcher$30).start();
+            this.mDragLayer.animate().alpha(n).withEndAction((Runnable)launcher$31).start();
         }
         else {
-            launcher$30.run();
+            launcher$31.run();
         }
     }
     
@@ -1369,14 +1335,14 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             final int measuredWidth = view.getMeasuredWidth();
             final int measuredHeight = view.getMeasuredHeight();
             Label_0138: {
-                if (!(view instanceof TextView)) {
+                if (!(view instanceof BubbleTextView)) {
                     break Label_0138;
                 }
-                final Drawable textViewIcon = Workspace.getTextViewIcon((TextView)view);
-                if (textViewIcon == null) {
+                final Drawable icon = ((BubbleTextView)view).getIcon();
+                if (icon == null) {
                     break Label_0138;
                 }
-                final Rect bounds = textViewIcon.getBounds();
+                final Rect bounds = icon.getBounds();
                 n = (measuredWidth - bounds.width()) / 2;
                 final int paddingTop = view.getPaddingTop();
                 final int width = bounds.width();
@@ -1433,7 +1399,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public View$OnTouchListener getHapticFeedbackTouchListener() {
         if (this.mHapticFeedbackTouchListener == null) {
-            this.mHapticFeedbackTouchListener = (View$OnTouchListener)new Launcher$20(this);
+            this.mHapticFeedbackTouchListener = (View$OnTouchListener)new Launcher$21(this);
         }
         return this.mHapticFeedbackTouchListener;
     }
@@ -1456,10 +1422,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public PopupDataProvider getPopupDataProvider() {
         return this.mPopupDataProvider;
-    }
-    
-    public View getQsbContainer() {
-        return this.mQsbContainer;
     }
     
     public SharedPreferences getSharedPrefs() {
@@ -1602,11 +1564,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        final IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction("android.intent.action.SCREEN_OFF");
-        this.registerReceiver(this.mReceiver, intentFilter);
         FirstFrameAnimatorHelper.initializeDrawListener(this.getWindow().getDecorView());
-        this.mAttached = true;
         if (this.mLauncherCallbacks != null) {
             this.mLauncherCallbacks.onAttachedToWindow();
         }
@@ -1703,7 +1661,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     public void onClickAddWidgetButton(final View view) {
         final boolean b = true;
         if (this.mIsSafeModeEnabled) {
-            Toast.makeText((Context)this, 2131492898, 0).show();
+            Toast.makeText((Context)this, 2131492900, 0).show();
         }
         else {
             this.showWidgetsView(b, b);
@@ -1714,7 +1672,10 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         final int n = 1;
         if (!this.isAppsViewVisible()) {
             this.getUserEventDispatcher().logActionOnControl(0, n);
-            this.showAppsView(n != 0, n != 0, false);
+            this.showAppsView(n != 0, n != 0);
+        }
+        else {
+            this.showWorkspace(n != 0);
         }
     }
     
@@ -1745,13 +1706,13 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             Toast.makeText((Context)this, shortcutInfo.disabledMessage, 0).show();
             return;
         }
-        final int n = 2131492896;
+        final int n = 2131492898;
         int n2;
         if ((shortcutInfo.isDisabled & 0x1) != 0x0) {
-            n2 = 2131492897;
+            n2 = 2131492899;
         }
         else if ((shortcutInfo.isDisabled & 0x10) != 0x0 || (shortcutInfo.isDisabled & 0x20) != 0x0) {
-            n2 = 2131492899;
+            n2 = 2131492901;
         }
         else {
             n2 = n;
@@ -1772,7 +1733,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     public void onClickPendingWidget(final PendingAppWidgetHostView pendingAppWidgetHostView) {
         final int n = 1;
         if (this.mIsSafeModeEnabled) {
-            Toast.makeText((Context)this, 2131492898, 0).show();
+            Toast.makeText((Context)this, 2131492900, 0).show();
             return;
         }
         final LauncherAppWidgetInfo launcherAppWidgetInfo = (LauncherAppWidgetInfo)pendingAppWidgetHostView.getTag();
@@ -1786,10 +1747,10 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                 if (!launcherAppWidgetInfo.hasRestoreFlag(16)) {
                     return;
                 }
-                widgetAddFlowHandler.startBindFlow(this, launcherAppWidgetInfo.appWidgetId, launcherAppWidgetInfo, 14);
+                widgetAddFlowHandler.startBindFlow(this, launcherAppWidgetInfo.appWidgetId, launcherAppWidgetInfo, 12);
             }
             else {
-                widgetAddFlowHandler.startConfigActivity(this, launcherAppWidgetInfo, 12);
+                widgetAddFlowHandler.startConfigActivity(this, launcherAppWidgetInfo, 13);
             }
         }
         else {
@@ -1814,21 +1775,21 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public void onClickWallpaperPicker(final View view) {
         if (!Utilities.isWallpaperAllowed((Context)this)) {
-            Toast.makeText((Context)this, 2131492944, 0).show();
+            Toast.makeText((Context)this, 2131492946, 0).show();
             return;
         }
         final float wallpaperOffsetForScroll = this.mWorkspace.mWallpaperOffset.wallpaperOffsetForScroll(this.mWorkspace.getScrollForPage(this.mWorkspace.getPageNearestToCenterOfScreen()));
         this.setWaitingForResult(new PendingRequestArgs(new ItemInfo()));
         final Intent putExtra = new Intent("android.intent.action.SET_WALLPAPER").putExtra("com.android.launcher3.WALLPAPER_OFFSET", wallpaperOffsetForScroll);
-        final String string = this.getString(2131492891);
-        final boolean empty = TextUtils.isEmpty((CharSequence)string);
-        if (!empty) {
+        final String string = this.getString(2131492893);
+        final boolean b = TextUtils.isEmpty((CharSequence)string) ^ true;
+        if (b) {
             putExtra.setPackage(string);
         }
         putExtra.setSourceBounds(this.getViewBounds(view));
-        Label_0182: {
-            if (!empty) {
-                break Label_0182;
+        Label_0184: {
+            if (!b) {
+                break Label_0184;
             }
             try {
                 Bundle activityLaunchOptions = this.getActivityLaunchOptions(view);
@@ -1841,19 +1802,22 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             }
             catch (ActivityNotFoundException ex) {
                 this.setWaitingForResult(null);
-                Toast.makeText((Context)this, 2131492895, 0).show();
+                Toast.makeText((Context)this, 2131492897, 0).show();
             }
         }
     }
     
     protected void onCreate(final Bundle bundle) {
-        final boolean b = true;
+        final boolean mShouldFadeInScrim = true;
         if (this.mLauncherCallbacks != null) {
             this.mLauncherCallbacks.preOnCreate();
         }
+        final WallpaperColorInfo instance = WallpaperColorInfo.getInstance((Context)this);
+        instance.setOnThemeChangeListener(this);
+        this.overrideTheme(instance.isDark(), instance.supportsDarkText());
         super.onCreate(bundle);
-        final LauncherAppState instance = LauncherAppState.getInstance((Context)this);
-        this.mDeviceProfile = instance.getInvariantDeviceProfile().getDeviceProfile((Context)this);
+        final LauncherAppState instance2 = LauncherAppState.getInstance((Context)this);
+        this.mDeviceProfile = instance2.getInvariantDeviceProfile().getDeviceProfile((Context)this);
         if (this.isInMultiWindowModeCompat()) {
             final Display defaultDisplay = this.getWindowManager().getDefaultDisplay();
             final Point point = new Point();
@@ -1862,9 +1826,9 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         }
         this.mSharedPrefs = Utilities.getPrefs((Context)this);
         this.mIsSafeModeEnabled = this.getPackageManager().isSafeMode();
-        this.mModel = instance.setLauncher(this);
+        this.mModel = instance2.setLauncher(this);
         this.mModelWriter = this.mModel.getWriter(this.mDeviceProfile.isVerticalBarLayout());
-        this.mIconCache = instance.getIconCache();
+        this.mIconCache = instance2.getIconCache();
         this.mAccessibilityDelegate = new LauncherAccessibilityDelegate(this);
         this.mDragController = new DragController(this);
         this.mAllAppsController = new AllAppsTransitionController(this);
@@ -1872,10 +1836,9 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         this.mAppWidgetManager = AppWidgetManagerCompat.getInstance((Context)this);
         (this.mAppWidgetHost = new LauncherAppWidgetHost(this, 1024)).startListening();
         this.mPaused = false;
-        this.mLauncherView = this.getLayoutInflater().inflate(2130968598, (ViewGroup)null);
+        this.mLauncherView = LayoutInflater.from((Context)this).inflate(2130968601, (ViewGroup)null);
         this.setupViews();
         this.mDeviceProfile.layout(this, false);
-        this.mExtractedColors = new ExtractedColors();
         this.loadExtractedColorsAndColorItems();
         this.mPopupDataProvider = new PopupDataProvider(this);
         ((AccessibilityManager)this.getSystemService("accessibility")).addAccessibilityStateChangeListener((AccessibilityManager$AccessibilityStateChangeListener)this);
@@ -1890,7 +1853,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         }
         else {
             this.mWorkspace.setCurrentPage(int1);
-            this.setWorkspaceLoading(b);
+            this.setWorkspaceLoading(mShouldFadeInScrim);
         }
         Selection.setSelection((Spannable)(this.mDefaultKeySsb = new SpannableStringBuilder()), 0);
         if (!(this.mRotationEnabled = this.getResources().getBoolean(2131689477))) {
@@ -1899,10 +1862,16 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.mSharedPrefs.registerOnSharedPreferenceChangeListener((SharedPreferences$OnSharedPreferenceChangeListener)this.mRotationPrefChangeHandler);
         }
         if (PinItemDragListener.handleDragRequest(this, this.getIntent())) {
-            this.mRotationEnabled = b;
+            this.mRotationEnabled = mShouldFadeInScrim;
         }
         this.setOrientation();
         this.setContentView(this.mLauncherView);
+        final IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("android.intent.action.SCREEN_OFF");
+        intentFilter.addAction("android.intent.action.USER_PRESENT");
+        this.registerReceiver(this.mReceiver, intentFilter);
+        this.mShouldFadeInScrim = mShouldFadeInScrim;
+        this.getSystemUiController().updateUiState(0, Themes.getAttrBoolean((Context)this, 2130772011));
         if (this.mLauncherCallbacks != null) {
             this.mLauncherCallbacks.onCreate(bundle);
         }
@@ -1910,6 +1879,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public void onDestroy() {
         super.onDestroy();
+        this.unregisterReceiver(this.mReceiver);
         this.mWorkspace.removeCallbacks(this.mBuildLayersRunnable);
         this.mWorkspace.removeFolderListeners();
         if (this.mModel.isCurrentCallbacks(this)) {
@@ -1926,6 +1896,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                 this.mAppWidgetHost = null;
                 TextKeyListener.getInstance().release();
                 ((AccessibilityManager)this.getSystemService("accessibility")).removeAccessibilityStateChangeListener((AccessibilityManager$AccessibilityStateChangeListener)this);
+                WallpaperColorInfo.getInstance((Context)this).setOnThemeChangeListener(null);
                 LauncherAnimUtils.onDestroyActivity();
                 if (this.mLauncherCallbacks != null) {
                     this.mLauncherCallbacks.onDestroy();
@@ -1940,10 +1911,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (this.mAttached) {
-            this.unregisterReceiver(this.mReceiver);
-            this.mAttached = false;
-        }
         if (this.mLauncherCallbacks != null) {
             this.mLauncherCallbacks.onDetachedFromWindow();
         }
@@ -1957,6 +1924,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     
     public void onExtractedColorsChanged() {
         this.loadExtractedColorsAndColorItems();
+        this.mExtractedColors.notifyChange();
     }
     
     public void onInsetsChanged(final Rect rect) {
@@ -1995,7 +1963,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             switch (n) {
                 case 29: {
                     if (this.mState == Launcher$State.WORKSPACE) {
-                        this.showAppsView(b, b, false);
+                        this.showAppsView(b, b);
                         return b;
                     }
                     break;
@@ -2053,10 +2021,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (this.mState != Launcher$State.WORKSPACE) {
             return false;
         }
-        if ((FeatureFlags.LAUNCHER3_ALL_APPS_PULL_UP && view instanceof PageIndicator) || (view == this.mAllAppsButton && this.mAllAppsButton != null)) {
-            this.onLongClickAllAppsButton(view);
-            return n != 0;
-        }
         final boolean shouldIgnoreLongPressToOverview = this.mDeviceProfile.shouldIgnoreLongPressToOverview(this.mLastDispatchTouchEventX);
         if (!(view instanceof Workspace)) {
             View cell;
@@ -2102,14 +2066,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         return false;
     }
     
-    protected void onLongClickAllAppsButton(final View view) {
-        final int n = 1;
-        if (!this.isAppsViewVisible()) {
-            this.getUserEventDispatcher().logActionOnControl(n, n);
-            this.showAppsView(n != 0, n != 0, n != 0);
-        }
-    }
-    
     protected void onNewIntent(final Intent intent) {
         final int n = 4194304;
         final boolean mMoveToDefaultScreenFromNewIntent = true;
@@ -2146,7 +2102,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                 ((InputMethodManager)this.getSystemService("input_method")).hideSoftInputFromWindow(peekDecorView.getWindowToken(), 0);
             }
             if (!b && this.mAppsView != null) {
-                this.mAppsView.scrollToTop();
+                this.mAppsView.reset();
             }
             if (!b && this.mWidgetsView != null) {
                 this.mWidgetsView.scrollToTop();
@@ -2169,7 +2125,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             }
             if (b2 && (this.mWorkspace.isTouchActive() ^ true) && shouldMoveToDefaultScreenOnHomeIntent) {
                 this.mMoveToDefaultScreenFromNewIntent = mMoveToDefaultScreenFromNewIntent;
-                this.mWorkspace.post((Runnable)new Launcher$15(this));
+                this.mWorkspace.post((Runnable)new Launcher$16(this));
             }
         }
     }
@@ -2179,9 +2135,10 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     protected void onPause() {
-        InstallShortcutReceiver.enableInstallQueue();
+        final int mPaused = 1;
+        InstallShortcutReceiver.enableInstallQueue(mPaused);
         super.onPause();
-        this.mPaused = true;
+        this.mPaused = (mPaused != 0);
         this.mDragController.cancelDrag();
         this.mDragController.resetLastGestureUpTime();
         if (this.mWorkspace.getCustomContentCallbacks() != null) {
@@ -2208,23 +2165,23 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         final int n2 = 4096;
         final ArrayList<KeyboardShortcutInfo> list2 = new ArrayList<KeyboardShortcutInfo>();
         if (this.mState == Launcher$State.WORKSPACE) {
-            list2.add(new KeyboardShortcutInfo((CharSequence)this.getString(2131492915), 29, n2));
+            list2.add(new KeyboardShortcutInfo((CharSequence)this.getString(2131492917), 29, n2));
         }
         final View currentFocus = this.getCurrentFocus();
         if (new CustomActionsPopup(this, currentFocus).canShow()) {
-            list2.add(new KeyboardShortcutInfo((CharSequence)this.getString(2131492901), 43, n2));
+            list2.add(new KeyboardShortcutInfo((CharSequence)this.getString(2131492903), 43, n2));
         }
         if (currentFocus.getTag() instanceof ItemInfo && DeepShortcutManager.supportsShortcuts((ItemInfo)currentFocus.getTag())) {
-            list2.add(new KeyboardShortcutInfo((CharSequence)this.getString(2131492989), 47, n2));
+            list2.add(new KeyboardShortcutInfo((CharSequence)this.getString(2131492998), 47, n2));
         }
         if (!list2.isEmpty()) {
-            list.add(new KeyboardShortcutGroup((CharSequence)this.getString(2131492900), (List)list2));
+            list.add(new KeyboardShortcutGroup((CharSequence)this.getString(2131492902), (List)list2));
         }
         super.onProvideKeyboardShortcuts(list, menu, n);
     }
     
     public void onRequestPermissionsResult(final int n, final String[] array, final int[] array2) {
-        final int n2 = 13;
+        final int n2 = 14;
         final PendingRequestArgs mPendingRequestArgs = this.mPendingRequestArgs;
         if (n == n2 && mPendingRequestArgs != null && mPendingRequestArgs.getRequestCode() == n2) {
             this.setWaitingForResult(null);
@@ -2241,7 +2198,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                 this.startActivitySafely(child, pendingIntent, null);
             }
             else {
-                Toast.makeText((Context)this, (CharSequence)this.getString(2131492926, new Object[] { this.getString(2131492886) }), 0).show();
+                Toast.makeText((Context)this, (CharSequence)this.getString(2131492928, new Object[] { this.getString(2131492886) }), 0).show();
             }
         }
         if (this.mLauncherCallbacks != null) {
@@ -2258,7 +2215,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     protected void onResume() {
-        final boolean workspaceLoading = true;
+        final int workspaceLoading = 1;
         if (this.mLauncherCallbacks != null) {
             this.mLauncherCallbacks.preOnResume();
         }
@@ -2268,15 +2225,25 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.showWorkspace(false);
         }
         else if (this.mOnResumeState == Launcher$State.APPS) {
-            this.showAppsView(false, (this.mWaitingForResume != null && workspaceLoading) ^ true, this.mAppsView.shouldRestoreImeState());
+            boolean b;
+            if (this.mWaitingForResume != null) {
+                b = (workspaceLoading != 0);
+            }
+            else {
+                b = false;
+            }
+            this.showAppsView(false, b ^ true);
         }
         else if (this.mOnResumeState == Launcher$State.WIDGETS) {
             this.showWidgetsView(false, false);
         }
+        if (this.mOnResumeState != Launcher$State.APPS) {
+            this.tryAndUpdatePredictedApps();
+        }
         this.mOnResumeState = Launcher$State.NONE;
         this.mPaused = false;
         if (this.mOnResumeNeedsLoad) {
-            this.setWorkspaceLoading(workspaceLoading);
+            this.setWorkspaceLoading(workspaceLoading != 0);
             this.mModel.startLoader(this.getCurrentWorkspaceScreen());
             this.mOnResumeNeedsLoad = false;
         }
@@ -2299,15 +2266,13 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.getWorkspace().reinflateWidgetsIfNecessary();
         }
         if (this.mWorkspace.getCustomContentCallbacks() != null && (this.mMoveToDefaultScreenFromNewIntent ^ true) && this.mWorkspace.isOnOrMovingToCustomContent()) {
-            this.mWorkspace.getCustomContentCallbacks().onShow(workspaceLoading);
+            this.mWorkspace.getCustomContentCallbacks().onShow(workspaceLoading != 0);
         }
         this.mMoveToDefaultScreenFromNewIntent = false;
         this.updateInteraction(Workspace$State.NORMAL, this.mWorkspace.getState());
         this.mWorkspace.onResume();
-        if (!this.isWorkspaceLoading()) {
-            InstallShortcutReceiver.disableAndFlushInstallQueue((Context)this);
-            this.mModel.refreshShortcutsIfRequired();
-        }
+        InstallShortcutReceiver.disableAndFlushInstallQueue(workspaceLoading, (Context)this);
+        this.mModel.refreshShortcutsIfRequired();
         if (this.shouldShowDiscoveryBounce()) {
             this.mAllAppsController.showDiscoveryBounce();
         }
@@ -2360,6 +2325,17 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (!this.isWorkspaceLoading()) {
             NotificationListener.setNotificationsChangedListener(this.mPopupDataProvider);
         }
+        if (this.mShouldFadeInScrim && this.mDragLayer.getBackground() != null) {
+            if (this.mScrimAnimator != null) {
+                this.mScrimAnimator.cancel();
+            }
+            this.mDragLayer.getBackground().setAlpha(0);
+            (this.mScrimAnimator = ObjectAnimator.ofInt((Object)this.mDragLayer.getBackground(), LauncherAnimUtils.DRAWABLE_ALPHA, new int[] { 0, 255 })).addListener((Animator$AnimatorListener)new Launcher$9(this));
+            this.mScrimAnimator.setDuration(600L);
+            this.mScrimAnimator.setStartDelay(this.getWindow().getTransitionBackgroundFadeDuration());
+            this.mScrimAnimator.start();
+        }
+        this.mShouldFadeInScrim = false;
     }
     
     protected void onStop() {
@@ -2372,6 +2348,10 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             this.mAppWidgetHost.stopListening();
         }
         NotificationListener.removeNotificationsChangedListener();
+    }
+    
+    public void onThemeChanged() {
+        this.recreate();
     }
     
     public boolean onTouch(final View view, final MotionEvent motionEvent) {
@@ -2399,7 +2379,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     public void onWindowVisibilityChanged(final int n) {
         if (n == 0) {
             if (!this.mWorkspaceLoading) {
-                this.mWorkspace.getViewTreeObserver().addOnDrawListener((ViewTreeObserver$OnDrawListener)new Launcher$14(this));
+                this.mWorkspace.getViewTreeObserver().addOnDrawListener((ViewTreeObserver$OnDrawListener)new Launcher$15(this));
             }
             this.clearTypedText();
         }
@@ -2411,6 +2391,15 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         }
     }
     
+    protected void overrideTheme(final boolean b, final boolean b2) {
+        if (b) {
+            this.setTheme(2131886084);
+        }
+        else if (b2) {
+            this.setTheme(2131886083);
+        }
+    }
+    
     protected void populateCustomContentContainer() {
         if (this.mLauncherCallbacks != null) {
             this.mLauncherCallbacks.populateCustomContentContainer();
@@ -2418,7 +2407,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public void refreshAndBindWidgetsForPackageUser(final PackageUserKey packageUserKey) {
-        this.mModel.refreshAndBindWidgetsAndShortcuts(this, this.mWidgetsView.isEmpty(), packageUserKey);
+        this.mModel.refreshAndBindWidgetsAndShortcuts(packageUserKey);
     }
     
     public boolean removeItem(final View view, final ItemInfo itemInfo, final boolean b) {
@@ -2463,7 +2452,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     }
     
     public boolean setLauncherCallbacks(final LauncherCallbacks mLauncherCallbacks) {
-        (this.mLauncherCallbacks = mLauncherCallbacks).setLauncherSearchCallback(new Launcher$5(this));
+        this.mLauncherCallbacks = mLauncherCallbacks;
         return true;
     }
     
@@ -2496,12 +2485,12 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         }
     }
     
-    public void showAppsView(final boolean b, final boolean b2, final boolean b3) {
+    public void showAppsView(final boolean b, final boolean b2) {
         this.markAppsViewShown();
         if (b2) {
             this.tryAndUpdatePredictedApps();
         }
-        this.showAppsOrWidgets(Launcher$State.APPS, b, b3);
+        this.showAppsOrWidgets(Launcher$State.APPS, b);
     }
     
     public void showOverviewMode(final boolean b) {
@@ -2511,7 +2500,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
     void showOverviewMode(final boolean b, final boolean b2) {
         Runnable runnable = null;
         if (b2) {
-            runnable = new Launcher$21(this);
+            runnable = new Launcher$22(this);
         }
         this.mWorkspace.setVisibility(0);
         this.mStateTransitionAnimation.startAnimationToWorkspace(this.mState, this.mWorkspace.getState(), Workspace$State.OVERVIEW, b, runnable);
@@ -2523,8 +2512,8 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         if (b2) {
             this.mWidgetsView.scrollToTop();
         }
-        this.showAppsOrWidgets(Launcher$State.WIDGETS, b, false);
-        this.mWidgetsView.post((Runnable)new Launcher$22(this));
+        this.showAppsOrWidgets(Launcher$State.WIDGETS, b);
+        this.mWidgetsView.post((Runnable)new Launcher$23(this));
     }
     
     public boolean showWorkspace(final boolean b) {
@@ -2584,7 +2573,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         //    29: iload           7
         //    31: ifeq            47
         //    34: aload_0        
-        //    35: ldc_w           2131492897
+        //    35: ldc_w           2131492899
         //    38: iconst_0       
         //    39: invokestatic    android/widget/Toast.makeText:(Landroid/content/Context;II)Landroid/widget/Toast;
         //    42: invokevirtual   android/widget/Toast.show:()V
@@ -2707,7 +2696,7 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
         //   278: goto            216
         //   281: astore          6
         //   283: aload_0        
-        //   284: ldc_w           2131492895
+        //   284: ldc_w           2131492897
         //   287: iconst_0       
         //   288: invokestatic    android/widget/Toast.makeText:(Landroid/content/Context;II)Landroid/widget/Toast;
         //   291: invokevirtual   android/widget/Toast.show:()V
@@ -2894,7 +2883,6 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
             final List predictedApps = this.mLauncherCallbacks.getPredictedApps();
             if (predictedApps != null) {
                 this.mAppsView.setPredictedApps(predictedApps);
-                this.getUserEventDispatcher().setPredictedApps(predictedApps);
             }
         }
     }
@@ -2905,15 +2893,15 @@ public class Launcher extends BaseActivity implements LauncherExterns, View$OnCl
                 this.setRequestedOrientation(-1);
             }
             else {
-                this.mHandler.postDelayed((Runnable)new Launcher$38(this), 500L);
+                this.mHandler.postDelayed((Runnable)new Launcher$40(this), 500L);
             }
         }
     }
     
     public void updateIconBadges(final Set set) {
-        final Launcher$13 launcher$13 = new Launcher$13(this, set);
-        if (!this.waitUntilResume(launcher$13)) {
-            launcher$13.run();
+        final Launcher$14 launcher$14 = new Launcher$14(this, set);
+        if (!this.waitUntilResume(launcher$14)) {
+            launcher$14.run();
         }
     }
     

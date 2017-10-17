@@ -52,13 +52,13 @@
     iput-object p2, p0, Lcom/android/launcher3/model/ModelWriter;->mBgDataModel:Lcom/android/launcher3/model/BgDataModel;
 
     .line 58
-    new-instance v0, Lcom/android/launcher3/util/LooperExecuter;
+    new-instance v0, Lcom/android/launcher3/util/LooperExecutor;
 
     invoke-static {}, Lcom/android/launcher3/LauncherModel;->getWorkerLooper()Landroid/os/Looper;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lcom/android/launcher3/util/LooperExecuter;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v0, v1}, Lcom/android/launcher3/util/LooperExecutor;-><init>(Landroid/os/Looper;)V
 
     iput-object v0, p0, Lcom/android/launcher3/model/ModelWriter;->mWorkerExecutor:Ljava/util/concurrent/Executor;
 

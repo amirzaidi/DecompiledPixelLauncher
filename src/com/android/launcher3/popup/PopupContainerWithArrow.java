@@ -6,11 +6,8 @@ package com.android.launcher3.popup;
 
 import java.util.Set;
 import com.android.launcher3.notification.NotificationKeyData;
-import android.animation.ValueAnimator$AnimatorUpdateListener;
-import android.animation.ValueAnimator;
 import com.android.launcher3.util.PackageUserKey;
 import java.util.Map;
-import com.android.launcher3.anim.PropertyResetListener;
 import android.os.Looper;
 import android.os.Handler;
 import com.android.launcher3.LauncherModel;
@@ -21,23 +18,26 @@ import com.android.launcher3.dragndrop.DragOptions;
 import com.android.launcher3.DropTarget$DragObject;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
 import com.android.launcher3.dragndrop.DragOptions$PreDragCondition;
-import com.android.launcher3.graphics.IconPalette;
+import android.graphics.Outline;
+import android.util.Property;
+import com.android.launcher3.anim.PropertyResetListener;
 import com.android.launcher3.badge.BadgeInfo;
-import com.android.launcher3.FastBitmapDrawable;
 import java.util.List;
 import com.android.launcher3.shortcuts.DeepShortcutManager;
 import com.android.launcher3.ItemInfo;
 import com.android.launcher3.dragndrop.DragLayer;
 import com.android.launcher3.anim.PropertyListBuilder;
-import android.util.Property;
+import android.animation.ValueAnimator;
+import android.graphics.Point;
+import android.animation.Animator$AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
-import android.animation.Animator$AnimatorListener;
-import android.view.animation.DecelerateInterpolator;
-import com.android.launcher3.LogAccelerateInterpolator;
+import com.android.launcher3.anim.RoundedRectRevealOutlineProvider;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import com.android.launcher3.LauncherAnimUtils;
 import android.view.LayoutInflater;
 import android.content.res.Resources;
+import com.android.launcher3.shortcuts.DeepShortcutView;
 import android.view.View$AccessibilityDelegate;
 import android.view.ViewGroup;
 import android.graphics.Paint;
@@ -45,17 +45,16 @@ import android.view.ViewGroup$LayoutParams;
 import android.graphics.drawable.Drawable;
 import android.graphics.PathEffect;
 import android.graphics.CornerPathEffect;
+import com.android.launcher3.util.Themes;
 import android.graphics.drawable.shapes.Shape;
 import android.graphics.drawable.ShapeDrawable;
 import com.android.launcher3.graphics.TriangleShape;
 import android.view.Gravity;
-import android.widget.FrameLayout$LayoutParams;
 import android.widget.LinearLayout$LayoutParams;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.accessibility.ShortcutMenuAccessibilityDelegate;
 import android.util.AttributeSet;
 import android.content.Context;
-import android.graphics.Rect;
 import com.android.launcher3.shortcuts.ShortcutsItemView;
 import android.animation.AnimatorSet;
 import com.android.launcher3.BubbleTextView;
@@ -63,6 +62,7 @@ import android.animation.Animator;
 import com.android.launcher3.notification.NotificationItemView;
 import com.android.launcher3.Launcher;
 import android.graphics.PointF;
+import android.graphics.Rect;
 import android.view.View;
 import com.android.launcher3.accessibility.LauncherAccessibilityDelegate;
 import com.android.launcher3.dragndrop.DragController$DragListener;
@@ -74,6 +74,8 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
     private LauncherAccessibilityDelegate mAccessibilityDelegate;
     private View mArrow;
     private boolean mDeferContainerRemoval;
+    private final Rect mEndRect;
+    private int mGravity;
     private PointF mInterceptTouchDown;
     protected boolean mIsAboveIcon;
     private boolean mIsLeftAligned;
@@ -85,6 +87,7 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
     private AnimatorSet mReduceHeightAnimatorSet;
     public ShortcutsItemView mShortcutsItemView;
     private final int mStartDragThreshold;
+    private final Rect mStartRect;
     private final Rect mTempRect;
     
     public PopupContainerWithArrow(final Context context) {
@@ -99,8 +102,10 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         super(context, set, n);
         this.mTempRect = new Rect();
         this.mInterceptTouchDown = new PointF();
+        this.mStartRect = new Rect();
+        this.mEndRect = new Rect();
         this.mLauncher = Launcher.getLauncher(context);
-        this.mStartDragThreshold = this.getResources().getDimensionPixelSize(2131427438);
+        this.mStartDragThreshold = this.getResources().getDimensionPixelSize(2131427448);
         this.mAccessibilityDelegate = new ShortcutMenuAccessibilityDelegate(this.mLauncher);
         this.mIsRtl = Utilities.isRtl(this.getResources());
     }
@@ -123,7 +128,7 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
             linearLayout$LayoutParams.bottomMargin = n2;
         }
         final View view = new View(this.getContext());
-        if (Gravity.isVertical(((FrameLayout$LayoutParams)this.getLayoutParams()).gravity)) {
+        if (Gravity.isVertical(this.mGravity)) {
             view.setVisibility(4);
         }
         else {
@@ -136,8 +141,9 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
             else {
                 n5 = 0;
             }
-            paint.setColor(((PopupItemView)this.getChildAt(n5)).getArrowColor(this.mIsAboveIcon));
-            paint.setPathEffect((PathEffect)new CornerPathEffect((float)this.getResources().getDimensionPixelSize(2131427451)));
+            final PopupItemView popupItemView = (PopupItemView)this.getChildAt(n5);
+            paint.setColor(Themes.getAttrColor((Context)this.mLauncher, 2130772007));
+            paint.setPathEffect((PathEffect)new CornerPathEffect((float)this.getResources().getDimensionPixelSize(2131427461)));
             view.setBackground((Drawable)background);
             view.setElevation(this.getElevation());
         }
@@ -148,51 +154,86 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         return view;
     }
     
-    private void addDummyViews(final PopupPopulator$Item[] array, final boolean b) {
+    private void addDummyViews(final PopupPopulator$Item[] array, final int n) {
         final Resources resources = this.getResources();
-        final int dimensionPixelSize = resources.getDimensionPixelSize(2131427436);
         final LayoutInflater layoutInflater = this.mLauncher.getLayoutInflater();
+        int n2 = 3;
         for (int length = array.length, i = 0; i < length; ++i) {
             final PopupPopulator$Item popupPopulator$Item = array[i];
             PopupPopulator$Item popupPopulator$Item2;
-            if (i < length - 1) {
-                popupPopulator$Item2 = array[i + 1];
+            if (i > 0) {
+                popupPopulator$Item2 = array[i - 1];
             }
             else {
                 popupPopulator$Item2 = null;
             }
+            PopupPopulator$Item popupPopulator$Item3;
+            if (i < length - 1) {
+                popupPopulator$Item3 = array[i + 1];
+            }
+            else {
+                popupPopulator$Item3 = null;
+            }
             final View inflate = layoutInflater.inflate(popupPopulator$Item.layoutId, (ViewGroup)this, false);
+            final boolean b = popupPopulator$Item2 != null && (popupPopulator$Item2.isShortcut ^ popupPopulator$Item.isShortcut);
+            final boolean b2 = popupPopulator$Item3 != null && (popupPopulator$Item3.isShortcut ^ popupPopulator$Item.isShortcut);
             if (popupPopulator$Item == PopupPopulator$Item.NOTIFICATION) {
                 this.mNotificationItemView = (NotificationItemView)inflate;
-                int dimensionPixelSize2;
-                if (b) {
-                    dimensionPixelSize2 = resources.getDimensionPixelSize(2131427467);
+                final boolean b3 = n > 1 && true;
+                int dimensionPixelSize;
+                if (b3) {
+                    dimensionPixelSize = resources.getDimensionPixelSize(2131427477);
                 }
                 else {
-                    dimensionPixelSize2 = 0;
+                    dimensionPixelSize = 0;
                 }
-                inflate.findViewById(2131624013).getLayoutParams().height = dimensionPixelSize2;
+                inflate.findViewById(2131624022).getLayoutParams().height = dimensionPixelSize;
+                if (b3) {
+                    this.mNotificationItemView.findViewById(2131624003).setVisibility(0);
+                }
+                int n3 = 3;
+                if (b) {
+                    n3 = 2;
+                    this.mNotificationItemView.findViewById(2131624017).setVisibility(0);
+                }
+                if (b2) {
+                    n3 &= 0xFFFFFFFD;
+                    this.mNotificationItemView.findViewById(2131624023).setVisibility(0);
+                }
+                this.mNotificationItemView.setBackgroundWithCorners(Themes.getAttrColor((Context)this.mLauncher, 2130772009), n3);
                 this.mNotificationItemView.getMainView().setAccessibilityDelegate((View$AccessibilityDelegate)this.mAccessibilityDelegate);
             }
             else if (popupPopulator$Item == PopupPopulator$Item.SHORTCUT) {
                 inflate.setAccessibilityDelegate((View$AccessibilityDelegate)this.mAccessibilityDelegate);
             }
-            final boolean b2 = popupPopulator$Item2 != null && (popupPopulator$Item.isShortcut ^ popupPopulator$Item2.isShortcut);
             if (popupPopulator$Item.isShortcut) {
                 if (this.mShortcutsItemView == null) {
                     this.addView((View)(this.mShortcutsItemView = (ShortcutsItemView)layoutInflater.inflate(2130968619, (ViewGroup)this, false)));
+                    if (b) {
+                        n2 &= 0xFFFFFFFE;
+                    }
+                }
+                if (popupPopulator$Item != PopupPopulator$Item.SYSTEM_SHORTCUT_ICON && n > 0) {
+                    final int height = inflate.getLayoutParams().height;
+                    inflate.getLayoutParams().height = resources.getDimensionPixelSize(2131427446);
+                    if (inflate instanceof DeepShortcutView) {
+                        final float n4 = inflate.getLayoutParams().height / height;
+                        ((DeepShortcutView)inflate).getIconView().setScaleX(n4);
+                        ((DeepShortcutView)inflate).getIconView().setScaleY(n4);
+                    }
                 }
                 this.mShortcutsItemView.addShortcutView(inflate, popupPopulator$Item);
                 if (b2) {
-                    ((LinearLayout$LayoutParams)this.mShortcutsItemView.getLayoutParams()).bottomMargin = dimensionPixelSize;
+                    n2 &= 0xFFFFFFFD;
                 }
             }
             else {
                 this.addView(inflate);
-                if (b2) {
-                    ((LinearLayout$LayoutParams)inflate.getLayoutParams()).bottomMargin = dimensionPixelSize;
-                }
             }
+        }
+        this.mShortcutsItemView.setBackgroundWithCorners(Themes.getAttrColor((Context)this.mLauncher, 2130772007), n2);
+        if (n > 0) {
+            this.mShortcutsItemView.hideShortcuts(this.mIsAboveIcon, 2);
         }
     }
     
@@ -200,49 +241,75 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         this.setVisibility(0);
         this.mIsOpen = true;
         final AnimatorSet animatorSet = LauncherAnimUtils.createAnimatorSet();
-        final int itemCount = this.getItemCount();
-        final long duration = this.getResources().getInteger(2131558422);
-        final long duration2 = this.getResources().getInteger(2131558423);
-        final long n = duration - duration2;
-        final long n2 = this.getResources().getInteger(2131558424);
-        final LogAccelerateInterpolator interpolator = new LogAccelerateInterpolator(100, 0);
-        final DecelerateInterpolator interpolator2 = new DecelerateInterpolator();
-        for (int i = 0; i < itemCount; ++i) {
-            final PopupItemView itemView = this.getItemViewAt(i);
-            itemView.setVisibility(4);
-            itemView.setAlpha(0.0f);
-            final Animator openAnimation = itemView.createOpenAnimation(this.mIsAboveIcon, this.mIsLeftAligned);
-            openAnimation.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$1(this, itemView));
-            openAnimation.setDuration(duration);
-            int n3;
-            if (this.mIsAboveIcon) {
-                n3 = itemCount - i - 1;
-            }
-            else {
-                n3 = i;
-            }
-            openAnimation.setStartDelay(n3 * n2);
-            openAnimation.setInterpolator((TimeInterpolator)interpolator2);
-            animatorSet.play(openAnimation);
-            final Property alpha = View.ALPHA;
-            final float[] array;
-            (array = new float[1])[0] = 1.0f;
-            final ObjectAnimator ofFloat = ObjectAnimator.ofFloat((Object)itemView, alpha, array);
-            ((Animator)ofFloat).setInterpolator((TimeInterpolator)interpolator);
-            ((Animator)ofFloat).setDuration(n);
-            animatorSet.play((Animator)ofFloat);
+        final Resources resources = this.getResources();
+        final long n = resources.getInteger(2131558423);
+        final AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = new AccelerateDecelerateInterpolator();
+        int n2 = 0;
+        for (int i = 0; i < this.getItemCount(); ++i) {
+            n2 += this.getItemViewAt(i).getMeasuredHeight();
         }
-        animatorSet.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$2(this));
+        final Point computeAnimStartPoint = this.computeAnimStartPoint(n2);
+        int n3;
+        if (this.mIsAboveIcon) {
+            n3 = this.getPaddingTop();
+        }
+        else {
+            n3 = computeAnimStartPoint.y;
+        }
+        final float backgroundRadius = this.getItemViewAt(0).getBackgroundRadius();
+        this.mStartRect.set(computeAnimStartPoint.x, computeAnimStartPoint.y, computeAnimStartPoint.x, computeAnimStartPoint.y);
+        this.mEndRect.set(0, n3, this.getMeasuredWidth(), n2 + n3);
+        final ValueAnimator revealAnimator = new RoundedRectRevealOutlineProvider(backgroundRadius, backgroundRadius, this.mStartRect, this.mEndRect).createRevealAnimator((View)this, false);
+        revealAnimator.setDuration(n);
+        revealAnimator.setInterpolator((TimeInterpolator)accelerateDecelerateInterpolator);
+        final ObjectAnimator ofFloat = ObjectAnimator.ofFloat((Object)this, PopupContainerWithArrow.ALPHA, new float[] { 0.0f, 1.0f });
+        ((Animator)ofFloat).setDuration(n);
+        ((Animator)ofFloat).setInterpolator((TimeInterpolator)accelerateDecelerateInterpolator);
+        animatorSet.play((Animator)ofFloat);
         this.mArrow.setScaleX(0.0f);
         this.mArrow.setScaleY(0.0f);
-        final ObjectAnimator setDuration = this.createArrowScaleAnim(1.0f).setDuration(duration2);
-        ((Animator)setDuration).setStartDelay(n);
-        animatorSet.play((Animator)setDuration);
-        ((AnimatorSet)(this.mOpenCloseAnimator = (Animator)animatorSet)).start();
+        final ObjectAnimator setDuration = this.createArrowScaleAnim(1.0f).setDuration((long)resources.getInteger(2131558424));
+        animatorSet.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$1(this));
+        ((AnimatorSet)(this.mOpenCloseAnimator = (Animator)animatorSet)).playSequentially(new Animator[] { revealAnimator, setDuration });
+        animatorSet.start();
+    }
+    
+    private Point computeAnimStartPoint(int n) {
+        final Resources resources = this.getResources();
+        int n2;
+        if (this.mIsLeftAligned ^ this.mIsRtl) {
+            n2 = 2131427457;
+        }
+        else {
+            n2 = 2131427458;
+        }
+        int dimensionPixelSize = resources.getDimensionPixelSize(n2);
+        if (!this.mIsLeftAligned) {
+            dimensionPixelSize = this.getMeasuredWidth() - dimensionPixelSize;
+        }
+        final int n3 = this.getMeasuredHeight() - this.getPaddingTop() - this.getPaddingBottom() - n;
+        final int paddingTop = this.getPaddingTop();
+        if (!this.mIsAboveIcon) {
+            n = n3;
+        }
+        return new Point(dimensionPixelSize, paddingTop + n);
     }
     
     private ObjectAnimator createArrowScaleAnim(final float n) {
         return LauncherAnimUtils.ofPropertyValuesHolder(this.mArrow, new PropertyListBuilder().scale(n).build());
+    }
+    
+    private void enforceContainedWithinScreen(final int n, final int n2) {
+        final DragLayer dragLayer = this.mLauncher.getDragLayer();
+        if (this.getTranslationX() + n < 0.0f || this.getTranslationX() + n2 > dragLayer.getWidth()) {
+            this.mGravity |= 0x1;
+        }
+        if (Gravity.isHorizontal(this.mGravity)) {
+            this.setX((float)(dragLayer.getWidth() / 2 - this.getMeasuredWidth() / 2));
+        }
+        if (Gravity.isVertical(this.mGravity)) {
+            this.setY((float)(dragLayer.getHeight() / 2 - this.getMeasuredHeight() / 2));
+        }
     }
     
     public static PopupContainerWithArrow getOpen(final Launcher launcher) {
@@ -276,15 +343,15 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
             n6 = 0;
         }
         int n7 = 0;
-        Label_0211: {
+        Label_0209: {
             if (n5 != 0) {
                 if (!this.mIsRtl) {
                     n7 = n3;
-                    break Label_0211;
+                    break Label_0209;
                 }
                 if (n6 == 0) {
                     n7 = n3;
-                    break Label_0211;
+                    break Label_0209;
                 }
             }
             n7 = n4;
@@ -301,66 +368,67 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         final Resources resources = this.getResources();
         int n10;
         if (this.isAlignedWithStart()) {
-            n10 = n9 / 2 - resources.getDimensionPixelSize(2131427439) / 2 - resources.getDimensionPixelSize(2131427442);
+            n10 = n9 / 2 - resources.getDimensionPixelSize(2131427449) / 2 - resources.getDimensionPixelSize(2131427452);
         }
         else {
-            n10 = n9 / 2 - resources.getDimensionPixelSize(2131427441) / 2 - resources.getDimensionPixelSize(2131427443);
+            n10 = n9 / 2 - resources.getDimensionPixelSize(2131427451) / 2 - resources.getDimensionPixelSize(2131427453);
         }
         if (!this.mIsLeftAligned) {
             n10 = -n10;
         }
         final int n11 = n8 + n10;
-        final int height = bubbleTextView.getIcon().getBounds().height();
-        final int n12 = this.mTempRect.top + bubbleTextView.getPaddingTop() - n2;
-        int n13;
-        if (!(this.mIsAboveIcon = (n12 > dragLayer.getTop() + insets.top))) {
-            n13 = this.mTempRect.top + bubbleTextView.getPaddingTop() + height;
+        int n12;
+        if (bubbleTextView.getIcon() != null) {
+            n12 = bubbleTextView.getIcon().getBounds().height();
         }
         else {
-            n13 = n12;
+            n12 = bubbleTextView.getHeight();
         }
+        final int n13 = this.mTempRect.top + bubbleTextView.getPaddingTop() - n2;
         int n14;
-        if (this.mIsRtl) {
-            n14 = insets.right + n11;
+        if (!(this.mIsAboveIcon = (n13 > dragLayer.getTop() + insets.top))) {
+            n14 = n12 + (this.mTempRect.top + bubbleTextView.getPaddingTop());
         }
         else {
-            n14 = n11 - insets.left;
+            n14 = n13;
         }
-        final int n15 = n13 - insets.top;
-        if (n15 < dragLayer.getTop() || n15 + n2 > dragLayer.getBottom()) {
-            ((FrameLayout$LayoutParams)this.getLayoutParams()).gravity = 16;
-            int n16 = n3 + n9 - insets.left;
-            final int n17 = n4 - n9 - insets.left;
+        int n15;
+        if (this.mIsRtl) {
+            n15 = insets.right + n11;
+        }
+        else {
+            n15 = n11 - insets.left;
+        }
+        final int n16 = n14 - insets.top;
+        this.mGravity = 0;
+        int n17;
+        if (n16 + n2 > dragLayer.getBottom() - insets.bottom) {
+            this.mGravity = 16;
+            n17 = n3 + n9 - insets.left;
+            final int n18 = n4 - n9 - insets.left;
             if (!this.mIsRtl) {
-                if (n16 + measuredWidth < dragLayer.getRight()) {
+                if (n17 + measuredWidth < dragLayer.getRight()) {
                     this.mIsLeftAligned = true;
                 }
                 else {
                     this.mIsLeftAligned = false;
-                    n16 = n17;
+                    n17 = n18;
                 }
             }
-            else if (n17 > dragLayer.getLeft()) {
+            else if (n18 > dragLayer.getLeft()) {
                 this.mIsLeftAligned = false;
-                n16 = n17;
+                n17 = n18;
             }
             else {
                 this.mIsLeftAligned = true;
             }
             this.mIsAboveIcon = true;
-            n14 = n16;
         }
-        if (n14 < dragLayer.getLeft() || n14 + measuredWidth > dragLayer.getRight()) {
-            final FrameLayout$LayoutParams frameLayout$LayoutParams = (FrameLayout$LayoutParams)this.getLayoutParams();
-            frameLayout$LayoutParams.gravity |= 0x1;
+        else {
+            n17 = n15;
         }
-        final int gravity = ((FrameLayout$LayoutParams)this.getLayoutParams()).gravity;
-        if (!Gravity.isHorizontal(gravity)) {
-            this.setX((float)n14);
-        }
-        if (!Gravity.isVertical(gravity)) {
-            this.setY((float)n15);
-        }
+        this.setX((float)n17);
+        this.setY((float)n16);
     }
     
     public static PopupContainerWithArrow showForIcon(final BubbleTextView bubbleTextView) {
@@ -377,7 +445,7 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         final List shortcutIdsForItem = popupDataProvider.getShortcutIdsForItem(itemInfo);
         final List notificationKeysForItem = popupDataProvider.getNotificationKeysForItem(itemInfo);
         final List enabledSystemShortcutsForItem = popupDataProvider.getEnabledSystemShortcutsForItem(itemInfo);
-        final PopupContainerWithArrow popupContainerWithArrow = (PopupContainerWithArrow)launcher.getLayoutInflater().inflate(2130968608, (ViewGroup)launcher.getDragLayer(), false);
+        final PopupContainerWithArrow popupContainerWithArrow = (PopupContainerWithArrow)launcher.getLayoutInflater().inflate(2130968612, (ViewGroup)launcher.getDragLayer(), false);
         popupContainerWithArrow.setVisibility(4);
         launcher.getDragLayer().addView((View)popupContainerWithArrow);
         popupContainerWithArrow.populateAndShow(bubbleTextView, shortcutIdsForItem, notificationKeysForItem, enabledSystemShortcutsForItem);
@@ -387,70 +455,116 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
     private void updateNotificationHeader() {
         final BadgeInfo badgeInfoForItem = this.mLauncher.getPopupDataProvider().getBadgeInfoForItem((ItemInfo)this.mOriginalIcon.getTag());
         if (this.mNotificationItemView != null && badgeInfoForItem != null) {
-            IconPalette iconPalette;
-            if (this.mOriginalIcon.getIcon() instanceof FastBitmapDrawable) {
-                iconPalette = ((FastBitmapDrawable)this.mOriginalIcon.getIcon()).getIconPalette();
-            }
-            else {
-                iconPalette = null;
-            }
-            this.mNotificationItemView.updateHeader(badgeInfoForItem.getNotificationCount(), iconPalette);
+            this.mNotificationItemView.updateHeader(badgeInfoForItem.getNotificationCount(), this.mOriginalIcon.getBadgePalette());
         }
     }
     
+    public Animator adjustItemHeights(final int n, final int n2, final int n3) {
+        final int n4 = 1;
+        if (this.mReduceHeightAnimatorSet != null) {
+            this.mReduceHeightAnimatorSet.cancel();
+        }
+        int n5;
+        if (this.mIsAboveIcon) {
+            n5 = n - n2;
+        }
+        else {
+            n5 = -n;
+        }
+        this.mReduceHeightAnimatorSet = LauncherAnimUtils.createAnimatorSet();
+        int n6;
+        if (n == this.mNotificationItemView.getHeightMinusFooter()) {
+            n6 = n4;
+        }
+        else {
+            n6 = 0;
+        }
+        int n7;
+        if (this.mIsAboveIcon) {
+            n7 = n6;
+        }
+        else {
+            n7 = 0;
+        }
+        this.mReduceHeightAnimatorSet.play(this.mNotificationItemView.animateHeightRemoval(n, (boolean)(n7 != 0)));
+        final PropertyResetListener propertyResetListener = new PropertyResetListener(PopupContainerWithArrow.TRANSLATION_Y, 0.0f);
+        int i = 0;
+        int n8 = 0;
+        while (i < this.getItemCount()) {
+            final PopupItemView itemView = this.getItemViewAt(i);
+            if (n8 != 0) {
+                itemView.setTranslationY(itemView.getTranslationY() - n2);
+            }
+            if (itemView != this.mNotificationItemView || (this.mIsAboveIcon && n6 == 0)) {
+                final Property translation_Y = PopupContainerWithArrow.TRANSLATION_Y;
+                final float[] array = new float[n4];
+                array[0] = itemView.getTranslationY() + n5;
+                final ObjectAnimator setDuration = ObjectAnimator.ofFloat((Object)itemView, translation_Y, array).setDuration((long)n3);
+                ((ValueAnimator)setDuration).addListener((Animator$AnimatorListener)propertyResetListener);
+                this.mReduceHeightAnimatorSet.play((Animator)setDuration);
+                if (itemView == this.mShortcutsItemView) {
+                    n8 = n4;
+                }
+            }
+            ++i;
+        }
+        if (this.mIsAboveIcon) {
+            this.mArrow.setTranslationY(this.mArrow.getTranslationY() - n2);
+        }
+        this.mReduceHeightAnimatorSet.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$4(this, n5));
+        return (Animator)this.mReduceHeightAnimatorSet;
+    }
+    
     protected void animateClose() {
+        final int n = 1;
         if (!this.mIsOpen) {
             return;
         }
+        this.mEndRect.setEmpty();
         if (this.mOpenCloseAnimator != null) {
+            final Outline outline = new Outline();
+            this.getOutlineProvider().getOutline((View)this, outline);
+            outline.getRect(this.mEndRect);
             this.mOpenCloseAnimator.cancel();
         }
         this.mIsOpen = false;
         final AnimatorSet animatorSet = LauncherAnimUtils.createAnimatorSet();
-        final int itemCount = this.getItemCount();
-        int n = 0;
-        for (int i = 0; i < itemCount; ++i) {
-            if (this.getItemViewAt(i).isOpenOrOpening()) {
-                ++n;
-            }
-        }
-        final long n2 = this.getResources().getInteger(2131558425);
         final long duration = this.getResources().getInteger(2131558423);
-        final long n3 = this.getResources().getInteger(2131558426);
-        final LogAccelerateInterpolator interpolator = new LogAccelerateInterpolator(100, 0);
-        int n4;
+        final AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = new AccelerateDecelerateInterpolator();
+        int i = 0;
+        int n2 = 0;
+        while (i < this.getItemCount()) {
+            n2 += this.getItemViewAt(i).getMeasuredHeight();
+            ++i;
+        }
+        final Point computeAnimStartPoint = this.computeAnimStartPoint(n2);
+        int n3;
         if (this.mIsAboveIcon) {
-            n4 = itemCount - n;
+            n3 = this.getPaddingTop();
         }
         else {
-            n4 = 0;
+            n3 = computeAnimStartPoint.y;
         }
-        for (int j = n4; j < n4 + n; ++j) {
-            final PopupItemView itemView = this.getItemViewAt(j);
-            final Animator closeAnimation = itemView.createCloseAnimation(this.mIsAboveIcon, this.mIsLeftAligned, n2);
-            int n5;
-            if (this.mIsAboveIcon) {
-                n5 = j - n4;
-            }
-            else {
-                n5 = n - j - 1;
-            }
-            closeAnimation.setStartDelay(n5 * n3);
-            final Property alpha = View.ALPHA;
-            final float[] array;
-            (array = new float[1])[0] = 0.0f;
-            final ObjectAnimator ofFloat = ObjectAnimator.ofFloat((Object)itemView, alpha, array);
-            ((Animator)ofFloat).setStartDelay(n5 * n3 + duration);
-            ((Animator)ofFloat).setDuration(n2 - duration);
-            ((Animator)ofFloat).setInterpolator((TimeInterpolator)interpolator);
-            animatorSet.play((Animator)ofFloat);
-            closeAnimation.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$7(this, itemView));
-            animatorSet.play(closeAnimation);
+        final float backgroundRadius = this.getItemViewAt(0).getBackgroundRadius();
+        this.mStartRect.set(computeAnimStartPoint.x, computeAnimStartPoint.y, computeAnimStartPoint.x, computeAnimStartPoint.y);
+        if (this.mEndRect.isEmpty()) {
+            this.mEndRect.set(0, n3, this.getMeasuredWidth(), n2 + n3);
         }
-        final ObjectAnimator setDuration = this.createArrowScaleAnim(0.0f).setDuration(duration);
-        ((Animator)setDuration).setStartDelay(0L);
-        animatorSet.play((Animator)setDuration);
-        animatorSet.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$8(this));
+        final ValueAnimator revealAnimator = new RoundedRectRevealOutlineProvider(backgroundRadius, backgroundRadius, this.mStartRect, this.mEndRect).createRevealAnimator((View)this, n != 0);
+        revealAnimator.setDuration(duration);
+        revealAnimator.setInterpolator((TimeInterpolator)accelerateDecelerateInterpolator);
+        animatorSet.play((Animator)revealAnimator);
+        final Property alpha = PopupContainerWithArrow.ALPHA;
+        final float[] array = new float[n];
+        array[0] = 0.0f;
+        final ObjectAnimator ofFloat = ObjectAnimator.ofFloat((Object)this, alpha, array);
+        ((Animator)ofFloat).setDuration(duration);
+        ((Animator)ofFloat).setInterpolator((TimeInterpolator)accelerateDecelerateInterpolator);
+        animatorSet.play((Animator)ofFloat);
+        final ObjectAnimator textAlphaAnimator = this.mOriginalIcon.createTextAlphaAnimator(n != 0);
+        ((Animator)textAlphaAnimator).setDuration(duration);
+        animatorSet.play((Animator)textAlphaAnimator);
+        animatorSet.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$5(this));
         ((AnimatorSet)(this.mOpenCloseAnimator = (Animator)animatorSet)).start();
         this.mOriginalIcon.forceHideBadge(false);
     }
@@ -462,21 +576,14 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         }
         this.mIsOpen = false;
         this.mDeferContainerRemoval = false;
-        boolean b;
-        if (((ItemInfo)this.mOriginalIcon.getTag()).container == -101) {
-            b = true;
-        }
-        else {
-            b = false;
-        }
-        this.mOriginalIcon.setTextVisibility(b ^ true);
+        this.mOriginalIcon.setTextVisibility(this.mOriginalIcon.shouldTextBeVisible());
         this.mOriginalIcon.forceHideBadge(false);
         this.mLauncher.getDragController().removeDragListener(this);
         this.mLauncher.getDragLayer().removeView((View)this);
     }
     
     public DragOptions$PreDragCondition createPreDragCondition() {
-        return new PopupContainerWithArrow$3(this);
+        return new PopupContainerWithArrow$2(this);
     }
     
     public void fillInLogContainerData(final View view, final ItemInfo itemInfo, final LauncherLogProto$Target launcherLogProto$Target, final LauncherLogProto$Target launcherLogProto$Target2) {
@@ -564,6 +671,11 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         return b;
     }
     
+    protected void onLayout(final boolean b, final int n, final int n2, final int n3, final int n4) {
+        super.onLayout(b, n, n2, n3, n4);
+        this.enforceContainedWithinScreen(n, n3);
+    }
+    
     protected void onWidgetsBound() {
         if (this.mShortcutsItemView != null) {
             this.mShortcutsItemView.enableWidgetsIfExist(this.mOriginalIcon);
@@ -572,12 +684,12 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
     
     public void populateAndShow(final BubbleTextView mOriginalIcon, final List list, final List list2, final List list3) {
         final Resources resources = this.getResources();
-        final int dimensionPixelSize = resources.getDimensionPixelSize(2131427444);
-        final int dimensionPixelSize2 = resources.getDimensionPixelSize(2131427445);
-        final int dimensionPixelSize3 = resources.getDimensionPixelSize(2131427446);
+        final int dimensionPixelSize = resources.getDimensionPixelSize(2131427454);
+        final int dimensionPixelSize2 = resources.getDimensionPixelSize(2131427455);
+        final int dimensionPixelSize3 = resources.getDimensionPixelSize(2131427456);
         this.mOriginalIcon = mOriginalIcon;
         final PopupPopulator$Item[] itemsToPopulate = PopupPopulator.getItemsToPopulate(list, list2, list3);
-        this.addDummyViews(itemsToPopulate, list2.size() > 1);
+        this.addDummyViews(itemsToPopulate, list2.size());
         this.measure(0, 0);
         this.orientAboutIcon(mOriginalIcon, dimensionPixelSize2 + dimensionPixelSize3);
         final boolean mIsAboveIcon = this.mIsAboveIcon;
@@ -585,7 +697,7 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
             this.removeAllViews();
             this.mNotificationItemView = null;
             this.mShortcutsItemView = null;
-            this.addDummyViews(PopupPopulator.reverseItems(itemsToPopulate), list2.size() > 1);
+            this.addDummyViews(PopupPopulator.reverseItems(itemsToPopulate), list2.size());
             this.measure(0, 0);
             this.orientAboutIcon(mOriginalIcon, dimensionPixelSize2 + dimensionPixelSize3);
         }
@@ -610,17 +722,17 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
         final int n = list4.size() + list5.size();
         final int size = list2.size();
         if (size == 0) {
-            this.setContentDescription((CharSequence)this.getContext().getString(2131492990, new Object[] { n, mOriginalIcon.getContentDescription().toString() }));
+            this.setContentDescription((CharSequence)this.getContext().getString(2131492999, new Object[] { n, mOriginalIcon.getContentDescription().toString() }));
         }
         else {
-            this.setContentDescription((CharSequence)this.getContext().getString(2131492991, new Object[] { n, size, mOriginalIcon.getContentDescription().toString() }));
+            this.setContentDescription((CharSequence)this.getContext().getString(2131493000, new Object[] { n, size, mOriginalIcon.getContentDescription().toString() }));
         }
         int n2;
         if (this.isAlignedWithStart()) {
-            n2 = 2131427449;
+            n2 = 2131427459;
         }
         else {
-            n2 = 2131427450;
+            n2 = 2131427460;
         }
         (this.mArrow = this.addArrowView(resources.getDimensionPixelSize(n2), dimensionPixelSize3, dimensionPixelSize, dimensionPixelSize2)).setPivotX((float)(dimensionPixelSize / 2));
         final View mArrow = this.mArrow;
@@ -632,6 +744,7 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
             n3 = dimensionPixelSize2;
         }
         mArrow.setPivotY((float)n3);
+        this.measure(0, 0);
         this.animateOpen();
         this.mLauncher.getDragController().addDragListener(this);
         this.mOriginalIcon.forceHideBadge(true);
@@ -639,28 +752,7 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
     }
     
     public Animator reduceNotificationViewHeight(final int n, final int n2) {
-        if (this.mReduceHeightAnimatorSet != null) {
-            this.mReduceHeightAnimatorSet.cancel();
-        }
-        int n3;
-        if (this.mIsAboveIcon) {
-            n3 = n;
-        }
-        else {
-            n3 = -n;
-        }
-        (this.mReduceHeightAnimatorSet = LauncherAnimUtils.createAnimatorSet()).play(this.mNotificationItemView.animateHeightRemoval(n));
-        final PropertyResetListener propertyResetListener = new PropertyResetListener(PopupContainerWithArrow.TRANSLATION_Y, 0.0f);
-        for (int i = 0; i < this.getItemCount(); ++i) {
-            final PopupItemView itemView = this.getItemViewAt(i);
-            if (this.mIsAboveIcon || itemView != this.mNotificationItemView) {
-                final ObjectAnimator setDuration = ObjectAnimator.ofFloat((Object)itemView, PopupContainerWithArrow.TRANSLATION_Y, new float[] { itemView.getTranslationY() + n3 }).setDuration((long)n2);
-                ((ValueAnimator)setDuration).addListener((Animator$AnimatorListener)propertyResetListener);
-                this.mReduceHeightAnimatorSet.play((Animator)setDuration);
-            }
-        }
-        this.mReduceHeightAnimatorSet.addListener((Animator$AnimatorListener)new PopupContainerWithArrow$6(this, n3));
-        return (Animator)this.mReduceHeightAnimatorSet;
+        return this.adjustItemHeights(n, 0, n2);
     }
     
     public boolean supportsAppInfoDropTarget() {
@@ -672,46 +764,39 @@ public class PopupContainerWithArrow extends AbstractFloatingView implements Dra
     }
     
     public void trimNotifications(final Map map) {
-        final float n = 1.0f;
-        final int n2 = 1;
+        final int n = 1;
         if (this.mNotificationItemView == null) {
             return;
         }
         final BadgeInfo badgeInfo = map.get(PackageUserKey.fromItemInfo((ItemInfo)this.mOriginalIcon.getTag()));
         if (badgeInfo == null || badgeInfo.getNotificationKeys().size() == 0) {
             final AnimatorSet animatorSet = LauncherAnimUtils.createAnimatorSet();
-            final int integer = this.getResources().getInteger(2131558427);
-            final int dimensionPixelSize = this.getResources().getDimensionPixelSize(2131427436);
-            animatorSet.play(this.reduceNotificationViewHeight(this.mNotificationItemView.getHeightMinusFooter() + dimensionPixelSize, integer));
-            PopupItemView popupItemView;
-            if (this.mIsAboveIcon) {
-                popupItemView = this.getItemViewAt(this.getItemCount() - 2);
+            int hiddenShortcutsHeight;
+            if (this.mShortcutsItemView != null) {
+                hiddenShortcutsHeight = this.mShortcutsItemView.getHiddenShortcutsHeight();
+                this.mShortcutsItemView.setBackgroundWithCorners(Themes.getAttrColor((Context)this.mLauncher, 2130772007), 3);
+                animatorSet.play(this.mShortcutsItemView.showAllShortcuts(this.mIsAboveIcon));
             }
             else {
-                popupItemView = this.mNotificationItemView;
+                hiddenShortcutsHeight = 0;
             }
-            if (popupItemView != null) {
-                final float[] array = { n, 0.0f };
-                array[n2] = 0.0f;
-                final ValueAnimator setDuration = ValueAnimator.ofFloat(array).setDuration((long)integer);
-                setDuration.addUpdateListener((ValueAnimator$AnimatorUpdateListener)new PopupContainerWithArrow$4(this, (View)popupItemView, dimensionPixelSize));
-                animatorSet.play((Animator)setDuration);
-            }
+            final int integer = this.getResources().getInteger(2131558425);
+            animatorSet.play(this.adjustItemHeights(this.mNotificationItemView.getHeightMinusFooter(), hiddenShortcutsHeight, integer));
             final NotificationItemView mNotificationItemView = this.mNotificationItemView;
             final Property alpha = PopupContainerWithArrow.ALPHA;
-            final float[] array2 = new float[n2];
-            array2[0] = 0.0f;
-            final ObjectAnimator setDuration2 = ObjectAnimator.ofFloat((Object)mNotificationItemView, alpha, array2).setDuration((long)integer);
-            ((Animator)setDuration2).addListener((Animator$AnimatorListener)new PopupContainerWithArrow$5(this));
-            animatorSet.play((Animator)setDuration2);
-            final long n3 = this.getResources().getInteger(2131558423);
-            final ObjectAnimator setDuration3 = this.createArrowScaleAnim(0.0f).setDuration(n3);
-            ((Animator)setDuration3).setStartDelay(0L);
-            final ObjectAnimator setDuration4 = this.createArrowScaleAnim(n).setDuration(n3);
-            ((Animator)setDuration4).setStartDelay((long)(integer - n3 * 1.5));
-            final Animator[] array3 = { setDuration3, null };
-            array3[n2] = (Animator)setDuration4;
-            animatorSet.playSequentially(array3);
+            final float[] array = new float[n];
+            array[0] = 0.0f;
+            final ObjectAnimator setDuration = ObjectAnimator.ofFloat((Object)mNotificationItemView, alpha, array).setDuration((long)integer);
+            ((Animator)setDuration).addListener((Animator$AnimatorListener)new PopupContainerWithArrow$3(this));
+            animatorSet.play((Animator)setDuration);
+            final long n2 = this.getResources().getInteger(2131558424);
+            final ObjectAnimator setDuration2 = this.createArrowScaleAnim(0.0f).setDuration(n2);
+            ((Animator)setDuration2).setStartDelay(0L);
+            final ObjectAnimator setDuration3 = this.createArrowScaleAnim(1.0f).setDuration(n2);
+            ((Animator)setDuration3).setStartDelay((long)(integer - n2 * 1.5));
+            final Animator[] array2 = { setDuration2, null };
+            array2[n] = (Animator)setDuration3;
+            animatorSet.playSequentially(array2);
             animatorSet.start();
             return;
         }

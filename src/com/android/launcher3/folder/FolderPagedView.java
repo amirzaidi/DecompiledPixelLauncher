@@ -4,6 +4,8 @@
 
 package com.android.launcher3.folder;
 
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Drawable$Callback;
 import android.animation.TimeInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.ViewPropertyAnimator;
@@ -21,22 +23,21 @@ import com.android.launcher3.ShortcutInfo;
 import com.android.launcher3.DeviceProfile;
 import android.view.ViewGroup$LayoutParams;
 import android.view.ViewGroup;
-import com.android.launcher3.Launcher;
 import com.android.launcher3.ExtendedEditText;
 import java.util.Iterator;
 import com.android.launcher3.BubbleTextView;
 import com.android.launcher3.ItemInfo;
 import com.android.launcher3.CellLayout$LayoutParams;
+import com.android.launcher3.Launcher;
 import com.android.launcher3.CellLayout;
 import java.util.ArrayList;
 import com.android.launcher3.InvariantDeviceProfile;
 import android.view.View;
-import com.android.launcher3.util.Themes;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.LauncherAppState;
 import android.util.AttributeSet;
 import android.content.Context;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import com.android.launcher3.pageindicators.PageIndicator;
 import com.android.launcher3.FocusHelper$PagedFolderKeyEventListener;
 import android.view.LayoutInflater;
@@ -45,7 +46,7 @@ import com.android.launcher3.PagedView;
 
 public class FolderPagedView extends PagedView
 {
-    private static final int[] sTempPosArray;
+    private static final int[] sTmpArray;
     private int mAllocatedContentSize;
     private final ViewGroupFocusHelper mFocusIndicatorHelper;
     private Folder mFolder;
@@ -58,15 +59,15 @@ public class FolderPagedView extends PagedView
     private final int mMaxCountY;
     private final int mMaxItemsPerPage;
     private PageIndicator mPageIndicator;
-    final HashMap mPendingAnimations;
+    final ArrayMap mPendingAnimations;
     
     static {
-        sTempPosArray = new int[2];
+        sTmpArray = new int[2];
     }
     
     public FolderPagedView(final Context context, final AttributeSet set) {
         super(context, set);
-        this.mPendingAnimations = new HashMap();
+        this.mPendingAnimations = new ArrayMap();
         final InvariantDeviceProfile idp = LauncherAppState.getIDP(context);
         this.mMaxCountX = idp.numFolderColumns;
         this.mMaxCountY = idp.numFolderRows;
@@ -74,7 +75,6 @@ public class FolderPagedView extends PagedView
         this.mInflater = LayoutInflater.from(context);
         this.mIsRtl = Utilities.isRtl(this.getResources());
         this.setImportantForAccessibility(1);
-        this.setEdgeGlowColor(Themes.getAttrColor(context, 16843982));
         this.mFocusIndicatorHelper = new ViewGroupFocusHelper((View)this);
     }
     
@@ -87,6 +87,7 @@ public class FolderPagedView extends PagedView
         }
         this.setupContentDimensions(n);
         final Iterator<CellLayout> iterator = list2.iterator();
+        final FolderIconPreviewVerifier folderIconPreviewVerifier = new FolderIconPreviewVerifier(Launcher.getLauncher(this.getContext()).getDeviceProfile().inv);
         int j = 0;
         int rank = 0;
         int n2 = 0;
@@ -132,7 +133,7 @@ public class FolderPagedView extends PagedView
                 cellLayout$LayoutParams.cellX = itemInfo.cellX;
                 cellLayout$LayoutParams.cellY = itemInfo.cellY;
                 cellLayout3.addViewToCellLayout(view, -1, this.mFolder.mLauncher.getViewIdForItem(itemInfo), cellLayout$LayoutParams, true);
-                if (rank < FolderIcon.NUM_ITEMS_IN_PREVIEW && view instanceof BubbleTextView) {
+                if (folderIconPreviewVerifier.isItemInPreview(rank) && view instanceof BubbleTextView) {
                     ((BubbleTextView)view).verifyHighRes();
                 }
             }
@@ -177,54 +178,84 @@ public class FolderPagedView extends PagedView
         mFolderName.setGravity(gravity);
     }
     
+    public static void calculateGridSize(final int n, final int n2, final int n3, final int n4, final int n5, final int n6, final int[] array) {
+        final int n7 = 1;
+        int i;
+        int n8;
+        int n9;
+        if (n >= n6) {
+            i = n7;
+            n8 = n5;
+            n9 = n4;
+        }
+        else {
+            i = 0;
+            n8 = n3;
+            n9 = n2;
+        }
+        while (i == 0) {
+            int n13;
+            int max;
+            if (n9 * n8 < n) {
+                int n10;
+                int n11;
+                if ((n9 <= n8 || n8 == n5) && n9 < n4) {
+                    n10 = n9 + 1;
+                    n11 = n8;
+                }
+                else if (n8 < n5) {
+                    n11 = n8 + 1;
+                    n10 = n9;
+                }
+                else {
+                    n11 = n8;
+                    n10 = n9;
+                }
+                if (n11 == 0) {
+                    final int n12 = n11 + 1;
+                    n13 = n10;
+                    max = n12;
+                }
+                else {
+                    n13 = n10;
+                    max = n11;
+                }
+            }
+            else if ((n8 - 1) * n9 >= n && n8 >= n9) {
+                max = Math.max(0, n8 - 1);
+                n13 = n9;
+            }
+            else if ((n9 - 1) * n8 >= n) {
+                final int max2 = Math.max(0, n9 - 1);
+                max = n8;
+                n13 = max2;
+            }
+            else {
+                max = n8;
+                n13 = n9;
+            }
+            if (n13 == n9 && max == n8) {
+                i = n7;
+            }
+            else {
+                i = 0;
+            }
+            n8 = max;
+            n9 = n13;
+        }
+        array[0] = n9;
+        array[n7] = n8;
+    }
+    
     private CellLayout createAndAddNewPage() {
         final DeviceProfile deviceProfile = Launcher.getLauncher(this.getContext()).getDeviceProfile();
-        final CellLayout cellLayout = (CellLayout)this.mInflater.inflate(2130968596, (ViewGroup)this, false);
+        final CellLayout cellLayout = (CellLayout)this.mInflater.inflate(2130968598, (ViewGroup)this, false);
         cellLayout.setCellDimensions(deviceProfile.folderCellWidthPx, deviceProfile.folderCellHeightPx);
         cellLayout.getShortcutsAndWidgets().setMotionEventSplittingEnabled(false);
         cellLayout.setInvertIfRtl(true);
         cellLayout.setGridSize(this.mGridCountX, this.mGridCountY);
         this.addView((View)cellLayout, -1, (ViewGroup$LayoutParams)this.generateDefaultLayoutParams());
         return cellLayout;
-    }
-    
-    private void setupContentDimensions(final int mAllocatedContentSize) {
-        final boolean b = true;
-        this.mAllocatedContentSize = mAllocatedContentSize;
-        int i;
-        if (mAllocatedContentSize >= this.mMaxItemsPerPage) {
-            this.mGridCountX = this.mMaxCountX;
-            this.mGridCountY = this.mMaxCountY;
-            i = (b ? 1 : 0);
-        }
-        else {
-            i = 0;
-        }
-        while (i == 0) {
-            final int mGridCountX = this.mGridCountX;
-            final int mGridCountY = this.mGridCountY;
-            if (this.mGridCountX * this.mGridCountY < mAllocatedContentSize) {
-                if ((this.mGridCountX <= this.mGridCountY || this.mGridCountY == this.mMaxCountY) && this.mGridCountX < this.mMaxCountX) {
-                    ++this.mGridCountX;
-                }
-                else if (this.mGridCountY < this.mMaxCountY) {
-                    ++this.mGridCountY;
-                }
-                if (this.mGridCountY == 0) {
-                    ++this.mGridCountY;
-                }
-            }
-            else if ((this.mGridCountY - 1) * this.mGridCountX >= mAllocatedContentSize && this.mGridCountY >= this.mGridCountX) {
-                this.mGridCountY = Math.max(0, this.mGridCountY - 1);
-            }
-            else if ((this.mGridCountX - 1) * this.mGridCountY >= mAllocatedContentSize) {
-                this.mGridCountX = Math.max(0, this.mGridCountX - 1);
-            }
-            i = ((this.mGridCountX == mGridCountX && this.mGridCountY == mGridCountY && b) ? 1 : 0);
-        }
-        for (int j = this.getPageCount() - 1; j >= 0; --j) {
-            this.getPageAt(j).setGridSize(this.mGridCountX, this.mGridCountY);
-        }
     }
     
     public void addViewForRank(final View view, final ShortcutInfo shortcutInfo, final int rank) {
@@ -241,11 +272,15 @@ public class FolderPagedView extends PagedView
     
     public int allocateRankForNewItem() {
         final int itemCount = this.getItemCount();
-        final ArrayList<Object> list = new ArrayList<Object>(this.mFolder.getItemsInReadingOrder());
-        list.add(itemCount, null);
-        this.arrangeChildren(list, list.size(), false);
+        this.allocateSpaceForRank(itemCount);
         this.setCurrentPage(itemCount / this.mMaxItemsPerPage);
         return itemCount;
+    }
+    
+    public void allocateSpaceForRank(final int n) {
+        final ArrayList<Object> list = new ArrayList<Object>(this.mFolder.getItemsInReadingOrder());
+        list.add(n, null);
+        this.arrangeChildren(list, list.size(), false);
     }
     
     public void arrangeChildren(final ArrayList list, final int n) {
@@ -271,22 +306,24 @@ public class FolderPagedView extends PagedView
     
     public void completePendingPageChanges() {
         if (!this.mPendingAnimations.isEmpty()) {
-            for (final Map.Entry<View, Object> entry : new HashMap<View, Object>(this.mPendingAnimations).entrySet()) {
+            for (final Map.Entry<View, V> entry : new ArrayMap(this.mPendingAnimations).entrySet()) {
                 entry.getKey().animate().cancel();
-                entry.getValue().run();
+                ((Runnable)entry.getValue()).run();
             }
         }
     }
     
     public View createAndAddViewForRank(final ShortcutInfo shortcutInfo, final int n) {
         final View newView = this.createNewView(shortcutInfo);
+        this.allocateSpaceForRank(n);
         this.addViewForRank(newView, shortcutInfo, n);
         return newView;
     }
     
     public View createNewView(final ShortcutInfo shortcutInfo) {
-        final BubbleTextView bubbleTextView = (BubbleTextView)this.mInflater.inflate(2130968594, (ViewGroup)null, false);
+        final BubbleTextView bubbleTextView = (BubbleTextView)this.mInflater.inflate(2130968596, (ViewGroup)null, false);
         bubbleTextView.applyFromShortcutInfo(shortcutInfo);
+        bubbleTextView.setHapticFeedbackEnabled(false);
         bubbleTextView.setOnClickListener((View$OnClickListener)this.mFolder);
         bubbleTextView.setOnLongClickListener((View$OnLongClickListener)this.mFolder);
         bubbleTextView.setOnFocusChangeListener((View$OnFocusChangeListener)this.mFocusIndicatorHelper);
@@ -304,15 +341,15 @@ public class FolderPagedView extends PagedView
         final int n3 = 1;
         final int nextPage = this.getNextPage();
         final CellLayout page = this.getPageAt(nextPage);
-        page.findNearestArea(n, n2, n3, n3, FolderPagedView.sTempPosArray);
+        page.findNearestArea(n, n2, n3, n3, FolderPagedView.sTmpArray);
         if (this.mFolder.isLayoutRtl()) {
-            FolderPagedView.sTempPosArray[0] = page.getCountX() - FolderPagedView.sTempPosArray[0] - 1;
+            FolderPagedView.sTmpArray[0] = page.getCountX() - FolderPagedView.sTmpArray[0] - 1;
         }
-        return Math.min(this.mAllocatedContentSize - 1, this.mMaxItemsPerPage * nextPage + FolderPagedView.sTempPosArray[n3] * this.mGridCountX + FolderPagedView.sTempPosArray[0]);
+        return Math.min(this.mAllocatedContentSize - 1, this.mMaxItemsPerPage * nextPage + FolderPagedView.sTmpArray[n3] * this.mGridCountX + FolderPagedView.sTmpArray[0]);
     }
     
     public String getAccessibilityDescription() {
-        return this.getContext().getString(2131492935, new Object[] { this.mGridCountX, this.mGridCountY });
+        return this.getContext().getString(2131492937, new Object[] { this.mGridCountX, this.mGridCountY });
     }
     
     public int getAllocatedContentSize() {
@@ -341,11 +378,6 @@ public class FolderPagedView extends PagedView
             n = this.getPageAt(0).getDesiredWidth() + this.getPaddingLeft() + this.getPaddingRight();
         }
         return n;
-    }
-    
-    protected void getEdgeVerticalPosition(final int[] array) {
-        array[0] = 0;
-        array[1] = this.getViewportHeight();
     }
     
     public View getFirstItem() {
@@ -406,8 +438,8 @@ public class FolderPagedView extends PagedView
         return null;
     }
     
-    protected void notifyPageSwitchListener() {
-        super.notifyPageSwitchListener();
+    protected void notifyPageSwitchListener(final int n) {
+        super.notifyPageSwitchListener(n);
         if (this.mFolder != null) {
             this.mFolder.updateTextViewFocus();
         }
@@ -503,7 +535,7 @@ public class FolderPagedView extends PagedView
                         width = child.getWidth();
                     }
                     animate.translationXBy((float)width).setDuration(230L).setStartDelay(0L).withEndAction((Runnable)folderPagedView$1);
-                    this.mPendingAnimations.put(child, folderPagedView$1);
+                    this.mPendingAnimations.put((Object)child, (Object)folderPagedView$1);
                 }
             }
             i = n16;
@@ -554,8 +586,17 @@ public class FolderPagedView extends PagedView
     public void setFolder(final Folder mFolder) {
         this.mFolder = mFolder;
         this.mKeyListener = new FocusHelper$PagedFolderKeyEventListener(mFolder);
-        this.mPageIndicator = (PageIndicator)mFolder.findViewById(2131624040);
+        this.mPageIndicator = (PageIndicator)mFolder.findViewById(2131624066);
         this.initParentViews((View)mFolder);
+    }
+    
+    public void setupContentDimensions(final int mAllocatedContentSize) {
+        calculateGridSize(this.mAllocatedContentSize = mAllocatedContentSize, this.mGridCountX, this.mGridCountY, this.mMaxCountX, this.mMaxCountY, this.mMaxItemsPerPage, FolderPagedView.sTmpArray);
+        this.mGridCountX = FolderPagedView.sTmpArray[0];
+        this.mGridCountY = FolderPagedView.sTmpArray[1];
+        for (int i = this.getPageCount() - 1; i >= 0; --i) {
+            this.getPageAt(i).setGridSize(this.mGridCountX, this.mGridCountY);
+        }
     }
     
     public void showScrollHint(final int n) {
@@ -579,7 +620,12 @@ public class FolderPagedView extends PagedView
         if (page != null) {
             final ShortcutAndWidgetContainer shortcutsAndWidgets = page.getShortcutsAndWidgets();
             for (int i = shortcutsAndWidgets.getChildCount() - 1; i >= 0; --i) {
-                ((BubbleTextView)shortcutsAndWidgets.getChildAt(i)).verifyHighRes();
+                final BubbleTextView callback = (BubbleTextView)shortcutsAndWidgets.getChildAt(i);
+                callback.verifyHighRes();
+                final Drawable drawable = callback.getCompoundDrawables()[1];
+                if (drawable != null) {
+                    drawable.setCallback((Drawable$Callback)callback);
+                }
             }
         }
     }

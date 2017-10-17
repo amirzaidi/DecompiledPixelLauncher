@@ -10,21 +10,23 @@ import java.util.HashSet;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.animation.ObjectAnimator;
-import android.util.Property;
 import android.view.View;
 import android.animation.AnimatorSet;
 import android.animation.Animator;
 import android.animation.Animator$AnimatorListener;
 import java.util.WeakHashMap;
+import android.util.Property;
 
 public class LauncherAnimUtils
 {
+    public static final Property DRAWABLE_ALPHA;
     static WeakHashMap sAnimators;
     static Animator$AnimatorListener sEndAnimListener;
     
     static {
         LauncherAnimUtils.sAnimators = new WeakHashMap();
         LauncherAnimUtils.sEndAnimListener = (Animator$AnimatorListener)new LauncherAnimUtils$1();
+        DRAWABLE_ALPHA = new LauncherAnimUtils$2(Integer.TYPE, "drawableAlpha");
     }
     
     public static void cancelOnDestroyActivity(final Animator animator) {

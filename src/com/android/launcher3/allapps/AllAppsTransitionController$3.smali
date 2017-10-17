@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$3;->this$0:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
-    .line 391
+    .line 438
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 1
 
     .prologue
-    .line 394
+    .line 441
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$3;->this$0:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
     invoke-static {v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->-get1(Lcom/android/launcher3/allapps/AllAppsTransitionController;)Landroid/animation/AnimatorSet;
@@ -40,10 +40,10 @@
 
     if-nez v0, :cond_0
 
-    .line 395
+    .line 442
     return-void
 
-    .line 397
+    .line 444
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController$3;->this$0:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
@@ -53,6 +53,6 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 398
+    .line 445
     return-void
 .end method

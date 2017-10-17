@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 1505
+    .line 1619
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -24,14 +24,14 @@
     .locals 2
 
     .prologue
-    .line 1509
+    .line 1623
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->rank:I
 
     iget v1, p2, Lcom/android/launcher3/ItemInfo;->rank:I
 
     if-eq v0, v1, :cond_0
 
-    .line 1510
+    .line 1624
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->rank:I
 
     iget v1, p2, Lcom/android/launcher3/ItemInfo;->rank:I
@@ -40,7 +40,7 @@
 
     return v0
 
-    .line 1511
+    .line 1625
     :cond_0
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
@@ -48,7 +48,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 1512
+    .line 1626
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
     iget v1, p2, Lcom/android/launcher3/ItemInfo;->cellY:I
@@ -57,7 +57,7 @@
 
     return v0
 
-    .line 1514
+    .line 1628
     :cond_1
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 1507
+    .line 1621
     check-cast p1, Lcom/android/launcher3/ItemInfo;
 
     check-cast p2, Lcom/android/launcher3/ItemInfo;

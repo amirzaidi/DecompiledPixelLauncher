@@ -6,7 +6,7 @@ package com.android.launcher3;
 
 public interface FolderInfo$FolderListener
 {
-    void onAdd(final ShortcutInfo p0);
+    void onAdd(final ShortcutInfo p0, final int p1);
     
     void onItemsChanged(final boolean p0);
     

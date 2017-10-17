@@ -16,7 +16,7 @@ import android.view.ViewConfiguration;
 import android.content.Context;
 import android.view.VelocityTracker;
 import android.os.Handler;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.animation.Animator;
 import android.view.View;
 import android.animation.AnimatorListenerAdapter;

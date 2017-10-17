@@ -20,15 +20,13 @@
 
 .field public fillResIconDpi:I
 
-.field hotseatIconSize:F
-
-.field public hotseatScale:F
-
 .field public iconBitmapSize:I
 
 .field public iconSize:F
 
 .field public iconTextSize:F
+
+.field public landscapeIconSize:F
 
 .field public landscapeProfile:Lcom/android/launcher3/DeviceProfile;
 
@@ -58,27 +56,27 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 44
     const/high16 v0, 0x42700000    # 60.0f
 
     sput v0, Lcom/android/launcher3/InvariantDeviceProfile;->DEFAULT_ICON_SIZE_DP:F
 
-    .line 51
+    .line 50
     const/high16 v0, 0x40400000    # 3.0f
 
     sput v0, Lcom/android/launcher3/InvariantDeviceProfile;->KNEARESTNEIGHBOR:F
 
-    .line 52
+    .line 51
     const/high16 v0, 0x40a00000    # 5.0f
 
     sput v0, Lcom/android/launcher3/InvariantDeviceProfile;->WEIGHT_POWER:F
 
-    .line 55
+    .line 54
     const v0, 0x47c35000    # 100000.0f
 
     sput v0, Lcom/android/launcher3/InvariantDeviceProfile;->WEIGHT_EFFICIENT:F
 
-    .line 42
+    .line 41
     return-void
 .end method
 
@@ -86,10 +84,10 @@
     .locals 0
 
     .prologue
-    .line 97
+    .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
+    .line 96
     return-void
 .end method
 
@@ -97,10 +95,10 @@
     .locals 17
 
     .prologue
-    .line 127
+    .line 123
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 128
+    .line 124
     const-string/jumbo v2, "window"
 
     move-object/from16 v0, p1
@@ -111,33 +109,33 @@
 
     check-cast v2, Landroid/view/WindowManager;
 
-    .line 129
+    .line 125
     invoke-interface {v2}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v3
 
-    .line 130
+    .line 126
     new-instance v4, Landroid/util/DisplayMetrics;
 
     invoke-direct {v4}, Landroid/util/DisplayMetrics;-><init>()V
 
-    .line 131
+    .line 127
     invoke-virtual {v3, v4}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
 
-    .line 133
+    .line 129
     new-instance v5, Landroid/graphics/Point;
 
     invoke-direct {v5}, Landroid/graphics/Point;-><init>()V
 
-    .line 134
+    .line 130
     new-instance v6, Landroid/graphics/Point;
 
     invoke-direct {v6}, Landroid/graphics/Point;-><init>()V
 
-    .line 135
+    .line 131
     invoke-virtual {v3, v5, v6}, Landroid/view/Display;->getCurrentSizeRange(Landroid/graphics/Point;Landroid/graphics/Point;)V
 
-    .line 138
+    .line 134
     iget v2, v5, Landroid/graphics/Point;->x:I
 
     iget v7, v5, Landroid/graphics/Point;->y:I
@@ -154,7 +152,7 @@
 
     iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->minWidthDps:F
 
-    .line 139
+    .line 135
     iget v2, v6, Landroid/graphics/Point;->x:I
 
     iget v7, v6, Landroid/graphics/Point;->y:I
@@ -171,7 +169,7 @@
 
     iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->minHeightDps:F
 
-    .line 142
+    .line 138
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->minWidthDps:F
@@ -184,14 +182,14 @@
 
     move-result-object v8
 
-    .line 141
+    .line 137
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2, v7, v8}, Lcom/android/launcher3/InvariantDeviceProfile;->findClosestDeviceProfiles(FFLjava/util/ArrayList;)Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 144
+    .line 140
     move-object/from16 v0, p0
 
     iget v7, v0, Lcom/android/launcher3/InvariantDeviceProfile;->minWidthDps:F
@@ -206,7 +204,7 @@
 
     move-result-object v7
 
-    .line 146
+    .line 142
     const/4 v8, 0x0
 
     invoke-virtual {v2, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -215,63 +213,70 @@
 
     check-cast v2, Lcom/android/launcher3/InvariantDeviceProfile;
 
-    .line 147
+    .line 143
     iget v8, v2, Lcom/android/launcher3/InvariantDeviceProfile;->numRows:I
 
     move-object/from16 v0, p0
 
     iput v8, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numRows:I
 
-    .line 148
+    .line 144
     iget v8, v2, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
     move-object/from16 v0, p0
 
     iput v8, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
-    .line 149
+    .line 145
     iget v8, v2, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
     move-object/from16 v0, p0
 
     iput v8, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
-    .line 150
+    .line 146
     iget v8, v2, Lcom/android/launcher3/InvariantDeviceProfile;->defaultLayoutId:I
 
     move-object/from16 v0, p0
 
     iput v8, v0, Lcom/android/launcher3/InvariantDeviceProfile;->defaultLayoutId:I
 
-    .line 151
+    .line 147
     iget v8, v2, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderRows:I
 
     move-object/from16 v0, p0
 
     iput v8, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderRows:I
 
-    .line 152
+    .line 148
     iget v8, v2, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderColumns:I
 
     move-object/from16 v0, p0
 
     iput v8, v0, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderColumns:I
 
-    .line 153
+    .line 149
     iget v2, v2, Lcom/android/launcher3/InvariantDeviceProfile;->minAllAppsPredictionColumns:I
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->minAllAppsPredictionColumns:I
 
-    .line 155
+    .line 151
     iget v2, v7, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
-    .line 156
+    .line 152
+    iget v2, v7, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    move-object/from16 v0, p0
+
+    iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    .line 153
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
@@ -284,21 +289,14 @@
 
     iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->iconBitmapSize:I
 
-    .line 157
+    .line 154
     iget v2, v7, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
 
     move-object/from16 v0, p0
 
     iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
 
-    .line 158
-    iget v2, v7, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    move-object/from16 v0, p0
-
-    iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    .line 159
+    .line 155
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->iconBitmapSize:I
@@ -313,37 +311,22 @@
 
     iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->fillResIconDpi:I
 
-    .line 163
+    .line 159
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     invoke-direct {v0, v1, v4}, Lcom/android/launcher3/InvariantDeviceProfile;->applyPartnerDeviceProfileOverrides(Landroid/content/Context;Landroid/util/DisplayMetrics;)V
 
-    .line 165
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
-
-    div-float/2addr v2, v4
-
-    move-object/from16 v0, p0
-
-    iput v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatScale:F
-
-    .line 167
+    .line 161
     new-instance v2, Landroid/graphics/Point;
 
     invoke-direct {v2}, Landroid/graphics/Point;-><init>()V
 
-    .line 168
+    .line 162
     invoke-virtual {v3, v2}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    .line 171
+    .line 165
     iget v3, v2, Landroid/graphics/Point;->x:I
 
     iget v4, v2, Landroid/graphics/Point;->y:I
@@ -352,7 +335,7 @@
 
     move-result v8
 
-    .line 172
+    .line 166
     iget v3, v2, Landroid/graphics/Point;->x:I
 
     iget v2, v2, Landroid/graphics/Point;->y:I
@@ -361,27 +344,27 @@
 
     move-result v7
 
-    .line 174
+    .line 168
     new-instance v2, Lcom/android/launcher3/DeviceProfile;
 
-    .line 175
+    .line 169
     const/4 v9, 0x1
 
     move-object/from16 v3, p1
 
     move-object/from16 v4, p0
 
-    .line 174
+    .line 168
     invoke-direct/range {v2 .. v9}, Lcom/android/launcher3/DeviceProfile;-><init>(Landroid/content/Context;Lcom/android/launcher3/InvariantDeviceProfile;Landroid/graphics/Point;Landroid/graphics/Point;IIZ)V
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeProfile:Lcom/android/launcher3/DeviceProfile;
 
-    .line 176
+    .line 170
     new-instance v9, Lcom/android/launcher3/DeviceProfile;
 
-    .line 177
+    .line 171
     const/16 v16, 0x0
 
     move-object/from16 v10, p1
@@ -396,14 +379,14 @@
 
     move v15, v7
 
-    .line 176
+    .line 170
     invoke-direct/range {v9 .. v16}, Lcom/android/launcher3/DeviceProfile;-><init>(Landroid/content/Context;Lcom/android/launcher3/InvariantDeviceProfile;Landroid/graphics/Point;Landroid/graphics/Point;IIZ)V
 
     move-object/from16 v0, p0
 
     iput-object v9, v0, Lcom/android/launcher3/InvariantDeviceProfile;->portraitProfile:Lcom/android/launcher3/DeviceProfile;
 
-    .line 181
+    .line 175
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -418,10 +401,10 @@
 
     if-lt v2, v3, :cond_0
 
-    .line 182
+    .line 176
     new-instance v2, Landroid/graphics/Point;
 
-    .line 183
+    .line 177
     int-to-float v3, v7
 
     invoke-static {v7, v8}, Lcom/android/launcher3/InvariantDeviceProfile;->wallpaperTravelToScreenWidthRatio(II)F
@@ -432,18 +415,18 @@
 
     float-to-int v3, v3
 
-    .line 182
+    .line 176
     invoke-direct {v2, v3, v7}, Landroid/graphics/Point;-><init>(II)V
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/launcher3/InvariantDeviceProfile;->defaultWallpaperSize:Landroid/graphics/Point;
 
-    .line 188
+    .line 182
     :goto_0
     return-void
 
-    .line 186
+    .line 180
     :cond_0
     new-instance v2, Landroid/graphics/Point;
 
@@ -466,7 +449,7 @@
     .locals 14
 
     .prologue
-    .line 101
+    .line 99
     iget-object v1, p1, Lcom/android/launcher3/InvariantDeviceProfile;->name:Ljava/lang/String;
 
     iget v2, p1, Lcom/android/launcher3/InvariantDeviceProfile;->minWidthDps:F
@@ -477,90 +460,81 @@
 
     iget v5, p1, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
-    .line 102
+    .line 100
     iget v6, p1, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderRows:I
 
     iget v7, p1, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderColumns:I
 
     iget v8, p1, Lcom/android/launcher3/InvariantDeviceProfile;->minAllAppsPredictionColumns:I
 
-    .line 103
+    .line 101
     iget v9, p1, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
-    iget v10, p1, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
+    iget v10, p1, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
 
-    iget v11, p1, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
+    iget v11, p1, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
 
-    iget v12, p1, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
+    iget v12, p1, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
-    .line 104
+    .line 102
     iget v13, p1, Lcom/android/launcher3/InvariantDeviceProfile;->defaultLayoutId:I
 
     move-object v0, p0
 
-    .line 101
-    invoke-direct/range {v0 .. v13}, Lcom/android/launcher3/InvariantDeviceProfile;-><init>(Ljava/lang/String;FFIIIIIFFIFI)V
+    .line 99
+    invoke-direct/range {v0 .. v13}, Lcom/android/launcher3/InvariantDeviceProfile;-><init>(Ljava/lang/String;FFIIIIIFFFII)V
 
-    .line 105
+    .line 103
     return-void
 .end method
 
-.method constructor <init>(Ljava/lang/String;FFIIIIIFFIFI)V
-    .locals 2
+.method constructor <init>(Ljava/lang/String;FFIIIIIFFFII)V
+    .locals 0
 
     .prologue
-    .line 107
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 109
+    .line 107
     iput-object p1, p0, Lcom/android/launcher3/InvariantDeviceProfile;->name:Ljava/lang/String;
 
-    .line 110
+    .line 108
     iput p2, p0, Lcom/android/launcher3/InvariantDeviceProfile;->minWidthDps:F
 
-    .line 111
+    .line 109
     iput p3, p0, Lcom/android/launcher3/InvariantDeviceProfile;->minHeightDps:F
 
-    .line 112
+    .line 110
     iput p4, p0, Lcom/android/launcher3/InvariantDeviceProfile;->numRows:I
 
-    .line 113
+    .line 111
     iput p5, p0, Lcom/android/launcher3/InvariantDeviceProfile;->numColumns:I
 
-    .line 114
+    .line 112
     iput p6, p0, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderRows:I
 
-    .line 115
+    .line 113
     iput p7, p0, Lcom/android/launcher3/InvariantDeviceProfile;->numFolderColumns:I
 
-    .line 116
+    .line 114
     iput p8, p0, Lcom/android/launcher3/InvariantDeviceProfile;->minAllAppsPredictionColumns:I
 
-    .line 117
+    .line 115
     iput p9, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
+    .line 116
+    iput p10, p0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    .line 117
+    iput p11, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
+
     .line 118
-    iput p10, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
+    iput p12, p0, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
     .line 119
-    iput p11, p0, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
-
-    .line 120
-    iput p12, p0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    .line 121
     iput p13, p0, Lcom/android/launcher3/InvariantDeviceProfile;->defaultLayoutId:I
 
-    .line 123
-    iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    iget v1, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
-
-    div-float/2addr v0, v1
-
-    iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatScale:F
-
-    .line 124
+    .line 120
     return-void
 .end method
 
@@ -568,7 +542,7 @@
     .locals 2
 
     .prologue
-    .line 307
+    .line 301
     iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
     iget v1, p1, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
@@ -577,7 +551,16 @@
 
     iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
-    .line 308
+    .line 302
+    iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    iget v1, p1, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    add-float/2addr v0, v1
+
+    iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    .line 303
     iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
 
     iget v1, p1, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
@@ -586,16 +569,7 @@
 
     iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
 
-    .line 309
-    iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    iget v1, p1, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    add-float/2addr v0, v1
-
-    iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    .line 310
+    .line 304
     return-void
 .end method
 
@@ -603,7 +577,7 @@
     .locals 1
 
     .prologue
-    .line 257
+    .line 251
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
@@ -612,13 +586,13 @@
 
     move-result-object v0
 
-    .line 258
+    .line 252
     if-eqz v0, :cond_0
 
-    .line 259
+    .line 253
     invoke-virtual {v0, p0, p2}, Lcom/android/launcher3/Partner;->applyInvariantDeviceProfileOverrides(Lcom/android/launcher3/InvariantDeviceProfile;Landroid/util/DisplayMetrics;)V
 
-    .line 261
+    .line 255
     :cond_0
     return-void
 .end method
@@ -627,17 +601,17 @@
     .locals 6
 
     .prologue
-    .line 229
+    .line 223
     const/4 v0, 0x7
 
     new-array v2, v0, [I
 
     fill-array-data v2, :array_0
 
-    .line 239
+    .line 233
     const/16 v1, 0x280
 
-    .line 240
+    .line 234
     array-length v0, v2
 
     add-int/lit8 v0, v0, -0x1
@@ -651,7 +625,7 @@
     :goto_0
     if-ltz v1, :cond_1
 
-    .line 241
+    .line 235
     aget v3, v2, v1
 
     int-to-float v3, v3
@@ -660,33 +634,33 @@
 
     mul-float/2addr v3, v4
 
-    .line 242
+    .line 236
     const/high16 v4, 0x43200000    # 160.0f
 
-    .line 241
+    .line 235
     div-float/2addr v3, v4
 
-    .line 243
+    .line 237
     int-to-float v4, p1
 
     cmpl-float v3, v3, v4
 
     if-ltz v3, :cond_0
 
-    .line 244
+    .line 238
     aget v0, v2, v1
 
-    .line 240
+    .line 234
     :cond_0
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 248
+    .line 242
     :cond_1
     return v0
 
-    .line 229
+    .line 223
     :array_0
     .array-data 4
         0x78
@@ -703,28 +677,28 @@
     .locals 1
 
     .prologue
-    .line 313
+    .line 307
     iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
     mul-float/2addr v0, p1
 
     iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconSize:F
 
-    .line 314
+    .line 308
+    iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    mul-float/2addr v0, p1
+
+    iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeIconSize:F
+
+    .line 309
     iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
 
     mul-float/2addr v0, p1
 
     iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->iconTextSize:F
 
-    .line 315
-    iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    mul-float/2addr v0, p1
-
-    iput v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->hotseatIconSize:F
-
-    .line 316
+    .line 310
     return-object p0
 .end method
 
@@ -736,14 +710,14 @@
 
     const v2, 0x3e9d89d7
 
-    .line 348
+    .line 342
     int-to-float v0, p0
 
     int-to-float v1, p1
 
     div-float/2addr v0, v1
 
-    .line 369
+    .line 363
     mul-float/2addr v0, v2
 
     add-float/2addr v0, v3
@@ -755,12 +729,12 @@
     .locals 6
 
     .prologue
-    .line 336
+    .line 330
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/android/launcher3/InvariantDeviceProfile;->dist(FFFF)F
 
     move-result v0
 
-    .line 337
+    .line 331
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
@@ -769,12 +743,12 @@
 
     if-nez v1, :cond_0
 
-    .line 338
+    .line 332
     const/high16 v0, 0x7f800000    # Float.POSITIVE_INFINITY
 
     return v0
 
-    .line 340
+    .line 334
     :cond_0
     sget v1, Lcom/android/launcher3/InvariantDeviceProfile;->WEIGHT_EFFICIENT:F
 
@@ -801,7 +775,7 @@
     .locals 4
 
     .prologue
-    .line 264
+    .line 258
     sub-float v0, p3, p1
 
     float-to-double v0, v0
@@ -823,14 +797,14 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 270
     new-instance v0, Lcom/android/launcher3/InvariantDeviceProfile$1;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/launcher3/InvariantDeviceProfile$1;-><init>(Lcom/android/launcher3/InvariantDeviceProfile;FF)V
 
     invoke-static {p3, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 283
+    .line 277
     return-object p3
 .end method
 
@@ -838,7 +812,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 317
     iget v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->numHotseatIcons:I
 
     div-int/lit8 v0, v0, 0x2
@@ -850,7 +824,7 @@
     .locals 2
 
     .prologue
-    .line 331
+    .line 325
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -861,20 +835,20 @@
 
     iget v0, v0, Landroid/content/res/Configuration;->orientation:I
 
-    .line 332
+    .line 326
     const/4 v1, 0x2
 
-    .line 331
+    .line 325
     if-ne v0, v1, :cond_0
 
-    .line 332
+    .line 326
     iget-object v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeProfile:Lcom/android/launcher3/DeviceProfile;
 
-    .line 331
+    .line 325
     :goto_0
     return-object v0
 
-    .line 332
+    .line 326
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/InvariantDeviceProfile;->portraitProfile:Lcom/android/launcher3/DeviceProfile;
 
@@ -885,12 +859,12 @@
     .locals 22
 
     .prologue
-    .line 191
+    .line 185
     new-instance v18, Ljava/util/ArrayList;
 
     invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
 
-    .line 192
+    .line 186
     const/16 v17, 0x0
 
     const/4 v3, 0x0
@@ -909,13 +883,13 @@
 
     move-result-object v16
 
-    .line 193
+    .line 187
     :try_start_1
     invoke-interface/range {v16 .. v16}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v19
 
-    .line 196
+    .line 190
     :cond_0
     :goto_0
     invoke-interface/range {v16 .. v16}, Landroid/content/res/XmlResourceParser;->next()I
@@ -926,7 +900,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 197
+    .line 191
     invoke-interface/range {v16 .. v16}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v3
@@ -940,7 +914,7 @@
 
     if-eq v2, v3, :cond_3
 
-    .line 198
+    .line 192
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_0
@@ -957,21 +931,21 @@
 
     if-eqz v2, :cond_0
 
-    .line 200
+    .line 194
     invoke-static/range {v16 .. v16}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v2
 
     sget-object v3, Lcom/android/launcher3/R$styleable;->InvariantDeviceProfile:[I
 
-    .line 199
+    .line 193
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v20
 
-    .line 201
+    .line 195
     const/4 v2, 0x3
 
     const/4 v3, 0x0
@@ -982,7 +956,7 @@
 
     move-result v6
 
-    .line 202
+    .line 196
     const/4 v2, 0x4
 
     const/4 v3, 0x0
@@ -993,7 +967,7 @@
 
     move-result v7
 
-    .line 203
+    .line 197
     const/4 v2, 0x0
 
     const/16 v3, 0x9
@@ -1004,10 +978,10 @@
 
     move-result v11
 
-    .line 204
+    .line 198
     new-instance v2, Lcom/android/launcher3/InvariantDeviceProfile;
 
-    .line 205
+    .line 199
     const/4 v3, 0x0
 
     move-object/from16 v0, v20
@@ -1016,7 +990,7 @@
 
     move-result-object v3
 
-    .line 206
+    .line 200
     const/4 v4, 0x0
 
     const/4 v5, 0x1
@@ -1027,7 +1001,7 @@
 
     move-result v4
 
-    .line 207
+    .line 201
     const/4 v5, 0x0
 
     const/4 v8, 0x2
@@ -1038,7 +1012,7 @@
 
     move-result v5
 
-    .line 210
+    .line 204
     const/4 v8, 0x5
 
     move-object/from16 v0, v20
@@ -1047,7 +1021,7 @@
 
     move-result v8
 
-    .line 211
+    .line 205
     const/4 v9, 0x6
 
     move-object/from16 v0, v20
@@ -1056,7 +1030,7 @@
 
     move-result v9
 
-    .line 212
+    .line 206
     const/4 v10, 0x7
 
     move-object/from16 v0, v20
@@ -1065,36 +1039,36 @@
 
     move-result v10
 
-    .line 214
-    const/4 v12, 0x0
-
-    const/16 v13, 0xa
+    .line 208
+    const/16 v12, 0xa
 
     move-object/from16 v0, v20
 
-    invoke-virtual {v0, v13, v12}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v0, v12, v11}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v12
 
-    .line 215
-    const/16 v13, 0x8
+    .line 209
+    const/4 v13, 0x0
 
-    move-object/from16 v0, v20
-
-    invoke-virtual {v0, v13, v7}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v13
-
-    .line 216
     const/16 v14, 0xb
 
     move-object/from16 v0, v20
 
-    invoke-virtual {v0, v14, v11}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v0, v14, v13}, Landroid/content/res/TypedArray;->getFloat(IF)F
+
+    move-result v13
+
+    .line 210
+    const/16 v14, 0x8
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v0, v14, v7}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v14
 
-    .line 217
+    .line 211
     const/16 v15, 0xc
 
     const/16 v21, 0x0
@@ -1107,14 +1081,14 @@
 
     move-result v15
 
-    .line 204
-    invoke-direct/range {v2 .. v15}, Lcom/android/launcher3/InvariantDeviceProfile;-><init>(Ljava/lang/String;FFIIIIIFFIFI)V
+    .line 198
+    invoke-direct/range {v2 .. v15}, Lcom/android/launcher3/InvariantDeviceProfile;-><init>(Ljava/lang/String;FFIIIIIFFFII)V
 
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 218
+    .line 212
     invoke-virtual/range {v20 .. v20}, Landroid/content/res/TypedArray;->recycle()V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
@@ -1122,7 +1096,7 @@
 
     goto/16 :goto_0
 
-    .line 223
+    .line 217
     :catch_0
     move-exception v2
 
@@ -1163,18 +1137,18 @@
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_1
 
-    .line 221
+    .line 215
     :catch_1
     move-exception v2
 
-    .line 222
+    .line 216
     new-instance v3, Ljava/lang/RuntimeException;
 
     invoke-direct {v3, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
     throw v3
 
-    .line 223
+    .line 217
     :cond_3
     if-eqz v16, :cond_4
 
@@ -1219,11 +1193,11 @@
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_6 .. :try_end_6} :catch_1
 
-    .line 224
+    .line 218
     :cond_7
     return-object v18
 
-    .line 223
+    .line 217
     :catchall_1
     move-exception v2
 
@@ -1254,14 +1228,14 @@
 
     const/4 v2, 0x0
 
-    .line 291
+    .line 285
     invoke-virtual {p3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/InvariantDeviceProfile;
 
-    .line 292
+    .line 286
     iget v3, v0, Lcom/android/launcher3/InvariantDeviceProfile;->minWidthDps:F
 
     iget v4, v0, Lcom/android/launcher3/InvariantDeviceProfile;->minHeightDps:F
@@ -1274,10 +1248,10 @@
 
     if-nez v3, :cond_0
 
-    .line 293
+    .line 287
     return-object v0
 
-    .line 296
+    .line 290
     :cond_0
     new-instance v8, Lcom/android/launcher3/InvariantDeviceProfile;
 
@@ -1287,7 +1261,7 @@
 
     move v7, v2
 
-    .line 297
+    .line 291
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -1303,7 +1277,7 @@
 
     if-gez v0, :cond_1
 
-    .line 298
+    .line 292
     new-instance v9, Lcom/android/launcher3/InvariantDeviceProfile;
 
     invoke-virtual {p3, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1314,7 +1288,7 @@
 
     invoke-direct {v9, v0}, Lcom/android/launcher3/InvariantDeviceProfile;-><init>(Lcom/android/launcher3/InvariantDeviceProfile;)V
 
-    .line 299
+    .line 293
     iget v3, v9, Lcom/android/launcher3/InvariantDeviceProfile;->minWidthDps:F
 
     iget v4, v9, Lcom/android/launcher3/InvariantDeviceProfile;->minHeightDps:F
@@ -1331,17 +1305,17 @@
 
     move-result v0
 
-    .line 300
+    .line 294
     add-float v1, v7, v0
 
-    .line 301
+    .line 295
     invoke-direct {v9, v0}, Lcom/android/launcher3/InvariantDeviceProfile;->multiply(F)Lcom/android/launcher3/InvariantDeviceProfile;
 
     move-result-object v0
 
     invoke-direct {v8, v0}, Lcom/android/launcher3/InvariantDeviceProfile;->add(Lcom/android/launcher3/InvariantDeviceProfile;)V
 
-    .line 297
+    .line 291
     add-int/lit8 v0, v6, 0x1
 
     move v6, v0
@@ -1350,7 +1324,7 @@
 
     goto :goto_0
 
-    .line 303
+    .line 297
     :cond_1
     const/high16 v0, 0x3f800000    # 1.0f
 
@@ -1367,7 +1341,7 @@
     .locals 1
 
     .prologue
-    .line 327
+    .line 321
     invoke-virtual {p0}, Lcom/android/launcher3/InvariantDeviceProfile;->getAllAppsButtonRank()I
 
     move-result v0

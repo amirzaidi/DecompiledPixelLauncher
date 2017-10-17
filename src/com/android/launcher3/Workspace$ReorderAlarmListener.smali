@@ -7,19 +7,19 @@
 
 
 # instance fields
-.field child:Landroid/view/View;
+.field final child:Landroid/view/View;
 
-.field dragObject:Lcom/android/launcher3/DropTarget$DragObject;
+.field final dragObject:Lcom/android/launcher3/DropTarget$DragObject;
 
-.field dragViewCenter:[F
+.field final dragViewCenter:[F
 
-.field minSpanX:I
+.field final minSpanX:I
 
-.field minSpanY:I
+.field final minSpanY:I
 
-.field spanX:I
+.field final spanX:I
 
-.field spanY:I
+.field final spanY:I
 
 .field final synthetic this$0:Lcom/android/launcher3/Workspace;
 
@@ -29,33 +29,33 @@
     .locals 0
 
     .prologue
-    .line 3187
+    .line 3087
     iput-object p1, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3189
+    .line 3089
     iput-object p2, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->dragViewCenter:[F
 
-    .line 3190
+    .line 3090
     iput p3, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->minSpanX:I
 
-    .line 3191
+    .line 3091
     iput p4, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->minSpanY:I
 
-    .line 3192
+    .line 3092
     iput p5, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->spanX:I
 
-    .line 3193
+    .line 3093
     iput p6, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->spanY:I
 
-    .line 3194
+    .line 3094
     iput-object p8, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->child:Landroid/view/View;
 
-    .line 3195
+    .line 3095
     iput-object p7, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->dragObject:Lcom/android/launcher3/DropTarget$DragObject;
 
-    .line 3196
+    .line 3096
     return-void
 .end method
 
@@ -69,12 +69,12 @@
 
     const/4 v11, 0x0
 
-    .line 3199
+    .line 3099
     const/4 v0, 0x2
 
     new-array v9, v0, [I
 
-    .line 3200
+    .line 3100
     iget-object v7, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
@@ -87,7 +87,7 @@
 
     float-to-int v1, v1
 
-    .line 3201
+    .line 3101
     iget-object v2, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v2, v2, Lcom/android/launcher3/Workspace;->mDragViewVisualCenter:[F
@@ -104,19 +104,19 @@
 
     iget-object v5, v5, Lcom/android/launcher3/Workspace;->mDragTargetLayout:Lcom/android/launcher3/CellLayout;
 
-    .line 3202
+    .line 3102
     iget-object v6, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v6, v6, Lcom/android/launcher3/Workspace;->mTargetCell:[I
 
-    .line 3200
+    .line 3100
     invoke-virtual/range {v0 .. v6}, Lcom/android/launcher3/Workspace;->findNearestArea(IIIILcom/android/launcher3/CellLayout;[I)[I
 
     move-result-object v0
 
     iput-object v0, v7, Lcom/android/launcher3/Workspace;->mTargetCell:[I
 
-    .line 3203
+    .line 3103
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v1, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
@@ -127,7 +127,7 @@
 
     iput v1, v0, Lcom/android/launcher3/Workspace;->mLastReorderX:I
 
-    .line 3204
+    .line 3104
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v1, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
@@ -138,7 +138,7 @@
 
     iput v1, v0, Lcom/android/launcher3/Workspace;->mLastReorderY:I
 
-    .line 3206
+    .line 3106
     iget-object v12, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
@@ -153,7 +153,7 @@
 
     float-to-int v1, v1
 
-    .line 3207
+    .line 3107
     iget-object v2, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v2, v2, Lcom/android/launcher3/Workspace;->mDragViewVisualCenter:[F
@@ -170,21 +170,21 @@
 
     iget v6, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->spanY:I
 
-    .line 3208
+    .line 3108
     iget-object v7, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->child:Landroid/view/View;
 
     iget-object v8, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v8, v8, Lcom/android/launcher3/Workspace;->mTargetCell:[I
 
-    .line 3206
+    .line 3106
     invoke-virtual/range {v0 .. v10}, Lcom/android/launcher3/CellLayout;->performReorder(IIIIIILandroid/view/View;[I[II)[I
 
     move-result-object v0
 
     iput-object v0, v12, Lcom/android/launcher3/Workspace;->mTargetCell:[I
 
-    .line 3210
+    .line 3110
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v0, v0, Lcom/android/launcher3/Workspace;->mTargetCell:[I
@@ -201,7 +201,7 @@
 
     if-gez v0, :cond_2
 
-    .line 3211
+    .line 3111
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
@@ -209,7 +209,7 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/CellLayout;->revertTempState()V
 
-    .line 3216
+    .line 3116
     :goto_0
     aget v0, v9, v11
 
@@ -226,7 +226,7 @@
     :cond_1
     move v7, v10
 
-    .line 3217
+    .line 3117
     :goto_1
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
@@ -240,7 +240,7 @@
 
     move-result-object v2
 
-    .line 3218
+    .line 3118
     iget-object v3, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v3, v3, Lcom/android/launcher3/Workspace;->mTargetCell:[I
@@ -259,13 +259,13 @@
 
     iget-object v8, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->dragObject:Lcom/android/launcher3/DropTarget$DragObject;
 
-    .line 3217
+    .line 3117
     invoke-virtual/range {v0 .. v8}, Lcom/android/launcher3/CellLayout;->visualizeDropLocation(Landroid/view/View;Lcom/android/launcher3/graphics/DragPreviewProvider;IIIIZLcom/android/launcher3/DropTarget$DragObject;)V
 
-    .line 3219
+    .line 3119
     return-void
 
-    .line 3213
+    .line 3113
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/Workspace$ReorderAlarmListener;->this$0:Lcom/android/launcher3/Workspace;
 
@@ -278,6 +278,6 @@
     :cond_3
     move v7, v11
 
-    .line 3216
+    .line 3116
     goto :goto_1
 .end method

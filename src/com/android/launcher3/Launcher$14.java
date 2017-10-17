@@ -4,24 +4,25 @@
 
 package com.android.launcher3;
 
-import android.view.ViewTreeObserver$OnDrawListener;
+import com.android.launcher3.popup.PopupContainerWithArrow;
+import java.util.Set;
 
-final class Launcher$14 implements ViewTreeObserver$OnDrawListener
+final class Launcher$14 implements Runnable
 {
-    private boolean mStarted;
     final /* synthetic */ Launcher this$0;
+    final /* synthetic */ Set val$updatedBadges;
     
-    Launcher$14(final Launcher this$0) {
+    Launcher$14(final Launcher this$0, final Set val$updatedBadges) {
         this.this$0 = this$0;
-        this.mStarted = false;
+        this.val$updatedBadges = val$updatedBadges;
     }
     
-    public void onDraw() {
-        if (this.mStarted) {
-            return;
+    public void run() {
+        this.this$0.mWorkspace.updateIconBadges(this.val$updatedBadges);
+        this.this$0.mAppsView.updateIconBadges(this.val$updatedBadges);
+        final PopupContainerWithArrow open = PopupContainerWithArrow.getOpen(this.this$0);
+        if (open != null) {
+            open.updateNotificationHeader(this.val$updatedBadges);
         }
-        this.mStarted = true;
-        this.this$0.mWorkspace.postDelayed(this.this$0.mBuildLayersRunnable, 500L);
-        this.this$0.mWorkspace.post((Runnable)new Launcher$14$1(this, (ViewTreeObserver$OnDrawListener)this));
     }
 }

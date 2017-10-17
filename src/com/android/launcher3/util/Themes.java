@@ -6,7 +6,7 @@ package com.android.launcher3.util;
 
 import android.graphics.Color;
 import android.graphics.ColorMatrix;
-import android.view.ContextThemeWrapper;
+import android.graphics.drawable.Drawable;
 import android.content.res.TypedArray;
 import android.content.Context;
 
@@ -19,6 +19,13 @@ public class Themes
         return (int)(255.0f * float1 + 0.5f);
     }
     
+    public static boolean getAttrBoolean(final Context context, final int n) {
+        final TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[] { n });
+        final boolean boolean1 = obtainStyledAttributes.getBoolean(0, false);
+        obtainStyledAttributes.recycle();
+        return boolean1;
+    }
+    
     public static int getAttrColor(final Context context, final int n) {
         final TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[] { n });
         final int color = obtainStyledAttributes.getColor(0, 0);
@@ -26,12 +33,15 @@ public class Themes
         return color;
     }
     
-    public static int getColorAccent(final Context context) {
-        return getAttrColor(context, 16843829);
+    public static Drawable getAttrDrawable(final Context context, final int n) {
+        final TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[] { n });
+        final Drawable drawable = obtainStyledAttributes.getDrawable(0);
+        obtainStyledAttributes.recycle();
+        return drawable;
     }
     
-    public static int getColorPrimary(final Context context, final int n) {
-        return getAttrColor((Context)new ContextThemeWrapper(context, n), 16843827);
+    public static int getColorAccent(final Context context) {
+        return getAttrColor(context, 16843829);
     }
     
     public static void setColorScaleOnMatrix(final int n, final ColorMatrix colorMatrix) {

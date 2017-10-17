@@ -22,7 +22,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/model/PackageUpdatedTask$5;->val$removedApps:Ljava/util/ArrayList;
 
-    .line 356
+    .line 352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,11 +35,11 @@
     .locals 1
 
     .prologue
-    .line 359
+    .line 355
     iget-object v0, p0, Lcom/android/launcher3/model/PackageUpdatedTask$5;->val$removedApps:Ljava/util/ArrayList;
 
     invoke-interface {p1, v0}, Lcom/android/launcher3/LauncherModel$Callbacks;->bindAppInfosRemoved(Ljava/util/ArrayList;)V
 
-    .line 360
+    .line 356
     return-void
 .end method

@@ -4,7 +4,6 @@
 
 package com.android.launcher3.dynamicui;
 
-import android.content.Intent;
 import java.util.Iterator;
 import android.support.v7.a.d;
 import java.util.List;

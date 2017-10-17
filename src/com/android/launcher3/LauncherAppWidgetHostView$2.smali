@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/LauncherAppWidgetHostView$2;->this$0:Lcom/android/launcher3/LauncherAppWidgetHostView;
 
-    .line 435
+    .line 424
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,11 +31,11 @@
     .locals 1
 
     .prologue
-    .line 438
+    .line 427
     iget-object v0, p0, Lcom/android/launcher3/LauncherAppWidgetHostView$2;->this$0:Lcom/android/launcher3/LauncherAppWidgetHostView;
 
     invoke-static {v0}, Lcom/android/launcher3/LauncherAppWidgetHostView;->-wrap0(Lcom/android/launcher3/LauncherAppWidgetHostView;)V
 
-    .line 439
+    .line 428
     return-void
 .end method

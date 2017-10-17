@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$10;->this$0:Lcom/android/launcher3/Launcher;
 
-    .line 1362
+    .line 1322
     invoke-direct {p0, p2}, Lcom/android/launcher3/OverviewButtonClickListener;-><init>(I)V
 
     .line 1
@@ -28,11 +28,11 @@
     .locals 1
 
     .prologue
-    .line 1365
+    .line 1325
     iget-object v0, p0, Lcom/android/launcher3/Launcher$10;->this$0:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/Launcher;->onClickWallpaperPicker(Landroid/view/View;)V
 
-    .line 1366
+    .line 1326
     return-void
 .end method

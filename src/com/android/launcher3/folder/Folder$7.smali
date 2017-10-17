@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/folder/Folder$7;->this$0:Lcom/android/launcher3/folder/Folder;
 
-    .line 462
+    .line 467
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 2
 
     .prologue
-    .line 464
+    .line 469
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$7;->this$0:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/Folder;->getItemCount()I
@@ -42,12 +42,12 @@
 
     if-gt v0, v1, :cond_0
 
-    .line 465
+    .line 470
     iget-object v0, p0, Lcom/android/launcher3/folder/Folder$7;->this$0:Lcom/android/launcher3/folder/Folder;
 
     invoke-virtual {v0}, Lcom/android/launcher3/folder/Folder;->replaceFolderWithFinalItem()V
 
-    .line 467
+    .line 472
     :cond_0
     return-void
 .end method

@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret$4;->this$0:Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;
 
-    .line 106
+    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,13 +31,13 @@
     .locals 2
 
     .prologue
-    .line 109
+    .line 111
     iget-object v0, p0, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret$4;->this$0:Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;->-wrap0(Lcom/android/launcher3/pageindicators/PageIndicatorLineCaret;I)V
 
-    .line 110
+    .line 112
     return-void
 .end method

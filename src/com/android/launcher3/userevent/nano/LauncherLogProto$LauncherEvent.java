@@ -43,14 +43,14 @@ public final class LauncherLogProto$LauncherEvent extends a
         int i = 0;
         int computeSerializedSize = super.computeSerializedSize();
         if (this.action != null) {
-            computeSerializedSize += b.Rt(1, this.action);
+            computeSerializedSize += b.Vo(1, this.action);
         }
         if (this.srcTarget != null && this.srcTarget.length > 0) {
             int n2 = computeSerializedSize;
             for (int j = 0; j < this.srcTarget.length; ++j) {
                 final LauncherLogProto$Target launcherLogProto$Target = this.srcTarget[j];
                 if (launcherLogProto$Target != null) {
-                    n2 += b.Rt(2, launcherLogProto$Target);
+                    n2 += b.Vo(2, launcherLogProto$Target);
                 }
             }
             computeSerializedSize = n2;
@@ -59,35 +59,35 @@ public final class LauncherLogProto$LauncherEvent extends a
             while (i < this.destTarget.length) {
                 final LauncherLogProto$Target launcherLogProto$Target2 = this.destTarget[i];
                 if (launcherLogProto$Target2 != null) {
-                    computeSerializedSize += b.Rt(3, launcherLogProto$Target2);
+                    computeSerializedSize += b.Vo(3, launcherLogProto$Target2);
                 }
                 ++i;
             }
         }
         if (this.actionDurationMillis != n) {
-            computeSerializedSize += b.RE(4, this.actionDurationMillis);
+            computeSerializedSize += b.Vz(4, this.actionDurationMillis);
         }
         if (this.elapsedContainerMillis != n) {
-            computeSerializedSize += b.RE(5, this.elapsedContainerMillis);
+            computeSerializedSize += b.Vz(5, this.elapsedContainerMillis);
         }
         if (this.elapsedSessionMillis != n) {
-            computeSerializedSize += b.RE(6, this.elapsedSessionMillis);
+            computeSerializedSize += b.Vz(6, this.elapsedSessionMillis);
         }
         if (this.isInMultiWindowMode) {
-            computeSerializedSize += b.RQ(7, this.isInMultiWindowMode);
+            computeSerializedSize += b.VL(7, this.isInMultiWindowMode);
         }
         if (this.isInLandscapeMode) {
-            computeSerializedSize += b.RQ(8, this.isInLandscapeMode);
+            computeSerializedSize += b.VL(8, this.isInLandscapeMode);
         }
         return computeSerializedSize;
     }
     
     public LauncherLogProto$LauncherEvent mergeFrom(final c c) {
         while (true) {
-            final int sx = c.Sx();
-            switch (sx) {
+            final int ws = c.Ws();
+            switch (ws) {
                 default: {
-                    if (!f.SW(c, sx)) {
+                    if (!f.WR(c, ws)) {
                         return this;
                     }
                     continue;
@@ -99,11 +99,11 @@ public final class LauncherLogProto$LauncherEvent extends a
                     if (this.action == null) {
                         this.action = new LauncherLogProto$Action();
                     }
-                    c.SB(this.action);
+                    c.Ww(this.action);
                     continue;
                 }
                 case 18: {
-                    final int ss = f.SS(c, 18);
+                    final int wn = f.WN(c, 18);
                     int i;
                     if (this.srcTarget == null) {
                         i = 0;
@@ -111,21 +111,21 @@ public final class LauncherLogProto$LauncherEvent extends a
                     else {
                         i = this.srcTarget.length;
                     }
-                    final LauncherLogProto$Target[] srcTarget = new LauncherLogProto$Target[ss + i];
+                    final LauncherLogProto$Target[] srcTarget = new LauncherLogProto$Target[wn + i];
                     if (i != 0) {
                         System.arraycopy(this.srcTarget, 0, srcTarget, 0, i);
                     }
                     while (i < srcTarget.length - 1) {
-                        c.SB(srcTarget[i] = new LauncherLogProto$Target());
-                        c.Sx();
+                        c.Ww(srcTarget[i] = new LauncherLogProto$Target());
+                        c.Ws();
                         ++i;
                     }
-                    c.SB(srcTarget[i] = new LauncherLogProto$Target());
+                    c.Ww(srcTarget[i] = new LauncherLogProto$Target());
                     this.srcTarget = srcTarget;
                     continue;
                 }
                 case 26: {
-                    final int ss2 = f.SS(c, 26);
+                    final int wn2 = f.WN(c, 26);
                     int j;
                     if (this.destTarget == null) {
                         j = 0;
@@ -133,37 +133,37 @@ public final class LauncherLogProto$LauncherEvent extends a
                     else {
                         j = this.destTarget.length;
                     }
-                    final LauncherLogProto$Target[] destTarget = new LauncherLogProto$Target[ss2 + j];
+                    final LauncherLogProto$Target[] destTarget = new LauncherLogProto$Target[wn2 + j];
                     if (j != 0) {
                         System.arraycopy(this.destTarget, 0, destTarget, 0, j);
                     }
                     while (j < destTarget.length - 1) {
-                        c.SB(destTarget[j] = new LauncherLogProto$Target());
-                        c.Sx();
+                        c.Ww(destTarget[j] = new LauncherLogProto$Target());
+                        c.Ws();
                         ++j;
                     }
-                    c.SB(destTarget[j] = new LauncherLogProto$Target());
+                    c.Ww(destTarget[j] = new LauncherLogProto$Target());
                     this.destTarget = destTarget;
                     continue;
                 }
                 case 32: {
-                    this.actionDurationMillis = c.SE();
+                    this.actionDurationMillis = c.Wz();
                     continue;
                 }
                 case 40: {
-                    this.elapsedContainerMillis = c.SE();
+                    this.elapsedContainerMillis = c.Wz();
                     continue;
                 }
                 case 48: {
-                    this.elapsedSessionMillis = c.SE();
+                    this.elapsedSessionMillis = c.Wz();
                     continue;
                 }
                 case 56: {
-                    this.isInMultiWindowMode = c.SD();
+                    this.isInMultiWindowMode = c.Wy();
                     continue;
                 }
                 case 64: {
-                    this.isInLandscapeMode = c.SD();
+                    this.isInLandscapeMode = c.Wy();
                     continue;
                 }
             }
@@ -174,13 +174,13 @@ public final class LauncherLogProto$LauncherEvent extends a
         final long n = 0L;
         int i = 0;
         if (this.action != null) {
-            b.RP(1, this.action);
+            b.VK(1, this.action);
         }
         if (this.srcTarget != null && this.srcTarget.length > 0) {
             for (int j = 0; j < this.srcTarget.length; ++j) {
                 final LauncherLogProto$Target launcherLogProto$Target = this.srcTarget[j];
                 if (launcherLogProto$Target != null) {
-                    b.RP(2, launcherLogProto$Target);
+                    b.VK(2, launcherLogProto$Target);
                 }
             }
         }
@@ -188,25 +188,25 @@ public final class LauncherLogProto$LauncherEvent extends a
             while (i < this.destTarget.length) {
                 final LauncherLogProto$Target launcherLogProto$Target2 = this.destTarget[i];
                 if (launcherLogProto$Target2 != null) {
-                    b.RP(3, launcherLogProto$Target2);
+                    b.VK(3, launcherLogProto$Target2);
                 }
                 ++i;
             }
         }
         if (this.actionDurationMillis != n) {
-            b.Sh(4, this.actionDurationMillis);
+            b.Wc(4, this.actionDurationMillis);
         }
         if (this.elapsedContainerMillis != n) {
-            b.Sh(5, this.elapsedContainerMillis);
+            b.Wc(5, this.elapsedContainerMillis);
         }
         if (this.elapsedSessionMillis != n) {
-            b.Sh(6, this.elapsedSessionMillis);
+            b.Wc(6, this.elapsedSessionMillis);
         }
         if (this.isInMultiWindowMode) {
-            b.RL(7, this.isInMultiWindowMode);
+            b.VG(7, this.isInMultiWindowMode);
         }
         if (this.isInLandscapeMode) {
-            b.RL(8, this.isInLandscapeMode);
+            b.VG(8, this.isInLandscapeMode);
         }
         super.writeTo(b);
     }

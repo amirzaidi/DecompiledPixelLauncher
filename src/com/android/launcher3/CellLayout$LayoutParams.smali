@@ -40,33 +40,33 @@
 
     const/4 v0, -0x1
 
-    .line 2703
+    .line 2697
     invoke-direct {p0, v0, v0}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 2660
+    .line 2654
     iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
 
-    .line 2665
+    .line 2659
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isFullscreen:Z
 
-    .line 2671
+    .line 2665
     iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->canReorder:Z
 
-    .line 2704
+    .line 2698
     iput p1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
-    .line 2705
+    .line 2699
     iput p2, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
-    .line 2706
+    .line 2700
     iput p3, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
-    .line 2707
+    .line 2701
     iput p4, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
 
-    .line 2708
+    .line 2702
     return-void
 .end method
 
@@ -76,18 +76,48 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2683
+    .line 2677
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 2660
+    .line 2654
     iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
 
-    .line 2665
+    .line 2659
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isFullscreen:Z
 
-    .line 2671
+    .line 2665
+    iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->canReorder:Z
+
+    .line 2678
+    iput v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
+
+    .line 2679
+    iput v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
+
+    .line 2680
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x1
+
+    .line 2683
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 2654
+    iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
+
+    .line 2659
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isFullscreen:Z
+
+    .line 2665
     iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->canReorder:Z
 
     .line 2684
@@ -100,43 +130,13 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x1
-
-    .line 2689
-    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 2660
-    iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
-
-    .line 2665
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isFullscreen:Z
-
-    .line 2671
-    iput-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->canReorder:Z
-
-    .line 2690
-    iput v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
-
-    .line 2691
-    iput v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
-
-    .line 2692
-    return-void
-.end method
-
 
 # virtual methods
 .method public getHeight()I
     .locals 1
 
     .prologue
-    .line 2757
+    .line 2751
     iget v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->height:I
 
     return v0
@@ -146,7 +146,7 @@
     .locals 1
 
     .prologue
-    .line 2749
+    .line 2743
     iget v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->width:I
 
     return v0
@@ -156,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 2765
+    .line 2759
     iget v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
     return v0
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 2773
+    .line 2767
     iget v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
     return v0
@@ -176,10 +176,10 @@
     .locals 0
 
     .prologue
-    .line 2753
+    .line 2747
     iput p1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->height:I
 
-    .line 2754
+    .line 2748
     return-void
 .end method
 
@@ -187,10 +187,10 @@
     .locals 0
 
     .prologue
-    .line 2745
+    .line 2739
     iput p1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->width:I
 
-    .line 2746
+    .line 2740
     return-void
 .end method
 
@@ -198,10 +198,10 @@
     .locals 0
 
     .prologue
-    .line 2761
+    .line 2755
     iput p1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
-    .line 2762
+    .line 2756
     return-void
 .end method
 
@@ -209,10 +209,10 @@
     .locals 0
 
     .prologue
-    .line 2769
+    .line 2763
     iput p1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
-    .line 2770
+    .line 2764
     return-void
 .end method
 
@@ -234,10 +234,10 @@
 
     move v6, v5
 
-    .line 2711
+    .line 2705
     invoke-virtual/range {v0 .. v6}, Lcom/android/launcher3/CellLayout$LayoutParams;->setup(IIZIFF)V
 
-    .line 2712
+    .line 2706
     return-void
 .end method
 
@@ -245,25 +245,25 @@
     .locals 5
 
     .prologue
-    .line 2723
+    .line 2717
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->isLockedToGrid:Z
 
     if-eqz v0, :cond_1
 
-    .line 2724
+    .line 2718
     iget v2, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
-    .line 2725
+    .line 2719
     iget v3, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellVSpan:I
 
-    .line 2726
+    .line 2720
     iget-boolean v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->useTmpCoords:Z
 
     if-eqz v0, :cond_2
 
     iget v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellX:I
 
-    .line 2727
+    .line 2721
     :goto_0
     iget-boolean v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->useTmpCoords:Z
 
@@ -271,18 +271,18 @@
 
     iget v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->tmpCellY:I
 
-    .line 2729
+    .line 2723
     :goto_1
     if-eqz p3, :cond_0
 
-    .line 2730
+    .line 2724
     sub-int v0, p4, v0
 
     iget v4, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellHSpan:I
 
     sub-int/2addr v0, v4
 
-    .line 2733
+    .line 2727
     :cond_0
     mul-int/2addr v2, p1
 
@@ -306,7 +306,7 @@
 
     iput v2, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->width:I
 
-    .line 2734
+    .line 2728
     mul-int v2, v3, p2
 
     int-to-float v2, v2
@@ -329,7 +329,7 @@
 
     iput v2, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->height:I
 
-    .line 2735
+    .line 2729
     mul-int/2addr v0, p1
 
     iget v2, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->leftMargin:I
@@ -338,7 +338,7 @@
 
     iput v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
-    .line 2736
+    .line 2730
     mul-int v0, v1, p2
 
     iget v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->topMargin:I
@@ -347,17 +347,17 @@
 
     iput v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
-    .line 2738
+    .line 2732
     :cond_1
     return-void
 
-    .line 2726
+    .line 2720
     :cond_2
     iget v0, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellX:I
 
     goto :goto_0
 
-    .line 2727
+    .line 2721
     :cond_3
     iget v1, p0, Lcom/android/launcher3/CellLayout$LayoutParams;->cellY:I
 
@@ -368,7 +368,7 @@
     .locals 2
 
     .prologue
-    .line 2741
+    .line 2735
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

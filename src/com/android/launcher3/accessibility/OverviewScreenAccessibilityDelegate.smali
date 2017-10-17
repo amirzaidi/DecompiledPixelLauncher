@@ -18,9 +18,9 @@
 
     const v7, 0x7f0e000c
 
-    const v1, 0x7f0c0075
+    const v1, 0x7f0c007e
 
-    const v2, 0x7f0c0074
+    const v2, 0x7f0c007d
 
     .line 40
     invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
@@ -138,7 +138,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0c0076
+    const v2, 0x7f0c007f
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

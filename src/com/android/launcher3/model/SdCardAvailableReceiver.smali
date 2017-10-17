@@ -12,21 +12,29 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/android/launcher3/LauncherModel;Landroid/content/Context;Lcom/android/launcher3/util/MultiHashMap;)V
-    .locals 0
+.method public constructor <init>(Lcom/android/launcher3/LauncherAppState;Lcom/android/launcher3/util/MultiHashMap;)V
+    .locals 1
 
     .prologue
     .line 47
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     .line 49
-    iput-object p1, p0, Lcom/android/launcher3/model/SdCardAvailableReceiver;->mModel:Lcom/android/launcher3/LauncherModel;
+    invoke-virtual {p1}, Lcom/android/launcher3/LauncherAppState;->getModel()Lcom/android/launcher3/LauncherModel;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/launcher3/model/SdCardAvailableReceiver;->mModel:Lcom/android/launcher3/LauncherModel;
 
     .line 50
-    iput-object p2, p0, Lcom/android/launcher3/model/SdCardAvailableReceiver;->mContext:Landroid/content/Context;
+    invoke-virtual {p1}, Lcom/android/launcher3/LauncherAppState;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/launcher3/model/SdCardAvailableReceiver;->mContext:Landroid/content/Context;
 
     .line 51
-    iput-object p3, p0, Lcom/android/launcher3/model/SdCardAvailableReceiver;->mPackages:Lcom/android/launcher3/util/MultiHashMap;
+    iput-object p2, p0, Lcom/android/launcher3/model/SdCardAvailableReceiver;->mPackages:Lcom/android/launcher3/util/MultiHashMap;
 
     .line 52
     return-void

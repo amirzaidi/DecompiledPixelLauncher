@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/widget/WidgetsBottomSheet$1;->this$0:Lcom/android/launcher3/widget/WidgetsBottomSheet;
 
-    .line 187
+    .line 195
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 198
     iget-object v0, p0, Lcom/android/launcher3/widget/WidgetsBottomSheet$1;->this$0:Lcom/android/launcher3/widget/WidgetsBottomSheet;
 
     invoke-static {v0}, Lcom/android/launcher3/widget/WidgetsBottomSheet;->-get0(Lcom/android/launcher3/widget/WidgetsBottomSheet;)Lcom/android/launcher3/allapps/VerticalPullDetector;
@@ -37,6 +37,6 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->finishedScrolling()V
 
-    .line 191
+    .line 199
     return-void
 .end method

@@ -7,20 +7,20 @@ package com.android.launcher3.logging;
 import android.app.PendingIntent;
 import com.android.launcher3.DropTarget$DragObject;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Action;
+import android.content.ComponentName;
+import com.android.launcher3.ItemInfo;
 import android.util.Log;
 import java.util.Locale;
 import android.os.SystemClock;
 import android.content.Intent;
-import com.android.launcher3.util.ComponentKey;
-import com.android.launcher3.ItemInfo;
 import com.android.launcher3.userevent.nano.LauncherLogProto$LauncherEvent;
-import android.content.ComponentName;
+import android.content.SharedPreferences;
+import java.util.UUID;
 import com.android.launcher3.Utilities;
 import android.content.Context;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
 import android.view.ViewParent;
 import android.view.View;
-import java.util.List;
 
 public class UserEventDispatcher
 {
@@ -30,7 +30,7 @@ public class UserEventDispatcher
     private long mElapsedSessionMillis;
     private boolean mIsInLandscapeMode;
     private boolean mIsInMultiWindowMode;
-    private List mPredictedApps;
+    private String mUuidStr;
     
     static {
         IS_VERBOSE = false;
@@ -59,39 +59,30 @@ public class UserEventDispatcher
     }
     
     private static String getTargetsStr(final LauncherLogProto$Target[] array) {
-        final int n = 1;
-        final StringBuilder append = new StringBuilder().append("child:").append(LoggerUtils.getTargetStr(array[0]));
-        String string;
-        if (array.length > n) {
-            string = "\tparent:" + LoggerUtils.getTargetStr(array[n]);
+        String s = "child:" + LoggerUtils.getTargetStr(array[0]);
+        for (int i = 1; i < array.length; ++i) {
+            s = s + "\tparent:" + LoggerUtils.getTargetStr(array[i]);
         }
-        else {
-            string = "";
-        }
-        return append.append(string).toString();
+        return s;
     }
     
     public static UserEventDispatcher newInstance(final Context context, final boolean mIsInLandscapeMode, final boolean mIsInMultiWindowMode) {
-        final UserEventDispatcher userEventDispatcher = (UserEventDispatcher)Utilities.getOverrideObject(UserEventDispatcher.class, context.getApplicationContext(), 2131492890);
+        final SharedPreferences devicePrefs = Utilities.getDevicePrefs(context);
+        final String string = devicePrefs.getString("uuid", (String)null);
+        String mUuidStr;
+        if (string == null) {
+            final String string2 = UUID.randomUUID().toString();
+            devicePrefs.edit().putString("uuid", string2).apply();
+            mUuidStr = string2;
+        }
+        else {
+            mUuidStr = string;
+        }
+        final UserEventDispatcher userEventDispatcher = (UserEventDispatcher)Utilities.getOverrideObject(UserEventDispatcher.class, context.getApplicationContext(), 2131492891);
         userEventDispatcher.mIsInLandscapeMode = mIsInLandscapeMode;
         userEventDispatcher.mIsInMultiWindowMode = mIsInMultiWindowMode;
+        userEventDispatcher.mUuidStr = mUuidStr;
         return userEventDispatcher;
-    }
-    
-    protected LauncherLogProto$LauncherEvent createLauncherEvent(final View view, final int intentHash, final ComponentName componentName) {
-        final LauncherLogProto$LauncherEvent launcherEvent = LoggerUtils.newLauncherEvent(LoggerUtils.newTouchAction(0), LoggerUtils.newItemTarget(view), LoggerUtils.newTarget(3));
-        if (this.fillInLogContainerData(launcherEvent, view)) {
-            final ItemInfo itemInfo = (ItemInfo)view.getTag();
-            launcherEvent.srcTarget[0].intentHash = intentHash;
-            if (componentName != null) {
-                launcherEvent.srcTarget[0].packageNameHash = componentName.getPackageName().hashCode();
-                launcherEvent.srcTarget[0].componentHash = componentName.hashCode();
-                if (this.mPredictedApps != null) {
-                    launcherEvent.srcTarget[0].predictedRank = this.mPredictedApps.indexOf(new ComponentKey(componentName, itemInfo.user));
-                }
-            }
-        }
-        return launcherEvent;
     }
     
     public void dispatchUserEvent(final LauncherLogProto$LauncherEvent launcherLogProto$LauncherEvent, final Intent intent) {
@@ -112,7 +103,7 @@ public class UserEventDispatcher
         Log.d("UserEvent", s + String.format(Locale.US, "\n Elapsed container %d ms session %d ms action %d ms", launcherLogProto$LauncherEvent.elapsedContainerMillis, launcherLogProto$LauncherEvent.elapsedSessionMillis, launcherLogProto$LauncherEvent.actionDurationMillis) + "\n isInLandscapeMode " + launcherLogProto$LauncherEvent.isInLandscapeMode + "\n isInMultiWindowMode " + launcherLogProto$LauncherEvent.isInMultiWindowMode);
     }
     
-    public boolean fillInLogContainerData(final LauncherLogProto$LauncherEvent launcherLogProto$LauncherEvent, final View view) {
+    protected boolean fillInLogContainerData(final LauncherLogProto$LauncherEvent launcherLogProto$LauncherEvent, final View view) {
         final int n = 1;
         final UserEventDispatcher$LogContainerProvider launchProviderRecursive = getLaunchProviderRecursive(view);
         if (view == null || (view.getTag() instanceof ItemInfo ^ true) || launchProviderRecursive == null) {
@@ -120,6 +111,15 @@ public class UserEventDispatcher
         }
         launchProviderRecursive.fillInLogContainerData(view, (ItemInfo)view.getTag(), launcherLogProto$LauncherEvent.srcTarget[0], launcherLogProto$LauncherEvent.srcTarget[n]);
         return n != 0;
+    }
+    
+    protected void fillIntentInfo(final LauncherLogProto$Target launcherLogProto$Target, final Intent intent) {
+        launcherLogProto$Target.intentHash = intent.hashCode();
+        final ComponentName component = intent.getComponent();
+        if (component != null) {
+            launcherLogProto$Target.packageNameHash = (this.mUuidStr + component.getPackageName()).hashCode();
+            launcherLogProto$Target.componentHash = (this.mUuidStr + component.flattenToString()).hashCode();
+        }
     }
     
     public void logActionCommand(final int n, final int n2) {
@@ -153,10 +153,30 @@ public class UserEventDispatcher
         this.dispatchUserEvent(launcherEvent, null);
     }
     
-    public void logActionOnControl(final int n, final int controlType) {
-        final LauncherLogProto$LauncherEvent launcherEvent = LoggerUtils.newLauncherEvent(LoggerUtils.newTouchAction(n), LoggerUtils.newTarget(2));
-        launcherEvent.srcTarget[0].controlType = controlType;
-        this.dispatchUserEvent(launcherEvent, null);
+    public void logActionOnControl(final int n, final int n2) {
+        this.logActionOnControl(n, n2, null);
+    }
+    
+    public void logActionOnControl(final int n, final int controlType, final View view) {
+        final int n2 = 1;
+        final int n3 = 2;
+        LauncherLogProto$LauncherEvent launcherLogProto$LauncherEvent;
+        if (view == null) {
+            final LauncherLogProto$Action touchAction = LoggerUtils.newTouchAction(n);
+            final LauncherLogProto$Target[] array = new LauncherLogProto$Target[n2];
+            array[0] = LoggerUtils.newTarget(n3);
+            launcherLogProto$LauncherEvent = LoggerUtils.newLauncherEvent(touchAction, array);
+        }
+        else {
+            final LauncherLogProto$Action touchAction2 = LoggerUtils.newTouchAction(n);
+            final LauncherLogProto$Target[] array2 = new LauncherLogProto$Target[n3];
+            array2[0] = LoggerUtils.newTarget(n3);
+            array2[n2] = LoggerUtils.newTarget(3);
+            launcherLogProto$LauncherEvent = LoggerUtils.newLauncherEvent(touchAction2, array2);
+        }
+        launcherLogProto$LauncherEvent.srcTarget[0].controlType = controlType;
+        this.fillInLogContainerData(launcherLogProto$LauncherEvent, view);
+        this.dispatchUserEvent(launcherLogProto$LauncherEvent, null);
     }
     
     public void logActionOnItem(final int n, final int dir, final int itemType) {
@@ -182,9 +202,9 @@ public class UserEventDispatcher
     }
     
     public void logAppLaunch(final View view, final Intent intent) {
-        final LauncherLogProto$LauncherEvent launcherEvent = this.createLauncherEvent(view, intent.hashCode(), intent.getComponent());
-        if (launcherEvent == null) {
-            return;
+        final LauncherLogProto$LauncherEvent launcherEvent = LoggerUtils.newLauncherEvent(LoggerUtils.newTouchAction(0), LoggerUtils.newItemTarget(view), LoggerUtils.newTarget(3));
+        if (this.fillInLogContainerData(launcherEvent, view)) {
+            this.fillIntentInfo(launcherEvent.srcTarget[0], intent);
         }
         this.dispatchUserEvent(launcherEvent, intent);
     }
@@ -226,9 +246,9 @@ public class UserEventDispatcher
     }
     
     public void logNotificationLaunch(final View view, final PendingIntent pendingIntent) {
-        final LauncherLogProto$LauncherEvent launcherEvent = this.createLauncherEvent(view, pendingIntent.hashCode(), new ComponentName(pendingIntent.getCreatorPackage(), "--dummy--"));
-        if (launcherEvent == null) {
-            return;
+        final LauncherLogProto$LauncherEvent launcherEvent = LoggerUtils.newLauncherEvent(LoggerUtils.newTouchAction(0), LoggerUtils.newItemTarget(view), LoggerUtils.newTarget(3));
+        if (this.fillInLogContainerData(launcherEvent, view)) {
+            launcherEvent.srcTarget[0].packageNameHash = (this.mUuidStr + pendingIntent.getCreatorPackage()).hashCode();
         }
         this.dispatchUserEvent(launcherEvent, null);
     }
@@ -254,9 +274,5 @@ public class UserEventDispatcher
     public final void resetElapsedSessionMillis() {
         this.mElapsedSessionMillis = SystemClock.uptimeMillis();
         this.mElapsedContainerMillis = SystemClock.uptimeMillis();
-    }
-    
-    public void setPredictedApps(final List mPredictedApps) {
-        this.mPredictedApps = mPredictedApps;
     }
 }

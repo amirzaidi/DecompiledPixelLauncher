@@ -26,7 +26,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/dragndrop/DragLayer$1;->val$onFinishAnimationRunnable:Ljava/lang/Runnable;
 
-    .line 634
+    .line 637
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -39,24 +39,24 @@
     .locals 2
 
     .prologue
-    .line 636
+    .line 639
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$1;->val$child:Landroid/view/View;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 637
+    .line 640
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$1;->val$onFinishAnimationRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 638
+    .line 641
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer$1;->val$onFinishAnimationRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 640
+    .line 643
     :cond_0
     return-void
 .end method

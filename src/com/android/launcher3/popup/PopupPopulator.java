@@ -33,34 +33,29 @@ public class PopupPopulator
     }
     
     public static PopupPopulator$Item[] getItemsToPopulate(final List list, final List list2, final List list3) {
-        int n = 2;
-        int n2 = 1;
+        int n = 1;
         int i = 0;
-        int n3;
+        int n2;
         if (list2.size() > 0) {
-            n3 = n2;
+            n2 = n;
         }
         else {
-            n3 = 0;
-        }
-        if (n3 == 0) {
             n2 = 0;
         }
-        final int size = list.size();
-        if (n3 == 0 || size <= n) {
-            n = size;
+        if (n2 == 0) {
+            n = 0;
         }
-        final int n4 = list3.size() + Math.min(4, n2 + n);
-        final PopupPopulator$Item[] array = new PopupPopulator$Item[n4];
-        for (int j = 0; j < n4; ++j) {
+        final int n3 = list3.size() + (n + Math.min(4, list.size()));
+        final PopupPopulator$Item[] array = new PopupPopulator$Item[n3];
+        for (int j = 0; j < n3; ++j) {
             array[j] = PopupPopulator$Item.SHORTCUT;
         }
-        if (n3 != 0) {
+        if (n2 != 0) {
             array[0] = PopupPopulator$Item.NOTIFICATION;
         }
         final boolean b = list.isEmpty() ^ true;
         while (i < list3.size()) {
-            final int n5 = n4 - 1 - i;
+            final int n4 = n3 - 1 - i;
             PopupPopulator$Item popupPopulator$Item;
             if (b) {
                 popupPopulator$Item = PopupPopulator$Item.SYSTEM_SHORTCUT_ICON;
@@ -68,7 +63,7 @@ public class PopupPopulator
             else {
                 popupPopulator$Item = PopupPopulator$Item.SYSTEM_SHORTCUT;
             }
-            array[n5] = popupPopulator$Item;
+            array[n4] = popupPopulator$Item;
             ++i;
         }
         return array;
@@ -77,12 +72,12 @@ public class PopupPopulator
     public static void initializeSystemShortcut(final Context context, final View view, final SystemShortcut tag) {
         if (view instanceof DeepShortcutView) {
             final DeepShortcutView deepShortcutView = (DeepShortcutView)view;
-            deepShortcutView.getIconView().setBackground(tag.getIcon(context, 16843282));
+            deepShortcutView.getIconView().setBackground(tag.getIcon(context));
             deepShortcutView.getBubbleText().setText((CharSequence)tag.getLabel(context));
         }
         else if (view instanceof ImageView) {
             final ImageView imageView = (ImageView)view;
-            imageView.setImageDrawable(tag.getIcon(context, 16842906));
+            imageView.setImageDrawable(tag.getIcon(context));
             imageView.setContentDescription((CharSequence)tag.getLabel(context));
         }
         view.setTag((Object)tag);

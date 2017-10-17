@@ -1,5 +1,5 @@
 .class final Lcom/android/launcher3/LauncherModel$7;
-.super Lcom/android/launcher3/model/ExtendedModelTask;
+.super Lcom/android/launcher3/model/BaseModelUpdateTask;
 .source "SourceFile"
 
 
@@ -19,8 +19,8 @@
 
     iput-object p2, p0, Lcom/android/launcher3/LauncherModel$7;->val$shortcutProvider:Lcom/android/launcher3/util/Provider;
 
-    .line 1903
-    invoke-direct {p0}, Lcom/android/launcher3/model/ExtendedModelTask;-><init>()V
+    .line 651
+    invoke-direct {p0}, Lcom/android/launcher3/model/BaseModelUpdateTask;-><init>()V
 
     .line 1
     return-void
@@ -32,7 +32,7 @@
     .locals 2
 
     .prologue
-    .line 1906
+    .line 654
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$7;->val$shortcutProvider:Lcom/android/launcher3/util/Provider;
 
     invoke-virtual {v0}, Lcom/android/launcher3/util/Provider;->get()Ljava/lang/Object;
@@ -41,19 +41,19 @@
 
     check-cast v0, Lcom/android/launcher3/ShortcutInfo;
 
-    .line 1907
+    .line 655
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1908
+    .line 656
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1909
+    .line 657
     iget-object v0, v0, Lcom/android/launcher3/ShortcutInfo;->user:Landroid/os/UserHandle;
 
     invoke-virtual {p0, v1, v0}, Lcom/android/launcher3/LauncherModel$7;->bindUpdatedShortcuts(Ljava/util/ArrayList;Landroid/os/UserHandle;)V
 
-    .line 1910
+    .line 658
     return-void
 .end method

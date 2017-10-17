@@ -23,7 +23,7 @@ final class FolderPagedView$1 implements Runnable
     }
     
     public void run() {
-        this.this$0.mPendingAnimations.remove(this.val$v);
+        this.this$0.mPendingAnimations.remove((Object)this.val$v);
         this.val$v.setTranslationX(this.val$oldTranslateX);
         ((CellLayout)this.val$v.getParent().getParent()).removeView(this.val$v);
         this.this$0.addViewForRank(this.val$v, (ShortcutInfo)this.val$v.getTag(), this.val$newRank);

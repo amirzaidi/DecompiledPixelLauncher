@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$3;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
-    .line 663
+    .line 653
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -31,7 +31,7 @@
     .locals 3
 
     .prologue
-    .line 666
+    .line 656
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$3;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
     iget-object v0, v0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->this$0:Lcom/android/launcher3/WidgetPreviewLoader;
@@ -40,7 +40,7 @@
 
     monitor-enter v1
 
-    .line 667
+    .line 657
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$3;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
@@ -58,17 +58,17 @@
 
     monitor-exit v1
 
-    .line 669
+    .line 659
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask$3;->this$1:Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;
 
     const/4 v1, 0x0
 
     iput-object v1, v0, Lcom/android/launcher3/WidgetPreviewLoader$PreviewLoadTask;->mBitmapToRecycle:Landroid/graphics/Bitmap;
 
-    .line 670
+    .line 660
     return-void
 
-    .line 666
+    .line 656
     :catchall_0
     move-exception v0
 

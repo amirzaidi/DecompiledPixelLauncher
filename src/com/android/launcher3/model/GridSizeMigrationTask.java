@@ -30,7 +30,6 @@ import android.text.TextUtils;
 import com.android.launcher3.LauncherProvider;
 import android.graphics.Point;
 import com.android.launcher3.Utilities;
-import java.util.HashMap;
 import java.util.HashSet;
 import android.content.ContentValues;
 import com.android.launcher3.InvariantDeviceProfile;
@@ -55,7 +54,6 @@ public class GridSizeMigrationTask
     private final int mTrgY;
     private final ArrayList mUpdateOperations;
     private final HashSet mValidPackages;
-    private final HashMap mWidgetMinSize;
     
     static {
         GridSizeMigrationTask.ENABLED = Utilities.ATLEAST_NOUGAT;
@@ -63,7 +61,6 @@ public class GridSizeMigrationTask
     
     protected GridSizeMigrationTask(final Context mContext, final InvariantDeviceProfile mIdp, final HashSet mValidPackages, final int mSrcHotseatSize, final int mDestHotseatSize) {
         final int n = -1;
-        this.mWidgetMinSize = new HashMap();
         this.mTempValues = new ContentValues();
         this.mEntryToRemove = new ArrayList();
         this.mUpdateOperations = new ArrayList();
@@ -84,7 +81,6 @@ public class GridSizeMigrationTask
     protected GridSizeMigrationTask(final Context mContext, final InvariantDeviceProfile mIdp, final HashSet mValidPackages, final Point point, final Point point2) {
         boolean mShouldRemoveY = true;
         final int n = -1;
-        this.mWidgetMinSize = new HashMap();
         this.mTempValues = new ContentValues();
         this.mEntryToRemove = new ArrayList();
         this.mUpdateOperations = new ArrayList();
@@ -706,21 +702,9 @@ public class GridSizeMigrationTask
         final ArrayList<GridSizeMigrationTask$DbEntry> list = new ArrayList<GridSizeMigrationTask$DbEntry>();
     Label_0249:
         while (queryWorkspace.moveToNext()) {
-            GridSizeMigrationTask$DbEntry gridSizeMigrationTask$DbEntry;
-            float weight;
-            String string;
-            ComponentName unflattenFromString;
-            Cursor cursor;
-            LauncherAppWidgetProviderInfo launcherAppWidgetInfo = null;
-            Object value;
-            Point minSpans;
-            int minSpanX;
-            int minSpanY;
-            InvariantDeviceProfile mIdp = null;
-            int folderItemsCount;
-            Label_0861_Outer:Label_0887_Outer:Label_0897_Outer:Label_0611_Outer:
+        Label_0818_Outer:
             while (true) {
-                gridSizeMigrationTask$DbEntry = new GridSizeMigrationTask$DbEntry();
+                final GridSizeMigrationTask$DbEntry gridSizeMigrationTask$DbEntry = new GridSizeMigrationTask$DbEntry();
                 gridSizeMigrationTask$DbEntry.id = queryWorkspace.getLong(columnIndexOrThrow);
                 gridSizeMigrationTask$DbEntry.itemType = queryWorkspace.getInt(columnIndexOrThrow2);
                 gridSizeMigrationTask$DbEntry.cellX = queryWorkspace.getInt(columnIndexOrThrow3);
@@ -729,109 +713,104 @@ public class GridSizeMigrationTask
                 gridSizeMigrationTask$DbEntry.spanY = queryWorkspace.getInt(columnIndexOrThrow6);
                 gridSizeMigrationTask$DbEntry.screenId = screenId;
                 while (true) {
-                Label_1057:
+                Label_1084:
                     while (true) {
-                        Label_1026: {
-                            while (true) {
-                            Label_1017:
-                                while (true) {
-                                Label_1004:
-                                    while (true) {
-                                        try {
-                                            switch (gridSizeMigrationTask$DbEntry.itemType) {
-                                                default: {
-                                                    throw new Exception("Invalid item type");
-                                                }
-                                                case 0:
-                                                case 1:
-                                                case 6: {
-                                                    this.verifyIntent(queryWorkspace.getString(columnIndexOrThrow7));
-                                                    if (gridSizeMigrationTask$DbEntry.itemType == 0) {
-                                                        weight = 0.8f;
-                                                    }
-                                                    else {
-                                                        weight = 1.0f;
-                                                    }
-                                                    gridSizeMigrationTask$DbEntry.weight = weight;
-                                                    break;
-                                                }
-                                                case 4: {
-                                                    string = queryWorkspace.getString(columnIndexOrThrow8);
-                                                    try {
-                                                        unflattenFromString = ComponentName.unflattenFromString(string);
-                                                        try {
-                                                            this.verifyPackage(unflattenFromString.getPackageName());
-                                                            gridSizeMigrationTask$DbEntry.weight = Math.max(2.0f, gridSizeMigrationTask$DbEntry.spanX * 0.6f * gridSizeMigrationTask$DbEntry.spanY);
-                                                            cursor = queryWorkspace;
-                                                            try {
-                                                                launcherAppWidgetInfo = AppWidgetManagerCompat.getInstance(this.mContext).getLauncherAppWidgetInfo(cursor.getInt(columnIndexOrThrow9));
-                                                                Label_0967: {
-                                                                    if (launcherAppWidgetInfo != null) {
-                                                                        break Label_0967;
-                                                                    }
-                                                                    value = this.mWidgetMinSize.get(string);
-                                                                    try {
-                                                                        minSpans = (Point)value;
-                                                                        if (minSpans == null) {
-                                                                            break Label_1026;
-                                                                        }
-                                                                        if (minSpans.x <= 0) {
-                                                                            break Label_1004;
-                                                                        }
-                                                                        minSpanX = minSpans.x;
-                                                                        gridSizeMigrationTask$DbEntry.minSpanX = minSpanX;
-                                                                        if (minSpans.y <= 0) {
-                                                                            break Label_1017;
-                                                                        }
-                                                                        minSpanY = minSpans.y;
-                                                                        gridSizeMigrationTask$DbEntry.minSpanY = minSpanY;
-                                                                        if (gridSizeMigrationTask$DbEntry.minSpanX > this.mTrgX || gridSizeMigrationTask$DbEntry.minSpanY > this.mTrgY) {
-                                                                            throw new Exception("Widget can't be resized down to fit the grid");
-                                                                        }
-                                                                        break;
-                                                                        mIdp = this.mIdp;
-                                                                    }
-                                                                    catch (Exception ex) {}
-                                                                }
-                                                            }
-                                                            catch (Exception ex2) {}
-                                                        }
-                                                        catch (Exception ex3) {}
-                                                    }
-                                                    catch (Exception ex4) {}
-                                                    break;
-                                                }
-                                                case 2: {
-                                                    break Label_1057;
-                                                }
-                                            }
-                                            list.add(gridSizeMigrationTask$DbEntry);
-                                            continue Label_0249;
-                                        }
-                                        catch (Exception ex5) {}
-                                        minSpans = launcherAppWidgetInfo.getMinSpans(mIdp, this.mContext);
-                                        continue Label_0861_Outer;
+                        Label_0998: {
+                            LauncherAppWidgetProviderInfo launcherAppWidgetInfo = null;
+                            InvariantDeviceProfile mIdp = null;
+                            try {
+                                switch (gridSizeMigrationTask$DbEntry.itemType) {
+                                    default: {
+                                        throw new Exception("Invalid item type");
                                     }
-                                    minSpanX = gridSizeMigrationTask$DbEntry.spanX;
-                                    continue Label_0887_Outer;
+                                    case 0:
+                                    case 1:
+                                    case 6: {
+                                        this.verifyIntent(queryWorkspace.getString(columnIndexOrThrow7));
+                                        float weight;
+                                        if (gridSizeMigrationTask$DbEntry.itemType == 0) {
+                                            weight = 0.8f;
+                                        }
+                                        else {
+                                            weight = 1.0f;
+                                        }
+                                        gridSizeMigrationTask$DbEntry.weight = weight;
+                                        list.add(gridSizeMigrationTask$DbEntry);
+                                        continue Label_0249;
+                                    }
+                                    case 4: {
+                                        final String string = queryWorkspace.getString(columnIndexOrThrow8);
+                                        try {
+                                            final ComponentName unflattenFromString = ComponentName.unflattenFromString(string);
+                                            try {
+                                                this.verifyPackage(unflattenFromString.getPackageName());
+                                                gridSizeMigrationTask$DbEntry.weight = Math.max(2.0f, gridSizeMigrationTask$DbEntry.spanX * 0.6f * gridSizeMigrationTask$DbEntry.spanY);
+                                                final Cursor cursor = queryWorkspace;
+                                                try {
+                                                    final int int1 = cursor.getInt(columnIndexOrThrow9);
+                                                    final Context mContext = this.mContext;
+                                                    try {
+                                                        launcherAppWidgetInfo = AppWidgetManagerCompat.getInstance(mContext).getLauncherAppWidgetInfo(int1);
+                                                        if (launcherAppWidgetInfo == null) {
+                                                            break Label_1084;
+                                                        }
+                                                        mIdp = this.mIdp;
+                                                    }
+                                                    catch (Exception ex) {}
+                                                }
+                                                catch (Exception ex2) {}
+                                            }
+                                            catch (Exception ex3) {}
+                                        }
+                                        catch (Exception ex4) {}
+                                        break;
+                                    }
+                                    case 2: {
+                                        break Label_0998;
+                                    }
                                 }
-                                minSpanY = gridSizeMigrationTask$DbEntry.spanY;
-                                continue Label_0897_Outer;
                             }
+                            catch (Exception ex5) {}
+                            final Point minSpans = launcherAppWidgetInfo.getMinSpans(mIdp, this.mContext);
+                            if (minSpans != null) {
+                                int minSpanX;
+                                if (minSpans.x > 0) {
+                                    minSpanX = minSpans.x;
+                                }
+                                else {
+                                    minSpanX = gridSizeMigrationTask$DbEntry.spanX;
+                                }
+                                gridSizeMigrationTask$DbEntry.minSpanX = minSpanX;
+                                int minSpanY;
+                                if (minSpans.y > 0) {
+                                    minSpanY = minSpans.y;
+                                }
+                                else {
+                                    minSpanY = gridSizeMigrationTask$DbEntry.spanY;
+                                }
+                                gridSizeMigrationTask$DbEntry.minSpanY = minSpanY;
+                            }
+                            else {
+                                gridSizeMigrationTask$DbEntry.minSpanY = 2;
+                                gridSizeMigrationTask$DbEntry.minSpanX = 2;
+                            }
+                            if (gridSizeMigrationTask$DbEntry.minSpanX > this.mTrgX || gridSizeMigrationTask$DbEntry.minSpanY > this.mTrgY) {
+                                break;
+                            }
+                            continue Label_0818_Outer;
                         }
-                        gridSizeMigrationTask$DbEntry.minSpanY = 2;
-                        gridSizeMigrationTask$DbEntry.minSpanX = 2;
-                        continue Label_0611_Outer;
+                        final int folderItemsCount = this.getFolderItemsCount(gridSizeMigrationTask$DbEntry.id);
+                        if (folderItemsCount == 0) {
+                            throw new Exception("Folder is empty");
+                        }
+                        gridSizeMigrationTask$DbEntry.weight = folderItemsCount * 0.5f;
+                        continue Label_0818_Outer;
                     }
-                    folderItemsCount = this.getFolderItemsCount(gridSizeMigrationTask$DbEntry.id);
-                    if (folderItemsCount == 0) {
-                        break;
-                    }
-                    gridSizeMigrationTask$DbEntry.weight = folderItemsCount * 0.5f;
+                    final Point minSpans = null;
                     continue;
                 }
             }
-            throw new Exception("Folder is empty");
+            throw new Exception("Widget can't be resized down to fit the grid");
         }
         queryWorkspace.close();
         return list;

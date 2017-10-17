@@ -18,24 +18,24 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 43
     invoke-virtual {p1}, Lcom/android/launcher3/dragndrop/DragLayer;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 37
+    .line 36
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/folder/PreviewImageView;->mTempRect:Landroid/graphics/Rect;
 
-    .line 45
+    .line 44
     iput-object p1, p0, Lcom/android/launcher3/folder/PreviewImageView;->mParent:Lcom/android/launcher3/dragndrop/DragLayer;
 
-    .line 46
+    .line 45
     return-void
 .end method
 
@@ -45,7 +45,7 @@
     .prologue
     const v2, 0x7f0e0005
 
-    .line 90
+    .line 89
     invoke-static {p0}, Lcom/android/launcher3/Launcher;->getLauncher(Landroid/content/Context;)Lcom/android/launcher3/Launcher;
 
     move-result-object v0
@@ -54,25 +54,25 @@
 
     move-result-object v1
 
-    .line 91
+    .line 90
     invoke-virtual {v1, v2}, Lcom/android/launcher3/dragndrop/DragLayer;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/folder/PreviewImageView;
 
-    .line 92
+    .line 91
     if-nez v0, :cond_0
 
-    .line 93
+    .line 92
     new-instance v0, Lcom/android/launcher3/folder/PreviewImageView;
 
     invoke-direct {v0, v1}, Lcom/android/launcher3/folder/PreviewImageView;-><init>(Lcom/android/launcher3/dragndrop/DragLayer;)V
 
-    .line 94
+    .line 93
     invoke-virtual {v1, v2, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->setTag(ILjava/lang/Object;)V
 
-    .line 96
+    .line 95
     :cond_0
     return-object v0
 .end method
@@ -83,17 +83,17 @@
     .locals 5
 
     .prologue
-    .line 49
+    .line 48
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 50
+    .line 49
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
 
-    .line 52
+    .line 51
     iget-object v0, p0, Lcom/android/launcher3/folder/PreviewImageView;->mBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
@@ -106,7 +106,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 53
+    .line 52
     :cond_0
     :goto_0
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -117,7 +117,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/folder/PreviewImageView;->mBitmap:Landroid/graphics/Bitmap;
 
-    .line 54
+    .line 53
     new-instance v0, Landroid/graphics/Canvas;
 
     iget-object v3, p0, Lcom/android/launcher3/folder/PreviewImageView;->mBitmap:Landroid/graphics/Bitmap;
@@ -126,7 +126,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/folder/PreviewImageView;->mCanvas:Landroid/graphics/Canvas;
 
-    .line 58
+    .line 57
     :cond_1
     invoke-virtual {p0}, Lcom/android/launcher3/folder/PreviewImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -136,14 +136,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 59
+    .line 58
     invoke-virtual {p0}, Lcom/android/launcher3/folder/PreviewImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
-    .line 66
+    .line 65
     :goto_1
     iget-object v3, p0, Lcom/android/launcher3/folder/PreviewImageView;->mParent:Lcom/android/launcher3/dragndrop/DragLayer;
 
@@ -153,26 +153,26 @@
 
     move-result v3
 
-    .line 67
+    .line 66
     const/4 v4, 0x1
 
     iput-boolean v4, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->customPosition:Z
 
-    .line 68
+    .line 67
     iget-object v4, p0, Lcom/android/launcher3/folder/PreviewImageView;->mTempRect:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->left:I
 
     iput v4, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->x:I
 
-    .line 69
+    .line 68
     iget-object v4, p0, Lcom/android/launcher3/folder/PreviewImageView;->mTempRect:Landroid/graphics/Rect;
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
     iput v4, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->y:I
 
-    .line 70
+    .line 69
     int-to-float v1, v1
 
     mul-float/2addr v1, v3
@@ -181,7 +181,7 @@
 
     iput v1, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->width:I
 
-    .line 71
+    .line 70
     int-to-float v1, v2
 
     mul-float/2addr v1, v3
@@ -190,7 +190,7 @@
 
     iput v1, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->height:I
 
-    .line 73
+    .line 72
     iget-object v1, p0, Lcom/android/launcher3/folder/PreviewImageView;->mCanvas:Landroid/graphics/Canvas;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -199,28 +199,28 @@
 
     invoke-virtual {v1, v3, v2}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 74
+    .line 73
     iget-object v1, p0, Lcom/android/launcher3/folder/PreviewImageView;->mCanvas:Landroid/graphics/Canvas;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 75
+    .line 74
     iget-object v1, p0, Lcom/android/launcher3/folder/PreviewImageView;->mBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, v1}, Lcom/android/launcher3/folder/PreviewImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 79
+    .line 78
     invoke-virtual {p0}, Lcom/android/launcher3/folder/PreviewImageView;->removeFromParent()V
 
-    .line 80
+    .line 79
     iget-object v1, p0, Lcom/android/launcher3/folder/PreviewImageView;->mParent:Lcom/android/launcher3/dragndrop/DragLayer;
 
     invoke-virtual {v1, p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 81
+    .line 80
     return-void
 
-    .line 52
+    .line 51
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/folder/PreviewImageView;->mBitmap:Landroid/graphics/Bitmap;
 
@@ -232,7 +232,7 @@
 
     goto :goto_0
 
-    .line 61
+    .line 60
     :cond_3
     new-instance v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
@@ -245,7 +245,7 @@
     .locals 2
 
     .prologue
-    .line 84
+    .line 83
     iget-object v0, p0, Lcom/android/launcher3/folder/PreviewImageView;->mParent:Lcom/android/launcher3/dragndrop/DragLayer;
 
     invoke-virtual {v0, p0}, Lcom/android/launcher3/dragndrop/DragLayer;->indexOfChild(Landroid/view/View;)I
@@ -256,12 +256,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 85
+    .line 84
     iget-object v0, p0, Lcom/android/launcher3/folder/PreviewImageView;->mParent:Lcom/android/launcher3/dragndrop/DragLayer;
 
     invoke-virtual {v0, p0}, Lcom/android/launcher3/dragndrop/DragLayer;->removeView(Landroid/view/View;)V
 
-    .line 87
+    .line 86
     :cond_0
     return-void
 .end method

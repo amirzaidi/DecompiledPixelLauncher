@@ -64,7 +64,7 @@
 
     aput-object v0, v1, v6
 
-    const v0, 0x7f0c0071
+    const v0, 0x7f0c007a
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -143,7 +143,7 @@
 
     aput-object v1, v0, v6
 
-    const v1, 0x7f0c006f
+    const v1, 0x7f0c0078
 
     invoke-virtual {p1, v1, v0}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -159,7 +159,7 @@
 
     aput-object v0, v1, v6
 
-    const v0, 0x7f0c006e
+    const v0, 0x7f0c0077
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -223,7 +223,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0c006d
+    const v1, 0x7f0c0076
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -252,7 +252,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0c0072
+    const v1, 0x7f0c007b
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -269,7 +269,7 @@
     .line 131
     iget-object v0, p0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;->mContext:Landroid/content/Context;
 
-    const v1, 0x7f0c0070
+    const v1, 0x7f0c0079
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -642,7 +642,7 @@
     .line 148
     iget-object v1, p0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p2, v1}, Landroid/support/v4/view/a/a;->adM(Landroid/graphics/Rect;)V
+    invoke-virtual {p2, v1}, Landroid/support/v4/view/a/a;->aeO(Landroid/graphics/Rect;)V
 
     .line 149
     iget-object v1, p0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;->mTempRect:Landroid/graphics/Rect;
@@ -731,7 +731,7 @@
     .line 153
     iget-object v0, p0, Lcom/android/launcher3/accessibility/WorkspaceAccessibilityHelper;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/a/a;->adV(Landroid/graphics/Rect;)V
+    invoke-virtual {p2, v0}, Landroid/support/v4/view/a/a;->aeX(Landroid/graphics/Rect;)V
 
     .line 154
     return-void

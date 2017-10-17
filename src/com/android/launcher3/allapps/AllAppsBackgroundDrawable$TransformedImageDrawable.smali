@@ -16,30 +16,30 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;IFFI)V
+.method public constructor <init>(Landroid/content/Context;IFFI)V
     .locals 1
 
     .prologue
-    .line 51
+    .line 54
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
-    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    .line 56
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mImage:Landroid/graphics/drawable/Drawable;
 
-    .line 54
+    .line 57
     iput p3, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mXPercent:F
 
-    .line 55
+    .line 58
     iput p4, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mYPercent:F
 
-    .line 56
+    .line 59
     iput p5, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mGravity:I
 
-    .line 57
+    .line 60
     return-void
 .end method
 
@@ -49,12 +49,12 @@
     .locals 1
 
     .prologue
-    .line 83
+    .line 86
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mImage:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 84
+    .line 87
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 68
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mAlpha:I
 
     return v0
@@ -72,15 +72,15 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 63
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mImage:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 61
+    .line 64
     iput p1, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mAlpha:I
 
-    .line 62
+    .line 65
     return-void
 .end method
 
@@ -88,21 +88,21 @@
     .locals 6
 
     .prologue
-    .line 69
+    .line 72
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mImage:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v2
 
-    .line 70
+    .line 73
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mImage:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v3
 
-    .line 71
+    .line 74
     iget v0, p1, Landroid/graphics/Rect;->left:I
 
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mXPercent:F
@@ -119,7 +119,7 @@
 
     add-int/2addr v0, v1
 
-    .line 72
+    .line 75
     iget v1, p1, Landroid/graphics/Rect;->top:I
 
     iget v4, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mYPercent:F
@@ -136,7 +136,7 @@
 
     add-int/2addr v1, v4
 
-    .line 73
+    .line 76
     iget v4, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mGravity:I
 
     and-int/lit8 v4, v4, 0x1
@@ -145,12 +145,12 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 74
+    .line 77
     div-int/lit8 v4, v2, 0x2
 
     sub-int/2addr v0, v4
 
-    .line 76
+    .line 79
     :cond_0
     iget v4, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mGravity:I
 
@@ -160,12 +160,12 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 77
+    .line 80
     div-int/lit8 v4, v3, 0x2
 
     sub-int/2addr v1, v4
 
-    .line 79
+    .line 82
     :cond_1
     iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsBackgroundDrawable$TransformedImageDrawable;->mImage:Landroid/graphics/drawable/Drawable;
 
@@ -175,6 +175,6 @@
 
     invoke-virtual {v4, v0, v1, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 80
+    .line 83
     return-void
 .end method

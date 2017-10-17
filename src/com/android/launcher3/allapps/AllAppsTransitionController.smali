@@ -5,12 +5,10 @@
 # interfaces
 .implements Lcom/android/launcher3/util/TouchController;
 .implements Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;
-.implements Landroid/view/View$OnLayoutChangeListener;
+.implements Lcom/android/launcher3/allapps/SearchUiManager$OnScrollRangeChangeListener;
 
 
 # instance fields
-.field private final mAccelInterpolator:Landroid/view/animation/Interpolator;
-
 .field private mAllAppsBackgroundColor:I
 
 .field private mAnimationDuration:J
@@ -33,9 +31,15 @@
 
 .field private final mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
+.field private mGradientView:Lcom/android/launcher3/graphics/GradientView;
+
 .field private mHotseat:Lcom/android/launcher3/Hotseat;
 
+.field private final mHotseatAccelInterpolator:Landroid/view/animation/Interpolator;
+
 .field private mHotseatBackgroundColor:I
+
+.field private final mIsDarkTheme:Z
 
 .field private mIsTranslateWithoutWorkspace:Z
 
@@ -51,9 +55,15 @@
 
 .field private mShiftStart:F
 
+.field private mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
 .field private mStatusBarHeight:F
 
+.field private mTouchEventStartedOnHotseat:Z
+
 .field private mWorkspace:Lcom/android/launcher3/Workspace;
+
+.field private final mWorkspaceAccelnterpolator:Landroid/view/animation/Interpolator;
 
 
 # direct methods
@@ -101,19 +111,28 @@
     .locals 2
 
     .prologue
-    .line 95
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 50
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     const/high16 v1, 0x40000000    # 2.0f
 
     invoke-direct {v0, v1}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
 
-    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAccelInterpolator:Landroid/view/animation/Interpolator;
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mWorkspaceAccelnterpolator:Landroid/view/animation/Interpolator;
 
-    .line 47
+    .line 51
+    new-instance v0, Landroid/view/animation/AccelerateInterpolator;
+
+    const/high16 v1, 0x3fc00000    # 1.5f
+
+    invoke-direct {v0, v1}, Landroid/view/animation/AccelerateInterpolator;-><init>(F)V
+
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseatAccelInterpolator:Landroid/view/animation/Interpolator;
+
+    .line 52
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v1, 0x40400000    # 3.0f
@@ -122,59 +141,59 @@
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDecelInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 48
+    .line 53
     new-instance v0, Landroid/support/v4/view/b/a;
 
     invoke-direct {v0}, Landroid/support/v4/view/b/a;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 50
+    .line 55
     new-instance v0, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;
 
     invoke-direct {v0}, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;-><init>()V
 
-    .line 49
+    .line 54
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mScrollInterpolator:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;
 
-    .line 92
+    .line 99
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mIsTranslateWithoutWorkspace:Z
 
-    .line 96
+    .line 106
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 97
+    .line 107
     new-instance v0, Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/allapps/VerticalPullDetector;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
-    .line 98
+    .line 108
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     invoke-virtual {v0, p0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->setListener(Lcom/android/launcher3/allapps/VerticalPullDetector$Listener;)V
 
-    .line 99
+    .line 109
     const/high16 v0, 0x41200000    # 10.0f
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
-    .line 100
+    .line 110
     const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
-    .line 102
+    .line 112
     new-instance v0, Landroid/animation/ArgbEvaluator;
 
     invoke-direct {v0}, Landroid/animation/ArgbEvaluator;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mEvaluator:Landroid/animation/ArgbEvaluator;
 
-    .line 103
+    .line 113
     const v0, 0x1010433
 
     invoke-static {p1, v0}, Lcom/android/launcher3/util/Themes;->getAttrColor(Landroid/content/Context;I)I
@@ -183,7 +202,18 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAllAppsBackgroundColor:I
 
-    .line 104
+    .line 114
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    const v1, 0x7f01002a
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/util/Themes;->getAttrBoolean(Landroid/content/Context;I)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mIsDarkTheme:Z
+
+    .line 115
     return-void
 .end method
 
@@ -191,7 +221,7 @@
     .locals 2
 
     .prologue
-    .line 316
+    .line 363
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
@@ -204,7 +234,7 @@
 
     iput-wide v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAnimationDuration:J
 
-    .line 317
+    .line 364
     return-void
 .end method
 
@@ -214,24 +244,24 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 466
+    .line 519
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCurrentAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 467
+    .line 520
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCurrentAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 468
+    .line 521
     iput-object v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCurrentAnimation:Landroid/animation/AnimatorSet;
 
-    .line 470
+    .line 523
     :cond_0
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->cancelDiscoveryAnimation()V
 
-    .line 471
+    .line 524
     return-void
 .end method
 
@@ -239,20 +269,41 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 535
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCurrentAnimation:Landroid/animation/AnimatorSet;
 
-    .line 483
+    .line 536
     return-void
+.end method
+
+.method private hasSpringAnimationHandler()Z
+    .locals 2
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 550
+    sget-boolean v1, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_PHYSICS:Z
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    if-eqz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
 .end method
 
 .method private isInDisallowRecatchBottomZone()Z
     .locals 2
 
     .prologue
-    .line 164
+    .line 179
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     const v1, 0x3f69999a    # 0.9125f
@@ -276,7 +327,7 @@
     .locals 2
 
     .prologue
-    .line 160
+    .line 175
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     const v1, 0x3db33333    # 0.0875f
@@ -296,56 +347,106 @@
     goto :goto_0
 .end method
 
-.method private updateLightStatusBar(F)V
-    .locals 3
+.method private updateAllAppsBg(F)V
+    .locals 2
 
     .prologue
-    const/4 v1, 0x1
+    .line 300
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mGradientView:Lcom/android/launcher3/graphics/GradientView;
 
-    .line 257
+    if-nez v0, :cond_0
+
+    .line 301
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
+    const v1, 0x7f0e0048
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
+    check-cast v0, Lcom/android/launcher3/graphics/GradientView;
 
-    move-result v0
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mGradientView:Lcom/android/launcher3/graphics/GradientView;
 
-    if-eqz v0, :cond_0
+    .line 302
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mGradientView:Lcom/android/launcher3/graphics/GradientView;
 
-    .line 258
-    return-void
+    const/4 v1, 0x0
 
-    .line 262
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/graphics/GradientView;->setVisibility(I)V
+
+    .line 304
     :cond_0
-    iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mStatusBarHeight:F
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mGradientView:Lcom/android/launcher3/graphics/GradientView;
 
-    const/high16 v2, 0x40000000    # 2.0f
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/graphics/GradientView;->setProgress(F)V
 
-    div-float/2addr v0, v2
+    .line 305
+    return-void
+.end method
+
+.method private updateLightStatusBar(F)V
+    .locals 4
+
+    .prologue
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
+
+    .line 287
+    iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
+
+    const/high16 v3, 0x40800000    # 4.0f
+
+    div-float/2addr v0, v3
 
     cmpg-float v0, p1, v0
 
-    if-gtz v0, :cond_1
+    if-gtz v0, :cond_0
 
     move v0, v1
 
-    .line 263
+    .line 289
     :goto_0
-    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v2, v0, v1, v1}, Lcom/android/launcher3/Launcher;->activateLightSystemBars(ZZZ)V
+    .line 290
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 264
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getSystemUiController()Lcom/android/launcher3/util/SystemUiController;
+
+    move-result-object v0
+
+    .line 291
+    iget-boolean v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mIsDarkTheme:Z
+
+    xor-int/lit8 v2, v2, 0x1
+
+    .line 290
+    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/SystemUiController;->updateUiState(IZ)V
+
+    .line 296
+    :goto_1
     return-void
 
-    .line 262
-    :cond_1
-    const/4 v0, 0x0
+    :cond_0
+    move v0, v2
 
+    .line 287
     goto :goto_0
+
+    .line 293
+    :cond_1
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getSystemUiController()Lcom/android/launcher3/util/SystemUiController;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/SystemUiController;->updateUiState(II)V
+
+    goto :goto_1
 .end method
 
 
@@ -360,13 +461,13 @@
 
     const/4 v2, 0x1
 
-    .line 321
+    .line 368
     if-nez p1, :cond_0
 
-    .line 322
+    .line 369
     return v2
 
-    .line 325
+    .line 372
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
@@ -376,13 +477,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 326
+    .line 373
     invoke-virtual {p0, v2}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->preparePull(Z)V
 
-    .line 327
+    .line 374
     iput-wide p2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAnimationDuration:J
 
-    .line 328
+    .line 375
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
@@ -391,12 +492,12 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftStart:F
 
-    .line 329
+    .line 376
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
     move v1, v2
 
-    .line 340
+    .line 387
     :goto_0
     const-string/jumbo v4, "progress"
 
@@ -404,43 +505,43 @@
 
     new-array v5, v5, [F
 
-    .line 341
+    .line 388
     iget v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     aput v6, v5, v3
 
     aput v7, v5, v2
 
-    .line 340
+    .line 387
     invoke-static {p0, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
-    .line 342
+    .line 389
     iget-wide v4, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAnimationDuration:J
 
     invoke-virtual {v2, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 343
+    .line 390
     invoke-virtual {v2, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 344
+    .line 391
     invoke-virtual {p1, v2}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 346
+    .line 393
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController$1;-><init>(Lcom/android/launcher3/allapps/AllAppsTransitionController;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 365
+    .line 412
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCurrentAnimation:Landroid/animation/AnimatorSet;
 
-    .line 366
+    .line 413
     return v1
 
-    .line 331
+    .line 378
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mScrollInterpolator:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;
 
@@ -452,10 +553,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;->setVelocityAtZero(F)V
 
-    .line 332
+    .line 379
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mScrollInterpolator:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;
 
-    .line 333
+    .line 380
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     iget v4, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mContainerVelocity:F
@@ -470,18 +571,18 @@
 
     add-float/2addr v1, v4
 
-    .line 334
+    .line 381
     cmpl-float v4, v1, v7
 
     if-ltz v4, :cond_2
 
-    .line 335
+    .line 382
     iput v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     :cond_2
     move v1, v3
 
-    .line 337
+    .line 384
     goto :goto_0
 .end method
 
@@ -495,13 +596,13 @@
 
     const/4 v2, 0x1
 
-    .line 404
+    .line 451
     if-nez p1, :cond_0
 
-    .line 405
+    .line 452
     return v2
 
-    .line 408
+    .line 455
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
@@ -511,13 +612,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 409
+    .line 456
     invoke-virtual {p0, v2}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->preparePull(Z)V
 
-    .line 410
+    .line 457
     iput-wide p2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAnimationDuration:J
 
-    .line 411
+    .line 458
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
@@ -526,12 +627,12 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftStart:F
 
-    .line 412
+    .line 459
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
     move v1, v2
 
-    .line 423
+    .line 470
     :goto_0
     const-string/jumbo v4, "progress"
 
@@ -539,43 +640,43 @@
 
     new-array v5, v5, [F
 
-    .line 424
+    .line 471
     iget v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     aput v6, v5, v3
 
     aput v7, v5, v2
 
-    .line 423
+    .line 470
     invoke-static {p0, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
-    .line 425
+    .line 472
     iget-wide v4, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAnimationDuration:J
 
     invoke-virtual {v2, v4, v5}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 426
+    .line 473
     invoke-virtual {v2, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 427
+    .line 474
     invoke-virtual {p1, v2}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
 
-    .line 429
+    .line 476
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsTransitionController$4;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController$4;-><init>(Lcom/android/launcher3/allapps/AllAppsTransitionController;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 448
+    .line 495
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCurrentAnimation:Landroid/animation/AnimatorSet;
 
-    .line 449
+    .line 496
     return v1
 
-    .line 414
+    .line 461
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mScrollInterpolator:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;
 
@@ -587,10 +688,10 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;->setVelocityAtZero(F)V
 
-    .line 415
+    .line 462
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mScrollInterpolator:Lcom/android/launcher3/allapps/VerticalPullDetector$ScrollInterpolator;
 
-    .line 416
+    .line 463
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     iget v4, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mContainerVelocity:F
@@ -605,18 +706,18 @@
 
     add-float/2addr v1, v4
 
-    .line 417
+    .line 464
     cmpg-float v4, v1, v7
 
     if-gtz v4, :cond_2
 
-    .line 418
+    .line 465
     iput v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     :cond_2
     move v1, v3
 
-    .line 420
+    .line 467
     goto :goto_0
 .end method
 
@@ -626,24 +727,24 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 474
+    .line 527
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDiscoBounceAnimation:Landroid/animation/AnimatorSet;
 
     if-nez v0, :cond_0
 
-    .line 475
+    .line 528
     return-void
 
-    .line 477
+    .line 530
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDiscoBounceAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 478
+    .line 531
     iput-object v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDiscoBounceAnimation:Landroid/animation/AnimatorSet;
 
-    .line 479
+    .line 532
     return-void
 .end method
 
@@ -653,34 +754,47 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 458
+    .line 508
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsContainerView;->setVisibility(I)V
 
-    .line 459
+    .line 509
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/Hotseat;->setBackgroundTransparent(Z)V
 
-    .line 460
+    .line 510
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/Hotseat;->setVisibility(I)V
 
-    .line 461
+    .line 511
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->reset()V
 
-    .line 462
+    .line 512
+    invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->hasSpringAnimationHandler()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 513
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/anim/SpringAnimationHandler;->reset()V
+
+    .line 515
+    :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->setProgress(F)V
 
-    .line 463
+    .line 516
     return-void
 .end method
 
@@ -688,19 +802,32 @@
     .locals 2
 
     .prologue
-    .line 453
+    .line 500
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Hotseat;->setVisibility(I)V
 
-    .line 454
+    .line 501
+    invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->hasSpringAnimationHandler()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 502
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/anim/SpringAnimationHandler;->reset()V
+
+    .line 504
+    :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->setProgress(F)V
 
-    .line 455
+    .line 505
     return-void
 .end method
 
@@ -708,7 +835,7 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 255
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->isDraggingOrSettling()Z
@@ -728,17 +855,30 @@
 
     const/4 v1, 0x0
 
-    .line 108
+    .line 119
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 109
+    .line 120
     iput-boolean v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mNoIntercept:Z
 
-    .line 110
+    .line 121
+    iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v3}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverHotseat(Landroid/view/MotionEvent;)Z
+
+    move-result v3
+
+    iput-boolean v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mTouchEventStartedOnHotseat:Z
+
+    .line 122
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v3}, Lcom/android/launcher3/Launcher;->isAllAppsVisible()Z
@@ -759,20 +899,20 @@
 
     if-eqz v3, :cond_1
 
-    .line 111
+    .line 123
     iput-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mNoIntercept:Z
 
-    .line 144
+    .line 156
     :cond_0
     :goto_0
     iget-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mNoIntercept:Z
 
     if-eqz v0, :cond_8
 
-    .line 145
+    .line 157
     return v1
 
-    .line 112
+    .line 124
     :cond_1
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -782,7 +922,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 113
+    .line 125
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v3, p1}, Lcom/android/launcher3/allapps/AllAppsContainerView;->shouldContainerScroll(Landroid/view/MotionEvent;)Z
@@ -791,15 +931,15 @@
 
     xor-int/lit8 v3, v3, 0x1
 
-    .line 112
+    .line 124
     if-eqz v3, :cond_2
 
-    .line 114
+    .line 126
     iput-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mNoIntercept:Z
 
     goto :goto_0
 
-    .line 115
+    .line 127
     :cond_2
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -809,12 +949,12 @@
 
     if-eqz v3, :cond_3
 
-    .line 116
+    .line 128
     iput-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mNoIntercept:Z
 
     goto :goto_0
 
-    .line 123
+    .line 135
     :cond_3
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
@@ -824,7 +964,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 124
+    .line 136
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v3}, Lcom/android/launcher3/Launcher;->isAllAppsVisible()Z
@@ -835,7 +975,7 @@
 
     move v0, v1
 
-    .line 139
+    .line 151
     :goto_1
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
@@ -848,10 +988,10 @@
 
     move v0, v1
 
-    .line 127
+    .line 139
     goto :goto_1
 
-    .line 130
+    .line 142
     :cond_5
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->isInDisallowRecatchBottomZone()Z
 
@@ -863,10 +1003,10 @@
 
     move v0, v1
 
-    .line 131
+    .line 143
     goto :goto_1
 
-    .line 132
+    .line 144
     :cond_6
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->isInDisallowRecatchTopZone()Z
 
@@ -876,23 +1016,23 @@
 
     move v0, v1
 
-    .line 133
-    goto :goto_1
-
-    .line 135
-    :cond_7
-    const/4 v2, 0x3
-
-    .line 136
+    .line 145
     goto :goto_1
 
     .line 147
+    :cond_7
+    const/4 v2, 0x3
+
+    .line 148
+    goto :goto_1
+
+    .line 159
     :cond_8
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/VerticalPullDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 148
+    .line 160
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->isSettlingState()Z
@@ -913,11 +1053,11 @@
 
     if-eqz v0, :cond_a
 
-    .line 149
+    .line 161
     :cond_9
     return v1
 
-    .line 151
+    .line 163
     :cond_a
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
@@ -932,7 +1072,20 @@
     .locals 1
 
     .prologue
-    .line 156
+    .line 168
+    invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->hasSpringAnimationHandler()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 169
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    invoke-virtual {v0, p1}, Lcom/android/launcher3/anim/SpringAnimationHandler;->addMovement(Landroid/view/MotionEvent;)V
+
+    .line 171
+    :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/allapps/VerticalPullDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -946,21 +1099,21 @@
     .locals 2
 
     .prologue
-    .line 178
+    .line 196
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     if-nez v0, :cond_0
 
-    .line 179
+    .line 197
     const/4 v0, 0x0
 
     return v0
 
-    .line 182
+    .line 200
     :cond_0
     iput p2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mContainerVelocity:F
 
-    .line 184
+    .line 202
     const/4 v0, 0x0
 
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftStart:F
@@ -977,14 +1130,14 @@
 
     move-result v0
 
-    .line 185
+    .line 203
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
     div-float/2addr v0, v1
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->setProgress(F)V
 
-    .line 187
+    .line 205
     const/4 v0, 0x1
 
     return v0
@@ -994,146 +1147,109 @@
     .locals 6
 
     .prologue
-    const/4 v5, 0x2
+    const/4 v5, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    .line 192
+    .line 210
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     if-nez v0, :cond_0
 
-    .line 193
+    .line 211
     return-void
 
-    .line 196
+    .line 214
     :cond_0
-    if-eqz p2, :cond_3
+    iget-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mTouchEventStartedOnHotseat:Z
 
-    .line 197
-    const/4 v0, 0x0
+    if-eqz v0, :cond_3
 
-    cmpg-float v0, p1, v0
+    .line 215
+    const/4 v0, 0x2
 
-    if-gez v0, :cond_2
+    .line 217
+    :goto_0
+    if-eqz p2, :cond_5
 
-    .line 198
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+    .line 218
+    cmpg-float v2, p1, v4
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
+    if-gez v2, :cond_4
 
-    move-result v0
+    .line 219
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
-    invoke-direct {p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->calculateDuration(FF)V
+    invoke-virtual {v2}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
 
-    .line 200
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+    move-result v2
 
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->isAllAppsVisible()Z
+    invoke-direct {p0, p1, v2}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->calculateDuration(FF)V
 
-    move-result v0
+    .line 221
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    if-nez v0, :cond_1
+    invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->isAllAppsVisible()Z
 
-    .line 201
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+    move-result v2
 
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
+    if-nez v2, :cond_1
 
-    move-result-object v0
+    .line 222
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 202
-    const/4 v1, 0x4
+    invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
 
-    .line 201
-    invoke-virtual {v0, v1, v3, v5}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionOnContainer(III)V
+    move-result-object v2
 
-    .line 206
+    .line 223
+    const/4 v3, 0x4
+
+    .line 222
+    invoke-virtual {v2, v3, v1, v0}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionOnContainer(III)V
+
+    .line 227
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v0, v3, v4, v4}, Lcom/android/launcher3/Launcher;->showAppsView(ZZZ)V
+    invoke-virtual {v0, v1, v5}, Lcom/android/launcher3/Launcher;->showAppsView(ZZ)V
 
-    .line 231
-    :goto_0
+    .line 228
+    invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->hasSpringAnimationHandler()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 230
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    invoke-virtual {v0, v4, v1}, Lcom/android/launcher3/anim/SpringAnimationHandler;->animateToFinalPosition(FI)V
+
+    .line 252
+    :cond_2
+    :goto_1
     return-void
 
-    .line 210
-    :cond_2
-    iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
-
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
-
-    invoke-virtual {v1}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
-
-    move-result v1
-
-    sub-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    invoke-direct {p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->calculateDuration(FF)V
-
-    .line 211
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0, v3}, Lcom/android/launcher3/Launcher;->showWorkspace(Z)Z
-
-    goto :goto_0
+    :cond_3
+    move v0, v1
 
     .line 215
-    :cond_3
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+    goto :goto_0
 
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
-
-    move-result v0
-
-    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
-
-    const/high16 v2, 0x40000000    # 2.0f
-
-    div-float/2addr v1, v2
-
-    cmpl-float v0, v0, v1
-
-    if-lez v0, :cond_4
-
-    .line 216
+    .line 233
+    :cond_4
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
-    iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
-    invoke-virtual {v1}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
+    invoke-virtual {v2}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
 
-    move-result v1
+    move-result v2
 
-    sub-float/2addr v0, v1
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    invoke-direct {p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->calculateDuration(FF)V
-
-    .line 217
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0, v3}, Lcom/android/launcher3/Launcher;->showWorkspace(Z)Z
-
-    goto :goto_0
-
-    .line 219
-    :cond_4
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
-
-    move-result v0
+    sub-float/2addr v0, v2
 
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
@@ -1141,57 +1257,120 @@
 
     invoke-direct {p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->calculateDuration(FF)V
 
-    .line 220
+    .line 234
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->isAllAppsVisible()Z
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->showWorkspace(Z)Z
 
-    move-result v0
+    goto :goto_1
 
-    if-nez v0, :cond_5
-
-    .line 221
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
-
-    move-result-object v0
-
-    .line 222
-    const/4 v1, 0x3
-
-    .line 221
-    invoke-virtual {v0, v1, v3, v5}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionOnContainer(III)V
-
-    .line 226
+    .line 238
     :cond_5
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
+
+    move-result v2
+
+    iget v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    div-float/2addr v3, v4
+
+    cmpl-float v2, v2, v3
+
+    if-lez v2, :cond_6
+
+    .line 239
+    iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
+
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
+
+    move-result v2
+
+    sub-float/2addr v0, v2
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    invoke-direct {p0, p1, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->calculateDuration(FF)V
+
+    .line 240
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    invoke-virtual {v0, v3, v4, v4}, Lcom/android/launcher3/Launcher;->showAppsView(ZZZ)V
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->showWorkspace(Z)Z
 
-    goto :goto_0
+    goto :goto_1
+
+    .line 242
+    :cond_6
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+
+    move-result v2
+
+    invoke-direct {p0, p1, v2}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->calculateDuration(FF)V
+
+    .line 243
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->isAllAppsVisible()Z
+
+    move-result v2
+
+    if-nez v2, :cond_7
+
+    .line 244
+    iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v2}, Lcom/android/launcher3/Launcher;->getUserEventDispatcher()Lcom/android/launcher3/logging/UserEventDispatcher;
+
+    move-result-object v2
+
+    .line 245
+    const/4 v3, 0x3
+
+    .line 244
+    invoke-virtual {v2, v3, v1, v0}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionOnContainer(III)V
+
+    .line 249
+    :cond_7
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v0, v1, v5}, Lcom/android/launcher3/Launcher;->showAppsView(ZZ)V
+
+    goto :goto_1
 .end method
 
 .method public onDragStart(Z)V
     .locals 1
 
     .prologue
-    .line 169
+    .line 184
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCaretController:Lcom/android/launcher3/allapps/AllAppsCaretController;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsCaretController;->onDragStart()V
 
-    .line 170
+    .line 185
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->cancelAnimation()V
 
-    .line 171
+    .line 186
     invoke-static {}, Lcom/android/launcher3/LauncherAnimUtils;->createAnimatorSet()Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCurrentAnimation:Landroid/animation/AnimatorSet;
 
-    .line 172
+    .line 187
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getTranslationY()F
@@ -1200,51 +1379,42 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftStart:F
 
-    .line 173
+    .line 188
     invoke-virtual {p0, p1}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->preparePull(Z)V
 
-    .line 174
-    return-void
-.end method
-
-.method public onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .locals 1
-
-    .prologue
-    .line 498
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
+    .line 189
+    invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->hasSpringAnimationHandler()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 499
-    int-to-float v0, p3
+    .line 190
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/anim/SpringAnimationHandler;->skipToEnd()V
+
+    .line 192
+    :cond_0
+    return-void
+.end method
+
+.method public onScrollRangeChanged(I)V
+    .locals 1
+
+    .prologue
+    .line 555
+    int-to-float v0, p1
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
-    .line 503
-    :goto_0
+    .line 556
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->setProgress(F)V
 
-    .line 504
+    .line 557
     return-void
-
-    .line 501
-    :cond_0
-    int-to-float v0, p5
-
-    iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
-
-    goto :goto_0
 .end method
 
 .method public preparePull(Z)V
@@ -1253,10 +1423,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 241
+    .line 262
     if-eqz p1, :cond_0
 
-    .line 243
+    .line 264
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDragLayer()Lcom/android/launcher3/dragndrop/DragLayer;
@@ -1273,12 +1443,12 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mStatusBarHeight:F
 
-    .line 244
+    .line 265
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/Hotseat;->setVisibility(I)V
 
-    .line 245
+    .line 266
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Hotseat;->getBackgroundDrawableColor()I
@@ -1287,14 +1457,14 @@
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseatBackgroundColor:I
 
-    .line 246
+    .line 267
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Hotseat;->setBackgroundTransparent(Z)V
 
-    .line 247
+    .line 268
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->isAllAppsVisible()Z
@@ -1303,92 +1473,92 @@
 
     if-nez v0, :cond_0
 
-    .line 248
+    .line 269
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->tryAndUpdatePredictedApps()V
 
-    .line 249
+    .line 270
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/allapps/AllAppsContainerView;->setVisibility(I)V
 
-    .line 250
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
-
-    iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseatBackgroundColor:I
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsContainerView;->setRevealDrawableColor(I)V
-
-    .line 253
+    .line 276
     :cond_0
     return-void
 .end method
 
 .method public setProgress(F)V
-    .locals 9
+    .locals 10
 
     .prologue
     const/high16 v3, 0x3f800000    # 1.0f
 
-    const/high16 v8, 0x3e000000    # 0.125f
+    const/high16 v9, 0x3e000000    # 0.125f
 
-    .line 270
+    .line 311
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
     iget v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
     mul-float/2addr v1, v0
 
-    .line 271
+    .line 312
     iput p1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mProgress:F
 
-    .line 272
+    .line 313
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
     mul-float v2, p1, v0
 
-    .line 274
+    .line 315
     const/4 v0, 0x0
 
     invoke-static {p1, v0, v3}, Lcom/android/launcher3/Utilities;->boundToRange(FFF)F
 
     move-result v0
 
-    .line 275
+    .line 316
     sub-float/2addr v3, v0
 
-    .line 276
-    iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAccelInterpolator:Landroid/view/animation/Interpolator;
+    .line 317
+    iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mWorkspaceAccelnterpolator:Landroid/view/animation/Interpolator;
 
     invoke-interface {v4, v0}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
     move-result v4
 
-    .line 278
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mEvaluator:Landroid/animation/ArgbEvaluator;
+    .line 318
+    iget-object v5, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseatAccelInterpolator:Landroid/view/animation/Interpolator;
 
-    iget-object v5, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDecelInterpolator:Landroid/view/animation/Interpolator;
-
-    invoke-interface {v5, v3}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+    invoke-interface {v5, v0}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
     move-result v5
 
-    .line 279
-    iget v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseatBackgroundColor:I
+    .line 320
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mEvaluator:Landroid/animation/ArgbEvaluator;
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDecelInterpolator:Landroid/view/animation/Interpolator;
 
-    move-result-object v6
+    invoke-interface {v6, v3}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
-    iget v7, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAllAppsBackgroundColor:I
+    move-result v6
+
+    .line 321
+    iget v7, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseatBackgroundColor:I
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    .line 278
-    invoke-virtual {v0, v5, v6, v7}, Landroid/animation/ArgbEvaluator;->evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget v8, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAllAppsBackgroundColor:I
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    .line 320
+    invoke-virtual {v0, v6, v7, v8}, Landroid/animation/ArgbEvaluator;->evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1396,12 +1566,10 @@
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v5
-
-    .line 280
+    .line 322
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mEvaluator:Landroid/animation/ArgbEvaluator;
 
-    .line 281
+    .line 323
     iget v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseatBackgroundColor:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1414,7 +1582,7 @@
 
     move-result-object v7
 
-    .line 280
+    .line 322
     invoke-virtual {v0, v3, v6, v7}, Landroid/animation/ArgbEvaluator;->evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -1427,18 +1595,10 @@
 
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v0
+    .line 326
+    invoke-direct {p0, v3}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->updateAllAppsBg(F)V
 
-    .line 283
-    iget-object v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
-
-    invoke-static {v5, v0}, Landroid/support/v4/b/a;->arc(II)I
-
-    move-result v0
-
-    invoke-virtual {v6, v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->setRevealDrawableColor(I)V
-
-    .line 284
+    .line 331
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getContentView()Landroid/view/View;
@@ -1447,12 +1607,12 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 285
+    .line 332
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/allapps/AllAppsContainerView;->setTranslationY(F)V
 
-    .line 287
+    .line 334
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
@@ -1465,65 +1625,65 @@
 
     if-nez v0, :cond_0
 
-    .line 288
+    .line 335
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     sget-object v3, Lcom/android/launcher3/Workspace$Direction;->Y:Lcom/android/launcher3/Workspace$Direction;
 
-    iget v5, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
+    iget v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
-    neg-float v5, v5
+    neg-float v6, v6
 
-    add-float/2addr v5, v2
+    add-float/2addr v6, v2
 
-    invoke-virtual {v0, v3, v5, v4}, Lcom/android/launcher3/Workspace;->setHotseatTranslationAndAlpha(Lcom/android/launcher3/Workspace$Direction;FF)V
+    invoke-virtual {v0, v3, v6, v5}, Lcom/android/launcher3/Workspace;->setHotseatTranslationAndAlpha(Lcom/android/launcher3/Workspace$Direction;FF)V
 
-    .line 296
+    .line 343
     :goto_0
     iget-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mIsTranslateWithoutWorkspace:Z
 
     if-eqz v0, :cond_1
 
-    .line 297
+    .line 344
     return-void
 
-    .line 291
+    .line 338
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     sget-object v3, Lcom/android/launcher3/Workspace$Direction;->Y:Lcom/android/launcher3/Workspace$Direction;
 
-    .line 292
-    iget v5, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
+    .line 339
+    iget v6, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
-    neg-float v5, v5
+    neg-float v6, v6
 
-    add-float/2addr v5, v2
+    add-float/2addr v6, v2
 
-    mul-float/2addr v5, v8
+    mul-float/2addr v6, v9
 
-    .line 291
-    invoke-virtual {v0, v3, v5, v4}, Lcom/android/launcher3/Workspace;->setHotseatTranslationAndAlpha(Lcom/android/launcher3/Workspace$Direction;FF)V
+    .line 338
+    invoke-virtual {v0, v3, v6, v5}, Lcom/android/launcher3/Workspace;->setHotseatTranslationAndAlpha(Lcom/android/launcher3/Workspace$Direction;FF)V
 
     goto :goto_0
 
-    .line 299
+    .line 346
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mWorkspace:Lcom/android/launcher3/Workspace;
 
-    .line 300
+    .line 347
     iget v3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mShiftRange:F
 
     neg-float v3, v3
 
     add-float/2addr v3, v2
 
-    mul-float/2addr v3, v8
+    mul-float/2addr v3, v9
 
-    .line 299
+    .line 346
     invoke-virtual {v0, v3, v4}, Lcom/android/launcher3/Workspace;->setWorkspaceYTranslationAndAlpha(FF)V
 
-    .line 302
+    .line 349
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/VerticalPullDetector;->isDraggingState()Z
@@ -1532,24 +1692,24 @@
 
     if-nez v0, :cond_2
 
-    .line 303
+    .line 350
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDetector:Lcom/android/launcher3/allapps/VerticalPullDetector;
 
     sub-float v1, v2, v1
 
-    .line 304
+    .line 351
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    .line 303
+    .line 350
     invoke-virtual {v0, v1, v4, v5}, Lcom/android/launcher3/allapps/VerticalPullDetector;->computeVelocity(FJ)F
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mContainerVelocity:F
 
-    .line 307
+    .line 354
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCaretController:Lcom/android/launcher3/allapps/AllAppsCaretController;
 
@@ -1563,10 +1723,10 @@
 
     invoke-virtual {v0, p1, v1, v3}, Lcom/android/launcher3/allapps/AllAppsCaretController;->updateCaret(FFZ)V
 
-    .line 308
+    .line 355
     invoke-direct {p0, v2}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->updateLightStatusBar(F)V
 
-    .line 309
+    .line 356
     return-void
 .end method
 
@@ -1574,29 +1734,24 @@
     .locals 3
 
     .prologue
-    .line 486
+    .line 539
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
-    .line 487
+    .line 540
     iput-object p2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
-    .line 488
+    .line 541
     iput-object p3, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mWorkspace:Lcom/android/launcher3/Workspace;
 
-    .line 489
-    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
-
-    invoke-virtual {v0, p0}, Lcom/android/launcher3/Hotseat;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
-
-    .line 490
+    .line 542
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mHotseat:Lcom/android/launcher3/Hotseat;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Hotseat;->bringToFront()V
 
-    .line 491
+    .line 543
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsCaretController;
 
-    .line 492
+    .line 544
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mWorkspace:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v1}, Lcom/android/launcher3/Workspace;->getPageIndicator()Lcom/android/launcher3/pageindicators/PageIndicator;
@@ -1609,12 +1764,30 @@
 
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 491
+    .line 543
     invoke-direct {v0, v1, v2}, Lcom/android/launcher3/allapps/AllAppsCaretController;-><init>(Lcom/android/launcher3/pageindicators/CaretDrawable;Lcom/android/launcher3/Launcher;)V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mCaretController:Lcom/android/launcher3/allapps/AllAppsCaretController;
 
-    .line 493
+    .line 545
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getSearchUiManager()Lcom/android/launcher3/allapps/SearchUiManager;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0}, Lcom/android/launcher3/allapps/SearchUiManager;->addOnScrollRangeChangeListener(Lcom/android/launcher3/allapps/SearchUiManager$OnScrollRangeChangeListener;)V
+
+    .line 546
+    iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->getSpringAnimationHandler()Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mSpringAnimationHandler:Lcom/android/launcher3/anim/SpringAnimationHandler;
+
+    .line 547
     return-void
 .end method
 
@@ -1622,16 +1795,16 @@
     .locals 2
 
     .prologue
-    .line 371
+    .line 418
     invoke-virtual {p0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->cancelDiscoveryAnimation()V
 
-    .line 374
+    .line 421
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 375
+    .line 422
     const/high16 v1, 0x7f050000
 
-    .line 374
+    .line 421
     invoke-static {v0, v1}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
 
     move-result-object v0
@@ -1640,7 +1813,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDiscoBounceAnimation:Landroid/animation/AnimatorSet;
 
-    .line 376
+    .line 423
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDiscoBounceAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsTransitionController$2;
@@ -1649,12 +1822,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 390
+    .line 437
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mDiscoBounceAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0, p0}, Landroid/animation/AnimatorSet;->setTarget(Ljava/lang/Object;)V
 
-    .line 391
+    .line 438
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsTransitionController;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
 
     new-instance v1, Lcom/android/launcher3/allapps/AllAppsTransitionController$3;
@@ -1663,6 +1836,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsContainerView;->post(Ljava/lang/Runnable;)Z
 
-    .line 400
+    .line 447
     return-void
 .end method

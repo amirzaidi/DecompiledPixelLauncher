@@ -25,6 +25,6 @@ class AutoInstallsLayout$AutoInstallParser implements AutoInstallsLayout$TagPars
             return -1;
         }
         this.this$0.mValues.put("restored", 2);
-        return this.this$0.addShortcut(this.this$0.mContext.getString(2131492957), new Intent("android.intent.action.MAIN", (Uri)null).addCategory("android.intent.category.LAUNCHER").setComponent(new ComponentName(attributeValue, attributeValue2)).setFlags(270532608), 0);
+        return this.this$0.addShortcut(this.this$0.mContext.getString(2131492966), new Intent("android.intent.action.MAIN", (Uri)null).addCategory("android.intent.category.LAUNCHER").setComponent(new ComponentName(attributeValue, attributeValue2)).setFlags(270532608), 0);
     }
 }

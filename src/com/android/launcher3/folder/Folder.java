@@ -14,6 +14,8 @@ import com.android.launcher3.accessibility.DragViewStateAnnouncer;
 import android.text.Spannable;
 import android.text.Selection;
 import com.android.launcher3.Utilities;
+import java.util.Collection;
+import com.android.launcher3.BubbleTextView;
 import android.view.FocusFinder;
 import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
 import android.view.accessibility.AccessibilityEvent;
@@ -21,29 +23,28 @@ import java.util.Iterator;
 import android.view.ViewGroup$LayoutParams;
 import java.util.List;
 import java.util.Collections;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.animation.AnimatorSet;
-import android.animation.Animator;
-import android.view.animation.AccelerateInterpolator;
-import com.android.launcher3.util.CircleRevealOutlineProvider;
-import android.animation.TimeInterpolator;
-import com.android.launcher3.LogDecelerateInterpolator;
-import android.animation.PropertyValuesHolder;
 import com.android.launcher3.ItemInfo;
 import com.android.launcher3.Workspace$ItemOperator;
 import com.android.launcher3.ShortcutInfo;
 import com.android.launcher3.DropTarget$DragObject;
+import android.animation.ValueAnimator;
+import android.util.Property;
+import android.view.animation.AccelerateInterpolator;
+import com.android.launcher3.anim.CircleRevealOutlineProvider;
+import android.animation.TimeInterpolator;
+import com.android.launcher3.LogDecelerateInterpolator;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import com.android.launcher3.anim.AnimationLayerSet;
+import android.animation.Animator;
+import com.android.launcher3.LauncherAnimUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.DeviceProfile;
 import com.android.launcher3.dragndrop.DragLayer;
 import com.android.launcher3.dragndrop.DragLayer$LayoutParams;
-import android.animation.ObjectAnimator;
-import android.graphics.Paint;
 import android.animation.Animator$AnimatorListener;
-import com.android.launcher3.LauncherAnimUtils;
+import com.android.launcher3.config.FeatureFlags;
 import android.content.res.Resources;
 import android.util.AttributeSet;
 import android.content.Context;
@@ -56,6 +57,7 @@ import com.android.launcher3.FolderInfo;
 import com.android.launcher3.ExtendedEditText;
 import com.android.launcher3.dragndrop.DragController;
 import android.view.View;
+import android.animation.AnimatorSet;
 import android.graphics.Rect;
 import java.util.Comparator;
 import com.android.launcher3.ExtendedEditText$OnBackKeyListener;
@@ -77,6 +79,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     private static String sHintText;
     private static final Rect sTempRect;
     FolderPagedView mContent;
+    private AnimatorSet mCurrentAnimator;
     private View mCurrentDragView;
     int mCurrentScrollDir;
     private boolean mDeferDropAfterUninstall;
@@ -100,7 +103,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     final ArrayList mItemsInReadingOrder;
     boolean mItemsInvalidated;
     protected final Launcher mLauncher;
-    private final int mMaterialExpandDuration;
+    public final int mMaterialExpandDuration;
     private final int mMaterialExpandStagger;
     private final Alarm mOnExitAlarm;
     OnAlarmListener mOnExitAlarmListener;
@@ -149,29 +152,32 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         this.mMaterialExpandDuration = resources.getInteger(2131558418);
         this.mMaterialExpandStagger = resources.getInteger(2131558419);
         if (Folder.sDefaultFolderName == null) {
-            Folder.sDefaultFolderName = resources.getString(2131492893);
+            Folder.sDefaultFolderName = resources.getString(2131492895);
         }
         if (Folder.sHintText == null) {
-            Folder.sHintText = resources.getString(2131492930);
+            Folder.sHintText = resources.getString(2131492932);
         }
         this.mLauncher = Launcher.getLauncher(context);
         this.setFocusableInTouchMode(true);
     }
     
     private void animateClosed() {
-        final float n = 0.9f;
-        final ObjectAnimator ofViewAlphaAndScale = LauncherAnimUtils.ofViewAlphaAndScale((View)this, 0.0f, n, n);
-        ofViewAlphaAndScale.addListener((Animator$AnimatorListener)new Folder$11(this));
-        ofViewAlphaAndScale.setDuration((long)this.mExpandDuration);
-        this.setLayerType(2, (Paint)null);
-        ofViewAlphaAndScale.start();
+        AnimatorSet set;
+        if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+            set = new FolderAnimationManager(this, false).getAnimator();
+        }
+        else {
+            set = this.getClosingAnimator();
+        }
+        set.addListener((Animator$AnimatorListener)new Folder$12(this));
+        this.startAnimation(set);
     }
     
     private void centerAboutIcon() {
         final float n = 1.0f;
         final DeviceProfile deviceProfile = this.mLauncher.getDeviceProfile();
         final DragLayer$LayoutParams dragLayer$LayoutParams = (DragLayer$LayoutParams)this.getLayoutParams();
-        final DragLayer dragLayer = (DragLayer)this.mLauncher.findViewById(2131624002);
+        final DragLayer dragLayer = (DragLayer)this.mLauncher.findViewById(2131624011);
         final int folderWidth = this.getFolderWidth();
         final int folderHeight = this.getFolderHeight();
         dragLayer.getDescendantRectRelativeToSelf((View)this.mFolderIcon, Folder.sTempRect);
@@ -226,8 +232,28 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         }
         this.mDragController.removeDropTarget(this);
         this.clearFocus();
-        if (b) {
-            this.mFolderIcon.requestFocus();
+        if (this.mFolderIcon != null) {
+            this.mFolderIcon.setVisibility(0);
+            if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+                this.mFolderIcon.setBackgroundVisible(mDeleteFolderOnDropCompleted != 0);
+                this.mFolderIcon.mFolderName.setTextVisibility(mDeleteFolderOnDropCompleted != 0);
+            }
+            if (b) {
+                if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+                    this.mFolderIcon.mBackground.fadeInBackgroundShadow();
+                    this.mFolderIcon.mBackground.animateBackgroundStroke();
+                    this.mFolderIcon.onFolderClose(this.mContent.getCurrentPage());
+                }
+                if (this.mFolderIcon.hasBadge()) {
+                    final FolderIcon mFolderIcon = this.mFolderIcon;
+                    final float[] array2;
+                    final float[] array = array2 = new float[2];
+                    array2[0] = 0.0f;
+                    array2[1] = 1.0f;
+                    mFolderIcon.createBadgeScaleAnimator(array).start();
+                }
+                this.mFolderIcon.requestFocus();
+            }
         }
         if (this.mRearrangeOnClose) {
             this.rearrangeChildren();
@@ -244,18 +270,30 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         this.mSuppressFolderDeletion = false;
         this.clearDragInfo();
         this.mState = 0;
+        this.mContent.setCurrentPage(0);
     }
     
     static Folder fromXml(final Launcher launcher) {
         final LayoutInflater layoutInflater = launcher.getLayoutInflater();
         int n;
         if (FeatureFlags.LAUNCHER3_DISABLE_ICON_NORMALIZATION) {
-            n = 2130968623;
+            n = 2130968625;
         }
         else {
-            n = 2130968624;
+            n = 2130968626;
         }
         return (Folder)layoutInflater.inflate(n, (ViewGroup)null);
+    }
+    
+    private AnimatorSet getClosingAnimator() {
+        final float n = 0.9f;
+        final AnimatorSet animatorSet = LauncherAnimUtils.createAnimatorSet();
+        animatorSet.play((Animator)LauncherAnimUtils.ofViewAlphaAndScale((View)this, 0.0f, n, n));
+        final AnimationLayerSet set = new AnimationLayerSet();
+        set.addView((View)this);
+        animatorSet.addListener((Animator$AnimatorListener)set);
+        animatorSet.setDuration((long)this.mExpandDuration);
+        return animatorSet;
     }
     
     private int getContentAreaHeight() {
@@ -283,13 +321,77 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         return (Folder)AbstractFloatingView.getOpenView(launcher, 1);
     }
     
+    private AnimatorSet getOpeningAnimator() {
+        final float n = -0.075f;
+        final int n2 = 1;
+        final int n3 = 2;
+        this.prepareReveal();
+        this.mFolderIcon.growAndFadeOut();
+        final AnimatorSet animatorSet = LauncherAnimUtils.createAnimatorSet();
+        final int folderWidth = this.getFolderWidth();
+        final int folderHeight = this.getFolderHeight();
+        final float translationX = (folderWidth / 2 - this.getPivotX()) * n;
+        final float translationY = (folderHeight / 2 - this.getPivotY()) * n;
+        this.setTranslationX(translationX);
+        this.setTranslationY(translationY);
+        final Property translation_X = Folder.TRANSLATION_X;
+        final float[] array = new float[n3];
+        array[0] = translationX;
+        array[n2] = 0.0f;
+        final PropertyValuesHolder ofFloat = PropertyValuesHolder.ofFloat(translation_X, array);
+        final Property translation_Y = Folder.TRANSLATION_Y;
+        final float[] array2 = new float[n3];
+        array2[0] = translationY;
+        array2[n2] = 0.0f;
+        final PropertyValuesHolder ofFloat2 = PropertyValuesHolder.ofFloat(translation_Y, array2);
+        final PropertyValuesHolder[] array3 = new PropertyValuesHolder[n3];
+        array3[0] = ofFloat;
+        array3[n2] = ofFloat2;
+        final ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder((Object)this, array3);
+        ((Animator)ofPropertyValuesHolder).setDuration((long)this.mMaterialExpandDuration);
+        ((Animator)ofPropertyValuesHolder).setStartDelay((long)this.mMaterialExpandStagger);
+        ((Animator)ofPropertyValuesHolder).setInterpolator((TimeInterpolator)new LogDecelerateInterpolator(100, 0));
+        final ValueAnimator revealAnimator = new CircleRevealOutlineProvider((int)this.getPivotX(), (int)this.getPivotY(), 0.0f, (float)Math.hypot((int)Math.max(Math.max(folderWidth - this.getPivotX(), 0.0f), this.getPivotX()), (int)Math.max(Math.max(folderHeight - this.getPivotY(), 0.0f), this.getPivotY()))).createRevealAnimator((View)this);
+        ((Animator)revealAnimator).setDuration((long)this.mMaterialExpandDuration);
+        ((Animator)revealAnimator).setInterpolator((TimeInterpolator)new LogDecelerateInterpolator(100, 0));
+        this.mContent.setAlpha(0.0f);
+        final FolderPagedView mContent = this.mContent;
+        final float[] array5;
+        final float[] array4 = array5 = new float[n3];
+        array5[0] = 0.0f;
+        array5[1] = 1.0f;
+        final ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat((Object)mContent, "alpha", array4);
+        ((Animator)ofFloat3).setDuration((long)this.mMaterialExpandDuration);
+        ((Animator)ofFloat3).setStartDelay((long)this.mMaterialExpandStagger);
+        ((Animator)ofFloat3).setInterpolator((TimeInterpolator)new AccelerateInterpolator(1.5f));
+        this.mFooter.setAlpha(0.0f);
+        final View mFooter = this.mFooter;
+        final float[] array7;
+        final float[] array6 = array7 = new float[n3];
+        array7[0] = 0.0f;
+        array7[1] = 1.0f;
+        final ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat((Object)mFooter, "alpha", array6);
+        ((Animator)ofFloat4).setDuration((long)this.mMaterialExpandDuration);
+        ((Animator)ofFloat4).setStartDelay((long)this.mMaterialExpandStagger);
+        ((Animator)ofFloat4).setInterpolator((TimeInterpolator)new AccelerateInterpolator(1.5f));
+        animatorSet.play((Animator)ofPropertyValuesHolder);
+        animatorSet.play((Animator)ofFloat3);
+        animatorSet.play((Animator)ofFloat4);
+        animatorSet.play((Animator)revealAnimator);
+        final AnimationLayerSet set = new AnimationLayerSet();
+        set.addView((View)this.mContent);
+        set.addView(this.mFooter);
+        animatorSet.addListener((Animator$AnimatorListener)set);
+        return animatorSet;
+    }
+    
     private int getTargetRank(final DropTarget$DragObject dropTarget$DragObject, final float[] array) {
         final float[] visualCenter = dropTarget$DragObject.getVisualCenter(array);
         return this.mContent.findNearestArea((int)visualCenter[0] - this.getPaddingLeft(), (int)visualCenter[1] - this.getPaddingTop());
     }
     
     private View getViewForInfo(final ShortcutInfo shortcutInfo) {
-        return this.mContent.iterateOverItems(new Folder$16(this, shortcutInfo));
+        return this.mContent.iterateOverItems(new Folder$17(this, shortcutInfo));
     }
     
     private void prepareReveal() {
@@ -315,6 +417,14 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         }
     }
     
+    private void startAnimation(final AnimatorSet set) {
+        if (this.mCurrentAnimator != null && this.mCurrentAnimator.isRunning()) {
+            this.mCurrentAnimator.cancel();
+        }
+        set.addListener((Animator$AnimatorListener)new Folder$8(this, set));
+        set.start();
+    }
+    
     private void updateItemLocationsInDatabaseBatch() {
         final ArrayList itemsInReadingOrder = this.getItemsInReadingOrder();
         final ArrayList<ItemInfo> list = new ArrayList<ItemInfo>();
@@ -337,7 +447,6 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     
     public void animateOpen() {
         final int mIsOpen = 1;
-        final int n = 2;
         final Folder open = getOpen(this.mLauncher);
         if (open != null && open != this) {
             open.close(mIsOpen != 0);
@@ -353,78 +462,30 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
             this.mContent.snapToPageImmediately(0);
         }
         this.mDeleteFolderOnDropCompleted = false;
-        this.prepareReveal();
         this.centerAboutIcon();
-        this.mFolderIcon.growAndFadeOut();
-        final AnimatorSet animatorSet = LauncherAnimUtils.createAnimatorSet();
-        final int folderWidth = this.getFolderWidth();
-        final int folderHeight = this.getFolderHeight();
-        final float translationX = (folderWidth / 2 - this.getPivotX()) * -0.075f;
-        final float translationY = (folderHeight / 2 - this.getPivotY()) * -0.075f;
-        this.setTranslationX(translationX);
-        this.setTranslationY(translationY);
-        final Property translation_X = Folder.TRANSLATION_X;
-        final float[] array = new float[n];
-        array[0] = translationX;
-        array[mIsOpen] = 0.0f;
-        final PropertyValuesHolder ofFloat = PropertyValuesHolder.ofFloat(translation_X, array);
-        final Property translation_Y = Folder.TRANSLATION_Y;
-        final float[] array2 = new float[n];
-        array2[0] = translationY;
-        array2[mIsOpen] = 0.0f;
-        final PropertyValuesHolder ofFloat2 = PropertyValuesHolder.ofFloat(translation_Y, array2);
-        final PropertyValuesHolder[] array3 = new PropertyValuesHolder[n];
-        array3[0] = ofFloat;
-        array3[mIsOpen] = ofFloat2;
-        final ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder((Object)this, array3);
-        ((Animator)ofPropertyValuesHolder).setDuration((long)this.mMaterialExpandDuration);
-        ((Animator)ofPropertyValuesHolder).setStartDelay((long)this.mMaterialExpandStagger);
-        ((Animator)ofPropertyValuesHolder).setInterpolator((TimeInterpolator)new LogDecelerateInterpolator(100, 0));
-        final ValueAnimator revealAnimator = new CircleRevealOutlineProvider((int)this.getPivotX(), (int)this.getPivotY(), 0.0f, (float)Math.hypot((int)Math.max(Math.max(folderWidth - this.getPivotX(), 0.0f), this.getPivotX()), (int)Math.max(Math.max(folderHeight - this.getPivotY(), 0.0f), this.getPivotY()))).createRevealAnimator((View)this);
-        ((Animator)revealAnimator).setDuration((long)this.mMaterialExpandDuration);
-        ((Animator)revealAnimator).setInterpolator((TimeInterpolator)new LogDecelerateInterpolator(100, 0));
-        this.mContent.setAlpha(0.0f);
-        final FolderPagedView mContent = this.mContent;
-        final float[] array5;
-        final float[] array4 = array5 = new float[n];
-        array5[0] = 0.0f;
-        array5[1] = 1.0f;
-        final ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat((Object)mContent, "alpha", array4);
-        ((Animator)ofFloat3).setDuration((long)this.mMaterialExpandDuration);
-        ((Animator)ofFloat3).setStartDelay((long)this.mMaterialExpandStagger);
-        ((Animator)ofFloat3).setInterpolator((TimeInterpolator)new AccelerateInterpolator(1.5f));
-        this.mFooter.setAlpha(0.0f);
-        final View mFooter = this.mFooter;
-        final float[] array7;
-        final float[] array6 = array7 = new float[n];
-        array7[0] = 0.0f;
-        array7[1] = 1.0f;
-        final ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat((Object)mFooter, "alpha", array6);
-        ((Animator)ofFloat4).setDuration((long)this.mMaterialExpandDuration);
-        ((Animator)ofFloat4).setStartDelay((long)this.mMaterialExpandStagger);
-        ((Animator)ofFloat4).setInterpolator((TimeInterpolator)new AccelerateInterpolator(1.5f));
-        animatorSet.play((Animator)ofPropertyValuesHolder);
-        animatorSet.play((Animator)ofFloat3);
-        animatorSet.play((Animator)ofFloat4);
-        animatorSet.play((Animator)revealAnimator);
-        this.mContent.setLayerType(n, (Paint)null);
-        this.mFooter.setLayerType(n, (Paint)null);
-        animatorSet.addListener((Animator$AnimatorListener)new Folder$9(this, new Folder$8(this)));
+        AnimatorSet set;
+        if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+            set = new FolderAnimationManager(this, mIsOpen != 0).getAnimator();
+        }
+        else {
+            set = this.getOpeningAnimator();
+        }
+        set.addListener((Animator$AnimatorListener)new Folder$10(this, new Folder$9(this)));
         if (this.mContent.getPageCount() > mIsOpen && (this.mInfo.hasOption(4) ^ true)) {
-            float translationX2 = (this.mContent.getDesiredWidth() - this.mFooter.getPaddingLeft() - this.mFooter.getPaddingRight() - this.mFolderName.getPaint().measureText(this.mFolderName.getText().toString())) / 2.0f;
+            float translationX = (this.mContent.getDesiredWidth() - this.mFooter.getPaddingLeft() - this.mFooter.getPaddingRight() - this.mFolderName.getPaint().measureText(this.mFolderName.getText().toString())) / 2.0f;
             final ExtendedEditText mFolderName = this.mFolderName;
             if (this.mContent.mIsRtl) {
-                translationX2 = -translationX2;
+                translationX = -translationX;
             }
-            mFolderName.setTranslationX(translationX2);
+            mFolderName.setTranslationX(translationX);
             this.mPageIndicator.prepareEntryAnimation();
-            animatorSet.addListener((Animator$AnimatorListener)new Folder$10(this, this.mDragInProgress ^ true));
+            set.addListener((Animator$AnimatorListener)new Folder$11(this, this.mDragInProgress ^ true));
         }
         else {
             this.mFolderName.setTranslationX(0.0f);
         }
         this.mPageIndicator.stopAllAnimations();
-        animatorSet.start();
+        this.startAnimation(set);
         if (this.mDragController.isDragging()) {
             this.mDragController.forceTouchMove();
         }
@@ -461,9 +522,11 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         this.mInfo.addListener(this);
         if (!Folder.sDefaultFolderName.contentEquals(this.mInfo.title)) {
             this.mFolderName.setText(this.mInfo.title);
+            this.mFolderName.setHint((CharSequence)null);
         }
         else {
             this.mFolderName.setText((CharSequence)"");
+            this.mFolderName.setHint((CharSequence)Folder.sHintText);
         }
         this.mFolderIcon.post((Runnable)new Folder$7(this));
     }
@@ -538,10 +601,32 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     public ArrayList getItemsInReadingOrder() {
         if (this.mItemsInvalidated) {
             this.mItemsInReadingOrder.clear();
-            this.mContent.iterateOverItems(new Folder$17(this));
+            this.mContent.iterateOverItems(new Folder$18(this));
             this.mItemsInvalidated = false;
         }
         return this.mItemsInReadingOrder;
+    }
+    
+    public List getItemsOnPage(final int n) {
+        final ArrayList itemsInReadingOrder = this.getItemsInReadingOrder();
+        final int n2 = this.mContent.getPageCount() - 1;
+        final int size = itemsInReadingOrder.size();
+        final int itemsPerPage = this.mContent.itemsPerPage();
+        int n3;
+        if (n == n2) {
+            n3 = size - itemsPerPage * n;
+        }
+        else {
+            n3 = itemsPerPage;
+        }
+        int i = itemsPerPage * n;
+        final int min = Math.min(i + n3, itemsInReadingOrder.size());
+        final ArrayList list = new ArrayList<BubbleTextView>(n3);
+        while (i < min) {
+            list.add((BubbleTextView)itemsInReadingOrder.get(i));
+            ++i;
+        }
+        return list;
     }
     
     public int getLogContainerType() {
@@ -562,7 +647,12 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
             this.mFolderName.dispatchBackKey();
         }
         if (this.mFolderIcon != null) {
-            this.mFolderIcon.shrinkAndFadeIn(b);
+            if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+                this.mFolderIcon.clearLeaveBehindIfExists();
+            }
+            else {
+                this.mFolderIcon.shrinkAndFadeIn(b);
+            }
         }
         if (!(this.getParent() instanceof DragLayer)) {
             return;
@@ -586,7 +676,14 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     }
     
     public boolean isDropEnabled() {
-        return true;
+        boolean b = true;
+        if (FeatureFlags.LAUNCHER3_NEW_FOLDER_ANIMATION) {
+            if (this.mState == (b ? 1 : 0)) {
+                b = false;
+            }
+            return b;
+        }
+        return b;
     }
     
     public boolean isEditingName() {
@@ -619,10 +716,13 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         }
     }
     
-    public void onAdd(final ShortcutInfo shortcutInfo) {
-        this.mContent.createAndAddViewForRank(shortcutInfo, this.mContent.allocateRankForNewItem());
-        this.mItemsInvalidated = true;
+    public void onAdd(final ShortcutInfo shortcutInfo, final int n) {
+        final View andAddViewForRank = this.mContent.createAndAddViewForRank(shortcutInfo, n);
         this.mLauncher.getModelWriter().addOrMoveItemInDatabase(shortcutInfo, this.mInfo.id, 0L, shortcutInfo.cellX, shortcutInfo.cellY);
+        final ArrayList<View> list = new ArrayList<View>(this.getItemsInReadingOrder());
+        list.add(n, andAddViewForRank);
+        this.mContent.arrangeChildren(list, list.size());
+        this.mItemsInvalidated = true;
     }
     
     protected void onAttachedToWindow() {
@@ -632,14 +732,22 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     
     public boolean onBackKey() {
         final int n = 1;
-        this.mFolderName.setHint((CharSequence)Folder.sHintText);
         final String string = this.mFolderName.getText().toString();
         this.mInfo.setTitle(string);
         this.mLauncher.getModelWriter().updateItemInDatabase(this.mInfo);
+        final ExtendedEditText mFolderName = this.mFolderName;
+        String sHintText;
+        if (Folder.sDefaultFolderName.contentEquals(string)) {
+            sHintText = Folder.sHintText;
+        }
+        else {
+            sHintText = null;
+        }
+        mFolderName.setHint((CharSequence)sHintText);
         final Context context = this.getContext();
         final Object[] array = new Object[n];
         array[0] = string;
-        Utilities.sendCustomAccessibilityEvent((View)this, 32, context.getString(2131492939, array));
+        Utilities.sendCustomAccessibilityEvent((View)this, 32, context.getString(2131492941, array));
         this.mFolderName.clearFocus();
         Selection.setSelection((Spannable)this.mFolderName.getText(), 0, 0);
         this.mIsEditingName = false;
@@ -656,6 +764,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         if (this.mIsExternalDrag && this.mDragInProgress) {
             this.completeDragExit();
         }
+        this.mDragInProgress = false;
         this.mDragController.removeDragListener(this);
     }
     
@@ -710,7 +819,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
                 final Context context = this.getContext();
                 final Object[] array2 = new Object[n2];
                 array2[0] = this.mTargetRank + 1;
-                stateAnnouncer.announce(context.getString(2131492971, array2));
+                stateAnnouncer.announce(context.getString(2131492980, array2));
             }
         }
         final float n3 = array[0];
@@ -730,9 +839,9 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         else {
             n6 = 0;
         }
-        Label_0393: {
+        Label_0394: {
             if (nextPage <= 0) {
-                break Label_0393;
+                break Label_0394;
             }
             int n7;
             if (this.mContent.mIsRtl) {
@@ -742,7 +851,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
                 n7 = n5;
             }
             if (n7 == 0) {
-                break Label_0393;
+                break Label_0394;
             }
             this.showScrollHint(0, dropTarget$DragObject);
             return;
@@ -912,7 +1021,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         //    17: astore          5
         //    19: aload           4
         //    21: aload           5
-        //    23: if_acmpeq       425
+        //    23: if_acmpeq       363
         //    26: aload_1        
         //    27: getfield        com/android/launcher3/DropTarget$DragObject.dragSource:Lcom/android/launcher3/DragSource;
         //    30: astore          4
@@ -922,12 +1031,12 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         //    38: ixor           
         //    39: istore          6
         //    41: iload           6
-        //    43: ifeq            671
-        //    46: new             Lcom/android/launcher3/folder/Folder$15;
+        //    43: ifeq            840
+        //    46: new             Lcom/android/launcher3/folder/Folder$16;
         //    49: astore_3       
         //    50: aload_3        
         //    51: aload_0        
-        //    52: invokespecial   com/android/launcher3/folder/Folder$15.<init>:(Lcom/android/launcher3/folder/Folder;)V
+        //    52: invokespecial   com/android/launcher3/folder/Folder$16.<init>:(Lcom/android/launcher3/folder/Folder;)V
         //    55: aload_3        
         //    56: astore          7
         //    58: aload_0        
@@ -974,298 +1083,389 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         //   135: getfield        com/android/launcher3/DropTarget$DragObject.dragInfo:Lcom/android/launcher3/ItemInfo;
         //   138: astore_3       
         //   139: aload_3        
-        //   140: instanceof      Lcom/android/launcher3/AppInfo;
+        //   140: instanceof      Lcom/android/launcher3/widget/PendingAddShortcutInfo;
         //   143: istore_2       
         //   144: iload_2        
-        //   145: ifeq            431
+        //   145: ifeq            372
         //   148: aload_1        
         //   149: getfield        com/android/launcher3/DropTarget$DragObject.dragInfo:Lcom/android/launcher3/ItemInfo;
-        //   152: checkcast       Lcom/android/launcher3/AppInfo;
+        //   152: checkcast       Lcom/android/launcher3/widget/PendingAddShortcutInfo;
         //   155: astore_3       
         //   156: aload_3        
-        //   157: invokevirtual   com/android/launcher3/AppInfo.makeShortcut:()Lcom/android/launcher3/ShortcutInfo;
-        //   160: astore          4
-        //   162: aload_0        
-        //   163: getfield        com/android/launcher3/folder/Folder.mIsExternalDrag:Z
-        //   166: istore_2       
-        //   167: iload_2        
-        //   168: ifeq            445
-        //   171: aload_0        
-        //   172: getfield        com/android/launcher3/folder/Folder.mContent:Lcom/android/launcher3/folder/FolderPagedView;
-        //   175: astore_3       
-        //   176: aload_0        
-        //   177: getfield        com/android/launcher3/folder/Folder.mEmptyCellRank:I
-        //   180: istore          8
-        //   182: aload_3        
-        //   183: aload           4
-        //   185: iload           8
-        //   187: invokevirtual   com/android/launcher3/folder/FolderPagedView.createAndAddViewForRank:(Lcom/android/launcher3/ShortcutInfo;I)Landroid/view/View;
-        //   190: astore          9
-        //   192: aload_0        
-        //   193: getfield        com/android/launcher3/folder/Folder.mLauncher:Lcom/android/launcher3/Launcher;
-        //   196: invokevirtual   com/android/launcher3/Launcher.getModelWriter:()Lcom/android/launcher3/model/ModelWriter;
-        //   199: astore_3       
-        //   200: aload_0        
-        //   201: getfield        com/android/launcher3/folder/Folder.mInfo:Lcom/android/launcher3/FolderInfo;
-        //   204: astore          5
-        //   206: aload           5
-        //   208: getfield        com/android/launcher3/FolderInfo.id:J
-        //   211: lstore          10
-        //   213: lconst_0       
-        //   214: lstore          12
-        //   216: aload           4
-        //   218: getfield        com/android/launcher3/ShortcutInfo.cellX:I
-        //   221: istore          14
-        //   223: aload           4
-        //   225: getfield        com/android/launcher3/ShortcutInfo.cellY:I
-        //   228: istore          15
-        //   230: aload_3        
-        //   231: aload           4
-        //   233: lload           10
-        //   235: lload           12
-        //   237: iload           14
-        //   239: iload           15
-        //   241: invokevirtual   com/android/launcher3/model/ModelWriter.addOrMoveItemInDatabase:(Lcom/android/launcher3/ItemInfo;JJII)V
-        //   244: aload_1        
-        //   245: getfield        com/android/launcher3/DropTarget$DragObject.dragSource:Lcom/android/launcher3/DragSource;
-        //   248: astore_3       
-        //   249: aload_3        
-        //   250: aload_0        
-        //   251: if_acmpeq       258
-        //   254: aload_0        
-        //   255: invokespecial   com/android/launcher3/folder/Folder.updateItemLocationsInDatabaseBatch:()V
-        //   258: iconst_0       
-        //   259: istore_2       
-        //   260: aload_0        
-        //   261: iconst_0       
-        //   262: putfield        com/android/launcher3/folder/Folder.mIsExternalDrag:Z
-        //   265: aload           9
-        //   267: astore_3       
-        //   268: aload_1        
-        //   269: getfield        com/android/launcher3/DropTarget$DragObject.dragView:Lcom/android/launcher3/dragndrop/DragView;
-        //   272: astore          5
-        //   274: aload           5
-        //   276: invokevirtual   com/android/launcher3/dragndrop/DragView.hasDrawn:()Z
-        //   279: istore          8
-        //   281: iload           8
-        //   283: ifeq            475
-        //   286: aload_0        
-        //   287: invokevirtual   com/android/launcher3/folder/Folder.getScaleX:()F
-        //   290: fstore          16
-        //   292: aload_0        
-        //   293: invokevirtual   com/android/launcher3/folder/Folder.getScaleY:()F
-        //   296: fstore          17
+        //   157: astore          4
+        //   159: aload           4
+        //   161: ifnull          381
+        //   164: aload           4
+        //   166: getfield        com/android/launcher3/widget/PendingAddShortcutInfo.activityInfo:Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;
+        //   169: invokevirtual   com/android/launcher3/compat/ShortcutConfigActivityInfo.createShortcutInfo:()Lcom/android/launcher3/ShortcutInfo;
+        //   172: astore_3       
+        //   173: aload           4
+        //   175: ifnull          388
+        //   178: aload_3        
+        //   179: ifnonnull       388
+        //   182: aload_0        
+        //   183: getfield        com/android/launcher3/folder/Folder.mInfo:Lcom/android/launcher3/FolderInfo;
+        //   186: getfield        com/android/launcher3/FolderInfo.id:J
+        //   189: lstore          8
+        //   191: aload           4
+        //   193: lload           8
+        //   195: putfield        com/android/launcher3/widget/PendingAddShortcutInfo.container:J
+        //   198: aload_0        
+        //   199: getfield        com/android/launcher3/folder/Folder.mEmptyCellRank:I
+        //   202: istore_2       
+        //   203: aload           4
+        //   205: iload_2        
+        //   206: putfield        com/android/launcher3/widget/PendingAddShortcutInfo.rank:I
+        //   209: aload_0        
+        //   210: getfield        com/android/launcher3/folder/Folder.mLauncher:Lcom/android/launcher3/Launcher;
+        //   213: astore_3       
+        //   214: aload           4
+        //   216: getfield        com/android/launcher3/widget/PendingAddShortcutInfo.container:J
+        //   219: lstore          8
+        //   221: aload           4
+        //   223: getfield        com/android/launcher3/widget/PendingAddShortcutInfo.screenId:J
+        //   226: lstore          10
+        //   228: aload           4
+        //   230: getfield        com/android/launcher3/widget/PendingAddShortcutInfo.spanX:I
+        //   233: istore          12
+        //   235: aload           4
+        //   237: getfield        com/android/launcher3/widget/PendingAddShortcutInfo.spanY:I
+        //   240: istore          13
+        //   242: iconst_0       
+        //   243: istore          14
+        //   245: aload_3        
+        //   246: aload           4
+        //   248: lload           8
+        //   250: lload           10
+        //   252: aconst_null    
+        //   253: iload           12
+        //   255: iload           13
+        //   257: invokevirtual   com/android/launcher3/Launcher.addPendingItem:(Lcom/android/launcher3/PendingAddItemInfo;JJ[III)V
+        //   260: aconst_null    
+        //   261: astore_3       
+        //   262: aload_1        
+        //   263: iconst_0       
+        //   264: putfield        com/android/launcher3/DropTarget$DragObject.deferDragViewCleanupPostAnimation:Z
+        //   267: iconst_1       
+        //   268: istore_2       
+        //   269: aload_0        
+        //   270: iload_2        
+        //   271: putfield        com/android/launcher3/folder/Folder.mRearrangeOnClose:Z
+        //   274: aload_0        
+        //   275: iconst_0       
+        //   276: putfield        com/android/launcher3/folder/Folder.mDragInProgress:Z
+        //   279: aload_0        
+        //   280: getfield        com/android/launcher3/folder/Folder.mContent:Lcom/android/launcher3/folder/FolderPagedView;
+        //   283: astore_3       
+        //   284: aload_3        
+        //   285: invokevirtual   com/android/launcher3/folder/FolderPagedView.getPageCount:()I
+        //   288: istore_2       
+        //   289: iconst_1       
+        //   290: istore          6
+        //   292: iload_2        
+        //   293: iload           6
+        //   295: if_icmple       337
         //   298: aload_0        
-        //   299: ldc             1.0
-        //   301: invokevirtual   com/android/launcher3/folder/Folder.setScaleX:(F)V
-        //   304: ldc             1.0
-        //   306: fstore          18
-        //   308: aload_0        
-        //   309: fload           18
-        //   311: invokevirtual   com/android/launcher3/folder/Folder.setScaleY:(F)V
-        //   314: aload_0        
-        //   315: getfield        com/android/launcher3/folder/Folder.mLauncher:Lcom/android/launcher3/Launcher;
-        //   318: invokevirtual   com/android/launcher3/Launcher.getDragLayer:()Lcom/android/launcher3/dragndrop/DragLayer;
-        //   321: astore          19
-        //   323: aload_1        
-        //   324: getfield        com/android/launcher3/DropTarget$DragObject.dragView:Lcom/android/launcher3/dragndrop/DragView;
-        //   327: astore          20
-        //   329: iconst_0       
-        //   330: istore          14
-        //   332: aload           19
-        //   334: aload           20
-        //   336: aload_3        
-        //   337: aload           7
-        //   339: aconst_null    
-        //   340: invokevirtual   com/android/launcher3/dragndrop/DragLayer.animateViewIntoPosition:(Lcom/android/launcher3/dragndrop/DragView;Landroid/view/View;Ljava/lang/Runnable;Landroid/view/View;)V
-        //   343: aload_0        
-        //   344: fload           16
-        //   346: invokevirtual   com/android/launcher3/folder/Folder.setScaleX:(F)V
-        //   349: aload_0        
-        //   350: fload           17
-        //   352: invokevirtual   com/android/launcher3/folder/Folder.setScaleY:(F)V
-        //   355: iconst_1       
-        //   356: istore_2       
-        //   357: aload_0        
-        //   358: iload_2        
-        //   359: putfield        com/android/launcher3/folder/Folder.mItemsInvalidated:Z
-        //   362: aload_0        
-        //   363: invokevirtual   com/android/launcher3/folder/Folder.rearrangeChildren:()V
-        //   366: fconst_0       
-        //   367: fstore          18
-        //   369: aconst_null    
-        //   370: astore          19
+        //   299: getfield        com/android/launcher3/folder/Folder.mInfo:Lcom/android/launcher3/FolderInfo;
+        //   302: astore_3       
+        //   303: aload_0        
+        //   304: getfield        com/android/launcher3/folder/Folder.mLauncher:Lcom/android/launcher3/Launcher;
+        //   307: invokevirtual   com/android/launcher3/Launcher.getModelWriter:()Lcom/android/launcher3/model/ModelWriter;
+        //   310: astore          4
+        //   312: iconst_4       
+        //   313: istore          15
+        //   315: ldc_w           5.6E-45
+        //   318: fstore          16
+        //   320: iconst_1       
+        //   321: istore          17
+        //   323: ldc             1.4E-45
+        //   325: fstore          18
+        //   327: aload_3        
+        //   328: iload           15
+        //   330: iload           17
+        //   332: aload           4
+        //   334: invokevirtual   com/android/launcher3/FolderInfo.setOption:(IZLcom/android/launcher3/model/ModelWriter;)V
+        //   337: aload_1        
+        //   338: getfield        com/android/launcher3/DropTarget$DragObject.stateAnnouncer:Lcom/android/launcher3/accessibility/DragViewStateAnnouncer;
+        //   341: astore_3       
+        //   342: aload_3        
+        //   343: ifnull          362
+        //   346: aload_1        
+        //   347: getfield        com/android/launcher3/DropTarget$DragObject.stateAnnouncer:Lcom/android/launcher3/accessibility/DragViewStateAnnouncer;
+        //   350: astore_3       
+        //   351: ldc_w           2131492982
+        //   354: istore          6
+        //   356: aload_3        
+        //   357: iload           6
+        //   359: invokevirtual   com/android/launcher3/accessibility/DragViewStateAnnouncer.completeAction:(I)V
+        //   362: return         
+        //   363: iconst_0       
+        //   364: istore          13
+        //   366: aconst_null    
+        //   367: astore          7
+        //   369: goto            58
         //   372: iconst_0       
-        //   373: istore          21
-        //   375: fconst_0       
-        //   376: fstore          17
-        //   378: new             Lcom/android/launcher3/folder/Folder$SuppressInfoChanges;
-        //   381: astore          5
-        //   383: aload           5
-        //   385: aload_0        
-        //   386: invokespecial   com/android/launcher3/folder/Folder$SuppressInfoChanges.<init>:(Lcom/android/launcher3/folder/Folder;)V
-        //   389: aload_0        
-        //   390: getfield        com/android/launcher3/folder/Folder.mInfo:Lcom/android/launcher3/FolderInfo;
-        //   393: astore_3       
-        //   394: iconst_0       
-        //   395: istore          21
-        //   397: fconst_0       
-        //   398: fstore          17
-        //   400: aload_3        
-        //   401: aload           4
-        //   403: iconst_0       
-        //   404: invokevirtual   com/android/launcher3/FolderInfo.add:(Lcom/android/launcher3/ShortcutInfo;Z)V
-        //   407: aload           5
-        //   409: ifnull          417
-        //   412: aload           5
-        //   414: invokevirtual   com/android/launcher3/folder/Folder$SuppressInfoChanges.close:()V
-        //   417: aload           19
-        //   419: ifnull          574
-        //   422: aload           19
-        //   424: athrow         
-        //   425: aconst_null    
-        //   426: astore          7
-        //   428: goto            58
-        //   431: aload_1        
-        //   432: getfield        com/android/launcher3/DropTarget$DragObject.dragInfo:Lcom/android/launcher3/ItemInfo;
-        //   435: checkcast       Lcom/android/launcher3/ShortcutInfo;
-        //   438: astore_3       
-        //   439: aload_3        
-        //   440: astore          4
-        //   442: goto            162
-        //   445: aload_0        
-        //   446: getfield        com/android/launcher3/folder/Folder.mCurrentDragView:Landroid/view/View;
-        //   449: astore_3       
-        //   450: aload_0        
-        //   451: getfield        com/android/launcher3/folder/Folder.mContent:Lcom/android/launcher3/folder/FolderPagedView;
-        //   454: astore          5
-        //   456: aload_0        
-        //   457: getfield        com/android/launcher3/folder/Folder.mEmptyCellRank:I
-        //   460: istore          21
-        //   462: aload           5
-        //   464: aload_3        
-        //   465: aload           4
-        //   467: iload           21
-        //   469: invokevirtual   com/android/launcher3/folder/FolderPagedView.addViewForRank:(Landroid/view/View;Lcom/android/launcher3/ShortcutInfo;I)V
-        //   472: goto            268
-        //   475: aload_1        
-        //   476: iconst_0       
-        //   477: putfield        com/android/launcher3/DropTarget$DragObject.deferDragViewCleanupPostAnimation:Z
-        //   480: iconst_0       
-        //   481: istore          8
-        //   483: fconst_0       
-        //   484: fstore          16
-        //   486: aconst_null    
-        //   487: astore          5
-        //   489: aload_3        
-        //   490: iconst_0       
-        //   491: invokevirtual   android/view/View.setVisibility:(I)V
-        //   494: goto            355
-        //   497: astore          19
-        //   499: goto            417
-        //   502: astore_3       
-        //   503: iconst_0       
-        //   504: istore          6
-        //   506: aconst_null    
-        //   507: astore          4
-        //   509: aload_3        
-        //   510: athrow         
-        //   511: astore          22
-        //   513: aload           4
-        //   515: astore          5
-        //   517: aload_3        
-        //   518: astore          4
-        //   520: aload           22
-        //   522: astore_3       
-        //   523: aload           5
-        //   525: ifnull          533
-        //   528: aload           5
-        //   530: invokevirtual   com/android/launcher3/folder/Folder$SuppressInfoChanges.close:()V
-        //   533: aload           4
-        //   535: ifnull          572
-        //   538: aload           4
-        //   540: athrow         
-        //   541: astore          5
-        //   543: aload           4
-        //   545: ifnonnull       555
-        //   548: aload           5
-        //   550: astore          4
-        //   552: goto            533
-        //   555: aload           4
-        //   557: aload           5
-        //   559: if_acmpeq       533
-        //   562: aload           4
-        //   564: aload           5
-        //   566: invokevirtual   java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
-        //   569: goto            533
-        //   572: aload_3        
-        //   573: athrow         
-        //   574: aload_0        
-        //   575: iconst_0       
-        //   576: putfield        com/android/launcher3/folder/Folder.mDragInProgress:Z
-        //   579: aload_0        
-        //   580: getfield        com/android/launcher3/folder/Folder.mContent:Lcom/android/launcher3/folder/FolderPagedView;
-        //   583: astore_3       
-        //   584: aload_3        
-        //   585: invokevirtual   com/android/launcher3/folder/FolderPagedView.getPageCount:()I
-        //   588: istore_2       
-        //   589: iconst_1       
-        //   590: istore          6
-        //   592: iload_2        
-        //   593: iload           6
-        //   595: if_icmple       637
-        //   598: aload_0        
-        //   599: getfield        com/android/launcher3/folder/Folder.mInfo:Lcom/android/launcher3/FolderInfo;
-        //   602: astore_3       
-        //   603: aload_0        
-        //   604: getfield        com/android/launcher3/folder/Folder.mLauncher:Lcom/android/launcher3/Launcher;
-        //   607: invokevirtual   com/android/launcher3/Launcher.getModelWriter:()Lcom/android/launcher3/model/ModelWriter;
-        //   610: astore          4
-        //   612: iconst_4       
-        //   613: istore          8
-        //   615: ldc_w           5.6E-45
-        //   618: fstore          16
-        //   620: iconst_1       
-        //   621: istore          21
-        //   623: ldc             1.4E-45
-        //   625: fstore          17
-        //   627: aload_3        
-        //   628: iload           8
-        //   630: iload           21
-        //   632: aload           4
-        //   634: invokevirtual   com/android/launcher3/FolderInfo.setOption:(IZLcom/android/launcher3/model/ModelWriter;)V
-        //   637: aload_1        
-        //   638: getfield        com/android/launcher3/DropTarget$DragObject.stateAnnouncer:Lcom/android/launcher3/accessibility/DragViewStateAnnouncer;
-        //   641: astore_3       
-        //   642: aload_3        
-        //   643: ifnull          662
-        //   646: aload_1        
-        //   647: getfield        com/android/launcher3/DropTarget$DragObject.stateAnnouncer:Lcom/android/launcher3/accessibility/DragViewStateAnnouncer;
-        //   650: astore_3       
-        //   651: ldc_w           2131492973
-        //   654: istore          6
-        //   656: aload_3        
-        //   657: iload           6
-        //   659: invokevirtual   com/android/launcher3/accessibility/DragViewStateAnnouncer.completeAction:(I)V
-        //   662: return         
-        //   663: astore_3       
-        //   664: aload           5
-        //   666: astore          4
-        //   668: goto            509
-        //   671: aconst_null    
-        //   672: astore          7
-        //   674: goto            58
+        //   373: istore          6
+        //   375: aconst_null    
+        //   376: astore          4
+        //   378: goto            159
+        //   381: iconst_0       
+        //   382: istore_2       
+        //   383: aconst_null    
+        //   384: astore_3       
+        //   385: goto            173
+        //   388: aload_3        
+        //   389: ifnull          658
+        //   392: aload_3        
+        //   393: astore          4
+        //   395: aload_0        
+        //   396: getfield        com/android/launcher3/folder/Folder.mIsExternalDrag:Z
+        //   399: istore_2       
+        //   400: iload_2        
+        //   401: ifeq            703
+        //   404: aload_0        
+        //   405: getfield        com/android/launcher3/folder/Folder.mContent:Lcom/android/launcher3/folder/FolderPagedView;
+        //   408: astore_3       
+        //   409: aload_0        
+        //   410: getfield        com/android/launcher3/folder/Folder.mEmptyCellRank:I
+        //   413: istore          15
+        //   415: aload_3        
+        //   416: aload           4
+        //   418: iload           15
+        //   420: invokevirtual   com/android/launcher3/folder/FolderPagedView.createAndAddViewForRank:(Lcom/android/launcher3/ShortcutInfo;I)Landroid/view/View;
+        //   423: astore          19
+        //   425: aload_0        
+        //   426: getfield        com/android/launcher3/folder/Folder.mLauncher:Lcom/android/launcher3/Launcher;
+        //   429: invokevirtual   com/android/launcher3/Launcher.getModelWriter:()Lcom/android/launcher3/model/ModelWriter;
+        //   432: astore_3       
+        //   433: aload_0        
+        //   434: getfield        com/android/launcher3/folder/Folder.mInfo:Lcom/android/launcher3/FolderInfo;
+        //   437: astore          5
+        //   439: aload           5
+        //   441: getfield        com/android/launcher3/FolderInfo.id:J
+        //   444: lstore          8
+        //   446: lconst_0       
+        //   447: lstore          10
+        //   449: aload           4
+        //   451: getfield        com/android/launcher3/ShortcutInfo.cellX:I
+        //   454: istore          14
+        //   456: aload           4
+        //   458: getfield        com/android/launcher3/ShortcutInfo.cellY:I
+        //   461: istore          12
+        //   463: aload_3        
+        //   464: aload           4
+        //   466: lload           8
+        //   468: lload           10
+        //   470: iload           14
+        //   472: iload           12
+        //   474: invokevirtual   com/android/launcher3/model/ModelWriter.addOrMoveItemInDatabase:(Lcom/android/launcher3/ItemInfo;JJII)V
+        //   477: aload_1        
+        //   478: getfield        com/android/launcher3/DropTarget$DragObject.dragSource:Lcom/android/launcher3/DragSource;
+        //   481: astore_3       
+        //   482: aload_3        
+        //   483: aload_0        
+        //   484: if_acmpeq       491
+        //   487: aload_0        
+        //   488: invokespecial   com/android/launcher3/folder/Folder.updateItemLocationsInDatabaseBatch:()V
+        //   491: iconst_0       
+        //   492: istore_2       
+        //   493: aload_0        
+        //   494: iconst_0       
+        //   495: putfield        com/android/launcher3/folder/Folder.mIsExternalDrag:Z
+        //   498: aload           19
+        //   500: astore_3       
+        //   501: aload_1        
+        //   502: getfield        com/android/launcher3/DropTarget$DragObject.dragView:Lcom/android/launcher3/dragndrop/DragView;
+        //   505: astore          5
+        //   507: aload           5
+        //   509: invokevirtual   com/android/launcher3/dragndrop/DragView.hasDrawn:()Z
+        //   512: istore          15
+        //   514: iload           15
+        //   516: ifeq            733
+        //   519: aload_0        
+        //   520: invokevirtual   com/android/launcher3/folder/Folder.getScaleX:()F
+        //   523: fstore          16
+        //   525: aload_0        
+        //   526: invokevirtual   com/android/launcher3/folder/Folder.getScaleY:()F
+        //   529: fstore          18
+        //   531: aload_0        
+        //   532: ldc             1.0
+        //   534: invokevirtual   com/android/launcher3/folder/Folder.setScaleX:(F)V
+        //   537: ldc             1.0
+        //   539: fstore          20
+        //   541: aload_0        
+        //   542: fload           20
+        //   544: invokevirtual   com/android/launcher3/folder/Folder.setScaleY:(F)V
+        //   547: aload_0        
+        //   548: getfield        com/android/launcher3/folder/Folder.mLauncher:Lcom/android/launcher3/Launcher;
+        //   551: invokevirtual   com/android/launcher3/Launcher.getDragLayer:()Lcom/android/launcher3/dragndrop/DragLayer;
+        //   554: astore          21
+        //   556: aload_1        
+        //   557: getfield        com/android/launcher3/DropTarget$DragObject.dragView:Lcom/android/launcher3/dragndrop/DragView;
+        //   560: astore          22
+        //   562: iconst_0       
+        //   563: istore          14
+        //   565: aload           21
+        //   567: aload           22
+        //   569: aload_3        
+        //   570: aload           7
+        //   572: aconst_null    
+        //   573: invokevirtual   com/android/launcher3/dragndrop/DragLayer.animateViewIntoPosition:(Lcom/android/launcher3/dragndrop/DragView;Landroid/view/View;Ljava/lang/Runnable;Landroid/view/View;)V
+        //   576: aload_0        
+        //   577: fload           16
+        //   579: invokevirtual   com/android/launcher3/folder/Folder.setScaleX:(F)V
+        //   582: aload_0        
+        //   583: fload           18
+        //   585: invokevirtual   com/android/launcher3/folder/Folder.setScaleY:(F)V
+        //   588: iconst_1       
+        //   589: istore_2       
+        //   590: aload_0        
+        //   591: iload_2        
+        //   592: putfield        com/android/launcher3/folder/Folder.mItemsInvalidated:Z
+        //   595: aload_0        
+        //   596: invokevirtual   com/android/launcher3/folder/Folder.rearrangeChildren:()V
+        //   599: fconst_0       
+        //   600: fstore          20
+        //   602: aconst_null    
+        //   603: astore          21
+        //   605: iconst_0       
+        //   606: istore          17
+        //   608: fconst_0       
+        //   609: fstore          18
+        //   611: new             Lcom/android/launcher3/folder/Folder$SuppressInfoChanges;
+        //   614: astore          5
+        //   616: aload           5
+        //   618: aload_0        
+        //   619: invokespecial   com/android/launcher3/folder/Folder$SuppressInfoChanges.<init>:(Lcom/android/launcher3/folder/Folder;)V
+        //   622: aload_0        
+        //   623: getfield        com/android/launcher3/folder/Folder.mInfo:Lcom/android/launcher3/FolderInfo;
+        //   626: astore_3       
+        //   627: iconst_0       
+        //   628: istore          17
+        //   630: fconst_0       
+        //   631: fstore          18
+        //   633: aload_3        
+        //   634: aload           4
+        //   636: iconst_0       
+        //   637: invokevirtual   com/android/launcher3/FolderInfo.add:(Lcom/android/launcher3/ShortcutInfo;Z)V
+        //   640: aload           5
+        //   642: ifnull          650
+        //   645: aload           5
+        //   647: invokevirtual   com/android/launcher3/folder/Folder$SuppressInfoChanges.close:()V
+        //   650: aload           21
+        //   652: ifnull          274
+        //   655: aload           21
+        //   657: athrow         
+        //   658: aload_1        
+        //   659: getfield        com/android/launcher3/DropTarget$DragObject.dragInfo:Lcom/android/launcher3/ItemInfo;
+        //   662: astore_3       
+        //   663: aload_3        
+        //   664: instanceof      Lcom/android/launcher3/AppInfo;
+        //   667: istore_2       
+        //   668: iload_2        
+        //   669: ifeq            689
+        //   672: aload_1        
+        //   673: getfield        com/android/launcher3/DropTarget$DragObject.dragInfo:Lcom/android/launcher3/ItemInfo;
+        //   676: checkcast       Lcom/android/launcher3/AppInfo;
+        //   679: astore_3       
+        //   680: aload_3        
+        //   681: invokevirtual   com/android/launcher3/AppInfo.makeShortcut:()Lcom/android/launcher3/ShortcutInfo;
+        //   684: astore          4
+        //   686: goto            395
+        //   689: aload_1        
+        //   690: getfield        com/android/launcher3/DropTarget$DragObject.dragInfo:Lcom/android/launcher3/ItemInfo;
+        //   693: checkcast       Lcom/android/launcher3/ShortcutInfo;
+        //   696: astore_3       
+        //   697: aload_3        
+        //   698: astore          4
+        //   700: goto            395
+        //   703: aload_0        
+        //   704: getfield        com/android/launcher3/folder/Folder.mCurrentDragView:Landroid/view/View;
+        //   707: astore_3       
+        //   708: aload_0        
+        //   709: getfield        com/android/launcher3/folder/Folder.mContent:Lcom/android/launcher3/folder/FolderPagedView;
+        //   712: astore          5
+        //   714: aload_0        
+        //   715: getfield        com/android/launcher3/folder/Folder.mEmptyCellRank:I
+        //   718: istore          17
+        //   720: aload           5
+        //   722: aload_3        
+        //   723: aload           4
+        //   725: iload           17
+        //   727: invokevirtual   com/android/launcher3/folder/FolderPagedView.addViewForRank:(Landroid/view/View;Lcom/android/launcher3/ShortcutInfo;I)V
+        //   730: goto            501
+        //   733: aload_1        
+        //   734: iconst_0       
+        //   735: putfield        com/android/launcher3/DropTarget$DragObject.deferDragViewCleanupPostAnimation:Z
+        //   738: iconst_0       
+        //   739: istore          15
+        //   741: fconst_0       
+        //   742: fstore          16
+        //   744: aconst_null    
+        //   745: astore          5
+        //   747: aload_3        
+        //   748: iconst_0       
+        //   749: invokevirtual   android/view/View.setVisibility:(I)V
+        //   752: goto            588
+        //   755: astore          21
+        //   757: goto            650
+        //   760: astore_3       
+        //   761: iconst_0       
+        //   762: istore          6
+        //   764: aconst_null    
+        //   765: astore          4
+        //   767: aload_3        
+        //   768: athrow         
+        //   769: astore          23
+        //   771: aload           4
+        //   773: astore          5
+        //   775: aload_3        
+        //   776: astore          4
+        //   778: aload           23
+        //   780: astore_3       
+        //   781: aload           5
+        //   783: ifnull          791
+        //   786: aload           5
+        //   788: invokevirtual   com/android/launcher3/folder/Folder$SuppressInfoChanges.close:()V
+        //   791: aload           4
+        //   793: ifnull          830
+        //   796: aload           4
+        //   798: athrow         
+        //   799: astore          5
+        //   801: aload           4
+        //   803: ifnonnull       813
+        //   806: aload           5
+        //   808: astore          4
+        //   810: goto            791
+        //   813: aload           4
+        //   815: aload           5
+        //   817: if_acmpeq       791
+        //   820: aload           4
+        //   822: aload           5
+        //   824: invokevirtual   java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+        //   827: goto            791
+        //   830: aload_3        
+        //   831: athrow         
+        //   832: astore_3       
+        //   833: aload           5
+        //   835: astore          4
+        //   837: goto            767
+        //   840: iconst_0       
+        //   841: istore          13
+        //   843: aconst_null    
+        //   844: astore          7
+        //   846: goto            58
         //    Exceptions:
         //  Try           Handler
         //  Start  End    Start  End    Type
         //  -----  -----  -----  -----  ----
-        //  378    381    502    511    Any
-        //  385    389    502    511    Any
-        //  389    393    663    511    Any
-        //  403    407    663    511    Any
-        //  412    417    497    502    Any
-        //  509    511    511    574    Any
-        //  528    533    541    572    Any
+        //  611    614    760    769    Any
+        //  618    622    760    769    Any
+        //  622    626    832    769    Any
+        //  636    640    832    769    Any
+        //  645    650    755    760    Any
+        //  767    769    769    832    Any
+        //  786    791    799    830    Any
         // 
         // The error that occurred was:
         // 
@@ -1293,7 +1493,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         //    20: ldc_w           "Deferred handling drop because waiting for uninstall."
         //    23: invokestatic    android/util/Log.d:(Ljava/lang/String;Ljava/lang/String;)I
         //    26: pop            
-        //    27: new             Lcom/android/launcher3/folder/Folder$12;
+        //    27: new             Lcom/android/launcher3/folder/Folder$13;
         //    30: astore          8
         //    32: aload_0        
         //    33: astore          9
@@ -1307,7 +1507,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         //    45: aload_2        
         //    46: iload_3        
         //    47: iload           4
-        //    49: invokespecial   com/android/launcher3/folder/Folder$12.<init>:(Lcom/android/launcher3/folder/Folder;Landroid/view/View;Lcom/android/launcher3/DropTarget$DragObject;ZZ)V
+        //    49: invokespecial   com/android/launcher3/folder/Folder$13.<init>:(Lcom/android/launcher3/folder/Folder;Landroid/view/View;Lcom/android/launcher3/DropTarget$DragObject;ZZ)V
         //    52: aload_0        
         //    53: aload           8
         //    55: putfield        com/android/launcher3/folder/Folder.mDeferredAction:Ljava/lang/Runnable;
@@ -1579,9 +1779,9 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     protected void onFinishInflate() {
         final boolean selectAllOnFocus = true;
         super.onFinishInflate();
-        (this.mContent = (FolderPagedView)this.findViewById(2131624039)).setFolder(this);
-        this.mPageIndicator = (PageIndicatorDots)this.findViewById(2131624040);
-        (this.mFolderName = (ExtendedEditText)this.findViewById(2131624042)).setOnBackKeyListener(this);
+        (this.mContent = (FolderPagedView)this.findViewById(2131624065)).setFolder(this);
+        this.mPageIndicator = (PageIndicatorDots)this.findViewById(2131624066);
+        (this.mFolderName = (ExtendedEditText)this.findViewById(2131624068)).setOnBackKeyListener(this);
         this.mFolderName.setOnFocusChangeListener((View$OnFocusChangeListener)this);
         if (!Utilities.ATLEAST_MARSHMALLOW) {
             this.mFolderName.setCustomSelectionActionModeCallback((ActionMode$Callback)new Folder$4(this));
@@ -1590,7 +1790,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         this.mFolderName.setSelectAllOnFocus(selectAllOnFocus);
         this.mFolderName.setInputType((this.mFolderName.getInputType() & 0xFFFF7FFF & 0xFFF7FFFF) | 0x2000);
         this.mFolderName.forceDisableSuggestions(selectAllOnFocus);
-        (this.mFooter = this.findViewById(2131624041)).measure(0, 0);
+        (this.mFooter = this.findViewById(2131624067)).measure(0, 0);
         this.mFooterHeight = this.mFooter.getMeasuredHeight();
     }
     
@@ -1674,13 +1874,12 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
     }
     
     void replaceFolderWithFinalItem() {
-        final Folder$13 folder$13 = new Folder$13(this);
-        final View lastItem = this.mContent.getLastItem();
-        if (lastItem != null) {
-            this.mFolderIcon.performDestroyAnimation(lastItem, folder$13);
+        final Folder$14 folder$14 = new Folder$14(this);
+        if (this.mContent.getLastItem() != null) {
+            this.mFolderIcon.performDestroyAnimation(folder$14);
         }
         else {
-            folder$13.run();
+            folder$14.run();
         }
         this.mDestroyed = true;
     }
@@ -1701,11 +1900,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
         final boolean b = true;
         final Object tag = mCurrentDragView.getTag();
         if (tag instanceof ShortcutInfo) {
-            final ShortcutInfo shortcutInfo = (ShortcutInfo)tag;
-            if (!mCurrentDragView.isInTouchMode()) {
-                return false;
-            }
-            this.mEmptyCellRank = shortcutInfo.rank;
+            this.mEmptyCellRank = ((ShortcutInfo)tag).rank;
             this.mCurrentDragView = mCurrentDragView;
             this.mDragController.addDragListener(this);
             if (dragOptions.isAccessibleDrag) {
@@ -1741,7 +1936,7 @@ public class Folder extends AbstractFloatingView implements DragSource, View$OnC
             this.setNextFocusRightId(firstItem.getId());
             this.setNextFocusLeftId(firstItem.getId());
             this.setNextFocusUpId(firstItem.getId());
-            this.setOnKeyListener((View$OnKeyListener)new Folder$14(this, lastItem));
+            this.setOnKeyListener((View$OnKeyListener)new Folder$15(this, lastItem));
         }
     }
 }

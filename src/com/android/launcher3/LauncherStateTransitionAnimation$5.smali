@@ -6,20 +6,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
-.field final synthetic val$appsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
-
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/LauncherStateTransitionAnimation;FLcom/android/launcher3/allapps/AllAppsContainerView;)V
+.method constructor <init>(Lcom/android/launcher3/LauncherStateTransitionAnimation;F)V
     .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
-    iput-object p3, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5;->val$appsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
-
-    .line 399
+    .line 393
     invoke-direct {p0, p2}, Lcom/android/launcher3/LauncherStateTransitionAnimation$PrivateTransitionCallbacks;-><init>(F)V
 
     .line 1
@@ -32,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 408
+    .line 402
     new-instance v0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5$1;
 
     invoke-direct {v0, p0, p2, p1}, Lcom/android/launcher3/LauncherStateTransitionAnimation$5$1;-><init>(Lcom/android/launcher3/LauncherStateTransitionAnimation$5;Landroid/view/View;Landroid/view/View;)V
@@ -44,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 402
+    .line 396
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     iget-object v0, v0, Lcom/android/launcher3/LauncherStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -55,7 +51,7 @@
 
     iget v0, v0, Lcom/android/launcher3/DeviceProfile;->allAppsButtonVisualSize:I
 
-    .line 403
+    .line 397
     div-int/lit8 v0, v0, 0x2
 
     int-to-float v0, v0
@@ -67,7 +63,7 @@
     .locals 1
 
     .prologue
-    .line 426
+    .line 420
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     iget-object v0, v0, Lcom/android/launcher3/LauncherStateTransitionAnimation;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -78,11 +74,6 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/logging/UserEventDispatcher;->resetElapsedContainerMillis()V
 
-    .line 427
-    iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$5;->val$appsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
-
-    invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsContainerView;->reset()V
-
-    .line 428
+    .line 421
     return-void
 .end method

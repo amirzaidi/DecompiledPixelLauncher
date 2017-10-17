@@ -25,7 +25,6 @@ public class FastBitmapDrawable extends Drawable
 {
     private static final Property BRIGHTNESS;
     public static final TimeInterpolator CLICK_FEEDBACK_INTERPOLATOR;
-    private static final int[] STATE_PRESSED;
     private static final SparseArray sCachedFilter;
     private static final ColorMatrix sTempBrightnessMatrix;
     private static final ColorMatrix sTempFilterMatrix;
@@ -41,7 +40,6 @@ public class FastBitmapDrawable extends Drawable
     private int mPrevUpdateKey;
     
     static {
-        STATE_PRESSED = new int[] { 16842919 };
         CLICK_FEEDBACK_INTERPOLATOR = (TimeInterpolator)new FastBitmapDrawable$1();
         sCachedFilter = new SparseArray();
         sTempBrightnessMatrix = new ColorMatrix();
@@ -160,22 +158,15 @@ public class FastBitmapDrawable extends Drawable
     }
     
     public void draw(final Canvas canvas) {
-        this.drawInternal(canvas);
-    }
-    
-    protected void drawInternal(final Canvas canvas) {
         canvas.drawBitmap(this.mBitmap, (Rect)null, this.getBounds(), this.mPaint);
-    }
-    
-    public void drawWithBrightness(final Canvas canvas, final float brightness) {
-        final float brightness2 = this.getBrightness();
-        this.setBrightness(brightness);
-        this.drawInternal(canvas);
-        this.setBrightness(brightness2);
     }
     
     public int getAlpha() {
         return this.mAlpha;
+    }
+    
+    public ColorFilter getColorFilter() {
+        return this.mPaint.getColorFilter();
     }
     
     public float getDesaturation() {
@@ -184,7 +175,7 @@ public class FastBitmapDrawable extends Drawable
     
     public IconPalette getIconPalette() {
         if (this.mIconPalette == null) {
-            this.mIconPalette = IconPalette.fromDominantColor(Utilities.findDominantColorByHue(this.mBitmap, 20));
+            this.mIconPalette = IconPalette.fromDominantColor(Utilities.findDominantColorByHue(this.mBitmap, 20), true);
         }
         return this.mIconPalette;
     }

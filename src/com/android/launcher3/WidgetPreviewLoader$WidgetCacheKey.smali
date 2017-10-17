@@ -12,13 +12,13 @@
     .locals 0
 
     .prologue
-    .line 681
+    .line 671
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/util/ComponentKey;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 682
+    .line 672
     iput-object p3, p0, Lcom/android/launcher3/WidgetPreviewLoader$WidgetCacheKey;->size:Ljava/lang/String;
 
-    .line 683
+    .line 673
     return-void
 .end method
 
@@ -28,7 +28,7 @@
     .locals 2
 
     .prologue
-    .line 692
+    .line 682
     invoke-super {p0, p1}, Lcom/android/launcher3/util/ComponentKey;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -58,7 +58,7 @@
     .locals 2
 
     .prologue
-    .line 687
+    .line 677
     invoke-super {p0}, Lcom/android/launcher3/util/ComponentKey;->hashCode()I
 
     move-result v0

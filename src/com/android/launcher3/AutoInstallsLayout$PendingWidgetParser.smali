@@ -15,7 +15,7 @@
     .locals 0
 
     .prologue
-    .line 468
+    .line 465
     iput-object p1, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,21 +29,21 @@
     .locals 6
 
     .prologue
-    .line 473
+    .line 470
     const-string/jumbo v0, "packageName"
 
     invoke-static {p1, v0}, Lcom/android/launcher3/AutoInstallsLayout;->getAttributeValue(Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 474
+    .line 471
     const-string/jumbo v1, "className"
 
     invoke-static {p1, v1}, Lcom/android/launcher3/AutoInstallsLayout;->getAttributeValue(Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 475
+    .line 472
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -56,13 +56,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 477
+    .line 474
     :cond_0
     const-wide/16 v0, -0x1
 
     return-wide v0
 
-    .line 480
+    .line 477
     :cond_1
     iget-object v2, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
@@ -78,7 +78,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 481
+    .line 478
     iget-object v2, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
     iget-object v2, v2, Lcom/android/launcher3/AutoInstallsLayout;->mValues:Landroid/content/ContentValues;
@@ -93,7 +93,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 482
+    .line 479
     iget-object v2, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
     iget-object v2, v2, Lcom/android/launcher3/AutoInstallsLayout;->mValues:Landroid/content/ContentValues;
@@ -108,17 +108,17 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 485
+    .line 482
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 486
+    .line 483
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v3
 
-    .line 488
+    .line 485
     :cond_2
     :goto_0
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->next()I
@@ -129,20 +129,20 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 489
+    .line 486
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getDepth()I
 
     move-result v5
 
     if-le v5, v3, :cond_6
 
-    .line 490
+    .line 487
     :cond_3
     const/4 v5, 0x2
 
     if-ne v4, v5, :cond_2
 
-    .line 494
+    .line 491
     const-string/jumbo v4, "extra"
 
     invoke-interface {p1}, Landroid/content/res/XmlResourceParser;->getName()Ljava/lang/String;
@@ -155,31 +155,31 @@
 
     if-eqz v4, :cond_5
 
-    .line 495
+    .line 492
     const-string/jumbo v4, "key"
 
     invoke-static {p1, v4}, Lcom/android/launcher3/AutoInstallsLayout;->getAttributeValue(Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 496
+    .line 493
     const-string/jumbo v5, "value"
 
     invoke-static {p1, v5}, Lcom/android/launcher3/AutoInstallsLayout;->getAttributeValue(Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 497
+    .line 494
     if-eqz v4, :cond_4
 
     if-eqz v5, :cond_4
 
-    .line 498
+    .line 495
     invoke-virtual {v2, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 500
+    .line 497
     :cond_4
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -189,7 +189,7 @@
 
     throw v0
 
-    .line 503
+    .line 500
     :cond_5
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -199,7 +199,7 @@
 
     throw v0
 
-    .line 507
+    .line 504
     :cond_6
     new-instance v3, Landroid/content/ComponentName;
 
@@ -216,7 +216,7 @@
     .locals 4
 
     .prologue
-    .line 511
+    .line 508
     iget-object v0, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
     iget-object v0, v0, Lcom/android/launcher3/AutoInstallsLayout;->mValues:Landroid/content/ContentValues;
@@ -229,24 +229,24 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 512
+    .line 509
     iget-object v0, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
     iget-object v0, v0, Lcom/android/launcher3/AutoInstallsLayout;->mValues:Landroid/content/ContentValues;
 
     const-string/jumbo v1, "restored"
 
-    .line 513
+    .line 510
     const/16 v2, 0x23
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 512
+    .line 509
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 516
+    .line 513
     iget-object v0, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
     iget-object v0, v0, Lcom/android/launcher3/AutoInstallsLayout;->mValues:Landroid/content/ContentValues;
@@ -267,14 +267,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 517
+    .line 514
     invoke-virtual {p2}, Landroid/os/Bundle;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 518
+    .line 515
     iget-object v0, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
     iget-object v0, v0, Lcom/android/launcher3/AutoInstallsLayout;->mValues:Landroid/content/ContentValues;
@@ -297,7 +297,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 521
+    .line 518
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/AutoInstallsLayout$PendingWidgetParser;->this$0:Lcom/android/launcher3/AutoInstallsLayout;
 
@@ -315,19 +315,19 @@
 
     move-result-wide v0
 
-    .line 522
+    .line 519
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
     if-gez v2, :cond_1
 
-    .line 523
+    .line 520
     const-wide/16 v0, -0x1
 
     return-wide v0
 
-    .line 525
+    .line 522
     :cond_1
     return-wide v0
 .end method

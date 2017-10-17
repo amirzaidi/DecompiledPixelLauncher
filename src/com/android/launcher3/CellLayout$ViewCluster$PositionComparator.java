@@ -19,8 +19,8 @@ class CellLayout$ViewCluster$PositionComparator implements Comparator
     }
     
     public int compare(final View view, final View view2) {
-        final CellAndSpan cellAndSpan = this.this$1.config.map.get(view);
-        final CellAndSpan cellAndSpan2 = this.this$1.config.map.get(view2);
+        final CellAndSpan cellAndSpan = (CellAndSpan)this.this$1.config.map.get((Object)view);
+        final CellAndSpan cellAndSpan2 = (CellAndSpan)this.this$1.config.map.get((Object)view2);
         switch (this.whichEdge) {
             default: {
                 return cellAndSpan.cellY - cellAndSpan2.cellY;

@@ -261,7 +261,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0e0022
+    const v1, 0x7f0e0025
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -781,7 +781,7 @@
     check-cast v3, Landroid/view/ViewGroup;
 
     .line 349
-    const v4, 0x7f0e0045
+    const v4, 0x7f0e004e
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -792,7 +792,7 @@
     check-cast v9, Landroid/view/ViewGroup;
 
     .line 350
-    const v4, 0x7f0e0023
+    const v4, 0x7f0e0026
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

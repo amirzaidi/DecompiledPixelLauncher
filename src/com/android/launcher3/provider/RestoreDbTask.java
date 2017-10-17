@@ -6,8 +6,8 @@ package com.android.launcher3.provider;
 
 import com.android.launcher3.LauncherSettings$Favorites;
 import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import com.android.launcher3.logging.FileLog;
+import android.database.sqlite.SQLiteDatabase;
 import com.android.launcher3.LauncherProvider$DatabaseHelper;
 import com.android.launcher3.Utilities;
 import android.content.Context;
@@ -18,24 +18,129 @@ public class RestoreDbTask
         return Utilities.getPrefs(context).getBoolean("restore_task_pending", false);
     }
     
-    public static boolean performRestore(final LauncherProvider$DatabaseHelper launcherProvider$DatabaseHelper) {
-        final SQLiteDatabase writableDatabase = launcherProvider$DatabaseHelper.getWritableDatabase();
-        writableDatabase.beginTransaction();
-        try {
-            try {
-                new RestoreDbTask().sanitizeDB(launcherProvider$DatabaseHelper, writableDatabase);
-                writableDatabase.setTransactionSuccessful();
-                return true;
-            }
-            catch (Exception ex) {
-                FileLog.e("RestoreDbTask", "Failed to verify db", ex);
-                return false;
-            }
-        }
-        catch (Exception ex2) {}
-        finally {
-            writableDatabase.endTransaction();
-        }
+    public static boolean performRestore(final LauncherProvider$DatabaseHelper p0) {
+        // 
+        // This method could not be decompiled.
+        // 
+        // Original Bytecode:
+        // 
+        //     0: aconst_null    
+        //     1: astore_1       
+        //     2: aload_0        
+        //     3: invokevirtual   com/android/launcher3/LauncherProvider$DatabaseHelper.getWritableDatabase:()Landroid/database/sqlite/SQLiteDatabase;
+        //     6: astore_2       
+        //     7: new             Lcom/android/launcher3/provider/LauncherDbUtils$SQLiteTransaction;
+        //    10: astore_3       
+        //    11: aload_3        
+        //    12: aload_2        
+        //    13: invokespecial   com/android/launcher3/provider/LauncherDbUtils$SQLiteTransaction.<init>:(Landroid/database/sqlite/SQLiteDatabase;)V
+        //    16: new             Lcom/android/launcher3/provider/RestoreDbTask;
+        //    19: astore          4
+        //    21: aload           4
+        //    23: invokespecial   com/android/launcher3/provider/RestoreDbTask.<init>:()V
+        //    26: aload           4
+        //    28: aload_0        
+        //    29: aload_2        
+        //    30: invokespecial   com/android/launcher3/provider/RestoreDbTask.sanitizeDB:(Lcom/android/launcher3/LauncherProvider$DatabaseHelper;Landroid/database/sqlite/SQLiteDatabase;)V
+        //    33: aload_3        
+        //    34: invokevirtual   com/android/launcher3/provider/LauncherDbUtils$SQLiteTransaction.commit:()V
+        //    37: iconst_1       
+        //    38: istore          5
+        //    40: aload_3        
+        //    41: ifnull          48
+        //    44: aload_3        
+        //    45: invokevirtual   com/android/launcher3/provider/LauncherDbUtils$SQLiteTransaction.close:()V
+        //    48: aload_1        
+        //    49: ifnull          69
+        //    52: aload_1        
+        //    53: athrow         
+        //    54: astore_2       
+        //    55: ldc             "RestoreDbTask"
+        //    57: ldc             "Failed to verify db"
+        //    59: aload_2        
+        //    60: invokestatic    com/android/launcher3/logging/FileLog.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
+        //    63: iconst_0       
+        //    64: ireturn        
+        //    65: astore_1       
+        //    66: goto            48
+        //    69: iload           5
+        //    71: ireturn        
+        //    72: astore_2       
+        //    73: aconst_null    
+        //    74: astore_3       
+        //    75: aload_2        
+        //    76: athrow         
+        //    77: astore          6
+        //    79: aload_2        
+        //    80: astore_1       
+        //    81: aload           6
+        //    83: astore_2       
+        //    84: aload_3        
+        //    85: ifnull          92
+        //    88: aload_3        
+        //    89: invokevirtual   com/android/launcher3/provider/LauncherDbUtils$SQLiteTransaction.close:()V
+        //    92: aload_1        
+        //    93: ifnull          121
+        //    96: aload_1        
+        //    97: athrow         
+        //    98: astore_3       
+        //    99: aload_1        
+        //   100: ifnonnull       108
+        //   103: aload_3        
+        //   104: astore_1       
+        //   105: goto            92
+        //   108: aload_1        
+        //   109: aload_3        
+        //   110: if_acmpeq       92
+        //   113: aload_1        
+        //   114: aload_3        
+        //   115: invokevirtual   java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+        //   118: goto            92
+        //   121: aload_2        
+        //   122: athrow         
+        //   123: astore_2       
+        //   124: goto            75
+        //    Exceptions:
+        //  Try           Handler
+        //  Start  End    Start  End    Type                 
+        //  -----  -----  -----  -----  ---------------------
+        //  7      10     72     75     Any
+        //  12     16     72     75     Any
+        //  16     19     123    127    Any
+        //  21     26     123    127    Any
+        //  29     33     123    127    Any
+        //  33     37     123    127    Any
+        //  44     48     65     69     Any
+        //  52     54     54     65     Ljava/lang/Exception;
+        //  75     77     77     123    Any
+        //  88     92     98     121    Any
+        //  96     98     54     65     Ljava/lang/Exception;
+        //  114    118    54     65     Ljava/lang/Exception;
+        //  121    123    54     65     Ljava/lang/Exception;
+        // 
+        // The error that occurred was:
+        // 
+        // java.lang.IllegalStateException: Expression is linked from several locations: Label_0048:
+        //     at com.strobel.decompiler.ast.Error.expressionLinkedFromMultipleLocations(Error.java:27)
+        //     at com.strobel.decompiler.ast.AstOptimizer.mergeDisparateObjectInitializations(AstOptimizer.java:2592)
+        //     at com.strobel.decompiler.ast.AstOptimizer.optimize(AstOptimizer.java:235)
+        //     at com.strobel.decompiler.ast.AstOptimizer.optimize(AstOptimizer.java:42)
+        //     at com.strobel.decompiler.languages.java.ast.AstMethodBodyBuilder.createMethodBody(AstMethodBodyBuilder.java:214)
+        //     at com.strobel.decompiler.languages.java.ast.AstMethodBodyBuilder.createMethodBody(AstMethodBodyBuilder.java:99)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createMethodBody(AstBuilder.java:757)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createMethod(AstBuilder.java:655)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.addTypeMembers(AstBuilder.java:532)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createTypeCore(AstBuilder.java:499)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createTypeNoCache(AstBuilder.java:141)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.createType(AstBuilder.java:130)
+        //     at com.strobel.decompiler.languages.java.ast.AstBuilder.addType(AstBuilder.java:105)
+        //     at com.strobel.decompiler.languages.java.JavaLanguage.buildAst(JavaLanguage.java:71)
+        //     at com.strobel.decompiler.languages.java.JavaLanguage.decompileType(JavaLanguage.java:59)
+        //     at com.strobel.decompiler.DecompilerDriver.decompileType(DecompilerDriver.java:317)
+        //     at com.strobel.decompiler.DecompilerDriver.decompileJar(DecompilerDriver.java:238)
+        //     at com.strobel.decompiler.DecompilerDriver.main(DecompilerDriver.java:123)
+        // 
+        throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
     private void sanitizeDB(final LauncherProvider$DatabaseHelper launcherProvider$DatabaseHelper, final SQLiteDatabase sqLiteDatabase) {
@@ -80,7 +185,7 @@ public class RestoreDbTask
     }
     
     public static void setPending(final Context context, final boolean b) {
-        FileLog.d("RestoreDbTask", "Restore data received through full backup");
+        FileLog.d("RestoreDbTask", "Restore data received through full backup " + b);
         Utilities.getPrefs(context).edit().putBoolean("restore_task_pending", b).commit();
     }
     

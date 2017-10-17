@@ -22,7 +22,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/LauncherModel$4;->val$oldCallbacks:Lcom/android/launcher3/LauncherModel$Callbacks;
 
-    .line 547
+    .line 469
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,11 +35,11 @@
     .locals 1
 
     .prologue
-    .line 549
+    .line 471
     iget-object v0, p0, Lcom/android/launcher3/LauncherModel$4;->val$oldCallbacks:Lcom/android/launcher3/LauncherModel$Callbacks;
 
     invoke-interface {v0}, Lcom/android/launcher3/LauncherModel$Callbacks;->clearPendingBinds()V
 
-    .line 550
+    .line 472
     return-void
 .end method

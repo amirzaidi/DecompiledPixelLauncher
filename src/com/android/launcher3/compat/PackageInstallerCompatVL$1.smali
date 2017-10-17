@@ -15,36 +15,55 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
-    .line 85
+    .line 95
     invoke-direct {p0}, Landroid/content/pm/PackageInstaller$SessionCallback;-><init>()V
 
     .line 1
     return-void
 .end method
 
-.method private pushSessionDisplayToLauncher(I)V
+.method private pushSessionDisplayToLauncher(I)Landroid/content/pm/PackageInstaller$SessionInfo;
     .locals 3
 
     .prologue
-    .line 124
+    const/4 v2, 0x0
+
+    .line 140
     iget-object v0, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
-    iget-object v0, v0, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->mInstaller:Landroid/content/pm/PackageInstaller;
+    iget-object v1, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
-    invoke-virtual {v0, p1}, Landroid/content/pm/PackageInstaller;->getSessionInfo(I)Landroid/content/pm/PackageInstaller$SessionInfo;
+    iget-object v1, v1, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->mInstaller:Landroid/content/pm/PackageInstaller;
+
+    invoke-virtual {v1, p1}, Landroid/content/pm/PackageInstaller;->getSessionInfo(I)Landroid/content/pm/PackageInstaller$SessionInfo;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->-wrap0(Lcom/android/launcher3/compat/PackageInstallerCompatVL;Landroid/content/pm/PackageInstaller$SessionInfo;)Landroid/content/pm/PackageInstaller$SessionInfo;
 
     move-result-object v0
 
-    .line 125
-    if-eqz v0, :cond_0
+    .line 141
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getAppPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    .line 126
+    .line 142
+    iget-object v1, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
+
+    iget-object v1, v1, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->mActiveSessions:Landroid/util/SparseArray;
+
+    invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getAppPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, p1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    .line 143
     iget-object v1, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
@@ -53,28 +72,32 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->addSessionInfoToCache(Landroid/content/pm/PackageInstaller$SessionInfo;Landroid/os/UserHandle;)V
 
-    .line 127
+    .line 144
     invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstanceNoCreate()Lcom/android/launcher3/LauncherAppState;
 
     move-result-object v1
 
-    .line 129
+    .line 145
     if-eqz v1, :cond_0
 
-    .line 130
+    .line 146
     invoke-virtual {v1}, Lcom/android/launcher3/LauncherAppState;->getModel()Lcom/android/launcher3/LauncherModel;
 
     move-result-object v1
 
     invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getAppPackageName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v1, v0}, Lcom/android/launcher3/LauncherModel;->updateSessionDisplayInfo(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lcom/android/launcher3/LauncherModel;->updateSessionDisplayInfo(Ljava/lang/String;)V
 
-    .line 133
+    .line 148
     :cond_0
-    return-void
+    return-object v0
+
+    .line 150
+    :cond_1
+    return-object v2
 .end method
 
 
@@ -83,7 +106,7 @@
     .locals 0
 
     .prologue
-    .line 116
+    .line 132
     return-void
 .end method
 
@@ -91,31 +114,60 @@
     .locals 0
 
     .prologue
-    .line 120
-    invoke-direct {p0, p1}, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->pushSessionDisplayToLauncher(I)V
+    .line 136
+    invoke-direct {p0, p1}, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->pushSessionDisplayToLauncher(I)Landroid/content/pm/PackageInstaller$SessionInfo;
 
-    .line 121
+    .line 137
     return-void
 .end method
 
 .method public onCreated(I)V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 89
-    invoke-direct {p0, p1}, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->pushSessionDisplayToLauncher(I)V
+    .line 99
+    invoke-direct {p0, p1}, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->pushSessionDisplayToLauncher(I)Landroid/content/pm/PackageInstaller$SessionInfo;
 
-    .line 90
+    move-result-object v0
+
+    .line 100
+    sget-boolean v1, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_PROMISE_APPS_IN_ALL_APPS:Z
+
+    if-eqz v1, :cond_0
+
+    if-eqz v0, :cond_0
+
+    .line 101
+    invoke-static {}, Lcom/android/launcher3/LauncherAppState;->getInstanceNoCreate()Lcom/android/launcher3/LauncherAppState;
+
+    move-result-object v1
+
+    .line 102
+    if-eqz v1, :cond_0
+
+    .line 103
+    invoke-virtual {v1}, Lcom/android/launcher3/LauncherAppState;->getModel()Lcom/android/launcher3/LauncherModel;
+
+    move-result-object v1
+
+    .line 104
+    invoke-static {v0}, Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;->fromInstallingState(Landroid/content/pm/PackageInstaller$SessionInfo;)Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;
+
+    move-result-object v0
+
+    .line 103
+    invoke-virtual {v1, v0}, Lcom/android/launcher3/LauncherModel;->onInstallSessionCreated(Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;)V
+
+    .line 107
+    :cond_0
     return-void
 .end method
 
 .method public onFinished(IZ)V
-    .locals 5
+    .locals 3
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 96
+    .line 113
     iget-object v0, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
     iget-object v0, v0, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->mActiveSessions:Landroid/util/SparseArray;
@@ -126,37 +178,37 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 97
+    .line 114
     iget-object v1, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
     iget-object v1, v1, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->mActiveSessions:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 99
+    .line 116
     if-eqz v0, :cond_0
 
-    .line 100
-    iget-object v3, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
+    .line 117
+    iget-object v2, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
-    new-instance v4, Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;
-
-    .line 101
+    .line 118
     if-eqz p2, :cond_1
 
-    move v1, v2
+    const/4 v1, 0x0
 
-    .line 100
+    .line 117
     :goto_0
-    invoke-direct {v4, v0, v1, v2}, Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;-><init>(Ljava/lang/String;II)V
+    invoke-static {v1, v0}, Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;->fromState(ILjava/lang/String;)Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;
 
-    invoke-virtual {v3, v4}, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->sendUpdate(Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;)V
+    move-result-object v0
 
-    .line 103
+    invoke-virtual {v2, v0}, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->sendUpdate(Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;)V
+
+    .line 121
     :cond_0
     return-void
 
-    .line 101
+    .line 118
     :cond_1
     const/4 v1, 0x2
 
@@ -164,19 +216,25 @@
 .end method
 
 .method public onProgressChanged(IF)V
-    .locals 5
+    .locals 2
 
     .prologue
-    .line 107
+    .line 125
     iget-object v0, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
-    iget-object v0, v0, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->mInstaller:Landroid/content/pm/PackageInstaller;
+    iget-object v1, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
-    invoke-virtual {v0, p1}, Landroid/content/pm/PackageInstaller;->getSessionInfo(I)Landroid/content/pm/PackageInstaller$SessionInfo;
+    iget-object v1, v1, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->mInstaller:Landroid/content/pm/PackageInstaller;
+
+    invoke-virtual {v1, p1}, Landroid/content/pm/PackageInstaller;->getSessionInfo(I)Landroid/content/pm/PackageInstaller$SessionInfo;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->-wrap0(Lcom/android/launcher3/compat/PackageInstallerCompatVL;Landroid/content/pm/PackageInstaller$SessionInfo;)Landroid/content/pm/PackageInstaller$SessionInfo;
 
     move-result-object v0
 
-    .line 108
+    .line 126
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getAppPackageName()Ljava/lang/String;
@@ -185,35 +243,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 109
+    .line 127
     iget-object v1, p0, Lcom/android/launcher3/compat/PackageInstallerCompatVL$1;->this$0:Lcom/android/launcher3/compat/PackageInstallerCompatVL;
 
-    new-instance v2, Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;
+    invoke-static {v0}, Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;->fromInstallingState(Landroid/content/pm/PackageInstaller$SessionInfo;)Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;
 
-    invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getAppPackageName()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v3
+    invoke-virtual {v1, v0}, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->sendUpdate(Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;)V
 
-    .line 111
-    invoke-virtual {v0}, Landroid/content/pm/PackageInstaller$SessionInfo;->getProgress()F
-
-    move-result v0
-
-    const/high16 v4, 0x42c80000    # 100.0f
-
-    mul-float/2addr v0, v4
-
-    float-to-int v0, v0
-
-    .line 110
-    const/4 v4, 0x1
-
-    .line 109
-    invoke-direct {v2, v3, v4, v0}, Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;-><init>(Ljava/lang/String;II)V
-
-    invoke-virtual {v1, v2}, Lcom/android/launcher3/compat/PackageInstallerCompatVL;->sendUpdate(Lcom/android/launcher3/compat/PackageInstallerCompat$PackageInstallInfo;)V
-
-    .line 113
+    .line 129
     :cond_0
     return-void
 .end method

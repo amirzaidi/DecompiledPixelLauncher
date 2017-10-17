@@ -19,7 +19,7 @@
 
     iput-object p3, p0, Lcom/android/launcher3/dragndrop/PinItemDragListener$2;->val$flowHandler:Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler;
 
-    .line 159
+    .line 98
     invoke-direct {p0, p2}, Lcom/android/launcher3/widget/PendingAddWidgetInfo;-><init>(Lcom/android/launcher3/LauncherAppWidgetProviderInfo;)V
 
     .line 1
@@ -32,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 101
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/PinItemDragListener$2;->val$flowHandler:Lcom/android/launcher3/dragndrop/PinWidgetFlowHandler;
 
     return-object v0

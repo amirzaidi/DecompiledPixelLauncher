@@ -12,13 +12,13 @@
 
 
 # instance fields
-.field private mTempRanking:Landroid/service/notification/NotificationListenerService$Ranking;
+.field private final mTempRanking:Landroid/service/notification/NotificationListenerService$Ranking;
 
-.field private mUiCallback:Landroid/os/Handler$Callback;
+.field private final mUiCallback:Landroid/os/Handler$Callback;
 
 .field private final mUiHandler:Landroid/os/Handler;
 
-.field private mWorkerCallback:Landroid/os/Handler$Callback;
+.field private final mWorkerCallback:Landroid/os/Handler$Callback;
 
 .field private final mWorkerHandler:Landroid/os/Handler;
 
@@ -72,12 +72,12 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 57
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/launcher3/notification/NotificationListener;->sNotificationListenerInstance:Lcom/android/launcher3/notification/NotificationListener;
 
-    .line 47
+    .line 49
     return-void
 .end method
 
@@ -85,31 +85,31 @@
     .locals 3
 
     .prologue
-    .line 113
+    .line 127
     invoke-direct {p0}, Landroid/service/notification/NotificationListenerService;-><init>()V
 
-    .line 60
+    .line 64
     new-instance v0, Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-direct {v0}, Landroid/service/notification/NotificationListenerService$Ranking;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mTempRanking:Landroid/service/notification/NotificationListenerService$Ranking;
 
-    .line 62
+    .line 66
     new-instance v0, Lcom/android/launcher3/notification/NotificationListener$1;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/notification/NotificationListener$1;-><init>(Lcom/android/launcher3/notification/NotificationListener;)V
 
     iput-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mWorkerCallback:Landroid/os/Handler$Callback;
 
-    .line 83
+    .line 97
     new-instance v0, Lcom/android/launcher3/notification/NotificationListener$2;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/notification/NotificationListener$2;-><init>(Lcom/android/launcher3/notification/NotificationListener;)V
 
     iput-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mUiCallback:Landroid/os/Handler$Callback;
 
-    .line 114
+    .line 128
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Lcom/android/launcher3/LauncherModel;->getWorkerLooper()Landroid/os/Looper;
@@ -122,7 +122,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mWorkerHandler:Landroid/os/Handler;
 
-    .line 115
+    .line 129
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -135,10 +135,10 @@
 
     iput-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mUiHandler:Landroid/os/Handler;
 
-    .line 116
+    .line 130
     sput-object p0, Lcom/android/launcher3/notification/NotificationListener;->sNotificationListenerInstance:Lcom/android/launcher3/notification/NotificationListener;
 
-    .line 117
+    .line 131
     return-void
 .end method
 
@@ -150,26 +150,26 @@
 
     const/4 v1, 0x0
 
-    .line 203
+    .line 219
     if-nez p1, :cond_0
 
     return-object v0
 
-    .line 204
+    .line 220
     :cond_0
-    new-instance v2, Ljava/util/HashSet;
+    new-instance v2, Landroid/util/ArraySet;
 
-    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v2}, Landroid/util/ArraySet;-><init>()V
 
     move v0, v1
 
-    .line 205
+    .line 221
     :goto_0
     array-length v3, p1
 
     if-ge v0, v3, :cond_2
 
-    .line 206
+    .line 222
     aget-object v3, p1, v0
 
     invoke-direct {p0, v3}, Lcom/android/launcher3/notification/NotificationListener;->shouldBeFilteredOut(Landroid/service/notification/StatusBarNotification;)Z
@@ -178,24 +178,24 @@
 
     if-eqz v3, :cond_1
 
-    .line 207
+    .line 223
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-interface {v2, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 205
+    .line 221
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 210
+    .line 226
     :cond_2
     new-instance v0, Ljava/util/ArrayList;
 
-    .line 211
+    .line 227
     array-length v3, p1
 
     invoke-interface {v2}, Ljava/util/Set;->size()I
@@ -204,16 +204,16 @@
 
     sub-int/2addr v3, v4
 
-    .line 210
+    .line 226
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 212
+    .line 228
     :goto_1
     array-length v3, p1
 
     if-ge v1, v3, :cond_4
 
-    .line 213
+    .line 229
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -224,18 +224,18 @@
 
     if-nez v3, :cond_3
 
-    .line 214
+    .line 230
     aget-object v3, p1, v1
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 212
+    .line 228
     :cond_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 217
+    .line 233
     :cond_4
     return-object v0
 .end method
@@ -244,7 +244,7 @@
     .locals 1
 
     .prologue
-    .line 120
+    .line 134
     sget-boolean v0, Lcom/android/launcher3/notification/NotificationListener;->sIsConnected:Z
 
     if-eqz v0, :cond_0
@@ -264,7 +264,7 @@
     .locals 2
 
     .prologue
-    .line 146
+    .line 161
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mWorkerHandler:Landroid/os/Handler;
 
     const/4 v1, 0x3
@@ -275,7 +275,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 147
+    .line 162
     return-void
 .end method
 
@@ -283,12 +283,12 @@
     .locals 1
 
     .prologue
-    .line 135
+    .line 150
     const/4 v0, 0x0
 
     sput-object v0, Lcom/android/launcher3/notification/NotificationListener;->sNotificationsChangedListener:Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
-    .line 136
+    .line 151
     return-void
 .end method
 
@@ -296,20 +296,21 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 141
     sput-object p0, Lcom/android/launcher3/notification/NotificationListener;->sNotificationsChangedListener:Lcom/android/launcher3/notification/NotificationListener$NotificationsChangedListener;
 
-    .line 129
-    sget-object v0, Lcom/android/launcher3/notification/NotificationListener;->sNotificationListenerInstance:Lcom/android/launcher3/notification/NotificationListener;
+    .line 143
+    invoke-static {}, Lcom/android/launcher3/notification/NotificationListener;->getInstanceIfConnected()Lcom/android/launcher3/notification/NotificationListener;
 
+    move-result-object v0
+
+    .line 144
     if-eqz v0, :cond_0
 
-    .line 130
-    sget-object v0, Lcom/android/launcher3/notification/NotificationListener;->sNotificationListenerInstance:Lcom/android/launcher3/notification/NotificationListener;
-
+    .line 145
     invoke-direct {v0}, Lcom/android/launcher3/notification/NotificationListener;->onNotificationFullRefresh()V
 
-    .line 132
+    .line 147
     :cond_0
     return-void
 .end method
@@ -322,7 +323,7 @@
 
     const/4 v2, 0x0
 
-    .line 221
+    .line 237
     invoke-virtual {p0}, Lcom/android/launcher3/notification/NotificationListener;->getCurrentRanking()Landroid/service/notification/NotificationListenerService$RankingMap;
 
     move-result-object v0
@@ -335,7 +336,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/service/notification/NotificationListenerService$RankingMap;->getRanking(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z
 
-    .line 222
+    .line 238
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mTempRanking:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v0}, Landroid/service/notification/NotificationListenerService$Ranking;->canShowBadge()Z
@@ -344,16 +345,16 @@
 
     if-nez v0, :cond_0
 
-    .line 223
+    .line 239
     return v1
 
-    .line 225
+    .line 241
     :cond_0
     invoke-virtual {p1}, Landroid/service/notification/StatusBarNotification;->getNotification()Landroid/app/Notification;
 
     move-result-object v3
 
-    .line 226
+    .line 242
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mTempRanking:Landroid/service/notification/NotificationListenerService$Ranking;
 
     invoke-virtual {v0}, Landroid/service/notification/NotificationListenerService$Ranking;->getChannel()Landroid/app/NotificationChannel;
@@ -372,17 +373,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 228
+    .line 244
     iget v0, v3, Landroid/app/Notification;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 229
+    .line 245
     return v1
 
-    .line 232
+    .line 248
     :cond_1
     iget v0, v3, Landroid/app/Notification;->flags:I
 
@@ -392,7 +393,7 @@
 
     move v0, v1
 
-    .line 233
+    .line 249
     :goto_0
     iget-object v4, v3, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
@@ -402,7 +403,7 @@
 
     move-result-object v4
 
-    .line 234
+    .line 250
     iget-object v3, v3, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
     const-string/jumbo v5, "android.text"
@@ -411,7 +412,7 @@
 
     move-result-object v3
 
-    .line 235
+    .line 251
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v4
@@ -422,7 +423,7 @@
 
     move-result v2
 
-    .line 236
+    .line 252
     :cond_2
     if-nez v0, :cond_3
 
@@ -434,7 +435,7 @@
     :cond_4
     move v0, v2
 
-    .line 232
+    .line 248
     goto :goto_0
 .end method
 
@@ -444,38 +445,43 @@
     .locals 2
 
     .prologue
-    .line 190
+    .line 205
     invoke-static {p1}, Lcom/android/launcher3/notification/NotificationKeyData;->extractKeysOnly(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 191
+    .line 206
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
     new-array v1, v1, [Ljava/lang/String;
 
-    .line 190
+    .line 205
     invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Ljava/lang/String;
 
-    .line 189
+    .line 204
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/NotificationListener;->getActiveNotifications([Ljava/lang/String;)[Landroid/service/notification/StatusBarNotification;
 
     move-result-object v0
 
-    .line 192
+    .line 207
     if-nez v0, :cond_0
 
-    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+    .line 208
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
+    move-result-object v0
+
+    .line 207
     :goto_0
     return-object v0
 
+    .line 208
     :cond_0
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -488,18 +494,18 @@
     .locals 1
 
     .prologue
-    .line 140
+    .line 155
     invoke-super {p0}, Landroid/service/notification/NotificationListenerService;->onListenerConnected()V
 
-    .line 141
+    .line 156
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/android/launcher3/notification/NotificationListener;->sIsConnected:Z
 
-    .line 142
+    .line 157
     invoke-direct {p0}, Lcom/android/launcher3/notification/NotificationListener;->onNotificationFullRefresh()V
 
-    .line 143
+    .line 158
     return-void
 .end method
 
@@ -507,15 +513,15 @@
     .locals 1
 
     .prologue
-    .line 151
+    .line 166
     invoke-super {p0}, Landroid/service/notification/NotificationListenerService;->onListenerDisconnected()V
 
-    .line 152
+    .line 167
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/launcher3/notification/NotificationListener;->sIsConnected:Z
 
-    .line 153
+    .line 168
     return-void
 .end method
 
@@ -523,10 +529,10 @@
     .locals 3
 
     .prologue
-    .line 157
+    .line 172
     invoke-super {p0, p1}, Landroid/service/notification/NotificationListenerService;->onNotificationPosted(Landroid/service/notification/StatusBarNotification;)V
 
-    .line 158
+    .line 173
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationListener;->mWorkerHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/launcher3/notification/NotificationListener$NotificationPostedMsg;
@@ -541,7 +547,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 160
+    .line 175
     return-void
 .end method
 
@@ -549,25 +555,25 @@
     .locals 3
 
     .prologue
-    .line 179
+    .line 194
     invoke-super {p0, p1}, Landroid/service/notification/NotificationListenerService;->onNotificationRemoved(Landroid/service/notification/StatusBarNotification;)V
 
-    .line 181
-    new-instance v0, Landroid/support/v4/a/b;
+    .line 196
+    new-instance v0, Landroid/util/Pair;
 
     invoke-static {p1}, Lcom/android/launcher3/util/PackageUserKey;->fromNotification(Landroid/service/notification/StatusBarNotification;)Lcom/android/launcher3/util/PackageUserKey;
 
     move-result-object v1
 
-    .line 182
+    .line 197
     invoke-static {p1}, Lcom/android/launcher3/notification/NotificationKeyData;->fromNotification(Landroid/service/notification/StatusBarNotification;)Lcom/android/launcher3/notification/NotificationKeyData;
 
     move-result-object v2
 
-    .line 181
-    invoke-direct {v0, v1, v2}, Landroid/support/v4/a/b;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    .line 196
+    invoke-direct {v0, v1, v2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 183
+    .line 198
     iget-object v1, p0, Lcom/android/launcher3/notification/NotificationListener;->mWorkerHandler:Landroid/os/Handler;
 
     const/4 v2, 0x2
@@ -578,6 +584,6 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 185
+    .line 200
     return-void
 .end method

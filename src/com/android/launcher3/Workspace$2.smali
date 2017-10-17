@@ -26,7 +26,7 @@
 
     iput-boolean p3, p0, Lcom/android/launcher3/Workspace$2;->val$stripEmptyScreens:Z
 
-    .line 914
+    .line 870
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -41,7 +41,7 @@
     .prologue
     const-wide/16 v2, -0xc9
 
-    .line 917
+    .line 873
     iget-object v0, p0, Lcom/android/launcher3/Workspace$2;->this$0:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->hasExtraEmptyScreen()Z
@@ -50,14 +50,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 918
+    .line 874
     iget-object v0, p0, Lcom/android/launcher3/Workspace$2;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v0, v0, Lcom/android/launcher3/Workspace;->mWorkspaceScreens:Lcom/android/launcher3/util/LongArrayMap;
 
     invoke-virtual {v0, v2, v3}, Lcom/android/launcher3/util/LongArrayMap;->remove(J)V
 
-    .line 919
+    .line 875
     iget-object v0, p0, Lcom/android/launcher3/Workspace$2;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v0, v0, Lcom/android/launcher3/Workspace;->mScreenOrder:Ljava/util/ArrayList;
@@ -68,30 +68,30 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 920
+    .line 876
     iget-object v0, p0, Lcom/android/launcher3/Workspace$2;->this$0:Lcom/android/launcher3/Workspace;
 
     iget-object v1, p0, Lcom/android/launcher3/Workspace$2;->val$cl:Lcom/android/launcher3/CellLayout;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->removeView(Landroid/view/View;)V
 
-    .line 921
+    .line 877
     iget-boolean v0, p0, Lcom/android/launcher3/Workspace$2;->val$stripEmptyScreens:Z
 
     if-eqz v0, :cond_0
 
-    .line 922
+    .line 878
     iget-object v0, p0, Lcom/android/launcher3/Workspace$2;->this$0:Lcom/android/launcher3/Workspace;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->stripEmptyScreens()V
 
-    .line 925
+    .line 881
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/Workspace$2;->this$0:Lcom/android/launcher3/Workspace;
 
-    invoke-static {v0}, Lcom/android/launcher3/Workspace;->-wrap2(Lcom/android/launcher3/Workspace;)V
+    invoke-static {v0}, Lcom/android/launcher3/Workspace;->-wrap1(Lcom/android/launcher3/Workspace;)V
 
-    .line 927
+    .line 883
     :cond_1
     return-void
 .end method

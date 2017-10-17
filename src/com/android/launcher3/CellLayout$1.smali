@@ -26,7 +26,7 @@
 
     iput p3, p0, Lcom/android/launcher3/CellLayout$1;->val$thisIndex:I
 
-    .line 255
+    .line 253
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -39,7 +39,7 @@
     .locals 3
 
     .prologue
-    .line 257
+    .line 255
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$1;->val$anim:Lcom/android/launcher3/InterruptibleInOutAnimator;
 
     invoke-virtual {v0}, Lcom/android/launcher3/InterruptibleInOutAnimator;->getTag()Ljava/lang/Object;
@@ -48,17 +48,17 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 261
+    .line 259
     if-nez v0, :cond_0
 
-    .line 268
+    .line 266
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 273
+    .line 271
     :goto_0
     return-void
 
-    .line 270
+    .line 268
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$1;->this$0:Lcom/android/launcher3/CellLayout;
 
@@ -78,7 +78,7 @@
 
     aput v0, v1, v2
 
-    .line 271
+    .line 269
     iget-object v0, p0, Lcom/android/launcher3/CellLayout$1;->this$0:Lcom/android/launcher3/CellLayout;
 
     iget-object v1, p0, Lcom/android/launcher3/CellLayout$1;->this$0:Lcom/android/launcher3/CellLayout;

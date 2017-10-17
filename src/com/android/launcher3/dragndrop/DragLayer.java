@@ -4,6 +4,8 @@
 
 package com.android.launcher3.dragndrop;
 
+import android.graphics.drawable.Drawable;
+import com.android.launcher3.util.Themes;
 import com.android.launcher3.DropTargetBar;
 import android.view.accessibility.AccessibilityEvent;
 import com.android.launcher3.widget.WidgetsBottomSheet;
@@ -12,6 +14,7 @@ import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.InsettableFrameLayout$LayoutParams;
 import android.widget.FrameLayout$LayoutParams;
 import android.view.KeyEvent;
+import android.support.v4.b.a;
 import android.graphics.Region$Op;
 import android.graphics.Canvas;
 import android.view.ViewGroup$LayoutParams;
@@ -37,6 +40,7 @@ import com.android.launcher3.Utilities;
 import android.view.animation.DecelerateInterpolator;
 import android.util.AttributeSet;
 import android.content.Context;
+import com.android.launcher3.dynamicui.WallpaperColorInfo;
 import com.android.launcher3.PinchToOverviewListener;
 import com.android.launcher3.Launcher;
 import android.graphics.Rect;
@@ -73,6 +77,7 @@ public class DragLayer extends InsettableFrameLayout
     private final int[] mTmpXY;
     private int mTopViewIndex;
     private DragLayer$TouchCompleteListener mTouchCompleteListener;
+    private final WallpaperColorInfo mWallpaperColorInfo;
     
     public DragLayer(final Context context, final AttributeSet set) {
         super(context, set);
@@ -93,6 +98,7 @@ public class DragLayer extends InsettableFrameLayout
         this.setChildrenDrawingOrderEnabled(true);
         this.mIsRtl = Utilities.isRtl(this.getResources());
         this.mFocusIndicatorHelper = new ViewGroupFocusHelper((View)this);
+        this.mWallpaperColorInfo = WallpaperColorInfo.getInstance(this.getContext());
     }
     
     private boolean handleTouchDown(final MotionEvent motionEvent, final boolean b) {
@@ -139,10 +145,10 @@ public class DragLayer extends InsettableFrameLayout
     private void sendTapOutsideFolderAccessibilityEvent(final boolean b) {
         int n;
         if (b) {
-            n = 2131492937;
+            n = 2131492939;
         }
         else {
-            n = 2131492936;
+            n = 2131492938;
         }
         Utilities.sendCustomAccessibilityEvent((View)this, 8, this.getContext().getString(n));
     }
@@ -183,7 +189,7 @@ public class DragLayer extends InsettableFrameLayout
     
     public void addResizeFrame(final LauncherAppWidgetHostView launcherAppWidgetHostView, final CellLayout cellLayout) {
         this.clearResizeFrame();
-        (this.mCurrentResizeFrame = (AppWidgetResizeFrame)LayoutInflater.from((Context)this.mLauncher).inflate(2130968587, (ViewGroup)this, false)).setupForWidget(launcherAppWidgetHostView, cellLayout, this);
+        (this.mCurrentResizeFrame = (AppWidgetResizeFrame)LayoutInflater.from((Context)this.mLauncher).inflate(2130968588, (ViewGroup)this, false)).setupForWidget(launcherAppWidgetHostView, cellLayout, this);
         ((DragLayer$LayoutParams)this.mCurrentResizeFrame.getLayoutParams()).customPosition = true;
         this.addView((View)this.mCurrentResizeFrame);
         this.mCurrentResizeFrame.snapToWidget(false);
@@ -215,7 +221,7 @@ public class DragLayer extends InsettableFrameLayout
     public void animateView(final DragView dragView, final Rect rect, final Rect rect2, final float n, final float n2, final float n3, final float n4, final float n5, int max, final Interpolator interpolator, final Interpolator interpolator2, final Runnable runnable, final int n6, final View view) {
         final float n7 = (float)Math.hypot(rect2.left - rect.left, rect2.top - rect.top);
         final Resources resources = this.getResources();
-        final float n8 = resources.getInteger(2131558420);
+        final float n8 = resources.getInteger(2131558421);
         if (max < 0) {
             int integer = resources.getInteger(2131558416);
             if (n7 < n8) {
@@ -242,7 +248,7 @@ public class DragLayer extends InsettableFrameLayout
         final CellLayout$LayoutParams cellLayout$LayoutParams = (CellLayout$LayoutParams)view.getLayoutParams();
         shortcutAndWidgetContainer.measureChild(view);
         final Rect rect = new Rect();
-        this.getViewRectRelativeToSelf(dragView, rect);
+        this.getViewRectRelativeToSelf((View)dragView, rect);
         final int[] array = new int[2];
         final float scaleX = view.getScaleX();
         array[0] = cellLayout$LayoutParams.x + (int)(view.getMeasuredWidth() * (1.0f - scaleX) / 2.0f);
@@ -285,7 +291,7 @@ public class DragLayer extends InsettableFrameLayout
     
     public void animateViewIntoPosition(final DragView dragView, final int[] array, final float n, final float n2, final float n3, final int n4, final Runnable runnable, final int n5) {
         final Rect rect = new Rect();
-        this.getViewRectRelativeToSelf(dragView, rect);
+        this.getViewRectRelativeToSelf((View)dragView, rect);
         this.animateViewIntoPosition(dragView, rect.left, rect.top, array[0], array[1], n, 1.0f, 1.0f, n2, n3, runnable, n4, n5, null);
     }
     
@@ -327,7 +333,7 @@ public class DragLayer extends InsettableFrameLayout
                 this.getDescendantRectRelativeToSelf((View)currentDragOverlappingLayout, this.mHighlightRect);
                 canvas.clipRect(this.mHighlightRect, Region$Op.DIFFERENCE);
             }
-            canvas.drawColor(n << 24 | 0x0);
+            canvas.drawColor(a.asb(a.asf(1711276032, this.mWallpaperColorInfo.getMainColor()), n));
             canvas.restore();
         }
         this.mFocusIndicatorHelper.draw(canvas);
@@ -360,7 +366,7 @@ public class DragLayer extends InsettableFrameLayout
     }
     
     public View getAnimatedView() {
-        return this.mDropView;
+        return (View)this.mDropView;
     }
     
     public float getBackgroundAlpha() {
@@ -427,6 +433,10 @@ public class DragLayer extends InsettableFrameLayout
         if (this.mBackgroundAlpha > 0.0f) {
             this.invalidate();
         }
+    }
+    
+    public boolean isEventOverHotseat(final MotionEvent motionEvent) {
+        return this.isEventOverView((View)this.mLauncher.getHotseat(), motionEvent);
     }
     
     public boolean isEventOverView(final View view, final MotionEvent motionEvent) {
@@ -610,12 +620,15 @@ public class DragLayer extends InsettableFrameLayout
     }
     
     public void setInsets(final Rect insets) {
-        int backgroundResource = 0;
         super.setInsets(insets);
-        if (insets.top != 0) {
-            backgroundResource = 2130837587;
+        Drawable attrDrawable;
+        if (insets.top == 0) {
+            attrDrawable = null;
         }
-        this.setBackgroundResource(backgroundResource);
+        else {
+            attrDrawable = Themes.getAttrDrawable(this.getContext(), 2130772016);
+        }
+        this.setBackground(attrDrawable);
     }
     
     public void setTouchCompleteListener(final DragLayer$TouchCompleteListener mTouchCompleteListener) {

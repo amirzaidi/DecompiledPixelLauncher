@@ -20,11 +20,11 @@ public class FolderAccessibilityHelper extends DragAndDropAccessibilityDelegate
     }
     
     protected String getConfirmationForIconDrop(final int n) {
-        return this.mContext.getString(2131492973);
+        return this.mContext.getString(2131492982);
     }
     
     protected String getLocationDescriptionForIconDrop(final int n) {
-        return this.mContext.getString(2131492971, new Object[] { this.mStartPosition + n + 1 });
+        return this.mContext.getString(2131492980, new Object[] { this.mStartPosition + n + 1 });
     }
     
     protected int intersectsValidDropTarget(final int n) {

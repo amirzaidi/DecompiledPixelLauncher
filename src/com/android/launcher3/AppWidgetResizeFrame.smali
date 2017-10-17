@@ -230,7 +230,7 @@
     move-result-object v0
 
     .line 105
-    const v1, 0x7f0b0025
+    const v1, 0x7f0b002e
 
     .line 104
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -1056,7 +1056,7 @@
 
     aput-object v5, v3, v6
 
-    const v5, 0x7f0c007c
+    const v5, 0x7f0c0085
 
     invoke-virtual {v1, v5, v3}, Lcom/android/launcher3/Launcher;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1904,7 +1904,7 @@
     move-result-object v0
 
     .line 135
-    const v1, 0x7f0b0023
+    const v1, 0x7f0b002c
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

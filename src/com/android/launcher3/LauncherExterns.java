@@ -13,6 +13,4 @@ public interface LauncherExterns
     SharedPreferences getSharedPrefs();
     
     boolean setLauncherCallbacks(final LauncherCallbacks p0);
-    
-    void setLauncherOverlay(final Launcher$LauncherOverlay p0);
 }

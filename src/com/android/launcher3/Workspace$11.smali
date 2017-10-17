@@ -9,32 +9,24 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/launcher3/Workspace;
 
-.field final synthetic val$container:J
+.field final synthetic val$finalView:Landroid/view/View;
 
-.field final synthetic val$item:Lcom/android/launcher3/ItemInfo;
-
-.field final synthetic val$pendingInfo:Lcom/android/launcher3/PendingAddItemInfo;
-
-.field final synthetic val$screenId:J
+.field final synthetic val$onCompleteRunnable:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Workspace;Lcom/android/launcher3/PendingAddItemInfo;JJLcom/android/launcher3/ItemInfo;)V
-    .locals 1
+.method constructor <init>(Lcom/android/launcher3/Workspace;Landroid/view/View;Ljava/lang/Runnable;)V
+    .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$11;->this$0:Lcom/android/launcher3/Workspace;
 
-    iput-object p2, p0, Lcom/android/launcher3/Workspace$11;->val$pendingInfo:Lcom/android/launcher3/PendingAddItemInfo;
+    iput-object p2, p0, Lcom/android/launcher3/Workspace$11;->val$finalView:Landroid/view/View;
 
-    iput-wide p3, p0, Lcom/android/launcher3/Workspace$11;->val$container:J
+    iput-object p3, p0, Lcom/android/launcher3/Workspace$11;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
-    iput-wide p5, p0, Lcom/android/launcher3/Workspace$11;->val$screenId:J
-
-    iput-object p7, p0, Lcom/android/launcher3/Workspace$11;->val$item:Lcom/android/launcher3/ItemInfo;
-
-    .line 3309
+    .line 3416
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -44,41 +36,33 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .locals 2
 
     .prologue
-    .line 3315
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$11;->this$0:Lcom/android/launcher3/Workspace;
+    .line 3419
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$11;->val$finalView:Landroid/view/View;
 
-    invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->deferRemoveExtraEmptyScreen()V
+    if-eqz v0, :cond_0
 
-    .line 3319
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$11;->this$0:Lcom/android/launcher3/Workspace;
+    .line 3420
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$11;->val$finalView:Landroid/view/View;
 
-    iget-object v0, v0, Lcom/android/launcher3/Workspace;->mLauncher:Lcom/android/launcher3/Launcher;
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lcom/android/launcher3/Workspace$11;->val$pendingInfo:Lcom/android/launcher3/PendingAddItemInfo;
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    iget-wide v2, p0, Lcom/android/launcher3/Workspace$11;->val$container:J
+    .line 3422
+    :cond_0
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$11;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
-    iget-wide v4, p0, Lcom/android/launcher3/Workspace$11;->val$screenId:J
+    if-eqz v0, :cond_1
 
-    iget-object v6, p0, Lcom/android/launcher3/Workspace$11;->this$0:Lcom/android/launcher3/Workspace;
+    .line 3423
+    iget-object v0, p0, Lcom/android/launcher3/Workspace$11;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
-    iget-object v6, v6, Lcom/android/launcher3/Workspace;->mTargetCell:[I
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 3320
-    iget-object v7, p0, Lcom/android/launcher3/Workspace$11;->val$item:Lcom/android/launcher3/ItemInfo;
-
-    iget v7, v7, Lcom/android/launcher3/ItemInfo;->spanX:I
-
-    iget-object v8, p0, Lcom/android/launcher3/Workspace$11;->val$item:Lcom/android/launcher3/ItemInfo;
-
-    iget v8, v8, Lcom/android/launcher3/ItemInfo;->spanY:I
-
-    .line 3319
-    invoke-virtual/range {v0 .. v8}, Lcom/android/launcher3/Launcher;->addPendingItem(Lcom/android/launcher3/PendingAddItemInfo;JJ[III)V
-
-    .line 3321
+    .line 3425
+    :cond_1
     return-void
 .end method

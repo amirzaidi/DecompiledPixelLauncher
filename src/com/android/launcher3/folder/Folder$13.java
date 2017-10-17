@@ -4,44 +4,27 @@
 
 package com.android.launcher3.folder;
 
-import com.android.launcher3.CellLayout;
-import com.android.launcher3.DropTarget;
 import android.view.View;
-import com.android.launcher3.ItemInfo;
-import android.view.ViewGroup;
-import com.android.launcher3.ShortcutInfo;
+import com.android.launcher3.DropTarget$DragObject;
 
 final class Folder$13 implements Runnable
 {
     final /* synthetic */ Folder this$0;
+    final /* synthetic */ DropTarget$DragObject val$d;
+    final /* synthetic */ boolean val$isFlingToDelete;
+    final /* synthetic */ boolean val$success;
+    final /* synthetic */ View val$target;
     
-    Folder$13(final Folder this$0) {
+    Folder$13(final Folder this$0, final View val$target, final DropTarget$DragObject val$d, final boolean val$isFlingToDelete, final boolean val$success) {
         this.this$0 = this$0;
+        this.val$target = val$target;
+        this.val$d = val$d;
+        this.val$isFlingToDelete = val$isFlingToDelete;
+        this.val$success = val$success;
     }
     
     public void run() {
-        final int n = 1;
-        final int size = this.this$0.mInfo.contents.size();
-        if (size <= n) {
-            View view;
-            if (size == n) {
-                final CellLayout cellLayout = this.this$0.mLauncher.getCellLayout(this.this$0.mInfo.container, this.this$0.mInfo.screenId);
-                final ShortcutInfo shortcutInfo = this.this$0.mInfo.contents.remove(0);
-                final View shortcut = this.this$0.mLauncher.createShortcut(cellLayout, shortcutInfo);
-                this.this$0.mLauncher.getModelWriter().addOrMoveItemInDatabase(shortcutInfo, this.this$0.mInfo.container, this.this$0.mInfo.screenId, this.this$0.mInfo.cellX, this.this$0.mInfo.cellY);
-                view = shortcut;
-            }
-            else {
-                view = null;
-            }
-            this.this$0.mLauncher.removeItem((View)this.this$0.mFolderIcon, this.this$0.mInfo, n != 0);
-            if (this.this$0.mFolderIcon instanceof DropTarget) {
-                this.this$0.mDragController.removeDropTarget((DropTarget)this.this$0.mFolderIcon);
-            }
-            if (view != null) {
-                this.this$0.mLauncher.getWorkspace().addInScreenFromBind(view, this.this$0.mInfo);
-                view.requestFocus();
-            }
-        }
+        this.this$0.onDropCompleted(this.val$target, this.val$d, this.val$isFlingToDelete, this.val$success);
+        this.this$0.mDeferredAction = null;
     }
 }

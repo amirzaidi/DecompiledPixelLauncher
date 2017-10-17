@@ -13,8 +13,8 @@ import android.animation.LayoutTransition;
 import android.animation.LayoutTransition$TransitionListener;
 import android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction;
 import android.view.accessibility.AccessibilityNodeInfo;
+import com.android.launcher3.util.Themes;
 import android.view.ViewConfiguration;
-import android.graphics.Canvas;
 import android.view.ViewGroup$LayoutParams;
 import java.util.ArrayList;
 import android.view.accessibility.AccessibilityEvent;
@@ -29,7 +29,6 @@ import android.content.Context;
 import android.view.VelocityTracker;
 import com.android.launcher3.pageindicators.PageIndicator;
 import android.view.View$OnLongClickListener;
-import com.android.launcher3.util.LauncherEdgeEffect;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.graphics.Rect;
@@ -57,8 +56,6 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
     private float mDownScrollX;
     View mDragView;
     private float mDragViewBaselineLeft;
-    private final LauncherEdgeEffect mEdgeGlowLeft;
-    private final LauncherEdgeEffect mEdgeGlowRight;
     protected boolean mFirstLayout;
     protected int mFlingThresholdVelocity;
     private boolean mFreeScroll;
@@ -79,6 +76,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
     protected int mMinSnapVelocity;
     protected int mNextPage;
     private int mNormalChildHeight;
+    protected int mOverScrollX;
     protected PageIndicator mPageIndicator;
     int mPageIndicatorViewId;
     private int[] mPageScrolls;
@@ -95,6 +93,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
     private float mTotalMotionX;
     protected int mTouchSlop;
     protected int mTouchState;
+    protected int mUnboundedScrollX;
     private boolean mUseMinScale;
     private VelocityTracker mVelocityTracker;
     private Rect mViewport;
@@ -141,8 +140,6 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         this.mSidePageHoverIndex = mSidePageHoverIndex;
         this.mReorderingStarted = false;
         this.mInsets = new Rect();
-        this.mEdgeGlowLeft = new LauncherEdgeEffect();
-        this.mEdgeGlowRight = new LauncherEdgeEffect();
         final TypedArray obtainStyledAttributes = context.obtainStyledAttributes(set, R$styleable.PagedView, n, 0);
         this.mPageIndicatorViewId = obtainStyledAttributes.getResourceId(0, mSidePageHoverIndex);
         obtainStyledAttributes.recycle();
@@ -264,6 +261,12 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         }
     }
     
+    private float overScrollInfluenceCurve(final float n) {
+        final float n2 = 1.0f;
+        final float n3 = n - n2;
+        return n3 * (n3 * n3) + n2;
+    }
+    
     private void releaseVelocityTracker() {
         if (this.mVelocityTracker != null) {
             this.mVelocityTracker.clear();
@@ -284,8 +287,6 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         this.mCancelTap = false;
         this.mTouchState = 0;
         this.mActivePointerId = -1;
-        this.mEdgeGlowLeft.onRelease();
-        this.mEdgeGlowRight.onRelease();
     }
     
     private void sendScrollAccessibilityEvent() {
@@ -405,7 +406,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         final int mNextPage = -1;
         final float n = 1.0f;
         if (this.mScroller.computeScrollOffset()) {
-            if (this.getUnboundedScrollX() != this.mScroller.getCurrX() || this.getScrollY() != this.mScroller.getCurrY()) {
+            if (this.getUnboundedScrollX() != this.mScroller.getCurrX() || this.getScrollY() != this.mScroller.getCurrY() || this.mOverScrollX != this.mScroller.getCurrX()) {
                 float scaleX;
                 if (this.mFreeScroll) {
                     scaleX = this.getScaleX();
@@ -422,9 +423,10 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         }
         if (this.mNextPage != mNextPage && b) {
             this.sendScrollAccessibilityEvent();
+            final int mCurrentPage = this.mCurrentPage;
             this.mCurrentPage = this.validateNewPage(this.mNextPage);
             this.mNextPage = mNextPage;
-            this.notifyPageSwitchListener();
+            this.notifyPageSwitchListener(mCurrentPage);
             if (this.mTouchState == 0) {
                 this.pageEndTransition();
             }
@@ -438,15 +440,21 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
     }
     
     protected void dampedOverScroll(final float n) {
-        final float n2 = n / this.getViewportWidth();
-        if (n2 < 0.0f) {
-            this.mEdgeGlowLeft.onPull(-n2);
+        final int viewportWidth = this.getViewportWidth();
+        final float n2 = n / viewportWidth;
+        if (Float.compare(n2, 0.0f) == 0) {
+            return;
+        }
+        float n3 = this.overScrollInfluenceCurve(Math.abs(n2)) * (n2 / Math.abs(n2));
+        if (Math.abs(n3) >= 1.0f) {
+            n3 /= Math.abs(n3);
+        }
+        final int round = Math.round(n3 * 0.07f * viewportWidth);
+        if (n < 0.0f) {
+            super.scrollTo(this.mOverScrollX = round, this.getScrollY());
         }
         else {
-            if (n2 <= 0.0f) {
-                return;
-            }
-            this.mEdgeGlowRight.onPull(n2);
+            super.scrollTo(this.mOverScrollX = round + this.mMaxScrollX, this.getScrollY());
         }
         this.invalidate();
     }
@@ -508,48 +516,6 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         return false;
     }
     
-    public void draw(final Canvas canvas) {
-        final int n = 1;
-        super.draw(canvas);
-        if (this.getPageCount() > 0) {
-            if (!this.mEdgeGlowLeft.isFinished()) {
-                final int save = canvas.save();
-                final Rect mViewport = this.mViewport;
-                canvas.translate((float)mViewport.left, (float)mViewport.top);
-                canvas.rotate(270.0f);
-                this.getEdgeVerticalPosition(PagedView.sTmpIntPoint);
-                canvas.translate((float)(mViewport.top - PagedView.sTmpIntPoint[n]), 0.0f);
-                this.mEdgeGlowLeft.setSize(PagedView.sTmpIntPoint[n] - PagedView.sTmpIntPoint[0], mViewport.width());
-                if (this.mEdgeGlowLeft.draw(canvas)) {
-                    this.postInvalidateOnAnimation();
-                }
-                canvas.restoreToCount(save);
-            }
-            if (!this.mEdgeGlowRight.isFinished()) {
-                final int save2 = canvas.save();
-                final Rect mViewport2 = this.mViewport;
-                final int left = mViewport2.left;
-                final int[] mPageScrolls = this.mPageScrolls;
-                int n2;
-                if (this.mIsRtl) {
-                    n2 = 0;
-                }
-                else {
-                    n2 = this.getPageCount() - 1;
-                }
-                canvas.translate((float)(mPageScrolls[n2] + left), (float)mViewport2.top);
-                canvas.rotate(90.0f);
-                this.getEdgeVerticalPosition(PagedView.sTmpIntPoint);
-                canvas.translate((float)(PagedView.sTmpIntPoint[0] - mViewport2.top), (float)(-mViewport2.width()));
-                this.mEdgeGlowRight.setSize(PagedView.sTmpIntPoint[n] - PagedView.sTmpIntPoint[0], mViewport2.width());
-                if (this.mEdgeGlowRight.draw(canvas)) {
-                    this.postInvalidateOnAnimation();
-                }
-                canvas.restoreToCount(save2);
-            }
-        }
-    }
-    
     public boolean enableFreeScroll() {
         final boolean enableFreeScroll = true;
         this.setEnableFreeScroll(enableFreeScroll);
@@ -608,10 +574,8 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
     }
     
     protected String getCurrentPageDescription() {
-        return this.getContext().getString(2131492932, new Object[] { this.getNextPage() + 1, this.getChildCount() });
+        return this.getContext().getString(2131492934, new Object[] { this.getNextPage() + 1, this.getChildCount() });
     }
-    
-    protected abstract void getEdgeVerticalPosition(final int[] p0);
     
     protected void getFreeScrollPageRange(final int[] array) {
         array[0] = 0;
@@ -673,6 +637,13 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         return this.getPageNearestToCenterOfScreen(this.getScrollX());
     }
     
+    protected int getPageSnapDuration() {
+        if (this.isInOverScroll()) {
+            return 270;
+        }
+        return 750;
+    }
+    
     public int getScrollForPage(final int n) {
         if (this.mPageScrolls != null && n < this.mPageScrolls.length && n >= 0) {
             return this.mPageScrolls[n];
@@ -699,7 +670,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
     }
     
     protected int getUnboundedScrollX() {
-        return this.getScrollX();
+        return this.mUnboundedScrollX;
     }
     
     public int getViewportHeight() {
@@ -735,6 +706,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         this.mMinSnapVelocity = (int)(density * 1500.0f);
         this.setOnHierarchyChangeListener((ViewGroup$OnHierarchyChangeListener)this);
         this.setWillNotDraw(false);
+        Themes.getAttrColor(this.getContext(), 16843982);
     }
     
     public void initParentViews(final View view) {
@@ -742,6 +714,14 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
             (this.mPageIndicator = (PageIndicator)view.findViewById(this.mPageIndicatorViewId)).setMarkersCount(this.getChildCount());
             this.mPageIndicator.setContentDescription((CharSequence)this.getPageIndicatorDescription());
         }
+    }
+    
+    protected boolean isInOverScroll() {
+        boolean b = true;
+        if (this.mOverScrollX <= this.mMaxScrollX && this.mOverScrollX >= 0) {
+            b = false;
+        }
+        return b;
     }
     
     protected boolean isPageInTransition() {
@@ -760,7 +740,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         return b2;
     }
     
-    protected void notifyPageSwitchListener() {
+    protected void notifyPageSwitchListener(final int n) {
         this.updatePageIndicator();
     }
     
@@ -774,6 +754,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
     
     public void onChildViewRemoved(final View view, final View view2) {
         this.updateFreescrollBounds();
+        this.mCurrentPage = this.validateNewPage(this.mCurrentPage);
         this.invalidate();
     }
     
@@ -1271,52 +1252,41 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
                         n7 = 0;
                     }
                     this.mTotalMotionX += Math.abs(this.mLastMotionX + this.mLastMotionXRemainder - x3);
-                    int n8;
-                    if (this.mTotalMotionX > 25.0f) {
-                        if (Math.abs(n5) > this.mFlingThresholdVelocity) {
-                            n8 = n2;
+                    final boolean b = this.mTotalMotionX > 25.0f && this.shouldFlingForVelocity(n5);
+                    if (!this.mFreeScroll) {
+                        int n8;
+                        if (Math.abs(n6) > measuredWidth * 0.33f && Math.signum(n5) != Math.signum(n6)) {
+                            if (b) {
+                                n8 = n2;
+                            }
+                            else {
+                                n8 = 0;
+                            }
                         }
                         else {
                             n8 = 0;
                         }
-                    }
-                    else {
-                        n8 = 0;
-                    }
-                    if (!this.mFreeScroll) {
                         int n9;
-                        if (Math.abs(n6) > measuredWidth * 0.33f && Math.signum(n5) != Math.signum(n6)) {
-                            if (n8 != 0) {
-                                n9 = n2;
-                            }
-                            else {
-                                n9 = 0;
-                            }
+                        if (this.mIsRtl ? (n6 > 0) : (n6 < 0)) {
+                            n9 = n2;
                         }
                         else {
                             n9 = 0;
                         }
-                        int n10;
-                        if (this.mIsRtl ? (n6 > 0) : (n6 < 0)) {
-                            n10 = n2;
-                        }
-                        else {
-                            n10 = 0;
-                        }
-                        Label_1153: {
+                        Label_1133: {
                             if (this.mIsRtl) {
                                 if (n5 <= 0) {
-                                    break Label_1153;
+                                    break Label_1133;
                                 }
                             }
                             else if (n5 >= 0) {
-                                break Label_1153;
+                                break Label_1133;
                             }
                             n3 = n2;
                         }
-                        if (((n7 != 0 && (n10 ^ 0x1) != 0x0 && (n8 ^ 0x1) != 0x0) || (n8 != 0 && (n3 ^ 0x1))) && this.mCurrentPage > 0) {
+                        if (((n7 != 0 && (n9 ^ 0x1) != 0x0 && (b ^ true)) || (b && (n3 ^ 0x1))) && this.mCurrentPage > 0) {
                             int mCurrentPage;
-                            if (n9 != 0) {
+                            if (n8 != 0) {
                                 mCurrentPage = this.mCurrentPage;
                             }
                             else {
@@ -1324,9 +1294,9 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
                             }
                             this.snapToPageWithVelocity(mCurrentPage, n5);
                         }
-                        else if (((n7 != 0 && n10 != 0 && (n8 ^ 0x1) != 0x0) || (n8 != 0 && n3)) && this.mCurrentPage < this.getChildCount() - 1) {
+                        else if (((n7 != 0 && n9 != 0 && (b ^ true)) || (b && n3)) && this.mCurrentPage < this.getChildCount() - 1) {
                             int mCurrentPage2;
-                            if (n9 != 0) {
+                            if (n8 != 0) {
                                 mCurrentPage2 = this.mCurrentPage;
                             }
                             else {
@@ -1343,10 +1313,10 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
                             this.abortScrollerAnimation(n2 != 0);
                         }
                         final float scaleX = this.getScaleX();
-                        final int n11 = (int)(-n5 * scaleX);
-                        final int n12 = (int)(this.getScrollX() * scaleX);
+                        final int n10 = (int)(-n5 * scaleX);
+                        final int n11 = (int)(this.getScrollX() * scaleX);
                         this.mScroller.setInterpolator((TimeInterpolator)this.mDefaultInterpolator);
-                        this.mScroller.fling(n12, this.getScrollY(), n11, 0, -1 << -1, -1 >>> 1, 0, 0);
+                        this.mScroller.fling(n11, this.getScrollY(), n10, 0, -1 << -1, -1 >>> 1, 0, 0);
                         this.mNextPage = this.getPageNearestToCenterOfScreen((int)(this.mScroller.getFinalX() / scaleX));
                         this.invalidate();
                     }
@@ -1523,6 +1493,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
             }
             max = Math.max(Math.min(max, this.mFreeScrollMaxScrollX), this.mFreeScrollMinScrollX);
         }
+        this.mUnboundedScrollX = max;
         final boolean b = (this.mIsRtl ? (max > this.mMaxScrollX) : (max < 0)) && n2;
         final boolean b2 = (this.mIsRtl ? (max < 0) : (max > this.mMaxScrollX)) && n2;
         if (b) {
@@ -1568,7 +1539,7 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
                 this.overScroll(0.0f);
                 this.mWasInOverscroll = false;
             }
-            super.scrollTo(max, n);
+            super.scrollTo(this.mOverScrollX = max, n);
         }
         if (this.isReordering(n2 != 0)) {
             final float[] mapPointFromParentToView = this.mapPointFromParentToView((View)this, this.mParentDownMotionX, this.mParentDownMotionY);
@@ -1591,20 +1562,16 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         if (this.getChildCount() == 0) {
             return;
         }
+        final int mCurrentPage = this.mCurrentPage;
         this.mCurrentPage = this.validateNewPage(n);
         this.updateCurrentPageScroll();
-        this.notifyPageSwitchListener();
+        this.notifyPageSwitchListener(mCurrentPage);
         this.invalidate();
     }
     
     protected void setDefaultInterpolator(final Interpolator mDefaultInterpolator) {
         this.mDefaultInterpolator = mDefaultInterpolator;
         this.mScroller.setInterpolator((TimeInterpolator)this.mDefaultInterpolator);
-    }
-    
-    protected void setEdgeGlowColor(final int n) {
-        this.mEdgeGlowLeft.setColor(n);
-        this.mEdgeGlowRight.setColor(n);
     }
     
     protected void setEnableOverscroll(final boolean mAllowOverScroll) {
@@ -1641,8 +1608,12 @@ public abstract class PagedView extends ViewGroup implements ViewGroup$OnHierarc
         }
     }
     
+    protected boolean shouldFlingForVelocity(final int n) {
+        return Math.abs(n) > this.mFlingThresholdVelocity;
+    }
+    
     protected void snapToDestination() {
-        this.snapToPage(this.getPageNearestToCenterOfScreen(), 750);
+        this.snapToPage(this.getPageNearestToCenterOfScreen(), this.getPageSnapDuration());
     }
     
     public void snapToPage(final int n) {

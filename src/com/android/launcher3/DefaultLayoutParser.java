@@ -5,7 +5,7 @@
 package com.android.launcher3;
 
 import android.content.res.XmlResourceParser;
-import java.util.HashMap;
+import android.util.ArrayMap;
 import android.content.res.Resources;
 import android.appwidget.AppWidgetHost;
 import android.content.Context;
@@ -16,26 +16,26 @@ public class DefaultLayoutParser extends AutoInstallsLayout
         super(context, appWidgetHost, autoInstallsLayout$LayoutParserCallback, resources, n, "favorites");
     }
     
-    protected HashMap getFolderElementsMap() {
+    protected ArrayMap getFolderElementsMap() {
         return this.getFolderElementsMap(this.mSourceRes);
     }
     
-    HashMap getFolderElementsMap(final Resources resources) {
-        final HashMap<String, DefaultLayoutParser$AppShortcutWithUriParser> hashMap = new HashMap<String, DefaultLayoutParser$AppShortcutWithUriParser>();
-        hashMap.put("favorite", new DefaultLayoutParser$AppShortcutWithUriParser(this));
-        hashMap.put("shortcut", (DefaultLayoutParser$AppShortcutWithUriParser)new DefaultLayoutParser$UriShortcutParser(this, resources));
-        return hashMap;
+    ArrayMap getFolderElementsMap(final Resources resources) {
+        final ArrayMap arrayMap = new ArrayMap();
+        arrayMap.put((Object)"favorite", (Object)new DefaultLayoutParser$AppShortcutWithUriParser(this));
+        arrayMap.put((Object)"shortcut", (Object)new DefaultLayoutParser$UriShortcutParser(this, resources));
+        return arrayMap;
     }
     
-    protected HashMap getLayoutElementsMap() {
-        final HashMap<String, DefaultLayoutParser$AppShortcutWithUriParser> hashMap = new HashMap<String, DefaultLayoutParser$AppShortcutWithUriParser>();
-        hashMap.put("favorite", new DefaultLayoutParser$AppShortcutWithUriParser(this));
-        hashMap.put("appwidget", (DefaultLayoutParser$AppShortcutWithUriParser)new DefaultLayoutParser$AppWidgetParser(this));
-        hashMap.put("shortcut", (DefaultLayoutParser$AppShortcutWithUriParser)new DefaultLayoutParser$UriShortcutParser(this, this.mSourceRes));
-        hashMap.put("resolve", (DefaultLayoutParser$AppShortcutWithUriParser)new DefaultLayoutParser$ResolveParser(this));
-        hashMap.put("folder", (DefaultLayoutParser$AppShortcutWithUriParser)new DefaultLayoutParser$MyFolderParser(this));
-        hashMap.put("partner-folder", (DefaultLayoutParser$AppShortcutWithUriParser)new DefaultLayoutParser$PartnerFolderParser(this));
-        return hashMap;
+    protected ArrayMap getLayoutElementsMap() {
+        final ArrayMap arrayMap = new ArrayMap();
+        arrayMap.put((Object)"favorite", (Object)new DefaultLayoutParser$AppShortcutWithUriParser(this));
+        arrayMap.put((Object)"appwidget", (Object)new DefaultLayoutParser$AppWidgetParser(this));
+        arrayMap.put((Object)"shortcut", (Object)new DefaultLayoutParser$UriShortcutParser(this, this.mSourceRes));
+        arrayMap.put((Object)"resolve", (Object)new DefaultLayoutParser$ResolveParser(this));
+        arrayMap.put((Object)"folder", (Object)new DefaultLayoutParser$MyFolderParser(this));
+        arrayMap.put((Object)"partner-folder", (Object)new DefaultLayoutParser$PartnerFolderParser(this));
+        return arrayMap;
     }
     
     protected void parseContainerAndScreen(final XmlResourceParser xmlResourceParser, final long[] array) {

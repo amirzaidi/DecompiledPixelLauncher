@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 140
+    .line 122
     invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     .line 1
@@ -21,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 125
     invoke-static {p1}, Lcom/android/launcher3/folder/FolderIcon;->-get0(Lcom/android/launcher3/folder/FolderIcon;)F
 
     move-result v0
@@ -37,7 +37,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 123
     check-cast p1, Lcom/android/launcher3/folder/FolderIcon;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/folder/FolderIcon$1;->get(Lcom/android/launcher3/folder/FolderIcon;)Ljava/lang/Float;
@@ -51,17 +51,17 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 130
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
     invoke-static {p1, v0}, Lcom/android/launcher3/folder/FolderIcon;->-set0(Lcom/android/launcher3/folder/FolderIcon;F)F
 
-    .line 149
+    .line 131
     invoke-virtual {p1}, Lcom/android/launcher3/folder/FolderIcon;->invalidate()V
 
-    .line 150
+    .line 132
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .locals 0
 
     .prologue
-    .line 146
+    .line 128
     check-cast p1, Lcom/android/launcher3/folder/FolderIcon;
 
     check-cast p2, Ljava/lang/Float;

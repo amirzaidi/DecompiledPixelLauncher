@@ -132,14 +132,14 @@
 
     const/high16 v4, -0x40800000    # -1.0f
 
-    .line 189
+    .line 187
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 216
+    .line 214
     :cond_0
     :goto_0
     :pswitch_0
@@ -147,20 +147,20 @@
 
     return v0
 
-    .line 192
+    .line 190
     :pswitch_1
     invoke-virtual {p0}, Lcom/android/launcher3/BaseContainerView;->getTouchDelegateTargetView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 193
+    .line 191
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 194
+    .line 192
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
@@ -169,7 +169,7 @@
 
     if-ltz v2, :cond_1
 
-    .line 195
+    .line 193
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
@@ -186,7 +186,7 @@
 
     if-lez v0, :cond_0
 
-    .line 196
+    .line 194
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/BaseContainerView;->mLastTouchDownPosPx:Landroid/graphics/PointF;
 
@@ -210,7 +210,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 198
     :pswitch_2
     iget-object v0, p0, Lcom/android/launcher3/BaseContainerView;->mLastTouchDownPosPx:Landroid/graphics/PointF;
 
@@ -220,7 +220,7 @@
 
     if-lez v0, :cond_2
 
-    .line 201
+    .line 199
     invoke-virtual {p0}, Lcom/android/launcher3/BaseContainerView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -229,7 +229,7 @@
 
     move-result-object v0
 
-    .line 202
+    .line 200
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -240,7 +240,7 @@
 
     sub-float/2addr v1, v2
 
-    .line 203
+    .line 201
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
@@ -251,12 +251,12 @@
 
     sub-float/2addr v2, v3
 
-    .line 204
+    .line 202
     invoke-static {v1, v2}, Landroid/graphics/PointF;->length(FF)F
 
     move-result v1
 
-    .line 205
+    .line 203
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
     move-result v0
@@ -267,7 +267,7 @@
 
     if-gez v0, :cond_2
 
-    .line 207
+    .line 205
     invoke-virtual {p0}, Lcom/android/launcher3/BaseContainerView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -278,10 +278,10 @@
 
     invoke-virtual {v0, v5}, Lcom/android/launcher3/Launcher;->showWorkspace(Z)Z
 
-    .line 208
+    .line 206
     return v5
 
-    .line 213
+    .line 211
     :cond_2
     :pswitch_3
     iget-object v0, p0, Lcom/android/launcher3/BaseContainerView;->mLastTouchDownPosPx:Landroid/graphics/PointF;
@@ -290,7 +290,7 @@
 
     goto :goto_0
 
-    .line 189
+    .line 187
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -311,59 +311,67 @@
 
     move-result-object v1
 
-    .line 122
     invoke-static {v1}, Lcom/android/launcher3/Launcher;->getLauncher(Landroid/content/Context;)Lcom/android/launcher3/Launcher;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/android/launcher3/Launcher;->getDeviceProfile()Lcom/android/launcher3/DeviceProfile;
 
+    move-result-object v3
+
+    .line 117
+    invoke-virtual {v3}, Lcom/android/launcher3/DeviceProfile;->getContainerPadding()[I
+
     move-result-object v1
 
-    .line 123
-    invoke-virtual {v1}, Lcom/android/launcher3/DeviceProfile;->getContainerPadding()[I
+    .line 119
+    aget v2, v1, v0
 
-    move-result-object v2
-
-    .line 124
-    aget v3, v2, v0
-
-    iget v4, v1, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
-
-    add-int/2addr v3, v4
-
-    .line 125
+    .line 120
     const/4 v4, 0x1
 
-    aget v2, v2, v4
+    aget v1, v1, v4
 
-    iget v4, v1, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
-
-    add-int/2addr v2, v4
-
-    .line 126
-    invoke-virtual {v1}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
+    .line 124
+    invoke-virtual {v3}, Lcom/android/launcher3/DeviceProfile;->isVerticalBarLayout()Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
+    .line 125
+    iget v0, v3, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
+
+    add-int/2addr v2, v0
+
+    .line 126
+    iget v0, v3, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
+
+    add-int/2addr v1, v0
+
     .line 127
-    iget v0, v1, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
+    iget v0, v3, Lcom/android/launcher3/DeviceProfile;->edgeMarginPx:I
 
-    move v1, v0
+    move v3, v2
 
-    .line 131
-    :goto_0
-    invoke-virtual {p0, v3, v0, v2, v1}, Lcom/android/launcher3/BaseContainerView;->updateBackground(IIII)V
+    move v2, v1
 
-    .line 132
-    return-void
-
-    :cond_0
     move v1, v0
 
     .line 129
+    :goto_0
+    invoke-virtual {p0, v3, v1, v2, v0}, Lcom/android/launcher3/BaseContainerView;->updateBackground(IIII)V
+
+    .line 130
+    return-void
+
+    :cond_0
+    move v3, v2
+
+    move v2, v1
+
+    move v1, v0
+
     goto :goto_0
 .end method
 
@@ -373,7 +381,7 @@
     .locals 1
 
     .prologue
-    .line 176
+    .line 174
     iget-object v0, p0, Lcom/android/launcher3/BaseContainerView;->mContent:Landroid/view/View;
 
     return-object v0
@@ -383,7 +391,7 @@
     .locals 1
 
     .prologue
-    .line 180
+    .line 178
     iget-object v0, p0, Lcom/android/launcher3/BaseContainerView;->mRevealView:Landroid/view/View;
 
     return-object v0
@@ -481,7 +489,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 101
-    const v0, 0x7f0e0027
+    const v0, 0x7f0e002a
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/BaseContainerView;->findViewById(I)Landroid/view/View;
 
@@ -490,7 +498,7 @@
     iput-object v0, p0, Lcom/android/launcher3/BaseContainerView;->mContent:Landroid/view/View;
 
     .line 102
-    const v0, 0x7f0e0026
+    const v0, 0x7f0e0029
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/BaseContainerView;->findViewById(I)Landroid/view/View;
 
@@ -509,7 +517,7 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 160
     invoke-direct {p0, p1}, Lcom/android/launcher3/BaseContainerView;->handleTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -532,18 +540,18 @@
     .locals 6
 
     .prologue
-    .line 147
+    .line 145
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 149
+    .line 147
     invoke-virtual {p0}, Lcom/android/launcher3/BaseContainerView;->getTouchDelegateTargetView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 150
+    .line 148
     if-eqz v0, :cond_0
 
-    .line 151
+    .line 149
     invoke-virtual {p0}, Lcom/android/launcher3/BaseContainerView;->getRevealView()Landroid/view/View;
 
     move-result-object v1
@@ -556,10 +564,10 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 152
+    .line 150
     iget-object v1, p0, Lcom/android/launcher3/BaseContainerView;->mTouchDelegate:Lcom/android/launcher3/util/TransformingTouchDelegate;
 
-    .line 153
+    .line 151
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v2
@@ -570,7 +578,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 154
+    .line 152
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v3
@@ -581,7 +589,7 @@
 
     sub-int/2addr v3, v4
 
-    .line 155
+    .line 153
     invoke-virtual {v0}, Landroid/view/View;->getRight()I
 
     move-result v4
@@ -592,7 +600,7 @@
 
     add-int/2addr v4, v5
 
-    .line 156
+    .line 154
     invoke-virtual {v0}, Landroid/view/View;->getBottom()I
 
     move-result v0
@@ -603,10 +611,10 @@
 
     add-int/2addr v0, v5
 
-    .line 152
+    .line 150
     invoke-virtual {v1, v2, v3, v4, v0}, Lcom/android/launcher3/util/TransformingTouchDelegate;->setBounds(IIII)V
 
-    .line 158
+    .line 156
     :cond_0
     return-void
 .end method
@@ -615,7 +623,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 166
     invoke-direct {p0, p1}, Lcom/android/launcher3/BaseContainerView;->handleTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -623,26 +631,11 @@
     return v0
 .end method
 
-.method public setRevealDrawableColor(I)V
-    .locals 1
-
-    .prologue
-    .line 172
-    iget-object v0, p0, Lcom/android/launcher3/BaseContainerView;->mBaseDrawable:Landroid/graphics/drawable/Drawable;
-
-    check-cast v0, Landroid/graphics/drawable/ColorDrawable;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/ColorDrawable;->setColor(I)V
-
-    .line 173
-    return-void
-.end method
-
 .method protected updateBackground(IIII)V
     .locals 7
 
     .prologue
-    .line 139
+    .line 137
     iget-object v6, p0, Lcom/android/launcher3/BaseContainerView;->mRevealView:Landroid/view/View;
 
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
@@ -661,7 +654,7 @@
 
     invoke-virtual {v6, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 141
+    .line 139
     iget-object v6, p0, Lcom/android/launcher3/BaseContainerView;->mContent:Landroid/view/View;
 
     new-instance v0, Landroid/graphics/drawable/InsetDrawable;
@@ -680,6 +673,6 @@
 
     invoke-virtual {v6, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 143
+    .line 141
     return-void
 .end method

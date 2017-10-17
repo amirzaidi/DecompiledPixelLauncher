@@ -4,13 +4,10 @@
 
 package com.android.launcher3.pageindicators;
 
-import android.util.Log;
-import android.support.v4.b.a;
 import com.android.launcher3.dynamicui.ExtractedColors;
 import android.view.View$AccessibilityDelegate;
 import android.view.View;
 import android.view.View$OnFocusChangeListener;
-import android.view.View$OnLongClickListener;
 import android.view.View$OnClickListener;
 import android.graphics.drawable.Drawable;
 import com.android.launcher3.Utilities;
@@ -18,6 +15,7 @@ import android.graphics.Canvas;
 import android.animation.Animator$AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.content.res.Resources;
+import com.android.launcher3.dynamicui.WallpaperColorInfo;
 import android.os.Looper;
 import android.util.AttributeSet;
 import android.content.Context;

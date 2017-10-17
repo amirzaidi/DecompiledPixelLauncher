@@ -285,7 +285,7 @@
 
     const/4 v5, 0x0
 
-    const/high16 v4, 0x3f400000    # 0.75f
+    const v4, 0x3f19999a    # 0.6f
 
     const/4 v3, 0x0
 
@@ -428,7 +428,7 @@
     iput v1, p0, Lcom/android/launcher3/graphics/PreloadIconDrawable;->mTrackAlpha:I
 
     .line 291
-    const/high16 v1, 0x3e800000    # 0.25f
+    const v1, 0x3ecccccc    # 0.39999998f
 
     mul-float/2addr v0, v1
 
@@ -658,7 +658,7 @@
     invoke-virtual {p1, v2, v3, v4, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 181
-    invoke-virtual {p0, p1}, Lcom/android/launcher3/graphics/PreloadIconDrawable;->drawInternal(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Lcom/android/launcher3/FastBitmapDrawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 182
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
@@ -715,9 +715,9 @@
     .prologue
     const/high16 v7, 0x42c80000    # 100.0f
 
-    const/high16 v6, 0x40800000    # 4.0f
+    const/high16 v6, 0x41600000    # 14.0f
 
-    const/high16 v5, 0x40600000    # 3.5f
+    const/high16 v5, 0x40800000    # 4.0f
 
     const/high16 v4, 0x40e00000    # 7.0f
 
@@ -736,9 +736,9 @@
 
     int-to-float v1, v1
 
-    sub-float/2addr v1, v4
-
     sub-float/2addr v1, v6
+
+    sub-float/2addr v1, v5
 
     div-float/2addr v1, v7
 
@@ -749,9 +749,9 @@
 
     int-to-float v2, v2
 
-    sub-float/2addr v2, v4
-
     sub-float/2addr v2, v6
+
+    sub-float/2addr v2, v5
 
     div-float/2addr v2, v7
 
@@ -766,7 +766,7 @@
 
     int-to-float v1, v1
 
-    add-float/2addr v1, v5
+    add-float/2addr v1, v4
 
     add-float/2addr v1, v3
 
@@ -775,7 +775,7 @@
 
     int-to-float v2, v2
 
-    add-float/2addr v2, v5
+    add-float/2addr v2, v4
 
     add-float/2addr v2, v3
 

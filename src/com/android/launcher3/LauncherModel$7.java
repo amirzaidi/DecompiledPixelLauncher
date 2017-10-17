@@ -7,9 +7,9 @@ package com.android.launcher3;
 import java.util.ArrayList;
 import com.android.launcher3.model.BgDataModel;
 import com.android.launcher3.util.Provider;
-import com.android.launcher3.model.ExtendedModelTask;
+import com.android.launcher3.model.BaseModelUpdateTask;
 
-final class LauncherModel$7 extends ExtendedModelTask
+final class LauncherModel$7 extends BaseModelUpdateTask
 {
     final /* synthetic */ LauncherModel this$0;
     final /* synthetic */ Provider val$shortcutProvider;

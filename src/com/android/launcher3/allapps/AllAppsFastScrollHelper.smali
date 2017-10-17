@@ -69,49 +69,49 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 35
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollPosition:I
 
-    .line 49
+    .line 45
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTrackedFastScrollViews:Ljava/util/HashSet;
 
-    .line 53
+    .line 49
     const/16 v0, 0xa
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollFrames:[I
 
-    .line 59
+    .line 55
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$1;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$1;-><init>(Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;)V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mSmoothSnapNextFrameRunnable:Ljava/lang/Runnable;
 
-    .line 73
+    .line 69
     new-instance v0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper$2;-><init>(Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;)V
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollToTargetSectionRunnable:Ljava/lang/Runnable;
 
-    .line 85
+    .line 81
     iput-object p1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
-    .line 86
+    .line 82
     iput-object p2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
-    .line 87
+    .line 83
     return-void
 .end method
 
@@ -123,40 +123,40 @@
 
     const/4 v1, 0x0
 
-    .line 114
+    .line 110
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mSmoothSnapNextFrameRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 115
+    .line 111
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollToTargetSectionRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 117
+    .line 113
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->trackAllChildViews()V
 
-    .line 118
+    .line 114
     iget-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mHasFastScrollTouchSettled:Z
 
     if-eqz v0, :cond_0
 
-    .line 122
+    .line 118
     iget-object v0, p3, Lcom/android/launcher3/allapps/AlphabeticalAppsList$FastScrollSectionInfo;->sectionName:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mCurrentFastScrollSection:Ljava/lang/String;
 
-    .line 123
+    .line 119
     iput-object v3, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollSection:Ljava/lang/String;
 
-    .line 124
+    .line 120
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->updateTrackedViewsFastScrollFocusState()V
 
-    .line 148
+    .line 144
     :goto_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
@@ -164,12 +164,12 @@
 
     move-result-object v0
 
-    .line 149
+    .line 145
     iget-object v2, p3, Lcom/android/launcher3/allapps/AlphabeticalAppsList$FastScrollSectionInfo;->fastScrollToItem:Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
 
     iget v2, v2, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
 
-    .line 150
+    .line 146
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
@@ -184,23 +184,23 @@
 
     move v0, v1
 
-    .line 153
+    .line 149
     :goto_1
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollFrames:[I
 
     array-length v3, v2
 
-    .line 154
+    .line 150
     sub-int/2addr v0, p1
 
-    .line 155
+    .line 151
     int-to-float v2, v0
 
     invoke-static {v2}, Ljava/lang/Math;->signum(F)F
 
     move-result v4
 
-    .line 156
+    .line 152
     float-to-double v6, v4
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
@@ -227,11 +227,11 @@
 
     move v0, v1
 
-    .line 157
+    .line 153
     :goto_2
     if-ge v0, v3, :cond_3
 
-    .line 159
+    .line 155
     iget-object v6, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollFrames:[I
 
     invoke-static {v5}, Ljava/lang/Math;->abs(I)I
@@ -254,58 +254,58 @@
 
     aput v7, v6, v0
 
-    .line 160
+    .line 156
     sub-int/2addr v2, v5
 
-    .line 157
+    .line 153
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 130
+    .line 126
     :cond_0
     iput-object v3, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mCurrentFastScrollSection:Ljava/lang/String;
 
-    .line 131
+    .line 127
     iget-object v0, p3, Lcom/android/launcher3/allapps/AlphabeticalAppsList$FastScrollSectionInfo;->sectionName:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollSection:Ljava/lang/String;
 
-    .line 132
+    .line 128
     iput-boolean v1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mHasFastScrollTouchSettled:Z
 
-    .line 133
+    .line 129
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->updateTrackedViewsFastScrollFocusState()V
 
-    .line 138
+    .line 134
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollToTargetSectionRunnable:Ljava/lang/Runnable;
 
-    .line 139
+    .line 135
     iget-boolean v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mHasFastScrollTouchSettledAtLeastOnce:Z
 
     if-eqz v0, :cond_1
 
-    .line 140
+    .line 136
     const/16 v0, 0xc8
 
-    .line 139
+    .line 135
     :goto_3
     int-to-long v4, v0
 
-    .line 138
+    .line 134
     invoke-virtual {v2, v3, v4, v5}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     goto :goto_0
 
-    .line 141
+    .line 137
     :cond_1
     const/16 v0, 0x64
 
     goto :goto_3
 
-    .line 152
+    .line 148
     :cond_2
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
@@ -319,18 +319,18 @@
 
     goto :goto_1
 
-    .line 162
+    .line 158
     :cond_3
     iput v1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollFrameIndex:I
 
-    .line 163
+    .line 159
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mSmoothSnapNextFrameRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->postOnAnimation(Ljava/lang/Runnable;)V
 
-    .line 164
+    .line 160
     return-void
 .end method
 
@@ -338,20 +338,20 @@
     .locals 4
 
     .prologue
-    .line 197
+    .line 193
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->getChildCount()I
 
     move-result v1
 
-    .line 198
+    .line 194
     const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 199
+    .line 195
     iget-object v2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
@@ -364,21 +364,21 @@
 
     move-result-object v2
 
-    .line 200
+    .line 196
     if-eqz v2, :cond_0
 
-    .line 201
+    .line 197
     iget-object v3, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTrackedFastScrollViews:Ljava/util/HashSet;
 
     invoke-virtual {v3, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 198
+    .line 194
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 204
+    .line 200
     :cond_1
     return-void
 .end method
@@ -389,7 +389,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 210
+    .line 206
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTrackedFastScrollViews:Ljava/util/HashSet;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -409,21 +409,35 @@
 
     check-cast v0, Landroid/support/v7/widget/j;
 
-    .line 211
+    .line 207
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->getAdapterPosition()I
 
     move-result v1
 
-    .line 213
+    .line 209
     iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mCurrentFastScrollSection:Ljava/lang/String;
 
     if-eqz v4, :cond_0
 
+    .line 210
     const/4 v4, -0x1
 
     if-le v1, v4, :cond_0
 
-    .line 214
+    .line 211
+    iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
+
+    invoke-virtual {v4}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->getAdapterItems()Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v1, v4, :cond_0
+
+    .line 212
     iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mApps:Lcom/android/launcher3/allapps/AlphabeticalAppsList;
 
     invoke-virtual {v4}, Lcom/android/launcher3/allapps/AlphabeticalAppsList;->getAdapterItems()Ljava/util/List;
@@ -436,10 +450,10 @@
 
     check-cast v1, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
 
-    .line 215
+    .line 213
     if-eqz v1, :cond_2
 
-    .line 216
+    .line 214
     iget-object v4, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mCurrentFastScrollSection:Ljava/lang/String;
 
     iget-object v5, v1, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->sectionName:Ljava/lang/String;
@@ -448,10 +462,10 @@
 
     move-result v4
 
-    .line 215
+    .line 213
     if-eqz v4, :cond_2
 
-    .line 217
+    .line 215
     iget v1, v1, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
 
     iget v4, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollPosition:I
@@ -460,7 +474,7 @@
 
     const/4 v1, 0x1
 
-    .line 219
+    .line 217
     :goto_1
     iget-object v0, v0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
@@ -471,22 +485,22 @@
     :cond_0
     move v1, v2
 
-    .line 213
+    .line 211
     goto :goto_1
 
     :cond_1
     move v1, v2
 
-    .line 217
+    .line 215
     goto :goto_1
 
     :cond_2
     move v1, v2
 
-    .line 215
+    .line 213
     goto :goto_1
 
-    .line 221
+    .line 219
     :cond_3
     return-void
 .end method
@@ -497,7 +511,7 @@
     .locals 1
 
     .prologue
-    .line 188
+    .line 184
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mCurrentFastScrollSection:Ljava/lang/String;
 
     if-nez v0, :cond_0
@@ -506,13 +520,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 189
+    .line 185
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTrackedFastScrollViews:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 191
+    .line 187
     :cond_1
     return-void
 .end method
@@ -525,46 +539,46 @@
 
     const/4 v2, 0x0
 
-    .line 171
+    .line 167
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mSmoothSnapNextFrameRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 172
+    .line 168
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mRv:Lcom/android/launcher3/allapps/AllAppsRecyclerView;
 
     iget-object v1, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mFastScrollToTargetSectionRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsRecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 175
+    .line 171
     iput-boolean v2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mHasFastScrollTouchSettled:Z
 
-    .line 176
+    .line 172
     iput-boolean v2, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mHasFastScrollTouchSettledAtLeastOnce:Z
 
-    .line 177
+    .line 173
     iput-object v3, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mCurrentFastScrollSection:Ljava/lang/String;
 
-    .line 178
+    .line 174
     iput-object v3, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollSection:Ljava/lang/String;
 
-    .line 179
+    .line 175
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollPosition:I
 
-    .line 181
+    .line 177
     invoke-direct {p0}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->updateTrackedViewsFastScrollFocusState()V
 
-    .line 182
+    .line 178
     iget-object v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTrackedFastScrollViews:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 183
+    .line 179
     return-void
 .end method
 
@@ -572,10 +586,10 @@
     .locals 0
 
     .prologue
-    .line 90
+    .line 86
     invoke-virtual {p1, p0}, Lcom/android/launcher3/allapps/AllAppsGridAdapter;->setBindViewCallback(Lcom/android/launcher3/allapps/AllAppsGridAdapter$BindViewCallback;)V
 
-    .line 91
+    .line 87
     return-void
 .end method
 
@@ -583,7 +597,7 @@
     .locals 2
 
     .prologue
-    .line 100
+    .line 96
     iget v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollPosition:I
 
     iget-object v1, p3, Lcom/android/launcher3/allapps/AlphabeticalAppsList$FastScrollSectionInfo;->fastScrollToItem:Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
@@ -592,22 +606,22 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 101
+    .line 97
     iget-object v0, p3, Lcom/android/launcher3/allapps/AlphabeticalAppsList$FastScrollSectionInfo;->fastScrollToItem:Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;
 
     iget v0, v0, Lcom/android/launcher3/allapps/AlphabeticalAppsList$AdapterItem;->position:I
 
     iput v0, p0, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->mTargetFastScrollPosition:I
 
-    .line 102
+    .line 98
     invoke-direct {p0, p1, p2, p3}, Lcom/android/launcher3/allapps/AllAppsFastScrollHelper;->smoothSnapToPosition(IILcom/android/launcher3/allapps/AlphabeticalAppsList$FastScrollSectionInfo;)V
 
-    .line 103
+    .line 99
     const/4 v0, 0x1
 
     return v0
 
-    .line 105
+    .line 101
     :cond_0
     const/4 v0, 0x0
 

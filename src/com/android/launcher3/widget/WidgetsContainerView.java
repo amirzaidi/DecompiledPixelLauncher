@@ -68,7 +68,7 @@ public class WidgetsContainerView extends BaseContainerView implements View$OnLo
     
     private boolean beginDraggingWidget(final WidgetCell widgetCell) {
         final int n = 1;
-        final WidgetImageView widgetImageView = (WidgetImageView)widgetCell.findViewById(2131624045);
+        final WidgetImageView widgetImageView = (WidgetImageView)widgetCell.findViewById(2131624071);
         if (widgetImageView.getBitmap() == null) {
             return false;
         }
@@ -98,19 +98,11 @@ public class WidgetsContainerView extends BaseContainerView implements View$OnLo
         if (this.mWidgetInstructionToast != null) {
             this.mWidgetInstructionToast.cancel();
         }
-        (this.mWidgetInstructionToast = Toast.makeText(this.getContext(), Utilities.wrapForTts(this.getContext().getText(2131492902), this.getContext().getString(2131492903)), 0)).show();
+        (this.mWidgetInstructionToast = Toast.makeText(this.getContext(), Utilities.wrapForTts(this.getContext().getText(2131492904), this.getContext().getString(2131492905)), 0)).show();
     }
     
     public boolean handleLongClick(final View view) {
-        return view.isInTouchMode() && !this.mLauncher.getWorkspace().isSwitchingState() && this.mLauncher.isDraggingEnabled() && this.beginDragging(view);
-    }
-    
-    public boolean isEmpty() {
-        boolean b = false;
-        if (this.mAdapter.getItemCount() == 0) {
-            b = true;
-        }
-        return b;
+        return !this.mLauncher.getWorkspace().isSwitchingState() && this.mLauncher.isDraggingEnabled() && this.beginDragging(view);
     }
     
     public void onClick(final View view) {
@@ -132,7 +124,7 @@ public class WidgetsContainerView extends BaseContainerView implements View$OnLo
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        (this.mRecyclerView = (WidgetsRecyclerView)this.getContentView().findViewById(2131624051)).setAdapter(this.mAdapter);
+        (this.mRecyclerView = (WidgetsRecyclerView)this.getContentView().findViewById(2131624077)).setAdapter(this.mAdapter);
         this.mRecyclerView.setLayoutManager(new N(this.getContext()));
     }
     
@@ -147,7 +139,7 @@ public class WidgetsContainerView extends BaseContainerView implements View$OnLo
     public void setWidgets(final MultiHashMap widgets) {
         this.mAdapter.setWidgets(widgets);
         this.mAdapter.notifyDataSetChanged();
-        final View viewById = this.getContentView().findViewById(2131624052);
+        final View viewById = this.getContentView().findViewById(2131624078);
         if (viewById != null) {
             ((ViewGroup)this.getContentView()).removeView(viewById);
         }

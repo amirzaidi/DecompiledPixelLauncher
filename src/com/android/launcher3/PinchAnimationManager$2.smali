@@ -19,7 +19,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/PinchAnimationManager$2;->val$thresholdManager:Lcom/android/launcher3/PinchThresholdManager;
 
-    .line 108
+    .line 107
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -32,19 +32,19 @@
     .locals 2
 
     .prologue
-    .line 111
+    .line 110
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager$2;->this$0:Lcom/android/launcher3/PinchAnimationManager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/launcher3/PinchAnimationManager;->-set0(Lcom/android/launcher3/PinchAnimationManager;Z)Z
 
-    .line 112
+    .line 111
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager$2;->val$thresholdManager:Lcom/android/launcher3/PinchThresholdManager;
 
     invoke-virtual {v0}, Lcom/android/launcher3/PinchThresholdManager;->reset()V
 
-    .line 113
+    .line 112
     iget-object v0, p0, Lcom/android/launcher3/PinchAnimationManager$2;->this$0:Lcom/android/launcher3/PinchAnimationManager;
 
     invoke-static {v0}, Lcom/android/launcher3/PinchAnimationManager;->-get0(Lcom/android/launcher3/PinchAnimationManager;)Lcom/android/launcher3/Workspace;
@@ -53,6 +53,6 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->onEndStateTransition()V
 
-    .line 114
+    .line 113
     return-void
 .end method

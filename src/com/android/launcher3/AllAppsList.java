@@ -4,22 +4,25 @@
 
 package com.android.launcher3;
 
+import android.util.Log;
 import java.util.HashSet;
 import com.android.launcher3.util.FlagOp;
 import com.android.launcher3.util.ItemInfoMatcher;
+import android.os.Process;
+import com.android.launcher3.compat.PackageInstallerCompat$PackageInstallInfo;
 import com.android.launcher3.compat.LauncherAppsCompat;
 import android.content.Context;
+import android.os.UserHandle;
 import java.util.Iterator;
 import android.content.pm.LauncherActivityInfo;
-import java.util.List;
-import android.os.UserHandle;
 import android.content.ComponentName;
+import java.util.List;
 import java.util.ArrayList;
 
 public class AllAppsList
 {
     public ArrayList added;
-    public ArrayList data;
+    public final ArrayList data;
     private AppFilter mAppFilter;
     private IconCache mIconCache;
     public ArrayList modified;
@@ -35,16 +38,6 @@ public class AllAppsList
         this.mAppFilter = mAppFilter;
     }
     
-    private static boolean findActivity(final ArrayList list, final ComponentName componentName, final UserHandle userHandle) {
-        for (int size = list.size(), i = 0; i < size; ++i) {
-            final AppInfo appInfo = list.get(i);
-            if (appInfo.user.equals((Object)userHandle) && appInfo.componentName.equals((Object)componentName)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
     private static boolean findActivity(final List list, final ComponentName componentName) {
         final Iterator<LauncherActivityInfo> iterator = list.iterator();
         while (iterator.hasNext()) {
@@ -55,9 +48,9 @@ public class AllAppsList
         return false;
     }
     
-    private AppInfo findApplicationInfoLocked(final String s, final UserHandle userHandle, final String s2) {
+    private AppInfo findAppInfo(final ComponentName componentName, final UserHandle userHandle) {
         for (final AppInfo appInfo : this.data) {
-            if (userHandle.equals((Object)appInfo.user) && s.equals(appInfo.componentName.getPackageName()) && s2.equals(appInfo.componentName.getClassName())) {
+            if (componentName.equals((Object)appInfo.componentName) && userHandle.equals((Object)appInfo.user)) {
                 return appInfo;
             }
         }
@@ -68,7 +61,7 @@ public class AllAppsList
         if (!this.mAppFilter.shouldShowApp(appInfo.componentName)) {
             return;
         }
-        if (findActivity(this.data, appInfo.componentName, appInfo.user)) {
+        if (this.findAppInfo(appInfo.componentName, appInfo.user) != null) {
             return;
         }
         this.mIconCache.getTitleAndIcon(appInfo, launcherActivityInfo, true);
@@ -82,11 +75,24 @@ public class AllAppsList
         }
     }
     
+    public void addPromiseApp(final Context context, final PackageInstallerCompat$PackageInstallInfo packageInstallerCompat$PackageInstallInfo) {
+        if (LauncherAppsCompat.getInstance(context).getApplicationInfo(packageInstallerCompat$PackageInstallInfo.packageName, 0, Process.myUserHandle()) == null) {
+            final PromiseAppInfo promiseAppInfo = new PromiseAppInfo(packageInstallerCompat$PackageInstallInfo);
+            this.mIconCache.getTitleAndIcon(promiseAppInfo, promiseAppInfo.usingLowResIcon);
+            this.data.add(promiseAppInfo);
+            this.added.add(promiseAppInfo);
+        }
+    }
+    
     public void clear() {
         this.data.clear();
         this.added.clear();
         this.removed.clear();
         this.modified.clear();
+    }
+    
+    public AppInfo get(final int n) {
+        return this.data.get(n);
     }
     
     public void removePackage(final String s, final UserHandle userHandle) {
@@ -98,6 +104,14 @@ public class AllAppsList
                 data.remove(i);
             }
         }
+    }
+    
+    public void removePromiseApp(final AppInfo appInfo) {
+        this.data.remove(appInfo);
+    }
+    
+    public int size() {
+        return this.data.size();
     }
     
     public void updateDisabledFlags(final ItemInfoMatcher itemInfoMatcher, final FlagOp flagOp) {
@@ -126,27 +140,28 @@ public class AllAppsList
             for (int i = this.data.size() - 1; i >= 0; --i) {
                 final AppInfo appInfo = this.data.get(i);
                 if (userHandle.equals((Object)appInfo.user) && s.equals(appInfo.componentName.getPackageName()) && !findActivity(activityList, appInfo.componentName)) {
+                    Log.w("AllAppsList", "Shortcut will be removed due to app component name change.");
                     this.removed.add(appInfo);
                     this.data.remove(i);
                 }
             }
             for (final LauncherActivityInfo launcherActivityInfo : activityList) {
-                final AppInfo applicationInfoLocked = this.findApplicationInfoLocked(launcherActivityInfo.getComponentName().getPackageName(), userHandle, launcherActivityInfo.getComponentName().getClassName());
-                if (applicationInfoLocked == null) {
+                final AppInfo appInfo2 = this.findAppInfo(launcherActivityInfo.getComponentName(), userHandle);
+                if (appInfo2 == null) {
                     this.add(new AppInfo(context, launcherActivityInfo, userHandle), launcherActivityInfo);
                 }
                 else {
-                    this.mIconCache.getTitleAndIcon(applicationInfoLocked, launcherActivityInfo, true);
-                    this.modified.add(applicationInfoLocked);
+                    this.mIconCache.getTitleAndIcon(appInfo2, launcherActivityInfo, true);
+                    this.modified.add(appInfo2);
                 }
             }
         }
         else {
             for (int j = this.data.size() - 1; j >= 0; --j) {
-                final AppInfo appInfo2 = this.data.get(j);
-                if (userHandle.equals((Object)appInfo2.user) && s.equals(appInfo2.componentName.getPackageName())) {
-                    this.removed.add(appInfo2);
-                    this.mIconCache.remove(appInfo2.componentName, userHandle);
+                final AppInfo appInfo3 = this.data.get(j);
+                if (userHandle.equals((Object)appInfo3.user) && s.equals(appInfo3.componentName.getPackageName())) {
+                    this.removed.add(appInfo3);
+                    this.mIconCache.remove(appInfo3.componentName, userHandle);
                     this.data.remove(j);
                 }
             }

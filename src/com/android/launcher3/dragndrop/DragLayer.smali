@@ -48,6 +48,8 @@
 
 .field private mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
+.field private final mWallpaperColorInfo:Lcom/android/launcher3/dynamicui/WallpaperColorInfo;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -58,7 +60,7 @@
 
     const/4 v2, 0x0
 
-    .line 125
+    .line 126
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 78
@@ -123,18 +125,18 @@
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mScrollChildPosition:Landroid/graphics/Rect;
 
-    .line 112
+    .line 113
     iput-object v2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mPinchListener:Lcom/android/launcher3/PinchToOverviewListener;
 
-    .line 128
+    .line 129
     invoke-virtual {p0, v3}, Lcom/android/launcher3/dragndrop/DragLayer;->setMotionEventSplittingEnabled(Z)V
 
-    .line 129
+    .line 130
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->setChildrenDrawingOrderEnabled(Z)V
 
-    .line 131
+    .line 132
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -145,14 +147,25 @@
 
     iput-boolean v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mIsRtl:Z
 
-    .line 132
+    .line 133
     new-instance v0, Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
     invoke-direct {v0, p0}, Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mFocusIndicatorHelper:Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
-    .line 133
+    .line 134
+    invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/launcher3/dynamicui/WallpaperColorInfo;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/dynamicui/WallpaperColorInfo;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mWallpaperColorInfo:Lcom/android/launcher3/dynamicui/WallpaperColorInfo;
+
+    .line 135
     return-void
 .end method
 
@@ -162,40 +175,40 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 182
+    .line 184
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-static {v1}, Lcom/android/launcher3/AbstractFloatingView;->getTopOpenView(Lcom/android/launcher3/Launcher;)Lcom/android/launcher3/AbstractFloatingView;
 
     move-result-object v1
 
-    .line 183
+    .line 185
     if-eqz v1, :cond_3
 
     if-eqz p2, :cond_3
 
-    .line 184
+    .line 186
     invoke-virtual {v1}, Lcom/android/launcher3/AbstractFloatingView;->getActiveTextView()Lcom/android/launcher3/ExtendedEditText;
 
     move-result-object v2
 
-    .line 185
+    .line 187
     if-eqz v2, :cond_0
 
-    .line 186
+    .line 188
     invoke-virtual {p0, v2, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result v1
 
     if-nez v1, :cond_3
 
-    .line 187
+    .line 189
     invoke-virtual {v2}, Lcom/android/launcher3/ExtendedEditText;->dispatchBackKey()V
 
-    .line 188
+    .line 190
     return v0
 
-    .line 190
+    .line 192
     :cond_0
     invoke-virtual {p0, v1, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
@@ -203,24 +216,24 @@
 
     if-nez v2, :cond_3
 
-    .line 191
+    .line 193
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->isInAccessibleDrag()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 193
+    .line 195
     invoke-direct {p0, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverDropTargetBar(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
     if-nez v1, :cond_3
 
-    .line 194
+    .line 196
     return v0
 
-    .line 197
+    .line 199
     :cond_1
     iget-object v2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -228,7 +241,7 @@
 
     move-result-object v2
 
-    .line 198
+    .line 200
     invoke-virtual {v1}, Lcom/android/launcher3/AbstractFloatingView;->getLogContainerType()I
 
     move-result v3
@@ -237,18 +250,18 @@
 
     move-result-object v3
 
-    .line 197
+    .line 199
     invoke-virtual {v2, v3}, Lcom/android/launcher3/logging/UserEventDispatcher;->logActionTapOutside(Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;)V
 
-    .line 199
+    .line 201
     invoke-virtual {v1, v0}, Lcom/android/launcher3/AbstractFloatingView;->close(Z)V
 
-    .line 203
+    .line 205
     invoke-virtual {v1}, Lcom/android/launcher3/AbstractFloatingView;->getExtendedTouchView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 204
+    .line 206
     if-eqz v1, :cond_2
 
     invoke-virtual {p0, v1, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
@@ -260,7 +273,7 @@
     :cond_2
     return v0
 
-    .line 208
+    .line 210
     :cond_3
     const/4 v0, 0x0
 
@@ -271,7 +284,7 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 175
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDropTargetBar()Lcom/android/launcher3/DropTargetBar;
@@ -289,7 +302,7 @@
     .locals 1
 
     .prologue
-    .line 169
+    .line 171
     invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -301,7 +314,7 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 314
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getAccessibilityDelegate()Lcom/android/launcher3/accessibility/LauncherAccessibilityDelegate;
@@ -319,12 +332,12 @@
     .locals 2
 
     .prologue
-    .line 306
+    .line 308
     if-eqz p1, :cond_0
 
-    const v0, 0x7f0c0049
+    const v0, 0x7f0c004b
 
-    .line 308
+    .line 310
     :goto_0
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getContext()Landroid/content/Context;
 
@@ -336,15 +349,15 @@
 
     const/16 v1, 0x8
 
-    .line 307
+    .line 309
     invoke-static {p0, v1, v0}, Lcom/android/launcher3/Utilities;->sendCustomAccessibilityEvent(Landroid/view/View;ILjava/lang/String;)V
 
-    .line 309
+    .line 311
     return-void
 
-    .line 306
+    .line 308
     :cond_0
-    const v0, 0x7f0c0048
+    const v0, 0x7f0c004a
 
     goto :goto_0
 .end method
@@ -353,23 +366,23 @@
     .locals 3
 
     .prologue
-    .line 822
+    .line 825
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTopViewIndex:I
 
-    .line 823
+    .line 826
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getChildCount()I
 
     move-result v1
 
-    .line 824
+    .line 827
     const/4 v0, 0x0
 
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 825
+    .line 828
     invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -378,20 +391,20 @@
 
     if-eqz v2, :cond_0
 
-    .line 826
+    .line 829
     iput v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTopViewIndex:I
 
-    .line 824
+    .line 827
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 829
+    .line 832
     :cond_1
     iput v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mChildCountOnLastUpdate:I
 
-    .line 830
+    .line 833
     return-void
 .end method
 
@@ -401,27 +414,27 @@
     .locals 1
 
     .prologue
-    .line 335
+    .line 337
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-static {v0}, Lcom/android/launcher3/AbstractFloatingView;->getTopOpenView(Lcom/android/launcher3/Launcher;)Lcom/android/launcher3/AbstractFloatingView;
 
     move-result-object v0
 
-    .line 336
+    .line 338
     if-eqz v0, :cond_1
 
-    .line 338
+    .line 340
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 340
+    .line 342
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->isInAccessibleDrag()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 341
+    .line 343
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getDropTargetBar()Lcom/android/launcher3/DropTargetBar;
@@ -430,12 +443,12 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 346
+    .line 348
     :cond_0
     :goto_0
     return-void
 
-    .line 344
+    .line 346
     :cond_1
     invoke-super {p0, p1}, Lcom/android/launcher3/InsettableFrameLayout;->addChildrenForAccessibility(Ljava/util/ArrayList;)V
 
@@ -446,24 +459,24 @@
     .locals 1
 
     .prologue
-    .line 910
+    .line 916
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-static {v0}, Lcom/android/launcher3/AbstractFloatingView;->getTopOpenView(Lcom/android/launcher3/Launcher;)Lcom/android/launcher3/AbstractFloatingView;
 
     move-result-object v0
 
-    .line 911
+    .line 917
     if-eqz v0, :cond_0
 
-    .line 912
+    .line 918
     invoke-virtual {v0, p1, p2}, Landroid/view/View;->addFocusables(Ljava/util/ArrayList;I)V
 
-    .line 916
+    .line 922
     :goto_0
     return-void
 
-    .line 914
+    .line 920
     :cond_0
     invoke-super {p0, p1, p2, p3}, Lcom/android/launcher3/InsettableFrameLayout;->addFocusables(Ljava/util/ArrayList;II)V
 
@@ -476,20 +489,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 551
+    .line 554
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->clearResizeFrame()V
 
-    .line 553
+    .line 556
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
-    .line 554
-    const v1, 0x7f04000b
+    .line 557
+    const v1, 0x7f04000c
 
-    .line 553
+    .line 556
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
@@ -498,12 +511,12 @@
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
-    .line 555
+    .line 558
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     invoke-virtual {v0, p1, p2, p0}, Lcom/android/launcher3/AppWidgetResizeFrame;->setupForWidget(Lcom/android/launcher3/LauncherAppWidgetHostView;Lcom/android/launcher3/CellLayout;Lcom/android/launcher3/dragndrop/DragLayer;)V
 
-    .line 556
+    .line 559
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     invoke-virtual {v0}, Lcom/android/launcher3/AppWidgetResizeFrame;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -516,17 +529,17 @@
 
     iput-boolean v1, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->customPosition:Z
 
-    .line 558
+    .line 561
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->addView(Landroid/view/View;)V
 
-    .line 559
+    .line 562
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     invoke-virtual {v0, v2}, Lcom/android/launcher3/AppWidgetResizeFrame;->snapToWidget(Z)V
 
-    .line 560
+    .line 563
     return-void
 .end method
 
@@ -534,7 +547,7 @@
     .locals 4
 
     .prologue
-    .line 753
+    .line 756
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
@@ -543,54 +556,54 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 756
+    .line 759
     :cond_0
     iput-object p1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
-    .line 757
+    .line 760
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/dragndrop/DragView;->cancelAnimation()V
 
-    .line 758
+    .line 761
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0}, Lcom/android/launcher3/dragndrop/DragView;->requestLayout()V
 
-    .line 761
+    .line 764
     if-eqz p7, :cond_1
 
-    .line 762
+    .line 765
     invoke-virtual {p7}, Landroid/view/View;->getScrollX()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mAnchorViewInitialScrollX:I
 
-    .line 764
+    .line 767
     :cond_1
     iput-object p7, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mAnchorView:Landroid/view/View;
 
-    .line 767
+    .line 770
     new-instance v0, Landroid/animation/ValueAnimator;
 
     invoke-direct {v0}, Landroid/animation/ValueAnimator;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
-    .line 768
+    .line 771
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, p4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 769
+    .line 772
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     int-to-long v2, p3
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 770
+    .line 773
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     const/4 v1, 0x2
@@ -601,12 +614,12 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
-    .line 771
+    .line 774
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 772
+    .line 775
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lcom/android/launcher3/dragndrop/DragLayer$3;
@@ -615,15 +628,15 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 786
+    .line 789
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 787
+    .line 790
     return-void
 
-    .line 770
+    .line 773
     nop
 
     :array_0
@@ -637,7 +650,7 @@
     .locals 17
 
     .prologue
-    .line 686
+    .line 689
     move-object/from16 v0, p3
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
@@ -668,13 +681,13 @@
 
     double-to-float v3, v2
 
-    .line 687
+    .line 690
     invoke-virtual/range {p0 .. p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    .line 688
-    const v2, 0x7f0d0014
+    .line 691
+    const v2, 0x7f0d0015
 
     invoke-virtual {v4, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -682,22 +695,22 @@
 
     int-to-float v5, v2
 
-    .line 691
+    .line 694
     if-gez p9, :cond_1
 
-    .line 692
+    .line 695
     const v2, 0x7f0d0010
 
     invoke-virtual {v4, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result v2
 
-    .line 693
+    .line 696
     cmpg-float v6, v3, v5
 
     if-gez v6, :cond_0
 
-    .line 694
+    .line 697
     int-to-float v2, v2
 
     move-object/from16 v0, p0
@@ -714,7 +727,7 @@
 
     float-to-int v2, v2
 
-    .line 696
+    .line 699
     :cond_0
     const v3, 0x7f0d000f
 
@@ -726,16 +739,16 @@
 
     move-result p9
 
-    .line 700
+    .line 703
     :cond_1
     const/4 v2, 0x0
 
-    .line 701
+    .line 704
     if-eqz p11, :cond_2
 
     if-nez p10, :cond_3
 
-    .line 702
+    .line 705
     :cond_2
     move-object/from16 v0, p0
 
@@ -743,18 +756,18 @@
 
     move-object/from16 v16, v2
 
-    .line 706
+    .line 709
     :goto_0
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getAlpha()F
 
     move-result v13
 
-    .line 707
+    .line 710
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getScaleX()F
 
     move-result v8
 
-    .line 708
+    .line 711
     new-instance v2, Lcom/android/launcher3/dragndrop/DragLayer$2;
 
     move-object/from16 v3, p0
@@ -797,16 +810,16 @@
 
     move-object/from16 v10, p14
 
-    .line 745
+    .line 748
     invoke-virtual/range {v3 .. v10}, Lcom/android/launcher3/dragndrop/DragLayer;->animateView(Lcom/android/launcher3/dragndrop/DragView;Landroid/animation/ValueAnimator$AnimatorUpdateListener;ILandroid/animation/TimeInterpolator;Ljava/lang/Runnable;ILandroid/view/View;)V
 
-    .line 747
+    .line 750
     return-void
 
     :cond_3
     move-object/from16 v16, v2
 
-    .line 701
+    .line 704
     goto :goto_0
 .end method
 
@@ -814,32 +827,32 @@
     .locals 17
 
     .prologue
-    .line 650
+    .line 653
     new-instance v4, Landroid/graphics/Rect;
 
-    .line 651
+    .line 654
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredWidth()I
 
     move-result v2
 
-    .line 650
+    .line 653
     add-int v2, v2, p2
 
-    .line 651
+    .line 654
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredHeight()I
 
     move-result v3
 
     add-int v3, v3, p3
 
-    .line 650
+    .line 653
     move/from16 v0, p2
 
     move/from16 v1, p3
 
     invoke-direct {v4, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 652
+    .line 655
     new-instance v5, Landroid/graphics/Rect;
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredWidth()I
@@ -860,7 +873,7 @@
 
     invoke-direct {v5, v0, v1, v2, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 654
+    .line 657
     const/4 v12, 0x0
 
     const/4 v13, 0x0
@@ -887,10 +900,10 @@
 
     move-object/from16 v16, p14
 
-    .line 653
+    .line 656
     invoke-virtual/range {v2 .. v16}, Lcom/android/launcher3/dragndrop/DragLayer;->animateView(Lcom/android/launcher3/dragndrop/DragView;Landroid/graphics/Rect;Landroid/graphics/Rect;FFFFFILandroid/view/animation/Interpolator;Landroid/view/animation/Interpolator;Ljava/lang/Runnable;ILandroid/view/View;)V
 
-    .line 655
+    .line 658
     return-void
 .end method
 
@@ -898,48 +911,48 @@
     .locals 18
 
     .prologue
-    .line 581
+    .line 584
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
 
     check-cast v3, Lcom/android/launcher3/ShortcutAndWidgetContainer;
 
-    .line 582
+    .line 585
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v4
 
     check-cast v4, Lcom/android/launcher3/CellLayout$LayoutParams;
 
-    .line 583
+    .line 586
     move-object/from16 v0, p2
 
     invoke-virtual {v3, v0}, Lcom/android/launcher3/ShortcutAndWidgetContainer;->measureChild(Landroid/view/View;)V
 
-    .line 585
+    .line 588
     new-instance v6, Landroid/graphics/Rect;
 
     invoke-direct {v6}, Landroid/graphics/Rect;-><init>()V
 
-    .line 586
+    .line 589
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1, v6}, Lcom/android/launcher3/dragndrop/DragLayer;->getViewRectRelativeToSelf(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 588
+    .line 591
     const/4 v3, 0x2
 
     new-array v5, v3, [I
 
-    .line 589
+    .line 592
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getScaleX()F
 
     move-result v7
 
-    .line 590
+    .line 593
     iget v3, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->x:I
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getMeasuredWidth()I
@@ -966,7 +979,7 @@
 
     aput v3, v5, v8
 
-    .line 591
+    .line 594
     iget v3, v4, Lcom/android/launcher3/CellLayout$LayoutParams;->y:I
 
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getMeasuredHeight()I
@@ -993,7 +1006,7 @@
 
     aput v3, v5, v4
 
-    .line 595
+    .line 598
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
@@ -1006,20 +1019,20 @@
 
     move-result v3
 
-    .line 598
+    .line 601
     mul-float v4, v3, v7
 
-    .line 599
+    .line 602
     const/4 v3, 0x0
 
     aget v7, v5, v3
 
-    .line 600
+    .line 603
     const/4 v3, 0x1
 
     aget v5, v5, v3
 
-    .line 602
+    .line 605
     move-object/from16 v0, p2
 
     instance-of v3, v0, Landroid/widget/TextView;
@@ -1028,17 +1041,17 @@
 
     move-object/from16 v3, p2
 
-    .line 603
+    .line 606
     check-cast v3, Landroid/widget/TextView;
 
-    .line 606
+    .line 609
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getIntrinsicIconScaleFactor()F
 
     move-result v8
 
     div-float v12, v4, v8
 
-    .line 611
+    .line 614
     invoke-virtual {v3}, Landroid/widget/TextView;->getPaddingTop()I
 
     move-result v3
@@ -1053,7 +1066,7 @@
 
     add-int/2addr v3, v5
 
-    .line 612
+    .line 615
     int-to-float v3, v3
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredHeight()I
@@ -1076,14 +1089,14 @@
 
     float-to-int v3, v3
 
-    .line 613
+    .line 616
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getDragVisualizeOffset()Landroid/graphics/Point;
 
     move-result-object v5
 
     if-eqz v5, :cond_0
 
-    .line 614
+    .line 617
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getDragVisualizeOffset()Landroid/graphics/Point;
 
     move-result-object v5
@@ -1100,7 +1113,7 @@
 
     sub-int/2addr v3, v5
 
-    .line 617
+    .line 620
     :cond_0
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredWidth()I
 
@@ -1126,21 +1139,21 @@
 
     move v8, v3
 
-    .line 631
+    .line 634
     :goto_0
     iget v5, v6, Landroid/graphics/Rect;->left:I
 
-    .line 632
+    .line 635
     iget v6, v6, Landroid/graphics/Rect;->top:I
 
-    .line 633
+    .line 636
     const/4 v3, 0x4
 
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 634
+    .line 637
     new-instance v14, Lcom/android/launcher3/dragndrop/DragLayer$1;
 
     move-object/from16 v0, p0
@@ -1151,14 +1164,14 @@
 
     invoke-direct {v14, v0, v1, v2}, Lcom/android/launcher3/dragndrop/DragLayer$1;-><init>(Lcom/android/launcher3/dragndrop/DragLayer;Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 642
+    .line 645
     const/high16 v9, 0x3f800000    # 1.0f
 
     const/high16 v10, 0x3f800000    # 1.0f
 
     const/high16 v11, 0x3f800000    # 1.0f
 
-    .line 643
+    .line 646
     const/4 v15, 0x0
 
     move-object/from16 v3, p0
@@ -1171,13 +1184,13 @@
 
     move-object/from16 v17, p5
 
-    .line 642
+    .line 645
     invoke-virtual/range {v3 .. v17}, Lcom/android/launcher3/dragndrop/DragLayer;->animateViewIntoPosition(Lcom/android/launcher3/dragndrop/DragView;IIIIFFFFFLjava/lang/Runnable;IILandroid/view/View;)V
 
-    .line 644
+    .line 647
     return-void
 
-    .line 618
+    .line 621
     :cond_1
     move-object/from16 v0, p2
 
@@ -1185,7 +1198,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 620
+    .line 623
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getPaddingTop()I
 
     move-result v3
@@ -1206,7 +1219,7 @@
 
     add-int/2addr v3, v5
 
-    .line 621
+    .line 624
     int-to-float v3, v3
 
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getBlurSizeOutline()I
@@ -1225,7 +1238,7 @@
 
     float-to-int v3, v3
 
-    .line 622
+    .line 625
     int-to-float v3, v3
 
     const/high16 v5, 0x3f800000    # 1.0f
@@ -1248,7 +1261,7 @@
 
     float-to-int v8, v3
 
-    .line 624
+    .line 627
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredWidth()I
 
     move-result v3
@@ -1275,7 +1288,7 @@
 
     goto :goto_0
 
-    .line 626
+    .line 629
     :cond_2
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getHeight()I
 
@@ -1299,17 +1312,17 @@
 
     sub-int v8, v5, v3
 
-    .line 627
+    .line 630
     invoke-virtual/range {p1 .. p1}, Lcom/android/launcher3/dragndrop/DragView;->getMeasuredWidth()I
 
     move-result v3
 
-    .line 628
+    .line 631
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
 
-    .line 627
+    .line 630
     sub-int/2addr v3, v5
 
     int-to-float v3, v3
@@ -1333,7 +1346,7 @@
     .locals 6
 
     .prologue
-    .line 576
+    .line 579
     const/4 v3, -0x1
 
     move-object v0, p0
@@ -1348,7 +1361,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/dragndrop/DragLayer;->animateViewIntoPosition(Lcom/android/launcher3/dragndrop/DragView;Landroid/view/View;ILjava/lang/Runnable;Landroid/view/View;)V
 
-    .line 577
+    .line 580
     return-void
 .end method
 
@@ -1356,25 +1369,25 @@
     .locals 17
 
     .prologue
-    .line 565
+    .line 568
     new-instance v2, Landroid/graphics/Rect;
 
     invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
 
-    .line 566
+    .line 569
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/dragndrop/DragLayer;->getViewRectRelativeToSelf(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 567
+    .line 570
     iget v4, v2, Landroid/graphics/Rect;->left:I
 
-    .line 568
+    .line 571
     iget v5, v2, Landroid/graphics/Rect;->top:I
 
-    .line 570
+    .line 573
     const/4 v2, 0x0
 
     aget v6, p2, v2
@@ -1387,7 +1400,7 @@
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    .line 571
+    .line 574
     const/16 v16, 0x0
 
     move-object/from16 v2, p0
@@ -1406,10 +1419,10 @@
 
     move/from16 v15, p8
 
-    .line 570
+    .line 573
     invoke-virtual/range {v2 .. v16}, Lcom/android/launcher3/dragndrop/DragLayer;->animateViewIntoPosition(Lcom/android/launcher3/dragndrop/DragView;IIIIFFFFFLjava/lang/Runnable;IILandroid/view/View;)V
 
-    .line 572
+    .line 575
     return-void
 .end method
 
@@ -1417,13 +1430,13 @@
     .locals 0
 
     .prologue
-    .line 817
+    .line 820
     invoke-super {p0, p1}, Lcom/android/launcher3/InsettableFrameLayout;->bringChildToFront(Landroid/view/View;)V
 
-    .line 818
+    .line 821
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->updateChildIndices()V
 
-    .line 819
+    .line 822
     return-void
 .end method
 
@@ -1431,7 +1444,7 @@
     .locals 1
 
     .prologue
-    .line 470
+    .line 473
     instance-of v0, p1, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     return v0
@@ -1443,37 +1456,37 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 790
+    .line 793
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 791
+    .line 794
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropAnim:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 793
+    .line 796
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     if-eqz v0, :cond_1
 
-    .line 794
+    .line 797
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDragController:Lcom/android/launcher3/dragndrop/DragController;
 
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/dragndrop/DragController;->onDeferredEndDrag(Lcom/android/launcher3/dragndrop/DragView;)V
 
-    .line 796
+    .line 799
     :cond_1
     iput-object v2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
-    .line 797
+    .line 800
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->invalidate()V
 
-    .line 798
+    .line 801
     return-void
 .end method
 
@@ -1483,25 +1496,25 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 543
+    .line 546
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     if-eqz v0, :cond_0
 
-    .line 544
+    .line 547
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     invoke-virtual {v0}, Lcom/android/launcher3/AppWidgetResizeFrame;->commitResize()V
 
-    .line 545
+    .line 548
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->removeView(Landroid/view/View;)V
 
-    .line 546
+    .line 549
     iput-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
-    .line 548
+    .line 551
     :cond_0
     return-void
 .end method
@@ -1510,7 +1523,7 @@
     .locals 3
 
     .prologue
-    .line 867
+    .line 870
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mBackgroundAlpha:F
 
     const/4 v1, 0x0
@@ -1519,7 +1532,7 @@
 
     if-lez v0, :cond_1
 
-    .line 869
+    .line 872
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getWorkspace()Lcom/android/launcher3/Workspace;
@@ -1528,7 +1541,7 @@
 
     invoke-virtual {v0}, Lcom/android/launcher3/Workspace;->computeScrollWithoutInvalidation()V
 
-    .line 871
+    .line 874
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mBackgroundAlpha:F
 
     const/high16 v1, 0x437f0000    # 255.0f
@@ -1537,7 +1550,7 @@
 
     float-to-int v0, v0
 
-    .line 872
+    .line 875
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-virtual {v1}, Lcom/android/launcher3/Launcher;->getWorkspace()Lcom/android/launcher3/Workspace;
@@ -1548,10 +1561,10 @@
 
     move-result-object v1
 
-    .line 873
+    .line 876
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 874
+    .line 877
     if-eqz v1, :cond_0
 
     iget-object v2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
@@ -1566,39 +1579,52 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 876
+    .line 879
     iget-object v2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHighlightRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v1, v2}, Lcom/android/launcher3/dragndrop/DragLayer;->getDescendantRectRelativeToSelf(Landroid/view/View;Landroid/graphics/Rect;)F
 
-    .line 877
+    .line 880
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHighlightRect:Landroid/graphics/Rect;
 
     sget-object v2, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;Landroid/graphics/Region$Op;)Z
 
-    .line 879
+    .line 884
     :cond_0
-    shl-int/lit8 v0, v0, 0x18
+    iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mWallpaperColorInfo:Lcom/android/launcher3/dynamicui/WallpaperColorInfo;
 
-    or-int/lit8 v0, v0, 0x0
+    invoke-virtual {v1}, Lcom/android/launcher3/dynamicui/WallpaperColorInfo;->getMainColor()I
+
+    move-result v1
+
+    const/high16 v2, 0x66000000
+
+    invoke-static {v2, v1}, Landroid/support/v4/b/a;->asf(II)I
+
+    move-result v1
+
+    .line 885
+    invoke-static {v1, v0}, Landroid/support/v4/b/a;->asb(II)I
+
+    move-result v0
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 880
+    .line 886
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 883
+    .line 889
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mFocusIndicatorHelper:Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;->draw(Landroid/graphics/Canvas;)V
 
-    .line 884
+    .line 890
     invoke-super {p0, p1}, Lcom/android/launcher3/InsettableFrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 885
+    .line 891
     return-void
 .end method
 
@@ -1606,7 +1632,7 @@
     .locals 1
 
     .prologue
-    .line 152
+    .line 154
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDragController:Lcom/android/launcher3/dragndrop/DragController;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/dragndrop/DragController;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
@@ -1634,7 +1660,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 447
+    .line 449
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-static {v1}, Lcom/android/launcher3/AbstractFloatingView;->getTopOpenView(Lcom/android/launcher3/Launcher;)Lcom/android/launcher3/AbstractFloatingView;
@@ -1645,7 +1671,7 @@
 
     move v1, v0
 
-    .line 448
+    .line 450
     :goto_0
     if-nez v1, :cond_0
 
@@ -1658,7 +1684,7 @@
     :cond_0
     return v0
 
-    .line 447
+    .line 449
     :cond_1
     const/4 v1, 0x0
 
@@ -1669,7 +1695,7 @@
     .locals 1
 
     .prologue
-    .line 462
+    .line 465
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->generateDefaultLayoutParams()Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1681,7 +1707,7 @@
     .locals 1
 
     .prologue
-    .line 462
+    .line 465
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->generateDefaultLayoutParams()Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1693,7 +1719,7 @@
     .locals 1
 
     .prologue
-    .line 462
+    .line 465
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->generateDefaultLayoutParams()Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1707,7 +1733,7 @@
     .prologue
     const/4 v1, -0x2
 
-    .line 464
+    .line 467
     new-instance v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     invoke-direct {v0, v1, v1}, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;-><init>(II)V
@@ -1719,7 +1745,7 @@
     .locals 1
 
     .prologue
-    .line 457
+    .line 460
     invoke-virtual {p0, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->generateLayoutParams(Landroid/util/AttributeSet;)Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1731,7 +1757,7 @@
     .locals 1
 
     .prologue
-    .line 473
+    .line 476
     invoke-virtual {p0, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1743,7 +1769,7 @@
     .locals 1
 
     .prologue
-    .line 457
+    .line 460
     invoke-virtual {p0, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->generateLayoutParams(Landroid/util/AttributeSet;)Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1755,7 +1781,7 @@
     .locals 1
 
     .prologue
-    .line 457
+    .line 460
     invoke-virtual {p0, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->generateLayoutParams(Landroid/util/AttributeSet;)Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1767,7 +1793,7 @@
     .locals 1
 
     .prologue
-    .line 473
+    .line 476
     invoke-virtual {p0, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     move-result-object v0
@@ -1779,7 +1805,7 @@
     .locals 2
 
     .prologue
-    .line 459
+    .line 462
     new-instance v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getContext()Landroid/content/Context;
@@ -1795,7 +1821,7 @@
     .locals 1
 
     .prologue
-    .line 475
+    .line 478
     new-instance v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     invoke-direct {v0, p1}, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1807,7 +1833,7 @@
     .locals 1
 
     .prologue
-    .line 801
+    .line 804
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDropView:Lcom/android/launcher3/dragndrop/DragView;
 
     return-object v0
@@ -1817,7 +1843,7 @@
     .locals 1
 
     .prologue
-    .line 895
+    .line 901
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mBackgroundAlpha:F
 
     return v0
@@ -1827,15 +1853,15 @@
     .locals 2
 
     .prologue
-    .line 834
+    .line 837
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mChildCountOnLastUpdate:I
 
     if-eq v0, p1, :cond_0
 
-    .line 839
+    .line 842
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->updateChildIndices()V
 
-    .line 843
+    .line 846
     :cond_0
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTopViewIndex:I
 
@@ -1843,30 +1869,30 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 845
+    .line 848
     return p2
 
-    .line 846
+    .line 849
     :cond_1
     add-int/lit8 v0, p1, -0x1
 
     if-ne p2, v0, :cond_2
 
-    .line 848
+    .line 851
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTopViewIndex:I
 
     return v0
 
-    .line 849
+    .line 852
     :cond_2
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTopViewIndex:I
 
     if-ge p2, v0, :cond_3
 
-    .line 850
+    .line 853
     return p2
 
-    .line 854
+    .line 857
     :cond_3
     add-int/lit8 v0, p2, 0x1
 
@@ -1877,7 +1903,7 @@
     .locals 1
 
     .prologue
-    .line 401
+    .line 403
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->getDescendantCoordRelativeToSelf(Landroid/view/View;[IZ)F
@@ -1891,7 +1917,7 @@
     .locals 1
 
     .prologue
-    .line 418
+    .line 420
     invoke-static {p1, p0, p2, p3}, Lcom/android/launcher3/Utilities;->getDescendantCoordRelativeToAncestor(Landroid/view/View;Landroid/view/View;[IZ)F
 
     move-result v0
@@ -1907,24 +1933,24 @@
 
     const/4 v4, 0x0
 
-    .line 384
+    .line 386
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTmpXY:[I
 
     aput v4, v0, v4
 
-    .line 385
+    .line 387
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTmpXY:[I
 
     aput v4, v0, v5
 
-    .line 386
+    .line 388
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTmpXY:[I
 
     invoke-virtual {p0, p1, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->getDescendantCoordRelativeToSelf(Landroid/view/View;[I)F
 
     move-result v0
 
-    .line 388
+    .line 390
     iget-object v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTmpXY:[I
 
     aget v1, v1, v4
@@ -1933,7 +1959,7 @@
 
     aget v2, v2, v5
 
-    .line 389
+    .line 391
     iget-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTmpXY:[I
 
     aget v3, v3, v4
@@ -1952,7 +1978,7 @@
 
     float-to-int v3, v3
 
-    .line 390
+    .line 392
     iget-object v4, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTmpXY:[I
 
     aget v4, v4, v5
@@ -1971,10 +1997,10 @@
 
     float-to-int v4, v4
 
-    .line 388
+    .line 390
     invoke-virtual {p2, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 391
+    .line 393
     return v0
 .end method
 
@@ -1982,7 +2008,7 @@
     .locals 1
 
     .prologue
-    .line 147
+    .line 149
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mFocusIndicatorHelper:Lcom/android/launcher3/keyboard/ViewGroupFocusHelper;
 
     return-object v0
@@ -1994,15 +2020,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 395
+    .line 397
     aput v1, p2, v1
 
-    .line 396
+    .line 398
     const/4 v0, 0x1
 
     aput v1, p2, v0
 
-    .line 397
+    .line 399
     invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/dragndrop/DragLayer;->getDescendantCoordRelativeToSelf(Landroid/view/View;[I)F
 
     move-result v0
@@ -2018,36 +2044,36 @@
 
     const/4 v3, 0x0
 
-    .line 430
+    .line 432
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    .line 431
+    .line 433
     invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->getLocationInWindow([I)V
 
-    .line 432
+    .line 434
     aget v1, v0, v3
 
-    .line 433
+    .line 435
     aget v2, v0, v4
 
-    .line 435
+    .line 437
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 436
+    .line 438
     aget v3, v0, v3
 
-    .line 437
+    .line 439
     aget v0, v0, v4
 
-    .line 439
+    .line 441
     sub-int v1, v3, v1
 
-    .line 440
+    .line 442
     sub-int/2addr v0, v2
 
-    .line 441
+    .line 443
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -2062,7 +2088,7 @@
 
     invoke-virtual {p2, v1, v0, v2, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 442
+    .line 444
     return-void
 .end method
 
@@ -2070,7 +2096,7 @@
     .locals 2
 
     .prologue
-    .line 859
+    .line 862
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mBackgroundAlpha:F
 
     const/4 v1, 0x0
@@ -2079,24 +2105,42 @@
 
     if-lez v0, :cond_0
 
-    .line 860
+    .line 863
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->invalidate()V
 
-    .line 862
+    .line 865
     :cond_0
     return-void
+.end method
+
+.method public isEventOverHotseat(Landroid/view/MotionEvent;)Z
+    .locals 1
+
+    .prologue
+    .line 167
+    iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    invoke-virtual {v0}, Lcom/android/launcher3/Launcher;->getHotseat()Lcom/android/launcher3/Hotseat;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public isEventOverView(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 3
 
     .prologue
-    .line 177
+    .line 179
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHitRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, p1, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->getDescendantRectRelativeToSelf(Landroid/view/View;Landroid/graphics/Rect;)F
 
-    .line 178
+    .line 180
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHitRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -2122,10 +2166,10 @@
     .locals 0
 
     .prologue
-    .line 426
+    .line 428
     invoke-static {p1, p0, p2}, Lcom/android/launcher3/Utilities;->mapCoordInSelfToDescendant(Landroid/view/View;Landroid/view/View;[I)V
 
-    .line 427
+    .line 429
     return-void
 .end method
 
@@ -2133,25 +2177,25 @@
     .locals 2
 
     .prologue
-    .line 156
+    .line 158
     sget-boolean v0, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_DISABLE_PINCH_TO_OVERVIEW:Z
 
     if-nez v0, :cond_0
 
     if-eqz p1, :cond_1
 
-    .line 157
+    .line 159
     :cond_0
     const/4 v0, 0x0
 
-    .line 156
+    .line 158
     :goto_0
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mPinchListener:Lcom/android/launcher3/PinchToOverviewListener;
 
-    .line 158
+    .line 160
     return-void
 
-    .line 157
+    .line 159
     :cond_1
     new-instance v0, Lcom/android/launcher3/PinchToOverviewListener;
 
@@ -2166,13 +2210,13 @@
     .locals 0
 
     .prologue
-    .line 806
+    .line 809
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout;->onChildViewAdded(Landroid/view/View;Landroid/view/View;)V
 
-    .line 807
+    .line 810
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->updateChildIndices()V
 
-    .line 808
+    .line 811
     return-void
 .end method
 
@@ -2180,10 +2224,10 @@
     .locals 0
 
     .prologue
-    .line 812
+    .line 815
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->updateChildIndices()V
 
-    .line 813
+    .line 816
     return-void
 .end method
 
@@ -2191,7 +2235,7 @@
     .locals 1
 
     .prologue
-    .line 352
+    .line 354
     const/4 v0, 0x0
 
     return v0
@@ -2205,7 +2249,7 @@
 
     const/4 v2, 0x0
 
-    .line 265
+    .line 267
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     if-eqz v0, :cond_0
@@ -2218,11 +2262,11 @@
 
     if-nez v0, :cond_1
 
-    .line 266
+    .line 268
     :cond_0
     return v2
 
-    .line 268
+    .line 270
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -2230,13 +2274,13 @@
 
     move-result-object v3
 
-    .line 269
+    .line 271
     if-nez v3, :cond_2
 
-    .line 270
+    .line 272
     return v2
 
-    .line 273
+    .line 275
     :cond_2
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getContext()Landroid/content/Context;
 
@@ -2248,31 +2292,31 @@
 
     move-result-object v0
 
-    .line 272
+    .line 274
     check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    .line 274
+    .line 276
     invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 275
+    .line 277
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 277
+    .line 279
     packed-switch v0, :pswitch_data_0
 
-    .line 302
+    .line 304
     :cond_3
     :goto_0
     :pswitch_0
     return v2
 
-    .line 279
+    .line 281
     :pswitch_1
     invoke-direct {p0, v3, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverFolder(Lcom/android/launcher3/folder/Folder;Landroid/view/MotionEvent;)Z
 
@@ -2280,7 +2324,7 @@
 
     if-nez v0, :cond_4
 
-    .line 280
+    .line 282
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->isInAccessibleDrag()Z
 
     move-result v0
@@ -2291,42 +2335,42 @@
 
     move-result v0
 
-    .line 281
+    .line 283
     :goto_1
     if-nez v0, :cond_6
 
-    .line 282
+    .line 284
     invoke-virtual {v3}, Lcom/android/launcher3/folder/Folder;->isEditingName()Z
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->sendTapOutsideFolderAccessibilityEvent(Z)V
 
-    .line 283
+    .line 285
     iput-boolean v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHoverPointClosesFolder:Z
 
-    .line 284
+    .line 286
     return v1
 
     :cond_4
     move v0, v1
 
-    .line 279
+    .line 281
     goto :goto_1
 
     :cond_5
     move v0, v2
 
-    .line 280
+    .line 282
     goto :goto_1
 
-    .line 286
+    .line 288
     :cond_6
     iput-boolean v2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHoverPointClosesFolder:Z
 
     goto :goto_0
 
-    .line 289
+    .line 291
     :pswitch_2
     invoke-direct {p0, v3, p1}, Lcom/android/launcher3/dragndrop/DragLayer;->isEventOverFolder(Lcom/android/launcher3/folder/Folder;Landroid/view/MotionEvent;)Z
 
@@ -2334,7 +2378,7 @@
 
     if-nez v0, :cond_7
 
-    .line 290
+    .line 292
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->isInAccessibleDrag()Z
 
     move-result v0
@@ -2345,7 +2389,7 @@
 
     move-result v0
 
-    .line 291
+    .line 293
     :goto_2
     if-nez v0, :cond_9
 
@@ -2355,45 +2399,45 @@
 
     if-eqz v4, :cond_9
 
-    .line 292
+    .line 294
     invoke-virtual {v3}, Lcom/android/launcher3/folder/Folder;->isEditingName()Z
 
     move-result v0
 
     invoke-direct {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->sendTapOutsideFolderAccessibilityEvent(Z)V
 
-    .line 293
+    .line 295
     iput-boolean v1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHoverPointClosesFolder:Z
 
-    .line 294
+    .line 296
     return v1
 
     :cond_7
     move v0, v1
 
-    .line 289
+    .line 291
     goto :goto_2
 
     :cond_8
     move v0, v2
 
-    .line 290
+    .line 292
     goto :goto_2
 
-    .line 295
+    .line 297
     :cond_9
     if-nez v0, :cond_a
 
-    .line 296
+    .line 298
     return v1
 
-    .line 298
+    .line 300
     :cond_a
     iput-boolean v2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mHoverPointClosesFolder:Z
 
     goto :goto_0
 
-    .line 277
+    .line 279
     :pswitch_data_0
     .packed-switch 0x7
         :pswitch_2
@@ -2412,30 +2456,30 @@
 
     const/4 v2, 0x1
 
-    .line 213
+    .line 215
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 215
+    .line 217
     if-nez v0, :cond_0
 
-    .line 219
+    .line 221
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mAllAppsController:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
     invoke-virtual {v0}, Lcom/android/launcher3/allapps/AllAppsTransitionController;->cancelDiscoveryAnimation()V
 
-    .line 220
+    .line 222
     invoke-direct {p0, p1, v2}, Lcom/android/launcher3/dragndrop/DragLayer;->handleTouchDown(Landroid/view/MotionEvent;Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 221
+    .line 223
     return v2
 
-    .line 223
+    .line 225
     :cond_0
     if-eq v0, v2, :cond_1
 
@@ -2443,53 +2487,53 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 224
+    .line 226
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
     if-eqz v0, :cond_2
 
-    .line 225
+    .line 227
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
     invoke-interface {v0}, Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;->onTouchComplete()V
 
-    .line 227
+    .line 229
     :cond_2
     iput-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
-    .line 229
+    .line 231
     :cond_3
     iput-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
-    .line 231
+    .line 233
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     if-eqz v0, :cond_4
 
-    .line 232
+    .line 234
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/AppWidgetResizeFrame;->onControllerInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 231
+    .line 233
     if-eqz v0, :cond_4
 
-    .line 233
+    .line 235
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mCurrentResizeFrame:Lcom/android/launcher3/AppWidgetResizeFrame;
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
-    .line 234
+    .line 236
     return v2
 
-    .line 236
+    .line 238
     :cond_4
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->clearResizeFrame()V
 
-    .line 239
+    .line 241
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDragController:Lcom/android/launcher3/dragndrop/DragController;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/dragndrop/DragController;->onControllerInterceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -2498,15 +2542,15 @@
 
     if-eqz v0, :cond_5
 
-    .line 240
+    .line 242
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDragController:Lcom/android/launcher3/dragndrop/DragController;
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
-    .line 241
+    .line 243
     return v2
 
-    .line 244
+    .line 246
     :cond_5
     sget-boolean v0, Lcom/android/launcher3/config/FeatureFlags;->LAUNCHER3_ALL_APPS_PULL_UP:Z
 
@@ -2520,15 +2564,15 @@
 
     if-eqz v0, :cond_6
 
-    .line 245
+    .line 247
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mAllAppsController:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
-    .line 246
+    .line 248
     return v2
 
-    .line 249
+    .line 251
     :cond_6
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
@@ -2536,7 +2580,7 @@
 
     move-result-object v0
 
-    .line 250
+    .line 252
     if-eqz v0, :cond_7
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/widget/WidgetsBottomSheet;->onControllerInterceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -2545,13 +2589,13 @@
 
     if-eqz v1, :cond_7
 
-    .line 251
+    .line 253
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
-    .line 252
+    .line 254
     return v2
 
-    .line 255
+    .line 257
     :cond_7
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mPinchListener:Lcom/android/launcher3/PinchToOverviewListener;
 
@@ -2565,15 +2609,15 @@
 
     if-eqz v0, :cond_8
 
-    .line 257
+    .line 259
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mPinchListener:Lcom/android/launcher3/PinchToOverviewListener;
 
     iput-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
-    .line 258
+    .line 260
     return v2
 
-    .line 260
+    .line 262
     :cond_8
     return v4
 .end method
@@ -2582,15 +2626,15 @@
     .locals 8
 
     .prologue
-    .line 528
+    .line 531
     invoke-super/range {p0 .. p5}, Lcom/android/launcher3/InsettableFrameLayout;->onLayout(ZIIII)V
 
-    .line 529
+    .line 532
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getChildCount()I
 
     move-result v2
 
-    .line 530
+    .line 533
     const/4 v0, 0x0
 
     move v1, v0
@@ -2598,32 +2642,32 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 531
+    .line 534
     invoke-virtual {p0, v1}, Lcom/android/launcher3/dragndrop/DragLayer;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 532
+    .line 535
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 533
+    .line 536
     instance-of v4, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
     if-eqz v4, :cond_0
 
-    .line 534
+    .line 537
     check-cast v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;
 
-    .line 535
+    .line 538
     iget-boolean v4, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->customPosition:Z
 
     if-eqz v4, :cond_0
 
-    .line 536
+    .line 539
     iget v4, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->x:I
 
     iget v5, v0, Lcom/android/launcher3/dragndrop/DragLayer$LayoutParams;->y:I
@@ -2642,7 +2686,7 @@
 
     invoke-virtual {v3, v4, v5, v6, v0}, Landroid/view/View;->layout(IIII)V
 
-    .line 530
+    .line 533
     :cond_0
     add-int/lit8 v0, v1, 0x1
 
@@ -2650,7 +2694,7 @@
 
     goto :goto_0
 
-    .line 540
+    .line 543
     :cond_1
     return-void
 .end method
@@ -2659,24 +2703,24 @@
     .locals 1
 
     .prologue
-    .line 900
+    .line 906
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-static {v0}, Lcom/android/launcher3/AbstractFloatingView;->getTopOpenView(Lcom/android/launcher3/Launcher;)Lcom/android/launcher3/AbstractFloatingView;
 
     move-result-object v0
 
-    .line 901
+    .line 907
     if-eqz v0, :cond_0
 
-    .line 902
+    .line 908
     invoke-virtual {v0, p1, p2}, Landroid/view/View;->requestFocus(ILandroid/graphics/Rect;)Z
 
     move-result v0
 
     return v0
 
-    .line 904
+    .line 910
     :cond_0
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout;->onRequestFocusInDescendants(ILandroid/graphics/Rect;)Z
 
@@ -2689,27 +2733,27 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 320
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
     invoke-static {v0}, Lcom/android/launcher3/AbstractFloatingView;->getTopOpenView(Lcom/android/launcher3/Launcher;)Lcom/android/launcher3/AbstractFloatingView;
 
     move-result-object v0
 
-    .line 319
+    .line 321
     if-eqz v0, :cond_2
 
-    .line 320
+    .line 322
     if-ne p1, v0, :cond_0
 
-    .line 321
+    .line 323
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout;->onRequestSendAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
 
     return v0
 
-    .line 323
+    .line 325
     :cond_0
     invoke-direct {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->isInAccessibleDrag()Z
 
@@ -2721,20 +2765,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 324
+    .line 326
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout;->onRequestSendAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     move-result v0
 
     return v0
 
-    .line 328
+    .line 330
     :cond_1
     const/4 v0, 0x0
 
     return v0
 
-    .line 330
+    .line 332
     :cond_2
     invoke-super {p0, p1, p2}, Lcom/android/launcher3/InsettableFrameLayout;->onRequestSendAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
 
@@ -2753,25 +2797,25 @@
 
     const/4 v2, 0x0
 
-    .line 357
+    .line 359
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 359
+    .line 361
     if-nez v0, :cond_0
 
-    .line 360
+    .line 362
     invoke-direct {p0, p1, v2}, Lcom/android/launcher3/dragndrop/DragLayer;->handleTouchDown(Landroid/view/MotionEvent;Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 361
+    .line 363
     return v1
 
-    .line 363
+    .line 365
     :cond_0
     if-eq v0, v1, :cond_1
 
@@ -2779,28 +2823,28 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 364
+    .line 366
     :cond_1
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
     if-eqz v0, :cond_2
 
-    .line 365
+    .line 367
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
     invoke-interface {v0}, Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;->onTouchComplete()V
 
-    .line 367
+    .line 369
     :cond_2
     iput-object v3, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
-    .line 370
+    .line 372
     :cond_3
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
     if-eqz v0, :cond_4
 
-    .line 371
+    .line 373
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mActiveController:Lcom/android/launcher3/util/TouchController;
 
     invoke-interface {v0, p1}, Lcom/android/launcher3/util/TouchController;->onControllerTouchEvent(Landroid/view/MotionEvent;)Z
@@ -2809,7 +2853,7 @@
 
     return v0
 
-    .line 373
+    .line 375
     :cond_4
     return v2
 .end method
@@ -2818,20 +2862,20 @@
     .locals 1
 
     .prologue
-    .line 888
+    .line 894
     iget v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mBackgroundAlpha:F
 
     cmpl-float v0, p1, v0
 
     if-eqz v0, :cond_0
 
-    .line 889
+    .line 895
     iput p1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mBackgroundAlpha:F
 
-    .line 890
+    .line 896
     invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->invalidate()V
 
-    .line 892
+    .line 898
     :cond_0
     return-void
 .end method
@@ -2840,25 +2884,33 @@
     .locals 2
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 453
+    .line 455
     invoke-super {p0, p1}, Lcom/android/launcher3/InsettableFrameLayout;->setInsets(Landroid/graphics/Rect;)V
 
-    .line 454
-    iget v1, p1, Landroid/graphics/Rect;->top:I
+    .line 456
+    iget v0, p1, Landroid/graphics/Rect;->top:I
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->setBackgroundResource(I)V
+    invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 455
+    .line 458
     return-void
 
-    .line 454
+    .line 457
     :cond_0
-    const v0, 0x7f020053
+    invoke-virtual {p0}, Lcom/android/launcher3/dragndrop/DragLayer;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v1, 0x7f010030
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/util/Themes;->getAttrDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
 
     goto :goto_0
 .end method
@@ -2867,10 +2919,10 @@
     .locals 0
 
     .prologue
-    .line 919
+    .line 925
     iput-object p1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mTouchCompleteListener:Lcom/android/launcher3/dragndrop/DragLayer$TouchCompleteListener;
 
-    .line 920
+    .line 926
     return-void
 .end method
 
@@ -2878,22 +2930,22 @@
     .locals 2
 
     .prologue
-    .line 137
+    .line 139
     iput-object p1, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 138
+    .line 140
     iput-object p2, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mDragController:Lcom/android/launcher3/dragndrop/DragController;
 
-    .line 139
+    .line 141
     iput-object p3, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mAllAppsController:Lcom/android/launcher3/allapps/AllAppsTransitionController;
 
-    .line 141
+    .line 143
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/DragLayer;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 142
+    .line 144
     const-string/jumbo v1, "accessibility"
 
-    .line 141
+    .line 143
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -2904,9 +2956,9 @@
 
     move-result v0
 
-    .line 143
+    .line 145
     invoke-virtual {p0, v0}, Lcom/android/launcher3/dragndrop/DragLayer;->onAccessibilityStateChanged(Z)V
 
-    .line 144
+    .line 146
     return-void
 .end method

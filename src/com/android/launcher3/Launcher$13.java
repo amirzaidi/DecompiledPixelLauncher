@@ -4,25 +4,23 @@
 
 package com.android.launcher3;
 
-import com.android.launcher3.popup.PopupContainerWithArrow;
-import java.util.Set;
+import android.view.View;
 
-final class Launcher$13 implements Runnable
+final class Launcher$13 implements Workspace$ItemOperator
 {
     final /* synthetic */ Launcher this$0;
-    final /* synthetic */ Set val$updatedBadges;
+    final /* synthetic */ long val$folderIconId;
     
-    Launcher$13(final Launcher this$0, final Set val$updatedBadges) {
+    Launcher$13(final Launcher this$0, final long val$folderIconId) {
         this.this$0 = this$0;
-        this.val$updatedBadges = val$updatedBadges;
+        this.val$folderIconId = val$folderIconId;
     }
     
-    public void run() {
-        this.this$0.mWorkspace.updateIconBadges(this.val$updatedBadges);
-        this.this$0.mAppsView.updateIconBadges(this.val$updatedBadges);
-        final PopupContainerWithArrow open = PopupContainerWithArrow.getOpen(this.this$0);
-        if (open != null) {
-            open.updateNotificationHeader(this.val$updatedBadges);
+    public boolean evaluate(final ItemInfo itemInfo, final View view) {
+        boolean b = false;
+        if (itemInfo != null && itemInfo.id == this.val$folderIconId) {
+            b = true;
         }
+        return b;
     }
 }

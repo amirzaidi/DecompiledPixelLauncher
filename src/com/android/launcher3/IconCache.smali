@@ -8,8 +8,6 @@
 
 
 # instance fields
-.field private final mActivityBgColor:I
-
 .field private final mCache:Ljava/util/HashMap;
 
 .field private final mContext:Landroid/content/Context;
@@ -20,19 +18,13 @@
 
 .field private final mIconDpi:I
 
-.field private mIconProvider:Lcom/android/launcher3/IconProvider;
+.field private final mIconProvider:Lcom/android/launcher3/IconProvider;
 
 .field private final mLauncherApps:Lcom/android/launcher3/compat/LauncherAppsCompat;
 
-.field private mLowResCanvas:Landroid/graphics/Canvas;
-
 .field private final mLowResOptions:Landroid/graphics/BitmapFactory$Options;
 
-.field private mLowResPaint:Landroid/graphics/Paint;
-
 .field final mMainThreadExecutor:Lcom/android/launcher3/MainThreadExecutor;
-
-.field private final mPackageBgColor:I
 
 .field private final mPackageManager:Landroid/content/pm/PackageManager;
 
@@ -62,14 +54,14 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 78
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/IconCache;->ICON_UPDATE_TOKEN:Ljava/lang/Object;
 
-    .line 71
+    .line 64
     return-void
 .end method
 
@@ -77,44 +69,44 @@
     .locals 2
 
     .prologue
-    .line 121
+    .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
+    .line 87
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mDefaultIcons:Ljava/util/HashMap;
 
-    .line 95
+    .line 88
     new-instance v0, Lcom/android/launcher3/MainThreadExecutor;
 
     invoke-direct {v0}, Lcom/android/launcher3/MainThreadExecutor;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mMainThreadExecutor:Lcom/android/launcher3/MainThreadExecutor;
 
-    .line 103
+    .line 96
     new-instance v0, Ljava/util/HashMap;
 
     const/16 v1, 0x32
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
-    .line 102
+    .line 95
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
-    .line 122
+    .line 105
     iput-object p1, p0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
 
-    .line 123
+    .line 106
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 124
+    .line 107
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/UserManagerCompat;
@@ -123,7 +115,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
-    .line 125
+    .line 108
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/LauncherAppsCompat;
@@ -132,12 +124,12 @@
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mLauncherApps:Lcom/android/launcher3/compat/LauncherAppsCompat;
 
-    .line 126
+    .line 109
     iget v0, p2, Lcom/android/launcher3/InvariantDeviceProfile;->fillResIconDpi:I
 
     iput v0, p0, Lcom/android/launcher3/IconCache;->mIconDpi:I
 
-    .line 127
+    .line 110
     new-instance v0, Lcom/android/launcher3/IconCache$IconDB;
 
     iget v1, p2, Lcom/android/launcher3/InvariantDeviceProfile;->iconBitmapSize:I
@@ -146,28 +138,12 @@
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mIconDb:Lcom/android/launcher3/IconCache$IconDB;
 
-    .line 128
-    new-instance v0, Landroid/graphics/Canvas;
-
-    invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
-
-    iput-object v0, p0, Lcom/android/launcher3/IconCache;->mLowResCanvas:Landroid/graphics/Canvas;
-
-    .line 129
-    new-instance v0, Landroid/graphics/Paint;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object v0, p0, Lcom/android/launcher3/IconCache;->mLowResPaint:Landroid/graphics/Paint;
-
-    .line 132
+    .line 113
     const-class v0, Lcom/android/launcher3/IconProvider;
 
-    const v1, 0x7f0c0018
+    const v1, 0x7f0c0019
 
-    .line 131
+    .line 112
     invoke-static {v0, p1, v1}, Lcom/android/launcher3/Utilities;->getOverrideObject(Ljava/lang/Class;Landroid/content/Context;I)Ljava/lang/Object;
 
     move-result-object v0
@@ -176,7 +152,7 @@
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mIconProvider:Lcom/android/launcher3/IconProvider;
 
-    .line 133
+    .line 114
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Lcom/android/launcher3/LauncherModel;->getWorkerLooper()Landroid/os/Looper;
@@ -187,39 +163,21 @@
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mWorkerHandler:Landroid/os/Handler;
 
-    .line 135
-    const v0, 0x7f120001
-
-    invoke-static {p1, v0}, Lcom/android/launcher3/util/Themes;->getColorPrimary(Landroid/content/Context;I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/launcher3/IconCache;->mActivityBgColor:I
-
-    .line 136
-    const v0, 0x7f120002
-
-    invoke-static {p1, v0}, Lcom/android/launcher3/util/Themes;->getColorPrimary(Landroid/content/Context;I)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/launcher3/IconCache;->mPackageBgColor:I
-
-    .line 138
+    .line 116
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     iput-object v0, p0, Lcom/android/launcher3/IconCache;->mLowResOptions:Landroid/graphics/BitmapFactory$Options;
 
-    .line 141
+    .line 119
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mLowResOptions:Landroid/graphics/BitmapFactory$Options;
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     iput-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
 
-    .line 142
+    .line 120
     return-void
 .end method
 
@@ -227,7 +185,7 @@
     .locals 4
 
     .prologue
-    .line 402
+    .line 384
     const-string/jumbo v0, "componentName"
 
     invoke-virtual {p2}, Landroid/content/ComponentName;->flattenToString()Ljava/lang/String;
@@ -236,7 +194,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 403
+    .line 385
     const-string/jumbo v0, "profileId"
 
     invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -245,7 +203,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 404
+    .line 386
     const-string/jumbo v0, "lastUpdated"
 
     iget-wide v2, p3, Landroid/content/pm/PackageInfo;->lastUpdateTime:J
@@ -256,7 +214,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 405
+    .line 387
     const-string/jumbo v0, "version"
 
     iget v1, p3, Landroid/content/pm/PackageInfo;->versionCode:I
@@ -267,12 +225,12 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 406
+    .line 388
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mIconDb:Lcom/android/launcher3/IconCache$IconDB;
 
     invoke-virtual {v0, p1}, Lcom/android/launcher3/IconCache$IconDB;->insertOrReplace(Landroid/content/ContentValues;)V
 
-    .line 407
+    .line 389
     return-void
 .end method
 
@@ -280,7 +238,7 @@
     .locals 1
 
     .prologue
-    .line 499
+    .line 481
     iget-object v0, p1, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
     invoke-static {v0}, Lcom/android/launcher3/Utilities;->trim(Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -289,12 +247,12 @@
 
     iput-object v0, p2, Lcom/android/launcher3/ItemInfoWithIcon;->title:Ljava/lang/CharSequence;
 
-    .line 500
+    .line 482
     iget-object v0, p1, Lcom/android/launcher3/IconCache$CacheEntry;->contentDescription:Ljava/lang/CharSequence;
 
     iput-object v0, p2, Lcom/android/launcher3/ItemInfoWithIcon;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 501
+    .line 483
     iget-object v0, p1, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_0
@@ -308,36 +266,33 @@
     :goto_0
     iput-object v0, p2, Lcom/android/launcher3/ItemInfoWithIcon;->iconBitmap:Landroid/graphics/Bitmap;
 
-    .line 502
+    .line 484
     iget-boolean v0, p1, Lcom/android/launcher3/IconCache$CacheEntry;->isLowResIcon:Z
 
     iput-boolean v0, p2, Lcom/android/launcher3/ItemInfoWithIcon;->usingLowResIcon:Z
 
-    .line 503
+    .line 485
     return-void
 
-    .line 501
+    .line 483
     :cond_0
     iget-object v0, p1, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
     goto :goto_0
 .end method
 
-.method private generateLowResIcon(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
-    .locals 8
+.method private generateLowResIcon(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    .locals 3
 
     .prologue
-    .line 826
-    if-nez p2, :cond_0
-
-    .line 828
+    .line 809
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
 
     div-int/lit8 v0, v0, 0x5
 
-    .line 829
+    .line 810
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
@@ -346,112 +301,12 @@
 
     const/4 v2, 0x1
 
-    .line 827
+    .line 808
     invoke-static {p1, v0, v1, v2}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     return-object v0
-
-    .line 831
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v0
-
-    div-int/lit8 v0, v0, 0x5
-
-    .line 832
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v1
-
-    div-int/lit8 v1, v1, 0x5
-
-    sget-object v2, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-
-    .line 831
-    invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 833
-    monitor-enter p0
-
-    .line 834
-    :try_start_0
-    iget-object v1, p0, Lcom/android/launcher3/IconCache;->mLowResCanvas:Landroid/graphics/Canvas;
-
-    invoke-virtual {v1, v0}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 835
-    iget-object v1, p0, Lcom/android/launcher3/IconCache;->mLowResCanvas:Landroid/graphics/Canvas;
-
-    invoke-virtual {v1, p2}, Landroid/graphics/Canvas;->drawColor(I)V
-
-    .line 836
-    iget-object v1, p0, Lcom/android/launcher3/IconCache;->mLowResCanvas:Landroid/graphics/Canvas;
-
-    new-instance v2, Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    invoke-direct {v2, v5, v6, v3, v4}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    .line 837
-    new-instance v3, Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v4
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v5
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    invoke-direct {v3, v6, v7, v4, v5}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    .line 838
-    iget-object v4, p0, Lcom/android/launcher3/IconCache;->mLowResPaint:Landroid/graphics/Paint;
-
-    .line 836
-    invoke-virtual {v1, p1, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-
-    .line 839
-    iget-object v1, p0, Lcom/android/launcher3/IconCache;->mLowResCanvas:Landroid/graphics/Canvas;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    .line 841
-    return-object v0
-
-    .line 833
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
 .method private getEntryForPackageLocked(Ljava/lang/String;Landroid/os/UserHandle;Z)Lcom/android/launcher3/IconCache$CacheEntry;
@@ -460,15 +315,15 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 617
+    .line 599
     invoke-static {}, Lcom/android/launcher3/util/Preconditions;->assertWorkerThread()V
 
-    .line 618
+    .line 600
     invoke-static {p1, p2}, Lcom/android/launcher3/IconCache;->getPackageKey(Ljava/lang/String;Landroid/os/UserHandle;)Lcom/android/launcher3/util/ComponentKey;
 
     move-result-object v9
 
-    .line 619
+    .line 601
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v0, v9}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -477,7 +332,7 @@
 
     check-cast v0, Lcom/android/launcher3/IconCache$CacheEntry;
 
-    .line 621
+    .line 603
     if-eqz v0, :cond_0
 
     iget-boolean v1, v0, Lcom/android/launcher3/IconCache$CacheEntry;->isLowResIcon:Z
@@ -488,23 +343,23 @@
 
     if-eqz v1, :cond_1
 
-    .line 622
+    .line 604
     :cond_0
     new-instance v6, Lcom/android/launcher3/IconCache$CacheEntry;
 
     invoke-direct {v6}, Lcom/android/launcher3/IconCache$CacheEntry;-><init>()V
 
-    .line 623
+    .line 605
     const/4 v7, 0x1
 
-    .line 626
+    .line 608
     invoke-direct {p0, v9, v6, p3}, Lcom/android/launcher3/IconCache;->getEntryFromDB(Lcom/android/launcher3/util/ComponentKey;Lcom/android/launcher3/IconCache$CacheEntry;Z)Z
 
     move-result v0
 
     if-nez v0, :cond_4
 
-    .line 628
+    .line 610
     :try_start_0
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
@@ -518,7 +373,7 @@
 
     move v0, v8
 
-    .line 630
+    .line 612
     :goto_0
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mPackageManager:Landroid/content/pm/PackageManager;
 
@@ -526,13 +381,13 @@
 
     move-result-object v3
 
-    .line 631
+    .line 613
     iget-object v0, v3, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 632
+    .line 614
     if-nez v0, :cond_3
 
-    .line 633
+    .line 615
     new-instance v0, Landroid/content/pm/PackageManager$NameNotFoundException;
 
     const-string/jumbo v1, "ApplicationInfo is null"
@@ -543,35 +398,35 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 653
+    .line 635
     :catch_0
     move-exception v0
 
     move v0, v8
 
-    .line 660
+    .line 642
     :goto_1
     if-eqz v0, :cond_6
 
-    .line 661
+    .line 643
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v0, v9, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v0, v6
 
-    .line 664
+    .line 646
     :cond_1
     :goto_2
     return-object v0
 
-    .line 629
+    .line 611
     :cond_2
     const/16 v0, 0x2000
 
     goto :goto_0
 
-    .line 639
+    .line 621
     :cond_3
     :try_start_1
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -584,19 +439,17 @@
 
     iget v4, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 638
+    .line 620
     invoke-static {v1, p2, v2, v4}, Lcom/android/launcher3/graphics/LauncherIcons;->createBadgedIconBitmap(Landroid/graphics/drawable/Drawable;Landroid/os/UserHandle;Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 640
-    iget v1, p0, Lcom/android/launcher3/IconCache;->mPackageBgColor:I
-
-    invoke-direct {p0, v2, v1}, Lcom/android/launcher3/IconCache;->generateLowResIcon(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+    .line 622
+    invoke-direct {p0, v2}, Lcom/android/launcher3/IconCache;->generateLowResIcon(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 641
+    .line 623
     iget-object v4, p0, Lcom/android/launcher3/IconCache;->mPackageManager:Landroid/content/pm/PackageManager;
 
     invoke-virtual {v0, v4}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
@@ -605,7 +458,7 @@
 
     iput-object v0, v6, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 642
+    .line 624
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     iget-object v4, v6, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
@@ -616,7 +469,7 @@
 
     iput-object v0, v6, Lcom/android/launcher3/IconCache$CacheEntry;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 643
+    .line 625
     if-eqz p3, :cond_5
 
     move-object v0, v1
@@ -624,10 +477,10 @@
     :goto_3
     iput-object v0, v6, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
-    .line 644
+    .line 626
     iput-boolean p3, v6, Lcom/android/launcher3/IconCache$CacheEntry;->isLowResIcon:Z
 
-    .line 649
+    .line 631
     iget-object v0, v6, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
     invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -638,10 +491,10 @@
 
     move-result-object v1
 
-    .line 650
+    .line 632
     iget-object v2, v9, Lcom/android/launcher3/util/ComponentKey;->componentName:Landroid/content/ComponentName;
 
-    .line 651
+    .line 633
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     invoke-virtual {v0, p2}, Lcom/android/launcher3/compat/UserManagerCompat;->getSerialNumberForUser(Landroid/os/UserHandle;)J
@@ -650,7 +503,7 @@
 
     move-object v0, p0
 
-    .line 650
+    .line 632
     invoke-direct/range {v0 .. v5}, Lcom/android/launcher3/IconCache;->addIconToDB(Landroid/content/ContentValues;Landroid/content/ComponentName;Landroid/content/pm/PackageInfo;J)V
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
@@ -663,7 +516,7 @@
     :cond_5
     move-object v0, v2
 
-    .line 643
+    .line 625
     goto :goto_3
 
     :cond_6
@@ -682,11 +535,11 @@
 
     const/4 v1, 0x0
 
-    .line 670
+    .line 652
     :try_start_0
     iget-object v2, p0, Lcom/android/launcher3/IconCache;->mIconDb:Lcom/android/launcher3/IconCache$IconDB;
 
-    .line 671
+    .line 653
     const/4 v0, 0x2
 
     new-array v3, v0, [Ljava/lang/String;
@@ -700,17 +553,17 @@
 
     aput-object v0, v3, v4
 
-    .line 672
+    .line 654
     const-string/jumbo v0, "label"
 
     const/4 v4, 0x1
 
     aput-object v0, v3, v4
 
-    .line 673
+    .line 655
     const-string/jumbo v0, "componentName = ? AND profileId = ?"
 
-    .line 674
+    .line 656
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/String;
@@ -725,7 +578,7 @@
 
     aput-object v5, v4, v6
 
-    .line 675
+    .line 657
     iget-object v5, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     iget-object v6, p1, Lcom/android/launcher3/util/ComponentKey;->user:Landroid/os/UserHandle;
@@ -742,7 +595,7 @@
 
     aput-object v5, v4, v6
 
-    .line 670
+    .line 652
     invoke-virtual {v2, v3, v0, v4}, Lcom/android/launcher3/IconCache$IconDB;->query([Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -750,7 +603,7 @@
 
     move-result-object v2
 
-    .line 676
+    .line 658
     :try_start_1
     invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -758,7 +611,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 677
+    .line 659
     if-eqz p3, :cond_0
 
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mLowResOptions:Landroid/graphics/BitmapFactory$Options;
@@ -772,10 +625,10 @@
 
     iput-object v0, p2, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
-    .line 678
+    .line 660
     iput-boolean p3, p2, Lcom/android/launcher3/IconCache$CacheEntry;->isLowResIcon:Z
 
-    .line 679
+    .line 661
     const/4 v0, 0x1
 
     invoke-interface {v2, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
@@ -784,17 +637,17 @@
 
     iput-object v0, p2, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 680
+    .line 662
     iget-object v0, p2, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_3
 
-    .line 681
+    .line 663
     const-string/jumbo v0, ""
 
     iput-object v0, p2, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 682
+    .line 664
     const-string/jumbo v0, ""
 
     iput-object v0, p2, Lcom/android/launcher3/IconCache$CacheEntry;->contentDescription:Ljava/lang/CharSequence;
@@ -802,18 +655,18 @@
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 692
+    .line 674
     :goto_1
     if-eqz v2, :cond_1
 
-    .line 693
+    .line 675
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 687
+    .line 669
     :cond_1
     return v9
 
-    .line 671
+    .line 653
     :cond_2
     :try_start_2
     const-string/jumbo v0, "icon"
@@ -823,17 +676,17 @@
 
     goto :goto_0
 
-    .line 684
+    .line 666
     :cond_3
     :try_start_3
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
-    .line 685
+    .line 667
     iget-object v1, p2, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
     iget-object v3, p1, Lcom/android/launcher3/util/ComponentKey;->user:Landroid/os/UserHandle;
 
-    .line 684
+    .line 666
     invoke-virtual {v0, v1, v3}, Lcom/android/launcher3/compat/UserManagerCompat;->getBadgedLabelForUser(Ljava/lang/CharSequence;Landroid/os/UserHandle;)Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -845,13 +698,13 @@
 
     goto :goto_1
 
-    .line 689
+    .line 671
     :catch_0
     move-exception v0
 
     move-object v1, v2
 
-    .line 690
+    .line 672
     :goto_2
     :try_start_4
     const-string/jumbo v2, "Launcher.IconCache"
@@ -862,38 +715,38 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 692
+    .line 674
     if-eqz v1, :cond_4
 
-    .line 693
+    .line 675
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 696
+    .line 678
     :cond_4
     :goto_3
     return v8
 
-    .line 692
+    .line 674
     :cond_5
     if-eqz v2, :cond_4
 
-    .line 693
+    .line 675
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
     goto :goto_3
 
-    .line 691
+    .line 673
     :catchall_0
     move-exception v0
 
-    .line 692
+    .line 674
     :goto_4
     if-eqz v1, :cond_6
 
-    .line 693
+    .line 675
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
 
-    .line 691
+    .line 673
     :cond_6
     throw v0
 
@@ -904,7 +757,7 @@
 
     goto :goto_4
 
-    .line 689
+    .line 671
     :catch_1
     move-exception v0
 
@@ -915,18 +768,33 @@
     .locals 2
 
     .prologue
-    .line 145
+    .line 123
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/high16 v1, 0x10d0000
+    invoke-static {}, Lcom/android/launcher3/Utilities;->isAtLeastO()Z
 
-    invoke-direct {p0, v0, v1}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 124
+    const v0, 0x1080093
+
+    .line 123
+    :goto_0
+    invoke-direct {p0, v1, v0}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     return-object v0
+
+    .line 124
+    :cond_0
+    const/high16 v0, 0x10d0000
+
+    goto :goto_0
 .end method
 
 .method private getFullResIcon(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
@@ -935,7 +803,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 151
+    .line 130
     :try_start_0
     iget v1, p0, Lcom/android/launcher3/IconCache;->mIconDpi:I
 
@@ -945,7 +813,7 @@
 
     move-result-object v0
 
-    .line 156
+    .line 135
     :goto_0
     if-eqz v0, :cond_0
 
@@ -959,7 +827,7 @@
 
     goto :goto_1
 
-    .line 152
+    .line 131
     :catch_0
     move-exception v1
 
@@ -970,7 +838,7 @@
     .locals 3
 
     .prologue
-    .line 607
+    .line 589
     new-instance v0, Landroid/content/ComponentName;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -993,7 +861,7 @@
 
     invoke-direct {v0, p0, v1}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 608
+    .line 590
     new-instance v1, Lcom/android/launcher3/util/ComponentKey;
 
     invoke-direct {v1, v0, p1}, Lcom/android/launcher3/util/ComponentKey;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
@@ -1007,13 +875,13 @@
     .prologue
     monitor-enter p0
 
-    .line 483
+    .line 465
     :try_start_0
     invoke-virtual {p1}, Lcom/android/launcher3/ItemInfoWithIcon;->getTargetComponent()Landroid/content/ComponentName;
 
     move-result-object v1
 
-    .line 484
+    .line 466
     iget-object v3, p1, Lcom/android/launcher3/ItemInfoWithIcon;->user:Landroid/os/UserHandle;
 
     move-object v0, p0
@@ -1024,19 +892,19 @@
 
     move v5, p4
 
-    .line 483
+    .line 465
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/IconCache;->cacheLocked(Landroid/content/ComponentName;Lcom/android/launcher3/util/Provider;Landroid/os/UserHandle;ZZ)Lcom/android/launcher3/IconCache$CacheEntry;
 
     move-result-object v0
 
-    .line 485
+    .line 467
     invoke-direct {p0, v0, p1}, Lcom/android/launcher3/IconCache;->applyCacheEntry(Lcom/android/launcher3/IconCache$CacheEntry;Lcom/android/launcher3/ItemInfoWithIcon;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 486
+    .line 468
     return-void
 
     :catchall_0
@@ -1051,12 +919,12 @@
     .locals 3
 
     .prologue
-    .line 846
+    .line 814
     invoke-interface {p0, p1}, Landroid/database/Cursor;->getBlob(I)[B
 
     move-result-object v0
 
-    .line 848
+    .line 816
     :try_start_0
     array-length v1, v0
 
@@ -1070,11 +938,11 @@
 
     return-object v0
 
-    .line 849
+    .line 817
     :catch_0
     move-exception v0
 
-    .line 850
+    .line 818
     const/4 v0, 0x0
 
     return-object v0
@@ -1084,12 +952,12 @@
     .locals 3
 
     .prologue
-    .line 812
+    .line 794
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 813
+    .line 795
     const-string/jumbo v1, "icon"
 
     invoke-static {p1}, Lcom/android/launcher3/Utilities;->flattenBitmap(Landroid/graphics/Bitmap;)[B
@@ -1098,7 +966,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 814
+    .line 796
     const-string/jumbo v1, "icon_low_res"
 
     invoke-static {p2}, Lcom/android/launcher3/Utilities;->flattenBitmap(Landroid/graphics/Bitmap;)[B
@@ -1107,12 +975,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 816
+    .line 798
     const-string/jumbo v1, "label"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 817
+    .line 799
     const-string/jumbo v1, "system_state"
 
     iget-object v2, p0, Lcom/android/launcher3/IconCache;->mIconProvider:Lcom/android/launcher3/IconProvider;
@@ -1123,7 +991,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 819
+    .line 801
     return-object v0
 .end method
 
@@ -1131,12 +999,12 @@
     .locals 4
 
     .prologue
-    .line 212
+    .line 195
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 213
+    .line 196
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -1161,7 +1029,7 @@
 
     check-cast v0, Lcom/android/launcher3/util/ComponentKey;
 
-    .line 214
+    .line 197
     iget-object v3, v0, Lcom/android/launcher3/util/ComponentKey;->componentName:Landroid/content/ComponentName;
 
     invoke-virtual {v3}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
@@ -1174,22 +1042,22 @@
 
     if-eqz v3, :cond_0
 
-    .line 215
+    .line 198
     iget-object v3, v0, Lcom/android/launcher3/util/ComponentKey;->user:Landroid/os/UserHandle;
 
     invoke-virtual {v3, p2}, Landroid/os/UserHandle;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    .line 214
+    .line 197
     if-eqz v3, :cond_0
 
-    .line 216
+    .line 199
     invoke-virtual {v1, v0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 219
+    .line 202
     :cond_1
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1208,14 +1076,14 @@
 
     check-cast v0, Lcom/android/launcher3/util/ComponentKey;
 
-    .line 220
+    .line 203
     iget-object v2, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 222
+    .line 205
     :cond_2
     return-void
 .end method
@@ -1224,7 +1092,7 @@
     .locals 24
 
     .prologue
-    .line 281
+    .line 263
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
@@ -1235,7 +1103,7 @@
 
     move-result-wide v6
 
-    .line 282
+    .line 264
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
@@ -1244,12 +1112,12 @@
 
     move-result-object v4
 
-    .line 283
+    .line 265
     new-instance v8, Ljava/util/HashMap;
 
     invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
 
-    .line 284
+    .line 266
     const/16 v5, 0x2000
 
     invoke-virtual {v4, v5}, Landroid/content/pm/PackageManager;->getInstalledPackages(I)Ljava/util/List;
@@ -1273,20 +1141,20 @@
 
     check-cast v4, Landroid/content/pm/PackageInfo;
 
-    .line 285
+    .line 267
     iget-object v9, v4, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v8, v9, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 288
+    .line 270
     :cond_0
     new-instance v11, Ljava/util/HashMap;
 
     invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
 
-    .line 289
+    .line 271
     invoke-interface/range {p2 .. p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -1304,7 +1172,7 @@
 
     check-cast v4, Landroid/content/pm/LauncherActivityInfo;
 
-    .line 290
+    .line 272
     invoke-virtual {v4}, Landroid/content/pm/LauncherActivityInfo;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v9
@@ -1313,27 +1181,27 @@
 
     goto :goto_1
 
-    .line 293
+    .line 275
     :cond_1
     new-instance v12, Ljava/util/HashSet;
 
     invoke-direct {v12}, Ljava/util/HashSet;-><init>()V
 
-    .line 294
+    .line 276
     new-instance v10, Ljava/util/Stack;
 
     invoke-direct {v10}, Ljava/util/Stack;-><init>()V
 
-    .line 296
+    .line 278
     const/4 v5, 0x0
 
-    .line 298
+    .line 280
     :try_start_0
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/IconCache;->mIconDb:Lcom/android/launcher3/IconCache$IconDB;
 
-    .line 299
+    .line 281
     const/4 v9, 0x5
 
     new-array v9, v9, [Ljava/lang/String;
@@ -1350,7 +1218,7 @@
 
     aput-object v13, v9, v14
 
-    .line 300
+    .line 282
     const-string/jumbo v13, "lastUpdated"
 
     const/4 v14, 0x2
@@ -1363,17 +1231,17 @@
 
     aput-object v13, v9, v14
 
-    .line 301
+    .line 283
     const-string/jumbo v13, "system_state"
 
     const/4 v14, 0x4
 
     aput-object v13, v9, v14
 
-    .line 302
+    .line 284
     const-string/jumbo v13, "profileId = ? "
 
-    .line 303
+    .line 285
     const/4 v14, 0x1
 
     new-array v14, v14, [Ljava/lang/String;
@@ -1386,7 +1254,7 @@
 
     aput-object v15, v14, v16
 
-    .line 298
+    .line 280
     invoke-virtual {v4, v9, v13, v14}, Lcom/android/launcher3/IconCache$IconDB;->query([Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
     :try_end_0
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_1
@@ -1394,7 +1262,7 @@
 
     move-result-object v9
 
-    .line 305
+    .line 287
     :try_start_1
     const-string/jumbo v4, "componentName"
 
@@ -1402,35 +1270,35 @@
 
     move-result v13
 
-    .line 306
+    .line 288
     const-string/jumbo v4, "lastUpdated"
 
     invoke-interface {v9, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v14
 
-    .line 307
+    .line 289
     const-string/jumbo v4, "version"
 
     invoke-interface {v9, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v15
 
-    .line 308
+    .line 290
     const-string/jumbo v4, "rowid"
 
     invoke-interface {v9, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v16
 
-    .line 309
+    .line 291
     const-string/jumbo v4, "system_state"
 
     invoke-interface {v9, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v17
 
-    .line 311
+    .line 293
     :cond_2
     :goto_2
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
@@ -1439,17 +1307,17 @@
 
     if-eqz v4, :cond_b
 
-    .line 312
+    .line 294
     invoke-interface {v9, v13}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 313
+    .line 295
     invoke-static {v4}, Landroid/content/ComponentName;->unflattenFromString(Ljava/lang/String;)Landroid/content/ComponentName;
 
     move-result-object v18
 
-    .line 314
+    .line 296
     invoke-virtual/range {v18 .. v18}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
@@ -1460,10 +1328,10 @@
 
     check-cast v4, Landroid/content/pm/PackageInfo;
 
-    .line 315
+    .line 297
     if-nez v4, :cond_7
 
-    .line 316
+    .line 298
     invoke-virtual/range {v18 .. v18}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v4
@@ -1476,7 +1344,7 @@
 
     if-nez v4, :cond_2
 
-    .line 317
+    .line 299
     move-object/from16 v0, p0
 
     move-object/from16 v1, v18
@@ -1485,7 +1353,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/IconCache;->remove(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 318
+    .line 300
     move/from16 v0, v16
 
     invoke-interface {v9, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -1503,13 +1371,13 @@
 
     goto :goto_2
 
-    .line 342
+    .line 324
     :catch_0
     move-exception v4
 
     move-object v5, v9
 
-    .line 343
+    .line 325
     :goto_3
     :try_start_2
     const-string/jumbo v9, "Launcher.IconCache"
@@ -1520,13 +1388,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 346
+    .line 328
     if-eqz v5, :cond_3
 
-    .line 347
+    .line 329
     invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
-    .line 350
+    .line 332
     :cond_3
     :goto_4
     invoke-virtual {v12}, Ljava/util/HashSet;->isEmpty()Z
@@ -1535,12 +1403,12 @@
 
     if-nez v4, :cond_4
 
-    .line 351
+    .line 333
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/launcher3/IconCache;->mIconDb:Lcom/android/launcher3/IconCache$IconDB;
 
-    .line 352
+    .line 334
     const-string/jumbo v5, "rowid"
 
     invoke-static {v5, v12}, Lcom/android/launcher3/Utilities;->createDbSelectionQuery(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/String;
@@ -1549,10 +1417,10 @@
 
     const/4 v9, 0x0
 
-    .line 351
+    .line 333
     invoke-virtual {v4, v5, v9}, Lcom/android/launcher3/IconCache$IconDB;->delete(Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 356
+    .line 338
     :cond_4
     invoke-virtual {v11}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -1568,20 +1436,20 @@
 
     if-eqz v4, :cond_6
 
-    .line 357
+    .line 339
     :cond_5
     new-instance v9, Ljava/util/Stack;
 
     invoke-direct {v9}, Ljava/util/Stack;-><init>()V
 
-    .line 358
+    .line 340
     invoke-virtual {v11}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
     move-result-object v4
 
     invoke-virtual {v9, v4}, Ljava/util/Stack;->addAll(Ljava/util/Collection;)Z
 
-    .line 359
+    .line 341
     new-instance v4, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;
 
     move-object/from16 v5, p0
@@ -1590,11 +1458,11 @@
 
     invoke-virtual {v4}, Lcom/android/launcher3/IconCache$SerializedIconUpdateTask;->scheduleNext()V
 
-    .line 362
+    .line 344
     :cond_6
     return-void
 
-    .line 322
+    .line 304
     :cond_7
     :try_start_3
     iget-object v5, v4, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
@@ -1607,17 +1475,17 @@
 
     if-nez v5, :cond_2
 
-    .line 327
+    .line 309
     invoke-interface {v9, v14}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v20
 
-    .line 328
+    .line 310
     invoke-interface {v9, v15}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v19
 
-    .line 329
+    .line 311
     move-object/from16 v0, v18
 
     invoke-virtual {v11, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1626,7 +1494,7 @@
 
     check-cast v5, Landroid/content/pm/LauncherActivityInfo;
 
-    .line 330
+    .line 312
     iget v0, v4, Landroid/content/pm/PackageInfo;->versionCode:I
 
     move/from16 v22, v0
@@ -1645,14 +1513,14 @@
 
     if-nez v19, :cond_8
 
-    .line 331
+    .line 313
     move/from16 v0, v17
 
     invoke-interface {v9, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v19
 
-    .line 332
+    .line 314
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/launcher3/IconCache;->mIconProvider:Lcom/android/launcher3/IconProvider;
@@ -1667,21 +1535,21 @@
 
     move-result-object v4
 
-    .line 331
+    .line 313
     move-object/from16 v0, v19
 
     invoke-static {v0, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v4
 
-    .line 330
+    .line 312
     if-nez v4, :cond_2
 
-    .line 335
+    .line 317
     :cond_8
     if-nez v5, :cond_a
 
-    .line 336
+    .line 318
     move-object/from16 v0, p0
 
     move-object/from16 v1, v18
@@ -1690,7 +1558,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/IconCache;->remove(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 337
+    .line 319
     move/from16 v0, v16
 
     invoke-interface {v9, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -1708,22 +1576,22 @@
 
     goto/16 :goto_2
 
-    .line 345
+    .line 327
     :catchall_0
     move-exception v4
 
-    .line 346
+    .line 328
     :goto_5
     if-eqz v9, :cond_9
 
-    .line 347
+    .line 329
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 345
+    .line 327
     :cond_9
     throw v4
 
-    .line 339
+    .line 321
     :cond_a
     :try_start_4
     invoke-virtual {v10, v5}, Ljava/util/Stack;->add(Ljava/lang/Object;)Z
@@ -1733,16 +1601,16 @@
 
     goto/16 :goto_2
 
-    .line 346
+    .line 328
     :cond_b
     if-eqz v9, :cond_3
 
-    .line 347
+    .line 329
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     goto/16 :goto_4
 
-    .line 345
+    .line 327
     :catchall_1
     move-exception v4
 
@@ -1757,7 +1625,7 @@
 
     goto :goto_5
 
-    .line 342
+    .line 324
     :catch_1
     move-exception v4
 
@@ -1774,7 +1642,7 @@
 
     monitor-enter p0
 
-    .line 372
+    .line 354
     :try_start_0
     new-instance v2, Lcom/android/launcher3/util/ComponentKey;
 
@@ -1788,10 +1656,10 @@
 
     invoke-direct {v2, v0, v3}, Lcom/android/launcher3/util/ComponentKey;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 374
+    .line 356
     if-nez p5, :cond_3
 
-    .line 375
+    .line 357
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1800,7 +1668,7 @@
 
     check-cast v0, Lcom/android/launcher3/IconCache$CacheEntry;
 
-    .line 377
+    .line 359
     if-eqz v0, :cond_0
 
     iget-boolean v3, v0, Lcom/android/launcher3/IconCache$CacheEntry;->isLowResIcon:Z
@@ -1814,17 +1682,17 @@
     :cond_0
     move-object v0, v1
 
-    .line 381
+    .line 363
     :cond_1
     :goto_0
     if-nez v0, :cond_2
 
-    .line 382
+    .line 364
     new-instance v0, Lcom/android/launcher3/IconCache$CacheEntry;
 
     invoke-direct {v0}, Lcom/android/launcher3/IconCache$CacheEntry;-><init>()V
 
-    .line 383
+    .line 365
     invoke-virtual {p0, p1}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/pm/LauncherActivityInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -1833,7 +1701,7 @@
 
     move-result-object v3
 
-    .line 384
+    .line 366
     iget-object v4, p0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/pm/LauncherActivityInfo;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -1842,14 +1710,14 @@
 
     iget v5, v5, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 383
+    .line 365
     invoke-static {v1, v3, v4, v5}, Lcom/android/launcher3/graphics/LauncherIcons;->createBadgedIconBitmap(Landroid/graphics/drawable/Drawable;Landroid/os/UserHandle;Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     iput-object v1, v0, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
-    .line 386
+    .line 368
     :cond_2
     invoke-virtual {p1}, Landroid/content/pm/LauncherActivityInfo;->getLabel()Ljava/lang/CharSequence;
 
@@ -1857,7 +1725,7 @@
 
     iput-object v1, v0, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 387
+    .line 369
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     iget-object v3, v0, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
@@ -1872,21 +1740,19 @@
 
     iput-object v1, v0, Lcom/android/launcher3/IconCache$CacheEntry;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 388
+    .line 370
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 390
+    .line 372
     iget-object v1, v0, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
-    iget v2, p0, Lcom/android/launcher3/IconCache;->mActivityBgColor:I
-
-    invoke-direct {p0, v1, v2}, Lcom/android/launcher3/IconCache;->generateLowResIcon(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+    invoke-direct {p0, v1}, Lcom/android/launcher3/IconCache;->generateLowResIcon(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 391
+    .line 373
     iget-object v2, v0, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
     iget-object v0, v0, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
@@ -1895,19 +1761,19 @@
 
     move-result-object v0
 
-    .line 392
+    .line 374
     invoke-virtual {p1}, Landroid/content/pm/LauncherActivityInfo;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object v3
 
     iget-object v3, v3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
-    .line 391
+    .line 373
     invoke-direct {p0, v2, v1, v0, v3}, Lcom/android/launcher3/IconCache;->newContentValues(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;)Landroid/content/ContentValues;
 
     move-result-object v1
 
-    .line 393
+    .line 375
     invoke-virtual {p1}, Landroid/content/pm/LauncherActivityInfo;->getComponentName()Landroid/content/ComponentName;
 
     move-result-object v2
@@ -1924,7 +1790,7 @@
 
     monitor-exit p0
 
-    .line 394
+    .line 376
     return-void
 
     :catchall_0
@@ -1950,15 +1816,15 @@
 
     const/4 v3, 0x0
 
-    .line 524
+    .line 506
     invoke-static {}, Lcom/android/launcher3/util/Preconditions;->assertWorkerThread()V
 
-    .line 525
+    .line 507
     new-instance v5, Lcom/android/launcher3/util/ComponentKey;
 
     invoke-direct {v5, p1, p3}, Lcom/android/launcher3/util/ComponentKey;-><init>(Landroid/content/ComponentName;Landroid/os/UserHandle;)V
 
-    .line 526
+    .line 508
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v0, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1967,7 +1833,7 @@
 
     check-cast v0, Lcom/android/launcher3/IconCache$CacheEntry;
 
-    .line 527
+    .line 509
     if-eqz v0, :cond_0
 
     iget-boolean v4, v0, Lcom/android/launcher3/IconCache$CacheEntry;->isLowResIcon:Z
@@ -1978,18 +1844,18 @@
 
     if-eqz v4, :cond_2
 
-    .line 528
+    .line 510
     :cond_0
     new-instance v4, Lcom/android/launcher3/IconCache$CacheEntry;
 
     invoke-direct {v4}, Lcom/android/launcher3/IconCache$CacheEntry;-><init>()V
 
-    .line 529
+    .line 511
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v0, v5, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 535
+    .line 517
     invoke-direct {p0, v5, v4, p5}, Lcom/android/launcher3/IconCache;->getEntryFromDB(Lcom/android/launcher3/util/ComponentKey;Lcom/android/launcher3/IconCache$CacheEntry;Z)Z
 
     move-result v0
@@ -2000,7 +1866,7 @@
 
     move-object v1, v3
 
-    .line 563
+    .line 545
     :goto_0
     iget-object v2, v4, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
@@ -2010,14 +1876,14 @@
 
     if-eqz v2, :cond_6
 
-    .line 564
+    .line 546
     if-nez v1, :cond_1
 
     xor-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 565
+    .line 547
     invoke-virtual {p2}, Lcom/android/launcher3/util/Provider;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -2026,18 +1892,18 @@
 
     move-object v1, v0
 
-    .line 568
+    .line 550
     :cond_1
     if-eqz v1, :cond_6
 
-    .line 569
+    .line 551
     invoke-virtual {v1}, Landroid/content/pm/LauncherActivityInfo;->getLabel()Ljava/lang/CharSequence;
 
     move-result-object v0
 
     iput-object v0, v4, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 570
+    .line 552
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     iget-object v1, v4, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
@@ -2050,12 +1916,12 @@
 
     move-object v0, v4
 
-    .line 574
+    .line 556
     :cond_2
     :goto_1
     return-object v0
 
-    .line 536
+    .line 518
     :cond_3
     invoke-virtual {p2}, Lcom/android/launcher3/util/Provider;->get()Ljava/lang/Object;
 
@@ -2063,10 +1929,10 @@
 
     check-cast v0, Landroid/content/pm/LauncherActivityInfo;
 
-    .line 539
+    .line 521
     if-eqz v0, :cond_4
 
-    .line 541
+    .line 523
     invoke-virtual {p0, v0}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/pm/LauncherActivityInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2077,7 +1943,7 @@
 
     iget-object v6, p0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
 
-    .line 542
+    .line 524
     invoke-virtual {p2}, Lcom/android/launcher3/util/Provider;->get()Ljava/lang/Object;
 
     move-result-object v1
@@ -2090,7 +1956,7 @@
 
     iget v1, v1, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
-    .line 540
+    .line 522
     invoke-static {v3, v5, v6, v1}, Lcom/android/launcher3/graphics/LauncherIcons;->createBadgedIconBitmap(Landroid/graphics/drawable/Drawable;Landroid/os/UserHandle;Landroid/content/Context;I)Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -2103,45 +1969,45 @@
 
     goto :goto_0
 
-    .line 544
+    .line 526
     :cond_4
     if-eqz p4, :cond_5
 
-    .line 546
+    .line 528
     invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 545
+    .line 527
     invoke-direct {p0, v3, p3, v1}, Lcom/android/launcher3/IconCache;->getEntryForPackageLocked(Ljava/lang/String;Landroid/os/UserHandle;Z)Lcom/android/launcher3/IconCache$CacheEntry;
 
     move-result-object v1
 
-    .line 547
+    .line 529
     if-eqz v1, :cond_5
 
-    .line 550
+    .line 532
     iget-object v3, v1, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
     iput-object v3, v4, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
-    .line 551
+    .line 533
     iget-object v3, v1, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
     iput-object v3, v4, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 552
+    .line 534
     iget-object v1, v1, Lcom/android/launcher3/IconCache$CacheEntry;->contentDescription:Ljava/lang/CharSequence;
 
     iput-object v1, v4, Lcom/android/launcher3/IconCache$CacheEntry;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 555
+    .line 537
     :cond_5
     iget-object v1, v4, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
     if-nez v1, :cond_7
 
-    .line 558
+    .line 540
     invoke-virtual {p0, p3}, Lcom/android/launcher3/IconCache;->getDefaultIcon(Landroid/os/UserHandle;)Landroid/graphics/Bitmap;
 
     move-result-object v1
@@ -2173,16 +2039,16 @@
     .prologue
     monitor-enter p0
 
-    .line 588
+    .line 570
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/IconCache;->removeFromMemCacheLocked(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 590
+    .line 572
     invoke-static {p1, p2}, Lcom/android/launcher3/IconCache;->getPackageKey(Ljava/lang/String;Landroid/os/UserHandle;)Lcom/android/launcher3/util/ComponentKey;
 
     move-result-object v1
 
-    .line 591
+    .line 573
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2191,20 +2057,20 @@
 
     check-cast v0, Lcom/android/launcher3/IconCache$CacheEntry;
 
-    .line 594
+    .line 576
     if-nez v0, :cond_0
 
-    .line 595
+    .line 577
     new-instance v0, Lcom/android/launcher3/IconCache$CacheEntry;
 
     invoke-direct {v0}, Lcom/android/launcher3/IconCache$CacheEntry;-><init>()V
 
-    .line 596
+    .line 578
     iget-object v2, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
     invoke-virtual {v2, v1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 598
+    .line 580
     :cond_0
     invoke-static {p4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2212,14 +2078,14 @@
 
     if-nez v1, :cond_1
 
-    .line 599
+    .line 581
     iput-object p4, v0, Lcom/android/launcher3/IconCache$CacheEntry;->title:Ljava/lang/CharSequence;
 
-    .line 601
+    .line 583
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 602
+    .line 584
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
 
     invoke-static {p3, v1}, Lcom/android/launcher3/graphics/LauncherIcons;->createIconBitmap(Landroid/graphics/Bitmap;Landroid/content/Context;)Landroid/graphics/Bitmap;
@@ -2233,7 +2099,7 @@
     :cond_2
     monitor-exit p0
 
-    .line 604
+    .line 586
     return-void
 
     :catchall_0
@@ -2250,11 +2116,11 @@
     .prologue
     monitor-enter p0
 
-    .line 578
+    .line 560
     :try_start_0
     invoke-static {}, Lcom/android/launcher3/util/Preconditions;->assertWorkerThread()V
 
-    .line 579
+    .line 561
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mIconDb:Lcom/android/launcher3/IconCache$IconDB;
 
     invoke-virtual {v0}, Lcom/android/launcher3/IconCache$IconDB;->clear()V
@@ -2263,7 +2129,7 @@
 
     monitor-exit p0
 
-    .line 580
+    .line 562
     return-void
 
     :catchall_0
@@ -2280,7 +2146,7 @@
     .prologue
     monitor-enter p0
 
-    .line 506
+    .line 488
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mDefaultIcons:Ljava/util/HashMap;
 
@@ -2290,7 +2156,7 @@
 
     if-nez v0, :cond_0
 
-    .line 507
+    .line 489
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mDefaultIcons:Ljava/util/HashMap;
 
     invoke-virtual {p0, p1}, Lcom/android/launcher3/IconCache;->makeDefaultIcon(Landroid/os/UserHandle;)Landroid/graphics/Bitmap;
@@ -2299,7 +2165,7 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 509
+    .line 491
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mDefaultIcons:Ljava/util/HashMap;
 
@@ -2329,40 +2195,40 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 177
+    .line 156
     :try_start_0
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 178
+    .line 157
     iget-object v2, p1, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 177
+    .line 156
     invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    .line 182
+    .line 161
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 183
+    .line 162
     invoke-virtual {p1}, Landroid/content/pm/ActivityInfo;->getIconResource()I
 
     move-result v1
 
-    .line 184
+    .line 163
     if-eqz v1, :cond_0
 
-    .line 185
+    .line 164
     invoke-direct {p0, v0, v1}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     return-object v0
 
-    .line 189
+    .line 168
     :cond_0
     invoke-direct {p0}, Lcom/android/launcher3/IconCache;->getFullResDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 
@@ -2370,7 +2236,7 @@
 
     return-object v0
 
-    .line 179
+    .line 158
     :catch_0
     move-exception v1
 
@@ -2378,15 +2244,29 @@
 .end method
 
 .method public getFullResIcon(Landroid/content/pm/LauncherActivityInfo;)Landroid/graphics/drawable/Drawable;
+    .locals 1
+
+    .prologue
+    .line 172
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/pm/LauncherActivityInfo;Z)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getFullResIcon(Landroid/content/pm/LauncherActivityInfo;Z)Landroid/graphics/drawable/Drawable;
     .locals 2
 
     .prologue
-    .line 193
+    .line 176
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mIconProvider:Lcom/android/launcher3/IconProvider;
 
     iget v1, p0, Lcom/android/launcher3/IconCache;->mIconDpi:I
 
-    invoke-virtual {v0, p1, v1}, Lcom/android/launcher3/IconProvider;->getIcon(Landroid/content/pm/LauncherActivityInfo;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, p1, v1, p2}, Lcom/android/launcher3/IconProvider;->getIcon(Landroid/content/pm/LauncherActivityInfo;IZ)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -2399,7 +2279,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 162
+    .line 141
     :try_start_0
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mPackageManager:Landroid/content/pm/PackageManager;
 
@@ -2409,21 +2289,21 @@
 
     move-result-object v0
 
-    .line 166
+    .line 145
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 167
+    .line 146
     if-eqz p2, :cond_0
 
-    .line 168
+    .line 147
     invoke-direct {p0, v0, p2}, Lcom/android/launcher3/IconCache;->getFullResIcon(Landroid/content/res/Resources;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     return-object v0
 
-    .line 171
+    .line 150
     :cond_0
     invoke-direct {p0}, Lcom/android/launcher3/IconCache;->getFullResDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 
@@ -2431,7 +2311,7 @@
 
     return-object v0
 
-    .line 163
+    .line 142
     :catch_0
     move-exception v1
 
@@ -2444,7 +2324,7 @@
     .prologue
     monitor-enter p0
 
-    .line 455
+    .line 437
     :try_start_0
     invoke-static {p2}, Lcom/android/launcher3/util/Provider;->of(Ljava/lang/Object;)Lcom/android/launcher3/util/Provider;
 
@@ -2458,7 +2338,7 @@
 
     monitor-exit p0
 
-    .line 456
+    .line 438
     return-void
 
     :catchall_0
@@ -2475,7 +2355,7 @@
     .prologue
     monitor-enter p0
 
-    .line 465
+    .line 447
     :try_start_0
     invoke-virtual {p1}, Lcom/android/launcher3/ItemInfoWithIcon;->getTargetComponent()Landroid/content/ComponentName;
 
@@ -2483,7 +2363,7 @@
 
     if-nez v0, :cond_0
 
-    .line 466
+    .line 448
     iget-object v0, p1, Lcom/android/launcher3/ItemInfoWithIcon;->user:Landroid/os/UserHandle;
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/IconCache;->getDefaultIcon(Landroid/os/UserHandle;)Landroid/graphics/Bitmap;
@@ -2492,17 +2372,17 @@
 
     iput-object v0, p1, Lcom/android/launcher3/ItemInfoWithIcon;->iconBitmap:Landroid/graphics/Bitmap;
 
-    .line 467
+    .line 449
     const-string/jumbo v0, ""
 
     iput-object v0, p1, Lcom/android/launcher3/ItemInfoWithIcon;->title:Ljava/lang/CharSequence;
 
-    .line 468
+    .line 450
     const-string/jumbo v0, ""
 
     iput-object v0, p1, Lcom/android/launcher3/ItemInfoWithIcon;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 469
+    .line 451
     const/4 v0, 0x0
 
     iput-boolean v0, p1, Lcom/android/launcher3/ItemInfoWithIcon;->usingLowResIcon:Z
@@ -2512,10 +2392,10 @@
     :goto_0
     monitor-exit p0
 
-    .line 474
+    .line 456
     return-void
 
-    .line 471
+    .line 453
     :cond_0
     :try_start_1
     new-instance v0, Lcom/android/launcher3/IconCache$ActivityInfoProvider;
@@ -2528,10 +2408,10 @@
 
     invoke-direct {v0, p0, v1, v2}, Lcom/android/launcher3/IconCache$ActivityInfoProvider;-><init>(Lcom/android/launcher3/IconCache;Landroid/content/Intent;Landroid/os/UserHandle;)V
 
-    .line 472
+    .line 454
     const/4 v1, 0x1
 
-    .line 471
+    .line 453
     invoke-direct {p0, p1, v0, v1, p2}, Lcom/android/launcher3/IconCache;->getTitleAndIcon(Lcom/android/launcher3/ItemInfoWithIcon;Lcom/android/launcher3/util/Provider;ZZ)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -2552,25 +2432,25 @@
     .prologue
     monitor-enter p0
 
-    .line 494
+    .line 476
     :try_start_0
     iget-object v0, p1, Lcom/android/launcher3/model/PackageItemInfo;->packageName:Ljava/lang/String;
 
     iget-object v1, p1, Lcom/android/launcher3/model/PackageItemInfo;->user:Landroid/os/UserHandle;
 
-    .line 493
+    .line 475
     invoke-direct {p0, v0, v1, p2}, Lcom/android/launcher3/IconCache;->getEntryForPackageLocked(Ljava/lang/String;Landroid/os/UserHandle;Z)Lcom/android/launcher3/IconCache$CacheEntry;
 
     move-result-object v0
 
-    .line 495
+    .line 477
     invoke-direct {p0, v0, p1}, Lcom/android/launcher3/IconCache;->applyCacheEntry(Lcom/android/launcher3/IconCache$CacheEntry;Lcom/android/launcher3/ItemInfoWithIcon;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 496
+    .line 478
     return-void
 
     :catchall_0
@@ -2585,7 +2465,7 @@
     .locals 1
 
     .prologue
-    .line 513
+    .line 495
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mDefaultIcons:Ljava/util/HashMap;
 
     invoke-virtual {v0, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2609,12 +2489,12 @@
     .locals 3
 
     .prologue
-    .line 197
+    .line 180
     invoke-direct {p0}, Lcom/android/launcher3/IconCache;->getFullResDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 198
+    .line 181
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mContext:Landroid/content/Context;
 
     const/16 v2, 0x1a
@@ -2632,7 +2512,7 @@
     .prologue
     monitor-enter p0
 
-    .line 205
+    .line 188
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mCache:Ljava/util/HashMap;
 
@@ -2646,7 +2526,7 @@
 
     monitor-exit p0
 
-    .line 206
+    .line 189
     return-void
 
     :catchall_0
@@ -2663,24 +2543,24 @@
     .prologue
     monitor-enter p0
 
-    .line 246
+    .line 228
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/android/launcher3/IconCache;->removeFromMemCacheLocked(Ljava/lang/String;Landroid/os/UserHandle;)V
 
-    .line 247
+    .line 229
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     invoke-virtual {v0, p2}, Lcom/android/launcher3/compat/UserManagerCompat;->getSerialNumberForUser(Landroid/os/UserHandle;)J
 
     move-result-wide v0
 
-    .line 248
+    .line 230
     iget-object v2, p0, Lcom/android/launcher3/IconCache;->mIconDb:Lcom/android/launcher3/IconCache$IconDB;
 
-    .line 249
+    .line 231
     const-string/jumbo v3, "componentName LIKE ? AND profileId = ?"
 
-    .line 250
+    .line 232
     const/4 v4, 0x2
 
     new-array v4, v4, [Ljava/lang/String;
@@ -2715,14 +2595,14 @@
 
     aput-object v0, v4, v1
 
-    .line 248
+    .line 230
     invoke-virtual {v2, v3, v4}, Lcom/android/launcher3/IconCache$IconDB;->delete(Ljava/lang/String;[Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     monitor-exit p0
 
-    .line 251
+    .line 233
     return-void
 
     :catchall_0
@@ -2739,19 +2619,19 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 255
+    .line 237
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mWorkerHandler:Landroid/os/Handler;
 
     sget-object v1, Lcom/android/launcher3/IconCache;->ICON_UPDATE_TOKEN:Ljava/lang/Object;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 257
+    .line 239
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mIconProvider:Lcom/android/launcher3/IconProvider;
 
     invoke-virtual {v0}, Lcom/android/launcher3/IconProvider;->updateSystemStateString()V
 
-    .line 258
+    .line 240
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     invoke-virtual {v0}, Lcom/android/launcher3/compat/UserManagerCompat;->getUserProfiles()Ljava/util/List;
@@ -2775,14 +2655,14 @@
 
     check-cast v0, Landroid/os/UserHandle;
 
-    .line 260
+    .line 242
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mLauncherApps:Lcom/android/launcher3/compat/LauncherAppsCompat;
 
     invoke-virtual {v1, v4, v0}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getActivityList(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
 
     move-result-object v3
 
-    .line 263
+    .line 245
     if-eqz v3, :cond_0
 
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
@@ -2791,11 +2671,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 264
+    .line 246
     :cond_0
     return-void
 
-    .line 269
+    .line 251
     :cond_1
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
@@ -2814,7 +2694,7 @@
 
     goto :goto_0
 
-    .line 270
+    .line 252
     :cond_2
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
@@ -2822,7 +2702,7 @@
 
     goto :goto_1
 
-    .line 272
+    .line 254
     :cond_3
     return-void
 .end method
@@ -2831,17 +2711,17 @@
     .locals 3
 
     .prologue
-    .line 415
+    .line 397
     new-instance v0, Lcom/android/launcher3/IconCache$1;
 
     invoke-direct {v0, p0, p2, p1}, Lcom/android/launcher3/IconCache$1;-><init>(Lcom/android/launcher3/IconCache;Lcom/android/launcher3/ItemInfoWithIcon;Lcom/android/launcher3/IconCache$ItemInfoUpdateReceiver;)V
 
-    .line 433
+    .line 415
     iget-object v1, p0, Lcom/android/launcher3/IconCache;->mWorkerHandler:Landroid/os/Handler;
 
     invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 434
+    .line 416
     new-instance v1, Lcom/android/launcher3/IconCache$IconLoadRequest;
 
     iget-object v2, p0, Lcom/android/launcher3/IconCache;->mWorkerHandler:Landroid/os/Handler;
@@ -2857,32 +2737,32 @@
     .prologue
     monitor-enter p0
 
-    .line 228
+    .line 211
     :try_start_0
     invoke-virtual {p0, p1, p2}, Lcom/android/launcher3/IconCache;->removeIconsForPkg(Ljava/lang/String;Landroid/os/UserHandle;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 230
+    .line 213
     :try_start_1
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 231
+    .line 214
     const/16 v1, 0x2000
 
-    .line 230
+    .line 213
     invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
     move-result-object v3
 
-    .line 232
+    .line 215
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mUserManager:Lcom/android/launcher3/compat/UserManagerCompat;
 
     invoke-virtual {v0, p2}, Lcom/android/launcher3/compat/UserManagerCompat;->getSerialNumberForUser(Landroid/os/UserHandle;)J
 
     move-result-wide v4
 
-    .line 233
+    .line 216
     iget-object v0, p0, Lcom/android/launcher3/IconCache;->mLauncherApps:Lcom/android/launcher3/compat/LauncherAppsCompat;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/launcher3/compat/LauncherAppsCompat;->getActivityList(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;
@@ -2906,7 +2786,7 @@
 
     check-cast v2, Landroid/content/pm/LauncherActivityInfo;
 
-    .line 234
+    .line 217
     const/4 v6, 0x0
 
     move-object v1, p0
@@ -2918,11 +2798,11 @@
 
     goto :goto_0
 
-    .line 236
+    .line 219
     :catch_0
     move-exception v0
 
-    .line 237
+    .line 220
     :try_start_2
     const-string/jumbo v1, "Launcher.IconCache"
 
@@ -2932,15 +2812,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    monitor-exit p0
-
-    .line 238
-    return-void
-
     :cond_0
     monitor-exit p0
 
-    .line 240
+    .line 222
     return-void
 
     :catchall_0
@@ -2957,18 +2832,18 @@
     .prologue
     monitor-enter p0
 
-    .line 441
+    .line 423
     :try_start_0
     iget-object v1, p1, Lcom/android/launcher3/AppInfo;->componentName:Landroid/content/ComponentName;
 
-    .line 442
+    .line 424
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/launcher3/util/Provider;->of(Ljava/lang/Object;)Lcom/android/launcher3/util/Provider;
 
     move-result-object v2
 
-    .line 443
+    .line 425
     iget-object v3, p1, Lcom/android/launcher3/AppInfo;->user:Landroid/os/UserHandle;
 
     iget-boolean v5, p1, Lcom/android/launcher3/AppInfo;->usingLowResIcon:Z
@@ -2977,12 +2852,12 @@
 
     move-object v0, p0
 
-    .line 441
+    .line 423
     invoke-virtual/range {v0 .. v5}, Lcom/android/launcher3/IconCache;->cacheLocked(Landroid/content/ComponentName;Lcom/android/launcher3/util/Provider;Landroid/os/UserHandle;ZZ)Lcom/android/launcher3/IconCache$CacheEntry;
 
     move-result-object v0
 
-    .line 444
+    .line 426
     iget-object v1, v0, Lcom/android/launcher3/IconCache$CacheEntry;->icon:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_0
@@ -2999,7 +2874,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 445
+    .line 427
     invoke-direct {p0, v0, p1}, Lcom/android/launcher3/IconCache;->applyCacheEntry(Lcom/android/launcher3/IconCache$CacheEntry;Lcom/android/launcher3/ItemInfoWithIcon;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -3007,7 +2882,7 @@
     :cond_0
     monitor-exit p0
 
-    .line 447
+    .line 429
     return-void
 
     :catchall_0

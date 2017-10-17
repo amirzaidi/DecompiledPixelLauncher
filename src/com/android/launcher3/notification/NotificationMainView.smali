@@ -87,21 +87,21 @@
     .line 87
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationMainView;->mNotificationInfo:Lcom/android/launcher3/notification/NotificationInfo;
 
-    iget-object v1, v0, Lcom/android/launcher3/notification/NotificationInfo;->title:Ljava/lang/CharSequence;
+    iget-object v0, v0, Lcom/android/launcher3/notification/NotificationInfo;->title:Ljava/lang/CharSequence;
 
     .line 88
-    iget-object v0, p0, Lcom/android/launcher3/notification/NotificationMainView;->mNotificationInfo:Lcom/android/launcher3/notification/NotificationInfo;
+    iget-object v1, p0, Lcom/android/launcher3/notification/NotificationMainView;->mNotificationInfo:Lcom/android/launcher3/notification/NotificationInfo;
 
-    iget-object v0, v0, Lcom/android/launcher3/notification/NotificationInfo;->text:Ljava/lang/CharSequence;
+    iget-object v1, v1, Lcom/android/launcher3/notification/NotificationInfo;->text:Ljava/lang/CharSequence;
 
     .line 89
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
@@ -112,12 +112,20 @@
     .line 90
     iget-object v2, p0, Lcom/android/launcher3/notification/NotificationMainView;->mTitleView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 91
-    iget-object v1, p0, Lcom/android/launcher3/notification/NotificationMainView;->mTextView:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/android/launcher3/notification/NotificationMainView;->mTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 97
     :goto_0
@@ -205,11 +213,15 @@
     .line 94
     iget-object v2, p0, Lcom/android/launcher3/notification/NotificationMainView;->mTitleView:Landroid/widget/TextView;
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-eqz v3, :cond_3
+
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     :goto_1
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -223,10 +235,12 @@
 
     goto :goto_0
 
-    :cond_3
-    move-object v0, v1
-
     .line 94
+    :cond_3
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     goto :goto_1
 .end method
 
@@ -369,7 +383,7 @@
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
     .line 66
-    const v0, 0x7f0e0050
+    const v0, 0x7f0e005a
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/notification/NotificationMainView;->findViewById(I)Landroid/view/View;
 
@@ -441,7 +455,7 @@
     .line 74
     iget-object v0, p0, Lcom/android/launcher3/notification/NotificationMainView;->mTextAndBackground:Landroid/view/ViewGroup;
 
-    const v1, 0x7f0e0051
+    const v1, 0x7f0e005b
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

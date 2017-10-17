@@ -44,49 +44,49 @@
 
     const/4 v0, 0x1
 
-    .line 107
+    .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput-wide v2, p0, Lcom/android/launcher3/ItemInfo;->id:J
 
-    .line 53
+    .line 55
     iput-wide v2, p0, Lcom/android/launcher3/ItemInfo;->container:J
 
-    .line 58
+    .line 62
     iput-wide v2, p0, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 63
+    .line 67
     iput v1, p0, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 68
+    .line 72
     iput v1, p0, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 73
+    .line 77
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanX:I
 
-    .line 78
+    .line 82
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 83
+    .line 87
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->minSpanX:I
 
-    .line 88
+    .line 92
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->minSpanY:I
 
-    .line 93
+    .line 97
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->rank:I
 
-    .line 108
+    .line 112
     invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/launcher3/ItemInfo;->user:Landroid/os/UserHandle;
 
-    .line 109
+    .line 113
     return-void
 .end method
 
@@ -100,48 +100,48 @@
 
     const/4 v0, 0x1
 
-    .line 111
+    .line 115
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
     iput-wide v2, p0, Lcom/android/launcher3/ItemInfo;->id:J
 
-    .line 53
+    .line 55
     iput-wide v2, p0, Lcom/android/launcher3/ItemInfo;->container:J
 
-    .line 58
+    .line 62
     iput-wide v2, p0, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 63
+    .line 67
     iput v1, p0, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 68
+    .line 72
     iput v1, p0, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 73
+    .line 77
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanX:I
 
-    .line 78
+    .line 82
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 83
+    .line 87
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->minSpanX:I
 
-    .line 88
+    .line 92
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->minSpanY:I
 
-    .line 93
+    .line 97
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->rank:I
 
-    .line 112
+    .line 116
     invoke-virtual {p0, p1}, Lcom/android/launcher3/ItemInfo;->copyFrom(Lcom/android/launcher3/ItemInfo;)V
 
-    .line 114
+    .line 118
     invoke-static {p0}, Lcom/android/launcher3/LauncherModel;->checkItemInfo(Lcom/android/launcher3/ItemInfo;)V
 
-    .line 115
+    .line 119
     return-void
 .end method
 
@@ -151,62 +151,62 @@
     .locals 2
 
     .prologue
-    .line 118
+    .line 122
     iget-wide v0, p1, Lcom/android/launcher3/ItemInfo;->id:J
 
     iput-wide v0, p0, Lcom/android/launcher3/ItemInfo;->id:J
 
-    .line 119
+    .line 123
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellX:I
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 120
+    .line 124
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->cellY:I
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 121
+    .line 125
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->spanX:I
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanX:I
 
-    .line 122
+    .line 126
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->spanY:I
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 123
+    .line 127
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->rank:I
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->rank:I
 
-    .line 124
+    .line 128
     iget-wide v0, p1, Lcom/android/launcher3/ItemInfo;->screenId:J
 
     iput-wide v0, p0, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 125
+    .line 129
     iget v0, p1, Lcom/android/launcher3/ItemInfo;->itemType:I
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
 
-    .line 126
+    .line 130
     iget-wide v0, p1, Lcom/android/launcher3/ItemInfo;->container:J
 
     iput-wide v0, p0, Lcom/android/launcher3/ItemInfo;->container:J
 
-    .line 127
+    .line 131
     iget-object v0, p1, Lcom/android/launcher3/ItemInfo;->user:Landroid/os/UserHandle;
 
     iput-object v0, p0, Lcom/android/launcher3/ItemInfo;->user:Landroid/os/UserHandle;
 
-    .line 128
+    .line 132
     iget-object v0, p1, Lcom/android/launcher3/ItemInfo;->contentDescription:Ljava/lang/CharSequence;
 
     iput-object v0, p0, Lcom/android/launcher3/ItemInfo;->contentDescription:Ljava/lang/CharSequence;
 
-    .line 129
+    .line 133
     return-void
 .end method
 
@@ -214,7 +214,7 @@
     .locals 4
 
     .prologue
-    .line 180
+    .line 195
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -231,194 +231,228 @@
 
     move-result-object v0
 
-    .line 181
+    .line 196
     const-string/jumbo v1, " type="
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 181
+    .line 196
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
 
-    .line 180
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Lcom/android/launcher3/LauncherSettings$Favorites;->itemTypeToString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 195
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 182
+    .line 197
     const-string/jumbo v1, " container="
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 182
+    .line 197
     iget-wide v2, p0, Lcom/android/launcher3/ItemInfo;->container:J
 
-    .line 180
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    long-to-int v1, v2
+
+    invoke-static {v1}, Lcom/android/launcher3/LauncherSettings$Favorites;->containerToString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 195
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 183
+    .line 198
     const-string/jumbo v1, " screen="
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 183
+    .line 198
     iget-wide v2, p0, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 184
-    const-string/jumbo v1, " cellX="
+    .line 199
+    const-string/jumbo v1, " cell("
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 184
+    .line 199
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 185
-    const-string/jumbo v1, " cellY="
+    .line 199
+    const-string/jumbo v1, ","
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 185
+    .line 199
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 186
-    const-string/jumbo v1, " spanX="
+    .line 199
+    const-string/jumbo v1, ")"
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 186
+    .line 200
+    const-string/jumbo v1, " span("
+
+    .line 195
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 200
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->spanX:I
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 187
-    const-string/jumbo v1, " spanY="
+    .line 200
+    const-string/jumbo v1, ","
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 187
+    .line 200
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 188
-    const-string/jumbo v1, " minSpanX="
+    .line 200
+    const-string/jumbo v1, ")"
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 188
+    .line 201
+    const-string/jumbo v1, " minSpan("
+
+    .line 195
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 201
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->minSpanX:I
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 189
-    const-string/jumbo v1, " minSpanY="
+    .line 201
+    const-string/jumbo v1, ","
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 189
+    .line 201
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->minSpanY:I
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 190
+    .line 201
+    const-string/jumbo v1, ")"
+
+    .line 195
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    .line 202
     const-string/jumbo v1, " rank="
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 190
+    .line 202
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->rank:I
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 191
+    .line 203
     const-string/jumbo v1, " user="
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 191
+    .line 203
     iget-object v1, p0, Lcom/android/launcher3/ItemInfo;->user:Landroid/os/UserHandle;
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 192
+    .line 204
     const-string/jumbo v1, " title="
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 192
+    .line 204
     iget-object v1, p0, Lcom/android/launcher3/ItemInfo;->title:Ljava/lang/CharSequence;
 
-    .line 180
+    .line 195
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -434,45 +468,74 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 136
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public getTargetComponent()Landroid/content/ComponentName;
-    .locals 2
+    .locals 5
 
     .prologue
     const/4 v0, 0x0
 
-    .line 136
+    .line 140
     invoke-virtual {p0}, Lcom/android/launcher3/ItemInfo;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
 
+    .line 141
     if-nez v1, :cond_0
+
+    .line 142
+    return-object v0
+
+    .line 144
+    :cond_0
+    invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v2
+
+    .line 145
+    iget v3, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_2
+
+    if-nez v2, :cond_2
+
+    .line 148
+    invoke-virtual {v1}, Landroid/content/Intent;->getPackage()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 149
+    if-nez v1, :cond_1
 
     :goto_0
     return-object v0
 
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/launcher3/ItemInfo;->getIntent()Landroid/content/Intent;
+    :cond_1
+    new-instance v0, Landroid/content/ComponentName;
 
-    move-result-object v0
+    const-string/jumbo v2, "."
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v0
+    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
+
+    .line 151
+    :cond_2
+    return-object v2
 .end method
 
 .method public isDisabled()Z
     .locals 1
 
     .prologue
-    .line 199
+    .line 211
     const/4 v0, 0x0
 
     return v0
@@ -482,7 +545,7 @@
     .locals 4
 
     .prologue
-    .line 165
+    .line 180
     iget-wide v0, p0, Lcom/android/launcher3/ItemInfo;->screenId:J
 
     const-wide/16 v2, -0xc9
@@ -491,7 +554,7 @@
 
     if-nez v0, :cond_0
 
-    .line 167
+    .line 182
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string/jumbo v1, "Screen id should not be EXTRA_EMPTY_SCREEN_ID"
@@ -500,18 +563,18 @@
 
     throw v0
 
-    .line 170
+    .line 185
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/launcher3/ItemInfo;->writeToValues(Lcom/android/launcher3/util/ContentWriter;)V
 
-    .line 171
+    .line 186
     const-string/jumbo v0, "profileId"
 
     iget-object v1, p0, Lcom/android/launcher3/ItemInfo;->user:Landroid/os/UserHandle;
 
     invoke-virtual {p1, v0, v1}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Landroid/os/UserHandle;)Lcom/android/launcher3/util/ContentWriter;
 
-    .line 172
+    .line 187
     return-void
 .end method
 
@@ -519,7 +582,7 @@
     .locals 2
 
     .prologue
-    .line 151
+    .line 166
     const-string/jumbo v0, "itemType"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -532,7 +595,7 @@
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
 
-    .line 152
+    .line 167
     const-string/jumbo v0, "container"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
@@ -545,7 +608,7 @@
 
     iput-wide v0, p0, Lcom/android/launcher3/ItemInfo;->container:J
 
-    .line 153
+    .line 168
     const-string/jumbo v0, "screen"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsLong(Ljava/lang/String;)Ljava/lang/Long;
@@ -558,7 +621,7 @@
 
     iput-wide v0, p0, Lcom/android/launcher3/ItemInfo;->screenId:J
 
-    .line 154
+    .line 169
     const-string/jumbo v0, "cellX"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -571,7 +634,7 @@
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->cellX:I
 
-    .line 155
+    .line 170
     const-string/jumbo v0, "cellY"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -584,7 +647,7 @@
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->cellY:I
 
-    .line 156
+    .line 171
     const-string/jumbo v0, "spanX"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -597,7 +660,7 @@
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanX:I
 
-    .line 157
+    .line 172
     const-string/jumbo v0, "spanY"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -610,7 +673,7 @@
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->spanY:I
 
-    .line 158
+    .line 173
     const-string/jumbo v0, "rank"
 
     invoke-virtual {p1, v0}, Landroid/content/ContentValues;->getAsInteger(Ljava/lang/String;)Ljava/lang/Integer;
@@ -623,7 +686,7 @@
 
     iput v0, p0, Lcom/android/launcher3/ItemInfo;->rank:I
 
-    .line 159
+    .line 174
     return-void
 .end method
 
@@ -631,7 +694,7 @@
     .locals 2
 
     .prologue
-    .line 176
+    .line 191
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -679,7 +742,7 @@
     .locals 4
 
     .prologue
-    .line 140
+    .line 155
     const-string/jumbo v0, "itemType"
 
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
@@ -692,7 +755,7 @@
 
     move-result-object v0
 
-    .line 141
+    .line 156
     const-string/jumbo v1, "container"
 
     iget-wide v2, p0, Lcom/android/launcher3/ItemInfo;->container:J
@@ -701,12 +764,12 @@
 
     move-result-object v2
 
-    .line 140
+    .line 155
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Ljava/lang/Long;)Lcom/android/launcher3/util/ContentWriter;
 
     move-result-object v0
 
-    .line 142
+    .line 157
     const-string/jumbo v1, "screen"
 
     iget-wide v2, p0, Lcom/android/launcher3/ItemInfo;->screenId:J
@@ -715,12 +778,12 @@
 
     move-result-object v2
 
-    .line 140
+    .line 155
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Ljava/lang/Long;)Lcom/android/launcher3/util/ContentWriter;
 
     move-result-object v0
 
-    .line 143
+    .line 158
     const-string/jumbo v1, "cellX"
 
     iget v2, p0, Lcom/android/launcher3/ItemInfo;->cellX:I
@@ -729,12 +792,12 @@
 
     move-result-object v2
 
-    .line 140
+    .line 155
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Ljava/lang/Integer;)Lcom/android/launcher3/util/ContentWriter;
 
     move-result-object v0
 
-    .line 144
+    .line 159
     const-string/jumbo v1, "cellY"
 
     iget v2, p0, Lcom/android/launcher3/ItemInfo;->cellY:I
@@ -743,12 +806,12 @@
 
     move-result-object v2
 
-    .line 140
+    .line 155
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Ljava/lang/Integer;)Lcom/android/launcher3/util/ContentWriter;
 
     move-result-object v0
 
-    .line 145
+    .line 160
     const-string/jumbo v1, "spanX"
 
     iget v2, p0, Lcom/android/launcher3/ItemInfo;->spanX:I
@@ -757,12 +820,12 @@
 
     move-result-object v2
 
-    .line 140
+    .line 155
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Ljava/lang/Integer;)Lcom/android/launcher3/util/ContentWriter;
 
     move-result-object v0
 
-    .line 146
+    .line 161
     const-string/jumbo v1, "spanY"
 
     iget v2, p0, Lcom/android/launcher3/ItemInfo;->spanY:I
@@ -771,12 +834,12 @@
 
     move-result-object v2
 
-    .line 140
+    .line 155
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Ljava/lang/Integer;)Lcom/android/launcher3/util/ContentWriter;
 
     move-result-object v0
 
-    .line 147
+    .line 162
     const-string/jumbo v1, "rank"
 
     iget v2, p0, Lcom/android/launcher3/ItemInfo;->rank:I
@@ -785,9 +848,9 @@
 
     move-result-object v2
 
-    .line 140
+    .line 155
     invoke-virtual {v0, v1, v2}, Lcom/android/launcher3/util/ContentWriter;->put(Ljava/lang/String;Ljava/lang/Integer;)Lcom/android/launcher3/util/ContentWriter;
 
-    .line 148
+    .line 163
     return-void
 .end method

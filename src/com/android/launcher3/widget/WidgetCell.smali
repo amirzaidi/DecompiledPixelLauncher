@@ -207,7 +207,7 @@
     aput-object v3, v2, v5
 
     .line 136
-    const v3, 0x7f0c0028
+    const v3, 0x7f0c002a
 
     invoke-virtual {v1, v3, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -245,7 +245,7 @@
 
     aput-object v3, v2, v5
 
-    const v3, 0x7f0c0029
+    const v3, 0x7f0c002b
 
     .line 138
     invoke-virtual {v1, v3, v2}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
@@ -510,7 +510,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 110
-    const v0, 0x7f0e006d
+    const v0, 0x7f0e0087
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/widget/WidgetCell;->findViewById(I)Landroid/view/View;
 
@@ -521,7 +521,7 @@
     iput-object v0, p0, Lcom/android/launcher3/widget/WidgetCell;->mWidgetImage:Lcom/android/launcher3/widget/WidgetImageView;
 
     .line 111
-    const v0, 0x7f0e006b
+    const v0, 0x7f0e0085
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/widget/WidgetCell;->findViewById(I)Landroid/view/View;
 
@@ -532,7 +532,7 @@
     iput-object v0, p0, Lcom/android/launcher3/widget/WidgetCell;->mWidgetName:Landroid/widget/TextView;
 
     .line 112
-    const v0, 0x7f0e006c
+    const v0, 0x7f0e0086
 
     invoke-virtual {p0, v0}, Lcom/android/launcher3/widget/WidgetCell;->findViewById(I)Landroid/view/View;
 

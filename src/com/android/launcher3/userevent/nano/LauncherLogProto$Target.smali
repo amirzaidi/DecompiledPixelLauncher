@@ -64,7 +64,7 @@
     if-nez v0, :cond_1
 
     .line 67
-    sget-object v1, Lcom/google/protobuf/nano/d;->La:Ljava/lang/Object;
+    sget-object v1, Lcom/google/protobuf/nano/d;->PH:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -185,7 +185,7 @@
     iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->type:I
 
     .line 201
-    invoke-static {v3, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v3, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -203,7 +203,7 @@
     const/4 v2, 0x2
 
     .line 205
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -221,7 +221,7 @@
     const/4 v2, 0x3
 
     .line 209
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -239,7 +239,7 @@
     const/4 v2, 0x4
 
     .line 213
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -257,7 +257,7 @@
     const/4 v2, 0x5
 
     .line 217
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -275,7 +275,7 @@
     const/4 v2, 0x6
 
     .line 221
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -293,7 +293,7 @@
     const/4 v2, 0x7
 
     .line 225
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -311,7 +311,7 @@
     const/16 v2, 0x8
 
     .line 229
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -329,7 +329,7 @@
     const/16 v2, 0x9
 
     .line 233
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -347,7 +347,7 @@
     const/16 v2, 0xa
 
     .line 237
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -365,7 +365,7 @@
     const/16 v2, 0xb
 
     .line 241
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -383,7 +383,7 @@
     const/16 v2, 0xc
 
     .line 245
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -401,7 +401,7 @@
     const/16 v2, 0xd
 
     .line 249
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -419,7 +419,7 @@
     const/16 v2, 0xe
 
     .line 253
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -437,7 +437,7 @@
     const/16 v2, 0xf
 
     .line 257
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->RF(II)I
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
 
     move-result v1
 
@@ -455,7 +455,7 @@
     .line 268
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->Sx()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->Ws()I
 
     move-result v0
 
@@ -463,7 +463,7 @@
     sparse-switch v0, :sswitch_data_0
 
     .line 273
-    invoke-static {p1, v0}, Lcom/google/protobuf/nano/f;->SW(Lcom/google/protobuf/nano/c;I)Z
+    invoke-static {p1, v0}, Lcom/google/protobuf/nano/f;->WR(Lcom/google/protobuf/nano/c;I)Z
 
     move-result v0
 
@@ -478,7 +478,7 @@
 
     .line 279
     :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -495,7 +495,7 @@
 
     .line 291
     :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -505,7 +505,7 @@
 
     .line 295
     :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -515,7 +515,7 @@
 
     .line 299
     :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -525,7 +525,7 @@
 
     .line 303
     :sswitch_5
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -535,7 +535,7 @@
 
     .line 307
     :sswitch_6
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -552,7 +552,7 @@
 
     .line 326
     :sswitch_7
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -562,7 +562,7 @@
 
     .line 330
     :sswitch_8
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -579,7 +579,7 @@
 
     .line 350
     :sswitch_9
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -596,7 +596,7 @@
 
     .line 367
     :sswitch_a
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -606,7 +606,7 @@
 
     .line 371
     :sswitch_b
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -616,7 +616,7 @@
 
     .line 375
     :sswitch_c
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -626,7 +626,7 @@
 
     .line 379
     :sswitch_d
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -636,7 +636,7 @@
 
     .line 383
     :sswitch_e
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -646,7 +646,7 @@
 
     .line 387
     :sswitch_f
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SK()I
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
 
     move-result v0
 
@@ -760,7 +760,7 @@
     .line 150
     iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->type:I
 
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 152
     :cond_0
@@ -773,7 +773,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 155
     :cond_1
@@ -786,7 +786,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 158
     :cond_2
@@ -799,7 +799,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 161
     :cond_3
@@ -812,7 +812,7 @@
 
     const/4 v1, 0x5
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 164
     :cond_4
@@ -825,7 +825,7 @@
 
     const/4 v1, 0x6
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 167
     :cond_5
@@ -838,7 +838,7 @@
 
     const/4 v1, 0x7
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 170
     :cond_6
@@ -851,7 +851,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 173
     :cond_7
@@ -864,7 +864,7 @@
 
     const/16 v1, 0x9
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 176
     :cond_8
@@ -877,7 +877,7 @@
 
     const/16 v1, 0xa
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 179
     :cond_9
@@ -890,7 +890,7 @@
 
     const/16 v1, 0xb
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 182
     :cond_a
@@ -903,7 +903,7 @@
 
     const/16 v1, 0xc
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 185
     :cond_b
@@ -916,7 +916,7 @@
 
     const/16 v1, 0xd
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 188
     :cond_c
@@ -929,7 +929,7 @@
 
     const/16 v1, 0xe
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 191
     :cond_d
@@ -942,7 +942,7 @@
 
     const/16 v1, 0xf
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RA(II)V
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
     .line 194
     :cond_e

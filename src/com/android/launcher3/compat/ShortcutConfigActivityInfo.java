@@ -52,7 +52,7 @@ public abstract class ShortcutConfigActivityInfo
     }
     
     public boolean startConfigActivity(final Activity activity, final int n) {
-        final int n2 = 2131492895;
+        final int n2 = 2131492897;
         final Intent setComponent = new Intent("android.intent.action.CREATE_SHORTCUT").setComponent(this.getComponent());
         try {
             activity.startActivityForResult(setComponent, n);

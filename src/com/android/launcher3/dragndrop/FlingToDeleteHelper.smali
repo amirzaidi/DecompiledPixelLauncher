@@ -30,7 +30,7 @@
     move-result-object v0
 
     .line 48
-    const v1, 0x7f0b0056
+    const v1, 0x7f0b0060
 
     .line 47
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
@@ -105,7 +105,7 @@
     .line 109
     iget-object v0, p0, Lcom/android/launcher3/dragndrop/FlingToDeleteHelper;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    const v1, 0x7f0e003c
+    const v1, 0x7f0e0044
 
     invoke-virtual {v0, v1}, Lcom/android/launcher3/Launcher;->findViewById(I)Landroid/view/View;
 

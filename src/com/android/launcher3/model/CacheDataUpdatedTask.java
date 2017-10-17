@@ -17,7 +17,7 @@ import com.android.launcher3.LauncherAppState;
 import android.os.UserHandle;
 import java.util.HashSet;
 
-public class CacheDataUpdatedTask extends ExtendedModelTask
+public class CacheDataUpdatedTask extends BaseModelUpdateTask
 {
     private final int mOp;
     private final HashSet mPackages;

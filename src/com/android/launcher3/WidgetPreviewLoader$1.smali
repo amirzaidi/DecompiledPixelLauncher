@@ -22,7 +22,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/WidgetPreviewLoader$1;->val$drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 497
+    .line 487
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -35,7 +35,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 490
     iget-object v0, p0, Lcom/android/launcher3/WidgetPreviewLoader$1;->val$drawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
@@ -49,7 +49,7 @@
     .locals 1
 
     .prologue
-    .line 498
+    .line 488
     invoke-virtual {p0}, Lcom/android/launcher3/WidgetPreviewLoader$1;->call()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

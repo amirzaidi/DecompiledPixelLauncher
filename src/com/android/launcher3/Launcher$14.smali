@@ -3,30 +3,27 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnDrawListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private mStarted:Z
-
 .field final synthetic this$0:Lcom/android/launcher3/Launcher;
+
+.field final synthetic val$updatedBadges:Ljava/util/Set;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/launcher3/Launcher;)V
-    .locals 1
+.method constructor <init>(Lcom/android/launcher3/Launcher;Ljava/util/Set;)V
+    .locals 0
 
     .prologue
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Launcher$14;->this$0:Lcom/android/launcher3/Launcher;
 
-    .line 1630
+    iput-object p2, p0, Lcom/android/launcher3/Launcher$14;->val$updatedBadges:Ljava/util/Set;
+
+    .line 1557
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 1631
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/launcher3/Launcher$14;->mStarted:Z
 
     .line 1
     return-void
@@ -34,47 +31,44 @@
 
 
 # virtual methods
-.method public onDraw()V
-    .locals 4
+.method public run()V
+    .locals 2
 
     .prologue
-    .line 1633
-    iget-boolean v0, p0, Lcom/android/launcher3/Launcher$14;->mStarted:Z
+    .line 1560
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$14;->this$0:Lcom/android/launcher3/Launcher;
 
+    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
+
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$14;->val$updatedBadges:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->updateIconBadges(Ljava/util/Set;)V
+
+    .line 1561
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$14;->this$0:Lcom/android/launcher3/Launcher;
+
+    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mAppsView:Lcom/android/launcher3/allapps/AllAppsContainerView;
+
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$14;->val$updatedBadges:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/allapps/AllAppsContainerView;->updateIconBadges(Ljava/util/Set;)V
+
+    .line 1563
+    iget-object v0, p0, Lcom/android/launcher3/Launcher$14;->this$0:Lcom/android/launcher3/Launcher;
+
+    invoke-static {v0}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->getOpen(Lcom/android/launcher3/Launcher;)Lcom/android/launcher3/popup/PopupContainerWithArrow;
+
+    move-result-object v0
+
+    .line 1564
     if-eqz v0, :cond_0
 
-    return-void
+    .line 1565
+    iget-object v1, p0, Lcom/android/launcher3/Launcher$14;->val$updatedBadges:Ljava/util/Set;
 
-    .line 1634
+    invoke-virtual {v0, v1}, Lcom/android/launcher3/popup/PopupContainerWithArrow;->updateNotificationHeader(Ljava/util/Set;)V
+
+    .line 1567
     :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/launcher3/Launcher$14;->mStarted:Z
-
-    .line 1640
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$14;->this$0:Lcom/android/launcher3/Launcher;
-
-    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    iget-object v1, p0, Lcom/android/launcher3/Launcher$14;->this$0:Lcom/android/launcher3/Launcher;
-
-    iget-object v1, v1, Lcom/android/launcher3/Launcher;->mBuildLayersRunnable:Ljava/lang/Runnable;
-
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Workspace;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    .line 1642
-    iget-object v0, p0, Lcom/android/launcher3/Launcher$14;->this$0:Lcom/android/launcher3/Launcher;
-
-    iget-object v0, v0, Lcom/android/launcher3/Launcher;->mWorkspace:Lcom/android/launcher3/Workspace;
-
-    new-instance v1, Lcom/android/launcher3/Launcher$14$1;
-
-    invoke-direct {v1, p0, p0}, Lcom/android/launcher3/Launcher$14$1;-><init>(Lcom/android/launcher3/Launcher$14;Landroid/view/ViewTreeObserver$OnDrawListener;)V
-
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->post(Ljava/lang/Runnable;)Z
-
-    .line 1651
     return-void
 .end method

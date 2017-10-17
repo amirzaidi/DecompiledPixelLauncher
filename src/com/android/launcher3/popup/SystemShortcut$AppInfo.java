@@ -11,7 +11,7 @@ import com.android.launcher3.Launcher;
 public class SystemShortcut$AppInfo extends SystemShortcut
 {
     public SystemShortcut$AppInfo() {
-        super(2130837567, 2131492919);
+        super(2130837565, 2131492921);
     }
     
     public View$OnClickListener getOnClickListener(final Launcher launcher, final ItemInfo itemInfo) {

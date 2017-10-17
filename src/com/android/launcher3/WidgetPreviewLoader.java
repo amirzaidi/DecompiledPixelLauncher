@@ -29,15 +29,15 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Callable;
 import android.graphics.drawable.Drawable;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import com.android.launcher3.graphics.LauncherIcons;
 import android.graphics.Bitmap$Config;
 import android.graphics.PorterDuff$Mode;
 import com.android.launcher3.compat.ShortcutConfigActivityInfo;
 import android.content.res.Resources;
-import android.support.v4.b.a;
+import com.android.launcher3.graphics.ShadowGenerator$Builder;
 import android.graphics.RectF;
-import android.graphics.Paint;
 import android.graphics.Canvas;
 import java.util.Map;
 import java.util.Collections;
@@ -75,19 +75,15 @@ public class WidgetPreviewLoader
         this.mWorkerHandler = new Handler(LauncherModel.getWorkerLooper());
     }
     
-    private RectF drawBoxWithShadow(final Canvas canvas, final Paint paint, final int n, final int n2) {
+    private RectF drawBoxWithShadow(final Canvas canvas, final int n, final int n2) {
         final Resources resources = this.mContext.getResources();
-        final float dimension = resources.getDimension(2131427395);
-        final float dimension2 = resources.getDimension(2131427396);
-        final float dimension3 = resources.getDimension(2131427397);
-        final RectF rectF = new RectF(dimension, dimension, n - dimension, n2 - dimension - dimension2);
-        paint.setColor(-1);
-        paint.setShadowLayer(dimension, 0.0f, dimension2, 1023410176);
-        canvas.drawRoundRect(rectF, dimension3, dimension3, paint);
-        paint.setShadowLayer(dimension, 0.0f, 0.0f, a.arc(-16777216, 30));
-        canvas.drawRoundRect(rectF, dimension3, dimension3, paint);
-        paint.clearShadowLayer();
-        return rectF;
+        final ShadowGenerator$Builder shadowGenerator$Builder = new ShadowGenerator$Builder(-1);
+        shadowGenerator$Builder.shadowBlur = resources.getDimension(2131427404);
+        shadowGenerator$Builder.radius = resources.getDimension(2131427406);
+        shadowGenerator$Builder.keyShadowDistance = resources.getDimension(2131427405);
+        shadowGenerator$Builder.bounds.set(shadowGenerator$Builder.shadowBlur, shadowGenerator$Builder.shadowBlur, n - shadowGenerator$Builder.shadowBlur, n2 - shadowGenerator$Builder.shadowBlur - shadowGenerator$Builder.keyShadowDistance);
+        shadowGenerator$Builder.drawShadow(canvas);
+        return shadowGenerator$Builder.bounds;
     }
     
     private Bitmap generatePreview(final BaseActivity baseActivity, final WidgetItem widgetItem, final Bitmap bitmap, final int n, final int n2) {
@@ -99,7 +95,7 @@ public class WidgetPreviewLoader
     
     private Bitmap generateShortcutPreview(final BaseActivity baseActivity, final ShortcutConfigActivityInfo shortcutConfigActivityInfo, final int n, final int n2, Bitmap bitmap) {
         final int iconSizePx = baseActivity.getDeviceProfile().iconSizePx;
-        final int dimensionPixelSize = baseActivity.getResources().getDimensionPixelSize(2131427399);
+        final int dimensionPixelSize = baseActivity.getResources().getDimensionPixelSize(2131427408);
         final int n3 = dimensionPixelSize * 2 + iconSizePx;
         if (n2 < n3 || n < n3) {
             throw new RuntimeException("Max size is too small for preview");
@@ -116,13 +112,12 @@ public class WidgetPreviewLoader
             bitmap = Bitmap.createBitmap(n3, n3, Bitmap$Config.ARGB_8888);
             canvas.setBitmap(bitmap);
         }
-        final Paint paint = new Paint(3);
-        final RectF drawBoxWithShadow = this.drawBoxWithShadow(canvas, paint, n3, n3);
-        final Bitmap scaledBitmapWithoutShadow = LauncherIcons.createScaledBitmapWithoutShadow(this.mutateOnMainThread(shortcutConfigActivityInfo.getFullResIcon(this.mIconCache)), this.mContext, 26);
+        final RectF drawBoxWithShadow = this.drawBoxWithShadow(canvas, n3, n3);
+        final Bitmap scaledBitmapWithoutShadow = LauncherIcons.createScaledBitmapWithoutShadow(this.mutateOnMainThread(shortcutConfigActivityInfo.getFullResIcon(this.mIconCache)), this.mContext, 0);
         final Rect rect = new Rect(0, 0, scaledBitmapWithoutShadow.getWidth(), scaledBitmapWithoutShadow.getHeight());
         drawBoxWithShadow.set(0.0f, 0.0f, (float)iconSizePx, (float)iconSizePx);
         drawBoxWithShadow.offset((float)dimensionPixelSize, (float)dimensionPixelSize);
-        canvas.drawBitmap(scaledBitmapWithoutShadow, rect, drawBoxWithShadow, paint);
+        canvas.drawBitmap(scaledBitmapWithoutShadow, rect, drawBoxWithShadow, new Paint(3));
         canvas.setBitmap((Bitmap)null);
         return bitmap;
     }
@@ -195,8 +190,8 @@ public class WidgetPreviewLoader
             int n8;
             DeviceProfile deviceProfile;
             int min;
-            Paint paint;
             RectF drawBoxWithShadow;
+            Paint paint;
             float left;
             float n9;
             int i;
@@ -215,9 +210,9 @@ public class WidgetPreviewLoader
             Label_0090_Outer:Label_0121_Outer:Label_0177_Outer:
             while (true) {
                 while (true) {
-                    Label_1071: {
+                    Label_1069: {
                         while (true) {
-                            Label_1060: {
+                            Label_1058: {
                             Label_0612:
                                 while (true) {
                                 Label_0541:
@@ -246,11 +241,11 @@ public class WidgetPreviewLoader
                                                                 array[0] = intrinsicWidth;
                                                             }
                                                             if (intrinsicWidth <= n) {
-                                                                break Label_1071;
+                                                                break Label_1069;
                                                             }
                                                             n4 = n / intrinsicWidth;
                                                             if (n4 == 1.0f) {
-                                                                break Label_1060;
+                                                                break Label_1058;
                                                             }
                                                             n5 = (int)(intrinsicWidth * n4);
                                                             n6 = (int)(intrinsicHeight * n4);
@@ -297,10 +292,10 @@ public class WidgetPreviewLoader
                                     canvas.drawColor(0, PorterDuff$Mode.CLEAR);
                                     continue;
                                 }
+                                drawBoxWithShadow = this.drawBoxWithShadow(canvas, n7, n6);
                                 paint = new Paint(1);
-                                drawBoxWithShadow = this.drawBoxWithShadow(canvas, paint, n7, n6);
                                 paint.setStyle(Paint$Style.STROKE);
-                                paint.setStrokeWidth(this.mContext.getResources().getDimension(2131427398));
+                                paint.setStrokeWidth(this.mContext.getResources().getDimension(2131427407));
                                 paint.setXfermode((Xfermode)new PorterDuffXfermode(PorterDuff$Mode.CLEAR));
                                 left = drawBoxWithShadow.left;
                                 n9 = drawBoxWithShadow.width() / spanX;
@@ -319,9 +314,9 @@ public class WidgetPreviewLoader
                                 }
                                 try {
                                     icon = launcherAppWidgetProviderInfo.getIcon((Context)baseActivity, this.mIconCache);
-                                    Label_1037: {
+                                    Label_1035: {
                                         if (icon == null) {
-                                            break Label_1037;
+                                            break Label_1035;
                                         }
                                         deviceProfile2 = baseActivity.getDeviceProfile();
                                         try {
@@ -683,7 +678,6 @@ public class WidgetPreviewLoader
         Label_0563_Outer:
             while (true) {
                 Object o = null;
-            Label_0563:
                 while (true) {
                     int n = 0;
                     try {
@@ -725,12 +719,15 @@ public class WidgetPreviewLoader
                                                     try {
                                                         set3.add(string);
                                                         continue Label_0563_Outer;
-                                                        final UserManagerCompat mUserManager = this.mUserManager;
-                                                        o = packageUserKey.mUser;
-                                                        serialNumberForUser2 = mUserManager.getSerialNumberForUser((UserHandle)o);
-                                                        continue Label_0563_Outer;
                                                         n = 0;
-                                                        break Label_0563;
+                                                        // iftrue(Label_0696:, n >= longSparseArray.size())
+                                                        Block_24: {
+                                                            break Block_24;
+                                                            final UserManagerCompat mUserManager = this.mUserManager;
+                                                            o = packageUserKey.mUser;
+                                                            serialNumberForUser2 = mUserManager.getSerialNumberForUser((UserHandle)o);
+                                                            continue Label_0563_Outer;
+                                                        }
                                                         final long key = longSparseArray.keyAt(n);
                                                         try {
                                                             this.mUserManager.getUserForSerialNumber(key);
@@ -752,7 +749,6 @@ public class WidgetPreviewLoader
                                                         }
                                                         catch (SQLException ex4) {}
                                                     }
-                                                    // iftrue(Label_0696:, n >= longSparseArray.size())
                                                     catch (SQLException ex5) {}
                                                 }
                                                 catch (SQLException ex6) {}
@@ -773,7 +769,7 @@ public class WidgetPreviewLoader
                         }
                     }
                     ++n;
-                    continue Label_0563;
+                    continue;
                 }
                 Label_0696: {
                     if (o != null) {

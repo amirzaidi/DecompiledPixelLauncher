@@ -13,6 +13,8 @@ final class Launcher$16 implements Runnable
     }
     
     public void run() {
-        this.this$0.exitSpringLoadedDragModeDelayed(true, 500, null);
+        if (this.this$0.mWorkspace != null) {
+            this.this$0.mWorkspace.moveToDefaultScreen(true);
+        }
     }
 }

@@ -17,7 +17,7 @@ class Launcher$RotationPrefChangeHandler implements SharedPreferences$OnSharedPr
     
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String s) {
         if ("pref_allowRotation".equals(s)) {
-            this.this$0.finish();
+            this.this$0.recreate();
         }
     }
 }

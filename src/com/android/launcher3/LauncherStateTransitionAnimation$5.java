@@ -6,16 +6,13 @@ package com.android.launcher3;
 
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import com.android.launcher3.allapps.AllAppsContainerView;
 
 final class LauncherStateTransitionAnimation$5 extends LauncherStateTransitionAnimation$PrivateTransitionCallbacks
 {
     final /* synthetic */ LauncherStateTransitionAnimation this$0;
-    final /* synthetic */ AllAppsContainerView val$appsView;
     
-    LauncherStateTransitionAnimation$5(final LauncherStateTransitionAnimation this$0, final float n, final AllAppsContainerView val$appsView) {
+    LauncherStateTransitionAnimation$5(final LauncherStateTransitionAnimation this$0, final float n) {
         this.this$0 = this$0;
-        this.val$appsView = val$appsView;
         super(n);
     }
     
@@ -29,6 +26,5 @@ final class LauncherStateTransitionAnimation$5 extends LauncherStateTransitionAn
     
     void onTransitionComplete() {
         this.this$0.mLauncher.getUserEventDispatcher().resetElapsedContainerMillis();
-        this.val$appsView.reset();
     }
 }

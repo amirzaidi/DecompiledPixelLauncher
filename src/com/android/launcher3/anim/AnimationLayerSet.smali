@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final mViewsToLayerTypeMap:Ljava/util/HashMap;
+.field private final mViewsToLayerTypeMap:Landroid/util/ArrayMap;
 
 
 # direct methods
@@ -12,17 +12,17 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 33
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
+    .line 34
+    new-instance v0, Landroid/util/ArrayMap;
+
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
+
+    iput-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Landroid/util/ArrayMap;
+
     .line 35
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Ljava/util/HashMap;
-
-    .line 36
     return-void
 .end method
 
@@ -30,22 +30,22 @@
     .locals 2
 
     .prologue
-    .line 38
+    .line 37
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    .line 39
-    new-instance v0, Ljava/util/HashMap;
+    .line 38
+    new-instance v0, Landroid/util/ArrayMap;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
+    invoke-direct {v0, v1}, Landroid/util/ArrayMap;-><init>(I)V
 
-    iput-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Ljava/util/HashMap;
+    iput-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Landroid/util/ArrayMap;
 
-    .line 40
+    .line 39
     invoke-virtual {p0, p1}, Lcom/android/launcher3/anim/AnimationLayerSet;->addView(Landroid/view/View;)V
 
-    .line 41
+    .line 40
     return-void
 .end method
 
@@ -55,8 +55,8 @@
     .locals 2
 
     .prologue
-    .line 44
-    iget-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Ljava/util/HashMap;
+    .line 43
+    iget-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Landroid/util/ArrayMap;
 
     invoke-virtual {p1}, Landroid/view/View;->getLayerType()I
 
@@ -66,9 +66,9 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -76,10 +76,10 @@
     .locals 4
 
     .prologue
-    .line 64
-    iget-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Ljava/util/HashMap;
+    .line 63
+    iget-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -87,7 +87,7 @@
 
     move-result-object v2
 
-    .line 65
+    .line 64
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -95,14 +95,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 66
+    .line 65
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 67
+    .line 66
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 69
+    .line 68
     :cond_0
     return-void
 .end method
@@ -134,10 +134,10 @@
     .locals 4
 
     .prologue
-    .line 50
-    iget-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Ljava/util/HashMap;
+    .line 49
+    iget-object v0, p0, Lcom/android/launcher3/anim/AnimationLayerSet;->mViewsToLayerTypeMap:Landroid/util/ArrayMap;
 
-    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Landroid/util/ArrayMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -145,7 +145,7 @@
 
     move-result-object v2
 
-    .line 51
+    .line 50
     :cond_0
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -154,21 +154,21 @@
 
     if-eqz v0, :cond_1
 
-    .line 52
+    .line 51
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 53
+    .line 52
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/View;
 
-    .line 54
+    .line 53
     invoke-virtual {v1}, Landroid/view/View;->getLayerType()I
 
     move-result v3
@@ -179,14 +179,14 @@
 
     invoke-interface {v0, v3}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 55
+    .line 54
     const/4 v0, 0x2
 
     const/4 v3, 0x0
 
     invoke-virtual {v1, v0, v3}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 56
+    .line 55
     invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v0
@@ -199,12 +199,12 @@
 
     if-nez v0, :cond_0
 
-    .line 57
+    .line 56
     invoke-virtual {v1}, Landroid/view/View;->buildLayer()V
 
     goto :goto_0
 
-    .line 60
+    .line 59
     :cond_1
     return-void
 .end method

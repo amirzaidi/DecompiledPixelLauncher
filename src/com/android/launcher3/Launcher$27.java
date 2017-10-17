@@ -4,22 +4,23 @@
 
 package com.android.launcher3;
 
+import java.util.Collection;
+import android.animation.AnimatorSet;
+
 final class Launcher$27 implements Runnable
 {
     final /* synthetic */ Launcher this$0;
-    final /* synthetic */ int val$newScreenIndex;
-    final /* synthetic */ Runnable val$startBounceAnimRunnable;
+    final /* synthetic */ AnimatorSet val$anim;
+    final /* synthetic */ Collection val$bounceAnims;
     
-    Launcher$27(final Launcher this$0, final int val$newScreenIndex, final Runnable val$startBounceAnimRunnable) {
+    Launcher$27(final Launcher this$0, final AnimatorSet val$anim, final Collection val$bounceAnims) {
         this.this$0 = this$0;
-        this.val$newScreenIndex = val$newScreenIndex;
-        this.val$startBounceAnimRunnable = val$startBounceAnimRunnable;
+        this.val$anim = val$anim;
+        this.val$bounceAnims = val$bounceAnims;
     }
     
     public void run() {
-        if (this.this$0.mWorkspace != null) {
-            this.this$0.mWorkspace.snapToPage(this.val$newScreenIndex);
-            this.this$0.mWorkspace.postDelayed(this.val$startBounceAnimRunnable, (long)Launcher.NEW_APPS_ANIMATION_DELAY);
-        }
+        this.val$anim.playTogether(this.val$bounceAnims);
+        this.val$anim.start();
     }
 }

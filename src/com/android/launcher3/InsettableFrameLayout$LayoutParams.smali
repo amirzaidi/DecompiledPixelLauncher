@@ -12,15 +12,15 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 89
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    .line 80
+    .line 77
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/InsettableFrameLayout$LayoutParams;->ignoreInsets:Z
 
-    .line 93
+    .line 90
     return-void
 .end method
 
@@ -30,31 +30,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 83
+    .line 80
     invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 80
+    .line 77
     iput-boolean v1, p0, Lcom/android/launcher3/InsettableFrameLayout$LayoutParams;->ignoreInsets:Z
 
-    .line 85
+    .line 82
     sget-object v0, Lcom/android/launcher3/R$styleable;->InsettableFrameLayout_Layout:[I
 
-    .line 84
+    .line 81
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 86
+    .line 83
     invoke-virtual {v0, v1, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lcom/android/launcher3/InsettableFrameLayout$LayoutParams;->ignoreInsets:Z
 
-    .line 88
+    .line 85
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 89
+    .line 86
     return-void
 .end method
 
@@ -62,14 +62,14 @@
     .locals 1
 
     .prologue
-    .line 96
+    .line 93
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 80
+    .line 77
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/launcher3/InsettableFrameLayout$LayoutParams;->ignoreInsets:Z
 
-    .line 97
+    .line 94
     return-void
 .end method

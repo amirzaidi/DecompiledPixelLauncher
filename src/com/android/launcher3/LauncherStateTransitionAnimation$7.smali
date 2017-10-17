@@ -19,7 +19,7 @@
 
     iput-object p2, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$7;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
-    .line 483
+    .line 476
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
@@ -32,22 +32,22 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 480
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$7;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 488
+    .line 481
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$7;->val$onCompleteRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 492
+    .line 485
     :cond_0
     iget-object v0, p0, Lcom/android/launcher3/LauncherStateTransitionAnimation$7;->this$0:Lcom/android/launcher3/LauncherStateTransitionAnimation;
 
     invoke-virtual {v0}, Lcom/android/launcher3/LauncherStateTransitionAnimation;->cleanupAnimation()V
 
-    .line 493
+    .line 486
     return-void
 .end method

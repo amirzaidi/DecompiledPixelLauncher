@@ -34,7 +34,7 @@ public class AlphabeticalAppsList$AdapterItem
     
     public static AlphabeticalAppsList$AdapterItem asDiscoveryItem(final int position, final String sectionName, final AppInfo appInfo, final int appIndex) {
         final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = new AlphabeticalAppsList$AdapterItem();
-        alphabeticalAppsList$AdapterItem.viewType = 512;
+        alphabeticalAppsList$AdapterItem.viewType = 256;
         alphabeticalAppsList$AdapterItem.position = position;
         alphabeticalAppsList$AdapterItem.sectionName = sectionName;
         alphabeticalAppsList$AdapterItem.appInfo = appInfo;
@@ -51,7 +51,7 @@ public class AlphabeticalAppsList$AdapterItem
     
     public static AlphabeticalAppsList$AdapterItem asLoadingDivider(final int position) {
         final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = new AlphabeticalAppsList$AdapterItem();
-        alphabeticalAppsList$AdapterItem.viewType = 256;
+        alphabeticalAppsList$AdapterItem.viewType = 128;
         alphabeticalAppsList$AdapterItem.position = position;
         return alphabeticalAppsList$AdapterItem;
     }
@@ -77,13 +77,6 @@ public class AlphabeticalAppsList$AdapterItem
     }
     
     public static AlphabeticalAppsList$AdapterItem asPredictionDivider(final int position) {
-        final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = new AlphabeticalAppsList$AdapterItem();
-        alphabeticalAppsList$AdapterItem.viewType = 128;
-        alphabeticalAppsList$AdapterItem.position = position;
-        return alphabeticalAppsList$AdapterItem;
-    }
-    
-    public static AlphabeticalAppsList$AdapterItem asSearchDivider(final int position) {
         final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = new AlphabeticalAppsList$AdapterItem();
         alphabeticalAppsList$AdapterItem.viewType = 64;
         alphabeticalAppsList$AdapterItem.position = position;

@@ -6,10 +6,10 @@ package com.android.launcher3.popup;
 
 public enum PopupPopulator$Item
 {
-    NOTIFICATION("NOTIFICATION", n3, 2130968599, false), 
-    SHORTCUT("SHORTCUT", 0, 2130968591, (boolean)(n3 != 0)), 
-    SYSTEM_SHORTCUT("SYSTEM_SHORTCUT", n2, 2130968620, (boolean)(n3 != 0)), 
-    SYSTEM_SHORTCUT_ICON("SYSTEM_SHORTCUT_ICON", n, 2130968621, (boolean)(n3 != 0));
+    NOTIFICATION("NOTIFICATION", n3, 2130968602, false), 
+    SHORTCUT("SHORTCUT", 0, 2130968593, (boolean)(n3 != 0)), 
+    SYSTEM_SHORTCUT("SYSTEM_SHORTCUT", n2, 2130968622, (boolean)(n3 != 0)), 
+    SYSTEM_SHORTCUT_ICON("SYSTEM_SHORTCUT_ICON", n, 2130968623, (boolean)(n3 != 0));
     
     public final boolean isShortcut;
     public final int layoutId;

@@ -4,9 +4,6 @@
 
 package com.android.launcher3.folder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class StackFolderIconLayoutRule implements FolderIcon$PreviewLayoutRule
 {
     private int mAvailableSpaceInPreview;
@@ -18,7 +15,7 @@ public class StackFolderIconLayoutRule implements FolderIcon$PreviewLayoutRule
         return false;
     }
     
-    public FolderIcon$PreviewItemDrawingParams computePreviewItemDrawingParams(final int n, final int n2, FolderIcon$PreviewItemDrawingParams folderIcon$PreviewItemDrawingParams) {
+    public PreviewItemDrawingParams computePreviewItemDrawingParams(final int n, final int n2, PreviewItemDrawingParams previewItemDrawingParams) {
         final float n3 = 2.0f;
         final float n4 = 1.0f;
         final float scaleForItem = this.scaleForItem(n, n2);
@@ -29,25 +26,36 @@ public class StackFolderIconLayoutRule implements FolderIcon$PreviewLayoutRule
         final float n9 = (this.mAvailableSpaceInPreview - n7) / n3;
         final float n10 = scaleForItem * this.mBaselineIconScale;
         final float overlayAlpha = (n4 - n5) * 80.0f / 255.0f;
-        if (folderIcon$PreviewItemDrawingParams == null) {
-            folderIcon$PreviewItemDrawingParams = new FolderIcon$PreviewItemDrawingParams(n9, n8, n10, overlayAlpha);
+        if (previewItemDrawingParams == null) {
+            previewItemDrawingParams = new PreviewItemDrawingParams(n9, n8, n10, overlayAlpha);
         }
         else {
-            folderIcon$PreviewItemDrawingParams.update(n9, n8, n10);
-            folderIcon$PreviewItemDrawingParams.overlayAlpha = overlayAlpha;
+            previewItemDrawingParams.update(n9, n8, n10);
+            previewItemDrawingParams.overlayAlpha = overlayAlpha;
         }
-        return folderIcon$PreviewItemDrawingParams;
+        return previewItemDrawingParams;
     }
     
-    public List getItemsToDisplay(final Folder folder) {
-        final ArrayList itemsInReadingOrder = folder.getItemsInReadingOrder();
-        return itemsInReadingOrder.subList(0, Math.min(itemsInReadingOrder.size(), 3));
+    public int getEnterIndex() {
+        throw new RuntimeException("hasEnterExitIndices not supported");
     }
     
-    public void init(final int mAvailableSpaceInPreview, final int n, final boolean b) {
+    public int getExitIndex() {
+        throw new RuntimeException("hasEnterExitIndices not supported");
+    }
+    
+    public float getIconSize() {
+        return this.mBaselineIconSize;
+    }
+    
+    public boolean hasEnterExitIndices() {
+        return false;
+    }
+    
+    public void init(final int mAvailableSpaceInPreview, final float n, final boolean b) {
         this.mAvailableSpaceInPreview = mAvailableSpaceInPreview;
-        this.mBaselineIconScale = (int)(this.mAvailableSpaceInPreview / 2 * 1.8f) * 1.0f / (int)(n * 1.1800001f);
-        this.mBaselineIconSize = (int)(n * this.mBaselineIconScale);
+        this.mBaselineIconScale = (int)(this.mAvailableSpaceInPreview / 2 * 1.8f) * 1.0f / (int)(1.1800001f * n);
+        this.mBaselineIconSize = (int)(this.mBaselineIconScale * n);
         this.mMaxPerspectiveShift = this.mBaselineIconSize * 0.18f;
     }
     

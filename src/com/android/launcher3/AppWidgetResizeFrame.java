@@ -96,7 +96,7 @@ public class AppWidgetResizeFrame extends FrameLayout implements View$OnKeyListe
         this.mBottomTouchRegionAdjustment = 0;
         this.mLauncher = Launcher.getLauncher(context);
         this.mStateAnnouncer = DragViewStateAnnouncer.createFor((View)this);
-        this.mBackgroundPadding = this.getResources().getDimensionPixelSize(2131427365);
+        this.mBackgroundPadding = this.getResources().getDimensionPixelSize(2131427374);
         this.mTouchTargetWidth = this.mBackgroundPadding * 2;
     }
     
@@ -232,7 +232,7 @@ public class AppWidgetResizeFrame extends FrameLayout implements View$OnKeyListe
         }
         if (this.mCellLayout.createAreaForResize(start, start2, size, size2, (View)this.mWidgetView, this.mDirectionVector, b)) {
             if (this.mStateAnnouncer != null && (cellLayout$LayoutParams.cellHSpan != size || cellLayout$LayoutParams.cellVSpan != size2)) {
-                this.mStateAnnouncer.announce(this.mLauncher.getString(2131492988, new Object[] { size, size2 }));
+                this.mStateAnnouncer.announce(this.mLauncher.getString(2131492997, new Object[] { size, size2 }));
             }
             cellLayout$LayoutParams.tmpCellX = start;
             cellLayout$LayoutParams.tmpCellY = start2;
@@ -408,7 +408,7 @@ public class AppWidgetResizeFrame extends FrameLayout implements View$OnKeyListe
             this.mWidgetPadding = AppWidgetHostView.getDefaultPaddingForWidget(this.getContext(), mWidgetView.getAppWidgetInfo().provider, (Rect)null);
         }
         else {
-            final int dimensionPixelSize = this.getContext().getResources().getDimensionPixelSize(2131427363);
+            final int dimensionPixelSize = this.getContext().getResources().getDimensionPixelSize(2131427372);
             this.mWidgetPadding = new Rect(dimensionPixelSize, dimensionPixelSize, dimensionPixelSize, dimensionPixelSize);
         }
         if (this.mResizeMode == n2) {

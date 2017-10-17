@@ -16,16 +16,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 617
+    .line 627
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 608
+    .line 618
     iput-boolean v0, p0, Lcom/android/launcher3/PagedView$LayoutParams;->isFullScreenPage:Z
 
-    .line 611
+    .line 621
     iput-boolean v0, p0, Lcom/android/launcher3/PagedView$LayoutParams;->matchStartEdge:Z
 
-    .line 618
+    .line 628
     return-void
 .end method
 
@@ -35,16 +35,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 621
+    .line 631
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 608
+    .line 618
     iput-boolean v0, p0, Lcom/android/launcher3/PagedView$LayoutParams;->isFullScreenPage:Z
 
-    .line 611
+    .line 621
     iput-boolean v0, p0, Lcom/android/launcher3/PagedView$LayoutParams;->matchStartEdge:Z
 
-    .line 622
+    .line 632
     return-void
 .end method
 
@@ -54,15 +54,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 625
+    .line 635
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 608
+    .line 618
     iput-boolean v0, p0, Lcom/android/launcher3/PagedView$LayoutParams;->isFullScreenPage:Z
 
-    .line 611
+    .line 621
     iput-boolean v0, p0, Lcom/android/launcher3/PagedView$LayoutParams;->matchStartEdge:Z
 
-    .line 626
+    .line 636
     return-void
 .end method

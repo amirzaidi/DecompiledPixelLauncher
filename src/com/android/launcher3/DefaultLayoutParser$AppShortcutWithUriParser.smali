@@ -12,7 +12,7 @@
     .locals 0
 
     .prologue
-    .line 94
+    .line 91
     iput-object p1, p0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     invoke-direct {p0, p1}, Lcom/android/launcher3/AutoInstallsLayout$AppShortcutParser;-><init>(Lcom/android/launcher3/AutoInstallsLayout;)V
@@ -28,7 +28,7 @@
 
     const/4 v3, 0x0
 
-    .line 145
+    .line 142
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v4
@@ -37,17 +37,17 @@
 
     move-object v1, v3
 
-    .line 146
+    .line 143
     :goto_0
     if-ge v2, v4, :cond_1
 
-    .line 148
+    .line 145
     :try_start_0
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v5, v0, Lcom/android/launcher3/DefaultLayoutParser;->mPackageManager:Landroid/content/pm/PackageManager;
 
-    .line 149
+    .line 146
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -60,25 +60,25 @@
 
     const/4 v6, 0x0
 
-    .line 148
+    .line 145
     invoke-virtual {v5, v0, v6}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
     move-result-object v0
 
-    .line 150
+    .line 147
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_2
 
-    .line 151
+    .line 148
     if-eqz v1, :cond_0
 
-    .line 152
+    .line 149
     return-object v3
 
-    .line 154
+    .line 151
     :cond_0
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -88,7 +88,7 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 146
+    .line 143
     :goto_1
     add-int/lit8 v1, v2, 0x1
 
@@ -98,21 +98,21 @@
 
     goto :goto_0
 
-    .line 157
+    .line 154
     :catch_0
     move-exception v0
 
-    .line 158
+    .line 155
     const-string/jumbo v1, "DefaultLayoutParser"
 
     const-string/jumbo v2, "Unable to get info about resolve results"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 159
+    .line 156
     return-object v3
 
-    .line 162
+    .line 159
     :cond_1
     return-object v1
 
@@ -130,7 +130,7 @@
 
     move v1, v2
 
-    .line 169
+    .line 166
     :goto_0
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -138,14 +138,14 @@
 
     if-ge v1, v0, :cond_1
 
-    .line 170
+    .line 167
     invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/content/pm/ResolveInfo;
 
-    .line 171
+    .line 168
     iget-object v3, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v3, v3, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
@@ -160,7 +160,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 172
+    .line 169
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
     iget-object v0, v0, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -173,13 +173,13 @@
 
     move-result v0
 
-    .line 171
+    .line 168
     if-eqz v0, :cond_0
 
-    .line 173
+    .line 170
     return v2
 
-    .line 169
+    .line 166
     :cond_0
     add-int/lit8 v0, v1, 0x1
 
@@ -187,7 +187,7 @@
 
     goto :goto_0
 
-    .line 176
+    .line 173
     :cond_1
     const/4 v0, 0x1
 
@@ -206,31 +206,31 @@
 
     const-wide/16 v6, -0x1
 
-    .line 98
+    .line 95
     const-string/jumbo v0, "uri"
 
     invoke-static {p1, v0}, Lcom/android/launcher3/DefaultLayoutParser;->getAttributeValue(Landroid/content/res/XmlResourceParser;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 99
+    .line 96
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 100
+    .line 97
     const-string/jumbo v0, "DefaultLayoutParser"
 
     const-string/jumbo v1, "Skipping invalid <favorite> with no component or uri"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
+    .line 98
     return-wide v6
 
-    .line 106
+    .line 103
     :cond_0
     const/4 v1, 0x0
 
@@ -241,7 +241,7 @@
 
     move-result-object v1
 
-    .line 112
+    .line 109
     iget-object v0, p0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v0, v0, Lcom/android/launcher3/DefaultLayoutParser;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -250,7 +250,7 @@
 
     move-result-object v0
 
-    .line 114
+    .line 111
     iget-object v2, p0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v2, v2, Lcom/android/launcher3/DefaultLayoutParser;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -259,22 +259,22 @@
 
     move-result-object v2
 
-    .line 119
+    .line 116
     invoke-direct {p0, v0, v2}, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->wouldLaunchResolverActivity(Landroid/content/pm/ResolveInfo;Ljava/util/List;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 121
+    .line 118
     invoke-direct {p0, v2}, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->getSingleSystemActivity(Ljava/util/List;)Landroid/content/pm/ResolveInfo;
 
     move-result-object v0
 
-    .line 122
+    .line 119
     if-nez v0, :cond_1
 
-    .line 125
+    .line 122
     const-string/jumbo v0, "DefaultLayoutParser"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -287,12 +287,12 @@
 
     move-result-object v2
 
-    .line 126
+    .line 123
     invoke-virtual {v1}, Landroid/content/Intent;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 125
+    .line 122
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
@@ -303,14 +303,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
+    .line 124
     return-wide v6
 
-    .line 107
+    .line 104
     :catch_0
     move-exception v1
 
-    .line 108
+    .line 105
     const-string/jumbo v2, "DefaultLayoutParser"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -333,14 +333,14 @@
 
     invoke-static {v2, v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 109
+    .line 106
     return-wide v6
 
-    .line 131
+    .line 128
     :cond_1
     iget-object v0, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    .line 132
+    .line 129
     iget-object v1, p0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v1, v1, Lcom/android/launcher3/DefaultLayoutParser;->mPackageManager:Landroid/content/pm/PackageManager;
@@ -351,19 +351,19 @@
 
     move-result-object v1
 
-    .line 133
+    .line 130
     if-nez v1, :cond_2
 
-    .line 134
+    .line 131
     return-wide v6
 
-    .line 136
+    .line 133
     :cond_2
     const/high16 v2, 0x10200000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 139
+    .line 136
     iget-object v2, p0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;
 
     iget-object v3, p0, Lcom/android/launcher3/DefaultLayoutParser$AppShortcutWithUriParser;->this$0:Lcom/android/launcher3/DefaultLayoutParser;

@@ -5,23 +5,26 @@
 package com.android.launcher3;
 
 import com.android.launcher3.shortcuts.ShortcutInfoCompat;
+import com.android.launcher3.model.LoaderResults;
 import com.android.launcher3.model.PackageInstallStateChangedTask;
-import com.android.launcher3.compat.PackageInstallerCompat$PackageInstallInfo;
 import com.android.launcher3.util.PackageUserKey;
 import com.android.launcher3.model.ShortcutsChangedTask;
+import java.util.List;
 import com.android.launcher3.dynamicui.ExtractionUtils;
 import com.android.launcher3.model.UserLockStateChangedTask;
+import com.android.launcher3.compat.UserManagerCompat;
 import android.content.Intent;
 import com.android.launcher3.model.CacheDataUpdatedTask;
 import java.util.HashSet;
 import com.android.launcher3.model.PackageUpdatedTask;
 import android.os.UserHandle;
+import com.android.launcher3.compat.PackageInstallerCompat$PackageInstallInfo;
 import com.android.launcher3.util.Preconditions;
 import com.android.launcher3.model.ModelWriter;
+import java.util.concurrent.Executor;
 import android.text.TextUtils;
 import java.io.PrintWriter;
 import java.io.FileDescriptor;
-import java.util.List;
 import com.android.launcher3.model.AddWorkspaceItemsTask;
 import com.android.launcher3.util.Provider;
 import java.util.Iterator;
@@ -30,64 +33,44 @@ import android.content.ContentResolver;
 import java.util.Collection;
 import android.os.Process;
 import com.android.launcher3.provider.LauncherDbUtils;
-import android.appwidget.AppWidgetProviderInfo;
-import android.os.Looper;
+import java.util.ArrayList;
 import android.content.Context;
-import com.android.launcher3.compat.UserManagerCompat;
-import com.android.launcher3.compat.LauncherAppsCompat;
+import android.os.Looper;
+import com.android.launcher3.model.LoaderTask;
 import java.lang.ref.WeakReference;
-import com.android.launcher3.model.WidgetsModel;
 import android.os.HandlerThread;
 import android.os.Handler;
 import com.android.launcher3.model.BgDataModel;
-import java.util.ArrayList;
 import com.android.launcher3.compat.LauncherAppsCompat$OnAppsChangedCallbackCompat;
 import android.content.BroadcastReceiver;
 
 public class LauncherModel extends BroadcastReceiver implements LauncherAppsCompat$OnAppsChangedCallbackCompat
 {
-    static final ArrayList mBindCompleteRunnables;
     static final BgDataModel sBgDataModel;
     static final Handler sWorker;
     static final HandlerThread sWorkerThread;
     final LauncherAppState mApp;
     private final AllAppsList mBgAllAppsList;
-    private final WidgetsModel mBgWidgetsModel;
     WeakReference mCallbacks;
-    DeferredHandler mHandler;
-    boolean mHasLoaderCompletedOnce;
-    private boolean mHasShortcutHostPermission;
-    private final IconCache mIconCache;
     boolean mIsLoaderTaskRunning;
-    private final LauncherAppsCompat mLauncherApps;
-    LauncherModel$LoaderTask mLoaderTask;
+    LoaderTask mLoaderTask;
     final Object mLock;
     private boolean mModelLoaded;
     private final Runnable mShortcutPermissionCheckRunnable;
-    private final UserManagerCompat mUserManager;
+    private final MainThreadExecutor mUiExecutor;
     
     static {
         (sWorkerThread = new HandlerThread("launcher-loader")).start();
         sWorker = new Handler(LauncherModel.sWorkerThread.getLooper());
-        mBindCompleteRunnables = new ArrayList();
         sBgDataModel = new BgDataModel();
     }
     
-    LauncherModel(final LauncherAppState mApp, final IconCache mIconCache, final AppFilter appFilter) {
+    LauncherModel(final LauncherAppState mApp, final IconCache iconCache, final AppFilter appFilter) {
+        this.mUiExecutor = new MainThreadExecutor();
         this.mLock = new Object();
-        this.mHandler = new DeferredHandler();
         this.mShortcutPermissionCheckRunnable = new LauncherModel$1(this);
-        final Context context = mApp.getContext();
         this.mApp = mApp;
-        this.mBgAllAppsList = new AllAppsList(mIconCache, appFilter);
-        this.mBgWidgetsModel = new WidgetsModel(mIconCache, appFilter);
-        this.mIconCache = mIconCache;
-        this.mLauncherApps = LauncherAppsCompat.getInstance(context);
-        this.mUserManager = UserManagerCompat.getInstance(context);
-    }
-    
-    private void bindWidgetsModel(final LauncherModel$Callbacks launcherModel$Callbacks) {
-        this.mHandler.post(new LauncherModel$8(this, launcherModel$Callbacks, this.mBgWidgetsModel.getWidgetsMap().clone()));
+        this.mBgAllAppsList = new AllAppsList(iconCache, appFilter);
     }
     
     static void checkItemInfo(final ItemInfo itemInfo) {
@@ -132,25 +115,8 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
         return LauncherModel.sWorkerThread.getLooper();
     }
     
-    static boolean isValidProvider(final AppWidgetProviderInfo appWidgetProviderInfo) {
-        boolean b = false;
-        if (appWidgetProviderInfo != null && appWidgetProviderInfo.provider != null && appWidgetProviderInfo.provider.getPackageName() != null) {
-            b = true;
-        }
-        return b;
-    }
-    
     public static ArrayList loadWorkspaceScreensDb(final Context context) {
         return LauncherDbUtils.getScreenIdsFromCursor(context.getContentResolver().query(LauncherSettings$WorkspaceScreens.CONTENT_URI, (String[])null, (String)null, (String[])null, "screenRank"));
-    }
-    
-    private void runOnMainThread(final Runnable runnable) {
-        if (LauncherModel.sWorkerThread.getThreadId() == Process.myTid()) {
-            this.mHandler.post(runnable);
-        }
-        else {
-            runnable.run();
-        }
     }
     
     private static void runOnWorkerThread(final Runnable runnable) {
@@ -159,13 +125,6 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
         }
         else {
             LauncherModel.sWorker.post(runnable);
-        }
-    }
-    
-    private void stopLoaderLocked() {
-        final LauncherModel$LoaderTask mLoaderTask = this.mLoaderTask;
-        if (mLoaderTask != null) {
-            mLoaderTask.stopLocked();
         }
     }
     
@@ -186,12 +145,8 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
         this.enqueueModelUpdateTask(new AddWorkspaceItemsTask(provider));
     }
     
-    public void addAndBindAddedWorkspaceItems(final List list) {
-        this.addAndBindAddedWorkspaceItems(Provider.of(list));
-    }
-    
-    public void bindDeepShortcuts() {
-        this.runOnMainThread(new LauncherModel$5(this, LauncherModel.sBgDataModel.deepShortcutMap.clone()));
+    public LauncherModel$LoaderTransaction beginLoader(final LoaderTask loaderTask) {
+        return new LauncherModel$LoaderTransaction(this, loaderTask, null);
     }
     
     public void dumpState(final String s, final FileDescriptor fileDescriptor, final PrintWriter printWriter, final String[] array) {
@@ -204,23 +159,14 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
         LauncherModel.sBgDataModel.dump(s, fileDescriptor, printWriter, array);
     }
     
-    void enqueueModelUpdateTask(final LauncherModel$BaseModelUpdateTask launcherModel$BaseModelUpdateTask) {
-        if (!this.mModelLoaded && this.mLoaderTask == null) {
-            return;
-        }
-        launcherModel$BaseModelUpdateTask.init(this);
-        runOnWorkerThread(launcherModel$BaseModelUpdateTask);
-    }
-    
-    public FolderInfo findFolderById(final Long n) {
-        synchronized (LauncherModel.sBgDataModel) {
-            return (FolderInfo)LauncherModel.sBgDataModel.folders.get((long)n);
-        }
+    public void enqueueModelUpdateTask(final LauncherModel$ModelUpdateTask launcherModel$ModelUpdateTask) {
+        launcherModel$ModelUpdateTask.init(this.mApp, this, LauncherModel.sBgDataModel, this.mBgAllAppsList, this.mUiExecutor);
+        runOnWorkerThread(launcherModel$ModelUpdateTask);
     }
     
     public void forceReload() {
         synchronized (this.mLock) {
-            this.stopLoaderLocked();
+            this.stopLoader();
             this.mModelLoaded = false;
             // monitorexit(this.mLock)
             this.startLoaderFromBackground();
@@ -242,7 +188,6 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
     public void initialize(final LauncherModel$Callbacks launcherModel$Callbacks) {
         synchronized (this.mLock) {
             Preconditions.assertUIThread();
-            this.mHandler.cancelAll();
             this.mCallbacks = new WeakReference((T)launcherModel$Callbacks);
         }
     }
@@ -263,6 +208,10 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
             }
             return b;
         }
+    }
+    
+    public void onInstallSessionCreated(final PackageInstallerCompat$PackageInstallInfo packageInstallerCompat$PackageInstallInfo) {
+        this.enqueueModelUpdateTask(new LauncherModel$5(this, packageInstallerCompat$PackageInstallInfo));
     }
     
     public void onPackageAdded(final String s, final UserHandle userHandle) {
@@ -335,8 +284,8 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
         this.enqueueModelUpdateTask(new ShortcutsChangedTask(s, list, userHandle, true));
     }
     
-    public void refreshAndBindWidgetsAndShortcuts(final LauncherModel$Callbacks launcherModel$Callbacks, final boolean b, final PackageUserKey packageUserKey) {
-        runOnWorkerThread(new LauncherModel$9(this, b, launcherModel$Callbacks, packageUserKey));
+    public void refreshAndBindWidgetsAndShortcuts(final PackageUserKey packageUserKey) {
+        this.enqueueModelUpdateTask(new LauncherModel$8(this, packageUserKey));
     }
     
     public void refreshShortcutsIfRequired() {
@@ -351,20 +300,29 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
     }
     
     public boolean startLoader(final int n) {
-        InstallShortcutReceiver.enableInstallQueue();
+        InstallShortcutReceiver.enableInstallQueue(2);
         synchronized (this.mLock) {
             if (this.mCallbacks != null && this.mCallbacks.get() != null) {
-                this.runOnMainThread(new LauncherModel$4(this, (LauncherModel$Callbacks)this.mCallbacks.get()));
-                this.stopLoaderLocked();
-                this.mLoaderTask = new LauncherModel$LoaderTask(this, this.mApp.getContext(), n);
-                if (n != -1001 && this.mModelLoaded && (this.mIsLoaderTaskRunning ^ true)) {
-                    this.mLoaderTask.runBindSynchronousPage(n);
+                this.mUiExecutor.execute(new LauncherModel$4(this, (LauncherModel$Callbacks)this.mCallbacks.get()));
+                this.stopLoader();
+                final LoaderResults loaderResults = new LoaderResults(this.mApp, LauncherModel.sBgDataModel, this.mBgAllAppsList, n, this.mCallbacks);
+                if (this.mModelLoaded && (this.mIsLoaderTaskRunning ^ true)) {
+                    loaderResults.bindWorkspace();
+                    loaderResults.bindAllApps();
+                    loaderResults.bindDeepShortcuts();
+                    loaderResults.bindWidgets();
                     return true;
                 }
-                LauncherModel.sWorkerThread.setPriority(5);
-                LauncherModel.sWorker.post((Runnable)this.mLoaderTask);
+                this.startLoaderForResults(loaderResults);
             }
             return false;
+        }
+    }
+    
+    public void startLoaderForResults(final LoaderResults loaderResults) {
+        synchronized (this.mLock) {
+            this.stopLoader();
+            runOnWorkerThread(this.mLoaderTask = new LoaderTask(this.mApp, this.mBgAllAppsList, LauncherModel.sBgDataModel, loaderResults));
         }
     }
     
@@ -377,8 +335,10 @@ public class LauncherModel extends BroadcastReceiver implements LauncherAppsComp
     
     public void stopLoader() {
         synchronized (this.mLock) {
-            if (this.mLoaderTask != null) {
-                this.mLoaderTask.stopLocked();
+            final LoaderTask mLoaderTask = this.mLoaderTask;
+            this.mLoaderTask = null;
+            if (mLoaderTask != null) {
+                mLoaderTask.stopLocked();
             }
         }
     }

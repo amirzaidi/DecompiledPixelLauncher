@@ -15,7 +15,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/dragndrop/AddItemActivity$1;->this$0:Lcom/android/launcher3/dragndrop/AddItemActivity;
 
-    .line 170
+    .line 174
     invoke-direct {p0, p2}, Landroid/view/View$DragShadowBuilder;-><init>(Landroid/view/View;)V
 
     .line 1
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 173
+    .line 177
     return-void
 .end method
 
@@ -40,12 +40,12 @@
 
     const/4 v0, 0x5
 
-    .line 177
+    .line 181
     invoke-virtual {p1, v1, v1}, Landroid/graphics/Point;->set(II)V
 
-    .line 178
+    .line 182
     invoke-virtual {p2, v0, v0}, Landroid/graphics/Point;->set(II)V
 
-    .line 179
+    .line 183
     return-void
 .end method

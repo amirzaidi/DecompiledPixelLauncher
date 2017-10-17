@@ -28,6 +28,8 @@ public interface LauncherModel$Callbacks
     
     void bindItems(final ArrayList p0, final int p1, final int p2, final boolean p3);
     
+    void bindPromiseAppProgressUpdated(final PromiseAppInfo p0);
+    
     void bindRestoreItemsChange(final HashSet p0);
     
     void bindScreens(final ArrayList p0);

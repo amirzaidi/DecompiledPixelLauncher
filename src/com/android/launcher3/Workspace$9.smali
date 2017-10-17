@@ -18,7 +18,7 @@
     .line 1
     iput-object p1, p0, Lcom/android/launcher3/Workspace$9;->this$0:Lcom/android/launcher3/Workspace;
 
-    .line 2678
+    .line 3138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1
@@ -28,21 +28,24 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 4
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 2681
+    .line 3141
     iget-object v0, p0, Lcom/android/launcher3/Workspace$9;->this$0:Lcom/android/launcher3/Workspace;
 
-    iput-boolean v1, v0, Lcom/android/launcher3/Workspace;->mAnimatingViewIntoPlace:Z
+    iget-object v0, v0, Lcom/android/launcher3/Workspace;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    .line 2682
-    iget-object v0, p0, Lcom/android/launcher3/Workspace$9;->this$0:Lcom/android/launcher3/Workspace;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/launcher3/Workspace;->updateChildrenLayersEnabled(Z)V
+    .line 3142
+    const/16 v2, 0x1f4
 
-    .line 2683
+    const/4 v3, 0x0
+
+    .line 3141
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/launcher3/Launcher;->exitSpringLoadedDragModeDelayed(ZILjava/lang/Runnable;)V
+
+    .line 3143
     return-void
 .end method

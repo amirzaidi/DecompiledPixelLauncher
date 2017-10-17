@@ -5,37 +5,52 @@
 package com.android.launcher3.allapps;
 
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.m;
 import android.support.v7.widget.t;
 import com.android.launcher3.DeviceProfile;
 import android.support.v7.widget.h;
 import android.support.v7.widget.q;
 import android.view.View$MeasureSpec;
+import com.android.launcher3.config.FeatureFlags;
 import android.graphics.drawable.Drawable$Callback;
 import com.android.launcher3.graphics.DrawableFactory;
 import android.view.MotionEvent;
 import android.graphics.Canvas;
-import com.android.launcher3.Launcher;
 import java.util.List;
 import com.android.launcher3.BubbleTextView;
+import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
+import com.android.launcher3.ItemInfo;
 import android.view.View;
 import android.view.ViewGroup;
 import android.content.res.Resources;
 import android.support.v7.widget.n;
 import android.util.AttributeSet;
 import android.content.Context;
+import com.android.launcher3.views.RecyclerViewFastScroller;
+import com.android.launcher3.anim.SpringAnimationHandler;
 import android.util.SparseIntArray;
+import android.util.Property;
+import com.android.launcher3.logging.UserEventDispatcher$LogContainerProvider;
 import com.android.launcher3.BaseRecyclerView;
 
-public class AllAppsRecyclerView extends BaseRecyclerView
+public class AllAppsRecyclerView extends BaseRecyclerView implements UserEventDispatcher$LogContainerProvider
 {
+    public static final Property CONTENT_TRANS_Y;
     private AlphabeticalAppsList mApps;
     private SparseIntArray mCachedScrollPositions;
-    private HeaderElevationController mElevationController;
+    private float mContentTranslationY;
     private AllAppsBackgroundDrawable mEmptySearchBackground;
     private int mEmptySearchBackgroundTopOffset;
     private AllAppsFastScrollHelper mFastScrollHelper;
     private int mNumAppsPerRow;
+    private AllAppsRecyclerView$OverScrollHelper mOverScrollHelper;
+    private VerticalPullDetector mPullDetector;
+    private SpringAnimationHandler mSpringAnimationHandler;
     private SparseIntArray mViewHeights;
+    
+    static {
+        CONTENT_TRANS_Y = new AllAppsRecyclerView$1(Float.class, "appsRecyclerViewContentTransY");
+    }
     
     public AllAppsRecyclerView(final Context context) {
         this(context, null);
@@ -53,10 +68,13 @@ public class AllAppsRecyclerView extends BaseRecyclerView
         super(context, set, n);
         this.mViewHeights = new SparseIntArray();
         this.mCachedScrollPositions = new SparseIntArray();
+        this.mContentTranslationY = 0.0f;
         final Resources resources = this.getResources();
         this.addOnItemTouchListener(this);
-        this.mScrollbar.setDetachThumbOnFastScroll();
-        this.mEmptySearchBackgroundTopOffset = resources.getDimensionPixelSize(2131427382);
+        this.mEmptySearchBackgroundTopOffset = resources.getDimensionPixelSize(2131427391);
+        this.mOverScrollHelper = new AllAppsRecyclerView$OverScrollHelper(this, null);
+        (this.mPullDetector = new VerticalPullDetector(this.getContext())).setListener(this.mOverScrollHelper);
+        this.mPullDetector.setDetectableScrollConditions(3, true);
     }
     
     private void putSameHeightFor(final AllAppsGridAdapter allAppsGridAdapter, final int n, final int n2, final int... array) {
@@ -78,22 +96,37 @@ public class AllAppsRecyclerView extends BaseRecyclerView
         this.mEmptySearchBackground.setBounds(n, mEmptySearchBackgroundTopOffset, this.mEmptySearchBackground.getIntrinsicWidth() + n, this.mEmptySearchBackground.getIntrinsicHeight() + mEmptySearchBackgroundTopOffset);
     }
     
-    protected int getAvailableScrollHeight() {
-        return this.getCurrentScrollY(this.mApps.getAdapterItems().size(), 0) + this.getPaddingBottom() - this.getScrollbarTrackHeight();
+    public void fillInLogContainerData(final View view, final ItemInfo itemInfo, final LauncherLogProto$Target launcherLogProto$Target, final LauncherLogProto$Target launcherLogProto$Target2) {
+        final int containerType = 4;
+        if (this.mApps.hasFilter()) {
+            launcherLogProto$Target2.containerType = 8;
+        }
+        else {
+            if (view instanceof BubbleTextView) {
+                final int childPosition = this.getChildPosition(view);
+                if (childPosition != -1) {
+                    final AlphabeticalAppsList$AdapterItem alphabeticalAppsList$AdapterItem = this.mApps.getAdapterItems().get(childPosition);
+                    if (alphabeticalAppsList$AdapterItem.viewType == containerType) {
+                        launcherLogProto$Target2.containerType = 7;
+                        launcherLogProto$Target.predictedRank = alphabeticalAppsList$AdapterItem.rowAppIndex;
+                        return;
+                    }
+                }
+            }
+            launcherLogProto$Target2.containerType = containerType;
+        }
     }
     
-    public int getContainerType(final View view) {
-        final int n = 4;
-        if (this.mApps.hasFilter()) {
-            return 8;
-        }
-        if (view instanceof BubbleTextView) {
-            final int childPosition = this.getChildPosition(view);
-            if (childPosition != -1 && ((AlphabeticalAppsList$AdapterItem)this.mApps.getAdapterItems().get(childPosition)).viewType == n) {
-                return 7;
-            }
-        }
-        return n;
+    public AlphabeticalAppsList getApps() {
+        return this.mApps;
+    }
+    
+    protected int getAvailableScrollHeight() {
+        return this.getPaddingTop() + this.getCurrentScrollY(this.mApps.getAdapterItems().size(), 0) - this.getHeight() + this.getPaddingBottom();
+    }
+    
+    public float getContentTranslationY() {
+        return this.mContentTranslationY;
     }
     
     public int getCurrentScrollY() {
@@ -106,7 +139,7 @@ public class AllAppsRecyclerView extends BaseRecyclerView
         if (childPosition == n) {
             return n;
         }
-        return this.getCurrentScrollY(childPosition, this.getLayoutManager().getDecoratedTop(child));
+        return this.getCurrentScrollY(childPosition, this.getLayoutManager().getDecoratedTop(child)) + this.getPaddingTop();
     }
     
     public int getCurrentScrollY(final int n, final int n2) {
@@ -144,14 +177,11 @@ public class AllAppsRecyclerView extends BaseRecyclerView
             }
             this.mCachedScrollPositions.put(n, value);
         }
-        return this.getPaddingTop() + value - n2;
-    }
-    
-    protected int getScrollbarTrackHeight() {
-        return super.getScrollbarTrackHeight() - Launcher.getLauncher(this.getContext()).getDragLayer().getInsets().bottom;
+        return value - n2;
     }
     
     public void onDraw(final Canvas canvas) {
+        canvas.translate(0.0f, this.mContentTranslationY);
         if (this.mEmptySearchBackground != null && this.mEmptySearchBackground.getAlpha() > 0) {
             this.mEmptySearchBackground.draw(canvas);
         }
@@ -164,11 +194,12 @@ public class AllAppsRecyclerView extends BaseRecyclerView
     }
     
     public boolean onInterceptTouchEvent(final MotionEvent motionEvent) {
-        final boolean onInterceptTouchEvent = super.onInterceptTouchEvent(motionEvent);
-        if (!onInterceptTouchEvent && motionEvent.getAction() == 0 && this.mEmptySearchBackground != null && this.mEmptySearchBackground.getAlpha() > 0) {
+        this.mPullDetector.onTouchEvent(motionEvent);
+        final boolean b = super.onInterceptTouchEvent(motionEvent) || this.mOverScrollHelper.isInOverScroll();
+        if (!b && motionEvent.getAction() == 0 && this.mEmptySearchBackground != null && this.mEmptySearchBackground.getAlpha() > 0) {
             this.mEmptySearchBackground.setHotspot(motionEvent.getX(), motionEvent.getY());
         }
-        return onInterceptTouchEvent;
+        return b;
     }
     
     public void onSearchResultsChanged() {
@@ -188,6 +219,14 @@ public class AllAppsRecyclerView extends BaseRecyclerView
     
     protected void onSizeChanged(final int n, final int n2, final int n3, final int n4) {
         this.updateEmptySearchBackgroundBounds();
+    }
+    
+    public boolean onTouchEvent(final MotionEvent motionEvent) {
+        this.mPullDetector.onTouchEvent(motionEvent);
+        if (FeatureFlags.LAUNCHER3_PHYSICS && this.mSpringAnimationHandler != null) {
+            this.mSpringAnimationHandler.addMovement(motionEvent);
+        }
+        return super.onTouchEvent(motionEvent);
     }
     
     public void onUpdateScrollbar(final int n) {
@@ -238,23 +277,20 @@ public class AllAppsRecyclerView extends BaseRecyclerView
     
     public void preMeasureViews(final AllAppsGridAdapter allAppsGridAdapter) {
         final int n = 2;
-        final int n2 = -1 << -1;
-        final int n3 = 1;
+        final int n2 = 1;
+        final int n3 = -1 << -1;
         final int height = allAppsGridAdapter.onCreateViewHolder(this, n).itemView.getLayoutParams().height;
         this.mViewHeights.put(n, height);
         this.mViewHeights.put(4, height);
-        final int measureSpec = View$MeasureSpec.makeMeasureSpec(this.getResources().getDisplayMetrics().widthPixels, n2);
-        final int measureSpec2 = View$MeasureSpec.makeMeasureSpec(this.getResources().getDisplayMetrics().heightPixels, n2);
-        this.putSameHeightFor(allAppsGridAdapter, measureSpec, measureSpec2, 128, 32);
-        final int[] array = new int[n3];
-        array[0] = 64;
+        final int measureSpec = View$MeasureSpec.makeMeasureSpec(this.getResources().getDisplayMetrics().widthPixels, n3);
+        final int measureSpec2 = View$MeasureSpec.makeMeasureSpec(this.getResources().getDisplayMetrics().heightPixels, n3);
+        this.putSameHeightFor(allAppsGridAdapter, measureSpec, measureSpec2, 64, 32);
+        final int[] array = new int[n2];
+        array[0] = 16;
         this.putSameHeightFor(allAppsGridAdapter, measureSpec, measureSpec2, array);
-        final int[] array2 = new int[n3];
-        array2[0] = 16;
+        final int[] array2 = new int[n2];
+        array2[0] = 8;
         this.putSameHeightFor(allAppsGridAdapter, measureSpec, measureSpec2, array2);
-        final int[] array3 = new int[n3];
-        array3[0] = 8;
-        this.putSameHeightFor(allAppsGridAdapter, measureSpec, measureSpec2, array3);
     }
     
     public String scrollToPositionAtProgress(final float n) {
@@ -279,18 +315,15 @@ public class AllAppsRecyclerView extends BaseRecyclerView
     }
     
     public void scrollToTop() {
-        if (this.mScrollbar.isThumbDetached()) {
+        if (this.mScrollbar != null) {
             this.mScrollbar.reattachThumbToScroll();
         }
         this.scrollToPosition(0);
-        if (this.mElevationController != null) {
-            this.mElevationController.reset();
-        }
     }
     
     public void setAdapter(final q adapter) {
         super.setAdapter(adapter);
-        adapter.registerAdapterDataObserver(new AllAppsRecyclerView$1(this));
+        adapter.registerAdapterDataObserver(new AllAppsRecyclerView$2(this));
         this.mFastScrollHelper.onSetAdapter((AllAppsGridAdapter)adapter);
     }
     
@@ -299,8 +332,9 @@ public class AllAppsRecyclerView extends BaseRecyclerView
         this.mFastScrollHelper = new AllAppsFastScrollHelper(this, mApps);
     }
     
-    public void setElevationController(final HeaderElevationController mElevationController) {
-        this.mElevationController = mElevationController;
+    public void setContentTranslationY(final float mContentTranslationY) {
+        this.mContentTranslationY = mContentTranslationY;
+        this.invalidate();
     }
     
     public void setNumAppsPerRow(final DeviceProfile deviceProfile, final int mNumAppsPerRow) {
@@ -308,16 +342,22 @@ public class AllAppsRecyclerView extends BaseRecyclerView
         this.mNumAppsPerRow = mNumAppsPerRow;
         final t recycledViewPool = this.getRecycledViewPool();
         final int n2 = (int)Math.ceil(deviceProfile.availableHeightPx / deviceProfile.allAppsIconSizePx);
-        recycledViewPool.XO(8, n);
-        recycledViewPool.XO(64, n);
-        recycledViewPool.XO(32, n);
-        recycledViewPool.XO(16, n);
-        recycledViewPool.XO(2, n2 * this.mNumAppsPerRow);
-        recycledViewPool.XO(4, this.mNumAppsPerRow);
-        recycledViewPool.XO(128, n);
+        recycledViewPool.YO(8, n);
+        recycledViewPool.YO(32, n);
+        recycledViewPool.YO(16, n);
+        recycledViewPool.YO(2, n2 * this.mNumAppsPerRow);
+        recycledViewPool.YO(4, this.mNumAppsPerRow);
+        recycledViewPool.YO(64, n);
     }
     
-    protected boolean supportsFastScrolling() {
+    public void setSpringAnimationHandler(final SpringAnimationHandler mSpringAnimationHandler) {
+        if (FeatureFlags.LAUNCHER3_PHYSICS) {
+            this.mSpringAnimationHandler = mSpringAnimationHandler;
+            this.addOnScrollListener(new AllAppsRecyclerView$SpringMotionOnScrollListener(this, null));
+        }
+    }
+    
+    public boolean supportsFastScrolling() {
         return this.mApps.hasFilter() ^ true;
     }
     

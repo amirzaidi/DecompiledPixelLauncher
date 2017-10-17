@@ -8,7 +8,7 @@ import android.view.DragEvent;
 
 class InternalDragDriver extends DragDriver
 {
-    public InternalDragDriver(final DragController dragController) {
+    InternalDragDriver(final DragController dragController) {
         super(dragController);
     }
     

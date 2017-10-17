@@ -12,14 +12,14 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 42
     new-instance v0, Landroid/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
 
     sput-object v0, Lcom/android/launcher3/logging/LoggerUtils;->sNameCache:Landroid/util/ArrayMap;
 
-    .line 42
+    .line 41
     return-void
 .end method
 
@@ -27,40 +27,99 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static getActionStr(Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;)Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     .prologue
+    .line 69
+    const-string/jumbo v0, ""
+
     .line 70
-    iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->type:I
+    iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->type:I
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch v1, :pswitch_data_0
 
-    .line 73
+    .line 78
     :pswitch_0
     const-string/jumbo v0, "UNKNOWN"
 
     return-object v0
 
-    .line 71
+    .line 72
     :pswitch_1
-    iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->touch:I
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-class v1, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action$Touch;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v0, v1}, Lcom/android/launcher3/logging/LoggerUtils;->getFieldName(ILjava/lang/Class;)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
+    iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->touch:I
+
+    const-class v2, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action$Touch;
+
+    invoke-static {v1, v2}, Lcom/android/launcher3/logging/LoggerUtils;->getFieldName(ILjava/lang/Class;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 73
+    iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->touch:I
+
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_0
+
+    .line 74
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " direction="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->dir:I
+
+    const-class v2, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action$Direction;
+
+    invoke-static {v1, v2}, Lcom/android/launcher3/logging/LoggerUtils;->getFieldName(ILjava/lang/Class;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 76
+    :cond_0
     return-object v0
 
-    .line 72
+    .line 77
     :pswitch_2
     iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->command:I
 
@@ -73,8 +132,6 @@
     return-object v0
 
     .line 70
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -87,12 +144,12 @@
     .locals 8
 
     .prologue
-    .line 48
+    .line 47
     sget-object v2, Lcom/android/launcher3/logging/LoggerUtils;->sNameCache:Landroid/util/ArrayMap;
 
     monitor-enter v2
 
-    .line 49
+    .line 48
     :try_start_0
     sget-object v0, Lcom/android/launcher3/logging/LoggerUtils;->sNameCache:Landroid/util/ArrayMap;
 
@@ -102,15 +159,15 @@
 
     check-cast v0, Landroid/util/SparseArray;
 
-    .line 50
+    .line 49
     if-nez v0, :cond_2
 
-    .line 51
+    .line 50
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    .line 52
+    .line 51
     invoke-virtual {p1}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
     move-result-object v3
@@ -124,7 +181,7 @@
 
     aget-object v5, v3, v1
 
-    .line 53
+    .line 52
     invoke-virtual {v5}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v6
@@ -145,13 +202,13 @@
 
     if-eqz v6, :cond_0
 
-    .line 55
+    .line 54
     const/4 v6, 0x1
 
     :try_start_1
     invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 56
+    .line 55
     const/4 v6, 0x0
 
     invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
@@ -167,14 +224,14 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 52
+    .line 51
     :cond_0
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 62
+    .line 61
     :cond_1
     :try_start_2
     sget-object v1, Lcom/android/launcher3/logging/LoggerUtils;->sNameCache:Landroid/util/ArrayMap;
@@ -186,20 +243,20 @@
     :cond_2
     monitor-exit v2
 
-    .line 65
+    .line 64
     invoke-virtual {v0, p0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/String;
 
-    .line 66
+    .line 65
     if-eqz v0, :cond_3
 
     :goto_2
     return-object v0
 
-    .line 48
+    .line 47
     :catchall_0
     move-exception v0
 
@@ -207,13 +264,13 @@
 
     throw v0
 
-    .line 66
+    .line 65
     :cond_3
     const-string/jumbo v0, "UNKNOWN"
 
     goto :goto_2
 
-    .line 57
+    .line 56
     :catch_0
     move-exception v5
 
@@ -224,7 +281,7 @@
     .locals 2
 
     .prologue
-    .line 100
+    .line 105
     iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->itemType:I
 
     const-class v1, Lcom/android/launcher3/userevent/nano/LauncherLogProto$ItemType;
@@ -233,12 +290,12 @@
 
     move-result-object v0
 
-    .line 101
+    .line 106
     iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->packageNameHash:I
 
     if-eqz v1, :cond_0
 
-    .line 102
+    .line 107
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -263,13 +320,13 @@
 
     move-result-object v0
 
-    .line 104
+    .line 109
     :cond_0
     iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->componentHash:I
 
     if-eqz v1, :cond_1
 
-    .line 105
+    .line 110
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -294,13 +351,13 @@
 
     move-result-object v0
 
-    .line 107
+    .line 112
     :cond_1
     iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->intentHash:I
 
     if-eqz v1, :cond_2
 
-    .line 108
+    .line 113
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -325,7 +382,7 @@
 
     move-result-object v0
 
-    .line 110
+    .line 115
     :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -383,18 +440,18 @@
 
     move-result-object v0
 
-    .line 111
+    .line 116
     const-string/jumbo v1, "), pageIdx="
 
-    .line 110
+    .line 115
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .line 111
+    .line 116
     iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->pageIndex:I
 
-    .line 110
+    .line 115
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -410,26 +467,26 @@
     .locals 3
 
     .prologue
-    .line 78
+    .line 83
     if-nez p0, :cond_0
 
-    .line 79
+    .line 84
     const-string/jumbo v0, ""
 
     return-object v0
 
-    .line 81
+    .line 86
     :cond_0
     iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->type:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 95
+    .line 100
     const-string/jumbo v0, "UNKNOWN TARGET TYPE"
 
     return-object v0
 
-    .line 83
+    .line 88
     :pswitch_0
     invoke-static {p0}, Lcom/android/launcher3/logging/LoggerUtils;->getItemStr(Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;)Ljava/lang/String;
 
@@ -437,7 +494,7 @@
 
     return-object v0
 
-    .line 85
+    .line 90
     :pswitch_1
     iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->controlType:I
 
@@ -449,7 +506,7 @@
 
     return-object v0
 
-    .line 87
+    .line 92
     :pswitch_2
     iget v0, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->containerType:I
 
@@ -459,14 +516,14 @@
 
     move-result-object v0
 
-    .line 88
+    .line 93
     iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->containerType:I
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_2
 
-    .line 89
+    .line 94
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -491,12 +548,12 @@
 
     move-result-object v0
 
-    .line 93
+    .line 98
     :cond_1
     :goto_0
     return-object v0
 
-    .line 90
+    .line 95
     :cond_2
     iget v1, p0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->containerType:I
 
@@ -504,7 +561,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 91
+    .line 96
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -549,7 +606,7 @@
 
     goto :goto_0
 
-    .line 81
+    .line 86
     nop
 
     :pswitch_data_0
@@ -564,15 +621,15 @@
     .locals 1
 
     .prologue
-    .line 169
+    .line 174
     new-instance v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;
 
     invoke-direct {v0}, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;-><init>()V
 
-    .line 170
+    .line 175
     iput p0, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->type:I
 
-    .line 171
+    .line 176
     return-object v0
 .end method
 
@@ -580,17 +637,17 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 179
     const/4 v0, 0x2
 
     invoke-static {v0}, Lcom/android/launcher3/logging/LoggerUtils;->newAction(I)Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;
 
     move-result-object v0
 
-    .line 175
+    .line 180
     iput p0, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->command:I
 
-    .line 176
+    .line 181
     return-object v0
 .end method
 
@@ -598,17 +655,17 @@
     .locals 1
 
     .prologue
-    .line 163
+    .line 168
     const/4 v0, 0x3
 
     invoke-static {v0}, Lcom/android/launcher3/logging/LoggerUtils;->newTarget(I)Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;
 
     move-result-object v0
 
-    .line 164
+    .line 169
     iput p0, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->containerType:I
 
-    .line 165
+    .line 170
     return-object v0
 .end method
 
@@ -616,12 +673,12 @@
     .locals 2
 
     .prologue
-    .line 143
+    .line 148
     instance-of v0, p0, Lcom/android/launcher3/ButtonDropTarget;
 
     if-nez v0, :cond_0
 
-    .line 144
+    .line 149
     const/4 v0, 0x3
 
     invoke-static {v0}, Lcom/android/launcher3/logging/LoggerUtils;->newTarget(I)Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;
@@ -630,7 +687,7 @@
 
     return-object v0
 
-    .line 146
+    .line 151
     :cond_0
     const/4 v0, 0x2
 
@@ -638,41 +695,41 @@
 
     move-result-object v0
 
-    .line 147
+    .line 152
     instance-of v1, p0, Lcom/android/launcher3/InfoDropTarget;
 
     if-eqz v1, :cond_2
 
-    .line 148
+    .line 153
     const/4 v1, 0x7
 
     iput v1, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->controlType:I
 
-    .line 154
+    .line 159
     :cond_1
     :goto_0
     return-object v0
 
-    .line 149
+    .line 154
     :cond_2
     instance-of v1, p0, Lcom/android/launcher3/UninstallDropTarget;
 
     if-eqz v1, :cond_3
 
-    .line 150
+    .line 155
     const/4 v1, 0x6
 
     iput v1, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->controlType:I
 
     goto :goto_0
 
-    .line 151
+    .line 156
     :cond_3
     instance-of v1, p0, Lcom/android/launcher3/DeleteDropTarget;
 
     if-eqz v1, :cond_1
 
-    .line 152
+    .line 157
     const/4 v1, 0x5
 
     iput v1, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->controlType:I
@@ -684,7 +741,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 120
     invoke-virtual {p0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -693,7 +750,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 121
     invoke-virtual {p0}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -704,11 +761,11 @@
 
     move-result-object v0
 
-    .line 115
+    .line 120
     :goto_0
     return-object v0
 
-    .line 117
+    .line 122
     :cond_0
     const/4 v0, 0x1
 
@@ -725,28 +782,28 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 121
+    .line 126
     invoke-static {v2}, Lcom/android/launcher3/logging/LoggerUtils;->newTarget(I)Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;
 
     move-result-object v0
 
-    .line 122
+    .line 127
     iget v1, p0, Lcom/android/launcher3/ItemInfo;->itemType:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 139
+    .line 144
     :goto_0
     :pswitch_0
     return-object v0
 
-    .line 124
+    .line 129
     :pswitch_1
     iput v2, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->itemType:I
 
     goto :goto_0
 
-    .line 127
+    .line 132
     :pswitch_2
     const/4 v1, 0x2
 
@@ -754,7 +811,7 @@
 
     goto :goto_0
 
-    .line 130
+    .line 135
     :pswitch_3
     const/4 v1, 0x4
 
@@ -762,7 +819,7 @@
 
     goto :goto_0
 
-    .line 133
+    .line 138
     :pswitch_4
     const/4 v1, 0x3
 
@@ -770,7 +827,7 @@
 
     goto :goto_0
 
-    .line 136
+    .line 141
     :pswitch_5
     const/4 v1, 0x5
 
@@ -778,7 +835,7 @@
 
     goto :goto_0
 
-    .line 122
+    .line 127
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -795,18 +852,18 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 190
     new-instance v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$LauncherEvent;
 
     invoke-direct {v0}, Lcom/android/launcher3/userevent/nano/LauncherLogProto$LauncherEvent;-><init>()V
 
-    .line 186
+    .line 191
     iput-object p1, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$LauncherEvent;->srcTarget:[Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;
 
-    .line 187
+    .line 192
     iput-object p0, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$LauncherEvent;->action:Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;
 
-    .line 188
+    .line 193
     return-object v0
 .end method
 
@@ -814,15 +871,15 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 163
     new-instance v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;
 
     invoke-direct {v0}, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;-><init>()V
 
-    .line 159
+    .line 164
     iput p0, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;->type:I
 
-    .line 160
+    .line 165
     return-object v0
 .end method
 
@@ -830,16 +887,16 @@
     .locals 1
 
     .prologue
-    .line 179
+    .line 184
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/android/launcher3/logging/LoggerUtils;->newAction(I)Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;
 
     move-result-object v0
 
-    .line 180
+    .line 185
     iput p0, v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$Action;->touch:I
 
-    .line 181
+    .line 186
     return-object v0
 .end method
