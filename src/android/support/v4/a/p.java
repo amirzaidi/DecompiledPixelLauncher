@@ -13,37 +13,37 @@ import java.io.Writer;
 
 public class p extends Writer
 {
-    private StringBuilder VM;
-    private final String VN;
+    private StringBuilder Xv;
+    private final String Xw;
     
-    public p(final String vn) {
-        this.VM = new StringBuilder(128);
-        this.VN = vn;
+    public p(final String xw) {
+        this.Xv = new StringBuilder(128);
+        this.Xw = xw;
     }
     
-    private void ahN() {
-        if (this.VM.length() > 0) {
-            Log.d(this.VN, this.VM.toString());
-            this.VM.delete(0, this.VM.length());
+    private void aiX() {
+        if (this.Xv.length() > 0) {
+            Log.d(this.Xw, this.Xv.toString());
+            this.Xv.delete(0, this.Xv.length());
         }
     }
     
     public void close() {
-        this.ahN();
+        this.aiX();
     }
     
     public void flush() {
-        this.ahN();
+        this.aiX();
     }
     
     public void write(final char[] array, final int n, final int n2) {
         for (int i = 0; i < n2; ++i) {
             final char c = array[n + i];
             if (c != '\n') {
-                this.VM.append(c);
+                this.Xv.append(c);
             }
             else {
-                this.ahN();
+                this.aiX();
             }
         }
     }

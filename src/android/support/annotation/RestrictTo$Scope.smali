@@ -4,17 +4,17 @@
 
 
 # static fields
-.field public static final enum afs:Landroid/support/annotation/RestrictTo$Scope;
+.field public static final enum agu:Landroid/support/annotation/RestrictTo$Scope;
 
-.field private static final synthetic aft:[Landroid/support/annotation/RestrictTo$Scope;
+.field private static final synthetic agv:[Landroid/support/annotation/RestrictTo$Scope;
 
-.field public static final enum afu:Landroid/support/annotation/RestrictTo$Scope;
+.field public static final enum agw:Landroid/support/annotation/RestrictTo$Scope;
 
-.field public static final enum afv:Landroid/support/annotation/RestrictTo$Scope;
+.field public static final enum agx:Landroid/support/annotation/RestrictTo$Scope;
 
-.field public static final enum afw:Landroid/support/annotation/RestrictTo$Scope;
+.field public static final enum agy:Landroid/support/annotation/RestrictTo$Scope;
 
-.field public static final enum afx:Landroid/support/annotation/RestrictTo$Scope;
+.field public static final enum agz:Landroid/support/annotation/RestrictTo$Scope;
 
 
 # direct methods
@@ -39,7 +39,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/support/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->afw:Landroid/support/annotation/RestrictTo$Scope;
+    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->agy:Landroid/support/annotation/RestrictTo$Scope;
 
     .line 69
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
@@ -48,7 +48,7 @@
 
     invoke-direct {v0, v1, v3}, Landroid/support/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->afx:Landroid/support/annotation/RestrictTo$Scope;
+    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->agz:Landroid/support/annotation/RestrictTo$Scope;
 
     .line 77
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
@@ -57,7 +57,7 @@
 
     invoke-direct {v0, v1, v4}, Landroid/support/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->afv:Landroid/support/annotation/RestrictTo$Scope;
+    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->agx:Landroid/support/annotation/RestrictTo$Scope;
 
     .line 83
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
@@ -66,7 +66,7 @@
 
     invoke-direct {v0, v1, v5}, Landroid/support/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->afu:Landroid/support/annotation/RestrictTo$Scope;
+    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->agw:Landroid/support/annotation/RestrictTo$Scope;
 
     .line 91
     new-instance v0, Landroid/support/annotation/RestrictTo$Scope;
@@ -75,34 +75,34 @@
 
     invoke-direct {v0, v1, v6}, Landroid/support/annotation/RestrictTo$Scope;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->afs:Landroid/support/annotation/RestrictTo$Scope;
+    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->agu:Landroid/support/annotation/RestrictTo$Scope;
 
     .line 58
     const/4 v0, 0x5
 
     new-array v0, v0, [Landroid/support/annotation/RestrictTo$Scope;
 
-    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->afw:Landroid/support/annotation/RestrictTo$Scope;
+    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->agy:Landroid/support/annotation/RestrictTo$Scope;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->afx:Landroid/support/annotation/RestrictTo$Scope;
+    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->agz:Landroid/support/annotation/RestrictTo$Scope;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->afv:Landroid/support/annotation/RestrictTo$Scope;
+    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->agx:Landroid/support/annotation/RestrictTo$Scope;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->afu:Landroid/support/annotation/RestrictTo$Scope;
+    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->agw:Landroid/support/annotation/RestrictTo$Scope;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->afs:Landroid/support/annotation/RestrictTo$Scope;
+    sget-object v1, Landroid/support/annotation/RestrictTo$Scope;->agu:Landroid/support/annotation/RestrictTo$Scope;
 
     aput-object v1, v0, v6
 
-    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->aft:[Landroid/support/annotation/RestrictTo$Scope;
+    sput-object v0, Landroid/support/annotation/RestrictTo$Scope;->agv:[Landroid/support/annotation/RestrictTo$Scope;
 
     return-void
 .end method
@@ -138,7 +138,7 @@
 
     .prologue
     .line 58
-    sget-object v0, Landroid/support/annotation/RestrictTo$Scope;->aft:[Landroid/support/annotation/RestrictTo$Scope;
+    sget-object v0, Landroid/support/annotation/RestrictTo$Scope;->agv:[Landroid/support/annotation/RestrictTo$Scope;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 

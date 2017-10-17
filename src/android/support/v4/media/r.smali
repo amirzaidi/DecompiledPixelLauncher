@@ -4,7 +4,7 @@
 
 
 # virtual methods
-.method public abstract asN(Landroid/os/Parcel;)V
+.method public abstract atK(Landroid/os/Parcel;)V
 .end method
 
 .method public abstract onError(Ljava/lang/String;)V

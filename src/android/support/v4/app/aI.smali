@@ -1,64 +1,40 @@
-.class Landroid/support/v4/app/aI;
+.class public final Landroid/support/v4/app/aI;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
-
 
 # direct methods
-.method constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 625
+    .line 88
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentManagerState;
-    .locals 1
+.method public static aop(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
+    .locals 2
 
     .prologue
-    .line 628
-    new-instance v0, Landroid/support/v4/app/FragmentManagerState;
+    .line 98
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    invoke-direct {v0, p1}, Landroid/support/v4/app/FragmentManagerState;-><init>(Landroid/os/Parcel;)V
+    const/16 v1, 0x12
 
-    return-object v0
-.end method
+    if-ge v0, v1, :cond_0
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 625
-    invoke-virtual {p0, p1}, Landroid/support/v4/app/aI;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentManagerState;
+    .line 101
+    invoke-static {p0, p1}, Landroid/support/v4/app/G;->alT(Landroid/os/Bundle;Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 
     return-object v0
-.end method
 
-.method public newArray(I)[Landroid/support/v4/app/FragmentManagerState;
-    .locals 1
-
-    .prologue
-    .line 633
-    new-array v0, p1, [Landroid/support/v4/app/FragmentManagerState;
-
-    return-object v0
-.end method
-
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 625
-    invoke-virtual {p0, p1}, Landroid/support/v4/app/aI;->newArray(I)[Landroid/support/v4/app/FragmentManagerState;
+    .line 99
+    :cond_0
+    invoke-virtual {p0, p1}, Landroid/os/Bundle;->getBinder(Ljava/lang/String;)Landroid/os/IBinder;
 
     move-result-object v0
 

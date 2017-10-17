@@ -11,38 +11,38 @@ import android.content.Context;
 
 public class O extends i
 {
-    int Qd;
-    int Qe;
+    int RK;
+    int RL;
     
     public O(final int n, final int n2) {
         super(n, n2);
-        this.Qd = -1;
-        this.Qe = 0;
+        this.RK = -1;
+        this.RL = 0;
     }
     
     public O(final Context context, final AttributeSet set) {
         super(context, set);
-        this.Qd = -1;
-        this.Qe = 0;
+        this.RK = -1;
+        this.RL = 0;
     }
     
     public O(final ViewGroup$LayoutParams viewGroup$LayoutParams) {
         super(viewGroup$LayoutParams);
-        this.Qd = -1;
-        this.Qe = 0;
+        this.RK = -1;
+        this.RL = 0;
     }
     
     public O(final ViewGroup$MarginLayoutParams viewGroup$MarginLayoutParams) {
         super(viewGroup$MarginLayoutParams);
-        this.Qd = -1;
-        this.Qe = 0;
+        this.RK = -1;
+        this.RL = 0;
     }
     
-    public int ZO() {
-        return this.Qd;
+    public int aaQ() {
+        return this.RK;
     }
     
-    public int ZP() {
-        return this.Qe;
+    public int aaR() {
+        return this.RL;
     }
 }

@@ -4,3 +4,8 @@
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;
+
+
+# virtual methods
+.method public abstract atT()[Ljava/lang/String;
+.end method

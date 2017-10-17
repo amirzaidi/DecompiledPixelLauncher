@@ -6,14 +6,14 @@ package android.support.v4.a;
 
 public class m implements Cloneable
 {
-    private static final Object VG;
-    private long[] VH;
-    private Object[] VI;
-    private boolean VJ;
+    private static final Object Xp;
+    private long[] Xq;
+    private Object[] Xr;
+    private boolean Xs;
     private int mSize;
     
     static {
-        VG = new Object();
+        Xp = new Object();
     }
     
     public m() {
@@ -21,117 +21,117 @@ public class m implements Cloneable
     }
     
     public m(final int n) {
-        this.VJ = false;
+        this.Xs = false;
         if (n != 0) {
-            final int ahQ = s.ahQ(n);
-            this.VH = new long[ahQ];
-            this.VI = new Object[ahQ];
+            final int aja = s.aja(n);
+            this.Xq = new long[aja];
+            this.Xr = new Object[aja];
         }
         else {
-            this.VH = s.VR;
-            this.VI = s.VS;
+            this.Xq = s.XA;
+            this.Xr = s.XB;
         }
         this.mSize = 0;
     }
     
-    private void ahG() {
+    private void aiQ() {
         final int mSize = this.mSize;
-        final long[] vh = this.VH;
-        final Object[] vi = this.VI;
+        final long[] xq = this.Xq;
+        final Object[] xr = this.Xr;
         int i = 0;
         int mSize2 = 0;
         while (i < mSize) {
-            final Object o = vi[i];
-            if (o != m.VG) {
+            final Object o = xr[i];
+            if (o != m.Xp) {
                 if (i != mSize2) {
-                    vh[mSize2] = vh[i];
-                    vi[mSize2] = o;
-                    vi[i] = null;
+                    xq[mSize2] = xq[i];
+                    xr[mSize2] = o;
+                    xr[i] = null;
                 }
                 ++mSize2;
             }
             ++i;
         }
-        this.VJ = false;
+        this.Xs = false;
         this.mSize = mSize2;
     }
     
-    public void ahH(final long n, final Object o) {
-        final int ahT = s.ahT(this.VH, this.mSize, n);
-        if (ahT < 0) {
-            int n2 = ~ahT;
-            if (n2 < this.mSize && this.VI[n2] == m.VG) {
-                this.VH[n2] = n;
-                this.VI[n2] = o;
+    public void aiR(final long n, final Object o) {
+        final int ajd = s.ajd(this.Xq, this.mSize, n);
+        if (ajd < 0) {
+            int n2 = ~ajd;
+            if (n2 < this.mSize && this.Xr[n2] == m.Xp) {
+                this.Xq[n2] = n;
+                this.Xr[n2] = o;
                 return;
             }
-            if (this.VJ && this.mSize >= this.VH.length) {
-                this.ahG();
-                n2 = ~s.ahT(this.VH, this.mSize, n);
+            if (this.Xs && this.mSize >= this.Xq.length) {
+                this.aiQ();
+                n2 = ~s.ajd(this.Xq, this.mSize, n);
             }
-            if (this.mSize >= this.VH.length) {
-                final int ahQ = s.ahQ(this.mSize + 1);
-                final long[] vh = new long[ahQ];
-                final Object[] vi = new Object[ahQ];
-                System.arraycopy(this.VH, 0, vh, 0, this.VH.length);
-                System.arraycopy(this.VI, 0, vi, 0, this.VI.length);
-                this.VH = vh;
-                this.VI = vi;
+            if (this.mSize >= this.Xq.length) {
+                final int aja = s.aja(this.mSize + 1);
+                final long[] xq = new long[aja];
+                final Object[] xr = new Object[aja];
+                System.arraycopy(this.Xq, 0, xq, 0, this.Xq.length);
+                System.arraycopy(this.Xr, 0, xr, 0, this.Xr.length);
+                this.Xq = xq;
+                this.Xr = xr;
             }
             if (this.mSize - n2 != 0) {
-                System.arraycopy(this.VH, n2, this.VH, n2 + 1, this.mSize - n2);
-                System.arraycopy(this.VI, n2, this.VI, n2 + 1, this.mSize - n2);
+                System.arraycopy(this.Xq, n2, this.Xq, n2 + 1, this.mSize - n2);
+                System.arraycopy(this.Xr, n2, this.Xr, n2 + 1, this.mSize - n2);
             }
-            this.VH[n2] = n;
-            this.VI[n2] = o;
+            this.Xq[n2] = n;
+            this.Xr[n2] = o;
             ++this.mSize;
         }
         else {
-            this.VI[ahT] = o;
+            this.Xr[ajd] = o;
         }
     }
     
-    public void ahI(final int n) {
-        if (this.VI[n] != m.VG) {
-            this.VI[n] = m.VG;
-            this.VJ = true;
+    public void aiS(final int n) {
+        if (this.Xr[n] != m.Xp) {
+            this.Xr[n] = m.Xp;
+            this.Xs = true;
         }
     }
     
-    public long ahJ(final int n) {
-        if (this.VJ) {
-            this.ahG();
+    public long aiT(final int n) {
+        if (this.Xs) {
+            this.aiQ();
         }
-        return this.VH[n];
+        return this.Xq[n];
     }
     
-    public Object ahK(final int n) {
-        if (this.VJ) {
-            this.ahG();
+    public Object aiU(final int n) {
+        if (this.Xs) {
+            this.aiQ();
         }
-        return this.VI[n];
+        return this.Xr[n];
     }
     
-    public Object ahL(final long n) {
-        return this.ahM(n, null);
+    public Object aiV(final long n) {
+        return this.aiW(n, null);
     }
     
-    public Object ahM(final long n, final Object o) {
-        final int ahT = s.ahT(this.VH, this.mSize, n);
-        if (ahT >= 0 && this.VI[ahT] != m.VG) {
-            return this.VI[ahT];
+    public Object aiW(final long n, final Object o) {
+        final int ajd = s.ajd(this.Xq, this.mSize, n);
+        if (ajd >= 0 && this.Xr[ajd] != m.Xp) {
+            return this.Xr[ajd];
         }
         return o;
     }
     
     public void clear() {
         final int mSize = this.mSize;
-        final Object[] vi = this.VI;
+        final Object[] xr = this.Xr;
         for (int i = 0; i < mSize; ++i) {
-            vi[i] = null;
+            xr[i] = null;
         }
         this.mSize = 0;
-        this.VJ = false;
+        this.Xs = false;
     }
     
     public m clone() {
@@ -149,7 +149,7 @@ public class m implements Cloneable
         //     8: checkcast       Landroid/support/v4/a/m;
         //    11: astore_2       
         //    12: aload_0        
-        //    13: getfield        android/support/v4/a/m.VH:[J
+        //    13: getfield        android/support/v4/a/m.Xq:[J
         //    16: astore_1       
         //    17: aload_1        
         //    18: invokevirtual   java/lang/Object.clone:()Ljava/lang/Object;
@@ -159,9 +159,9 @@ public class m implements Cloneable
         //    26: astore_1       
         //    27: aload_2        
         //    28: aload_1        
-        //    29: putfield        android/support/v4/a/m.VH:[J
+        //    29: putfield        android/support/v4/a/m.Xq:[J
         //    32: aload_0        
-        //    33: getfield        android/support/v4/a/m.VI:[Ljava/lang/Object;
+        //    33: getfield        android/support/v4/a/m.Xr:[Ljava/lang/Object;
         //    36: astore_1       
         //    37: aload_1        
         //    38: invokevirtual   java/lang/Object.clone:()Ljava/lang/Object;
@@ -171,7 +171,7 @@ public class m implements Cloneable
         //    46: astore_1       
         //    47: aload_2        
         //    48: aload_1        
-        //    49: putfield        android/support/v4/a/m.VI:[Ljava/lang/Object;
+        //    49: putfield        android/support/v4/a/m.Xr:[Ljava/lang/Object;
         //    52: aload_2        
         //    53: areturn        
         //    54: astore_2       
@@ -221,8 +221,8 @@ public class m implements Cloneable
     }
     
     public int size() {
-        if (this.VJ) {
-            this.ahG();
+        if (this.Xs) {
+            this.aiQ();
         }
         return this.mSize;
     }
@@ -236,14 +236,14 @@ public class m implements Cloneable
                 if (i > 0) {
                     sb.append(", ");
                 }
-                sb.append(this.ahJ(i));
+                sb.append(this.aiT(i));
                 sb.append('=');
-                final Object ahK = this.ahK(i);
-                if (ahK == this) {
+                final Object aiU = this.aiU(i);
+                if (aiU == this) {
                     sb.append("(this Map)");
                 }
                 else {
-                    sb.append(ahK);
+                    sb.append(aiU);
                 }
                 ++i;
             }

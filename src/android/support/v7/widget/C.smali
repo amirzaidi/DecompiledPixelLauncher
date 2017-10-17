@@ -7,21 +7,21 @@
 
 
 # instance fields
-.field final PC:Ljava/util/ArrayList;
+.field final Rj:Ljava/util/ArrayList;
 
-.field final PD:Ljava/util/ArrayList;
+.field final Rk:Ljava/util/ArrayList;
 
-.field final PE:Landroid/support/v7/widget/am;
+.field final Rl:Landroid/support/v7/widget/am;
 
-.field private PF:I
+.field private Rm:I
 
-.field private PG:Landroid/support/v4/a/i;
+.field private Rn:Landroid/support/v4/a/j;
 
-.field final PH:Z
+.field final Ro:Z
 
-.field PI:Ljava/lang/Runnable;
+.field Rp:Ljava/lang/Runnable;
 
-.field final PJ:Landroid/support/v7/widget/ay;
+.field final Rq:Landroid/support/v7/widget/ay;
 
 
 # direct methods
@@ -52,45 +52,45 @@
 
     invoke-direct {v0, v1}, Landroid/support/v4/a/d;-><init>(I)V
 
-    iput-object v0, p0, Landroid/support/v7/widget/C;->PG:Landroid/support/v4/a/i;
+    iput-object v0, p0, Landroid/support/v7/widget/C;->Rn:Landroid/support/v4/a/j;
 
     .line 56
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     .line 58
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     .line 68
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/support/v7/widget/C;->PF:I
+    iput v0, p0, Landroid/support/v7/widget/C;->Rm:I
 
     .line 75
-    iput-object p1, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iput-object p1, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
     .line 76
-    iput-boolean p2, p0, Landroid/support/v7/widget/C;->PH:Z
+    iput-boolean p2, p0, Landroid/support/v7/widget/C;->Ro:Z
 
     .line 77
     new-instance v0, Landroid/support/v7/widget/ay;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/ay;-><init>(Landroid/support/v7/widget/Y;)V
 
-    iput-object v0, p0, Landroid/support/v7/widget/C;->PJ:Landroid/support/v7/widget/ay;
+    iput-object v0, p0, Landroid/support/v7/widget/C;->Rq:Landroid/support/v7/widget/ay;
 
     .line 78
     return-void
 .end method
 
-.method private YZ(II)I
+.method private aab(II)I
     .locals 8
 
     .prologue
@@ -101,7 +101,7 @@
     const/4 v5, 0x1
 
     .line 329
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -118,7 +118,7 @@
     if-gez v4, :cond_0
 
     .line 394
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -136,7 +136,7 @@
 
     .line 331
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -145,12 +145,12 @@
     check-cast v0, Landroid/support/v7/widget/aK;
 
     .line 332
-    iget v2, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     if-eq v2, v7, :cond_2
 
     .line 371
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-le v2, v1, :cond_e
 
@@ -171,17 +171,17 @@
 
     .line 334
     :cond_2
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v3, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->UA:I
 
     if-lt v2, v3, :cond_4
 
     .line 338
-    iget v3, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->UA:I
 
     .line 339
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 341
     :goto_3
@@ -189,7 +189,7 @@
 
     .line 360
     :cond_3
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-lt v1, v2, :cond_b
 
@@ -203,10 +203,10 @@
 
     .line 335
     :cond_4
-    iget v3, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 336
-    iget v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     goto :goto_3
 
@@ -215,7 +215,7 @@
     if-gt v1, v2, :cond_3
 
     .line 343
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-eq v3, v2, :cond_6
 
@@ -246,41 +246,41 @@
 
     .line 345
     :cond_7
-    iget v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/lit8 v2, v2, 0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     goto :goto_6
 
     .line 347
     :cond_8
-    iget v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     goto :goto_6
 
     .line 353
     :cond_9
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     add-int/lit8 v2, v2, 0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     goto :goto_5
 
     .line 355
     :cond_a
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     goto :goto_5
 
@@ -297,18 +297,18 @@
 
     .line 363
     :cond_c
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     add-int/lit8 v2, v2, 0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 364
-    iget v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/lit8 v2, v2, 0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     move v0, v1
 
@@ -316,18 +316,18 @@
 
     .line 366
     :cond_d
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 367
-    iget v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SR:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->UA:I
 
     move v0, v1
 
@@ -335,17 +335,17 @@
 
     .line 372
     :cond_e
-    iget v2, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     if-eq v2, v5, :cond_f
 
     .line 374
-    iget v2, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     if-ne v2, v6, :cond_1
 
     .line 375
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/2addr v1, v0
 
@@ -353,7 +353,7 @@
 
     .line 373
     :cond_f
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     sub-int/2addr v1, v0
 
@@ -361,27 +361,27 @@
 
     .line 379
     :cond_10
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     add-int/lit8 v2, v2, 0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     goto/16 :goto_2
 
     .line 381
     :cond_11
-    iget v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     add-int/lit8 v2, v2, -0x1
 
-    iput v2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iput v2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     goto/16 :goto_2
 
     .line 395
     :cond_12
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -390,12 +390,12 @@
     check-cast v0, Landroid/support/v7/widget/aK;
 
     .line 396
-    iget v3, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     if-eq v3, v7, :cond_13
 
     .line 401
-    iget v3, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->UA:I
 
     if-lez v3, :cond_16
 
@@ -409,26 +409,26 @@
 
     .line 397
     :cond_13
-    iget v3, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->UA:I
 
-    iget v4, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-ne v3, v4, :cond_15
 
     .line 398
     :cond_14
-    iget-object v3, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 399
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     goto :goto_7
 
     .line 397
     :cond_15
-    iget v3, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->UA:I
 
     if-ltz v3, :cond_14
 
@@ -436,17 +436,17 @@
 
     .line 402
     :cond_16
-    iget-object v3, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v3, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 403
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     goto :goto_7
 .end method
 
-.method private Za(I)Z
+.method private aac(I)Z
     .locals 7
 
     .prologue
@@ -455,7 +455,7 @@
     const/4 v6, 0x1
 
     .line 410
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -472,7 +472,7 @@
 
     .line 412
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -481,14 +481,14 @@
     check-cast v0, Landroid/support/v7/widget/aK;
 
     .line 413
-    iget v4, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     const/16 v5, 0x8
 
     if-eq v4, v5, :cond_2
 
     .line 417
-    iget v4, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     if-eq v4, v6, :cond_3
 
@@ -502,11 +502,11 @@
 
     .line 414
     :cond_2
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/lit8 v4, v1, 0x1
 
-    invoke-virtual {p0, v0, v4}, Landroid/support/v7/widget/C;->YW(II)I
+    invoke-virtual {p0, v0, v4}, Landroid/support/v7/widget/C;->ZY(II)I
 
     move-result v0
 
@@ -517,14 +517,14 @@
 
     .line 419
     :cond_3
-    iget v4, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v5, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v5, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/2addr v4, v5
 
     .line 420
-    iget v0, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     :goto_1
     if-ge v0, v4, :cond_1
@@ -532,7 +532,7 @@
     .line 421
     add-int/lit8 v5, v1, 0x1
 
-    invoke-virtual {p0, v0, v5}, Landroid/support/v7/widget/C;->YW(II)I
+    invoke-virtual {p0, v0, v5}, Landroid/support/v7/widget/C;->ZY(II)I
 
     move-result v5
 
@@ -548,7 +548,7 @@
     return v6
 .end method
 
-.method private Zc(Landroid/support/v7/widget/aK;)V
+.method private aae(Landroid/support/v7/widget/aK;)V
     .locals 10
 
     .prologue
@@ -557,7 +557,7 @@
     const/4 v2, 0x1
 
     .line 230
-    iget v0, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Ux:I
 
     if-ne v0, v2, :cond_1
 
@@ -573,26 +573,26 @@
 
     .line 230
     :cond_1
-    iget v0, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Ux:I
 
     const/16 v3, 0x8
 
     if-eq v0, v3, :cond_0
 
     .line 244
-    iget v0, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v3, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v3, p1, Landroid/support/v7/widget/aK;->Ux:I
 
-    invoke-direct {p0, v0, v3}, Landroid/support/v7/widget/C;->YZ(II)I
+    invoke-direct {p0, v0, v3}, Landroid/support/v7/widget/C;->aab(II)I
 
     move-result v4
 
     .line 249
-    iget v3, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, p1, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 251
-    iget v0, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Ux:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -636,15 +636,15 @@
 
     .line 261
     :goto_1
-    iget v7, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v7, p1, Landroid/support/v7/widget/aK;->UA:I
 
     if-lt v3, v7, :cond_2
 
     .line 293
-    iget-object v0, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v0, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
     .line 294
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, p1}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     .line 295
     if-gtz v5, :cond_7
@@ -661,21 +661,21 @@
 
     .line 262
     :cond_2
-    iget v7, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v7, p1, Landroid/support/v7/widget/aK;->Uz:I
 
     mul-int v8, v0, v3
 
     add-int/2addr v7, v8
 
     .line 263
-    iget v8, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v8, p1, Landroid/support/v7/widget/aK;->Ux:I
 
-    invoke-direct {p0, v7, v8}, Landroid/support/v7/widget/C;->YZ(II)I
+    invoke-direct {p0, v7, v8}, Landroid/support/v7/widget/C;->aab(II)I
 
     move-result v8
 
     .line 268
-    iget v7, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v7, p1, Landroid/support/v7/widget/aK;->Ux:I
 
     packed-switch v7, :pswitch_data_1
 
@@ -687,22 +687,22 @@
     if-nez v7, :cond_5
 
     .line 280
-    iget v7, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v7, p1, Landroid/support/v7/widget/aK;->Ux:I
 
-    iget-object v9, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v9, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
-    invoke-virtual {p0, v7, v6, v5, v9}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v7, v6, v5, v9}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object v6
 
     .line 284
-    invoke-virtual {p0, v6, v4}, Landroid/support/v7/widget/C;->Ze(Landroid/support/v7/widget/aK;I)V
+    invoke-virtual {p0, v6, v4}, Landroid/support/v7/widget/C;->aag(Landroid/support/v7/widget/aK;I)V
 
     .line 285
-    invoke-virtual {p0, v6}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, v6}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     .line 286
-    iget v6, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v6, p1, Landroid/support/v7/widget/aK;->Ux:I
 
     const/4 v7, 0x4
 
@@ -761,17 +761,17 @@
 
     .line 296
     :cond_7
-    iget v1, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->Ux:I
 
-    invoke-virtual {p0, v1, v6, v5, v0}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v1, v6, v5, v0}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object v0
 
     .line 300
-    invoke-virtual {p0, v0, v4}, Landroid/support/v7/widget/C;->Ze(Landroid/support/v7/widget/aK;I)V
+    invoke-virtual {p0, v0, v4}, Landroid/support/v7/widget/C;->aag(Landroid/support/v7/widget/aK;I)V
 
     .line 301
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     goto :goto_2
 
@@ -792,7 +792,7 @@
     .end packed-switch
 .end method
 
-.method private Zf(Landroid/support/v7/widget/aK;)V
+.method private aah(Landroid/support/v7/widget/aK;)V
     .locals 11
 
     .prologue
@@ -805,12 +805,12 @@
     const/4 v1, 0x0
 
     .line 133
-    iget v7, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v7, p1, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 135
-    iget v0, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v3, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v3, p1, Landroid/support/v7/widget/aK;->UA:I
 
     add-int v4, v0, v3
 
@@ -818,7 +818,7 @@
     const/4 v5, -0x1
 
     .line 137
-    iget v3, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, p1, Landroid/support/v7/widget/aK;->Uz:I
 
     move v6, v1
 
@@ -826,7 +826,7 @@
     if-lt v3, v4, :cond_0
 
     .line 175
-    iget v0, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->UA:I
 
     if-ne v6, v0, :cond_6
 
@@ -835,7 +835,7 @@
     if-eqz v5, :cond_7
 
     .line 182
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->Zh(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->aaj(Landroid/support/v7/widget/aK;)V
 
     .line 184
     :goto_2
@@ -843,9 +843,9 @@
 
     .line 139
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    invoke-interface {v0, v3}, Landroid/support/v7/widget/am;->abw(I)Landroid/support/v7/widget/j;
+    invoke-interface {v0, v3}, Landroid/support/v7/widget/am;->acx(I)Landroid/support/v7/widget/j;
 
     move-result-object v0
 
@@ -890,7 +890,7 @@
 
     .line 140
     :cond_2
-    invoke-direct {p0, v3}, Landroid/support/v7/widget/C;->Za(I)Z
+    invoke-direct {p0, v3}, Landroid/support/v7/widget/C;->aac(I)Z
 
     move-result v0
 
@@ -909,12 +909,12 @@
 
     .line 150
     :cond_3
-    invoke-virtual {p0, v9, v7, v6, v8}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v9, v7, v6, v8}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object v0
 
     .line 151
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zc(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aae(Landroid/support/v7/widget/aK;)V
 
     move v0, v2
 
@@ -923,12 +923,12 @@
 
     .line 161
     :cond_4
-    invoke-virtual {p0, v9, v7, v6, v8}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v9, v7, v6, v8}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object v0
 
     .line 162
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zh(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aaj(Landroid/support/v7/widget/aK;)V
 
     move v0, v2
 
@@ -949,10 +949,10 @@
 
     .line 176
     :cond_6
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, p1}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     .line 177
-    invoke-virtual {p0, v9, v7, v6, v8}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v9, v7, v6, v8}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object p1
 
@@ -960,12 +960,12 @@
 
     .line 180
     :cond_7
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->Zc(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->aae(Landroid/support/v7/widget/aK;)V
 
     goto :goto_2
 .end method
 
-.method private Zg(Landroid/support/v7/widget/aK;)V
+.method private aai(Landroid/support/v7/widget/aK;)V
     .locals 10
 
     .prologue
@@ -976,12 +976,12 @@
     const/4 v1, 0x0
 
     .line 187
-    iget v2, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v2, p1, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 189
-    iget v0, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v3, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v3, p1, Landroid/support/v7/widget/aK;->UA:I
 
     add-int v6, v0, v3
 
@@ -989,7 +989,7 @@
     const/4 v0, -0x1
 
     .line 191
-    iget v3, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, p1, Landroid/support/v7/widget/aK;->Uz:I
 
     move v5, v0
 
@@ -999,7 +999,7 @@
     if-lt v3, v6, :cond_0
 
     .line 214
-    iget v1, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->UA:I
 
     if-ne v0, v1, :cond_5
 
@@ -1008,7 +1008,7 @@
     if-eqz v5, :cond_6
 
     .line 222
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->Zh(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->aaj(Landroid/support/v7/widget/aK;)V
 
     .line 224
     :goto_2
@@ -1016,9 +1016,9 @@
 
     .line 192
     :cond_0
-    iget-object v7, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v7, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    invoke-interface {v7, v3}, Landroid/support/v7/widget/am;->abw(I)Landroid/support/v7/widget/j;
+    invoke-interface {v7, v3}, Landroid/support/v7/widget/am;->acx(I)Landroid/support/v7/widget/j;
 
     move-result-object v7
 
@@ -1055,7 +1055,7 @@
 
     .line 193
     :cond_2
-    invoke-direct {p0, v3}, Landroid/support/v7/widget/C;->Za(I)Z
+    invoke-direct {p0, v3}, Landroid/support/v7/widget/C;->aac(I)Z
 
     move-result v7
 
@@ -1076,14 +1076,14 @@
 
     .line 195
     :cond_3
-    iget-object v5, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v5, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
-    invoke-virtual {p0, v8, v2, v0, v5}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v8, v2, v0, v5}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object v0
 
     .line 197
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zc(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aae(Landroid/support/v7/widget/aK;)V
 
     move v0, v1
 
@@ -1094,14 +1094,14 @@
 
     .line 204
     :cond_4
-    iget-object v5, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v5, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
-    invoke-virtual {p0, v8, v2, v0, v5}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v8, v2, v0, v5}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object v0
 
     .line 206
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zh(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aaj(Landroid/support/v7/widget/aK;)V
 
     move v0, v1
 
@@ -1112,13 +1112,13 @@
 
     .line 215
     :cond_5
-    iget-object v1, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v1, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
     .line 216
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, p1}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     .line 217
-    invoke-virtual {p0, v8, v2, v0, v1}, Landroid/support/v7/widget/C;->YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+    invoke-virtual {p0, v8, v2, v0, v1}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
 
     move-result-object p1
 
@@ -1126,22 +1126,22 @@
 
     .line 220
     :cond_6
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->Zc(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->aae(Landroid/support/v7/widget/aK;)V
 
     goto :goto_2
 .end method
 
-.method private Zh(Landroid/support/v7/widget/aK;)V
+.method private aaj(Landroid/support/v7/widget/aK;)V
     .locals 4
 
     .prologue
     .line 438
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 439
-    iget v0, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Ux:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -1173,13 +1173,13 @@
 
     .line 441
     :pswitch_1
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v1, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v2, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, p1, Landroid/support/v7/widget/aK;->UA:I
 
-    invoke-interface {v0, v1, v2}, Landroid/support/v7/widget/am;->abr(II)V
+    invoke-interface {v0, v1, v2}, Landroid/support/v7/widget/am;->acs(II)V
 
     .line 456
     :goto_0
@@ -1187,39 +1187,39 @@
 
     .line 444
     :pswitch_2
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v1, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v2, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, p1, Landroid/support/v7/widget/aK;->UA:I
 
-    invoke-interface {v0, v1, v2}, Landroid/support/v7/widget/am;->abu(II)V
+    invoke-interface {v0, v1, v2}, Landroid/support/v7/widget/am;->acv(II)V
 
     goto :goto_0
 
     .line 447
     :pswitch_3
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v1, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v2, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, p1, Landroid/support/v7/widget/aK;->UA:I
 
-    invoke-interface {v0, v1, v2}, Landroid/support/v7/widget/am;->abx(II)V
+    invoke-interface {v0, v1, v2}, Landroid/support/v7/widget/am;->acy(II)V
 
     goto :goto_0
 
     .line 451
     :pswitch_4
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v1, p1, Landroid/support/v7/widget/aK;->SQ:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v2, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v2, p1, Landroid/support/v7/widget/aK;->UA:I
 
-    iget-object v3, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v3, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
-    invoke-interface {v0, v1, v2, v3}, Landroid/support/v7/widget/am;->abv(IILjava/lang/Object;)V
+    invoke-interface {v0, v1, v2, v3}, Landroid/support/v7/widget/am;->acw(IILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -1237,23 +1237,23 @@
     .end packed-switch
 .end method
 
-.method private Zl(Landroid/support/v7/widget/aK;)V
+.method private aan(Landroid/support/v7/widget/aK;)V
     .locals 0
 
     .prologue
     .line 431
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->Zh(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->aaj(Landroid/support/v7/widget/aK;)V
 
     .line 432
     return-void
 .end method
 
-.method private Zm(Landroid/support/v7/widget/aK;)V
+.method private aao(Landroid/support/v7/widget/aK;)V
     .locals 0
 
     .prologue
     .line 129
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->Zh(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/C;->aaj(Landroid/support/v7/widget/aK;)V
 
     .line 130
     return-void
@@ -1261,14 +1261,14 @@
 
 
 # virtual methods
-.method YV(I)Z
+.method ZX(I)Z
     .locals 2
 
     .prologue
     const/4 v0, 0x0
 
     .line 463
-    iget v1, p0, Landroid/support/v7/widget/C;->PF:I
+    iget v1, p0, Landroid/support/v7/widget/C;->Rm:I
 
     and-int/2addr v1, p1
 
@@ -1283,12 +1283,12 @@
     goto :goto_0
 .end method
 
-.method YW(II)I
+.method ZY(II)I
     .locals 5
 
     .prologue
     .line 471
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1305,7 +1305,7 @@
 
     .line 473
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1314,14 +1314,14 @@
     check-cast v0, Landroid/support/v7/widget/aK;
 
     .line 474
-    iget v3, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     const/16 v4, 0x8
 
     if-eq v3, v4, :cond_2
 
     .line 485
-    iget v3, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-le v3, v1, :cond_5
 
@@ -1334,18 +1334,18 @@
 
     .line 475
     :cond_2
-    iget v3, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-eq v3, v1, :cond_3
 
     .line 478
-    iget v3, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-lt v3, v1, :cond_4
 
     .line 481
     :goto_2
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     if-gt v0, v1, :cond_1
 
@@ -1356,7 +1356,7 @@
 
     .line 476
     :cond_3
-    iget v1, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v1, v0, Landroid/support/v7/widget/aK;->UA:I
 
     goto :goto_1
 
@@ -1368,21 +1368,21 @@
 
     .line 486
     :cond_5
-    iget v3, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     const/4 v4, 0x2
 
     if-eq v3, v4, :cond_6
 
     .line 491
-    iget v3, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     const/4 v4, 0x1
 
     if-ne v3, v4, :cond_1
 
     .line 492
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/2addr v1, v0
 
@@ -1390,16 +1390,16 @@
 
     .line 487
     :cond_6
-    iget v3, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v4, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/2addr v3, v4
 
     if-lt v1, v3, :cond_7
 
     .line 490
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     sub-int/2addr v1, v0
 
@@ -1412,14 +1412,14 @@
     return v0
 .end method
 
-.method public YX(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+.method public ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
     .locals 1
 
     .prologue
     .line 726
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PG:Landroid/support/v4/a/i;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rn:Landroid/support/v4/a/j;
 
-    invoke-interface {v0}, Landroid/support/v4/a/i;->agV()Ljava/lang/Object;
+    invoke-interface {v0}, Landroid/support/v4/a/j;->air()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1429,16 +1429,16 @@
     if-eqz v0, :cond_0
 
     .line 730
-    iput p1, v0, Landroid/support/v7/widget/aK;->SO:I
+    iput p1, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     .line 731
-    iput p2, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iput p2, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     .line 732
-    iput p3, v0, Landroid/support/v7/widget/aK;->SR:I
+    iput p3, v0, Landroid/support/v7/widget/aK;->UA:I
 
     .line 733
-    iput-object p4, v0, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iput-object p4, v0, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
     .line 735
     :goto_0
@@ -1453,12 +1453,12 @@
     goto :goto_0
 .end method
 
-.method public YY(Landroid/support/v7/widget/aK;)V
+.method public aaa(Landroid/support/v7/widget/aK;)V
     .locals 1
 
     .prologue
     .line 740
-    iget-boolean v0, p0, Landroid/support/v7/widget/C;->PH:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/C;->Ro:Z
 
     if-eqz v0, :cond_0
 
@@ -1470,24 +1470,24 @@
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iput-object v0, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
     .line 742
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PG:Landroid/support/v4/a/i;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rn:Landroid/support/v4/a/j;
 
-    invoke-interface {v0, p1}, Landroid/support/v4/a/i;->agT(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Landroid/support/v4/a/j;->aip(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method
 
-.method Zb()Z
+.method aad()Z
     .locals 2
 
     .prologue
     const/4 v0, 0x0
 
     .line 623
-    iget-object v1, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1500,7 +1500,7 @@
     return v0
 
     :cond_1
-    iget-object v1, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1513,19 +1513,19 @@
     goto :goto_0
 .end method
 
-.method Zd()V
+.method aaf()V
     .locals 4
 
     .prologue
     .line 92
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PJ:Landroid/support/v7/widget/ay;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rq:Landroid/support/v7/widget/ay;
 
-    iget-object v1, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ay;->abR(Ljava/util/List;)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ay;->acS(Ljava/util/List;)V
 
     .line 93
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1540,7 +1540,7 @@
     if-lt v1, v2, :cond_0
 
     .line 114
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
@@ -1549,7 +1549,7 @@
 
     .line 95
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1558,14 +1558,14 @@
     check-cast v0, Landroid/support/v7/widget/aK;
 
     .line 96
-    iget v3, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v3, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     packed-switch v3, :pswitch_data_0
 
     .line 110
     :goto_1
     :pswitch_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PI:Ljava/lang/Runnable;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rp:Ljava/lang/Runnable;
 
     if-nez v0, :cond_1
 
@@ -1579,31 +1579,31 @@
 
     .line 98
     :pswitch_1
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zl(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aan(Landroid/support/v7/widget/aK;)V
 
     goto :goto_1
 
     .line 101
     :pswitch_2
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zf(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aah(Landroid/support/v7/widget/aK;)V
 
     goto :goto_1
 
     .line 104
     :pswitch_3
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zg(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aai(Landroid/support/v7/widget/aK;)V
 
     goto :goto_1
 
     .line 107
     :pswitch_4
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->Zm(Landroid/support/v7/widget/aK;)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/C;->aao(Landroid/support/v7/widget/aK;)V
 
     goto :goto_1
 
     .line 111
     :cond_1
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PI:Ljava/lang/Runnable;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rp:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
@@ -1623,17 +1623,17 @@
     .end packed-switch
 .end method
 
-.method Ze(Landroid/support/v7/widget/aK;I)V
+.method aag(Landroid/support/v7/widget/aK;I)V
     .locals 3
 
     .prologue
     .line 314
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    invoke-interface {v0, p1}, Landroid/support/v7/widget/am;->aby(Landroid/support/v7/widget/aK;)V
+    invoke-interface {v0, p1}, Landroid/support/v7/widget/am;->acz(Landroid/support/v7/widget/aK;)V
 
     .line 315
-    iget v0, p1, Landroid/support/v7/widget/aK;->SO:I
+    iget v0, p1, Landroid/support/v7/widget/aK;->Ux:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -1649,11 +1649,11 @@
 
     .line 317
     :pswitch_1
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v1, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->UA:I
 
-    invoke-interface {v0, p2, v1}, Landroid/support/v7/widget/am;->abs(II)V
+    invoke-interface {v0, p2, v1}, Landroid/support/v7/widget/am;->act(II)V
 
     .line 326
     :goto_0
@@ -1661,13 +1661,13 @@
 
     .line 320
     :pswitch_2
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v1, p1, Landroid/support/v7/widget/aK;->SR:I
+    iget v1, p1, Landroid/support/v7/widget/aK;->UA:I
 
-    iget-object v2, p1, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v2, p1, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
-    invoke-interface {v0, p2, v1, v2}, Landroid/support/v7/widget/am;->abv(IILjava/lang/Object;)V
+    invoke-interface {v0, p2, v1, v2}, Landroid/support/v7/widget/am;->acw(IILjava/lang/Object;)V
 
     goto :goto_0
 
@@ -1682,14 +1682,14 @@
     .end packed-switch
 .end method
 
-.method Zi()V
+.method aak()V
     .locals 5
 
     .prologue
     const/4 v2, 0x0
 
     .line 118
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1702,21 +1702,21 @@
     if-lt v1, v3, :cond_0
 
     .line 122
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->Zk(Ljava/util/List;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aam(Ljava/util/List;)V
 
     .line 123
-    iput v2, p0, Landroid/support/v7/widget/C;->PF:I
+    iput v2, p0, Landroid/support/v7/widget/C;->Rm:I
 
     .line 124
     return-void
 
     .line 120
     :cond_0
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1724,7 +1724,7 @@
 
     check-cast v0, Landroid/support/v7/widget/aK;
 
-    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->abt(Landroid/support/v7/widget/aK;)V
+    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->acu(Landroid/support/v7/widget/aK;)V
 
     .line 119
     add-int/lit8 v0, v1, 0x1
@@ -1734,12 +1734,12 @@
     goto :goto_0
 .end method
 
-.method public Zj(I)I
+.method public aal(I)I
     .locals 6
 
     .prologue
     .line 587
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1760,7 +1760,7 @@
 
     .line 589
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1769,7 +1769,7 @@
     check-cast v0, Landroid/support/v7/widget/aK;
 
     .line 590
-    iget v4, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     sparse-switch v4, :sswitch_data_0
 
@@ -1784,12 +1784,12 @@
 
     .line 592
     :sswitch_0
-    iget v4, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-gt v4, v1, :cond_1
 
     .line 593
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/2addr v1, v0
 
@@ -1797,14 +1797,14 @@
 
     .line 597
     :sswitch_1
-    iget v4, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-gt v4, v1, :cond_1
 
     .line 598
-    iget v4, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v5, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v5, v0, Landroid/support/v7/widget/aK;->UA:I
 
     add-int/2addr v4, v5
 
@@ -1812,7 +1812,7 @@
     if-gt v4, v1, :cond_2
 
     .line 602
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     sub-int/2addr v1, v0
 
@@ -1826,18 +1826,18 @@
 
     .line 606
     :sswitch_2
-    iget v4, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-eq v4, v1, :cond_3
 
     .line 609
-    iget v4, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Uz:I
 
     if-lt v4, v1, :cond_4
 
     .line 612
     :goto_2
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
     if-gt v0, v1, :cond_1
 
@@ -1848,7 +1848,7 @@
 
     .line 607
     :cond_3
-    iget v1, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v1, v0, Landroid/support/v7/widget/aK;->UA:I
 
     goto :goto_1
 
@@ -1869,7 +1869,7 @@
     .end sparse-switch
 .end method
 
-.method Zk(Ljava/util/List;)V
+.method aam(Ljava/util/List;)V
     .locals 3
 
     .prologue
@@ -1900,7 +1900,7 @@
 
     check-cast v0, Landroid/support/v7/widget/aK;
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->YY(Landroid/support/v7/widget/aK;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aaa(Landroid/support/v7/widget/aK;)V
 
     .line 748
     add-int/lit8 v0, v1, 0x1
@@ -1910,14 +1910,14 @@
     goto :goto_0
 .end method
 
-.method Zn()Z
+.method aap()Z
     .locals 2
 
     .prologue
     const/4 v0, 0x0
 
     .line 459
-    iget-object v1, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1934,17 +1934,17 @@
     goto :goto_0
 .end method
 
-.method Zo()V
+.method aaq()V
     .locals 7
 
     .prologue
     const/4 v2, 0x0
 
     .line 556
-    invoke-virtual {p0}, Landroid/support/v7/widget/C;->Zi()V
+    invoke-virtual {p0}, Landroid/support/v7/widget/C;->aak()V
 
     .line 557
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1957,19 +1957,19 @@
     if-lt v1, v3, :cond_0
 
     .line 582
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->Zk(Ljava/util/List;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aam(Ljava/util/List;)V
 
     .line 583
-    iput v2, p0, Landroid/support/v7/widget/C;->PF:I
+    iput v2, p0, Landroid/support/v7/widget/C;->Rm:I
 
     .line 584
     return-void
 
     .line 559
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1978,14 +1978,14 @@
     check-cast v0, Landroid/support/v7/widget/aK;
 
     .line 560
-    iget v4, v0, Landroid/support/v7/widget/aK;->SO:I
+    iget v4, v0, Landroid/support/v7/widget/aK;->Ux:I
 
     packed-switch v4, :pswitch_data_0
 
     .line 578
     :goto_1
     :pswitch_0
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PI:Ljava/lang/Runnable;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rp:Ljava/lang/Runnable;
 
     if-nez v0, :cond_1
 
@@ -1999,77 +1999,77 @@
 
     .line 562
     :pswitch_1
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->abt(Landroid/support/v7/widget/aK;)V
+    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->acu(Landroid/support/v7/widget/aK;)V
 
     .line 563
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v5, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v5, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
-    invoke-interface {v4, v5, v0}, Landroid/support/v7/widget/am;->abr(II)V
+    invoke-interface {v4, v5, v0}, Landroid/support/v7/widget/am;->acs(II)V
 
     goto :goto_1
 
     .line 566
     :pswitch_2
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->abt(Landroid/support/v7/widget/aK;)V
+    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->acu(Landroid/support/v7/widget/aK;)V
 
     .line 567
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v5, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v5, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
-    invoke-interface {v4, v5, v0}, Landroid/support/v7/widget/am;->abs(II)V
+    invoke-interface {v4, v5, v0}, Landroid/support/v7/widget/am;->act(II)V
 
     goto :goto_1
 
     .line 570
     :pswitch_3
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->abt(Landroid/support/v7/widget/aK;)V
+    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->acu(Landroid/support/v7/widget/aK;)V
 
     .line 571
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v5, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v5, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v6, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v6, v0, Landroid/support/v7/widget/aK;->UA:I
 
-    iget-object v0, v0, Landroid/support/v7/widget/aK;->SP:Ljava/lang/Object;
+    iget-object v0, v0, Landroid/support/v7/widget/aK;->Uy:Ljava/lang/Object;
 
-    invoke-interface {v4, v5, v6, v0}, Landroid/support/v7/widget/am;->abv(IILjava/lang/Object;)V
+    invoke-interface {v4, v5, v6, v0}, Landroid/support/v7/widget/am;->acw(IILjava/lang/Object;)V
 
     goto :goto_1
 
     .line 574
     :pswitch_4
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->abt(Landroid/support/v7/widget/aK;)V
+    invoke-interface {v4, v0}, Landroid/support/v7/widget/am;->acu(Landroid/support/v7/widget/aK;)V
 
     .line 575
-    iget-object v4, p0, Landroid/support/v7/widget/C;->PE:Landroid/support/v7/widget/am;
+    iget-object v4, p0, Landroid/support/v7/widget/C;->Rl:Landroid/support/v7/widget/am;
 
-    iget v5, v0, Landroid/support/v7/widget/aK;->SQ:I
+    iget v5, v0, Landroid/support/v7/widget/aK;->Uz:I
 
-    iget v0, v0, Landroid/support/v7/widget/aK;->SR:I
+    iget v0, v0, Landroid/support/v7/widget/aK;->UA:I
 
-    invoke-interface {v4, v5, v0}, Landroid/support/v7/widget/am;->abu(II)V
+    invoke-interface {v4, v5, v0}, Landroid/support/v7/widget/am;->acv(II)V
 
     goto :goto_1
 
     .line 579
     :cond_1
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PI:Ljava/lang/Runnable;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rp:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
@@ -2089,18 +2089,70 @@
     .end packed-switch
 .end method
 
-.method Zp(I)I
+.method aar(I)I
     .locals 1
 
     .prologue
     .line 467
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/C;->YW(II)I
+    invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/C;->ZY(II)I
 
     move-result v0
 
     return v0
+.end method
+
+.method onItemRangeChanged(IILjava/lang/Object;)Z
+    .locals 4
+
+    .prologue
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    .line 503
+    if-lt p2, v1, :cond_0
+
+    .line 506
+    iget-object v2, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
+
+    const/4 v3, 0x4
+
+    invoke-virtual {p0, v3, p1, p2, p3}, Landroid/support/v7/widget/C;->ZZ(IIILjava/lang/Object;)Landroid/support/v7/widget/aK;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 507
+    iget v2, p0, Landroid/support/v7/widget/C;->Rm:I
+
+    or-int/lit8 v2, v2, 0x4
+
+    iput v2, p0, Landroid/support/v7/widget/C;->Rm:I
+
+    .line 508
+    iget-object v2, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-eq v2, v1, :cond_1
+
+    :goto_0
+    return v0
+
+    .line 504
+    :cond_0
+    return v0
+
+    :cond_1
+    move v0, v1
+
+    .line 508
+    goto :goto_0
 .end method
 
 .method reset()V
@@ -2108,19 +2160,19 @@
 
     .prologue
     .line 86
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PC:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rj:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->Zk(Ljava/util/List;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aam(Ljava/util/List;)V
 
     .line 87
-    iget-object v0, p0, Landroid/support/v7/widget/C;->PD:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v7/widget/C;->Rk:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->Zk(Ljava/util/List;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/C;->aam(Ljava/util/List;)V
 
     .line 88
     const/4 v0, 0x0
 
-    iput v0, p0, Landroid/support/v7/widget/C;->PF:I
+    iput v0, p0, Landroid/support/v7/widget/C;->Rm:I
 
     .line 89
     return-void

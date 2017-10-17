@@ -9,11 +9,11 @@
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
-.field public static final Uv:Landroid/support/v4/view/AbsSavedState;
+.field public static final VV:Landroid/support/v4/view/AbsSavedState;
 
 
 # instance fields
-.field private final Uu:Landroid/os/Parcelable;
+.field private final VU:Landroid/os/Parcelable;
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/view/AbsSavedState$1;-><init>()V
 
-    sput-object v0, Landroid/support/v4/view/AbsSavedState;->Uv:Landroid/support/v4/view/AbsSavedState;
+    sput-object v0, Landroid/support/v4/view/AbsSavedState;->VV:Landroid/support/v4/view/AbsSavedState;
 
     .line 84
     new-instance v0, Landroid/support/v4/view/z;
@@ -48,7 +48,7 @@
     .line 35
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v4/view/AbsSavedState;->Uu:Landroid/os/Parcelable;
+    iput-object v0, p0, Landroid/support/v4/view/AbsSavedState;->VU:Landroid/os/Parcelable;
 
     .line 36
     return-void
@@ -69,10 +69,10 @@
     .line 67
     if-nez v0, :cond_0
 
-    sget-object v0, Landroid/support/v4/view/AbsSavedState;->Uv:Landroid/support/v4/view/AbsSavedState;
+    sget-object v0, Landroid/support/v4/view/AbsSavedState;->VV:Landroid/support/v4/view/AbsSavedState;
 
     :cond_0
-    iput-object v0, p0, Landroid/support/v4/view/AbsSavedState;->Uu:Landroid/os/Parcelable;
+    iput-object v0, p0, Landroid/support/v4/view/AbsSavedState;->VU:Landroid/os/Parcelable;
 
     .line 68
     return-void
@@ -91,14 +91,14 @@
     if-eqz p1, :cond_1
 
     .line 47
-    sget-object v1, Landroid/support/v4/view/AbsSavedState;->Uv:Landroid/support/v4/view/AbsSavedState;
+    sget-object v1, Landroid/support/v4/view/AbsSavedState;->VV:Landroid/support/v4/view/AbsSavedState;
 
     if-ne p1, v1, :cond_0
 
     move-object p1, v0
 
     :cond_0
-    iput-object p1, p0, Landroid/support/v4/view/AbsSavedState;->Uu:Landroid/os/Parcelable;
+    iput-object p1, p0, Landroid/support/v4/view/AbsSavedState;->VU:Landroid/os/Parcelable;
 
     .line 48
     return-void
@@ -126,12 +126,12 @@
 
 
 # virtual methods
-.method public final afq()Landroid/os/Parcelable;
+.method public final ago()Landroid/os/Parcelable;
     .locals 1
 
     .prologue
     .line 71
-    iget-object v0, p0, Landroid/support/v4/view/AbsSavedState;->Uu:Landroid/os/Parcelable;
+    iget-object v0, p0, Landroid/support/v4/view/AbsSavedState;->VU:Landroid/os/Parcelable;
 
     return-object v0
 .end method
@@ -151,7 +151,7 @@
 
     .prologue
     .line 81
-    iget-object v0, p0, Landroid/support/v4/view/AbsSavedState;->Uu:Landroid/os/Parcelable;
+    iget-object v0, p0, Landroid/support/v4/view/AbsSavedState;->VU:Landroid/os/Parcelable;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 

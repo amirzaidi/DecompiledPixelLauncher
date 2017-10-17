@@ -9,39 +9,39 @@ import java.util.Iterator;
 
 final class g implements Iterator
 {
-    int Vn;
-    final /* synthetic */ l Vo;
-    boolean Vp;
+    int Xa;
+    final /* synthetic */ l Xb;
+    boolean Xc;
     final int mOffset;
     int mSize;
     
-    g(final l vo, final int mOffset) {
-        this.Vo = vo;
-        this.Vp = false;
+    g(final l xb, final int mOffset) {
+        this.Xb = xb;
+        this.Xc = false;
         this.mOffset = mOffset;
-        this.mSize = vo.ahB();
+        this.mSize = xb.aiL();
     }
     
     public boolean hasNext() {
-        return this.Vn < this.mSize;
+        return this.Xa < this.mSize;
     }
     
     public Object next() {
         if (this.hasNext()) {
-            final Object ahq = this.Vo.ahq(this.Vn, this.mOffset);
-            ++this.Vn;
-            this.Vp = true;
-            return ahq;
+            final Object aiA = this.Xb.aiA(this.Xa, this.mOffset);
+            ++this.Xa;
+            this.Xc = true;
+            return aiA;
         }
         throw new NoSuchElementException();
     }
     
     public void remove() {
-        if (this.Vp) {
-            --this.Vn;
+        if (this.Xc) {
+            --this.Xa;
             --this.mSize;
-            this.Vp = false;
-            this.Vo.ahC(this.Vn);
+            this.Xc = false;
+            this.Xb.aiM(this.Xa);
             return;
         }
         throw new IllegalStateException();

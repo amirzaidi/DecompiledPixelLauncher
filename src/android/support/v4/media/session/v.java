@@ -4,23 +4,19 @@
 
 package android.support.v4.media.session;
 
-import java.util.List;
-import android.support.v4.media.MediaMetadataCompat;
-import android.os.Bundle;
-
-class v implements Runnable
+public final class v
 {
-    final /* synthetic */ String aec;
-    final /* synthetic */ Bundle aed;
-    final /* synthetic */ s aee;
+    private final int afD;
+    private final int afE;
+    private final int afF;
+    private final int afG;
+    private final int afH;
     
-    v(final s aee, final String aec, final Bundle aed) {
-        this.aee = aee;
-        this.aec = aec;
-        this.aed = aed;
-    }
-    
-    public void run() {
-        this.aee.adY.onSessionEvent(this.aec, this.aed);
+    v(final int afG, final int afF, final int afD, final int afE, final int afH) {
+        this.afG = afG;
+        this.afF = afF;
+        this.afD = afD;
+        this.afE = afE;
+        this.afH = afH;
     }
 }

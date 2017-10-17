@@ -7,7 +7,4 @@ package android.support.annotation;
 import java.lang.annotation.Annotation;
 
 public @interface g {
-    double asR();
-    
-    double asS();
 }

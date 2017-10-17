@@ -1,71 +1,152 @@
-.class final Landroid/support/v4/media/session/t;
-.super Ljava/lang/Object;
+.class Landroid/support/v4/media/session/t;
+.super Landroid/media/session/MediaController$Callback;
 .source "SourceFile"
 
 
+# instance fields
+.field protected final afC:Landroid/support/v4/media/session/u;
+
+
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>(Landroid/support/v4/media/session/u;)V
     .locals 0
 
     .prologue
-    .line 79
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 276
+    invoke-direct {p0}, Landroid/media/session/MediaController$Callback;-><init>()V
 
+    .line 277
+    iput-object p1, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
+
+    .line 278
     return-void
 .end method
 
-.method public static arH(Ljava/lang/Object;)Landroid/os/Bundle;
-    .locals 1
+
+# virtual methods
+.method public onAudioInfoChanged(Landroid/media/session/MediaController$PlaybackInfo;)V
+    .locals 6
 
     .prologue
-    .line 92
-    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
+    .line 317
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getExtras()Landroid/os/Bundle;
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getPlaybackType()I
 
-    move-result-object v0
+    move-result v1
 
-    return-object v0
+    .line 318
+    invoke-static {p1}, Landroid/support/v4/media/session/l;->asO(Ljava/lang/Object;)I
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getVolumeControl()I
+
+    move-result v3
+
+    .line 319
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getMaxVolume()I
+
+    move-result v4
+
+    invoke-virtual {p1}, Landroid/media/session/MediaController$PlaybackInfo;->getCurrentVolume()I
+
+    move-result v5
+
+    .line 317
+    invoke-interface/range {v0 .. v5}, Landroid/support/v4/media/session/u;->asR(IIIII)V
+
+    .line 320
+    return-void
 .end method
 
-.method public static arI(Ljava/lang/Object;)I
+.method public onExtrasChanged(Landroid/os/Bundle;)V
     .locals 1
 
     .prologue
-    .line 89
-    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
+    .line 312
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getIcon()I
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/u;->onExtrasChanged(Landroid/os/Bundle;)V
 
-    move-result v0
-
-    return v0
+    .line 313
+    return-void
 .end method
 
-.method public static arJ(Ljava/lang/Object;)Ljava/lang/String;
+.method public onMetadataChanged(Landroid/media/MediaMetadata;)V
     .locals 1
 
     .prologue
-    .line 81
-    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
+    .line 297
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getAction()Ljava/lang/String;
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/u;->asT(Ljava/lang/Object;)V
 
-    move-result-object v0
-
-    return-object v0
+    .line 298
+    return-void
 .end method
 
-.method public static arK(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public onPlaybackStateChanged(Landroid/media/session/PlaybackState;)V
     .locals 1
 
     .prologue
-    .line 85
-    check-cast p0, Landroid/media/session/PlaybackState$CustomAction;
+    .line 292
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState$CustomAction;->getName()Ljava/lang/CharSequence;
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/u;->asS(Ljava/lang/Object;)V
 
-    move-result-object v0
+    .line 293
+    return-void
+.end method
 
-    return-object v0
+.method public onQueueChanged(Ljava/util/List;)V
+    .locals 1
+
+    .prologue
+    .line 302
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
+
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/u;->onQueueChanged(Ljava/util/List;)V
+
+    .line 303
+    return-void
+.end method
+
+.method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
+    .locals 1
+
+    .prologue
+    .line 307
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
+
+    invoke-interface {v0, p1}, Landroid/support/v4/media/session/u;->onQueueTitleChanged(Ljava/lang/CharSequence;)V
+
+    .line 308
+    return-void
+.end method
+
+.method public onSessionDestroyed()V
+    .locals 1
+
+    .prologue
+    .line 282
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
+
+    invoke-interface {v0}, Landroid/support/v4/media/session/u;->onSessionDestroyed()V
+
+    .line 283
+    return-void
+.end method
+
+.method public onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
+    .locals 1
+
+    .prologue
+    .line 287
+    iget-object v0, p0, Landroid/support/v4/media/session/t;->afC:Landroid/support/v4/media/session/u;
+
+    invoke-interface {v0, p1, p2}, Landroid/support/v4/media/session/u;->onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    .line 288
+    return-void
 .end method

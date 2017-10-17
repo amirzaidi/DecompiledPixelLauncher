@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field Vn:I
+.field Xa:I
 
-.field final synthetic Vo:Landroid/support/v4/a/l;
+.field final synthetic Xb:Landroid/support/v4/a/l;
 
-.field Vp:Z
+.field Xc:Z
 
 .field final mOffset:I
 
@@ -24,20 +24,20 @@
 
     .prologue
     .line 41
-    iput-object p1, p0, Landroid/support/v4/a/g;->Vo:Landroid/support/v4/a/l;
+    iput-object p1, p0, Landroid/support/v4/a/g;->Xb:Landroid/support/v4/a/l;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v4/a/g;->Vp:Z
+    iput-boolean v0, p0, Landroid/support/v4/a/g;->Xc:Z
 
     .line 42
     iput p2, p0, Landroid/support/v4/a/g;->mOffset:I
 
     .line 43
-    invoke-virtual {p1}, Landroid/support/v4/a/l;->ahB()I
+    invoke-virtual {p1}, Landroid/support/v4/a/l;->aiL()I
 
     move-result v0
 
@@ -54,7 +54,7 @@
 
     .prologue
     .line 48
-    iget v0, p0, Landroid/support/v4/a/g;->Vn:I
+    iget v0, p0, Landroid/support/v4/a/g;->Xa:I
 
     iget v1, p0, Landroid/support/v4/a/g;->mSize:I
 
@@ -83,27 +83,27 @@
     if-eqz v0, :cond_0
 
     .line 54
-    iget-object v0, p0, Landroid/support/v4/a/g;->Vo:Landroid/support/v4/a/l;
+    iget-object v0, p0, Landroid/support/v4/a/g;->Xb:Landroid/support/v4/a/l;
 
-    iget v1, p0, Landroid/support/v4/a/g;->Vn:I
+    iget v1, p0, Landroid/support/v4/a/g;->Xa:I
 
     iget v2, p0, Landroid/support/v4/a/g;->mOffset:I
 
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/a/l;->ahq(II)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/a/l;->aiA(II)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 55
-    iget v1, p0, Landroid/support/v4/a/g;->Vn:I
+    iget v1, p0, Landroid/support/v4/a/g;->Xa:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Landroid/support/v4/a/g;->Vn:I
+    iput v1, p0, Landroid/support/v4/a/g;->Xa:I
 
     .line 56
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Landroid/support/v4/a/g;->Vp:Z
+    iput-boolean v1, p0, Landroid/support/v4/a/g;->Xc:Z
 
     .line 57
     return-object v0
@@ -124,16 +124,16 @@
     const/4 v1, 0x0
 
     .line 62
-    iget-boolean v0, p0, Landroid/support/v4/a/g;->Vp:Z
+    iget-boolean v0, p0, Landroid/support/v4/a/g;->Xc:Z
 
     if-eqz v0, :cond_0
 
     .line 65
-    iget v0, p0, Landroid/support/v4/a/g;->Vn:I
+    iget v0, p0, Landroid/support/v4/a/g;->Xa:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Landroid/support/v4/a/g;->Vn:I
+    iput v0, p0, Landroid/support/v4/a/g;->Xa:I
 
     .line 66
     iget v0, p0, Landroid/support/v4/a/g;->mSize:I
@@ -143,14 +143,14 @@
     iput v0, p0, Landroid/support/v4/a/g;->mSize:I
 
     .line 67
-    iput-boolean v1, p0, Landroid/support/v4/a/g;->Vp:Z
+    iput-boolean v1, p0, Landroid/support/v4/a/g;->Xc:Z
 
     .line 68
-    iget-object v0, p0, Landroid/support/v4/a/g;->Vo:Landroid/support/v4/a/l;
+    iget-object v0, p0, Landroid/support/v4/a/g;->Xb:Landroid/support/v4/a/l;
 
-    iget v1, p0, Landroid/support/v4/a/g;->Vn:I
+    iget v1, p0, Landroid/support/v4/a/g;->Xa:I
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/a/l;->ahC(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/a/l;->aiM(I)V
 
     .line 69
     return-void

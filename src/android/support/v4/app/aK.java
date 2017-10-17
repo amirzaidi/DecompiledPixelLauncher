@@ -11,17 +11,17 @@ import android.view.ViewTreeObserver$OnPreDrawListener;
 
 class ak implements ViewTreeObserver$OnPreDrawListener, View$OnAttachStateChangeListener
 {
-    private ViewTreeObserver aaA;
+    private ViewTreeObserver acf;
     private final Runnable mRunnable;
     private final View mView;
     
     private ak(final View mView, final Runnable mRunnable) {
         this.mView = mView;
-        this.aaA = mView.getViewTreeObserver();
+        this.acf = mView.getViewTreeObserver();
         this.mRunnable = mRunnable;
     }
     
-    public static ak amJ(final View view, final Runnable runnable) {
+    public static ak anV(final View view, final Runnable runnable) {
         final ak ak = new ak(view, runnable);
         view.getViewTreeObserver().addOnPreDrawListener((ViewTreeObserver$OnPreDrawListener)ak);
         view.addOnAttachStateChangeListener((View$OnAttachStateChangeListener)ak);
@@ -35,7 +35,7 @@ class ak implements ViewTreeObserver$OnPreDrawListener, View$OnAttachStateChange
     }
     
     public void onViewAttachedToWindow(final View view) {
-        this.aaA = view.getViewTreeObserver();
+        this.acf = view.getViewTreeObserver();
     }
     
     public void onViewDetachedFromWindow(final View view) {
@@ -43,11 +43,11 @@ class ak implements ViewTreeObserver$OnPreDrawListener, View$OnAttachStateChange
     }
     
     public void removeListener() {
-        if (!this.aaA.isAlive()) {
+        if (!this.acf.isAlive()) {
             this.mView.getViewTreeObserver().removeOnPreDrawListener((ViewTreeObserver$OnPreDrawListener)this);
         }
         else {
-            this.aaA.removeOnPreDrawListener((ViewTreeObserver$OnPreDrawListener)this);
+            this.acf.removeOnPreDrawListener((ViewTreeObserver$OnPreDrawListener)this);
         }
         this.mView.removeOnAttachStateChangeListener((View$OnAttachStateChangeListener)this);
     }

@@ -4,11 +4,17 @@
 
 package android.support.v4.app;
 
-import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.content.Context;
+import android.view.View;
 
-public class aC extends z
+public abstract class ac
 {
-    Bitmap aaV;
-    boolean aaW;
-    Bitmap aaX;
+    public abstract boolean alD();
+    
+    public abstract View alH(final int p0);
+    
+    public g anU(final Context context, final String s, final Bundle bundle) {
+        return g.akh(context, s, bundle);
+    }
 }

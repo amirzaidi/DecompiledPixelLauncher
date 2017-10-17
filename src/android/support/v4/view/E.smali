@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 93
+    .line 92
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,35 +16,35 @@
 
 
 # virtual methods
-.method public agg(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+.method public ahp(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
     .locals 2
 
     .prologue
-    .line 102
+    .line 101
     invoke-virtual {p1, p2}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
 
-    .line 104
+    .line 103
     invoke-virtual {p1}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
 
     move-result-object v0
 
-    .line 105
+    .line 104
     instance-of v1, v0, Landroid/view/LayoutInflater$Factory2;
 
     if-nez v1, :cond_0
 
-    .line 111
-    invoke-static {p1, p2}, Landroid/support/v4/view/C;->agr(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    .line 110
+    invoke-static {p1, p2}, Landroid/support/v4/view/B;->ahA(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
 
-    .line 113
+    .line 112
     :goto_0
     return-void
 
-    .line 108
+    .line 107
     :cond_0
     check-cast v0, Landroid/view/LayoutInflater$Factory2;
 
-    invoke-static {p1, v0}, Landroid/support/v4/view/C;->agr(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+    invoke-static {p1, v0}, Landroid/support/v4/view/B;->ahA(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
 
     goto :goto_0
 .end method

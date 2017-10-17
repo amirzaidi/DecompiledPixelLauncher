@@ -1,41 +1,47 @@
-.class public Landroid/support/v4/app/ab;
-.super Landroid/support/v4/c/a;
+.class final Landroid/support/v4/app/ab;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field abH:I
+
+.field abI:Landroid/support/v4/app/g;
+
+.field abJ:I
+
+.field abK:I
+
+.field abL:I
+
+.field abM:I
+
+
 # direct methods
-.method protected constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 89
-    invoke-direct {p0}, Landroid/support/v4/c/a;-><init>()V
+    .line 200
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 91
+    .line 201
     return-void
 .end method
 
-.method public static amI(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
-    .locals 2
+.method constructor <init>(ILandroid/support/v4/app/g;)V
+    .locals 0
 
     .prologue
-    .line 152
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 203
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x10
+    .line 204
+    iput p1, p0, Landroid/support/v4/app/ab;->abH:I
 
-    if-ge v0, v1, :cond_0
+    .line 205
+    iput-object p2, p0, Landroid/support/v4/app/ab;->abI:Landroid/support/v4/app/g;
 
-    .line 155
-    invoke-virtual {p0, p1, p2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 157
-    :goto_0
+    .line 206
     return-void
-
-    .line 153
-    :cond_0
-    invoke-virtual {p0, p1, p2, p3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
-
-    goto :goto_0
 .end method

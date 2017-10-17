@@ -11,8 +11,8 @@ import android.os.Parcelable$Creator;
 public class ViewPager$SavedState extends AbsSavedState
 {
     public static final Parcelable$Creator CREATOR;
-    ClassLoader UI;
-    Parcelable UJ;
+    ClassLoader Wi;
+    Parcelable Wj;
     int position;
     
     static {
@@ -25,8 +25,8 @@ public class ViewPager$SavedState extends AbsSavedState
             classLoader = this.getClass().getClassLoader();
         }
         this.position = parcel.readInt();
-        this.UJ = parcel.readParcelable(classLoader);
-        this.UI = classLoader;
+        this.Wj = parcel.readParcelable(classLoader);
+        this.Wi = classLoader;
     }
     
     public String toString() {
@@ -36,6 +36,6 @@ public class ViewPager$SavedState extends AbsSavedState
     public void writeToParcel(final Parcel parcel, final int n) {
         super.writeToParcel(parcel, n);
         parcel.writeInt(this.position);
-        parcel.writeParcelable(this.UJ, n);
+        parcel.writeParcelable(this.Wj, n);
     }
 }

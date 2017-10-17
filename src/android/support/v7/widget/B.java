@@ -14,25 +14,25 @@ import java.util.ArrayList;
 
 public abstract class b
 {
-    private long OA;
-    private long OB;
-    private long OC;
-    private ArrayList OD;
-    private x OE;
-    private long Oz;
+    private long Qd;
+    private long Qe;
+    private long Qf;
+    private long Qg;
+    private ArrayList Qh;
+    private x Qi;
     
     public b() {
         final long n = 250L;
         final long n2 = 120;
-        this.OE = null;
-        this.OD = new ArrayList();
-        this.OA = n2;
-        this.Oz = n2;
-        this.OB = n;
-        this.OC = n;
+        this.Qi = null;
+        this.Qh = new ArrayList();
+        this.Qe = n2;
+        this.Qd = n2;
+        this.Qf = n;
+        this.Qg = n;
     }
     
-    static int Wr(final j j) {
+    static int Xp(final j j) {
         final int n = -1;
         int n2 = j.mFlags & 0xE;
         if (!j.isInvalid()) {
@@ -48,69 +48,69 @@ public abstract class b
         return 4;
     }
     
-    public E WA(final e e, final j j, final int n, final List list) {
-        return this.Wv().ZA(j);
+    public long XA() {
+        return this.Qd;
     }
     
-    public E WB(final e e, final j j) {
-        return this.Wv().ZA(j);
-    }
+    public abstract boolean XB();
     
-    public long WC() {
-        return this.Oz;
-    }
-    
-    public abstract boolean WD();
-    
-    public final void WE(final j j) {
-        this.Wx(j);
-        if (this.OE != null) {
-            this.OE.WH(j);
+    public final void XC(final j j) {
+        this.Xv(j);
+        if (this.Qi != null) {
+            this.Qi.XF(j);
         }
     }
     
-    public abstract boolean WF(final j p0, final j p1, final E p2, final E p3);
+    public abstract boolean XD(final j p0, final j p1, final E p2, final E p3);
     
-    public abstract void WG();
+    public abstract void XE();
     
-    public long Wo() {
-        return this.OC;
+    public long Xm() {
+        return this.Qg;
     }
     
-    public final void Wp() {
-        for (int size = this.OD.size(), i = 0; i < size; ++i) {
-            ((F)this.OD.get(i)).ZC();
+    public final void Xn() {
+        for (int size = this.Qh.size(), i = 0; i < size; ++i) {
+            ((F)this.Qh.get(i)).aaE();
         }
-        this.OD.clear();
+        this.Qh.clear();
     }
     
-    public abstract void Wq();
+    public abstract void Xo();
     
-    void Ws(final x oe) {
-        this.OE = oe;
+    void Xq(final x qi) {
+        this.Qi = qi;
     }
     
-    public abstract boolean Wt(final j p0, final E p1, final E p2);
+    public abstract boolean Xr(final j p0, final E p1, final E p2);
     
-    public abstract void Wu(final j p0);
+    public abstract void Xs(final j p0);
     
-    public E Wv() {
+    public E Xt() {
         return new E();
     }
     
-    public boolean Ww(final j j, final List list) {
+    public boolean Xu(final j j, final List list) {
         return this.canReuseUpdatedViewHolder(j);
     }
     
-    public void Wx(final j j) {
+    public void Xv(final j j) {
     }
     
-    public long Wy() {
-        return this.OB;
+    public long Xw() {
+        return this.Qf;
     }
     
-    public long Wz() {
-        return this.OA;
+    public long Xx() {
+        return this.Qe;
+    }
+    
+    public E Xy(final e e, final j j, final int n, final List list) {
+        return this.Xt().aaC(j);
+    }
+    
+    public E Xz(final e e, final j j) {
+        return this.Xt().aaC(j);
     }
     
     public abstract boolean animateAppearance(final j p0, final E p1, final E p2);

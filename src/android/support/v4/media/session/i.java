@@ -4,16 +4,12 @@
 
 package android.support.v4.media.session;
 
-import android.os.Parcel;
-import android.os.Parcelable$Creator;
+import android.media.session.PlaybackState;
+import android.os.Bundle;
 
-class i implements Parcelable$Creator
+class i
 {
-    public PlaybackStateCompat$CustomAction createFromParcel(final Parcel parcel) {
-        return new PlaybackStateCompat$CustomAction(parcel);
-    }
-    
-    public PlaybackStateCompat$CustomAction[] newArray(final int n) {
-        return new PlaybackStateCompat$CustomAction[n];
+    public static Bundle asN(final Object o) {
+        return ((PlaybackState)o).getExtras();
     }
 }

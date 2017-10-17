@@ -11,7 +11,7 @@ import android.view.View$BaseSavedState;
 class FragmentTabHost$SavedState extends View$BaseSavedState
 {
     public static final Parcelable$Creator CREATOR;
-    String abs;
+    String acM;
     
     static {
         CREATOR = (Parcelable$Creator)new ae();
@@ -19,15 +19,15 @@ class FragmentTabHost$SavedState extends View$BaseSavedState
     
     FragmentTabHost$SavedState(final Parcel parcel) {
         super(parcel);
-        this.abs = parcel.readString();
+        this.acM = parcel.readString();
     }
     
     public String toString() {
-        return "FragmentTabHost.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " curTab=" + this.abs + "}";
+        return "FragmentTabHost.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " curTab=" + this.acM + "}";
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         super.writeToParcel(parcel, n);
-        parcel.writeString(this.abs);
+        parcel.writeString(this.acM);
     }
 }

@@ -8,47 +8,47 @@ import android.graphics.Color;
 
 public final class a
 {
-    private static final ThreadLocal ado;
+    private static final ThreadLocal aeH;
     
     static {
-        ado = new ThreadLocal();
+        aeH = new ThreadLocal();
     }
     
-    private static int aqM(final int n, final int n2) {
+    private static int arK(final int n, final int n2) {
         return 255 - (255 - n2) * (255 - n) / 255;
     }
     
-    public static double aqN(int arg, final int n) {
+    public static double arL(int asf, final int n) {
         final int n2 = 255;
         final double n3 = 0.05;
         if (Color.alpha(n) == n2) {
-            if (Color.alpha(arg) < n2) {
-                arg = arg(arg, n);
+            if (Color.alpha(asf) < n2) {
+                asf = asf(asf, n);
             }
-            final double n4 = aqR(arg) + n3;
-            final double n5 = aqR(n) + n3;
+            final double n4 = arP(asf) + n3;
+            final double n5 = arP(n) + n3;
             return Math.max(n4, n5) / Math.min(n4, n5);
         }
         throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(n));
     }
     
-    private static double[] aqO() {
-        double[] array = a.ado.get();
+    private static double[] arM() {
+        double[] array = a.aeH.get();
         if (array == null) {
             array = new double[3];
-            a.ado.set(array);
+            a.aeH.set(array);
         }
         return array;
     }
     
-    private static int aqP(final int n, final int n2, final int n3, final int n4, final int n5) {
+    private static int arN(final int n, final int n2, final int n3, final int n4, final int n5) {
         if (n5 != 0) {
             return (n * 255 * n2 + n3 * n4 * (255 - n2)) / (n5 * 255);
         }
         return 0;
     }
     
-    public static void aqQ(final int n, final int n2, final int n3, final float[] array) {
+    public static void arO(final int n, final int n2, final int n3, final float[] array) {
         final float n4 = 360.0f;
         final float n5 = 255.0f;
         final float n6 = 2.0f;
@@ -82,24 +82,24 @@ public final class a
         if (n15 < 0.0f) {
             n15 += n4;
         }
-        array[0] = are(n15, 0.0f, n4);
-        array[1] = are(n14, 0.0f, n7);
-        array[2] = are(n12, 0.0f, n7);
+        array[0] = asd(n15, 0.0f, n4);
+        array[1] = asd(n14, 0.0f, n7);
+        array[2] = asd(n12, 0.0f, n7);
     }
     
-    public static double aqR(final int n) {
-        final double[] aqO = aqO();
-        aqU(n, aqO);
-        return aqO[1] / 100.0;
+    public static double arP(final int n) {
+        final double[] arM = arM();
+        arS(n, arM);
+        return arM[1] / 100.0;
     }
     
-    public static int aqS(final double n, final double n2, final double n3) {
-        final double[] aqO = aqO();
-        arb(n, n2, n3, aqO);
-        return aqY(aqO[0], aqO[1], aqO[2]);
+    public static int arQ(final double n, final double n2, final double n3) {
+        final double[] arM = arM();
+        arZ(n, n2, n3, arM);
+        return arW(arM[0], arM[1], arM[2]);
     }
     
-    private static double aqT(final double n) {
+    private static double arR(final double n) {
         double pow;
         if (n > 0.008856) {
             pow = Math.pow(n, 0.3333333333333333);
@@ -110,28 +110,28 @@ public final class a
         return pow;
     }
     
-    public static void aqU(final int n, final double[] array) {
-        ard(Color.red(n), Color.green(n), Color.blue(n), array);
+    public static void arS(final int n, final double[] array) {
+        asc(Color.red(n), Color.green(n), Color.blue(n), array);
     }
     
-    public static void aqV(final double n, final double n2, final double n3, final double[] array) {
+    public static void arT(final double n, final double n2, final double n3, final double[] array) {
         if (array.length == 3) {
-            final double aqT = aqT(n / 95.047);
-            final double aqT2 = aqT(n2 / 100.0);
-            final double aqT3 = aqT(n3 / 108.883);
-            array[0] = Math.max(0.0, 116.0 * aqT2 - 16.0);
-            array[1] = (aqT - aqT2) * 500.0;
-            array[2] = (aqT2 - aqT3) * 200.0;
+            final double arR = arR(n / 95.047);
+            final double arR2 = arR(n2 / 100.0);
+            final double arR3 = arR(n3 / 108.883);
+            array[0] = Math.max(0.0, 116.0 * arR2 - 16.0);
+            array[1] = (arR - arR2) * 500.0;
+            array[2] = (arR2 - arR3) * 200.0;
             return;
         }
         throw new IllegalArgumentException("outLab must have a length of 3.");
     }
     
-    public static void aqW(final int n, final float[] array) {
-        aqQ(Color.red(n), Color.green(n), Color.blue(n), array);
+    public static void arU(final int n, final float[] array) {
+        arO(Color.red(n), Color.green(n), Color.blue(n), array);
     }
     
-    private static int aqX(int n, final int n2, final int n3) {
+    private static int arV(int n, final int n2, final int n3) {
         if (n >= n2) {
             if (n > n3) {
                 n = n3;
@@ -143,7 +143,7 @@ public final class a
         return n;
     }
     
-    public static int aqY(final double n, final double n2, final double n3) {
+    public static int arW(final double n, final double n2, final double n3) {
         final double n4 = (3.2406 * n + -1.5372 * n2 + -0.4986 * n3) / 100.0;
         final double n5 = (-0.9689 * n + 1.8758 * n2 + 0.0415 * n3) / 100.0;
         final double n6 = (0.0557 * n + -0.204 * n2 + 1.057 * n3) / 100.0;
@@ -168,19 +168,19 @@ public final class a
         else {
             n9 = n6 * 12.92;
         }
-        return Color.rgb(aqX((int)Math.round(n7 * 255.0), 0, 255), aqX((int)Math.round(n8 * 255.0), 0, 255), aqX((int)Math.round(255.0 * n9), 0, 255));
+        return Color.rgb(arV((int)Math.round(n7 * 255.0), 0, 255), arV((int)Math.round(n8 * 255.0), 0, 255), arV((int)Math.round(255.0 * n9), 0, 255));
     }
     
-    public static void aqZ(final int n, final int n2, final int n3, final double[] array) {
-        ard(n, n2, n3, array);
-        aqV(array[0], array[1], array[2], array);
+    public static void arX(final int n, final int n2, final int n3, final double[] array) {
+        asc(n, n2, n3, array);
+        arT(array[0], array[1], array[2], array);
     }
     
-    public static void ara(final int n, final double[] array) {
-        aqZ(Color.red(n), Color.green(n), Color.blue(n), array);
+    public static void arY(final int n, final double[] array) {
+        arX(Color.red(n), Color.green(n), Color.blue(n), array);
     }
     
-    public static void arb(final double n, final double n2, final double n3, final double[] array) {
+    public static void arZ(final double n, final double n2, final double n3, final double[] array) {
         final double n4 = (16.0 + n) / 116.0;
         final double n5 = n2 / 500.0 + n4;
         final double n6 = n4 - n3 / 200.0;
@@ -204,14 +204,76 @@ public final class a
         array[2] = 108.883 * pow3;
     }
     
-    public static int arc(final int n, final int n2) {
+    public static int asa(final float[] array) {
+        final float n = 2.0f;
+        final int n2 = 255;
+        final float n3 = 1.0f;
+        final float n4 = 255.0f;
+        final float n5 = array[0];
+        final float n6 = array[1];
+        final float n7 = array[2];
+        final float n8 = (n3 - Math.abs(n * n7 - n3)) * n6;
+        final float n9 = n7 - 0.5f * n8;
+        final float n10 = n8 * (n3 - Math.abs(n5 / 60.0f % n - n3));
+        int n11 = 0;
+        int n12 = 0;
+        int n13 = 0;
+        switch ((int)n5 / 60) {
+            default: {
+                n11 = 0;
+                n12 = 0;
+                n13 = 0;
+                break;
+            }
+            case 0: {
+                n13 = Math.round((n8 + n9) * n4);
+                n12 = Math.round((n10 + n9) * n4);
+                n11 = Math.round(n4 * n9);
+                break;
+            }
+            case 1: {
+                n13 = Math.round((n10 + n9) * n4);
+                n12 = Math.round((n8 + n9) * n4);
+                n11 = Math.round(n4 * n9);
+                break;
+            }
+            case 2: {
+                n13 = Math.round(n4 * n9);
+                n12 = Math.round((n8 + n9) * n4);
+                n11 = Math.round((n10 + n9) * n4);
+                break;
+            }
+            case 3: {
+                n13 = Math.round(n4 * n9);
+                n12 = Math.round((n10 + n9) * n4);
+                n11 = Math.round((n8 + n9) * n4);
+                break;
+            }
+            case 4: {
+                n13 = Math.round((n10 + n9) * n4);
+                n12 = Math.round(n4 * n9);
+                n11 = Math.round((n8 + n9) * n4);
+                break;
+            }
+            case 5:
+            case 6: {
+                n13 = Math.round((n8 + n9) * n4);
+                n12 = Math.round(n4 * n9);
+                n11 = Math.round((n10 + n9) * n4);
+                break;
+            }
+        }
+        return Color.rgb(arV(n13, 0, n2), arV(n12, 0, n2), arV(n11, 0, n2));
+    }
+    
+    public static int asb(final int n, final int n2) {
         if (n2 >= 0 && n2 <= 255) {
             return (0xFFFFFF & n) | n2 << 24;
         }
         throw new IllegalArgumentException("alpha must be between 0 and 255.");
     }
     
-    public static void ard(final int n, final int n2, final int n3, final double[] array) {
+    public static void asc(final int n, final int n2, final int n3, final double[] array) {
         if (array.length == 3) {
             final double n4 = n / 255.0;
             double pow;
@@ -245,7 +307,7 @@ public final class a
         throw new IllegalArgumentException("outXyz must have a length of 3.");
     }
     
-    private static float are(final float n, float n2, final float n3) {
+    private static float asd(final float n, float n2, final float n3) {
         if (n >= n2) {
             if (n > n3) {
                 n2 = n3;
@@ -257,19 +319,19 @@ public final class a
         return n2;
     }
     
-    public static int arf(final int n, final int n2, final float n3) {
+    public static int ase(final int n, final int n2, final float n3) {
         int n4 = 0;
         int n5 = 255;
         if (Color.alpha(n2) != n5) {
             throw new IllegalArgumentException("background can not be translucent: #" + Integer.toHexString(n2));
         }
-        if (aqN(arc(n, n5), n2) < n3) {
+        if (arL(asb(n, n5), n2) < n3) {
             return -1;
         }
         int n7;
         for (int n6 = 0; n6 <= 10 && n5 - n4 > 1; ++n6, n4 = n7) {
             n7 = (n4 + n5) / 2;
-            if (aqN(arc(n, n7), n2) >= n3) {
+            if (arL(asb(n, n7), n2) >= n3) {
                 n5 = n7;
                 n7 = n4;
             }
@@ -277,11 +339,11 @@ public final class a
         return n5;
     }
     
-    public static int arg(final int n, final int n2) {
+    public static int asf(final int n, final int n2) {
         final int alpha = Color.alpha(n2);
         final int alpha2 = Color.alpha(n);
-        final int aqM = aqM(alpha2, alpha);
-        return Color.argb(aqM, aqP(Color.red(n), alpha2, Color.red(n2), alpha, aqM), aqP(Color.green(n), alpha2, Color.green(n2), alpha, aqM), aqP(Color.blue(n), alpha2, Color.blue(n2), alpha, aqM));
+        final int arK = arK(alpha2, alpha);
+        return Color.argb(arK, arN(Color.red(n), alpha2, Color.red(n2), alpha, arK), arN(Color.green(n), alpha2, Color.green(n2), alpha, arK), arN(Color.blue(n), alpha2, Color.blue(n2), alpha, arK));
     }
     
     static float circularInterpolate(float n, float n2, final float n3) {

@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field private final afk:Landroid/support/v4/media/MediaDescriptionCompat;
+.field private final agm:Landroid/support/v4/media/MediaDescriptionCompat;
 
 .field private final mFlags:I
 
@@ -54,7 +54,7 @@
 
     check-cast v0, Landroid/support/v4/media/MediaDescriptionCompat;
 
-    iput-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->afk:Landroid/support/v4/media/MediaDescriptionCompat;
+    iput-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->agm:Landroid/support/v4/media/MediaDescriptionCompat;
 
     .line 521
     return-void
@@ -101,7 +101,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->afk:Landroid/support/v4/media/MediaDescriptionCompat;
+    iget-object v2, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->agm:Landroid/support/v4/media/MediaDescriptionCompat;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -128,7 +128,7 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 531
-    iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->afk:Landroid/support/v4/media/MediaDescriptionCompat;
+    iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;->agm:Landroid/support/v4/media/MediaDescriptionCompat;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/MediaDescriptionCompat;->writeToParcel(Landroid/os/Parcel;I)V
 

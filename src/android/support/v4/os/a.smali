@@ -1,38 +1,54 @@
-.class public Landroid/support/v4/os/a;
+.class Landroid/support/v4/os/a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field final aeR:I
+
+.field final synthetic aeS:Landroid/support/v4/os/ResultReceiver;
+
+.field final aeT:Landroid/os/Bundle;
+
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>(Landroid/support/v4/os/ResultReceiver;ILandroid/os/Bundle;)V
     .locals 0
 
     .prologue
-    .line 26
+    .line 53
+    iput-object p1, p0, Landroid/support/v4/os/a;->aeS:Landroid/support/v4/os/ResultReceiver;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
+    .line 54
+    iput p2, p0, Landroid/support/v4/os/a;->aeR:I
+
+    .line 55
+    iput-object p3, p0, Landroid/support/v4/os/a;->aeT:Landroid/os/Bundle;
+
+    .line 56
     return-void
 .end method
 
-.method public static isAtLeastO()Z
-    .locals 2
+
+# virtual methods
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 64
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 60
+    iget-object v0, p0, Landroid/support/v4/os/a;->aeS:Landroid/support/v4/os/ResultReceiver;
 
-    const/16 v1, 0x1a
+    iget v1, p0, Landroid/support/v4/os/a;->aeR:I
 
-    if-ge v0, v1, :cond_0
+    iget-object v2, p0, Landroid/support/v4/os/a;->aeT:Landroid/os/Bundle;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/os/ResultReceiver;->onReceiveResult(ILandroid/os/Bundle;)V
 
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    goto :goto_0
+    .line 61
+    return-void
 .end method

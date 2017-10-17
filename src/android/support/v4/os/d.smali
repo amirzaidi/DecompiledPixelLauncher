@@ -3,64 +3,107 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Landroid/support/v4/os/IResultReceiver;
+
+
+# instance fields
+.field private mRemote:Landroid/os/IBinder;
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Landroid/os/IBinder;)V
     .locals 0
 
     .prologue
-    .line 142
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 69
+    iput-object p1, p0, Landroid/support/v4/os/d;->mRemote:Landroid/os/IBinder;
+
+    .line 70
     return-void
 .end method
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/os/ResultReceiver;
+.method public asBinder()Landroid/os/IBinder;
     .locals 1
 
     .prologue
-    .line 145
-    new-instance v0, Landroid/support/v4/os/ResultReceiver;
-
-    invoke-direct {v0, p1}, Landroid/support/v4/os/ResultReceiver;-><init>(Landroid/os/Parcel;)V
+    .line 73
+    iget-object v0, p0, Landroid/support/v4/os/d;->mRemote:Landroid/os/IBinder;
 
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 1
+.method public send(ILandroid/os/Bundle;)V
+    .locals 5
 
     .prologue
-    .line 142
-    invoke-virtual {p0, p1}, Landroid/support/v4/os/d;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/os/ResultReceiver;
+    .line 81
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
-.end method
+    .line 83
+    :try_start_0
+    const-string/jumbo v0, "android.support.v4.os.IResultReceiver"
 
-.method public newArray(I)[Landroid/support/v4/os/ResultReceiver;
-    .locals 1
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .prologue
-    .line 149
-    new-array v0, p1, [Landroid/support/v4/os/ResultReceiver;
+    .line 84
+    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    return-object v0
-.end method
+    .line 85
+    if-nez p2, :cond_0
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
+    .line 90
+    const/4 v0, 0x0
 
-    .prologue
-    .line 142
-    invoke-virtual {p0, p1}, Landroid/support/v4/os/d;->newArray(I)[Landroid/support/v4/os/ResultReceiver;
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    move-result-object v0
+    .line 92
+    :goto_0
+    iget-object v0, p0, Landroid/support/v4/os/d;->mRemote:Landroid/os/IBinder;
 
-    return-object v0
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x1
+
+    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 95
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 97
+    return-void
+
+    .line 86
+    :cond_0
+    const/4 v0, 0x1
+
+    :try_start_1
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 87
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 95
+    :catchall_0
+    move-exception v0
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    throw v0
 .end method

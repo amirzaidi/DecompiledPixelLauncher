@@ -4,25 +4,57 @@
 
 package android.support.v4.app;
 
-import android.content.IntentSender;
+import android.os.Build$VERSION;
 import android.os.Bundle;
-import android.content.Intent;
+import java.util.Set;
 
-abstract class w extends N
+public final class W extends as
 {
-    boolean XS;
+    private static final aH aaI;
+    public static final aM aaN;
+    private final Set aaH;
+    private final boolean aaJ;
+    private final Bundle aaK;
+    private final CharSequence[] aaL;
+    private final CharSequence aaM;
+    private final String aaO;
     
-    public void startActivityForResult(final Intent intent, final int n, final Bundle bundle) {
-        if (!this.XS && n != -1) {
-            N.aln(n);
+    static {
+        if (Build$VERSION.SDK_INT < 20) {
+            if (Build$VERSION.SDK_INT < 16) {
+                aaI = new az();
+            }
+            else {
+                aaI = new at();
+            }
         }
-        super.startActivityForResult(intent, n, bundle);
+        else {
+            aaI = new m();
+        }
+        aaN = new an();
     }
     
-    public void startIntentSenderForResult(final IntentSender intentSender, final int n, final Intent intent, final int n2, final int n3, final int n4, final Bundle bundle) {
-        if (!this.Yl && n != -1) {
-            N.aln(n);
-        }
-        super.startIntentSenderForResult(intentSender, n, intent, n2, n3, n4, bundle);
+    public Set anF() {
+        return this.aaH;
+    }
+    
+    public String anG() {
+        return this.aaO;
+    }
+    
+    public boolean anH() {
+        return this.aaJ;
+    }
+    
+    public CharSequence[] anI() {
+        return this.aaL;
+    }
+    
+    public Bundle getExtras() {
+        return this.aaK;
+    }
+    
+    public CharSequence getLabel() {
+        return this.aaM;
     }
 }

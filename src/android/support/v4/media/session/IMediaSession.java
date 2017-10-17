@@ -80,6 +80,8 @@ public interface IMediaSession extends IInterface
     
     void rate(final RatingCompat p0);
     
+    void rateWithExtras(final RatingCompat p0, final Bundle p1);
+    
     void registerCallbackListener(final IMediaControllerCallback p0);
     
     void removeQueueItem(final MediaDescriptionCompat p0);

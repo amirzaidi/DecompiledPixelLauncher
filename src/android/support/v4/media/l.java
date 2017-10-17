@@ -9,7 +9,7 @@ import android.net.Uri;
 
 class l extends g
 {
-    public static void asA(final Object o, final Uri mediaUri) {
+    public static void atx(final Object o, final Uri mediaUri) {
         ((MediaDescription$Builder)o).setMediaUri(mediaUri);
     }
 }

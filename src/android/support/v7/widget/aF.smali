@@ -19,7 +19,7 @@
 
 
 # virtual methods
-.method public acn(Landroid/support/v7/widget/aE;Landroid/support/v7/widget/aE;)I
+.method public ado(Landroid/support/v7/widget/aE;Landroid/support/v7/widget/aE;)I
     .locals 5
 
     .prologue
@@ -30,14 +30,14 @@
     const/4 v1, 0x0
 
     .line 191
-    iget-object v0, p1, Landroid/support/v7/widget/aE;->SJ:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p1, Landroid/support/v7/widget/aE;->Us:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v0, :cond_0
 
     move v0, v1
 
     :goto_0
-    iget-object v4, p2, Landroid/support/v7/widget/aE;->SJ:Landroid/support/v7/widget/RecyclerView;
+    iget-object v4, p2, Landroid/support/v7/widget/aE;->Us:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v4, :cond_1
 
@@ -47,16 +47,16 @@
     if-ne v0, v4, :cond_2
 
     .line 196
-    iget-boolean v0, p1, Landroid/support/v7/widget/aE;->SH:Z
+    iget-boolean v0, p1, Landroid/support/v7/widget/aE;->Uq:Z
 
-    iget-boolean v4, p2, Landroid/support/v7/widget/aE;->SH:Z
+    iget-boolean v4, p2, Landroid/support/v7/widget/aE;->Uq:Z
 
     if-ne v0, v4, :cond_4
 
     .line 201
-    iget v0, p2, Landroid/support/v7/widget/aE;->SI:I
+    iget v0, p2, Landroid/support/v7/widget/aE;->Ur:I
 
-    iget v2, p1, Landroid/support/v7/widget/aE;->SI:I
+    iget v2, p1, Landroid/support/v7/widget/aE;->Ur:I
 
     sub-int/2addr v0, v2
 
@@ -64,9 +64,9 @@
     if-nez v0, :cond_6
 
     .line 205
-    iget v0, p1, Landroid/support/v7/widget/aE;->SG:I
+    iget v0, p1, Landroid/support/v7/widget/aE;->Up:I
 
-    iget v2, p2, Landroid/support/v7/widget/aE;->SG:I
+    iget v2, p2, Landroid/support/v7/widget/aE;->Up:I
 
     sub-int/2addr v0, v2
 
@@ -89,7 +89,7 @@
 
     .line 192
     :cond_2
-    iget-object v0, p1, Landroid/support/v7/widget/aE;->SJ:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p1, Landroid/support/v7/widget/aE;->Us:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v0, :cond_3
 
@@ -100,7 +100,7 @@
 
     .line 197
     :cond_4
-    iget-boolean v0, p1, Landroid/support/v7/widget/aE;->SH:Z
+    iget-boolean v0, p1, Landroid/support/v7/widget/aE;->Uq:Z
 
     if-nez v0, :cond_5
 
@@ -130,7 +130,7 @@
 
     check-cast p2, Landroid/support/v7/widget/aE;
 
-    invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/aF;->acn(Landroid/support/v7/widget/aE;Landroid/support/v7/widget/aE;)I
+    invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/aF;->ado(Landroid/support/v7/widget/aE;Landroid/support/v7/widget/aE;)I
 
     move-result v0
 

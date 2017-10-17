@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public asd(Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;)V
+.method public ata(Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;)V
     .locals 0
 
     .prologue
@@ -24,7 +24,7 @@
     return-void
 .end method
 
-.method public ase(Ljava/lang/String;Landroid/os/Bundle;)V
+.method public atb(Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 0
 
     .prologue

@@ -2,156 +2,105 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final synthetic Xp:Landroid/support/v4/app/e;
-
-.field final synthetic Xq:Landroid/support/v4/app/e;
-
-.field final synthetic Xr:Landroid/graphics/Rect;
-
-.field final synthetic Xs:Ljava/lang/Object;
-
-.field final synthetic Xt:Ljava/util/ArrayList;
-
-.field final synthetic Xu:Landroid/support/v4/a/t;
-
-.field final synthetic Xv:Z
-
-.field final synthetic Xw:Ljava/lang/Object;
-
-.field final synthetic Xx:Landroid/support/v4/app/l;
-
-.field final synthetic Xy:Ljava/util/ArrayList;
-
-.field final synthetic Xz:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/a/t;Ljava/lang/Object;Landroid/support/v4/app/l;Ljava/util/ArrayList;Landroid/view/View;Landroid/support/v4/app/e;Landroid/support/v4/app/e;ZLjava/util/ArrayList;Ljava/lang/Object;Landroid/graphics/Rect;)V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 654
-    iput-object p1, p0, Landroid/support/v4/app/o;->Xu:Landroid/support/v4/a/t;
-
-    iput-object p2, p0, Landroid/support/v4/app/o;->Xw:Ljava/lang/Object;
-
-    iput-object p3, p0, Landroid/support/v4/app/o;->Xx:Landroid/support/v4/app/l;
-
-    iput-object p4, p0, Landroid/support/v4/app/o;->Xt:Ljava/util/ArrayList;
-
-    iput-object p5, p0, Landroid/support/v4/app/o;->Xz:Landroid/view/View;
-
-    iput-object p6, p0, Landroid/support/v4/app/o;->Xp:Landroid/support/v4/app/e;
-
-    iput-object p7, p0, Landroid/support/v4/app/o;->Xq:Landroid/support/v4/app/e;
-
-    iput-boolean p8, p0, Landroid/support/v4/app/o;->Xv:Z
-
-    iput-object p9, p0, Landroid/support/v4/app/o;->Xy:Ljava/util/ArrayList;
-
-    iput-object p10, p0, Landroid/support/v4/app/o;->Xs:Ljava/lang/Object;
-
-    iput-object p11, p0, Landroid/support/v4/app/o;->Xr:Landroid/graphics/Rect;
-
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public run()V
+.method static alo([Landroid/support/v4/app/as;)[Landroid/app/RemoteInput;
     .locals 5
 
     .prologue
-    .line 657
-    iget-object v0, p0, Landroid/support/v4/app/o;->Xu:Landroid/support/v4/a/t;
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xw:Ljava/lang/Object;
+    .line 51
+    if-eqz p0, :cond_0
 
-    iget-object v2, p0, Landroid/support/v4/app/o;->Xx:Landroid/support/v4/app/l;
+    .line 54
+    array-length v0, p0
 
-    invoke-static {v0, v1, v2}, Landroid/support/v4/app/aP;->anv(Landroid/support/v4/a/t;Ljava/lang/Object;Landroid/support/v4/app/l;)Landroid/support/v4/a/t;
+    new-array v1, v0, [Landroid/app/RemoteInput;
 
-    move-result-object v0
+    .line 55
+    const/4 v0, 0x0
 
-    .line 660
-    if-nez v0, :cond_1
-
-    .line 665
     :goto_0
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xp:Landroid/support/v4/app/e;
+    array-length v2, p0
 
-    iget-object v2, p0, Landroid/support/v4/app/o;->Xq:Landroid/support/v4/app/e;
+    if-lt v0, v2, :cond_1
 
-    iget-boolean v3, p0, Landroid/support/v4/app/o;->Xv:Z
+    .line 64
+    return-object v1
 
-    const/4 v4, 0x0
-
-    invoke-static {v1, v2, v3, v0, v4}, Landroid/support/v4/app/aP;->anP(Landroid/support/v4/app/e;Landroid/support/v4/app/e;ZLandroid/support/v4/a/t;Z)V
-
-    .line 667
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xw:Ljava/lang/Object;
-
-    if-nez v1, :cond_2
-
-    .line 679
+    .line 52
     :cond_0
-    :goto_1
-    return-void
+    return-object v0
 
-    .line 661
+    .line 56
     :cond_1
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xt:Ljava/util/ArrayList;
+    aget-object v2, p0, v0
 
-    invoke-virtual {v0}, Landroid/support/v4/a/t;->values()Ljava/util/Collection;
+    .line 57
+    new-instance v3, Landroid/app/RemoteInput$Builder;
+
+    invoke-virtual {v2}, Landroid/support/v4/app/as;->anG()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Landroid/app/RemoteInput$Builder;-><init>(Ljava/lang/String;)V
+
+    .line 58
+    invoke-virtual {v2}, Landroid/support/v4/app/as;->getLabel()Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/app/RemoteInput$Builder;->setLabel(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
+
+    move-result-object v3
+
+    .line 59
+    invoke-virtual {v2}, Landroid/support/v4/app/as;->anI()[Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/app/RemoteInput$Builder;->setChoices([Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
+
+    move-result-object v3
+
+    .line 60
+    invoke-virtual {v2}, Landroid/support/v4/app/as;->anH()Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/app/RemoteInput$Builder;->setAllowFreeFormInput(Z)Landroid/app/RemoteInput$Builder;
+
+    move-result-object v3
+
+    .line 61
+    invoke-virtual {v2}, Landroid/support/v4/app/as;->getExtras()Landroid/os/Bundle;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    invoke-virtual {v3, v2}, Landroid/app/RemoteInput$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/RemoteInput$Builder;
 
-    .line 662
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xt:Ljava/util/ArrayList;
+    move-result-object v2
 
-    iget-object v2, p0, Landroid/support/v4/app/o;->Xz:Landroid/view/View;
+    .line 62
+    invoke-virtual {v2}, Landroid/app/RemoteInput$Builder;->build()Landroid/app/RemoteInput;
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object v2
+
+    aput-object v2, v1, v0
+
+    .line 55
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
-
-    .line 668
-    :cond_2
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xw:Ljava/lang/Object;
-
-    iget-object v2, p0, Landroid/support/v4/app/o;->Xy:Ljava/util/ArrayList;
-
-    iget-object v3, p0, Landroid/support/v4/app/o;->Xt:Ljava/util/ArrayList;
-
-    invoke-static {v1, v2, v3}, Landroid/support/v4/app/Q;->alF(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-
-    .line 672
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xx:Landroid/support/v4/app/l;
-
-    iget-object v2, p0, Landroid/support/v4/app/o;->Xs:Ljava/lang/Object;
-
-    iget-boolean v3, p0, Landroid/support/v4/app/o;->Xv:Z
-
-    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/app/aP;->anS(Landroid/support/v4/a/t;Landroid/support/v4/app/l;Ljava/lang/Object;Z)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 674
-    if-eqz v0, :cond_0
-
-    .line 675
-    iget-object v1, p0, Landroid/support/v4/app/o;->Xr:Landroid/graphics/Rect;
-
-    invoke-static {v0, v1}, Landroid/support/v4/app/Q;->alM(Landroid/view/View;Landroid/graphics/Rect;)V
-
-    goto :goto_1
 .end method

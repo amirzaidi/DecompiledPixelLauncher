@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field private OW:Z
+.field private QC:Z
 
-.field private OX:I
+.field private QD:I
 
-.field private OY:Z
+.field private QE:Landroid/support/v7/widget/p;
 
-.field private final OZ:Landroid/support/v7/widget/H;
+.field private QF:Z
 
-.field private mLayoutManager:Landroid/support/v7/widget/p;
+.field private final QG:Landroid/support/v7/widget/H;
 
 .field private mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -26,26 +26,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 11062
+    .line 11107
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 11048
+    .line 11093
     const/4 v0, -0x1
 
-    iput v0, p0, Landroid/support/v7/widget/g;->OX:I
+    iput v0, p0, Landroid/support/v7/widget/g;->QD:I
 
-    .line 11063
+    .line 11108
     new-instance v0, Landroid/support/v7/widget/H;
 
     invoke-direct {v0, v1, v1}, Landroid/support/v7/widget/H;-><init>(II)V
 
-    iput-object v0, p0, Landroid/support/v7/widget/g;->OZ:Landroid/support/v7/widget/H;
+    iput-object v0, p0, Landroid/support/v7/widget/g;->QG:Landroid/support/v7/widget/H;
 
-    .line 11064
+    .line 11109
     return-void
 .end method
 
-.method private WR(II)V
+.method private XR(II)V
     .locals 5
 
     .prologue
@@ -53,41 +53,41 @@
 
     const/4 v3, 0x0
 
-    .line 11158
+    .line 11203
     iget-object v0, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 11159
-    iget-boolean v1, p0, Landroid/support/v7/widget/g;->OW:Z
+    .line 11204
+    iget-boolean v1, p0, Landroid/support/v7/widget/g;->QC:Z
 
     if-nez v1, :cond_2
 
-    .line 11160
+    .line 11205
     :cond_0
     invoke-virtual {p0}, Landroid/support/v7/widget/g;->stop()V
 
-    .line 11162
+    .line 11207
     :goto_0
-    iput-boolean v3, p0, Landroid/support/v7/widget/g;->OY:Z
+    iput-boolean v3, p0, Landroid/support/v7/widget/g;->QF:Z
 
-    .line 11163
+    .line 11208
     iget-object v1, p0, Landroid/support/v7/widget/g;->mTargetView:Landroid/view/View;
 
     if-nez v1, :cond_3
 
-    .line 11174
+    .line 11219
     :goto_1
-    iget-boolean v1, p0, Landroid/support/v7/widget/g;->OW:Z
+    iget-boolean v1, p0, Landroid/support/v7/widget/g;->QC:Z
 
     if-nez v1, :cond_5
 
-    .line 11188
+    .line 11233
     :cond_1
     :goto_2
     return-void
 
-    .line 11159
+    .line 11204
     :cond_2
-    iget v1, p0, Landroid/support/v7/widget/g;->OX:I
+    iget v1, p0, Landroid/support/v7/widget/g;->QD:I
 
     const/4 v2, -0x1
 
@@ -97,7 +97,7 @@
 
     goto :goto_0
 
-    .line 11165
+    .line 11210
     :cond_3
     iget-object v1, p0, Landroid/support/v7/widget/g;->mTargetView:Landroid/view/View;
 
@@ -105,106 +105,106 @@
 
     move-result v1
 
-    iget v2, p0, Landroid/support/v7/widget/g;->OX:I
+    iget v2, p0, Landroid/support/v7/widget/g;->QD:I
 
     if-eq v1, v2, :cond_4
 
-    .line 11170
+    .line 11215
     const-string/jumbo v1, "RecyclerView"
 
     const-string/jumbo v2, "Passed over target position while smooth scrolling."
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 11171
+    .line 11216
     iput-object v4, p0, Landroid/support/v7/widget/g;->mTargetView:Landroid/view/View;
 
     goto :goto_1
 
-    .line 11166
+    .line 11211
     :cond_4
     iget-object v1, p0, Landroid/support/v7/widget/g;->mTargetView:Landroid/view/View;
 
     iget-object v2, v0, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/e;
 
-    iget-object v3, p0, Landroid/support/v7/widget/g;->OZ:Landroid/support/v7/widget/H;
+    iget-object v3, p0, Landroid/support/v7/widget/g;->QG:Landroid/support/v7/widget/H;
 
-    invoke-virtual {p0, v1, v2, v3}, Landroid/support/v7/widget/g;->WT(Landroid/view/View;Landroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
+    invoke-virtual {p0, v1, v2, v3}, Landroid/support/v7/widget/g;->XT(Landroid/view/View;Landroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
 
-    .line 11167
-    iget-object v1, p0, Landroid/support/v7/widget/g;->OZ:Landroid/support/v7/widget/H;
+    .line 11212
+    iget-object v1, p0, Landroid/support/v7/widget/g;->QG:Landroid/support/v7/widget/H;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/H;->ZF(Landroid/support/v7/widget/RecyclerView;)V
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/H;->aaH(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 11168
+    .line 11213
     invoke-virtual {p0}, Landroid/support/v7/widget/g;->stop()V
 
     goto :goto_1
 
-    .line 11175
+    .line 11220
     :cond_5
     iget-object v1, v0, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/e;
 
-    iget-object v2, p0, Landroid/support/v7/widget/g;->OZ:Landroid/support/v7/widget/H;
+    iget-object v2, p0, Landroid/support/v7/widget/g;->QG:Landroid/support/v7/widget/H;
 
-    invoke-virtual {p0, p1, p2, v1, v2}, Landroid/support/v7/widget/g;->WV(IILandroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
+    invoke-virtual {p0, p1, p2, v1, v2}, Landroid/support/v7/widget/g;->XU(IILandroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
 
-    .line 11176
-    iget-object v1, p0, Landroid/support/v7/widget/g;->OZ:Landroid/support/v7/widget/H;
+    .line 11221
+    iget-object v1, p0, Landroid/support/v7/widget/g;->QG:Landroid/support/v7/widget/H;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/H;->ZH()Z
+    invoke-virtual {v1}, Landroid/support/v7/widget/H;->aaJ()Z
 
     move-result v1
 
-    .line 11177
-    iget-object v2, p0, Landroid/support/v7/widget/g;->OZ:Landroid/support/v7/widget/H;
+    .line 11222
+    iget-object v2, p0, Landroid/support/v7/widget/g;->QG:Landroid/support/v7/widget/H;
 
-    invoke-virtual {v2, v0}, Landroid/support/v7/widget/H;->ZF(Landroid/support/v7/widget/RecyclerView;)V
+    invoke-virtual {v2, v0}, Landroid/support/v7/widget/H;->aaH(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 11178
+    .line 11223
     if-eqz v1, :cond_1
 
-    .line 11180
-    iget-boolean v1, p0, Landroid/support/v7/widget/g;->OW:Z
+    .line 11225
+    iget-boolean v1, p0, Landroid/support/v7/widget/g;->QC:Z
 
     if-nez v1, :cond_6
 
-    .line 11184
+    .line 11229
     invoke-virtual {p0}, Landroid/support/v7/widget/g;->stop()V
 
     goto :goto_2
 
-    .line 11181
+    .line 11226
     :cond_6
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Landroid/support/v7/widget/g;->OY:Z
+    iput-boolean v1, p0, Landroid/support/v7/widget/g;->QF:Z
 
-    .line 11182
+    .line 11227
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mViewFlinger:Landroid/support/v7/widget/v;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/v;->Yc()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/v;->Ze()V
 
     goto :goto_2
 .end method
 
-.method static synthetic WU(Landroid/support/v7/widget/g;II)V
+.method static synthetic Ya(Landroid/support/v7/widget/g;II)V
     .locals 0
 
     .prologue
-    .line 11046
-    invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/g;->WR(II)V
+    .line 11091
+    invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/g;->XR(II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected WS(Landroid/graphics/PointF;)V
+.method protected XS(Landroid/graphics/PointF;)V
     .locals 3
 
     .prologue
-    .line 11234
+    .line 11279
     iget v0, p1, Landroid/graphics/PointF;->x:F
 
     iget v1, p1, Landroid/graphics/PointF;->x:F
@@ -227,87 +227,87 @@
 
     double-to-float v0, v0
 
-    .line 11236
+    .line 11281
     iget v1, p1, Landroid/graphics/PointF;->x:F
 
     div-float/2addr v1, v0
 
     iput v1, p1, Landroid/graphics/PointF;->x:F
 
-    .line 11237
+    .line 11282
     iget v1, p1, Landroid/graphics/PointF;->y:F
 
     div-float v0, v1, v0
 
     iput v0, p1, Landroid/graphics/PointF;->y:F
 
-    .line 11238
+    .line 11283
     return-void
 .end method
 
-.method protected abstract WT(Landroid/view/View;Landroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
+.method protected abstract XT(Landroid/view/View;Landroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
 .end method
 
-.method protected abstract WV(IILandroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
+.method protected abstract XU(IILandroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
 .end method
 
-.method public WW(I)V
+.method public XV(I)V
     .locals 0
 
     .prologue
-    .line 11093
-    iput p1, p0, Landroid/support/v7/widget/g;->OX:I
+    .line 11138
+    iput p1, p0, Landroid/support/v7/widget/g;->QD:I
 
-    .line 11094
+    .line 11139
     return-void
 .end method
 
-.method public WX()I
+.method public XW()I
     .locals 1
 
     .prologue
-    .line 11154
-    iget v0, p0, Landroid/support/v7/widget/g;->OX:I
+    .line 11199
+    iget v0, p0, Landroid/support/v7/widget/g;->QD:I
 
     return v0
 .end method
 
-.method WY(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/p;)V
+.method XX(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/p;)V
     .locals 3
 
     .prologue
     const/4 v2, 0x1
 
-    .line 11079
+    .line 11124
     iput-object p1, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 11080
-    iput-object p2, p0, Landroid/support/v7/widget/g;->mLayoutManager:Landroid/support/v7/widget/p;
+    .line 11125
+    iput-object p2, p0, Landroid/support/v7/widget/g;->QE:Landroid/support/v7/widget/p;
 
-    .line 11081
-    iget v0, p0, Landroid/support/v7/widget/g;->OX:I
+    .line 11126
+    iget v0, p0, Landroid/support/v7/widget/g;->QD:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 11084
+    .line 11129
     iget-object v0, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/e;
 
-    iget v1, p0, Landroid/support/v7/widget/g;->OX:I
+    iget v1, p0, Landroid/support/v7/widget/g;->QD:I
 
-    invoke-static {v0, v1}, Landroid/support/v7/widget/e;->WO(Landroid/support/v7/widget/e;I)I
+    invoke-static {v0, v1}, Landroid/support/v7/widget/e;->XK(Landroid/support/v7/widget/e;I)I
 
-    .line 11085
-    iput-boolean v2, p0, Landroid/support/v7/widget/g;->OW:Z
+    .line 11130
+    iput-boolean v2, p0, Landroid/support/v7/widget/g;->QC:Z
 
-    .line 11086
-    iput-boolean v2, p0, Landroid/support/v7/widget/g;->OY:Z
+    .line 11131
+    iput-boolean v2, p0, Landroid/support/v7/widget/g;->QF:Z
 
-    .line 11087
-    invoke-virtual {p0}, Landroid/support/v7/widget/g;->WX()I
+    .line 11132
+    invoke-virtual {p0}, Landroid/support/v7/widget/g;->XW()I
 
     move-result v0
 
@@ -317,20 +317,20 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/g;->mTargetView:Landroid/view/View;
 
-    .line 11088
+    .line 11133
     invoke-virtual {p0}, Landroid/support/v7/widget/g;->onStart()V
 
-    .line 11089
+    .line 11134
     iget-object v0, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mViewFlinger:Landroid/support/v7/widget/v;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/v;->Yc()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/v;->Ze()V
 
-    .line 11090
+    .line 11135
     return-void
 
-    .line 11082
+    .line 11127
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -341,22 +341,22 @@
     throw v0
 .end method
 
-.method public WZ()Z
+.method public XY()Z
     .locals 1
 
     .prologue
-    .line 11144
-    iget-boolean v0, p0, Landroid/support/v7/widget/g;->OW:Z
+    .line 11189
+    iget-boolean v0, p0, Landroid/support/v7/widget/g;->QC:Z
 
     return v0
 .end method
 
-.method public Xa()Z
+.method public XZ()Z
     .locals 1
 
     .prologue
-    .line 11136
-    iget-boolean v0, p0, Landroid/support/v7/widget/g;->OY:Z
+    .line 11181
+    iget-boolean v0, p0, Landroid/support/v7/widget/g;->QF:Z
 
     return v0
 .end method
@@ -365,7 +365,7 @@
     .locals 1
 
     .prologue
-    .line 11208
+    .line 11253
     iget-object v0, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mLayout:Landroid/support/v7/widget/p;
@@ -381,7 +381,7 @@
     .locals 1
 
     .prologue
-    .line 11201
+    .line 11246
     iget-object v0, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mLayout:Landroid/support/v7/widget/p;
@@ -397,7 +397,7 @@
     .locals 1
 
     .prologue
-    .line 11194
+    .line 11239
     iget-object v0, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->getChildLayoutPosition(Landroid/view/View;)I
@@ -411,8 +411,8 @@
     .locals 1
 
     .prologue
-    .line 11102
-    iget-object v0, p0, Landroid/support/v7/widget/g;->mLayoutManager:Landroid/support/v7/widget/p;
+    .line 11147
+    iget-object v0, p0, Landroid/support/v7/widget/g;->QE:Landroid/support/v7/widget/p;
 
     return-object v0
 .end method
@@ -421,22 +421,22 @@
     .locals 2
 
     .prologue
-    .line 11221
+    .line 11266
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/g;->getChildPosition(Landroid/view/View;)I
 
     move-result v0
 
-    invoke-virtual {p0}, Landroid/support/v7/widget/g;->WX()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/g;->XW()I
 
     move-result v1
 
     if-eq v0, v1, :cond_0
 
-    .line 11227
+    .line 11272
     :goto_0
     return-void
 
-    .line 11222
+    .line 11267
     :cond_0
     iput-object p1, p0, Landroid/support/v7/widget/g;->mTargetView:Landroid/view/View;
 
@@ -459,48 +459,48 @@
 
     const/4 v1, 0x0
 
-    .line 11112
-    iget-boolean v0, p0, Landroid/support/v7/widget/g;->OW:Z
+    .line 11157
+    iget-boolean v0, p0, Landroid/support/v7/widget/g;->QC:Z
 
     if-eqz v0, :cond_0
 
-    .line 11115
+    .line 11160
     invoke-virtual {p0}, Landroid/support/v7/widget/g;->onStop()V
 
-    .line 11116
+    .line 11161
     iget-object v0, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/e;
 
-    invoke-static {v0, v3}, Landroid/support/v7/widget/e;->WO(Landroid/support/v7/widget/e;I)I
+    invoke-static {v0, v3}, Landroid/support/v7/widget/e;->XK(Landroid/support/v7/widget/e;I)I
 
-    .line 11117
+    .line 11162
     iput-object v2, p0, Landroid/support/v7/widget/g;->mTargetView:Landroid/view/View;
 
-    .line 11118
-    iput v3, p0, Landroid/support/v7/widget/g;->OX:I
+    .line 11163
+    iput v3, p0, Landroid/support/v7/widget/g;->QD:I
 
-    .line 11119
-    iput-boolean v1, p0, Landroid/support/v7/widget/g;->OY:Z
+    .line 11164
+    iput-boolean v1, p0, Landroid/support/v7/widget/g;->QF:Z
 
-    .line 11120
-    iput-boolean v1, p0, Landroid/support/v7/widget/g;->OW:Z
+    .line 11165
+    iput-boolean v1, p0, Landroid/support/v7/widget/g;->QC:Z
 
-    .line 11122
-    iget-object v0, p0, Landroid/support/v7/widget/g;->mLayoutManager:Landroid/support/v7/widget/p;
+    .line 11167
+    iget-object v0, p0, Landroid/support/v7/widget/g;->QE:Landroid/support/v7/widget/p;
 
-    invoke-static {v0, p0}, Landroid/support/v7/widget/p;->access$1300(Landroid/support/v7/widget/p;Landroid/support/v7/widget/g;)V
+    invoke-static {v0, p0}, Landroid/support/v7/widget/p;->access$1400(Landroid/support/v7/widget/p;Landroid/support/v7/widget/g;)V
 
-    .line 11124
-    iput-object v2, p0, Landroid/support/v7/widget/g;->mLayoutManager:Landroid/support/v7/widget/p;
+    .line 11169
+    iput-object v2, p0, Landroid/support/v7/widget/g;->QE:Landroid/support/v7/widget/p;
 
-    .line 11125
+    .line 11170
     iput-object v2, p0, Landroid/support/v7/widget/g;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 11126
+    .line 11171
     return-void
 
-    .line 11113
+    .line 11158
     :cond_0
     return-void
 .end method

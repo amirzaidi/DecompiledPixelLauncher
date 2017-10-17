@@ -13,18 +13,18 @@ import android.os.Parcelable;
 public class ResultReceiver implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final boolean adp;
-    IResultReceiver adq;
+    final boolean aeP;
+    IResultReceiver aeQ;
     final Handler mHandler;
     
     static {
-        CREATOR = (Parcelable$Creator)new d();
+        CREATOR = (Parcelable$Creator)new c();
     }
     
     ResultReceiver(final Parcel parcel) {
-        this.adp = false;
+        this.aeP = false;
         this.mHandler = null;
-        this.adq = IResultReceiver$Stub.asInterface(parcel.readStrongBinder());
+        this.aeQ = IResultReceiver$Stub.asInterface(parcel.readStrongBinder());
     }
     
     public int describeContents() {
@@ -36,10 +36,10 @@ public class ResultReceiver implements Parcelable
     
     public void writeToParcel(final Parcel parcel, final int n) {
         synchronized (this) {
-            if (this.adq == null) {
-                this.adq = new f(this);
+            if (this.aeQ == null) {
+                this.aeQ = new e(this);
             }
-            parcel.writeStrongBinder(this.adq.asBinder());
+            parcel.writeStrongBinder(this.aeQ.asBinder());
         }
     }
 }

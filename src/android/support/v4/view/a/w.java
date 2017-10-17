@@ -4,12 +4,9 @@
 
 package android.support.v4.view.a;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityRecord;
-
 class w extends x
 {
-    public void afh(final AccessibilityRecord accessibilityRecord, final View view, final int n) {
-        accessibilityRecord.setSource(view, n);
+    public Object agj(final b b) {
+        return z.agk(new E(this, b));
     }
 }

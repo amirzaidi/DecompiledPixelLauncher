@@ -140,13 +140,13 @@
 
     move-result v4
 
-    iput v4, v0, Landroid/support/v7/widget/O;->Qe:I
+    iput v4, v0, Landroid/support/v7/widget/O;->RL:I
 
     .line 784
-    iput v3, v0, Landroid/support/v7/widget/O;->Qd:I
+    iput v3, v0, Landroid/support/v7/widget/O;->RK:I
 
     .line 785
-    iget v0, v0, Landroid/support/v7/widget/O;->Qe:I
+    iget v0, v0, Landroid/support/v7/widget/O;->RL:I
 
     add-int/2addr v3, v0
 
@@ -191,14 +191,14 @@
     check-cast v0, Landroid/support/v7/widget/O;
 
     .line 192
-    invoke-virtual {v0}, Landroid/support/v7/widget/O;->Xd()I
+    invoke-virtual {v0}, Landroid/support/v7/widget/O;->Yd()I
 
     move-result v3
 
     .line 193
     iget-object v4, p0, Landroid/support/v7/widget/M;->mPreLayoutSpanSizeCache:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/O;->ZP()I
+    invoke-virtual {v0}, Landroid/support/v7/widget/O;->aaR()I
 
     move-result v5
 
@@ -207,7 +207,7 @@
     .line 194
     iget-object v4, p0, Landroid/support/v7/widget/M;->mPreLayoutSpanIndexCache:Landroid/util/SparseIntArray;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/O;->ZO()I
+    invoke-virtual {v0}, Landroid/support/v7/widget/O;->aaQ()I
 
     move-result v0
 
@@ -496,14 +496,14 @@
     const/4 v2, 0x0
 
     .line 450
-    invoke-virtual {p2}, Landroid/support/v7/widget/e;->WN()Z
+    invoke-virtual {p2}, Landroid/support/v7/widget/e;->XM()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
     .line 453
-    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Xl(I)I
+    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Yl(I)I
 
     move-result v0
 
@@ -572,7 +572,7 @@
     const/4 v1, -0x1
 
     .line 466
-    invoke-virtual {p2}, Landroid/support/v7/widget/e;->WN()Z
+    invoke-virtual {p2}, Landroid/support/v7/widget/e;->XM()Z
 
     move-result v0
 
@@ -589,7 +589,7 @@
     if-ne v0, v1, :cond_1
 
     .line 473
-    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Xl(I)I
+    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Yl(I)I
 
     move-result v0
 
@@ -658,7 +658,7 @@
     const/4 v1, -0x1
 
     .line 487
-    invoke-virtual {p2}, Landroid/support/v7/widget/e;->WN()Z
+    invoke-virtual {p2}, Landroid/support/v7/widget/e;->XM()Z
 
     move-result v0
 
@@ -675,7 +675,7 @@
     if-ne v0, v1, :cond_1
 
     .line 494
-    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Xl(I)I
+    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Yl(I)I
 
     move-result v0
 
@@ -810,9 +810,9 @@
     add-int/2addr v3, v1
 
     .line 717
-    iget v1, v0, Landroid/support/v7/widget/O;->Qd:I
+    iget v1, v0, Landroid/support/v7/widget/O;->RK:I
 
-    iget v4, v0, Landroid/support/v7/widget/O;->Qe:I
+    iget v4, v0, Landroid/support/v7/widget/O;->RL:I
 
     invoke-virtual {p0, v1, v4}, Landroid/support/v7/widget/M;->getSpaceForSpanRange(II)I
 
@@ -833,7 +833,7 @@
     .line 728
     iget-object v2, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v2}, Landroid/support/v7/widget/U;->aah()I
+    invoke-virtual {v2}, Landroid/support/v7/widget/U;->abj()I
 
     move-result v2
 
@@ -871,7 +871,7 @@
     .line 723
     iget-object v3, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v3}, Landroid/support/v7/widget/U;->aah()I
+    invoke-virtual {v3}, Landroid/support/v7/widget/U;->abj()I
 
     move-result v3
 
@@ -1025,7 +1025,7 @@
 
     .line 512
     :cond_1
-    invoke-virtual {p2, p1}, Landroid/support/v7/widget/R;->ZU(Landroid/support/v7/widget/e;)Z
+    invoke-virtual {p2, p1}, Landroid/support/v7/widget/R;->aaW(Landroid/support/v7/widget/e;)Z
 
     move-result v3
 
@@ -1034,16 +1034,16 @@
     if-lez v2, :cond_0
 
     .line 513
-    iget v3, p2, Landroid/support/v7/widget/R;->Qk:I
+    iget v3, p2, Landroid/support/v7/widget/R;->RR:I
 
     .line 514
-    iget v4, p2, Landroid/support/v7/widget/R;->Qn:I
+    iget v4, p2, Landroid/support/v7/widget/R;->RU:I
 
     invoke-static {v1, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
-    invoke-interface {p3, v3, v4}, Landroid/support/v7/widget/I;->Yk(II)V
+    invoke-interface {p3, v3, v4}, Landroid/support/v7/widget/I;->Zm(II)V
 
     .line 515
     iget-object v4, p0, Landroid/support/v7/widget/M;->mSpanSizeLookup:Landroid/support/v7/widget/Q;
@@ -1056,13 +1056,13 @@
     sub-int/2addr v2, v3
 
     .line 517
-    iget v3, p2, Landroid/support/v7/widget/R;->Qk:I
+    iget v3, p2, Landroid/support/v7/widget/R;->RR:I
 
-    iget v4, p2, Landroid/support/v7/widget/R;->Qp:I
+    iget v4, p2, Landroid/support/v7/widget/R;->RW:I
 
     add-int/2addr v3, v4
 
-    iput v3, p2, Landroid/support/v7/widget/R;->Qk:I
+    iput v3, p2, Landroid/support/v7/widget/R;->RR:I
 
     .line 518
     add-int/lit8 v0, v0, 0x1
@@ -1082,14 +1082,14 @@
     .line 419
     iget-object v0, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/U;->aak()I
+    invoke-virtual {v0}, Landroid/support/v7/widget/U;->abm()I
 
     move-result v5
 
     .line 420
     iget-object v0, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/U;->aas()I
+    invoke-virtual {v0}, Landroid/support/v7/widget/U;->abu()I
 
     move-result v6
 
@@ -1169,7 +1169,7 @@
 
     check-cast v0, Landroid/support/v7/widget/i;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/i;->Xf()Z
+    invoke-virtual {v0}, Landroid/support/v7/widget/i;->Yf()Z
 
     move-result v0
 
@@ -1178,7 +1178,7 @@
     .line 435
     iget-object v0, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v0, v3}, Landroid/support/v7/widget/U;->aai(Landroid/view/View;)I
+    invoke-virtual {v0, v3}, Landroid/support/v7/widget/U;->abk(Landroid/view/View;)I
 
     move-result v0
 
@@ -1223,7 +1223,7 @@
     iget-object v0, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
     .line 436
-    invoke-virtual {v0, v3}, Landroid/support/v7/widget/U;->aaj(Landroid/view/View;)I
+    invoke-virtual {v0, v3}, Landroid/support/v7/widget/U;->abl(Landroid/view/View;)I
 
     move-result v0
 
@@ -1466,6 +1466,16 @@
     return v0
 .end method
 
+.method public getSpanSizeLookup()Landroid/support/v7/widget/Q;
+    .locals 1
+
+    .prologue
+    .line 270
+    iget-object v0, p0, Landroid/support/v7/widget/M;->mSpanSizeLookup:Landroid/support/v7/widget/Q;
+
+    return-object v0
+.end method
+
 .method layoutChunk(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;Landroid/support/v7/widget/R;Landroid/support/v7/widget/T;)V
     .locals 13
 
@@ -1473,7 +1483,7 @@
     .line 525
     iget-object v1, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/U;->aam()I
+    invoke-virtual {v1}, Landroid/support/v7/widget/U;->abo()I
 
     move-result v11
 
@@ -1506,7 +1516,7 @@
     :goto_2
     move-object/from16 v0, p3
 
-    iget v1, v0, Landroid/support/v7/widget/R;->Qp:I
+    iget v1, v0, Landroid/support/v7/widget/R;->RW:I
 
     const/4 v2, 0x1
 
@@ -1581,7 +1591,7 @@
     .line 648
     move-object/from16 v0, p4
 
-    iput v2, v0, Landroid/support/v7/widget/T;->Qu:I
+    iput v2, v0, Landroid/support/v7/widget/T;->Sb:I
 
     .line 650
     const/4 v6, 0x0
@@ -1602,7 +1612,7 @@
     .line 660
     move-object/from16 v0, p3
 
-    iget v3, v0, Landroid/support/v7/widget/R;->Ql:I
+    iget v3, v0, Landroid/support/v7/widget/R;->RS:I
 
     const/4 v6, -0x1
 
@@ -1685,7 +1695,7 @@
     :cond_5
     move-object/from16 v0, p3
 
-    iget v1, v0, Landroid/support/v7/widget/R;->Qk:I
+    iget v1, v0, Landroid/support/v7/widget/R;->RR:I
 
     invoke-direct {p0, p1, p2, v1}, Landroid/support/v7/widget/M;->getSpanIndex(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;I)I
 
@@ -1694,7 +1704,7 @@
     .line 541
     move-object/from16 v0, p3
 
-    iget v2, v0, Landroid/support/v7/widget/R;->Qk:I
+    iget v2, v0, Landroid/support/v7/widget/R;->RR:I
 
     invoke-direct {p0, p1, p2, v2}, Landroid/support/v7/widget/M;->getSpanSize(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;I)I
 
@@ -1709,7 +1719,7 @@
     :cond_6
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, p2}, Landroid/support/v7/widget/R;->ZU(Landroid/support/v7/widget/e;)Z
+    invoke-virtual {v0, p2}, Landroid/support/v7/widget/R;->aaW(Landroid/support/v7/widget/e;)Z
 
     move-result v2
 
@@ -1720,7 +1730,7 @@
     .line 545
     move-object/from16 v0, p3
 
-    iget v2, v0, Landroid/support/v7/widget/R;->Qk:I
+    iget v2, v0, Landroid/support/v7/widget/R;->RR:I
 
     .line 546
     invoke-direct {p0, p1, p2, v2}, Landroid/support/v7/widget/M;->getSpanSize(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;I)I
@@ -1741,7 +1751,7 @@
     .line 556
     move-object/from16 v0, p3
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/R;->ZR(Landroid/support/v7/widget/s;)Landroid/view/View;
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/R;->aaT(Landroid/support/v7/widget/s;)Landroid/view/View;
 
     move-result-object v2
 
@@ -1835,7 +1845,7 @@
     .line 577
     move-object/from16 v0, p3
 
-    iget-object v2, v0, Landroid/support/v7/widget/R;->Qh:Ljava/util/List;
+    iget-object v2, v0, Landroid/support/v7/widget/R;->RO:Ljava/util/List;
 
     if-eqz v2, :cond_b
 
@@ -1861,7 +1871,7 @@
     .line 593
     iget-object v2, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v2, v9}, Landroid/support/v7/widget/U;->aag(Landroid/view/View;)I
+    invoke-virtual {v2, v9}, Landroid/support/v7/widget/U;->abi(Landroid/view/View;)I
 
     move-result v2
 
@@ -1881,7 +1891,7 @@
     .line 598
     iget-object v10, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v10, v9}, Landroid/support/v7/widget/U;->aaf(Landroid/view/View;)I
+    invoke-virtual {v10, v9}, Landroid/support/v7/widget/U;->abh(Landroid/view/View;)I
 
     move-result v9
 
@@ -1891,7 +1901,7 @@
 
     mul-float/2addr v9, v10
 
-    iget v1, v1, Landroid/support/v7/widget/O;->Qe:I
+    iget v1, v1, Landroid/support/v7/widget/O;->RL:I
 
     int-to-float v1, v1
 
@@ -1980,7 +1990,7 @@
     .line 612
     iget-object v5, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v5, v2}, Landroid/support/v7/widget/U;->aag(Landroid/view/View;)I
+    invoke-virtual {v5, v2}, Landroid/support/v7/widget/U;->abi(Landroid/view/View;)I
 
     move-result v2
 
@@ -2010,7 +2020,7 @@
     .line 623
     iget-object v1, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v1, v6}, Landroid/support/v7/widget/U;->aag(Landroid/view/View;)I
+    invoke-virtual {v1, v6}, Landroid/support/v7/widget/U;->abi(Landroid/view/View;)I
 
     move-result v1
 
@@ -2066,9 +2076,9 @@
     add-int/2addr v3, v8
 
     .line 630
-    iget v8, v1, Landroid/support/v7/widget/O;->Qd:I
+    iget v8, v1, Landroid/support/v7/widget/O;->RK:I
 
-    iget v9, v1, Landroid/support/v7/widget/O;->Qe:I
+    iget v9, v1, Landroid/support/v7/widget/O;->RL:I
 
     invoke-virtual {p0, v8, v9}, Landroid/support/v7/widget/M;->getSpaceForSpanRange(II)I
 
@@ -2136,7 +2146,7 @@
     :cond_15
     move-object/from16 v0, p3
 
-    iget v1, v0, Landroid/support/v7/widget/R;->Ql:I
+    iget v1, v0, Landroid/support/v7/widget/R;->RS:I
 
     const/4 v5, -0x1
 
@@ -2223,7 +2233,7 @@
 
     iget-object v5, p0, Landroid/support/v7/widget/M;->mCachedBorders:[I
 
-    iget v8, v1, Landroid/support/v7/widget/O;->Qd:I
+    iget v8, v1, Landroid/support/v7/widget/O;->RK:I
 
     aget v5, v5, v8
 
@@ -2232,7 +2242,7 @@
     .line 681
     iget-object v3, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v3, v6}, Landroid/support/v7/widget/U;->aaf(Landroid/view/View;)I
+    invoke-virtual {v3, v6}, Landroid/support/v7/widget/U;->abh(Landroid/view/View;)I
 
     move-result v3
 
@@ -2245,7 +2255,7 @@
     invoke-virtual/range {v5 .. v10}, Landroid/support/v7/widget/M;->layoutDecoratedWithMargins(Landroid/view/View;IIII)V
 
     .line 693
-    invoke-virtual {v1}, Landroid/support/v7/widget/O;->Xf()Z
+    invoke-virtual {v1}, Landroid/support/v7/widget/O;->Yf()Z
 
     move-result v3
 
@@ -2257,13 +2267,13 @@
 
     move-object/from16 v0, p4
 
-    iput-boolean v1, v0, Landroid/support/v7/widget/T;->Qv:Z
+    iput-boolean v1, v0, Landroid/support/v7/widget/T;->Sc:Z
 
     .line 696
     :goto_11
     move-object/from16 v0, p4
 
-    iget-boolean v1, v0, Landroid/support/v7/widget/T;->Qw:Z
+    iget-boolean v1, v0, Landroid/support/v7/widget/T;->Sd:Z
 
     invoke-virtual {v6}, Landroid/view/View;->hasFocusable()Z
 
@@ -2273,7 +2283,7 @@
 
     move-object/from16 v0, p4
 
-    iput-boolean v1, v0, Landroid/support/v7/widget/T;->Qw:Z
+    iput-boolean v1, v0, Landroid/support/v7/widget/T;->Sd:Z
 
     .line 668
     add-int/lit8 v1, v2, 0x1
@@ -2297,7 +2307,7 @@
 
     iget-object v5, p0, Landroid/support/v7/widget/M;->mCachedBorders:[I
 
-    iget v7, v1, Landroid/support/v7/widget/O;->Qd:I
+    iget v7, v1, Landroid/support/v7/widget/O;->RK:I
 
     aget v5, v5, v7
 
@@ -2306,7 +2316,7 @@
     .line 677
     iget-object v3, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v3, v6}, Landroid/support/v7/widget/U;->aaf(Landroid/view/View;)I
+    invoke-virtual {v3, v6}, Landroid/support/v7/widget/U;->abh(Landroid/view/View;)I
 
     move-result v3
 
@@ -2324,7 +2334,7 @@
 
     iget v7, p0, Landroid/support/v7/widget/M;->mSpanCount:I
 
-    iget v9, v1, Landroid/support/v7/widget/O;->Qd:I
+    iget v9, v1, Landroid/support/v7/widget/O;->RK:I
 
     sub-int/2addr v7, v9
 
@@ -2335,7 +2345,7 @@
     .line 674
     iget-object v3, p0, Landroid/support/v7/widget/M;->mOrientationHelper:Landroid/support/v7/widget/U;
 
-    invoke-virtual {v3, v6}, Landroid/support/v7/widget/U;->aaf(Landroid/view/View;)I
+    invoke-virtual {v3, v6}, Landroid/support/v7/widget/U;->abh(Landroid/view/View;)I
 
     move-result v3
 
@@ -2345,7 +2355,7 @@
 
     .line 693
     :cond_1c
-    invoke-virtual {v1}, Landroid/support/v7/widget/O;->Xe()Z
+    invoke-virtual {v1}, Landroid/support/v7/widget/O;->Ye()Z
 
     move-result v1
 
@@ -2381,7 +2391,7 @@
 
     .line 356
     :cond_1
-    invoke-virtual {p2}, Landroid/support/v7/widget/e;->WN()Z
+    invoke-virtual {p2}, Landroid/support/v7/widget/e;->XM()Z
 
     move-result v0
 
@@ -2413,14 +2423,14 @@
     check-cast v4, Landroid/support/v7/widget/O;
 
     .line 999
-    iget v0, v4, Landroid/support/v7/widget/O;->Qd:I
+    iget v0, v4, Landroid/support/v7/widget/O;->RK:I
 
     move/from16 v19, v0
 
     .line 1000
-    iget v5, v4, Landroid/support/v7/widget/O;->Qd:I
+    iget v5, v4, Landroid/support/v7/widget/O;->RK:I
 
-    iget v4, v4, Landroid/support/v7/widget/O;->Qe:I
+    iget v4, v4, Landroid/support/v7/widget/O;->RL:I
 
     add-int v20, v5, v4
 
@@ -2641,14 +2651,14 @@
     check-cast v4, Landroid/support/v7/widget/O;
 
     .line 1063
-    iget v0, v4, Landroid/support/v7/widget/O;->Qd:I
+    iget v0, v4, Landroid/support/v7/widget/O;->RK:I
 
     move/from16 v22, v0
 
     .line 1064
-    iget v15, v4, Landroid/support/v7/widget/O;->Qd:I
+    iget v15, v4, Landroid/support/v7/widget/O;->RK:I
 
-    iget v0, v4, Landroid/support/v7/widget/O;->Qe:I
+    iget v0, v4, Landroid/support/v7/widget/O;->RL:I
 
     move/from16 v16, v0
 
@@ -2909,7 +2919,7 @@
     if-nez v15, :cond_19
 
     .line 1105
-    iget v8, v4, Landroid/support/v7/widget/O;->Qd:I
+    iget v8, v4, Landroid/support/v7/widget/O;->RK:I
 
     .line 1106
     move/from16 v0, v23
@@ -2943,7 +2953,7 @@
 
     .line 1100
     :cond_19
-    iget v12, v4, Landroid/support/v7/widget/O;->Qd:I
+    iget v12, v4, Landroid/support/v7/widget/O;->RK:I
 
     .line 1101
     move/from16 v0, v23
@@ -3010,7 +3020,7 @@
     check-cast v6, Landroid/support/v7/widget/O;
 
     .line 151
-    invoke-virtual {v6}, Landroid/support/v7/widget/O;->Xd()I
+    invoke-virtual {v6}, Landroid/support/v7/widget/O;->Yd()I
 
     move-result v0
 
@@ -3027,11 +3037,11 @@
     const/4 v3, 0x1
 
     .line 160
-    invoke-virtual {v6}, Landroid/support/v7/widget/O;->ZO()I
+    invoke-virtual {v6}, Landroid/support/v7/widget/O;->aaQ()I
 
     move-result v4
 
-    invoke-virtual {v6}, Landroid/support/v7/widget/O;->ZP()I
+    invoke-virtual {v6}, Landroid/support/v7/widget/O;->aaR()I
 
     move-result v5
 
@@ -3049,11 +3059,11 @@
     :goto_0
     const/4 v7, 0x0
 
-    invoke-static/range {v2 .. v7}, Landroid/support/v4/view/a/l;->aeO(IIIIZZ)Landroid/support/v4/view/a/l;
+    invoke-static/range {v2 .. v7}, Landroid/support/v4/view/a/l;->afQ(IIIIZZ)Landroid/support/v4/view/a/l;
 
     move-result-object v0
 
-    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->adL(Ljava/lang/Object;)V
+    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->aeN(Ljava/lang/Object;)V
 
     .line 163
     :goto_1
@@ -3068,11 +3078,11 @@
 
     .line 154
     :cond_2
-    invoke-virtual {v6}, Landroid/support/v7/widget/O;->ZO()I
+    invoke-virtual {v6}, Landroid/support/v7/widget/O;->aaQ()I
 
     move-result v0
 
-    invoke-virtual {v6}, Landroid/support/v7/widget/O;->ZP()I
+    invoke-virtual {v6}, Landroid/support/v7/widget/O;->aaR()I
 
     move-result v1
 
@@ -3092,17 +3102,17 @@
     :goto_2
     const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Landroid/support/v4/view/a/l;->aeO(IIIIZZ)Landroid/support/v4/view/a/l;
+    invoke-static/range {v0 .. v5}, Landroid/support/v4/view/a/l;->afQ(IIIIZZ)Landroid/support/v4/view/a/l;
 
     move-result-object v0
 
-    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->adL(Ljava/lang/Object;)V
+    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->aeN(Ljava/lang/Object;)V
 
     goto :goto_1
 
     .line 156
     :cond_4
-    invoke-virtual {v6}, Landroid/support/v7/widget/O;->ZP()I
+    invoke-virtual {v6}, Landroid/support/v7/widget/O;->aaR()I
 
     move-result v4
 
@@ -3116,7 +3126,7 @@
 
     .line 161
     :cond_5
-    invoke-virtual {v6}, Landroid/support/v7/widget/O;->ZP()I
+    invoke-virtual {v6}, Landroid/support/v7/widget/O;->aaR()I
 
     move-result v0
 
@@ -3199,7 +3209,7 @@
 
     .prologue
     .line 167
-    invoke-virtual {p2}, Landroid/support/v7/widget/e;->WN()Z
+    invoke-virtual {p2}, Landroid/support/v7/widget/e;->XM()Z
 
     move-result v0
 

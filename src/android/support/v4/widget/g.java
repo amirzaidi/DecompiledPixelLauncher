@@ -9,18 +9,18 @@ import android.os.Build$VERSION;
 
 public final class g
 {
-    private static final f TP;
+    private static final f Wr;
     
     static {
         if (Build$VERSION.SDK_INT < 21) {
-            TP = new f();
+            Wr = new f();
         }
         else {
-            TP = new e();
+            Wr = new e();
         }
     }
     
-    public static void adE(final EdgeEffect edgeEffect, final float n, final float n2) {
-        g.TP.adD(edgeEffect, n, n2);
+    public static void ahK(final EdgeEffect edgeEffect, final float n, final float n2) {
+        g.Wr.ahJ(edgeEffect, n, n2);
     }
 }

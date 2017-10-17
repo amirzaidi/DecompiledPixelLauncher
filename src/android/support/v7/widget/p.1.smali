@@ -50,24 +50,24 @@
 
     const/4 v2, 0x0
 
-    .line 6938
+    .line 6982
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6946
+    .line 6990
     new-instance v0, Landroid/support/v7/widget/at;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/at;-><init>(Landroid/support/v7/widget/p;)V
 
     iput-object v0, p0, Landroid/support/v7/widget/p;->mHorizontalBoundCheckCallback:Landroid/support/v7/widget/J;
 
-    .line 6992
+    .line 7036
     new-instance v0, Landroid/support/v7/widget/ap;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/ap;-><init>(Landroid/support/v7/widget/p;)V
 
     iput-object v0, p0, Landroid/support/v7/widget/p;->mVerticalBoundCheckCallback:Landroid/support/v7/widget/J;
 
-    .line 7042
+    .line 7086
     new-instance v0, Landroid/support/v7/widget/K;
 
     iget-object v1, p0, Landroid/support/v7/widget/p;->mHorizontalBoundCheckCallback:Landroid/support/v7/widget/J;
@@ -76,7 +76,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/p;->mHorizontalBoundCheck:Landroid/support/v7/widget/K;
 
-    .line 7043
+    .line 7087
     new-instance v0, Landroid/support/v7/widget/K;
 
     iget-object v1, p0, Landroid/support/v7/widget/p;->mVerticalBoundCheckCallback:Landroid/support/v7/widget/J;
@@ -85,30 +85,30 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/p;->mVerticalBoundCheck:Landroid/support/v7/widget/K;
 
-    .line 7048
+    .line 7092
     iput-boolean v2, p0, Landroid/support/v7/widget/p;->mRequestedSimpleAnimations:Z
 
-    .line 7050
+    .line 7094
     iput-boolean v2, p0, Landroid/support/v7/widget/p;->mIsAttachedToWindow:Z
 
-    .line 7052
+    .line 7096
     iput-boolean v2, p0, Landroid/support/v7/widget/p;->mAutoMeasure:Z
 
-    .line 7058
+    .line 7102
     iput-boolean v3, p0, Landroid/support/v7/widget/p;->mMeasurementCacheEnabled:Z
 
-    .line 7060
+    .line 7104
     iput-boolean v3, p0, Landroid/support/v7/widget/p;->mItemPrefetchEnabled:Z
 
-    .line 9990
+    .line 10035
     return-void
 .end method
 
-.method static synthetic access$1300(Landroid/support/v7/widget/p;Landroid/support/v7/widget/g;)V
+.method static synthetic access$1400(Landroid/support/v7/widget/p;Landroid/support/v7/widget/g;)V
     .locals 0
 
     .prologue
-    .line 6938
+    .line 6982
     invoke-direct {p0, p1}, Landroid/support/v7/widget/p;->onSmoothScrollerStopped(Landroid/support/v7/widget/g;)V
 
     return-void
@@ -122,23 +122,23 @@
 
     const/4 v4, 0x0
 
-    .line 7916
+    .line 7960
     invoke-static {p1}, Landroid/support/v7/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroid/support/v7/widget/j;
 
     move-result-object v1
 
-    .line 7917
+    .line 7961
     if-eqz p3, :cond_3
 
-    .line 7919
+    .line 7963
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mViewInfoStore:Landroid/support/v7/widget/B;
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/B;->YN(Landroid/support/v7/widget/j;)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/B;->ZP(Landroid/support/v7/widget/j;)V
 
-    .line 7928
+    .line 7972
     :goto_0
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -146,14 +146,14 @@
 
     check-cast v0, Landroid/support/v7/widget/i;
 
-    .line 7929
+    .line 7973
     invoke-virtual {v1}, Landroid/support/v7/widget/j;->wasReturnedFromScrap()Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    .line 7930
+    .line 7974
     :cond_1
     invoke-virtual {v1}, Landroid/support/v7/widget/j;->isScrap()Z
 
@@ -161,10 +161,10 @@
 
     if-nez v2, :cond_5
 
-    .line 7933
+    .line 7977
     invoke-virtual {v1}, Landroid/support/v7/widget/j;->clearReturnedFromScrapFlag()V
 
-    .line 7935
+    .line 7979
     :goto_1
     iget-object v2, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
@@ -172,20 +172,20 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, p1, p2, v3, v4}, Landroid/support/v7/widget/A;->Yy(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)V
+    invoke-virtual {v2, p1, p2, v3, v4}, Landroid/support/v7/widget/A;->ZA(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)V
 
-    .line 7960
+    .line 8004
     :cond_2
     :goto_2
-    iget-boolean v2, v0, Landroid/support/v7/widget/i;->Pc:Z
+    iget-boolean v2, v0, Landroid/support/v7/widget/i;->QJ:Z
 
     if-nez v2, :cond_9
 
-    .line 7967
+    .line 8011
     :goto_3
     return-void
 
-    .line 7917
+    .line 7961
     :cond_3
     invoke-virtual {v1}, Landroid/support/v7/widget/j;->isRemoved()Z
 
@@ -193,16 +193,16 @@
 
     if-nez v0, :cond_0
 
-    .line 7926
+    .line 7970
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mViewInfoStore:Landroid/support/v7/widget/B;
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/B;->YP(Landroid/support/v7/widget/j;)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/B;->ZR(Landroid/support/v7/widget/j;)V
 
     goto :goto_0
 
-    .line 7929
+    .line 7973
     :cond_4
     invoke-virtual {v1}, Landroid/support/v7/widget/j;->isScrap()Z
 
@@ -210,7 +210,7 @@
 
     if-nez v2, :cond_1
 
-    .line 7939
+    .line 7983
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
@@ -219,61 +219,61 @@
 
     if-eq v2, v3, :cond_6
 
-    .line 7954
+    .line 7998
     iget-object v2, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
-    invoke-virtual {v2, p1, p2, v4}, Landroid/support/v7/widget/A;->Yv(Landroid/view/View;IZ)V
+    invoke-virtual {v2, p1, p2, v4}, Landroid/support/v7/widget/A;->Zx(Landroid/view/View;IZ)V
 
-    .line 7955
+    .line 7999
     const/4 v2, 0x1
 
-    iput-boolean v2, v0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v2, v0, Landroid/support/v7/widget/i;->QI:Z
 
-    .line 7956
+    .line 8000
     iget-object v2, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     if-eqz v2, :cond_2
 
     iget-object v2, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
-    invoke-virtual {v2}, Landroid/support/v7/widget/g;->WZ()Z
+    invoke-virtual {v2}, Landroid/support/v7/widget/g;->XY()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 7957
+    .line 8001
     iget-object v2, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     invoke-virtual {v2, p1}, Landroid/support/v7/widget/g;->onChildAttachedToWindow(Landroid/view/View;)V
 
     goto :goto_2
 
-    .line 7931
+    .line 7975
     :cond_5
     invoke-virtual {v1}, Landroid/support/v7/widget/j;->unScrap()V
 
     goto :goto_1
 
-    .line 7941
+    .line 7985
     :cond_6
     iget-object v2, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
-    invoke-virtual {v2, p1}, Landroid/support/v7/widget/A;->Yr(Landroid/view/View;)I
+    invoke-virtual {v2, p1}, Landroid/support/v7/widget/A;->Zt(Landroid/view/View;)I
 
     move-result v2
 
-    .line 7942
+    .line 7986
     if-eq p2, v5, :cond_7
 
-    .line 7945
+    .line 7989
     :goto_4
     if-eq v2, v5, :cond_8
 
-    .line 7950
+    .line 7994
     if-eq v2, p2, :cond_2
 
-    .line 7951
+    .line 7995
     iget-object v3, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v3, v3, Landroid/support/v7/widget/RecyclerView;->mLayout:Landroid/support/v7/widget/p;
@@ -282,7 +282,7 @@
 
     goto :goto_2
 
-    .line 7943
+    .line 7987
     :cond_7
     iget-object v3, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
@@ -292,7 +292,7 @@
 
     goto :goto_4
 
-    .line 7946
+    .line 7990
     :cond_8
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -308,12 +308,22 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 7948
+    .line 7992
     invoke-virtual {v2, p1}, Landroid/support/v7/widget/RecyclerView;->indexOfChild(Landroid/view/View;)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
+
+    invoke-virtual {v2}, Landroid/support/v7/widget/RecyclerView;->exceptionLabel()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -325,36 +335,36 @@
 
     throw v0
 
-    .line 7964
+    .line 8008
     :cond_9
     iget-object v1, v1, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
-    .line 7965
-    iput-boolean v4, v0, Landroid/support/v7/widget/i;->Pc:Z
+    .line 8009
+    iput-boolean v4, v0, Landroid/support/v7/widget/i;->QJ:Z
 
-    goto :goto_3
+    goto/16 :goto_3
 .end method
 
 .method public static chooseSize(III)I
     .locals 2
 
     .prologue
-    .line 7247
+    .line 7291
     invoke-static {p0}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
-    .line 7248
+    .line 7292
     invoke-static {p0}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 7249
+    .line 7293
     sparse-switch v0, :sswitch_data_0
 
-    .line 7256
+    .line 7300
     :sswitch_0
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
@@ -362,11 +372,11 @@
 
     return v0
 
-    .line 7251
+    .line 7295
     :sswitch_1
     return v1
 
-    .line 7253
+    .line 7297
     :sswitch_2
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
@@ -378,7 +388,7 @@
 
     return v0
 
-    .line 7249
+    .line 7293
     :sswitch_data_0
     .sparse-switch
         -0x80000000 -> :sswitch_2
@@ -391,12 +401,12 @@
     .locals 1
 
     .prologue
-    .line 8143
+    .line 8187
     iget-object v0, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/A;->Yz(I)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/A;->ZB(I)V
 
-    .line 8144
+    .line 8188
     return-void
 .end method
 
@@ -414,28 +424,28 @@
 
     const/4 v0, 0x0
 
-    .line 8777
+    .line 8822
     sub-int v1, p0, p2
 
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 8780
+    .line 8825
     if-nez p4, :cond_0
 
-    .line 8801
+    .line 8846
     if-gez p3, :cond_4
 
-    .line 8804
+    .line 8849
     if-eq p3, v5, :cond_5
 
-    .line 8807
+    .line 8852
     if-eq p3, v4, :cond_6
 
     move v1, v0
 
-    .line 8818
+    .line 8863
     :goto_0
     invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -443,14 +453,14 @@
 
     return v0
 
-    .line 8781
+    .line 8826
     :cond_0
     if-gez p3, :cond_1
 
-    .line 8784
+    .line 8829
     if-eq p3, v5, :cond_2
 
-    .line 8796
+    .line 8841
     if-eq p3, v4, :cond_3
 
     move v1, v0
@@ -462,10 +472,10 @@
 
     move v1, p3
 
-    .line 8783
+    .line 8828
     goto :goto_0
 
-    .line 8785
+    .line 8830
     :cond_2
     sparse-switch p1, :sswitch_data_0
 
@@ -476,25 +486,25 @@
 
     move v0, p1
 
-    .line 8794
+    .line 8839
     goto :goto_0
 
     :sswitch_0
     move v0, v1
 
-    .line 8790
+    .line 8835
     goto :goto_1
 
     :sswitch_1
     move p1, v0
 
-    .line 8793
+    .line 8838
     goto :goto_1
 
     :cond_3
     move v1, v0
 
-    .line 8798
+    .line 8843
     goto :goto_0
 
     :cond_4
@@ -502,32 +512,32 @@
 
     move v1, p3
 
-    .line 8803
+    .line 8848
     goto :goto_0
 
     :cond_5
     move v0, p1
 
-    .line 8806
+    .line 8851
     goto :goto_0
 
-    .line 8809
+    .line 8854
     :cond_6
     if-ne p1, v2, :cond_8
 
     :cond_7
     move v0, v2
 
-    .line 8810
+    .line 8855
     goto :goto_0
 
-    .line 8809
+    .line 8854
     :cond_8
     if-eq p1, v3, :cond_7
 
     goto :goto_0
 
-    .line 8785
+    .line 8830
     nop
 
     :sswitch_data_0
@@ -542,22 +552,22 @@
     .locals 14
 
     .prologue
-    .line 9167
+    .line 9212
     const/4 v1, 0x2
 
     new-array v4, v1, [I
 
-    .line 9168
+    .line 9213
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getPaddingLeft()I
 
     move-result v5
 
-    .line 9169
+    .line 9214
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getPaddingTop()I
 
     move-result v6
 
-    .line 9170
+    .line 9215
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getWidth()I
 
     move-result v1
@@ -568,7 +578,7 @@
 
     sub-int v7, v1, v2
 
-    .line 9171
+    .line 9216
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getHeight()I
 
     move-result v1
@@ -579,7 +589,7 @@
 
     sub-int v8, v1, v2
 
-    .line 9172
+    .line 9217
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getLeft()I
 
     move-result v1
@@ -596,7 +606,7 @@
 
     sub-int v9, v1, v2
 
-    .line 9173
+    .line 9218
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getTop()I
 
     move-result v1
@@ -613,21 +623,21 @@
 
     sub-int v10, v1, v2
 
-    .line 9174
+    .line 9219
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/Rect;->width()I
 
     move-result v1
 
     add-int v11, v9, v1
 
-    .line 9175
+    .line 9220
     invoke-virtual/range {p3 .. p3}, Landroid/graphics/Rect;->height()I
 
     move-result v1
 
     add-int v12, v10, v1
 
-    .line 9177
+    .line 9222
     sub-int v1, v9, v5
 
     const/4 v2, 0x0
@@ -636,7 +646,7 @@
 
     move-result v2
 
-    .line 9178
+    .line 9223
     sub-int v1, v10, v6
 
     const/4 v3, 0x0
@@ -645,7 +655,7 @@
 
     move-result v3
 
-    .line 9179
+    .line 9224
     sub-int v1, v11, v7
 
     const/4 v13, 0x0
@@ -654,7 +664,7 @@
 
     move-result v1
 
-    .line 9180
+    .line 9225
     sub-int v8, v12, v8
 
     const/4 v12, 0x0
@@ -663,7 +673,7 @@
 
     move-result v8
 
-    .line 9186
+    .line 9231
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getLayoutDirection()I
 
     move-result v12
@@ -672,12 +682,12 @@
 
     if-eq v12, v13, :cond_0
 
-    .line 9190
+    .line 9235
     if-nez v2, :cond_2
 
     sub-int v2, v9, v5
 
-    .line 9191
+    .line 9236
     invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
 
     move-result v1
@@ -685,38 +695,38 @@
     :goto_0
     move v2, v1
 
-    .line 9196
+    .line 9241
     :goto_1
     if-nez v3, :cond_3
 
     sub-int v1, v10, v6
 
-    .line 9197
+    .line 9242
     invoke-static {v1, v8}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 9198
+    .line 9243
     :goto_2
     const/4 v3, 0x0
 
     aput v2, v4, v3
 
-    .line 9199
+    .line 9244
     const/4 v2, 0x1
 
     aput v1, v4, v2
 
-    .line 9200
+    .line 9245
     return-object v4
 
-    .line 9187
+    .line 9232
     :cond_0
     if-nez v1, :cond_1
 
     sub-int v1, v11, v7
 
-    .line 9188
+    .line 9233
     invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
@@ -729,13 +739,13 @@
     :cond_2
     move v1, v2
 
-    .line 9190
+    .line 9235
     goto :goto_0
 
     :cond_3
     move v1, v3
 
-    .line 9196
+    .line 9241
     goto :goto_2
 .end method
 
@@ -745,25 +755,25 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 9299
+    .line 9344
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getFocusedChild()Landroid/view/View;
 
     move-result-object v0
 
-    .line 9300
+    .line 9345
     if-eqz v0, :cond_1
 
-    .line 9303
+    .line 9348
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getPaddingLeft()I
 
     move-result v1
 
-    .line 9304
+    .line 9349
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getPaddingTop()I
 
     move-result v2
 
-    .line 9305
+    .line 9350
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getWidth()I
 
     move-result v3
@@ -774,7 +784,7 @@
 
     sub-int/2addr v3, v4
 
-    .line 9306
+    .line 9351
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getHeight()I
 
     move-result v4
@@ -785,30 +795,30 @@
 
     sub-int/2addr v4, v5
 
-    .line 9307
+    .line 9352
     iget-object v5, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v5, v5, Landroid/support/v7/widget/RecyclerView;->mTempRect:Landroid/graphics/Rect;
 
-    .line 9308
+    .line 9353
     invoke-virtual {p0, v0, v5}, Landroid/support/v7/widget/p;->getDecoratedBoundsWithMargins(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 9310
+    .line 9355
     iget v0, v5, Landroid/graphics/Rect;->left:I
 
     sub-int/2addr v0, p2
 
     if-lt v0, v3, :cond_2
 
-    .line 9312
+    .line 9357
     :cond_0
     return v6
 
-    .line 9301
+    .line 9346
     :cond_1
     return v6
 
-    .line 9310
+    .line 9355
     :cond_2
     iget v0, v5, Landroid/graphics/Rect;->right:I
 
@@ -828,7 +838,7 @@
 
     if-le v0, v2, :cond_0
 
-    .line 9314
+    .line 9359
     const/4 v0, 0x1
 
     return v0
@@ -842,38 +852,38 @@
 
     const/4 v0, 0x0
 
-    .line 8671
+    .line 8716
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v2
 
-    .line 8672
+    .line 8717
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v3
 
-    .line 8673
+    .line 8718
     if-gtz p2, :cond_1
 
-    .line 8676
+    .line 8721
     :cond_0
     sparse-switch v2, :sswitch_data_0
 
-    .line 8684
+    .line 8729
     return v0
 
-    .line 8673
+    .line 8718
     :cond_1
     if-eq p0, p2, :cond_0
 
-    .line 8674
+    .line 8719
     return v0
 
-    .line 8678
+    .line 8723
     :sswitch_0
     return v1
 
-    .line 8680
+    .line 8725
     :sswitch_1
     if-ge v3, p0, :cond_2
 
@@ -885,7 +895,7 @@
 
     goto :goto_0
 
-    .line 8682
+    .line 8727
     :sswitch_2
     if-eq v3, p0, :cond_3
 
@@ -897,7 +907,7 @@
 
     goto :goto_1
 
-    .line 8676
+    .line 8721
     :sswitch_data_0
     .sparse-switch
         -0x80000000 -> :sswitch_1
@@ -910,16 +920,16 @@
     .locals 1
 
     .prologue
-    .line 9624
+    .line 9669
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     if-eq v0, p1, :cond_0
 
-    .line 9627
+    .line 9672
     :goto_0
     return-void
 
-    .line 9625
+    .line 9670
     :cond_0
     const/4 v0, 0x0
 
@@ -932,48 +942,48 @@
     .locals 2
 
     .prologue
-    .line 8531
+    .line 8576
     invoke-static {p3}, Landroid/support/v7/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroid/support/v7/widget/j;
 
     move-result-object v0
 
-    .line 8532
+    .line 8577
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->shouldIgnore()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 8538
+    .line 8583
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->isInvalid()Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 8543
+    .line 8588
     :cond_0
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/p;->detachViewAt(I)V
 
-    .line 8544
-    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Xm(Landroid/view/View;)V
+    .line 8589
+    invoke-virtual {p1, p3}, Landroid/support/v7/widget/s;->Ym(Landroid/view/View;)V
 
-    .line 8545
+    .line 8590
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, v1, Landroid/support/v7/widget/RecyclerView;->mViewInfoStore:Landroid/support/v7/widget/B;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/B;->YH(Landroid/support/v7/widget/j;)V
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/B;->ZJ(Landroid/support/v7/widget/j;)V
 
-    .line 8547
+    .line 8592
     :goto_0
     return-void
 
-    .line 8536
+    .line 8581
     :cond_1
     return-void
 
-    .line 8538
+    .line 8583
     :cond_2
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->isRemoved()Z
 
@@ -985,18 +995,18 @@
 
     iget-object v1, v1, Landroid/support/v7/widget/RecyclerView;->mAdapter:Landroid/support/v7/widget/q;
 
-    .line 8539
+    .line 8584
     invoke-virtual {v1}, Landroid/support/v7/widget/q;->hasStableIds()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 8540
+    .line 8585
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/p;->removeViewAt(I)V
 
-    .line 8541
-    invoke-virtual {p1, v0}, Landroid/support/v7/widget/s;->XI(Landroid/support/v7/widget/j;)V
+    .line 8586
+    invoke-virtual {p1, v0}, Landroid/support/v7/widget/s;->YI(Landroid/support/v7/widget/j;)V
 
     goto :goto_0
 .end method
@@ -1007,12 +1017,12 @@
     .locals 1
 
     .prologue
-    .line 7871
+    .line 7915
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/p;->addDisappearingView(Landroid/view/View;I)V
 
-    .line 7872
+    .line 7916
     return-void
 .end method
 
@@ -1020,12 +1030,12 @@
     .locals 1
 
     .prologue
-    .line 7889
+    .line 7933
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v7/widget/p;->addViewInt(Landroid/view/View;IZ)V
 
-    .line 7890
+    .line 7934
     return-void
 .end method
 
@@ -1033,12 +1043,12 @@
     .locals 1
 
     .prologue
-    .line 7900
+    .line 7944
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/p;->addView(Landroid/view/View;I)V
 
-    .line 7901
+    .line 7945
     return-void
 .end method
 
@@ -1046,12 +1056,12 @@
     .locals 1
 
     .prologue
-    .line 7912
+    .line 7956
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Landroid/support/v7/widget/p;->addViewInt(Landroid/view/View;IZ)V
 
-    .line 7913
+    .line 7957
     return-void
 .end method
 
@@ -1059,16 +1069,16 @@
     .locals 1
 
     .prologue
-    .line 7268
+    .line 7312
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
 
-    .line 7271
+    .line 7315
     :goto_0
     return-void
 
-    .line 7269
+    .line 7313
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -1081,7 +1091,7 @@
     .locals 1
 
     .prologue
-    .line 8177
+    .line 8221
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -1090,7 +1100,7 @@
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/support/v7/widget/p;->attachView(Landroid/view/View;ILandroid/support/v7/widget/i;)V
 
-    .line 8178
+    .line 8222
     return-void
 .end method
 
@@ -1098,26 +1108,26 @@
     .locals 2
 
     .prologue
-    .line 8156
+    .line 8200
     invoke-static {p1}, Landroid/support/v7/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroid/support/v7/widget/j;
 
     move-result-object v0
 
-    .line 8157
+    .line 8201
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->isRemoved()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 8160
+    .line 8204
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, v1, Landroid/support/v7/widget/RecyclerView;->mViewInfoStore:Landroid/support/v7/widget/B;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/B;->YP(Landroid/support/v7/widget/j;)V
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/B;->ZR(Landroid/support/v7/widget/j;)V
 
-    .line 8162
+    .line 8206
     :goto_0
     iget-object v1, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
@@ -1125,18 +1135,18 @@
 
     move-result v0
 
-    invoke-virtual {v1, p1, p2, p3, v0}, Landroid/support/v7/widget/A;->Yy(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)V
+    invoke-virtual {v1, p1, p2, p3, v0}, Landroid/support/v7/widget/A;->ZA(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)V
 
-    .line 8166
+    .line 8210
     return-void
 
-    .line 8158
+    .line 8202
     :cond_0
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, v1, Landroid/support/v7/widget/RecyclerView;->mViewInfoStore:Landroid/support/v7/widget/B;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/B;->YN(Landroid/support/v7/widget/j;)V
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/B;->ZP(Landroid/support/v7/widget/j;)V
 
     goto :goto_0
 .end method
@@ -1147,29 +1157,29 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 9037
+    .line 9082
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v0, :cond_0
 
-    .line 9041
+    .line 9086
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->getItemDecorInsetsForChild(Landroid/view/View;)Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 9042
+    .line 9087
     invoke-virtual {p2, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 9043
+    .line 9088
     return-void
 
-    .line 9038
+    .line 9083
     :cond_0
     invoke-virtual {p2, v1, v1, v1, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 9039
+    .line 9084
     return-void
 .end method
 
@@ -1177,7 +1187,7 @@
     .locals 1
 
     .prologue
-    .line 7772
+    .line 7816
     const/4 v0, 0x0
 
     return v0
@@ -1187,7 +1197,7 @@
     .locals 1
 
     .prologue
-    .line 7782
+    .line 7826
     const/4 v0, 0x0
 
     return v0
@@ -1197,7 +1207,7 @@
     .locals 1
 
     .prologue
-    .line 7687
+    .line 7731
     if-nez p1, :cond_0
 
     const/4 v0, 0x0
@@ -1215,7 +1225,7 @@
     .locals 0
 
     .prologue
-    .line 7439
+    .line 7483
     return-void
 .end method
 
@@ -1223,41 +1233,11 @@
     .locals 0
 
     .prologue
-    .line 7467
+    .line 7511
     return-void
 .end method
 
 .method public computeHorizontalScrollExtent(Landroid/support/v7/widget/e;)I
-    .locals 1
-
-    .prologue
-    .line 9478
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public computeHorizontalScrollOffset(Landroid/support/v7/widget/e;)I
-    .locals 1
-
-    .prologue
-    .line 9493
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public computeHorizontalScrollRange(Landroid/support/v7/widget/e;)I
-    .locals 1
-
-    .prologue
-    .line 9508
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public computeVerticalScrollExtent(Landroid/support/v7/widget/e;)I
     .locals 1
 
     .prologue
@@ -1267,7 +1247,7 @@
     return v0
 .end method
 
-.method public computeVerticalScrollOffset(Landroid/support/v7/widget/e;)I
+.method public computeHorizontalScrollOffset(Landroid/support/v7/widget/e;)I
     .locals 1
 
     .prologue
@@ -1277,7 +1257,7 @@
     return v0
 .end method
 
-.method public computeVerticalScrollRange(Landroid/support/v7/widget/e;)I
+.method public computeHorizontalScrollRange(Landroid/support/v7/widget/e;)I
     .locals 1
 
     .prologue
@@ -1287,31 +1267,61 @@
     return v0
 .end method
 
+.method public computeVerticalScrollExtent(Landroid/support/v7/widget/e;)I
+    .locals 1
+
+    .prologue
+    .line 9568
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public computeVerticalScrollOffset(Landroid/support/v7/widget/e;)I
+    .locals 1
+
+    .prologue
+    .line 9583
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public computeVerticalScrollRange(Landroid/support/v7/widget/e;)I
+    .locals 1
+
+    .prologue
+    .line 9598
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public detachAndScrapAttachedViews(Landroid/support/v7/widget/s;)V
     .locals 2
 
     .prologue
-    .line 8523
+    .line 8568
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getChildCount()I
 
     move-result v0
 
-    .line 8524
+    .line 8569
     :goto_0
     add-int/lit8 v0, v0, -0x1
 
     if-gez v0, :cond_0
 
-    .line 8528
+    .line 8573
     return-void
 
-    .line 8525
+    .line 8570
     :cond_0
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 8526
+    .line 8571
     invoke-direct {p0, p1, v0, v1}, Landroid/support/v7/widget/p;->scrapOrRecycleView(Landroid/support/v7/widget/s;ILandroid/view/View;)V
 
     goto :goto_0
@@ -1321,14 +1331,14 @@
     .locals 1
 
     .prologue
-    .line 8136
+    .line 8180
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0}, Landroid/support/v7/widget/p;->detachViewInternal(ILandroid/view/View;)V
 
-    .line 8137
+    .line 8181
     return-void
 .end method
 
@@ -1336,15 +1346,15 @@
     .locals 1
 
     .prologue
-    .line 7470
+    .line 7514
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/widget/p;->mIsAttachedToWindow:Z
 
-    .line 7471
+    .line 7515
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->onAttachedToWindow(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 7472
+    .line 7516
     return-void
 .end method
 
@@ -1352,15 +1362,15 @@
     .locals 1
 
     .prologue
-    .line 7475
+    .line 7519
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v7/widget/p;->mIsAttachedToWindow:Z
 
-    .line 7476
+    .line 7520
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/p;->onDetachedFromWindow(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/s;)V
 
-    .line 7477
+    .line 7521
     return-void
 .end method
 
@@ -1370,42 +1380,42 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 8056
+    .line 8100
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v0, :cond_0
 
-    .line 8059
+    .line 8103
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/RecyclerView;->findContainingItemView(Landroid/view/View;)Landroid/view/View;
 
     move-result-object v0
 
-    .line 8060
+    .line 8104
     if-eqz v0, :cond_1
 
-    .line 8063
+    .line 8107
     iget-object v1, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/A;->Yq(Landroid/view/View;)Z
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/A;->Zs(Landroid/view/View;)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 8066
+    .line 8110
     return-object v0
 
-    .line 8057
+    .line 8101
     :cond_0
     return-object v2
 
-    .line 8061
+    .line 8105
     :cond_1
     return-object v2
 
-    .line 8064
+    .line 8108
     :cond_2
     return-object v2
 .end method
@@ -1418,47 +1428,47 @@
 
     const/4 v0, 0x0
 
-    .line 8083
+    .line 8127
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getChildCount()I
 
     move-result v1
 
-    .line 8084
+    .line 8128
     :goto_0
     if-lt v0, v1, :cond_0
 
-    .line 8095
+    .line 8139
     return-object v5
 
-    .line 8085
+    .line 8129
     :cond_0
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 8086
+    .line 8130
     invoke-static {v2}, Landroid/support/v7/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroid/support/v7/widget/j;
 
     move-result-object v3
 
-    .line 8087
+    .line 8131
     if-eqz v3, :cond_1
 
-    .line 8090
+    .line 8134
     invoke-virtual {v3}, Landroid/support/v7/widget/j;->getLayoutPosition()I
 
     move-result v4
 
     if-eq v4, p1, :cond_2
 
-    .line 8084
+    .line 8128
     :cond_1
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 8090
+    .line 8134
     :cond_2
     invoke-virtual {v3}, Landroid/support/v7/widget/j;->shouldIgnore()Z
 
@@ -1470,18 +1480,18 @@
 
     iget-object v4, v4, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/e;
 
-    .line 8091
-    invoke-virtual {v4}, Landroid/support/v7/widget/e;->WN()Z
+    .line 8135
+    invoke-virtual {v4}, Landroid/support/v7/widget/e;->XM()Z
 
     move-result v4
 
     if-eqz v4, :cond_4
 
-    .line 8092
+    .line 8136
     :cond_3
     return-object v2
 
-    .line 8091
+    .line 8135
     :cond_4
     invoke-virtual {v3}, Landroid/support/v7/widget/j;->isRemoved()Z
 
@@ -1499,7 +1509,7 @@
     .locals 1
 
     .prologue
-    .line 7728
+    .line 7772
     new-instance v0, Landroid/support/v7/widget/i;
 
     invoke-direct {v0, p1, p2}, Landroid/support/v7/widget/i;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -1511,24 +1521,24 @@
     .locals 1
 
     .prologue
-    .line 7704
+    .line 7748
     instance-of v0, p1, Landroid/support/v7/widget/i;
 
     if-nez v0, :cond_0
 
-    .line 7706
+    .line 7750
     instance-of v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
     if-nez v0, :cond_1
 
-    .line 7709
+    .line 7753
     new-instance v0, Landroid/support/v7/widget/i;
 
     invoke-direct {v0, p1}, Landroid/support/v7/widget/i;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-object v0
 
-    .line 7705
+    .line 7749
     :cond_0
     new-instance v0, Landroid/support/v7/widget/i;
 
@@ -1538,7 +1548,7 @@
 
     return-object v0
 
-    .line 7707
+    .line 7751
     :cond_1
     new-instance v0, Landroid/support/v7/widget/i;
 
@@ -1553,7 +1563,7 @@
     .locals 1
 
     .prologue
-    .line 8015
+    .line 8059
     const/4 v0, -0x1
 
     return v0
@@ -1563,7 +1573,7 @@
     .locals 1
 
     .prologue
-    .line 9072
+    .line 9117
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -1583,7 +1593,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 8284
+    .line 8328
     iget-object v1, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
     if-nez v1, :cond_0
@@ -1605,7 +1615,7 @@
     .locals 1
 
     .prologue
-    .line 8275
+    .line 8319
     iget-object v0, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
     if-nez v0, :cond_0
@@ -1631,16 +1641,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 9837
+    .line 9882
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v1, :cond_1
 
-    .line 9838
+    .line 9883
     :cond_0
     return v0
 
-    .line 9837
+    .line 9882
     :cond_1
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -1648,7 +1658,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 9840
+    .line 9885
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->canScrollHorizontally()Z
 
     move-result v1
@@ -1674,7 +1684,7 @@
     .locals 2
 
     .prologue
-    .line 9016
+    .line 9061
     invoke-virtual {p1}, Landroid/view/View;->getBottom()I
 
     move-result v0
@@ -1692,10 +1702,10 @@
     .locals 0
 
     .prologue
-    .line 8968
+    .line 9013
     invoke-static {p1, p2}, Landroid/support/v7/widget/RecyclerView;->getDecoratedBoundsWithMarginsInt(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 8969
+    .line 9014
     return-void
 .end method
 
@@ -1703,7 +1713,7 @@
     .locals 2
 
     .prologue
-    .line 8980
+    .line 9025
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
     move-result v0
@@ -1721,7 +1731,7 @@
     .locals 3
 
     .prologue
-    .line 8845
+    .line 8890
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -1730,7 +1740,7 @@
 
     iget-object v0, v0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 8846
+    .line 8891
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -1750,7 +1760,7 @@
     .locals 3
 
     .prologue
-    .line 8831
+    .line 8876
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -1759,7 +1769,7 @@
 
     iget-object v0, v0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 8832
+    .line 8877
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -1779,7 +1789,7 @@
     .locals 2
 
     .prologue
-    .line 9004
+    .line 9049
     invoke-virtual {p1}, Landroid/view/View;->getRight()I
 
     move-result v0
@@ -1797,7 +1807,7 @@
     .locals 2
 
     .prologue
-    .line 8992
+    .line 9037
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result v0
@@ -1817,40 +1827,40 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 8421
+    .line 8465
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v0, :cond_1
 
-    .line 8424
+    .line 8468
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->getFocusedChild()Landroid/view/View;
 
     move-result-object v0
 
-    .line 8425
+    .line 8469
     if-nez v0, :cond_2
 
-    .line 8426
+    .line 8470
     :cond_0
     return-object v2
 
-    .line 8422
+    .line 8466
     :cond_1
     return-object v2
 
-    .line 8425
+    .line 8469
     :cond_2
     iget-object v1, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/A;->Yq(Landroid/view/View;)Z
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/A;->Zs(Landroid/view/View;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 8428
+    .line 8472
     return-object v0
 .end method
 
@@ -1858,7 +1868,7 @@
     .locals 1
 
     .prologue
-    .line 8338
+    .line 8382
     iget v0, p0, Landroid/support/v7/widget/p;->mHeight:I
 
     return v0
@@ -1868,7 +1878,7 @@
     .locals 1
 
     .prologue
-    .line 8320
+    .line 8364
     iget v0, p0, Landroid/support/v7/widget/p;->mHeightMode:I
 
     return v0
@@ -1878,10 +1888,10 @@
     .locals 1
 
     .prologue
-    .line 7842
+    .line 7886
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-static {v0}, Landroid/support/v4/view/f;->afr(Landroid/view/View;)I
+    invoke-static {v0}, Landroid/support/v4/view/f;->ags(Landroid/view/View;)I
 
     move-result v0
 
@@ -1892,7 +1902,7 @@
     .locals 1
 
     .prologue
-    .line 9087
+    .line 9132
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -1910,10 +1920,10 @@
     .locals 1
 
     .prologue
-    .line 9596
+    .line 9641
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-static {v0}, Landroid/support/v4/view/f;->afD(Landroid/view/View;)I
+    invoke-static {v0}, Landroid/support/v4/view/f;->agF(Landroid/view/View;)I
 
     move-result v0
 
@@ -1924,10 +1934,10 @@
     .locals 1
 
     .prologue
-    .line 9589
+    .line 9634
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-static {v0}, Landroid/support/v4/view/f;->afB(Landroid/view/View;)I
+    invoke-static {v0}, Landroid/support/v4/view/f;->agD(Landroid/view/View;)I
 
     move-result v0
 
@@ -1938,7 +1948,7 @@
     .locals 1
 
     .prologue
-    .line 8374
+    .line 8418
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
@@ -1962,7 +1972,7 @@
     .locals 1
 
     .prologue
-    .line 8347
+    .line 8391
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
@@ -1986,7 +1996,7 @@
     .locals 1
 
     .prologue
-    .line 8365
+    .line 8409
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
@@ -2010,7 +2020,7 @@
     .locals 1
 
     .prologue
-    .line 8356
+    .line 8400
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
@@ -2034,14 +2044,14 @@
     .locals 1
 
     .prologue
-    .line 8026
+    .line 8070
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/i;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/i;->Xd()I
+    invoke-virtual {v0}, Landroid/support/v7/widget/i;->Yd()I
 
     move-result v0
 
@@ -2052,7 +2062,7 @@
     .locals 1
 
     .prologue
-    .line 9102
+    .line 9147
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -2072,16 +2082,16 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 9818
+    .line 9863
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v1, :cond_1
 
-    .line 9819
+    .line 9864
     :cond_0
     return v0
 
-    .line 9818
+    .line 9863
     :cond_1
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -2089,7 +2099,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 9821
+    .line 9866
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->canScrollVertically()Z
 
     move-result v1
@@ -2115,7 +2125,7 @@
     .locals 1
 
     .prologue
-    .line 9802
+    .line 9847
     const/4 v0, 0x0
 
     return v0
@@ -2125,7 +2135,7 @@
     .locals 1
 
     .prologue
-    .line 9057
+    .line 9102
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -2145,10 +2155,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 8935
+    .line 8980
     if-nez p2, :cond_1
 
-    .line 8940
+    .line 8985
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -2159,13 +2169,13 @@
 
     invoke-virtual {p3, v2, v2, v0, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 8943
+    .line 8988
     :goto_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_2
 
-    .line 8957
+    .line 9002
     :cond_0
     :goto_1
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
@@ -2178,10 +2188,10 @@
 
     invoke-virtual {p3, v0, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 8958
+    .line 9003
     return-void
 
-    .line 8936
+    .line 8981
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2191,7 +2201,7 @@
 
     iget-object v0, v0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 8937
+    .line 8982
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
     neg-int v1, v1
@@ -2200,7 +2210,7 @@
 
     neg-int v2, v2
 
-    .line 8938
+    .line 8983
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v3
@@ -2217,18 +2227,18 @@
 
     add-int/2addr v0, v4
 
-    .line 8937
+    .line 8982
     invoke-virtual {p3, v1, v2, v3, v0}, Landroid/graphics/Rect;->set(IIII)V
 
     goto :goto_0
 
-    .line 8944
+    .line 8989
     :cond_2
     invoke-virtual {p1}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v0
 
-    .line 8945
+    .line 8990
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->isIdentity()Z
@@ -2237,23 +2247,23 @@
 
     if-nez v1, :cond_0
 
-    .line 8946
+    .line 8991
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, v1, Landroid/support/v7/widget/RecyclerView;->mTempRectF:Landroid/graphics/RectF;
 
-    .line 8947
+    .line 8992
     invoke-virtual {v1, p3}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 8948
+    .line 8993
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    .line 8949
+    .line 8994
     iget v0, v1, Landroid/graphics/RectF;->left:F
 
     float-to-double v2, v0
 
-    .line 8950
+    .line 8995
     invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v2
@@ -2264,7 +2274,7 @@
 
     float-to-double v2, v2
 
-    .line 8951
+    .line 8996
     invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v2
@@ -2275,7 +2285,7 @@
 
     float-to-double v4, v3
 
-    .line 8952
+    .line 8997
     invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v4
@@ -2286,14 +2296,14 @@
 
     float-to-double v4, v1
 
-    .line 8953
+    .line 8998
     invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v4
 
     double-to-int v1, v4
 
-    .line 8949
+    .line 8994
     invoke-virtual {p3, v0, v2, v3, v1}, Landroid/graphics/Rect;->set(IIII)V
 
     goto :goto_1
@@ -2303,7 +2313,7 @@
     .locals 1
 
     .prologue
-    .line 8329
+    .line 8373
     iget v0, p0, Landroid/support/v7/widget/p;->mWidth:I
 
     return v0
@@ -2313,7 +2323,7 @@
     .locals 1
 
     .prologue
-    .line 8302
+    .line 8346
     iget v0, p0, Landroid/support/v7/widget/p;->mWidthMode:I
 
     return v0
@@ -2325,49 +2335,49 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 9976
+    .line 10021
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getChildCount()I
 
     move-result v2
 
     move v0, v1
 
-    .line 9977
+    .line 10022
     :goto_0
     if-lt v0, v2, :cond_0
 
-    .line 9984
+    .line 10029
     return v1
 
-    .line 9978
+    .line 10023
     :cond_0
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 9979
+    .line 10024
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
 
-    .line 9980
+    .line 10025
     iget v4, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     if-ltz v4, :cond_2
 
-    .line 9977
+    .line 10022
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 9980
+    .line 10025
     :cond_2
     iget v3, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     if-gez v3, :cond_1
 
-    .line 9981
+    .line 10026
     const/4 v0, 0x1
 
     return v0
@@ -2377,7 +2387,7 @@
     .locals 1
 
     .prologue
-    .line 7415
+    .line 7459
     iget-boolean v0, p0, Landroid/support/v7/widget/p;->mItemPrefetchEnabled:Z
 
     return v0
@@ -2387,7 +2397,7 @@
     .locals 1
 
     .prologue
-    .line 9854
+    .line 9899
     const/4 v0, 0x0
 
     return v0
@@ -2399,7 +2409,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 7829
+    .line 7873
     iget-object v1, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     if-nez v1, :cond_1
@@ -2411,7 +2421,7 @@
     :cond_1
     iget-object v1, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/g;->WZ()Z
+    invoke-virtual {v1}, Landroid/support/v7/widget/g;->XY()Z
 
     move-result v1
 
@@ -2432,10 +2442,10 @@
 
     const/4 v2, 0x0
 
-    .line 9279
+    .line 9324
     iget-object v0, p0, Landroid/support/v7/widget/p;->mHorizontalBoundCheck:Landroid/support/v7/widget/K;
 
-    invoke-virtual {v0, p1, v3}, Landroid/support/v7/widget/K;->ZN(Landroid/view/View;I)Z
+    invoke-virtual {v0, p1, v3}, Landroid/support/v7/widget/K;->aaP(Landroid/view/View;I)Z
 
     move-result v0
 
@@ -2444,22 +2454,22 @@
     :cond_0
     move v0, v2
 
-    .line 9282
+    .line 9327
     :goto_0
     if-nez p2, :cond_2
 
-    .line 9285
+    .line 9330
     if-eqz v0, :cond_3
 
     :goto_1
     return v2
 
-    .line 9279
+    .line 9324
     :cond_1
     iget-object v0, p0, Landroid/support/v7/widget/p;->mVerticalBoundCheck:Landroid/support/v7/widget/K;
 
-    .line 9281
-    invoke-virtual {v0, p1, v3}, Landroid/support/v7/widget/K;->ZN(Landroid/view/View;I)Z
+    .line 9326
+    invoke-virtual {v0, p1, v3}, Landroid/support/v7/widget/K;->aaP(Landroid/view/View;I)Z
 
     move-result v0
 
@@ -2469,14 +2479,14 @@
 
     goto :goto_0
 
-    .line 9283
+    .line 9328
     :cond_2
     return v0
 
     :cond_3
     move v2, v1
 
-    .line 9285
+    .line 9330
     goto :goto_1
 .end method
 
@@ -2484,17 +2494,17 @@
     .locals 6
 
     .prologue
-    .line 8916
+    .line 8961
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/i;
 
-    .line 8917
+    .line 8962
     iget-object v1, v0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 8918
+    .line 8963
     iget v2, v1, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v2, p2
@@ -2529,7 +2539,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v0}, Landroid/view/View;->layout(IIII)V
 
-    .line 8921
+    .line 8966
     return-void
 .end method
 
@@ -2537,21 +2547,21 @@
     .locals 7
 
     .prologue
-    .line 8700
+    .line 8745
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/i;
 
-    .line 8702
+    .line 8747
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/RecyclerView;->getItemDecorInsetsForChild(Landroid/view/View;)Landroid/graphics/Rect;
 
     move-result-object v1
 
-    .line 8703
+    .line 8748
     iget v2, v1, Landroid/graphics/Rect;->left:I
 
     iget v3, v1, Landroid/graphics/Rect;->right:I
@@ -2560,7 +2570,7 @@
 
     add-int/2addr v2, p2
 
-    .line 8704
+    .line 8749
     iget v3, v1, Landroid/graphics/Rect;->top:I
 
     iget v1, v1, Landroid/graphics/Rect;->bottom:I
@@ -2569,7 +2579,7 @@
 
     add-int/2addr v1, p3
 
-    .line 8706
+    .line 8751
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getWidth()I
 
     move-result v3
@@ -2578,7 +2588,7 @@
 
     move-result v4
 
-    .line 8707
+    .line 8752
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getPaddingLeft()I
 
     move-result v5
@@ -2601,17 +2611,17 @@
 
     iget v5, v0, Landroid/support/v7/widget/i;->width:I
 
-    .line 8709
+    .line 8754
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->canScrollHorizontally()Z
 
     move-result v6
 
-    .line 8706
+    .line 8751
     invoke-static {v3, v4, v2, v5, v6}, Landroid/support/v7/widget/p;->getChildMeasureSpec(IIIIZ)I
 
     move-result v2
 
-    .line 8710
+    .line 8755
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getHeight()I
 
     move-result v3
@@ -2620,7 +2630,7 @@
 
     move-result v4
 
-    .line 8711
+    .line 8756
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getPaddingTop()I
 
     move-result v5
@@ -2643,28 +2653,28 @@
 
     iget v5, v0, Landroid/support/v7/widget/i;->height:I
 
-    .line 8713
+    .line 8758
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->canScrollVertically()Z
 
     move-result v6
 
-    .line 8710
+    .line 8755
     invoke-static {v3, v4, v1, v5, v6}, Landroid/support/v7/widget/p;->getChildMeasureSpec(IIIIZ)I
 
     move-result v1
 
-    .line 8714
+    .line 8759
     invoke-virtual {p0, p1, v2, v1, v0}, Landroid/support/v7/widget/p;->shouldMeasureChild(Landroid/view/View;IILandroid/support/v7/widget/i;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 8717
+    .line 8762
     :goto_0
     return-void
 
-    .line 8715
+    .line 8760
     :cond_0
     invoke-virtual {p1, v2, v1}, Landroid/view/View;->measure(II)V
 
@@ -2675,24 +2685,24 @@
     .locals 3
 
     .prologue
-    .line 8208
+    .line 8252
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 8209
+    .line 8253
     if-eqz v0, :cond_0
 
-    .line 8213
+    .line 8257
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->detachViewAt(I)V
 
-    .line 8214
+    .line 8258
     invoke-virtual {p0, v0, p2}, Landroid/support/v7/widget/p;->attachView(Landroid/view/View;I)V
 
-    .line 8215
+    .line 8259
     return-void
 
-    .line 8210
+    .line 8254
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -2710,6 +2720,17 @@
 
     move-result-object v1
 
+    iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
+
+    .line 8255
+    invoke-virtual {v2}, Landroid/support/v7/widget/RecyclerView;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -2723,16 +2744,16 @@
     .locals 1
 
     .prologue
-    .line 8455
+    .line 8499
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
 
-    .line 8458
+    .line 8502
     :goto_0
     return-void
 
-    .line 8456
+    .line 8500
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -2745,16 +2766,16 @@
     .locals 1
 
     .prologue
-    .line 8467
+    .line 8511
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
 
-    .line 8470
+    .line 8514
     :goto_0
     return-void
 
-    .line 8468
+    .line 8512
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -2767,7 +2788,7 @@
     .locals 0
 
     .prologue
-    .line 9361
+    .line 9406
     return-void
 .end method
 
@@ -2775,7 +2796,7 @@
     .locals 1
 
     .prologue
-    .line 9389
+    .line 9434
     const/4 v0, 0x0
 
     return v0
@@ -2785,7 +2806,7 @@
     .locals 0
 
     .prologue
-    .line 7542
+    .line 7586
     return-void
 .end method
 
@@ -2793,7 +2814,7 @@
     .locals 0
 
     .prologue
-    .line 7551
+    .line 7595
     return-void
 .end method
 
@@ -2801,10 +2822,10 @@
     .locals 0
 
     .prologue
-    .line 7578
+    .line 7622
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->onDetachedFromWindow(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 7579
+    .line 7623
     return-void
 .end method
 
@@ -2812,7 +2833,7 @@
     .locals 1
 
     .prologue
-    .line 9130
+    .line 9175
     const/4 v0, 0x0
 
     return-object v0
@@ -2828,20 +2849,20 @@
 
     const/4 v0, 0x0
 
-    .line 9725
+    .line 9770
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v2, :cond_1
 
-    .line 9726
+    .line 9771
     :cond_0
     return-void
 
-    .line 9725
+    .line 9770
     :cond_1
     if-eqz p3, :cond_0
 
-    .line 9728
+    .line 9773
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v2, v1}, Landroid/support/v7/widget/RecyclerView;->canScrollVertically(I)Z
@@ -2856,22 +2877,22 @@
     :goto_0
     invoke-virtual {p3, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollable(Z)V
 
-    .line 9733
+    .line 9778
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mAdapter:Landroid/support/v7/widget/q;
 
     if-nez v0, :cond_4
 
-    .line 9736
+    .line 9781
     :goto_1
     return-void
 
-    .line 9728
+    .line 9773
     :cond_3
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 9729
+    .line 9774
     invoke-virtual {v2, v3}, Landroid/support/v7/widget/RecyclerView;->canScrollVertically(I)Z
 
     move-result v2
@@ -2880,7 +2901,7 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 9730
+    .line 9775
     invoke-virtual {v2, v3}, Landroid/support/v7/widget/RecyclerView;->canScrollHorizontally(I)Z
 
     move-result v2
@@ -2889,7 +2910,7 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 9731
+    .line 9776
     invoke-virtual {v2, v1}, Landroid/support/v7/widget/RecyclerView;->canScrollHorizontally(I)Z
 
     move-result v2
@@ -2898,7 +2919,7 @@
 
     goto :goto_0
 
-    .line 9734
+    .line 9779
     :cond_4
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -2917,7 +2938,7 @@
     .locals 2
 
     .prologue
-    .line 9709
+    .line 9754
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mRecycler:Landroid/support/v7/widget/s;
@@ -2928,7 +2949,7 @@
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/support/v7/widget/p;->onInitializeAccessibilityEvent(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;Landroid/view/accessibility/AccessibilityEvent;)V
 
-    .line 9710
+    .line 9755
     return-void
 .end method
 
@@ -2936,7 +2957,7 @@
     .locals 2
 
     .prologue
-    .line 9660
+    .line 9705
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mRecycler:Landroid/support/v7/widget/s;
@@ -2947,7 +2968,7 @@
 
     invoke-virtual {p0, v0, v1, p1}, Landroid/support/v7/widget/p;->onInitializeAccessibilityNodeInfo(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;Landroid/support/v4/view/a/a;)V
 
-    .line 9661
+    .line 9706
     return-void
 .end method
 
@@ -2959,7 +2980,7 @@
 
     const/4 v1, 0x1
 
-    .line 9690
+    .line 9735
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/RecyclerView;->canScrollVertically(I)Z
@@ -2968,16 +2989,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 9691
+    .line 9736
     :cond_0
     const/16 v0, 0x2000
 
-    invoke-virtual {p3, v0}, Landroid/support/v4/view/a/a;->adW(I)V
+    invoke-virtual {p3, v0}, Landroid/support/v4/view/a/a;->aeY(I)V
 
-    .line 9692
-    invoke-virtual {p3, v1}, Landroid/support/v4/view/a/a;->adQ(Z)V
+    .line 9737
+    invoke-virtual {p3, v1}, Landroid/support/v4/view/a/a;->aeS(Z)V
 
-    .line 9694
+    .line 9739
     :goto_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -2987,48 +3008,48 @@
 
     if-eqz v0, :cond_3
 
-    .line 9695
+    .line 9740
     :cond_1
     const/16 v0, 0x1000
 
-    invoke-virtual {p3, v0}, Landroid/support/v4/view/a/a;->adW(I)V
+    invoke-virtual {p3, v0}, Landroid/support/v4/view/a/a;->aeY(I)V
 
-    .line 9696
-    invoke-virtual {p3, v1}, Landroid/support/v4/view/a/a;->adQ(Z)V
+    .line 9741
+    invoke-virtual {p3, v1}, Landroid/support/v4/view/a/a;->aeS(Z)V
 
-    .line 9700
+    .line 9745
     :goto_1
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/p;->getRowCountForAccessibility(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;)I
 
     move-result v0
 
-    .line 9701
+    .line 9746
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/p;->getColumnCountForAccessibility(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;)I
 
     move-result v1
 
-    .line 9702
+    .line 9747
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/p;->isLayoutHierarchical(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;)Z
 
     move-result v2
 
-    .line 9703
+    .line 9748
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/p;->getSelectionModeForAccessibility(Landroid/support/v7/widget/s;Landroid/support/v7/widget/e;)I
 
     move-result v3
 
-    .line 9700
-    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/view/a/m;->aeU(IIZI)Landroid/support/v4/view/a/m;
+    .line 9745
+    invoke-static {v0, v1, v2, v3}, Landroid/support/v4/view/a/m;->afW(IIZI)Landroid/support/v4/view/a/m;
 
     move-result-object v0
 
-    .line 9704
-    invoke-virtual {p3, v0}, Landroid/support/v4/view/a/a;->adF(Ljava/lang/Object;)V
+    .line 9749
+    invoke-virtual {p3, v0}, Landroid/support/v4/view/a/a;->aeH(Ljava/lang/Object;)V
 
-    .line 9705
+    .line 9750
     return-void
 
-    .line 9690
+    .line 9735
     :cond_2
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3040,7 +3061,7 @@
 
     goto :goto_0
 
-    .line 9694
+    .line 9739
     :cond_3
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3061,7 +3082,7 @@
 
     const/4 v4, 0x0
 
-    .line 9764
+    .line 9809
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->canScrollVertically()Z
 
     move-result v0
@@ -3070,7 +3091,7 @@
 
     move v0, v4
 
-    .line 9765
+    .line 9810
     :goto_0
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->canScrollHorizontally()Z
 
@@ -3085,18 +3106,18 @@
 
     move v5, v4
 
-    .line 9767
-    invoke-static/range {v0 .. v5}, Landroid/support/v4/view/a/l;->aeO(IIIIZZ)Landroid/support/v4/view/a/l;
+    .line 9812
+    invoke-static/range {v0 .. v5}, Landroid/support/v4/view/a/l;->afQ(IIIIZZ)Landroid/support/v4/view/a/l;
 
     move-result-object v0
 
-    .line 9769
-    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->adL(Ljava/lang/Object;)V
+    .line 9814
+    invoke-virtual {p4, v0}, Landroid/support/v4/view/a/a;->aeN(Ljava/lang/Object;)V
 
-    .line 9770
+    .line 9815
     return-void
 
-    .line 9764
+    .line 9809
     :cond_0
     invoke-virtual {p0, p3}, Landroid/support/v7/widget/p;->getPosition(Landroid/view/View;)I
 
@@ -3104,7 +3125,7 @@
 
     goto :goto_0
 
-    .line 9765
+    .line 9810
     :cond_1
     invoke-virtual {p0, p3}, Landroid/support/v7/widget/p;->getPosition(Landroid/view/View;)I
 
@@ -3117,20 +3138,20 @@
     .locals 2
 
     .prologue
-    .line 9740
+    .line 9785
     invoke-static {p1}, Landroid/support/v7/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroid/support/v7/widget/j;
 
     move-result-object v0
 
-    .line 9742
+    .line 9787
     if-nez v0, :cond_1
 
-    .line 9746
+    .line 9791
     :cond_0
     :goto_0
     return-void
 
-    .line 9742
+    .line 9787
     :cond_1
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->isRemoved()Z
 
@@ -3142,13 +3163,13 @@
 
     iget-object v0, v0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/A;->Yq(Landroid/view/View;)Z
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/A;->Zs(Landroid/view/View;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 9743
+    .line 9788
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mRecycler:Landroid/support/v7/widget/s;
@@ -3166,7 +3187,7 @@
     .locals 1
 
     .prologue
-    .line 9150
+    .line 9195
     const/4 v0, 0x0
 
     return-object v0
@@ -3176,7 +3197,7 @@
     .locals 0
 
     .prologue
-    .line 9411
+    .line 9456
     return-void
 .end method
 
@@ -3184,7 +3205,7 @@
     .locals 0
 
     .prologue
-    .line 9399
+    .line 9444
     return-void
 .end method
 
@@ -3192,7 +3213,7 @@
     .locals 0
 
     .prologue
-    .line 9463
+    .line 9508
     return-void
 .end method
 
@@ -3200,7 +3221,7 @@
     .locals 0
 
     .prologue
-    .line 9421
+    .line 9466
     return-void
 .end method
 
@@ -3208,7 +3229,7 @@
     .locals 0
 
     .prologue
-    .line 9433
+    .line 9478
     return-void
 .end method
 
@@ -3216,10 +3237,10 @@
     .locals 0
 
     .prologue
-    .line 9446
+    .line 9491
     invoke-virtual {p0, p1, p2, p3}, Landroid/support/v7/widget/p;->onItemsUpdated(Landroid/support/v7/widget/RecyclerView;II)V
 
-    .line 9447
+    .line 9492
     return-void
 .end method
 
@@ -3227,14 +3248,14 @@
     .locals 2
 
     .prologue
-    .line 7642
+    .line 7686
     const-string/jumbo v0, "RecyclerView"
 
     const-string/jumbo v1, "You must override onLayoutChildren(Recycler recycler, State state) "
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7643
+    .line 7687
     return-void
 .end method
 
@@ -3242,7 +3263,7 @@
     .locals 0
 
     .prologue
-    .line 7657
+    .line 7701
     return-void
 .end method
 
@@ -3250,12 +3271,12 @@
     .locals 1
 
     .prologue
-    .line 9571
+    .line 9616
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p3, p4}, Landroid/support/v7/widget/RecyclerView;->defaultOnMeasure(II)V
 
-    .line 9572
+    .line 9617
     return-void
 .end method
 
@@ -3263,7 +3284,7 @@
     .locals 1
 
     .prologue
-    .line 9345
+    .line 9390
     invoke-virtual {p0, p1, p3, p4}, Landroid/support/v7/widget/p;->onRequestChildFocus(Landroid/support/v7/widget/RecyclerView;Landroid/view/View;Landroid/view/View;)Z
 
     move-result v0
@@ -3277,7 +3298,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 9323
+    .line 9368
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->isSmoothScrolling()Z
 
     move-result v1
@@ -3304,7 +3325,7 @@
     .locals 0
 
     .prologue
-    .line 9615
+    .line 9660
     return-void
 .end method
 
@@ -3312,7 +3333,7 @@
     .locals 1
 
     .prologue
-    .line 9609
+    .line 9654
     const/4 v0, 0x0
 
     return-object v0
@@ -3322,7 +3343,7 @@
     .locals 0
 
     .prologue
-    .line 9635
+    .line 9680
     return-void
 .end method
 
@@ -3330,7 +3351,7 @@
     .locals 2
 
     .prologue
-    .line 9859
+    .line 9904
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mRecycler:Landroid/support/v7/widget/s;
@@ -3356,36 +3377,36 @@
 
     const/4 v1, 0x0
 
-    .line 9875
+    .line 9920
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v0, :cond_1
 
-    .line 9879
+    .line 9924
     sparse-switch p3, :sswitch_data_0
 
     move v0, v1
 
     move v2, v1
 
-    .line 9897
+    .line 9942
     :goto_0
     if-eqz v2, :cond_6
 
-    .line 9900
+    .line 9945
     :cond_0
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v1, v0, v2}, Landroid/support/v7/widget/RecyclerView;->scrollBy(II)V
 
-    .line 9901
+    .line 9946
     return v4
 
-    .line 9876
+    .line 9921
     :cond_1
     return v1
 
-    .line 9881
+    .line 9926
     :sswitch_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3397,7 +3418,7 @@
 
     move v0, v1
 
-    .line 9884
+    .line 9929
     :goto_1
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3413,7 +3434,7 @@
 
     goto :goto_0
 
-    .line 9882
+    .line 9927
     :cond_2
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getHeight()I
 
@@ -3435,7 +3456,7 @@
 
     goto :goto_1
 
-    .line 9885
+    .line 9930
     :cond_3
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getWidth()I
 
@@ -3463,7 +3484,7 @@
 
     goto :goto_0
 
-    .line 9889
+    .line 9934
     :sswitch_1
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3475,7 +3496,7 @@
 
     move v0, v1
 
-    .line 9892
+    .line 9937
     :goto_2
     iget-object v2, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3491,7 +3512,7 @@
 
     goto :goto_0
 
-    .line 9890
+    .line 9935
     :cond_4
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getHeight()I
 
@@ -3511,7 +3532,7 @@
 
     goto :goto_2
 
-    .line 9893
+    .line 9938
     :cond_5
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getWidth()I
 
@@ -3537,14 +3558,14 @@
 
     goto :goto_0
 
-    .line 9897
+    .line 9942
     :cond_6
     if-nez v0, :cond_0
 
-    .line 9898
+    .line 9943
     return v1
 
-    .line 9879
+    .line 9924
     :sswitch_data_0
     .sparse-switch
         0x1000 -> :sswitch_1
@@ -3556,7 +3577,7 @@
     .locals 1
 
     .prologue
-    .line 9927
+    .line 9972
     const/4 v0, 0x0
 
     return v0
@@ -3566,7 +3587,7 @@
     .locals 6
 
     .prologue
-    .line 9906
+    .line 9951
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, v0, Landroid/support/v7/widget/RecyclerView;->mRecycler:Landroid/support/v7/widget/s;
@@ -3594,7 +3615,7 @@
     .locals 2
 
     .prologue
-    .line 9650
+    .line 9695
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getChildCount()I
 
     move-result v0
@@ -3605,16 +3626,16 @@
 
     if-gez v0, :cond_1
 
-    .line 9656
+    .line 9701
     return-void
 
-    .line 9651
+    .line 9696
     :cond_1
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 9652
+    .line 9697
     invoke-static {v1}, Landroid/support/v7/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroid/support/v7/widget/j;
 
     move-result-object v1
@@ -3625,7 +3646,7 @@
 
     if-nez v1, :cond_0
 
-    .line 9653
+    .line 9698
     invoke-virtual {p0, v0, p1}, Landroid/support/v7/widget/p;->removeAndRecycleViewAt(ILandroid/support/v7/widget/s;)V
 
     goto :goto_0
@@ -3637,56 +3658,56 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 8559
-    invoke-virtual {p1}, Landroid/support/v7/widget/s;->Xk()I
+    .line 8604
+    invoke-virtual {p1}, Landroid/support/v7/widget/s;->Yk()I
 
     move-result v1
 
-    .line 8561
+    .line 8606
     add-int/lit8 v0, v1, -0x1
 
     :goto_0
     if-gez v0, :cond_0
 
-    .line 8582
-    invoke-virtual {p1}, Landroid/support/v7/widget/s;->XF()V
+    .line 8627
+    invoke-virtual {p1}, Landroid/support/v7/widget/s;->YF()V
 
-    .line 8583
+    .line 8628
     if-gtz v1, :cond_4
 
-    .line 8586
+    .line 8631
     :goto_1
     return-void
 
-    .line 8562
+    .line 8607
     :cond_0
-    invoke-virtual {p1, v0}, Landroid/support/v7/widget/s;->Xo(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/support/v7/widget/s;->Yo(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 8563
+    .line 8608
     invoke-static {v2}, Landroid/support/v7/widget/RecyclerView;->getChildViewHolderInt(Landroid/view/View;)Landroid/support/v7/widget/j;
 
     move-result-object v3
 
-    .line 8564
+    .line 8609
     invoke-virtual {v3}, Landroid/support/v7/widget/j;->shouldIgnore()Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 8572
+    .line 8617
     invoke-virtual {v3, v5}, Landroid/support/v7/widget/j;->setIsRecyclable(Z)V
 
-    .line 8573
+    .line 8618
     invoke-virtual {v3}, Landroid/support/v7/widget/j;->isTmpDetached()Z
 
     move-result v4
 
     if-nez v4, :cond_2
 
-    .line 8576
+    .line 8621
     :goto_2
     iget-object v4, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3694,22 +3715,22 @@
 
     if-nez v4, :cond_3
 
-    .line 8579
+    .line 8624
     :goto_3
     const/4 v4, 0x1
 
     invoke-virtual {v3, v4}, Landroid/support/v7/widget/j;->setIsRecyclable(Z)V
 
-    .line 8580
-    invoke-virtual {p1, v2}, Landroid/support/v7/widget/s;->XJ(Landroid/view/View;)V
+    .line 8625
+    invoke-virtual {p1, v2}, Landroid/support/v7/widget/s;->YJ(Landroid/view/View;)V
 
-    .line 8561
+    .line 8606
     :cond_1
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 8574
+    .line 8619
     :cond_2
     iget-object v4, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3717,17 +3738,17 @@
 
     goto :goto_2
 
-    .line 8577
+    .line 8622
     :cond_3
     iget-object v4, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v4, v4, Landroid/support/v7/widget/RecyclerView;->mItemAnimator:Landroid/support/v7/widget/b;
 
-    invoke-virtual {v4, v3}, Landroid/support/v7/widget/b;->Wu(Landroid/support/v7/widget/j;)V
+    invoke-virtual {v4, v3}, Landroid/support/v7/widget/b;->Xs(Landroid/support/v7/widget/j;)V
 
     goto :goto_3
 
-    .line 8584
+    .line 8629
     :cond_4
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3740,13 +3761,13 @@
     .locals 0
 
     .prologue
-    .line 8252
+    .line 8296
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->removeView(Landroid/view/View;)V
 
-    .line 8253
-    invoke-virtual {p2, p1}, Landroid/support/v7/widget/s;->Xu(Landroid/view/View;)V
+    .line 8297
+    invoke-virtual {p2, p1}, Landroid/support/v7/widget/s;->Yu(Landroid/view/View;)V
 
-    .line 8254
+    .line 8298
     return-void
 .end method
 
@@ -3754,18 +3775,18 @@
     .locals 1
 
     .prologue
-    .line 8263
+    .line 8307
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 8264
+    .line 8308
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->removeViewAt(I)V
 
-    .line 8265
-    invoke-virtual {p2, v0}, Landroid/support/v7/widget/s;->Xu(Landroid/view/View;)V
+    .line 8309
+    invoke-virtual {p2, v0}, Landroid/support/v7/widget/s;->Yu(Landroid/view/View;)V
 
-    .line 8266
+    .line 8310
     return-void
 .end method
 
@@ -3773,12 +3794,12 @@
     .locals 1
 
     .prologue
-    .line 7978
+    .line 8022
     iget-object v0, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/A;->removeView(Landroid/view/View;)V
 
-    .line 7979
+    .line 8023
     return-void
 .end method
 
@@ -3786,19 +3807,19 @@
     .locals 1
 
     .prologue
-    .line 7990
+    .line 8034
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 7991
+    .line 8035
     if-nez v0, :cond_0
 
-    .line 7994
+    .line 8038
     :goto_0
     return-void
 
-    .line 7992
+    .line 8036
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
@@ -3811,7 +3832,7 @@
     .locals 6
 
     .prologue
-    .line 9219
+    .line 9264
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -3839,36 +3860,36 @@
 
     const/4 v3, 0x0
 
-    .line 9239
+    .line 9284
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/support/v7/widget/p;->getChildRectangleOnScreenScrollAmount(Landroid/support/v7/widget/RecyclerView;Landroid/view/View;Landroid/graphics/Rect;Z)[I
 
     move-result-object v0
 
-    .line 9241
+    .line 9286
     aget v1, v0, v3
 
-    .line 9242
+    .line 9287
     aget v0, v0, v4
 
-    .line 9243
+    .line 9288
     if-nez p5, :cond_2
 
-    .line 9244
+    .line 9289
     :cond_0
     if-eqz v1, :cond_3
 
-    .line 9245
+    .line 9290
     :cond_1
     if-nez p4, :cond_4
 
-    .line 9248
+    .line 9293
     invoke-virtual {p1, v1, v0}, Landroid/support/v7/widget/RecyclerView;->smoothScrollBy(II)V
 
-    .line 9250
+    .line 9295
     :goto_0
     return v4
 
-    .line 9243
+    .line 9288
     :cond_2
     invoke-direct {p0, p1, v1, v0}, Landroid/support/v7/widget/p;->isFocusedChildVisibleAfterScrolling(Landroid/support/v7/widget/RecyclerView;II)Z
 
@@ -3876,17 +3897,17 @@
 
     if-nez v2, :cond_0
 
-    .line 9253
+    .line 9298
     :goto_1
     return v3
 
-    .line 9244
+    .line 9289
     :cond_3
     if-nez v0, :cond_1
 
     goto :goto_1
 
-    .line 9246
+    .line 9291
     :cond_4
     invoke-virtual {p1, v1, v0}, Landroid/support/v7/widget/RecyclerView;->scrollBy(II)V
 
@@ -3897,16 +3918,16 @@
     .locals 1
 
     .prologue
-    .line 7218
+    .line 7262
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-nez v0, :cond_0
 
-    .line 7221
+    .line 7265
     :goto_0
     return-void
 
-    .line 7219
+    .line 7263
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -3919,7 +3940,7 @@
     .locals 1
 
     .prologue
-    .line 7745
+    .line 7789
     const/4 v0, 0x0
 
     return v0
@@ -3929,7 +3950,7 @@
     .locals 0
 
     .prologue
-    .line 7795
+    .line 7839
     return-void
 .end method
 
@@ -3937,7 +3958,7 @@
     .locals 1
 
     .prologue
-    .line 7762
+    .line 7806
     const/4 v0, 0x0
 
     return v0
@@ -3947,10 +3968,10 @@
     .locals 0
 
     .prologue
-    .line 7338
+    .line 7382
     iput-boolean p1, p0, Landroid/support/v7/widget/p;->mAutoMeasure:Z
 
-    .line 7339
+    .line 7383
     return-void
 .end method
 
@@ -3960,7 +3981,7 @@
     .prologue
     const/high16 v2, 0x40000000    # 2.0f
 
-    .line 9956
+    .line 10001
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getWidth()I
 
     move-result v0
@@ -3969,7 +3990,7 @@
 
     move-result v0
 
-    .line 9957
+    .line 10002
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getHeight()I
 
     move-result v1
@@ -3978,10 +3999,10 @@
 
     move-result v1
 
-    .line 9955
+    .line 10000
     invoke-virtual {p0, v0, v1}, Landroid/support/v7/widget/p;->setMeasureSpecs(II)V
 
-    .line 9959
+    .line 10004
     return-void
 .end method
 
@@ -3991,26 +4012,26 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 7129
+    .line 7173
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/p;->mWidth:I
 
-    .line 7130
+    .line 7174
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/p;->mWidthMode:I
 
-    .line 7131
+    .line 7175
     iget v0, p0, Landroid/support/v7/widget/p;->mWidthMode:I
 
     if-eqz v0, :cond_2
 
-    .line 7135
+    .line 7179
     :cond_0
     :goto_0
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -4019,41 +4040,41 @@
 
     iput v0, p0, Landroid/support/v7/widget/p;->mHeight:I
 
-    .line 7136
+    .line 7180
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/p;->mHeightMode:I
 
-    .line 7137
+    .line 7181
     iget v0, p0, Landroid/support/v7/widget/p;->mHeightMode:I
 
     if-eqz v0, :cond_3
 
-    .line 7140
+    .line 7184
     :cond_1
     :goto_1
     return-void
 
-    .line 7131
+    .line 7175
     :cond_2
     sget-boolean v0, Landroid/support/v7/widget/RecyclerView;->ALLOW_SIZE_IN_UNSPECIFIED_SPEC:Z
 
     if-nez v0, :cond_0
 
-    .line 7132
+    .line 7176
     iput v1, p0, Landroid/support/v7/widget/p;->mWidth:I
 
     goto :goto_0
 
-    .line 7137
+    .line 7181
     :cond_3
     sget-boolean v0, Landroid/support/v7/widget/RecyclerView;->ALLOW_SIZE_IN_UNSPECIFIED_SPEC:Z
 
     if-nez v0, :cond_1
 
-    .line 7138
+    .line 7182
     iput v1, p0, Landroid/support/v7/widget/p;->mHeight:I
 
     goto :goto_1
@@ -4063,12 +4084,12 @@
     .locals 1
 
     .prologue
-    .line 9582
+    .line 9627
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-static {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView;->access$1100(Landroid/support/v7/widget/RecyclerView;II)V
+    invoke-static {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView;->access$1200(Landroid/support/v7/widget/RecyclerView;II)V
 
-    .line 9583
+    .line 9628
     return-void
 .end method
 
@@ -4076,7 +4097,7 @@
     .locals 3
 
     .prologue
-    .line 7207
+    .line 7251
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result v0
@@ -4093,7 +4114,7 @@
 
     add-int/2addr v0, v1
 
-    .line 7208
+    .line 7252
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
     move-result v1
@@ -4110,7 +4131,7 @@
 
     add-int/2addr v1, v2
 
-    .line 7209
+    .line 7253
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getMinimumWidth()I
 
     move-result v2
@@ -4119,7 +4140,7 @@
 
     move-result v0
 
-    .line 7210
+    .line 7254
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getMinimumHeight()I
 
     move-result v2
@@ -4128,10 +4149,10 @@
 
     move-result v1
 
-    .line 7211
+    .line 7255
     invoke-virtual {p0, v0, v1}, Landroid/support/v7/widget/p;->setMeasuredDimension(II)V
 
-    .line 7212
+    .line 7256
     return-void
 .end method
 
@@ -4145,12 +4166,12 @@
 
     const/high16 v3, -0x80000000
 
-    .line 7156
+    .line 7200
     invoke-virtual {p0}, Landroid/support/v7/widget/p;->getChildCount()I
 
     move-result v5
 
-    .line 7157
+    .line 7201
     if-eqz v5, :cond_0
 
     move v4, v0
@@ -4159,98 +4180,98 @@
 
     move v0, v2
 
-    .line 7166
+    .line 7210
     :goto_0
     if-lt v4, v5, :cond_1
 
-    .line 7183
+    .line 7227
     iget-object v4, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v4, v4, Landroid/support/v7/widget/RecyclerView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {v4, v0, v2, v1, v3}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 7184
+    .line 7228
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->mTempRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v0, p1, p2}, Landroid/support/v7/widget/p;->setMeasuredDimension(Landroid/graphics/Rect;II)V
 
-    .line 7185
+    .line 7229
     return-void
 
-    .line 7158
+    .line 7202
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView;->defaultOnMeasure(II)V
 
-    .line 7159
+    .line 7203
     return-void
 
-    .line 7167
+    .line 7211
     :cond_1
     invoke-virtual {p0, v4}, Landroid/support/v7/widget/p;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    .line 7168
+    .line 7212
     iget-object v7, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v7, v7, Landroid/support/v7/widget/RecyclerView;->mTempRect:Landroid/graphics/Rect;
 
-    .line 7169
+    .line 7213
     invoke-virtual {p0, v6, v7}, Landroid/support/v7/widget/p;->getDecoratedBoundsWithMargins(Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 7170
+    .line 7214
     iget v6, v7, Landroid/graphics/Rect;->left:I
 
     if-lt v6, v0, :cond_2
 
-    .line 7173
+    .line 7217
     :goto_1
     iget v6, v7, Landroid/graphics/Rect;->right:I
 
     if-gt v6, v1, :cond_3
 
-    .line 7176
+    .line 7220
     :goto_2
     iget v6, v7, Landroid/graphics/Rect;->top:I
 
     if-lt v6, v2, :cond_4
 
-    .line 7179
+    .line 7223
     :goto_3
     iget v6, v7, Landroid/graphics/Rect;->bottom:I
 
     if-gt v6, v3, :cond_5
 
-    .line 7166
+    .line 7210
     :goto_4
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 7171
+    .line 7215
     :cond_2
     iget v0, v7, Landroid/graphics/Rect;->left:I
 
     goto :goto_1
 
-    .line 7174
+    .line 7218
     :cond_3
     iget v1, v7, Landroid/graphics/Rect;->right:I
 
     goto :goto_2
 
-    .line 7177
+    .line 7221
     :cond_4
     iget v2, v7, Landroid/graphics/Rect;->top:I
 
     goto :goto_3
 
-    .line 7180
+    .line 7224
     :cond_5
     iget v3, v7, Landroid/graphics/Rect;->bottom:I
 
@@ -4267,52 +4288,52 @@
 
     const/4 v0, 0x0
 
-    .line 7113
+    .line 7157
     if-eqz p1, :cond_0
 
-    .line 7119
+    .line 7163
     iput-object p1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 7120
+    .line 7164
     iget-object v0, p1, Landroid/support/v7/widget/RecyclerView;->mChildHelper:Landroid/support/v7/widget/A;
 
     iput-object v0, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
-    .line 7121
+    .line 7165
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getWidth()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/p;->mWidth:I
 
-    .line 7122
+    .line 7166
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getHeight()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/p;->mHeight:I
 
-    .line 7124
+    .line 7168
     :goto_0
     iput v2, p0, Landroid/support/v7/widget/p;->mWidthMode:I
 
-    .line 7125
+    .line 7169
     iput v2, p0, Landroid/support/v7/widget/p;->mHeightMode:I
 
-    .line 7126
+    .line 7170
     return-void
 
-    .line 7114
+    .line 7158
     :cond_0
     iput-object v0, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    .line 7115
+    .line 7159
     iput-object v0, p0, Landroid/support/v7/widget/p;->mChildHelper:Landroid/support/v7/widget/A;
 
-    .line 7116
+    .line 7160
     iput v1, p0, Landroid/support/v7/widget/p;->mWidth:I
 
-    .line 7117
+    .line 7161
     iput v1, p0, Landroid/support/v7/widget/p;->mHeight:I
 
     goto :goto_0
@@ -4324,27 +4345,27 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 8638
+    .line 8683
     invoke-virtual {p1}, Landroid/view/View;->isLayoutRequested()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 8641
+    .line 8686
     :cond_0
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    .line 8638
+    .line 8683
     :cond_1
     iget-boolean v1, p0, Landroid/support/v7/widget/p;->mMeasurementCacheEnabled:Z
 
     if-eqz v1, :cond_0
 
-    .line 8640
+    .line 8685
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -4357,7 +4378,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 8641
+    .line 8686
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v1
@@ -4377,7 +4398,7 @@
     .locals 1
 
     .prologue
-    .line 9972
+    .line 10017
     const/4 v0, 0x0
 
     return v0
@@ -4389,19 +4410,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 8624
+    .line 8669
     iget-boolean v1, p0, Landroid/support/v7/widget/p;->mMeasurementCacheEnabled:Z
 
     if-nez v1, :cond_1
 
-    .line 8626
+    .line 8671
     :cond_0
     const/4 v0, 0x1
 
     :goto_0
     return v0
 
-    .line 8625
+    .line 8670
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -4415,7 +4436,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 8626
+    .line 8671
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -4435,14 +4456,14 @@
     .locals 2
 
     .prologue
-    .line 7808
+    .line 7852
     const-string/jumbo v0, "RecyclerView"
 
     const-string/jumbo v1, "You must override smoothScrollToPosition to support smooth scrolling"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 7809
+    .line 7853
     return-void
 .end method
 
@@ -4450,27 +4471,27 @@
     .locals 2
 
     .prologue
-    .line 7817
+    .line 7861
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     if-nez v0, :cond_1
 
-    .line 7821
+    .line 7865
     :cond_0
     :goto_0
     iput-object p1, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
-    .line 7822
+    .line 7866
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     iget-object v1, p0, Landroid/support/v7/widget/p;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-virtual {v0, v1, p0}, Landroid/support/v7/widget/g;->WY(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/p;)V
+    invoke-virtual {v0, v1, p0}, Landroid/support/v7/widget/g;->XX(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/p;)V
 
-    .line 7823
+    .line 7867
     return-void
 
-    .line 7817
+    .line 7861
     :cond_1
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
@@ -4478,14 +4499,14 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
-    .line 7818
-    invoke-virtual {v0}, Landroid/support/v7/widget/g;->WZ()Z
+    .line 7862
+    invoke-virtual {v0}, Landroid/support/v7/widget/g;->XY()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 7819
+    .line 7863
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/g;->stop()V
@@ -4497,16 +4518,16 @@
     .locals 1
 
     .prologue
-    .line 9618
+    .line 9663
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
     if-nez v0, :cond_0
 
-    .line 9621
+    .line 9666
     :goto_0
     return-void
 
-    .line 9619
+    .line 9664
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/p;->mSmoothScroller:Landroid/support/v7/widget/g;
 
@@ -4519,7 +4540,7 @@
     .locals 1
 
     .prologue
-    .line 7374
+    .line 7418
     const/4 v0, 0x0
 
     return v0

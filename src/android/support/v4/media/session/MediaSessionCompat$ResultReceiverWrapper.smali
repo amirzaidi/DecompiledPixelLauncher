@@ -11,7 +11,7 @@
 
 
 # instance fields
-.field private aey:Landroid/os/ResultReceiver;
+.field private afw:Landroid/os/ResultReceiver;
 
 
 # direct methods
@@ -19,10 +19,10 @@
     .locals 1
 
     .prologue
-    .line 1649
-    new-instance v0, Landroid/support/v4/media/session/o;
+    .line 1750
+    new-instance v0, Landroid/support/v4/media/session/s;
 
-    invoke-direct {v0}, Landroid/support/v4/media/session/o;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/media/session/s;-><init>()V
 
     sput-object v0, Landroid/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -33,10 +33,10 @@
     .locals 1
 
     .prologue
-    .line 1644
+    .line 1745
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1645
+    .line 1746
     sget-object v0, Landroid/os/ResultReceiver;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -45,9 +45,9 @@
 
     check-cast v0, Landroid/os/ResultReceiver;
 
-    iput-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper;->aey:Landroid/os/ResultReceiver;
+    iput-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper;->afw:Landroid/os/ResultReceiver;
 
-    .line 1646
+    .line 1747
     return-void
 .end method
 
@@ -57,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 1663
+    .line 1764
     const/4 v0, 0x0
 
     return v0
@@ -67,11 +67,11 @@
     .locals 1
 
     .prologue
-    .line 1668
-    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper;->aey:Landroid/os/ResultReceiver;
+    .line 1769
+    iget-object v0, p0, Landroid/support/v4/media/session/MediaSessionCompat$ResultReceiverWrapper;->afw:Landroid/os/ResultReceiver;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/ResultReceiver;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1669
+    .line 1770
     return-void
 .end method

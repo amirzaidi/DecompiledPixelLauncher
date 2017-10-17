@@ -8,11 +8,11 @@ import android.view.View;
 
 class k extends l
 {
-    public void afK(final View view, final int importantForAccessibility) {
+    public void agT(final View view, final int importantForAccessibility) {
         view.setImportantForAccessibility(importantForAccessibility);
     }
     
-    public boolean afL(final View view) {
+    public boolean agU(final View view) {
         return view.isAttachedToWindow();
     }
 }

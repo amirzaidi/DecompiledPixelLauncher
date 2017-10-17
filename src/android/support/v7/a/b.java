@@ -6,5 +6,5 @@ package android.support.v7.a;
 
 public interface b
 {
-    boolean acy(final int p0, final float[] p1);
+    boolean adC(final int p0, final float[] p1);
 }

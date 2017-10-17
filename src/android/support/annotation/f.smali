@@ -4,8 +4,3 @@
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;
-
-
-# virtual methods
-.method public abstract asQ()[J
-.end method

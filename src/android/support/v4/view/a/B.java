@@ -10,33 +10,33 @@ import android.os.Build$VERSION;
 
 public class b
 {
-    private static final q Ua;
-    private final Object Ub;
+    private static final y VA;
+    private final Object VB;
     
     static {
         if (Build$VERSION.SDK_INT < 19) {
             if (Build$VERSION.SDK_INT < 16) {
-                Ua = new p();
+                VA = new x();
             }
             else {
-                Ua = new o();
+                VA = new w();
             }
         }
         else {
-            Ua = new n();
+            VA = new v();
         }
     }
     
     public b() {
-        this.Ub = b.Ua.aeV(this);
+        this.VB = b.VA.agj(this);
     }
     
-    public b(final Object ub) {
-        this.Ub = ub;
+    public b(final Object vb) {
+        this.VB = vb;
     }
     
-    public Object aev() {
-        return this.Ub;
+    public Object afx() {
+        return this.VB;
     }
     
     public a createAccessibilityNodeInfo(final int n) {

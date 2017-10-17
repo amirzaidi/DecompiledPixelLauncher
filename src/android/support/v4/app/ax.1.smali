@@ -1,27 +1,50 @@
 .class public Landroid/support/v4/app/ax;
-.super Landroid/support/v4/app/z;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field aaS:Ljava/util/ArrayList;
+.field private final acr:Ljava/util/List;
+
+.field private final acs:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Ljava/util/List;Ljava/util/List;)V
+    .locals 0
+
+    .prologue
+    .line 38
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 39
+    iput-object p1, p0, Landroid/support/v4/app/ax;->acr:Ljava/util/List;
+
+    .line 40
+    iput-object p2, p0, Landroid/support/v4/app/ax;->acs:Ljava/util/List;
+
+    .line 41
+    return-void
+.end method
+
+
+# virtual methods
+.method anZ()Ljava/util/List;
     .locals 1
 
     .prologue
-    .line 2521
-    invoke-direct {p0}, Landroid/support/v4/app/z;-><init>()V
+    .line 47
+    iget-object v0, p0, Landroid/support/v4/app/ax;->acr:Ljava/util/List;
 
-    .line 2519
-    new-instance v0, Ljava/util/ArrayList;
+    return-object v0
+.end method
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+.method aoa()Ljava/util/List;
+    .locals 1
 
-    iput-object v0, p0, Landroid/support/v4/app/ax;->aaS:Ljava/util/ArrayList;
+    .prologue
+    .line 54
+    iget-object v0, p0, Landroid/support/v4/app/ax;->acs:Ljava/util/List;
 
-    .line 2522
-    return-void
+    return-object v0
 .end method

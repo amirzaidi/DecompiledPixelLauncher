@@ -4,36 +4,88 @@
 
 package android.support.v4.view.a;
 
-import android.view.accessibility.AccessibilityEvent;
+import android.view.View;
 import android.os.Build$VERSION;
+import android.view.accessibility.AccessibilityRecord;
 
-public final class r
+public class r
 {
-    private static final u Ue;
+    private static final u VF;
+    private final AccessibilityRecord VG;
     
     static {
-        if (Build$VERSION.SDK_INT < 19) {
-            if (Build$VERSION.SDK_INT < 16) {
-                Ue = new u();
+        if (Build$VERSION.SDK_INT < 16) {
+            if (Build$VERSION.SDK_INT < 15) {
+                VF = new u();
             }
             else {
-                Ue = new t();
+                VF = new t();
             }
         }
         else {
-            Ue = new s();
+            VF = new s();
         }
     }
     
-    public static void aeW(final AccessibilityEvent accessibilityEvent, final int n) {
-        r.Ue.afa(accessibilityEvent, n);
+    public r(final Object o) {
+        this.VG = (AccessibilityRecord)o;
     }
     
-    public static int aeX(final AccessibilityEvent accessibilityEvent) {
-        return r.Ue.aeZ(accessibilityEvent);
+    public static void agg(final AccessibilityRecord accessibilityRecord, final View view, final int n) {
+        r.VF.agi(accessibilityRecord, view, n);
     }
     
-    public static v aeY(final AccessibilityEvent accessibilityEvent) {
-        return new v(accessibilityEvent);
+    public void agc(final int fromIndex) {
+        this.VG.setFromIndex(fromIndex);
+    }
+    
+    public void agd(final int itemCount) {
+        this.VG.setItemCount(itemCount);
+    }
+    
+    public int age() {
+        return this.VG.getFromIndex();
+    }
+    
+    public int agf() {
+        return this.VG.getToIndex();
+    }
+    
+    public void agh(final int toIndex) {
+        this.VG.setToIndex(toIndex);
+    }
+    
+    public boolean equals(final Object o) {
+        final boolean b = true;
+        if (this == o) {
+            return b;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() == o.getClass()) {
+            final r r = (r)o;
+            if (this.VG != null) {
+                if (!this.VG.equals(r.VG)) {
+                    return false;
+                }
+            }
+            else if (r.VG != null) {
+                return false;
+            }
+            return b;
+        }
+        return false;
+    }
+    
+    public int hashCode() {
+        int hashCode;
+        if (this.VG != null) {
+            hashCode = this.VG.hashCode();
+        }
+        else {
+            hashCode = 0;
+        }
+        return hashCode;
     }
 }

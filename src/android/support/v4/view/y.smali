@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static UH:Ljava/lang/reflect/Method;
+.field private static Wh:Ljava/lang/reflect/Method;
 
 
 # direct methods
@@ -17,22 +17,14 @@
 
     const/16 v1, 0x19
 
-    if-ge v0, v1, :cond_1
+    if-eq v0, v1, :cond_0
 
     .line 48
-    :cond_0
     :goto_0
     return-void
 
-    .line 40
-    :cond_1
-    invoke-static {}, Landroid/support/v4/os/a;->isAtLeastO()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
     .line 42
+    :cond_0
     const/4 v0, 0x0
 
     :try_start_0
@@ -47,7 +39,7 @@
 
     move-result-object v0
 
-    sput-object v0, Landroid/support/v4/view/y;->UH:Ljava/lang/reflect/Method;
+    sput-object v0, Landroid/support/v4/view/y;->Wh:Ljava/lang/reflect/Method;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -77,19 +69,19 @@
     return-void
 .end method
 
-.method public static agn(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
-    .locals 1
+.method public static ahw(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
+    .locals 2
 
     .prologue
     .line 82
-    invoke-static {}, Landroid/support/v4/os/a;->isAtLeastO()Z
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-result v0
+    const/16 v1, 0x1a
 
-    if-nez v0, :cond_0
+    if-ge v0, v1, :cond_0
 
     .line 85
-    invoke-static {p0, p1}, Landroid/support/v4/view/y;->agp(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
+    invoke-static {p0, p1}, Landroid/support/v4/view/y;->ahy(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
 
     move-result v0
 
@@ -104,19 +96,19 @@
     return v0
 .end method
 
-.method public static ago(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
-    .locals 1
+.method public static ahx(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
+    .locals 2
 
     .prologue
     .line 99
-    invoke-static {}, Landroid/support/v4/os/a;->isAtLeastO()Z
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    move-result v0
+    const/16 v1, 0x1a
 
-    if-nez v0, :cond_0
+    if-ge v0, v1, :cond_0
 
     .line 102
-    invoke-static {p0, p1}, Landroid/support/v4/view/y;->agp(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
+    invoke-static {p0, p1}, Landroid/support/v4/view/y;->ahy(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
 
     move-result v0
 
@@ -131,7 +123,7 @@
     return v0
 .end method
 
-.method private static agp(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
+.method private static ahy(Landroid/view/ViewConfiguration;Landroid/content/Context;)F
     .locals 4
 
     .prologue
@@ -171,13 +163,13 @@
 
     .line 107
     :cond_1
-    sget-object v0, Landroid/support/v4/view/y;->UH:Ljava/lang/reflect/Method;
+    sget-object v0, Landroid/support/v4/view/y;->Wh:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_0
 
     .line 109
     :try_start_0
-    sget-object v0, Landroid/support/v4/view/y;->UH:Ljava/lang/reflect/Method;
+    sget-object v0, Landroid/support/v4/view/y;->Wh:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
 

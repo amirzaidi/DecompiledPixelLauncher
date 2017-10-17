@@ -12,7 +12,7 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 45
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -26,40 +26,9 @@
     .locals 0
 
     .prologue
-    .line 55
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
+    .line 55
     return-void
-.end method
-
-.method public static final arj(Landroid/content/Context;I)I
-    .locals 2
-
-    .prologue
-    .line 410
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x17
-
-    if-ge v0, v1, :cond_0
-
-    .line 413
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getColor(I)I
-
-    move-result v0
-
-    return v0
-
-    .line 411
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/content/Context;->getColor(I)I
-
-    move-result v0
-
-    return v0
 .end method

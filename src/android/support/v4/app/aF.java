@@ -4,51 +4,51 @@
 
 package android.support.v4.app;
 
-import android.os.Build$VERSION;
 import android.graphics.Rect;
-import android.util.SparseArray;
 import android.support.v4.view.f;
 import java.util.List;
 import java.util.Map;
 import android.view.ViewGroup;
 import android.support.v4.a.t;
+import android.util.SparseArray;
+import android.os.Build$VERSION;
 import java.util.Collection;
 import android.view.View;
 import java.util.ArrayList;
 
 class af implements Runnable
 {
-    final /* synthetic */ e aak;
-    final /* synthetic */ ArrayList aal;
-    final /* synthetic */ Object aam;
-    final /* synthetic */ Object aan;
-    final /* synthetic */ ArrayList aao;
-    final /* synthetic */ View aap;
-    final /* synthetic */ ArrayList aaq;
+    final /* synthetic */ g abP;
+    final /* synthetic */ ArrayList abQ;
+    final /* synthetic */ Object abR;
+    final /* synthetic */ Object abS;
+    final /* synthetic */ ArrayList abT;
+    final /* synthetic */ View abU;
+    final /* synthetic */ ArrayList abV;
     
-    af(final Object aan, final View aap, final e aak, final ArrayList aaq, final ArrayList aal, final ArrayList aao, final Object aam) {
-        this.aan = aan;
-        this.aap = aap;
-        this.aak = aak;
-        this.aaq = aaq;
-        this.aal = aal;
-        this.aao = aao;
-        this.aam = aam;
+    af(final Object abS, final View abU, final g abP, final ArrayList abV, final ArrayList abQ, final ArrayList abT, final Object abR) {
+        this.abS = abS;
+        this.abU = abU;
+        this.abP = abP;
+        this.abV = abV;
+        this.abQ = abQ;
+        this.abT = abT;
+        this.abR = abR;
     }
     
     public void run() {
-        if (this.aan != null) {
-            Q.alx(this.aan, this.aap);
-            this.aal.addAll(anE(this.aan, this.aak, this.aaq, this.aap));
+        if (this.abS != null) {
+            R.amM(this.abS, this.abU);
+            this.abQ.addAll(aoF(this.abS, this.abP, this.abV, this.abU));
         }
-        if (this.aao != null) {
-            if (this.aam != null) {
+        if (this.abT != null) {
+            if (this.abR != null) {
                 final ArrayList<View> list = new ArrayList<View>();
-                list.add(this.aap);
-                Q.alE(this.aam, this.aao, list);
+                list.add(this.abU);
+                R.amT(this.abR, this.abT, list);
             }
-            this.aao.clear();
-            this.aao.add(this.aap);
+            this.abT.clear();
+            this.abT.add(this.abU);
         }
     }
 }

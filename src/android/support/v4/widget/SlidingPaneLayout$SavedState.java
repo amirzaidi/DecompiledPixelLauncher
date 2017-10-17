@@ -11,25 +11,25 @@ import android.support.v4.view.AbsSavedState;
 class SlidingPaneLayout$SavedState extends AbsSavedState
 {
     public static final Parcelable$Creator CREATOR;
-    boolean TV;
+    boolean Wx;
     
     static {
         CREATOR = (Parcelable$Creator)new h();
     }
     
     SlidingPaneLayout$SavedState(final Parcel parcel, final ClassLoader classLoader) {
-        boolean tv = false;
+        boolean wx = false;
         super(parcel, classLoader);
         if (parcel.readInt() != 0) {
-            tv = true;
+            wx = true;
         }
-        this.TV = tv;
+        this.Wx = wx;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         int n2 = 0;
         super.writeToParcel(parcel, n);
-        if (this.TV) {
+        if (this.Wx) {
             n2 = 1;
         }
         parcel.writeInt(n2);

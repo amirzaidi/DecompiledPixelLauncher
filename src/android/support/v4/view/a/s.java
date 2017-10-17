@@ -4,15 +4,12 @@
 
 package android.support.v4.view.a;
 
-import android.view.accessibility.AccessibilityEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityRecord;
 
 class s extends t
 {
-    public int aeZ(final AccessibilityEvent accessibilityEvent) {
-        return accessibilityEvent.getContentChangeTypes();
-    }
-    
-    public void afa(final AccessibilityEvent accessibilityEvent, final int contentChangeTypes) {
-        accessibilityEvent.setContentChangeTypes(contentChangeTypes);
+    public void agi(final AccessibilityRecord accessibilityRecord, final View view, final int n) {
+        accessibilityRecord.setSource(view, n);
     }
 }

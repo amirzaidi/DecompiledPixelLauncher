@@ -4,7 +4,14 @@
 
 package android.support.v4.view.a;
 
-interface q
+import android.view.accessibility.AccessibilityEvent;
+
+class q
 {
-    Object aeV(final b p0);
+    public int aga(final AccessibilityEvent accessibilityEvent) {
+        return 0;
+    }
+    
+    public void agb(final AccessibilityEvent accessibilityEvent, final int n) {
+    }
 }

@@ -8,13 +8,13 @@ import android.graphics.Paint;
 
 class ag implements Runnable
 {
-    final /* synthetic */ D aar;
+    final /* synthetic */ E abW;
     
-    ag(final D aar) {
-        this.aar = aar;
+    ag(final E abW) {
+        this.abW = abW;
     }
     
     public void run() {
-        this.aar.mView.setLayerType(0, (Paint)null);
+        this.abW.mView.setLayerType(0, (Paint)null);
     }
 }

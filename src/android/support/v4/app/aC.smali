@@ -1,24 +1,8 @@
-.class public Landroid/support/v4/app/aC;
-.super Landroid/support/v4/app/z;
+.class interface abstract Landroid/support/v4/app/aC;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field aaV:Landroid/graphics/Bitmap;
-
-.field aaW:Z
-
-.field aaX:Landroid/graphics/Bitmap;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 2036
-    invoke-direct {p0}, Landroid/support/v4/app/z;-><init>()V
-
-    .line 2037
-    return-void
+# virtual methods
+.method public abstract alK(Ljava/util/ArrayList;Ljava/util/ArrayList;)Z
 .end method

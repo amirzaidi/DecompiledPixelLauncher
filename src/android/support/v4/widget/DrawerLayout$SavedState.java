@@ -11,11 +11,11 @@ import android.support.v4.view.AbsSavedState;
 class DrawerLayout$SavedState extends AbsSavedState
 {
     public static final Parcelable$Creator CREATOR;
-    int TQ;
-    int TR;
-    int TS;
-    int TT;
-    int TU;
+    int Ws;
+    int Wt;
+    int Wu;
+    int Wv;
+    int Ww;
     
     static {
         CREATOR = (Parcelable$Creator)new k();
@@ -23,20 +23,20 @@ class DrawerLayout$SavedState extends AbsSavedState
     
     public DrawerLayout$SavedState(final Parcel parcel, final ClassLoader classLoader) {
         super(parcel, classLoader);
-        this.TU = 0;
-        this.TU = parcel.readInt();
-        this.TR = parcel.readInt();
-        this.TS = parcel.readInt();
-        this.TT = parcel.readInt();
-        this.TQ = parcel.readInt();
+        this.Ww = 0;
+        this.Ww = parcel.readInt();
+        this.Wt = parcel.readInt();
+        this.Wu = parcel.readInt();
+        this.Wv = parcel.readInt();
+        this.Ws = parcel.readInt();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         super.writeToParcel(parcel, n);
-        parcel.writeInt(this.TU);
-        parcel.writeInt(this.TR);
-        parcel.writeInt(this.TS);
-        parcel.writeInt(this.TT);
-        parcel.writeInt(this.TQ);
+        parcel.writeInt(this.Ww);
+        parcel.writeInt(this.Wt);
+        parcel.writeInt(this.Wu);
+        parcel.writeInt(this.Wv);
+        parcel.writeInt(this.Ws);
     }
 }

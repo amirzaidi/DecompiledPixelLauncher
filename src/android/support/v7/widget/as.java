@@ -18,11 +18,11 @@ import android.animation.AnimatorListenerAdapter;
 
 class as extends AnimatorListenerAdapter
 {
-    final /* synthetic */ FastScroller Sn;
+    final /* synthetic */ FastScroller TW;
     private boolean mCanceled;
     
-    private as(final FastScroller sn) {
-        this.Sn = sn;
+    private as(final FastScroller tw) {
+        this.TW = tw;
         this.mCanceled = false;
     }
     
@@ -32,13 +32,13 @@ class as extends AnimatorListenerAdapter
     
     public void onAnimationEnd(final Animator animator) {
         if (!this.mCanceled) {
-            if ((float)this.Sn.Rm.getAnimatedValue() == 0.0f) {
-                this.Sn.RA = 0;
-                this.Sn.aaV(0);
+            if ((float)this.TW.SV.getAnimatedValue() == 0.0f) {
+                this.TW.Tj = 0;
+                this.TW.abX(0);
             }
             else {
-                this.Sn.RA = 2;
-                this.Sn.aaU();
+                this.TW.Tj = 2;
+                this.TW.abW();
             }
             return;
         }

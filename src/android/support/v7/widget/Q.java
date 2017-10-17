@@ -7,7 +7,7 @@ package android.support.v7.widget;
 import java.util.List;
 import android.view.ViewGroup;
 import android.view.ViewGroup$LayoutParams;
-import android.support.v4.os.c;
+import android.support.v4.os.b;
 
 public abstract class q
 {
@@ -20,27 +20,27 @@ public abstract class q
     }
     
     public final void bindViewHolder(final j j, final int mPosition) {
-        final int pb = 1;
+        final int qi = 1;
         j.mPosition = mPosition;
         if (this.hasStableIds()) {
             j.mItemId = this.getItemId(mPosition);
         }
-        j.setFlags(pb, 519);
-        c.ari("RV OnBindView");
+        j.setFlags(qi, 519);
+        b.asr("RV OnBindView");
         this.onBindViewHolder(j, mPosition, j.getUnmodifiedPayloads());
         j.clearPayload();
         final ViewGroup$LayoutParams layoutParams = j.itemView.getLayoutParams();
         if (layoutParams instanceof i) {
-            ((i)layoutParams).Pb = (pb != 0);
+            ((i)layoutParams).QI = (qi != 0);
         }
-        c.arh();
+        b.asq();
     }
     
     public final j createViewHolder(final ViewGroup viewGroup, final int mItemViewType) {
-        c.ari("RV CreateView");
+        b.asr("RV CreateView");
         final j onCreateViewHolder = this.onCreateViewHolder(viewGroup, mItemViewType);
         onCreateViewHolder.mItemViewType = mItemViewType;
-        c.arh();
+        b.asq();
         return onCreateViewHolder;
     }
     
@@ -59,7 +59,11 @@ public abstract class q
     }
     
     public final void notifyDataSetChanged() {
-        this.mObservable.WQ();
+        this.mObservable.XQ();
+    }
+    
+    public final void notifyItemChanged(final int n) {
+        this.mObservable.XP(n, 1);
     }
     
     public void onAttachedToRecyclerView(final RecyclerView recyclerView) {

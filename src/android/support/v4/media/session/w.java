@@ -5,43 +5,36 @@
 package android.support.v4.media.session;
 
 import java.util.List;
-import android.media.session.PlaybackState;
+import android.support.v4.media.MediaMetadataCompat;
+import android.os.Bundle;
 
-class w
+class w extends b
 {
-    public static long arN(final Object o) {
-        return ((PlaybackState)o).getPosition();
+    w(final c c) {
+        super(c);
     }
     
-    public static float arO(final Object o) {
-        return ((PlaybackState)o).getPlaybackSpeed();
+    public void onExtrasChanged(final Bundle bundle) {
+        throw new AssertionError();
     }
     
-    public static long arP(final Object o) {
-        return ((PlaybackState)o).getBufferedPosition();
+    public void onMetadataChanged(final MediaMetadataCompat mediaMetadataCompat) {
+        throw new AssertionError();
     }
     
-    public static List arQ(final Object o) {
-        return ((PlaybackState)o).getCustomActions();
+    public void onQueueChanged(final List list) {
+        throw new AssertionError();
     }
     
-    public static long arR(final Object o) {
-        return ((PlaybackState)o).getLastPositionUpdateTime();
+    public void onQueueTitleChanged(final CharSequence charSequence) {
+        throw new AssertionError();
     }
     
-    public static long arS(final Object o) {
-        return ((PlaybackState)o).getActiveQueueItemId();
+    public void onSessionDestroyed() {
+        throw new AssertionError();
     }
     
-    public static CharSequence arT(final Object o) {
-        return ((PlaybackState)o).getErrorMessage();
-    }
-    
-    public static long arU(final Object o) {
-        return ((PlaybackState)o).getActions();
-    }
-    
-    public static int arV(final Object o) {
-        return ((PlaybackState)o).getState();
+    public void onVolumeInfoChanged(final ParcelableVolumeInfo parcelableVolumeInfo) {
+        throw new AssertionError();
     }
 }

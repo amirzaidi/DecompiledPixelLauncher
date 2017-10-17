@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic Rg:Landroid/support/v7/widget/FastScroller;
+.field final synthetic SP:Landroid/support/v7/widget/FastScroller;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     .prologue
     .line 120
-    iput-object p1, p0, Landroid/support/v7/widget/ab;->Rg:Landroid/support/v7/widget/FastScroller;
+    iput-object p1, p0, Landroid/support/v7/widget/ab;->SP:Landroid/support/v7/widget/FastScroller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,7 +30,7 @@
 
     .prologue
     .line 123
-    iget-object v0, p0, Landroid/support/v7/widget/ab;->Rg:Landroid/support/v7/widget/FastScroller;
+    iget-object v0, p0, Landroid/support/v7/widget/ab;->SP:Landroid/support/v7/widget/FastScroller;
 
     const/16 v1, 0x1f4
 

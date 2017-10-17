@@ -8,45 +8,45 @@ import java.util.Map;
 
 class r extends l
 {
-    final /* synthetic */ c VP;
+    final /* synthetic */ c Xy;
     
-    r(final c vp) {
-        this.VP = vp;
+    r(final c xy) {
+        this.Xy = xy;
     }
     
-    protected int ahB() {
-        return this.VP.mSize;
+    protected Object aiA(final int n, final int n2) {
+        return this.Xy.WQ[n];
     }
     
-    protected void ahC(final int n) {
-        this.VP.agO(n);
+    protected int aiB(final Object o) {
+        return this.Xy.aio(o);
     }
     
-    protected void ahD(final Object o, final Object o2) {
-        this.VP.add(o);
+    protected int aiC(final Object o) {
+        return this.Xy.aio(o);
     }
     
-    protected Object ahq(final int n, final int n2) {
-        return this.VP.Vd[n];
-    }
-    
-    protected int ahr(final Object o) {
-        return this.VP.agS(o);
-    }
-    
-    protected int ahs(final Object o) {
-        return this.VP.agS(o);
-    }
-    
-    protected Map ahw() {
+    protected Map aiG() {
         throw new UnsupportedOperationException("not a map");
     }
     
-    protected Object ahx(final int n, final Object o) {
+    protected Object aiH(final int n, final Object o) {
         throw new UnsupportedOperationException("not a map");
     }
     
-    protected void ahy() {
-        this.VP.clear();
+    protected void aiI() {
+        this.Xy.clear();
+    }
+    
+    protected int aiL() {
+        return this.Xy.mSize;
+    }
+    
+    protected void aiM(final int n) {
+        this.Xy.aik(n);
+    }
+    
+    protected void aiN(final Object o, final Object o2) {
+        this.Xy.add(o);
     }
 }

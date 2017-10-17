@@ -4,48 +4,48 @@
 
 package android.support.v4.a;
 
-public class d implements i
+public class d implements j
 {
-    private final Object[] Vg;
-    private int Vh;
+    private final Object[] WT;
+    private int WU;
     
     public d(final int n) {
         if (n > 0) {
-            this.Vg = new Object[n];
+            this.WT = new Object[n];
             return;
         }
         throw new IllegalArgumentException("The max pool size must be > 0");
     }
     
-    private boolean agU(final Object o) {
-        for (int i = 0; i < this.Vh; ++i) {
-            if (this.Vg[i] == o) {
+    private boolean aiq(final Object o) {
+        for (int i = 0; i < this.WU; ++i) {
+            if (this.WT[i] == o) {
                 return true;
             }
         }
         return false;
     }
     
-    public boolean agT(final Object o) {
-        if (this.agU(o)) {
+    public boolean aip(final Object o) {
+        if (this.aiq(o)) {
             throw new IllegalStateException("Already in the pool!");
         }
-        if (this.Vh >= this.Vg.length) {
+        if (this.WU >= this.WT.length) {
             return false;
         }
-        this.Vg[this.Vh] = o;
-        ++this.Vh;
+        this.WT[this.WU] = o;
+        ++this.WU;
         return true;
     }
     
-    public Object agV() {
-        if (this.Vh <= 0) {
+    public Object air() {
+        if (this.WU <= 0) {
             return null;
         }
-        final int n = this.Vh - 1;
-        final Object o = this.Vg[n];
-        this.Vg[n] = null;
-        --this.Vh;
+        final int n = this.WU - 1;
+        final Object o = this.WT[n];
+        this.WT[n] = null;
+        --this.WU;
         return o;
     }
 }

@@ -9,7 +9,7 @@ import android.net.Uri;
 
 class q extends m
 {
-    public static Uri asO(final Object o) {
+    public static Uri atL(final Object o) {
         return ((MediaDescription)o).getMediaUri();
     }
 }

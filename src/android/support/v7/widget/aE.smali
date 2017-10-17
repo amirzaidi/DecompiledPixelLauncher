@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public SG:I
+.field public Up:I
 
-.field public SH:Z
+.field public Uq:Z
 
-.field public SI:I
+.field public Ur:I
 
-.field public SJ:Landroid/support/v7/widget/RecyclerView;
+.field public Us:Landroid/support/v7/widget/RecyclerView;
 
 .field public position:I
 
@@ -35,18 +35,18 @@
     const/4 v1, 0x0
 
     .line 44
-    iput-boolean v1, p0, Landroid/support/v7/widget/aE;->SH:Z
+    iput-boolean v1, p0, Landroid/support/v7/widget/aE;->Uq:Z
 
     .line 45
-    iput v1, p0, Landroid/support/v7/widget/aE;->SI:I
+    iput v1, p0, Landroid/support/v7/widget/aE;->Ur:I
 
     .line 46
-    iput v1, p0, Landroid/support/v7/widget/aE;->SG:I
+    iput v1, p0, Landroid/support/v7/widget/aE;->Up:I
 
     .line 47
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v7/widget/aE;->SJ:Landroid/support/v7/widget/RecyclerView;
+    iput-object v0, p0, Landroid/support/v7/widget/aE;->Us:Landroid/support/v7/widget/RecyclerView;
 
     .line 48
     iput v1, p0, Landroid/support/v7/widget/aE;->position:I

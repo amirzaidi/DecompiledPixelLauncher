@@ -8,45 +8,45 @@ import java.util.Map;
 
 class n extends l
 {
-    final /* synthetic */ t VK;
+    final /* synthetic */ t Xt;
     
-    n(final t vk) {
-        this.VK = vk;
+    n(final t xt) {
+        this.Xt = xt;
     }
     
-    protected int ahB() {
-        return this.VK.mSize;
+    protected Object aiA(final int n, final int n2) {
+        return this.Xt.WI[(n << 1) + n2];
     }
     
-    protected void ahC(final int n) {
-        this.VK.ahc(n);
+    protected int aiB(final Object o) {
+        return this.Xt.aie(o);
     }
     
-    protected void ahD(final Object o, final Object o2) {
-        this.VK.put(o, o2);
+    protected int aiC(final Object o) {
+        return this.Xt.ahT(o);
     }
     
-    protected Object ahq(final int n, final int n2) {
-        return this.VK.VC[(n << 1) + n2];
+    protected Map aiG() {
+        return this.Xt;
     }
     
-    protected int ahr(final Object o) {
-        return this.VK.ahm(o);
+    protected Object aiH(final int n, final Object o) {
+        return this.Xt.aif(n, o);
     }
     
-    protected int ahs(final Object o) {
-        return this.VK.ahb(o);
+    protected void aiI() {
+        this.Xt.clear();
     }
     
-    protected Map ahw() {
-        return this.VK;
+    protected int aiL() {
+        return this.Xt.mSize;
     }
     
-    protected Object ahx(final int n, final Object o) {
-        return this.VK.ahn(n, o);
+    protected void aiM(final int n) {
+        this.Xt.ahU(n);
     }
     
-    protected void ahy() {
-        this.VK.clear();
+    protected void aiN(final Object o, final Object o2) {
+        this.Xt.put(o, o2);
     }
 }

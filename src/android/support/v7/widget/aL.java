@@ -9,19 +9,19 @@ import java.util.ArrayList;
 
 class al implements Runnable
 {
-    final /* synthetic */ Z RZ;
-    final /* synthetic */ ArrayList Sa;
+    final /* synthetic */ Z TI;
+    final /* synthetic */ ArrayList TJ;
     
-    al(final Z rz, final ArrayList sa) {
-        this.RZ = rz;
-        this.Sa = sa;
+    al(final Z ti, final ArrayList tj) {
+        this.TI = ti;
+        this.TJ = tj;
     }
     
     public void run() {
-        for (final W w : this.Sa) {
-            this.RZ.aav(w.QF, w.QD, w.QC, w.QG, w.QE);
+        for (final X x : this.TJ) {
+            this.TI.abx(x.Sr, x.Sp, x.So, x.Ss, x.Sq);
         }
-        this.Sa.clear();
-        this.RZ.QZ.remove(this.Sa);
+        this.TJ.clear();
+        this.TI.SI.remove(this.TJ);
     }
 }

@@ -1,55 +1,43 @@
-.class Landroid/support/v4/media/session/v;
+.class public final Landroid/support/v4/media/session/v;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field final synthetic aec:Ljava/lang/String;
+.field private final afD:I
 
-.field final synthetic aed:Landroid/os/Bundle;
+.field private final afE:I
 
-.field final synthetic aee:Landroid/support/v4/media/session/s;
+.field private final afF:I
+
+.field private final afG:I
+
+.field private final afH:I
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/media/session/s;Ljava/lang/String;Landroid/os/Bundle;)V
+.method constructor <init>(IIIII)V
     .locals 0
 
     .prologue
-    .line 2082
-    iput-object p1, p0, Landroid/support/v4/media/session/v;->aee:Landroid/support/v4/media/session/s;
-
-    iput-object p2, p0, Landroid/support/v4/media/session/v;->aec:Ljava/lang/String;
-
-    iput-object p3, p0, Landroid/support/v4/media/session/v;->aed:Landroid/os/Bundle;
-
+    .line 1273
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    .line 1274
+    iput p1, p0, Landroid/support/v4/media/session/v;->afG:I
 
+    .line 1275
+    iput p2, p0, Landroid/support/v4/media/session/v;->afF:I
 
-# virtual methods
-.method public run()V
-    .locals 3
+    .line 1276
+    iput p3, p0, Landroid/support/v4/media/session/v;->afD:I
 
-    .prologue
-    .line 2085
-    iget-object v0, p0, Landroid/support/v4/media/session/v;->aee:Landroid/support/v4/media/session/s;
+    .line 1277
+    iput p4, p0, Landroid/support/v4/media/session/v;->afE:I
 
-    invoke-static {v0}, Landroid/support/v4/media/session/s;->arE(Landroid/support/v4/media/session/s;)Landroid/support/v4/media/session/c;
+    .line 1278
+    iput p5, p0, Landroid/support/v4/media/session/v;->afH:I
 
-    move-result-object v0
-
-    iget-object v1, p0, Landroid/support/v4/media/session/v;->aec:Ljava/lang/String;
-
-    iget-object v2, p0, Landroid/support/v4/media/session/v;->aed:Landroid/os/Bundle;
-
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/session/c;->onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    .line 2086
+    .line 1279
     return-void
 .end method

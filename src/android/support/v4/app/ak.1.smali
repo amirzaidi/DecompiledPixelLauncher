@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field private aaA:Landroid/view/ViewTreeObserver;
+.field private acf:Landroid/view/ViewTreeObserver;
 
 .field private final mRunnable:Ljava/lang/Runnable;
 
@@ -31,7 +31,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/support/v4/app/ak;->aaA:Landroid/view/ViewTreeObserver;
+    iput-object v0, p0, Landroid/support/v4/app/ak;->acf:Landroid/view/ViewTreeObserver;
 
     .line 44
     iput-object p2, p0, Landroid/support/v4/app/ak;->mRunnable:Ljava/lang/Runnable;
@@ -40,7 +40,7 @@
     return-void
 .end method
 
-.method public static amJ(Landroid/view/View;Ljava/lang/Runnable;)Landroid/support/v4/app/ak;
+.method public static anV(Landroid/view/View;Ljava/lang/Runnable;)Landroid/support/v4/app/ak;
     .locals 2
 
     .prologue
@@ -92,7 +92,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/support/v4/app/ak;->aaA:Landroid/view/ViewTreeObserver;
+    iput-object v0, p0, Landroid/support/v4/app/ak;->acf:Landroid/view/ViewTreeObserver;
 
     .line 84
     return-void
@@ -114,7 +114,7 @@
 
     .prologue
     .line 73
-    iget-object v0, p0, Landroid/support/v4/app/ak;->aaA:Landroid/view/ViewTreeObserver;
+    iget-object v0, p0, Landroid/support/v4/app/ak;->acf:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
@@ -142,7 +142,7 @@
 
     .line 74
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/app/ak;->aaA:Landroid/view/ViewTreeObserver;
+    iget-object v0, p0, Landroid/support/v4/app/ak;->acf:Landroid/view/ViewTreeObserver;
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 

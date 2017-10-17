@@ -12,11 +12,21 @@ import java.util.Map;
 
 abstract class l
 {
-    o VD;
-    q VE;
-    f VF;
+    o Xm;
+    q Xn;
+    f Xo;
     
-    public static boolean ahA(final Map map, final Collection collection) {
+    public static boolean aiJ(final Map map, final Collection collection) {
+        final Iterator<Object> iterator = collection.iterator();
+        while (iterator.hasNext()) {
+            if (!map.containsKey(iterator.next())) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    public static boolean aiK(final Map map, final Collection collection) {
         boolean b = false;
         final int size = map.size();
         final Iterator<Object> iterator = map.keySet().iterator();
@@ -31,7 +41,7 @@ abstract class l
         return b;
     }
     
-    public static boolean ahE(final Map map, final Collection collection) {
+    public static boolean aiO(final Map map, final Collection collection) {
         boolean b = false;
         final int size = map.size();
         final Iterator<Object> iterator = collection.iterator();
@@ -44,7 +54,7 @@ abstract class l
         return b;
     }
     
-    public static boolean ahF(final Set set, final Object o) {
+    public static boolean aiP(final Set set, final Object o) {
         boolean b = true;
         if (set == o) {
             return b;
@@ -72,75 +82,65 @@ abstract class l
         catch (ClassCastException ex4) {}
     }
     
-    public static boolean ahz(final Map map, final Collection collection) {
-        final Iterator<Object> iterator = collection.iterator();
-        while (iterator.hasNext()) {
-            if (!map.containsKey(iterator.next())) {
-                return false;
-            }
+    protected abstract Object aiA(final int p0, final int p1);
+    
+    protected abstract int aiB(final Object p0);
+    
+    protected abstract int aiC(final Object p0);
+    
+    public Object[] aiD(Object[] array, final int n) {
+        final int aiL = this.aiL();
+        if (array.length < aiL) {
+            array = (Object[])Array.newInstance(array.getClass().getComponentType(), aiL);
         }
-        return true;
-    }
-    
-    protected abstract int ahB();
-    
-    protected abstract void ahC(final int p0);
-    
-    protected abstract void ahD(final Object p0, final Object p1);
-    
-    public Object[] aho(final int n) {
-        final int ahB = this.ahB();
-        final Object[] array = new Object[ahB];
-        for (int i = 0; i < ahB; ++i) {
-            array[i] = this.ahq(i, n);
+        for (int i = 0; i < aiL; ++i) {
+            array[i] = this.aiA(i, n);
+        }
+        if (array.length > aiL) {
+            array[aiL] = null;
         }
         return array;
     }
     
-    public Collection ahp() {
-        if (this.VE == null) {
-            this.VE = new q(this);
+    public Set aiE() {
+        if (this.Xm == null) {
+            this.Xm = new o(this);
         }
-        return this.VE;
+        return this.Xm;
     }
     
-    protected abstract Object ahq(final int p0, final int p1);
-    
-    protected abstract int ahr(final Object p0);
-    
-    protected abstract int ahs(final Object p0);
-    
-    public Object[] aht(Object[] array, final int n) {
-        final int ahB = this.ahB();
-        if (array.length < ahB) {
-            array = (Object[])Array.newInstance(array.getClass().getComponentType(), ahB);
+    public Set aiF() {
+        if (this.Xo == null) {
+            this.Xo = new f(this);
         }
-        for (int i = 0; i < ahB; ++i) {
-            array[i] = this.ahq(i, n);
-        }
-        if (array.length > ahB) {
-            array[ahB] = null;
+        return this.Xo;
+    }
+    
+    protected abstract Map aiG();
+    
+    protected abstract Object aiH(final int p0, final Object p1);
+    
+    protected abstract void aiI();
+    
+    protected abstract int aiL();
+    
+    protected abstract void aiM(final int p0);
+    
+    protected abstract void aiN(final Object p0, final Object p1);
+    
+    public Object[] aiy(final int n) {
+        final int aiL = this.aiL();
+        final Object[] array = new Object[aiL];
+        for (int i = 0; i < aiL; ++i) {
+            array[i] = this.aiA(i, n);
         }
         return array;
     }
     
-    public Set ahu() {
-        if (this.VD == null) {
-            this.VD = new o(this);
+    public Collection aiz() {
+        if (this.Xn == null) {
+            this.Xn = new q(this);
         }
-        return this.VD;
+        return this.Xn;
     }
-    
-    public Set ahv() {
-        if (this.VF == null) {
-            this.VF = new f(this);
-        }
-        return this.VF;
-    }
-    
-    protected abstract Map ahw();
-    
-    protected abstract Object ahx(final int p0, final Object p1);
-    
-    protected abstract void ahy();
 }

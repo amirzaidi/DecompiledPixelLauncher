@@ -6,7 +6,7 @@ package android.support.v4.media;
 
 class a
 {
-    public static Object asc(final r r) {
+    public static Object asZ(final r r) {
         return new j(r);
     }
 }

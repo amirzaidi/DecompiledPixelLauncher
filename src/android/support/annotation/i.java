@@ -7,4 +7,7 @@ package android.support.annotation;
 import java.lang.annotation.Annotation;
 
 public @interface i {
+    double atP();
+    
+    double atQ();
 }

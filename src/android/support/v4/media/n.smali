@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field final synthetic afl:Landroid/support/v4/media/h;
+.field final synthetic agn:Landroid/support/v4/media/h;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     .prologue
     .line 851
-    iput-object p1, p0, Landroid/support/v4/media/n;->afl:Landroid/support/v4/media/h;
+    iput-object p1, p0, Landroid/support/v4/media/n;->agn:Landroid/support/v4/media/h;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public asN(Landroid/os/Parcel;)V
+.method public atK(Landroid/os/Parcel;)V
     .locals 2
 
     .prologue
@@ -54,9 +54,9 @@
     invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
 
     .line 863
-    iget-object v1, p0, Landroid/support/v4/media/n;->afl:Landroid/support/v4/media/h;
+    iget-object v1, p0, Landroid/support/v4/media/n;->agn:Landroid/support/v4/media/h;
 
-    invoke-virtual {v1, v0}, Landroid/support/v4/media/h;->ass(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
+    invoke-virtual {v1, v0}, Landroid/support/v4/media/h;->atp(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
 
     .line 865
     :goto_0
@@ -64,9 +64,9 @@
 
     .line 857
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/media/n;->afl:Landroid/support/v4/media/h;
+    iget-object v0, p0, Landroid/support/v4/media/n;->agn:Landroid/support/v4/media/h;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/media/h;->ass(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/media/h;->atp(Landroid/support/v4/media/MediaBrowserCompat$MediaItem;)V
 
     goto :goto_0
 .end method
@@ -76,7 +76,7 @@
 
     .prologue
     .line 869
-    iget-object v0, p0, Landroid/support/v4/media/n;->afl:Landroid/support/v4/media/h;
+    iget-object v0, p0, Landroid/support/v4/media/n;->agn:Landroid/support/v4/media/h;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/media/h;->onError(Ljava/lang/String;)V
 

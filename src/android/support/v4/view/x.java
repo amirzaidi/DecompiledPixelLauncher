@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 
 public final class x
 {
-    public static boolean agm(final MotionEvent motionEvent, final int n) {
+    public static boolean ahv(final MotionEvent motionEvent, final int n) {
         return (motionEvent.getSource() & n) == n;
     }
 }

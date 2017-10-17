@@ -1,18 +1,27 @@
-.class Landroid/support/v4/app/au;
-.super Ljava/lang/Object;
+.class public Landroid/support/v4/app/au;
+.super Landroid/app/Activity;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/support/v4/app/aL;
+
+# instance fields
+.field private aco:Landroid/support/v4/a/b;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .prologue
-    .line 343
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 31
+    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
+    .line 37
+    new-instance v0, Landroid/support/v4/a/b;
+
+    invoke-direct {v0}, Landroid/support/v4/a/b;-><init>()V
+
+    iput-object v0, p0, Landroid/support/v4/app/au;->aco:Landroid/support/v4/a/b;
+
+    .line 68
     return-void
 .end method

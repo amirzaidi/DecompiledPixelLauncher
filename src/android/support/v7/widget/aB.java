@@ -6,13 +6,13 @@ package android.support.v7.widget;
 
 class ab implements Runnable
 {
-    final /* synthetic */ FastScroller Rg;
+    final /* synthetic */ FastScroller SP;
     
-    ab(final FastScroller rg) {
-        this.Rg = rg;
+    ab(final FastScroller sp) {
+        this.SP = sp;
     }
     
     public void run() {
-        this.Rg.hide(500);
+        this.SP.hide(500);
     }
 }

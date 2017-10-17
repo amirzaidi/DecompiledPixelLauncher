@@ -46,7 +46,7 @@
     if-nez v0, :cond_0
 
     .line 91
-    sget-object v0, Landroid/support/v4/view/AbsSavedState;->Uv:Landroid/support/v4/view/AbsSavedState;
+    sget-object v0, Landroid/support/v4/view/AbsSavedState;->VV:Landroid/support/v4/view/AbsSavedState;
 
     return-object v0
 

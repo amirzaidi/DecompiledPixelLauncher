@@ -1,43 +1,29 @@
-.class Landroid/support/v4/media/session/u;
+.class public interface abstract Landroid/support/v4/media/session/u;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method constructor <init>()V
-    .locals 0
-
-    .prologue
-    .line 239
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract asR(IIIII)V
 .end method
 
-.method public static arL(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 246
-    check-cast p0, Landroid/media/session/MediaSession$QueueItem;
-
-    invoke-virtual {p0}, Landroid/media/session/MediaSession$QueueItem;->getDescription()Landroid/media/MediaDescription;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract asS(Ljava/lang/Object;)V
 .end method
 
-.method public static arM(Ljava/lang/Object;)J
-    .locals 2
+.method public abstract asT(Ljava/lang/Object;)V
+.end method
 
-    .prologue
-    .line 250
-    check-cast p0, Landroid/media/session/MediaSession$QueueItem;
+.method public abstract onExtrasChanged(Landroid/os/Bundle;)V
+.end method
 
-    invoke-virtual {p0}, Landroid/media/session/MediaSession$QueueItem;->getQueueId()J
+.method public abstract onQueueChanged(Ljava/util/List;)V
+.end method
 
-    move-result-wide v0
+.method public abstract onQueueTitleChanged(Ljava/lang/CharSequence;)V
+.end method
 
-    return-wide v0
+.method public abstract onSessionDestroyed()V
+.end method
+
+.method public abstract onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
 .end method

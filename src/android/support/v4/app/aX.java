@@ -4,13 +4,23 @@
 
 package android.support.v4.app;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class ax extends z
+public class ax
 {
-    ArrayList aaS;
+    private final List acr;
+    private final List acs;
     
-    public ax() {
-        this.aaS = new ArrayList();
+    ax(final List acr, final List acs) {
+        this.acr = acr;
+        this.acs = acs;
+    }
+    
+    List anZ() {
+        return this.acr;
+    }
+    
+    List aoa() {
+        return this.acs;
     }
 }

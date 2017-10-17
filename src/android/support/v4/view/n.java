@@ -9,42 +9,42 @@ import android.view.View;
 
 class n extends o
 {
-    public void afK(final View view, int importantForAccessibility) {
+    public void agT(final View view, int importantForAccessibility) {
         if (importantForAccessibility == 4) {
             importantForAccessibility = 2;
         }
         view.setImportantForAccessibility(importantForAccessibility);
     }
     
-    public int afO(final View view) {
+    public int agX(final View view) {
         return view.getMinimumHeight();
     }
     
-    public int afP(final View view) {
+    public int agY(final View view) {
         return view.getImportantForAccessibility();
     }
     
-    public boolean afQ(final View view) {
+    public boolean agZ(final View view) {
         return view.hasOverlappingRendering();
     }
     
-    public void afR(final View view, final Runnable runnable) {
+    public void aha(final View view, final Runnable runnable) {
         view.postOnAnimation(runnable);
     }
     
-    public void afS(final View view, final Runnable runnable, final long n) {
+    public void ahb(final View view, final Runnable runnable, final long n) {
         view.postOnAnimationDelayed(runnable, n);
     }
     
-    public boolean afT(final View view) {
+    public boolean ahc(final View view) {
         return view.hasTransientState();
     }
     
-    public void afU(final View view) {
+    public void ahd(final View view) {
         view.postInvalidateOnAnimation();
     }
     
-    public int afV(final View view) {
+    public int ahe(final View view) {
         return view.getMinimumWidth();
     }
     

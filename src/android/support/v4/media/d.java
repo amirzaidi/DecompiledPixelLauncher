@@ -9,7 +9,7 @@ import android.os.Parcel;
 
 class d
 {
-    public static void asf(final Object o, final Parcel parcel, final int n) {
+    public static void atc(final Object o, final Parcel parcel, final int n) {
         ((MediaMetadata)o).writeToParcel(parcel, n);
     }
 }

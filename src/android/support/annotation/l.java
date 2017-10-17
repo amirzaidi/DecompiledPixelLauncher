@@ -7,5 +7,4 @@ package android.support.annotation;
 import java.lang.annotation.Annotation;
 
 public @interface l {
-    int asV();
 }

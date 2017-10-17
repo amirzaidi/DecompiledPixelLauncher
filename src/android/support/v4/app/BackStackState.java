@@ -15,145 +15,145 @@ import android.os.Parcelable;
 final class BackStackState implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final CharSequence adb;
-    final int[] adc;
-    final int add;
-    final int ade;
-    final String adf;
-    final int adg;
-    final CharSequence adh;
-    final int adi;
-    final boolean adj;
-    final ArrayList adk;
-    final ArrayList adl;
-    final int adm;
+    final int aeA;
+    final CharSequence aeB;
+    final int aeC;
+    final boolean aeD;
+    final ArrayList aeE;
+    final ArrayList aeF;
+    final int aeG;
+    final CharSequence aev;
+    final int[] aew;
+    final int aex;
+    final int aey;
+    final String aez;
     
     static {
         CREATOR = (Parcelable$Creator)new O();
     }
     
     public BackStackState(final Parcel parcel) {
-        this.adc = parcel.createIntArray();
-        this.ade = parcel.readInt();
-        this.add = parcel.readInt();
-        this.adf = parcel.readString();
-        this.adm = parcel.readInt();
-        this.adg = parcel.readInt();
-        this.adh = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.adi = parcel.readInt();
-        this.adb = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.adk = parcel.createStringArrayList();
-        this.adl = parcel.createStringArrayList();
-        this.adj = (parcel.readInt() != 0);
+        this.aew = parcel.createIntArray();
+        this.aey = parcel.readInt();
+        this.aex = parcel.readInt();
+        this.aez = parcel.readString();
+        this.aeG = parcel.readInt();
+        this.aeA = parcel.readInt();
+        this.aeB = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.aeC = parcel.readInt();
+        this.aev = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.aeE = parcel.createStringArrayList();
+        this.aeF = parcel.createStringArrayList();
+        this.aeD = (parcel.readInt() != 0);
     }
     
-    public BackStackState(final U u) {
-        final int size = u.YR.size();
-        this.adc = new int[size * 6];
-        if (u.YU) {
+    public BackStackState(final V v) {
+        final int size = v.aaw.size();
+        this.aew = new int[size * 6];
+        if (v.aaz) {
             int i = 0;
             int n = 0;
             while (i < size) {
-                final aa aa = u.YR.get(i);
-                final int[] adc = this.adc;
+                final ab ab = v.aaw.get(i);
+                final int[] aew = this.aew;
                 final int n2 = n + 1;
-                adc[n] = aa.aac;
-                final int[] adc2 = this.adc;
+                aew[n] = ab.abH;
+                final int[] aew2 = this.aew;
                 final int n3 = n2 + 1;
-                int wr;
-                if (aa.aad == null) {
-                    wr = -1;
+                int yb;
+                if (ab.abI == null) {
+                    yb = -1;
                 }
                 else {
-                    wr = aa.aad.Wr;
+                    yb = ab.abI.Yb;
                 }
-                adc2[n2] = wr;
-                final int[] adc3 = this.adc;
+                aew2[n2] = yb;
+                final int[] aew3 = this.aew;
                 final int n4 = n3 + 1;
-                adc3[n3] = aa.aah;
-                final int[] adc4 = this.adc;
+                aew3[n3] = ab.abM;
+                final int[] aew4 = this.aew;
                 final int n5 = n4 + 1;
-                adc4[n4] = aa.aag;
-                final int[] adc5 = this.adc;
+                aew4[n4] = ab.abL;
+                final int[] aew5 = this.aew;
                 final int n6 = n5 + 1;
-                adc5[n5] = aa.aae;
-                final int[] adc6 = this.adc;
+                aew5[n5] = ab.abJ;
+                final int[] aew6 = this.aew;
                 n = n6 + 1;
-                adc6[n6] = aa.aaf;
+                aew6[n6] = ab.abK;
                 ++i;
             }
-            this.ade = u.YX;
-            this.add = u.YW;
-            this.adf = u.YI;
-            this.adm = u.YL;
-            this.adg = u.YY;
-            this.adh = u.YT;
-            this.adi = u.YO;
-            this.adb = u.YV;
-            this.adk = u.YP;
-            this.adl = u.YQ;
-            this.adj = u.YJ;
+            this.aey = v.aaC;
+            this.aex = v.aaB;
+            this.aez = v.aan;
+            this.aeG = v.aaq;
+            this.aeA = v.aaD;
+            this.aeB = v.aay;
+            this.aeC = v.aat;
+            this.aev = v.aaA;
+            this.aeE = v.aau;
+            this.aeF = v.aav;
+            this.aeD = v.aao;
             return;
         }
         throw new IllegalStateException("Not on back stack");
     }
     
-    public U aqI(final aV av) {
-        final int yu = 1;
+    public V arJ(final aR ar) {
+        final int aaz = 1;
         int i = 0;
-        final U u = new U(av);
+        final V v = new V(ar);
         int n = 0;
-        while (i < this.adc.length) {
-            final aa aa = new aa();
-            final int[] adc = this.adc;
+        while (i < this.aew.length) {
+            final ab ab = new ab();
+            final int[] aew = this.aew;
             final int n2 = i + 1;
-            aa.aac = adc[i];
-            if (aV.DEBUG) {
-                Log.v("FragmentManager", "Instantiate " + u + " op #" + n + " base fragment #" + this.adc[n2]);
+            ab.abH = aew[i];
+            if (aR.DEBUG) {
+                Log.v("FragmentManager", "Instantiate " + v + " op #" + n + " base fragment #" + this.aew[n2]);
             }
-            final int[] adc2 = this.adc;
+            final int[] aew2 = this.aew;
             final int n3 = n2 + 1;
-            final int n4 = adc2[n2];
+            final int n4 = aew2[n2];
             if (n4 < 0) {
-                aa.aad = null;
+                ab.abI = null;
             }
             else {
-                aa.aad = (e)av.acu.get(n4);
+                ab.abI = (g)ar.adO.get(n4);
             }
-            final int[] adc3 = this.adc;
+            final int[] aew3 = this.aew;
             final int n5 = n3 + 1;
-            aa.aah = adc3[n3];
-            final int[] adc4 = this.adc;
+            ab.abM = aew3[n3];
+            final int[] aew4 = this.aew;
             final int n6 = n5 + 1;
-            aa.aag = adc4[n5];
-            final int[] adc5 = this.adc;
+            ab.abL = aew4[n5];
+            final int[] aew5 = this.aew;
             final int n7 = n6 + 1;
-            aa.aae = adc5[n6];
-            final int[] adc6 = this.adc;
+            ab.abJ = aew5[n6];
+            final int[] aew6 = this.aew;
             final int n8 = n7 + 1;
-            aa.aaf = adc6[n7];
-            u.YZ = aa.aah;
-            u.YG = aa.aag;
-            u.YH = aa.aae;
-            u.YS = aa.aaf;
-            u.amm(aa);
+            ab.abK = aew6[n7];
+            v.aaE = ab.abM;
+            v.aal = ab.abL;
+            v.aam = ab.abJ;
+            v.aax = ab.abK;
+            v.anB(ab);
             ++n;
             i = n8;
         }
-        u.YX = this.ade;
-        u.YW = this.add;
-        u.YI = this.adf;
-        u.YL = this.adm;
-        u.YU = (yu != 0);
-        u.YY = this.adg;
-        u.YT = this.adh;
-        u.YO = this.adi;
-        u.YV = this.adb;
-        u.YP = this.adk;
-        u.YQ = this.adl;
-        u.YJ = this.adj;
-        u.amf(yu);
-        return u;
+        v.aaC = this.aey;
+        v.aaB = this.aex;
+        v.aan = this.aez;
+        v.aaq = this.aeG;
+        v.aaz = (aaz != 0);
+        v.aaD = this.aeA;
+        v.aay = this.aeB;
+        v.aat = this.aeC;
+        v.aaA = this.aev;
+        v.aau = this.aeE;
+        v.aav = this.aeF;
+        v.aao = this.aeD;
+        v.anu(aaz);
+        return v;
     }
     
     public int describeContents() {
@@ -162,18 +162,18 @@ final class BackStackState implements Parcelable
     
     public void writeToParcel(final Parcel parcel, final int n) {
         int n2 = 0;
-        parcel.writeIntArray(this.adc);
-        parcel.writeInt(this.ade);
-        parcel.writeInt(this.add);
-        parcel.writeString(this.adf);
-        parcel.writeInt(this.adm);
-        parcel.writeInt(this.adg);
-        TextUtils.writeToParcel(this.adh, parcel, 0);
-        parcel.writeInt(this.adi);
-        TextUtils.writeToParcel(this.adb, parcel, 0);
-        parcel.writeStringList((List)this.adk);
-        parcel.writeStringList((List)this.adl);
-        if (this.adj) {
+        parcel.writeIntArray(this.aew);
+        parcel.writeInt(this.aey);
+        parcel.writeInt(this.aex);
+        parcel.writeString(this.aez);
+        parcel.writeInt(this.aeG);
+        parcel.writeInt(this.aeA);
+        TextUtils.writeToParcel(this.aeB, parcel, 0);
+        parcel.writeInt(this.aeC);
+        TextUtils.writeToParcel(this.aev, parcel, 0);
+        parcel.writeStringList((List)this.aeE);
+        parcel.writeStringList((List)this.aeF);
+        if (this.aeD) {
             n2 = 1;
         }
         parcel.writeInt(n2);

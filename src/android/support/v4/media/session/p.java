@@ -4,50 +4,35 @@
 
 package android.support.v4.media.session;
 
+import java.util.Iterator;
+import android.os.RemoteException;
+import android.util.Log;
+import java.util.HashMap;
 import java.util.List;
-import android.media.session.PlaybackState;
-import android.media.MediaMetadata;
-import android.os.Bundle;
-import android.media.session.MediaController$PlaybackInfo;
-import android.media.session.MediaController$Callback;
 
-class p extends MediaController$Callback
+class p
 {
-    protected final q adS;
+    private final List aft;
+    private IMediaSession afu;
+    private HashMap afv;
     
-    public p(final q adS) {
-        this.adS = adS;
-    }
-    
-    public void onAudioInfoChanged(final MediaController$PlaybackInfo mediaController$PlaybackInfo) {
-        this.adS.arB(mediaController$PlaybackInfo.getPlaybackType(), j.ary(mediaController$PlaybackInfo), mediaController$PlaybackInfo.getVolumeControl(), mediaController$PlaybackInfo.getMaxVolume(), mediaController$PlaybackInfo.getCurrentVolume());
-    }
-    
-    public void onExtrasChanged(final Bundle bundle) {
-        this.adS.onExtrasChanged(bundle);
-    }
-    
-    public void onMetadataChanged(final MediaMetadata mediaMetadata) {
-        this.adS.arD(mediaMetadata);
-    }
-    
-    public void onPlaybackStateChanged(final PlaybackState playbackState) {
-        this.adS.arC(playbackState);
-    }
-    
-    public void onQueueChanged(final List list) {
-        this.adS.onQueueChanged(list);
-    }
-    
-    public void onQueueTitleChanged(final CharSequence charSequence) {
-        this.adS.onQueueTitleChanged(charSequence);
-    }
-    
-    public void onSessionDestroyed() {
-        this.adS.onSessionDestroyed();
-    }
-    
-    public void onSessionEvent(final String s, final Bundle bundle) {
-        this.adS.onSessionEvent(s, bundle);
+    private void asV() {
+        if (this.afu == null) {
+            return;
+        }
+        synchronized (this.aft) {
+            for (final c c : this.aft) {
+                final w w = new w(c);
+                this.afv.put(c, w);
+                c.afb = true;
+                try {
+                    this.afu.registerCallbackListener(w);
+                }
+                catch (RemoteException ex) {
+                    Log.e("MediaControllerCompat", "Dead object in registerCallback.", (Throwable)ex);
+                }
+            }
+            this.aft.clear();
+        }
     }
 }

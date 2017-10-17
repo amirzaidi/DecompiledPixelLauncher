@@ -24,7 +24,7 @@ public abstract class IResultReceiver$Stub extends Binder implements IResultRece
         if (queryLocalInterface != null && queryLocalInterface instanceof IResultReceiver) {
             return (IResultReceiver)queryLocalInterface;
         }
-        return new e(binder);
+        return new d(binder);
     }
     
     public IBinder asBinder() {

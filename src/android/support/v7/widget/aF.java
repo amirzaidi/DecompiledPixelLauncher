@@ -4,44 +4,47 @@
 
 package android.support.v7.widget;
 
-class af
+import android.animation.Animator$AnimatorListener;
+import android.animation.Animator;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.animation.AnimatorListenerAdapter;
+
+class af extends AnimatorListenerAdapter
 {
-    int RH;
-    int RI;
-    int RJ;
-    int RK;
-    int RL;
+    final /* synthetic */ int Tq;
+    final /* synthetic */ int Tr;
+    final /* synthetic */ Z Ts;
+    final /* synthetic */ j Tt;
+    final /* synthetic */ ViewPropertyAnimator Tu;
+    final /* synthetic */ View val$view;
     
-    af() {
-        this.RJ = 0;
+    af(final Z ts, final j tt, final int tr, final View val$view, final int tq, final ViewPropertyAnimator tu) {
+        this.Ts = ts;
+        this.Tt = tt;
+        this.Tr = tr;
+        this.val$view = val$view;
+        this.Tq = tq;
+        this.Tu = tu;
     }
     
-    int abh(final int n, final int n2) {
-        if (n > n2) {
-            return 1;
+    public void onAnimationCancel(final Animator animator) {
+        if (this.Tr != 0) {
+            this.val$view.setTranslationX(0.0f);
         }
-        if (n != n2) {
-            return 4;
+        if (this.Tq != 0) {
+            this.val$view.setTranslationY(0.0f);
         }
-        return 2;
     }
     
-    void abi() {
-        this.RJ = 0;
+    public void onAnimationEnd(final Animator animator) {
+        this.Tu.setListener((Animator$AnimatorListener)null);
+        this.Ts.adi(this.Tt);
+        this.Ts.SK.remove(this.Tt);
+        this.Ts.abF();
     }
     
-    boolean abj() {
-        return ((this.RJ & 0x7) == 0x0 || (this.RJ & this.abh(this.RL, this.RH) << 0) != 0x0) && ((this.RJ & 0x70) == 0x0 || (this.RJ & this.abh(this.RL, this.RI) << 4) != 0x0) && ((this.RJ & 0x700) == 0x0 || (this.RJ & this.abh(this.RK, this.RH) << 8) != 0x0) && ((this.RJ & 0x7000) == 0x0 || (this.RJ & this.abh(this.RK, this.RI) << 12) != 0x0);
-    }
-    
-    void addFlags(final int n) {
-        this.RJ |= n;
-    }
-    
-    void setBounds(final int rh, final int ri, final int rl, final int rk) {
-        this.RH = rh;
-        this.RI = ri;
-        this.RL = rl;
-        this.RK = rk;
+    public void onAnimationStart(final Animator animator) {
+        this.Ts.adh(this.Tt);
     }
 }

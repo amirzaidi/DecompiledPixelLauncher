@@ -4,22 +4,22 @@
 
 
 # virtual methods
-.method public abstract aci(Landroid/view/View;)V
-.end method
-
-.method public abstract acj(I)V
-.end method
-
-.method public abstract ack(Landroid/view/View;)I
-.end method
-
-.method public abstract acl(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-.end method
-
-.method public abstract acm(Landroid/view/View;)V
-.end method
-
 .method public abstract addView(Landroid/view/View;I)V
+.end method
+
+.method public abstract adj(Landroid/view/View;)V
+.end method
+
+.method public abstract adk(I)V
+.end method
+
+.method public abstract adl(Landroid/view/View;)I
+.end method
+
+.method public abstract adm(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+.end method
+
+.method public abstract adn(Landroid/view/View;)V
 .end method
 
 .method public abstract getChildAt(I)Landroid/view/View;

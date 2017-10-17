@@ -6,21 +6,21 @@ package android.support.v4.a;
 
 class s
 {
-    static final int[] VQ;
-    static final long[] VR;
-    static final Object[] VS;
+    static final long[] XA;
+    static final Object[] XB;
+    static final int[] Xz;
     
     static {
-        VQ = new int[0];
-        VR = new long[0];
-        VS = new Object[0];
+        Xz = new int[0];
+        XA = new long[0];
+        XB = new Object[0];
     }
     
-    public static int ahO(final int n) {
-        return ahP(n * 4) / 4;
+    public static int aiY(final int n) {
+        return aiZ(n * 4) / 4;
     }
     
-    public static int ahP(final int n) {
+    public static int aiZ(final int n) {
         final int n2 = 1;
         for (int i = 4; i < 32; ++i) {
             if (n <= (n2 << i) - 12) {
@@ -30,11 +30,11 @@ class s
         return n;
     }
     
-    public static int ahQ(final int n) {
-        return ahP(n * 8) / 8;
+    public static int aja(final int n) {
+        return aiZ(n * 8) / 8;
     }
     
-    public static boolean ahR(final Object o, final Object o2) {
+    public static boolean ajb(final Object o, final Object o2) {
         boolean b = false;
         if (o != o2) {
             if (o == null) {
@@ -48,7 +48,7 @@ class s
         return b;
     }
     
-    static int ahS(final int[] array, final int n, final int n2) {
+    static int ajc(final int[] array, final int n, final int n2) {
         int i = 0;
         int n3 = n - 1;
         while (i <= n3) {
@@ -67,7 +67,7 @@ class s
         return ~i;
     }
     
-    static int ahT(final long[] array, final int n, final long n2) {
+    static int ajd(final long[] array, final int n, final long n2) {
         final boolean b = true;
         int n3 = n - 1;
         int i = 0;

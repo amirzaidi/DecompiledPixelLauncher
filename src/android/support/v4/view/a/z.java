@@ -6,7 +6,7 @@ package android.support.v4.view.a;
 
 class z
 {
-    public static Object afi(final C c) {
+    public static Object agk(final C c) {
         return new D(c);
     }
 }

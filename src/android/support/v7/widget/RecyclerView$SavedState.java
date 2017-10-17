@@ -12,7 +12,7 @@ import android.support.v4.view.AbsSavedState;
 public class RecyclerView$SavedState extends AbsSavedState
 {
     public static final Parcelable$Creator CREATOR;
-    Parcelable OV;
+    Parcelable QB;
     
     static {
         CREATOR = (Parcelable$Creator)new aD();
@@ -23,19 +23,19 @@ public class RecyclerView$SavedState extends AbsSavedState
         if (classLoader == null) {
             classLoader = p.class.getClassLoader();
         }
-        this.OV = parcel.readParcelable(classLoader);
+        this.QB = parcel.readParcelable(classLoader);
     }
     
     RecyclerView$SavedState(final Parcelable parcelable) {
         super(parcelable);
     }
     
-    void WP(final RecyclerView$SavedState recyclerView$SavedState) {
-        this.OV = recyclerView$SavedState.OV;
+    void XN(final RecyclerView$SavedState recyclerView$SavedState) {
+        this.QB = recyclerView$SavedState.QB;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         super.writeToParcel(parcel, n);
-        parcel.writeParcelable(this.OV, 0);
+        parcel.writeParcelable(this.QB, 0);
     }
 }

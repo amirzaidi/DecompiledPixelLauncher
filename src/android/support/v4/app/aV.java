@@ -10,18 +10,18 @@ import java.util.Map;
 
 class av implements Runnable
 {
-    final /* synthetic */ Map aaP;
-    final /* synthetic */ ArrayList aaQ;
+    final /* synthetic */ Map acp;
+    final /* synthetic */ ArrayList acq;
     
-    av(final ArrayList aaQ, final Map aaP) {
-        this.aaQ = aaQ;
-        this.aaP = aaP;
+    av(final ArrayList acq, final Map acp) {
+        this.acq = acq;
+        this.acp = acp;
     }
     
     public void run() {
-        for (int size = this.aaQ.size(), i = 0; i < size; ++i) {
-            final View view = this.aaQ.get(i);
-            view.setTransitionName((String)this.aaP.get(view.getTransitionName()));
+        for (int size = this.acq.size(), i = 0; i < size; ++i) {
+            final View view = this.acq.get(i);
+            view.setTransitionName((String)this.acp.get(view.getTransitionName()));
         }
     }
 }

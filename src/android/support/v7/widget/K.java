@@ -8,7 +8,7 @@ import android.view.View;
 
 public interface k
 {
-    void Xg(final View p0);
+    void Yg(final View p0);
     
-    void Xh(final View p0);
+    void Yh(final View p0);
 }

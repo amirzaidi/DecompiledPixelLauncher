@@ -1,109 +1,60 @@
 .class Landroid/support/v4/os/e;
-.super Ljava/lang/Object;
+.super Landroid/support/v4/os/IResultReceiver$Stub;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/support/v4/os/IResultReceiver;
 
 
 # instance fields
-.field private adu:Landroid/os/IBinder;
+.field final synthetic aeU:Landroid/support/v4/os/ResultReceiver;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/IBinder;)V
+.method constructor <init>(Landroid/support/v4/os/ResultReceiver;)V
     .locals 0
 
     .prologue
-    .line 68
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 64
+    iput-object p1, p0, Landroid/support/v4/os/e;->aeU:Landroid/support/v4/os/ResultReceiver;
 
-    .line 69
-    iput-object p1, p0, Landroid/support/v4/os/e;->adu:Landroid/os/IBinder;
+    invoke-direct {p0}, Landroid/support/v4/os/IResultReceiver$Stub;-><init>()V
 
-    .line 70
     return-void
 .end method
 
 
 # virtual methods
-.method public asBinder()Landroid/os/IBinder;
-    .locals 1
-
-    .prologue
-    .line 73
-    iget-object v0, p0, Landroid/support/v4/os/e;->adu:Landroid/os/IBinder;
-
-    return-object v0
-.end method
-
 .method public send(ILandroid/os/Bundle;)V
-    .locals 5
+    .locals 3
 
     .prologue
-    .line 81
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    .line 67
+    iget-object v0, p0, Landroid/support/v4/os/e;->aeU:Landroid/support/v4/os/ResultReceiver;
 
-    move-result-object v1
+    iget-object v0, v0, Landroid/support/v4/os/ResultReceiver;->mHandler:Landroid/os/Handler;
 
-    .line 83
-    :try_start_0
-    const-string/jumbo v0, "android.support.v4.os.IResultReceiver"
+    if-nez v0, :cond_0
 
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    .line 70
+    iget-object v0, p0, Landroid/support/v4/os/e;->aeU:Landroid/support/v4/os/ResultReceiver;
 
-    .line 84
-    invoke-virtual {v1, p1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {v0, p1, p2}, Landroid/support/v4/os/ResultReceiver;->onReceiveResult(ILandroid/os/Bundle;)V
 
-    .line 85
-    if-nez p2, :cond_0
-
-    .line 90
-    const/4 v0, 0x0
-
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 92
+    .line 72
     :goto_0
-    iget-object v0, p0, Landroid/support/v4/os/e;->adu:Landroid/os/IBinder;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x1
-
-    invoke-interface {v0, v3, v1, v2, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 95
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 97
     return-void
 
-    .line 86
+    .line 68
     :cond_0
-    const/4 v0, 0x1
+    iget-object v0, p0, Landroid/support/v4/os/e;->aeU:Landroid/support/v4/os/ResultReceiver;
 
-    :try_start_1
-    invoke-virtual {v1, v0}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object v0, v0, Landroid/support/v4/os/ResultReceiver;->mHandler:Landroid/os/Handler;
 
-    .line 87
-    const/4 v0, 0x0
+    new-instance v1, Landroid/support/v4/os/a;
 
-    invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v2, p0, Landroid/support/v4/os/e;->aeU:Landroid/support/v4/os/ResultReceiver;
+
+    invoke-direct {v1, v2, p1, p2}, Landroid/support/v4/os/a;-><init>(Landroid/support/v4/os/ResultReceiver;ILandroid/os/Bundle;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_0
-
-    .line 95
-    :catchall_0
-    move-exception v0
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    throw v0
 .end method

@@ -11,39 +11,39 @@ import android.os.Parcelable;
 public abstract class AbsSavedState implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    public static final AbsSavedState Uv;
-    private final Parcelable Uu;
+    public static final AbsSavedState VV;
+    private final Parcelable VU;
     
     static {
-        Uv = new AbsSavedState$1();
+        VV = new AbsSavedState$1();
         CREATOR = (Parcelable$Creator)new z();
     }
     
     private AbsSavedState() {
-        this.Uu = null;
+        this.VU = null;
     }
     
     protected AbsSavedState(final Parcel parcel, final ClassLoader classLoader) {
-        Object uu = parcel.readParcelable(classLoader);
-        if (uu == null) {
-            uu = AbsSavedState.Uv;
+        Object vu = parcel.readParcelable(classLoader);
+        if (vu == null) {
+            vu = AbsSavedState.VV;
         }
-        this.Uu = (Parcelable)uu;
+        this.VU = (Parcelable)vu;
     }
     
-    protected AbsSavedState(Parcelable uu) {
-        if (uu != null) {
-            if (uu == AbsSavedState.Uv) {
-                uu = null;
+    protected AbsSavedState(Parcelable vu) {
+        if (vu != null) {
+            if (vu == AbsSavedState.VV) {
+                vu = null;
             }
-            this.Uu = uu;
+            this.VU = vu;
             return;
         }
         throw new IllegalArgumentException("superState must not be null");
     }
     
-    public final Parcelable afq() {
-        return this.Uu;
+    public final Parcelable ago() {
+        return this.VU;
     }
     
     public int describeContents() {
@@ -51,6 +51,6 @@ public abstract class AbsSavedState implements Parcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        parcel.writeParcelable(this.Uu, n);
+        parcel.writeParcelable(this.VU, n);
     }
 }

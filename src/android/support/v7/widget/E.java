@@ -8,75 +8,77 @@ import android.util.SparseArray;
 
 public class e
 {
-    private SparseArray OG;
-    int OH;
-    long OI;
-    int OJ;
-    boolean OK;
-    private int OL;
-    int OM;
-    int ON;
-    boolean OO;
-    boolean OP;
-    boolean OQ;
-    int OR;
-    int OS;
-    boolean OT;
-    boolean OU;
+    boolean QA;
+    private SparseArray Qk;
+    int Ql;
+    long Qm;
+    int Qn;
+    boolean Qo;
+    private int Qp;
+    int Qq;
+    int Qr;
+    int Qs;
+    boolean Qt;
+    int Qu;
+    boolean Qv;
+    boolean Qw;
+    int Qx;
+    int Qy;
+    boolean Qz;
     
     public e() {
-        this.OL = -1;
-        this.ON = 0;
-        this.OH = 0;
-        this.OS = 1;
-        this.OR = 0;
-        this.OP = false;
-        this.OO = false;
-        this.OK = false;
-        this.OU = false;
-        this.OQ = false;
-        this.OT = false;
+        this.Qp = -1;
+        this.Qs = 0;
+        this.Ql = 0;
+        this.Qy = 1;
+        this.Qx = 0;
+        this.Qv = false;
+        this.Qt = false;
+        this.Qo = false;
+        this.QA = false;
+        this.Qw = false;
+        this.Qz = false;
     }
     
-    void WJ(final int n) {
-        if ((this.OS & n) != 0x0) {
+    void XH(final int n) {
+        if ((this.Qy & n) != 0x0) {
             return;
         }
-        throw new IllegalStateException("Layout state should be one of " + Integer.toBinaryString(n) + " but it is " + Integer.toBinaryString(this.OS));
+        throw new IllegalStateException("Layout state should be one of " + Integer.toBinaryString(n) + " but it is " + Integer.toBinaryString(this.Qy));
     }
     
-    public boolean WK() {
-        return this.OL != -1;
+    public boolean XI() {
+        return this.Qp != -1;
     }
     
-    public boolean WL() {
-        return this.OT;
+    public boolean XJ() {
+        return this.Qz;
     }
     
-    void WM(final q q) {
-        this.OS = 1;
-        this.OR = q.getItemCount();
-        this.OO = false;
-        this.OK = false;
-        this.OU = false;
+    void XL(final q q) {
+        this.Qy = 1;
+        this.Qx = q.getItemCount();
+        this.Qt = false;
+        this.Qo = false;
+        this.QA = false;
     }
     
-    public boolean WN() {
-        return this.OO;
+    public boolean XM() {
+        return this.Qt;
     }
     
     public int getItemCount() {
-        int or;
-        if (!this.OO) {
-            or = this.OR;
+        int qx;
+        if (!this.Qt) {
+            qx = this.Qx;
         }
         else {
-            or = this.ON - this.OH;
+            qx = this.Qs - this.Ql;
         }
-        return or;
+        return qx;
     }
     
     public String toString() {
-        return "State{mTargetPosition=" + this.OL + ", mData=" + this.OG + ", mItemCount=" + this.OR + ", mPreviousLayoutItemCount=" + this.ON + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.OH + ", mStructureChanged=" + this.OP + ", mInPreLayout=" + this.OO + ", mRunSimpleAnimations=" + this.OQ + ", mRunPredictiveAnimations=" + this.OT + '}';
+        return "State{mTargetPosition=" + this.Qp + ", mData=" + this.Qk + ", mItemCount=" + this.Qx + ", mPreviousLayoutItemCount=" + this.Qs + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.Ql + ", mStructureChanged=" + this.Qv + ", mInPreLayout=" + this.Qt + ", mRunSimpleAnimations=" + this.Qw + ", mRunPredictiveAnimations=" + this.Qz + '}';
     }
 }

@@ -9,9 +9,9 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.Map;
 
-public class t extends k implements Map
+public class t extends b implements Map
 {
-    l VT;
+    l XC;
     
     public t() {
     }
@@ -20,33 +20,33 @@ public class t extends k implements Map
         super(n);
     }
     
-    private l ahU() {
-        if (this.VT == null) {
-            this.VT = new n(this);
+    private l aje() {
+        if (this.XC == null) {
+            this.XC = new n(this);
         }
-        return this.VT;
+        return this.XC;
     }
     
     public Set entrySet() {
-        return this.ahU().ahv();
+        return this.aje().aiF();
     }
     
     public Set keySet() {
-        return this.ahU().ahu();
+        return this.aje().aiE();
     }
     
     public void putAll(final Map map) {
-        this.ahl(this.mSize + map.size());
+        this.aid(this.mSize + map.size());
         for (final Entry<Object, V> entry : map.entrySet()) {
             this.put(entry.getKey(), entry.getValue());
         }
     }
     
     public boolean retainAll(final Collection collection) {
-        return l.ahA(this, collection);
+        return l.aiK(this, collection);
     }
     
     public Collection values() {
-        return this.ahU().ahp();
+        return this.aje().aiz();
     }
 }

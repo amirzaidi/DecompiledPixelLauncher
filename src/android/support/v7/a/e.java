@@ -6,142 +6,142 @@ package android.support.v7.a;
 
 public final class e
 {
-    public static final e To;
-    public static final e Tp;
-    public static final e Tq;
-    public static final e Ts;
-    public static final e Tv;
-    public static final e Tx;
-    boolean Tr;
-    final float[] Tt;
-    final float[] Tu;
-    final float[] Tw;
+    public static final e UX;
+    public static final e UY;
+    public static final e UZ;
+    public static final e Vb;
+    public static final e Ve;
+    public static final e Vg;
+    boolean Va;
+    final float[] Vc;
+    final float[] Vd;
+    final float[] Vf;
     
     static {
-        acS(To = new e());
-        acW(e.To);
-        acK(Tx = new e());
-        acW(e.Tx);
-        adb(Ts = new e());
-        acW(e.Ts);
-        acS(Tp = new e());
-        acU(e.Tp);
-        acK(Tv = new e());
-        acU(e.Tv);
-        adb(Tq = new e());
-        acU(e.Tq);
+        adW(UX = new e());
+        aea(e.UX);
+        adO(Vg = new e());
+        aea(e.Vg);
+        aef(Vb = new e());
+        aea(e.Vb);
+        adW(UY = new e());
+        adY(e.UY);
+        adO(Ve = new e());
+        adY(e.Ve);
+        aef(UZ = new e());
+        adY(e.UZ);
     }
     
     e() {
         final int n = 3;
-        this.Tu = new float[n];
-        this.Tw = new float[n];
-        this.Tt = new float[n];
-        this.Tr = true;
-        acZ(this.Tu);
-        acZ(this.Tw);
-        this.acO();
+        this.Vd = new float[n];
+        this.Vf = new float[n];
+        this.Vc = new float[n];
+        this.Va = true;
+        aed(this.Vd);
+        aed(this.Vf);
+        this.adS();
     }
     
-    private static void acK(final e e) {
-        e.Tw[0] = 0.3f;
-        e.Tw[1] = 0.5f;
-        e.Tw[2] = 0.7f;
+    private static void adO(final e e) {
+        e.Vf[0] = 0.3f;
+        e.Vf[1] = 0.5f;
+        e.Vf[2] = 0.7f;
     }
     
-    private void acO() {
+    private void adS() {
         final float n = 0.24f;
-        this.Tt[0] = n;
-        this.Tt[1] = 0.52f;
-        this.Tt[2] = n;
+        this.Vc[0] = n;
+        this.Vc[1] = 0.52f;
+        this.Vc[2] = n;
     }
     
-    private static void acS(final e e) {
-        e.Tw[0] = 0.55f;
-        e.Tw[1] = 0.74f;
+    private static void adW(final e e) {
+        e.Vf[0] = 0.55f;
+        e.Vf[1] = 0.74f;
     }
     
-    private static void acU(final e e) {
-        e.Tu[1] = 0.3f;
-        e.Tu[2] = 0.4f;
+    private static void adY(final e e) {
+        e.Vd[1] = 0.3f;
+        e.Vd[2] = 0.4f;
     }
     
-    private static void acW(final e e) {
-        e.Tu[0] = 0.35f;
-        e.Tu[1] = 1.0f;
+    private static void aea(final e e) {
+        e.Vd[0] = 0.35f;
+        e.Vd[1] = 1.0f;
     }
     
-    private static void acZ(final float[] array) {
+    private static void aed(final float[] array) {
         array[0] = 0.0f;
         array[1] = 0.5f;
         array[2] = 1.0f;
     }
     
-    private static void adb(final e e) {
-        e.Tw[1] = 0.26f;
-        e.Tw[2] = 0.45f;
+    private static void aef(final e e) {
+        e.Vf[1] = 0.26f;
+        e.Vf[2] = 0.45f;
     }
     
-    public float acL() {
-        return this.Tu[0];
+    public float adP() {
+        return this.Vd[0];
     }
     
-    public float acM() {
-        return this.Tw[0];
+    public float adQ() {
+        return this.Vf[0];
     }
     
-    public float acN() {
-        return this.Tw[2];
+    public float adR() {
+        return this.Vf[2];
     }
     
-    void acP() {
+    void adT() {
         int i = 0;
-        final int length = this.Tt.length;
+        final int length = this.Vc.length;
         int j = 0;
         float n = 0.0f;
         while (j < length) {
-            final float n2 = this.Tt[j];
+            final float n2 = this.Vc[j];
             if (n2 > 0.0f) {
                 n += n2;
             }
             ++j;
         }
         if (n != 0.0f) {
-            while (i < this.Tt.length) {
-                if (this.Tt[i] > 0.0f) {
-                    final float[] tt = this.Tt;
-                    tt[i] /= n;
+            while (i < this.Vc.length) {
+                if (this.Vc[i] > 0.0f) {
+                    final float[] vc = this.Vc;
+                    vc[i] /= n;
                 }
                 ++i;
             }
         }
     }
     
-    public float acQ() {
-        return this.Tu[1];
+    public float adU() {
+        return this.Vd[1];
     }
     
-    public float acR() {
-        return this.Tt[1];
+    public float adV() {
+        return this.Vc[1];
     }
     
-    public float acT() {
-        return this.Tt[0];
+    public float adX() {
+        return this.Vc[0];
     }
     
-    public float acV() {
-        return this.Tu[2];
+    public float adZ() {
+        return this.Vd[2];
     }
     
-    public float acX() {
-        return this.Tw[1];
+    public float aeb() {
+        return this.Vf[1];
     }
     
-    public float acY() {
-        return this.Tt[2];
+    public float aec() {
+        return this.Vc[2];
     }
     
-    public boolean ada() {
-        return this.Tr;
+    public boolean aee() {
+        return this.Va;
     }
 }

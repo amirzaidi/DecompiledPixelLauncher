@@ -14,17 +14,17 @@
     .locals 1
 
     .prologue
-    .line 6354
+    .line 6398
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6355
+    .line 6399
     new-instance v0, Landroid/support/v7/widget/f;
 
     invoke-direct {v0}, Landroid/support/v7/widget/f;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/q;->mObservable:Landroid/support/v7/widget/f;
 
-    .line 6356
+    .line 6400
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v7/widget/q;->mHasStableIds:Z
@@ -40,57 +40,57 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 6458
+    .line 6502
     iput p2, p1, Landroid/support/v7/widget/j;->mPosition:I
 
-    .line 6459
+    .line 6503
     invoke-virtual {p0}, Landroid/support/v7/widget/q;->hasStableIds()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 6462
+    .line 6506
     :goto_0
     const/16 v0, 0x207
 
     invoke-virtual {p1, v2, v0}, Landroid/support/v7/widget/j;->setFlags(II)V
 
-    .line 6465
+    .line 6509
     const-string/jumbo v0, "RV OnBindView"
 
-    invoke-static {v0}, Landroid/support/v4/os/c;->ari(Ljava/lang/String;)V
+    invoke-static {v0}, Landroid/support/v4/os/b;->asr(Ljava/lang/String;)V
 
-    .line 6466
+    .line 6510
     invoke-virtual {p1}, Landroid/support/v7/widget/j;->getUnmodifiedPayloads()Ljava/util/List;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/support/v7/widget/q;->onBindViewHolder(Landroid/support/v7/widget/j;ILjava/util/List;)V
 
-    .line 6467
+    .line 6511
     invoke-virtual {p1}, Landroid/support/v7/widget/j;->clearPayload()V
 
-    .line 6468
+    .line 6512
     iget-object v0, p1, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 6469
+    .line 6513
     instance-of v1, v0, Landroid/support/v7/widget/i;
 
     if-nez v1, :cond_1
 
-    .line 6472
+    .line 6516
     :goto_1
-    invoke-static {}, Landroid/support/v4/os/c;->arh()V
+    invoke-static {}, Landroid/support/v4/os/b;->asq()V
 
-    .line 6473
+    .line 6517
     return-void
 
-    .line 6460
+    .line 6504
     :cond_0
     invoke-virtual {p0, p2}, Landroid/support/v7/widget/q;->getItemId(I)J
 
@@ -100,11 +100,11 @@
 
     goto :goto_0
 
-    .line 6470
+    .line 6514
     :cond_1
     check-cast v0, Landroid/support/v7/widget/i;
 
-    iput-boolean v2, v0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v2, v0, Landroid/support/v7/widget/i;->QI:Z
 
     goto :goto_1
 .end method
@@ -113,23 +113,23 @@
     .locals 1
 
     .prologue
-    .line 6443
+    .line 6487
     const-string/jumbo v0, "RV CreateView"
 
-    invoke-static {v0}, Landroid/support/v4/os/c;->ari(Ljava/lang/String;)V
+    invoke-static {v0}, Landroid/support/v4/os/b;->asr(Ljava/lang/String;)V
 
-    .line 6444
+    .line 6488
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/q;->onCreateViewHolder(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/j;
 
     move-result-object v0
 
-    .line 6445
+    .line 6489
     iput p2, v0, Landroid/support/v7/widget/j;->mItemViewType:I
 
-    .line 6446
-    invoke-static {}, Landroid/support/v4/os/c;->arh()V
+    .line 6490
+    invoke-static {}, Landroid/support/v4/os/b;->asq()V
 
-    .line 6447
+    .line 6491
     return-object v0
 .end method
 
@@ -140,7 +140,7 @@
     .locals 2
 
     .prologue
-    .line 6516
+    .line 6560
     const-wide/16 v0, -0x1
 
     return-wide v0
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 6488
+    .line 6532
     const/4 v0, 0x0
 
     return v0
@@ -160,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 6534
+    .line 6578
     iget-boolean v0, p0, Landroid/support/v7/widget/q;->mHasStableIds:Z
 
     return v0
@@ -170,12 +170,27 @@
     .locals 1
 
     .prologue
-    .line 6713
+    .line 6757
     iget-object v0, p0, Landroid/support/v7/widget/q;->mObservable:Landroid/support/v7/widget/f;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/f;->WQ()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/f;->XQ()V
 
-    .line 6714
+    .line 6758
+    return-void
+.end method
+
+.method public final notifyItemChanged(I)V
+    .locals 2
+
+    .prologue
+    .line 6773
+    iget-object v0, p0, Landroid/support/v7/widget/q;->mObservable:Landroid/support/v7/widget/f;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, v1}, Landroid/support/v7/widget/f;->XP(II)V
+
+    .line 6774
     return-void
 .end method
 
@@ -183,7 +198,7 @@
     .locals 0
 
     .prologue
-    .line 6672
+    .line 6716
     return-void
 .end method
 
@@ -194,10 +209,10 @@
     .locals 0
 
     .prologue
-    .line 6433
+    .line 6477
     invoke-virtual {p0, p1, p2}, Landroid/support/v7/widget/q;->onBindViewHolder(Landroid/support/v7/widget/j;I)V
 
-    .line 6434
+    .line 6478
     return-void
 .end method
 
@@ -208,7 +223,7 @@
     .locals 0
 
     .prologue
-    .line 6681
+    .line 6725
     return-void
 .end method
 
@@ -216,7 +231,7 @@
     .locals 1
 
     .prologue
-    .line 6592
+    .line 6636
     const/4 v0, 0x0
 
     return v0
@@ -226,7 +241,7 @@
     .locals 0
 
     .prologue
-    .line 6606
+    .line 6650
     return-void
 .end method
 
@@ -234,7 +249,7 @@
     .locals 0
 
     .prologue
-    .line 6618
+    .line 6662
     return-void
 .end method
 
@@ -242,7 +257,7 @@
     .locals 0
 
     .prologue
-    .line 6555
+    .line 6599
     return-void
 .end method
 
@@ -250,12 +265,12 @@
     .locals 1
 
     .prologue
-    .line 6646
+    .line 6690
     iget-object v0, p0, Landroid/support/v7/widget/q;->mObservable:Landroid/support/v7/widget/f;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/f;->registerObserver(Ljava/lang/Object;)V
 
-    .line 6647
+    .line 6691
     return-void
 .end method
 
@@ -263,11 +278,11 @@
     .locals 1
 
     .prologue
-    .line 6660
+    .line 6704
     iget-object v0, p0, Landroid/support/v7/widget/q;->mObservable:Landroid/support/v7/widget/f;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/f;->unregisterObserver(Ljava/lang/Object;)V
 
-    .line 6661
+    .line 6705
     return-void
 .end method

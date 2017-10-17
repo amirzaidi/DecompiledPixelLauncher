@@ -8,25 +8,25 @@ import android.os.Parcel;
 
 class n implements r
 {
-    final /* synthetic */ h afl;
+    final /* synthetic */ h agn;
     
-    n(final h afl) {
-        this.afl = afl;
+    n(final h agn) {
+        this.agn = agn;
     }
     
-    public void asN(final Parcel parcel) {
+    public void atK(final Parcel parcel) {
         if (parcel != null) {
             parcel.setDataPosition(0);
             final MediaBrowserCompat$MediaItem mediaBrowserCompat$MediaItem = (MediaBrowserCompat$MediaItem)MediaBrowserCompat$MediaItem.CREATOR.createFromParcel(parcel);
             parcel.recycle();
-            this.afl.ass(mediaBrowserCompat$MediaItem);
+            this.agn.atp(mediaBrowserCompat$MediaItem);
         }
         else {
-            this.afl.ass(null);
+            this.agn.atp(null);
         }
     }
     
     public void onError(final String s) {
-        this.afl.onError(s);
+        this.agn.onError(s);
     }
 }

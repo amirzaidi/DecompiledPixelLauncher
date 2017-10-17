@@ -1,186 +1,156 @@
-.class Landroid/support/v4/media/session/l;
+.class public Landroid/support/v4/media/session/l;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/support/v4/media/session/q;
-
-
-# instance fields
-.field final synthetic adO:Landroid/support/v4/media/session/c;
-
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/media/session/c;)V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 738
-    iput-object p1, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
+    .line 190
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 739
     return-void
 .end method
 
-
-# virtual methods
-.method public arB(IIIII)V
-    .locals 7
+.method public static asO(Ljava/lang/Object;)I
+    .locals 1
 
     .prologue
-    .line 788
-    iget-object v6, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
+    .line 200
+    invoke-static {p0}, Landroid/support/v4/media/session/l;->asQ(Ljava/lang/Object;)Landroid/media/AudioAttributes;
 
-    new-instance v0, Landroid/support/v4/media/session/r;
+    move-result-object v0
 
-    move v1, p1
+    .line 201
+    invoke-static {v0}, Landroid/support/v4/media/session/l;->asP(Landroid/media/AudioAttributes;)I
 
-    move v2, p2
+    move-result v0
 
-    move v3, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    invoke-direct/range {v0 .. v5}, Landroid/support/v4/media/session/r;-><init>(IIIII)V
-
-    invoke-virtual {v6, v0}, Landroid/support/v4/media/session/c;->aru(Landroid/support/v4/media/session/r;)V
-
-    .line 790
-    return-void
+    return v0
 .end method
 
-.method public arC(Ljava/lang/Object;)V
-    .locals 2
+.method private static asP(Landroid/media/AudioAttributes;)I
+    .locals 4
 
     .prologue
-    .line 757
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
+    const/4 v3, 0x4
 
-    iget-boolean v0, v0, Landroid/support/v4/media/session/c;->adJ:Z
+    const/4 v2, 0x3
 
-    if-nez v0, :cond_0
+    const/4 v1, 0x1
 
-    .line 760
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
+    .line 224
+    invoke-virtual {p0}, Landroid/media/AudioAttributes;->getFlags()I
 
-    .line 761
-    invoke-static {p1}, Landroid/support/v4/media/session/PlaybackStateCompat;->arW(Ljava/lang/Object;)Landroid/support/v4/media/session/PlaybackStateCompat;
+    move-result v0
 
-    move-result-object v1
+    and-int/lit8 v0, v0, 0x1
 
-    .line 760
-    invoke-virtual {v0, v1}, Landroid/support/v4/media/session/c;->onPlaybackStateChanged(Landroid/support/v4/media/session/PlaybackStateCompat;)V
+    if-eq v0, v1, :cond_0
 
-    .line 763
+    .line 228
+    invoke-virtual {p0}, Landroid/media/AudioAttributes;->getFlags()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x4
+
+    if-eq v0, v3, :cond_1
+
+    .line 233
+    invoke-virtual {p0}, Landroid/media/AudioAttributes;->getUsage()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 257
+    :pswitch_0
+    return v2
+
+    .line 226
     :cond_0
-    return-void
-.end method
+    const/4 v0, 0x7
 
-.method public arD(Ljava/lang/Object;)V
-    .locals 2
+    return v0
 
-    .prologue
-    .line 767
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
-    invoke-static {p1}, Landroid/support/v4/media/MediaMetadataCompat;->asD(Ljava/lang/Object;)Landroid/support/v4/media/MediaMetadataCompat;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/media/session/c;->onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
-
-    .line 768
-    return-void
-.end method
-
-.method public onExtrasChanged(Landroid/os/Bundle;)V
-    .locals 1
-
-    .prologue
-    .line 782
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/session/c;->onExtrasChanged(Landroid/os/Bundle;)V
-
-    .line 783
-    return-void
-.end method
-
-.method public onQueueChanged(Ljava/util/List;)V
-    .locals 2
-
-    .prologue
-    .line 772
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
-    invoke-static {p1}, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;->arF(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/support/v4/media/session/c;->onQueueChanged(Ljava/util/List;)V
-
-    .line 773
-    return-void
-.end method
-
-.method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    .prologue
-    .line 777
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
-    invoke-virtual {v0, p1}, Landroid/support/v4/media/session/c;->onQueueTitleChanged(Ljava/lang/CharSequence;)V
-
-    .line 778
-    return-void
-.end method
-
-.method public onSessionDestroyed()V
-    .locals 1
-
-    .prologue
-    .line 743
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
-    invoke-virtual {v0}, Landroid/support/v4/media/session/c;->onSessionDestroyed()V
-
-    .line 744
-    return-void
-.end method
-
-.method public onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 2
-
-    .prologue
-    .line 748
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
-    iget-boolean v0, v0, Landroid/support/v4/media/session/c;->adJ:Z
-
-    if-nez v0, :cond_1
-
-    .line 751
-    :goto_0
-    iget-object v0, p0, Landroid/support/v4/media/session/l;->adO:Landroid/support/v4/media/session/c;
-
-    invoke-virtual {v0, p1, p2}, Landroid/support/v4/media/session/c;->onSessionEvent(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    .line 753
-    :cond_0
-    return-void
-
-    .line 748
+    .line 229
     :cond_1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/4 v0, 0x6
 
-    const/16 v1, 0x17
+    return v0
 
-    if-lt v0, v1, :cond_0
+    .line 238
+    :pswitch_1
+    return v2
 
-    goto :goto_0
+    .line 240
+    :pswitch_2
+    return v1
+
+    .line 242
+    :pswitch_3
+    const/4 v0, 0x0
+
+    return v0
+
+    .line 244
+    :pswitch_4
+    const/16 v0, 0x8
+
+    return v0
+
+    .line 246
+    :pswitch_5
+    return v3
+
+    .line 248
+    :pswitch_6
+    const/4 v0, 0x2
+
+    return v0
+
+    .line 254
+    :pswitch_7
+    const/4 v0, 0x5
+
+    return v0
+
+    .line 233
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_7
+        :pswitch_6
+        :pswitch_7
+        :pswitch_7
+        :pswitch_7
+        :pswitch_7
+        :pswitch_1
+        :pswitch_1
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public static asQ(Ljava/lang/Object;)Landroid/media/AudioAttributes;
+    .locals 1
+
+    .prologue
+    .line 196
+    check-cast p0, Landroid/media/session/MediaController$PlaybackInfo;
+
+    invoke-virtual {p0}, Landroid/media/session/MediaController$PlaybackInfo;->getAudioAttributes()Landroid/media/AudioAttributes;
+
+    move-result-object v0
+
+    return-object v0
 .end method

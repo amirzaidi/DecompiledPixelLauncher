@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 
 class t extends E
 {
-    public void agg(final LayoutInflater layoutInflater, final LayoutInflater$Factory2 factory2) {
+    public void ahp(final LayoutInflater layoutInflater, final LayoutInflater$Factory2 factory2) {
         layoutInflater.setFactory2(factory2);
     }
 }

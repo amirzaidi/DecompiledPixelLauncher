@@ -13,20 +13,20 @@ import android.os.Parcelable;
 public final class MediaSessionCompat$Token implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final IMediaSession aet;
-    private final Object aeu;
+    private final IMediaSession afq;
+    private final Object afr;
     
     static {
-        CREATOR = (Parcelable$Creator)new z();
+        CREATOR = (Parcelable$Creator)new n();
     }
     
     MediaSessionCompat$Token(final Object o) {
         this(o, null);
     }
     
-    MediaSessionCompat$Token(final Object aeu, final IMediaSession aet) {
-        this.aeu = aeu;
-        this.aet = aet;
+    MediaSessionCompat$Token(final Object afr, final IMediaSession afq) {
+        this.afr = afr;
+        this.afq = afq;
     }
     
     public int describeContents() {
@@ -43,28 +43,28 @@ public final class MediaSessionCompat$Token implements Parcelable
             return false;
         }
         final MediaSessionCompat$Token mediaSessionCompat$Token = (MediaSessionCompat$Token)o;
-        if (this.aeu != null) {
-            return mediaSessionCompat$Token.aeu != null && this.aeu.equals(mediaSessionCompat$Token.aeu);
+        if (this.afr != null) {
+            return mediaSessionCompat$Token.afr != null && this.afr.equals(mediaSessionCompat$Token.afr);
         }
-        if (mediaSessionCompat$Token.aeu == null) {
+        if (mediaSessionCompat$Token.afr == null) {
             b2 = b;
         }
         return b2;
     }
     
     public int hashCode() {
-        if (this.aeu != null) {
-            return this.aeu.hashCode();
+        if (this.afr != null) {
+            return this.afr.hashCode();
         }
         return 0;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         if (Build$VERSION.SDK_INT < 21) {
-            parcel.writeStrongBinder((IBinder)this.aeu);
+            parcel.writeStrongBinder((IBinder)this.afr);
         }
         else {
-            parcel.writeParcelable((Parcelable)this.aeu, n);
+            parcel.writeParcelable((Parcelable)this.afr, n);
         }
     }
 }

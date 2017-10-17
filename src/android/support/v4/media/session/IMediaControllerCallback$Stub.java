@@ -27,7 +27,7 @@ public abstract class IMediaControllerCallback$Stub extends Binder implements IM
         if (queryLocalInterface != null && queryLocalInterface instanceof IMediaControllerCallback) {
             return (IMediaControllerCallback)queryLocalInterface;
         }
-        return new e(binder);
+        return new g(binder);
     }
     
     public IBinder asBinder() {

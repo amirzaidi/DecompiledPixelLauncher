@@ -8,7 +8,7 @@ import java.util.Comparator;
 
 class h implements Comparator
 {
-    public int adn(final f f, final f f2) {
-        return f2.adg() - f.adg();
+    public int aer(final f f, final f f2) {
+        return f2.aek() - f.aek();
     }
 }

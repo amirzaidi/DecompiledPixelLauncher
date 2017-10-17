@@ -8,11 +8,31 @@ import android.view.View;
 
 class j extends k
 {
-    public String afI(final View view) {
+    public float agM(final View view) {
+        return view.getElevation();
+    }
+    
+    public float agN(final View view) {
+        return view.getTranslationZ();
+    }
+    
+    public String agO(final View view) {
         return view.getTransitionName();
     }
     
-    public void afJ(final View view) {
+    public void agP(final View view, final float translationZ) {
+        view.setTranslationZ(translationZ);
+    }
+    
+    public float agQ(final View view) {
+        return view.getZ();
+    }
+    
+    public void agR(final View view, final float z) {
+        view.setZ(z);
+    }
+    
+    public void agS(final View view) {
         view.stopNestedScroll();
     }
 }

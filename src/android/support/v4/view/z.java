@@ -15,7 +15,7 @@ class z implements Parcelable$ClassLoaderCreator
     
     public AbsSavedState createFromParcel(final Parcel parcel, final ClassLoader classLoader) {
         if (parcel.readParcelable(classLoader) == null) {
-            return AbsSavedState.Uv;
+            return AbsSavedState.VV;
         }
         throw new IllegalStateException("superState must be null");
     }

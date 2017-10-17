@@ -1,59 +1,66 @@
-.class public final Landroid/support/v4/os/c;
+.class Landroid/support/v4/os/c;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
+
 
 # direct methods
-.method private constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 62
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static arh()V
-    .locals 2
+
+# virtual methods
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/os/ResultReceiver;
+    .locals 1
 
     .prologue
-    .line 57
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 145
+    new-instance v0, Landroid/support/v4/os/ResultReceiver;
 
-    const/16 v1, 0x12
+    invoke-direct {v0, p1}, Landroid/support/v4/os/ResultReceiver;-><init>(Landroid/os/Parcel;)V
 
-    if-ge v0, v1, :cond_0
-
-    .line 60
-    :goto_0
-    return-void
-
-    .line 58
-    :cond_0
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public static ari(Ljava/lang/String;)V
-    .locals 2
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
 
     .prologue
-    .line 44
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 142
+    invoke-virtual {p0, p1}, Landroid/support/v4/os/c;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/os/ResultReceiver;
 
-    const/16 v1, 0x12
+    move-result-object v0
 
-    if-ge v0, v1, :cond_0
+    return-object v0
+.end method
 
-    .line 47
-    :goto_0
-    return-void
+.method public newArray(I)[Landroid/support/v4/os/ResultReceiver;
+    .locals 1
 
-    .line 45
-    :cond_0
-    invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    .prologue
+    .line 149
+    new-array v0, p1, [Landroid/support/v4/os/ResultReceiver;
 
-    goto :goto_0
+    return-object v0
+.end method
+
+.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 142
+    invoke-virtual {p0, p1}, Landroid/support/v4/os/c;->newArray(I)[Landroid/support/v4/os/ResultReceiver;
+
+    move-result-object v0
+
+    return-object v0
 .end method

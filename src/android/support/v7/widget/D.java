@@ -6,5 +6,5 @@ package android.support.v7.widget;
 
 public abstract class d
 {
-    public abstract boolean WI(final int p0, final int p1);
+    public abstract boolean XG(final int p0, final int p1);
 }

@@ -11,13 +11,13 @@
 
 
 # instance fields
-.field public aeG:I
+.field public afI:I
 
-.field public aeH:I
+.field public afJ:I
 
-.field public aeI:I
+.field public afK:I
 
-.field public aeJ:I
+.field public afL:I
 
 .field public controlType:I
 
@@ -28,9 +28,9 @@
 
     .prologue
     .line 65
-    new-instance v0, Landroid/support/v4/media/session/y;
+    new-instance v0, Landroid/support/v4/media/session/j;
 
-    invoke-direct {v0}, Landroid/support/v4/media/session/y;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/media/session/j;-><init>()V
 
     sput-object v0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -49,7 +49,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeG:I
+    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afI:I
 
     .line 44
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
@@ -63,21 +63,21 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeJ:I
+    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afL:I
 
     .line 46
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeH:I
+    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afJ:I
 
     .line 47
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeI:I
+    iput v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afK:I
 
     .line 48
     return-void
@@ -100,7 +100,7 @@
 
     .prologue
     .line 57
-    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeG:I
+    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afI:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
@@ -110,17 +110,17 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 59
-    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeJ:I
+    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afL:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 60
-    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeH:I
+    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afJ:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 61
-    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->aeI:I
+    iget v0, p0, Landroid/support/v4/media/session/ParcelableVolumeInfo;->afK:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 

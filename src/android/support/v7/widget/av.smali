@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field private final Sp:F
+.field private final TY:F
 
-.field protected Sq:Landroid/graphics/PointF;
+.field protected TZ:Landroid/graphics/PointF;
 
-.field protected final Sr:Landroid/view/animation/DecelerateInterpolator;
+.field protected final Ua:Landroid/view/animation/DecelerateInterpolator;
 
-.field protected final Ss:Landroid/view/animation/LinearInterpolator;
+.field protected final Ub:Landroid/view/animation/LinearInterpolator;
 
-.field protected St:I
+.field protected Uc:I
 
-.field protected Su:I
+.field protected Ud:I
 
 
 # direct methods
@@ -32,19 +32,19 @@
 
     invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v7/widget/av;->Ss:Landroid/view/animation/LinearInterpolator;
+    iput-object v0, p0, Landroid/support/v7/widget/av;->Ub:Landroid/view/animation/LinearInterpolator;
 
     .line 85
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v7/widget/av;->Sr:Landroid/view/animation/DecelerateInterpolator;
+    iput-object v0, p0, Landroid/support/v7/widget/av;->Ua:Landroid/view/animation/DecelerateInterpolator;
 
     .line 93
-    iput v1, p0, Landroid/support/v7/widget/av;->Su:I
+    iput v1, p0, Landroid/support/v7/widget/av;->Ud:I
 
-    iput v1, p0, Landroid/support/v7/widget/av;->St:I
+    iput v1, p0, Landroid/support/v7/widget/av;->Uc:I
 
     .line 96
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -55,17 +55,17 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/av;->abI(Landroid/util/DisplayMetrics;)F
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/av;->acJ(Landroid/util/DisplayMetrics;)F
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/av;->Sp:F
+    iput v0, p0, Landroid/support/v7/widget/av;->TY:F
 
     .line 97
     return-void
 .end method
 
-.method private abF(II)I
+.method private acG(II)I
     .locals 3
 
     .prologue
@@ -89,25 +89,25 @@
 
 
 # virtual methods
-.method protected WT(Landroid/view/View;Landroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
+.method protected XT(Landroid/view/View;Landroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
     .locals 4
 
     .prologue
     .line 112
-    invoke-virtual {p0}, Landroid/support/v7/widget/av;->abL()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/av;->acM()I
 
     move-result v0
 
-    invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/av;->abD(Landroid/view/View;I)I
+    invoke-virtual {p0, p1, v0}, Landroid/support/v7/widget/av;->acE(Landroid/view/View;I)I
 
     move-result v0
 
     .line 113
-    invoke-virtual {p0}, Landroid/support/v7/widget/av;->abK()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/av;->acL()I
 
     move-result v1
 
-    invoke-virtual {p0, p1, v1}, Landroid/support/v7/widget/av;->abJ(Landroid/view/View;I)I
+    invoke-virtual {p0, p1, v1}, Landroid/support/v7/widget/av;->acK(Landroid/view/View;I)I
 
     move-result v1
 
@@ -127,7 +127,7 @@
     double-to-int v2, v2
 
     .line 115
-    invoke-virtual {p0, v2}, Landroid/support/v7/widget/av;->abE(I)I
+    invoke-virtual {p0, v2}, Landroid/support/v7/widget/av;->acF(I)I
 
     move-result v2
 
@@ -144,14 +144,14 @@
 
     neg-int v1, v1
 
-    iget-object v3, p0, Landroid/support/v7/widget/av;->Sr:Landroid/view/animation/DecelerateInterpolator;
+    iget-object v3, p0, Landroid/support/v7/widget/av;->Ua:Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-virtual {p3, v0, v1, v2, v3}, Landroid/support/v7/widget/H;->ZE(IIILandroid/view/animation/Interpolator;)V
+    invoke-virtual {p3, v0, v1, v2, v3}, Landroid/support/v7/widget/H;->aaG(IIILandroid/view/animation/Interpolator;)V
 
     goto :goto_0
 .end method
 
-.method protected WV(IILandroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
+.method protected XU(IILandroid/support/v7/widget/e;Landroid/support/v7/widget/H;)V
     .locals 1
 
     .prologue
@@ -163,25 +163,25 @@
     if-eqz v0, :cond_1
 
     .line 136
-    iget v0, p0, Landroid/support/v7/widget/av;->Su:I
+    iget v0, p0, Landroid/support/v7/widget/av;->Ud:I
 
-    invoke-direct {p0, v0, p1}, Landroid/support/v7/widget/av;->abF(II)I
+    invoke-direct {p0, v0, p1}, Landroid/support/v7/widget/av;->acG(II)I
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/av;->Su:I
+    iput v0, p0, Landroid/support/v7/widget/av;->Ud:I
 
     .line 137
-    iget v0, p0, Landroid/support/v7/widget/av;->St:I
+    iget v0, p0, Landroid/support/v7/widget/av;->Uc:I
 
-    invoke-direct {p0, v0, p2}, Landroid/support/v7/widget/av;->abF(II)I
+    invoke-direct {p0, v0, p2}, Landroid/support/v7/widget/av;->acG(II)I
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/av;->St:I
+    iput v0, p0, Landroid/support/v7/widget/av;->Uc:I
 
     .line 139
-    iget v0, p0, Landroid/support/v7/widget/av;->Su:I
+    iget v0, p0, Landroid/support/v7/widget/av;->Ud:I
 
     if-eqz v0, :cond_2
 
@@ -199,17 +199,17 @@
 
     .line 139
     :cond_2
-    iget v0, p0, Landroid/support/v7/widget/av;->St:I
+    iget v0, p0, Landroid/support/v7/widget/av;->Uc:I
 
     if-nez v0, :cond_0
 
     .line 140
-    invoke-virtual {p0, p4}, Landroid/support/v7/widget/av;->abG(Landroid/support/v7/widget/H;)V
+    invoke-virtual {p0, p4}, Landroid/support/v7/widget/av;->acH(Landroid/support/v7/widget/H;)V
 
     goto :goto_0
 .end method
 
-.method public abC(IIIII)I
+.method public acD(IIIII)I
     .locals 2
 
     .prologue
@@ -272,7 +272,7 @@
     .end packed-switch
 .end method
 
-.method public abD(Landroid/view/View;I)I
+.method public acE(Landroid/view/View;I)I
     .locals 6
 
     .prologue
@@ -344,19 +344,19 @@
     move v5, p2
 
     .line 337
-    invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/av;->abC(IIIII)I
+    invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/av;->acD(IIIII)I
 
     move-result v0
 
     return v0
 .end method
 
-.method protected abE(I)I
+.method protected acF(I)I
     .locals 4
 
     .prologue
     .line 179
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/av;->abH(I)I
+    invoke-virtual {p0, p1}, Landroid/support/v7/widget/av;->acI(I)I
 
     move-result v0
 
@@ -375,7 +375,7 @@
     return v0
 .end method
 
-.method protected abG(Landroid/support/v7/widget/H;)V
+.method protected acH(Landroid/support/v7/widget/H;)V
     .locals 5
 
     .prologue
@@ -386,7 +386,7 @@
     const v3, 0x3f99999a    # 1.2f
 
     .line 232
-    invoke-virtual {p0}, Landroid/support/v7/widget/av;->WX()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/av;->XW()I
 
     move-result v0
 
@@ -399,12 +399,12 @@
 
     .line 234
     :cond_0
-    invoke-virtual {p0}, Landroid/support/v7/widget/av;->WX()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/av;->XW()I
 
     move-result v0
 
     .line 235
-    invoke-virtual {p1, v0}, Landroid/support/v7/widget/H;->ZG(I)V
+    invoke-virtual {p1, v0}, Landroid/support/v7/widget/H;->aaI(I)V
 
     .line 236
     invoke-virtual {p0}, Landroid/support/v7/widget/av;->stop()V
@@ -428,10 +428,10 @@
 
     .line 239
     :cond_2
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/av;->WS(Landroid/graphics/PointF;)V
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/av;->XS(Landroid/graphics/PointF;)V
 
     .line 240
-    iput-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iput-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     .line 242
     iget v1, v0, Landroid/graphics/PointF;->x:F
@@ -440,7 +440,7 @@
 
     float-to-int v1, v1
 
-    iput v1, p0, Landroid/support/v7/widget/av;->Su:I
+    iput v1, p0, Landroid/support/v7/widget/av;->Ud:I
 
     .line 243
     iget v0, v0, Landroid/graphics/PointF;->y:F
@@ -449,17 +449,17 @@
 
     float-to-int v0, v0
 
-    iput v0, p0, Landroid/support/v7/widget/av;->St:I
+    iput v0, p0, Landroid/support/v7/widget/av;->Uc:I
 
     .line 244
     const/16 v0, 0x2710
 
-    invoke-virtual {p0, v0}, Landroid/support/v7/widget/av;->abH(I)I
+    invoke-virtual {p0, v0}, Landroid/support/v7/widget/av;->acI(I)I
 
     move-result v0
 
     .line 248
-    iget v1, p0, Landroid/support/v7/widget/av;->Su:I
+    iget v1, p0, Landroid/support/v7/widget/av;->Ud:I
 
     int-to-float v1, v1
 
@@ -467,7 +467,7 @@
 
     float-to-int v1, v1
 
-    iget v2, p0, Landroid/support/v7/widget/av;->St:I
+    iget v2, p0, Landroid/support/v7/widget/av;->Uc:I
 
     int-to-float v2, v2
 
@@ -481,15 +481,15 @@
 
     float-to-int v0, v0
 
-    iget-object v3, p0, Landroid/support/v7/widget/av;->Ss:Landroid/view/animation/LinearInterpolator;
+    iget-object v3, p0, Landroid/support/v7/widget/av;->Ub:Landroid/view/animation/LinearInterpolator;
 
-    invoke-virtual {p1, v1, v2, v0, v3}, Landroid/support/v7/widget/H;->ZE(IIILandroid/view/animation/Interpolator;)V
+    invoke-virtual {p1, v1, v2, v0, v3}, Landroid/support/v7/widget/H;->aaG(IIILandroid/view/animation/Interpolator;)V
 
     .line 251
     return-void
 .end method
 
-.method protected abH(I)I
+.method protected acI(I)I
     .locals 2
 
     .prologue
@@ -500,7 +500,7 @@
 
     int-to-float v0, v0
 
-    iget v1, p0, Landroid/support/v7/widget/av;->Sp:F
+    iget v1, p0, Landroid/support/v7/widget/av;->TY:F
 
     mul-float/2addr v0, v1
 
@@ -515,7 +515,7 @@
     return v0
 .end method
 
-.method protected abI(Landroid/util/DisplayMetrics;)F
+.method protected acJ(Landroid/util/DisplayMetrics;)F
     .locals 2
 
     .prologue
@@ -531,7 +531,7 @@
     return v0
 .end method
 
-.method public abJ(Landroid/view/View;I)I
+.method public acK(Landroid/view/View;I)I
     .locals 6
 
     .prologue
@@ -603,21 +603,21 @@
     move v5, p2
 
     .line 312
-    invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/av;->abC(IIIII)I
+    invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/av;->acD(IIIII)I
 
     move-result v0
 
     return v0
 .end method
 
-.method protected abK()I
+.method protected acL()I
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
     .line 220
-    iget-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iget-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     if-nez v0, :cond_1
 
@@ -628,7 +628,7 @@
     return v0
 
     :cond_1
-    iget-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iget-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     iget v0, v0, Landroid/graphics/PointF;->y:F
 
@@ -636,7 +636,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iget-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     iget v0, v0, Landroid/graphics/PointF;->y:F
 
@@ -654,14 +654,14 @@
     goto :goto_0
 .end method
 
-.method protected abL()I
+.method protected acM()I
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
     .line 206
-    iget-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iget-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     if-nez v0, :cond_1
 
@@ -672,7 +672,7 @@
     return v0
 
     :cond_1
-    iget-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iget-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     iget v0, v0, Landroid/graphics/PointF;->x:F
 
@@ -680,7 +680,7 @@
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iget-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     iget v0, v0, Landroid/graphics/PointF;->x:F
 
@@ -723,16 +723,16 @@
 
     move-result-object v0
 
-    const-class v1, Landroid/support/v7/widget/G;
+    const-string/jumbo v1, "LinearSmoothScroller"
 
-    const-string/jumbo v2, "LinearSmoothScroller"
+    const-class v2, Landroid/support/v7/widget/G;
 
     .line 358
-    invoke-virtual {v1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -741,7 +741,7 @@
     move-result-object v0
 
     .line 357
-    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 359
     const/4 v0, 0x0
@@ -775,14 +775,14 @@
     const/4 v0, 0x0
 
     .line 150
-    iput v0, p0, Landroid/support/v7/widget/av;->St:I
+    iput v0, p0, Landroid/support/v7/widget/av;->Uc:I
 
-    iput v0, p0, Landroid/support/v7/widget/av;->Su:I
+    iput v0, p0, Landroid/support/v7/widget/av;->Ud:I
 
     .line 151
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v7/widget/av;->Sq:Landroid/graphics/PointF;
+    iput-object v0, p0, Landroid/support/v7/widget/av;->TZ:Landroid/graphics/PointF;
 
     .line 152
     return-void

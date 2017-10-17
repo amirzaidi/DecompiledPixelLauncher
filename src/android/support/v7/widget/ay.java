@@ -8,57 +8,57 @@ import java.util.List;
 
 class ay
 {
-    final Y Sz;
+    final Y Ui;
     
-    ay(final Y sz) {
-        this.Sz = sz;
+    ay(final Y ui) {
+        this.Ui = ui;
     }
     
-    private void abN(final List list, final int n, final aK ak, final int n2, final aK ak2) {
+    private void acO(final List list, final int n, final aK ak, final int n2, final aK ak2) {
         int n3 = 0;
-        if (ak.SR < ak2.SQ) {
+        if (ak.UA < ak2.Uz) {
             n3 = -1;
         }
-        if (ak.SQ < ak2.SQ) {
+        if (ak.Uz < ak2.Uz) {
             ++n3;
         }
-        if (ak2.SQ <= ak.SQ) {
-            ak.SQ += ak2.SR;
+        if (ak2.Uz <= ak.Uz) {
+            ak.Uz += ak2.UA;
         }
-        if (ak2.SQ <= ak.SR) {
-            ak.SR += ak2.SR;
+        if (ak2.Uz <= ak.UA) {
+            ak.UA += ak2.UA;
         }
-        ak2.SQ += n3;
+        ak2.Uz += n3;
         list.set(n, ak2);
         list.set(n2, ak);
     }
     
-    private void abO(final List list, final int n, final int n2) {
+    private void acP(final List list, final int n, final int n2) {
         final aK ak = list.get(n);
         final aK ak2 = list.get(n2);
-        switch (ak2.SO) {
+        switch (ak2.Ux) {
             case 2: {
-                this.abM(list, n, ak, n2, ak2);
+                this.acN(list, n, ak, n2, ak2);
                 break;
             }
             case 1: {
-                this.abN(list, n, ak, n2, ak2);
+                this.acO(list, n, ak, n2, ak2);
                 break;
             }
             case 4: {
-                this.abP(list, n, ak, n2, ak2);
+                this.acQ(list, n, ak, n2, ak2);
                 break;
             }
         }
     }
     
-    private int abQ(final List list) {
+    private int acR(final List list) {
         int n = 0;
         float n2 = 0.0f;
         int n3;
         float n4;
         for (int i = list.size() - 1; i >= 0; --i, n = n3, n2 = n4) {
-            if (list.get(i).SO != 8) {
+            if (list.get(i).Ux != 8) {
                 n3 = 1;
                 n4 = Float.MIN_VALUE;
             }
@@ -73,153 +73,153 @@ class ay
         return -1;
     }
     
-    void abM(final List list, final int n, final aK ak, final int n2, final aK ak2) {
-        final int so = 2;
-        final boolean sr = true;
+    void acN(final List list, final int n, final aK ak, final int n2, final aK ak2) {
+        final int ux = 2;
+        final boolean ua = true;
         boolean b = false;
         int n3;
-        if (ak.SQ >= ak.SR) {
-            if (ak2.SQ == ak.SR + 1 && ak2.SR == ak.SQ - ak.SR) {
-                b = sr;
-                n3 = (sr ? 1 : 0);
+        if (ak.Uz >= ak.UA) {
+            if (ak2.Uz == ak.UA + 1 && ak2.UA == ak.Uz - ak.UA) {
+                b = ua;
+                n3 = (ua ? 1 : 0);
             }
             else {
                 n3 = 0;
-                b = sr;
+                b = ua;
             }
         }
         else {
-            n3 = ((ak2.SQ == ak.SQ && ak2.SR == ak.SR - ak.SQ && sr) ? 1 : 0);
+            n3 = ((ak2.Uz == ak.Uz && ak2.UA == ak.UA - ak.Uz && ua) ? 1 : 0);
         }
-        if (ak.SR >= ak2.SQ) {
-            if (ak.SR < ak2.SQ + ak2.SR) {
-                --ak2.SR;
-                ak.SO = so;
-                ak.SR = (sr ? 1 : 0);
-                if (ak2.SR == 0) {
+        if (ak.UA >= ak2.Uz) {
+            if (ak.UA < ak2.Uz + ak2.UA) {
+                --ak2.UA;
+                ak.Ux = ux;
+                ak.UA = (ua ? 1 : 0);
+                if (ak2.UA == 0) {
                     list.remove(n2);
-                    this.Sz.YY(ak2);
+                    this.Ui.aaa(ak2);
                 }
                 return;
             }
         }
         else {
-            --ak2.SQ;
+            --ak2.Uz;
         }
-        aK yx;
-        if (ak.SQ > ak2.SQ) {
-            if (ak.SQ >= ak2.SQ + ak2.SR) {
-                yx = null;
+        aK zz;
+        if (ak.Uz > ak2.Uz) {
+            if (ak.Uz >= ak2.Uz + ak2.UA) {
+                zz = null;
             }
             else {
-                yx = this.Sz.YX(so, ak.SQ + 1, ak2.SQ + ak2.SR - ak.SQ, null);
-                ak2.SR = ak.SQ - ak2.SQ;
+                zz = this.Ui.ZZ(ux, ak.Uz + 1, ak2.Uz + ak2.UA - ak.Uz, null);
+                ak2.UA = ak.Uz - ak2.Uz;
             }
         }
         else {
-            ++ak2.SQ;
-            yx = null;
+            ++ak2.Uz;
+            zz = null;
         }
         if (n3 == 0) {
             if (!b) {
-                if (yx != null) {
-                    if (ak.SQ >= yx.SQ) {
-                        ak.SQ -= yx.SR;
+                if (zz != null) {
+                    if (ak.Uz >= zz.Uz) {
+                        ak.Uz -= zz.UA;
                     }
-                    if (ak.SR >= yx.SQ) {
-                        ak.SR -= yx.SR;
+                    if (ak.UA >= zz.Uz) {
+                        ak.UA -= zz.UA;
                     }
                 }
-                if (ak.SQ >= ak2.SQ) {
-                    ak.SQ -= ak2.SR;
+                if (ak.Uz >= ak2.Uz) {
+                    ak.Uz -= ak2.UA;
                 }
-                if (ak.SR >= ak2.SQ) {
-                    ak.SR -= ak2.SR;
+                if (ak.UA >= ak2.Uz) {
+                    ak.UA -= ak2.UA;
                 }
             }
             else {
-                if (yx != null) {
-                    if (ak.SQ > yx.SQ) {
-                        ak.SQ -= yx.SR;
+                if (zz != null) {
+                    if (ak.Uz > zz.Uz) {
+                        ak.Uz -= zz.UA;
                     }
-                    if (ak.SR > yx.SQ) {
-                        ak.SR -= yx.SR;
+                    if (ak.UA > zz.Uz) {
+                        ak.UA -= zz.UA;
                     }
                 }
-                if (ak.SQ > ak2.SQ) {
-                    ak.SQ -= ak2.SR;
+                if (ak.Uz > ak2.Uz) {
+                    ak.Uz -= ak2.UA;
                 }
-                if (ak.SR > ak2.SQ) {
-                    ak.SR -= ak2.SR;
+                if (ak.UA > ak2.Uz) {
+                    ak.UA -= ak2.UA;
                 }
             }
             list.set(n, ak2);
-            if (ak.SQ == ak.SR) {
+            if (ak.Uz == ak.UA) {
                 list.remove(n2);
             }
             else {
                 list.set(n2, ak);
             }
-            if (yx != null) {
-                list.add(n, yx);
+            if (zz != null) {
+                list.add(n, zz);
             }
             return;
         }
         list.set(n, ak2);
         list.remove(n2);
-        this.Sz.YY(ak);
+        this.Ui.aaa(ak);
     }
     
-    void abP(final List list, final int n, final aK ak, final int n2, final aK ak2) {
+    void acQ(final List list, final int n, final aK ak, final int n2, final aK ak2) {
         final int n3 = 4;
-        aK yx = null;
-        aK yx2;
-        if (ak.SR >= ak2.SQ) {
-            if (ak.SR >= ak2.SQ + ak2.SR) {
-                yx2 = null;
+        aK zz = null;
+        aK zz2;
+        if (ak.UA >= ak2.Uz) {
+            if (ak.UA >= ak2.Uz + ak2.UA) {
+                zz2 = null;
             }
             else {
-                --ak2.SR;
-                yx2 = this.Sz.YX(n3, ak.SQ, 1, ak2.SP);
+                --ak2.UA;
+                zz2 = this.Ui.ZZ(n3, ak.Uz, 1, ak2.Uy);
             }
         }
         else {
-            --ak2.SQ;
-            yx2 = null;
+            --ak2.Uz;
+            zz2 = null;
         }
-        if (ak.SQ > ak2.SQ) {
-            if (ak.SQ < ak2.SQ + ak2.SR) {
-                final int n4 = ak2.SQ + ak2.SR - ak.SQ;
-                yx = this.Sz.YX(n3, ak.SQ + 1, n4, ak2.SP);
-                ak2.SR -= n4;
+        if (ak.Uz > ak2.Uz) {
+            if (ak.Uz < ak2.Uz + ak2.UA) {
+                final int n4 = ak2.Uz + ak2.UA - ak.Uz;
+                zz = this.Ui.ZZ(n3, ak.Uz + 1, n4, ak2.Uy);
+                ak2.UA -= n4;
             }
         }
         else {
-            ++ak2.SQ;
+            ++ak2.Uz;
         }
         list.set(n2, ak);
-        if (ak2.SR <= 0) {
+        if (ak2.UA <= 0) {
             list.remove(n);
-            this.Sz.YY(ak2);
+            this.Ui.aaa(ak2);
         }
         else {
             list.set(n, ak2);
         }
-        if (yx2 != null) {
-            list.add(n, yx2);
+        if (zz2 != null) {
+            list.add(n, zz2);
         }
-        if (yx != null) {
-            list.add(n, yx);
+        if (zz != null) {
+            list.add(n, zz);
         }
     }
     
-    void abR(final List list) {
+    void acS(final List list) {
         while (true) {
-            final int abQ = this.abQ(list);
-            if (abQ == -1) {
+            final int acR = this.acR(list);
+            if (acR == -1) {
                 break;
             }
-            this.abO(list, abQ, abQ + 1);
+            this.acP(list, acR, acR + 1);
         }
     }
 }

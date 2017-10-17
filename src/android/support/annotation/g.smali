@@ -4,11 +4,3 @@
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;
-
-
-# virtual methods
-.method public abstract asR()D
-.end method
-
-.method public abstract asS()D
-.end method

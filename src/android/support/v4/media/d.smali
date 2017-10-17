@@ -15,7 +15,7 @@
     return-void
 .end method
 
-.method public static asf(Ljava/lang/Object;Landroid/os/Parcel;I)V
+.method public static atc(Ljava/lang/Object;Landroid/os/Parcel;I)V
     .locals 0
 
     .prologue

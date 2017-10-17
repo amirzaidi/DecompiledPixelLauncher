@@ -6,7 +6,7 @@ package android.support.v7.a;
 
 class g implements b
 {
-    private boolean adk(final float[] array) {
+    private boolean aeo(final float[] array) {
         int n = 1;
         if (array[0] < 10.0f || array[0] > 37.0f || array[n] > 0.82f) {
             n = 0;
@@ -14,17 +14,17 @@ class g implements b
         return n != 0;
     }
     
-    private boolean adl(final float[] array) {
+    private boolean aep(final float[] array) {
         return array[2] <= 0.05f;
     }
     
-    private boolean adm(final float[] array) {
+    private boolean aeq(final float[] array) {
         return array[2] >= 0.95f;
     }
     
-    public boolean acy(final int n, final float[] array) {
+    public boolean adC(final int n, final float[] array) {
         boolean b = false;
-        if (!this.adm(array) && !this.adl(array) && !this.adk(array)) {
+        if (!this.aeq(array) && !this.aep(array) && !this.aeo(array)) {
             b = true;
         }
         return b;

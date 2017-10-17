@@ -12,15 +12,15 @@ import android.os.Parcelable;
 public class StaggeredGridLayoutManager$SavedState implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    int QK;
-    int[] QL;
-    boolean QM;
-    int QN;
-    boolean QO;
-    int QP;
-    int QQ;
-    int[] QR;
-    List QS;
+    int[] SA;
+    List SB;
+    int St;
+    int[] Su;
+    boolean Sv;
+    int Sw;
+    boolean Sx;
+    int Sy;
+    int Sz;
     boolean mReverseLayout;
     
     static {
@@ -31,25 +31,25 @@ public class StaggeredGridLayoutManager$SavedState implements Parcelable
     }
     
     StaggeredGridLayoutManager$SavedState(final Parcel parcel) {
-        boolean qo = false;
+        boolean sx = false;
         final boolean b = true;
-        this.QN = parcel.readInt();
-        this.QK = parcel.readInt();
-        this.QP = parcel.readInt();
-        if (this.QP > 0) {
-            parcel.readIntArray(this.QR = new int[this.QP]);
+        this.Sw = parcel.readInt();
+        this.St = parcel.readInt();
+        this.Sy = parcel.readInt();
+        if (this.Sy > 0) {
+            parcel.readIntArray(this.SA = new int[this.Sy]);
         }
-        this.QQ = parcel.readInt();
-        if (this.QQ > 0) {
-            parcel.readIntArray(this.QL = new int[this.QQ]);
+        this.Sz = parcel.readInt();
+        if (this.Sz > 0) {
+            parcel.readIntArray(this.Su = new int[this.Sz]);
         }
         this.mReverseLayout = (parcel.readInt() == (b ? 1 : 0) && b);
-        this.QM = (parcel.readInt() == (b ? 1 : 0) && b);
+        this.Sv = (parcel.readInt() == (b ? 1 : 0) && b);
         if (parcel.readInt() == (b ? 1 : 0)) {
-            qo = b;
+            sx = b;
         }
-        this.QO = qo;
-        this.QS = parcel.readArrayList(StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem.class.getClassLoader());
+        this.Sx = sx;
+        this.SB = parcel.readArrayList(StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem.class.getClassLoader());
     }
     
     public int describeContents() {
@@ -59,15 +59,15 @@ public class StaggeredGridLayoutManager$SavedState implements Parcelable
     public void writeToParcel(final Parcel parcel, final int n) {
         final int n2 = 1;
         int n3 = 0;
-        parcel.writeInt(this.QN);
-        parcel.writeInt(this.QK);
-        parcel.writeInt(this.QP);
-        if (this.QP > 0) {
-            parcel.writeIntArray(this.QR);
+        parcel.writeInt(this.Sw);
+        parcel.writeInt(this.St);
+        parcel.writeInt(this.Sy);
+        if (this.Sy > 0) {
+            parcel.writeIntArray(this.SA);
         }
-        parcel.writeInt(this.QQ);
-        if (this.QQ > 0) {
-            parcel.writeIntArray(this.QL);
+        parcel.writeInt(this.Sz);
+        if (this.Sz > 0) {
+            parcel.writeIntArray(this.Su);
         }
         int n4;
         if (!this.mReverseLayout) {
@@ -78,17 +78,17 @@ public class StaggeredGridLayoutManager$SavedState implements Parcelable
         }
         parcel.writeInt(n4);
         int n5;
-        if (!this.QM) {
+        if (!this.Sv) {
             n5 = 0;
         }
         else {
             n5 = n2;
         }
         parcel.writeInt(n5);
-        if (this.QO) {
+        if (this.Sx) {
             n3 = n2;
         }
         parcel.writeInt(n3);
-        parcel.writeList(this.QS);
+        parcel.writeList(this.SB);
     }
 }

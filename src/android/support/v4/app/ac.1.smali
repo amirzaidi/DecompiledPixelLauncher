@@ -16,18 +16,18 @@
 
 
 # virtual methods
-.method public abstract aks()Z
+.method public abstract alD()Z
 .end method
 
-.method public abstract akw(I)Landroid/view/View;
+.method public abstract alH(I)Landroid/view/View;
 .end method
 
-.method public amH(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/support/v4/app/e;
+.method public anU(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/support/v4/app/g;
     .locals 1
 
     .prologue
     .line 33
-    invoke-static {p1, p2, p3}, Landroid/support/v4/app/e;->aiU(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/support/v4/app/e;
+    invoke-static {p1, p2, p3}, Landroid/support/v4/app/g;->akh(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/support/v4/app/g;
 
     move-result-object v0
 

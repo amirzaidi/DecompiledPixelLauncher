@@ -31,11 +31,11 @@
     if-lt v0, v1, :cond_0
 
     .line 418
-    invoke-static {p1}, Landroid/support/v4/media/m;->asL(Landroid/os/Parcel;)Ljava/lang/Object;
+    invoke-static {p1}, Landroid/support/v4/media/m;->atI(Landroid/os/Parcel;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompat;->asB(Ljava/lang/Object;)Landroid/support/v4/media/MediaDescriptionCompat;
+    invoke-static {v0}, Landroid/support/v4/media/MediaDescriptionCompat;->aty(Ljava/lang/Object;)Landroid/support/v4/media/MediaDescriptionCompat;
 
     move-result-object v0
 

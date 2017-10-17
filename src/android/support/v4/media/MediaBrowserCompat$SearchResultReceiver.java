@@ -12,8 +12,8 @@ import android.support.v4.os.ResultReceiver;
 
 class MediaBrowserCompat$SearchResultReceiver extends ResultReceiver
 {
-    private final c afq;
-    private final Bundle afr;
+    private final c ags;
+    private final Bundle agt;
     private final String mQuery;
     
     protected void onReceiveResult(final int n, final Bundle bundle) {
@@ -32,9 +32,9 @@ class MediaBrowserCompat$SearchResultReceiver extends ResultReceiver
                 }
                 list = list2;
             }
-            this.afq.asd(this.mQuery, this.afr, list);
+            this.ags.ata(this.mQuery, this.agt, list);
             return;
         }
-        this.afq.ase(this.mQuery, this.afr);
+        this.ags.atb(this.mQuery, this.agt);
     }
 }

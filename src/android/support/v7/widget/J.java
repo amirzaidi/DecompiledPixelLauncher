@@ -70,14 +70,14 @@ public abstract class j
     
     private boolean doesTransientStatePreventRecycling() {
         boolean b = false;
-        if ((this.mFlags & 0x10) == 0x0 && f.afF(this.itemView)) {
+        if ((this.mFlags & 0x10) == 0x0 && f.agJ(this.itemView)) {
             b = true;
         }
         return b;
     }
     
     private void onEnteredHiddenState(final RecyclerView recyclerView) {
-        this.mWasImportantForAccessibilityBeforeHidden = f.afy(this.itemView);
+        this.mWasImportantForAccessibilityBeforeHidden = f.agA(this.itemView);
         recyclerView.setChildImportantForAccessibilityInternal(this, 4);
     }
     
@@ -211,7 +211,7 @@ public abstract class j
     
     public final boolean isRecyclable() {
         boolean b = false;
-        if ((this.mFlags & 0x10) == 0x0 && !f.afF(this.itemView)) {
+        if ((this.mFlags & 0x10) == 0x0 && !f.agJ(this.itemView)) {
             b = true;
         }
         return b;
@@ -266,7 +266,7 @@ public abstract class j
         }
         this.mPosition += n;
         if (this.itemView.getLayoutParams() != null) {
-            ((i)this.itemView.getLayoutParams()).Pb = true;
+            ((i)this.itemView.getLayoutParams()).QI = true;
         }
     }
     
@@ -377,7 +377,7 @@ public abstract class j
     }
     
     void unScrap() {
-        this.mScrapContainer.Xy(this);
+        this.mScrapContainer.Yy(this);
     }
     
     boolean wasReturnedFromScrap() {

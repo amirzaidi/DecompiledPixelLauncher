@@ -1,30 +1,54 @@
-.class public abstract Landroid/support/v4/app/y;
-.super Ljava/lang/Object;
+.class Landroid/support/v4/app/y;
+.super Landroid/transition/Transition$EpicenterCallback;
 .source "SourceFile"
 
 
+# instance fields
+.field final synthetic ZA:Landroid/graphics/Rect;
+
+
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>(Landroid/graphics/Rect;)V
     .locals 0
 
     .prologue
-    .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 546
+    iput-object p1, p0, Landroid/support/v4/app/y;->ZA:Landroid/graphics/Rect;
 
-    .line 187
+    invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract akB(Landroid/support/v4/app/e;)Landroid/support/v4/app/y;
-.end method
+.method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
+    .locals 2
 
-.method public abstract akC()I
-.end method
+    .prologue
+    const/4 v1, 0x0
 
-.method public abstract akD(Landroid/support/v4/app/e;Ljava/lang/String;)Landroid/support/v4/app/y;
-.end method
+    .line 549
+    iget-object v0, p0, Landroid/support/v4/app/y;->ZA:Landroid/graphics/Rect;
 
-.method public abstract commit()I
+    if-nez v0, :cond_1
+
+    .line 550
+    :cond_0
+    return-object v1
+
+    .line 549
+    :cond_1
+    iget-object v0, p0, Landroid/support/v4/app/y;->ZA:Landroid/graphics/Rect;
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 552
+    iget-object v0, p0, Landroid/support/v4/app/y;->ZA:Landroid/graphics/Rect;
+
+    return-object v0
 .end method

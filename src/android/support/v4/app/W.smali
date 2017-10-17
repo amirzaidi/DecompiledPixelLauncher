@@ -1,106 +1,143 @@
-.class Landroid/support/v4/app/W;
-.super Ljava/lang/Object;
+.class public final Landroid/support/v4/app/W;
+.super Landroid/support/v4/app/as;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field private static final aaI:Landroid/support/v4/app/aH;
+
+.field public static final aaN:Landroid/support/v4/app/aM;
 
 
 # instance fields
-.field final synthetic Zk:I
+.field private final aaH:Ljava/util/Set;
 
-.field final synthetic Zl:Ljava/util/ArrayList;
+.field private final aaJ:Z
 
-.field final synthetic Zm:Ljava/util/ArrayList;
+.field private final aaK:Landroid/os/Bundle;
 
-.field final synthetic Zn:Ljava/util/ArrayList;
+.field private final aaL:[Ljava/lang/CharSequence;
 
-.field final synthetic Zo:Ljava/util/ArrayList;
+.field private final aaM:Ljava/lang/CharSequence;
+
+.field private final aaO:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(ILjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .prologue
-    .line 343
-    iput p1, p0, Landroid/support/v4/app/W;->Zk:I
+    .line 394
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iput-object p2, p0, Landroid/support/v4/app/W;->Zn:Ljava/util/ArrayList;
+    const/16 v1, 0x14
 
-    iput-object p3, p0, Landroid/support/v4/app/W;->Zo:Ljava/util/ArrayList;
+    if-ge v0, v1, :cond_0
 
-    iput-object p4, p0, Landroid/support/v4/app/W;->Zl:Ljava/util/ArrayList;
+    .line 396
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iput-object p5, p0, Landroid/support/v4/app/W;->Zm:Ljava/util/ArrayList;
+    const/16 v1, 0x10
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-ge v0, v1, :cond_1
+
+    .line 399
+    new-instance v0, Landroid/support/v4/app/az;
+
+    invoke-direct {v0}, Landroid/support/v4/app/az;-><init>()V
+
+    sput-object v0, Landroid/support/v4/app/W;->aaI:Landroid/support/v4/app/aH;
+
+    .line 405
+    :goto_0
+    new-instance v0, Landroid/support/v4/app/an;
+
+    invoke-direct {v0}, Landroid/support/v4/app/an;-><init>()V
+
+    sput-object v0, Landroid/support/v4/app/W;->aaN:Landroid/support/v4/app/aM;
 
     return-void
+
+    .line 395
+    :cond_0
+    new-instance v0, Landroid/support/v4/app/m;
+
+    invoke-direct {v0}, Landroid/support/v4/app/m;-><init>()V
+
+    sput-object v0, Landroid/support/v4/app/W;->aaI:Landroid/support/v4/app/aH;
+
+    goto :goto_0
+
+    .line 397
+    :cond_1
+    new-instance v0, Landroid/support/v4/app/at;
+
+    invoke-direct {v0}, Landroid/support/v4/app/at;-><init>()V
+
+    sput-object v0, Landroid/support/v4/app/W;->aaI:Landroid/support/v4/app/aH;
+
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public anF()Ljava/util/Set;
+    .locals 1
 
     .prologue
-    .line 346
-    const/4 v0, 0x0
+    .line 93
+    iget-object v0, p0, Landroid/support/v4/app/W;->aaH:Ljava/util/Set;
 
-    move v2, v0
+    return-object v0
+.end method
 
-    :goto_0
-    iget v0, p0, Landroid/support/v4/app/W;->Zk:I
+.method public anG()Ljava/lang/String;
+    .locals 1
 
-    if-lt v2, v0, :cond_0
+    .prologue
+    .line 72
+    iget-object v0, p0, Landroid/support/v4/app/W;->aaO:Ljava/lang/String;
 
-    .line 350
-    return-void
+    return-object v0
+.end method
 
-    .line 347
-    :cond_0
-    iget-object v0, p0, Landroid/support/v4/app/W;->Zn:Ljava/util/ArrayList;
+.method public anH()Z
+    .locals 1
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .prologue
+    .line 116
+    iget-boolean v0, p0, Landroid/support/v4/app/W;->aaJ:Z
 
-    move-result-object v0
+    return v0
+.end method
 
-    check-cast v0, Landroid/view/View;
+.method public anI()[Ljava/lang/CharSequence;
+    .locals 1
 
-    iget-object v1, p0, Landroid/support/v4/app/W;->Zo:Ljava/util/ArrayList;
+    .prologue
+    .line 88
+    iget-object v0, p0, Landroid/support/v4/app/W;->aaL:[Ljava/lang/CharSequence;
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v1
+.method public getExtras()Landroid/os/Bundle;
+    .locals 1
 
-    check-cast v1, Ljava/lang/String;
+    .prologue
+    .line 124
+    iget-object v0, p0, Landroid/support/v4/app/W;->aaK:Landroid/os/Bundle;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionName(Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    .line 348
-    iget-object v0, p0, Landroid/support/v4/app/W;->Zl:Ljava/util/ArrayList;
+.method public getLabel()Ljava/lang/CharSequence;
+    .locals 1
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .prologue
+    .line 80
+    iget-object v0, p0, Landroid/support/v4/app/W;->aaM:Ljava/lang/CharSequence;
 
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    iget-object v1, p0, Landroid/support/v4/app/W;->Zm:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionName(Ljava/lang/String;)V
-
-    .line 346
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
-
-    goto :goto_0
+    return-object v0
 .end method

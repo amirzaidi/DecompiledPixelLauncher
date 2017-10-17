@@ -3,36 +3,28 @@
 .source "SourceFile"
 
 
-# instance fields
-.field XU:Ljava/lang/CharSequence;
-
-.field XV:Ljava/lang/CharSequence;
-
-.field XW:Z
-
-
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
-    .line 1971
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1975
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroid/support/v4/app/z;->XW:Z
-
+    .line 187
     return-void
 .end method
 
 
 # virtual methods
-.method public akz(Landroid/os/Bundle;)V
-    .locals 0
+.method public abstract alL(Landroid/support/v4/app/g;)Landroid/support/v4/app/z;
+.end method
 
-    .prologue
-    .line 2000
-    return-void
+.method public abstract alM()I
+.end method
+
+.method public abstract alN(Landroid/support/v4/app/g;Ljava/lang/String;)Landroid/support/v4/app/z;
+.end method
+
+.method public abstract commit()I
 .end method

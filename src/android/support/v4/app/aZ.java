@@ -4,23 +4,6 @@
 
 package android.support.v4.app;
 
-import java.util.List;
-
-public class az
+class az implements aH
 {
-    private final List aaT;
-    private final List aaU;
-    
-    az(final List aaT, final List aaU) {
-        this.aaT = aaT;
-        this.aaU = aaU;
-    }
-    
-    List amV() {
-        return this.aaT;
-    }
-    
-    List amW() {
-        return this.aaU;
-    }
 }

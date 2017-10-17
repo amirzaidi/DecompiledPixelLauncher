@@ -4,47 +4,44 @@
 
 package android.support.v7.widget;
 
-import android.animation.Animator$AnimatorListener;
-import android.animation.Animator;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.animation.AnimatorListenerAdapter;
-
-class ag extends AnimatorListenerAdapter
+class ag
 {
-    final /* synthetic */ int RM;
-    final /* synthetic */ int RN;
-    final /* synthetic */ Z RO;
-    final /* synthetic */ j RP;
-    final /* synthetic */ ViewPropertyAnimator RQ;
-    final /* synthetic */ View val$view;
+    int Tv;
+    int Tw;
+    int Tx;
+    int Ty;
+    int Tz;
     
-    ag(final Z ro, final j rp, final int rn, final View val$view, final int rm, final ViewPropertyAnimator rq) {
-        this.RO = ro;
-        this.RP = rp;
-        this.RN = rn;
-        this.val$view = val$view;
-        this.RM = rm;
-        this.RQ = rq;
+    ag() {
+        this.Tx = 0;
     }
     
-    public void onAnimationCancel(final Animator animator) {
-        if (this.RN != 0) {
-            this.val$view.setTranslationX(0.0f);
+    int acj(final int n, final int n2) {
+        if (n > n2) {
+            return 1;
         }
-        if (this.RM != 0) {
-            this.val$view.setTranslationY(0.0f);
+        if (n != n2) {
+            return 4;
         }
+        return 2;
     }
     
-    public void onAnimationEnd(final Animator animator) {
-        this.RQ.setListener((Animator$AnimatorListener)null);
-        this.RO.ach(this.RP);
-        this.RO.Rb.remove(this.RP);
-        this.RO.aaD();
+    void ack() {
+        this.Tx = 0;
     }
     
-    public void onAnimationStart(final Animator animator) {
-        this.RO.acg(this.RP);
+    boolean acl() {
+        return ((this.Tx & 0x7) == 0x0 || (this.Tx & this.acj(this.Tz, this.Tv) << 0) != 0x0) && ((this.Tx & 0x70) == 0x0 || (this.Tx & this.acj(this.Tz, this.Tw) << 4) != 0x0) && ((this.Tx & 0x700) == 0x0 || (this.Tx & this.acj(this.Ty, this.Tv) << 8) != 0x0) && ((this.Tx & 0x7000) == 0x0 || (this.Tx & this.acj(this.Ty, this.Tw) << 12) != 0x0);
+    }
+    
+    void addFlags(final int n) {
+        this.Tx |= n;
+    }
+    
+    void setBounds(final int tv, final int tw, final int tz, final int ty) {
+        this.Tv = tv;
+        this.Tw = tw;
+        this.Tz = tz;
+        this.Ty = ty;
     }
 }

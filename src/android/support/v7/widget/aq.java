@@ -5,35 +5,35 @@
 package android.support.v7.widget;
 
 import android.support.v4.a.d;
-import android.support.v4.a.i;
+import android.support.v4.a.j;
 
 class aq
 {
-    static i Sk;
-    E Sj;
-    E Sl;
-    int Sm;
+    static j TT;
+    E TS;
+    E TU;
+    int TV;
     
     static {
-        aq.Sk = new d(20);
+        aq.TT = new d(20);
     }
     
-    static aq abA() {
-        aq aq = (aq)android.support.v7.widget.aq.Sk.agV();
+    static void acA(final aq aq) {
+        aq.TV = 0;
+        aq.TS = null;
+        aq.TU = null;
+        aq.TT.aip(aq);
+    }
+    
+    static aq acB() {
+        aq aq = (aq)android.support.v7.widget.aq.TT.air();
         if (aq == null) {
             aq = new aq();
         }
         return aq;
     }
     
-    static void abB() {
-        while (aq.Sk.agV() != null) {}
-    }
-    
-    static void abz(final aq aq) {
-        aq.Sm = 0;
-        aq.Sj = null;
-        aq.Sl = null;
-        aq.Sk.agT(aq);
+    static void acC() {
+        while (aq.TT.air() != null) {}
     }
 }

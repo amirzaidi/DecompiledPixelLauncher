@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 1171
+    .line 1173
     invoke-direct {p0}, Landroid/support/v4/view/l;-><init>()V
 
     return-void
@@ -16,22 +16,22 @@
 
 
 # virtual methods
-.method public afK(Landroid/view/View;I)V
+.method public agT(Landroid/view/View;I)V
     .locals 0
 
     .prologue
-    .line 1184
+    .line 1186
     invoke-virtual {p1, p2}, Landroid/view/View;->setImportantForAccessibility(I)V
 
-    .line 1185
+    .line 1187
     return-void
 .end method
 
-.method public afL(Landroid/view/View;)Z
+.method public agU(Landroid/view/View;)Z
     .locals 1
 
     .prologue
-    .line 1199
+    .line 1201
     invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v0

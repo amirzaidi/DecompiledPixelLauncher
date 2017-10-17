@@ -8,27 +8,33 @@
     .locals 0
 
     .prologue
-    .line 47
+    .line 76
     invoke-direct {p0}, Landroid/support/v4/view/a/p;-><init>()V
 
-    .line 48
     return-void
 .end method
 
 
 # virtual methods
-.method public aeV(Landroid/support/v4/view/a/b;)Ljava/lang/Object;
+.method public aga(Landroid/view/accessibility/AccessibilityEvent;)I
     .locals 1
 
     .prologue
-    .line 53
-    new-instance v0, Landroid/support/v4/view/a/E;
+    .line 85
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getContentChangeTypes()I
 
-    invoke-direct {v0, p0, p1}, Landroid/support/v4/view/a/E;-><init>(Landroid/support/v4/view/a/o;Landroid/support/v4/view/a/b;)V
+    move-result v0
 
-    invoke-static {v0}, Landroid/support/v4/view/a/z;->afi(Landroid/support/v4/view/a/C;)Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object v0
+.method public agb(Landroid/view/accessibility/AccessibilityEvent;I)V
+    .locals 0
 
-    return-object v0
+    .prologue
+    .line 80
+    invoke-virtual {p1, p2}, Landroid/view/accessibility/AccessibilityEvent;->setContentChangeTypes(I)V
+
+    .line 81
+    return-void
 .end method

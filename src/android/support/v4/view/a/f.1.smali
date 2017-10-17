@@ -16,7 +16,19 @@
 
 
 # virtual methods
-.method public aew(IIZI)Ljava/lang/Object;
+.method public afA(IIIIZZ)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 1475
+    invoke-static/range {p1 .. p6}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public afy(IIZI)Ljava/lang/Object;
     .locals 1
 
     .prologue
@@ -28,7 +40,7 @@
     return-object v0
 .end method
 
-.method public aex(Ljava/lang/Object;)Z
+.method public afz(Ljava/lang/Object;)Z
     .locals 1
 
     .prologue
@@ -40,16 +52,4 @@
     move-result v0
 
     return v0
-.end method
-
-.method public aey(IIIIZZ)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 1475
-    invoke-static/range {p1 .. p6}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
-
-    move-result-object v0
-
-    return-object v0
 .end method

@@ -16,14 +16,14 @@ import android.os.Parcelable;
 public final class MediaDescriptionCompat implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final CharSequence aeW;
-    private Object aeX;
-    private final Bundle aeY;
-    private final CharSequence aeZ;
-    private final CharSequence afa;
-    private final String afb;
-    private final Uri afc;
-    private final Uri afd;
+    private final CharSequence afY;
+    private Object afZ;
+    private final Bundle aga;
+    private final CharSequence agb;
+    private final CharSequence agc;
+    private final String agd;
+    private final Uri age;
+    private final Uri agf;
     private final Bitmap mIcon;
     
     static {
@@ -31,94 +31,94 @@ public final class MediaDescriptionCompat implements Parcelable
     }
     
     MediaDescriptionCompat(final Parcel parcel) {
-        this.afb = parcel.readString();
-        this.aeZ = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.aeW = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.afa = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.agd = parcel.readString();
+        this.agb = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.afY = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.agc = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.mIcon = (Bitmap)parcel.readParcelable((ClassLoader)null);
-        this.afd = (Uri)parcel.readParcelable((ClassLoader)null);
-        this.aeY = parcel.readBundle();
-        this.afc = (Uri)parcel.readParcelable((ClassLoader)null);
+        this.agf = (Uri)parcel.readParcelable((ClassLoader)null);
+        this.aga = parcel.readBundle();
+        this.age = (Uri)parcel.readParcelable((ClassLoader)null);
     }
     
-    MediaDescriptionCompat(final String afb, final CharSequence aeZ, final CharSequence aeW, final CharSequence afa, final Bitmap mIcon, final Uri afd, final Bundle aeY, final Uri afc) {
-        this.afb = afb;
-        this.aeZ = aeZ;
-        this.aeW = aeW;
-        this.afa = afa;
+    MediaDescriptionCompat(final String agd, final CharSequence agb, final CharSequence afY, final CharSequence agc, final Bitmap mIcon, final Uri agf, final Bundle aga, final Uri age) {
+        this.agd = agd;
+        this.agb = agb;
+        this.afY = afY;
+        this.agc = agc;
         this.mIcon = mIcon;
-        this.afd = afd;
-        this.aeY = aeY;
-        this.afc = afc;
+        this.agf = agf;
+        this.aga = aga;
+        this.age = age;
     }
     
-    public static MediaDescriptionCompat asB(final Object aeX) {
+    public static MediaDescriptionCompat aty(final Object afZ) {
         Bundle bundle = null;
-        if (aeX != null && Build$VERSION.SDK_INT >= 21) {
+        if (afZ != null && Build$VERSION.SDK_INT >= 21) {
             final k k = new k();
-            k.asy(m.asM(aeX));
-            k.setTitle(m.asE(aeX));
-            k.asv(m.asG(aeX));
-            k.asx(m.asJ(aeX));
-            k.ast(m.asH(aeX));
-            k.asz(m.asI(aeX));
-            final Bundle f = m.asF(aeX);
+            k.atv(m.atJ(afZ));
+            k.setTitle(m.atB(afZ));
+            k.ats(m.atD(afZ));
+            k.atu(m.atG(afZ));
+            k.atq(m.atE(afZ));
+            k.atw(m.atF(afZ));
+            final Bundle atC = m.atC(afZ);
             Uri uri;
-            if (f != null) {
-                uri = (Uri)f.getParcelable("android.support.v4.media.description.MEDIA_URI");
+            if (atC != null) {
+                uri = (Uri)atC.getParcelable("android.support.v4.media.description.MEDIA_URI");
             }
             else {
                 uri = null;
             }
             if (uri == null) {
-                bundle = f;
+                bundle = atC;
             }
-            else if (f.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") || f.size() != 2) {
-                f.remove("android.support.v4.media.description.MEDIA_URI");
-                f.remove("android.support.v4.media.description.NULL_BUNDLE_FLAG");
-                bundle = f;
+            else if (atC.containsKey("android.support.v4.media.description.NULL_BUNDLE_FLAG") || atC.size() != 2) {
+                atC.remove("android.support.v4.media.description.MEDIA_URI");
+                atC.remove("android.support.v4.media.description.NULL_BUNDLE_FLAG");
+                bundle = atC;
             }
-            k.asw(bundle);
+            k.att(bundle);
             if (uri == null) {
                 if (Build$VERSION.SDK_INT >= 23) {
-                    k.asu(q.asO(aeX));
+                    k.atr(q.atL(afZ));
                 }
             }
             else {
-                k.asu(uri);
+                k.atr(uri);
             }
             final MediaDescriptionCompat build = k.build();
-            build.aeX = aeX;
+            build.afZ = afZ;
             return build;
         }
         return null;
     }
     
-    public Object asC() {
+    public Object atz() {
         final int n = 23;
-        if (this.aeX == null && Build$VERSION.SDK_INT >= 21) {
-            final Object asp = g.asp();
-            g.asj(asp, this.afb);
-            g.asq(asp, this.aeZ);
-            g.asr(asp, this.aeW);
-            g.ask(asp, this.afa);
-            g.asm(asp, this.mIcon);
-            g.asn(asp, this.afd);
-            Bundle aeY = this.aeY;
-            if (Build$VERSION.SDK_INT < n && this.afc != null) {
-                if (aeY == null) {
-                    aeY = new Bundle();
-                    aeY.putBoolean("android.support.v4.media.description.NULL_BUNDLE_FLAG", true);
+        if (this.afZ == null && Build$VERSION.SDK_INT >= 21) {
+            final Object atm = g.atm();
+            g.atg(atm, this.agd);
+            g.atn(atm, this.agb);
+            g.ato(atm, this.afY);
+            g.ath(atm, this.agc);
+            g.atj(atm, this.mIcon);
+            g.atk(atm, this.agf);
+            Bundle aga = this.aga;
+            if (Build$VERSION.SDK_INT < n && this.age != null) {
+                if (aga == null) {
+                    aga = new Bundle();
+                    aga.putBoolean("android.support.v4.media.description.NULL_BUNDLE_FLAG", true);
                 }
-                aeY.putParcelable("android.support.v4.media.description.MEDIA_URI", (Parcelable)this.afc);
+                aga.putParcelable("android.support.v4.media.description.MEDIA_URI", (Parcelable)this.age);
             }
-            g.asl(asp, aeY);
+            g.ati(atm, aga);
             if (Build$VERSION.SDK_INT >= n) {
-                l.asA(asp, this.afc);
+                l.atx(atm, this.age);
             }
-            return this.aeX = g.aso(asp);
+            return this.afZ = g.atl(atm);
         }
-        return this.aeX;
+        return this.afZ;
     }
     
     public int describeContents() {
@@ -126,22 +126,22 @@ public final class MediaDescriptionCompat implements Parcelable
     }
     
     public String toString() {
-        return (Object)this.aeZ + ", " + (Object)this.aeW + ", " + (Object)this.afa;
+        return (Object)this.agb + ", " + (Object)this.afY + ", " + (Object)this.agc;
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         if (Build$VERSION.SDK_INT >= 21) {
-            m.asK(this.asC(), parcel, n);
+            m.atH(this.atz(), parcel, n);
         }
         else {
-            parcel.writeString(this.afb);
-            TextUtils.writeToParcel(this.aeZ, parcel, n);
-            TextUtils.writeToParcel(this.aeW, parcel, n);
-            TextUtils.writeToParcel(this.afa, parcel, n);
+            parcel.writeString(this.agd);
+            TextUtils.writeToParcel(this.agb, parcel, n);
+            TextUtils.writeToParcel(this.afY, parcel, n);
+            TextUtils.writeToParcel(this.agc, parcel, n);
             parcel.writeParcelable((Parcelable)this.mIcon, n);
-            parcel.writeParcelable((Parcelable)this.afd, n);
-            parcel.writeBundle(this.aeY);
-            parcel.writeParcelable((Parcelable)this.afc, n);
+            parcel.writeParcelable((Parcelable)this.agf, n);
+            parcel.writeBundle(this.aga);
+            parcel.writeParcelable((Parcelable)this.age, n);
         }
     }
 }

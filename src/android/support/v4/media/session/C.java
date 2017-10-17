@@ -6,31 +6,38 @@ package android.support.v4.media.session;
 
 import java.util.List;
 import android.support.v4.media.MediaMetadataCompat;
+import android.os.Message;
 import android.os.Bundle;
 import android.os.Build$VERSION;
 import android.os.IBinder$DeathRecipient;
 
 public abstract class c implements IBinder$DeathRecipient
 {
-    f adG;
-    boolean adH;
-    private final Object adI;
-    boolean adJ;
+    h aeZ;
+    private final Object afa;
+    boolean afb;
     
     public c() {
-        this.adH = false;
         if (Build$VERSION.SDK_INT < 21) {
-            this.adI = new a(this);
+            this.afa = new b(this);
         }
         else {
-            this.adI = B.asa(new l(this));
+            this.afa = r.asX(new o(this));
         }
     }
     
-    public void aru(final r r) {
+    void asA(final int n, final Object o, final Bundle data) {
+        if (this.aeZ != null) {
+            final Message obtainMessage = this.aeZ.obtainMessage(n, o);
+            obtainMessage.setData(data);
+            obtainMessage.sendToTarget();
+        }
     }
     
-    public void arv(final boolean b) {
+    public void asy(final v v) {
+    }
+    
+    public void asz(final boolean b) {
     }
     
     public void binderDied() {

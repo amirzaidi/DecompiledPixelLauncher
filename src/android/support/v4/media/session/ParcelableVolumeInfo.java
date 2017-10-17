@@ -11,22 +11,22 @@ import android.os.Parcelable;
 public class ParcelableVolumeInfo implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    public int aeG;
-    public int aeH;
-    public int aeI;
-    public int aeJ;
+    public int afI;
+    public int afJ;
+    public int afK;
+    public int afL;
     public int controlType;
     
     static {
-        CREATOR = (Parcelable$Creator)new y();
+        CREATOR = (Parcelable$Creator)new j();
     }
     
     public ParcelableVolumeInfo(final Parcel parcel) {
-        this.aeG = parcel.readInt();
+        this.afI = parcel.readInt();
         this.controlType = parcel.readInt();
-        this.aeJ = parcel.readInt();
-        this.aeH = parcel.readInt();
-        this.aeI = parcel.readInt();
+        this.afL = parcel.readInt();
+        this.afJ = parcel.readInt();
+        this.afK = parcel.readInt();
     }
     
     public int describeContents() {
@@ -34,10 +34,10 @@ public class ParcelableVolumeInfo implements Parcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        parcel.writeInt(this.aeG);
+        parcel.writeInt(this.afI);
         parcel.writeInt(this.controlType);
-        parcel.writeInt(this.aeJ);
-        parcel.writeInt(this.aeH);
-        parcel.writeInt(this.aeI);
+        parcel.writeInt(this.afL);
+        parcel.writeInt(this.afJ);
+        parcel.writeInt(this.afK);
     }
 }

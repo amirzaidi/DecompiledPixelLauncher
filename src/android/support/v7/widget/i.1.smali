@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field Pa:Landroid/support/v7/widget/j;
+.field QH:Landroid/support/v7/widget/j;
 
-.field Pb:Z
+.field QI:Z
 
-.field Pc:Z
+.field QJ:Z
 
 .field final mDecorInsets:Landroid/graphics/Rect;
 
@@ -18,27 +18,27 @@
     .locals 1
 
     .prologue
-    .line 10920
+    .line 10965
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 10908
+    .line 10953
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 10909
+    .line 10954
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QI:Z
 
-    .line 10913
+    .line 10958
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pc:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QJ:Z
 
-    .line 10921
+    .line 10966
     return-void
 .end method
 
@@ -46,27 +46,27 @@
     .locals 1
 
     .prologue
-    .line 10916
+    .line 10961
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 10908
+    .line 10953
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 10909
+    .line 10954
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QI:Z
 
-    .line 10913
+    .line 10958
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pc:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QJ:Z
 
-    .line 10917
+    .line 10962
     return-void
 .end method
 
@@ -74,27 +74,27 @@
     .locals 1
 
     .prologue
-    .line 10932
+    .line 10977
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 10908
+    .line 10953
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 10909
+    .line 10954
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QI:Z
 
-    .line 10913
+    .line 10958
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pc:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QJ:Z
 
-    .line 10933
+    .line 10978
     return-void
 .end method
 
@@ -102,27 +102,27 @@
     .locals 1
 
     .prologue
-    .line 10928
+    .line 10973
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 10908
+    .line 10953
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 10909
+    .line 10954
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QI:Z
 
-    .line 10913
+    .line 10958
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pc:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QJ:Z
 
-    .line 10929
+    .line 10974
     return-void
 .end method
 
@@ -130,38 +130,38 @@
     .locals 1
 
     .prologue
-    .line 10924
+    .line 10969
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 10908
+    .line 10953
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Landroid/support/v7/widget/i;->mDecorInsets:Landroid/graphics/Rect;
 
-    .line 10909
+    .line 10954
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QI:Z
 
-    .line 10913
+    .line 10958
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/i;->Pc:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/i;->QJ:Z
 
-    .line 10925
+    .line 10970
     return-void
 .end method
 
 
 # virtual methods
-.method public Xb()I
+.method public Yb()I
     .locals 1
 
     .prologue
-    .line 11004
-    iget-object v0, p0, Landroid/support/v7/widget/i;->Pa:Landroid/support/v7/widget/j;
+    .line 11049
+    iget-object v0, p0, Landroid/support/v7/widget/i;->QH:Landroid/support/v7/widget/j;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->getAdapterPosition()I
 
@@ -170,12 +170,12 @@
     return v0
 .end method
 
-.method public Xc()Z
+.method public Yc()Z
     .locals 1
 
     .prologue
-    .line 10952
-    iget-object v0, p0, Landroid/support/v7/widget/i;->Pa:Landroid/support/v7/widget/j;
+    .line 10997
+    iget-object v0, p0, Landroid/support/v7/widget/i;->QH:Landroid/support/v7/widget/j;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->isInvalid()Z
 
@@ -184,12 +184,12 @@
     return v0
 .end method
 
-.method public Xd()I
+.method public Yd()I
     .locals 1
 
     .prologue
-    .line 10992
-    iget-object v0, p0, Landroid/support/v7/widget/i;->Pa:Landroid/support/v7/widget/j;
+    .line 11037
+    iget-object v0, p0, Landroid/support/v7/widget/i;->QH:Landroid/support/v7/widget/j;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->getLayoutPosition()I
 
@@ -198,12 +198,12 @@
     return v0
 .end method
 
-.method public Xe()Z
+.method public Ye()Z
     .locals 1
 
     .prologue
-    .line 10974
-    iget-object v0, p0, Landroid/support/v7/widget/i;->Pa:Landroid/support/v7/widget/j;
+    .line 11019
+    iget-object v0, p0, Landroid/support/v7/widget/i;->QH:Landroid/support/v7/widget/j;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->isUpdated()Z
 
@@ -212,12 +212,12 @@
     return v0
 .end method
 
-.method public Xf()Z
+.method public Yf()Z
     .locals 1
 
     .prologue
-    .line 10963
-    iget-object v0, p0, Landroid/support/v7/widget/i;->Pa:Landroid/support/v7/widget/j;
+    .line 11008
+    iget-object v0, p0, Landroid/support/v7/widget/i;->QH:Landroid/support/v7/widget/j;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/j;->isRemoved()Z
 

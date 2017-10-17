@@ -4,20 +4,30 @@
 
 package android.support.v4.app;
 
-final class aa
+import android.os.Bundle;
+import android.content.Context;
+import android.view.View;
+
+class aa extends ac
 {
-    int aac;
-    e aad;
-    int aae;
-    int aaf;
-    int aag;
-    int aah;
+    final /* synthetic */ g abG;
     
-    aa() {
+    aa(final g abG) {
+        this.abG = abG;
     }
     
-    aa(final int aac, final e aad) {
-        this.aac = aac;
-        this.aad = aad;
+    public boolean alD() {
+        return this.abG.mView != null;
+    }
+    
+    public View alH(final int n) {
+        if (this.abG.mView != null) {
+            return this.abG.mView.findViewById(n);
+        }
+        throw new IllegalStateException("Fragment does not have a view");
+    }
+    
+    public g anU(final Context context, final String s, final Bundle bundle) {
+        return this.abG.XU.anU(context, s, bundle);
     }
 }

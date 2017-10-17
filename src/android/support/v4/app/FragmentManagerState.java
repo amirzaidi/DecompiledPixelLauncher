@@ -11,27 +11,27 @@ import android.os.Parcelable;
 final class FragmentManagerState implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    int[] aaK;
-    BackStackState[] aaL;
-    int aaM;
-    FragmentState[] aaN;
-    int aaO;
+    int[] acj;
+    BackStackState[] ack;
+    int acl;
+    FragmentState[] acm;
+    int acn;
     
     static {
-        CREATOR = (Parcelable$Creator)new aI();
+        CREATOR = (Parcelable$Creator)new aE();
     }
     
     public FragmentManagerState() {
-        this.aaM = -1;
+        this.acl = -1;
     }
     
     public FragmentManagerState(final Parcel parcel) {
-        this.aaM = -1;
-        this.aaN = (FragmentState[])parcel.createTypedArray(FragmentState.CREATOR);
-        this.aaK = parcel.createIntArray();
-        this.aaL = (BackStackState[])parcel.createTypedArray(BackStackState.CREATOR);
-        this.aaM = parcel.readInt();
-        this.aaO = parcel.readInt();
+        this.acl = -1;
+        this.acm = (FragmentState[])parcel.createTypedArray(FragmentState.CREATOR);
+        this.acj = parcel.createIntArray();
+        this.ack = (BackStackState[])parcel.createTypedArray(BackStackState.CREATOR);
+        this.acl = parcel.readInt();
+        this.acn = parcel.readInt();
     }
     
     public int describeContents() {
@@ -39,10 +39,10 @@ final class FragmentManagerState implements Parcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        parcel.writeTypedArray((Parcelable[])this.aaN, n);
-        parcel.writeIntArray(this.aaK);
-        parcel.writeTypedArray((Parcelable[])this.aaL, n);
-        parcel.writeInt(this.aaM);
-        parcel.writeInt(this.aaO);
+        parcel.writeTypedArray((Parcelable[])this.acm, n);
+        parcel.writeIntArray(this.acj);
+        parcel.writeTypedArray((Parcelable[])this.ack, n);
+        parcel.writeInt(this.acl);
+        parcel.writeInt(this.acn);
     }
 }

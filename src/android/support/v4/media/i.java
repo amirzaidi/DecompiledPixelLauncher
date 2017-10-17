@@ -12,7 +12,7 @@ class i implements Parcelable$Creator
 {
     public MediaDescriptionCompat createFromParcel(final Parcel parcel) {
         if (Build$VERSION.SDK_INT >= 21) {
-            return MediaDescriptionCompat.asB(m.asL(parcel));
+            return MediaDescriptionCompat.aty(m.atI(parcel));
         }
         return new MediaDescriptionCompat(parcel);
     }

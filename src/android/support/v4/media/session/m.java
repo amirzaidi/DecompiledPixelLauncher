@@ -4,21 +4,16 @@
 
 package android.support.v4.media.session;
 
-import java.util.List;
-import android.support.v4.media.MediaMetadataCompat;
-import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable$Creator;
 
-class m implements Runnable
+class m implements Parcelable$Creator
 {
-    final /* synthetic */ int adP;
-    final /* synthetic */ s adQ;
-    
-    m(final s adQ, final int adP) {
-        this.adQ = adQ;
-        this.adP = adP;
+    public MediaSessionCompat$QueueItem createFromParcel(final Parcel parcel) {
+        return new MediaSessionCompat$QueueItem(parcel);
     }
     
-    public void run() {
-        this.adQ.adY.onShuffleModeChanged(this.adP);
+    public MediaSessionCompat$QueueItem[] newArray(final int n) {
+        return new MediaSessionCompat$QueueItem[n];
     }
 }

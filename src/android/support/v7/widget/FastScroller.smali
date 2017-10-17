@@ -7,53 +7,53 @@
 
 
 # static fields
-.field private static final RB:[I
+.field private static final Ta:[I
 
-.field private static final Rr:[I
+.field private static final Tk:[I
 
 
 # instance fields
-.field private RA:I
+.field private final SQ:Landroid/graphics/drawable/StateListDrawable;
 
-.field private final RC:[I
+.field private final SR:Ljava/lang/Runnable;
 
-.field private RD:I
+.field private final SS:I
 
-.field private final Rh:Landroid/graphics/drawable/StateListDrawable;
+.field private ST:Z
 
-.field private final Ri:Ljava/lang/Runnable;
+.field private final SU:I
 
-.field private final Rj:I
+.field private final SV:Landroid/animation/ValueAnimator;
 
-.field private Rk:Z
+.field private final SW:I
 
-.field private final Rl:I
+.field private final SX:I
 
-.field private final Rm:Landroid/animation/ValueAnimator;
+.field private final SY:Landroid/graphics/drawable/Drawable;
 
-.field private final Rn:I
+.field private SZ:I
 
-.field private final Ro:I
+.field private final Tb:Landroid/support/v7/widget/m;
 
-.field private final Rp:Landroid/graphics/drawable/Drawable;
+.field private final Tc:I
 
-.field private Rq:I
+.field private final Td:I
 
-.field private final Rs:Landroid/support/v7/widget/m;
+.field private Te:I
 
-.field private final Rt:I
+.field private final Tf:Landroid/graphics/drawable/StateListDrawable;
 
-.field private final Ru:I
+.field private Tg:Z
 
-.field private Rv:I
+.field private final Th:Landroid/graphics/drawable/Drawable;
 
-.field private final Rw:Landroid/graphics/drawable/StateListDrawable;
+.field private final Ti:[I
 
-.field private Rx:Z
+.field private Tj:I
 
-.field private final Ry:Landroid/graphics/drawable/Drawable;
+.field private final Tl:[I
 
-.field private final Rz:[I
+.field private Tm:I
 
 .field mHorizontalDragX:F
 
@@ -88,12 +88,12 @@
 
     aput v1, v0, v2
 
-    sput-object v0, Landroid/support/v7/widget/FastScroller;->Rr:[I
+    sput-object v0, Landroid/support/v7/widget/FastScroller;->Ta:[I
 
     .line 76
     new-array v0, v2, [I
 
-    sput-object v0, Landroid/support/v7/widget/FastScroller;->RB:[I
+    sput-object v0, Landroid/support/v7/widget/FastScroller;->Tk:[I
 
     return-void
 .end method
@@ -114,32 +114,32 @@
     invoke-direct {p0}, Landroid/support/v7/widget/o;-><init>()V
 
     .line 103
-    iput v3, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iput v3, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
     .line 104
-    iput v3, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iput v3, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
     .line 111
-    iput-boolean v3, p0, Landroid/support/v7/widget/FastScroller;->Rx:Z
+    iput-boolean v3, p0, Landroid/support/v7/widget/FastScroller;->Tg:Z
 
     .line 112
-    iput-boolean v3, p0, Landroid/support/v7/widget/FastScroller;->Rk:Z
+    iput-boolean v3, p0, Landroid/support/v7/widget/FastScroller;->ST:Z
 
     .line 113
     iput v3, p0, Landroid/support/v7/widget/FastScroller;->mState:I
 
     .line 114
-    iput v3, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iput v3, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     .line 116
     new-array v0, v1, [I
 
-    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->RC:[I
+    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tl:[I
 
     .line 117
     new-array v0, v1, [I
 
-    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rz:[I
+    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ti:[I
 
     .line 118
     new-array v0, v1, [F
@@ -158,36 +158,36 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     .line 119
-    iput v3, p0, Landroid/support/v7/widget/FastScroller;->RA:I
+    iput v3, p0, Landroid/support/v7/widget/FastScroller;->Tj:I
 
     .line 120
     new-instance v0, Landroid/support/v7/widget/ab;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/ab;-><init>(Landroid/support/v7/widget/FastScroller;)V
 
-    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ri:Ljava/lang/Runnable;
+    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->SR:Ljava/lang/Runnable;
 
     .line 126
     new-instance v0, Landroid/support/v7/widget/ao;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/ao;-><init>(Landroid/support/v7/widget/FastScroller;)V
 
-    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rs:Landroid/support/v7/widget/m;
+    iput-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tb:Landroid/support/v7/widget/m;
 
     .line 138
-    iput-object p2, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iput-object p2, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
     .line 139
-    iput-object p3, p0, Landroid/support/v7/widget/FastScroller;->Ry:Landroid/graphics/drawable/Drawable;
+    iput-object p3, p0, Landroid/support/v7/widget/FastScroller;->Th:Landroid/graphics/drawable/Drawable;
 
     .line 140
-    iput-object p4, p0, Landroid/support/v7/widget/FastScroller;->Rh:Landroid/graphics/drawable/StateListDrawable;
+    iput-object p4, p0, Landroid/support/v7/widget/FastScroller;->SQ:Landroid/graphics/drawable/StateListDrawable;
 
     .line 141
-    iput-object p5, p0, Landroid/support/v7/widget/FastScroller;->Rp:Landroid/graphics/drawable/Drawable;
+    iput-object p5, p0, Landroid/support/v7/widget/FastScroller;->SY:Landroid/graphics/drawable/Drawable;
 
     .line 142
     invoke-virtual {p2}, Landroid/graphics/drawable/StateListDrawable;->getIntrinsicWidth()I
@@ -198,7 +198,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Ro:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->SX:I
 
     .line 143
     invoke-virtual {p3}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -209,7 +209,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Rn:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->SW:I
 
     .line 145
     invoke-virtual {p4}, Landroid/graphics/drawable/StateListDrawable;->getIntrinsicWidth()I
@@ -220,7 +220,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Rj:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->SS:I
 
     .line 147
     invoke-virtual {p5}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -231,26 +231,26 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Ru:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Td:I
 
     .line 148
-    iput p7, p0, Landroid/support/v7/widget/FastScroller;->Rt:I
+    iput p7, p0, Landroid/support/v7/widget/FastScroller;->Tc:I
 
     .line 149
-    iput p8, p0, Landroid/support/v7/widget/FastScroller;->Rl:I
+    iput p8, p0, Landroid/support/v7/widget/FastScroller;->SU:I
 
     .line 150
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/StateListDrawable;->setAlpha(I)V
 
     .line 151
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ry:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Th:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
     .line 153
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/support/v7/widget/as;
 
@@ -259,7 +259,7 @@
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     .line 154
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     new-instance v1, Landroid/support/v7/widget/aG;
 
@@ -268,31 +268,31 @@
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     .line 156
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/FastScroller;->aaJ(Landroid/support/v7/widget/RecyclerView;)V
+    invoke-virtual {p0, p1}, Landroid/support/v7/widget/FastScroller;->abL(Landroid/support/v7/widget/RecyclerView;)V
 
     .line 157
     return-void
 .end method
 
-.method private aaL()[I
+.method private abN()[I
     .locals 3
 
     .prologue
     .line 545
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rz:[I
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ti:[I
 
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Rl:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->SU:I
 
     const/4 v2, 0x0
 
     aput v1, v0, v2
 
     .line 546
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rz:[I
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ti:[I
 
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
-    iget v2, p0, Landroid/support/v7/widget/FastScroller;->Rl:I
+    iget v2, p0, Landroid/support/v7/widget/FastScroller;->SU:I
 
     sub-int/2addr v1, v2
 
@@ -301,12 +301,12 @@
     aput v1, v0, v2
 
     .line 547
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rz:[I
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ti:[I
 
     return-object v0
 .end method
 
-.method private aaM()V
+.method private abO()V
     .locals 2
 
     .prologue
@@ -323,28 +323,28 @@
     .line 181
     iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Rs:Landroid/support/v7/widget/m;
+    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Tb:Landroid/support/v7/widget/m;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->removeOnScrollListener(Landroid/support/v7/widget/m;)V
 
     .line 182
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaR()V
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abT()V
 
     .line 183
     return-void
 .end method
 
-.method static synthetic aaN(Landroid/support/v7/widget/FastScroller;)Landroid/graphics/drawable/Drawable;
+.method static synthetic abP(Landroid/support/v7/widget/FastScroller;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
     .prologue
     .line 42
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ry:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Th:Landroid/graphics/drawable/Drawable;
 
     return-object v0
 .end method
 
-.method private aaO(Landroid/graphics/Canvas;)V
+.method private abQ(Landroid/graphics/Canvas;)V
     .locals 8
 
     .prologue
@@ -355,10 +355,10 @@
     const/4 v5, 0x0
 
     .line 295
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
     .line 297
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Ro:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->SX:I
 
     sub-int/2addr v0, v1
 
@@ -372,20 +372,20 @@
     sub-int/2addr v1, v2
 
     .line 299
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
-    iget v3, p0, Landroid/support/v7/widget/FastScroller;->Ro:I
+    iget v3, p0, Landroid/support/v7/widget/FastScroller;->SX:I
 
     iget v4, p0, Landroid/support/v7/widget/FastScroller;->mVerticalThumbHeight:I
 
     invoke-virtual {v2, v5, v5, v3, v4}, Landroid/graphics/drawable/StateListDrawable;->setBounds(IIII)V
 
     .line 300
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Ry:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Th:Landroid/graphics/drawable/Drawable;
 
-    iget v3, p0, Landroid/support/v7/widget/FastScroller;->Rn:I
+    iget v3, p0, Landroid/support/v7/widget/FastScroller;->SW:I
 
-    iget v4, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v4, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
     .line 301
     invoke-virtual {v2, v5, v5, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
@@ -403,7 +403,7 @@
     invoke-virtual {p1, v2, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 312
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Ry:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Th:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -413,7 +413,7 @@
     invoke-virtual {p1, v7, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 314
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/StateListDrawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -434,12 +434,12 @@
 
     .line 304
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ry:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Th:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 305
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Ro:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->SX:I
 
     int-to-float v0, v0
 
@@ -453,7 +453,7 @@
     invoke-virtual {p1, v0, v6}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 307
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/StateListDrawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -461,7 +461,7 @@
     invoke-virtual {p1, v6, v6}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 309
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Ro:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->SX:I
 
     neg-int v0, v0
 
@@ -476,14 +476,14 @@
     goto :goto_0
 .end method
 
-.method private aaP(F)V
+.method private abR(F)V
     .locals 8
 
     .prologue
     const/4 v7, 0x0
 
     .line 464
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaL()[I
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abN()[I
 
     move-result-object v3
 
@@ -544,12 +544,12 @@
 
     move-result v5
 
-    iget v6, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v6, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
     move-object v0, p0
 
     .line 470
-    invoke-direct/range {v0 .. v6}, Landroid/support/v7/widget/FastScroller;->aba(FF[IIII)I
+    invoke-direct/range {v0 .. v6}, Landroid/support/v7/widget/FastScroller;->acc(FF[IIII)I
 
     move-result v0
 
@@ -572,24 +572,24 @@
     goto :goto_0
 .end method
 
-.method static synthetic aaQ(Landroid/support/v7/widget/FastScroller;I)V
+.method static synthetic abS(Landroid/support/v7/widget/FastScroller;I)V
     .locals 0
 
     .prologue
     .line 42
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/FastScroller;->aaV(I)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/FastScroller;->abX(I)V
 
     return-void
 .end method
 
-.method private aaR()V
+.method private abT()V
     .locals 2
 
     .prologue
     .line 262
     iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Ri:Ljava/lang/Runnable;
+    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->SR:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
@@ -597,27 +597,27 @@
     return-void
 .end method
 
-.method static synthetic aaS(Landroid/support/v7/widget/FastScroller;)V
+.method static synthetic abU(Landroid/support/v7/widget/FastScroller;)V
     .locals 0
 
     .prologue
     .line 42
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaU()V
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abW()V
 
     return-void
 .end method
 
-.method static synthetic aaT(Landroid/support/v7/widget/FastScroller;I)I
+.method static synthetic abV(Landroid/support/v7/widget/FastScroller;I)I
     .locals 0
 
     .prologue
     .line 42
-    iput p1, p0, Landroid/support/v7/widget/FastScroller;->RA:I
+    iput p1, p0, Landroid/support/v7/widget/FastScroller;->Tj:I
 
     return p1
 .end method
 
-.method private aaU()V
+.method private abW()V
     .locals 1
 
     .prologue
@@ -630,7 +630,7 @@
     return-void
 .end method
 
-.method private aaV(I)V
+.method private abX(I)V
     .locals 3
 
     .prologue
@@ -673,20 +673,20 @@
     if-eq v0, v2, :cond_0
 
     .line 191
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
-    sget-object v1, Landroid/support/v7/widget/FastScroller;->Rr:[I
+    sget-object v1, Landroid/support/v7/widget/FastScroller;->Ta:[I
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/StateListDrawable;->setState([I)Z
 
     .line 192
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaR()V
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abT()V
 
     goto :goto_0
 
     .line 196
     :cond_3
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaU()V
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abW()V
 
     goto :goto_1
 
@@ -695,16 +695,16 @@
     if-eq p1, v2, :cond_1
 
     .line 202
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
-    sget-object v1, Landroid/support/v7/widget/FastScroller;->RB:[I
+    sget-object v1, Landroid/support/v7/widget/FastScroller;->Tk:[I
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/StateListDrawable;->setState([I)Z
 
     .line 203
     const/16 v0, 0x4b0
 
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->abd(I)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->acf(I)V
 
     goto :goto_2
 
@@ -712,19 +712,19 @@
     :cond_5
     const/16 v0, 0x5dc
 
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->abd(I)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->acf(I)V
 
     goto :goto_2
 .end method
 
-.method private aaW(F)V
+.method private abY(F)V
     .locals 8
 
     .prologue
     const/4 v7, 0x0
 
     .line 449
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaX()[I
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abZ()[I
 
     move-result-object v3
 
@@ -785,12 +785,12 @@
 
     move-result v5
 
-    iget v6, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v6, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
     move-object v0, p0
 
     .line 454
-    invoke-direct/range {v0 .. v6}, Landroid/support/v7/widget/FastScroller;->aba(FF[IIII)I
+    invoke-direct/range {v0 .. v6}, Landroid/support/v7/widget/FastScroller;->acc(FF[IIII)I
 
     move-result v0
 
@@ -813,25 +813,25 @@
     goto :goto_0
 .end method
 
-.method private aaX()[I
+.method private abZ()[I
     .locals 3
 
     .prologue
     .line 536
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->RC:[I
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tl:[I
 
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Rl:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->SU:I
 
     const/4 v2, 0x0
 
     aput v1, v0, v2
 
     .line 537
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->RC:[I
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tl:[I
 
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
-    iget v2, p0, Landroid/support/v7/widget/FastScroller;->Rl:I
+    iget v2, p0, Landroid/support/v7/widget/FastScroller;->SU:I
 
     sub-int/2addr v1, v2
 
@@ -840,12 +840,12 @@
     aput v1, v0, v2
 
     .line 538
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->RC:[I
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tl:[I
 
     return-object v0
 .end method
 
-.method private aaY()V
+.method private aca()V
     .locals 2
 
     .prologue
@@ -862,7 +862,7 @@
     .line 175
     iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Rs:Landroid/support/v7/widget/m;
+    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Tb:Landroid/support/v7/widget/m;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addOnScrollListener(Landroid/support/v7/widget/m;)V
 
@@ -870,17 +870,17 @@
     return-void
 .end method
 
-.method static synthetic aaZ(Landroid/support/v7/widget/FastScroller;)Landroid/animation/ValueAnimator;
+.method static synthetic acb(Landroid/support/v7/widget/FastScroller;)Landroid/animation/ValueAnimator;
     .locals 1
 
     .prologue
     .line 42
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     return-object v0
 .end method
 
-.method private aba(FF[IIII)I
+.method private acc(FF[IIII)I
     .locals 4
 
     .prologue
@@ -937,17 +937,17 @@
     return v0
 .end method
 
-.method static synthetic abb(Landroid/support/v7/widget/FastScroller;)Landroid/graphics/drawable/StateListDrawable;
+.method static synthetic acd(Landroid/support/v7/widget/FastScroller;)Landroid/graphics/drawable/StateListDrawable;
     .locals 1
 
     .prologue
     .line 42
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
     return-object v0
 .end method
 
-.method private abc(Landroid/graphics/Canvas;)V
+.method private ace(Landroid/graphics/Canvas;)V
     .locals 7
 
     .prologue
@@ -956,10 +956,10 @@
     const/4 v5, 0x0
 
     .line 320
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
     .line 322
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Rj:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->SS:I
 
     sub-int/2addr v0, v1
 
@@ -973,20 +973,20 @@
     sub-int/2addr v1, v2
 
     .line 324
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Rh:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->SQ:Landroid/graphics/drawable/StateListDrawable;
 
     iget v3, p0, Landroid/support/v7/widget/FastScroller;->mHorizontalThumbWidth:I
 
-    iget v4, p0, Landroid/support/v7/widget/FastScroller;->Rj:I
+    iget v4, p0, Landroid/support/v7/widget/FastScroller;->SS:I
 
     invoke-virtual {v2, v5, v5, v3, v4}, Landroid/graphics/drawable/StateListDrawable;->setBounds(IIII)V
 
     .line 325
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Rp:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->SY:Landroid/graphics/drawable/Drawable;
 
-    iget v3, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v3, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
-    iget v4, p0, Landroid/support/v7/widget/FastScroller;->Ru:I
+    iget v4, p0, Landroid/support/v7/widget/FastScroller;->Td:I
 
     .line 326
     invoke-virtual {v2, v5, v5, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
@@ -997,7 +997,7 @@
     invoke-virtual {p1, v6, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 329
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Rp:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->SY:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -1007,7 +1007,7 @@
     invoke-virtual {p1, v2, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 331
-    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->Rh:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v2, p0, Landroid/support/v7/widget/FastScroller;->SQ:Landroid/graphics/drawable/StateListDrawable;
 
     invoke-virtual {v2, p1}, Landroid/graphics/drawable/StateListDrawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -1026,17 +1026,17 @@
     return-void
 .end method
 
-.method private abd(I)V
+.method private acf(I)V
     .locals 4
 
     .prologue
     .line 266
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaR()V
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abT()V
 
     .line 267
     iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Ri:Ljava/lang/Runnable;
+    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->SR:Ljava/lang/Runnable;
 
     int-to-long v2, p1
 
@@ -1055,7 +1055,7 @@
     .line 211
     iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-static {v1}, Landroid/support/v4/view/f;->afr(Landroid/view/View;)I
+    invoke-static {v1}, Landroid/support/v4/view/f;->ags(Landroid/view/View;)I
 
     move-result v1
 
@@ -1069,7 +1069,7 @@
 
 
 # virtual methods
-.method public aaJ(Landroid/support/v7/widget/RecyclerView;)V
+.method public abL(Landroid/support/v7/widget/RecyclerView;)V
     .locals 1
 
     .prologue
@@ -1102,18 +1102,18 @@
 
     .line 164
     :cond_1
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaM()V
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->abO()V
 
     goto :goto_0
 
     .line 168
     :cond_2
-    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aaY()V
+    invoke-direct {p0}, Landroid/support/v7/widget/FastScroller;->aca()V
 
     goto :goto_1
 .end method
 
-.method aaK(II)V
+.method abM(II)V
     .locals 9
 
     .prologue
@@ -1131,7 +1131,7 @@
     move-result v3
 
     .line 344
-    iget v4, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v4, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
     .line 345
     sub-int v0, v3, v4
@@ -1142,7 +1142,7 @@
     move v0, v2
 
     :goto_0
-    iput-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rx:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Tg:Z
 
     .line 348
     iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
@@ -1152,7 +1152,7 @@
     move-result v5
 
     .line 349
-    iget v6, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v6, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
     .line 350
     sub-int v0, v5, v6
@@ -1163,22 +1163,22 @@
     move v0, v2
 
     :goto_1
-    iput-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rk:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->ST:Z
 
     .line 353
-    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rx:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Tg:Z
 
     if-eqz v0, :cond_6
 
     .line 360
     :cond_2
-    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rx:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Tg:Z
 
     if-nez v0, :cond_8
 
     .line 368
     :goto_2
-    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rk:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->ST:Z
 
     if-nez v0, :cond_9
 
@@ -1190,7 +1190,7 @@
 
     .line 377
     :cond_3
-    invoke-direct {p0, v1}, Landroid/support/v7/widget/FastScroller;->aaV(I)V
+    invoke-direct {p0, v1}, Landroid/support/v7/widget/FastScroller;->abX(I)V
 
     .line 379
     :goto_4
@@ -1198,9 +1198,9 @@
 
     .line 345
     :cond_4
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
-    iget v5, p0, Landroid/support/v7/widget/FastScroller;->Rt:I
+    iget v5, p0, Landroid/support/v7/widget/FastScroller;->Tc:I
 
     if-lt v0, v5, :cond_0
 
@@ -1210,9 +1210,9 @@
 
     .line 350
     :cond_5
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
-    iget v7, p0, Landroid/support/v7/widget/FastScroller;->Rt:I
+    iget v7, p0, Landroid/support/v7/widget/FastScroller;->Tc:I
 
     if-lt v0, v7, :cond_1
 
@@ -1222,7 +1222,7 @@
 
     .line 353
     :cond_6
-    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rk:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->ST:Z
 
     if-nez v0, :cond_2
 
@@ -1237,7 +1237,7 @@
 
     .line 355
     :cond_7
-    invoke-direct {p0, v2}, Landroid/support/v7/widget/FastScroller;->aaV(I)V
+    invoke-direct {p0, v2}, Landroid/support/v7/widget/FastScroller;->abX(I)V
 
     goto :goto_5
 
@@ -1327,7 +1327,7 @@
 
     .prologue
     .line 519
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rh:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SQ:Landroid/graphics/drawable/StateListDrawable;
 
     return-object v0
 .end method
@@ -1337,7 +1337,7 @@
 
     .prologue
     .line 514
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rp:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SY:Landroid/graphics/drawable/Drawable;
 
     return-object v0
 .end method
@@ -1347,7 +1347,7 @@
 
     .prologue
     .line 529
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rw:Landroid/graphics/drawable/StateListDrawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Tf:Landroid/graphics/drawable/StateListDrawable;
 
     return-object v0
 .end method
@@ -1357,7 +1357,7 @@
 
     .prologue
     .line 524
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Ry:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Th:Landroid/graphics/drawable/Drawable;
 
     return-object v0
 .end method
@@ -1367,7 +1367,7 @@
 
     .prologue
     .line 248
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->RA:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Tj:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -1377,7 +1377,7 @@
 
     .line 250
     :pswitch_0
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
@@ -1385,16 +1385,16 @@
     :pswitch_1
     const/4 v0, 0x3
 
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->RA:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Tj:I
 
     .line 254
-    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     const/4 v0, 0x2
 
     new-array v2, v0, [F
 
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -1419,14 +1419,14 @@
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
     .line 255
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     int-to-long v2, p1
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     .line 256
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
@@ -1467,9 +1467,9 @@
 
     .prologue
     .line 507
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Rj:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->SS:I
 
     sub-int/2addr v0, v1
 
@@ -1531,9 +1531,9 @@
 
     if-nez v1, :cond_1
 
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
-    iget v2, p0, Landroid/support/v7/widget/FastScroller;->Ro:I
+    iget v2, p0, Landroid/support/v7/widget/FastScroller;->SX:I
 
     sub-int/2addr v1, v2
 
@@ -1578,7 +1578,7 @@
     return v0
 
     :cond_1
-    iget v1, p0, Landroid/support/v7/widget/FastScroller;->Ro:I
+    iget v1, p0, Landroid/support/v7/widget/FastScroller;->SX:I
 
     div-int/lit8 v1, v1, 0x2
 
@@ -1615,7 +1615,7 @@
     const/4 v2, 0x0
 
     .line 272
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
     iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -1633,7 +1633,7 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Rv:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Te:I
 
     .line 275
     iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
@@ -1642,17 +1642,17 @@
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
     .line 280
-    invoke-direct {p0, v2}, Landroid/support/v7/widget/FastScroller;->aaV(I)V
+    invoke-direct {p0, v2}, Landroid/support/v7/widget/FastScroller;->abX(I)V
 
     .line 281
     return-void
 
     .line 272
     :cond_1
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->RD:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Tm:I
 
     iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
@@ -1664,7 +1664,7 @@
     if-ne v0, v1, :cond_0
 
     .line 284
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->RA:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Tj:I
 
     if-nez v0, :cond_3
 
@@ -1675,24 +1675,24 @@
 
     .line 285
     :cond_3
-    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rx:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Tg:Z
 
     if-nez v0, :cond_4
 
     .line 288
     :goto_1
-    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->Rk:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/FastScroller;->ST:Z
 
     if-eqz v0, :cond_2
 
     .line 289
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/FastScroller;->abc(Landroid/graphics/Canvas;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/FastScroller;->ace(Landroid/graphics/Canvas;)V
 
     goto :goto_0
 
     .line 286
     :cond_4
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/FastScroller;->aaO(Landroid/graphics/Canvas;)V
+    invoke-direct {p0, p1}, Landroid/support/v7/widget/FastScroller;->abQ(Landroid/graphics/Canvas;)V
 
     goto :goto_1
 .end method
@@ -1777,7 +1777,7 @@
 
     .line 397
     :goto_2
-    invoke-direct {p0, v5}, Landroid/support/v7/widget/FastScroller;->aaV(I)V
+    invoke-direct {p0, v5}, Landroid/support/v7/widget/FastScroller;->abX(I)V
 
     goto :goto_0
 
@@ -1789,7 +1789,7 @@
 
     .line 390
     :cond_5
-    iput v0, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iput v0, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     .line 391
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -1806,7 +1806,7 @@
 
     .line 393
     :cond_6
-    iput v5, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iput v5, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     .line 394
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
@@ -1917,7 +1917,7 @@
 
     .line 427
     :goto_1
-    invoke-direct {p0, v3}, Landroid/support/v7/widget/FastScroller;->aaV(I)V
+    invoke-direct {p0, v3}, Landroid/support/v7/widget/FastScroller;->abX(I)V
 
     goto :goto_0
 
@@ -1929,7 +1929,7 @@
 
     .line 421
     :cond_6
-    iput v4, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iput v4, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     .line 422
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -1946,7 +1946,7 @@
 
     .line 424
     :cond_7
-    iput v3, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iput v3, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     .line 425
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
@@ -1974,10 +1974,10 @@
     iput v2, p0, Landroid/support/v7/widget/FastScroller;->mHorizontalDragX:F
 
     .line 432
-    invoke-direct {p0, v4}, Landroid/support/v7/widget/FastScroller;->aaV(I)V
+    invoke-direct {p0, v4}, Landroid/support/v7/widget/FastScroller;->abX(I)V
 
     .line 433
-    iput v1, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iput v1, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     goto :goto_0
 
@@ -1991,13 +1991,13 @@
     invoke-virtual {p0}, Landroid/support/v7/widget/FastScroller;->show()V
 
     .line 436
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     if-eq v0, v4, :cond_a
 
     .line 439
     :goto_2
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Rq:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->SZ:I
 
     if-ne v0, v3, :cond_1
 
@@ -2006,7 +2006,7 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->aaW(F)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->abY(F)V
 
     goto :goto_0
 
@@ -2016,7 +2016,7 @@
 
     move-result v0
 
-    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->aaP(F)V
+    invoke-direct {p0, v0}, Landroid/support/v7/widget/FastScroller;->abR(F)V
 
     goto :goto_2
 .end method
@@ -2028,7 +2028,7 @@
     const/4 v4, 0x1
 
     .line 228
-    iget v0, p0, Landroid/support/v7/widget/FastScroller;->RA:I
+    iget v0, p0, Landroid/support/v7/widget/FastScroller;->Tj:I
 
     packed-switch v0, :pswitch_data_0
 
@@ -2039,22 +2039,22 @@
 
     .line 230
     :pswitch_1
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     .line 233
     :pswitch_2
-    iput v4, p0, Landroid/support/v7/widget/FastScroller;->RA:I
+    iput v4, p0, Landroid/support/v7/widget/FastScroller;->Tj:I
 
     .line 234
-    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v1, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     const/4 v0, 0x2
 
     new-array v2, v0, [F
 
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -2077,21 +2077,21 @@
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
 
     .line 235
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x1f4
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     .line 236
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x0
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
     .line 237
-    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->Rm:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/FastScroller;->SV:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 

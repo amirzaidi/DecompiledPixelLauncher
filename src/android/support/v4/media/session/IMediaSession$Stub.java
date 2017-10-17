@@ -32,7 +32,7 @@ public abstract class IMediaSession$Stub extends Binder implements IMediaSession
         if (queryLocalInterface != null && queryLocalInterface instanceof IMediaSession) {
             return (IMediaSession)queryLocalInterface;
         }
-        return new n(binder);
+        return new q(binder);
     }
     
     public IBinder asBinder() {
@@ -437,6 +437,22 @@ public abstract class IMediaSession$Stub extends Binder implements IMediaSession
                     o = RatingCompat.CREATOR.createFromParcel(parcel);
                 }
                 this.rate((RatingCompat)o);
+                parcel2.writeNoException();
+                return n4 != 0;
+            }
+            case 51: {
+                parcel.enforceInterface("android.support.v4.media.session.IMediaSession");
+                RatingCompat ratingCompat;
+                if (parcel.readInt() == 0) {
+                    ratingCompat = null;
+                }
+                else {
+                    ratingCompat = (RatingCompat)RatingCompat.CREATOR.createFromParcel(parcel);
+                }
+                if (parcel.readInt() != 0) {
+                    o = Bundle.CREATOR.createFromParcel(parcel);
+                }
+                this.rateWithExtras(ratingCompat, (Bundle)o);
                 parcel2.writeNoException();
                 return n4 != 0;
             }

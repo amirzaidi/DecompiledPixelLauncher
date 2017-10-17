@@ -7,5 +7,5 @@
 
 
 # virtual methods
-.method public abstract asU()[Ljava/lang/String;
+.method public abstract atR()J
 .end method

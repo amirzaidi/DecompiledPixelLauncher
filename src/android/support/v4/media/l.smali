@@ -14,7 +14,7 @@
     return-void
 .end method
 
-.method public static asA(Ljava/lang/Object;Landroid/net/Uri;)V
+.method public static atx(Ljava/lang/Object;Landroid/net/Uri;)V
     .locals 0
 
     .prologue

@@ -5,22 +5,23 @@
 package android.support.v7.widget;
 
 import android.os.Bundle;
+import android.support.v4.view.a.a;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.View;
-import android.support.v4.view.a;
+import android.support.v4.view.c;
 
-public class z extends a
+public class z extends c
 {
-    final a Py;
+    final c Rf;
     final RecyclerView mRecyclerView;
     
     public z(final RecyclerView mRecyclerView) {
         this.mRecyclerView = mRecyclerView;
-        this.Py = new ad(this);
+        this.Rf = new ad(this);
     }
     
-    public a Yo() {
-        return this.Py;
+    public c Zq() {
+        return this.Rf;
     }
     
     public void onInitializeAccessibilityEvent(final View view, final AccessibilityEvent accessibilityEvent) {
@@ -34,9 +35,9 @@ public class z extends a
         }
     }
     
-    public void onInitializeAccessibilityNodeInfo(final View view, final android.support.v4.view.a.a a) {
+    public void onInitializeAccessibilityNodeInfo(final View view, final a a) {
         super.onInitializeAccessibilityNodeInfo(view, a);
-        a.aeb(RecyclerView.class.getName());
+        a.afd(RecyclerView.class.getName());
         if (!this.shouldIgnore() && this.mRecyclerView.getLayoutManager() != null) {
             this.mRecyclerView.getLayoutManager().onInitializeAccessibilityNodeInfo(a);
         }

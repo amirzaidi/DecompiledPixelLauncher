@@ -8,29 +8,29 @@ import android.view.View;
 
 class ap implements J
 {
-    final /* synthetic */ p Si;
+    final /* synthetic */ p TR;
     
-    ap(final p si) {
-        this.Si = si;
+    ap(final p tr) {
+        this.TR = tr;
     }
     
-    public int ZI() {
-        return this.Si.getHeight() - this.Si.getPaddingBottom();
+    public int aaK() {
+        return this.TR.getHeight() - this.TR.getPaddingBottom();
     }
     
-    public int ZJ() {
-        return this.Si.getPaddingTop();
+    public int aaL() {
+        return this.TR.getPaddingTop();
     }
     
-    public int ZK(final View view) {
-        return this.Si.getDecoratedTop(view) - ((i)view.getLayoutParams()).topMargin;
+    public int aaM(final View view) {
+        return this.TR.getDecoratedTop(view) - ((i)view.getLayoutParams()).topMargin;
     }
     
-    public int ZL(final View view) {
-        return ((i)view.getLayoutParams()).bottomMargin + this.Si.getDecoratedBottom(view);
+    public int aaN(final View view) {
+        return ((i)view.getLayoutParams()).bottomMargin + this.TR.getDecoratedBottom(view);
     }
     
     public View getChildAt(final int n) {
-        return this.Si.getChildAt(n);
+        return this.TR.getChildAt(n);
     }
 }

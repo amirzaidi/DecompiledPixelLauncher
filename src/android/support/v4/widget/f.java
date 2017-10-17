@@ -8,7 +8,7 @@ import android.widget.EdgeEffect;
 
 class f
 {
-    public void adD(final EdgeEffect edgeEffect, final float n, final float n2) {
+    public void ahJ(final EdgeEffect edgeEffect, final float n, final float n2) {
         edgeEffect.onPull(n);
     }
 }

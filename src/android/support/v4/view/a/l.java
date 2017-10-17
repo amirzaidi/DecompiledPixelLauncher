@@ -6,37 +6,37 @@ package android.support.v4.view.a;
 
 public class l
 {
-    final Object Uc;
+    final Object VC;
     
-    l(final Object uc) {
-        this.Uc = uc;
+    l(final Object vc) {
+        this.VC = vc;
     }
     
-    public static l aeO(final int n, final int n2, final int n3, final int n4, final boolean b, final boolean b2) {
-        return new l(a.TY.aey(n, n2, n3, n4, b, b2));
+    public static l afQ(final int n, final int n2, final int n3, final int n4, final boolean b, final boolean b2) {
+        return new l(a.Vy.afA(n, n2, n3, n4, b, b2));
     }
     
-    public int aeN() {
-        return a.TY.aeC(this.Uc);
+    public int afP() {
+        return a.Vy.afE(this.VC);
     }
     
-    public int aeP() {
-        return a.TY.aeF(this.Uc);
+    public int afR() {
+        return a.Vy.afH(this.VC);
     }
     
-    public int aeQ() {
-        return a.TY.aeG(this.Uc);
+    public int afS() {
+        return a.Vy.afI(this.VC);
     }
     
-    public boolean aeR() {
-        return a.TY.aex(this.Uc);
+    public boolean afT() {
+        return a.Vy.afz(this.VC);
     }
     
-    public int aeS() {
-        return a.TY.aez(this.Uc);
+    public int afU() {
+        return a.Vy.afB(this.VC);
     }
     
-    public boolean aeT() {
-        return a.TY.aeA(this.Uc);
+    public boolean afV() {
+        return a.Vy.afC(this.VC);
     }
 }

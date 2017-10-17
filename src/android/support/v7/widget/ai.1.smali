@@ -4,17 +4,17 @@
 
 
 # instance fields
-.field public RT:I
+.field public TC:I
 
-.field public RU:I
+.field public TD:I
 
-.field public RV:Landroid/support/v7/widget/j;
+.field public TE:Landroid/support/v7/widget/j;
 
-.field public RW:Landroid/support/v7/widget/j;
+.field public TF:Landroid/support/v7/widget/j;
 
-.field public RX:I
+.field public TG:I
 
-.field public RY:I
+.field public TH:I
 
 
 # direct methods
@@ -26,10 +26,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 74
-    iput-object p1, p0, Landroid/support/v7/widget/ai;->RW:Landroid/support/v7/widget/j;
+    iput-object p1, p0, Landroid/support/v7/widget/ai;->TF:Landroid/support/v7/widget/j;
 
     .line 75
-    iput-object p2, p0, Landroid/support/v7/widget/ai;->RV:Landroid/support/v7/widget/j;
+    iput-object p2, p0, Landroid/support/v7/widget/ai;->TE:Landroid/support/v7/widget/j;
 
     .line 76
     return-void
@@ -43,16 +43,16 @@
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/ai;-><init>(Landroid/support/v7/widget/j;Landroid/support/v7/widget/j;)V
 
     .line 81
-    iput p3, p0, Landroid/support/v7/widget/ai;->RU:I
+    iput p3, p0, Landroid/support/v7/widget/ai;->TD:I
 
     .line 82
-    iput p4, p0, Landroid/support/v7/widget/ai;->RT:I
+    iput p4, p0, Landroid/support/v7/widget/ai;->TC:I
 
     .line 83
-    iput p5, p0, Landroid/support/v7/widget/ai;->RY:I
+    iput p5, p0, Landroid/support/v7/widget/ai;->TH:I
 
     .line 84
-    iput p6, p0, Landroid/support/v7/widget/ai;->RX:I
+    iput p6, p0, Landroid/support/v7/widget/ai;->TG:I
 
     .line 85
     return-void
@@ -75,7 +75,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v7/widget/ai;->RW:Landroid/support/v7/widget/j;
+    iget-object v1, p0, Landroid/support/v7/widget/ai;->TF:Landroid/support/v7/widget/j;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -87,7 +87,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v7/widget/ai;->RV:Landroid/support/v7/widget/j;
+    iget-object v1, p0, Landroid/support/v7/widget/ai;->TE:Landroid/support/v7/widget/j;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -99,7 +99,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/support/v7/widget/ai;->RU:I
+    iget v1, p0, Landroid/support/v7/widget/ai;->TD:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -111,7 +111,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/support/v7/widget/ai;->RT:I
+    iget v1, p0, Landroid/support/v7/widget/ai;->TC:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -123,7 +123,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/support/v7/widget/ai;->RY:I
+    iget v1, p0, Landroid/support/v7/widget/ai;->TH:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -135,7 +135,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/support/v7/widget/ai;->RX:I
+    iget v1, p0, Landroid/support/v7/widget/ai;->TG:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

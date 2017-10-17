@@ -4,21 +4,20 @@
 
 package android.support.v4.os;
 
-import android.os.Bundle;
+import android.os.Trace;
+import android.os.Build$VERSION;
 
-class b implements Runnable
+public final class b
 {
-    final int adr;
-    final /* synthetic */ ResultReceiver ads;
-    final Bundle adt;
-    
-    b(final ResultReceiver ads, final int adr, final Bundle adt) {
-        this.ads = ads;
-        this.adr = adr;
-        this.adt = adt;
+    public static void asq() {
+        if (Build$VERSION.SDK_INT >= 18) {
+            Trace.endSection();
+        }
     }
     
-    public void run() {
-        this.ads.onReceiveResult(this.adr, this.adt);
+    public static void asr(final String s) {
+        if (Build$VERSION.SDK_INT >= 18) {
+            Trace.beginSection(s);
+        }
     }
 }

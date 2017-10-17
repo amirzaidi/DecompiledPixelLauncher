@@ -15,22 +15,22 @@ import android.graphics.PointF;
 
 public class av extends g
 {
-    private final float Sp;
-    protected PointF Sq;
-    protected final DecelerateInterpolator Sr;
-    protected final LinearInterpolator Ss;
-    protected int St;
-    protected int Su;
+    private final float TY;
+    protected PointF TZ;
+    protected final DecelerateInterpolator Ua;
+    protected final LinearInterpolator Ub;
+    protected int Uc;
+    protected int Ud;
     
     public av(final Context context) {
-        this.Ss = new LinearInterpolator();
-        this.Sr = new DecelerateInterpolator();
-        this.Su = 0;
-        this.St = 0;
-        this.Sp = this.abI(context.getResources().getDisplayMetrics());
+        this.Ub = new LinearInterpolator();
+        this.Ua = new DecelerateInterpolator();
+        this.Ud = 0;
+        this.Uc = 0;
+        this.TY = this.acJ(context.getResources().getDisplayMetrics());
     }
     
-    private int abF(final int n, final int n2) {
+    private int acG(final int n, final int n2) {
         final int n3 = n - n2;
         if (n * n3 > 0) {
             return n3;
@@ -38,28 +38,28 @@ public class av extends g
         return 0;
     }
     
-    protected void WT(final View view, final e e, final H h) {
-        final int abD = this.abD(view, this.abL());
-        final int abJ = this.abJ(view, this.abK());
-        final int abE = this.abE((int)Math.sqrt(abD * abD + abJ * abJ));
-        if (abE > 0) {
-            h.ZE(-abD, -abJ, abE, (Interpolator)this.Sr);
+    protected void XT(final View view, final e e, final H h) {
+        final int acE = this.acE(view, this.acM());
+        final int acK = this.acK(view, this.acL());
+        final int acF = this.acF((int)Math.sqrt(acE * acE + acK * acK));
+        if (acF > 0) {
+            h.aaG(-acE, -acK, acF, (Interpolator)this.Ua);
         }
     }
     
-    protected void WV(final int n, final int n2, final e e, final H h) {
+    protected void XU(final int n, final int n2, final e e, final H h) {
         if (this.getChildCount() != 0) {
-            this.Su = this.abF(this.Su, n);
-            this.St = this.abF(this.St, n2);
-            if (this.Su == 0 && this.St == 0) {
-                this.abG(h);
+            this.Ud = this.acG(this.Ud, n);
+            this.Uc = this.acG(this.Uc, n2);
+            if (this.Ud == 0 && this.Uc == 0) {
+                this.acH(h);
             }
             return;
         }
         this.stop();
     }
     
-    public int abC(final int n, final int n2, final int n3, final int n4, final int n5) {
+    public int acD(final int n, final int n2, final int n3, final int n4, final int n5) {
         switch (n5) {
             default: {
                 throw new IllegalArgumentException("snap preference should be one of the constants defined in SmoothScroller, starting with SNAP_");
@@ -84,56 +84,56 @@ public class av extends g
         }
     }
     
-    public int abD(final View view, final int n) {
+    public int acE(final View view, final int n) {
         final p layoutManager = this.getLayoutManager();
         if (layoutManager != null && layoutManager.canScrollHorizontally()) {
             final i i = (i)view.getLayoutParams();
-            return this.abC(layoutManager.getDecoratedLeft(view) - i.leftMargin, layoutManager.getDecoratedRight(view) + i.rightMargin, layoutManager.getPaddingLeft(), layoutManager.getWidth() - layoutManager.getPaddingRight(), n);
+            return this.acD(layoutManager.getDecoratedLeft(view) - i.leftMargin, layoutManager.getDecoratedRight(view) + i.rightMargin, layoutManager.getPaddingLeft(), layoutManager.getWidth() - layoutManager.getPaddingRight(), n);
         }
         return 0;
     }
     
-    protected int abE(final int n) {
-        return (int)Math.ceil(this.abH(n) / 0.3356);
+    protected int acF(final int n) {
+        return (int)Math.ceil(this.acI(n) / 0.3356);
     }
     
-    protected void abG(final H h) {
+    protected void acH(final H h) {
         final float n = 10000.0f;
         final float n2 = 1.2f;
-        final PointF computeScrollVectorForPosition = this.computeScrollVectorForPosition(this.WX());
+        final PointF computeScrollVectorForPosition = this.computeScrollVectorForPosition(this.XW());
         if (computeScrollVectorForPosition != null && (computeScrollVectorForPosition.x != 0.0f || computeScrollVectorForPosition.y != 0.0f)) {
-            this.WS(computeScrollVectorForPosition);
-            this.Sq = computeScrollVectorForPosition;
-            this.Su = (int)(computeScrollVectorForPosition.x * n);
-            this.St = (int)(computeScrollVectorForPosition.y * n);
-            h.ZE((int)(this.Su * n2), (int)(this.St * n2), (int)(this.abH(10000) * n2), (Interpolator)this.Ss);
+            this.XS(computeScrollVectorForPosition);
+            this.TZ = computeScrollVectorForPosition;
+            this.Ud = (int)(computeScrollVectorForPosition.x * n);
+            this.Uc = (int)(computeScrollVectorForPosition.y * n);
+            h.aaG((int)(this.Ud * n2), (int)(this.Uc * n2), (int)(this.acI(10000) * n2), (Interpolator)this.Ub);
             return;
         }
-        h.ZG(this.WX());
+        h.aaI(this.XW());
         this.stop();
     }
     
-    protected int abH(final int n) {
-        return (int)Math.ceil(Math.abs(n) * this.Sp);
+    protected int acI(final int n) {
+        return (int)Math.ceil(Math.abs(n) * this.TY);
     }
     
-    protected float abI(final DisplayMetrics displayMetrics) {
+    protected float acJ(final DisplayMetrics displayMetrics) {
         return 25.0f / displayMetrics.densityDpi;
     }
     
-    public int abJ(final View view, final int n) {
+    public int acK(final View view, final int n) {
         final p layoutManager = this.getLayoutManager();
         if (layoutManager != null && layoutManager.canScrollVertically()) {
             final i i = (i)view.getLayoutParams();
-            return this.abC(layoutManager.getDecoratedTop(view) - i.topMargin, layoutManager.getDecoratedBottom(view) + i.bottomMargin, layoutManager.getPaddingTop(), layoutManager.getHeight() - layoutManager.getPaddingBottom(), n);
+            return this.acD(layoutManager.getDecoratedTop(view) - i.topMargin, layoutManager.getDecoratedBottom(view) + i.bottomMargin, layoutManager.getPaddingTop(), layoutManager.getHeight() - layoutManager.getPaddingBottom(), n);
         }
         return 0;
     }
     
-    protected int abK() {
+    protected int acL() {
         int n;
-        if (this.Sq != null && this.Sq.y != 0.0f) {
-            if (this.Sq.y > 0.0f) {
+        if (this.TZ != null && this.TZ.y != 0.0f) {
+            if (this.TZ.y > 0.0f) {
                 n = 1;
             }
             else {
@@ -146,10 +146,10 @@ public class av extends g
         return n;
     }
     
-    protected int abL() {
+    protected int acM() {
         int n;
-        if (this.Sq != null && this.Sq.x != 0.0f) {
-            if (this.Sq.x > 0.0f) {
+        if (this.TZ != null && this.TZ.x != 0.0f) {
+            if (this.TZ.x > 0.0f) {
                 n = 1;
             }
             else {
@@ -175,8 +175,8 @@ public class av extends g
     }
     
     protected void onStop() {
-        this.St = 0;
-        this.Su = 0;
-        this.Sq = null;
+        this.Uc = 0;
+        this.Ud = 0;
+        this.TZ = null;
     }
 }

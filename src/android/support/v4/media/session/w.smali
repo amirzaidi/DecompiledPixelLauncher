@@ -1,142 +1,90 @@
 .class Landroid/support/v4/media/session/w;
-.super Ljava/lang/Object;
+.super Landroid/support/v4/media/session/b;
 .source "SourceFile"
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Landroid/support/v4/media/session/c;)V
     .locals 0
 
     .prologue
-    .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 2177
+    invoke-direct {p0, p1}, Landroid/support/v4/media/session/b;-><init>(Landroid/support/v4/media/session/c;)V
 
-    .line 79
+    .line 2178
     return-void
 .end method
 
-.method public static arN(Ljava/lang/Object;)J
-    .locals 2
 
-    .prologue
-    .line 32
-    check-cast p0, Landroid/media/session/PlaybackState;
-
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getPosition()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static arO(Ljava/lang/Object;)F
+# virtual methods
+.method public onExtrasChanged(Landroid/os/Bundle;)V
     .locals 1
 
     .prologue
-    .line 40
-    check-cast p0, Landroid/media/session/PlaybackState;
+    .line 2207
+    new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getPlaybackSpeed()F
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    move-result v0
-
-    return v0
+    throw v0
 .end method
 
-.method public static arP(Ljava/lang/Object;)J
-    .locals 2
-
-    .prologue
-    .line 36
-    check-cast p0, Landroid/media/session/PlaybackState;
-
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getBufferedPosition()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static arQ(Ljava/lang/Object;)Ljava/util/List;
+.method public onMetadataChanged(Landroid/support/v4/media/MediaMetadataCompat;)V
     .locals 1
 
     .prologue
-    .line 56
-    check-cast p0, Landroid/media/session/PlaybackState;
+    .line 2189
+    new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getCustomActions()Ljava/util/List;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method
 
-.method public static arR(Ljava/lang/Object;)J
-    .locals 2
-
-    .prologue
-    .line 52
-    check-cast p0, Landroid/media/session/PlaybackState;
-
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getLastPositionUpdateTime()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static arS(Ljava/lang/Object;)J
-    .locals 2
-
-    .prologue
-    .line 60
-    check-cast p0, Landroid/media/session/PlaybackState;
-
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getActiveQueueItemId()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static arT(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public onQueueChanged(Ljava/util/List;)V
     .locals 1
 
     .prologue
-    .line 48
-    check-cast p0, Landroid/media/session/PlaybackState;
+    .line 2195
+    new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getErrorMessage()Ljava/lang/CharSequence;
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method
 
-.method public static arU(Ljava/lang/Object;)J
-    .locals 2
-
-    .prologue
-    .line 44
-    check-cast p0, Landroid/media/session/PlaybackState;
-
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getActions()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static arV(Ljava/lang/Object;)I
+.method public onQueueTitleChanged(Ljava/lang/CharSequence;)V
     .locals 1
 
     .prologue
-    .line 28
-    check-cast p0, Landroid/media/session/PlaybackState;
+    .line 2201
+    new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-virtual {p0}, Landroid/media/session/PlaybackState;->getState()I
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    move-result v0
+    throw v0
+.end method
 
-    return v0
+.method public onSessionDestroyed()V
+    .locals 1
+
+    .prologue
+    .line 2183
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
+.end method
+
+.method public onVolumeInfoChanged(Landroid/support/v4/media/session/ParcelableVolumeInfo;)V
+    .locals 1
+
+    .prologue
+    .line 2213
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v0
 .end method

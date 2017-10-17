@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public adD(Landroid/widget/EdgeEffect;FF)V
+.method public ahJ(Landroid/widget/EdgeEffect;FF)V
     .locals 0
 
     .prologue

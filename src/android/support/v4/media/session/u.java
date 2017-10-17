@@ -4,15 +4,24 @@
 
 package android.support.v4.media.session;
 
-import android.media.session.MediaSession$QueueItem;
+import java.util.List;
+import android.os.Bundle;
 
-class u
+public interface u
 {
-    public static Object arL(final Object o) {
-        return ((MediaSession$QueueItem)o).getDescription();
-    }
+    void asR(final int p0, final int p1, final int p2, final int p3, final int p4);
     
-    public static long arM(final Object o) {
-        return ((MediaSession$QueueItem)o).getQueueId();
-    }
+    void asS(final Object p0);
+    
+    void asT(final Object p0);
+    
+    void onExtrasChanged(final Bundle p0);
+    
+    void onQueueChanged(final List p0);
+    
+    void onQueueTitleChanged(final CharSequence p0);
+    
+    void onSessionDestroyed();
+    
+    void onSessionEvent(final String p0, final Bundle p1);
 }

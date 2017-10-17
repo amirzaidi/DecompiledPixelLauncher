@@ -8,18 +8,18 @@ import android.os.Build$VERSION;
 
 public abstract class h
 {
-    final Object aeN;
+    final Object afP;
     
     public h() {
         if (Build$VERSION.SDK_INT < 23) {
-            this.aeN = null;
+            this.afP = null;
         }
         else {
-            this.aeN = a.asc(new n(this));
+            this.afP = a.asZ(new n(this));
         }
     }
     
-    public void ass(final MediaBrowserCompat$MediaItem mediaBrowserCompat$MediaItem) {
+    public void atp(final MediaBrowserCompat$MediaItem mediaBrowserCompat$MediaItem) {
     }
     
     public void onError(final String s) {

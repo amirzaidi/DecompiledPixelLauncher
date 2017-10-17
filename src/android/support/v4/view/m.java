@@ -9,11 +9,11 @@ import android.view.View;
 
 class m extends n
 {
-    public int afM(final View view) {
+    public int agV(final View view) {
         return view.getLayoutDirection();
     }
     
-    public Display afN(final View view) {
+    public Display agW(final View view) {
         return view.getDisplay();
     }
 }

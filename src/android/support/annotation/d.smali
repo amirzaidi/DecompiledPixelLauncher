@@ -7,5 +7,5 @@
 
 
 # virtual methods
-.method public abstract asP()[Landroid/support/annotation/RestrictTo$Scope;
+.method public abstract atM()[Landroid/support/annotation/RestrictTo$Scope;
 .end method

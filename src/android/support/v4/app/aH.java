@@ -11,12 +11,12 @@ import android.transition.Transition$TransitionListener;
 
 class ah implements Transition$TransitionListener
 {
-    final /* synthetic */ View aas;
-    final /* synthetic */ ArrayList aat;
+    final /* synthetic */ View abX;
+    final /* synthetic */ ArrayList abY;
     
-    ah(final View aas, final ArrayList aat) {
-        this.aas = aas;
-        this.aat = aat;
+    ah(final View abX, final ArrayList abY) {
+        this.abX = abX;
+        this.abY = abY;
     }
     
     public void onTransitionCancel(final Transition transition) {
@@ -24,9 +24,9 @@ class ah implements Transition$TransitionListener
     
     public void onTransitionEnd(final Transition transition) {
         transition.removeListener((Transition$TransitionListener)this);
-        this.aas.setVisibility(8);
-        for (int size = this.aat.size(), i = 0; i < size; ++i) {
-            ((View)this.aat.get(i)).setVisibility(0);
+        this.abX.setVisibility(8);
+        for (int size = this.abY.size(), i = 0; i < size; ++i) {
+            ((View)this.abY.get(i)).setVisibility(0);
         }
     }
     

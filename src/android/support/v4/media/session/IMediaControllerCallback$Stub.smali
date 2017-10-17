@@ -44,9 +44,9 @@
 
     .line 35
     :cond_0
-    new-instance v0, Landroid/support/v4/media/session/e;
+    new-instance v0, Landroid/support/v4/media/session/g;
 
-    invoke-direct {v0, p0}, Landroid/support/v4/media/session/e;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p0}, Landroid/support/v4/media/session/g;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 

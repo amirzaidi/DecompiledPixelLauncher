@@ -11,7 +11,7 @@ import android.view.View$BaseSavedState;
 class NestedScrollView$SavedState extends View$BaseSavedState
 {
     public static final Parcelable$Creator CREATOR;
-    public int TW;
+    public int Wy;
     
     static {
         CREATOR = (Parcelable$Creator)new j();
@@ -19,15 +19,15 @@ class NestedScrollView$SavedState extends View$BaseSavedState
     
     NestedScrollView$SavedState(final Parcel parcel) {
         super(parcel);
-        this.TW = parcel.readInt();
+        this.Wy = parcel.readInt();
     }
     
     public String toString() {
-        return "HorizontalScrollView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " scrollPosition=" + this.TW + "}";
+        return "HorizontalScrollView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " scrollPosition=" + this.Wy + "}";
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         super.writeToParcel(parcel, n);
-        parcel.writeInt(this.TW);
+        parcel.writeInt(this.Wy);
     }
 }

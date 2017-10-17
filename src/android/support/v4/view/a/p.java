@@ -4,9 +4,6 @@
 
 package android.support.v4.view.a;
 
-class p implements q
+class p extends q
 {
-    public Object aeV(final b b) {
-        return null;
-    }
 }

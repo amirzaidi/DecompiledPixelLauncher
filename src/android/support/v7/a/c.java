@@ -12,69 +12,50 @@ import java.util.List;
 
 public final class c
 {
-    private final List SY;
-    private final List SZ;
-    private final List Ta;
-    private int Tb;
-    private Rect Tc;
-    private int Td;
-    private int Te;
+    private final List UH;
+    private final List UI;
+    private final List UJ;
+    private int UK;
+    private Rect UL;
+    private int UM;
+    private int UN;
     private final Bitmap mBitmap;
     
     public c(final Bitmap mBitmap) {
-        this.Ta = new ArrayList();
-        this.Td = 16;
-        this.Te = 12544;
-        this.Tb = -1;
-        this.SZ = new ArrayList();
+        this.UJ = new ArrayList();
+        this.UM = 16;
+        this.UN = 12544;
+        this.UK = -1;
+        this.UI = new ArrayList();
         if (mBitmap != null && !mBitmap.isRecycled()) {
-            this.SZ.add(a.SU);
+            this.UI.add(a.UD);
             this.mBitmap = mBitmap;
-            this.SY = null;
-            this.Ta.add(e.To);
-            this.Ta.add(e.Tx);
-            this.Ta.add(e.Ts);
-            this.Ta.add(e.Tp);
-            this.Ta.add(e.Tv);
-            this.Ta.add(e.Tq);
+            this.UH = null;
+            this.UJ.add(e.UX);
+            this.UJ.add(e.Vg);
+            this.UJ.add(e.Vb);
+            this.UJ.add(e.UY);
+            this.UJ.add(e.Ve);
+            this.UJ.add(e.UZ);
             return;
         }
         throw new IllegalArgumentException("Bitmap is not valid");
     }
     
-    private int[] acB(final Bitmap bitmap) {
-        int i = 0;
-        final int width = bitmap.getWidth();
-        final int height = bitmap.getHeight();
-        final int[] array = new int[width * height];
-        bitmap.getPixels(array, 0, width, 0, 0, width, height);
-        if (this.Tc != null) {
-            final int width2 = this.Tc.width();
-            final int height2 = this.Tc.height();
-            final int[] array2 = new int[width2 * height2];
-            while (i < height2) {
-                System.arraycopy(array, (this.Tc.top + i) * width + this.Tc.left, array2, i * width2, width2);
-                ++i;
-            }
-            return array2;
-        }
-        return array;
-    }
-    
-    private Bitmap acz(final Bitmap bitmap) {
+    private Bitmap adD(final Bitmap bitmap) {
         double sqrt = -1.0;
-        if (this.Te <= 0) {
-            if (this.Tb > 0) {
+        if (this.UN <= 0) {
+            if (this.UK > 0) {
                 final int max = Math.max(bitmap.getWidth(), bitmap.getHeight());
-                if (max > this.Tb) {
-                    sqrt = this.Tb / max;
+                if (max > this.UK) {
+                    sqrt = this.UK / max;
                 }
             }
         }
         else {
             final int n = bitmap.getWidth() * bitmap.getHeight();
-            if (n > this.Te) {
-                sqrt = Math.sqrt(this.Te / n);
+            if (n > this.UN) {
+                sqrt = Math.sqrt(this.UN / n);
             }
         }
         if (sqrt <= 0.0) {
@@ -83,62 +64,81 @@ public final class c
         return Bitmap.createScaledBitmap(bitmap, (int)Math.ceil(bitmap.getWidth() * sqrt), (int)Math.ceil(sqrt * bitmap.getHeight()), false);
     }
     
-    public c acA(final int n, final int n2, final int n3, final int n4) {
-        if (this.mBitmap != null) {
-            if (this.Tc == null) {
-                this.Tc = new Rect();
+    private int[] adF(final Bitmap bitmap) {
+        int i = 0;
+        final int width = bitmap.getWidth();
+        final int height = bitmap.getHeight();
+        final int[] array = new int[width * height];
+        bitmap.getPixels(array, 0, width, 0, 0, width, height);
+        if (this.UL != null) {
+            final int width2 = this.UL.width();
+            final int height2 = this.UL.height();
+            final int[] array2 = new int[width2 * height2];
+            while (i < height2) {
+                System.arraycopy(array, (this.UL.top + i) * width + this.UL.left, array2, i * width2, width2);
+                ++i;
             }
-            this.Tc.set(0, 0, this.mBitmap.getWidth(), this.mBitmap.getHeight());
-            if (!this.Tc.intersect(n, n2, n3, n4)) {
+            return array2;
+        }
+        return array;
+    }
+    
+    public c adE(final int n, final int n2, final int n3, final int n4) {
+        if (this.mBitmap != null) {
+            if (this.UL == null) {
+                this.UL = new Rect();
+            }
+            this.UL.set(0, 0, this.mBitmap.getWidth(), this.mBitmap.getHeight());
+            if (!this.UL.intersect(n, n2, n3, n4)) {
                 throw new IllegalArgumentException("The given region must intersect with the Bitmap's dimensions.");
             }
         }
         return this;
     }
     
-    public c acC() {
-        this.SZ.clear();
+    public c adG() {
+        this.UI.clear();
         return this;
     }
     
-    public a acD() {
+    public a adH() {
         List list;
         if (this.mBitmap == null) {
-            list = this.SY;
+            list = this.UH;
         }
         else {
-            final Bitmap acz = this.acz(this.mBitmap);
+            final Bitmap adD = this.adD(this.mBitmap);
             if (false) {
                 null.addSplit("Processed Bitmap");
             }
-            final Rect tc = this.Tc;
-            if (acz != this.mBitmap && tc != null) {
-                final double n = acz.getWidth() / this.mBitmap.getWidth();
-                tc.left = (int)Math.floor(tc.left * n);
-                tc.top = (int)Math.floor(tc.top * n);
-                tc.right = Math.min((int)Math.ceil(tc.right * n), acz.getWidth());
-                tc.bottom = Math.min((int)Math.ceil(n * tc.bottom), acz.getHeight());
+            final Rect ul = this.UL;
+            if (adD != this.mBitmap && ul != null) {
+                final double n = adD.getWidth() / this.mBitmap.getWidth();
+                ul.left = (int)Math.floor(ul.left * n);
+                ul.top = (int)Math.floor(ul.top * n);
+                ul.right = Math.min((int)Math.ceil(ul.right * n), adD.getWidth());
+                ul.bottom = Math.min((int)Math.ceil(n * ul.bottom), adD.getHeight());
             }
-            final int[] acB = this.acB(acz);
-            final int td = this.Td;
+            final int[] adF = this.adF(adD);
+            final int um = this.UM;
             b[] array;
-            if (!this.SZ.isEmpty()) {
-                array = this.SZ.toArray(new b[this.SZ.size()]);
+            if (!this.UI.isEmpty()) {
+                array = this.UI.toArray(new b[this.UI.size()]);
             }
             else {
                 array = null;
             }
-            final i i = new i(acB, td, array);
-            if (acz != this.mBitmap) {
-                acz.recycle();
+            final i i = new i(adF, um, array);
+            if (adD != this.mBitmap) {
+                adD.recycle();
             }
-            list = i.adC();
+            list = i.aeG();
             if (false) {
                 null.addSplit("Color quantization completed");
             }
         }
-        final a a = new a(list, this.Ta);
-        a.acv();
+        final a a = new a(list, this.UJ);
+        a.adz();
         if (false) {
             null.addSplit("Created Palette");
             null.dumpToLog();

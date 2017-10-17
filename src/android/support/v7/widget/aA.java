@@ -6,24 +6,24 @@ package android.support.v7.widget;
 
 class aa implements Runnable
 {
-    final /* synthetic */ RecyclerView Rf;
+    final /* synthetic */ RecyclerView SO;
     
-    aa(final RecyclerView rf) {
-        this.Rf = rf;
+    aa(final RecyclerView so) {
+        this.SO = so;
     }
     
     public void run() {
-        if (this.Rf.mFirstLayoutComplete || this.Rf.isLayoutRequested()) {
+        if (this.SO.mFirstLayoutComplete || this.SO.isLayoutRequested()) {
             return;
         }
-        if (!this.Rf.mIsAttached) {
-            this.Rf.requestLayout();
+        if (!this.SO.mIsAttached) {
+            this.SO.requestLayout();
             return;
         }
-        if (!this.Rf.mLayoutFrozen) {
-            this.Rf.consumePendingUpdateOperations();
+        if (!this.SO.mLayoutFrozen) {
+            this.SO.consumePendingUpdateOperations();
             return;
         }
-        this.Rf.mLayoutRequestEaten = true;
+        this.SO.mLayoutRequestEaten = true;
     }
 }

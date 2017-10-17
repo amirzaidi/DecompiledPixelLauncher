@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final Un:[F
+.field private static final VN:[F
 
 
 # direct methods
@@ -1219,7 +1219,7 @@
 
     aput v4, v0, v1
 
-    sput-object v0, Landroid/support/v4/view/b/a;->Un:[F
+    sput-object v0, Landroid/support/v4/view/b/a;->VN:[F
 
     return-void
 .end method
@@ -1229,7 +1229,7 @@
 
     .prologue
     .line 67
-    sget-object v0, Landroid/support/v4/view/b/a;->Un:[F
+    sget-object v0, Landroid/support/v4/view/b/a;->VN:[F
 
     invoke-direct {p0, v0}, Landroid/support/v4/view/b/b;-><init>([F)V
 

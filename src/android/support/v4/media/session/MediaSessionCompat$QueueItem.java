@@ -16,46 +16,46 @@ import android.os.Parcelable;
 public final class MediaSessionCompat$QueueItem implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private Object adZ;
-    private final MediaDescriptionCompat aea;
-    private final long aeb;
+    private Object aeV;
+    private final MediaDescriptionCompat aeW;
+    private final long aeX;
     
     static {
-        CREATOR = (Parcelable$Creator)new k();
+        CREATOR = (Parcelable$Creator)new m();
     }
     
     MediaSessionCompat$QueueItem(final Parcel parcel) {
-        this.aea = (MediaDescriptionCompat)MediaDescriptionCompat.CREATOR.createFromParcel(parcel);
-        this.aeb = parcel.readLong();
+        this.aeW = (MediaDescriptionCompat)MediaDescriptionCompat.CREATOR.createFromParcel(parcel);
+        this.aeX = parcel.readLong();
     }
     
-    private MediaSessionCompat$QueueItem(final Object adZ, final MediaDescriptionCompat aea, final long aeb) {
-        if (aea == null) {
+    private MediaSessionCompat$QueueItem(final Object aeV, final MediaDescriptionCompat aeW, final long aeX) {
+        if (aeW == null) {
             throw new IllegalArgumentException("Description cannot be null.");
         }
-        if (aeb == -1) {
+        if (aeX == -1) {
             throw new IllegalArgumentException("Id cannot be QueueItem.UNKNOWN_ID");
         }
-        this.aea = aea;
-        this.aeb = aeb;
-        this.adZ = adZ;
+        this.aeW = aeW;
+        this.aeX = aeX;
+        this.aeV = aeV;
     }
     
-    public static List arF(final List list) {
+    public static List ass(final List list) {
         if (list != null && Build$VERSION.SDK_INT >= 21) {
             final ArrayList<MediaSessionCompat$QueueItem> list2 = new ArrayList<MediaSessionCompat$QueueItem>();
             final Iterator<Object> iterator = list.iterator();
             while (iterator.hasNext()) {
-                list2.add(arG(iterator.next()));
+                list2.add(ast(iterator.next()));
             }
             return list2;
         }
         return null;
     }
     
-    public static MediaSessionCompat$QueueItem arG(final Object o) {
+    public static MediaSessionCompat$QueueItem ast(final Object o) {
         if (o != null && Build$VERSION.SDK_INT >= 21) {
-            return new MediaSessionCompat$QueueItem(o, MediaDescriptionCompat.asB(u.arL(o)), u.arM(o));
+            return new MediaSessionCompat$QueueItem(o, MediaDescriptionCompat.aty(e.asB(o)), e.asC(o));
         }
         return null;
     }
@@ -65,11 +65,11 @@ public final class MediaSessionCompat$QueueItem implements Parcelable
     }
     
     public String toString() {
-        return "MediaSession.QueueItem {Description=" + this.aea + ", Id=" + this.aeb + " }";
+        return "MediaSession.QueueItem {Description=" + this.aeW + ", Id=" + this.aeX + " }";
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        this.aea.writeToParcel(parcel, n);
-        parcel.writeLong(this.aeb);
+        this.aeW.writeToParcel(parcel, n);
+        parcel.writeLong(this.aeX);
     }
 }

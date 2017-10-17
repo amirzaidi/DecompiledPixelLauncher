@@ -5,18 +5,17 @@
 package android.support.v4.view;
 
 import android.os.Bundle;
-import android.view.accessibility.AccessibilityEvent;
+import android.support.v4.view.a.a;
 import android.view.Display;
 import android.view.View;
 import android.os.Build$VERSION;
-import android.support.v4.os.a;
 
 public class f
 {
-    static final p Uw;
+    static final p VW;
     
     static {
-        if (!a.isAtLeastO()) {
+        if (Build$VERSION.SDK_INT < 26) {
             if (Build$VERSION.SDK_INT < 24) {
                 if (Build$VERSION.SDK_INT < 23) {
                     if (Build$VERSION.SDK_INT < 21) {
@@ -25,122 +24,130 @@ public class f
                                 if (Build$VERSION.SDK_INT < 17) {
                                     if (Build$VERSION.SDK_INT < 16) {
                                         if (Build$VERSION.SDK_INT < 15) {
-                                            Uw = new p();
+                                            VW = new p();
                                         }
                                         else {
-                                            Uw = new o();
+                                            VW = new o();
                                         }
                                     }
                                     else {
-                                        Uw = new n();
+                                        VW = new n();
                                     }
                                 }
                                 else {
-                                    Uw = new m();
+                                    VW = new m();
                                 }
                             }
                             else {
-                                Uw = new l();
+                                VW = new l();
                             }
                         }
                         else {
-                            Uw = new k();
+                            VW = new k();
                         }
                     }
                     else {
-                        Uw = new j();
+                        VW = new j();
                     }
                 }
                 else {
-                    Uw = new i();
+                    VW = new i();
                 }
             }
             else {
-                Uw = new h();
+                VW = new h();
             }
         }
         else {
-            Uw = new g();
+            VW = new g();
         }
     }
     
-    public static void afA(final View view, final int n) {
-        f.Uw.afK(view, n);
+    public static int agA(final View view) {
+        return f.VW.agY(view);
     }
     
-    public static int afB(final View view) {
-        return f.Uw.afV(view);
+    public static boolean agB(final View view) {
+        return f.VW.agZ(view);
     }
     
-    public static boolean afC(final View view) {
-        return f.Uw.afL(view);
+    public static void agC(final View view, final int n) {
+        f.VW.agT(view, n);
     }
     
-    public static int afD(final View view) {
-        return f.Uw.afO(view);
+    public static int agD(final View view) {
+        return f.VW.ahe(view);
     }
     
-    public static void afE(final View view, final Runnable runnable) {
-        f.Uw.afR(view, runnable);
+    public static boolean agE(final View view) {
+        return f.VW.agU(view);
     }
     
-    public static boolean afF(final View view) {
-        return f.Uw.afT(view);
+    public static int agF(final View view) {
+        return f.VW.agX(view);
     }
     
-    public static float afG(final View view) {
-        return view.getAlpha();
+    public static void agG(final View view, final Runnable runnable) {
+        f.VW.aha(view, runnable);
     }
     
-    public static Display afH(final View view) {
-        return f.Uw.afN(view);
+    public static float agH(final View view) {
+        return f.VW.agQ(view);
     }
     
-    public static int afr(final View view) {
-        return f.Uw.afM(view);
+    public static void agI(final View view, final float n) {
+        f.VW.agR(view, n);
     }
     
-    public static void afs(final View view) {
-        f.Uw.afJ(view);
+    public static boolean agJ(final View view) {
+        return f.VW.ahc(view);
     }
     
-    public static void aft(final View view, final android.support.v4.view.a a) {
-        f.Uw.afX(view, a);
+    public static void agK(final View view, final float n) {
+        f.VW.agP(view, n);
     }
     
-    public static String afu(final View view) {
-        return f.Uw.afI(view);
+    public static Display agL(final View view) {
+        return f.VW.agW(view);
     }
     
-    public static void afv(final View view, final Runnable runnable, final long n) {
-        f.Uw.afS(view, runnable, n);
+    public static int ags(final View view) {
+        return f.VW.agV(view);
     }
     
-    public static void afw(final View view) {
-        f.Uw.afU(view);
+    public static void agt(final View view) {
+        f.VW.agS(view);
     }
     
-    public static boolean afx(final View view) {
-        return f.Uw.afY(view);
+    public static void agu(final View view, final c c) {
+        f.VW.ahg(view, c);
     }
     
-    public static int afy(final View view) {
-        return f.Uw.afP(view);
+    public static String agv(final View view) {
+        return f.VW.agO(view);
     }
     
-    public static boolean afz(final View view) {
-        return f.Uw.afQ(view);
+    public static void agw(final View view, final Runnable runnable, final long n) {
+        f.VW.ahb(view, runnable, n);
     }
     
-    public static void onInitializeAccessibilityEvent(final View view, final AccessibilityEvent accessibilityEvent) {
-        view.onInitializeAccessibilityEvent(accessibilityEvent);
+    public static float agx(final View view) {
+        return f.VW.agN(view);
     }
     
-    public static void onInitializeAccessibilityNodeInfo(final View view, final android.support.v4.view.a.a a) {
-        f.Uw.onInitializeAccessibilityNodeInfo(view, a);
+    public static void agy(final View view) {
+        f.VW.ahd(view);
+    }
+    
+    public static boolean agz(final View view) {
+        return f.VW.ahh(view);
+    }
+    
+    public static void onInitializeAccessibilityNodeInfo(final View view, final a a) {
+        f.VW.onInitializeAccessibilityNodeInfo(view, a);
     }
     
     public static boolean performAccessibilityAction(final View view, final int n, final Bundle bundle) {
-        return f.Uw.performAccessibilityAction(view, n, bundle);
+        return f.VW.performAccessibilityAction(view, n, bundle);
     }
 }

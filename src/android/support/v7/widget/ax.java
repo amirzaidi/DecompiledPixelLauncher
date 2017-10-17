@@ -12,29 +12,29 @@ import android.animation.AnimatorListenerAdapter;
 
 class ax extends AnimatorListenerAdapter
 {
-    final /* synthetic */ ai Sv;
-    final /* synthetic */ Z Sw;
-    final /* synthetic */ ViewPropertyAnimator Sx;
-    final /* synthetic */ View Sy;
+    final /* synthetic */ ai Ue;
+    final /* synthetic */ Z Uf;
+    final /* synthetic */ ViewPropertyAnimator Ug;
+    final /* synthetic */ View Uh;
     
-    ax(final Z sw, final ai sv, final ViewPropertyAnimator sx, final View sy) {
-        this.Sw = sw;
-        this.Sv = sv;
-        this.Sx = sx;
-        this.Sy = sy;
+    ax(final Z uf, final ai ue, final ViewPropertyAnimator ug, final View uh) {
+        this.Uf = uf;
+        this.Ue = ue;
+        this.Ug = ug;
+        this.Uh = uh;
     }
     
     public void onAnimationEnd(final Animator animator) {
-        this.Sx.setListener((Animator$AnimatorListener)null);
-        this.Sy.setAlpha(1.0f);
-        this.Sy.setTranslationX(0.0f);
-        this.Sy.setTranslationY(0.0f);
-        this.Sw.abS(this.Sv.RV, false);
-        this.Sw.Rd.remove(this.Sv.RV);
-        this.Sw.aaD();
+        this.Ug.setListener((Animator$AnimatorListener)null);
+        this.Uh.setAlpha(1.0f);
+        this.Uh.setTranslationX(0.0f);
+        this.Uh.setTranslationY(0.0f);
+        this.Uf.acT(this.Ue.TE, false);
+        this.Uf.SM.remove(this.Ue.TE);
+        this.Uf.abF();
     }
     
     public void onAnimationStart(final Animator animator) {
-        this.Sw.abY(this.Sv.RV, false);
+        this.Uf.acZ(this.Ue.TE, false);
     }
 }

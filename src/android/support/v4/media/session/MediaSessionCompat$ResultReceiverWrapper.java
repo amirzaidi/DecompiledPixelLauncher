@@ -12,14 +12,14 @@ import android.os.Parcelable;
 final class MediaSessionCompat$ResultReceiverWrapper implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private ResultReceiver aey;
+    private ResultReceiver afw;
     
     static {
-        CREATOR = (Parcelable$Creator)new o();
+        CREATOR = (Parcelable$Creator)new s();
     }
     
     MediaSessionCompat$ResultReceiverWrapper(final Parcel parcel) {
-        this.aey = (ResultReceiver)ResultReceiver.CREATOR.createFromParcel(parcel);
+        this.afw = (ResultReceiver)ResultReceiver.CREATOR.createFromParcel(parcel);
     }
     
     public int describeContents() {
@@ -27,6 +27,6 @@ final class MediaSessionCompat$ResultReceiverWrapper implements Parcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        this.aey.writeToParcel(parcel, n);
+        this.afw.writeToParcel(parcel, n);
     }
 }

@@ -8,29 +8,29 @@ import android.view.View;
 
 class at implements J
 {
-    final /* synthetic */ p So;
+    final /* synthetic */ p TX;
     
-    at(final p so) {
-        this.So = so;
+    at(final p tx) {
+        this.TX = tx;
     }
     
-    public int ZI() {
-        return this.So.getWidth() - this.So.getPaddingRight();
+    public int aaK() {
+        return this.TX.getWidth() - this.TX.getPaddingRight();
     }
     
-    public int ZJ() {
-        return this.So.getPaddingLeft();
+    public int aaL() {
+        return this.TX.getPaddingLeft();
     }
     
-    public int ZK(final View view) {
-        return this.So.getDecoratedLeft(view) - ((i)view.getLayoutParams()).leftMargin;
+    public int aaM(final View view) {
+        return this.TX.getDecoratedLeft(view) - ((i)view.getLayoutParams()).leftMargin;
     }
     
-    public int ZL(final View view) {
-        return ((i)view.getLayoutParams()).rightMargin + this.So.getDecoratedRight(view);
+    public int aaN(final View view) {
+        return ((i)view.getLayoutParams()).rightMargin + this.TX.getDecoratedRight(view);
     }
     
     public View getChildAt(final int n) {
-        return this.So.getChildAt(n);
+        return this.TX.getChildAt(n);
     }
 }

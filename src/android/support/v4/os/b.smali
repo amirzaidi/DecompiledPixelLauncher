@@ -1,54 +1,59 @@
-.class Landroid/support/v4/os/b;
+.class public final Landroid/support/v4/os/b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final adr:I
-
-.field final synthetic ads:Landroid/support/v4/os/ResultReceiver;
-
-.field final adt:Landroid/os/Bundle;
-
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/os/ResultReceiver;ILandroid/os/Bundle;)V
+.method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 53
-    iput-object p1, p0, Landroid/support/v4/os/b;->ads:Landroid/support/v4/os/ResultReceiver;
-
+    .line 62
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
-    iput p2, p0, Landroid/support/v4/os/b;->adr:I
-
-    .line 55
-    iput-object p3, p0, Landroid/support/v4/os/b;->adt:Landroid/os/Bundle;
-
-    .line 56
     return-void
 .end method
 
-
-# virtual methods
-.method public run()V
-    .locals 3
+.method public static asq()V
+    .locals 2
 
     .prologue
+    .line 57
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x12
+
+    if-ge v0, v1, :cond_0
+
     .line 60
-    iget-object v0, p0, Landroid/support/v4/os/b;->ads:Landroid/support/v4/os/ResultReceiver;
-
-    iget v1, p0, Landroid/support/v4/os/b;->adr:I
-
-    iget-object v2, p0, Landroid/support/v4/os/b;->adt:Landroid/os/Bundle;
-
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/os/ResultReceiver;->onReceiveResult(ILandroid/os/Bundle;)V
-
-    .line 61
+    :goto_0
     return-void
+
+    .line 58
+    :cond_0
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    goto :goto_0
+.end method
+
+.method public static asr(Ljava/lang/String;)V
+    .locals 2
+
+    .prologue
+    .line 44
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x12
+
+    if-ge v0, v1, :cond_0
+
+    .line 47
+    :goto_0
+    return-void
+
+    .line 45
+    :cond_0
+    invoke-static {p0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

@@ -4,49 +4,32 @@
 
 package android.support.v4.app;
 
-import java.util.Iterator;
-import android.os.Bundle;
-import java.util.ArrayList;
-import android.graphics.Bitmap;
-import android.app.PendingIntent;
-import android.widget.RemoteViews;
-import android.app.Notification;
-import android.content.Context;
-import android.app.Notification$Builder;
+import android.animation.Animator;
+import android.view.ViewGroup;
+import android.view.View;
+import android.animation.AnimatorListenerAdapter;
 
-public class d implements X, C
+class d extends AnimatorListenerAdapter
 {
-    private Notification$Builder Wi;
+    final /* synthetic */ aR XL;
+    final /* synthetic */ View XM;
+    final /* synthetic */ g XN;
+    final /* synthetic */ ViewGroup XO;
     
-    d(final Context context, final Notification notification, final CharSequence contentTitle, final CharSequence contentText, final CharSequence contentInfo, final RemoteViews remoteViews, final int number, final PendingIntent contentIntent, final PendingIntent pendingIntent, final Bitmap largeIcon, final int n, final int n2, final boolean b, final boolean showWhen, final boolean usesChronometer, final int priority, final CharSequence subText, final boolean localOnly, final String category, final ArrayList list, final Bundle extras, final int color, final int visibility, final Notification publicVersion, final String group, final boolean groupSummary, final String sortKey, final CharSequence[] remoteInputHistory, final RemoteViews customContentView, final RemoteViews customBigContentView, final RemoteViews customHeadsUpContentView, final String channelId, final int badgeIconType, final String shortcutId, final long timeoutAfter, final boolean colorized, final boolean b2, final int groupAlertBehavior) {
-        this.Wi = new Notification$Builder(context, channelId).setWhen(notification.when).setShowWhen(showWhen).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, remoteViews).setSound(notification.sound, notification.audioStreamType).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 0x2) != 0x0).setOnlyAlertOnce((notification.flags & 0x8) != 0x0).setAutoCancel((notification.flags & 0x10) != 0x0).setDefaults(notification.defaults).setContentTitle(contentTitle).setContentText(contentText).setSubText(subText).setContentInfo(contentInfo).setContentIntent(contentIntent).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(pendingIntent, (notification.flags & 0x80) != 0x0).setLargeIcon(largeIcon).setNumber(number).setUsesChronometer(usesChronometer).setPriority(priority).setProgress(n, n2, b).setLocalOnly(localOnly).setExtras(extras).setGroup(group).setGroupSummary(groupSummary).setSortKey(sortKey).setCategory(category).setColor(color).setVisibility(visibility).setPublicVersion(publicVersion).setRemoteInputHistory(remoteInputHistory).setChannelId(channelId).setBadgeIconType(badgeIconType).setShortcutId(shortcutId).setTimeoutAfter(timeoutAfter).setGroupAlertBehavior(groupAlertBehavior);
-        if (b2) {
-            this.Wi.setColorized(colorized);
-        }
-        if (customContentView != null) {
-            this.Wi.setCustomContentView(customContentView);
-        }
-        if (customBigContentView != null) {
-            this.Wi.setCustomBigContentView(customBigContentView);
-        }
-        if (customHeadsUpContentView != null) {
-            this.Wi.setCustomHeadsUpContentView(customHeadsUpContentView);
-        }
-        final Iterator<String> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            this.Wi.addPerson((String)iterator.next());
-        }
+    d(final aR xl, final ViewGroup xo, final View xm, final g xn) {
+        this.XL = xl;
+        this.XO = xo;
+        this.XM = xm;
+        this.XN = xn;
     }
     
-    public void aim(final S s) {
-        as.amU(this.Wi, s);
-    }
-    
-    public Notification$Builder ain() {
-        return this.Wi;
-    }
-    
-    public Notification build() {
-        return this.Wi.build();
+    public void onAnimationEnd(final Animator animator) {
+        if (this.XO != null) {
+            this.XO.endViewTransition(this.XM);
+        }
+        if (this.XN.getAnimator() != null) {
+            this.XN.akr(null);
+            this.XL.apw(this.XN, this.XN.akU(), 0, 0, false);
+        }
     }
 }

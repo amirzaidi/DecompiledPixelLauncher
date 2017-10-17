@@ -15,7 +15,7 @@
     return-void
 .end method
 
-.method public static asE(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public static atB(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
     .prologue
@@ -29,7 +29,7 @@
     return-object v0
 .end method
 
-.method public static asF(Ljava/lang/Object;)Landroid/os/Bundle;
+.method public static atC(Ljava/lang/Object;)Landroid/os/Bundle;
     .locals 1
 
     .prologue
@@ -43,7 +43,7 @@
     return-object v0
 .end method
 
-.method public static asG(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public static atD(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
     .prologue
@@ -57,7 +57,7 @@
     return-object v0
 .end method
 
-.method public static asH(Ljava/lang/Object;)Landroid/graphics/Bitmap;
+.method public static atE(Ljava/lang/Object;)Landroid/graphics/Bitmap;
     .locals 1
 
     .prologue
@@ -71,7 +71,7 @@
     return-object v0
 .end method
 
-.method public static asI(Ljava/lang/Object;)Landroid/net/Uri;
+.method public static atF(Ljava/lang/Object;)Landroid/net/Uri;
     .locals 1
 
     .prologue
@@ -85,7 +85,7 @@
     return-object v0
 .end method
 
-.method public static asJ(Ljava/lang/Object;)Ljava/lang/CharSequence;
+.method public static atG(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
 
     .prologue
@@ -99,7 +99,7 @@
     return-object v0
 .end method
 
-.method public static asK(Ljava/lang/Object;Landroid/os/Parcel;I)V
+.method public static atH(Ljava/lang/Object;Landroid/os/Parcel;I)V
     .locals 0
 
     .prologue
@@ -112,7 +112,7 @@
     return-void
 .end method
 
-.method public static asL(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public static atI(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
 
     .prologue
@@ -126,7 +126,7 @@
     return-object v0
 .end method
 
-.method public static asM(Ljava/lang/Object;)Ljava/lang/String;
+.method public static atJ(Ljava/lang/Object;)Ljava/lang/String;
     .locals 1
 
     .prologue

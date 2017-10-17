@@ -4,20 +4,16 @@
 
 package android.support.v4.os;
 
-import android.os.Trace;
-import android.os.Build$VERSION;
+import android.os.Parcel;
+import android.os.Parcelable$Creator;
 
-public final class c
+class c implements Parcelable$Creator
 {
-    public static void arh() {
-        if (Build$VERSION.SDK_INT >= 18) {
-            Trace.endSection();
-        }
+    public ResultReceiver createFromParcel(final Parcel parcel) {
+        return new ResultReceiver(parcel);
     }
     
-    public static void ari(final String s) {
-        if (Build$VERSION.SDK_INT >= 18) {
-            Trace.beginSection(s);
-        }
+    public ResultReceiver[] newArray(final int n) {
+        return new ResultReceiver[n];
     }
 }

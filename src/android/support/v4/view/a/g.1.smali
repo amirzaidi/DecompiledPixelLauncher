@@ -16,7 +16,33 @@
 
 
 # virtual methods
-.method public aeA(Ljava/lang/Object;)Z
+.method public afA(IIIIZZ)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 1286
+    invoke-static {p1, p2, p3, p4, p5}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public afB(Ljava/lang/Object;)I
+    .locals 1
+
+    .prologue
+    .line 1329
+    check-cast p1, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
+
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->getColumnIndex()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public afC(Ljava/lang/Object;)Z
     .locals 1
 
     .prologue
@@ -30,7 +56,7 @@
     return v0
 .end method
 
-.method public aeB(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/Object;
+.method public afD(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/Object;
     .locals 1
 
     .prologue
@@ -42,7 +68,7 @@
     return-object v0
 .end method
 
-.method public aeC(Ljava/lang/Object;)I
+.method public afE(Ljava/lang/Object;)I
     .locals 1
 
     .prologue
@@ -56,7 +82,7 @@
     return v0
 .end method
 
-.method public aeD(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/Object;)V
+.method public afF(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/Object;)V
     .locals 0
 
     .prologue
@@ -69,7 +95,7 @@
     return-void
 .end method
 
-.method public aeE(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/Object;)V
+.method public afG(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/Object;)V
     .locals 0
 
     .prologue
@@ -82,7 +108,7 @@
     return-void
 .end method
 
-.method public aeF(Ljava/lang/Object;)I
+.method public afH(Ljava/lang/Object;)I
     .locals 1
 
     .prologue
@@ -96,7 +122,7 @@
     return v0
 .end method
 
-.method public aeG(Ljava/lang/Object;)I
+.method public afI(Ljava/lang/Object;)I
     .locals 1
 
     .prologue
@@ -110,7 +136,7 @@
     return v0
 .end method
 
-.method public aew(IIZI)Ljava/lang/Object;
+.method public afy(IIZI)Ljava/lang/Object;
     .locals 1
 
     .prologue
@@ -120,30 +146,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public aey(IIIIZZ)Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 1286
-    invoke-static {p1, p2, p3, p4, p5}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public aez(Ljava/lang/Object;)I
-    .locals 1
-
-    .prologue
-    .line 1329
-    check-cast p1, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
-
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->getColumnIndex()I
-
-    move-result v0
-
-    return v0
 .end method

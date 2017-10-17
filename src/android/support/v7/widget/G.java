@@ -27,92 +27,92 @@ import android.view.View;
 
 public abstract class g
 {
-    private boolean OW;
-    private int OX;
-    private boolean OY;
-    private final H OZ;
-    private p mLayoutManager;
+    private boolean QC;
+    private int QD;
+    private p QE;
+    private boolean QF;
+    private final H QG;
     private RecyclerView mRecyclerView;
     private View mTargetView;
     
     public g() {
-        this.OX = -1;
-        this.OZ = new H(0, 0);
+        this.QD = -1;
+        this.QG = new H(0, 0);
     }
     
-    private void WR(final int n, final int n2) {
+    private void XR(final int n, final int n2) {
         final RecyclerView mRecyclerView = this.mRecyclerView;
-        if (this.OW || this.OX == -1 || mRecyclerView == null) {
+        if (this.QC || this.QD == -1 || mRecyclerView == null) {
             this.stop();
         }
-        this.OY = false;
+        this.QF = false;
         if (this.mTargetView != null) {
-            if (this.getChildPosition(this.mTargetView) != this.OX) {
+            if (this.getChildPosition(this.mTargetView) != this.QD) {
                 Log.e("RecyclerView", "Passed over target position while smooth scrolling.");
                 this.mTargetView = null;
             }
             else {
-                this.WT(this.mTargetView, mRecyclerView.mState, this.OZ);
-                this.OZ.ZF(mRecyclerView);
+                this.XT(this.mTargetView, mRecyclerView.mState, this.QG);
+                this.QG.aaH(mRecyclerView);
                 this.stop();
             }
         }
-        if (this.OW) {
-            this.WV(n, n2, mRecyclerView.mState, this.OZ);
-            final boolean zh = this.OZ.ZH();
-            this.OZ.ZF(mRecyclerView);
-            if (zh) {
-                if (!this.OW) {
+        if (this.QC) {
+            this.XU(n, n2, mRecyclerView.mState, this.QG);
+            final boolean aaJ = this.QG.aaJ();
+            this.QG.aaH(mRecyclerView);
+            if (aaJ) {
+                if (!this.QC) {
                     this.stop();
                 }
                 else {
-                    this.OY = true;
-                    mRecyclerView.mViewFlinger.Yc();
+                    this.QF = true;
+                    mRecyclerView.mViewFlinger.Ze();
                 }
             }
         }
     }
     
-    protected void WS(final PointF pointF) {
+    protected void XS(final PointF pointF) {
         final float n = (float)Math.sqrt(pointF.x * pointF.x + pointF.y * pointF.y);
         pointF.x /= n;
         pointF.y /= n;
     }
     
-    protected abstract void WT(final View p0, final e p1, final H p2);
+    protected abstract void XT(final View p0, final e p1, final H p2);
     
-    protected abstract void WV(final int p0, final int p1, final e p2, final H p3);
+    protected abstract void XU(final int p0, final int p1, final e p2, final H p3);
     
-    public void WW(final int ox) {
-        this.OX = ox;
+    public void XV(final int qd) {
+        this.QD = qd;
     }
     
-    public int WX() {
-        return this.OX;
+    public int XW() {
+        return this.QD;
     }
     
-    void WY(final RecyclerView mRecyclerView, final p mLayoutManager) {
+    void XX(final RecyclerView mRecyclerView, final p qe) {
         final boolean b = true;
         this.mRecyclerView = mRecyclerView;
-        this.mLayoutManager = mLayoutManager;
-        if (this.OX != -1) {
-            this.mRecyclerView.mState.OL = this.OX;
-            this.OW = b;
-            this.OY = b;
-            this.mTargetView = this.findViewByPosition(this.WX());
+        this.QE = qe;
+        if (this.QD != -1) {
+            this.mRecyclerView.mState.Qp = this.QD;
+            this.QC = b;
+            this.QF = b;
+            this.mTargetView = this.findViewByPosition(this.XW());
             this.onStart();
-            this.mRecyclerView.mViewFlinger.Yc();
+            this.mRecyclerView.mViewFlinger.Ze();
             return;
         }
         throw new IllegalArgumentException("Invalid target position");
     }
     
-    public boolean WZ() {
-        return this.OW;
+    public boolean XY() {
+        return this.QC;
     }
     
-    public boolean Xa() {
-        return this.OY;
+    public boolean XZ() {
+        return this.QF;
     }
     
     public View findViewByPosition(final int n) {
@@ -128,11 +128,11 @@ public abstract class g
     }
     
     public p getLayoutManager() {
-        return this.mLayoutManager;
+        return this.QE;
     }
     
     protected void onChildAttachedToWindow(final View mTargetView) {
-        if (this.getChildPosition(mTargetView) == this.WX()) {
+        if (this.getChildPosition(mTargetView) == this.XW()) {
             this.mTargetView = mTargetView;
         }
     }
@@ -142,16 +142,16 @@ public abstract class g
     protected abstract void onStop();
     
     protected final void stop() {
-        final int ox = -1;
-        if (this.OW) {
+        final int qd = -1;
+        if (this.QC) {
             this.onStop();
-            this.mRecyclerView.mState.OL = ox;
+            this.mRecyclerView.mState.Qp = qd;
             this.mTargetView = null;
-            this.OX = ox;
-            this.OY = false;
-            this.OW = false;
-            this.mLayoutManager.onSmoothScrollerStopped(this);
-            this.mLayoutManager = null;
+            this.QD = qd;
+            this.QF = false;
+            this.QC = false;
+            this.QE.onSmoothScrollerStopped(this);
+            this.QE = null;
             this.mRecyclerView = null;
         }
     }

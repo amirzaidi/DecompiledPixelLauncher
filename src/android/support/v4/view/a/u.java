@@ -4,14 +4,11 @@
 
 package android.support.v4.view.a;
 
-import android.view.accessibility.AccessibilityEvent;
+import android.view.View;
+import android.view.accessibility.AccessibilityRecord;
 
 class u
 {
-    public int aeZ(final AccessibilityEvent accessibilityEvent) {
-        return 0;
-    }
-    
-    public void afa(final AccessibilityEvent accessibilityEvent, final int n) {
+    public void agi(final AccessibilityRecord accessibilityRecord, final View view, final int n) {
     }
 }

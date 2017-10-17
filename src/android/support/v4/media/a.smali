@@ -15,7 +15,7 @@
     return-void
 .end method
 
-.method public static asc(Landroid/support/v4/media/r;)Ljava/lang/Object;
+.method public static asZ(Landroid/support/v4/media/r;)Ljava/lang/Object;
     .locals 1
 
     .prologue

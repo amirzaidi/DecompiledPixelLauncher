@@ -1,238 +1,132 @@
 .class Landroid/support/v7/widget/af;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
 # instance fields
-.field RH:I
+.field final synthetic Tq:I
 
-.field RI:I
+.field final synthetic Tr:I
 
-.field RJ:I
+.field final synthetic Ts:Landroid/support/v7/widget/Z;
 
-.field RK:I
+.field final synthetic Tt:Landroid/support/v7/widget/j;
 
-.field RL:I
+.field final synthetic Tu:Landroid/view/ViewPropertyAnimator;
+
+.field final synthetic val$view:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method constructor <init>(Landroid/support/v7/widget/Z;Landroid/support/v7/widget/j;ILandroid/view/View;ILandroid/view/ViewPropertyAnimator;)V
+    .locals 0
 
     .prologue
-    .line 135
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 292
+    iput-object p1, p0, Landroid/support/v7/widget/af;->Ts:Landroid/support/v7/widget/Z;
 
-    .line 136
-    const/4 v0, 0x0
+    iput-object p2, p0, Landroid/support/v7/widget/af;->Tt:Landroid/support/v7/widget/j;
 
-    iput v0, p0, Landroid/support/v7/widget/af;->RJ:I
+    iput p3, p0, Landroid/support/v7/widget/af;->Tr:I
+
+    iput-object p4, p0, Landroid/support/v7/widget/af;->val$view:Landroid/view/View;
+
+    iput p5, p0, Landroid/support/v7/widget/af;->Tq:I
+
+    iput-object p6, p0, Landroid/support/v7/widget/af;->Tu:Landroid/view/ViewPropertyAnimator;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method abh(II)I
-    .locals 1
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 2
 
     .prologue
-    .line 159
-    if-gt p1, p2, :cond_0
+    const/4 v1, 0x0
 
-    .line 162
-    if-eq p1, p2, :cond_1
-
-    .line 165
-    const/4 v0, 0x4
-
-    return v0
-
-    .line 160
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
-
-    .line 163
-    :cond_1
-    const/4 v0, 0x2
-
-    return v0
-.end method
-
-.method abi()V
-    .locals 1
-
-    .prologue
-    .line 155
-    const/4 v0, 0x0
-
-    iput v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    .line 156
-    return-void
-.end method
-
-.method abj()Z
-    .locals 4
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 169
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    and-int/lit8 v0, v0, 0x7
-
-    if-nez v0, :cond_4
-
-    .line 175
-    :cond_0
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    and-int/lit8 v0, v0, 0x70
-
-    if-nez v0, :cond_5
-
-    .line 181
-    :cond_1
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    and-int/lit16 v0, v0, 0x700
-
-    if-nez v0, :cond_6
-
-    .line 187
-    :cond_2
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    and-int/lit16 v0, v0, 0x7000
-
-    if-nez v0, :cond_7
-
-    .line 192
-    :cond_3
-    const/4 v0, 0x1
-
-    return v0
-
-    .line 170
-    :cond_4
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    iget v1, p0, Landroid/support/v7/widget/af;->RL:I
-
-    iget v2, p0, Landroid/support/v7/widget/af;->RH:I
-
-    invoke-virtual {p0, v1, v2}, Landroid/support/v7/widget/af;->abh(II)I
-
-    move-result v1
-
-    shl-int/lit8 v1, v1, 0x0
-
-    and-int/2addr v0, v1
+    .line 300
+    iget v0, p0, Landroid/support/v7/widget/af;->Tr:I
 
     if-nez v0, :cond_0
 
-    .line 171
-    return v3
-
-    .line 176
-    :cond_5
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    iget v1, p0, Landroid/support/v7/widget/af;->RL:I
-
-    iget v2, p0, Landroid/support/v7/widget/af;->RI:I
-
-    invoke-virtual {p0, v1, v2}, Landroid/support/v7/widget/af;->abh(II)I
-
-    move-result v1
-
-    shl-int/lit8 v1, v1, 0x4
-
-    and-int/2addr v0, v1
+    .line 303
+    :goto_0
+    iget v0, p0, Landroid/support/v7/widget/af;->Tq:I
 
     if-nez v0, :cond_1
 
-    .line 177
-    return v3
+    .line 306
+    :goto_1
+    return-void
 
-    .line 182
-    :cond_6
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
+    .line 301
+    :cond_0
+    iget-object v0, p0, Landroid/support/v7/widget/af;->val$view:Landroid/view/View;
 
-    iget v1, p0, Landroid/support/v7/widget/af;->RK:I
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    iget v2, p0, Landroid/support/v7/widget/af;->RH:I
+    goto :goto_0
 
-    invoke-virtual {p0, v1, v2}, Landroid/support/v7/widget/af;->abh(II)I
+    .line 304
+    :cond_1
+    iget-object v0, p0, Landroid/support/v7/widget/af;->val$view:Landroid/view/View;
 
-    move-result v1
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    shl-int/lit8 v1, v1, 0x8
-
-    and-int/2addr v0, v1
-
-    if-nez v0, :cond_2
-
-    .line 183
-    return v3
-
-    .line 188
-    :cond_7
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
-
-    iget v1, p0, Landroid/support/v7/widget/af;->RK:I
-
-    iget v2, p0, Landroid/support/v7/widget/af;->RI:I
-
-    invoke-virtual {p0, v1, v2}, Landroid/support/v7/widget/af;->abh(II)I
-
-    move-result v1
-
-    shl-int/lit8 v1, v1, 0xc
-
-    and-int/2addr v0, v1
-
-    if-nez v0, :cond_3
-
-    .line 189
-    return v3
+    goto :goto_1
 .end method
 
-.method addFlags(I)V
-    .locals 1
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
     .prologue
-    .line 151
-    iget v0, p0, Landroid/support/v7/widget/af;->RJ:I
+    .line 310
+    iget-object v0, p0, Landroid/support/v7/widget/af;->Tu:Landroid/view/ViewPropertyAnimator;
 
-    or-int/2addr v0, p1
+    const/4 v1, 0x0
 
-    iput v0, p0, Landroid/support/v7/widget/af;->RJ:I
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 152
+    .line 311
+    iget-object v0, p0, Landroid/support/v7/widget/af;->Ts:Landroid/support/v7/widget/Z;
+
+    iget-object v1, p0, Landroid/support/v7/widget/af;->Tt:Landroid/support/v7/widget/j;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/Z;->adi(Landroid/support/v7/widget/j;)V
+
+    .line 312
+    iget-object v0, p0, Landroid/support/v7/widget/af;->Ts:Landroid/support/v7/widget/Z;
+
+    iget-object v0, v0, Landroid/support/v7/widget/Z;->SK:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Landroid/support/v7/widget/af;->Tt:Landroid/support/v7/widget/j;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 313
+    iget-object v0, p0, Landroid/support/v7/widget/af;->Ts:Landroid/support/v7/widget/Z;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/Z;->abF()V
+
+    .line 314
     return-void
 .end method
 
-.method setBounds(IIII)V
-    .locals 0
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
     .prologue
-    .line 140
-    iput p1, p0, Landroid/support/v7/widget/af;->RH:I
+    .line 295
+    iget-object v0, p0, Landroid/support/v7/widget/af;->Ts:Landroid/support/v7/widget/Z;
 
-    .line 141
-    iput p2, p0, Landroid/support/v7/widget/af;->RI:I
+    iget-object v1, p0, Landroid/support/v7/widget/af;->Tt:Landroid/support/v7/widget/j;
 
-    .line 142
-    iput p3, p0, Landroid/support/v7/widget/af;->RL:I
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/Z;->adh(Landroid/support/v7/widget/j;)V
 
-    .line 143
-    iput p4, p0, Landroid/support/v7/widget/af;->RK:I
-
-    .line 144
+    .line 296
     return-void
 .end method

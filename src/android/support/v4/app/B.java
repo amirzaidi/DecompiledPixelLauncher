@@ -4,32 +4,20 @@
 
 package android.support.v4.app;
 
-import android.animation.Animator;
-import android.view.ViewGroup;
-import android.view.View;
-import android.animation.AnimatorListenerAdapter;
+import android.os.Build$VERSION;
+import android.os.Bundle;
+import android.content.Intent;
+import android.app.Activity;
+import android.support.v4.c.a;
 
-class b extends AnimatorListenerAdapter
+public class b extends a
 {
-    final /* synthetic */ aV Wb;
-    final /* synthetic */ View Wc;
-    final /* synthetic */ e Wd;
-    final /* synthetic */ ViewGroup We;
-    
-    b(final aV wb, final ViewGroup we, final View wc, final e wd) {
-        this.Wb = wb;
-        this.We = we;
-        this.Wc = wc;
-        this.Wd = wd;
-    }
-    
-    public void onAnimationEnd(final Animator animator) {
-        if (this.We != null) {
-            this.We.endViewTransition(this.Wc);
+    public static void ajq(final Activity activity, final Intent intent, final int n, final Bundle bundle) {
+        if (Build$VERSION.SDK_INT < 16) {
+            activity.startActivityForResult(intent, n);
         }
-        if (this.Wd.getAnimator() != null) {
-            this.Wd.aje(null);
-            this.Wb.aov(this.Wd, this.Wd.ajH(), 0, 0, false);
+        else {
+            activity.startActivityForResult(intent, n, bundle);
         }
     }
 }

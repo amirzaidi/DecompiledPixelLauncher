@@ -9,103 +9,103 @@ import android.util.SparseArray;
 
 public class t
 {
-    private int Pm;
-    SparseArray Pn;
+    private int QT;
+    SparseArray QU;
     
     public t() {
-        this.Pn = new SparseArray();
-        this.Pm = 0;
+        this.QU = new SparseArray();
+        this.QT = 0;
     }
     
-    private L XU(final int n) {
-        L l = (L)this.Pn.get(n);
+    private L YU(final int n) {
+        L l = (L)this.QU.get(n);
         if (l == null) {
             l = new L();
-            this.Pn.put(n, (Object)l);
+            this.QU.put(n, (Object)l);
         }
         return l;
     }
     
-    void XM(final int n, final long n2) {
-        final L xu = this.XU(n);
-        xu.PZ = this.XX(xu.PZ, n2);
+    void YM(final int n, final long n2) {
+        final L yu = this.YU(n);
+        yu.RG = this.YX(yu.RG, n2);
     }
     
-    void XN(final q q) {
-        ++this.Pm;
+    void YN(final q q) {
+        ++this.QT;
     }
     
-    public void XO(final int n, final int qc) {
-        final L xu = this.XU(n);
-        xu.Qc = qc;
-        final ArrayList qa = xu.Qa;
-        if (qa != null) {
-            while (qa.size() > qc) {
-                qa.remove(qa.size() - 1);
+    public void YO(final int n, final int rj) {
+        final L yu = this.YU(n);
+        yu.RJ = rj;
+        final ArrayList rh = yu.RH;
+        if (rh != null) {
+            while (rh.size() > rj) {
+                rh.remove(rh.size() - 1);
             }
         }
     }
     
-    boolean XP(final int n, final long n2, final long n3) {
+    boolean YP(final int n, final long n2, final long n3) {
         final boolean b = true;
         boolean b2 = false;
-        final long qb = this.XU(n).Qb;
-        if (qb == 0L || (qb + n2 < n3 || !b)) {
+        final long ri = this.YU(n).RI;
+        if (ri == 0L || (ri + n2 < n3 || !b)) {
             b2 = b;
         }
         return b2;
     }
     
-    void XQ(final int n, final long n2) {
-        final L xu = this.XU(n);
-        xu.Qb = this.XX(xu.Qb, n2);
+    void YQ(final int n, final long n2) {
+        final L yu = this.YU(n);
+        yu.RI = this.YX(yu.RI, n2);
     }
     
-    public void XR(final j j) {
+    public void YR(final j j) {
         final int itemViewType = j.getItemViewType();
-        final ArrayList qa = this.XU(itemViewType).Qa;
-        if (((L)this.Pn.get(itemViewType)).Qc > qa.size()) {
+        final ArrayList rh = this.YU(itemViewType).RH;
+        if (((L)this.QU.get(itemViewType)).RJ > rh.size()) {
             j.resetInternal();
-            qa.add(j);
+            rh.add(j);
         }
     }
     
-    boolean XS(final int n, final long n2, final long n3) {
+    boolean YS(final int n, final long n2, final long n3) {
         final boolean b = true;
         boolean b2 = false;
-        final long pz = this.XU(n).PZ;
-        if (pz == 0L || (pz + n2 < n3 || !b)) {
+        final long rg = this.YU(n).RG;
+        if (rg == 0L || (rg + n2 < n3 || !b)) {
             b2 = b;
         }
         return b2;
     }
     
-    void XT() {
-        --this.Pm;
+    void YT() {
+        --this.QT;
     }
     
-    public j XV(final int n) {
-        final L l = (L)this.Pn.get(n);
-        if (l != null && !l.Qa.isEmpty()) {
-            final ArrayList qa = l.Qa;
-            return qa.remove(qa.size() - 1);
+    public j YV(final int n) {
+        final L l = (L)this.QU.get(n);
+        if (l != null && !l.RH.isEmpty()) {
+            final ArrayList rh = l.RH;
+            return rh.remove(rh.size() - 1);
         }
         return null;
     }
     
-    void XW(final q q, final q q2, final boolean b) {
+    void YW(final q q, final q q2, final boolean b) {
         if (q != null) {
-            this.XT();
+            this.YT();
         }
-        if (!b && this.Pm == 0) {
+        if (!b && this.QT == 0) {
             this.clear();
         }
         if (q2 != null) {
-            this.XN(q2);
+            this.YN(q2);
         }
     }
     
-    long XX(final long n, final long n2) {
+    long YX(final long n, final long n2) {
         final long n3 = 4;
         if (n == 0L) {
             return n2;
@@ -114,8 +114,8 @@ public class t
     }
     
     public void clear() {
-        for (int i = 0; i < this.Pn.size(); ++i) {
-            ((L)this.Pn.valueAt(i)).Qa.clear();
+        for (int i = 0; i < this.QU.size(); ++i) {
+            ((L)this.QU.valueAt(i)).RH.clear();
         }
     }
 }

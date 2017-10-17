@@ -9,20 +9,20 @@ import java.util.ArrayList;
 
 class ae implements Runnable
 {
-    final /* synthetic */ Z RF;
-    final /* synthetic */ ArrayList RG;
+    final /* synthetic */ Z To;
+    final /* synthetic */ ArrayList Tp;
     
-    ae(final Z rf, final ArrayList rg) {
-        this.RF = rf;
-        this.RG = rg;
+    ae(final Z to, final ArrayList tp) {
+        this.To = to;
+        this.Tp = tp;
     }
     
     public void run() {
-        final Iterator<ai> iterator = this.RG.iterator();
+        final Iterator<ai> iterator = this.Tp.iterator();
         while (iterator.hasNext()) {
-            this.RF.aaA(iterator.next());
+            this.To.abC(iterator.next());
         }
-        this.RG.clear();
-        this.RF.QY.remove(this.RG);
+        this.Tp.clear();
+        this.To.SH.remove(this.Tp);
     }
 }

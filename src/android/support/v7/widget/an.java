@@ -12,29 +12,29 @@ import android.animation.AnimatorListenerAdapter;
 
 class an extends AnimatorListenerAdapter
 {
-    final /* synthetic */ ai Sb;
-    final /* synthetic */ ViewPropertyAnimator Sc;
-    final /* synthetic */ Z Sd;
+    final /* synthetic */ ai TK;
+    final /* synthetic */ ViewPropertyAnimator TL;
+    final /* synthetic */ Z TM;
     final /* synthetic */ View val$view;
     
-    an(final Z sd, final ai sb, final ViewPropertyAnimator sc, final View val$view) {
-        this.Sd = sd;
-        this.Sb = sb;
-        this.Sc = sc;
+    an(final Z tm, final ai tk, final ViewPropertyAnimator tl, final View val$view) {
+        this.TM = tm;
+        this.TK = tk;
+        this.TL = tl;
         this.val$view = val$view;
     }
     
     public void onAnimationEnd(final Animator animator) {
-        this.Sc.setListener((Animator$AnimatorListener)null);
+        this.TL.setListener((Animator$AnimatorListener)null);
         this.val$view.setAlpha(1.0f);
         this.val$view.setTranslationX(0.0f);
         this.val$view.setTranslationY(0.0f);
-        this.Sd.abS(this.Sb.RW, true);
-        this.Sd.Rd.remove(this.Sb.RW);
-        this.Sd.aaD();
+        this.TM.acT(this.TK.TF, true);
+        this.TM.SM.remove(this.TK.TF);
+        this.TM.abF();
     }
     
     public void onAnimationStart(final Animator animator) {
-        this.Sd.abY(this.Sb.RW, true);
+        this.TM.acZ(this.TK.TF, true);
     }
 }

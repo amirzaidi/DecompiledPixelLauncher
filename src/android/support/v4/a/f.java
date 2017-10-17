@@ -11,33 +11,33 @@ import java.util.Set;
 
 final class f implements Set
 {
-    final /* synthetic */ l Vm;
+    final /* synthetic */ l WZ;
     
-    f(final l vm) {
-        this.Vm = vm;
+    f(final l wz) {
+        this.WZ = wz;
     }
     
     public boolean addAll(final Collection collection) {
-        final int ahB = this.Vm.ahB();
+        final int aiL = this.WZ.aiL();
         for (final Map.Entry<Object, V> entry : collection) {
-            this.Vm.ahD(entry.getKey(), entry.getValue());
+            this.WZ.aiN(entry.getKey(), entry.getValue());
         }
-        return ahB != this.Vm.ahB();
+        return aiL != this.WZ.aiL();
     }
     
-    public boolean agW(final Map.Entry entry) {
+    public boolean ais(final Map.Entry entry) {
         throw new UnsupportedOperationException();
     }
     
     public void clear() {
-        this.Vm.ahy();
+        this.WZ.aiI();
     }
     
     public boolean contains(final Object o) {
         if (o instanceof Map.Entry) {
             final Map.Entry entry = (Map.Entry)o;
-            final int ahr = this.Vm.ahr(entry.getKey());
-            return ahr >= 0 && s.ahR(this.Vm.ahq(ahr, 1), entry.getValue());
+            final int aiB = this.WZ.aiB(entry.getKey());
+            return aiB >= 0 && s.ajb(this.WZ.aiA(aiB, 1), entry.getValue());
         }
         return false;
     }
@@ -53,25 +53,25 @@ final class f implements Set
     }
     
     public boolean equals(final Object o) {
-        return l.ahF(this, o);
+        return l.aiP(this, o);
     }
     
     public int hashCode() {
-        int i = this.Vm.ahB() - 1;
+        int i = this.WZ.aiL() - 1;
         int n = 0;
         while (i >= 0) {
-            final Object ahq = this.Vm.ahq(i, 0);
-            final Object ahq2 = this.Vm.ahq(i, 1);
+            final Object aiA = this.WZ.aiA(i, 0);
+            final Object aiA2 = this.WZ.aiA(i, 1);
             int hashCode;
-            if (ahq != null) {
-                hashCode = ahq.hashCode();
+            if (aiA != null) {
+                hashCode = aiA.hashCode();
             }
             else {
                 hashCode = 0;
             }
             int hashCode2;
-            if (ahq2 != null) {
-                hashCode2 = ahq2.hashCode();
+            if (aiA2 != null) {
+                hashCode2 = aiA2.hashCode();
             }
             else {
                 hashCode2 = 0;
@@ -85,14 +85,14 @@ final class f implements Set
     
     public boolean isEmpty() {
         boolean b = false;
-        if (this.Vm.ahB() == 0) {
+        if (this.WZ.aiL() == 0) {
             b = true;
         }
         return b;
     }
     
     public Iterator iterator() {
-        return new e(this.Vm);
+        return new e(this.WZ);
     }
     
     public boolean remove(final Object o) {
@@ -108,7 +108,7 @@ final class f implements Set
     }
     
     public int size() {
-        return this.Vm.ahB();
+        return this.WZ.aiL();
     }
     
     public Object[] toArray() {

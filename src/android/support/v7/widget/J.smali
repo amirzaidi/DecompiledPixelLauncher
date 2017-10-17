@@ -4,16 +4,16 @@
 
 
 # virtual methods
-.method public abstract ZI()I
+.method public abstract aaK()I
 .end method
 
-.method public abstract ZJ()I
+.method public abstract aaL()I
 .end method
 
-.method public abstract ZK(Landroid/view/View;)I
+.method public abstract aaM(Landroid/view/View;)I
 .end method
 
-.method public abstract ZL(Landroid/view/View;)I
+.method public abstract aaN(Landroid/view/View;)I
 .end method
 
 .method public abstract getChildAt(I)Landroid/view/View;

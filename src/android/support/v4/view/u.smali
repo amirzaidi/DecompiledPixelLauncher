@@ -3,21 +3,21 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/support/v4/view/B;
+.implements Landroid/support/v4/view/C;
 
 
 # virtual methods
-.method public abstract agh(Landroid/view/View;I)V
+.method public abstract ahq(Landroid/view/View;I)V
 .end method
 
-.method public abstract agi(Landroid/view/View;Landroid/view/View;II)Z
+.method public abstract ahr(Landroid/view/View;Landroid/view/View;II)Z
 .end method
 
-.method public abstract agj(Landroid/view/View;IIIII)V
+.method public abstract ahs(Landroid/view/View;IIIII)V
 .end method
 
-.method public abstract agk(Landroid/view/View;II[II)V
+.method public abstract aht(Landroid/view/View;II[II)V
 .end method
 
-.method public abstract agl(Landroid/view/View;Landroid/view/View;II)V
+.method public abstract ahu(Landroid/view/View;Landroid/view/View;II)V
 .end method

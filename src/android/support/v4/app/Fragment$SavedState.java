@@ -12,16 +12,16 @@ import android.os.Parcelable;
 public class Fragment$SavedState implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final Bundle aai;
+    final Bundle abN;
     
     static {
-        CREATOR = (Parcelable$Creator)new r();
+        CREATOR = (Parcelable$Creator)new t();
     }
     
     Fragment$SavedState(final Parcel parcel, final ClassLoader classLoader) {
-        this.aai = parcel.readBundle();
-        if (classLoader != null && this.aai != null) {
-            this.aai.setClassLoader(classLoader);
+        this.abN = parcel.readBundle();
+        if (classLoader != null && this.abN != null) {
+            this.abN.setClassLoader(classLoader);
         }
     }
     
@@ -30,6 +30,6 @@ public class Fragment$SavedState implements Parcelable
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        parcel.writeBundle(this.aai);
+        parcel.writeBundle(this.abN);
     }
 }

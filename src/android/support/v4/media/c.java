@@ -9,9 +9,9 @@ import android.os.Bundle;
 
 public abstract class c
 {
-    public void asd(final String s, final Bundle bundle, final List list) {
+    public void ata(final String s, final Bundle bundle, final List list) {
     }
     
-    public void ase(final String s, final Bundle bundle) {
+    public void atb(final String s, final Bundle bundle) {
     }
 }

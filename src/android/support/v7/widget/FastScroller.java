@@ -16,29 +16,29 @@ import android.graphics.drawable.StateListDrawable;
 
 class FastScroller extends o implements n
 {
-    private static final int[] RB;
-    private static final int[] Rr;
-    private int RA;
-    private final int[] RC;
-    private int RD;
-    private final StateListDrawable Rh;
-    private final Runnable Ri;
-    private final int Rj;
-    private boolean Rk;
-    private final int Rl;
-    private final ValueAnimator Rm;
-    private final int Rn;
-    private final int Ro;
-    private final Drawable Rp;
-    private int Rq;
-    private final m Rs;
-    private final int Rt;
-    private final int Ru;
-    private int Rv;
-    private final StateListDrawable Rw;
-    private boolean Rx;
-    private final Drawable Ry;
-    private final int[] Rz;
+    private static final int[] Ta;
+    private static final int[] Tk;
+    private final StateListDrawable SQ;
+    private final Runnable SR;
+    private final int SS;
+    private boolean ST;
+    private final int SU;
+    private final ValueAnimator SV;
+    private final int SW;
+    private final int SX;
+    private final Drawable SY;
+    private int SZ;
+    private final m Tb;
+    private final int Tc;
+    private final int Td;
+    private int Te;
+    private final StateListDrawable Tf;
+    private boolean Tg;
+    private final Drawable Th;
+    private final int[] Ti;
+    private int Tj;
+    private final int[] Tl;
+    private int Tm;
     float mHorizontalDragX;
     int mHorizontalThumbCenterX;
     int mHorizontalThumbWidth;
@@ -49,150 +49,150 @@ class FastScroller extends o implements n
     int mVerticalThumbHeight;
     
     static {
-        Rr = new int[] { 16842919 };
-        RB = new int[0];
+        Ta = new int[] { 16842919 };
+        Tk = new int[0];
     }
     
-    FastScroller(final RecyclerView recyclerView, final StateListDrawable rw, final Drawable ry, final StateListDrawable rh, final Drawable rp, final int n, final int rt, final int rl) {
+    FastScroller(final RecyclerView recyclerView, final StateListDrawable tf, final Drawable th, final StateListDrawable sq, final Drawable sy, final int n, final int tc, final int su) {
         final int n2 = 255;
         final int n3 = 2;
-        this.Rv = 0;
-        this.RD = 0;
-        this.Rx = false;
-        this.Rk = false;
+        this.Te = 0;
+        this.Tm = 0;
+        this.Tg = false;
+        this.ST = false;
         this.mState = 0;
-        this.Rq = 0;
-        this.RC = new int[n3];
-        this.Rz = new int[n3];
+        this.SZ = 0;
+        this.Tl = new int[n3];
+        this.Ti = new int[n3];
         final float[] array = new float[n3];
         array[0] = 0.0f;
         array[1] = 1.0f;
-        this.Rm = ValueAnimator.ofFloat(array);
-        this.RA = 0;
-        this.Ri = new ab(this);
-        this.Rs = new ao(this);
-        this.Rw = rw;
-        this.Ry = ry;
-        this.Rh = rh;
-        this.Rp = rp;
-        this.Ro = Math.max(n, rw.getIntrinsicWidth());
-        this.Rn = Math.max(n, ry.getIntrinsicWidth());
-        this.Rj = Math.max(n, rh.getIntrinsicWidth());
-        this.Ru = Math.max(n, rp.getIntrinsicWidth());
-        this.Rt = rt;
-        this.Rl = rl;
-        this.Rw.setAlpha(n2);
-        this.Ry.setAlpha(n2);
-        this.Rm.addListener((Animator$AnimatorListener)new as(this, null));
-        this.Rm.addUpdateListener((ValueAnimator$AnimatorUpdateListener)new aG(this, null));
-        this.aaJ(recyclerView);
+        this.SV = ValueAnimator.ofFloat(array);
+        this.Tj = 0;
+        this.SR = new ab(this);
+        this.Tb = new ao(this);
+        this.Tf = tf;
+        this.Th = th;
+        this.SQ = sq;
+        this.SY = sy;
+        this.SX = Math.max(n, tf.getIntrinsicWidth());
+        this.SW = Math.max(n, th.getIntrinsicWidth());
+        this.SS = Math.max(n, sq.getIntrinsicWidth());
+        this.Td = Math.max(n, sy.getIntrinsicWidth());
+        this.Tc = tc;
+        this.SU = su;
+        this.Tf.setAlpha(n2);
+        this.Th.setAlpha(n2);
+        this.SV.addListener((Animator$AnimatorListener)new as(this, null));
+        this.SV.addUpdateListener((ValueAnimator$AnimatorUpdateListener)new aG(this, null));
+        this.abL(recyclerView);
     }
     
-    private int[] aaL() {
-        this.Rz[0] = this.Rl;
-        this.Rz[1] = this.Rv - this.Rl;
-        return this.Rz;
+    private int[] abN() {
+        this.Ti[0] = this.SU;
+        this.Ti[1] = this.Te - this.SU;
+        return this.Ti;
     }
     
-    private void aaM() {
+    private void abO() {
         this.mRecyclerView.removeItemDecoration(this);
         this.mRecyclerView.removeOnItemTouchListener(this);
-        this.mRecyclerView.removeOnScrollListener(this.Rs);
-        this.aaR();
+        this.mRecyclerView.removeOnScrollListener(this.Tb);
+        this.abT();
     }
     
-    private void aaO(final Canvas canvas) {
+    private void abQ(final Canvas canvas) {
         final float n = 1.0f;
-        final int n2 = this.Rv - this.Ro;
+        final int n2 = this.Te - this.SX;
         final int n3 = this.mVerticalThumbCenterY - this.mVerticalThumbHeight / 2;
-        this.Rw.setBounds(0, 0, this.Ro, this.mVerticalThumbHeight);
-        this.Ry.setBounds(0, 0, this.Rn, this.RD);
+        this.Tf.setBounds(0, 0, this.SX, this.mVerticalThumbHeight);
+        this.Th.setBounds(0, 0, this.SW, this.Tm);
         if (!this.isLayoutRTL()) {
             canvas.translate((float)n2, 0.0f);
-            this.Ry.draw(canvas);
+            this.Th.draw(canvas);
             canvas.translate(0.0f, (float)n3);
-            this.Rw.draw(canvas);
+            this.Tf.draw(canvas);
             canvas.translate((float)(-n2), (float)(-n3));
         }
         else {
-            this.Ry.draw(canvas);
-            canvas.translate((float)this.Ro, (float)n3);
+            this.Th.draw(canvas);
+            canvas.translate((float)this.SX, (float)n3);
             canvas.scale(-1.0f, n);
-            this.Rw.draw(canvas);
+            this.Tf.draw(canvas);
             canvas.scale(n, n);
-            canvas.translate((float)(-this.Ro), (float)(-n3));
+            canvas.translate((float)(-this.SX), (float)(-n3));
         }
     }
     
-    private void aaP(final float n) {
-        final int[] aaL = this.aaL();
-        final float max = Math.max(aaL[0], Math.min(aaL[1], n));
+    private void abR(final float n) {
+        final int[] abN = this.abN();
+        final float max = Math.max(abN[0], Math.min(abN[1], n));
         if (Math.abs(this.mHorizontalThumbCenterX - max) < 2.0f) {
             return;
         }
-        final int aba = this.aba(this.mHorizontalDragX, max, aaL, this.mRecyclerView.computeHorizontalScrollRange(), this.mRecyclerView.computeHorizontalScrollOffset(), this.Rv);
-        if (aba != 0) {
-            this.mRecyclerView.scrollBy(aba, 0);
+        final int acc = this.acc(this.mHorizontalDragX, max, abN, this.mRecyclerView.computeHorizontalScrollRange(), this.mRecyclerView.computeHorizontalScrollOffset(), this.Te);
+        if (acc != 0) {
+            this.mRecyclerView.scrollBy(acc, 0);
         }
         this.mHorizontalDragX = max;
     }
     
-    private void aaR() {
-        this.mRecyclerView.removeCallbacks(this.Ri);
+    private void abT() {
+        this.mRecyclerView.removeCallbacks(this.SR);
     }
     
-    private void aaU() {
+    private void abW() {
         this.mRecyclerView.invalidate();
     }
     
-    private void aaV(final int mState) {
+    private void abX(final int mState) {
         final int n = 2;
         if (mState == n && this.mState != n) {
-            this.Rw.setState(FastScroller.Rr);
-            this.aaR();
+            this.Tf.setState(FastScroller.Ta);
+            this.abT();
         }
         if (mState != 0) {
             this.show();
         }
         else {
-            this.aaU();
+            this.abW();
         }
         if (this.mState == n && mState != n) {
-            this.Rw.setState(FastScroller.RB);
-            this.abd(1200);
+            this.Tf.setState(FastScroller.Tk);
+            this.acf(1200);
         }
         else if (mState == 1) {
-            this.abd(1500);
+            this.acf(1500);
         }
         this.mState = mState;
     }
     
-    private void aaW(final float n) {
-        final int[] aaX = this.aaX();
-        final float max = Math.max(aaX[0], Math.min(aaX[1], n));
+    private void abY(final float n) {
+        final int[] abZ = this.abZ();
+        final float max = Math.max(abZ[0], Math.min(abZ[1], n));
         if (Math.abs(this.mVerticalThumbCenterY - max) < 2.0f) {
             return;
         }
-        final int aba = this.aba(this.mVerticalDragY, max, aaX, this.mRecyclerView.computeVerticalScrollRange(), this.mRecyclerView.computeVerticalScrollOffset(), this.RD);
-        if (aba != 0) {
-            this.mRecyclerView.scrollBy(0, aba);
+        final int acc = this.acc(this.mVerticalDragY, max, abZ, this.mRecyclerView.computeVerticalScrollRange(), this.mRecyclerView.computeVerticalScrollOffset(), this.Tm);
+        if (acc != 0) {
+            this.mRecyclerView.scrollBy(0, acc);
         }
         this.mVerticalDragY = max;
     }
     
-    private int[] aaX() {
-        this.RC[0] = this.Rl;
-        this.RC[1] = this.RD - this.Rl;
-        return this.RC;
+    private int[] abZ() {
+        this.Tl[0] = this.SU;
+        this.Tl[1] = this.Tm - this.SU;
+        return this.Tl;
     }
     
-    private void aaY() {
+    private void aca() {
         this.mRecyclerView.addItemDecoration(this);
         this.mRecyclerView.addOnItemTouchListener(this);
-        this.mRecyclerView.addOnScrollListener(this.Rs);
+        this.mRecyclerView.addOnScrollListener(this.Tb);
     }
     
-    private int aba(final float n, final float n2, final int[] array, final int n3, final int n4, final int n5) {
+    private int acc(final float n, final float n2, final int[] array, final int n3, final int n4, final int n5) {
         final int n6 = array[1] - array[0];
         if (n6 == 0) {
             return 0;
@@ -207,97 +207,97 @@ class FastScroller extends o implements n
         return 0;
     }
     
-    private void abc(final Canvas canvas) {
-        final int n = this.RD - this.Rj;
+    private void ace(final Canvas canvas) {
+        final int n = this.Tm - this.SS;
         final int n2 = this.mHorizontalThumbCenterX - this.mHorizontalThumbWidth / 2;
-        this.Rh.setBounds(0, 0, this.mHorizontalThumbWidth, this.Rj);
-        this.Rp.setBounds(0, 0, this.Rv, this.Ru);
+        this.SQ.setBounds(0, 0, this.mHorizontalThumbWidth, this.SS);
+        this.SY.setBounds(0, 0, this.Te, this.Td);
         canvas.translate(0.0f, (float)n);
-        this.Rp.draw(canvas);
+        this.SY.draw(canvas);
         canvas.translate((float)n2, 0.0f);
-        this.Rh.draw(canvas);
+        this.SQ.draw(canvas);
         canvas.translate((float)(-n2), (float)(-n));
     }
     
-    private void abd(final int n) {
-        this.aaR();
-        this.mRecyclerView.postDelayed(this.Ri, (long)n);
+    private void acf(final int n) {
+        this.abT();
+        this.mRecyclerView.postDelayed(this.SR, (long)n);
     }
     
     private boolean isLayoutRTL() {
         boolean b = true;
-        if (f.afr((View)this.mRecyclerView) != (b ? 1 : 0)) {
+        if (f.ags((View)this.mRecyclerView) != (b ? 1 : 0)) {
             b = false;
         }
         return b;
     }
     
-    public void aaJ(final RecyclerView mRecyclerView) {
+    public void abL(final RecyclerView mRecyclerView) {
         if (this.mRecyclerView != mRecyclerView) {
             if (this.mRecyclerView != null) {
-                this.aaM();
+                this.abO();
             }
             this.mRecyclerView = mRecyclerView;
             if (this.mRecyclerView != null) {
-                this.aaY();
+                this.aca();
             }
         }
     }
     
-    void aaK(final int n, final int n2) {
+    void abM(final int n, final int n2) {
         final float n3 = 2.0f;
         final int n4 = 1;
         final int computeVerticalScrollRange = this.mRecyclerView.computeVerticalScrollRange();
-        final int rd = this.RD;
-        this.Rx = (computeVerticalScrollRange - rd > 0 && this.RD >= this.Rt && n4);
+        final int tm = this.Tm;
+        this.Tg = (computeVerticalScrollRange - tm > 0 && this.Tm >= this.Tc && n4);
         final int computeHorizontalScrollRange = this.mRecyclerView.computeHorizontalScrollRange();
-        final int rv = this.Rv;
-        this.Rk = (computeHorizontalScrollRange - rv > 0 && this.Rv >= this.Rt && n4);
-        if (!this.Rx && !this.Rk) {
+        final int te = this.Te;
+        this.ST = (computeHorizontalScrollRange - te > 0 && this.Te >= this.Tc && n4);
+        if (!this.Tg && !this.ST) {
             if (this.mState != 0) {
-                this.aaV(0);
+                this.abX(0);
             }
             return;
         }
-        if (this.Rx) {
-            this.mVerticalThumbCenterY = (int)((n2 + rd / n3) * rd / computeVerticalScrollRange);
-            this.mVerticalThumbHeight = Math.min(rd, rd * rd / computeVerticalScrollRange);
+        if (this.Tg) {
+            this.mVerticalThumbCenterY = (int)((n2 + tm / n3) * tm / computeVerticalScrollRange);
+            this.mVerticalThumbHeight = Math.min(tm, tm * tm / computeVerticalScrollRange);
         }
-        if (this.Rk) {
-            this.mHorizontalThumbCenterX = (int)((n + rv / n3) * rv / computeHorizontalScrollRange);
-            this.mHorizontalThumbWidth = Math.min(rv, rv * rv / computeHorizontalScrollRange);
+        if (this.ST) {
+            this.mHorizontalThumbCenterX = (int)((n + te / n3) * te / computeHorizontalScrollRange);
+            this.mHorizontalThumbWidth = Math.min(te, te * te / computeHorizontalScrollRange);
         }
         if (this.mState == 0 || this.mState == n4) {
-            this.aaV(n4);
+            this.abX(n4);
         }
     }
     
     Drawable getHorizontalThumbDrawable() {
-        return (Drawable)this.Rh;
+        return (Drawable)this.SQ;
     }
     
     Drawable getHorizontalTrackDrawable() {
-        return this.Rp;
+        return this.SY;
     }
     
     Drawable getVerticalThumbDrawable() {
-        return (Drawable)this.Rw;
+        return (Drawable)this.Tf;
     }
     
     Drawable getVerticalTrackDrawable() {
-        return this.Ry;
+        return this.Th;
     }
     
     void hide(final int n) {
-        switch (this.RA) {
+        switch (this.Tj) {
             case 1: {
-                this.Rm.cancel();
+                this.SV.cancel();
             }
             case 2: {
-                this.RA = 3;
-                this.Rm.setFloatValues(new float[] { (float)this.Rm.getAnimatedValue(), 0.0f });
-                this.Rm.setDuration((long)n);
-                this.Rm.start();
+                this.Tj = 3;
+                this.SV.setFloatValues(new float[] { (float)this.SV.getAnimatedValue(), 0.0f });
+                this.SV.setDuration((long)n);
+                this.SV.start();
                 break;
             }
         }
@@ -312,17 +312,17 @@ class FastScroller extends o implements n
     }
     
     boolean isPointInsideHorizontalThumb(final float n, final float n2) {
-        return n2 >= this.RD - this.Rj && n >= this.mHorizontalThumbCenterX - this.mHorizontalThumbWidth / 2 && n <= this.mHorizontalThumbCenterX + this.mHorizontalThumbWidth / 2;
+        return n2 >= this.Tm - this.SS && n >= this.mHorizontalThumbCenterX - this.mHorizontalThumbWidth / 2 && n <= this.mHorizontalThumbCenterX + this.mHorizontalThumbWidth / 2;
     }
     
     boolean isPointInsideVerticalThumb(final float n, final float n2) {
         boolean b = false;
         if (!this.isLayoutRTL()) {
-            if (n < this.Rv - this.Ro) {
+            if (n < this.Te - this.SX) {
                 return b;
             }
         }
-        else if (n > this.Ro / 2) {
+        else if (n > this.SX / 2) {
             return b;
         }
         if (n2 >= this.mVerticalThumbCenterY - this.mVerticalThumbHeight / 2 && n2 <= this.mVerticalThumbCenterY + this.mVerticalThumbHeight / 2) {
@@ -340,28 +340,28 @@ class FastScroller extends o implements n
     }
     
     public void onDrawOver(final Canvas canvas, final RecyclerView recyclerView, final e e) {
-        if (this.Rv == this.mRecyclerView.getWidth() && this.RD == this.mRecyclerView.getHeight()) {
-            if (this.RA != 0) {
-                if (this.Rx) {
-                    this.aaO(canvas);
+        if (this.Te == this.mRecyclerView.getWidth() && this.Tm == this.mRecyclerView.getHeight()) {
+            if (this.Tj != 0) {
+                if (this.Tg) {
+                    this.abQ(canvas);
                 }
-                if (this.Rk) {
-                    this.abc(canvas);
+                if (this.ST) {
+                    this.ace(canvas);
                 }
             }
             return;
         }
-        this.Rv = this.mRecyclerView.getWidth();
-        this.RD = this.mRecyclerView.getHeight();
-        this.aaV(0);
+        this.Te = this.mRecyclerView.getWidth();
+        this.Tm = this.mRecyclerView.getHeight();
+        this.abX(0);
     }
     
     public boolean onInterceptTouchEvent(final RecyclerView recyclerView, final MotionEvent motionEvent) {
-        final int rq = 2;
-        boolean rq2 = true;
-        if (this.mState != (rq2 ? 1 : 0)) {
-            if (this.mState != rq) {
-                rq2 = false;
+        final int sz = 2;
+        boolean sz2 = true;
+        if (this.mState != (sz2 ? 1 : 0)) {
+            if (this.mState != sz) {
+                sz2 = false;
             }
         }
         else {
@@ -370,44 +370,44 @@ class FastScroller extends o implements n
             if (motionEvent.getAction() == 0 && (pointInsideVerticalThumb || pointInsideHorizontalThumb)) {
                 if (!pointInsideHorizontalThumb) {
                     if (pointInsideVerticalThumb) {
-                        this.Rq = rq;
+                        this.SZ = sz;
                         this.mVerticalDragY = (int)motionEvent.getY();
                     }
                 }
                 else {
-                    this.Rq = (rq2 ? 1 : 0);
+                    this.SZ = (sz2 ? 1 : 0);
                     this.mHorizontalDragX = (int)motionEvent.getX();
                 }
-                this.aaV(rq);
+                this.abX(sz);
             }
             else {
-                rq2 = false;
+                sz2 = false;
             }
         }
-        return rq2;
+        return sz2;
     }
     
     public void onRequestDisallowInterceptTouchEvent(final boolean b) {
     }
     
     public void onTouchEvent(final RecyclerView recyclerView, final MotionEvent motionEvent) {
-        final int rq = 1;
-        final int rq2 = 2;
+        final int sz = 1;
+        final int sz2 = 2;
         if (this.mState != 0) {
             if (motionEvent.getAction() != 0) {
-                if (motionEvent.getAction() == rq && this.mState == rq2) {
+                if (motionEvent.getAction() == sz && this.mState == sz2) {
                     this.mVerticalDragY = 0.0f;
                     this.mHorizontalDragX = 0.0f;
-                    this.aaV(rq);
-                    this.Rq = 0;
+                    this.abX(sz);
+                    this.SZ = 0;
                 }
-                else if (motionEvent.getAction() == rq2 && this.mState == rq2) {
+                else if (motionEvent.getAction() == sz2 && this.mState == sz2) {
                     this.show();
-                    if (this.Rq == rq) {
-                        this.aaP(motionEvent.getX());
+                    if (this.SZ == sz) {
+                        this.abR(motionEvent.getX());
                     }
-                    if (this.Rq == rq2) {
-                        this.aaW(motionEvent.getY());
+                    if (this.SZ == sz2) {
+                        this.abY(motionEvent.getY());
                     }
                 }
             }
@@ -417,35 +417,35 @@ class FastScroller extends o implements n
                 if (pointInsideVerticalThumb || pointInsideHorizontalThumb) {
                     if (!pointInsideHorizontalThumb) {
                         if (pointInsideVerticalThumb) {
-                            this.Rq = rq2;
+                            this.SZ = sz2;
                             this.mVerticalDragY = (int)motionEvent.getY();
                         }
                     }
                     else {
-                        this.Rq = rq;
+                        this.SZ = sz;
                         this.mHorizontalDragX = (int)motionEvent.getX();
                     }
-                    this.aaV(rq2);
+                    this.abX(sz2);
                 }
             }
         }
     }
     
     public void show() {
-        final int ra = 1;
-        switch (this.RA) {
+        final int tj = 1;
+        switch (this.Tj) {
             case 3: {
-                this.Rm.cancel();
+                this.SV.cancel();
             }
             case 0: {
-                this.RA = ra;
-                final ValueAnimator rm = this.Rm;
-                final float[] floatValues = { (float)this.Rm.getAnimatedValue(), 0.0f };
-                floatValues[ra] = 1.0f;
-                rm.setFloatValues(floatValues);
-                this.Rm.setDuration(500L);
-                this.Rm.setStartDelay(0L);
-                this.Rm.start();
+                this.Tj = tj;
+                final ValueAnimator sv = this.SV;
+                final float[] floatValues = { (float)this.SV.getAnimatedValue(), 0.0f };
+                floatValues[tj] = 1.0f;
+                sv.setFloatValues(floatValues);
+                this.SV.setDuration(500L);
+                this.SV.setStartDelay(0L);
+                this.SV.start();
                 break;
             }
         }

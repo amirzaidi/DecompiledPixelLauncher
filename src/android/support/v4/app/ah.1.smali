@@ -7,9 +7,9 @@
 
 
 # instance fields
-.field final synthetic aas:Landroid/view/View;
+.field final synthetic abX:Landroid/view/View;
 
-.field final synthetic aat:Ljava/util/ArrayList;
+.field final synthetic abY:Ljava/util/ArrayList;
 
 
 # direct methods
@@ -18,9 +18,9 @@
 
     .prologue
     .line 220
-    iput-object p1, p0, Landroid/support/v4/app/ah;->aas:Landroid/view/View;
+    iput-object p1, p0, Landroid/support/v4/app/ah;->abX:Landroid/view/View;
 
-    iput-object p2, p0, Landroid/support/v4/app/ah;->aat:Ljava/util/ArrayList;
+    iput-object p2, p0, Landroid/support/v4/app/ah;->abY:Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,14 +47,14 @@
     invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
     .line 228
-    iget-object v0, p0, Landroid/support/v4/app/ah;->aas:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v4/app/ah;->abX:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 229
-    iget-object v0, p0, Landroid/support/v4/app/ah;->aat:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v4/app/ah;->abY:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -71,7 +71,7 @@
 
     .line 231
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/app/ah;->aat:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/v4/app/ah;->abY:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 

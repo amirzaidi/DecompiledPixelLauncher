@@ -9,10 +9,10 @@ import java.util.Collection;
 
 final class q implements Collection
 {
-    final /* synthetic */ l VO;
+    final /* synthetic */ l Xx;
     
-    q(final l vo) {
-        this.VO = vo;
+    q(final l xx) {
+        this.Xx = xx;
     }
     
     public boolean add(final Object o) {
@@ -24,12 +24,12 @@ final class q implements Collection
     }
     
     public void clear() {
-        this.VO.ahy();
+        this.Xx.aiI();
     }
     
     public boolean contains(final Object o) {
         boolean b = false;
-        if (this.VO.ahs(o) >= 0) {
+        if (this.Xx.aiC(o) >= 0) {
             b = true;
         }
         return b;
@@ -47,35 +47,35 @@ final class q implements Collection
     
     public boolean isEmpty() {
         boolean b = false;
-        if (this.VO.ahB() == 0) {
+        if (this.Xx.aiL() == 0) {
             b = true;
         }
         return b;
     }
     
     public Iterator iterator() {
-        return new g(this.VO, 1);
+        return new g(this.Xx, 1);
     }
     
     public boolean remove(final Object o) {
-        final int ahs = this.VO.ahs(o);
-        if (ahs < 0) {
+        final int aiC = this.Xx.aiC(o);
+        if (aiC < 0) {
             return false;
         }
-        this.VO.ahC(ahs);
+        this.Xx.aiM(aiC);
         return true;
     }
     
     public boolean removeAll(final Collection collection) {
         final int n = 1;
         int i = 0;
-        int ahB = this.VO.ahB();
+        int aiL = this.Xx.aiL();
         boolean b = false;
-        while (i < ahB) {
-            if (collection.contains(this.VO.ahq(i, n))) {
-                this.VO.ahC(i);
+        while (i < aiL) {
+            if (collection.contains(this.Xx.aiA(i, n))) {
+                this.Xx.aiM(i);
                 --i;
-                --ahB;
+                --aiL;
                 b = (n != 0);
             }
             ++i;
@@ -86,13 +86,13 @@ final class q implements Collection
     public boolean retainAll(final Collection collection) {
         final int n = 1;
         int i = 0;
-        int ahB = this.VO.ahB();
+        int aiL = this.Xx.aiL();
         boolean b = false;
-        while (i < ahB) {
-            if (!collection.contains(this.VO.ahq(i, n))) {
-                this.VO.ahC(i);
+        while (i < aiL) {
+            if (!collection.contains(this.Xx.aiA(i, n))) {
+                this.Xx.aiM(i);
                 --i;
-                --ahB;
+                --aiL;
                 b = (n != 0);
             }
             ++i;
@@ -101,14 +101,14 @@ final class q implements Collection
     }
     
     public int size() {
-        return this.VO.ahB();
+        return this.Xx.aiL();
     }
     
     public Object[] toArray() {
-        return this.VO.aho(1);
+        return this.Xx.aiy(1);
     }
     
     public Object[] toArray(final Object[] array) {
-        return this.VO.aht(array, 1);
+        return this.Xx.aiD(array, 1);
     }
 }

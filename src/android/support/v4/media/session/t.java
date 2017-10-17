@@ -4,24 +4,50 @@
 
 package android.support.v4.media.session;
 
-import android.media.session.PlaybackState$CustomAction;
+import java.util.List;
+import android.media.session.PlaybackState;
+import android.media.MediaMetadata;
 import android.os.Bundle;
+import android.media.session.MediaController$PlaybackInfo;
+import android.media.session.MediaController$Callback;
 
-final class t
+class t extends MediaController$Callback
 {
-    public static Bundle arH(final Object o) {
-        return ((PlaybackState$CustomAction)o).getExtras();
+    protected final u afC;
+    
+    public t(final u afC) {
+        this.afC = afC;
     }
     
-    public static int arI(final Object o) {
-        return ((PlaybackState$CustomAction)o).getIcon();
+    public void onAudioInfoChanged(final MediaController$PlaybackInfo mediaController$PlaybackInfo) {
+        this.afC.asR(mediaController$PlaybackInfo.getPlaybackType(), l.asO(mediaController$PlaybackInfo), mediaController$PlaybackInfo.getVolumeControl(), mediaController$PlaybackInfo.getMaxVolume(), mediaController$PlaybackInfo.getCurrentVolume());
     }
     
-    public static String arJ(final Object o) {
-        return ((PlaybackState$CustomAction)o).getAction();
+    public void onExtrasChanged(final Bundle bundle) {
+        this.afC.onExtrasChanged(bundle);
     }
     
-    public static CharSequence arK(final Object o) {
-        return ((PlaybackState$CustomAction)o).getName();
+    public void onMetadataChanged(final MediaMetadata mediaMetadata) {
+        this.afC.asT(mediaMetadata);
+    }
+    
+    public void onPlaybackStateChanged(final PlaybackState playbackState) {
+        this.afC.asS(playbackState);
+    }
+    
+    public void onQueueChanged(final List list) {
+        this.afC.onQueueChanged(list);
+    }
+    
+    public void onQueueTitleChanged(final CharSequence charSequence) {
+        this.afC.onQueueTitleChanged(charSequence);
+    }
+    
+    public void onSessionDestroyed() {
+        this.afC.onSessionDestroyed();
+    }
+    
+    public void onSessionEvent(final String s, final Bundle bundle) {
+        this.afC.onSessionEvent(s, bundle);
     }
 }

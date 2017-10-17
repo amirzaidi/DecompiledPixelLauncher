@@ -1,54 +1,79 @@
-.class Landroid/support/v4/app/x;
-.super Landroid/transition/Transition$EpicenterCallback;
+.class abstract Landroid/support/v4/app/x;
+.super Landroid/support/v4/app/P;
 .source "SourceFile"
 
 
 # instance fields
-.field final synthetic XT:Landroid/graphics/Rect;
+.field Zz:Z
 
 
 # direct methods
-.method constructor <init>(Landroid/graphics/Rect;)V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 546
-    iput-object p1, p0, Landroid/support/v4/app/x;->XT:Landroid/graphics/Rect;
-
-    invoke-direct {p0}, Landroid/transition/Transition$EpicenterCallback;-><init>()V
+    .line 34
+    invoke-direct {p0}, Landroid/support/v4/app/P;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onGetEpicenter(Landroid/transition/Transition;)Landroid/graphics/Rect;
-    .locals 2
+.method public startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
+    .line 49
+    iget-boolean v0, p0, Landroid/support/v4/app/x;->Zz:Z
 
-    .line 549
-    iget-object v0, p0, Landroid/support/v4/app/x;->XT:Landroid/graphics/Rect;
+    if-eqz v0, :cond_1
 
-    if-nez v0, :cond_1
-
-    .line 550
+    .line 54
     :cond_0
-    return-object v1
+    :goto_0
+    invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/P;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
 
-    .line 549
+    .line 55
+    return-void
+
+    .line 50
     :cond_1
-    iget-object v0, p0, Landroid/support/v4/app/x;->XT:Landroid/graphics/Rect;
+    const/4 v0, -0x1
 
-    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
+    if-eq p2, v0, :cond_0
 
-    move-result v0
+    .line 51
+    invoke-static {p2}, Landroid/support/v4/app/x;->amC(I)V
 
-    if-nez v0, :cond_0
+    goto :goto_0
+.end method
 
-    .line 552
-    iget-object v0, p0, Landroid/support/v4/app/x;->XT:Landroid/graphics/Rect;
+.method public startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+    .locals 1
 
-    return-object v0
+    .prologue
+    .line 64
+    iget-boolean v0, p0, Landroid/support/v4/app/x;->ZQ:Z
+
+    if-eqz v0, :cond_1
+
+    .line 69
+    :cond_0
+    :goto_0
+    invoke-super/range {p0 .. p7}, Landroid/support/v4/app/P;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+
+    .line 71
+    return-void
+
+    .line 65
+    :cond_1
+    const/4 v0, -0x1
+
+    if-eq p2, v0, :cond_0
+
+    .line 66
+    invoke-static {p2}, Landroid/support/v4/app/x;->amC(I)V
+
+    goto :goto_0
 .end method

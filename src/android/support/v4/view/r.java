@@ -10,7 +10,7 @@ import android.view.ViewParent;
 
 class r extends s
 {
-    public void afZ(final ViewParent viewParent, final View view, final View view2, final int n) {
+    public void ahi(final ViewParent viewParent, final View view, final View view2, final int n) {
         try {
             viewParent.onNestedScrollAccepted(view, view2, n);
         }
@@ -19,7 +19,7 @@ class r extends s
         }
     }
     
-    public void aga(final ViewParent viewParent, final View view, final int n, final int n2, final int n3, final int n4) {
+    public void ahj(final ViewParent viewParent, final View view, final int n, final int n2, final int n3, final int n4) {
         try {
             viewParent.onNestedScroll(view, n, n2, n3, n4);
         }
@@ -28,7 +28,7 @@ class r extends s
         }
     }
     
-    public boolean agb(final ViewParent viewParent, final View view, final float n, final float n2, final boolean b) {
+    public boolean ahk(final ViewParent viewParent, final View view, final float n, final float n2, final boolean b) {
         try {
             return viewParent.onNestedFling(view, n, n2, b);
         }
@@ -38,7 +38,7 @@ class r extends s
         }
     }
     
-    public boolean agc(final ViewParent viewParent, final View view, final float n, final float n2) {
+    public boolean ahl(final ViewParent viewParent, final View view, final float n, final float n2) {
         try {
             return viewParent.onNestedPreFling(view, n, n2);
         }
@@ -48,7 +48,7 @@ class r extends s
         }
     }
     
-    public void agd(final ViewParent viewParent, final View view, final int n, final int n2, final int[] array) {
+    public void ahm(final ViewParent viewParent, final View view, final int n, final int n2, final int[] array) {
         try {
             viewParent.onNestedPreScroll(view, n, n2, array);
         }
@@ -57,7 +57,7 @@ class r extends s
         }
     }
     
-    public boolean age(final ViewParent viewParent, final View view, final View view2, final int n) {
+    public boolean ahn(final ViewParent viewParent, final View view, final View view2, final int n) {
         try {
             return viewParent.onStartNestedScroll(view, view2, n);
         }
@@ -67,7 +67,7 @@ class r extends s
         }
     }
     
-    public void agf(final ViewParent viewParent, final View view) {
+    public void aho(final ViewParent viewParent, final View view) {
         try {
             viewParent.onStopNestedScroll(view);
         }

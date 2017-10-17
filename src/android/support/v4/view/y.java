@@ -8,20 +8,19 @@ import android.util.TypedValue;
 import android.content.Context;
 import android.util.Log;
 import android.view.ViewConfiguration;
-import android.support.v4.os.a;
 import android.os.Build$VERSION;
 import java.lang.reflect.Method;
 
 public final class y
 {
-    private static Method UH;
+    private static Method Wh;
     
     static {
-        if (Build$VERSION.SDK_INT >= 25 && !a.isAtLeastO()) {
+        if (Build$VERSION.SDK_INT == 25) {
             try {
                 final Method declaredMethod = ViewConfiguration.class.getDeclaredMethod("getScaledScrollFactor", (Class<?>[])new Class[0]);
                 try {
-                    y.UH = declaredMethod;
+                    y.Wh = declaredMethod;
                 }
                 catch (Exception ex) {
                     Log.i("ViewConfigCompat", "Could not find method getScaledScrollFactor() on ViewConfiguration");
@@ -31,24 +30,24 @@ public final class y
         }
     }
     
-    public static float agn(final ViewConfiguration viewConfiguration, final Context context) {
-        if (!a.isAtLeastO()) {
-            return agp(viewConfiguration, context);
+    public static float ahw(final ViewConfiguration viewConfiguration, final Context context) {
+        if (Build$VERSION.SDK_INT < 26) {
+            return ahy(viewConfiguration, context);
         }
         return viewConfiguration.getScaledHorizontalScrollFactor();
     }
     
-    public static float ago(final ViewConfiguration viewConfiguration, final Context context) {
-        if (!a.isAtLeastO()) {
-            return agp(viewConfiguration, context);
+    public static float ahx(final ViewConfiguration viewConfiguration, final Context context) {
+        if (Build$VERSION.SDK_INT < 26) {
+            return ahy(viewConfiguration, context);
         }
         return viewConfiguration.getScaledVerticalScrollFactor();
     }
     
-    private static float agp(final ViewConfiguration viewConfiguration, final Context context) {
-        if (Build$VERSION.SDK_INT >= 25 && y.UH != null) {
+    private static float ahy(final ViewConfiguration viewConfiguration, final Context context) {
+        if (Build$VERSION.SDK_INT >= 25 && y.Wh != null) {
             try {
-                final Object invoke = y.UH.invoke(viewConfiguration, new Object[0]);
+                final Object invoke = y.Wh.invoke(viewConfiguration, new Object[0]);
                 try {
                     final Integer n = (Integer)invoke;
                     try {

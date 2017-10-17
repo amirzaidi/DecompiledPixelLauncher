@@ -10,24 +10,24 @@ import android.media.browse.MediaBrowser$ItemCallback;
 
 class j extends MediaBrowser$ItemCallback
 {
-    protected final r aeO;
+    protected final r afQ;
     
-    public j(final r aeO) {
-        this.aeO = aeO;
+    public j(final r afQ) {
+        this.afQ = afQ;
     }
     
     public void onError(final String s) {
-        this.aeO.onError(s);
+        this.afQ.onError(s);
     }
     
     public void onItemLoaded(final MediaBrowser$MediaItem mediaBrowser$MediaItem) {
         if (mediaBrowser$MediaItem != null) {
             final Parcel obtain = Parcel.obtain();
             mediaBrowser$MediaItem.writeToParcel(obtain, 0);
-            this.aeO.asN(obtain);
+            this.afQ.atK(obtain);
         }
         else {
-            this.aeO.asN(null);
+            this.afQ.atK(null);
         }
     }
 }

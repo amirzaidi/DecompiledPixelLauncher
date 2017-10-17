@@ -7,5 +7,5 @@ package android.support.annotation;
 import java.lang.annotation.Annotation;
 
 public @interface d {
-    RestrictTo$Scope[] asP();
+    RestrictTo$Scope[] atM();
 }

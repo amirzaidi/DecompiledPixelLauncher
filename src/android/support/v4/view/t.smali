@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 126
+    .line 125
     invoke-direct {p0}, Landroid/support/v4/view/E;-><init>()V
 
     return-void
@@ -16,13 +16,13 @@
 
 
 # virtual methods
-.method public agg(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
+.method public ahp(Landroid/view/LayoutInflater;Landroid/view/LayoutInflater$Factory2;)V
     .locals 0
 
     .prologue
-    .line 135
+    .line 134
     invoke-virtual {p1, p2}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
 
-    .line 136
+    .line 135
     return-void
 .end method

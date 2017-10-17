@@ -18,33 +18,33 @@
 
 
 # virtual methods
-.method public aac(Landroid/view/View;)I
+.method public abe(Landroid/view/View;)I
     .locals 3
 
     .prologue
     .line 408
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Si:Landroid/graphics/Rect;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, p1, v2, v1}, Landroid/support/v7/widget/p;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
     .line 409
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Si:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->top:I
 
     return v0
 .end method
 
-.method public aad()I
+.method public abf()I
     .locals 1
 
     .prologue
     .line 430
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/p;->getHeightMode()I
 
@@ -53,7 +53,7 @@
     return v0
 .end method
 
-.method public aaf(Landroid/view/View;)I
+.method public abh(Landroid/view/View;)I
     .locals 3
 
     .prologue
@@ -65,7 +65,7 @@
     check-cast v0, Landroid/support/v7/widget/i;
 
     .line 382
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/p;->getDecoratedMeasuredWidth(Landroid/view/View;)I
 
@@ -82,7 +82,7 @@
     return v0
 .end method
 
-.method public aag(Landroid/view/View;)I
+.method public abi(Landroid/view/View;)I
     .locals 3
 
     .prologue
@@ -94,7 +94,7 @@
     check-cast v0, Landroid/support/v7/widget/i;
 
     .line 374
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/p;->getDecoratedMeasuredHeight(Landroid/view/View;)I
 
@@ -111,18 +111,18 @@
     return v0
 .end method
 
-.method public aah()I
+.method public abj()I
     .locals 2
 
     .prologue
     .line 414
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/p;->getHeight()I
 
     move-result v0
 
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v1}, Landroid/support/v7/widget/p;->getPaddingTop()I
 
@@ -130,7 +130,7 @@
 
     sub-int/2addr v0, v1
 
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     .line 415
     invoke-virtual {v1}, Landroid/support/v7/widget/p;->getPaddingBottom()I
@@ -142,7 +142,7 @@
     return v0
 .end method
 
-.method public aai(Landroid/view/View;)I
+.method public abk(Landroid/view/View;)I
     .locals 2
 
     .prologue
@@ -154,7 +154,7 @@
     check-cast v0, Landroid/support/v7/widget/i;
 
     .line 397
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/p;->getDecoratedTop(Landroid/view/View;)I
 
@@ -167,7 +167,7 @@
     return v0
 .end method
 
-.method public aaj(Landroid/view/View;)I
+.method public abl(Landroid/view/View;)I
     .locals 2
 
     .prologue
@@ -179,7 +179,7 @@
     check-cast v0, Landroid/support/v7/widget/i;
 
     .line 390
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/p;->getDecoratedBottom(Landroid/view/View;)I
 
@@ -192,12 +192,12 @@
     return v0
 .end method
 
-.method public aak()I
+.method public abm()I
     .locals 1
 
     .prologue
     .line 367
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/p;->getPaddingTop()I
 
@@ -206,12 +206,12 @@
     return v0
 .end method
 
-.method public aal()I
+.method public abn()I
     .locals 1
 
     .prologue
     .line 357
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/p;->getHeight()I
 
@@ -220,12 +220,12 @@
     return v0
 .end method
 
-.method public aam()I
+.method public abo()I
     .locals 1
 
     .prologue
     .line 435
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/p;->getWidthMode()I
 
@@ -234,12 +234,12 @@
     return v0
 .end method
 
-.method public aan()I
+.method public abp()I
     .locals 1
 
     .prologue
     .line 425
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/p;->getPaddingBottom()I
 
@@ -248,39 +248,39 @@
     return v0
 .end method
 
-.method public aar(Landroid/view/View;)I
+.method public abt(Landroid/view/View;)I
     .locals 3
 
     .prologue
     .line 402
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Si:Landroid/graphics/Rect;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, p1, v2, v1}, Landroid/support/v7/widget/p;->getTransformedBoundingBox(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
     .line 403
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mTmpRect:Landroid/graphics/Rect;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Si:Landroid/graphics/Rect;
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     return v0
 .end method
 
-.method public aas()I
+.method public abu()I
     .locals 2
 
     .prologue
     .line 352
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/p;->getHeight()I
 
     move-result v0
 
-    iget-object v1, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v1, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v1}, Landroid/support/v7/widget/p;->getPaddingBottom()I
 
@@ -291,12 +291,12 @@
     return v0
 .end method
 
-.method public aat(I)V
+.method public abv(I)V
     .locals 1
 
     .prologue
     .line 362
-    iget-object v0, p0, Landroid/support/v7/widget/aj;->mLayoutManager:Landroid/support/v7/widget/p;
+    iget-object v0, p0, Landroid/support/v7/widget/aj;->Sh:Landroid/support/v7/widget/p;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/p;->offsetChildrenVertical(I)V
 

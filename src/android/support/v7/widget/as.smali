@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic Sn:Landroid/support/v7/widget/FastScroller;
+.field final synthetic TW:Landroid/support/v7/widget/FastScroller;
 
 .field private mCanceled:Z
 
@@ -15,7 +15,7 @@
 
     .prologue
     .line 550
-    iput-object p1, p0, Landroid/support/v7/widget/as;->Sn:Landroid/support/v7/widget/FastScroller;
+    iput-object p1, p0, Landroid/support/v7/widget/as;->TW:Landroid/support/v7/widget/FastScroller;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -64,9 +64,9 @@
     if-nez v0, :cond_0
 
     .line 561
-    iget-object v0, p0, Landroid/support/v7/widget/as;->Sn:Landroid/support/v7/widget/FastScroller;
+    iget-object v0, p0, Landroid/support/v7/widget/as;->TW:Landroid/support/v7/widget/FastScroller;
 
-    invoke-static {v0}, Landroid/support/v7/widget/FastScroller;->aaZ(Landroid/support/v7/widget/FastScroller;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Landroid/support/v7/widget/FastScroller;->acb(Landroid/support/v7/widget/FastScroller;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
@@ -87,14 +87,14 @@
     if-nez v0, :cond_1
 
     .line 562
-    iget-object v0, p0, Landroid/support/v7/widget/as;->Sn:Landroid/support/v7/widget/FastScroller;
+    iget-object v0, p0, Landroid/support/v7/widget/as;->TW:Landroid/support/v7/widget/FastScroller;
 
-    invoke-static {v0, v2}, Landroid/support/v7/widget/FastScroller;->aaT(Landroid/support/v7/widget/FastScroller;I)I
+    invoke-static {v0, v2}, Landroid/support/v7/widget/FastScroller;->abV(Landroid/support/v7/widget/FastScroller;I)I
 
     .line 563
-    iget-object v0, p0, Landroid/support/v7/widget/as;->Sn:Landroid/support/v7/widget/FastScroller;
+    iget-object v0, p0, Landroid/support/v7/widget/as;->TW:Landroid/support/v7/widget/FastScroller;
 
-    invoke-static {v0, v2}, Landroid/support/v7/widget/FastScroller;->aaQ(Landroid/support/v7/widget/FastScroller;I)V
+    invoke-static {v0, v2}, Landroid/support/v7/widget/FastScroller;->abS(Landroid/support/v7/widget/FastScroller;I)V
 
     .line 568
     :goto_0
@@ -109,16 +109,16 @@
 
     .line 565
     :cond_1
-    iget-object v0, p0, Landroid/support/v7/widget/as;->Sn:Landroid/support/v7/widget/FastScroller;
+    iget-object v0, p0, Landroid/support/v7/widget/as;->TW:Landroid/support/v7/widget/FastScroller;
 
     const/4 v1, 0x2
 
-    invoke-static {v0, v1}, Landroid/support/v7/widget/FastScroller;->aaT(Landroid/support/v7/widget/FastScroller;I)I
+    invoke-static {v0, v1}, Landroid/support/v7/widget/FastScroller;->abV(Landroid/support/v7/widget/FastScroller;I)I
 
     .line 566
-    iget-object v0, p0, Landroid/support/v7/widget/as;->Sn:Landroid/support/v7/widget/FastScroller;
+    iget-object v0, p0, Landroid/support/v7/widget/as;->TW:Landroid/support/v7/widget/FastScroller;
 
-    invoke-static {v0}, Landroid/support/v7/widget/FastScroller;->aaS(Landroid/support/v7/widget/FastScroller;)V
+    invoke-static {v0}, Landroid/support/v7/widget/FastScroller;->abU(Landroid/support/v7/widget/FastScroller;)V
 
     goto :goto_0
 .end method

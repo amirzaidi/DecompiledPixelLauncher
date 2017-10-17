@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 37
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -16,46 +16,46 @@
 
 
 # virtual methods
-.method public afZ(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)V
+.method public ahi(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)V
     .locals 1
 
     .prologue
-    .line 49
-    instance-of v0, p1, Landroid/support/v4/view/B;
+    .line 48
+    instance-of v0, p1, Landroid/support/v4/view/C;
 
     if-nez v0, :cond_0
 
-    .line 53
+    .line 52
     :goto_0
     return-void
 
-    .line 50
+    .line 49
     :cond_0
-    check-cast p1, Landroid/support/v4/view/B;
+    check-cast p1, Landroid/support/v4/view/C;
 
-    invoke-interface {p1, p2, p3, p4}, Landroid/support/v4/view/B;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
+    invoke-interface {p1, p2, p3, p4}, Landroid/support/v4/view/C;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
 
     goto :goto_0
 .end method
 
-.method public aga(Landroid/view/ViewParent;Landroid/view/View;IIII)V
+.method public ahj(Landroid/view/ViewParent;Landroid/view/View;IIII)V
     .locals 6
 
     .prologue
-    .line 63
-    instance-of v0, p1, Landroid/support/v4/view/B;
+    .line 62
+    instance-of v0, p1, Landroid/support/v4/view/C;
 
     if-nez v0, :cond_0
 
-    .line 67
+    .line 66
     :goto_0
     return-void
 
     :cond_0
     move-object v0, p1
 
-    .line 64
-    check-cast v0, Landroid/support/v4/view/B;
+    .line 63
+    check-cast v0, Landroid/support/v4/view/C;
 
     move-object v1, p2
 
@@ -67,126 +67,126 @@
 
     move v5, p6
 
-    invoke-interface/range {v0 .. v5}, Landroid/support/v4/view/B;->onNestedScroll(Landroid/view/View;IIII)V
+    invoke-interface/range {v0 .. v5}, Landroid/support/v4/view/C;->onNestedScroll(Landroid/view/View;IIII)V
 
     goto :goto_0
 .end method
 
-.method public agb(Landroid/view/ViewParent;Landroid/view/View;FFZ)Z
+.method public ahk(Landroid/view/ViewParent;Landroid/view/View;FFZ)Z
     .locals 2
 
     .prologue
     const/4 v1, 0x0
+
+    .line 77
+    instance-of v0, p1, Landroid/support/v4/view/C;
+
+    if-nez v0, :cond_0
+
+    .line 81
+    return v1
 
     .line 78
-    instance-of v0, p1, Landroid/support/v4/view/B;
-
-    if-nez v0, :cond_0
-
-    .line 82
-    return v1
-
-    .line 79
     :cond_0
-    check-cast p1, Landroid/support/v4/view/B;
+    check-cast p1, Landroid/support/v4/view/C;
 
-    invoke-interface {p1, p2, p3, p4, p5}, Landroid/support/v4/view/B;->onNestedFling(Landroid/view/View;FFZ)Z
+    invoke-interface {p1, p2, p3, p4, p5}, Landroid/support/v4/view/C;->onNestedFling(Landroid/view/View;FFZ)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public agc(Landroid/view/ViewParent;Landroid/view/View;FF)Z
+.method public ahl(Landroid/view/ViewParent;Landroid/view/View;FF)Z
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
-    .line 87
-    instance-of v0, p1, Landroid/support/v4/view/B;
+    .line 86
+    instance-of v0, p1, Landroid/support/v4/view/C;
 
     if-nez v0, :cond_0
 
-    .line 91
+    .line 90
     return v1
 
-    .line 88
+    .line 87
     :cond_0
-    check-cast p1, Landroid/support/v4/view/B;
+    check-cast p1, Landroid/support/v4/view/C;
 
-    invoke-interface {p1, p2, p3, p4}, Landroid/support/v4/view/B;->onNestedPreFling(Landroid/view/View;FF)Z
+    invoke-interface {p1, p2, p3, p4}, Landroid/support/v4/view/C;->onNestedPreFling(Landroid/view/View;FF)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public agd(Landroid/view/ViewParent;Landroid/view/View;II[I)V
+.method public ahm(Landroid/view/ViewParent;Landroid/view/View;II[I)V
     .locals 1
 
     .prologue
-    .line 71
-    instance-of v0, p1, Landroid/support/v4/view/B;
+    .line 70
+    instance-of v0, p1, Landroid/support/v4/view/C;
 
     if-nez v0, :cond_0
 
-    .line 74
+    .line 73
     :goto_0
     return-void
 
-    .line 72
+    .line 71
     :cond_0
-    check-cast p1, Landroid/support/v4/view/B;
+    check-cast p1, Landroid/support/v4/view/C;
 
-    invoke-interface {p1, p2, p3, p4, p5}, Landroid/support/v4/view/B;->onNestedPreScroll(Landroid/view/View;II[I)V
+    invoke-interface {p1, p2, p3, p4, p5}, Landroid/support/v4/view/C;->onNestedPreScroll(Landroid/view/View;II[I)V
 
     goto :goto_0
 .end method
 
-.method public age(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)Z
+.method public ahn(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)Z
     .locals 2
 
     .prologue
     const/4 v1, 0x0
 
-    .line 40
-    instance-of v0, p1, Landroid/support/v4/view/B;
+    .line 39
+    instance-of v0, p1, Landroid/support/v4/view/C;
 
     if-nez v0, :cond_0
 
-    .line 44
+    .line 43
     return v1
 
-    .line 41
+    .line 40
     :cond_0
-    check-cast p1, Landroid/support/v4/view/B;
+    check-cast p1, Landroid/support/v4/view/C;
 
-    invoke-interface {p1, p2, p3, p4}, Landroid/support/v4/view/B;->onStartNestedScroll(Landroid/view/View;Landroid/view/View;I)Z
+    invoke-interface {p1, p2, p3, p4}, Landroid/support/v4/view/C;->onStartNestedScroll(Landroid/view/View;Landroid/view/View;I)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public agf(Landroid/view/ViewParent;Landroid/view/View;)V
+.method public aho(Landroid/view/ViewParent;Landroid/view/View;)V
     .locals 1
 
     .prologue
-    .line 56
-    instance-of v0, p1, Landroid/support/v4/view/B;
+    .line 55
+    instance-of v0, p1, Landroid/support/v4/view/C;
 
     if-nez v0, :cond_0
 
-    .line 59
+    .line 58
     :goto_0
     return-void
 
-    .line 57
+    .line 56
     :cond_0
-    check-cast p1, Landroid/support/v4/view/B;
+    check-cast p1, Landroid/support/v4/view/C;
 
-    invoke-interface {p1, p2}, Landroid/support/v4/view/B;->onStopNestedScroll(Landroid/view/View;)V
+    invoke-interface {p1, p2}, Landroid/support/v4/view/C;->onStopNestedScroll(Landroid/view/View;)V
 
     goto :goto_0
 .end method

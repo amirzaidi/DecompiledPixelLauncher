@@ -44,9 +44,9 @@
 
     .line 34
     :cond_0
-    new-instance v0, Landroid/support/v4/media/session/n;
+    new-instance v0, Landroid/support/v4/media/session/q;
 
-    invoke-direct {v0, p0}, Landroid/support/v4/media/session/n;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p0}, Landroid/support/v4/media/session/q;-><init>(Landroid/os/IBinder;)V
 
     return-object v0
 
@@ -89,7 +89,7 @@
     .line 42
     sparse-switch p1, :sswitch_data_0
 
-    .line 595
+    .line 616
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v0
@@ -1393,121 +1393,42 @@
 
     if-nez v0, :cond_19
 
-    .line 547
-    :goto_19
-    invoke-virtual {p0, v1}, Landroid/support/v4/media/session/IMediaSession$Stub;->setCaptioningEnabled(Z)V
-
-    .line 548
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 549
-    return v3
-
-    :cond_19
-    move v1, v3
-
-    .line 546
-    goto :goto_19
+    move-object v1, v2
 
     .line 553
-    :sswitch_2d
-    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 555
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 556
-    invoke-virtual {p0, v0}, Landroid/support/v4/media/session/IMediaSession$Stub;->setRepeatMode(I)V
-
-    .line 557
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 558
-    return v3
-
-    .line 562
-    :sswitch_2e
-    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 564
+    :goto_19
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     if-nez v0, :cond_1a
 
-    .line 565
+    .line 559
     :goto_1a
-    invoke-virtual {p0, v1}, Landroid/support/v4/media/session/IMediaSession$Stub;->setShuffleModeEnabledDeprecated(Z)V
+    invoke-virtual {p0, v1, v2}, Landroid/support/v4/media/session/IMediaSession$Stub;->rateWithExtras(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
 
-    .line 566
+    .line 560
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
-    .line 567
+    .line 561
     return v3
 
+    .line 547
+    :cond_19
+    sget-object v0, Landroid/support/v4/media/RatingCompat;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/media/RatingCompat;
+
+    move-object v1, v0
+
+    goto :goto_19
+
+    .line 554
     :cond_1a
-    move v1, v3
-
-    .line 564
-    goto :goto_1a
-
-    .line 571
-    :sswitch_2f
-    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 573
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 574
-    invoke-virtual {p0, v0}, Landroid/support/v4/media/session/IMediaSession$Stub;->setShuffleMode(I)V
-
-    .line 575
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 576
-    return v3
-
-    .line 580
-    :sswitch_30
-    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
-
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 582
-    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 584
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-nez v0, :cond_1b
-
-    .line 590
-    :goto_1b
-    invoke-virtual {p0, v1, v2}, Landroid/support/v4/media/session/IMediaSession$Stub;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    .line 591
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    .line 592
-    return v3
-
-    .line 585
-    :cond_1b
     sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -1518,7 +1439,147 @@
 
     move-object v2, v0
 
+    goto :goto_1a
+
+    .line 565
+    :sswitch_2d
+    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 567
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-nez v0, :cond_1b
+
+    .line 568
+    :goto_1b
+    invoke-virtual {p0, v1}, Landroid/support/v4/media/session/IMediaSession$Stub;->setCaptioningEnabled(Z)V
+
+    .line 569
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 570
+    return v3
+
+    :cond_1b
+    move v1, v3
+
+    .line 567
     goto :goto_1b
+
+    .line 574
+    :sswitch_2e
+    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 576
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 577
+    invoke-virtual {p0, v0}, Landroid/support/v4/media/session/IMediaSession$Stub;->setRepeatMode(I)V
+
+    .line 578
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 579
+    return v3
+
+    .line 583
+    :sswitch_2f
+    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 585
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-nez v0, :cond_1c
+
+    .line 586
+    :goto_1c
+    invoke-virtual {p0, v1}, Landroid/support/v4/media/session/IMediaSession$Stub;->setShuffleModeEnabledDeprecated(Z)V
+
+    .line 587
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 588
+    return v3
+
+    :cond_1c
+    move v1, v3
+
+    .line 585
+    goto :goto_1c
+
+    .line 592
+    :sswitch_30
+    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 594
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    .line 595
+    invoke-virtual {p0, v0}, Landroid/support/v4/media/session/IMediaSession$Stub;->setShuffleMode(I)V
+
+    .line 596
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 597
+    return v3
+
+    .line 601
+    :sswitch_31
+    const-string/jumbo v0, "android.support.v4.media.session.IMediaSession"
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 603
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 605
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-nez v0, :cond_1d
+
+    .line 611
+    :goto_1d
+    invoke-virtual {p0, v1, v2}, Landroid/support/v4/media/session/IMediaSession$Stub;->sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    .line 612
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 613
+    return v3
+
+    .line 606
+    :cond_1d
+    sget-object v0, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-interface {v0, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/Bundle;
+
+    move-object v2, v0
+
+    goto :goto_1d
 
     .line 42
     :sswitch_data_0
@@ -1548,7 +1609,7 @@
         0x17 -> :sswitch_29
         0x18 -> :sswitch_2a
         0x19 -> :sswitch_2b
-        0x1a -> :sswitch_30
+        0x1a -> :sswitch_31
         0x1b -> :sswitch_d
         0x1c -> :sswitch_e
         0x1d -> :sswitch_f
@@ -1561,16 +1622,17 @@
         0x24 -> :sswitch_1e
         0x25 -> :sswitch_14
         0x26 -> :sswitch_15
-        0x27 -> :sswitch_2d
-        0x28 -> :sswitch_2e
+        0x27 -> :sswitch_2e
+        0x28 -> :sswitch_2f
         0x29 -> :sswitch_17
         0x2a -> :sswitch_18
         0x2b -> :sswitch_19
         0x2c -> :sswitch_1a
         0x2d -> :sswitch_13
-        0x2e -> :sswitch_2c
+        0x2e -> :sswitch_2d
         0x2f -> :sswitch_16
-        0x30 -> :sswitch_2f
+        0x30 -> :sswitch_30
+        0x33 -> :sswitch_2c
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

@@ -12,9 +12,9 @@ import android.os.Parcelable;
 class StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    int Sf;
-    boolean Sg;
-    int[] Sh;
+    int TO;
+    boolean TP;
+    int[] TQ;
     int mPosition;
     
     static {
@@ -26,16 +26,16 @@ class StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem implements Parcelab
     
     StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem(final Parcel parcel) {
         final boolean b = true;
-        boolean sg = false;
+        boolean tp = false;
         this.mPosition = parcel.readInt();
-        this.Sf = parcel.readInt();
+        this.TO = parcel.readInt();
         if (parcel.readInt() == (b ? 1 : 0)) {
-            sg = b;
+            tp = b;
         }
-        this.Sg = sg;
+        this.TP = tp;
         final int int1 = parcel.readInt();
         if (int1 > 0) {
-            parcel.readIntArray(this.Sh = new int[int1]);
+            parcel.readIntArray(this.TQ = new int[int1]);
         }
     }
     
@@ -44,23 +44,23 @@ class StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem implements Parcelab
     }
     
     public String toString() {
-        return "FullSpanItem{mPosition=" + this.mPosition + ", mGapDir=" + this.Sf + ", mHasUnwantedGapAfter=" + this.Sg + ", mGapPerSpan=" + Arrays.toString(this.Sh) + '}';
+        return "FullSpanItem{mPosition=" + this.mPosition + ", mGapDir=" + this.TO + ", mHasUnwantedGapAfter=" + this.TP + ", mGapPerSpan=" + Arrays.toString(this.TQ) + '}';
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         parcel.writeInt(this.mPosition);
-        parcel.writeInt(this.Sf);
+        parcel.writeInt(this.TO);
         int n2;
-        if (!this.Sg) {
+        if (!this.TP) {
             n2 = 0;
         }
         else {
             n2 = 1;
         }
         parcel.writeInt(n2);
-        if (this.Sh != null && this.Sh.length > 0) {
-            parcel.writeInt(this.Sh.length);
-            parcel.writeIntArray(this.Sh);
+        if (this.TQ != null && this.TQ.length > 0) {
+            parcel.writeInt(this.TQ.length);
+            parcel.writeIntArray(this.TQ);
         }
         else {
             parcel.writeInt(0);

@@ -12,63 +12,63 @@ class aj extends U
         super(p, null);
     }
     
-    public int aac(final View view) {
-        this.mLayoutManager.getTransformedBoundingBox(view, true, this.mTmpRect);
-        return this.mTmpRect.top;
+    public int abe(final View view) {
+        this.Sh.getTransformedBoundingBox(view, true, this.Si);
+        return this.Si.top;
     }
     
-    public int aad() {
-        return this.mLayoutManager.getHeightMode();
+    public int abf() {
+        return this.Sh.getHeightMode();
     }
     
-    public int aaf(final View view) {
+    public int abh(final View view) {
         final i i = (i)view.getLayoutParams();
-        return i.rightMargin + (this.mLayoutManager.getDecoratedMeasuredWidth(view) + i.leftMargin);
+        return i.rightMargin + (this.Sh.getDecoratedMeasuredWidth(view) + i.leftMargin);
     }
     
-    public int aag(final View view) {
+    public int abi(final View view) {
         final i i = (i)view.getLayoutParams();
-        return i.bottomMargin + (this.mLayoutManager.getDecoratedMeasuredHeight(view) + i.topMargin);
+        return i.bottomMargin + (this.Sh.getDecoratedMeasuredHeight(view) + i.topMargin);
     }
     
-    public int aah() {
-        return this.mLayoutManager.getHeight() - this.mLayoutManager.getPaddingTop() - this.mLayoutManager.getPaddingBottom();
+    public int abj() {
+        return this.Sh.getHeight() - this.Sh.getPaddingTop() - this.Sh.getPaddingBottom();
     }
     
-    public int aai(final View view) {
-        return this.mLayoutManager.getDecoratedTop(view) - ((i)view.getLayoutParams()).topMargin;
+    public int abk(final View view) {
+        return this.Sh.getDecoratedTop(view) - ((i)view.getLayoutParams()).topMargin;
     }
     
-    public int aaj(final View view) {
-        return ((i)view.getLayoutParams()).bottomMargin + this.mLayoutManager.getDecoratedBottom(view);
+    public int abl(final View view) {
+        return ((i)view.getLayoutParams()).bottomMargin + this.Sh.getDecoratedBottom(view);
     }
     
-    public int aak() {
-        return this.mLayoutManager.getPaddingTop();
+    public int abm() {
+        return this.Sh.getPaddingTop();
     }
     
-    public int aal() {
-        return this.mLayoutManager.getHeight();
+    public int abn() {
+        return this.Sh.getHeight();
     }
     
-    public int aam() {
-        return this.mLayoutManager.getWidthMode();
+    public int abo() {
+        return this.Sh.getWidthMode();
     }
     
-    public int aan() {
-        return this.mLayoutManager.getPaddingBottom();
+    public int abp() {
+        return this.Sh.getPaddingBottom();
     }
     
-    public int aar(final View view) {
-        this.mLayoutManager.getTransformedBoundingBox(view, true, this.mTmpRect);
-        return this.mTmpRect.bottom;
+    public int abt(final View view) {
+        this.Sh.getTransformedBoundingBox(view, true, this.Si);
+        return this.Si.bottom;
     }
     
-    public int aas() {
-        return this.mLayoutManager.getHeight() - this.mLayoutManager.getPaddingBottom();
+    public int abu() {
+        return this.Sh.getHeight() - this.Sh.getPaddingBottom();
     }
     
-    public void aat(final int n) {
-        this.mLayoutManager.offsetChildrenVertical(n);
+    public void abv(final int n) {
+        this.Sh.offsetChildrenVertical(n);
     }
 }

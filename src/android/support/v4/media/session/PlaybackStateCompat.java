@@ -18,71 +18,71 @@ import android.os.Parcelable;
 public final class PlaybackStateCompat implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final long aei;
-    final long aej;
-    final long aek;
-    final Bundle ael;
-    List aem;
-    final long aen;
-    final int aeo;
-    private Object aep;
-    final CharSequence aeq;
-    final long aer;
-    final float aes;
+    final long aff;
+    final long afg;
+    final long afh;
+    final Bundle afi;
+    List afj;
+    final long afk;
+    final int afl;
+    private Object afm;
+    final CharSequence afn;
+    final long afo;
+    final float afp;
     final int mState;
     
     static {
         CREATOR = (Parcelable$Creator)new d();
     }
     
-    PlaybackStateCompat(final int mState, final long aer, final long aej, final float aes, final long aei, final int aeo, final CharSequence aeq, final long aek, final List list, final long aen, final Bundle ael) {
+    PlaybackStateCompat(final int mState, final long afo, final long afg, final float afp, final long aff, final int afl, final CharSequence afn, final long afh, final List list, final long afk, final Bundle afi) {
         this.mState = mState;
-        this.aer = aer;
-        this.aej = aej;
-        this.aes = aes;
-        this.aei = aei;
-        this.aeo = aeo;
-        this.aeq = aeq;
-        this.aek = aek;
-        this.aem = new ArrayList(list);
-        this.aen = aen;
-        this.ael = ael;
+        this.afo = afo;
+        this.afg = afg;
+        this.afp = afp;
+        this.aff = aff;
+        this.afl = afl;
+        this.afn = afn;
+        this.afh = afh;
+        this.afj = new ArrayList(list);
+        this.afk = afk;
+        this.afi = afi;
     }
     
     PlaybackStateCompat(final Parcel parcel) {
         this.mState = parcel.readInt();
-        this.aer = parcel.readLong();
-        this.aes = parcel.readFloat();
-        this.aek = parcel.readLong();
-        this.aej = parcel.readLong();
-        this.aei = parcel.readLong();
-        this.aeq = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        this.aem = parcel.createTypedArrayList(PlaybackStateCompat$CustomAction.CREATOR);
-        this.aen = parcel.readLong();
-        this.ael = parcel.readBundle();
-        this.aeo = parcel.readInt();
+        this.afo = parcel.readLong();
+        this.afp = parcel.readFloat();
+        this.afh = parcel.readLong();
+        this.afg = parcel.readLong();
+        this.aff = parcel.readLong();
+        this.afn = (CharSequence)TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.afj = parcel.createTypedArrayList(PlaybackStateCompat$CustomAction.CREATOR);
+        this.afk = parcel.readLong();
+        this.afi = parcel.readBundle();
+        this.afl = parcel.readInt();
     }
     
-    public static PlaybackStateCompat arW(final Object aep) {
-        if (aep != null && Build$VERSION.SDK_INT >= 21) {
-            final List arQ = w.arQ(aep);
+    public static PlaybackStateCompat asM(final Object afm) {
+        if (afm != null && Build$VERSION.SDK_INT >= 21) {
+            final List g = f.asG(afm);
             ArrayList list = null;
-            if (arQ != null) {
-                list = new ArrayList<PlaybackStateCompat$CustomAction>(arQ.size());
-                final Iterator<Object> iterator = arQ.iterator();
+            if (g != null) {
+                list = new ArrayList<PlaybackStateCompat$CustomAction>(g.size());
+                final Iterator<Object> iterator = g.iterator();
                 while (iterator.hasNext()) {
-                    list.add(PlaybackStateCompat$CustomAction.asb(iterator.next()));
+                    list.add(PlaybackStateCompat$CustomAction.asY(iterator.next()));
                 }
             }
-            Bundle arx;
+            Bundle n;
             if (Build$VERSION.SDK_INT < 22) {
-                arx = null;
+                n = null;
             }
             else {
-                arx = h.arx(aep);
+                n = i.asN(afm);
             }
-            final PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(w.arV(aep), w.arN(aep), w.arP(aep), w.arO(aep), w.arU(aep), 0, w.arT(aep), w.arR(aep), list, w.arS(aep), arx);
-            playbackStateCompat.aep = aep;
+            final PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat(f.asL(afm), f.asD(afm), f.asF(afm), f.asE(afm), f.asK(afm), 0, f.asJ(afm), f.asH(afm), list, f.asI(afm), n);
+            playbackStateCompat.afm = afm;
             return playbackStateCompat;
         }
         return null;
@@ -95,30 +95,30 @@ public final class PlaybackStateCompat implements Parcelable
     public String toString() {
         final StringBuilder sb = new StringBuilder("PlaybackState {");
         sb.append("state=").append(this.mState);
-        sb.append(", position=").append(this.aer);
-        sb.append(", buffered position=").append(this.aej);
-        sb.append(", speed=").append(this.aes);
-        sb.append(", updated=").append(this.aek);
-        sb.append(", actions=").append(this.aei);
-        sb.append(", error code=").append(this.aeo);
-        sb.append(", error message=").append(this.aeq);
-        sb.append(", custom actions=").append(this.aem);
-        sb.append(", active item id=").append(this.aen);
+        sb.append(", position=").append(this.afo);
+        sb.append(", buffered position=").append(this.afg);
+        sb.append(", speed=").append(this.afp);
+        sb.append(", updated=").append(this.afh);
+        sb.append(", actions=").append(this.aff);
+        sb.append(", error code=").append(this.afl);
+        sb.append(", error message=").append(this.afn);
+        sb.append(", custom actions=").append(this.afj);
+        sb.append(", active item id=").append(this.afk);
         sb.append("}");
         return sb.toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
         parcel.writeInt(this.mState);
-        parcel.writeLong(this.aer);
-        parcel.writeFloat(this.aes);
-        parcel.writeLong(this.aek);
-        parcel.writeLong(this.aej);
-        parcel.writeLong(this.aei);
-        TextUtils.writeToParcel(this.aeq, parcel, n);
-        parcel.writeTypedList(this.aem);
-        parcel.writeLong(this.aen);
-        parcel.writeBundle(this.ael);
-        parcel.writeInt(this.aeo);
+        parcel.writeLong(this.afo);
+        parcel.writeFloat(this.afp);
+        parcel.writeLong(this.afh);
+        parcel.writeLong(this.afg);
+        parcel.writeLong(this.aff);
+        TextUtils.writeToParcel(this.afn, parcel, n);
+        parcel.writeTypedList(this.afj);
+        parcel.writeLong(this.afk);
+        parcel.writeBundle(this.afi);
+        parcel.writeInt(this.afl);
     }
 }

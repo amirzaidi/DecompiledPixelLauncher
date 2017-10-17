@@ -10,10 +10,10 @@ import java.util.Set;
 
 final class o implements Set
 {
-    final /* synthetic */ l VL;
+    final /* synthetic */ l Xu;
     
-    o(final l vl) {
-        this.VL = vl;
+    o(final l xu) {
+        this.Xu = xu;
     }
     
     public boolean add(final Object o) {
@@ -25,33 +25,33 @@ final class o implements Set
     }
     
     public void clear() {
-        this.VL.ahy();
+        this.Xu.aiI();
     }
     
     public boolean contains(final Object o) {
         boolean b = false;
-        if (this.VL.ahr(o) >= 0) {
+        if (this.Xu.aiB(o) >= 0) {
             b = true;
         }
         return b;
     }
     
     public boolean containsAll(final Collection collection) {
-        return l.ahz(this.VL.ahw(), collection);
+        return l.aiJ(this.Xu.aiG(), collection);
     }
     
     public boolean equals(final Object o) {
-        return l.ahF(this, o);
+        return l.aiP(this, o);
     }
     
     public int hashCode() {
-        int i = this.VL.ahB() - 1;
+        int i = this.Xu.aiL() - 1;
         int n = 0;
         while (i >= 0) {
-            final Object ahq = this.VL.ahq(i, 0);
+            final Object aiA = this.Xu.aiA(i, 0);
             int hashCode;
-            if (ahq != null) {
-                hashCode = ahq.hashCode();
+            if (aiA != null) {
+                hashCode = aiA.hashCode();
             }
             else {
                 hashCode = 0;
@@ -64,42 +64,42 @@ final class o implements Set
     
     public boolean isEmpty() {
         boolean b = false;
-        if (this.VL.ahB() == 0) {
+        if (this.Xu.aiL() == 0) {
             b = true;
         }
         return b;
     }
     
     public Iterator iterator() {
-        return new g(this.VL, 0);
+        return new g(this.Xu, 0);
     }
     
     public boolean remove(final Object o) {
-        final int ahr = this.VL.ahr(o);
-        if (ahr < 0) {
+        final int aiB = this.Xu.aiB(o);
+        if (aiB < 0) {
             return false;
         }
-        this.VL.ahC(ahr);
+        this.Xu.aiM(aiB);
         return true;
     }
     
     public boolean removeAll(final Collection collection) {
-        return l.ahE(this.VL.ahw(), collection);
+        return l.aiO(this.Xu.aiG(), collection);
     }
     
     public boolean retainAll(final Collection collection) {
-        return l.ahA(this.VL.ahw(), collection);
+        return l.aiK(this.Xu.aiG(), collection);
     }
     
     public int size() {
-        return this.VL.ahB();
+        return this.Xu.aiL();
     }
     
     public Object[] toArray() {
-        return this.VL.aho(0);
+        return this.Xu.aiy(0);
     }
     
     public Object[] toArray(final Object[] array) {
-        return this.VL.aht(array, 0);
+        return this.Xu.aiD(array, 0);
     }
 }

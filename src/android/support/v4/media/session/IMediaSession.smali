@@ -103,6 +103,9 @@
 .method public abstract rate(Landroid/support/v4/media/RatingCompat;)V
 .end method
 
+.method public abstract rateWithExtras(Landroid/support/v4/media/RatingCompat;Landroid/os/Bundle;)V
+.end method
+
 .method public abstract registerCallbackListener(Landroid/support/v4/media/session/IMediaControllerCallback;)V
 .end method
 

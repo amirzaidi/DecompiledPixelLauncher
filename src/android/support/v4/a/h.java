@@ -4,72 +4,73 @@
 
 package android.support.v4.a;
 
+import java.util.Locale;
 import java.util.Map;
 import java.util.LinkedHashMap;
 
 public class h
 {
-    private int Vq;
-    private final LinkedHashMap Vr;
-    private int Vs;
-    private int Vt;
-    private int Vu;
-    private int Vv;
-    private int Vw;
+    private int Xd;
+    private final LinkedHashMap Xe;
+    private int Xf;
+    private int Xg;
+    private int Xh;
+    private int Xi;
+    private int Xj;
     
-    public h(final int vs) {
-        if (vs > 0) {
-            this.Vs = vs;
-            this.Vr = new LinkedHashMap(0, 0.75f, true);
+    public h(final int xf) {
+        if (xf > 0) {
+            this.Xf = xf;
+            this.Xe = new LinkedHashMap(0, 0.75f, true);
             return;
         }
         throw new IllegalArgumentException("maxSize <= 0");
     }
     
-    private int agY(final Object o, final Object o2) {
-        final int md = this.mD(o, o2);
-        if (md >= 0) {
-            return md;
+    private int aiu(final Object o, final Object o2) {
+        final int pr = this.pr(o, o2);
+        if (pr >= 0) {
+            return pr;
         }
         throw new IllegalStateException("Negative size: " + o + "=" + o2);
     }
     
-    public final void agX() {
-        this.agZ(-1);
+    public final void ait() {
+        this.aiv(-1);
     }
     
-    public void agZ(final int n) {
+    public void aiv(final int n) {
         while (true) {
             while (true) {
                 synchronized (this) {
-                    if (this.Vq < 0) {
+                    if (this.Xd < 0) {
                         throw new IllegalStateException(this.getClass().getName() + ".sizeOf() is reporting inconsistent results!");
                     }
                 }
-                if (this.Vr.isEmpty() && this.Vq != 0) {
+                if (this.Xe.isEmpty() && this.Xd != 0) {
                     continue;
                 }
                 break;
             }
-            if (this.Vq <= n || this.Vr.isEmpty()) {
+            if (this.Xd <= n || this.Xe.isEmpty()) {
                 break;
             }
-            final Map.Entry<Object, V> entry = this.Vr.entrySet().iterator().next();
+            final Map.Entry<Object, V> entry = this.Xe.entrySet().iterator().next();
             final Object key = entry.getKey();
             final Object value = entry.getValue();
-            this.Vr.remove(key);
-            this.Vq -= this.agY(key, value);
-            ++this.Vt;
+            this.Xe.remove(key);
+            this.Xd -= this.aiu(key, value);
+            ++this.Xg;
             // monitorexit(this)
-            this.mC(true, key, value, null);
+            this.pq(true, key, value, null);
         }
     }
     // monitorexit(this)
     
-    protected void mC(final boolean b, final Object o, final Object o2, final Object o3) {
+    protected void pq(final boolean b, final Object o, final Object o2, final Object o3) {
     }
     
-    protected int mD(final Object o, final Object o2) {
+    protected int pr(final Object o, final Object o2) {
         return 1;
     }
     
@@ -81,19 +82,19 @@ public class h
             while (true) {
                 final Object put;
                 synchronized (this) {
-                    ++this.Vw;
-                    this.Vq += this.agY(o, o2);
-                    put = this.Vr.put(o, o2);
+                    ++this.Xj;
+                    this.Xd += this.aiu(o, o2);
+                    put = this.Xe.put(o, o2);
                     if (put != null) {
-                        this.Vq -= this.agY(o, put);
+                        this.Xd -= this.aiu(o, put);
                     }
                     // monitorexit(this)
                     if (put == null) {
-                        this.agZ(this.Vs);
+                        this.aiv(this.Xf);
                         return put;
                     }
                 }
-                this.mC(false, o, put, o2);
+                this.pq(false, o, put, o2);
                 continue;
             }
         }
@@ -102,18 +103,19 @@ public class h
     public final String toString() {
         int n = 0;
         synchronized (this) {
-            final int n2 = this.Vu + this.Vv;
+            final int n2 = this.Xh + this.Xi;
             if (n2 != 0) {
-                n = this.Vu * 100 / n2;
+                n = this.Xh * 100 / n2;
             }
+            final Locale us = Locale.US;
             final Object[] array = new Object[4];
-            final int vs = this.Vs;
+            final int xf = this.Xf;
             final String s = "LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]";
-            array[0] = vs;
-            array[1] = this.Vu;
-            array[2] = this.Vv;
+            array[0] = xf;
+            array[1] = this.Xh;
+            array[2] = this.Xi;
             array[3] = n;
-            return String.format(s, array);
+            return String.format(us, s, array);
         }
     }
 }

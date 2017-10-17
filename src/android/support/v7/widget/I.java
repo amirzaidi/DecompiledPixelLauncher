@@ -12,63 +12,63 @@ import android.view.ViewGroup$MarginLayoutParams;
 
 public class i extends ViewGroup$MarginLayoutParams
 {
-    j Pa;
-    boolean Pb;
-    boolean Pc;
+    j QH;
+    boolean QI;
+    boolean QJ;
     final Rect mDecorInsets;
     
     public i(final int n, final int n2) {
         super(n, n2);
         this.mDecorInsets = new Rect();
-        this.Pb = true;
-        this.Pc = false;
+        this.QI = true;
+        this.QJ = false;
     }
     
     public i(final Context context, final AttributeSet set) {
         super(context, set);
         this.mDecorInsets = new Rect();
-        this.Pb = true;
-        this.Pc = false;
+        this.QI = true;
+        this.QJ = false;
     }
     
     public i(final i i) {
         super((ViewGroup$LayoutParams)i);
         this.mDecorInsets = new Rect();
-        this.Pb = true;
-        this.Pc = false;
+        this.QI = true;
+        this.QJ = false;
     }
     
     public i(final ViewGroup$LayoutParams viewGroup$LayoutParams) {
         super(viewGroup$LayoutParams);
         this.mDecorInsets = new Rect();
-        this.Pb = true;
-        this.Pc = false;
+        this.QI = true;
+        this.QJ = false;
     }
     
     public i(final ViewGroup$MarginLayoutParams viewGroup$MarginLayoutParams) {
         super(viewGroup$MarginLayoutParams);
         this.mDecorInsets = new Rect();
-        this.Pb = true;
-        this.Pc = false;
+        this.QI = true;
+        this.QJ = false;
     }
     
-    public int Xb() {
-        return this.Pa.getAdapterPosition();
+    public int Yb() {
+        return this.QH.getAdapterPosition();
     }
     
-    public boolean Xc() {
-        return this.Pa.isInvalid();
+    public boolean Yc() {
+        return this.QH.isInvalid();
     }
     
-    public int Xd() {
-        return this.Pa.getLayoutPosition();
+    public int Yd() {
+        return this.QH.getLayoutPosition();
     }
     
-    public boolean Xe() {
-        return this.Pa.isUpdated();
+    public boolean Ye() {
+        return this.QH.isUpdated();
     }
     
-    public boolean Xf() {
-        return this.Pa.isRemoved();
+    public boolean Yf() {
+        return this.QH.isRemoved();
     }
 }

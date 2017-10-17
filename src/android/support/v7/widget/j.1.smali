@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 10368
+    .line 10413
     sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
     sput-object v0, Landroid/support/v7/widget/j;->FULLUPDATE_PAYLOADS:Ljava/util/List;
@@ -68,63 +68,63 @@
 
     const/4 v2, 0x0
 
-    .line 10395
+    .line 10440
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10256
+    .line 10301
     iput v3, p0, Landroid/support/v7/widget/j;->mPosition:I
 
-    .line 10257
+    .line 10302
     iput v3, p0, Landroid/support/v7/widget/j;->mOldPosition:I
 
-    .line 10258
+    .line 10303
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/support/v7/widget/j;->mItemId:J
 
-    .line 10259
+    .line 10304
     iput v3, p0, Landroid/support/v7/widget/j;->mItemViewType:I
 
-    .line 10260
+    .line 10305
     iput v3, p0, Landroid/support/v7/widget/j;->mPreLayoutPosition:I
 
-    .line 10263
+    .line 10308
     iput-object v2, p0, Landroid/support/v7/widget/j;->mShadowedHolder:Landroid/support/v7/widget/j;
 
-    .line 10265
+    .line 10310
     iput-object v2, p0, Landroid/support/v7/widget/j;->mShadowingHolder:Landroid/support/v7/widget/j;
 
-    .line 10370
+    .line 10415
     iput-object v2, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
-    .line 10371
+    .line 10416
     iput-object v2, p0, Landroid/support/v7/widget/j;->mUnmodifiedPayloads:Ljava/util/List;
 
-    .line 10373
+    .line 10418
     iput v4, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
-    .line 10377
+    .line 10422
     iput-object v2, p0, Landroid/support/v7/widget/j;->mScrapContainer:Landroid/support/v7/widget/s;
 
-    .line 10379
+    .line 10424
     iput-boolean v4, p0, Landroid/support/v7/widget/j;->mInChangeScrap:Z
 
-    .line 10383
+    .line 10428
     iput v4, p0, Landroid/support/v7/widget/j;->mWasImportantForAccessibilityBeforeHidden:I
 
-    .line 10386
+    .line 10431
     iput v3, p0, Landroid/support/v7/widget/j;->mPendingAccessibilityState:I
 
-    .line 10396
+    .line 10441
     if-eqz p1, :cond_0
 
-    .line 10399
+    .line 10444
     iput-object p1, p0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
-    .line 10400
+    .line 10445
     return-void
 
-    .line 10397
+    .line 10442
     :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -135,31 +135,41 @@
     throw v0
 .end method
 
-.method static synthetic access$1000(Landroid/support/v7/widget/j;)Z
+.method static synthetic access$1002(Landroid/support/v7/widget/j;Landroid/support/v7/widget/s;)Landroid/support/v7/widget/s;
+    .locals 0
+
+    .prologue
+    .line 10298
+    iput-object p1, p0, Landroid/support/v7/widget/j;->mScrapContainer:Landroid/support/v7/widget/s;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1100(Landroid/support/v7/widget/j;)Z
     .locals 1
 
     .prologue
-    .line 10253
+    .line 10298
     iget-boolean v0, p0, Landroid/support/v7/widget/j;->mInChangeScrap:Z
 
     return v0
 .end method
 
-.method static synthetic access$1002(Landroid/support/v7/widget/j;Z)Z
+.method static synthetic access$1102(Landroid/support/v7/widget/j;Z)Z
     .locals 0
 
     .prologue
-    .line 10253
+    .line 10298
     iput-boolean p1, p0, Landroid/support/v7/widget/j;->mInChangeScrap:Z
 
     return p1
 .end method
 
-.method static synthetic access$1400(Landroid/support/v7/widget/j;)Z
+.method static synthetic access$1500(Landroid/support/v7/widget/j;)Z
     .locals 1
 
     .prologue
-    .line 10253
+    .line 10298
     invoke-direct {p0}, Landroid/support/v7/widget/j;->shouldBeKeptAsChild()Z
 
     move-result v0
@@ -167,11 +177,11 @@
     return v0
 .end method
 
-.method static synthetic access$1500(Landroid/support/v7/widget/j;)I
+.method static synthetic access$1600(Landroid/support/v7/widget/j;)I
     .locals 1
 
     .prologue
-    .line 10253
+    .line 10298
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     return v0
@@ -181,7 +191,7 @@
     .locals 0
 
     .prologue
-    .line 10253
+    .line 10298
     invoke-direct {p0, p1}, Landroid/support/v7/widget/j;->onEnteredHiddenState(Landroid/support/v7/widget/RecyclerView;)V
 
     return-void
@@ -191,17 +201,17 @@
     .locals 0
 
     .prologue
-    .line 10253
+    .line 10298
     invoke-direct {p0, p1}, Landroid/support/v7/widget/j;->onLeftHiddenState(Landroid/support/v7/widget/RecyclerView;)V
 
     return-void
 .end method
 
-.method static synthetic access$800(Landroid/support/v7/widget/j;)Z
+.method static synthetic access$900(Landroid/support/v7/widget/j;)Z
     .locals 1
 
     .prologue
-    .line 10253
+    .line 10298
     invoke-direct {p0}, Landroid/support/v7/widget/j;->doesTransientStatePreventRecycling()Z
 
     move-result v0
@@ -209,30 +219,20 @@
     return v0
 .end method
 
-.method static synthetic access$902(Landroid/support/v7/widget/j;Landroid/support/v7/widget/s;)Landroid/support/v7/widget/s;
-    .locals 0
-
-    .prologue
-    .line 10253
-    iput-object p1, p0, Landroid/support/v7/widget/j;->mScrapContainer:Landroid/support/v7/widget/s;
-
-    return-object p1
-.end method
-
 .method private createPayloadsIfNeeded()V
     .locals 1
 
     .prologue
-    .line 10614
+    .line 10659
     iget-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
     if-eqz v0, :cond_0
 
-    .line 10618
+    .line 10663
     :goto_0
     return-void
 
-    .line 10615
+    .line 10660
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -240,7 +240,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
-    .line 10616
+    .line 10661
     iget-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -258,7 +258,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10755
+    .line 10800
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x10
@@ -272,7 +272,7 @@
     :cond_1
     iget-object v1, p0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
-    invoke-static {v1}, Landroid/support/v4/view/f;->afF(Landroid/view/View;)Z
+    invoke-static {v1}, Landroid/support/v4/view/f;->agJ(Landroid/view/View;)Z
 
     move-result v1
 
@@ -287,22 +287,22 @@
     .locals 1
 
     .prologue
-    .line 10661
+    .line 10706
     iget-object v0, p0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
-    .line 10662
-    invoke-static {v0}, Landroid/support/v4/view/f;->afy(Landroid/view/View;)I
+    .line 10707
+    invoke-static {v0}, Landroid/support/v4/view/f;->agA(Landroid/view/View;)I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/j;->mWasImportantForAccessibilityBeforeHidden:I
 
-    .line 10663
+    .line 10708
     const/4 v0, 0x4
 
     invoke-virtual {p1, p0, v0}, Landroid/support/v7/widget/RecyclerView;->setChildImportantForAccessibilityInternal(Landroid/support/v7/widget/j;I)Z
 
-    .line 10665
+    .line 10710
     return-void
 .end method
 
@@ -310,17 +310,17 @@
     .locals 1
 
     .prologue
-    .line 10671
+    .line 10716
     iget v0, p0, Landroid/support/v7/widget/j;->mWasImportantForAccessibilityBeforeHidden:I
 
     invoke-virtual {p1, p0, v0}, Landroid/support/v7/widget/RecyclerView;->setChildImportantForAccessibilityInternal(Landroid/support/v7/widget/j;I)Z
 
-    .line 10673
+    .line 10718
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v7/widget/j;->mWasImportantForAccessibilityBeforeHidden:I
 
-    .line 10674
+    .line 10719
     return-void
 .end method
 
@@ -330,7 +330,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10747
+    .line 10792
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x10
@@ -352,21 +352,21 @@
     .locals 1
 
     .prologue
-    .line 10605
+    .line 10650
     if-eqz p1, :cond_0
 
-    .line 10607
+    .line 10652
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit16 v0, v0, 0x400
 
     if-eqz v0, :cond_1
 
-    .line 10611
+    .line 10656
     :goto_0
     return-void
 
-    .line 10606
+    .line 10651
     :cond_0
     const/16 v0, 0x400
 
@@ -374,11 +374,11 @@
 
     goto :goto_0
 
-    .line 10608
+    .line 10653
     :cond_1
     invoke-direct {p0}, Landroid/support/v7/widget/j;->createPayloadsIfNeeded()V
 
-    .line 10609
+    .line 10654
     iget-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -390,14 +390,14 @@
     .locals 1
 
     .prologue
-    .line 10601
+    .line 10646
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     or-int/2addr v0, p1
 
     iput v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
-    .line 10602
+    .line 10647
     return-void
 .end method
 
@@ -407,13 +407,13 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 10425
+    .line 10470
     iput v0, p0, Landroid/support/v7/widget/j;->mOldPosition:I
 
-    .line 10426
+    .line 10471
     iput v0, p0, Landroid/support/v7/widget/j;->mPreLayoutPosition:I
 
-    .line 10427
+    .line 10472
     return-void
 .end method
 
@@ -421,12 +421,12 @@
     .locals 1
 
     .prologue
-    .line 10621
+    .line 10666
     iget-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
     if-nez v0, :cond_0
 
-    .line 10624
+    .line 10669
     :goto_0
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
@@ -434,10 +434,10 @@
 
     iput v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
-    .line 10625
+    .line 10670
     return-void
 
-    .line 10622
+    .line 10667
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
@@ -450,14 +450,14 @@
     .locals 1
 
     .prologue
-    .line 10552
+    .line 10597
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
-    .line 10553
+    .line 10598
     return-void
 .end method
 
@@ -465,14 +465,14 @@
     .locals 1
 
     .prologue
-    .line 10556
+    .line 10601
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit16 v0, v0, -0x101
 
     iput v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
-    .line 10557
+    .line 10602
     return-void
 .end method
 
@@ -480,18 +480,18 @@
     .locals 1
 
     .prologue
-    .line 10403
+    .line 10448
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/j;->addFlags(I)V
 
-    .line 10404
+    .line 10449
     invoke-virtual {p0, p2, p3}, Landroid/support/v7/widget/j;->offsetPosition(IZ)V
 
-    .line 10405
+    .line 10450
     iput p1, p0, Landroid/support/v7/widget/j;->mPosition:I
 
-    .line 10406
+    .line 10451
     return-void
 .end method
 
@@ -499,12 +499,12 @@
     .locals 1
 
     .prologue
-    .line 10501
+    .line 10546
     iget-object v0, p0, Landroid/support/v7/widget/j;->mOwnerRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v0, :cond_0
 
-    .line 10504
+    .line 10549
     iget-object v0, p0, Landroid/support/v7/widget/j;->mOwnerRecyclerView:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v0, p0}, Landroid/support/v7/widget/RecyclerView;->getAdapterPositionFor(Landroid/support/v7/widget/j;)I
@@ -513,7 +513,7 @@
 
     return v0
 
-    .line 10502
+    .line 10547
     :cond_0
     const/4 v0, -0x1
 
@@ -524,7 +524,7 @@
     .locals 2
 
     .prologue
-    .line 10529
+    .line 10574
     iget-wide v0, p0, Landroid/support/v7/widget/j;->mItemId:J
 
     return-wide v0
@@ -534,7 +534,7 @@
     .locals 1
 
     .prologue
-    .line 10536
+    .line 10581
     iget v0, p0, Landroid/support/v7/widget/j;->mItemViewType:I
 
     return v0
@@ -544,7 +544,7 @@
     .locals 2
 
     .prologue
-    .line 10475
+    .line 10520
     iget v0, p0, Landroid/support/v7/widget/j;->mPreLayoutPosition:I
 
     const/4 v1, -0x1
@@ -566,7 +566,7 @@
     .locals 1
 
     .prologue
-    .line 10519
+    .line 10564
     iget v0, p0, Landroid/support/v7/widget/j;->mOldPosition:I
 
     return v0
@@ -576,31 +576,31 @@
     .locals 1
 
     .prologue
-    .line 10628
+    .line 10673
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit16 v0, v0, 0x400
 
     if-eqz v0, :cond_0
 
-    .line 10637
+    .line 10682
     sget-object v0, Landroid/support/v7/widget/j;->FULLUPDATE_PAYLOADS:Ljava/util/List;
 
     return-object v0
 
-    .line 10629
+    .line 10674
     :cond_0
     iget-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
     if-nez v0, :cond_2
 
-    .line 10631
+    .line 10676
     :cond_1
     sget-object v0, Landroid/support/v7/widget/j;->FULLUPDATE_PAYLOADS:Ljava/util/List;
 
     return-object v0
 
-    .line 10629
+    .line 10674
     :cond_2
     iget-object v0, p0, Landroid/support/v7/widget/j;->mPayloads:Ljava/util/List;
 
@@ -610,7 +610,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 10634
+    .line 10679
     iget-object v0, p0, Landroid/support/v7/widget/j;->mUnmodifiedPayloads:Ljava/util/List;
 
     return-object v0
@@ -622,7 +622,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10585
+    .line 10630
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/2addr v1, p1
@@ -644,7 +644,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10593
+    .line 10638
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit16 v1, v1, 0x200
@@ -673,7 +673,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10577
+    .line 10622
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x1
@@ -695,7 +695,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10569
+    .line 10614
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x4
@@ -717,24 +717,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10738
+    .line 10783
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x10
 
     if-eqz v1, :cond_1
 
-    .line 10739
+    .line 10784
     :cond_0
     :goto_0
     return v0
 
-    .line 10738
+    .line 10783
     :cond_1
     iget-object v1, p0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
-    .line 10739
-    invoke-static {v1}, Landroid/support/v4/view/f;->afF(Landroid/view/View;)Z
+    .line 10784
+    invoke-static {v1}, Landroid/support/v4/view/f;->agJ(Landroid/view/View;)Z
 
     move-result v1
 
@@ -751,7 +751,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10581
+    .line 10626
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x8
@@ -771,7 +771,7 @@
     .locals 1
 
     .prologue
-    .line 10540
+    .line 10585
     iget-object v0, p0, Landroid/support/v7/widget/j;->mScrapContainer:Landroid/support/v7/widget/s;
 
     if-nez v0, :cond_0
@@ -793,7 +793,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10589
+    .line 10634
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit16 v1, v1, 0x100
@@ -815,7 +815,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10759
+    .line 10804
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x2
@@ -837,7 +837,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10573
+    .line 10618
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x2
@@ -859,22 +859,22 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 10409
+    .line 10454
     iget v0, p0, Landroid/support/v7/widget/j;->mOldPosition:I
 
     if-eq v0, v1, :cond_0
 
-    .line 10412
+    .line 10457
     :goto_0
     iget v0, p0, Landroid/support/v7/widget/j;->mPreLayoutPosition:I
 
     if-eq v0, v1, :cond_1
 
-    .line 10415
+    .line 10460
     :goto_1
     if-nez p2, :cond_2
 
-    .line 10418
+    .line 10463
     :goto_2
     iget v0, p0, Landroid/support/v7/widget/j;->mPosition:I
 
@@ -882,7 +882,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/j;->mPosition:I
 
-    .line 10419
+    .line 10464
     iget-object v0, p0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -891,11 +891,11 @@
 
     if-nez v0, :cond_3
 
-    .line 10422
+    .line 10467
     :goto_3
     return-void
 
-    .line 10410
+    .line 10455
     :cond_0
     iget v0, p0, Landroid/support/v7/widget/j;->mPosition:I
 
@@ -903,7 +903,7 @@
 
     goto :goto_0
 
-    .line 10413
+    .line 10458
     :cond_1
     iget v0, p0, Landroid/support/v7/widget/j;->mPosition:I
 
@@ -911,7 +911,7 @@
 
     goto :goto_1
 
-    .line 10416
+    .line 10461
     :cond_2
     iget v0, p0, Landroid/support/v7/widget/j;->mPreLayoutPosition:I
 
@@ -921,7 +921,7 @@
 
     goto :goto_2
 
-    .line 10420
+    .line 10465
     :cond_3
     iget-object v0, p0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
@@ -933,7 +933,7 @@
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Landroid/support/v7/widget/i;->Pb:Z
+    iput-boolean v1, v0, Landroid/support/v7/widget/i;->QI:Z
 
     goto :goto_3
 .end method
@@ -948,45 +948,45 @@
 
     const/4 v2, -0x1
 
-    .line 10642
+    .line 10687
     iput v3, p0, Landroid/support/v7/widget/j;->mFlags:I
 
-    .line 10643
+    .line 10688
     iput v2, p0, Landroid/support/v7/widget/j;->mPosition:I
 
-    .line 10644
+    .line 10689
     iput v2, p0, Landroid/support/v7/widget/j;->mOldPosition:I
 
-    .line 10645
+    .line 10690
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/support/v7/widget/j;->mItemId:J
 
-    .line 10646
+    .line 10691
     iput v2, p0, Landroid/support/v7/widget/j;->mPreLayoutPosition:I
 
-    .line 10647
+    .line 10692
     iput v3, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
-    .line 10648
+    .line 10693
     iput-object v4, p0, Landroid/support/v7/widget/j;->mShadowedHolder:Landroid/support/v7/widget/j;
 
-    .line 10649
+    .line 10694
     iput-object v4, p0, Landroid/support/v7/widget/j;->mShadowingHolder:Landroid/support/v7/widget/j;
 
-    .line 10650
+    .line 10695
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->clearPayload()V
 
-    .line 10651
+    .line 10696
     iput v3, p0, Landroid/support/v7/widget/j;->mWasImportantForAccessibilityBeforeHidden:I
 
-    .line 10652
+    .line 10697
     iput v2, p0, Landroid/support/v7/widget/j;->mPendingAccessibilityState:I
 
-    .line 10653
+    .line 10698
     invoke-static {p0}, Landroid/support/v7/widget/RecyclerView;->clearNestedRecyclerViewIfNotNested(Landroid/support/v7/widget/j;)V
 
-    .line 10654
+    .line 10699
     return-void
 .end method
 
@@ -994,18 +994,18 @@
     .locals 2
 
     .prologue
-    .line 10430
+    .line 10475
     iget v0, p0, Landroid/support/v7/widget/j;->mOldPosition:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 10433
+    .line 10478
     :goto_0
     return-void
 
-    .line 10431
+    .line 10476
     :cond_0
     iget v0, p0, Landroid/support/v7/widget/j;->mPosition:I
 
@@ -1018,7 +1018,7 @@
     .locals 2
 
     .prologue
-    .line 10597
+    .line 10642
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     xor-int/lit8 v1, p2, -0x1
@@ -1031,7 +1031,7 @@
 
     iput v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
-    .line 10598
+    .line 10643
     return-void
 .end method
 
@@ -1041,7 +1041,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 10713
+    .line 10758
     if-nez p1, :cond_2
 
     iget v0, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
@@ -1051,24 +1051,24 @@
     :goto_0
     iput v0, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
-    .line 10714
+    .line 10759
     iget v0, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
     if-ltz v0, :cond_3
 
-    .line 10722
+    .line 10767
     if-eqz p1, :cond_4
 
-    .line 10724
+    .line 10769
     :cond_0
     if-nez p1, :cond_5
 
-    .line 10730
+    .line 10775
     :cond_1
     :goto_1
     return-void
 
-    .line 10713
+    .line 10758
     :cond_2
     iget v0, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
@@ -1076,11 +1076,11 @@
 
     goto :goto_0
 
-    .line 10715
+    .line 10760
     :cond_3
     iput v1, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
-    .line 10720
+    .line 10765
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1105,7 +1105,7 @@
 
     goto :goto_1
 
-    .line 10722
+    .line 10767
     :cond_4
     iget v0, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
@@ -1113,7 +1113,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 10723
+    .line 10768
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     or-int/lit8 v0, v0, 0x10
@@ -1122,13 +1122,13 @@
 
     goto :goto_1
 
-    .line 10724
+    .line 10769
     :cond_5
     iget v0, p0, Landroid/support/v7/widget/j;->mIsRecyclableCount:I
 
     if-nez v0, :cond_1
 
-    .line 10725
+    .line 10770
     iget v0, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v0, v0, -0x11
@@ -1142,13 +1142,13 @@
     .locals 0
 
     .prologue
-    .line 10564
+    .line 10609
     iput-object p1, p0, Landroid/support/v7/widget/j;->mScrapContainer:Landroid/support/v7/widget/s;
 
-    .line 10565
+    .line 10610
     iput-boolean p2, p0, Landroid/support/v7/widget/j;->mInChangeScrap:Z
 
-    .line 10566
+    .line 10611
     return-void
 .end method
 
@@ -1158,7 +1158,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10436
+    .line 10481
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit16 v1, v1, 0x80
@@ -1178,7 +1178,7 @@
     .locals 4
 
     .prologue
-    .line 10678
+    .line 10723
     new-instance v1, Ljava/lang/StringBuilder;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1191,7 +1191,7 @@
 
     move-result-object v0
 
-    .line 10679
+    .line 10724
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
@@ -1258,14 +1258,14 @@
 
     invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 10681
+    .line 10726
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->isScrap()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 10685
+    .line 10730
     :goto_0
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->isInvalid()Z
 
@@ -1273,7 +1273,7 @@
 
     if-nez v0, :cond_2
 
-    .line 10686
+    .line 10731
     :goto_1
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->isBound()Z
 
@@ -1281,7 +1281,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 10687
+    .line 10732
     :goto_2
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->needsUpdate()Z
 
@@ -1289,7 +1289,7 @@
 
     if-nez v0, :cond_4
 
-    .line 10688
+    .line 10733
     :goto_3
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->isRemoved()Z
 
@@ -1297,7 +1297,7 @@
 
     if-nez v0, :cond_5
 
-    .line 10689
+    .line 10734
     :goto_4
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->shouldIgnore()Z
 
@@ -1305,7 +1305,7 @@
 
     if-nez v0, :cond_6
 
-    .line 10690
+    .line 10735
     :goto_5
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->isTmpDetached()Z
 
@@ -1313,7 +1313,7 @@
 
     if-nez v0, :cond_7
 
-    .line 10691
+    .line 10736
     :goto_6
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->isRecyclable()Z
 
@@ -1321,7 +1321,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 10692
+    .line 10737
     :goto_7
     invoke-virtual {p0}, Landroid/support/v7/widget/j;->isAdapterPositionUnknown()Z
 
@@ -1329,7 +1329,7 @@
 
     if-nez v0, :cond_9
 
-    .line 10694
+    .line 10739
     :goto_8
     iget-object v0, p0, Landroid/support/v7/widget/j;->itemView:Landroid/view/View;
 
@@ -1339,20 +1339,20 @@
 
     if-eqz v0, :cond_a
 
-    .line 10695
+    .line 10740
     :goto_9
     const-string/jumbo v0, "}"
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 10696
+    .line 10741
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 
-    .line 10682
+    .line 10727
     :cond_0
     const-string/jumbo v0, " scrap "
 
@@ -1366,19 +1366,19 @@
 
     const-string/jumbo v0, "[attachedScrap]"
 
-    .line 10683
+    .line 10728
     :goto_a
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 10682
+    .line 10727
     :cond_1
     const-string/jumbo v0, "[changeScrap]"
 
     goto :goto_a
 
-    .line 10685
+    .line 10730
     :cond_2
     const-string/jumbo v0, " invalid"
 
@@ -1386,7 +1386,7 @@
 
     goto :goto_1
 
-    .line 10686
+    .line 10731
     :cond_3
     const-string/jumbo v0, " unbound"
 
@@ -1394,7 +1394,7 @@
 
     goto :goto_2
 
-    .line 10687
+    .line 10732
     :cond_4
     const-string/jumbo v0, " update"
 
@@ -1402,7 +1402,7 @@
 
     goto :goto_3
 
-    .line 10688
+    .line 10733
     :cond_5
     const-string/jumbo v0, " removed"
 
@@ -1410,7 +1410,7 @@
 
     goto :goto_4
 
-    .line 10689
+    .line 10734
     :cond_6
     const-string/jumbo v0, " ignored"
 
@@ -1418,7 +1418,7 @@
 
     goto :goto_5
 
-    .line 10690
+    .line 10735
     :cond_7
     const-string/jumbo v0, " tmpDetached"
 
@@ -1426,7 +1426,7 @@
 
     goto :goto_6
 
-    .line 10691
+    .line 10736
     :cond_8
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1458,7 +1458,7 @@
 
     goto :goto_7
 
-    .line 10692
+    .line 10737
     :cond_9
     const-string/jumbo v0, " undefined adapter position"
 
@@ -1466,7 +1466,7 @@
 
     goto :goto_8
 
-    .line 10694
+    .line 10739
     :cond_a
     const-string/jumbo v0, " no parent"
 
@@ -1479,12 +1479,12 @@
     .locals 1
 
     .prologue
-    .line 10544
+    .line 10589
     iget-object v0, p0, Landroid/support/v7/widget/j;->mScrapContainer:Landroid/support/v7/widget/s;
 
-    invoke-virtual {v0, p0}, Landroid/support/v7/widget/s;->Xy(Landroid/support/v7/widget/j;)V
+    invoke-virtual {v0, p0}, Landroid/support/v7/widget/s;->Yy(Landroid/support/v7/widget/j;)V
 
-    .line 10545
+    .line 10590
     return-void
 .end method
 
@@ -1494,7 +1494,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 10548
+    .line 10593
     iget v1, p0, Landroid/support/v7/widget/j;->mFlags:I
 
     and-int/lit8 v1, v1, 0x20

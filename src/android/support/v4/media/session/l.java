@@ -4,52 +4,61 @@
 
 package android.support.v4.media.session;
 
-import android.os.Build$VERSION;
-import java.util.List;
-import android.os.Bundle;
-import android.support.v4.media.MediaMetadataCompat;
+import android.media.session.MediaController$PlaybackInfo;
+import android.media.AudioAttributes;
 
-class l implements q
+public class l
 {
-    final /* synthetic */ c adO;
-    
-    l(final c adO) {
-        this.adO = adO;
+    public static int asO(final Object o) {
+        return asP(asQ(o));
     }
     
-    public void arB(final int n, final int n2, final int n3, final int n4, final int n5) {
-        this.adO.aru(new r(n, n2, n3, n4, n5));
-    }
-    
-    public void arC(final Object o) {
-        if (!this.adO.adJ) {
-            this.adO.onPlaybackStateChanged(PlaybackStateCompat.arW(o));
+    private static int asP(final AudioAttributes audioAttributes) {
+        final int n = 4;
+        final int n2 = 3;
+        final boolean b = true;
+        if ((audioAttributes.getFlags() & 0x1) == (b ? 1 : 0)) {
+            return 7;
+        }
+        if ((audioAttributes.getFlags() & 0x4) == n) {
+            return 6;
+        }
+        switch (audioAttributes.getUsage()) {
+            default: {
+                return n2;
+            }
+            case 1:
+            case 11:
+            case 12:
+            case 14: {
+                return n2;
+            }
+            case 13: {
+                return b ? 1 : 0;
+            }
+            case 2: {
+                return 0;
+            }
+            case 3: {
+                return 8;
+            }
+            case 4: {
+                return n;
+            }
+            case 6: {
+                return 2;
+            }
+            case 5:
+            case 7:
+            case 8:
+            case 9:
+            case 10: {
+                return 5;
+            }
         }
     }
     
-    public void arD(final Object o) {
-        this.adO.onMetadataChanged(MediaMetadataCompat.asD(o));
-    }
-    
-    public void onExtrasChanged(final Bundle bundle) {
-        this.adO.onExtrasChanged(bundle);
-    }
-    
-    public void onQueueChanged(final List list) {
-        this.adO.onQueueChanged(MediaSessionCompat$QueueItem.arF(list));
-    }
-    
-    public void onQueueTitleChanged(final CharSequence charSequence) {
-        this.adO.onQueueTitleChanged(charSequence);
-    }
-    
-    public void onSessionDestroyed() {
-        this.adO.onSessionDestroyed();
-    }
-    
-    public void onSessionEvent(final String s, final Bundle bundle) {
-        if (this.adO.adJ || Build$VERSION.SDK_INT >= 23) {
-            this.adO.onSessionEvent(s, bundle);
-        }
+    public static AudioAttributes asQ(final Object o) {
+        return ((MediaController$PlaybackInfo)o).getAudioAttributes();
     }
 }

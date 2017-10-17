@@ -4,19 +4,35 @@
 
 package android.support.v7.widget;
 
-class W
+import android.animation.Animator$AnimatorListener;
+import android.animation.Animator;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.animation.AnimatorListenerAdapter;
+
+class W extends AnimatorListenerAdapter
 {
-    public int QC;
-    public int QD;
-    public int QE;
-    public j QF;
-    public int QG;
+    final /* synthetic */ Z Sl;
+    final /* synthetic */ j Sm;
+    final /* synthetic */ ViewPropertyAnimator Sn;
+    final /* synthetic */ View val$view;
     
-    W(final j qf, final int qd, final int qc, final int qg, final int qe) {
-        this.QF = qf;
-        this.QD = qd;
-        this.QC = qc;
-        this.QG = qg;
-        this.QE = qe;
+    W(final Z sl, final j sm, final ViewPropertyAnimator sn, final View val$view) {
+        this.Sl = sl;
+        this.Sm = sm;
+        this.Sn = sn;
+        this.val$view = val$view;
+    }
+    
+    public void onAnimationEnd(final Animator animator) {
+        this.Sn.setListener((Animator$AnimatorListener)null);
+        this.val$view.setAlpha(1.0f);
+        this.Sl.adf(this.Sm);
+        this.Sl.SG.remove(this.Sm);
+        this.Sl.abF();
+    }
+    
+    public void onAnimationStart(final Animator animator) {
+        this.Sl.ada(this.Sm);
     }
 }

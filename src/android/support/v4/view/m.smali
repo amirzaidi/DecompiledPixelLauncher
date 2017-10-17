@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 1094
+    .line 1096
     invoke-direct {p0}, Landroid/support/v4/view/n;-><init>()V
 
     return-void
@@ -16,11 +16,11 @@
 
 
 # virtual methods
-.method public afM(Landroid/view/View;)I
+.method public agV(Landroid/view/View;)I
     .locals 1
 
     .prologue
-    .line 1113
+    .line 1115
     invoke-virtual {p1}, Landroid/view/View;->getLayoutDirection()I
 
     move-result v0
@@ -28,11 +28,11 @@
     return v0
 .end method
 
-.method public afN(Landroid/view/View;)Landroid/view/Display;
+.method public agW(Landroid/view/View;)Landroid/view/Display;
     .locals 1
 
     .prologue
-    .line 1148
+    .line 1150
     invoke-virtual {p1}, Landroid/view/View;->getDisplay()Landroid/view/Display;
 
     move-result-object v0

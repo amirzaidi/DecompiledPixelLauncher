@@ -3,25 +3,15 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field final synthetic adP:I
-
-.field final synthetic adQ:Landroid/support/v4/media/session/s;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v4/media/session/s;I)V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 2158
-    iput-object p1, p0, Landroid/support/v4/media/session/m;->adQ:Landroid/support/v4/media/session/s;
-
-    iput p2, p0, Landroid/support/v4/media/session/m;->adP:I
-
+    .line 1712
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,21 +19,48 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;
+    .locals 1
 
     .prologue
-    .line 2161
-    iget-object v0, p0, Landroid/support/v4/media/session/m;->adQ:Landroid/support/v4/media/session/s;
+    .line 1716
+    new-instance v0, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;
 
-    invoke-static {v0}, Landroid/support/v4/media/session/s;->arE(Landroid/support/v4/media/session/s;)Landroid/support/v4/media/session/c;
+    invoke-direct {v0, p1}, Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+.end method
+
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 1712
+    invoke-virtual {p0, p1}, Landroid/support/v4/media/session/m;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;
 
     move-result-object v0
 
-    iget v1, p0, Landroid/support/v4/media/session/m;->adP:I
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/media/session/c;->onShuffleModeChanged(I)V
+.method public newArray(I)[Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;
+    .locals 1
 
-    .line 2162
-    return-void
+    .prologue
+    .line 1721
+    new-array v0, p1, [Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 1712
+    invoke-virtual {p0, p1}, Landroid/support/v4/media/session/m;->newArray(I)[Landroid/support/v4/media/session/MediaSessionCompat$QueueItem;
+
+    move-result-object v0
+
+    return-object v0
 .end method

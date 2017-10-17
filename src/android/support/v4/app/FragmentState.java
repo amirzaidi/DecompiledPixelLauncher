@@ -14,87 +14,87 @@ import android.os.Parcelable;
 final class FragmentState implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    final boolean abC;
-    Bundle abD;
-    final int abE;
-    final Bundle abF;
-    final String abG;
-    final String abH;
-    final int abI;
-    final boolean abJ;
-    final boolean abK;
-    final int abL;
-    e abM;
-    final boolean abN;
+    final boolean acW;
+    Bundle acX;
+    final int acY;
+    final Bundle acZ;
+    final String ada;
+    final String adb;
+    final int adc;
+    final boolean add;
+    final boolean ade;
+    final int adf;
+    g adg;
+    final boolean adh;
     
     static {
-        CREATOR = (Parcelable$Creator)new aH();
+        CREATOR = (Parcelable$Creator)new aD();
     }
     
     public FragmentState(final Parcel parcel) {
         final boolean b = true;
-        boolean abN = false;
-        this.abH = parcel.readString();
-        this.abI = parcel.readInt();
-        this.abJ = (parcel.readInt() != 0 && b);
-        this.abE = parcel.readInt();
-        this.abL = parcel.readInt();
-        this.abG = parcel.readString();
-        this.abK = (parcel.readInt() != 0 && b);
-        this.abC = (parcel.readInt() != 0 && b);
-        this.abF = parcel.readBundle();
+        boolean adh = false;
+        this.adb = parcel.readString();
+        this.adc = parcel.readInt();
+        this.add = (parcel.readInt() != 0 && b);
+        this.acY = parcel.readInt();
+        this.adf = parcel.readInt();
+        this.ada = parcel.readString();
+        this.ade = (parcel.readInt() != 0 && b);
+        this.acW = (parcel.readInt() != 0 && b);
+        this.acZ = parcel.readBundle();
         if (parcel.readInt() != 0) {
-            abN = b;
+            adh = b;
         }
-        this.abN = abN;
-        this.abD = parcel.readBundle();
+        this.adh = adh;
+        this.acX = parcel.readBundle();
     }
     
-    public FragmentState(final e e) {
-        this.abH = e.getClass().getName();
-        this.abI = e.Wr;
-        this.abJ = e.WC;
-        this.abE = e.Wx;
-        this.abL = e.Ws;
-        this.abG = e.WM;
-        this.abK = e.WP;
-        this.abC = e.WR;
-        this.abF = e.WJ;
-        this.abN = e.WY;
+    public FragmentState(final g g) {
+        this.adb = g.getClass().getName();
+        this.adc = g.Yb;
+        this.add = g.Ym;
+        this.acY = g.Yh;
+        this.adf = g.Yc;
+        this.ada = g.Yw;
+        this.ade = g.Yz;
+        this.acW = g.YB;
+        this.acZ = g.Yt;
+        this.adh = g.YI;
     }
     
-    public e anW(final p p4, final ac ac, final e e, final az wd) {
-        if (this.abM == null) {
-            final Context context = p4.getContext();
-            if (this.abF != null) {
-                this.abF.setClassLoader(context.getClassLoader());
+    public g aoX(final r r, final ac ac, final g g, final ax yn) {
+        if (this.adg == null) {
+            final Context context = r.getContext();
+            if (this.acZ != null) {
+                this.acZ.setClassLoader(context.getClassLoader());
             }
             if (ac == null) {
-                this.abM = e.aiU(context, this.abH, this.abF);
+                this.adg = g.akh(context, this.adb, this.acZ);
             }
             else {
-                this.abM = ac.amH(context, this.abH, this.abF);
+                this.adg = ac.anU(context, this.adb, this.acZ);
             }
-            if (this.abD != null) {
-                this.abD.setClassLoader(context.getClassLoader());
-                this.abM.WI = this.abD;
+            if (this.acX != null) {
+                this.acX.setClassLoader(context.getClassLoader());
+                this.adg.Ys = this.acX;
             }
-            this.abM.ajy(this.abI, e);
-            this.abM.WC = this.abJ;
-            this.abM.Wt = true;
-            this.abM.Wx = this.abE;
-            this.abM.Ws = this.abL;
-            this.abM.WM = this.abG;
-            this.abM.WP = this.abK;
-            this.abM.WR = this.abC;
-            this.abM.WY = this.abN;
-            this.abM.Ww = p4.XC;
-            if (aV.DEBUG) {
-                Log.v("FragmentManager", "Instantiated fragment " + this.abM);
+            this.adg.akL(this.adc, g);
+            this.adg.Ym = this.add;
+            this.adg.Yd = true;
+            this.adg.Yh = this.acY;
+            this.adg.Yc = this.adf;
+            this.adg.Yw = this.ada;
+            this.adg.Yz = this.ade;
+            this.adg.YB = this.acW;
+            this.adg.YI = this.adh;
+            this.adg.Yg = r.Zm;
+            if (aR.DEBUG) {
+                Log.v("FragmentManager", "Instantiated fragment " + this.adg);
             }
         }
-        this.abM.WD = wd;
-        return this.abM;
+        this.adg.Yn = yn;
+        return this.adg;
     }
     
     public int describeContents() {
@@ -104,21 +104,21 @@ final class FragmentState implements Parcelable
     public void writeToParcel(final Parcel parcel, final int n) {
         final int n2 = 1;
         int n3 = 0;
-        parcel.writeString(this.abH);
-        parcel.writeInt(this.abI);
+        parcel.writeString(this.adb);
+        parcel.writeInt(this.adc);
         int n4;
-        if (!this.abJ) {
+        if (!this.add) {
             n4 = 0;
         }
         else {
             n4 = n2;
         }
         parcel.writeInt(n4);
-        parcel.writeInt(this.abE);
-        parcel.writeInt(this.abL);
-        parcel.writeString(this.abG);
+        parcel.writeInt(this.acY);
+        parcel.writeInt(this.adf);
+        parcel.writeString(this.ada);
         int n5;
-        if (!this.abK) {
+        if (!this.ade) {
             n5 = 0;
         }
         else {
@@ -126,18 +126,18 @@ final class FragmentState implements Parcelable
         }
         parcel.writeInt(n5);
         int n6;
-        if (!this.abC) {
+        if (!this.acW) {
             n6 = 0;
         }
         else {
             n6 = n2;
         }
         parcel.writeInt(n6);
-        parcel.writeBundle(this.abF);
-        if (this.abN) {
+        parcel.writeBundle(this.acZ);
+        if (this.adh) {
             n3 = n2;
         }
         parcel.writeInt(n3);
-        parcel.writeBundle(this.abD);
+        parcel.writeBundle(this.acX);
     }
 }

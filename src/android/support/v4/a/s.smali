@@ -4,11 +4,11 @@
 
 
 # static fields
-.field static final VQ:[I
+.field static final XA:[J
 
-.field static final VR:[J
+.field static final XB:[Ljava/lang/Object;
 
-.field static final VS:[Ljava/lang/Object;
+.field static final Xz:[I
 
 
 # direct methods
@@ -21,17 +21,17 @@
     .line 20
     new-array v0, v1, [I
 
-    sput-object v0, Landroid/support/v4/a/s;->VQ:[I
+    sput-object v0, Landroid/support/v4/a/s;->Xz:[I
 
     .line 21
     new-array v0, v1, [J
 
-    sput-object v0, Landroid/support/v4/a/s;->VR:[J
+    sput-object v0, Landroid/support/v4/a/s;->XA:[J
 
     .line 22
     new-array v0, v1, [Ljava/lang/Object;
 
-    sput-object v0, Landroid/support/v4/a/s;->VS:[Ljava/lang/Object;
+    sput-object v0, Landroid/support/v4/a/s;->XB:[Ljava/lang/Object;
 
     return-void
 .end method
@@ -46,14 +46,14 @@
     return-void
 .end method
 
-.method public static ahO(I)I
+.method public static aiY(I)I
     .locals 1
 
     .prologue
     .line 25
     mul-int/lit8 v0, p0, 0x4
 
-    invoke-static {v0}, Landroid/support/v4/a/s;->ahP(I)I
+    invoke-static {v0}, Landroid/support/v4/a/s;->aiZ(I)I
 
     move-result v0
 
@@ -62,7 +62,7 @@
     return v0
 .end method
 
-.method public static ahP(I)I
+.method public static aiZ(I)I
     .locals 3
 
     .prologue
@@ -101,14 +101,14 @@
     return v0
 .end method
 
-.method public static ahQ(I)I
+.method public static aja(I)I
     .locals 1
 
     .prologue
     .line 29
     mul-int/lit8 v0, p0, 0x8
 
-    invoke-static {v0}, Landroid/support/v4/a/s;->ahP(I)I
+    invoke-static {v0}, Landroid/support/v4/a/s;->aiZ(I)I
 
     move-result v0
 
@@ -117,7 +117,7 @@
     return v0
 .end method
 
-.method public static ahR(Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public static ajb(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 2
 
     .prologue
@@ -145,7 +145,7 @@
     goto :goto_0
 .end method
 
-.method static ahS([III)I
+.method static ajc([III)I
     .locals 4
 
     .prologue
@@ -195,7 +195,7 @@
     goto :goto_0
 .end method
 
-.method static ahT([JIJ)I
+.method static ajd([JIJ)I
     .locals 8
 
     .prologue

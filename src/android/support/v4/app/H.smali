@@ -1,531 +1,289 @@
-.class public Landroid/support/v4/app/H;
-.super Ljava/lang/Object;
+.class Landroid/support/v4/app/H;
+.super Landroid/support/v4/app/am;
 .source "SourceFile"
 
 
-# instance fields
-.field private final Yc:Landroid/support/v4/app/p;
-
-
 # direct methods
-.method private constructor <init>(Landroid/support/v4/app/p;)V
+.method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 50
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 919
+    invoke-direct {p0}, Landroid/support/v4/app/am;-><init>()V
 
-    .line 51
-    iput-object p1, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    .line 52
     return-void
-.end method
-
-.method public static final all(Landroid/support/v4/app/p;)Landroid/support/v4/app/H;
-    .locals 1
-
-    .prologue
-    .line 47
-    new-instance v0, Landroid/support/v4/app/H;
-
-    invoke-direct {v0, p0}, Landroid/support/v4/app/H;-><init>(Landroid/support/v4/app/p;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public akF(Z)V
-    .locals 1
+.method public all(Landroid/support/v4/app/Z;Landroid/support/v4/app/aq;)Landroid/app/Notification;
+    .locals 43
 
     .prologue
-    .line 284
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    .line 923
+    new-instance v3, Landroid/support/v4/app/f;
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->apE(Z)V
+    iget-object v4, v0, Landroid/support/v4/app/Z;->mContext:Landroid/content/Context;
 
-    .line 285
-    return-void
-.end method
+    move-object/from16 v0, p1
 
-.method public akG(Landroid/view/Menu;)V
-    .locals 1
+    iget-object v5, v0, Landroid/support/v4/app/Z;->abs:Landroid/app/Notification;
 
-    .prologue
-    .line 368
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    iget-object v6, v0, Landroid/support/v4/app/Z;->aaZ:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->apc(Landroid/view/Menu;)V
+    move-object/from16 v0, p1
 
-    .line 369
-    return-void
-.end method
+    iget-object v7, v0, Landroid/support/v4/app/Z;->aba:Ljava/lang/CharSequence;
 
-.method public akH()V
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 203
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-object v8, v0, Landroid/support/v4/app/Z;->abz:Ljava/lang/CharSequence;
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aob()V
+    iget-object v9, v0, Landroid/support/v4/app/Z;->abj:Landroid/widget/RemoteViews;
 
-    .line 204
-    return-void
-.end method
+    move-object/from16 v0, p1
 
-.method public akI()V
-    .locals 1
+    iget v10, v0, Landroid/support/v4/app/Z;->abi:I
 
-    .prologue
-    .line 386
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0}, Landroid/support/v4/app/p;->ake()V
+    iget-object v11, v0, Landroid/support/v4/app/Z;->abx:Landroid/app/PendingIntent;
 
-    .line 387
-    return-void
-.end method
+    move-object/from16 v0, p1
 
-.method public akJ(Z)V
-    .locals 1
+    iget-object v12, v0, Landroid/support/v4/app/Z;->abg:Landroid/app/PendingIntent;
 
-    .prologue
-    .line 397
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/p;->akf(Z)V
+    iget-object v13, v0, Landroid/support/v4/app/Z;->abh:Landroid/graphics/Bitmap;
 
-    .line 398
-    return-void
-.end method
+    move-object/from16 v0, p1
 
-.method public akK(Ljava/lang/String;)Landroid/support/v4/app/e;
-    .locals 1
+    iget v14, v0, Landroid/support/v4/app/Z;->abd:I
 
-    .prologue
-    .line 73
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    iget v15, v0, Landroid/support/v4/app/Z;->abq:I
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->apG(Ljava/lang/String;)Landroid/support/v4/app/e;
+    move-object/from16 v0, p1
 
-    move-result-object v0
+    iget-boolean v0, v0, Landroid/support/v4/app/Z;->abk:Z
 
-    return-object v0
-.end method
+    move/from16 v16, v0
 
-.method public akL()Landroid/support/v4/a/k;
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 426
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-boolean v0, v0, Landroid/support/v4/app/Z;->abw:Z
 
-    invoke-virtual {v0}, Landroid/support/v4/app/p;->akg()Landroid/support/v4/a/k;
+    move/from16 v17, v0
 
-    move-result-object v0
+    move-object/from16 v0, p1
 
-    return-object v0
-.end method
+    iget-boolean v0, v0, Landroid/support/v4/app/Z;->abu:Z
 
-.method public akM()V
-    .locals 1
+    move/from16 v18, v0
 
-    .prologue
-    .line 411
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0}, Landroid/support/v4/app/p;->akh()V
+    iget v0, v0, Landroid/support/v4/app/Z;->abt:I
 
-    .line 412
-    return-void
-.end method
+    move/from16 v19, v0
 
-.method public akN(Landroid/view/Menu;)Z
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 331
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abf:Ljava/lang/CharSequence;
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v20, v0
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->apI(Landroid/view/Menu;)Z
+    move-object/from16 v0, p1
 
-    move-result v0
+    iget-boolean v0, v0, Landroid/support/v4/app/Z;->abb:Z
 
-    return v0
-.end method
+    move/from16 v21, v0
 
-.method public akO(Landroid/view/MenuItem;)Z
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 357
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-object v0, v0, Landroid/support/v4/app/Z;->aaW:Ljava/lang/String;
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v22, v0
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->aoC(Landroid/view/MenuItem;)Z
+    move-object/from16 v0, p1
 
-    move-result v0
+    iget-object v0, v0, Landroid/support/v4/app/Z;->aaX:Ljava/util/ArrayList;
 
-    return v0
-.end method
+    move-object/from16 v23, v0
 
-.method public akP(Landroid/support/v4/a/k;)V
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 436
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abp:Landroid/os/Bundle;
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/p;->aki(Landroid/support/v4/a/k;)V
+    move-object/from16 v24, v0
 
-    .line 437
-    return-void
-.end method
+    move-object/from16 v0, p1
 
-.method public akQ()V
-    .locals 1
+    iget v0, v0, Landroid/support/v4/app/Z;->aaU:I
 
-    .prologue
-    .line 225
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move/from16 v25, v0
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->apl()V
+    iget v0, v0, Landroid/support/v4/app/Z;->abo:I
 
-    .line 226
-    return-void
-.end method
+    move/from16 v26, v0
 
-.method public akR(Landroid/view/Menu;Landroid/view/MenuInflater;)Z
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 319
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-object v0, v0, Landroid/support/v4/app/Z;->aby:Landroid/app/Notification;
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v27, v0
 
-    invoke-virtual {v0, p1, p2}, Landroid/support/v4/app/aV;->aod(Landroid/view/Menu;Landroid/view/MenuInflater;)Z
+    move-object/from16 v0, p1
 
-    move-result v0
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abE:Ljava/lang/String;
 
-    return v0
-.end method
+    move-object/from16 v28, v0
 
-.method public akS()V
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 181
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-boolean v0, v0, Landroid/support/v4/app/Z;->abl:Z
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move/from16 v29, v0
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->apL()V
+    move-object/from16 v0, p1
 
-    .line 182
-    return-void
-.end method
+    iget-object v0, v0, Landroid/support/v4/app/Z;->aaY:Ljava/lang/String;
 
-.method public akT()V
-    .locals 1
+    move-object/from16 v30, v0
 
-    .prologue
-    .line 236
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abF:[Ljava/lang/CharSequence;
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aoF()V
+    move-object/from16 v31, v0
 
-    .line 237
-    return-void
-.end method
+    move-object/from16 v0, p1
 
-.method public akU(Landroid/view/MenuItem;)Z
-    .locals 1
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abc:Landroid/widget/RemoteViews;
 
-    .prologue
-    .line 344
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v32, v0
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->apP(Landroid/view/MenuItem;)Z
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abA:Landroid/widget/RemoteViews;
 
-    move-result v0
+    move-object/from16 v33, v0
 
-    return v0
-.end method
+    move-object/from16 v0, p1
 
-.method public akV(Landroid/support/v4/app/e;)V
-    .locals 3
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abv:Landroid/widget/RemoteViews;
 
-    .prologue
-    .line 95
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v34, v0
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-object/from16 v0, p1
 
-    iget-object v1, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abr:Ljava/lang/String;
 
-    iget-object v2, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v35, v0
 
-    invoke-virtual {v0, v1, v2, p1}, Landroid/support/v4/app/aV;->aps(Landroid/support/v4/app/p;Landroid/support/v4/app/ac;Landroid/support/v4/app/e;)V
+    move-object/from16 v0, p1
 
-    .line 97
-    return-void
-.end method
+    iget v0, v0, Landroid/support/v4/app/Z;->mBadgeIcon:I
 
-.method public akW(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
-    .locals 1
+    move/from16 v36, v0
 
-    .prologue
-    .line 443
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/support/v4/app/p;->akl(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    iget-object v0, v0, Landroid/support/v4/app/Z;->abn:Ljava/lang/String;
 
-    .line 444
-    return-void
-.end method
+    move-object/from16 v37, v0
 
-.method public akX()Landroid/support/v4/app/bb;
-    .locals 1
+    move-object/from16 v0, p1
 
-    .prologue
-    .line 58
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    iget-wide v0, v0, Landroid/support/v4/app/Z;->abB:J
 
-    invoke-virtual {v0}, Landroid/support/v4/app/p;->akn()Landroid/support/v4/app/aV;
+    move-wide/from16 v38, v0
 
-    move-result-object v0
+    move-object/from16 v0, p1
 
-    return-object v0
-.end method
+    iget-boolean v0, v0, Landroid/support/v4/app/Z;->abm:Z
 
-.method public akY()Landroid/os/Parcelable;
-    .locals 1
+    move/from16 v40, v0
 
-    .prologue
-    .line 125
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    iget-boolean v0, v0, Landroid/support/v4/app/Z;->abD:Z
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aog()Landroid/os/Parcelable;
+    move/from16 v41, v0
 
-    move-result-object v0
+    .line 932
+    invoke-static/range {p1 .. p1}, Landroid/support/v4/app/Z;->anO(Landroid/support/v4/app/Z;)I
 
-    return-object v0
-.end method
+    move-result v42
 
-.method public akZ()V
-    .locals 1
+    invoke-direct/range {v3 .. v42}, Landroid/support/v4/app/f;-><init>(Landroid/content/Context;Landroid/app/Notification;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/widget/RemoteViews;ILandroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/graphics/Bitmap;IIZZZILjava/lang/CharSequence;ZLjava/lang/String;Ljava/util/ArrayList;Landroid/os/Bundle;IILandroid/app/Notification;Ljava/lang/String;ZLjava/lang/String;[Ljava/lang/CharSequence;Landroid/widget/RemoteViews;Landroid/widget/RemoteViews;Landroid/widget/RemoteViews;Ljava/lang/String;ILjava/lang/String;JZZI)V
 
-    .prologue
-    .line 262
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    .line 933
+    move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    iget-object v2, v0, Landroid/support/v4/app/Z;->aaV:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aoL()V
+    invoke-static {v3, v2}, Landroid/support/v4/app/k;->aln(Landroid/support/v4/app/D;Ljava/util/ArrayList;)V
 
-    .line 263
-    return-void
-.end method
+    .line 934
+    move-object/from16 v0, p1
 
-.method public ala()V
-    .locals 1
+    iget-object v2, v0, Landroid/support/v4/app/Z;->abC:Landroid/support/v4/app/A;
 
-    .prologue
-    .line 118
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    if-nez v2, :cond_0
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    .line 937
+    :goto_0
+    move-object/from16 v0, p2
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->apU()V
+    move-object/from16 v1, p1
 
-    .line 119
-    return-void
-.end method
+    invoke-virtual {v0, v1, v3}, Landroid/support/v4/app/aq;->anX(Landroid/support/v4/app/Z;Landroid/support/v4/app/Y;)Landroid/app/Notification;
 
-.method public alb()V
-    .locals 1
+    move-result-object v2
 
-    .prologue
-    .line 418
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    .line 938
+    move-object/from16 v0, p1
 
-    invoke-virtual {v0}, Landroid/support/v4/app/p;->akp()V
+    iget-object v3, v0, Landroid/support/v4/app/Z;->abC:Landroid/support/v4/app/A;
 
-    .line 419
-    return-void
-.end method
+    if-nez v3, :cond_1
 
-.method public alc()Landroid/support/v4/app/az;
-    .locals 1
+    .line 941
+    :goto_1
+    return-object v2
 
-    .prologue
-    .line 170
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    .line 935
+    :cond_0
+    move-object/from16 v0, p1
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    iget-object v2, v0, Landroid/support/v4/app/Z;->abC:Landroid/support/v4/app/A;
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aoR()Landroid/support/v4/app/az;
+    invoke-virtual {v2, v3}, Landroid/support/v4/app/A;->alS(Landroid/support/v4/app/Y;)V
 
-    move-result-object v0
+    goto :goto_0
 
-    return-object v0
-.end method
+    .line 939
+    :cond_1
+    move-object/from16 v0, p1
 
-.method public ald()V
-    .locals 1
+    iget-object v3, v0, Landroid/support/v4/app/Z;->abC:Landroid/support/v4/app/A;
 
-    .prologue
-    .line 240
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
+    invoke-static {v2}, Landroid/support/v4/app/k;->alm(Landroid/app/Notification;)Landroid/os/Bundle;
 
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
+    move-result-object v4
 
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aoP()V
+    invoke-virtual {v3, v4}, Landroid/support/v4/app/A;->alO(Landroid/os/Bundle;)V
 
-    .line 241
-    return-void
-.end method
-
-.method public ale()V
-    .locals 1
-
-    .prologue
-    .line 192
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->apv()V
-
-    .line 193
-    return-void
-.end method
-
-.method public alf()V
-    .locals 1
-
-    .prologue
-    .line 307
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aoU()V
-
-    .line 308
-    return-void
-.end method
-
-.method public alg(Landroid/os/Parcelable;Landroid/support/v4/app/az;)V
-    .locals 1
-
-    .prologue
-    .line 149
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0, p1, p2}, Landroid/support/v4/app/aV;->aoW(Landroid/os/Parcelable;Landroid/support/v4/app/az;)V
-
-    .line 150
-    return-void
-.end method
-
-.method public alh()V
-    .locals 1
-
-    .prologue
-    .line 214
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aqf()V
-
-    .line 215
-    return-void
-.end method
-
-.method public ali(Landroid/content/res/Configuration;)V
-    .locals 1
-
-    .prologue
-    .line 295
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->apz(Landroid/content/res/Configuration;)V
-
-    .line 296
-    return-void
-.end method
-
-.method public alj()Z
-    .locals 1
-
-    .prologue
-    .line 379
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0}, Landroid/support/v4/app/aV;->aoZ()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public alk(Z)V
-    .locals 1
-
-    .prologue
-    .line 273
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0, p1}, Landroid/support/v4/app/aV;->aqg(Z)V
-
-    .line 274
-    return-void
-.end method
-
-.method public onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
-    .locals 1
-
-    .prologue
-    .line 111
-    iget-object v0, p0, Landroid/support/v4/app/H;->Yc:Landroid/support/v4/app/p;
-
-    iget-object v0, v0, Landroid/support/v4/app/p;->XC:Landroid/support/v4/app/aV;
-
-    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/support/v4/app/aV;->onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_1
 .end method

@@ -4,20 +4,6 @@
 
 package android.support.v4.app;
 
-import android.os.Bundle;
-import java.util.Set;
-
-public abstract class at
+class at implements aH
 {
-    protected abstract Set amq();
-    
-    protected abstract String amr();
-    
-    protected abstract boolean ams();
-    
-    protected abstract CharSequence[] amt();
-    
-    protected abstract Bundle getExtras();
-    
-    protected abstract CharSequence getLabel();
 }

@@ -12,16 +12,16 @@ import android.animation.AnimatorListenerAdapter;
 
 class az extends AnimatorListenerAdapter
 {
-    final /* synthetic */ Z SA;
-    final /* synthetic */ j SB;
-    final /* synthetic */ ViewPropertyAnimator SC;
+    final /* synthetic */ Z Uj;
+    final /* synthetic */ j Uk;
+    final /* synthetic */ ViewPropertyAnimator Ul;
     final /* synthetic */ View val$view;
     
-    az(final Z sa, final j sb, final View val$view, final ViewPropertyAnimator sc) {
-        this.SA = sa;
-        this.SB = sb;
+    az(final Z uj, final j uk, final View val$view, final ViewPropertyAnimator ul) {
+        this.Uj = uj;
+        this.Uk = uk;
         this.val$view = val$view;
-        this.SC = sc;
+        this.Ul = ul;
     }
     
     public void onAnimationCancel(final Animator animator) {
@@ -29,13 +29,13 @@ class az extends AnimatorListenerAdapter
     }
     
     public void onAnimationEnd(final Animator animator) {
-        this.SC.setListener((Animator$AnimatorListener)null);
-        this.SA.abV(this.SB);
-        this.SA.QU.remove(this.SB);
-        this.SA.aaD();
+        this.Ul.setListener((Animator$AnimatorListener)null);
+        this.Uj.acW(this.Uk);
+        this.Uj.SD.remove(this.Uk);
+        this.Uj.abF();
     }
     
     public void onAnimationStart(final Animator animator) {
-        this.SA.abX(this.SB);
+        this.Uj.acY(this.Uk);
     }
 }

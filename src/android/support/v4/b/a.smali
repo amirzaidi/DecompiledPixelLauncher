@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final ado:Ljava/lang/ThreadLocal;
+.field private static final aeH:Ljava/lang/ThreadLocal;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
-    sput-object v0, Landroid/support/v4/b/a;->ado:Ljava/lang/ThreadLocal;
+    sput-object v0, Landroid/support/v4/b/a;->aeH:Ljava/lang/ThreadLocal;
 
     return-void
 .end method
@@ -32,7 +32,7 @@
     return-void
 .end method
 
-.method private static aqM(II)I
+.method private static arK(II)I
     .locals 2
 
     .prologue
@@ -50,7 +50,7 @@
     return v0
 .end method
 
-.method public static aqN(II)D
+.method public static arL(II)D
     .locals 6
 
     .prologue
@@ -74,14 +74,14 @@
 
     .line 100
     :goto_0
-    invoke-static {p0}, Landroid/support/v4/b/a;->aqR(I)D
+    invoke-static {p0}, Landroid/support/v4/b/a;->arP(I)D
 
     move-result-wide v0
 
     add-double/2addr v0, v4
 
     .line 101
-    invoke-static {p1}, Landroid/support/v4/b/a;->aqR(I)D
+    invoke-static {p1}, Landroid/support/v4/b/a;->arP(I)D
 
     move-result-wide v2
 
@@ -133,19 +133,19 @@
 
     .line 97
     :cond_1
-    invoke-static {p0, p1}, Landroid/support/v4/b/a;->arg(II)I
+    invoke-static {p0, p1}, Landroid/support/v4/b/a;->asf(II)I
 
     move-result p0
 
     goto :goto_0
 .end method
 
-.method private static aqO()[D
+.method private static arM()[D
     .locals 2
 
     .prologue
     .line 610
-    sget-object v0, Landroid/support/v4/b/a;->ado:Ljava/lang/ThreadLocal;
+    sget-object v0, Landroid/support/v4/b/a;->aeH:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
@@ -167,14 +167,14 @@
     new-array v0, v0, [D
 
     .line 613
-    sget-object v1, Landroid/support/v4/b/a;->ado:Ljava/lang/ThreadLocal;
+    sget-object v1, Landroid/support/v4/b/a;->aeH:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v1, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
     goto :goto_0
 .end method
 
-.method private static aqP(IIIII)I
+.method private static arN(IIIII)I
     .locals 3
 
     .prologue
@@ -207,7 +207,7 @@
     return v0
 .end method
 
-.method public static aqQ(III[F)V
+.method public static arO(III[F)V
     .locals 11
 
     .prologue
@@ -289,7 +289,7 @@
 
     .line 204
     :cond_0
-    invoke-static {v0, v1, v10}, Landroid/support/v4/b/a;->are(FFF)F
+    invoke-static {v0, v1, v10}, Landroid/support/v4/b/a;->asd(FFF)F
 
     move-result v0
 
@@ -298,7 +298,7 @@
     aput v0, p3, v3
 
     .line 205
-    invoke-static {v2, v1, v8}, Landroid/support/v4/b/a;->are(FFF)F
+    invoke-static {v2, v1, v8}, Landroid/support/v4/b/a;->asd(FFF)F
 
     move-result v0
 
@@ -307,7 +307,7 @@
     aput v0, p3, v2
 
     .line 206
-    invoke-static {v7, v1, v8}, Landroid/support/v4/b/a;->are(FFF)F
+    invoke-static {v7, v1, v8}, Landroid/support/v4/b/a;->asd(FFF)F
 
     move-result v0
 
@@ -377,17 +377,17 @@
     goto :goto_1
 .end method
 
-.method public static aqR(I)D
+.method public static arP(I)D
     .locals 4
 
     .prologue
     .line 77
-    invoke-static {}, Landroid/support/v4/b/a;->aqO()[D
+    invoke-static {}, Landroid/support/v4/b/a;->arM()[D
 
     move-result-object v0
 
     .line 78
-    invoke-static {p0, v0}, Landroid/support/v4/b/a;->aqU(I[D)V
+    invoke-static {p0, v0}, Landroid/support/v4/b/a;->arS(I[D)V
 
     .line 80
     const/4 v1, 0x1
@@ -401,12 +401,12 @@
     return-wide v0
 .end method
 
-.method public static aqS(DDD)I
+.method public static arQ(DDD)I
     .locals 8
 
     .prologue
     .line 502
-    invoke-static {}, Landroid/support/v4/b/a;->aqO()[D
+    invoke-static {}, Landroid/support/v4/b/a;->arM()[D
 
     move-result-object v6
 
@@ -417,7 +417,7 @@
     move-wide v4, p4
 
     .line 503
-    invoke-static/range {v0 .. v6}, Landroid/support/v4/b/a;->arb(DDD[D)V
+    invoke-static/range {v0 .. v6}, Landroid/support/v4/b/a;->arZ(DDD[D)V
 
     .line 504
     const/4 v0, 0x0
@@ -432,14 +432,14 @@
 
     aget-wide v4, v6, v4
 
-    invoke-static/range {v0 .. v5}, Landroid/support/v4/b/a;->aqY(DDD)I
+    invoke-static/range {v0 .. v5}, Landroid/support/v4/b/a;->arW(DDD)I
 
     move-result v0
 
     return v0
 .end method
 
-.method private static aqT(D)D
+.method private static arR(D)D
     .locals 4
 
     .prologue
@@ -476,7 +476,7 @@
     goto :goto_0
 .end method
 
-.method public static aqU(I[D)V
+.method public static arS(I[D)V
     .locals 3
 
     .prologue
@@ -493,13 +493,13 @@
 
     move-result v2
 
-    invoke-static {v0, v1, v2, p1}, Landroid/support/v4/b/a;->ard(III[D)V
+    invoke-static {v0, v1, v2, p1}, Landroid/support/v4/b/a;->asc(III[D)V
 
     .line 354
     return-void
 .end method
 
-.method public static aqV(DDD[D)V
+.method public static arT(DDD[D)V
     .locals 12
 
     .prologue
@@ -517,7 +517,7 @@
 
     div-double v2, p0, v2
 
-    invoke-static {v2, v3}, Landroid/support/v4/b/a;->aqT(D)D
+    invoke-static {v2, v3}, Landroid/support/v4/b/a;->arR(D)D
 
     move-result-wide v2
 
@@ -526,7 +526,7 @@
 
     div-double v4, p2, v4
 
-    invoke-static {v4, v5}, Landroid/support/v4/b/a;->aqT(D)D
+    invoke-static {v4, v5}, Landroid/support/v4/b/a;->arR(D)D
 
     move-result-wide v4
 
@@ -535,7 +535,7 @@
 
     div-double v6, p4, v6
 
-    invoke-static {v6, v7}, Landroid/support/v4/b/a;->aqT(D)D
+    invoke-static {v6, v7}, Landroid/support/v4/b/a;->arR(D)D
 
     move-result-wide v6
 
@@ -594,7 +594,7 @@
     throw v2
 .end method
 
-.method public static aqW(I[F)V
+.method public static arU(I[F)V
     .locals 3
 
     .prologue
@@ -611,13 +611,13 @@
 
     move-result v2
 
-    invoke-static {v0, v1, v2, p1}, Landroid/support/v4/b/a;->aqQ(III[F)V
+    invoke-static {v0, v1, v2, p1}, Landroid/support/v4/b/a;->arO(III[F)V
 
     .line 222
     return-void
 .end method
 
-.method private static aqX(III)I
+.method private static arV(III)I
     .locals 0
 
     .prologue
@@ -640,7 +640,7 @@
     goto :goto_0
 .end method
 
-.method public static aqY(DDD)I
+.method public static arW(DDD)I
     .locals 8
 
     .prologue
@@ -789,7 +789,7 @@
 
     const/16 v6, 0xff
 
-    invoke-static {v0, v1, v6}, Landroid/support/v4/b/a;->aqX(III)I
+    invoke-static {v0, v1, v6}, Landroid/support/v4/b/a;->arV(III)I
 
     move-result v0
 
@@ -808,7 +808,7 @@
 
     const/16 v3, 0xff
 
-    invoke-static {v1, v2, v3}, Landroid/support/v4/b/a;->aqX(III)I
+    invoke-static {v1, v2, v3}, Landroid/support/v4/b/a;->arV(III)I
 
     move-result v1
 
@@ -827,7 +827,7 @@
 
     const/16 v4, 0xff
 
-    invoke-static {v2, v3, v4}, Landroid/support/v4/b/a;->aqX(III)I
+    invoke-static {v2, v3, v4}, Landroid/support/v4/b/a;->arV(III)I
 
     move-result v2
 
@@ -863,12 +863,12 @@
     goto :goto_2
 .end method
 
-.method public static aqZ(III[D)V
+.method public static arX(III[D)V
     .locals 7
 
     .prologue
     .line 331
-    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/b/a;->ard(III[D)V
+    invoke-static {p0, p1, p2, p3}, Landroid/support/v4/b/a;->asc(III[D)V
 
     .line 333
     const/4 v0, 0x0
@@ -885,13 +885,13 @@
 
     move-object v6, p3
 
-    invoke-static/range {v0 .. v6}, Landroid/support/v4/b/a;->aqV(DDD[D)V
+    invoke-static/range {v0 .. v6}, Landroid/support/v4/b/a;->arT(DDD[D)V
 
     .line 335
     return-void
 .end method
 
-.method public static ara(I[D)V
+.method public static arY(I[D)V
     .locals 3
 
     .prologue
@@ -908,13 +908,13 @@
 
     move-result v2
 
-    invoke-static {v0, v1, v2, p1}, Landroid/support/v4/b/a;->aqZ(III[D)V
+    invoke-static {v0, v1, v2, p1}, Landroid/support/v4/b/a;->arX(III[D)V
 
     .line 311
     return-void
 .end method
 
-.method public static arb(DDD[D)V
+.method public static arZ(DDD[D)V
     .locals 10
 
     .prologue
@@ -1056,7 +1056,291 @@
     goto :goto_2
 .end method
 
-.method public static arc(II)I
+.method public static asa([F)I
+    .locals 10
+
+    .prologue
+    const/high16 v9, 0x40000000    # 2.0f
+
+    const/16 v8, 0xff
+
+    const/high16 v6, 0x3f800000    # 1.0f
+
+    const/4 v1, 0x0
+
+    const/high16 v7, 0x437f0000    # 255.0f
+
+    .line 238
+    aget v0, p0, v1
+
+    .line 239
+    const/4 v2, 0x1
+
+    aget v2, p0, v2
+
+    .line 240
+    const/4 v3, 0x2
+
+    aget v3, p0, v3
+
+    .line 242
+    mul-float v4, v9, v3
+
+    sub-float/2addr v4, v6
+
+    invoke-static {v4}, Ljava/lang/Math;->abs(F)F
+
+    move-result v4
+
+    sub-float v4, v6, v4
+
+    mul-float/2addr v4, v2
+
+    .line 243
+    const/high16 v2, 0x3f000000    # 0.5f
+
+    mul-float/2addr v2, v4
+
+    sub-float v5, v3, v2
+
+    .line 244
+    const/high16 v2, 0x42700000    # 60.0f
+
+    div-float v2, v0, v2
+
+    rem-float/2addr v2, v9
+
+    sub-float/2addr v2, v6
+
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+
+    move-result v2
+
+    sub-float v2, v6, v2
+
+    mul-float v6, v4, v2
+
+    .line 246
+    float-to-int v0, v0
+
+    div-int/lit8 v0, v0, 0x3c
+
+    .line 250
+    packed-switch v0, :pswitch_data_0
+
+    move v0, v1
+
+    move v2, v1
+
+    move v3, v1
+
+    .line 284
+    :goto_0
+    invoke-static {v3, v1, v8}, Landroid/support/v4/b/a;->arV(III)I
+
+    move-result v3
+
+    .line 285
+    invoke-static {v2, v1, v8}, Landroid/support/v4/b/a;->arV(III)I
+
+    move-result v2
+
+    .line 286
+    invoke-static {v0, v1, v8}, Landroid/support/v4/b/a;->arV(III)I
+
+    move-result v0
+
+    .line 288
+    invoke-static {v3, v2, v0}, Landroid/graphics/Color;->rgb(III)I
+
+    move-result v0
+
+    return v0
+
+    .line 252
+    :pswitch_0
+    add-float v0, v4, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    .line 253
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    .line 254
+    mul-float v0, v7, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 257
+    :pswitch_1
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    .line 258
+    add-float v0, v4, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    .line 259
+    mul-float v0, v7, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 262
+    :pswitch_2
+    mul-float v0, v7, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    .line 263
+    add-float v0, v4, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    .line 264
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 267
+    :pswitch_3
+    mul-float v0, v7, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    .line 268
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    .line 269
+    add-float v0, v4, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 272
+    :pswitch_4
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    .line 273
+    mul-float v0, v7, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    .line 274
+    add-float v0, v4, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    goto :goto_0
+
+    .line 278
+    :pswitch_5
+    add-float v0, v4, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v3
+
+    .line 279
+    mul-float v0, v7, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    .line 280
+    add-float v0, v6, v5
+
+    mul-float/2addr v0, v7
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    goto/16 :goto_0
+
+    .line 250
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_5
+    .end packed-switch
+.end method
+
+.method public static asb(II)I
     .locals 2
 
     .prologue
@@ -1091,7 +1375,7 @@
     return v0
 .end method
 
-.method public static ard(III[D)V
+.method public static asc(III[D)V
     .locals 10
 
     .prologue
@@ -1302,7 +1586,7 @@
     goto/16 :goto_2
 .end method
 
-.method private static are(FFF)F
+.method private static asd(FFF)F
     .locals 1
 
     .prologue
@@ -1329,7 +1613,7 @@
     goto :goto_0
 .end method
 
-.method public static arf(IIF)I
+.method public static ase(IIF)I
     .locals 8
 
     .prologue
@@ -1345,12 +1629,12 @@
     if-ne v1, v0, :cond_0
 
     .line 125
-    invoke-static {p0, v0}, Landroid/support/v4/b/a;->arc(II)I
+    invoke-static {p0, v0}, Landroid/support/v4/b/a;->asb(II)I
 
     move-result v1
 
     .line 126
-    invoke-static {v1, p1}, Landroid/support/v4/b/a;->aqN(II)D
+    invoke-static {v1, p1}, Landroid/support/v4/b/a;->arL(II)D
 
     move-result-wide v4
 
@@ -1424,12 +1708,12 @@
     div-int/lit8 v1, v1, 0x2
 
     .line 141
-    invoke-static {p0, v1}, Landroid/support/v4/b/a;->arc(II)I
+    invoke-static {p0, v1}, Landroid/support/v4/b/a;->asb(II)I
 
     move-result v4
 
     .line 142
-    invoke-static {v4, p1}, Landroid/support/v4/b/a;->aqN(II)D
+    invoke-static {v4, p1}, Landroid/support/v4/b/a;->arL(II)D
 
     move-result-wide v4
 
@@ -1460,7 +1744,7 @@
     goto :goto_1
 .end method
 
-.method public static arg(II)I
+.method public static asf(II)I
     .locals 7
 
     .prologue
@@ -1475,7 +1759,7 @@
     move-result v1
 
     .line 50
-    invoke-static {v1, v0}, Landroid/support/v4/b/a;->aqM(II)I
+    invoke-static {v1, v0}, Landroid/support/v4/b/a;->arK(II)I
 
     move-result v2
 
@@ -1490,7 +1774,7 @@
     move-result v4
 
     .line 52
-    invoke-static {v3, v1, v4, v0, v2}, Landroid/support/v4/b/a;->aqP(IIIII)I
+    invoke-static {v3, v1, v4, v0, v2}, Landroid/support/v4/b/a;->arN(IIIII)I
 
     move-result v3
 
@@ -1505,7 +1789,7 @@
     move-result v5
 
     .line 54
-    invoke-static {v4, v1, v5, v0, v2}, Landroid/support/v4/b/a;->aqP(IIIII)I
+    invoke-static {v4, v1, v5, v0, v2}, Landroid/support/v4/b/a;->arN(IIIII)I
 
     move-result v4
 
@@ -1520,7 +1804,7 @@
     move-result v6
 
     .line 56
-    invoke-static {v5, v1, v6, v0, v2}, Landroid/support/v4/b/a;->aqP(IIIII)I
+    invoke-static {v5, v1, v6, v0, v2}, Landroid/support/v4/b/a;->arN(IIIII)I
 
     move-result v0
 

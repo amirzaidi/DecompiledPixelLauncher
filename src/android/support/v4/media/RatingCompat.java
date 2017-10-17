@@ -11,36 +11,36 @@ import android.os.Parcelable;
 public final class RatingCompat implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    private final int afm;
-    private final float afn;
+    private final int ago;
+    private final float agp;
     
     static {
         CREATOR = (Parcelable$Creator)new o();
     }
     
-    RatingCompat(final int afm, final float afn) {
-        this.afm = afm;
-        this.afn = afn;
+    RatingCompat(final int ago, final float agp) {
+        this.ago = ago;
+        this.agp = agp;
     }
     
     public int describeContents() {
-        return this.afm;
+        return this.ago;
     }
     
     public String toString() {
-        final StringBuilder append = new StringBuilder().append("Rating:style=").append(this.afm).append(" rating=");
+        final StringBuilder append = new StringBuilder().append("Rating:style=").append(this.ago).append(" rating=");
         String value;
-        if (this.afn < 0.0f) {
+        if (this.agp < 0.0f) {
             value = "unrated";
         }
         else {
-            value = String.valueOf(this.afn);
+            value = String.valueOf(this.agp);
         }
         return append.append(value).toString();
     }
     
     public void writeToParcel(final Parcel parcel, final int n) {
-        parcel.writeInt(this.afm);
-        parcel.writeFloat(this.afn);
+        parcel.writeInt(this.ago);
+        parcel.writeFloat(this.agp);
     }
 }

@@ -9,11 +9,11 @@ import android.os.Parcelable$Creator;
 
 class k implements Parcelable$Creator
 {
-    public MediaSessionCompat$QueueItem createFromParcel(final Parcel parcel) {
-        return new MediaSessionCompat$QueueItem(parcel);
+    public PlaybackStateCompat$CustomAction createFromParcel(final Parcel parcel) {
+        return new PlaybackStateCompat$CustomAction(parcel);
     }
     
-    public MediaSessionCompat$QueueItem[] newArray(final int n) {
-        return new MediaSessionCompat$QueueItem[n];
+    public PlaybackStateCompat$CustomAction[] newArray(final int n) {
+        return new PlaybackStateCompat$CustomAction[n];
     }
 }

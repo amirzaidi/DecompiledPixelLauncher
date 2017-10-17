@@ -4,6 +4,9 @@
 
 package android.support.v4.view.a;
 
-class x extends y
+class x implements y
 {
+    public Object agj(final b b) {
+        return null;
+    }
 }

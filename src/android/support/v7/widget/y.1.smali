@@ -7,11 +7,11 @@
 
 
 # instance fields
-.field Pv:I
+.field Rc:I
 
-.field Pw:I
+.field Rd:I
 
-.field Px:[I
+.field Re:[I
 
 .field mCount:I
 
@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method Yj(Landroid/support/v7/widget/RecyclerView;Z)V
+.method Zl(Landroid/support/v7/widget/RecyclerView;Z)V
     .locals 4
 
     .prologue
@@ -39,7 +39,7 @@
     iput v0, p0, Landroid/support/v7/widget/y;->mCount:I
 
     .line 77
-    iget-object v0, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v0, p0, Landroid/support/v7/widget/y;->Re:[I
 
     if-nez v0, :cond_1
 
@@ -59,7 +59,7 @@
 
     .line 78
     :cond_1
-    iget-object v0, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v0, p0, Landroid/support/v7/widget/y;->Re:[I
 
     const/4 v1, -0x1
 
@@ -108,7 +108,7 @@
     .line 102
     iget-object v0, p1, Landroid/support/v7/widget/RecyclerView;->mRecycler:Landroid/support/v7/widget/s;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/s;->Xv()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/s;->Yv()V
 
     goto :goto_1
 
@@ -116,7 +116,7 @@
     :cond_4
     iget-object v1, p1, Landroid/support/v7/widget/RecyclerView;->mAdapterHelper:Landroid/support/v7/widget/C;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/C;->Zn()Z
+    invoke-virtual {v1}, Landroid/support/v7/widget/C;->aap()Z
 
     move-result v1
 
@@ -135,9 +135,9 @@
 
     .line 94
     :cond_5
-    iget v1, p0, Landroid/support/v7/widget/y;->Pv:I
+    iget v1, p0, Landroid/support/v7/widget/y;->Rc:I
 
-    iget v2, p0, Landroid/support/v7/widget/y;->Pw:I
+    iget v2, p0, Landroid/support/v7/widget/y;->Rd:I
 
     iget-object v3, p1, Landroid/support/v7/widget/RecyclerView;->mState:Landroid/support/v7/widget/e;
 
@@ -146,7 +146,7 @@
     goto :goto_2
 .end method
 
-.method public Yk(II)V
+.method public Zm(II)V
     .locals 5
 
     .prologue
@@ -164,12 +164,12 @@
     mul-int/lit8 v0, v0, 0x2
 
     .line 119
-    iget-object v1, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v1, p0, Landroid/support/v7/widget/y;->Re:[I
 
     if-eqz v1, :cond_2
 
     .line 122
-    iget-object v1, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v1, p0, Landroid/support/v7/widget/y;->Re:[I
 
     array-length v1, v1
 
@@ -177,12 +177,12 @@
 
     .line 129
     :goto_0
-    iget-object v1, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v1, p0, Landroid/support/v7/widget/y;->Re:[I
 
     aput p1, v1, v0
 
     .line 130
-    iget-object v1, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v1, p0, Landroid/support/v7/widget/y;->Re:[I
 
     add-int/lit8 v0, v0, 0x1
 
@@ -224,10 +224,10 @@
 
     new-array v1, v1, [I
 
-    iput-object v1, p0, Landroid/support/v7/widget/y;->Px:[I
+    iput-object v1, p0, Landroid/support/v7/widget/y;->Re:[I
 
     .line 121
-    iget-object v1, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v1, p0, Landroid/support/v7/widget/y;->Re:[I
 
     const/4 v2, -0x1
 
@@ -237,17 +237,17 @@
 
     .line 123
     :cond_3
-    iget-object v1, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v1, p0, Landroid/support/v7/widget/y;->Re:[I
 
     .line 124
     mul-int/lit8 v2, v0, 0x2
 
     new-array v2, v2, [I
 
-    iput-object v2, p0, Landroid/support/v7/widget/y;->Px:[I
+    iput-object v2, p0, Landroid/support/v7/widget/y;->Re:[I
 
     .line 125
-    iget-object v2, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v2, p0, Landroid/support/v7/widget/y;->Re:[I
 
     array-length v3, v1
 
@@ -256,28 +256,28 @@
     goto :goto_0
 .end method
 
-.method Yl(II)V
+.method Zn(II)V
     .locals 0
 
     .prologue
     .line 71
-    iput p1, p0, Landroid/support/v7/widget/y;->Pv:I
+    iput p1, p0, Landroid/support/v7/widget/y;->Rc:I
 
     .line 72
-    iput p2, p0, Landroid/support/v7/widget/y;->Pw:I
+    iput p2, p0, Landroid/support/v7/widget/y;->Rd:I
 
     .line 73
     return-void
 .end method
 
-.method Ym(I)Z
+.method Zo(I)Z
     .locals 4
 
     .prologue
     const/4 v1, 0x0
 
     .line 136
-    iget-object v0, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v0, p0, Landroid/support/v7/widget/y;->Re:[I
 
     if-nez v0, :cond_1
 
@@ -298,7 +298,7 @@
     if-ge v0, v2, :cond_0
 
     .line 139
-    iget-object v3, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v3, p0, Landroid/support/v7/widget/y;->Re:[I
 
     aget v3, v3, v0
 
@@ -316,12 +316,12 @@
     return v0
 .end method
 
-.method Yn()V
+.method Zp()V
     .locals 2
 
     .prologue
     .line 149
-    iget-object v0, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v0, p0, Landroid/support/v7/widget/y;->Re:[I
 
     if-nez v0, :cond_0
 
@@ -336,7 +336,7 @@
 
     .line 150
     :cond_0
-    iget-object v0, p0, Landroid/support/v7/widget/y;->Px:[I
+    iget-object v0, p0, Landroid/support/v7/widget/y;->Re:[I
 
     const/4 v1, -0x1
 

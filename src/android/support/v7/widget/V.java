@@ -17,7 +17,6 @@ import android.graphics.Canvas;
 import android.util.SparseArray;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.support.v4.view.a.r;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.ViewParent;
 import android.view.ViewGroup$LayoutParams;
@@ -35,9 +34,8 @@ import java.util.List;
 import java.util.ArrayList;
 import android.widget.EdgeEffect;
 import android.view.accessibility.AccessibilityManager;
-import android.support.v4.view.e;
 import android.view.ViewGroup;
-import android.support.v4.os.c;
+import android.support.v4.os.b;
 import android.view.View;
 import android.support.v4.view.f;
 import android.view.animation.Interpolator;
@@ -45,23 +43,23 @@ import android.widget.OverScroller;
 
 class v implements Runnable
 {
-    private boolean Pp;
-    private int Pq;
-    private OverScroller Pr;
-    private boolean Ps;
-    private int Pt;
-    final /* synthetic */ RecyclerView Pu;
+    private boolean QW;
+    private int QX;
+    private OverScroller QY;
+    private boolean QZ;
+    private int Ra;
+    final /* synthetic */ RecyclerView Rb;
     Interpolator mInterpolator;
     
-    v(final RecyclerView pu) {
-        this.Pu = pu;
+    v(final RecyclerView rb) {
+        this.Rb = rb;
         this.mInterpolator = RecyclerView.sQuinticInterpolator;
-        this.Pp = false;
-        this.Ps = false;
-        this.Pr = new OverScroller(pu.getContext(), RecyclerView.sQuinticInterpolator);
+        this.QW = false;
+        this.QZ = false;
+        this.QY = new OverScroller(rb.getContext(), RecyclerView.sQuinticInterpolator);
     }
     
-    private int XZ(final int n, final int n2, final int n3, final int n4) {
+    private int Zb(final int n, final int n2, final int n3, final int n4) {
         final float n5 = 1.0f;
         boolean b = false;
         final int abs = Math.abs(n);
@@ -73,10 +71,10 @@ class v implements Runnable
         final int n7 = (int)Math.sqrt(n * n + n2 * n2);
         int n8;
         if (!b) {
-            n8 = this.Pu.getHeight();
+            n8 = this.Rb.getHeight();
         }
         else {
-            n8 = this.Pu.getWidth();
+            n8 = this.Rb.getWidth();
         }
         final int n9 = n8 / 2;
         final float n10 = this.distanceInfluenceForSnapDuration(Math.min(n5, n7 * n5 / n8)) * n9 + n9;
@@ -97,15 +95,15 @@ class v implements Runnable
         return Math.min(n12, 2000);
     }
     
-    private void Ya() {
-        this.Ps = false;
-        this.Pp = true;
+    private void Zc() {
+        this.QZ = false;
+        this.QW = true;
     }
     
-    private void Yb() {
-        this.Pp = false;
-        if (this.Ps) {
-            this.Yc();
+    private void Zd() {
+        this.QW = false;
+        if (this.QZ) {
+            this.Ze();
         }
     }
     
@@ -113,92 +111,93 @@ class v implements Runnable
         return (float)Math.sin((n - 0.5f) * 0.47123894f);
     }
     
-    public void XY(final int n, final int n2, final int n3, final Interpolator mInterpolator) {
+    public void YZ(final int n, final int n2, final int n3, final Interpolator mInterpolator) {
         if (this.mInterpolator != mInterpolator) {
             this.mInterpolator = mInterpolator;
-            this.Pr = new OverScroller(this.Pu.getContext(), mInterpolator);
+            this.QY = new OverScroller(this.Rb.getContext(), mInterpolator);
         }
-        this.Pu.setScrollState(2);
-        this.Pq = 0;
-        this.Pt = 0;
-        this.Pr.startScroll(0, 0, n, n2, n3);
-        this.Yc();
+        this.Rb.setScrollState(2);
+        this.QX = 0;
+        this.Ra = 0;
+        this.QY.startScroll(0, 0, n, n2, n3);
+        this.Ze();
     }
     
-    void Yc() {
-        if (!this.Pp) {
-            this.Pu.removeCallbacks((Runnable)this);
-            f.afE((View)this.Pu, this);
+    void Ze() {
+        if (!this.QW) {
+            this.Rb.removeCallbacks((Runnable)this);
+            f.agG((View)this.Rb, this);
         }
         else {
-            this.Ps = true;
+            this.QZ = true;
         }
     }
     
-    public void Yd(final int n, final int n2, final int n3, final int n4) {
-        this.Ye(n, n2, this.XZ(n, n2, n3, n4));
+    public void Zf(final int n, final int n2, final int n3, final int n4) {
+        this.Zg(n, n2, this.Zb(n, n2, n3, n4));
     }
     
-    public void Ye(final int n, final int n2, final int n3) {
-        this.XY(n, n2, n3, RecyclerView.sQuinticInterpolator);
+    public void Zg(final int n, final int n2, final int n3) {
+        this.YZ(n, n2, n3, RecyclerView.sQuinticInterpolator);
     }
     
     public void fling(final int n, final int n2) {
         final int n3 = -1 >>> 1;
         final int n4 = -1 << -1;
-        this.Pu.setScrollState(2);
-        this.Pq = 0;
-        this.Pt = 0;
-        this.Pr.fling(0, 0, n, n2, n4, n3, n4, n3);
-        this.Yc();
+        this.Rb.setScrollState(2);
+        this.QX = 0;
+        this.Ra = 0;
+        this.QY.fling(0, 0, n, n2, n4, n3, n4, n3);
+        this.Ze();
     }
     
     public void run() {
-        if (this.Pu.mLayout != null) {
-            this.Ya();
-            this.Pu.consumePendingUpdateOperations();
-            final OverScroller pr = this.Pr;
-            final g mSmoothScroller = this.Pu.mLayout.mSmoothScroller;
-            if (pr.computeScrollOffset()) {
-                final int[] access$400 = this.Pu.mScrollConsumed;
-                final int currX = pr.getCurrX();
-                final int currY = pr.getCurrY();
-                final int n = currX - this.Pt;
-                final int n2 = currY - this.Pq;
-                this.Pt = currX;
-                this.Pq = currY;
+        if (this.Rb.mLayout != null) {
+            this.Zc();
+            this.Rb.consumePendingUpdateOperations();
+            final OverScroller qy = this.QY;
+            final g mSmoothScroller = this.Rb.mLayout.mSmoothScroller;
+            if (qy.computeScrollOffset()) {
+                final int[] access$500 = this.Rb.mScrollConsumed;
+                final int currX = qy.getCurrX();
+                final int currY = qy.getCurrY();
+                final int n = currX - this.Ra;
+                final int n2 = currY - this.QX;
+                this.Ra = currX;
+                this.QX = currY;
                 int n3;
                 int n4;
-                if (!this.Pu.dispatchNestedPreScroll(n, n2, access$400, null, 1)) {
+                if (!this.Rb.dispatchNestedPreScroll(n, n2, access$500, null, 1)) {
                     n3 = n2;
                     n4 = n;
                 }
                 else {
-                    final int n5 = n - access$400[0];
-                    n3 = n2 - access$400[1];
+                    final int n5 = n - access$500[0];
+                    n3 = n2 - access$500[1];
                     n4 = n5;
                 }
                 int n6;
                 int n7;
                 int n8;
                 int n9;
-                if (this.Pu.mAdapter == null) {
+                if (this.Rb.mAdapter == null) {
                     n6 = 0;
                     n7 = 0;
                     n8 = 0;
                     n9 = 0;
                 }
                 else {
-                    this.Pu.eatRequestLayout();
-                    this.Pu.onEnterLayoutOrScroll();
-                    c.ari("RV Scroll");
+                    this.Rb.eatRequestLayout();
+                    this.Rb.onEnterLayoutOrScroll();
+                    b.asr("RV Scroll");
+                    this.Rb.fillRemainingScrollValues(this.Rb.mState);
                     int scrollHorizontallyBy;
                     if (n4 == 0) {
                         n7 = 0;
                         scrollHorizontallyBy = 0;
                     }
                     else {
-                        scrollHorizontallyBy = this.Pu.mLayout.scrollHorizontallyBy(n4, this.Pu.mRecycler, this.Pu.mState);
+                        scrollHorizontallyBy = this.Rb.mLayout.scrollHorizontallyBy(n4, this.Rb.mRecycler, this.Rb.mState);
                         n7 = n4 - scrollHorizontallyBy;
                     }
                     int n10;
@@ -208,33 +207,33 @@ class v implements Runnable
                         scrollVerticallyBy = 0;
                     }
                     else {
-                        scrollVerticallyBy = this.Pu.mLayout.scrollVerticallyBy(n3, this.Pu.mRecycler, this.Pu.mState);
+                        scrollVerticallyBy = this.Rb.mLayout.scrollVerticallyBy(n3, this.Rb.mRecycler, this.Rb.mState);
                         n10 = n3 - scrollVerticallyBy;
                     }
-                    c.arh();
-                    this.Pu.repositionShadowingViews();
-                    this.Pu.onExitLayoutOrScroll();
-                    this.Pu.resumeRequestLayout(false);
-                    if (mSmoothScroller != null && !mSmoothScroller.Xa()) {
-                        if (!mSmoothScroller.WZ()) {
+                    b.asq();
+                    this.Rb.repositionShadowingViews();
+                    this.Rb.onExitLayoutOrScroll();
+                    this.Rb.resumeRequestLayout(false);
+                    if (mSmoothScroller != null && !mSmoothScroller.XZ()) {
+                        if (!mSmoothScroller.XY()) {
                             n6 = n10;
                             final int n11 = scrollVerticallyBy;
                             n9 = scrollHorizontallyBy;
                             n8 = n11;
                         }
                         else {
-                            final int itemCount = this.Pu.mState.getItemCount();
+                            final int itemCount = this.Rb.mState.getItemCount();
                             if (itemCount != 0) {
-                                if (mSmoothScroller.WX() < itemCount) {
-                                    mSmoothScroller.WR(n4 - n7, n3 - n10);
+                                if (mSmoothScroller.XW() < itemCount) {
+                                    mSmoothScroller.XR(n4 - n7, n3 - n10);
                                     n6 = n10;
                                     final int n12 = scrollVerticallyBy;
                                     n9 = scrollHorizontallyBy;
                                     n8 = n12;
                                 }
                                 else {
-                                    mSmoothScroller.WW(itemCount - 1);
-                                    mSmoothScroller.WR(n4 - n7, n3 - n10);
+                                    mSmoothScroller.XV(itemCount - 1);
+                                    mSmoothScroller.XR(n4 - n7, n3 - n10);
                                     n6 = n10;
                                     final int n13 = scrollVerticallyBy;
                                     n9 = scrollHorizontallyBy;
@@ -257,15 +256,15 @@ class v implements Runnable
                         n8 = n15;
                     }
                 }
-                if (!this.Pu.mItemDecorations.isEmpty()) {
-                    this.Pu.invalidate();
+                if (!this.Rb.mItemDecorations.isEmpty()) {
+                    this.Rb.invalidate();
                 }
-                if (this.Pu.getOverScrollMode() != 2) {
-                    this.Pu.considerReleasingGlowsOnScroll(n4, n3);
+                if (this.Rb.getOverScrollMode() != 2) {
+                    this.Rb.considerReleasingGlowsOnScroll(n4, n3);
                 }
-                if (!this.Pu.dispatchNestedScroll(n9, n8, n7, n6, null, 1)) {
+                if (!this.Rb.dispatchNestedScroll(n9, n8, n7, n6, null, 1)) {
                     if (n7 != 0 || n6 != 0) {
-                        int n16 = (int)pr.getCurrVelocity();
+                        int n16 = (int)qy.getCurrVelocity();
                         int n17 = 0;
                         if (n7 != currX) {
                             if (n7 >= 0) {
@@ -291,25 +290,25 @@ class v implements Runnable
                         else {
                             n16 = -n16;
                         }
-                        if (this.Pu.getOverScrollMode() != 2) {
-                            this.Pu.absorbGlows(n17, n16);
+                        if (this.Rb.getOverScrollMode() != 2) {
+                            this.Rb.absorbGlows(n17, n16);
                         }
-                        if (n17 != 0 || n7 == currX || pr.getFinalX() == 0) {
-                            if (n16 != 0 || n6 == currY || pr.getFinalY() == 0) {
-                                pr.abortAnimation();
+                        if (n17 != 0 || n7 == currX || qy.getFinalX() == 0) {
+                            if (n16 != 0 || n6 == currY || qy.getFinalY() == 0) {
+                                qy.abortAnimation();
                             }
                         }
                     }
                 }
                 if (n9 != 0 || n8 != 0) {
-                    this.Pu.dispatchOnScrolled(n9, n8);
+                    this.Rb.dispatchOnScrolled(n9, n8);
                 }
-                if (!RecyclerView.access$600(this.Pu)) {
-                    this.Pu.invalidate();
+                if (!RecyclerView.access$700(this.Rb)) {
+                    this.Rb.invalidate();
                 }
-                final boolean b = n3 != 0 && this.Pu.mLayout.canScrollVertically() && n8 == n3;
+                final boolean b = n3 != 0 && this.Rb.mLayout.canScrollVertically() && n8 == n3;
                 boolean b2;
-                if (n4 != 0 && this.Pu.mLayout.canScrollHorizontally() && n9 == n4) {
+                if (n4 != 0 && this.Rb.mLayout.canScrollHorizontally() && n9 == n4) {
                     b2 = true;
                 }
                 else {
@@ -325,48 +324,48 @@ class v implements Runnable
                     }
                     b3 = true;
                 }
-                if (!pr.isFinished() && (b3 || this.Pu.hasNestedScrollingParent(1))) {
-                    this.Yc();
-                    if (this.Pu.mGapWorker != null) {
-                        this.Pu.mGapWorker.Zw(this.Pu, n4, n3);
+                if (!qy.isFinished() && (b3 || this.Rb.hasNestedScrollingParent(1))) {
+                    this.Ze();
+                    if (this.Rb.mGapWorker != null) {
+                        this.Rb.mGapWorker.aay(this.Rb, n4, n3);
                     }
                 }
                 else {
-                    this.Pu.setScrollState(0);
+                    this.Rb.setScrollState(0);
                     if (RecyclerView.ALLOW_THREAD_GAP_WORK) {
-                        this.Pu.mPrefetchRegistry.Yn();
+                        this.Rb.mPrefetchRegistry.Zp();
                     }
-                    this.Pu.stopNestedScroll(1);
+                    this.Rb.stopNestedScroll(1);
                 }
             }
             if (mSmoothScroller != null) {
-                if (mSmoothScroller.Xa()) {
-                    mSmoothScroller.WR(0, 0);
+                if (mSmoothScroller.XZ()) {
+                    mSmoothScroller.XR(0, 0);
                 }
-                if (!this.Ps) {
+                if (!this.QZ) {
                     mSmoothScroller.stop();
                 }
             }
-            this.Yb();
+            this.Zd();
             return;
         }
         this.stop();
     }
     
     public void smoothScrollBy(final int n, final int n2) {
-        this.Yd(n, n2, 0, 0);
+        this.Zf(n, n2, 0, 0);
     }
     
     public void smoothScrollBy(final int n, final int n2, Interpolator sQuinticInterpolator) {
-        final int xz = this.XZ(n, n2, 0, 0);
+        final int zb = this.Zb(n, n2, 0, 0);
         if (sQuinticInterpolator == null) {
             sQuinticInterpolator = RecyclerView.sQuinticInterpolator;
         }
-        this.XY(n, n2, xz, sQuinticInterpolator);
+        this.YZ(n, n2, zb, sQuinticInterpolator);
     }
     
     public void stop() {
-        this.Pu.removeCallbacks((Runnable)this);
-        this.Pr.abortAnimation();
+        this.Rb.removeCallbacks((Runnable)this);
+        this.QY.abortAnimation();
     }
 }

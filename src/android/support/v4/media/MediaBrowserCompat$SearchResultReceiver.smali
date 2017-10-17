@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final afq:Landroid/support/v4/media/c;
+.field private final ags:Landroid/support/v4/media/c;
 
-.field private final afr:Landroid/os/Bundle;
+.field private final agt:Landroid/os/Bundle;
 
 .field private final mQuery:Ljava/lang/String;
 
@@ -20,27 +20,27 @@
 
     const/4 v0, 0x0
 
-    .line 2202
+    .line 2210
     if-nez p2, :cond_1
 
-    .line 2205
+    .line 2213
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 2207
+    .line 2215
     :cond_0
-    iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->afq:Landroid/support/v4/media/c;
+    iget-object v0, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->ags:Landroid/support/v4/media/c;
 
     iget-object v1, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mQuery:Ljava/lang/String;
 
-    iget-object v2, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->afr:Landroid/os/Bundle;
+    iget-object v2, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->agt:Landroid/os/Bundle;
 
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/c;->ase(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/media/c;->atb(Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 2208
+    .line 2216
     return-void
 
-    .line 2203
+    .line 2211
     :cond_1
     const-class v1, Landroid/support/v4/media/e;
 
@@ -52,49 +52,49 @@
 
     goto :goto_0
 
-    .line 2205
+    .line 2213
     :cond_2
     if-eqz p2, :cond_0
 
     const-string/jumbo v1, "search_results"
 
-    .line 2206
+    .line 2214
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2210
+    .line 2218
     const-string/jumbo v1, "search_results"
 
     invoke-virtual {p2, v1}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;)[Landroid/os/Parcelable;
 
     move-result-object v3
 
-    .line 2213
+    .line 2221
     if-nez v3, :cond_3
 
-    .line 2219
+    .line 2227
     :goto_1
-    iget-object v1, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->afq:Landroid/support/v4/media/c;
+    iget-object v1, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->ags:Landroid/support/v4/media/c;
 
     iget-object v2, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->mQuery:Ljava/lang/String;
 
-    iget-object v3, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->afr:Landroid/os/Bundle;
+    iget-object v3, p0, Landroid/support/v4/media/MediaBrowserCompat$SearchResultReceiver;->agt:Landroid/os/Bundle;
 
-    invoke-virtual {v1, v2, v3, v0}, Landroid/support/v4/media/c;->asd(Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;)V
+    invoke-virtual {v1, v2, v3, v0}, Landroid/support/v4/media/c;->ata(Ljava/lang/String;Landroid/os/Bundle;Ljava/util/List;)V
 
-    .line 2220
+    .line 2228
     return-void
 
-    .line 2214
+    .line 2222
     :cond_3
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2215
+    .line 2223
     array-length v4, v3
 
     :goto_2
@@ -107,12 +107,12 @@
     :cond_4
     aget-object v0, v3, v2
 
-    .line 2216
+    .line 2224
     check-cast v0, Landroid/support/v4/media/MediaBrowserCompat$MediaItem;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2215
+    .line 2223
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0

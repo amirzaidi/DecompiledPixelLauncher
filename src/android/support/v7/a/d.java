@@ -10,91 +10,91 @@ import android.graphics.Color;
 
 public final class d
 {
-    private final int Tf;
-    private final int Tg;
-    private final int Th;
-    private int Ti;
-    private final int Tj;
-    private int Tk;
-    private final int Tl;
-    private float[] Tm;
-    private boolean Tn;
+    private final int UO;
+    private final int UP;
+    private final int UQ;
+    private int UR;
+    private final int US;
+    private int UT;
+    private final int UU;
+    private float[] UV;
+    private boolean UW;
     
-    public d(final int th, final int tl) {
-        this.Tf = Color.red(th);
-        this.Tg = Color.green(th);
-        this.Tj = Color.blue(th);
-        this.Th = th;
-        this.Tl = tl;
+    public d(final int uq, final int uu) {
+        this.UO = Color.red(uq);
+        this.UP = Color.green(uq);
+        this.US = Color.blue(uq);
+        this.UQ = uq;
+        this.UU = uu;
     }
     
-    private void acF() {
+    private void adJ() {
         final float n = 4.5f;
         final float n2 = 3.0f;
-        final boolean tn = true;
+        final boolean uw = true;
         final int n3 = -16777216;
         final int n4 = -1;
-        if (!this.Tn) {
-            final int arf = a.arf(n4, this.Th, n);
-            final int arf2 = a.arf(n4, this.Th, n2);
-            if (arf != n4 && arf2 != n4) {
-                this.Tk = a.arc(n4, arf);
-                this.Ti = a.arc(n4, arf2);
-                this.Tn = tn;
+        if (!this.UW) {
+            final int ase = a.ase(n4, this.UQ, n);
+            final int ase2 = a.ase(n4, this.UQ, n2);
+            if (ase != n4 && ase2 != n4) {
+                this.UT = a.asb(n4, ase);
+                this.UR = a.asb(n4, ase2);
+                this.UW = uw;
                 return;
             }
-            final int arf3 = a.arf(n3, this.Th, n);
-            final int arf4 = a.arf(n3, this.Th, n2);
-            if (arf3 != n4 && arf4 != n4) {
-                this.Tk = a.arc(n3, arf3);
-                this.Ti = a.arc(n3, arf4);
-                this.Tn = tn;
+            final int ase3 = a.ase(n3, this.UQ, n);
+            final int ase4 = a.ase(n3, this.UQ, n2);
+            if (ase3 != n4 && ase4 != n4) {
+                this.UT = a.asb(n3, ase3);
+                this.UR = a.asb(n3, ase4);
+                this.UW = uw;
                 return;
             }
-            int tk;
-            if (arf == n4) {
-                tk = a.arc(n3, arf3);
+            int ut;
+            if (ase == n4) {
+                ut = a.asb(n3, ase3);
             }
             else {
-                tk = a.arc(n4, arf);
+                ut = a.asb(n4, ase);
             }
-            this.Tk = tk;
-            int ti;
-            if (arf2 == n4) {
-                ti = a.arc(n3, arf4);
+            this.UT = ut;
+            int ur;
+            if (ase2 == n4) {
+                ur = a.asb(n3, ase4);
             }
             else {
-                ti = a.arc(n4, arf2);
+                ur = a.asb(n4, ase2);
             }
-            this.Ti = ti;
-            this.Tn = tn;
+            this.UR = ur;
+            this.UW = uw;
         }
     }
     
-    public float[] acE() {
-        if (this.Tm == null) {
-            this.Tm = new float[3];
+    public float[] adI() {
+        if (this.UV == null) {
+            this.UV = new float[3];
         }
-        a.aqQ(this.Tf, this.Tg, this.Tj, this.Tm);
-        return this.Tm;
+        a.arO(this.UO, this.UP, this.US, this.UV);
+        return this.UV;
     }
     
-    public int acG() {
-        return this.Tl;
+    public int adK() {
+        return this.UU;
     }
     
-    public int acH() {
-        this.acF();
-        return this.Ti;
+    public int adL() {
+        this.adJ();
+        return this.UR;
     }
     
-    public int acI() {
-        return this.Th;
+    public int adM() {
+        return this.UQ;
     }
     
-    public int acJ() {
-        this.acF();
-        return this.Tk;
+    public int adN() {
+        this.adJ();
+        return this.UT;
     }
     
     public boolean equals(final Object o) {
@@ -104,7 +104,7 @@ public final class d
         }
         if (o != null && this.getClass() == o.getClass()) {
             final d d = (d)o;
-            if (this.Tl != d.Tl || this.Th != d.Th) {
+            if (this.UU != d.UU || this.UQ != d.UQ) {
                 b = false;
             }
             return b;
@@ -113,11 +113,11 @@ public final class d
     }
     
     public int hashCode() {
-        return this.Th * 31 + this.Tl;
+        return this.UQ * 31 + this.UU;
     }
     
     public String toString() {
         final char c = ']';
-        return this.getClass().getSimpleName() + " [RGB: #" + Integer.toHexString(this.acI()) + c + " [HSL: " + Arrays.toString(this.acE()) + c + " [Population: " + this.Tl + c + " [Title Text: #" + Integer.toHexString(this.acH()) + c + " [Body Text: #" + Integer.toHexString(this.acJ()) + c;
+        return this.getClass().getSimpleName() + " [RGB: #" + Integer.toHexString(this.adM()) + c + " [HSL: " + Arrays.toString(this.adI()) + c + " [Population: " + this.UU + c + " [Title Text: #" + Integer.toHexString(this.adL()) + c + " [Body Text: #" + Integer.toHexString(this.adN()) + c;
     }
 }

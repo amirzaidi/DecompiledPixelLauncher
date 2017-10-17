@@ -6,81 +6,81 @@ package android.support.v4.c;
 
 import java.io.PrintWriter;
 import java.io.FileDescriptor;
-import android.support.v4.a.j;
+import android.support.v4.a.k;
 
 public class b
 {
-    boolean adA;
-    c adB;
-    boolean adC;
-    boolean adw;
-    d adx;
-    boolean ady;
-    int adz;
+    boolean aeI;
+    d aeJ;
+    boolean aeK;
+    int aeL;
+    boolean aeM;
+    c aeN;
+    boolean aeO;
     boolean mStarted;
     
-    public void ark() {
+    public void asg() {
         this.mStarted = false;
-        this.arp();
+        this.asl();
     }
     
-    protected void arl() {
+    protected void ash() {
     }
     
-    public void arm(final c c) {
-        if (this.adB == null) {
+    public void asi(final c c) {
+        if (this.aeN == null) {
             throw new IllegalStateException("No listener register");
         }
-        if (this.adB == c) {
-            this.adB = null;
+        if (this.aeN == c) {
+            this.aeN = null;
             return;
         }
         throw new IllegalArgumentException("Attempting to unregister the wrong listener");
     }
     
-    public final void arn() {
+    public final void asj() {
         this.mStarted = true;
-        this.adw = false;
-        this.adC = false;
-        this.arl();
+        this.aeI = false;
+        this.aeO = false;
+        this.ash();
     }
     
-    public void aro(final d d) {
-        if (this.adx == null) {
+    public void ask(final d d) {
+        if (this.aeJ == null) {
             throw new IllegalStateException("No listener register");
         }
-        if (this.adx == d) {
-            this.adx = null;
+        if (this.aeJ == d) {
+            this.aeJ = null;
             return;
         }
         throw new IllegalArgumentException("Attempting to unregister the wrong listener");
     }
     
-    protected void arp() {
+    protected void asl() {
     }
     
-    protected void arq() {
+    protected void asm() {
     }
     
-    public String arr(final Object o) {
+    public String asn(final Object o) {
         final StringBuilder sb = new StringBuilder(64);
-        j.aha(o, sb);
+        k.aix(o, sb);
         sb.append("}");
         return sb.toString();
     }
     
-    public void ars(final int adz, final d adx) {
-        if (this.adx == null) {
-            this.adx = adx;
-            this.adz = adz;
+    public void aso(final int aeL, final d aeJ) {
+        if (this.aeJ == null) {
+            this.aeJ = aeJ;
+            this.aeL = aeL;
             return;
         }
         throw new IllegalStateException("There is already a listener registered");
     }
     
-    public void art(final c adB) {
-        if (this.adB == null) {
-            this.adB = adB;
+    public void asp(final c aeN) {
+        if (this.aeN == null) {
+            this.aeN = aeN;
             return;
         }
         throw new IllegalStateException("There is already a listener registered");
@@ -89,41 +89,41 @@ public class b
     public void dump(final String s, final FileDescriptor fileDescriptor, final PrintWriter printWriter, final String[] array) {
         printWriter.print(s);
         printWriter.print("mId=");
-        printWriter.print(this.adz);
+        printWriter.print(this.aeL);
         printWriter.print(" mListener=");
-        printWriter.println(this.adx);
-        if (this.mStarted || this.ady || this.adA) {
+        printWriter.println(this.aeJ);
+        if (this.mStarted || this.aeK || this.aeM) {
             printWriter.print(s);
             printWriter.print("mStarted=");
             printWriter.print(this.mStarted);
             printWriter.print(" mContentChanged=");
-            printWriter.print(this.ady);
+            printWriter.print(this.aeK);
             printWriter.print(" mProcessingChange=");
-            printWriter.println(this.adA);
+            printWriter.println(this.aeM);
         }
-        if (this.adC || this.adw) {
+        if (this.aeO || this.aeI) {
             printWriter.print(s);
             printWriter.print("mAbandoned=");
-            printWriter.print(this.adC);
+            printWriter.print(this.aeO);
             printWriter.print(" mReset=");
-            printWriter.println(this.adw);
+            printWriter.println(this.aeI);
         }
     }
     
     public void reset() {
-        this.arq();
-        this.adw = true;
+        this.asm();
+        this.aeI = true;
         this.mStarted = false;
-        this.adC = false;
-        this.ady = false;
-        this.adA = false;
+        this.aeO = false;
+        this.aeK = false;
+        this.aeM = false;
     }
     
     public String toString() {
         final StringBuilder sb = new StringBuilder(64);
-        j.aha(this, sb);
+        k.aix(this, sb);
         sb.append(" id=");
-        sb.append(this.adz);
+        sb.append(this.aeL);
         sb.append("}");
         return sb.toString();
     }

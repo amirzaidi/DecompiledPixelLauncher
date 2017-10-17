@@ -14,20 +14,20 @@ import java.util.List;
 
 class c implements x
 {
-    final /* synthetic */ RecyclerView OF;
+    final /* synthetic */ RecyclerView Qj;
     
-    c(final RecyclerView of) {
-        this.OF = of;
+    c(final RecyclerView qj) {
+        this.Qj = qj;
     }
     
-    public void WH(final j j) {
+    public void XF(final j j) {
         j.setIsRecyclable(true);
         if (j.mShadowedHolder != null && j.mShadowingHolder == null) {
             j.mShadowedHolder = null;
         }
         j.mShadowingHolder = null;
-        if (!j.shouldBeKeptAsChild() && !this.OF.removeAnimatingView(j.itemView) && j.isTmpDetached()) {
-            this.OF.removeDetachedView(j.itemView, false);
+        if (!j.shouldBeKeptAsChild() && !this.Qj.removeAnimatingView(j.itemView) && j.isTmpDetached()) {
+            this.Qj.removeDetachedView(j.itemView, false);
         }
     }
 }

@@ -6,14 +6,14 @@ package android.support.v4.a;
 
 public class a implements Cloneable
 {
-    private static final Object UQ;
-    private int[] UR;
-    private Object[] US;
-    private boolean UT;
+    private static final Object Wz;
+    private int[] WA;
+    private Object[] WB;
+    private boolean WC;
     private int mSize;
     
     static {
-        UQ = new Object();
+        Wz = new Object();
     }
     
     public a() {
@@ -21,129 +21,125 @@ public class a implements Cloneable
     }
     
     public a(final int n) {
-        this.UT = false;
+        this.WC = false;
         if (n != 0) {
-            final int ahO = s.ahO(n);
-            this.UR = new int[ahO];
-            this.US = new Object[ahO];
+            final int aiY = s.aiY(n);
+            this.WA = new int[aiY];
+            this.WB = new Object[aiY];
         }
         else {
-            this.UR = s.VQ;
-            this.US = s.VS;
+            this.WA = s.Xz;
+            this.WB = s.XB;
         }
         this.mSize = 0;
     }
     
-    private void agA() {
+    private void ahL() {
         final int mSize = this.mSize;
-        final int[] ur = this.UR;
-        final Object[] us = this.US;
+        final int[] wa = this.WA;
+        final Object[] wb = this.WB;
         int i = 0;
         int mSize2 = 0;
         while (i < mSize) {
-            final Object o = us[i];
-            if (o != a.UQ) {
+            final Object o = wb[i];
+            if (o != a.Wz) {
                 if (i != mSize2) {
-                    ur[mSize2] = ur[i];
-                    us[mSize2] = o;
-                    us[i] = null;
+                    wa[mSize2] = wa[i];
+                    wb[mSize2] = o;
+                    wb[i] = null;
                 }
                 ++mSize2;
             }
             ++i;
         }
-        this.UT = false;
+        this.WC = false;
         this.mSize = mSize2;
     }
     
-    public void agB(final int n) {
-        final int ahS = s.ahS(this.UR, this.mSize, n);
-        if (ahS >= 0 && this.US[ahS] != a.UQ) {
-            this.US[ahS] = a.UQ;
-            this.UT = true;
+    public void ahM(final int n) {
+        final int ajc = s.ajc(this.WA, this.mSize, n);
+        if (ajc >= 0 && this.WB[ajc] != a.Wz) {
+            this.WB[ajc] = a.Wz;
+            this.WC = true;
         }
     }
     
-    public Object agC(final int n, final Object o) {
-        final int ahS = s.ahS(this.UR, this.mSize, n);
-        if (ahS >= 0 && this.US[ahS] != a.UQ) {
-            return this.US[ahS];
+    public Object ahN(final int n, final Object o) {
+        final int ajc = s.ajc(this.WA, this.mSize, n);
+        if (ajc >= 0 && this.WB[ajc] != a.Wz) {
+            return this.WB[ajc];
         }
         return o;
     }
     
-    public Object agD(final int n) {
-        if (this.UT) {
-            this.agA();
+    public Object ahO(final int n) {
+        if (this.WC) {
+            this.ahL();
         }
-        return this.US[n];
+        return this.WB[n];
     }
     
-    public void agE(final int n) {
-        this.agB(n);
+    public void ahP(final int n) {
+        this.ahM(n);
     }
     
-    public Object agF(final int n) {
-        return this.agC(n, null);
-    }
-    
-    public int agG(final int n) {
-        if (this.UT) {
-            this.agA();
+    public int ahQ(final int n) {
+        if (this.WC) {
+            this.ahL();
         }
-        return this.UR[n];
+        return this.WA[n];
     }
     
-    public int agH(final int n) {
-        if (this.UT) {
-            this.agA();
+    public int ahR(final int n) {
+        if (this.WC) {
+            this.ahL();
         }
-        return s.ahS(this.UR, this.mSize, n);
+        return s.ajc(this.WA, this.mSize, n);
     }
     
-    public void agI(final int n, final Object o) {
-        final int ahS = s.ahS(this.UR, this.mSize, n);
-        if (ahS < 0) {
-            int n2 = ~ahS;
-            if (n2 < this.mSize && this.US[n2] == a.UQ) {
-                this.UR[n2] = n;
-                this.US[n2] = o;
+    public void ahS(final int n, final Object o) {
+        final int ajc = s.ajc(this.WA, this.mSize, n);
+        if (ajc < 0) {
+            int n2 = ~ajc;
+            if (n2 < this.mSize && this.WB[n2] == a.Wz) {
+                this.WA[n2] = n;
+                this.WB[n2] = o;
                 return;
             }
-            if (this.UT && this.mSize >= this.UR.length) {
-                this.agA();
-                n2 = ~s.ahS(this.UR, this.mSize, n);
+            if (this.WC && this.mSize >= this.WA.length) {
+                this.ahL();
+                n2 = ~s.ajc(this.WA, this.mSize, n);
             }
-            if (this.mSize >= this.UR.length) {
-                final int ahO = s.ahO(this.mSize + 1);
-                final int[] ur = new int[ahO];
-                final Object[] us = new Object[ahO];
-                System.arraycopy(this.UR, 0, ur, 0, this.UR.length);
-                System.arraycopy(this.US, 0, us, 0, this.US.length);
-                this.UR = ur;
-                this.US = us;
+            if (this.mSize >= this.WA.length) {
+                final int aiY = s.aiY(this.mSize + 1);
+                final int[] wa = new int[aiY];
+                final Object[] wb = new Object[aiY];
+                System.arraycopy(this.WA, 0, wa, 0, this.WA.length);
+                System.arraycopy(this.WB, 0, wb, 0, this.WB.length);
+                this.WA = wa;
+                this.WB = wb;
             }
             if (this.mSize - n2 != 0) {
-                System.arraycopy(this.UR, n2, this.UR, n2 + 1, this.mSize - n2);
-                System.arraycopy(this.US, n2, this.US, n2 + 1, this.mSize - n2);
+                System.arraycopy(this.WA, n2, this.WA, n2 + 1, this.mSize - n2);
+                System.arraycopy(this.WB, n2, this.WB, n2 + 1, this.mSize - n2);
             }
-            this.UR[n2] = n;
-            this.US[n2] = o;
+            this.WA[n2] = n;
+            this.WB[n2] = o;
             ++this.mSize;
         }
         else {
-            this.US[ahS] = o;
+            this.WB[ajc] = o;
         }
     }
     
     public void clear() {
         final int mSize = this.mSize;
-        final Object[] us = this.US;
+        final Object[] wb = this.WB;
         for (int i = 0; i < mSize; ++i) {
-            us[i] = null;
+            wb[i] = null;
         }
         this.mSize = 0;
-        this.UT = false;
+        this.WC = false;
     }
     
     public a clone() {
@@ -161,7 +157,7 @@ public class a implements Cloneable
         //     8: checkcast       Landroid/support/v4/a/a;
         //    11: astore_2       
         //    12: aload_0        
-        //    13: getfield        android/support/v4/a/a.UR:[I
+        //    13: getfield        android/support/v4/a/a.WA:[I
         //    16: astore_1       
         //    17: aload_1        
         //    18: invokevirtual   java/lang/Object.clone:()Ljava/lang/Object;
@@ -171,9 +167,9 @@ public class a implements Cloneable
         //    26: astore_1       
         //    27: aload_2        
         //    28: aload_1        
-        //    29: putfield        android/support/v4/a/a.UR:[I
+        //    29: putfield        android/support/v4/a/a.WA:[I
         //    32: aload_0        
-        //    33: getfield        android/support/v4/a/a.US:[Ljava/lang/Object;
+        //    33: getfield        android/support/v4/a/a.WB:[Ljava/lang/Object;
         //    36: astore_1       
         //    37: aload_1        
         //    38: invokevirtual   java/lang/Object.clone:()Ljava/lang/Object;
@@ -183,7 +179,7 @@ public class a implements Cloneable
         //    46: astore_1       
         //    47: aload_2        
         //    48: aload_1        
-        //    49: putfield        android/support/v4/a/a.US:[Ljava/lang/Object;
+        //    49: putfield        android/support/v4/a/a.WB:[Ljava/lang/Object;
         //    52: aload_2        
         //    53: areturn        
         //    54: astore_2       
@@ -232,9 +228,13 @@ public class a implements Cloneable
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
+    public Object get(final int n) {
+        return this.ahN(n, null);
+    }
+    
     public int size() {
-        if (this.UT) {
-            this.agA();
+        if (this.WC) {
+            this.ahL();
         }
         return this.mSize;
     }
@@ -248,14 +248,14 @@ public class a implements Cloneable
                 if (i > 0) {
                     sb.append(", ");
                 }
-                sb.append(this.agG(i));
+                sb.append(this.ahQ(i));
                 sb.append('=');
-                final Object agD = this.agD(i);
-                if (agD == this) {
+                final Object ahO = this.ahO(i);
+                if (ahO == this) {
                     sb.append("(this Map)");
                 }
                 else {
-                    sb.append(agD);
+                    sb.append(ahO);
                 }
                 ++i;
             }

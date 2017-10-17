@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract Wn(II)I
+.method public abstract Xl(II)I
 .end method

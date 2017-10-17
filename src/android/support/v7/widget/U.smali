@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private QA:I
+.field protected final Sh:Landroid/support/v7/widget/p;
 
-.field protected final mLayoutManager:Landroid/support/v7/widget/p;
+.field final Si:Landroid/graphics/Rect;
 
-.field final mTmpRect:Landroid/graphics/Rect;
+.field private Sj:I
 
 
 # direct methods
@@ -22,17 +22,17 @@
     .line 43
     const/high16 v0, -0x80000000
 
-    iput v0, p0, Landroid/support/v7/widget/U;->QA:I
+    iput v0, p0, Landroid/support/v7/widget/U;->Sj:I
 
     .line 45
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v7/widget/U;->mTmpRect:Landroid/graphics/Rect;
+    iput-object v0, p0, Landroid/support/v7/widget/U;->Si:Landroid/graphics/Rect;
 
     .line 48
-    iput-object p1, p0, Landroid/support/v7/widget/U;->mLayoutManager:Landroid/support/v7/widget/p;
+    iput-object p1, p0, Landroid/support/v7/widget/U;->Sh:Landroid/support/v7/widget/p;
 
     .line 49
     return-void
@@ -48,7 +48,7 @@
     return-void
 .end method
 
-.method public static aae(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
+.method public static abg(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
     .locals 1
 
     .prologue
@@ -60,7 +60,7 @@
     return-object v0
 .end method
 
-.method public static aao(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
+.method public static abq(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
     .locals 1
 
     .prologue
@@ -72,7 +72,7 @@
     return-object v0
 .end method
 
-.method public static aaq(Landroid/support/v7/widget/p;I)Landroid/support/v7/widget/U;
+.method public static abs(Landroid/support/v7/widget/p;I)Landroid/support/v7/widget/U;
     .locals 2
 
     .prologue
@@ -90,7 +90,7 @@
 
     .line 236
     :pswitch_0
-    invoke-static {p0}, Landroid/support/v7/widget/U;->aao(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
+    invoke-static {p0}, Landroid/support/v7/widget/U;->abq(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
 
     move-result-object v0
 
@@ -98,7 +98,7 @@
 
     .line 238
     :pswitch_1
-    invoke-static {p0}, Landroid/support/v7/widget/U;->aae(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
+    invoke-static {p0}, Landroid/support/v7/widget/U;->abg(Landroid/support/v7/widget/p;)Landroid/support/v7/widget/U;
 
     move-result-object v0
 
@@ -114,55 +114,55 @@
 
 
 # virtual methods
-.method public abstract aac(Landroid/view/View;)I
+.method public abstract abe(Landroid/view/View;)I
 .end method
 
-.method public abstract aad()I
+.method public abstract abf()I
 .end method
 
-.method public abstract aaf(Landroid/view/View;)I
+.method public abstract abh(Landroid/view/View;)I
 .end method
 
-.method public abstract aag(Landroid/view/View;)I
+.method public abstract abi(Landroid/view/View;)I
 .end method
 
-.method public abstract aah()I
+.method public abstract abj()I
 .end method
 
-.method public abstract aai(Landroid/view/View;)I
+.method public abstract abk(Landroid/view/View;)I
 .end method
 
-.method public abstract aaj(Landroid/view/View;)I
+.method public abstract abl(Landroid/view/View;)I
 .end method
 
-.method public abstract aak()I
+.method public abstract abm()I
 .end method
 
-.method public abstract aal()I
+.method public abstract abn()I
 .end method
 
-.method public abstract aam()I
+.method public abstract abo()I
 .end method
 
-.method public abstract aan()I
+.method public abstract abp()I
 .end method
 
-.method public aap()I
+.method public abr()I
     .locals 2
 
     .prologue
     .line 71
-    iget v0, p0, Landroid/support/v7/widget/U;->QA:I
+    iget v0, p0, Landroid/support/v7/widget/U;->Sj:I
 
     const/high16 v1, -0x80000000
 
     if-eq v1, v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/support/v7/widget/U;->aah()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/U;->abj()I
 
     move-result v0
 
-    iget v1, p0, Landroid/support/v7/widget/U;->QA:I
+    iget v1, p0, Landroid/support/v7/widget/U;->Sj:I
 
     sub-int/2addr v0, v1
 
@@ -175,25 +175,25 @@
     goto :goto_0
 .end method
 
-.method public abstract aar(Landroid/view/View;)I
+.method public abstract abt(Landroid/view/View;)I
 .end method
 
-.method public abstract aas()I
+.method public abstract abu()I
 .end method
 
-.method public abstract aat(I)V
+.method public abstract abv(I)V
 .end method
 
-.method public aau()V
+.method public abw()V
     .locals 1
 
     .prologue
     .line 57
-    invoke-virtual {p0}, Landroid/support/v7/widget/U;->aah()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/U;->abj()I
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/U;->QA:I
+    iput v0, p0, Landroid/support/v7/widget/U;->Sj:I
 
     .line 58
     return-void

@@ -15,7 +15,7 @@
     return-void
 .end method
 
-.method public static afj(Landroid/support/v4/view/a/A;)Ljava/lang/Object;
+.method public static agl(Landroid/support/v4/view/a/A;)Ljava/lang/Object;
     .locals 1
 
     .prologue

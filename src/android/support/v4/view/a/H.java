@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 class h extends i
 {
-    public String aeH(final AccessibilityNodeInfo accessibilityNodeInfo) {
+    public String afJ(final AccessibilityNodeInfo accessibilityNodeInfo) {
         return accessibilityNodeInfo.getViewIdResourceName();
     }
 }

@@ -11,9 +11,9 @@ import android.os.Parcelable;
 public class LinearLayoutManager$SavedState implements Parcelable
 {
     public static final Parcelable$Creator CREATOR;
-    int Qx;
-    boolean Qy;
-    int Qz;
+    int Se;
+    boolean Sf;
+    int Sg;
     
     static {
         CREATOR = (Parcelable$Creator)new au();
@@ -23,28 +23,28 @@ public class LinearLayoutManager$SavedState implements Parcelable
     }
     
     LinearLayoutManager$SavedState(final Parcel parcel) {
-        boolean qy = true;
-        this.Qz = parcel.readInt();
-        this.Qx = parcel.readInt();
-        if (parcel.readInt() != (qy ? 1 : 0)) {
-            qy = false;
+        boolean sf = true;
+        this.Sg = parcel.readInt();
+        this.Se = parcel.readInt();
+        if (parcel.readInt() != (sf ? 1 : 0)) {
+            sf = false;
         }
-        this.Qy = qy;
+        this.Sf = sf;
     }
     
     public LinearLayoutManager$SavedState(final LinearLayoutManager$SavedState linearLayoutManager$SavedState) {
-        this.Qz = linearLayoutManager$SavedState.Qz;
-        this.Qx = linearLayoutManager$SavedState.Qx;
-        this.Qy = linearLayoutManager$SavedState.Qy;
+        this.Sg = linearLayoutManager$SavedState.Sg;
+        this.Se = linearLayoutManager$SavedState.Se;
+        this.Sf = linearLayoutManager$SavedState.Sf;
     }
     
-    void aaa() {
-        this.Qz = -1;
+    void abc() {
+        this.Sg = -1;
     }
     
-    boolean aab() {
+    boolean abd() {
         boolean b = false;
-        if (this.Qz >= 0) {
+        if (this.Sg >= 0) {
             b = true;
         }
         return b;
@@ -56,9 +56,9 @@ public class LinearLayoutManager$SavedState implements Parcelable
     
     public void writeToParcel(final Parcel parcel, final int n) {
         int n2 = 0;
-        parcel.writeInt(this.Qz);
-        parcel.writeInt(this.Qx);
-        if (this.Qy) {
+        parcel.writeInt(this.Sg);
+        parcel.writeInt(this.Se);
+        if (this.Sf) {
             n2 = 1;
         }
         parcel.writeInt(n2);

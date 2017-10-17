@@ -10,8 +10,8 @@ import android.support.v4.os.ResultReceiver;
 
 class MediaBrowserCompat$ItemReceiver extends ResultReceiver
 {
-    private final String afo;
-    private final h afp;
+    private final String agq;
+    private final h agr;
     
     protected void onReceiveResult(final int n, final Bundle bundle) {
         if (bundle != null) {
@@ -20,13 +20,13 @@ class MediaBrowserCompat$ItemReceiver extends ResultReceiver
         if (n == 0 && bundle != null && bundle.containsKey("media_item")) {
             final Parcelable parcelable = bundle.getParcelable("media_item");
             if (parcelable != null && !(parcelable instanceof MediaBrowserCompat$MediaItem)) {
-                this.afp.onError(this.afo);
+                this.agr.onError(this.agq);
             }
             else {
-                this.afp.ass((MediaBrowserCompat$MediaItem)parcelable);
+                this.agr.atp((MediaBrowserCompat$MediaItem)parcelable);
             }
             return;
         }
-        this.afp.onError(this.afo);
+        this.agr.onError(this.agq);
     }
 }
