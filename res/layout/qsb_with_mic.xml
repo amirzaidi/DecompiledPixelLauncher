@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="start|center" android:orientation="horizontal" android:background="@drawable/bg_qsb_pill" android:layout_width="wrap_content" android:layout_height="@dimen/qsb_button_height" android:contentDescription="@string/label_search" android:elevation="@dimen/qsb_button_elevation"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/g_icon" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_super_g_color" android:scaleType="center" android:layout_weight="1.0" />
-    <View android:layout_gravity="center_vertical" android:background="#72333333" android:layout_width="0.5dip" android:layout_height="27.0dip" />
-    <ImageView android:id="@id/mic_icon" android:background="@drawable/bg_qsb_mic" android:layout_width="@dimen/qsb_button_height" android:layout_height="@dimen/qsb_button_height" android:src="@drawable/ic_mic_color" android:scaleType="center" android:contentDescription="@string/label_voice_search" android:elevation="@dimen/qsb_button_elevation" />
-</LinearLayout>

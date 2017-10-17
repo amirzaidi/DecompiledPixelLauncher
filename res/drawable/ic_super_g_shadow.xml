@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.graphics.ShadowDrawable android:src="@drawable/ic_super_g_color" android:shadowColor="@color/qsb_icon_shadow_color" android:elevation="4.0dip" launcher:darkTintColor="@color/qsb_dark_icon_tint"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto" />

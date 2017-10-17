@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="start|center" android:id="@id/g_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="?gIcon" />
+    <ImageView android:layout_gravity="end|center" android:id="@id/mic_icon" android:background="?android:selectableItemBackgroundBorderless" android:clickable="true" android:layout_width="48.0dip" android:layout_height="fill_parent" android:layout_marginTop="-6.0dip" android:layout_marginBottom="-6.0dip" android:src="?micIcon" android:scaleType="center" android:contentDescription="@string/label_voice_search" />
+</merge>

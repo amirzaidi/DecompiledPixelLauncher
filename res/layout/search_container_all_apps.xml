@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher3.allapps.search.AppsSearchContainerLayout android:gravity="bottom|center" android:layout_gravity="center|top" android:id="@id/search_container_all_apps" android:paddingLeft="@dimen/dynamic_grid_edge_margin" android:paddingRight="@dimen/dynamic_grid_edge_margin" android:saveEnabled="false" android:layout_width="fill_parent" android:layout_height="@dimen/all_apps_search_bar_height" android:layout_marginBottom="-8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.launcher3.ExtendedEditText android:textSize="16.0sp" android:textColor="?android:textColorSecondary" android:textColorHint="@drawable/all_apps_search_hint" android:gravity="center" android:layout_gravity="bottom" android:id="@id/search_box_input" android:background="@android:color/transparent" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="@dimen/all_apps_search_bar_field_height" android:layout_marginBottom="8.0dip" android:hint="@string/all_apps_search_bar_hint" android:maxLines="1" android:scrollHorizontally="true" android:singleLine="true" android:inputType="textCapWords|textNoSuggestions" android:imeOptions="actionSearch|flagNoExtractUi" />
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/search_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginBottom="8.0dip">
+        <View android:background="@drawable/all_apps_search_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </FrameLayout>
+</com.android.launcher3.allapps.search.AppsSearchContainerLayout>

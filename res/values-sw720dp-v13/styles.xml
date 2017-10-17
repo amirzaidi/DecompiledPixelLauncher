@@ -6,12 +6,12 @@
         <item name="android:windowShowWallpaper">true</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:keyboardLayout">@layout/search_container_all_apps</item>
         <item name="android:colorEdgeEffect">?android:textColorSecondary</item>
     </style>
     <style name="DropTargetButton" parent="@style/DropTargetButtonBase">
         <item name="android:paddingLeft">60.0dip</item>
         <item name="android:paddingRight">60.0dip</item>
-        <item name="android:shadowColor">#ff393939</item>
         <item name="android:shadowDx">0.0</item>
         <item name="android:shadowDy">0.0</item>
         <item name="android:shadowRadius">2.0</item>

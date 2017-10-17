@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.android.launcher3.discovery.AppDiscoveryItemView android:background="?android:selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/image" android:padding="8.0dip" android:layout_width="56.0dip" android:layout_height="56.0dip" android:scaleType="fitCenter" />
+    <ImageView android:id="@id/image" android:padding="8.0dip" android:focusable="false" android:layout_width="56.0dip" android:layout_height="56.0dip" android:scaleType="fitCenter" android:importantForAccessibility="no" />
     <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/image" android:layout_centerVertical="true">
         <TextView android:textSize="15.0sp" android:textColor="?android:textColorSecondary" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
         <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
@@ -12,5 +12,5 @@
             <TextView android:textSize="14.0sp" android:textColor="?android:textColorHint" android:id="@id/price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:textAllCaps="true" />
         </LinearLayout>
     </LinearLayout>
-    <ImageView android:paddingLeft="@dimen/container_fastscroll_thumb_max_width" android:paddingRight="@dimen/container_fastscroll_thumb_max_width" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/all_apps_divider" android:scaleType="fitXY" android:layout_alignParentBottom="true" android:importantForAccessibility="no" />
+    <ImageView android:paddingLeft="@dimen/dynamic_grid_edge_margin" android:paddingRight="@dimen/dynamic_grid_edge_margin" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/all_apps_divider" android:scaleType="fitXY" android:layout_alignParentBottom="true" android:importantForAccessibility="no" />
 </com.android.launcher3.discovery.AppDiscoveryItemView>

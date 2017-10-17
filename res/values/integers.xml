@@ -20,12 +20,10 @@
     <integer name="config_folderExpandDuration">120</integer>
     <integer name="config_materialFolderExpandDuration">200</integer>
     <integer name="config_materialFolderExpandStagger">60</integer>
+    <integer name="config_folderDelay">30</integer>
     <integer name="config_dropAnimMaxDist">800</integer>
     <integer name="config_caretAnimationDuration">200</integer>
-    <integer name="config_deepShortcutOpenDuration">220</integer>
-    <integer name="config_deepShortcutArrowOpenDuration">80</integer>
-    <integer name="config_deepShortcutOpenStagger">40</integer>
-    <integer name="config_deepShortcutCloseDuration">150</integer>
-    <integer name="config_deepShortcutCloseStagger">20</integer>
+    <integer name="config_popupOpenCloseDuration">150</integer>
+    <integer name="config_popupArrowOpenDuration">80</integer>
     <integer name="config_removeNotificationViewDuration">300</integer>
 </resources>

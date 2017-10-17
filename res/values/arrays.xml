@@ -9,9 +9,9 @@
     </string-array>
     <string-array name="icon_shape_override_paths_names">
         <item>@string/icon_shape_system_default</item>
-        <item>Square</item>
-        <item>Rounded square</item>
-        <item>Squircle</item>
-        <item>Teardrop</item>
+        <item>@string/icon_shape_square</item>
+        <item>@string/icon_shape_rounded_square</item>
+        <item>@string/icon_shape_squircle</item>
+        <item>@string/icon_shape_teardrop</item>
     </string-array>
 </resources>

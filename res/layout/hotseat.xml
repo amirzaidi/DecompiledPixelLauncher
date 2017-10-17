@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.launcher3.Hotseat
+<com.android.launcher3.Hotseat android:theme="@style/HomeScreenElementTheme"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto">
     <com.android.launcher3.CellLayout android:layout_gravity="center" android:id="@id/layout" android:layout_width="wrap_content" android:layout_height="fill_parent" launcher:containerType="hotseat" />
+    <include layout="@layout/search_container_hotseat" />
 </com.android.launcher3.Hotseat>

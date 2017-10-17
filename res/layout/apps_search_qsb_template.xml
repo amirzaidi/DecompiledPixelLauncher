@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/qsb_background_container" android:padding="@dimen/qsb_shadow_margin" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layoutDirection="ltr">
+        <ImageView android:id="@id/qsb_background_1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="matrix" />
+        <ImageView android:id="@id/qsb_background_2" android:layout_width="0.0dip" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_weight="1.0" />
+        <ImageView android:id="@id/qsb_background_3" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="matrix" android:scaleX="-1.0" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/qsb_icon_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="start|center" android:id="@id/g_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_super_g_color" />
+        <ImageView android:layout_gravity="end|center" android:id="@id/mic_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_mic_color" />
+    </FrameLayout>
+</FrameLayout>

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.android.launcher3.BubbleTextView style="@style/BaseIcon.Workspace" />
+<com.android.launcher3.views.DoubleShadowBubbleTextView style="@style/BaseIcon.Workspace" />

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.android.launcher3.LauncherRootView android:id="@id/launcher" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
   xmlns:android="http://schemas.android.com/apk/res/android" xmlns:launcher="http://schemas.android.com/apk/res-auto">
-    <com.android.launcher3.dragndrop.DragLayer android:id="@id/drag_layer" android:background="@drawable/workspace_bg" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no">
-        <com.android.launcher3.Workspace android:layout_gravity="center" android:id="@id/workspace" android:layout_width="fill_parent" android:layout_height="fill_parent" launcher:pageIndicator="@id/page_indicator" />
+    <com.android.launcher3.dragndrop.DragLayer android:id="@id/drag_layer" android:background="?workspaceStatusBarScrim" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:importantForAccessibility="no">
+        <com.android.launcher3.Workspace android:theme="@style/HomeScreenElementTheme" android:layout_gravity="center" android:id="@id/workspace" android:layout_width="fill_parent" android:layout_height="fill_parent" launcher:pageIndicator="@id/page_indicator" />
+        <include layout="@layout/gradient_bg" />
         <include android:layout_gravity="right" android:id="@id/hotseat" android:layout_width="fill_parent" android:layout_height="fill_parent" launcher:layout_ignoreInsets="true" layout="@layout/hotseat" />
         <include android:id="@id/drop_target_bar" layout="@layout/drop_target_bar_vert" />
         <include android:id="@id/overview_panel" android:visibility="gone" layout="@layout/overview_panel" />
-        <com.android.launcher3.pageindicators.PageIndicatorCaretLandscape android:layout_gravity="bottom|center|left" android:id="@id/page_indicator" android:layout_width="@dimen/dynamic_grid_page_indicator_height" android:layout_height="@dimen/dynamic_grid_page_indicator_height" />
-        <View android:id="@id/workspace_blocked_row" android:layout_width="0.0dip" android:layout_height="10.0dip" />
         <include android:id="@id/widgets_view" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/widgets_view" />
         <include android:id="@id/apps_view" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/all_apps" />
+        <com.android.launcher3.pageindicators.PageIndicatorCaretLandscape android:theme="@style/HomeScreenElementTheme" android:layout_gravity="bottom|center|left" android:id="@id/page_indicator" android:layout_width="@dimen/dynamic_grid_min_page_indicator_size" android:layout_height="@dimen/dynamic_grid_min_page_indicator_size" />
     </com.android.launcher3.dragndrop.DragLayer>
 </com.android.launcher3.LauncherRootView>
