@@ -4,60 +4,60 @@
 
 package com.google.android.apps.nexuslauncher.reflection;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent$CanceledException;
-import java.util.concurrent.TimeUnit;
-import android.app.PendingIntent$OnFinished;
-import android.os.Handler;
-import android.os.Looper;
-import java.util.concurrent.CountDownLatch;
-import com.android.launcher3.util.Preconditions;
-import android.util.MutableLong;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.os.SystemClock;
-import java.util.Calendar;
+import java.util.Iterator;
+import android.content.SharedPreferences;
+import java.util.List;
+import com.google.android.apps.nexuslauncher.reflection.filter.d;
+import com.google.android.apps.nexuslauncher.reflection.c.e;
+import java.io.File;
+import com.google.android.apps.nexuslauncher.reflection.c.c;
+import com.android.launcher3.Utilities;
+import com.google.android.apps.nexuslauncher.reflection.a.b;
+import java.util.ArrayList;
 import android.content.Context;
 
-public class a implements m
+public class a
 {
-    private final long cp;
-    
-    public a(final Context context) {
-        this.cp = this.initRecordedTime(context, 1);
-    }
-    
-    public long bA() {
-        return this.cp;
-    }
-    
-    protected long getAbsoluteBootTime() {
-        return Calendar.getInstance().getTimeInMillis() - SystemClock.elapsedRealtime();
-    }
-    
-    protected long initRecordedTime(final Context context, final int n) {
-        final int n2 = 1;
-        final Intent intent = new Intent("com.google.android.apps.nexuslauncher.reflection.ACTION_BOOT_CYCLE");
-        final PendingIntent broadcast = PendingIntent.getBroadcast(context, n, intent, 536870912);
-        final MutableLong mutableLong = new MutableLong(this.getAbsoluteBootTime());
-        if (broadcast != null) {
-            try {
-                Preconditions.assertNonUiThread();
-                final CountDownLatch countDownLatch = new CountDownLatch(1);
-                final p p2 = new p(this, mutableLong, countDownLatch);
-                try {
-                    broadcast.send(n, (PendingIntent$OnFinished)p2, new Handler(Looper.getMainLooper()));
-                    countDownLatch.await(1L, TimeUnit.SECONDS);
-                    return mutableLong.value;
-                }
-                catch (PendingIntent$CanceledException ex) {}
-                catch (InterruptedException ex2) {}
-            }
-            catch (PendingIntent$CanceledException ex3) {}
-            catch (InterruptedException ex4) {}
+    public static n am(final Context context) {
+        final ArrayList<b> list = new ArrayList<b>();
+        final k k = new k(context);
+        final SharedPreferences prefs = Utilities.getPrefs(context);
+        new h();
+        final c c = new c(new com.google.android.apps.nexuslauncher.reflection.c.a(context, "reflection.events"));
+        e e = null;
+        final File file = new File(context.getCacheDir(), "client_actions");
+        if (prefs.getBoolean("pre_debug", false)) {
+            e = new e(file, 10485760L);
         }
-        intent.putExtra("time", mutableLong.value);
-        ((AlarmManager)context.getSystemService("alarm")).set(n2, Long.MAX_VALUE, PendingIntent.getBroadcast(context, n, intent, 134217728));
-        return mutableLong.value;
+        else if (file.exists()) {
+            file.delete();
+        }
+        final b b = new b(context);
+        list.add(b);
+        final SharedPreferences at = g.aT(context);
+        final com.google.android.apps.nexuslauncher.reflection.filter.c c2 = new com.google.android.apps.nexuslauncher.reflection.filter.c(context);
+        final com.google.android.apps.nexuslauncher.reflection.filter.a a = new com.google.android.apps.nexuslauncher.reflection.filter.a(context);
+        final d d = new d(b);
+        final com.google.android.apps.nexuslauncher.reflection.b b2 = new com.google.android.apps.nexuslauncher.reflection.b(context, c, at, "foreground_evt_buf.properties", null);
+        final File file2 = new File(context.getFilesDir(), "reflection.engine");
+        final com.google.android.apps.nexuslauncher.reflection.e e2 = new com.google.android.apps.nexuslauncher.reflection.e(context, c, at, new File(context.getFilesDir(), "reflection.engine.background"), b2);
+        new l().aX(at, file2, b2, c, e2);
+        b2.an(file2);
+        final m m = new m(at);
+        final ArrayList<String> list2 = new ArrayList<String>();
+        for (final String s : g.bs) {
+            if (s.startsWith("/")) {
+                list2.add(context.getDir(s.substring(1), 0).getAbsolutePath());
+            }
+            else {
+                list2.add(s);
+            }
+        }
+        final n n = new n(context, b2, e2, b, c2, a, d, m, new com.google.android.apps.nexuslauncher.reflection.c.b(at, new File(context.getApplicationInfo().dataDir), list2), e, k);
+        final j j = new j(context, n, a, c2);
+        list.add((b)j);
+        n.bc(list);
+        j.aW();
+        return n;
     }
 }

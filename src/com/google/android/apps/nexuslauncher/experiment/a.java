@@ -4,28 +4,26 @@
 
 package com.google.android.apps.nexuslauncher.experiment;
 
-import android.util.Log;
-import com.google.android.gms.phenotype.Configurations;
-import android.content.SharedPreferences;
+import android.content.Context;
 import com.google.android.gms.phenotype.d;
-import com.google.android.gms.phenotype.c;
+import com.google.android.gms.phenotype.e;
 
-class a extends c implements d
+public class a
 {
-    private final SharedPreferences dg;
+    private static final e fr;
+    public static d fs;
+    public static d ft;
+    public static d fu;
     
-    public a(final com.google.android.gms.common.api.d d) {
-        super(d, "com.google.android.apps.nexuslauncher");
-        this.dg = d.getContext().getSharedPreferences("phenotype_configs", 0);
+    static {
+        fr = new e("phenotype_configs").CQ("");
+        a.fu = a.fr.CR("QSBFeature__qsb_is_wide", false);
+        a.fs = a.fr.CR("QSBFeature__qsb_is_in_experiment", false);
+        a.ft = a.fr.CR("QSBFeature__qsb_kill_switch", false);
     }
     
-    protected void cI(final Configurations configurations) {
-        c.oZ(this.dg, configurations);
-        Log.d("PhenotypeFlagCommitter", "Committed to new configuration from Phenotype");
-    }
-    
-    public void cJ(final boolean b) {
-        Log.d("PhenotypeFlagCommitter", "Commit finished, result:" + b);
-        this.lF.dx();
+    public static void dS(final Context context) {
+        d.CN(context);
+        PhenotypeUpdateReceiver.dT(context);
     }
 }

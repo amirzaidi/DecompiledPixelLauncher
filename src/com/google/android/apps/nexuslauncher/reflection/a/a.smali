@@ -1,1255 +1,412 @@
-.class public final Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-.super Lcom/google/protobuf/nano/a;
+.class public Lcom/google/android/apps/nexuslauncher/reflection/a/a;
+.super Landroid/content/BroadcastReceiver;
 .source "SourceFile"
+
+# interfaces
+.implements Lcom/google/android/apps/nexuslauncher/reflection/o;
 
 
 # instance fields
-.field public am:J
+.field private a:Z
 
-.field public an:Ljava/lang/String;
+.field private b:J
 
-.field public ao:Ljava/lang/String;
+.field private final c:Lcom/google/android/apps/nexuslauncher/reflection/b/b;
 
-.field public ap:J
+.field private d:Z
 
-.field public aq:[Ljava/lang/String;
+.field private e:J
 
-.field public ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-.field public as:Ljava/lang/String;
-
-.field public at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-.field public au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
-
-.field public av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-.field public aw:J
-
-.field public ax:J
-
-.field public ay:Ljava/lang/String;
-
-.field public az:Ljava/lang/String;
-
-.field public duration:J
+.field private final mContext:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/apps/nexuslauncher/reflection/b/b;Landroid/content/Context;)V
+    .locals 3
 
     .prologue
-    .line 70
-    invoke-direct {p0}, Lcom/google/protobuf/nano/a;-><init>()V
+    const-wide/16 v0, 0x0
 
-    .line 71
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->clear()Lcom/google/android/apps/nexuslauncher/reflection/a/a;
+    .line 52
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 72
+    .line 47
+    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->e:J
+
+    .line 49
+    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->b:J
+
+    .line 53
+    iput-object p2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->mContext:Landroid/content/Context;
+
+    .line 54
+    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->c:Lcom/google/android/apps/nexuslauncher/reflection/b/b;
+
+    .line 58
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string/jumbo v1, "android.intent.action.HEADSET_PLUG"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    .line 59
+    const-string/jumbo v1, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
+
+    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 60
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p2, p0, v0, v2, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+    .line 63
+    const-string/jumbo v0, "audio"
+
+    invoke-virtual {p2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/media/AudioManager;
+
+    .line 64
+    invoke-virtual {v0}, Landroid/media/AudioManager;->isWiredHeadsetOn()Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->d:Z
+
+    .line 65
+    invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothA2dpOn()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoOn()Z
+
+    move-result v0
+
+    :goto_0
+    iput-boolean v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->a:Z
+
+    .line 66
     return-void
-.end method
 
-.method public static am([B)Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-    .locals 1
+    .line 65
+    :cond_0
+    const/4 v0, 0x1
 
-    .prologue
-    .line 355
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-
-    invoke-direct {v0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;-><init>()V
-
-    invoke-static {v0, p0}, Lcom/google/protobuf/nano/a;->mergeFrom(Lcom/google/protobuf/nano/a;[B)Lcom/google/protobuf/nano/a;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-
-    return-object v0
-.end method
-
-.method public static an(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-    .locals 1
-
-    .prologue
-    .line 361
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-
-    invoke-direct {v0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;-><init>()V
-
-    invoke-virtual {v0, p0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public clear()Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-    .locals 4
+.method protected a(Z)V
+    .locals 2
 
     .prologue
-    const/4 v1, 0x0
+    .line 128
+    iput-boolean p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->a:Z
 
-    const-wide/16 v2, 0x0
-
-    .line 75
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->as:Ljava/lang/String;
-
-    .line 76
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->az:Ljava/lang/String;
-
-    .line 77
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->an:Ljava/lang/String;
-
-    .line 78
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ao:Ljava/lang/String;
-
-    .line 79
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aw:J
-
-    .line 80
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->am:J
-
-    .line 81
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ap:J
-
-    .line 82
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ay:Ljava/lang/String;
-
-    .line 83
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ax:J
-
-    .line 84
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->duration:J
-
-    .line 85
-    invoke-static {}, Lcom/google/android/apps/nexuslauncher/reflection/a/e;->emptyArray()[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
+    .line 129
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
 
-    .line 86
-    sget-object v0, Lcom/google/protobuf/nano/f;->Lg:[Ljava/lang/String;
+    move-result-wide v0
 
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
+    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->b:J
 
-    .line 87
-    iput-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
+    .line 130
+    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->b()V
 
-    .line 88
-    iput-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-    .line 89
-    iput-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    .line 90
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->cachedSize:I
-
-    .line 91
-    return-object p0
+    .line 131
+    return-void
 .end method
 
-.method protected computeSerializedSize()I
+.method public b()V
     .locals 8
+
+    .prologue
+    const-wide/16 v6, 0x0
+
+    .line 70
+    new-instance v1, Ljava/util/ArrayList;
+
+    const/4 v0, 0x4
+
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 71
+    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->e:J
+
+    cmp-long v0, v2, v6
+
+    if-lez v0, :cond_0
+
+    .line 72
+    new-instance v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;
+
+    invoke-direct {v2}, Lcom/google/android/apps/nexuslauncher/reflection/d/i;-><init>()V
+
+    .line 73
+    const-string/jumbo v0, "headset"
+
+    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;->aC:Ljava/lang/String;
+
+    .line 74
+    iget-wide v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->e:J
+
+    iput-wide v4, v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;->aD:J
+
+    .line 75
+    iget-boolean v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->d:Z
+
+    if-eqz v0, :cond_2
+
+    const-string/jumbo v0, "headset_wired_in"
+
+    :goto_0
+    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;->aE:Ljava/lang/String;
+
+    .line 76
+    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/b/a;
+
+    invoke-direct {v0, v2}, Lcom/google/android/apps/nexuslauncher/reflection/b/a;-><init>(Lcom/google/android/apps/nexuslauncher/reflection/d/i;)V
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 78
+    :cond_0
+    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->b:J
+
+    cmp-long v0, v2, v6
+
+    if-lez v0, :cond_1
+
+    .line 79
+    new-instance v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;
+
+    invoke-direct {v2}, Lcom/google/android/apps/nexuslauncher/reflection/d/i;-><init>()V
+
+    .line 80
+    const-string/jumbo v0, "headset"
+
+    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;->aC:Ljava/lang/String;
+
+    .line 81
+    iget-wide v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->b:J
+
+    iput-wide v4, v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;->aD:J
+
+    .line 82
+    iget-boolean v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->a:Z
+
+    if-eqz v0, :cond_3
+
+    const-string/jumbo v0, "headset_bluetooth_in"
+
+    :goto_1
+    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/d/i;->aE:Ljava/lang/String;
+
+    .line 83
+    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/b/a;
+
+    invoke-direct {v0, v2}, Lcom/google/android/apps/nexuslauncher/reflection/b/a;-><init>(Lcom/google/android/apps/nexuslauncher/reflection/d/i;)V
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 85
+    :cond_1
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->c:Lcom/google/android/apps/nexuslauncher/reflection/b/b;
+
+    const-string/jumbo v2, "headset"
+
+    invoke-static {v0, v2, v1}, Lcom/google/research/reflection/common/b;->Tb(Lcom/google/research/reflection/a/b;Ljava/lang/String;Ljava/util/List;)V
+
+    .line 91
+    return-void
+
+    .line 75
+    :cond_2
+    const-string/jumbo v0, "headset_wired_out"
+
+    goto :goto_0
+
+    .line 82
+    :cond_3
+    const-string/jumbo v0, "headset_bluetooth_out"
+
+    goto :goto_1
+.end method
+
+.method public c()V
+    .locals 1
+
+    .prologue
+    .line 135
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    .line 136
+    return-void
+.end method
+
+.method protected d(Z)V
+    .locals 2
+
+    .prologue
+    .line 122
+    iput-boolean p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->d:Z
+
+    .line 123
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->e:J
+
+    .line 124
+    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->b()V
+
+    .line 125
+    return-void
+.end method
+
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 5
 
     .prologue
     const/4 v4, 0x1
 
-    const-wide/16 v6, 0x0
+    const/4 v3, 0x0
 
-    const/4 v1, 0x0
+    const/4 v2, -0x1
 
-    .line 157
-    invoke-super {p0}, Lcom/google/protobuf/nano/a;->computeSerializedSize()I
+    .line 96
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "android.intent.action.HEADSET_PLUG"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 158
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->as:Ljava/lang/String;
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 160
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->as:Ljava/lang/String;
-
-    .line 159
-    invoke-static {v4, v2}, Lcom/google/protobuf/nano/b;->Sb(ILjava/lang/String;)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 162
-    :cond_0
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->az:Ljava/lang/String;
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 164
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->az:Ljava/lang/String;
-
-    const/4 v3, 0x2
-
-    .line 163
-    invoke-static {v3, v2}, Lcom/google/protobuf/nano/b;->Sb(ILjava/lang/String;)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 166
-    :cond_1
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->an:Ljava/lang/String;
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    .line 168
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->an:Ljava/lang/String;
-
-    const/4 v3, 0x3
-
-    .line 167
-    invoke-static {v3, v2}, Lcom/google/protobuf/nano/b;->Sb(ILjava/lang/String;)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 170
-    :cond_2
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ao:Ljava/lang/String;
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    .line 172
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ao:Ljava/lang/String;
-
-    const/4 v3, 0x4
-
-    .line 171
-    invoke-static {v3, v2}, Lcom/google/protobuf/nano/b;->Sb(ILjava/lang/String;)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 174
-    :cond_3
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aw:J
-
-    cmp-long v2, v2, v6
-
-    if-eqz v2, :cond_4
-
-    .line 176
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aw:J
-
-    const/4 v4, 0x5
-
-    .line 175
-    invoke-static {v4, v2, v3}, Lcom/google/protobuf/nano/b;->RE(IJ)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 178
-    :cond_4
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->am:J
-
-    cmp-long v2, v2, v6
-
-    if-eqz v2, :cond_5
-
-    .line 180
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->am:J
-
-    const/4 v4, 0x6
-
-    .line 179
-    invoke-static {v4, v2, v3}, Lcom/google/protobuf/nano/b;->RE(IJ)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 182
-    :cond_5
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ap:J
-
-    cmp-long v2, v2, v6
-
-    if-eqz v2, :cond_6
-
-    .line 184
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ap:J
-
-    const/4 v4, 0x7
-
-    .line 183
-    invoke-static {v4, v2, v3}, Lcom/google/protobuf/nano/b;->RE(IJ)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 186
-    :cond_6
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ay:Ljava/lang/String;
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_7
-
-    .line 188
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ay:Ljava/lang/String;
-
-    const/16 v3, 0x8
-
-    .line 187
-    invoke-static {v3, v2}, Lcom/google/protobuf/nano/b;->Sb(ILjava/lang/String;)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 190
-    :cond_7
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ax:J
-
-    cmp-long v2, v2, v6
-
-    if-eqz v2, :cond_8
-
-    .line 192
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ax:J
-
-    const/16 v4, 0x9
-
-    .line 191
-    invoke-static {v4, v2, v3}, Lcom/google/protobuf/nano/b;->RE(IJ)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 194
-    :cond_8
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->duration:J
-
-    cmp-long v2, v2, v6
-
-    if-eqz v2, :cond_9
-
-    .line 196
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->duration:J
-
-    const/16 v4, 0xa
-
-    .line 195
-    invoke-static {v4, v2, v3}, Lcom/google/protobuf/nano/b;->RE(IJ)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    .line 198
-    :cond_9
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    if-eqz v2, :cond_c
-
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    array-length v2, v2
-
-    if-lez v2, :cond_c
-
-    move v2, v0
-
-    move v0, v1
-
-    .line 199
-    :goto_0
-    iget-object v3, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    array-length v3, v3
-
-    if-ge v0, v3, :cond_b
-
-    .line 200
-    iget-object v3, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    aget-object v3, v3, v0
-
-    .line 201
-    if-eqz v3, :cond_a
-
-    .line 203
-    const/16 v4, 0xb
-
-    .line 202
-    invoke-static {v4, v3}, Lcom/google/protobuf/nano/b;->Rt(ILcom/google/protobuf/nano/a;)I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    .line 199
-    :cond_a
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_b
-    move v0, v2
-
-    .line 207
-    :cond_c
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    if-eqz v2, :cond_f
-
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    array-length v2, v2
-
-    if-lez v2, :cond_f
-
-    move v2, v1
-
-    move v3, v1
-
-    .line 210
-    :goto_1
-    iget-object v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    array-length v4, v4
-
-    if-ge v1, v4, :cond_e
-
-    .line 211
-    iget-object v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    aget-object v4, v4, v1
-
-    .line 212
-    if-eqz v4, :cond_d
-
-    .line 213
-    add-int/lit8 v3, v3, 0x1
-
-    .line 214
-    invoke-static {v4}, Lcom/google/protobuf/nano/b;->Rv(Ljava/lang/String;)I
-
-    move-result v4
-
-    add-int/2addr v2, v4
-
-    .line 210
-    :cond_d
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    .line 218
-    :cond_e
-    add-int/2addr v0, v2
-
-    .line 219
-    mul-int/lit8 v1, v3, 0x1
-
-    add-int/2addr v0, v1
-
-    .line 221
-    :cond_f
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
-
-    if-eqz v1, :cond_10
-
-    .line 223
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
-
-    const/16 v2, 0xd
-
-    .line 222
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->Rt(ILcom/google/protobuf/nano/a;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 225
-    :cond_10
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-    if-eqz v1, :cond_11
-
-    .line 227
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-    const/16 v2, 0xe
-
-    .line 226
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->Rt(ILcom/google/protobuf/nano/a;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 229
-    :cond_11
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    if-eqz v1, :cond_12
-
-    .line 231
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    const/16 v2, 0xf
-
-    .line 230
-    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->Rt(ILcom/google/protobuf/nano/a;)I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    .line 233
-    :cond_12
-    return v0
-.end method
-
-.method public mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-    .locals 4
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 241
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->Sx()I
-
-    move-result v0
-
-    .line 242
-    sparse-switch v0, :sswitch_data_0
-
-    .line 246
-    invoke-static {p1, v0}, Lcom/google/protobuf/nano/f;->SW(Lcom/google/protobuf/nano/c;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 247
-    return-object p0
-
-    .line 244
-    :sswitch_0
-    return-object p0
-
-    .line 252
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SG()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->as:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 256
-    :sswitch_2
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SG()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->az:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 260
-    :sswitch_3
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SG()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->an:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 264
-    :sswitch_4
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SG()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ao:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 268
-    :sswitch_5
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SE()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aw:J
-
-    goto :goto_0
-
-    .line 272
-    :sswitch_6
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SE()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->am:J
-
-    goto :goto_0
-
-    .line 276
-    :sswitch_7
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SE()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ap:J
-
-    goto :goto_0
-
-    .line 280
-    :sswitch_8
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SG()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ay:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 284
-    :sswitch_9
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SE()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ax:J
-
-    goto :goto_0
-
-    .line 288
-    :sswitch_a
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SE()J
-
-    move-result-wide v2
-
-    iput-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->duration:J
-
-    goto :goto_0
-
-    .line 293
-    :sswitch_b
-    const/16 v0, 0x5a
-
-    .line 292
-    invoke-static {p1, v0}, Lcom/google/protobuf/nano/f;->SS(Lcom/google/protobuf/nano/c;I)I
-
-    move-result v2
-
-    .line 294
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    if-nez v0, :cond_2
-
-    move v0, v1
-
-    .line 296
-    :goto_1
-    add-int/2addr v2, v0
-
-    new-array v2, v2, [Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    .line 297
     if-eqz v0, :cond_1
 
-    .line 298
-    iget-object v3, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 300
-    :cond_1
-    :goto_2
-    array-length v3, v2
-
-    add-int/lit8 v3, v3, -0x1
-
-    if-ge v0, v3, :cond_3
-
-    .line 301
-    new-instance v3, Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    invoke-direct {v3}, Lcom/google/android/apps/nexuslauncher/reflection/a/e;-><init>()V
-
-    aput-object v3, v2, v0
-
-    .line 302
-    aget-object v3, v2, v0
-
-    invoke-virtual {p1, v3}, Lcom/google/protobuf/nano/c;->SB(Lcom/google/protobuf/nano/a;)V
-
-    .line 303
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->Sx()I
-
-    .line 300
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    .line 294
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    array-length v0, v0
-
-    goto :goto_1
-
-    .line 306
-    :cond_3
-    new-instance v3, Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    invoke-direct {v3}, Lcom/google/android/apps/nexuslauncher/reflection/a/e;-><init>()V
-
-    aput-object v3, v2, v0
-
-    .line 307
-    aget-object v0, v2, v0
-
-    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/c;->SB(Lcom/google/protobuf/nano/a;)V
-
-    .line 308
-    iput-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    goto/16 :goto_0
-
-    .line 313
-    :sswitch_c
-    const/16 v0, 0x62
-
-    .line 312
-    invoke-static {p1, v0}, Lcom/google/protobuf/nano/f;->SS(Lcom/google/protobuf/nano/c;I)I
-
-    move-result v2
-
-    .line 314
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    if-nez v0, :cond_5
-
-    move v0, v1
-
-    .line 315
-    :goto_3
-    add-int/2addr v2, v0
-
-    new-array v2, v2, [Ljava/lang/String;
-
-    .line 316
-    if-eqz v0, :cond_4
-
-    .line 317
-    iget-object v3, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    invoke-static {v3, v1, v2, v1, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 319
-    :cond_4
-    :goto_4
-    array-length v3, v2
-
-    add-int/lit8 v3, v3, -0x1
-
-    if-ge v0, v3, :cond_6
-
-    .line 320
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SG()Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v2, v0
-
-    .line 321
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->Sx()I
-
-    .line 319
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_4
-
-    .line 314
-    :cond_5
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    array-length v0, v0
-
-    goto :goto_3
-
-    .line 324
-    :cond_6
-    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->SG()Ljava/lang/String;
-
-    move-result-object v3
-
-    aput-object v3, v2, v0
-
-    .line 325
-    iput-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
-
-    goto/16 :goto_0
-
-    .line 329
-    :sswitch_d
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
-
-    if-nez v0, :cond_7
-
-    .line 330
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/a/b;
-
-    invoke-direct {v0}, Lcom/google/android/apps/nexuslauncher/reflection/a/b;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
-
-    .line 332
-    :cond_7
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
-
-    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/c;->SB(Lcom/google/protobuf/nano/a;)V
-
-    goto/16 :goto_0
-
-    .line 336
-    :sswitch_e
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-    if-nez v0, :cond_8
-
-    .line 337
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-    invoke-direct {v0}, Lcom/google/android/apps/nexuslauncher/reflection/a/c;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-    .line 339
-    :cond_8
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
-
-    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/c;->SB(Lcom/google/protobuf/nano/a;)V
-
-    goto/16 :goto_0
-
-    .line 343
-    :sswitch_f
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    if-nez v0, :cond_9
-
-    .line 344
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    invoke-direct {v0}, Lcom/google/android/apps/nexuslauncher/reflection/a/d;-><init>()V
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    .line 346
-    :cond_9
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    invoke-virtual {p1, v0}, Lcom/google/protobuf/nano/c;->SB(Lcom/google/protobuf/nano/a;)V
-
-    goto/16 :goto_0
-
-    .line 242
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_0
-        0xa -> :sswitch_1
-        0x12 -> :sswitch_2
-        0x1a -> :sswitch_3
-        0x22 -> :sswitch_4
-        0x28 -> :sswitch_5
-        0x30 -> :sswitch_6
-        0x38 -> :sswitch_7
-        0x42 -> :sswitch_8
-        0x48 -> :sswitch_9
-        0x50 -> :sswitch_a
-        0x5a -> :sswitch_b
-        0x62 -> :sswitch_c
-        0x6a -> :sswitch_d
-        0x72 -> :sswitch_e
-        0x7a -> :sswitch_f
-    .end sparse-switch
-.end method
-
-.method public bridge synthetic mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/protobuf/nano/a;
-    .locals 1
-
-    .prologue
-    .line 236
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/a/a;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public writeTo(Lcom/google/protobuf/nano/b;)V
-    .locals 6
-
-    .prologue
-    const/4 v1, 0x0
-
-    const-wide/16 v4, 0x0
-
     .line 97
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->as:Ljava/lang/String;
-
-    const-string/jumbo v2, ""
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->isInitialStickyBroadcast()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    xor-int/lit8 v0, v0, 0x1
+
+    .line 96
+    if-eqz v0, :cond_1
 
     .line 98
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->as:Ljava/lang/String;
+    const-string/jumbo v0, "state"
 
-    const/4 v2, 0x1
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->RY(ILjava/lang/String;)V
-
-    .line 100
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->az:Ljava/lang/String;
-
-    const-string/jumbo v2, ""
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-nez v0, :cond_1
-
-    .line 101
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->az:Ljava/lang/String;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->RY(ILjava/lang/String;)V
-
-    .line 103
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->an:Ljava/lang/String;
-
-    const-string/jumbo v2, ""
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    .line 104
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->an:Ljava/lang/String;
-
-    const/4 v2, 0x3
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->RY(ILjava/lang/String;)V
-
-    .line 106
-    :cond_2
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ao:Ljava/lang/String;
-
-    const-string/jumbo v2, ""
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    .line 107
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ao:Ljava/lang/String;
-
-    const/4 v2, 0x4
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->RY(ILjava/lang/String;)V
-
-    .line 109
-    :cond_3
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aw:J
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_4
-
-    .line 110
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aw:J
-
-    const/4 v0, 0x5
-
-    invoke-virtual {p1, v0, v2, v3}, Lcom/google/protobuf/nano/b;->Sh(IJ)V
-
-    .line 112
-    :cond_4
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->am:J
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_5
-
-    .line 113
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->am:J
-
-    const/4 v0, 0x6
-
-    invoke-virtual {p1, v0, v2, v3}, Lcom/google/protobuf/nano/b;->Sh(IJ)V
-
-    .line 115
-    :cond_5
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ap:J
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_6
-
-    .line 116
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ap:J
-
-    const/4 v0, 0x7
-
-    invoke-virtual {p1, v0, v2, v3}, Lcom/google/protobuf/nano/b;->Sh(IJ)V
-
-    .line 118
-    :cond_6
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ay:Ljava/lang/String;
-
-    const-string/jumbo v2, ""
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_7
+    .line 99
+    packed-switch v0, :pswitch_data_0
 
     .line 119
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ay:Ljava/lang/String;
-
-    const/16 v2, 0x8
-
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->RY(ILjava/lang/String;)V
-
-    .line 121
-    :cond_7
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ax:J
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_8
-
-    .line 122
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ax:J
-
-    const/16 v0, 0x9
-
-    invoke-virtual {p1, v0, v2, v3}, Lcom/google/protobuf/nano/b;->Sh(IJ)V
-
-    .line 124
-    :cond_8
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->duration:J
-
-    cmp-long v0, v2, v4
-
-    if-eqz v0, :cond_9
-
-    .line 125
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->duration:J
-
-    const/16 v0, 0xa
-
-    invoke-virtual {p1, v0, v2, v3}, Lcom/google/protobuf/nano/b;->Sh(IJ)V
-
-    .line 127
-    :cond_9
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    if-eqz v0, :cond_b
-
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    array-length v0, v0
-
-    if-lez v0, :cond_b
-
-    move v0, v1
-
-    .line 128
+    :cond_0
     :goto_0
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
+    return-void
 
-    array-length v2, v2
-
-    if-ge v0, v2, :cond_b
-
-    .line 129
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->av:[Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    aget-object v2, v2, v0
-
-    .line 130
-    if-eqz v2, :cond_a
-
-    .line 131
-    const/16 v3, 0xb
-
-    invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/nano/b;->RP(ILcom/google/protobuf/nano/a;)V
-
-    .line 128
-    :cond_a
-    add-int/lit8 v0, v0, 0x1
+    .line 101
+    :pswitch_0
+    invoke-virtual {p0, v4}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->d(Z)V
 
     goto :goto_0
 
-    .line 135
-    :cond_b
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
+    .line 104
+    :pswitch_1
+    invoke-virtual {p0, v3}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->d(Z)V
 
-    if-eqz v0, :cond_d
+    goto :goto_0
 
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
+    .line 107
+    :cond_1
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    array-length v0, v0
+    move-result-object v0
 
-    if-lez v0, :cond_d
+    const-string/jumbo v1, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
 
-    .line 136
-    :goto_1
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    array-length v0, v0
+    move-result v0
 
-    if-ge v1, v0, :cond_d
+    if-eqz v0, :cond_0
 
-    .line 137
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->aq:[Ljava/lang/String;
+    .line 108
+    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->isInitialStickyBroadcast()Z
 
-    aget-object v0, v0, v1
+    move-result v0
 
-    .line 138
-    if-eqz v0, :cond_c
+    xor-int/lit8 v0, v0, 0x1
 
-    .line 139
-    const/16 v2, 0xc
+    .line 107
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/nano/b;->RY(ILjava/lang/String;)V
+    .line 109
+    const-string/jumbo v0, "android.bluetooth.profile.extra.STATE"
 
-    .line 136
-    :cond_c
-    add-int/lit8 v1, v1, 0x1
+    invoke-virtual {p2, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    goto :goto_1
+    move-result v0
 
-    .line 143
-    :cond_d
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
+    .line 110
+    packed-switch v0, :pswitch_data_1
 
-    if-eqz v0, :cond_e
+    :pswitch_2
+    goto :goto_0
 
-    .line 144
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->au:Lcom/google/android/apps/nexuslauncher/reflection/a/b;
+    .line 115
+    :pswitch_3
+    invoke-virtual {p0, v3}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->a(Z)V
 
-    const/16 v1, 0xd
+    goto :goto_0
 
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RP(ILcom/google/protobuf/nano/a;)V
+    .line 112
+    :pswitch_4
+    invoke-virtual {p0, v4}, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->a(Z)V
 
-    .line 146
-    :cond_e
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
+    goto :goto_0
 
-    if-eqz v0, :cond_f
+    .line 99
+    nop
 
-    .line 147
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->ar:Lcom/google/android/apps/nexuslauncher/reflection/a/c;
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 
-    const/16 v1, 0xe
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RP(ILcom/google/protobuf/nano/a;)V
-
-    .line 149
-    :cond_f
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    if-eqz v0, :cond_10
-
-    .line 150
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/a/a;->at:Lcom/google/android/apps/nexuslauncher/reflection/a/d;
-
-    const/16 v1, 0xf
-
-    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->RP(ILcom/google/protobuf/nano/a;)V
-
-    .line 152
-    :cond_10
-    invoke-super {p0, p1}, Lcom/google/protobuf/nano/a;->writeTo(Lcom/google/protobuf/nano/b;)V
-
-    .line 153
-    return-void
+    .line 110
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_4
+    .end packed-switch
 .end method

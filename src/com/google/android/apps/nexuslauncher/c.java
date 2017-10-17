@@ -4,62 +4,48 @@
 
 package com.google.android.apps.nexuslauncher;
 
-import com.android.launcher3.LauncherExterns;
-import com.android.launcher3.Launcher$LauncherOverlayCallbacks;
-import com.google.android.libraries.a.a.a;
-import com.android.launcher3.Launcher$LauncherOverlay;
+import java.lang.ref.WeakReference;
+import com.android.launcher3.model.LoaderResults;
+import android.util.Log;
+import java.util.concurrent.Executor;
+import com.android.launcher3.LauncherModel;
+import com.android.launcher3.model.BgDataModel;
+import com.android.launcher3.LauncherAppState;
+import com.android.launcher3.AllAppsList;
+import android.content.BroadcastReceiver$PendingResult;
+import com.android.launcher3.LauncherModel$ModelUpdateTask;
 
-public class c implements Launcher$LauncherOverlay, a
+class c implements LauncherModel$ModelUpdateTask
 {
-    private Launcher$LauncherOverlayCallbacks dA;
-    private boolean dB;
-    private com.google.android.libraries.a.a.c dy;
-    private final LauncherExterns dz;
+    private final BroadcastReceiver$PendingResult fK;
+    private AllAppsList mAllAppsList;
+    private LauncherAppState mApp;
+    private BgDataModel mBgDataModel;
+    private LauncherModel mModel;
     
-    public c(final LauncherExterns dz) {
-        this.dB = false;
-        this.dz = dz;
+    c(final BroadcastReceiver$PendingResult fk) {
+        this.fK = fk;
     }
     
-    public boolean dc() {
-        return this.dB;
+    public void init(final LauncherAppState mApp, final LauncherModel mModel, final BgDataModel mBgDataModel, final AllAppsList mAllAppsList, final Executor executor) {
+        this.mApp = mApp;
+        this.mModel = mModel;
+        this.mBgDataModel = mBgDataModel;
+        this.mAllAppsList = mAllAppsList;
     }
     
-    public void dd(final boolean db, final boolean b) {
-        if (db != this.dB) {
-            this.dB = db;
-            final LauncherExterns dz = this.dz;
-            final Launcher$LauncherOverlay launcherOverlay;
-            if (!db) {
-                launcherOverlay = null;
-            }
-            dz.setLauncherOverlay(launcherOverlay);
+    public void run() {
+        int resultCode = 0;
+        if (!this.mModel.isModelLoaded()) {
+            Log.d("SUWFinishReceiver", "Workspace not loaded, loading now");
+            this.mModel.startLoaderForResults(new LoaderResults(this.mApp, this.mBgDataModel, this.mAllAppsList, 0, null));
         }
-    }
-    
-    public void de(final com.google.android.libraries.a.a.c dy) {
-        this.dy = dy;
-    }
-    
-    public void onOverlayScrollChanged(final float n) {
-        if (this.dA != null) {
-            this.dA.onScrollChanged(n);
+        Log.d("SUWFinishReceiver", "Preload completed : " + this.mModel.isModelLoaded());
+        final BroadcastReceiver$PendingResult fk = this.fK;
+        if (this.mModel.isModelLoaded()) {
+            resultCode = -1;
         }
-    }
-    
-    public void onScrollChange(final float n, final boolean b) {
-        this.dy.QF(n);
-    }
-    
-    public void onScrollInteractionBegin() {
-        this.dy.Qw();
-    }
-    
-    public void onScrollInteractionEnd() {
-        this.dy.Qs();
-    }
-    
-    public void setOverlayCallbacks(final Launcher$LauncherOverlayCallbacks da) {
-        this.dA = da;
+        fk.setResultCode(resultCode);
+        this.fK.finish();
     }
 }

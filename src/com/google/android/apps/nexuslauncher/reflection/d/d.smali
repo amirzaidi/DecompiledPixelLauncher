@@ -1,412 +1,266 @@
-.class public Lcom/google/android/apps/nexuslauncher/reflection/d/d;
-.super Landroid/content/BroadcastReceiver;
+.class public final Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+.super Lcom/google/protobuf/nano/a;
 .source "SourceFile"
 
-# interfaces
-.implements Lcom/google/android/apps/nexuslauncher/reflection/f;
+
+# static fields
+.field private static volatile af:[Lcom/google/android/apps/nexuslauncher/reflection/d/d;
 
 
 # instance fields
-.field private bP:Z
+.field public ag:J
 
-.field private bQ:J
-
-.field private final bR:Lcom/google/android/apps/nexuslauncher/reflection/b/b;
-
-.field private bS:Z
-
-.field private bT:J
-
-.field private final mContext:Landroid/content/Context;
+.field public key:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/nexuslauncher/reflection/b/b;Landroid/content/Context;)V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    const-wide/16 v0, 0x0
+    .line 593
+    invoke-direct {p0}, Lcom/google/protobuf/nano/a;-><init>()V
 
-    .line 52
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    .line 594
+    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->clear()Lcom/google/android/apps/nexuslauncher/reflection/d/d;
 
-    .line 47
-    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bT:J
-
-    .line 49
-    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bQ:J
-
-    .line 53
-    iput-object p2, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->mContext:Landroid/content/Context;
-
-    .line 54
-    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bR:Lcom/google/android/apps/nexuslauncher/reflection/b/b;
-
-    .line 58
-    new-instance v0, Landroid/content/IntentFilter;
-
-    const-string/jumbo v1, "android.intent.action.HEADSET_PLUG"
-
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    .line 59
-    const-string/jumbo v1, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 60
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p2, p0, v0, v2, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
-    .line 63
-    const-string/jumbo v0, "audio"
-
-    invoke-virtual {p2, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/media/AudioManager;
-
-    .line 64
-    invoke-virtual {v0}, Landroid/media/AudioManager;->isWiredHeadsetOn()Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bS:Z
-
-    .line 65
-    invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothA2dpOn()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoOn()Z
-
-    move-result v0
-
-    :goto_0
-    iput-boolean v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bP:Z
-
-    .line 66
+    .line 595
     return-void
+.end method
 
-    .line 65
+.method public static emptyArray()[Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+    .locals 2
+
+    .prologue
+    .line 576
+    sget-object v0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->af:[Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+
+    if-nez v0, :cond_1
+
+    .line 577
+    sget-object v1, Lcom/google/protobuf/nano/d;->PH:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 579
+    :try_start_0
+    sget-object v0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->af:[Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+
+    if-nez v0, :cond_0
+
+    .line 580
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+
+    sput-object v0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->af:[Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     :cond_0
-    const/4 v0, 0x1
+    monitor-exit v1
 
-    goto :goto_0
+    .line 584
+    :cond_1
+    sget-object v0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->af:[Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+
+    return-object v0
+
+    .line 577
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public be()V
+.method public clear()Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+    .locals 2
+
+    .prologue
+    .line 598
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->key:I
+
+    .line 599
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->ag:J
+
+    .line 600
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->cachedSize:I
+
+    .line 601
+    return-object p0
+.end method
+
+.method protected computeSerializedSize()I
+    .locals 6
+
+    .prologue
+    .line 618
+    invoke-super {p0}, Lcom/google/protobuf/nano/a;->computeSerializedSize()I
+
+    move-result v0
+
+    .line 619
+    iget v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->key:I
+
+    if-eqz v1, :cond_0
+
+    .line 621
+    iget v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->key:I
+
+    const/4 v2, 0x1
+
+    .line 620
+    invoke-static {v2, v1}, Lcom/google/protobuf/nano/b;->VA(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 623
+    :cond_0
+    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->ag:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v1, v2, v4
+
+    if-eqz v1, :cond_1
+
+    .line 625
+    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->ag:J
+
+    const/4 v1, 0x2
+
+    .line 624
+    invoke-static {v1, v2, v3}, Lcom/google/protobuf/nano/b;->Vz(IJ)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 627
+    :cond_1
+    return v0
+.end method
+
+.method public mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/d/d;
+    .locals 2
+
+    .prologue
+    .line 635
+    :cond_0
+    :goto_0
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->Ws()I
+
+    move-result v0
+
+    .line 636
+    sparse-switch v0, :sswitch_data_0
+
+    .line 640
+    invoke-static {p1, v0}, Lcom/google/protobuf/nano/f;->WR(Lcom/google/protobuf/nano/c;I)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 641
+    return-object p0
+
+    .line 638
+    :sswitch_0
+    return-object p0
+
+    .line 646
+    :sswitch_1
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->WF()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->key:I
+
+    goto :goto_0
+
+    .line 650
+    :sswitch_2
+    invoke-virtual {p1}, Lcom/google/protobuf/nano/c;->Wz()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->ag:J
+
+    goto :goto_0
+
+    .line 636
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x8 -> :sswitch_1
+        0x10 -> :sswitch_2
+    .end sparse-switch
+.end method
+
+.method public bridge synthetic mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/protobuf/nano/a;
     .locals 1
 
     .prologue
-    .line 135
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    .line 136
-    return-void
-.end method
-
-.method protected bf(Z)V
-    .locals 2
-
-    .prologue
-    .line 128
-    iput-boolean p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bP:Z
-
-    .line 129
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    .line 630
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->mergeFrom(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/d/d;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bQ:J
-
-    .line 130
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bg()V
-
-    .line 131
-    return-void
+    return-object v0
 .end method
 
-.method public bg()V
-    .locals 8
+.method public writeTo(Lcom/google/protobuf/nano/b;)V
+    .locals 4
 
     .prologue
-    const-wide/16 v6, 0x0
-
-    .line 70
-    new-instance v1, Ljava/util/ArrayList;
-
-    const/4 v0, 0x4
-
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 71
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bT:J
-
-    cmp-long v0, v2, v6
-
-    if-lez v0, :cond_0
-
-    .line 72
-    new-instance v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    invoke-direct {v2}, Lcom/google/android/apps/nexuslauncher/reflection/a/e;-><init>()V
-
-    .line 73
-    const-string/jumbo v0, "headset"
-
-    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;->aN:Ljava/lang/String;
-
-    .line 74
-    iget-wide v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bT:J
-
-    iput-wide v4, v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;->aM:J
-
-    .line 75
-    iget-boolean v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bS:Z
-
-    if-eqz v0, :cond_2
-
-    const-string/jumbo v0, "headset_wired_in"
-
-    :goto_0
-    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;->aJ:Ljava/lang/String;
-
-    .line 76
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/b/a;
-
-    invoke-direct {v0, v2}, Lcom/google/android/apps/nexuslauncher/reflection/b/a;-><init>(Lcom/google/android/apps/nexuslauncher/reflection/a/e;)V
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 78
-    :cond_0
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bQ:J
-
-    cmp-long v0, v2, v6
-
-    if-lez v0, :cond_1
-
-    .line 79
-    new-instance v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;
-
-    invoke-direct {v2}, Lcom/google/android/apps/nexuslauncher/reflection/a/e;-><init>()V
-
-    .line 80
-    const-string/jumbo v0, "headset"
-
-    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;->aN:Ljava/lang/String;
-
-    .line 81
-    iget-wide v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bQ:J
-
-    iput-wide v4, v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;->aM:J
-
-    .line 82
-    iget-boolean v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bP:Z
-
-    if-eqz v0, :cond_3
-
-    const-string/jumbo v0, "headset_bluetooth_in"
-
-    :goto_1
-    iput-object v0, v2, Lcom/google/android/apps/nexuslauncher/reflection/a/e;->aJ:Ljava/lang/String;
-
-    .line 83
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/b/a;
-
-    invoke-direct {v0, v2}, Lcom/google/android/apps/nexuslauncher/reflection/b/a;-><init>(Lcom/google/android/apps/nexuslauncher/reflection/a/e;)V
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 85
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bR:Lcom/google/android/apps/nexuslauncher/reflection/b/b;
-
-    const-string/jumbo v2, "headset"
-
-    invoke-static {v0, v2, v1}, Lcom/google/research/reflection/common/b;->Uo(Lcom/google/research/reflection/a/b;Ljava/lang/String;Ljava/util/List;)V
-
-    .line 91
-    return-void
-
-    .line 75
-    :cond_2
-    const-string/jumbo v0, "headset_wired_out"
-
-    goto :goto_0
-
-    .line 82
-    :cond_3
-    const-string/jumbo v0, "headset_bluetooth_out"
-
-    goto :goto_1
-.end method
-
-.method protected bh(Z)V
-    .locals 2
-
-    .prologue
-    .line 122
-    iput-boolean p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bS:Z
-
-    .line 123
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bT:J
-
-    .line 124
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bg()V
-
-    .line 125
-    return-void
-.end method
-
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
-
-    .prologue
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    const/4 v2, -0x1
-
-    .line 96
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "android.intent.action.HEADSET_PLUG"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 97
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->isInitialStickyBroadcast()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    .line 96
-    if-eqz v0, :cond_1
-
-    .line 98
-    const-string/jumbo v0, "state"
-
-    invoke-virtual {p2, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v0
-
-    .line 99
-    packed-switch v0, :pswitch_data_0
-
-    .line 119
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 101
-    :pswitch_0
-    invoke-virtual {p0, v4}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bh(Z)V
-
-    goto :goto_0
-
-    .line 104
-    :pswitch_1
-    invoke-virtual {p0, v3}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bh(Z)V
-
-    goto :goto_0
-
-    .line 107
-    :cond_1
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
+    .line 607
+    iget v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->key:I
 
     if-eqz v0, :cond_0
 
-    .line 108
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->isInitialStickyBroadcast()Z
+    .line 608
+    iget v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->key:I
 
-    move-result v0
+    const/4 v1, 0x1
 
-    xor-int/lit8 v0, v0, 0x1
+    invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/nano/b;->Vv(II)V
 
-    .line 107
-    if-eqz v0, :cond_0
+    .line 610
+    :cond_0
+    iget-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->ag:J
 
-    .line 109
-    const-string/jumbo v0, "android.bluetooth.profile.extra.STATE"
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {p2, v0, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    cmp-long v0, v0, v2
 
-    move-result v0
+    if-eqz v0, :cond_1
 
-    .line 110
-    packed-switch v0, :pswitch_data_1
+    .line 611
+    iget-wide v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->ag:J
 
-    :pswitch_2
-    goto :goto_0
+    const/4 v2, 0x2
 
-    .line 115
-    :pswitch_3
-    invoke-virtual {p0, v3}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bf(Z)V
+    invoke-virtual {p1, v2, v0, v1}, Lcom/google/protobuf/nano/b;->Wc(IJ)V
 
-    goto :goto_0
+    .line 613
+    :cond_1
+    invoke-super {p0, p1}, Lcom/google/protobuf/nano/a;->writeTo(Lcom/google/protobuf/nano/b;)V
 
-    .line 112
-    :pswitch_4
-    invoke-virtual {p0, v4}, Lcom/google/android/apps/nexuslauncher/reflection/d/d;->bf(Z)V
-
-    goto :goto_0
-
-    .line 99
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    .line 110
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_4
-    .end packed-switch
+    .line 614
+    return-void
 .end method

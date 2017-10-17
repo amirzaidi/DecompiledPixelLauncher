@@ -1,103 +1,100 @@
-.class public Lcom/google/android/apps/nexuslauncher/experiment/b;
-.super Ljava/lang/Object;
+.class Lcom/google/android/apps/nexuslauncher/experiment/b;
+.super Lcom/google/android/gms/phenotype/a;
 .source "SourceFile"
 
+# interfaces
+.implements Lcom/google/android/gms/phenotype/b;
 
-# static fields
-.field private static final dh:Lcom/google/android/gms/phenotype/h;
 
-.field public static di:Lcom/google/android/gms/phenotype/g;
-
-.field public static dj:Lcom/google/android/gms/phenotype/g;
-
-.field public static dk:Lcom/google/android/gms/phenotype/g;
+# instance fields
+.field private final fv:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lcom/google/android/gms/common/api/a;)V
     .locals 3
 
     .prologue
-    const/4 v2, 0x0
+    .line 42
+    const-string/jumbo v0, "com.google.android.apps.nexuslauncher"
 
-    .line 18
-    new-instance v0, Lcom/google/android/gms/phenotype/h;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/phenotype/a;-><init>(Lcom/google/android/gms/common/api/a;Ljava/lang/String;)V
 
+    .line 43
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/a;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    .line 44
     const-string/jumbo v1, "phenotype_configs"
 
-    invoke-direct {v0, v1}, Lcom/google/android/gms/phenotype/h;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
 
-    .line 19
-    const-string/jumbo v1, ""
-
-    .line 18
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/phenotype/h;->ph(Ljava/lang/String;)Lcom/google/android/gms/phenotype/h;
+    .line 43
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 17
-    sput-object v0, Lcom/google/android/apps/nexuslauncher/experiment/b;->dh:Lcom/google/android/gms/phenotype/h;
+    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/experiment/b;->fv:Landroid/content/SharedPreferences;
 
-    .line 29
-    sget-object v0, Lcom/google/android/apps/nexuslauncher/experiment/b;->dh:Lcom/google/android/gms/phenotype/h;
-
-    const-string/jumbo v1, "QSBFeature__qsb_is_wide"
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/phenotype/h;->pi(Ljava/lang/String;Z)Lcom/google/android/gms/phenotype/g;
-
-    move-result-object v0
-
-    .line 28
-    sput-object v0, Lcom/google/android/apps/nexuslauncher/experiment/b;->dk:Lcom/google/android/gms/phenotype/g;
-
-    .line 31
-    sget-object v0, Lcom/google/android/apps/nexuslauncher/experiment/b;->dh:Lcom/google/android/gms/phenotype/h;
-
-    const-string/jumbo v1, "QSBFeature__qsb_is_in_experiment"
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/phenotype/h;->pi(Ljava/lang/String;Z)Lcom/google/android/gms/phenotype/g;
-
-    move-result-object v0
-
-    .line 30
-    sput-object v0, Lcom/google/android/apps/nexuslauncher/experiment/b;->di:Lcom/google/android/gms/phenotype/g;
-
-    .line 33
-    sget-object v0, Lcom/google/android/apps/nexuslauncher/experiment/b;->dh:Lcom/google/android/gms/phenotype/h;
-
-    const-string/jumbo v1, "QSBFeature__qsb_kill_switch"
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/gms/phenotype/h;->pi(Ljava/lang/String;Z)Lcom/google/android/gms/phenotype/g;
-
-    move-result-object v0
-
-    .line 32
-    sput-object v0, Lcom/google/android/apps/nexuslauncher/experiment/b;->dj:Lcom/google/android/gms/phenotype/g;
-
-    .line 10
+    .line 45
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+
+# virtual methods
+.method protected dU(Lcom/google/android/gms/phenotype/Configurations;)V
+    .locals 2
 
     .prologue
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 49
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/experiment/b;->fv:Landroid/content/SharedPreferences;
 
+    invoke-static {v0, p1}, Lcom/google/android/apps/nexuslauncher/experiment/b;->CJ(Landroid/content/SharedPreferences;Lcom/google/android/gms/phenotype/Configurations;)V
+
+    .line 52
+    const-string/jumbo v0, "PhenotypeFlagCommitter"
+
+    const-string/jumbo v1, "Committed to new configuration from Phenotype"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 54
     return-void
 .end method
 
-.method public static cK(Landroid/content/Context;)V
-    .locals 0
+.method public dV(Z)V
+    .locals 3
 
     .prologue
-    .line 22
-    invoke-static {p0}, Lcom/google/android/gms/phenotype/g;->pe(Landroid/content/Context;)V
+    .line 59
+    const-string/jumbo v0, "PhenotypeFlagCommitter"
 
-    .line 24
-    invoke-static {p0}, Lcom/google/android/apps/nexuslauncher/experiment/PhenotypeUpdateReceiver;->cH(Landroid/content/Context;)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 25
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Commit finished, result:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 61
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/experiment/b;->xN:Lcom/google/android/gms/common/api/a;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/a;->gi()V
+
+    .line 62
     return-void
 .end method

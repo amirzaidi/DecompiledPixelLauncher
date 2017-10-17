@@ -4,85 +4,51 @@
 
 package com.google.android.apps.nexuslauncher.reflection.a;
 
-import com.google.protobuf.nano.f;
-import com.google.protobuf.nano.c;
-import com.google.protobuf.nano.b;
-import com.google.protobuf.nano.a;
+import android.app.usage.UsageEvents;
+import com.google.android.apps.nexuslauncher.reflection.g;
+import android.content.ComponentName;
+import android.app.usage.UsageEvents$Event;
+import java.util.Iterator;
+import java.util.List;
+import com.google.android.apps.nexuslauncher.reflection.d.i;
+import com.google.android.apps.nexuslauncher.reflection.b.a;
+import java.util.ArrayList;
+import com.google.android.apps.nexuslauncher.reflection.b.b;
+import android.app.usage.UsageStatsManager;
 
-public final class d extends a
+public class d implements c
 {
-    public double aE;
-    public double aF;
-    public long aG;
+    private final UsageStatsManager l;
     
-    public d() {
-        this.clear();
+    public d(final UsageStatsManager l) {
+        this.l = l;
     }
     
-    public d clear() {
-        final double n = 0.0;
-        this.aG = 0L;
-        this.aE = n;
-        this.aF = n;
-        this.cachedSize = -1;
-        return this;
+    public void l(final b b) {
+        final List m = this.m(600000L);
+        final ArrayList list = new ArrayList<a>(m.size());
+        final Iterator<i> iterator = m.iterator();
+        while (iterator.hasNext()) {
+            list.add(new a(iterator.next()));
+        }
+        com.google.research.reflection.common.b.Tb(b, "app_usage", list);
     }
     
-    protected int computeSerializedSize() {
-        final double n = 0.0;
-        int computeSerializedSize = super.computeSerializedSize();
-        if (this.aG != 0L) {
-            computeSerializedSize += b.RE(1, this.aG);
-        }
-        if (Double.doubleToLongBits(this.aE) != Double.doubleToLongBits(n)) {
-            computeSerializedSize += b.RJ(2, this.aE);
-        }
-        if (Double.doubleToLongBits(this.aF) != Double.doubleToLongBits(n)) {
-            computeSerializedSize += b.RJ(3, this.aF);
-        }
-        return computeSerializedSize;
-    }
-    
-    public d mergeFrom(final c c) {
-        while (true) {
-            final int sx = c.Sx();
-            switch (sx) {
-                default: {
-                    if (!f.SW(c, sx)) {
-                        return this;
-                    }
-                    continue;
-                }
-                case 0: {
-                    return this;
-                }
-                case 8: {
-                    this.aG = c.SE();
-                    continue;
-                }
-                case 17: {
-                    this.aE = c.SA();
-                    continue;
-                }
-                case 25: {
-                    this.aF = c.SA();
-                    continue;
-                }
+    public List m(final long n) {
+        final ArrayList<i> list = new ArrayList<i>();
+        final long currentTimeMillis = System.currentTimeMillis();
+        final UsageEvents queryEvents = this.l.queryEvents(currentTimeMillis - n, currentTimeMillis);
+        final UsageEvents$Event usageEvents$Event = new UsageEvents$Event();
+        while (queryEvents.hasNextEvent()) {
+            queryEvents.getNextEvent(usageEvents$Event);
+            if (usageEvents$Event.getEventType() == 1) {
+                final i i = new i();
+                i.aC = "app_usage";
+                i.aD = usageEvents$Event.getTimeStamp();
+                i.aE = g.aU(new ComponentName(usageEvents$Event.getPackageName(), usageEvents$Event.getClassName()));
+                list.add(i);
             }
         }
-    }
-    
-    public void writeTo(final b b) {
-        final double n = 0.0;
-        if (this.aG != 0L) {
-            b.Sh(1, this.aG);
-        }
-        if (Double.doubleToLongBits(this.aE) != Double.doubleToLongBits(n)) {
-            b.Rp(2, this.aE);
-        }
-        if (Double.doubleToLongBits(this.aF) != Double.doubleToLongBits(n)) {
-            b.Rp(3, this.aF);
-        }
-        super.writeTo(b);
+        return list;
     }
 }

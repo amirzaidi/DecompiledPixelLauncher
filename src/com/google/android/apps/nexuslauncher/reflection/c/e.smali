@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final bG:J
+.field private final O:J
 
-.field private final bH:Ljava/io/File;
+.field private final P:Ljava/io/File;
 
 
 # direct methods
@@ -18,21 +18,21 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
-    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bH:Ljava/io/File;
+    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->P:Ljava/io/File;
 
     .line 44
-    iput-wide p2, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bG:J
+    iput-wide p2, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->O:J
 
     .line 45
     return-void
 .end method
 
-.method private aT()V
+.method private ab()V
     .locals 4
 
     .prologue
     .line 81
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bH:Ljava/io/File;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->P:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -41,26 +41,26 @@
     if-eqz v0, :cond_0
 
     .line 82
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bH:Ljava/io/File;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->P:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->length()J
 
     move-result-wide v0
 
     .line 83
-    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bG:J
+    iget-wide v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->O:J
 
     cmp-long v0, v0, v2
 
     if-lez v0, :cond_0
 
     .line 84
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->aU()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->ac()Ljava/util/List;
 
     move-result-object v0
 
     .line 85
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bH:Ljava/io/File;
+    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->P:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
@@ -92,7 +92,7 @@
 
 
 # virtual methods
-.method public declared-synchronized aS(Lcom/google/android/apps/nexuslauncher/reflection/a/f;)V
+.method public declared-synchronized aa(Lcom/google/android/apps/nexuslauncher/reflection/d/j;)V
     .locals 2
 
     .prologue
@@ -102,7 +102,7 @@
     const/4 v0, 0x1
 
     :try_start_0
-    new-array v0, v0, [Lcom/google/android/apps/nexuslauncher/reflection/a/f;
+    new-array v0, v0, [Lcom/google/android/apps/nexuslauncher/reflection/d/j;
 
     const/4 v1, 0x0
 
@@ -115,7 +115,7 @@
     invoke-virtual {p0, v0}, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->log(Ljava/util/List;)V
 
     .line 53
-    invoke-direct {p0}, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->aT()V
+    invoke-direct {p0}, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->ab()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -132,7 +132,7 @@
     throw v0
 .end method
 
-.method public declared-synchronized aU()Ljava/util/List;
+.method public declared-synchronized ac()Ljava/util/List;
     .locals 6
 
     .prologue
@@ -159,7 +159,7 @@
 
     new-instance v4, Ljava/io/FileInputStream;
 
-    iget-object v5, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bH:Ljava/io/File;
+    iget-object v5, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->P:Ljava/io/File;
 
     invoke-direct {v4, v5}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
@@ -201,11 +201,11 @@
     .line 110
     const/4 v4, 0x0
 
-    invoke-static {v0, v4, v2}, Lcom/google/protobuf/nano/c;->SH([BII)Lcom/google/protobuf/nano/c;
+    invoke-static {v0, v4, v2}, Lcom/google/protobuf/nano/c;->WC([BII)Lcom/google/protobuf/nano/c;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/android/apps/nexuslauncher/reflection/a/f;->ap(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/a/f;
+    invoke-static {v2}, Lcom/google/android/apps/nexuslauncher/reflection/d/j;->ah(Lcom/google/protobuf/nano/c;)Lcom/google/android/apps/nexuslauncher/reflection/d/j;
 
     move-result-object v2
 
@@ -323,7 +323,7 @@
 
     new-instance v3, Ljava/io/FileOutputStream;
 
-    iget-object v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->bH:Ljava/io/File;
+    iget-object v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/e;->P:Ljava/io/File;
 
     const/4 v5, 0x1
 
@@ -353,10 +353,10 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/apps/nexuslauncher/reflection/a/f;
+    check-cast v0, Lcom/google/android/apps/nexuslauncher/reflection/d/j;
 
     .line 65
-    invoke-virtual {v0}, Lcom/google/android/apps/nexuslauncher/reflection/a/f;->getSerializedSize()I
+    invoke-virtual {v0}, Lcom/google/android/apps/nexuslauncher/reflection/d/j;->getSerializedSize()I
 
     move-result v4
 

@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final dD:Ljava/util/HashSet;
+.field private final fL:Ljava/util/HashSet;
 
 
 # direct methods
@@ -20,10 +20,10 @@
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->dD:Ljava/util/HashSet;
+    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->fL:Ljava/util/HashSet;
 
     .line 20
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->dD:Ljava/util/HashSet;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->fL:Ljava/util/HashSet;
 
     .line 21
     const-string/jumbo v1, "com.google.android.googlequicksearchbox/.VoiceSearchActivity"
@@ -36,7 +36,7 @@
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 23
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->dD:Ljava/util/HashSet;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->fL:Ljava/util/HashSet;
 
     .line 24
     const-string/jumbo v1, "com.google.android.apps.wallpaper/.picker.CategoryPickerActivity"
@@ -49,7 +49,7 @@
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 28
-    invoke-static {p1}, Lcom/google/android/apps/nexuslauncher/experiment/b;->cK(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/google/android/apps/nexuslauncher/experiment/a;->dS(Landroid/content/Context;)V
 
     .line 29
     return-void
@@ -62,7 +62,7 @@
 
     .prologue
     .line 33
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->dD:Ljava/util/HashSet;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/NexusAppFilter;->fL:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 

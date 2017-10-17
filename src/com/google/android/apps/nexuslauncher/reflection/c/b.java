@@ -4,66 +4,51 @@
 
 package com.google.android.apps.nexuslauncher.reflection.c;
 
-import android.database.SQLException;
-import android.util.Log;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase$CursorFactory;
-import android.content.Context;
-import android.database.sqlite.SQLiteOpenHelper;
+import com.android.launcher3.util.Preconditions;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.io.File;
+import android.content.SharedPreferences;
+import java.util.Set;
 
-public class b extends SQLiteOpenHelper
+public class b
 {
-    public b(final Context context, final String s) {
-        super(context, s, (SQLiteDatabase$CursorFactory)null, 2);
+    private final Set J;
+    private final SharedPreferences K;
+    private final File mDir;
+    
+    public b(final SharedPreferences k, final File mDir, final List list) {
+        this.K = k;
+        this.mDir = mDir;
+        this.J = new HashSet(list);
     }
     
-    public void createEmptyDB(final SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS reflection_event");
-        this.onCreate(sqLiteDatabase);
-    }
-    
-    public void onCreate(final SQLiteDatabase sqLiteDatabase) {
-        // monitorenter(this)
-        final String s = "CREATE TABLE reflection_event (_id INTEGER PRIMARY KEY AUTOINCREMENT,timestamp INTEGER,client TEXT,type TEXT,id TEXT,latLong BLOB,semanticPlace BLOB,proto BLOB,eventSource TEXT)";
-        try {
-            sqLiteDatabase.execSQL(s);
-        }
-        finally {
-        }
-        // monitorexit(this)
-    }
-    
-    public void onDowngrade(final SQLiteDatabase sqLiteDatabase, final int n, final int n2) {
-        Log.w("Reflection.EvtDbHelper", "Database version downgrade from: " + n + " to " + n2 + ". Wiping database.");
-        this.createEmptyDB(sqLiteDatabase);
-    }
-    
-    public void onUpgrade(final SQLiteDatabase sqLiteDatabase, final int n, final int n2) {
-        switch (n) {
-            case 1: {
-                sqLiteDatabase.beginTransaction();
-                final String s = "ALTER TABLE reflection_event ADD COLUMN eventSource TEXT DEFAULT NULL";
-                try {
-                    sqLiteDatabase.execSQL(s);
-                    sqLiteDatabase.setTransactionSuccessful();
-                    return;
-                }
-                catch (SQLException ex) {
-                    final String s2 = "Reflection.EvtDbHelper";
-                    try {
-                        Log.d(s2, "Adding column failed: " + ex.getMessage());
-                    }
-                    finally {
-                        sqLiteDatabase.endTransaction();
-                    }
-                }
-                break;
+    private void U(final File file) {
+        int i = 0;
+        if (file.isDirectory()) {
+            for (File[] listFiles = file.listFiles(); i < listFiles.length; ++i) {
+                this.U(listFiles[i]);
             }
-            case 2: {
-                return;
+            if (file.list().length == 0 && this.J.contains(file.getAbsolutePath())) {
+                file.delete();
             }
         }
-        Log.w("Reflection.EvtDbHelper", "Destroying all old data.");
-        this.createEmptyDB(sqLiteDatabase);
+        else if (this.J.contains(file.getName()) || (file.getParentFile() != null && this.J.contains(file.getParentFile().getAbsolutePath()))) {
+            file.delete();
+        }
+    }
+    
+    public void T() {
+        synchronized (this) {
+            Preconditions.assertNonUiThread();
+            this.K.edit().clear().apply();
+            if (this.mDir.exists() && this.mDir.isDirectory()) {
+                final File[] listFiles = this.mDir.listFiles();
+                for (int i = 0; i < listFiles.length; ++i) {
+                    this.U(listFiles[i]);
+                }
+            }
+        }
     }
 }

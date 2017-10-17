@@ -17,58 +17,58 @@ import java.io.DataInputStream;
 import java.util.ArrayList;
 import com.android.launcher3.util.Preconditions;
 import java.util.Arrays;
-import com.google.android.apps.nexuslauncher.reflection.a.f;
+import com.google.android.apps.nexuslauncher.reflection.d.j;
 import java.util.List;
 import java.io.File;
 
 public class e
 {
-    private final long bG;
-    private final File bH;
+    private final long O;
+    private final File P;
     
-    public e(final File bh, final long bg) {
-        this.bH = bh;
-        this.bG = bg;
+    public e(final File p2, final long o) {
+        this.P = p2;
+        this.O = o;
     }
     
-    private void aT() {
-        if (this.bH.exists() && this.bH.length() > this.bG) {
-            final List au = this.aU();
-            if (this.bH.delete()) {
-                this.log(au.subList(au.size() / 2, au.size()));
+    private void ab() {
+        if (this.P.exists() && this.P.length() > this.O) {
+            final List ac = this.ac();
+            if (this.P.delete()) {
+                this.log(ac.subList(ac.size() / 2, ac.size()));
             }
         }
     }
     
-    public void aS(final f f) {
+    public void aa(final j j) {
         // monitorenter(this)
         final int n = 1;
         try {
-            final f[] array = new f[n];
-            array[0] = f;
+            final j[] array = new j[n];
+            array[0] = j;
             this.log(Arrays.asList(array));
-            this.aT();
+            this.ab();
         }
         finally {
         }
         // monitorexit(this)
     }
     
-    public List aU() {
+    public List ac() {
         // monitorenter(this)
         while (true) {
-            ArrayList<f> list;
-            c sh = null;
+            ArrayList<j> list;
+            c wc = null;
             try {
                 Preconditions.assertNonUiThread();
-                list = new ArrayList<f>();
+                list = new ArrayList<j>();
                 try {
                     final DataInputStream dataInputStream = new(java.io.DataInputStream.class);
                     try {
                         final BufferedInputStream bufferedInputStream = new(java.io.BufferedInputStream.class);
                         try {
                             try {
-                                final FileInputStream fileInputStream = new FileInputStream(this.bH);
+                                final FileInputStream fileInputStream = new FileInputStream(this.P);
                                 final BufferedInputStream bufferedInputStream2 = bufferedInputStream;
                                 try {
                                     new BufferedInputStream(fileInputStream);
@@ -83,16 +83,16 @@ public class e
                                                     o = new byte[int1];
                                                 }
                                                 dataInputStream.read((byte[])o, 0, int1);
-                                                sh = c.SH((byte[])o, 0, int1);
+                                                wc = c.WC((byte[])o, 0, int1);
                                                 try {
-                                                    final c c = sh;
-                                                    final f f = com.google.android.apps.nexuslauncher.reflection.a.f.ap(c);
-                                                    final f f3;
-                                                    final f f2 = f3 = f;
-                                                    if (f3 != null) {
-                                                        final ArrayList<f> list2 = list;
-                                                        final f f4 = f2;
-                                                        list2.add(f4);
+                                                    final c c = wc;
+                                                    final j j = com.google.android.apps.nexuslauncher.reflection.d.j.ah(c);
+                                                    final j k;
+                                                    final j i = k = j;
+                                                    if (k != null) {
+                                                        final ArrayList<j> list2 = list;
+                                                        final j l = i;
+                                                        list2.add(l);
                                                         continue;
                                                     }
                                                     continue;
@@ -124,14 +124,14 @@ public class e
             }
             finally {}
             try {
-                final c c = sh;
-                final f f = com.google.android.apps.nexuslauncher.reflection.a.f.ap(c);
-                final f f3;
-                final f f2 = f3 = f;
-                if (f3 != null) {
-                    final ArrayList<f> list2 = list;
-                    final f f4 = f2;
-                    list2.add(f4);
+                final c c = wc;
+                final j j = com.google.android.apps.nexuslauncher.reflection.d.j.ah(c);
+                final j k;
+                final j i = k = j;
+                if (k != null) {
+                    final ArrayList<j> list2 = list;
+                    final j l = i;
+                    list2.add(l);
                     continue;
                 }
                 continue;
@@ -161,7 +161,7 @@ public class e
         //    14: new             Ljava/io/FileOutputStream;
         //    17: astore          5
         //    19: aload_0        
-        //    20: getfield        com/google/android/apps/nexuslauncher/reflection/c/e.bH:Ljava/io/File;
+        //    20: getfield        com/google/android/apps/nexuslauncher/reflection/c/e.P:Ljava/io/File;
         //    23: astore          6
         //    25: iconst_1       
         //    26: istore          7
@@ -187,10 +187,10 @@ public class e
         //    74: invokeinterface java/util/Iterator.next:()Ljava/lang/Object;
         //    79: astore          4
         //    81: aload           4
-        //    83: checkcast       Lcom/google/android/apps/nexuslauncher/reflection/a/f;
+        //    83: checkcast       Lcom/google/android/apps/nexuslauncher/reflection/d/j;
         //    86: astore          4
         //    88: aload           4
-        //    90: invokevirtual   com/google/android/apps/nexuslauncher/reflection/a/f.getSerializedSize:()I
+        //    90: invokevirtual   com/google/android/apps/nexuslauncher/reflection/d/j.getSerializedSize:()I
         //    93: istore          9
         //    95: aload_2        
         //    96: ifnull          110

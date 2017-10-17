@@ -7,18 +7,15 @@ package com.google.android.apps.nexuslauncher.reflection.e;
 import java.io.OutputStream;
 import java.io.DataOutputStream;
 import java.io.ByteArrayOutputStream;
-import com.google.android.apps.nexuslauncher.reflection.a.n;
-import com.google.android.apps.nexuslauncher.reflection.a.m;
+import com.google.android.apps.nexuslauncher.reflection.d.c;
 import java.io.InputStream;
 import java.io.DataInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Calendar;
-import com.google.android.apps.nexuslauncher.reflection.a.l;
 import com.google.research.reflection.predictor.d;
 import java.util.Map;
-import com.google.android.apps.nexuslauncher.reflection.a.k;
 import com.google.research.reflection.predictor.b;
 
 public class a extends com.google.research.reflection.predictor.a
@@ -30,136 +27,136 @@ public class a extends com.google.research.reflection.predictor.a
         super(b);
     }
     
-    public static void bw(final k k, final Map map, final d d) {
+    public static void ai(final com.google.android.apps.nexuslauncher.reflection.d.a a, final Map map, final d d) {
         map.clear();
-        final l[] bk = k.bk;
-        for (int i = 0; i < bk.length; ++i) {
-            final l l = bk[i];
-            final a a = new a();
-            a.Tw(d);
-            a.by(l);
-            map.put(l.bt, a);
+        final com.google.android.apps.nexuslauncher.reflection.d.b[] s = a.S;
+        for (int i = 0; i < s.length; ++i) {
+            final com.google.android.apps.nexuslauncher.reflection.d.b b = s[i];
+            final a a2 = new a();
+            a2.Sj(d);
+            a2.ak(b);
+            map.put(b.U, a2);
         }
     }
     
-    public static k bx(final Map map) {
-        final k k = new k();
-        k.bh = Calendar.getInstance().getTimeInMillis();
-        k.bi = -1;
-        k.bj = "";
-        k.bk = new l[map.size()];
+    public static com.google.android.apps.nexuslauncher.reflection.d.a aj(final Map map) {
+        final com.google.android.apps.nexuslauncher.reflection.d.a a = new com.google.android.apps.nexuslauncher.reflection.d.a();
+        a.Q = Calendar.getInstance().getTimeInMillis();
+        a.version = -1;
+        a.R = "";
+        a.S = new com.google.android.apps.nexuslauncher.reflection.d.b[map.size()];
         final Iterator<Map.Entry<K, a>> iterator = (Iterator<Map.Entry<K, a>>)map.entrySet().iterator();
         int n = 0;
         while (iterator.hasNext()) {
             final Map.Entry<K, a> entry = iterator.next();
-            final l bz = entry.getValue().bz();
-            bz.bt = (String)entry.getKey();
-            final l[] bk = k.bk;
+            final com.google.android.apps.nexuslauncher.reflection.d.b al = entry.getValue().al();
+            al.U = (String)entry.getKey();
+            final com.google.android.apps.nexuslauncher.reflection.d.b[] s = a.S;
             final int n2 = n + 1;
-            bk[n] = bz;
+            s[n] = al;
             n = n2;
         }
-        return k;
+        return a;
     }
     
-    public void by(final l l) {
+    public void ak(final com.google.android.apps.nexuslauncher.reflection.d.b b) {
         int i = 0;
-        this.LB = l.bl;
-        this.LA = l.bm;
-        this.Lx = b.TC(l.bn);
-        if (this.Lx == null) {
-            throw new IOException("Cannot find predictor with " + l.bn);
+        this.Mv = b.ac;
+        this.Mu = b.Y;
+        this.Mr = b.Sp(b.aa);
+        if (this.Mr == null) {
+            throw new IOException("Cannot find predictor with " + b.aa);
         }
-        this.Lx.TE(this);
-        final DataInputStream dataInputStream = new DataInputStream(new ByteArrayInputStream(l.bo));
-        this.Lx.TJ(dataInputStream);
+        this.Mr.Sr(this);
+        final DataInputStream dataInputStream = new DataInputStream(new ByteArrayInputStream(b.Z));
+        this.Mr.Sw(dataInputStream);
         dataInputStream.close();
-        this.Ly.clear();
-        final m[] bp = l.bp;
-        for (int length = bp.length, j = 0; j < length; ++j) {
-            final m m = bp[j];
-            this.Ly.put(m.name, m.bv);
+        this.Ms.clear();
+        final c[] ab = b.ab;
+        for (int length = ab.length, j = 0; j < length; ++j) {
+            final c c = ab[j];
+            this.Ms.put(c.name, c.ae);
         }
-        this.LC.clear();
-        final n[] bq = l.bq;
-        for (int length2 = bq.length, k = 0; k < length2; ++k) {
-            final n n = bq[k];
-            this.LC.put(n.key, (int)n.bx);
+        this.Mw.clear();
+        final com.google.android.apps.nexuslauncher.reflection.d.d[] v = b.V;
+        for (int length2 = v.length, k = 0; k < length2; ++k) {
+            final com.google.android.apps.nexuslauncher.reflection.d.d d = v[k];
+            this.Mw.put(d.key, (int)d.ag);
         }
-        this.Lw.clear();
-        final n[] br = l.br;
-        for (int length3 = br.length, n2 = 0; n2 < length3; ++n2) {
-            final n n3 = br[n2];
-            this.Lw.put(n3.key, n3.bx);
+        this.Mq.clear();
+        final com.google.android.apps.nexuslauncher.reflection.d.d[] x = b.X;
+        for (int length3 = x.length, l = 0; l < length3; ++l) {
+            final com.google.android.apps.nexuslauncher.reflection.d.d d2 = x[l];
+            this.Mq.put(d2.key, d2.ag);
         }
-        this.LF.clear();
-        for (n[] bs = l.bs; i < bs.length; ++i) {
-            final n n4 = bs[i];
-            this.LF.put(n4.key, n4.bx);
+        this.Mz.clear();
+        for (com.google.android.apps.nexuslauncher.reflection.d.d[] w = b.W; i < w.length; ++i) {
+            final com.google.android.apps.nexuslauncher.reflection.d.d d3 = w[i];
+            this.Mz.put(d3.key, d3.ag);
         }
     }
     
-    public l bz() {
+    public com.google.android.apps.nexuslauncher.reflection.d.b al() {
         int n = 0;
-        final l l = new l();
-        l.bl = this.LB;
-        l.bm = this.LA;
-        l.bn = b.TG(this.Lx);
+        final com.google.android.apps.nexuslauncher.reflection.d.b b = new com.google.android.apps.nexuslauncher.reflection.d.b();
+        b.ac = this.Mv;
+        b.Y = this.Mu;
+        b.aa = com.google.research.reflection.predictor.b.St(this.Mr);
         final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         final DataOutputStream dataOutputStream = new DataOutputStream(byteArrayOutputStream);
-        this.Lx.TH(dataOutputStream);
+        this.Mr.Su(dataOutputStream);
         dataOutputStream.flush();
-        l.bo = byteArrayOutputStream.toByteArray();
+        b.Z = byteArrayOutputStream.toByteArray();
         dataOutputStream.close();
-        l.bp = new m[this.Ly.size()];
-        final Iterator iterator = this.Ly.entrySet().iterator();
+        b.ab = new c[this.Ms.size()];
+        final Iterator iterator = this.Ms.entrySet().iterator();
         int n2 = 0;
         while (iterator.hasNext()) {
             final Map.Entry<String, V> entry = iterator.next();
-            final m m = new m();
-            m.name = entry.getKey();
-            m.bv = (int)entry.getValue();
-            final m[] bp = l.bp;
+            final c c = new c();
+            c.name = entry.getKey();
+            c.ae = (int)entry.getValue();
+            final c[] ab = b.ab;
             final int n3 = n2 + 1;
-            bp[n2] = m;
+            ab[n2] = c;
             n2 = n3;
         }
-        l.bq = new n[this.LC.size()];
-        final Iterator iterator2 = this.LC.entrySet().iterator();
+        b.V = new com.google.android.apps.nexuslauncher.reflection.d.d[this.Mw.size()];
+        final Iterator iterator2 = this.Mw.entrySet().iterator();
         int n4 = 0;
         while (iterator2.hasNext()) {
             final Map.Entry<Integer, V> entry2 = iterator2.next();
-            final n n5 = new n();
-            n5.key = entry2.getKey();
-            n5.bx = (int)entry2.getValue();
-            final n[] bq = l.bq;
-            final int n6 = n4 + 1;
-            bq[n4] = n5;
-            n4 = n6;
+            final com.google.android.apps.nexuslauncher.reflection.d.d d = new com.google.android.apps.nexuslauncher.reflection.d.d();
+            d.key = entry2.getKey();
+            d.ag = (int)entry2.getValue();
+            final com.google.android.apps.nexuslauncher.reflection.d.d[] v = b.V;
+            final int n5 = n4 + 1;
+            v[n4] = d;
+            n4 = n5;
         }
-        l.br = new n[this.Lw.size()];
-        final Iterator iterator3 = this.Lw.entrySet().iterator();
-        int n7 = 0;
+        b.X = new com.google.android.apps.nexuslauncher.reflection.d.d[this.Mq.size()];
+        final Iterator iterator3 = this.Mq.entrySet().iterator();
+        int n6 = 0;
         while (iterator3.hasNext()) {
             final Map.Entry<Integer, V> entry3 = iterator3.next();
-            final n n8 = new n();
-            n8.key = entry3.getKey();
-            n8.bx = (long)entry3.getValue();
-            final n[] br = l.br;
-            final int n9 = n7 + 1;
-            br[n7] = n8;
-            n7 = n9;
+            final com.google.android.apps.nexuslauncher.reflection.d.d d2 = new com.google.android.apps.nexuslauncher.reflection.d.d();
+            d2.key = entry3.getKey();
+            d2.ag = (long)entry3.getValue();
+            final com.google.android.apps.nexuslauncher.reflection.d.d[] x = b.X;
+            final int n7 = n6 + 1;
+            x[n6] = d2;
+            n6 = n7;
         }
-        l.bs = new n[this.LF.size()];
-        for (final Map.Entry<Integer, V> entry4 : this.LF.entrySet()) {
-            final n n10 = new n();
-            n10.key = entry4.getKey();
-            n10.bx = (long)entry4.getValue();
-            final n[] bs = l.bs;
-            final int n11 = n + 1;
-            bs[n] = n10;
-            n = n11;
+        b.W = new com.google.android.apps.nexuslauncher.reflection.d.d[this.Mz.size()];
+        for (final Map.Entry<Integer, V> entry4 : this.Mz.entrySet()) {
+            final com.google.android.apps.nexuslauncher.reflection.d.d d3 = new com.google.android.apps.nexuslauncher.reflection.d.d();
+            d3.key = entry4.getKey();
+            d3.ag = (long)entry4.getValue();
+            final com.google.android.apps.nexuslauncher.reflection.d.d[] w = b.W;
+            final int n8 = n + 1;
+            w[n] = d3;
+            n = n8;
         }
-        return l;
+        return b;
     }
 }

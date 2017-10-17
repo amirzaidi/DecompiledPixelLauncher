@@ -1,187 +1,92 @@
 .class public Lcom/google/android/apps/nexuslauncher/qsb/b;
-.super Landroid/view/View$AccessibilityDelegate;
+.super Lcom/android/launcher3/dragndrop/BaseItemDragListener;
 .source "SourceFile"
 
 
+# instance fields
+.field private final bS:Landroid/content/pm/LauncherActivityInfo;
+
+
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/pm/LauncherActivityInfo;Landroid/graphics/Rect;)V
+    .locals 2
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
+    .line 22
+    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
 
-    return-void
-.end method
+    move-result v0
 
-.method public static final f(Landroid/content/Context;)Ljava/lang/String;
-    .locals 6
-
-    .prologue
-    const/4 v5, 0x0
-
-    .line 48
-    const/4 v0, 0x0
-
-    .line 50
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    .line 51
-    const-string/jumbo v2, "com.google.android.googlequicksearchbox"
-
-    .line 50
-    invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    .line 52
-    const-string/jumbo v2, "title_google_home_screen"
-
-    const-string/jumbo v3, "string"
-
-    .line 53
-    const-string/jumbo v4, "com.google.android.googlequicksearchbox"
-
-    .line 52
-    invoke-virtual {v1, v2, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 54
-    if-eqz v2, :cond_0
-
-    .line 55
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v0
-
-    .line 60
-    :cond_0
-    :goto_0
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    invoke-direct {p0, p2, v0, v1}, Lcom/android/launcher3/dragndrop/BaseItemDragListener;-><init>(Landroid/graphics/Rect;II)V
 
-    .line 61
-    const v0, 0x7f0c008e
+    .line 23
+    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/qsb/b;->bS:Landroid/content/pm/LauncherActivityInfo;
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    .line 24
+    return-void
+.end method
 
-    move-result-object v0
+.method static synthetic bs(Lcom/google/android/apps/nexuslauncher/qsb/b;)Landroid/content/pm/LauncherActivityInfo;
+    .locals 1
 
-    .line 63
-    :cond_1
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    aput-object v0, v1, v5
-
-    const v0, 0x7f0c008f
-
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/b;->bS:Landroid/content/pm/LauncherActivityInfo;
 
     return-object v0
+.end method
 
-    .line 57
-    :catch_0
-    move-exception v1
+.method static synthetic bt(Lcom/google/android/apps/nexuslauncher/qsb/b;)Lcom/android/launcher3/Launcher;
+    .locals 1
 
-    goto :goto_0
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/b;->mLauncher:Lcom/android/launcher3/Launcher;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+.method protected createDragHelper()Lcom/android/launcher3/widget/PendingItemDragHelper;
     .locals 3
 
     .prologue
-    .line 26
-    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .line 28
+    new-instance v0, Lcom/android/launcher3/widget/PendingAddShortcutInfo;
 
     .line 29
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    new-instance v1, Lcom/google/android/apps/nexuslauncher/qsb/g;
 
-    move-result-object v0
+    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/qsb/b;->bS:Landroid/content/pm/LauncherActivityInfo;
 
-    invoke-static {v0}, Lcom/android/launcher3/Launcher;->getLauncher(Landroid/content/Context;)Lcom/android/launcher3/Launcher;
+    invoke-direct {v1, p0, v2}, Lcom/google/android/apps/nexuslauncher/qsb/g;-><init>(Lcom/google/android/apps/nexuslauncher/qsb/b;Landroid/content/pm/LauncherActivityInfo;)V
 
-    move-result-object v0
+    .line 28
+    invoke-direct {v0, v1}, Lcom/android/launcher3/widget/PendingAddShortcutInfo;-><init>(Lcom/android/launcher3/compat/ShortcutConfigActivityInfo;)V
 
-    check-cast v0, Lcom/google/android/apps/nexuslauncher/NexusLauncherActivity;
+    .line 35
+    new-instance v1, Landroid/view/View;
 
-    .line 30
-    invoke-virtual {v0}, Lcom/google/android/apps/nexuslauncher/NexusLauncherActivity;->df()Z
+    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/qsb/b;->mLauncher:Lcom/android/launcher3/Launcher;
 
-    move-result v0
+    invoke-direct {v1, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    if-eqz v0, :cond_0
+    .line 36
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 32
-    new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+    .line 37
+    new-instance v0, Lcom/android/launcher3/widget/PendingItemDragHelper;
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-direct {v0, v1}, Lcom/android/launcher3/widget/PendingItemDragHelper;-><init>(Landroid/view/View;)V
 
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/apps/nexuslauncher/qsb/b;->f(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const v2, 0x7f0c008f
-
-    invoke-direct {v0, v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;-><init>(ILjava/lang/CharSequence;)V
-
-    .line 31
-    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
-
-    .line 34
-    :cond_0
-    return-void
+    return-object v0
 .end method
 
-.method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
-    .locals 1
+.method public fillInLogContainerData(Landroid/view/View;Lcom/android/launcher3/ItemInfo;Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;Lcom/android/launcher3/userevent/nano/LauncherLogProto$Target;)V
+    .locals 0
 
     .prologue
-    .line 38
-    const v0, 0x7f0c008f
-
-    if-ne p2, v0, :cond_0
-
-    .line 40
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/android/launcher3/Launcher;->getLauncher(Landroid/content/Context;)Lcom/android/launcher3/Launcher;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/nexuslauncher/NexusLauncherActivity;
-
-    .line 41
-    invoke-virtual {v0}, Lcom/google/android/apps/nexuslauncher/NexusLauncherActivity;->dg()V
-
-    .line 42
-    const/4 v0, 0x1
-
-    return v0
-
     .line 44
-    :cond_0
-    invoke-super {p0, p1, p2, p3}, Landroid/view/View$AccessibilityDelegate;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

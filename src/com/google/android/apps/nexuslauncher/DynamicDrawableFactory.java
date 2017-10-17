@@ -4,27 +4,25 @@
 
 package com.google.android.apps.nexuslauncher;
 
-import com.google.android.apps.nexuslauncher.a.b;
+import android.os.Process;
 import com.android.launcher3.FastBitmapDrawable;
 import com.android.launcher3.ItemInfo;
 import android.graphics.Bitmap;
 import android.content.Context;
-import com.google.android.apps.nexuslauncher.a.a;
+import com.google.android.apps.nexuslauncher.b.c;
 import com.android.launcher3.graphics.DrawableFactory;
 
 public class DynamicDrawableFactory extends DrawableFactory
 {
-    a du;
+    private final c fw;
     
     public DynamicDrawableFactory(final Context context) {
-        this.du = a.getInstance(context);
+        this.fw = new c(context);
     }
     
     public FastBitmapDrawable newIcon(final Bitmap bitmap, final ItemInfo itemInfo) {
-        if (itemInfo != null && itemInfo.itemType == 0 && a.dl.equals((Object)itemInfo.getTargetComponent())) {
-            final b b = new b(bitmap, this.du);
-            b.setFilterBitmap(true);
-            return b;
+        if (itemInfo != null && itemInfo.itemType == 0 && c.fk.equals((Object)itemInfo.getTargetComponent()) && itemInfo.user.equals((Object)Process.myUserHandle())) {
+            return this.fw.dJ(bitmap);
         }
         return super.newIcon(bitmap, itemInfo);
     }

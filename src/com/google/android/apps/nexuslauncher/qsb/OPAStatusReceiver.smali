@@ -20,12 +20,8 @@
     .locals 4
 
     .prologue
-    const/4 v3, 0x0
-
     .line 16
-    const-string/jumbo v0, "com.android.launcher3.device.prefs"
-
-    invoke-virtual {p1, v0, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    invoke-static {p1}, Lcom/android/launcher3/Utilities;->getDevicePrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -33,11 +29,13 @@
 
     move-result-object v0
 
-    .line 18
+    .line 17
     const-string/jumbo v1, "opa_enabled"
 
-    .line 19
+    .line 18
     const-string/jumbo v2, "OPA_ENABLED"
+
+    const/4 v3, 0x0
 
     invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
@@ -50,6 +48,6 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 21
+    .line 20
     return-void
 .end method

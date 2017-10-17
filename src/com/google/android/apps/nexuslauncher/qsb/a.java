@@ -4,41 +4,33 @@
 
 package com.google.android.apps.nexuslauncher.qsb;
 
-import android.os.Parcelable;
 import android.os.Bundle;
-import android.content.pm.PackageInfo;
+import android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction;
+import com.android.launcher3.Launcher;
+import com.google.android.apps.nexuslauncher.NexusLauncherActivity;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.View;
+import android.content.res.Resources;
 import android.content.pm.PackageManager$NameNotFoundException;
-import android.os.SystemClock;
+import android.text.TextUtils;
 import android.content.Context;
-import android.widget.RemoteViews;
+import android.view.View$AccessibilityDelegate;
 
-public class a
+public class a extends View$AccessibilityDelegate
 {
-    static long VALIDITY_DURATION;
-    public final long a;
-    public final int b;
-    public final long c;
-    public final RemoteViews d;
-    
-    static {
-        a.VALIDITY_DURATION = 7200000L;
-    }
-    
-    public a(final Context context, final RemoteViews d) {
-        PackageInfo packageInfo = null;
-        this.d = d;
+    public static final String br(final Context context) {
+        CharSequence charSequence = null;
         while (true) {
             try {
-                packageInfo = context.getPackageManager().getPackageInfo("com.google.android.googlequicksearchbox", 0);
-                if (packageInfo != null) {
-                    this.a = packageInfo.lastUpdateTime;
-                    this.b = packageInfo.versionCode;
+                final Resources resourcesForApplication = context.getPackageManager().getResourcesForApplication("com.google.android.googlequicksearchbox");
+                final int identifier = resourcesForApplication.getIdentifier("title_google_home_screen", "string", "com.google.android.googlequicksearchbox");
+                if (identifier != 0) {
+                    charSequence = resourcesForApplication.getString(identifier);
                 }
-                else {
-                    this.a = 0L;
-                    this.b = 0;
+                if (TextUtils.isEmpty(charSequence)) {
+                    charSequence = context.getString(2131493011);
                 }
-                this.c = SystemClock.uptimeMillis();
+                return context.getString(2131493012, new Object[] { charSequence });
             }
             catch (PackageManager$NameNotFoundException ex) {
                 continue;
@@ -47,24 +39,18 @@ public class a
         }
     }
     
-    public a(final Bundle bundle) {
-        final long n = 0L;
-        this.b = bundle.getInt("gsa_version", 0);
-        this.a = bundle.getLong("gsa_update_time", n);
-        this.c = bundle.getLong("publish_time", n);
-        this.d = (RemoteViews)bundle.getParcelable("views");
+    public void onInitializeAccessibilityNodeInfo(final View view, final AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        if (((NexusLauncherActivity)Launcher.getLauncher(view.getContext())).dW()) {
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo$AccessibilityAction(2131493012, (CharSequence)br(view.getContext())));
+        }
     }
     
-    public long a() {
-        return com.google.android.apps.nexuslauncher.qsb.a.VALIDITY_DURATION + this.c - SystemClock.uptimeMillis();
-    }
-    
-    public Bundle b() {
-        final Bundle bundle = new Bundle();
-        bundle.putInt("gsa_version", this.b);
-        bundle.putLong("gsa_update_time", this.a);
-        bundle.putLong("publish_time", this.c);
-        bundle.putParcelable("views", (Parcelable)this.d);
-        return bundle;
+    public boolean performAccessibilityAction(final View view, final int n, final Bundle bundle) {
+        if (n == 2131493012) {
+            ((NexusLauncherActivity)Launcher.getLauncher(view.getContext())).dX();
+            return true;
+        }
+        return super.performAccessibilityAction(view, n, bundle);
     }
 }

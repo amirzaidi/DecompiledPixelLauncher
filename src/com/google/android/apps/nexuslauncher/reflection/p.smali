@@ -7,24 +7,24 @@
 
 
 # instance fields
-.field final synthetic cX:Lcom/google/android/apps/nexuslauncher/reflection/a;
+.field final synthetic bK:Lcom/google/android/apps/nexuslauncher/reflection/k;
 
-.field final synthetic cY:Landroid/util/MutableLong;
+.field final synthetic bL:Landroid/util/MutableLong;
 
-.field final synthetic cZ:Ljava/util/concurrent/CountDownLatch;
+.field final synthetic bM:Ljava/util/concurrent/CountDownLatch;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/apps/nexuslauncher/reflection/a;Landroid/util/MutableLong;Ljava/util/concurrent/CountDownLatch;)V
+.method constructor <init>(Lcom/google/android/apps/nexuslauncher/reflection/k;Landroid/util/MutableLong;Ljava/util/concurrent/CountDownLatch;)V
     .locals 0
 
     .prologue
     .line 1
-    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->cX:Lcom/google/android/apps/nexuslauncher/reflection/a;
+    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->bK:Lcom/google/android/apps/nexuslauncher/reflection/k;
 
-    iput-object p2, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->cY:Landroid/util/MutableLong;
+    iput-object p2, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->bL:Landroid/util/MutableLong;
 
-    iput-object p3, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->cZ:Ljava/util/concurrent/CountDownLatch;
+    iput-object p3, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->bM:Ljava/util/concurrent/CountDownLatch;
 
     .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
 
     .prologue
     .line 63
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->cY:Landroid/util/MutableLong;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->bL:Landroid/util/MutableLong;
 
     const-string/jumbo v1, "time"
 
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->cY:Landroid/util/MutableLong;
+    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->bL:Landroid/util/MutableLong;
 
     iget-wide v2, v2, Landroid/util/MutableLong;->value:J
 
@@ -55,7 +55,7 @@
     iput-wide v2, v0, Landroid/util/MutableLong;->value:J
 
     .line 64
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->cZ:Ljava/util/concurrent/CountDownLatch;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/p;->bM:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 

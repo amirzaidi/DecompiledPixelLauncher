@@ -4,18 +4,18 @@
 
 
 # instance fields
-.field final synthetic ab:Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;
+.field final synthetic ct:Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;)V
+.method constructor <init>(Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;)V
     .locals 0
 
     .prologue
     .line 1
-    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/qsb/h;->ab:Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;
+    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/qsb/h;->ct:Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;
 
-    .line 44
+    .line 43
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     .line 1
@@ -28,11 +28,11 @@
     .locals 1
 
     .prologue
+    .line 46
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/h;->ct:Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;
+
+    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;->bT(Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;)V
+
     .line 47
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/h;->ab:Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;
-
-    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;->l(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;)V
-
-    .line 48
     return-void
 .end method

@@ -2,447 +2,97 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/os/Handler$Callback;
-
-
-# static fields
-.field private static final LOCK:Ljava/lang/Object;
-
-.field static final MSG_DESTROY:I = 0x1
-
-.field static final MSG_INIT:I
-
-.field private static cW:Lcom/google/android/apps/nexuslauncher/reflection/l;
-
-
-# instance fields
-.field private final cV:Lcom/android/launcher3/InvariantDeviceProfile;
-
-.field private final mContext:Landroid/content/Context;
-
-.field final mMessageHandler:Landroid/os/Handler;
-
-.field mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-.field final mWorkerThread:Landroid/os/HandlerThread;
-
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 34
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lcom/google/android/apps/nexuslauncher/reflection/l;->LOCK:Ljava/lang/Object;
-
-    .line 24
-    return-void
-.end method
-
-.method private constructor <init>(Landroid/content/Context;)V
-    .locals 2
-
-    .prologue
-    .line 55
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    .line 56
-    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mContext:Landroid/content/Context;
-
-    .line 57
-    new-instance v0, Landroid/os/HandlerThread;
-
-    const-string/jumbo v1, "reflection-thread"
-
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mWorkerThread:Landroid/os/HandlerThread;
-
-    .line 58
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mWorkerThread:Landroid/os/HandlerThread;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
-
-    .line 59
-    new-instance v0, Landroid/os/Handler;
-
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mWorkerThread:Landroid/os/HandlerThread;
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
-
-    .line 60
-    invoke-static {p1}, Lcom/android/launcher3/LauncherAppState;->getIDP(Landroid/content/Context;)Lcom/android/launcher3/InvariantDeviceProfile;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->cV:Lcom/android/launcher3/InvariantDeviceProfile;
-
-    .line 61
     return-void
-.end method
-
-.method private cr()V
-    .locals 3
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 70
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    if-eqz v0, :cond_0
-
-    .line 71
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/nexuslauncher/reflection/e;->bU(Z)V
-
-    .line 72
-    iput-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    .line 75
-    :cond_0
-    return-void
-.end method
-
-.method private cs()I
-    .locals 2
-
-    .prologue
-    .line 117
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->cV:Lcom/android/launcher3/InvariantDeviceProfile;
-
-    iget-object v0, v0, Lcom/android/launcher3/InvariantDeviceProfile;->landscapeProfile:Lcom/android/launcher3/DeviceProfile;
-
-    iget v0, v0, Lcom/android/launcher3/DeviceProfile;->allAppsNumPredictiveCols:I
-
-    .line 118
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->cV:Lcom/android/launcher3/InvariantDeviceProfile;
-
-    iget-object v1, v1, Lcom/android/launcher3/InvariantDeviceProfile;->portraitProfile:Lcom/android/launcher3/DeviceProfile;
-
-    iget v1, v1, Lcom/android/launcher3/DeviceProfile;->allAppsNumPredictiveCols:I
-
-    .line 117
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private ct()V
-    .locals 1
-
-    .prologue
-    .line 64
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    if-nez v0, :cond_0
-
-    .line 65
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/reflection/n;->cw(Landroid/content/Context;)Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    .line 67
-    :cond_0
-    return-void
-.end method
-
-.method public static getInstance(Landroid/content/Context;)Lcom/google/android/apps/nexuslauncher/reflection/l;
-    .locals 5
-
-    .prologue
-    .line 45
-    sget-object v1, Lcom/google/android/apps/nexuslauncher/reflection/l;->LOCK:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 46
-    :try_start_0
-    sget-object v0, Lcom/google/android/apps/nexuslauncher/reflection/l;->cW:Lcom/google/android/apps/nexuslauncher/reflection/l;
-
-    if-nez v0, :cond_0
-
-    .line 47
-    new-instance v0, Lcom/google/android/apps/nexuslauncher/reflection/l;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Lcom/google/android/apps/nexuslauncher/reflection/l;-><init>(Landroid/content/Context;)V
-
-    sput-object v0, Lcom/google/android/apps/nexuslauncher/reflection/l;->cW:Lcom/google/android/apps/nexuslauncher/reflection/l;
-
-    .line 48
-    sget-object v0, Lcom/google/android/apps/nexuslauncher/reflection/l;->cW:Lcom/google/android/apps/nexuslauncher/reflection/l;
-
-    invoke-static {p0}, Lcom/android/launcher3/Utilities;->getPrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    .line 49
-    const-string/jumbo v3, "pref_show_predictions"
-
-    const/4 v4, 0x1
-
-    .line 48
-    invoke-interface {v2, v3, v4}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/nexuslauncher/reflection/l;->cq(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit v1
-
-    .line 52
-    sget-object v0, Lcom/google/android/apps/nexuslauncher/reflection/l;->cW:Lcom/google/android/apps/nexuslauncher/reflection/l;
-
-    return-object v0
-
-    .line 45
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public cq(Z)V
-    .locals 3
+.method public aX(Landroid/content/SharedPreferences;Ljava/io/File;Lcom/google/android/apps/nexuslauncher/reflection/b;Lcom/google/android/apps/nexuslauncher/reflection/c/c;Lcom/google/android/apps/nexuslauncher/reflection/e;)V
+    .locals 2
 
     .prologue
-    const/4 v2, 0x1
+    const/16 v1, 0x18
 
-    const/4 v1, 0x0
+    .line 31
+    invoke-static {}, Lcom/android/launcher3/util/Preconditions;->assertNonUiThread()V
 
-    .line 127
-    if-eqz p1, :cond_0
+    .line 32
+    invoke-virtual {p3, p2}, Lcom/google/android/apps/nexuslauncher/reflection/b;->an(Ljava/io/File;)V
 
-    .line 128
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 129
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    .line 134
-    :goto_0
-    return-void
-
-    .line 131
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 132
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    goto :goto_0
-.end method
-
-.method public cu(Lcom/android/launcher3/util/ComponentKey;Lcom/android/launcher3/userevent/nano/LauncherLogProto$LauncherEvent;)V
-    .locals 3
-
-    .prologue
-    .line 141
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
-
-    invoke-static {p1, p2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
-
-    move-result-object v1
-
-    const/4 v2, 0x2
-
-    invoke-static {v0, v2, v1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+    .line 39
+    :try_start_0
+    invoke-static {p2}, Lcom/android/launcher3/util/IOUtils;->toByteArray(Ljava/io/File;)[B
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/reflection/d/a;->ad([B)Lcom/google/android/apps/nexuslauncher/reflection/d/a;
 
-    .line 142
-    return-void
-.end method
+    move-result-object v0
 
-.method public cv(J)V
-    .locals 3
+    .line 40
+    iget v0, v0, Lcom/google/android/apps/nexuslauncher/reflection/d/a;->version:I
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .prologue
-    const/4 v1, 0x3
+    .line 44
+    :goto_0
+    if-ge v0, v1, :cond_1
 
-    .line 122
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
+    .line 46
+    invoke-virtual {p3}, Lcom/google/android/apps/nexuslauncher/reflection/b;->as()Z
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 123
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mMessageHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    .line 124
-    return-void
-.end method
-
-.method public handleMessage(Landroid/os/Message;)Z
-    .locals 6
-
-    .prologue
-    const/4 v5, 0x1
-
-    .line 79
-    iget v0, p1, Landroid/os/Message;->what:I
-
-    packed-switch v0, :pswitch_data_0
-
-    .line 113
-    const/4 v0, 0x0
-
-    return v0
-
-    .line 81
-    :pswitch_0
-    invoke-direct {p0}, Lcom/google/android/apps/nexuslauncher/reflection/l;->ct()V
-
-    .line 82
-    return v5
-
-    .line 85
-    :pswitch_1
-    invoke-direct {p0}, Lcom/google/android/apps/nexuslauncher/reflection/l;->cr()V
-
-    .line 86
-    return v5
-
-    .line 89
-    :pswitch_2
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v0, Landroid/util/Pair;
-
-    .line 90
-    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v1, Lcom/android/launcher3/util/ComponentKey;
-
-    .line 91
-    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v0, Lcom/android/launcher3/userevent/nano/LauncherLogProto$LauncherEvent;
-
-    .line 92
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    if-eqz v2, :cond_0
-
-    .line 93
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mContext:Landroid/content/Context;
-
-    invoke-static {v2}, Lcom/android/launcher3/compat/UserManagerCompat;->getInstance(Landroid/content/Context;)Lcom/android/launcher3/compat/UserManagerCompat;
-
-    move-result-object v2
-
-    .line 94
-    iget-object v3, v1, Lcom/android/launcher3/util/ComponentKey;->user:Landroid/os/UserHandle;
-
-    .line 93
-    invoke-virtual {v2, v3}, Lcom/android/launcher3/compat/UserManagerCompat;->getSerialNumberForUser(Landroid/os/UserHandle;)J
-
-    move-result-wide v2
-
-    .line 95
-    iget-object v4, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    .line 96
-    iget-object v1, v1, Lcom/android/launcher3/util/ComponentKey;->componentName:Landroid/content/ComponentName;
-
-    .line 95
-    invoke-virtual {v4, v1, v2, v3}, Lcom/google/android/apps/nexuslauncher/reflection/e;->bW(Landroid/content/ComponentName;J)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 97
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    .line 98
-    const-string/jumbo v3, "GEL"
-
-    .line 100
-    const-string/jumbo v4, "app_launch"
-
-    .line 97
-    invoke-virtual {v2, v3, v1, v4, v0}, Lcom/google/android/apps/nexuslauncher/reflection/e;->bY(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/android/launcher3/userevent/nano/LauncherLogProto$LauncherEvent;)V
-
-    .line 103
-    :cond_0
-    return v5
-
-    .line 106
-    :pswitch_3
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
-
-    if-eqz v0, :cond_1
-
-    .line 107
-    invoke-direct {p0}, Lcom/google/android/apps/nexuslauncher/reflection/l;->cs()I
+    .line 47
+    invoke-virtual {p5}, Lcom/google/android/apps/nexuslauncher/reflection/e;->aG()Z
 
     move-result v0
 
-    .line 108
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/reflection/l;->mServiceHandler:Lcom/google/android/apps/nexuslauncher/reflection/e;
+    if-eqz v0, :cond_0
 
-    const-string/jumbo v2, "GEL"
+    .line 48
+    invoke-virtual {p5}, Lcom/google/android/apps/nexuslauncher/reflection/e;->aF()I
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/apps/nexuslauncher/reflection/e;->bX(Ljava/lang/String;I)V
+    move-result v0
 
-    .line 110
+    if-ne v0, v1, :cond_0
+
+    .line 49
+    const/4 v0, 0x0
+
+    invoke-virtual {p5, v0}, Lcom/google/android/apps/nexuslauncher/reflection/e;->aJ(Z)V
+
+    .line 59
+    :goto_1
+    return-void
+
+    .line 41
+    :catch_0
+    move-exception v0
+
+    .line 42
+    const/4 v0, -0x1
+
+    goto :goto_0
+
+    .line 51
+    :cond_0
+    const/4 v0, 0x1
+
+    invoke-virtual {p5, v0}, Lcom/google/android/apps/nexuslauncher/reflection/e;->aJ(Z)V
+
+    goto :goto_1
+
+    .line 54
     :cond_1
-    return v5
+    invoke-virtual {p3}, Lcom/google/android/apps/nexuslauncher/reflection/b;->as()Z
 
-    .line 79
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
+    goto :goto_1
 .end method

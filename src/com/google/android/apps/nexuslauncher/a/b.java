@@ -4,49 +4,37 @@
 
 package com.google.android.apps.nexuslauncher.a;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.Rect;
-import android.os.SystemClock;
-import com.android.launcher3.BubbleTextView;
-import android.graphics.Canvas;
-import android.graphics.Bitmap;
-import java.util.Calendar;
-import com.android.launcher3.FastBitmapDrawable;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager$NameNotFoundException;
+import android.content.Context;
+import android.content.IntentFilter;
 
-public class b extends FastBitmapDrawable implements Runnable
+public class b
 {
-    private final a dr;
-    private final Calendar ds;
-    
-    public b(final Bitmap bitmap, final a dr) {
-        super(bitmap);
-        this.ds = Calendar.getInstance();
-        this.dr = dr;
+    public static IntentFilter dx(final String... array) {
+        return dy("com.google.android.googlequicksearchbox", array);
     }
     
-    public void draw(final Canvas canvas) {
-        final long n = 100;
-        if (!(this.getCallback() instanceof BubbleTextView)) {
-            this.drawInternal(canvas);
-            return;
+    public static IntentFilter dy(final String s, final String... array) {
+        final IntentFilter intentFilter = new IntentFilter();
+        for (int length = array.length, i = 0; i < length; ++i) {
+            intentFilter.addAction(array[i]);
         }
-        if (!this.dr.cO()) {
-            super.draw(canvas);
-            return;
-        }
-        this.ds.setTimeInMillis(System.currentTimeMillis());
-        final Rect bounds = this.getBounds();
-        final Drawable cm = this.dr.cM(this.ds);
-        cm.setBounds(bounds);
-        final float cn = this.dr.cN();
-        canvas.scale(cn, cn, bounds.exactCenterX(), bounds.exactCenterY());
-        cm.draw(canvas);
-        this.unscheduleSelf((Runnable)this);
-        final long uptimeMillis = SystemClock.uptimeMillis();
-        this.scheduleSelf((Runnable)this, uptimeMillis - uptimeMillis % n + n);
+        intentFilter.addDataScheme("package");
+        intentFilter.addDataSchemeSpecificPart(s, 0);
+        return intentFilter;
     }
     
-    public void run() {
-        this.invalidateSelf();
+    public static boolean dz(final Context context) {
+        try {
+            final ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo("com.google.android.googlequicksearchbox", 0);
+            try {
+                return applicationInfo.enabled;
+            }
+            catch (PackageManager$NameNotFoundException ex) {
+                return false;
+            }
+        }
+        catch (PackageManager$NameNotFoundException ex2) {}
     }
 }

@@ -1,15 +1,22 @@
 .class final Lcom/google/android/apps/nexuslauncher/qsb/g;
-.super Landroid/util/Property;
+.super Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;
 .source "SourceFile"
 
 
+# instance fields
+.field final synthetic cs:Lcom/google/android/apps/nexuslauncher/qsb/b;
+
+
 # direct methods
-.method constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
+.method constructor <init>(Lcom/google/android/apps/nexuslauncher/qsb/b;Landroid/content/pm/LauncherActivityInfo;)V
     .locals 0
 
     .prologue
-    .line 31
-    invoke-direct {p0, p1, p2}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    .line 1
+    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/qsb/g;->cs:Lcom/google/android/apps/nexuslauncher/qsb/b;
+
+    .line 29
+    invoke-direct {p0, p2}, Lcom/android/launcher3/compat/ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;-><init>(Landroid/content/pm/LauncherActivityInfo;)V
 
     .line 1
     return-void
@@ -17,61 +24,26 @@
 
 
 # virtual methods
-.method public af(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;)Ljava/lang/Integer;
-    .locals 1
-
-    .prologue
-    .line 34
-    invoke-static {p1}, Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;->k(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;)I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public ag(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;Ljava/lang/Integer;)V
-    .locals 1
-
-    .prologue
-    .line 39
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    invoke-static {p1, v0}, Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;->m(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;I)V
-
-    .line 40
-    return-void
-.end method
-
-.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public createShortcutInfo()Lcom/android/launcher3/ShortcutInfo;
+    .locals 2
 
     .prologue
     .line 32
-    check-cast p1, Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/g;->cs:Lcom/google/android/apps/nexuslauncher/qsb/b;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/nexuslauncher/qsb/g;->af(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;)Ljava/lang/Integer;
+    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/qsb/b;->bs(Lcom/google/android/apps/nexuslauncher/qsb/b;)Landroid/content/pm/LauncherActivityInfo;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/qsb/g;->cs:Lcom/google/android/apps/nexuslauncher/qsb/b;
+
+    invoke-static {v1}, Lcom/google/android/apps/nexuslauncher/qsb/b;->bt(Lcom/google/android/apps/nexuslauncher/qsb/b;)Lcom/android/launcher3/Launcher;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/android/launcher3/InstallShortcutReceiver;->fromActivityInfo(Landroid/content/pm/LauncherActivityInfo;Landroid/content/Context;)Lcom/android/launcher3/ShortcutInfo;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    .prologue
-    .line 37
-    check-cast p1, Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;
-
-    check-cast p2, Ljava/lang/Integer;
-
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/apps/nexuslauncher/qsb/g;->ag(Lcom/google/android/apps/nexuslauncher/qsb/QsbConnector;Ljava/lang/Integer;)V
-
-    return-void
 .end method

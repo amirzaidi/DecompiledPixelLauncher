@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public final bE:Ljava/util/List;
+.field public final M:Ljava/util/List;
 
-.field public final bF:J
+.field public final N:J
 
 
 # direct methods
@@ -18,10 +18,10 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 231
-    iput-wide p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/d;->bF:J
+    iput-wide p1, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/d;->N:J
 
     .line 232
-    iput-object p3, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/d;->bE:Ljava/util/List;
+    iput-object p3, p0, Lcom/google/android/apps/nexuslauncher/reflection/c/d;->M:Ljava/util/List;
 
     .line 233
     return-void

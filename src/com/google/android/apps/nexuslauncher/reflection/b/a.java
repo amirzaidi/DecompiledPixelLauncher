@@ -7,46 +7,46 @@ package com.google.android.apps.nexuslauncher.reflection.b;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
-import com.google.android.apps.nexuslauncher.reflection.a.e;
+import com.google.android.apps.nexuslauncher.reflection.d.i;
 
 public class a implements com.google.research.reflection.a.a
 {
-    private e bz;
+    private i H;
     
     public a() {
-        this.bz = new e();
+        this.H = new i();
     }
     
-    public a(final e bz) {
-        this.bz = bz;
+    public a(final i h) {
+        this.H = h;
     }
     
-    public List ar() {
+    public List B() {
         final ArrayList<Double> list = new ArrayList<Double>();
-        final double[] ai = this.bz.aI;
-        for (int i = 0; i < ai.length; ++i) {
-            list.add(ai[i]);
+        final double[] ag = this.H.aG;
+        for (int i = 0; i < ag.length; ++i) {
+            list.add(ag[i]);
         }
         return list;
     }
     
-    public e as() {
-        return this.bz;
+    public List C() {
+        return Arrays.asList(this.H.aF);
     }
     
-    public List at() {
-        return Arrays.asList(this.bz.aL);
+    public Long D() {
+        return this.H.aD;
     }
     
-    public Long au() {
-        return this.bz.aM;
-    }
-    
-    public String av() {
-        return this.bz.aN;
+    public String E() {
+        return this.H.aC;
     }
     
     public String getId() {
-        return this.bz.aJ;
+        return this.H.aE;
+    }
+    
+    public i getInstance() {
+        return this.H;
     }
 }

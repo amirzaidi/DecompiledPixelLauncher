@@ -1,154 +1,105 @@
 .class public Lcom/google/android/apps/nexuslauncher/a/b;
-.super Lcom/android/launcher3/FastBitmapDrawable;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field private final dr:Lcom/google/android/apps/nexuslauncher/a/a;
-
-.field private final ds:Ljava/util/Calendar;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;Lcom/google/android/apps/nexuslauncher/a/a;)V
-    .locals 1
-
-    .prologue
-    .line 22
-    invoke-direct {p0, p1}, Lcom/android/launcher3/FastBitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 23
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/apps/nexuslauncher/a/b;->ds:Ljava/util/Calendar;
-
-    .line 24
-    iput-object p2, p0, Lcom/google/android/apps/nexuslauncher/a/b;->dr:Lcom/google/android/apps/nexuslauncher/a/a;
-
-    .line 25
-    return-void
-.end method
-
-
-# virtual methods
-.method public draw(Landroid/graphics/Canvas;)V
-    .locals 6
-
-    .prologue
-    const-wide/16 v4, 0x64
-
-    .line 29
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/a/b;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lcom/android/launcher3/BubbleTextView;
-
-    if-nez v0, :cond_0
-
-    .line 30
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/nexuslauncher/a/b;->drawInternal(Landroid/graphics/Canvas;)V
-
-    .line 31
-    return-void
-
-    .line 34
-    :cond_0
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/a/b;->dr:Lcom/google/android/apps/nexuslauncher/a/a;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/nexuslauncher/a/a;->cO()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    .line 35
-    invoke-super {p0, p1}, Lcom/android/launcher3/FastBitmapDrawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 36
-    return-void
-
-    .line 39
-    :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/a/b;->ds:Ljava/util/Calendar;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
-
-    .line 41
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/a/b;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    .line 43
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/a/b;->dr:Lcom/google/android/apps/nexuslauncher/a/a;
-
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/a/b;->ds:Ljava/util/Calendar;
-
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/nexuslauncher/a/a;->cM(Ljava/util/Calendar;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    .line 44
-    invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 46
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/a/b;->dr:Lcom/google/android/apps/nexuslauncher/a/a;
-
-    invoke-virtual {v2}, Lcom/google/android/apps/nexuslauncher/a/a;->cN()F
-
-    move-result v2
-
-    .line 47
-    invoke-virtual {v0}, Landroid/graphics/Rect;->exactCenterX()F
-
-    move-result v3
-
-    invoke-virtual {v0}, Landroid/graphics/Rect;->exactCenterY()F
-
-    move-result v0
-
-    invoke-virtual {p1, v2, v2, v3, v0}, Landroid/graphics/Canvas;->scale(FFFF)V
-
-    .line 48
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 50
-    invoke-virtual {p0, p0}, Lcom/google/android/apps/nexuslauncher/a/b;->unscheduleSelf(Ljava/lang/Runnable;)V
-
-    .line 51
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v0
-
-    .line 53
-    rem-long v2, v0, v4
-
-    sub-long/2addr v0, v2
-
-    add-long/2addr v0, v4
-
-    invoke-virtual {p0, p0, v0, v1}, Lcom/google/android/apps/nexuslauncher/a/b;->scheduleSelf(Ljava/lang/Runnable;J)V
-
-    .line 54
-    return-void
-.end method
-
-.method public run()V
+.method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 58
-    invoke-virtual {p0}, Lcom/google/android/apps/nexuslauncher/a/b;->invalidateSelf()V
+    .line 8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
     return-void
+.end method
+
+.method public static varargs dx([Ljava/lang/String;)Landroid/content/IntentFilter;
+    .locals 1
+
+    .prologue
+    .line 14
+    const-string/jumbo v0, "com.google.android.googlequicksearchbox"
+
+    invoke-static {v0, p0}, Lcom/google/android/apps/nexuslauncher/a/b;->dy(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/IntentFilter;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static varargs dy(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/IntentFilter;
+    .locals 5
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 18
+    new-instance v2, Landroid/content/IntentFilter;
+
+    invoke-direct {v2}, Landroid/content/IntentFilter;-><init>()V
+
+    .line 19
+    array-length v3, p1
+
+    move v0, v1
+
+    :goto_0
+    if-ge v0, v3, :cond_0
+
+    aget-object v4, p1, v0
+
+    .line 20
+    invoke-virtual {v2, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+
+    .line 19
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 22
+    :cond_0
+    const-string/jumbo v0, "package"
+
+    invoke-virtual {v2, v0}, Landroid/content/IntentFilter;->addDataScheme(Ljava/lang/String;)V
+
+    .line 23
+    invoke-virtual {v2, p0, v1}, Landroid/content/IntentFilter;->addDataSchemeSpecificPart(Ljava/lang/String;I)V
+
+    .line 24
+    return-object v2
+.end method
+
+.method public static dz(Landroid/content/Context;)Z
+    .locals 4
+
+    .prologue
+    const/4 v3, 0x0
+
+    .line 29
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "com.google.android.googlequicksearchbox"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v0
+
+    iget-boolean v0, v0, Landroid/content/pm/ApplicationInfo;->enabled:Z
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    .line 30
+    :catch_0
+    move-exception v0
+
+    .line 31
+    return v3
 .end method

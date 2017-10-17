@@ -4,31 +4,31 @@
 
 package com.google.android.apps.nexuslauncher.qsb;
 
-import android.graphics.Canvas;
-import com.google.android.apps.nexuslauncher.util.a;
-import android.animation.TimeInterpolator;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.util.Log;
-import android.util.AttributeSet;
-import android.content.Context;
-import android.content.BroadcastReceiver;
-import android.animation.ObjectAnimator;
+import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
+import com.android.launcher3.ItemInfo;
 import android.view.View;
-import android.util.Property;
+import com.android.launcher3.compat.ShortcutConfigActivityInfo;
+import com.android.launcher3.widget.PendingAddShortcutInfo;
+import com.android.launcher3.widget.PendingItemDragHelper;
+import com.android.launcher3.Launcher;
+import android.graphics.Rect;
+import com.android.launcher3.dragndrop.BaseItemDragListener;
+import android.content.Context;
+import com.android.launcher3.InstallShortcutReceiver;
+import com.android.launcher3.ShortcutInfo;
+import android.content.pm.LauncherActivityInfo;
+import com.android.launcher3.compat.ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO;
 
-final class g extends Property
+final class g extends ShortcutConfigActivityInfo$ShortcutConfigActivityInfoVO
 {
-    g(final Class clazz, final String s) {
-        super(clazz, s);
+    final /* synthetic */ b cs;
+    
+    g(final b cs, final LauncherActivityInfo launcherActivityInfo) {
+        this.cs = cs;
+        super(launcherActivityInfo);
     }
     
-    public Integer af(final QsbConnector qsbConnector) {
-        return qsbConnector.m;
-    }
-    
-    public void ag(final QsbConnector qsbConnector, final Integer n) {
-        qsbConnector.j(n);
+    public ShortcutInfo createShortcutInfo() {
+        return InstallShortcutReceiver.fromActivityInfo(this.cs.bS, (Context)this.cs.mLauncher);
     }
 }

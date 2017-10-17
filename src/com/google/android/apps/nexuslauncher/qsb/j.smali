@@ -1,29 +1,22 @@
 .class final Lcom/google/android/apps/nexuslauncher/qsb/j;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Lcom/google/android/gms/common/api/a;
 
 
 # instance fields
-.field final synthetic ac:Lcom/google/android/gms/common/api/d;
-
-.field final synthetic val$context:Landroid/content/Context;
+.field final synthetic cv:Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/android/gms/common/api/d;Landroid/content/Context;)V
+.method constructor <init>(Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;)V
     .locals 0
 
     .prologue
     .line 1
-    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->ac:Lcom/google/android/gms/common/api/d;
+    iput-object p1, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->cv:Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;
 
-    iput-object p2, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->val$context:Landroid/content/Context;
-
-    .line 150
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 217
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     .line 1
     return-void
@@ -31,55 +24,27 @@
 
 
 # virtual methods
-.method public bridge synthetic C(Lcom/google/android/gms/common/api/b;)V
-    .locals 0
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
     .prologue
-    .line 151
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
+    .line 220
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->cv:Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;
 
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/nexuslauncher/qsb/j;->ah(Lcom/google/android/gms/common/api/Status;)V
-
-    return-void
-.end method
-
-.method public ah(Lcom/google/android/gms/common/api/Status;)V
-    .locals 5
-
-    .prologue
-    .line 153
-    sget-object v0, Lcom/google/android/gms/phenotype/f;->lQ:Lcom/google/android/gms/phenotype/a;
-
-    .line 154
-    iget-object v1, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->ac:Lcom/google/android/gms/common/api/d;
-
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->val$context:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, ""
-
-    const/4 v4, 0x0
-
-    .line 153
-    invoke-interface {v0, v1, v2, v3, v4}, Lcom/google/android/gms/phenotype/a;->oD(Lcom/google/android/gms/common/api/d;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/common/api/c;
+    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;->bR(Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
-    .line 155
-    new-instance v1, Lcom/google/android/apps/nexuslauncher/qsb/k;
+    if-ne p1, v0, :cond_0
 
-    iget-object v2, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->val$context:Landroid/content/Context;
+    .line 221
+    iget-object v0, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->cv:Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;
 
-    iget-object v3, p0, Lcom/google/android/apps/nexuslauncher/qsb/j;->ac:Lcom/google/android/gms/common/api/d;
+    const/4 v1, 0x0
 
-    invoke-direct {v1, p0, v2, v3}, Lcom/google/android/apps/nexuslauncher/qsb/k;-><init>(Lcom/google/android/apps/nexuslauncher/qsb/j;Landroid/content/Context;Lcom/google/android/gms/common/api/d;)V
+    invoke-static {v0, v1}, Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;->bS(Lcom/google/android/apps/nexuslauncher/qsb/HotseatQsbWidget;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 153
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/c;->ds(Lcom/google/android/gms/common/api/a;)V
-
-    .line 174
+    .line 223
+    :cond_0
     return-void
 .end method

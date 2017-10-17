@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 13
+    .line 10
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -20,12 +20,8 @@
     .locals 3
 
     .prologue
-    .line 19
-    const-string/jumbo v0, "com.android.launcher3.device.prefs"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    .line 16
+    invoke-static {p1}, Lcom/android/launcher3/Utilities;->getDevicePrefs(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -33,38 +29,38 @@
 
     move-result-object v0
 
-    .line 21
+    .line 17
     const-string/jumbo v1, "data_import_src_pkg"
 
     const-string/jumbo v2, "com.google.android.googlequicksearchbox"
 
-    .line 19
+    .line 16
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 22
+    .line 18
     const-string/jumbo v1, "data_import_src_authority"
 
     const-string/jumbo v2, "com.google.android.launcher.settings"
 
-    .line 19
+    .line 16
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 23
+    .line 19
     const-string/jumbo v1, "pref_show_discovery_bounce"
 
     const/4 v2, 0x1
 
-    .line 19
+    .line 16
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 25
+    .line 21
     return-void
 .end method

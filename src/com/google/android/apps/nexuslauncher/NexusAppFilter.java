@@ -4,7 +4,7 @@
 
 package com.google.android.apps.nexuslauncher;
 
-import com.google.android.apps.nexuslauncher.experiment.b;
+import com.google.android.apps.nexuslauncher.experiment.a;
 import android.content.ComponentName;
 import android.content.Context;
 import java.util.HashSet;
@@ -12,15 +12,15 @@ import com.android.launcher3.AppFilter;
 
 public class NexusAppFilter extends AppFilter
 {
-    private final HashSet dD;
+    private final HashSet fL;
     
     public NexusAppFilter(final Context context) {
-        (this.dD = new HashSet()).add(ComponentName.unflattenFromString("com.google.android.googlequicksearchbox/.VoiceSearchActivity"));
-        this.dD.add(ComponentName.unflattenFromString("com.google.android.apps.wallpaper/.picker.CategoryPickerActivity"));
-        b.cK(context);
+        (this.fL = new HashSet()).add(ComponentName.unflattenFromString("com.google.android.googlequicksearchbox/.VoiceSearchActivity"));
+        this.fL.add(ComponentName.unflattenFromString("com.google.android.apps.wallpaper/.picker.CategoryPickerActivity"));
+        a.dS(context);
     }
     
     public boolean shouldShowApp(final ComponentName componentName) {
-        return this.dD.contains(componentName) ^ true;
+        return this.fL.contains(componentName) ^ true;
     }
 }

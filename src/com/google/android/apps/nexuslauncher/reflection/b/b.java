@@ -4,107 +4,45 @@
 
 package com.google.android.apps.nexuslauncher.reflection.b;
 
-import java.io.IOException;
-import android.util.Log;
-import com.google.protobuf.nano.c;
-import com.google.android.apps.nexuslauncher.reflection.a.e;
+import com.google.android.apps.nexuslauncher.reflection.d.i;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import com.google.android.apps.nexuslauncher.reflection.a.a;
+import java.io.IOException;
+import android.util.Log;
+import com.google.protobuf.nano.c;
+import com.google.android.apps.nexuslauncher.reflection.d.e;
 
 public class b implements com.google.research.reflection.a.b
 {
-    private a bA;
+    private e I;
     
     public b() {
-        this.bA = new a();
+        this.I = new e();
     }
     
-    public b(final a ba) {
-        this.bA = ba;
+    public b(final e i) {
+        this.I = i;
     }
     
-    public Long aA() {
-        return this.bA.am;
+    public Long F() {
+        return this.I.ah;
     }
     
-    public Long aB() {
-        return this.bA.duration;
+    public String G() {
+        return this.I.an;
     }
     
-    public Long aC() {
-        return this.bA.ap;
-    }
-    
-    public List aD() {
-        return Arrays.asList(this.bA.aq);
-    }
-    
-    public List aE() {
-        final ArrayList<com.google.android.apps.nexuslauncher.reflection.b.a> list = new ArrayList<com.google.android.apps.nexuslauncher.reflection.b.a>(this.bA.av.length);
-        final e[] av = this.bA.av;
-        for (int i = 0; i < av.length; ++i) {
-            list.add(new com.google.android.apps.nexuslauncher.reflection.b.a(av[i]));
-        }
-        return list;
-    }
-    
-    public Long aF() {
-        return this.bA.ax;
-    }
-    
-    public String aG() {
-        return this.bA.ay;
-    }
-    
-    public String aH() {
-        return this.bA.az;
-    }
-    
-    public byte[] aI() {
-        if (this.bA == null) {
-            return null;
-        }
-        return com.google.protobuf.nano.a.toByteArray(this.bA);
-    }
-    
-    public com.google.research.reflection.a.b aJ(final String as) {
-        this.bA.as = as;
+    public com.google.research.reflection.a.b H(final String am) {
+        this.I.am = am;
         return this;
     }
     
-    public com.google.research.reflection.a.b aK(final List list) {
-        if (list == null) {
-            return this;
-        }
-        this.bA.av = new e[list.size()];
-        for (int i = 0; i < list.size(); ++i) {
-            if (!(list.get(i) instanceof com.google.android.apps.nexuslauncher.reflection.b.a)) {
-                throw new RuntimeException("Passed in type is unexpected!");
-            }
-            this.bA.av[i] = list.get(i).as();
-        }
-        return this;
-    }
-    
-    public String aw() {
-        return this.bA.an;
-    }
-    
-    public Long ax() {
-        return this.bA.aw;
-    }
-    
-    public a ay() {
-        return this.bA;
-    }
-    
-    public com.google.research.reflection.a.b az(final byte[] array, final int n, final int n2) {
+    public com.google.research.reflection.a.b I(final byte[] array, final int n, final int n2) {
         try {
-            final c sh = c.SH(array, 0, n2);
+            final c wc = c.WC(array, 0, n2);
             try {
-                return new b(a.an(sh));
+                return new b(e.af(wc));
             }
             catch (IOException ex) {
                 Log.e("Reflection", "deserialize event failed!");
@@ -114,11 +52,73 @@ public class b implements com.google.research.reflection.a.b
         catch (IOException ex2) {}
     }
     
+    public Long J() {
+        return this.I.ak;
+    }
+    
+    public Long K() {
+        return this.I.duration;
+    }
+    
+    public Long L() {
+        return this.I.al;
+    }
+    
+    public List M() {
+        return Arrays.asList(this.I.ao);
+    }
+    
+    public List N() {
+        final ArrayList<a> list = new ArrayList<a>(this.I.au.length);
+        final i[] au = this.I.au;
+        for (int i = 0; i < au.length; ++i) {
+            list.add(new a(au[i]));
+        }
+        return list;
+    }
+    
+    public Long O() {
+        return this.I.aj;
+    }
+    
+    public String P() {
+        return this.I.ai;
+    }
+    
+    public String Q() {
+        return this.I.ap;
+    }
+    
+    public byte[] R() {
+        if (this.I == null) {
+            return null;
+        }
+        return com.google.protobuf.nano.a.toByteArray(this.I);
+    }
+    
+    public com.google.research.reflection.a.b S(final List list) {
+        if (list == null) {
+            return this;
+        }
+        this.I.au = new i[list.size()];
+        for (int i = 0; i < list.size(); ++i) {
+            if (!(list.get(i) instanceof a)) {
+                throw new RuntimeException("Passed in type is unexpected!");
+            }
+            this.I.au[i] = list.get(i).getInstance();
+        }
+        return this;
+    }
+    
     public boolean equals(final Object o) {
-        return (o == null && this.bA == null) || (o != null && this.bA != null && o instanceof b && this.bA.toString().equals(((b)o).ay().toString()));
+        return (o == null && this.I == null) || (o != null && this.I != null && o instanceof b && this.I.toString().equals(((b)o).getInstance().toString()));
     }
     
     public String getId() {
-        return this.bA.as;
+        return this.I.am;
+    }
+    
+    public e getInstance() {
+        return this.I;
     }
 }

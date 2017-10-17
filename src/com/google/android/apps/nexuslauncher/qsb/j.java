@@ -4,24 +4,48 @@
 
 package com.google.android.apps.nexuslauncher.qsb;
 
-import com.google.android.gms.phenotype.f;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.b;
+import android.content.IntentFilter;
+import android.view.ViewGroup$MarginLayoutParams;
+import com.android.launcher3.CellLayout;
+import android.util.Property;
+import com.android.launcher3.dragndrop.DragLayer;
+import android.view.animation.DecelerateInterpolator;
+import android.animation.TimeInterpolator;
+import android.view.animation.AccelerateInterpolator;
+import android.animation.ObjectAnimator;
+import android.animation.Animator$AnimatorListener;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Handler;
+import com.android.launcher3.Utilities;
+import android.app.WallpaperInfo;
+import android.app.WallpaperManager;
+import android.graphics.Rect;
+import android.content.Intent;
+import android.view.ViewGroup;
+import android.view.View;
+import android.view.ContextThemeWrapper;
+import com.android.launcher3.Launcher;
+import android.view.View$AccessibilityDelegate;
+import android.view.View$OnClickListener;
+import android.util.AttributeSet;
 import android.content.Context;
-import com.google.android.gms.common.api.d;
-import com.google.android.gms.common.api.a;
+import android.content.BroadcastReceiver;
+import android.animation.AnimatorSet;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-final class j implements a
+final class j extends AnimatorListenerAdapter
 {
-    final /* synthetic */ d ac;
-    final /* synthetic */ Context val$context;
+    final /* synthetic */ HotseatQsbWidget cv;
     
-    j(final d ac, final Context val$context) {
-        this.ac = ac;
-        this.val$context = val$context;
+    j(final HotseatQsbWidget cv) {
+        this.cv = cv;
     }
     
-    public void ah(final Status status) {
-        f.lQ.oD(this.ac, this.val$context.getPackageName(), "", null).ds(new k(this, this.val$context, this.ac));
+    public void onAnimationEnd(final Animator animator) {
+        if (animator == this.cv.ci) {
+            this.cv.ci = null;
+        }
     }
 }

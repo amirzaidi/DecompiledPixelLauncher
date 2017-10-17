@@ -4,203 +4,145 @@
 
 package com.google.android.apps.nexuslauncher.reflection.a;
 
-import com.google.protobuf.nano.c;
-import com.google.protobuf.nano.f;
-import com.google.protobuf.nano.a;
+import com.google.android.apps.nexuslauncher.reflection.g;
+import android.content.ComponentName;
+import java.util.Calendar;
+import java.util.Iterator;
+import android.app.usage.UsageStatsManager;
+import android.app.AppOpsManager;
+import com.google.protobuf.nano.InvalidProtocolBufferNanoException;
+import android.util.Log;
+import android.os.Process;
+import com.android.launcher3.compat.UserManagerCompat;
+import android.content.Context;
+import java.util.List;
+import com.google.android.gms.common.api.a;
+import java.util.ArrayList;
+import com.google.android.apps.nexuslauncher.reflection.o;
 
-public final class b extends a
+public class b implements o
 {
-    public int[] aA;
-    public long aB;
+    private final ArrayList f;
+    private final a g;
+    private final com.google.android.apps.nexuslauncher.reflection.b.b h;
+    private final long i;
+    private final List j;
+    private final List k;
     
-    public b() {
-        this.clear();
-    }
-    
-    public b clear() {
-        this.aB = 0L;
-        this.aA = f.Lh;
-        this.cachedSize = -1;
-        return this;
-    }
-    
-    protected int computeSerializedSize() {
-        final int n = 1;
-        int i = 0;
-        int computeSerializedSize = super.computeSerializedSize();
-        if (this.aB != 0L) {
-            computeSerializedSize += com.google.protobuf.nano.b.RE(n, this.aB);
+    public b(final Context context) {
+        final int n = 4;
+        this.f = new ArrayList();
+        this.h = new com.google.android.apps.nexuslauncher.reflection.b.b();
+        this.j = new ArrayList(n);
+        this.k = new ArrayList(n);
+        this.g = this.e(context);
+        this.i = UserManagerCompat.getInstance(context).getSerialNumberForUser(Process.myUserHandle());
+        this.j.add(new e(this.g, com.google.android.gms.location.b.DJ));
+        final com.google.android.apps.nexuslauncher.reflection.a.a a = new com.google.android.apps.nexuslauncher.reflection.a.a(this.h, context);
+        this.k.add(a);
+        this.f.add(a);
+        final d j = this.j(context);
+        if (j != null) {
+            this.j.add(j);
         }
-        if (this.aA != null && this.aA.length > 0) {
-            int n2 = 0;
-            while (i < this.aA.length) {
-                n2 += com.google.protobuf.nano.b.Rw(this.aA[i]);
-                ++i;
+        this.g.gg();
+        this.k();
+    }
+    
+    b(final List j, final List k, final long i) {
+        this.f = new ArrayList();
+        this.h = new com.google.android.apps.nexuslauncher.reflection.b.b();
+        this.j = j;
+        this.k = k;
+        this.g = null;
+        this.i = i;
+        this.k();
+    }
+    
+    private a e(final Context context) {
+        final com.google.android.gms.common.api.b b = new com.google.android.gms.common.api.b(context);
+        b.gu(com.google.android.gms.location.b.DI);
+        b.go();
+        return b.build();
+    }
+    
+    private com.google.android.apps.nexuslauncher.reflection.d.e h() {
+        try {
+            final com.google.android.apps.nexuslauncher.reflection.b.b h = this.h;
+            try {
+                final com.google.android.apps.nexuslauncher.reflection.d.e instance = h.getInstance();
+                try {
+                    final byte[] byteArray = com.google.protobuf.nano.a.toByteArray(instance);
+                    try {
+                        return com.google.android.apps.nexuslauncher.reflection.d.e.ae(byteArray);
+                    }
+                    catch (InvalidProtocolBufferNanoException ex) {
+                        Log.e("Reflection.Situation", "error duplicating Event", (Throwable)ex);
+                        final com.google.android.apps.nexuslauncher.reflection.d.e ae = null;
+                    }
+                }
+                catch (InvalidProtocolBufferNanoException ex2) {}
             }
-            computeSerializedSize = computeSerializedSize + n2 + this.aA.length * 1;
+            catch (InvalidProtocolBufferNanoException ex3) {}
         }
-        return computeSerializedSize;
+        catch (InvalidProtocolBufferNanoException ex4) {}
     }
     
-    public b mergeFrom(final c c) {
-        while (true) {
-            final int sx = c.Sx();
-            switch (sx) {
-                default: {
-                    if (!f.SW(c, sx)) {
-                        return this;
-                    }
-                    continue;
-                }
-                case 0: {
-                    return this;
-                }
-                case 8: {
-                    this.aB = c.SE();
-                    continue;
-                }
-                case 16: {
-                    final int ss = f.SS(c, 16);
-                    final int[] aa = new int[ss];
-                    int i = 0;
-                    int n = 0;
-                    while (i < ss) {
-                        if (i != 0) {
-                            c.Sx();
-                        }
-                        final int sk = c.SK();
-                        int n2 = 0;
-                        switch (sk) {
-                            default: {
-                                n2 = n;
-                                break;
-                            }
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                            case 7:
-                            case 8:
-                            case 9:
-                            case 10:
-                            case 11: {
-                                n2 = n + 1;
-                                aa[n] = sk;
-                                break;
-                            }
-                        }
-                        ++i;
-                        n = n2;
-                    }
-                    if (n == 0) {
-                        continue;
-                    }
-                    int length;
-                    if (this.aA == null) {
-                        length = 0;
-                    }
-                    else {
-                        length = this.aA.length;
-                    }
-                    if (length == 0 && n == aa.length) {
-                        this.aA = aa;
-                        continue;
-                    }
-                    final int[] aa2 = new int[length + n];
-                    if (length != 0) {
-                        System.arraycopy(this.aA, 0, aa2, 0, length);
-                    }
-                    System.arraycopy(aa, 0, aa2, length, n);
-                    this.aA = aa2;
-                    continue;
-                }
-                case 18: {
-                    final int st = c.St(c.Sw());
-                    final int ss2 = c.Ss();
-                    int n3 = 0;
-                    while (c.Sv() > 0) {
-                        switch (c.SK()) {
-                            default: {
-                                continue;
-                            }
-                            case 0:
-                            case 1:
-                            case 2:
-                            case 3:
-                            case 4:
-                            case 5:
-                            case 6:
-                            case 7:
-                            case 8:
-                            case 9:
-                            case 10:
-                            case 11: {
-                                ++n3;
-                                continue;
-                            }
-                        }
-                    }
-                    if (n3 != 0) {
-                        c.SJ(ss2);
-                        int length2;
-                        if (this.aA == null) {
-                            length2 = 0;
-                        }
-                        else {
-                            length2 = this.aA.length;
-                        }
-                        final int[] aa3 = new int[n3 + length2];
-                        if (length2 != 0) {
-                            System.arraycopy(this.aA, 0, aa3, 0, length2);
-                        }
-                        while (c.Sv() > 0) {
-                            final int sk2 = c.SK();
-                            switch (sk2) {
-                                default: {
-                                    continue;
-                                }
-                                case 0:
-                                case 1:
-                                case 2:
-                                case 3:
-                                case 4:
-                                case 5:
-                                case 6:
-                                case 7:
-                                case 8:
-                                case 9:
-                                case 10:
-                                case 11: {
-                                    final int n4 = length2 + 1;
-                                    aa3[length2] = sk2;
-                                    length2 = n4;
-                                    continue;
-                                }
-                            }
-                        }
-                        this.aA = aa3;
-                    }
-                    c.Sq(st);
-                    continue;
-                }
-            }
+    private d j(final Context context) {
+        d d;
+        if (((AppOpsManager)context.getSystemService("appops")).checkOpNoThrow("android:get_usage_stats", Process.myUid(), context.getPackageName()) == 0) {
+            d = new d((UsageStatsManager)context.getSystemService("usagestats"));
+        }
+        else {
+            d = null;
+        }
+        return d;
+    }
+    
+    public void c() {
+        this.g.gi();
+        final Iterator iterator = this.f.iterator();
+        while (iterator.hasNext()) {
+            iterator.next().c();
         }
     }
     
-    public void writeTo(final com.google.protobuf.nano.b b) {
-        int i = 0;
-        if (this.aB != 0L) {
-            b.Sh(1, this.aB);
+    public com.google.android.apps.nexuslauncher.reflection.b.b f(final String an, final String ap, final Calendar calendar, final long ak, final long al, final String am, final String s) {
+        final com.google.android.apps.nexuslauncher.reflection.d.e h = this.h();
+        h.ah = calendar.getTimeInMillis();
+        h.ai = calendar.getTimeZone().getID();
+        h.aj = calendar.getTimeZone().getOffset(h.ah);
+        h.ak = ak;
+        h.al = al;
+        h.am = am;
+        h.an = an;
+        h.ao = new String[] { "GEL", s };
+        if (ap == null || ap.length() == 0) {
+            h.ap = "app_launch";
         }
-        if (this.aA != null && this.aA.length > 0) {
-            while (i < this.aA.length) {
-                b.RA(2, this.aA[i]);
-                ++i;
-            }
+        else {
+            h.ap = ap;
         }
-        super.writeTo(b);
+        return new com.google.android.apps.nexuslauncher.reflection.b.b(h);
+    }
+    
+    public com.google.android.apps.nexuslauncher.reflection.b.b g(final String s, final String s2, final Calendar calendar, final long n, final long n2, final String s3, final String s4) {
+        this.k();
+        return this.f(s, s2, calendar, n, n2, s3, s4);
+    }
+    
+    public String i(final ComponentName componentName, final long n) {
+        String s = com.google.android.apps.nexuslauncher.reflection.g.aU(componentName);
+        if (n != this.i) {
+            s = String.format("%s#%d", s, n);
+        }
+        return s;
+    }
+    
+    public void k() {
+        final Iterator iterator = this.j.iterator();
+        while (iterator.hasNext()) {
+            iterator.next().l(this.h);
+        }
     }
 }

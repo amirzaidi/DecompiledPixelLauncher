@@ -14,38 +14,38 @@
     return-void
 .end method
 
-.method static cH(Landroid/content/Context;)V
+.method static dT(Landroid/content/Context;)V
     .locals 2
 
     .prologue
     .line 27
-    new-instance v0, Lcom/google/android/gms/common/api/e;
+    new-instance v0, Lcom/google/android/gms/common/api/b;
 
-    invoke-direct {v0, p0}, Lcom/google/android/gms/common/api/e;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0}, Lcom/google/android/gms/common/api/b;-><init>(Landroid/content/Context;)V
 
-    sget-object v1, Lcom/google/android/gms/phenotype/f;->lS:Lcom/google/android/gms/common/api/h;
+    sget-object v1, Lcom/google/android/gms/phenotype/g;->yN:Lcom/google/android/gms/common/api/e;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/e;->dO(Lcom/google/android/gms/common/api/h;)Lcom/google/android/gms/common/api/e;
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/common/api/b;->gu(Lcom/google/android/gms/common/api/e;)Lcom/google/android/gms/common/api/b;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/e;->build()Lcom/google/android/gms/common/api/d;
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/b;->build()Lcom/google/android/gms/common/api/a;
 
     move-result-object v0
 
     .line 28
-    invoke-virtual {v0}, Lcom/google/android/gms/common/api/d;->dv()V
+    invoke-virtual {v0}, Lcom/google/android/gms/common/api/a;->gg()V
 
     .line 29
-    new-instance v1, Lcom/google/android/apps/nexuslauncher/experiment/a;
+    new-instance v1, Lcom/google/android/apps/nexuslauncher/experiment/b;
 
-    invoke-direct {v1, v0}, Lcom/google/android/apps/nexuslauncher/experiment/a;-><init>(Lcom/google/android/gms/common/api/d;)V
+    invoke-direct {v1, v0}, Lcom/google/android/apps/nexuslauncher/experiment/b;-><init>(Lcom/google/android/gms/common/api/a;)V
 
     .line 31
     const-string/jumbo v0, ""
 
     .line 32
-    invoke-virtual {v1, v0, v1}, Lcom/google/android/apps/nexuslauncher/experiment/a;->oX(Ljava/lang/String;Lcom/google/android/gms/phenotype/d;)V
+    invoke-virtual {v1, v0, v1}, Lcom/google/android/apps/nexuslauncher/experiment/b;->CH(Ljava/lang/String;Lcom/google/android/gms/phenotype/b;)V
 
     .line 33
     return-void
@@ -62,7 +62,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/experiment/PhenotypeUpdateReceiver;->cH(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/google/android/apps/nexuslauncher/experiment/PhenotypeUpdateReceiver;->dT(Landroid/content/Context;)V
 
     .line 24
     return-void
