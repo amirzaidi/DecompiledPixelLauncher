@@ -10,13 +10,13 @@ import android.support.v7.widget.m;
 
 class c extends m
 {
-    final /* synthetic */ AllAppsQsbLayout bY;
+    final /* synthetic */ AllAppsQsbLayout cC;
     
-    private c(final AllAppsQsbLayout by) {
-        this.bY = by;
+    private c(final AllAppsQsbLayout cc) {
+        this.cC = cc;
     }
     
     public final void onScrolled(final RecyclerView recyclerView, final int n, final int n2) {
-        this.bY.bv(((BaseRecyclerView)recyclerView).getCurrentScrollY());
+        this.cC.ch(((BaseRecyclerView)recyclerView).getCurrentScrollY());
     }
 }

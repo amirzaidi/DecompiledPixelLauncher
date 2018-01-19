@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.reflection.d;
+package com.google.android.apps.nexuslauncher.reflection.f;
 
 import com.google.protobuf.nano.f;
 import com.google.protobuf.nano.c;
@@ -11,37 +11,37 @@ import com.google.protobuf.nano.a;
 
 public final class g extends a
 {
-    public String ax;
-    public long ay;
+    public long aH;
+    public String aI;
     
     public g() {
         this.clear();
     }
     
     public g clear() {
-        this.ay = 0L;
-        this.ax = "";
+        this.aH = 0L;
+        this.aI = "";
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.ay != 0L) {
-            computeSerializedSize += b.Vz(1, this.ay);
+        if (this.aH != 0L) {
+            computeSerializedSize += b.EV(1, this.aH);
         }
-        if (!this.ax.equals("")) {
-            computeSerializedSize += b.VW(2, this.ax);
+        if (!this.aI.equals("")) {
+            computeSerializedSize += b.Fs(2, this.aI);
         }
         return computeSerializedSize;
     }
     
     public g mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -50,11 +50,11 @@ public final class g extends a
                     return this;
                 }
                 case 8: {
-                    this.ay = c.Wz();
+                    this.aH = c.FV();
                     continue;
                 }
                 case 18: {
-                    this.ax = c.WB();
+                    this.aI = c.FX();
                     continue;
                 }
             }
@@ -62,11 +62,11 @@ public final class g extends a
     }
     
     public void writeTo(final b b) {
-        if (this.ay != 0L) {
-            b.Wc(1, this.ay);
+        if (this.aH != 0L) {
+            b.Fy(1, this.aH);
         }
-        if (!this.ax.equals("")) {
-            b.VT(2, this.ax);
+        if (!this.aI.equals("")) {
+            b.Fp(2, this.aI);
         }
         super.writeTo(b);
     }

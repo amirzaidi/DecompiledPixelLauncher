@@ -4,23 +4,30 @@
 
 package com.google.android.apps.nexuslauncher.smartspace;
 
-import com.android.launcher3.AbstractFloatingView;
-import android.view.View;
-import com.android.launcher3.Launcher;
-import android.view.View$OnClickListener;
+import com.google.android.apps.nexuslauncher.smartspace.b.i;
+import com.android.launcher3.util.Preconditions;
+import java.util.List;
+import java.io.PrintWriter;
+import android.content.Intent;
+import android.os.Message;
+import android.content.BroadcastReceiver;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.Handler;
+import android.content.Context;
+import android.os.Handler$Callback;
+import com.android.launcher3.Alarm;
+import com.android.launcher3.OnAlarmListener;
 
-final class g implements View$OnClickListener
+final class g implements OnAlarmListener
 {
-    final /* synthetic */ b dY;
-    final /* synthetic */ Launcher val$launcher;
+    final /* synthetic */ b eP;
     
-    g(final b dy, final Launcher val$launcher) {
-        this.dY = dy;
-        this.val$launcher = val$launcher;
+    g(final b ep) {
+        this.eP = ep;
     }
     
-    public void onClick(final View view) {
-        f.get(view.getContext()).cZ();
-        AbstractFloatingView.closeAllOpenViews(this.val$launcher);
+    public void onAlarm(final Alarm alarm) {
+        this.eP.dq();
     }
 }

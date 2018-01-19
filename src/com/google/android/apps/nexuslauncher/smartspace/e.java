@@ -4,53 +4,96 @@
 
 package com.google.android.apps.nexuslauncher.smartspace;
 
+import com.android.launcher3.InvariantDeviceProfile;
+import android.content.res.Resources;
+import com.google.android.apps.nexuslauncher.smartspace.b.f;
+import android.util.Log;
+import com.android.launcher3.graphics.LauncherIcons;
+import com.android.launcher3.LauncherAppState;
+import android.provider.MediaStore$Images$Media;
+import android.net.Uri;
+import android.graphics.Bitmap;
+import android.content.Context;
+import android.text.TextUtils;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import com.google.android.apps.nexuslauncher.smartspace.b.b;
+
 public class e
 {
-    d dO;
-    d dP;
+    public final boolean eF;
+    public final b eG;
+    public final PackageInfo eH;
+    public final long eI;
+    public final Intent intent;
     
-    public e() {
-        this.dO = null;
-        this.dP = null;
+    public e(final b eg, final Intent intent, final boolean ef, final long ei, final PackageInfo eh) {
+        this.eG = eg;
+        this.eF = ef;
+        this.intent = intent;
+        this.eI = ei;
+        this.eH = eh;
     }
     
-    public boolean cR() {
-        return this.dO != null;
+    private static Object dL(final String s, final Intent intent) {
+        if (!TextUtils.isEmpty((CharSequence)s)) {
+            return intent.getParcelableExtra(s);
+        }
+        return null;
     }
     
-    public boolean cS() {
-        return this.dP != null;
-    }
-    
-    public long cT() {
-        final long currentTimeMillis = System.currentTimeMillis();
-        if (this.cS() && this.cR()) {
-            return Math.min(this.dP.cF(), this.dO.cF()) - currentTimeMillis;
+    public Bitmap dM(final Context context) {
+        final f dw = this.eG.dw;
+        if (dw == null) {
+            return null;
         }
-        if (this.cS()) {
-            return this.dP.cF() - currentTimeMillis;
+        final Bitmap bitmap = (Bitmap)dL(dw.dN, this.intent);
+        if (bitmap != null) {
+            return bitmap;
         }
-        if (this.cR()) {
-            return this.dO.cF() - currentTimeMillis;
+        try {
+            final String do1 = dw.dO;
+            try {
+                Label_0082: {
+                    if (TextUtils.isEmpty((CharSequence)do1)) {
+                        break Label_0082;
+                    }
+                    final String do2 = dw.dO;
+                    try {
+                        final Uri parse = Uri.parse(do2);
+                        try {
+                            return MediaStore$Images$Media.getBitmap(context.getContentResolver(), parse);
+                            final String dm = dw.dM;
+                            try {
+                                if (TextUtils.isEmpty((CharSequence)dm)) {
+                                    return null;
+                                }
+                                final Resources resourcesForApplication = context.getPackageManager().getResourcesForApplication("com.google.android.googlequicksearchbox");
+                                try {
+                                    final int identifier = resourcesForApplication.getIdentifier(dw.dM, (String)null, (String)null);
+                                    try {
+                                        final InvariantDeviceProfile idp = LauncherAppState.getIDP(context);
+                                        try {
+                                            return LauncherIcons.createIconBitmap(resourcesForApplication.getDrawableForDensity(identifier, idp.fillResIconDpi), context);
+                                        }
+                                        catch (Exception ex) {
+                                            Log.e("NewCardInfo", "retrieving bitmap uri=" + dw.dO + " gsaRes=" + dw.dM);
+                                        }
+                                    }
+                                    catch (Exception ex2) {}
+                                }
+                                catch (Exception ex3) {}
+                            }
+                            catch (Exception ex4) {}
+                        }
+                        catch (Exception ex5) {}
+                    }
+                    catch (Exception ex6) {}
+                }
+            }
+            catch (Exception ex7) {}
         }
-        return 0L;
-    }
-    
-    public boolean cU() {
-        final boolean b = true;
-        boolean b2 = false;
-        if (this.cR() && this.dO.cM()) {
-            this.dO = null;
-            b2 = b;
-        }
-        if (this.cS() && this.dP.cM()) {
-            this.dP = null;
-            b2 = b;
-        }
-        return b2;
-    }
-    
-    public String toString() {
-        return "{" + this.dP + "," + this.dO + "}";
+        catch (Exception ex8) {}
+        return null;
     }
 }

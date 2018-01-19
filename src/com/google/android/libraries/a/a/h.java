@@ -13,7 +13,7 @@ import android.content.ServiceConnection;
 
 class h implements ServiceConnection
 {
-    private boolean Mk;
+    private boolean NO;
     private final Context mContext;
     private final int mFlags;
     
@@ -22,21 +22,21 @@ class h implements ServiceConnection
         this.mFlags = mFlags;
     }
     
-    public final boolean RR() {
-        if (!this.Mk) {
+    public final boolean Ea() {
+        if (!this.NO) {
             try {
                 final Context mContext = this.mContext;
                 try {
                     final Context mContext2 = this.mContext;
                     try {
-                        final Intent rc = d.RC(mContext2);
+                        final Intent dl = d.DL(mContext2);
                         try {
-                            this.Mk = mContext.bindService(rc, (ServiceConnection)this, this.mFlags);
-                            return this.Mk;
+                            this.NO = mContext.bindService(dl, (ServiceConnection)this, this.mFlags);
+                            return this.NO;
                         }
                         catch (SecurityException ex) {
                             Log.e("LauncherClient", "Unable to connect to overlay service", (Throwable)ex);
-                            return this.Mk;
+                            return this.NO;
                         }
                     }
                     catch (SecurityException ex2) {}
@@ -45,14 +45,18 @@ class h implements ServiceConnection
             }
             catch (SecurityException ex4) {}
         }
-        return this.Mk;
+        return this.NO;
     }
     
-    public void RS() {
-        if (this.Mk) {
+    public void Eb() {
+        if (this.NO) {
             this.mContext.unbindService((ServiceConnection)this);
-            this.Mk = false;
+            this.NO = false;
         }
+    }
+    
+    public boolean isBound() {
+        return this.NO;
     }
     
     public void onServiceConnected(final ComponentName componentName, final IBinder binder) {

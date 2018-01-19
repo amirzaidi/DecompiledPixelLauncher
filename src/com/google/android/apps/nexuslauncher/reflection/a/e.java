@@ -4,57 +4,39 @@
 
 package com.google.android.apps.nexuslauncher.reflection.a;
 
-import android.location.Location;
-import android.util.Log;
-import com.google.android.apps.nexuslauncher.reflection.d.i;
-import com.google.android.apps.nexuslauncher.reflection.b.b;
-import com.google.android.gms.common.api.a;
+import com.android.launcher3.userevent.nano.LauncherLogExtensions$TargetExtension;
+import com.android.launcher3.userevent.nano.LauncherLogProto$LauncherEvent;
+import com.android.launcher3.util.ComponentKey;
+import java.util.Comparator;
+import java.util.Collections;
+import com.google.research.reflection.b.h;
+import com.google.research.reflection.b.i;
+import com.google.research.reflection.b.d;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Collection;
+import com.google.android.gms.learning.Features;
+import com.google.android.gms.learning.Example;
+import com.google.android.gms.learning.TrainerOptions;
+import com.google.android.gms.learning.ExampleCollectionOptions;
+import com.google.android.gms.learning.PredictorOptions;
+import android.content.Context;
+import com.google.android.gms.learning.g;
+import com.google.android.apps.nexuslauncher.reflection.filter.f;
+import com.google.android.gms.learning.c;
+import java.util.List;
+import java.util.ArrayList;
+import com.google.android.gms.tasks.b;
 
-public class e implements c
+final class e implements b
 {
-    private final a m;
-    private final com.google.android.gms.location.a n;
+    final /* synthetic */ a i;
     
-    public e(final a m, final com.google.android.gms.location.a n) {
-        this.m = m;
-        this.n = n;
+    e(final a i) {
+        this.i = i;
     }
     
-    public void l(final b b) {
-        try {
-            final com.google.android.gms.location.a n = this.n;
-            try {
-                final Location gd = n.GD(this.m);
-                if (gd == null) {
-                    return;
-                }
-                try {
-                    final i i = new i();
-                    i.aC = "lat_long";
-                    i.aD = gd.getTime();
-                    i.aG = new double[2];
-                    final double[] ag = i.aG;
-                    try {
-                        ag[0] = gd.getLatitude();
-                        final double[] ag2 = i.aG;
-                        try {
-                            ag2[1] = gd.getLongitude();
-                            final com.google.android.apps.nexuslauncher.reflection.b.a a = new com.google.android.apps.nexuslauncher.reflection.b.a(i);
-                            try {
-                                com.google.research.reflection.common.b.Ta(b, a);
-                            }
-                            catch (SecurityException ex) {
-                                Log.d("Reflection.LocReader", "cannot read location due to lack of permission", (Throwable)ex);
-                            }
-                        }
-                        catch (SecurityException ex2) {}
-                    }
-                    catch (SecurityException ex3) {}
-                }
-                catch (SecurityException ex4) {}
-            }
-            catch (SecurityException ex5) {}
-        }
-        catch (SecurityException ex6) {}
+    public void r(final Exception ex) {
+        this.i.mPredictedApps = new ArrayList();
     }
 }

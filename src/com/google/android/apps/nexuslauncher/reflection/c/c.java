@@ -7,37 +7,37 @@ package com.google.android.apps.nexuslauncher.reflection.c;
 import java.util.List;
 import java.io.Serializable;
 import android.database.sqlite.SQLiteDatabase;
-import com.google.android.apps.nexuslauncher.reflection.d.i;
+import com.google.android.apps.nexuslauncher.reflection.f.i;
 import com.google.protobuf.nano.InvalidProtocolBufferNanoException;
 import java.util.ArrayList;
 import android.content.ContentValues;
-import com.google.android.apps.nexuslauncher.reflection.d.e;
 import java.util.Map;
-import com.google.research.reflection.a.b;
+import com.google.android.apps.nexuslauncher.reflection.d.b;
+import com.google.research.reflection.a.a;
 import com.android.launcher3.util.Preconditions;
 
 public class c
 {
-    private final a L;
+    private final e n;
     
-    public c(final a l) {
-        this.L = l;
+    public c(final e n) {
+        this.n = n;
     }
     
-    public void V(final long n) {
+    public void B(final long n) {
         synchronized (this) {
             Preconditions.assertNonUiThread();
-            this.L.getWritableDatabase().delete("reflection_event", "timestamp <= ?", new String[] { Long.toString(n - 3024000000L) });
+            this.n.getWritableDatabase().delete("reflection_event", "timestamp <= ?", new String[] { Long.toString(n - 3024000000L) });
         }
     }
     
-    public void W(final b b) {
+    public void C(final a a) {
         synchronized (this) {
-            this.Z(((com.google.android.apps.nexuslauncher.reflection.b.b)b).getInstance());
+            this.F(((b)a).getInstance());
         }
     }
     
-    public void X(final String p0, final String p1, final Map p2) {
+    public void D(final String p0, final String p1, final Map p2) {
         // 
         // This method could not be decompiled.
         // 
@@ -49,10 +49,10 @@ public class c
         //     4: monitorenter   
         //     5: invokestatic    com/android/launcher3/util/Preconditions.assertNonUiThread:()V
         //     8: aload_0        
-        //     9: getfield        com/google/android/apps/nexuslauncher/reflection/c/c.L:Lcom/google/android/apps/nexuslauncher/reflection/c/a;
+        //     9: getfield        com/google/android/apps/nexuslauncher/reflection/c/c.n:Lcom/google/android/apps/nexuslauncher/reflection/c/e;
         //    12: astore          5
         //    14: aload           5
-        //    16: invokevirtual   com/google/android/apps/nexuslauncher/reflection/c/a.getWritableDatabase:()Landroid/database/sqlite/SQLiteDatabase;
+        //    16: invokevirtual   com/google/android/apps/nexuslauncher/reflection/c/e.getWritableDatabase:()Landroid/database/sqlite/SQLiteDatabase;
         //    19: astore          5
         //    21: aload           5
         //    23: invokevirtual   android/database/sqlite/SQLiteDatabase.beginTransaction:()V
@@ -433,7 +433,7 @@ public class c
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    public d Y(final long p0, final int p1) {
+    public d E(final long p0, final int p1) {
         // 
         // This method could not be decompiled.
         // 
@@ -442,10 +442,10 @@ public class c
         //     0: aload_0        
         //     1: monitorenter   
         //     2: aload_0        
-        //     3: getfield        com/google/android/apps/nexuslauncher/reflection/c/c.L:Lcom/google/android/apps/nexuslauncher/reflection/c/a;
+        //     3: getfield        com/google/android/apps/nexuslauncher/reflection/c/c.n:Lcom/google/android/apps/nexuslauncher/reflection/c/e;
         //     6: astore          4
         //     8: aload           4
-        //    10: invokevirtual   com/google/android/apps/nexuslauncher/reflection/c/a.getReadableDatabase:()Landroid/database/sqlite/SQLiteDatabase;
+        //    10: invokevirtual   com/google/android/apps/nexuslauncher/reflection/c/e.getReadableDatabase:()Landroid/database/sqlite/SQLiteDatabase;
         //    13: astore          4
         //    15: new             Ljava/util/ArrayList;
         //    18: astore          5
@@ -563,25 +563,25 @@ public class c
         //   244: istore          26
         //   246: iload           26
         //   248: ifeq            428
-        //   251: new             Lcom/google/android/apps/nexuslauncher/reflection/b/b;
+        //   251: new             Lcom/google/android/apps/nexuslauncher/reflection/d/b;
         //   254: astore          21
         //   256: aload           12
         //   258: iload           14
         //   260: invokeinterface android/database/Cursor.getBlob:(I)[B
         //   265: astore          10
         //   267: aload           10
-        //   269: invokestatic    com/google/android/apps/nexuslauncher/reflection/d/e.ae:([B)Lcom/google/android/apps/nexuslauncher/reflection/d/e;
+        //   269: invokestatic    com/google/android/apps/nexuslauncher/reflection/f/e.aC:([B)Lcom/google/android/apps/nexuslauncher/reflection/f/e;
         //   272: astore          10
         //   274: aload           21
         //   276: aload           10
-        //   278: invokespecial   com/google/android/apps/nexuslauncher/reflection/b/b.<init>:(Lcom/google/android/apps/nexuslauncher/reflection/d/e;)V
+        //   278: invokespecial   com/google/android/apps/nexuslauncher/reflection/d/b.<init>:(Lcom/google/android/apps/nexuslauncher/reflection/f/e;)V
         //   281: aload           12
         //   283: iload           19
         //   285: invokeinterface android/database/Cursor.getString:(I)Ljava/lang/String;
         //   290: astore          10
         //   292: aload           21
         //   294: aload           10
-        //   296: invokevirtual   com/google/android/apps/nexuslauncher/reflection/b/b.H:(Ljava/lang/String;)Lcom/google/research/reflection/a/b;
+        //   296: invokevirtual   com/google/android/apps/nexuslauncher/reflection/d/b.ab:(Ljava/lang/String;)Lcom/google/research/reflection/a/a;
         //   299: pop            
         //   300: aload           12
         //   302: iload           17
@@ -594,16 +594,16 @@ public class c
         //   320: invokeinterface android/database/Cursor.getBlob:(I)[B
         //   325: astore          10
         //   327: aload           10
-        //   329: invokestatic    com/google/android/apps/nexuslauncher/reflection/d/i.ag:([B)Lcom/google/android/apps/nexuslauncher/reflection/d/i;
+        //   329: invokestatic    com/google/android/apps/nexuslauncher/reflection/f/i.aE:([B)Lcom/google/android/apps/nexuslauncher/reflection/f/i;
         //   332: astore          10
-        //   334: new             Lcom/google/android/apps/nexuslauncher/reflection/b/a;
+        //   334: new             Lcom/google/android/apps/nexuslauncher/reflection/d/a;
         //   337: astore          27
         //   339: aload           27
         //   341: aload           10
-        //   343: invokespecial   com/google/android/apps/nexuslauncher/reflection/b/a.<init>:(Lcom/google/android/apps/nexuslauncher/reflection/d/i;)V
+        //   343: invokespecial   com/google/android/apps/nexuslauncher/reflection/d/a.<init>:(Lcom/google/android/apps/nexuslauncher/reflection/f/i;)V
         //   346: aload           21
         //   348: aload           27
-        //   350: invokestatic    com/google/research/reflection/common/b.Ta:(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/a;)V
+        //   350: invokestatic    com/google/research/reflection/common/b.HE:(Lcom/google/research/reflection/a/a;Lcom/google/research/reflection/a/b;)V
         //   353: aload           12
         //   355: iload           23
         //   357: invokeinterface android/database/Cursor.isNull:(I)Z
@@ -615,16 +615,16 @@ public class c
         //   373: invokeinterface android/database/Cursor.getBlob:(I)[B
         //   378: astore          10
         //   380: aload           10
-        //   382: invokestatic    com/google/android/apps/nexuslauncher/reflection/d/i.ag:([B)Lcom/google/android/apps/nexuslauncher/reflection/d/i;
+        //   382: invokestatic    com/google/android/apps/nexuslauncher/reflection/f/i.aE:([B)Lcom/google/android/apps/nexuslauncher/reflection/f/i;
         //   385: astore          10
-        //   387: new             Lcom/google/android/apps/nexuslauncher/reflection/b/a;
+        //   387: new             Lcom/google/android/apps/nexuslauncher/reflection/d/a;
         //   390: astore          27
         //   392: aload           27
         //   394: aload           10
-        //   396: invokespecial   com/google/android/apps/nexuslauncher/reflection/b/a.<init>:(Lcom/google/android/apps/nexuslauncher/reflection/d/i;)V
+        //   396: invokespecial   com/google/android/apps/nexuslauncher/reflection/d/a.<init>:(Lcom/google/android/apps/nexuslauncher/reflection/f/i;)V
         //   399: aload           21
         //   401: aload           27
-        //   403: invokestatic    com/google/research/reflection/common/b.Ta:(Lcom/google/research/reflection/a/b;Lcom/google/research/reflection/a/a;)V
+        //   403: invokestatic    com/google/research/reflection/common/b.HE:(Lcom/google/research/reflection/a/a;Lcom/google/research/reflection/a/b;)V
         //   406: aload           5
         //   408: aload           21
         //   410: invokevirtual   java/util/ArrayList.add:(Ljava/lang/Object;)Z
@@ -798,74 +798,74 @@ public class c
         throw new IllegalStateException("An error occurred while decompiling this method.");
     }
     
-    public void Z(final e e) {
-        e ae;
-        SQLiteDatabase writableDatabase;
-        ContentValues contentValues;
+    public void F(final com.google.android.apps.nexuslauncher.reflection.f.e e) {
+        com.google.android.apps.nexuslauncher.reflection.f.e ac = null;
+        SQLiteDatabase writableDatabase = null;
+        ContentValues contentValues = null;
         Serializable s2 = null;
+    Label_0259_Outer:
         while (true) {
             int length = 1;
             // monitorenter(this)
-        Block_11_Outer:
             while (true) {
                 Object o = null;
                 try {
                     Preconditions.assertNonUiThread();
                     try {
                         final byte[] byteArray = com.google.protobuf.nano.a.toByteArray(e);
-                        Label_0272: {
-                            try {
-                                ae = e.ae(byteArray);
-                                writableDatabase = this.L.getWritableDatabase();
-                                contentValues = new ContentValues();
-                                final String s = "timestamp";
-                                s2 = ae.ah;
-                                contentValues.put(s, (Long)s2);
-                                final String s3 = "client";
-                                s2 = ae.an;
-                                contentValues.put(s3, (String)s2);
-                                final String s4 = "type";
-                                s2 = ae.ap;
-                                contentValues.put(s4, (String)s2);
-                                final String s5 = "id";
-                                s2 = ae.am;
-                                contentValues.put(s5, (String)s2);
-                                s2 = "eventSource";
-                                int i = ae.ao.length;
-                                if (i > length) {
-                                    final String s6 = ae.ao[1];
-                                    contentValues.put((String)s2, s6);
-                                    ae.am = "";
-                                    s2 = new ArrayList();
-                                    final i[] au = ae.au;
-                                    for (i = 0, length = au.length; i < length; ++i) {
-                                        o = au[i];
-                                        if (!((i)o).aC.equals("lat_long")) {
-                                            break Label_0272;
+                        while (true) {
+                            Label_0272: {
+                                try {
+                                    ac = com.google.android.apps.nexuslauncher.reflection.f.e.aC(byteArray);
+                                    writableDatabase = this.n.getWritableDatabase();
+                                    contentValues = new ContentValues();
+                                    final String s = "timestamp";
+                                    s2 = ac.aq;
+                                    contentValues.put(s, (Long)s2);
+                                    final String s3 = "client";
+                                    s2 = ac.ar;
+                                    contentValues.put(s3, (String)s2);
+                                    final String s4 = "type";
+                                    s2 = ac.as;
+                                    contentValues.put(s4, (String)s2);
+                                    final String s5 = "id";
+                                    s2 = ac.at;
+                                    contentValues.put(s5, (String)s2);
+                                    s2 = "eventSource";
+                                    int i = ac.au.length;
+                                    if (i > length) {
+                                        final String s6 = ac.au[1];
+                                        contentValues.put((String)s2, s6);
+                                        ac.at = "";
+                                        s2 = new ArrayList();
+                                        final i[] av = ac.av;
+                                        for (i = 0, length = av.length; i < length; ++i) {
+                                            o = av[i];
+                                            if (!((i)o).aM.equals("lat_long")) {
+                                                break Label_0272;
+                                            }
+                                            final String s7 = "latLong";
+                                            o = com.google.protobuf.nano.a.toByteArray((com.google.protobuf.nano.a)o);
+                                            contentValues.put(s7, (byte[])o);
                                         }
-                                        final String s7 = "latLong";
-                                        o = com.google.protobuf.nano.a.toByteArray((com.google.protobuf.nano.a)o);
-                                        contentValues.put(s7, (byte[])o);
+                                        break;
                                     }
-                                    break;
+                                    break Label_0272;
                                 }
-                                break Label_0272;
-                            }
-                            catch (InvalidProtocolBufferNanoException ex) {
-                                return;
-                                // iftrue(Label_0333:, !o.aC.equals((Object)"semantic_place"))
-                                while (true) {
+                                catch (InvalidProtocolBufferNanoException ex) {
+                                    return;
+                                    final String s6 = "";
+                                    continue Label_0259_Outer;
+                                    // iftrue(Label_0333:, !o.aM.equals((Object)"semantic_place"))
                                     final String s8 = "semanticPlace";
                                     o = com.google.protobuf.nano.a.toByteArray((com.google.protobuf.nano.a)o);
                                     contentValues.put(s8, (byte[])o);
-                                    continue Block_11_Outer;
-                                    continue;
                                 }
-                                final String s6 = "";
+                                finally {
+                                }
+                                // monitorexit(this)
                             }
-                            finally {
-                            }
-                            // monitorexit(this)
+                            break;
                         }
                     }
                     catch (InvalidProtocolBufferNanoException ex2) {}
@@ -877,8 +877,8 @@ public class c
                 continue;
             }
         }
-        ae.au = ((List<byte[]>)s2).toArray(new i[((List)s2).size()]);
-        contentValues.put("proto", com.google.protobuf.nano.a.toByteArray(ae));
+        ac.av = ((List<byte[]>)s2).toArray(new i[((List)s2).size()]);
+        contentValues.put("proto", com.google.protobuf.nano.a.toByteArray(ac));
         writableDatabase.insert("reflection_event", (String)null, contentValues);
     }
     // monitorexit(this)

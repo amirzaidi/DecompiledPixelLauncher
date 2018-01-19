@@ -4,37 +4,87 @@
 
 package com.google.android.apps.nexuslauncher.a;
 
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager$NameNotFoundException;
-import android.content.Context;
-import android.content.IntentFilter;
+import android.graphics.drawable.AdaptiveIconDrawable;
+import com.android.launcher3.Utilities;
+import java.util.TimeZone;
+import java.util.Calendar;
+import android.graphics.drawable.LayerDrawable;
+import android.graphics.drawable.Drawable;
 
 public class b
 {
-    public static IntentFilter dx(final String... array) {
-        return dy("com.google.android.googlequicksearchbox", array);
+    Drawable ca;
+    int cb;
+    int cc;
+    int cd;
+    LayerDrawable ce;
+    int cf;
+    private final Calendar cg;
+    int ch;
+    int ci;
+    float scale;
+    
+    public b() {
+        this.cg = Calendar.getInstance();
     }
     
-    public static IntentFilter dy(final String s, final String... array) {
-        final IntentFilter intentFilter = new IntentFilter();
-        for (int length = array.length, i = 0; i < length; ++i) {
-            intentFilter.addAction(array[i]);
+    public boolean bJ() {
+        final int n = 12;
+        final int n2 = 10;
+        final boolean b = true;
+        final int n3 = -1;
+        this.cg.setTimeInMillis(System.currentTimeMillis());
+        final int n4 = (this.cg.get(n2) + (12 - this.cb)) % 12;
+        final int n5 = (this.cg.get(n) + (60 - this.cc)) % 60;
+        final int n6 = (this.cg.get(13) + (60 - this.cd)) % 60;
+        boolean b2 = false;
+        if (this.cf != n3 && this.ce.getDrawable(this.cf).setLevel(n4 * 60 + this.cg.get(n))) {
+            b2 = b;
         }
-        intentFilter.addDataScheme("package");
-        intentFilter.addDataSchemeSpecificPart(s, 0);
-        return intentFilter;
+        if (this.ch != n3 && this.ce.getDrawable(this.ch).setLevel(n5 + this.cg.get(n2) * 60)) {
+            b2 = b;
+        }
+        if (this.ci != n3 && this.ce.getDrawable(this.ci).setLevel(n6 * 10)) {
+            b2 = b;
+        }
+        return b2;
     }
     
-    public static boolean dz(final Context context) {
-        try {
-            final ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo("com.google.android.googlequicksearchbox", 0);
-            try {
-                return applicationInfo.enabled;
-            }
-            catch (PackageManager$NameNotFoundException ex) {
-                return false;
+    public void bK(final TimeZone timeZone) {
+        this.cg.setTimeZone(timeZone);
+    }
+    
+    public LayerDrawable bL() {
+        if (this.ca instanceof LayerDrawable) {
+            return (LayerDrawable)this.ca;
+        }
+        if (Utilities.ATLEAST_OREO && this.ca instanceof AdaptiveIconDrawable) {
+            final AdaptiveIconDrawable adaptiveIconDrawable = (AdaptiveIconDrawable)this.ca;
+            if (adaptiveIconDrawable.getForeground() instanceof LayerDrawable) {
+                return (LayerDrawable)adaptiveIconDrawable.getForeground();
             }
         }
-        catch (PackageManager$NameNotFoundException ex2) {}
+        return null;
+    }
+    
+    public b clone() {
+        b b = null;
+        if (this.ca == null) {
+            return null;
+        }
+        final b b2 = new b();
+        b2.scale = this.scale;
+        b2.cf = this.cf;
+        b2.ch = this.ch;
+        b2.ci = this.ci;
+        b2.cb = this.cb;
+        b2.cc = this.cc;
+        b2.cd = this.cd;
+        b2.ca = this.ca.getConstantState().newDrawable();
+        b2.ce = b2.bL();
+        if (b2.ce != null) {
+            b = b2;
+        }
+        return b;
     }
 }

@@ -8,11 +8,11 @@ import java.util.List;
 
 public class d
 {
-    public final List M;
-    public final long N;
+    public final List o;
+    public final long p;
     
-    public d(final long n, final List m) {
-        this.N = n;
-        this.M = m;
+    public d(final long p2, final List o) {
+        this.p = p2;
+        this.o = o;
     }
 }

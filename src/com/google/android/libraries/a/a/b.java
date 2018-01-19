@@ -6,7 +6,7 @@ package com.google.android.libraries.a.a;
 
 public interface b
 {
-    void et(final boolean p0, final boolean p1);
+    void fd(final boolean p0, final boolean p1);
     
     void onOverlayScrollChanged(final float p0);
 }

@@ -21,6 +21,6 @@ public class LauncherLayoutPreloadReceiver extends BroadcastReceiver
             return;
         }
         Log.d("SUWFinishReceiver", "Trying to preload launcher");
-        LauncherAppState.getInstance(context).getModel().enqueueModelUpdateTask(new c(this.goAsync()));
+        LauncherAppState.getInstance(context).getModel().enqueueModelUpdateTask(new b(this.goAsync()));
     }
 }

@@ -4,31 +4,47 @@
 
 package com.google.android.apps.nexuslauncher.smartspace;
 
-import com.google.android.apps.nexuslauncher.smartspace.b.i;
 import java.util.List;
-import java.io.PrintWriter;
-import android.os.Message;
-import android.content.Intent;
-import android.content.BroadcastReceiver;
-import com.google.android.apps.nexuslauncher.a.b;
-import android.os.Looper;
-import com.android.launcher3.LauncherModel;
-import android.os.Handler;
+import java.util.Collections;
+import java.util.ArrayList;
+import com.android.launcher3.popup.PopupContainerWithArrow;
+import android.animation.ValueAnimator;
+import com.android.launcher3.Launcher;
+import com.google.android.apps.nexuslauncher.logging.UserEventDispatcherImpl;
+import android.animation.LayoutTransition;
+import com.android.launcher3.dynamicui.WallpaperColorInfo;
+import android.view.LayoutInflater;
+import android.text.TextUtils;
+import android.text.TextUtils$TruncateAt;
+import com.android.launcher3.util.Themes;
+import android.util.AttributeSet;
 import android.content.Context;
-import com.google.android.apps.nexuslauncher.a.a;
-import android.os.Handler$Callback;
-import com.android.launcher3.Alarm;
-import com.android.launcher3.OnAlarmListener;
+import android.os.Handler;
+import android.text.TextPaint;
+import com.android.launcher3.BubbleTextView;
+import android.view.ViewGroup;
+import com.google.android.apps.nexuslauncher.graphics.IcuDateTextView;
+import android.content.res.ColorStateList;
+import android.widget.TextView;
+import android.widget.ImageView;
+import android.view.View$OnLongClickListener;
+import android.animation.ValueAnimator$AnimatorUpdateListener;
+import android.widget.FrameLayout;
+import android.view.View;
+import android.view.View$OnClickListener;
 
-final class k implements OnAlarmListener
+final class k implements View$OnClickListener
 {
-    final /* synthetic */ f ec;
+    final /* synthetic */ SmartspaceView eT;
     
-    k(final f ec) {
-        this.ec = ec;
+    k(final SmartspaceView et) {
+        this.eT = et;
     }
     
-    public void onAlarm(final Alarm alarm) {
-        this.ec.dc();
+    public void onClick(final View view) {
+        if (this.eT.el != null && this.eT.el.dI()) {
+            this.eT.dD(2);
+            this.eT.el.eD.dP(view);
+        }
     }
 }

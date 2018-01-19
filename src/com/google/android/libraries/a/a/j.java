@@ -5,46 +5,33 @@
 package com.google.android.libraries.a.a;
 
 import android.util.Log;
-import android.content.pm.ResolveInfo;
+import java.io.PrintWriter;
 import android.content.res.Resources;
-import android.os.RemoteException;
 import com.google.android.libraries.launcherclient.ILauncherOverlayCallback;
 import android.os.Parcelable;
+import android.net.Uri;
 import android.os.Process;
+import android.content.Intent;
+import android.os.RemoteException;
+import android.content.pm.ResolveInfo;
+import android.os.Build$VERSION;
 import android.content.IntentFilter;
+import android.content.Context;
 import com.google.android.libraries.launcherclient.ILauncherOverlay;
 import android.view.WindowManager$LayoutParams;
 import android.os.Bundle;
 import android.app.Activity;
-import android.net.Uri;
-import android.os.Build$VERSION;
-import android.content.Intent;
-import android.content.Context;
 import android.content.BroadcastReceiver;
 
-class j extends BroadcastReceiver
+class j implements Runnable
 {
-    final /* synthetic */ d Mm;
+    final /* synthetic */ d NR;
     
-    j(final d mm) {
-        this.Mm = mm;
+    j(final d nr) {
+        this.NR = nr;
     }
     
-    public void onReceive(final Context context, final Intent intent) {
-        final Uri data = intent.getData();
-        if (Build$VERSION.SDK_INT < 19) {
-            if (data == null) {
-                return;
-            }
-            if (!"com.google.android.googlequicksearchbox".equals(data.getSchemeSpecificPart())) {
-                return;
-            }
-        }
-        this.Mm.LV.RS();
-        this.Mm.LT.RS();
-        Ru(context);
-        if ((this.Mm.LN & 0x2) != 0x0) {
-            this.Mm.Ry();
-        }
+    public void run() {
+        this.NR.DN(0);
     }
 }

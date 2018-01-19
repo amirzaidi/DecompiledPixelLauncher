@@ -13,18 +13,18 @@ import android.app.PendingIntent$OnFinished;
 
 final class p implements PendingIntent$OnFinished
 {
-    final /* synthetic */ k bK;
-    final /* synthetic */ MutableLong bL;
-    final /* synthetic */ CountDownLatch bM;
+    final /* synthetic */ g bW;
+    final /* synthetic */ MutableLong bX;
+    final /* synthetic */ CountDownLatch bY;
     
-    p(final k bk, final MutableLong bl, final CountDownLatch bm) {
-        this.bK = bk;
-        this.bL = bl;
-        this.bM = bm;
+    p(final g bw, final MutableLong bx, final CountDownLatch by) {
+        this.bW = bw;
+        this.bX = bx;
+        this.bY = by;
     }
     
     public void onSendFinished(final PendingIntent pendingIntent, final Intent intent, final int n, final String s, final Bundle bundle) {
-        this.bL.value = intent.getLongExtra("time", this.bL.value);
-        this.bM.countDown();
+        this.bX.value = intent.getLongExtra("time", this.bX.value);
+        this.bY.countDown();
     }
 }

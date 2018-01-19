@@ -28,7 +28,7 @@ import java.util.concurrent.Callable;
 
 class f implements Callable, LauncherModel$ModelUpdateTask
 {
-    private final FutureTask eN;
+    private final FutureTask fQ;
     private AllAppsList mAllAppsList;
     private LauncherAppState mApp;
     private BgDataModel mBgDataModel;
@@ -37,7 +37,7 @@ class f implements Callable, LauncherModel$ModelUpdateTask
     
     f(final String s) {
         this.mQuery = s.toLowerCase();
-        this.eN = new FutureTask(this);
+        this.fQ = new FutureTask(this);
     }
     
     public List call() {
@@ -73,6 +73,6 @@ class f implements Callable, LauncherModel$ModelUpdateTask
     }
     
     public void run() {
-        this.eN.run();
+        this.fQ.run();
     }
 }

@@ -8,7 +8,7 @@ import android.app.AlertDialog$Builder;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.preference.Preference;
-import com.google.android.apps.nexuslauncher.reflection.c;
+import com.google.android.apps.nexuslauncher.reflection.o;
 import android.preference.TwoStatePreference;
 import android.preference.PreferenceFragment;
 import android.content.DialogInterface;
@@ -24,10 +24,10 @@ public class SettingsActivity$SuggestionConfirmationFragment extends DialogFragm
                 ((TwoStatePreference)preference).setChecked(false);
             }
         }
-        c.getInstance(this.getContext()).aD(false);
+        o.getInstance(this.getContext()).bA(false);
     }
     
     public Dialog onCreateDialog(final Bundle bundle) {
-        return (Dialog)new AlertDialog$Builder(this.getContext()).setTitle(2131493008).setMessage(2131493009).setNegativeButton(17039360, (DialogInterface$OnClickListener)null).setPositiveButton(2131493010, (DialogInterface$OnClickListener)this).create();
+        return (Dialog)new AlertDialog$Builder(this.getContext()).setTitle(2131493007).setMessage(2131493008).setNegativeButton(17039360, (DialogInterface$OnClickListener)null).setPositiveButton(2131493009, (DialogInterface$OnClickListener)this).create();
     }
 }

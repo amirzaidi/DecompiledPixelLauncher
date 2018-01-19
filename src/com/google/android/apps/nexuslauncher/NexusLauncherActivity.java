@@ -13,26 +13,26 @@ import com.android.launcher3.Launcher;
 
 public class NexusLauncherActivity extends Launcher
 {
-    final a fx;
+    final c gz;
     
     public NexusLauncherActivity() {
-        this.fx = new a(this, this);
+        this.gz = new c(this, this);
     }
     
-    public boolean dW() {
-        return this.fx.fz.ep();
+    public d ff() {
+        return this.gz.gA;
     }
     
-    public void dX() {
-        this.fx.fy.RD(true);
+    public boolean fg() {
+        return this.gz.gB.fa();
     }
     
-    public d dY() {
-        return this.fx.fy;
+    public void fh() {
+        this.gz.gA.DM(true);
     }
     
     public List getPredictedApps() {
-        return this.fx.fA.getPredictedApps();
+        return this.gz.gC.getPredictedApps();
     }
     
     public void overrideTheme(final boolean b, final boolean b2) {
@@ -49,13 +49,13 @@ public class NexusLauncherActivity extends Launcher
             b3 = true;
         }
         if (b3 && b) {
-            this.setTheme(2131886100);
+            this.setTheme(2131886099);
         }
         else if (b3 && b2) {
-            this.setTheme(2131886101);
+            this.setTheme(2131886100);
         }
         else if (b3) {
-            this.setTheme(2131886099);
+            this.setTheme(2131886098);
         }
         else {
             super.overrideTheme(b, b2);

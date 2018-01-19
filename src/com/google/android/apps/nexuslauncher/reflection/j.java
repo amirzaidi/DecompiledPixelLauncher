@@ -4,92 +4,63 @@
 
 package com.google.android.apps.nexuslauncher.reflection;
 
-import java.util.List;
 import java.util.Iterator;
-import android.content.pm.LauncherActivityInfo;
-import android.os.UserHandle;
-import com.android.launcher3.util.Preconditions;
-import android.content.Context;
-import com.android.launcher3.compat.UserManagerCompat;
+import android.content.SharedPreferences;
+import java.util.List;
 import com.google.android.apps.nexuslauncher.reflection.filter.a;
-import com.android.launcher3.compat.LauncherAppsCompat;
-import com.google.android.apps.nexuslauncher.reflection.filter.c;
-import com.android.launcher3.compat.LauncherAppsCompat$OnAppsChangedCallbackCompat;
+import com.google.android.apps.nexuslauncher.reflection.filter.d;
+import com.google.android.apps.nexuslauncher.reflection.filter.f;
+import java.io.File;
+import com.google.android.apps.nexuslauncher.reflection.c.c;
+import com.google.android.apps.nexuslauncher.reflection.c.e;
+import com.android.launcher3.Utilities;
+import com.google.android.apps.nexuslauncher.reflection.e.b;
+import java.util.ArrayList;
+import android.content.Context;
 
-public class j implements o, LauncherAppsCompat$OnAppsChangedCallbackCompat
+public class j
 {
-    private final c bu;
-    private final LauncherAppsCompat bv;
-    private final a bw;
-    private final UserManagerCompat bx;
-    private final n mServiceHandler;
-    
-    public j(final Context context, final n mServiceHandler, final a bw, final c bu) {
-        this.bx = UserManagerCompat.getInstance(context);
-        this.bv = LauncherAppsCompat.getInstance(context);
-        this.mServiceHandler = mServiceHandler;
-        this.bw = bw;
-        this.bu = bu;
-    }
-    
-    public void aW() {
-        Preconditions.assertNonUiThread();
-        for (final UserHandle userHandle : this.bx.getUserProfiles()) {
-            final List activityList = this.bv.getActivityList(null, userHandle);
-            for (int i = activityList.size() - 1; i >= 0; --i) {
-                final LauncherActivityInfo launcherActivityInfo = activityList.get(i);
-                this.bw.s(1, launcherActivityInfo, userHandle);
-                this.bu.w(launcherActivityInfo, userHandle);
+    public static k ba(final Context context) {
+        final ArrayList<b> list = new ArrayList<b>();
+        final g g = new g(context);
+        final SharedPreferences prefs = Utilities.getPrefs(context);
+        new i();
+        final c c = new c(new e(context, "reflection.events"));
+        com.google.android.apps.nexuslauncher.reflection.c.b b = null;
+        final File file = new File(context.getCacheDir(), "client_actions");
+        if (prefs.getBoolean("pre_debug", false)) {
+            b = new com.google.android.apps.nexuslauncher.reflection.c.b(file, 10485760L);
+        }
+        else if (file.exists()) {
+            file.delete();
+        }
+        final b b2 = new b(context);
+        list.add(b2);
+        final SharedPreferences al = com.google.android.apps.nexuslauncher.reflection.b.aL(context);
+        final f f = new f(context);
+        final d d = new d(context);
+        final a a = new a(context);
+        final com.google.android.apps.nexuslauncher.reflection.filter.b b3 = new com.google.android.apps.nexuslauncher.reflection.filter.b(b2);
+        final com.google.android.apps.nexuslauncher.reflection.c c2 = new com.google.android.apps.nexuslauncher.reflection.c(context, c, al, "foreground_evt_buf.properties", null);
+        final File file2 = new File(context.getFilesDir(), "reflection.engine");
+        final m m = new m(context, c, al, new File(context.getFilesDir(), "reflection.engine.background"), c2);
+        new h().aZ(al, file2, c2, c, m);
+        c2.aV(file2);
+        final com.google.android.apps.nexuslauncher.reflection.a a2 = new com.google.android.apps.nexuslauncher.reflection.a(al);
+        final ArrayList<String> list2 = new ArrayList<String>();
+        for (final String s : com.google.android.apps.nexuslauncher.reflection.b.bo) {
+            if (s.startsWith("/")) {
+                list2.add(context.getDir(s.substring(1), 0).getAbsolutePath());
+            }
+            else {
+                list2.add(s);
             }
         }
-        this.bv.addOnAppsChangedCallback(this);
-    }
-    
-    public void c() {
-        this.bv.removeOnAppsChangedCallback(this);
-    }
-    
-    public void onPackageAdded(final String s, final UserHandle userHandle) {
-        final List activityList = this.bv.getActivityList(s, userHandle);
-        if (activityList.isEmpty()) {
-            return;
-        }
-        final LauncherActivityInfo launcherActivityInfo = activityList.get(0);
-        this.bw.s(1, launcherActivityInfo, userHandle);
-        this.bu.w(launcherActivityInfo, userHandle);
-    }
-    
-    public void onPackageChanged(final String s, final UserHandle userHandle) {
-        this.bw.r(-1, s, userHandle);
-        this.bu.t(s, userHandle);
-    }
-    
-    public void onPackageRemoved(final String s, final UserHandle userHandle) {
-        this.bw.r(0, s, userHandle);
-        this.bu.t(s, userHandle);
-        this.mServiceHandler.bi(s, this.bx.getSerialNumberForUser(userHandle));
-    }
-    
-    public void onPackagesAvailable(final String[] array, final UserHandle userHandle, final boolean b) {
-        this.bw.q(-1, array, userHandle);
-        this.bu.u(array, userHandle);
-    }
-    
-    public void onPackagesSuspended(final String[] array, final UserHandle userHandle) {
-        this.bw.q(0, array, userHandle);
-        this.bu.u(array, userHandle);
-    }
-    
-    public void onPackagesUnavailable(final String[] array, final UserHandle userHandle, final boolean b) {
-        this.bw.q(0, array, userHandle);
-        this.bu.u(array, userHandle);
-    }
-    
-    public void onPackagesUnsuspended(final String[] array, final UserHandle userHandle) {
-        this.bw.q(-1, array, userHandle);
-        this.bu.u(array, userHandle);
-    }
-    
-    public void onShortcutsChanged(final String s, final List list, final UserHandle userHandle) {
+        final k k = new k(context, c2, m, b2, f, d, b3, a, a2, new com.google.android.apps.nexuslauncher.reflection.c.a(al, new File(context.getApplicationInfo().dataDir), list2), b, g);
+        final com.google.android.apps.nexuslauncher.reflection.f f2 = new com.google.android.apps.nexuslauncher.reflection.f(context, k, d, f);
+        list.add((b)f2);
+        k.bc(list);
+        f2.aY();
+        return k;
     }
 }

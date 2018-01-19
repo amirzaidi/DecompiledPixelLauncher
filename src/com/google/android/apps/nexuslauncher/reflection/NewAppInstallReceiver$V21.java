@@ -17,7 +17,7 @@ public class NewAppInstallReceiver$V21 extends BroadcastReceiver
         if ("android.intent.action.PACKAGE_ADDED".equals(intent.getAction()) && (intent.getBooleanExtra("android.intent.extra.REPLACING", false) ^ true)) {
             final String schemeSpecificPart = intent.getData().getSchemeSpecificPart();
             if (!TextUtils.isEmpty((CharSequence)schemeSpecificPart)) {
-                c.getInstance(context).ax(new PackageUserKey(schemeSpecificPart, Process.myUserHandle()));
+                o.getInstance(context).bC(new PackageUserKey(schemeSpecificPart, Process.myUserHandle()));
             }
         }
     }

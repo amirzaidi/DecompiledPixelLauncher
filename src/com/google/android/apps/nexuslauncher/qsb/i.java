@@ -4,50 +4,37 @@
 
 package com.google.android.apps.nexuslauncher.qsb;
 
-import android.content.IntentFilter;
-import android.view.ViewGroup$MarginLayoutParams;
-import com.android.launcher3.CellLayout;
-import android.util.Property;
-import com.android.launcher3.dragndrop.DragLayer;
-import android.view.animation.DecelerateInterpolator;
-import android.animation.TimeInterpolator;
-import android.view.animation.AccelerateInterpolator;
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.animation.Animator$AnimatorListener;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.os.Handler;
-import com.android.launcher3.Utilities;
-import android.app.WallpaperInfo;
-import android.app.WallpaperManager;
-import android.graphics.Rect;
-import android.view.ViewGroup;
-import android.view.View;
-import android.view.ContextThemeWrapper;
-import com.android.launcher3.Launcher;
-import android.view.View$AccessibilityDelegate;
-import android.view.View$OnClickListener;
-import android.util.AttributeSet;
-import android.animation.AnimatorSet;
-import android.content.Intent;
+import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
+import com.android.launcher3.ItemInfo;
 import android.content.Context;
-import android.content.BroadcastReceiver;
+import android.view.View;
+import com.android.launcher3.compat.ShortcutConfigActivityInfo;
+import com.android.launcher3.widget.PendingAddShortcutInfo;
+import com.android.launcher3.widget.PendingItemDragHelper;
+import android.graphics.Rect;
+import com.android.launcher3.AppInfo;
+import com.android.launcher3.dragndrop.BaseItemDragListener;
 
-final class i extends BroadcastReceiver
+public class i extends BaseItemDragListener
 {
-    final /* synthetic */ HotseatQsbWidget cu;
+    private final AppInfo dc;
     
-    i(final HotseatQsbWidget cu) {
-        this.cu = cu;
+    public i(final AppInfo dc, final Rect rect) {
+        super(rect, rect.width(), rect.width());
+        this.dc = dc;
     }
     
-    public void onReceive(final Context context, final Intent intent) {
-        if (this.getResultCode() == 0) {
-            this.cu.bF("com.google.android.googlequicksearchbox.TEXT_ASSIST");
-        }
-        else {
-            this.cu.bN();
-        }
+    protected PendingItemDragHelper createDragHelper() {
+        final PendingAddShortcutInfo tag = new PendingAddShortcutInfo(new s(this, this.dc.componentName, this.dc.user));
+        final View view = new View((Context)this.mLauncher);
+        view.setTag((Object)tag);
+        return new PendingItemDragHelper(view);
+    }
+    
+    public void fillInLogContainerData(final View view, final ItemInfo itemInfo, final LauncherLogProto$Target launcherLogProto$Target, final LauncherLogProto$Target launcherLogProto$Target2) {
+    }
+    
+    public boolean supportsAppInfoDropTarget() {
+        return true;
     }
 }

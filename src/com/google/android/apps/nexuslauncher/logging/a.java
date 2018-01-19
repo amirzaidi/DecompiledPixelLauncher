@@ -9,13 +9,13 @@ import android.content.Context;
 
 public class a
 {
-    private com.google.android.gms.clearcut.a bN;
+    private com.google.android.gms.clearcut.a gl;
     
     public a(final Context context) {
-        this.bN = new com.google.android.gms.clearcut.a(context, "GOOGLE_NOW_LAUNCHER", null);
+        this.gl = new com.google.android.gms.clearcut.a(context, "GOOGLE_NOW_LAUNCHER", null);
     }
     
-    public void bm(final LauncherLogProto$LauncherEvent launcherLogProto$LauncherEvent) {
-        this.bN.Ml(com.google.protobuf.nano.a.toByteArray(launcherLogProto$LauncherEvent)).My();
+    public void eT(final LauncherLogProto$LauncherEvent launcherLogProto$LauncherEvent) {
+        this.gl.Cx(com.google.protobuf.nano.a.toByteArray(launcherLogProto$LauncherEvent)).CJ();
     }
 }

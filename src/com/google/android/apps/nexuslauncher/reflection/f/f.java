@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.reflection.d;
+package com.google.android.apps.nexuslauncher.reflection.f;
 
 import com.google.protobuf.nano.c;
 import com.google.protobuf.nano.b;
@@ -10,16 +10,16 @@ import com.google.protobuf.nano.a;
 
 public final class f extends a
 {
-    public long av;
-    public int[] aw;
+    public long aF;
+    public int[] aG;
     
     public f() {
         this.clear();
     }
     
     public f clear() {
-        this.av = 0L;
-        this.aw = com.google.protobuf.nano.f.PO;
+        this.aF = 0L;
+        this.aG = com.google.protobuf.nano.f.Ot;
         this.cachedSize = -1;
         return this;
     }
@@ -28,26 +28,26 @@ public final class f extends a
         final int n = 1;
         int i = 0;
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.av != 0L) {
-            computeSerializedSize += b.Vz(n, this.av);
+        if (this.aF != 0L) {
+            computeSerializedSize += b.EV(n, this.aF);
         }
-        if (this.aw != null && this.aw.length > 0) {
+        if (this.aG != null && this.aG.length > 0) {
             int n2 = 0;
-            while (i < this.aw.length) {
-                n2 += b.Vr(this.aw[i]);
+            while (i < this.aG.length) {
+                n2 += b.EN(this.aG[i]);
                 ++i;
             }
-            computeSerializedSize = computeSerializedSize + n2 + this.aw.length * 1;
+            computeSerializedSize = computeSerializedSize + n2 + this.aG.length * 1;
         }
         return computeSerializedSize;
     }
     
     public f mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!com.google.protobuf.nano.f.WR(c, ws)) {
+                    if (!com.google.protobuf.nano.f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -56,21 +56,21 @@ public final class f extends a
                     return this;
                 }
                 case 8: {
-                    this.av = c.Wz();
+                    this.aF = c.FV();
                     continue;
                 }
                 case 16: {
-                    final int wn = com.google.protobuf.nano.f.WN(c, 16);
-                    final int[] aw = new int[wn];
+                    final int gj = com.google.protobuf.nano.f.Gj(c, 16);
+                    final int[] ag = new int[gj];
                     int i = 0;
                     int n = 0;
-                    while (i < wn) {
+                    while (i < gj) {
                         if (i != 0) {
-                            c.Ws();
+                            c.FO();
                         }
-                        final int wf = c.WF();
+                        final int ga = c.Ga();
                         int n2 = 0;
-                        switch (wf) {
+                        switch (ga) {
                             default: {
                                 n2 = n;
                                 break;
@@ -88,7 +88,7 @@ public final class f extends a
                             case 10:
                             case 11: {
                                 n2 = n + 1;
-                                aw[n] = wf;
+                                ag[n] = ga;
                                 break;
                             }
                         }
@@ -99,30 +99,30 @@ public final class f extends a
                         continue;
                     }
                     int length;
-                    if (this.aw == null) {
+                    if (this.aG == null) {
                         length = 0;
                     }
                     else {
-                        length = this.aw.length;
+                        length = this.aG.length;
                     }
-                    if (length == 0 && n == aw.length) {
-                        this.aw = aw;
+                    if (length == 0 && n == ag.length) {
+                        this.aG = ag;
                         continue;
                     }
-                    final int[] aw2 = new int[length + n];
+                    final int[] ag2 = new int[length + n];
                     if (length != 0) {
-                        System.arraycopy(this.aw, 0, aw2, 0, length);
+                        System.arraycopy(this.aG, 0, ag2, 0, length);
                     }
-                    System.arraycopy(aw, 0, aw2, length, n);
-                    this.aw = aw2;
+                    System.arraycopy(ag, 0, ag2, length, n);
+                    this.aG = ag2;
                     continue;
                 }
                 case 18: {
-                    final int wo = c.Wo(c.Wr());
-                    final int wn2 = c.Wn();
+                    final int fk = c.FK(c.FN());
+                    final int fj = c.FJ();
                     int n3 = 0;
-                    while (c.Wq() > 0) {
-                        switch (c.WF()) {
+                    while (c.FM() > 0) {
+                        switch (c.Ga()) {
                             default: {
                                 continue;
                             }
@@ -144,21 +144,21 @@ public final class f extends a
                         }
                     }
                     if (n3 != 0) {
-                        c.WE(wn2);
+                        c.Gc(fj);
                         int length2;
-                        if (this.aw == null) {
+                        if (this.aG == null) {
                             length2 = 0;
                         }
                         else {
-                            length2 = this.aw.length;
+                            length2 = this.aG.length;
                         }
-                        final int[] aw3 = new int[n3 + length2];
+                        final int[] ag3 = new int[n3 + length2];
                         if (length2 != 0) {
-                            System.arraycopy(this.aw, 0, aw3, 0, length2);
+                            System.arraycopy(this.aG, 0, ag3, 0, length2);
                         }
-                        while (c.Wq() > 0) {
-                            final int wf2 = c.WF();
-                            switch (wf2) {
+                        while (c.FM() > 0) {
+                            final int ga2 = c.Ga();
+                            switch (ga2) {
                                 default: {
                                     continue;
                                 }
@@ -175,15 +175,15 @@ public final class f extends a
                                 case 10:
                                 case 11: {
                                     final int n4 = length2 + 1;
-                                    aw3[length2] = wf2;
+                                    ag3[length2] = ga2;
                                     length2 = n4;
                                     continue;
                                 }
                             }
                         }
-                        this.aw = aw3;
+                        this.aG = ag3;
                     }
-                    c.Wl(wo);
+                    c.FH(fk);
                     continue;
                 }
             }
@@ -192,12 +192,12 @@ public final class f extends a
     
     public void writeTo(final b b) {
         int i = 0;
-        if (this.av != 0L) {
-            b.Wc(1, this.av);
+        if (this.aF != 0L) {
+            b.Fy(1, this.aF);
         }
-        if (this.aw != null && this.aw.length > 0) {
-            while (i < this.aw.length) {
-                b.Vv(2, this.aw[i]);
+        if (this.aG != null && this.aG.length > 0) {
+            while (i < this.aG.length) {
+                b.ER(2, this.aG[i]);
                 ++i;
             }
         }

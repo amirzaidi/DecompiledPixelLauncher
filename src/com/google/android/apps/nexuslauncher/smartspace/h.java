@@ -4,57 +4,30 @@
 
 package com.google.android.apps.nexuslauncher.smartspace;
 
-import android.content.Context;
-import android.net.Uri$Builder;
-import android.net.Uri;
-import android.content.ActivityNotFoundException;
-import android.os.Process;
-import android.content.ComponentName;
-import com.android.launcher3.compat.LauncherAppsCompat;
-import com.android.launcher3.ItemInfo;
-import com.android.launcher3.Launcher;
+import com.google.android.apps.nexuslauncher.smartspace.b.i;
+import com.android.launcher3.util.Preconditions;
+import java.util.List;
+import java.io.PrintWriter;
+import android.os.Message;
+import com.android.launcher3.OnAlarmListener;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.os.Handler;
+import com.android.launcher3.Alarm;
+import android.os.Handler$Callback;
 import android.content.Intent;
-import android.content.ContentUris;
-import android.provider.CalendarContract;
-import android.view.View;
-import android.view.View$OnClickListener;
+import android.content.Context;
+import android.content.BroadcastReceiver;
 
-final class h implements View$OnClickListener
+final class h extends BroadcastReceiver
 {
-    final /* synthetic */ SmartspaceView dZ;
+    final /* synthetic */ b eQ;
     
-    h(final SmartspaceView dz) {
-        this.dZ = dz;
+    h(final b eq) {
+        this.eQ = eq;
     }
     
-    public void onClick(final View view) {
-        try {
-            this.dZ.cp(10000);
-            final Uri content_URI = CalendarContract.CONTENT_URI;
-            try {
-                final Uri$Builder appendPath = content_URI.buildUpon().appendPath("time");
-                try {
-                    ContentUris.appendId(appendPath, System.currentTimeMillis());
-                    final Intent addFlags = new Intent("android.intent.action.VIEW").setData(appendPath.build()).addFlags(270532608);
-                    try {
-                        final SmartspaceView dz = this.dZ;
-                        try {
-                            final Context context = dz.getContext();
-                            try {
-                                Launcher.getLauncher(context).startActivitySafely(view, addFlags, null);
-                            }
-                            catch (ActivityNotFoundException ex) {
-                                LauncherAppsCompat.getInstance(this.dZ.getContext()).showAppDetailsForProfile(new ComponentName("com.google.android.calendar", ""), Process.myUserHandle());
-                            }
-                        }
-                        catch (ActivityNotFoundException ex2) {}
-                    }
-                    catch (ActivityNotFoundException ex3) {}
-                }
-                catch (ActivityNotFoundException ex4) {}
-            }
-            catch (ActivityNotFoundException ex5) {}
-        }
-        catch (ActivityNotFoundException ex6) {}
+    public void onReceive(final Context context, final Intent intent) {
+        this.eQ.dr();
     }
 }

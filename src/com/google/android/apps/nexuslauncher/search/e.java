@@ -4,29 +4,18 @@
 
 package com.google.android.apps.nexuslauncher.search;
 
-import com.android.launcher3.userevent.nano.LauncherLogProto$Target;
-import com.android.launcher3.ItemInfo;
-import android.view.View;
-import android.content.Context;
-import com.android.launcher3.logging.UserEventDispatcher$LogContainerProvider;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import com.android.launcher3.allapps.search.AllAppsSearchBarController$Callbacks;
 
-class e extends FrameLayout implements UserEventDispatcher$LogContainerProvider
+class e
 {
-    private final int eJ;
+    final AllAppsSearchBarController$Callbacks fK;
+    final String fL;
+    final ArrayList fM;
     
-    public e(final Context context, final int ej) {
-        super(context);
-        this.eJ = ej;
-    }
-    
-    public void fillInLogContainerData(final View view, final ItemInfo itemInfo, final LauncherLogProto$Target launcherLogProto$Target, final LauncherLogProto$Target launcherLogProto$Target2) {
-        if (this.eJ >= 0) {
-            launcherLogProto$Target2.containerType = 7;
-            launcherLogProto$Target.predictedRank = this.eJ;
-        }
-        else {
-            launcherLogProto$Target2.containerType = 8;
-        }
+    e(final String fl, final AllAppsSearchBarController$Callbacks fk) {
+        this.fM = new ArrayList();
+        this.fL = fl;
+        this.fK = fk;
     }
 }

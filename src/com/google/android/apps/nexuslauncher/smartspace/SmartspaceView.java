@@ -9,221 +9,213 @@ import java.util.Collections;
 import java.util.ArrayList;
 import com.android.launcher3.popup.PopupContainerWithArrow;
 import android.animation.ValueAnimator;
-import android.util.Log;
 import com.android.launcher3.Launcher;
 import com.google.android.apps.nexuslauncher.logging.UserEventDispatcherImpl;
-import android.view.LayoutInflater;
-import android.text.TextUtils$TruncateAt;
+import android.animation.LayoutTransition;
 import com.android.launcher3.dynamicui.WallpaperColorInfo;
+import android.view.LayoutInflater;
 import android.text.TextUtils;
+import android.text.TextUtils$TruncateAt;
 import com.android.launcher3.util.Themes;
 import android.util.AttributeSet;
 import android.content.Context;
 import android.os.Handler;
-import com.android.launcher3.BubbleTextView;
-import com.google.android.apps.nexuslauncher.graphics.IcuDateTextView;
-import android.content.res.ColorStateList;
-import android.widget.ImageView;
-import android.view.ViewGroup;
 import android.view.View;
 import android.text.TextPaint;
+import com.android.launcher3.BubbleTextView;
+import android.view.ViewGroup;
+import com.google.android.apps.nexuslauncher.graphics.IcuDateTextView;
+import android.content.res.ColorStateList;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.view.View$OnLongClickListener;
 import android.view.View$OnClickListener;
 import android.animation.ValueAnimator$AnimatorUpdateListener;
 import android.widget.FrameLayout;
 
-public class SmartspaceView extends FrameLayout implements c, ValueAnimator$AnimatorUpdateListener, View$OnClickListener, View$OnLongClickListener, Runnable
+public class SmartspaceView extends FrameLayout implements a, ValueAnimator$AnimatorUpdateListener, View$OnClickListener, View$OnLongClickListener, Runnable
 {
-    private TextView dA;
-    private final TextPaint dB;
-    private View dC;
-    private TextView dD;
-    private ViewGroup dE;
-    private ImageView dF;
-    private TextView dG;
-    private final ColorStateList dH;
-    private final int dm;
-    private IcuDateTextView dn;
-    private ViewGroup do;
-    private final f dp;
-    private e dq;
-    private BubbleTextView dr;
-    private boolean ds;
-    private boolean dt;
-    private final View$OnClickListener du;
-    private final View$OnClickListener dv;
-    private ImageView dw;
-    private TextView dx;
-    private ViewGroup dy;
-    private ImageView dz;
+    private ImageView eA;
+    private TextView eB;
+    private final ColorStateList eC;
+    private final int eh;
+    private IcuDateTextView ei;
+    private ViewGroup ej;
+    private final b ek;
+    private d el;
+    private BubbleTextView em;
+    private boolean en;
+    private boolean eo;
+    private final View$OnClickListener ep;
+    private final View$OnClickListener eq;
+    private ImageView er;
+    private TextView es;
+    private ViewGroup et;
+    private ImageView eu;
+    private TextView ev;
+    private final TextPaint ew;
+    private View ex;
+    private TextView ey;
+    private ViewGroup ez;
     private final Handler mHandler;
     
     public SmartspaceView(final Context context, final AttributeSet set) {
         super(context, set);
-        this.du = (View$OnClickListener)new h(this);
-        this.dv = (View$OnClickListener)new i(this);
-        this.dp = f.get(context);
+        this.ep = (View$OnClickListener)new j(this);
+        this.eq = (View$OnClickListener)new k(this);
+        this.ek = b.get(context);
         this.mHandler = new Handler();
-        this.dH = ColorStateList.valueOf(Themes.getAttrColor(this.getContext(), 2130772012));
-        this.ds = this.dp.cY();
-        this.dm = 2130837511;
-        (this.dB = new TextPaint()).setTextSize((float)this.getResources().getDimensionPixelSize(2131427504));
+        this.eC = ColorStateList.valueOf(Themes.getAttrColor(this.getContext(), 2130772013));
+        this.en = this.ek.dn();
+        this.eh = 2130837511;
+        (this.ew = new TextPaint()).setTextSize((float)this.getResources().getDimensionPixelSize(2131427504));
     }
     
-    private void cj(final e e) {
-        final boolean cs = e.cS();
-        if (this.dt != cs) {
-            this.dt = cs;
-            this.cs();
-        }
-        this.setOnClickListener((View$OnClickListener)this);
-        this.setOnLongClickListener(this.co());
-        if (this.dt) {
-            this.ck(e);
-        }
-        else {
-            this.cl(e);
-        }
-        this.mHandler.removeCallbacks((Runnable)this);
-        if (e.cS() && e.dP.cv()) {
-            final long cw = e.dP.cw();
-            long min = 61000L - System.currentTimeMillis() % 60000L;
-            if (cw > 0L) {
-                min = Math.min(min, cw);
-            }
-            this.mHandler.postDelayed((Runnable)this, min);
-        }
+    private void dA() {
+        this.ey = (TextView)this.findViewById(2131624056);
+        this.es = (TextView)this.findViewById(2131624059);
+        this.er = (ImageView)this.findViewById(2131624058);
+        this.eA = (ImageView)this.findViewById(2131624054);
+        this.eu = (ImageView)this.findViewById(2131624062);
+        this.ej = (ViewGroup)this.findViewById(2131624050);
+        this.ez = (ViewGroup)this.findViewById(2131624053);
+        this.et = (ViewGroup)this.findViewById(2131624060);
+        this.eB = (TextView)this.findViewById(2131624055);
+        this.ev = (TextView)this.findViewById(2131624063);
+        this.ei = (IcuDateTextView)this.findViewById(2131624051);
+        this.ex = this.findViewById(2131624052);
     }
     
-    private void ck(final e e) {
-        ColorStateList dh = null;
-        this.setBackgroundResource(this.dm);
-        final d dp = e.dP;
-        if (!TextUtils.isEmpty((CharSequence)dp.getTitle())) {
-            if (dp.cv()) {
-                this.dD.setText((CharSequence)this.cn());
-            }
-            else {
-                this.dD.setText((CharSequence)dp.getTitle());
-            }
-            this.dD.setEllipsize(dp.cx(true));
-        }
-        if (!TextUtils.isEmpty((CharSequence)dp.cy()) || dp.getIcon() != null) {
-            this.dx.setText((CharSequence)dp.cy());
-            this.dx.setEllipsize(dp.cx(false));
-            if (dp.getIcon() != null) {
-                final ImageView dw = this.dw;
-                if (dp.cz() && WallpaperColorInfo.getInstance(this.getContext()).supportsDarkText()) {
-                    dh = this.dH;
-                }
-                dw.setImageTintList(dh);
-                this.dw.setImageBitmap(dp.getIcon());
-            }
-        }
-        if (e.cR()) {
-            this.dy.setVisibility(0);
-            this.dy.setOnClickListener(this.dv);
-            this.dy.setOnLongClickListener(this.co());
-            this.dA.setText((CharSequence)e.dO.getTitle());
-            this.dz.setImageBitmap(e.dO.getIcon());
-        }
-        else {
-            this.dy.setVisibility(8);
-        }
-    }
-    
-    private void cl(final e e) {
-        final int n = 8;
-        this.setBackgroundResource(0);
-        this.dn.setOnClickListener(this.du);
-        this.dn.setOnLongClickListener(this.co());
-        if (e.cR()) {
-            this.dC.setVisibility(0);
-            this.dE.setVisibility(0);
-            this.dE.setOnClickListener(this.dv);
-            this.dE.setOnLongClickListener(this.co());
-            this.dG.setText((CharSequence)e.dO.getTitle());
-            this.dF.setImageBitmap(e.dO.getIcon());
-        }
-        else {
-            this.dE.setVisibility(n);
-            this.dC.setVisibility(n);
-        }
-    }
-    
-    private void cm() {
-        this.dD = (TextView)this.findViewById(2131624056);
-        this.dx = (TextView)this.findViewById(2131624059);
-        this.dw = (ImageView)this.findViewById(2131624058);
-        this.dF = (ImageView)this.findViewById(2131624054);
-        this.dz = (ImageView)this.findViewById(2131624062);
-        this.do = (ViewGroup)this.findViewById(2131624050);
-        this.dE = (ViewGroup)this.findViewById(2131624053);
-        this.dy = (ViewGroup)this.findViewById(2131624060);
-        this.dG = (TextView)this.findViewById(2131624055);
-        this.dA = (TextView)this.findViewById(2131624063);
-        this.dn = (IcuDateTextView)this.findViewById(2131624051);
-        this.dC = this.findViewById(2131624052);
-    }
-    
-    private String cn() {
+    private String dB() {
         final boolean b = true;
-        final d dp = this.dq.dP;
-        return dp.cC(TextUtils.ellipsize((CharSequence)dp.cB(b), this.dB, this.getWidth() - this.getPaddingLeft() - this.getPaddingRight() - this.getResources().getDimensionPixelSize(2131427505) - this.dB.measureText(dp.cA(b)), TextUtils$TruncateAt.END).toString());
+        final f ee = this.el.eE;
+        return ee.dX(TextUtils.ellipsize((CharSequence)ee.dW(b), this.ew, this.getWidth() - this.getPaddingLeft() - this.getPaddingRight() - this.getResources().getDimensionPixelSize(2131427505) - this.ew.measureText(ee.dV(b)), TextUtils$TruncateAt.END).toString());
     }
     
-    private View$OnLongClickListener co() {
+    private View$OnLongClickListener dC() {
         final View$OnLongClickListener view$OnLongClickListener;
-        if (!this.ds) {
+        if (!this.en) {
             view$OnLongClickListener = null;
         }
         return view$OnLongClickListener;
     }
     
-    private void cs() {
-        final int indexOfChild = this.indexOfChild((View)this.do);
-        this.removeView((View)this.do);
+    private void dE() {
+        if (this.el != null) {
+            this.dj(this.el, true);
+        }
+    }
+    
+    private void dF() {
+        final int indexOfChild = this.indexOfChild((View)this.ej);
+        this.removeView((View)this.ej);
         final LayoutInflater from = LayoutInflater.from(this.getContext());
         int n;
-        if (this.dt) {
+        if (this.eo) {
+            n = 2130968622;
+        }
+        else {
             n = 2130968621;
         }
-        else {
-            n = 2130968620;
-        }
         this.addView(from.inflate(n, (ViewGroup)this, false), indexOfChild);
-        this.cm();
+        this.dA();
     }
     
-    protected final void cp(final int n) {
-        ((UserEventDispatcherImpl)Launcher.getLauncher(this.getContext()).getUserEventDispatcher()).bp(n);
-    }
-    
-    public void cq() {
-        this.ds = this.dp.cY();
-        if (this.dq != null) {
-            this.cr(this.dq);
+    private void dy(final d d) {
+        ColorStateList ec = null;
+        this.setBackgroundResource(this.eh);
+        final f ee = d.eE;
+        if (!TextUtils.isEmpty((CharSequence)ee.getTitle())) {
+            if (ee.dQ()) {
+                this.ey.setText((CharSequence)this.dB());
+            }
+            else {
+                this.ey.setText((CharSequence)ee.getTitle());
+            }
+            this.ey.setEllipsize(ee.dS(true));
+        }
+        if (!TextUtils.isEmpty((CharSequence)ee.dT()) || ee.getIcon() != null) {
+            this.es.setText((CharSequence)ee.dT());
+            this.es.setEllipsize(ee.dS(false));
+            if (ee.getIcon() != null) {
+                final ImageView er = this.er;
+                if (ee.dU() && WallpaperColorInfo.getInstance(this.getContext()).supportsDarkText()) {
+                    ec = this.eC;
+                }
+                er.setImageTintList(ec);
+                this.er.setImageBitmap(ee.getIcon());
+            }
+        }
+        if (d.dI()) {
+            this.et.setVisibility(0);
+            this.et.setOnClickListener(this.eq);
+            this.et.setOnLongClickListener(this.dC());
+            this.ev.setText((CharSequence)d.eD.getTitle());
+            this.eu.setImageBitmap(d.eD.getIcon());
         }
         else {
-            Log.d("SmartspaceView", "onGsaChanged but no data present");
+            this.et.setVisibility(8);
         }
     }
     
-    public void cr(final e dq) {
-        this.dq = dq;
-        int n;
-        if (this.do.getVisibility() == 0) {
-            n = 1;
+    private void dz(final d d, final boolean b) {
+        final int n = 8;
+        final LayoutTransition layoutTransition = this.ej.getLayoutTransition();
+        if (b && layoutTransition == null) {
+            this.ej.setLayoutTransition(new LayoutTransition());
+        }
+        else if (!b && layoutTransition != null) {
+            this.ej.setLayoutTransition((LayoutTransition)null);
+        }
+        this.setBackgroundResource(0);
+        this.ei.setOnClickListener(this.ep);
+        this.ei.setOnLongClickListener(this.dC());
+        if (d.dI()) {
+            this.ex.setVisibility(0);
+            this.ez.setVisibility(0);
+            this.ez.setOnClickListener(this.eq);
+            this.ez.setOnLongClickListener(this.dC());
+            this.eB.setText((CharSequence)d.eD.getTitle());
+            this.eA.setImageBitmap(d.eD.getIcon());
         }
         else {
-            n = 0;
+            this.ez.setVisibility(n);
+            this.ex.setVisibility(n);
         }
-        this.cj(dq);
-        if (n == 0) {
-            this.do.setVisibility(0);
-            this.do.setAlpha(0.0f);
-            this.do.animate().setDuration(200L).alpha(1.0f);
+    }
+    
+    protected final void dD(final int n) {
+        ((UserEventDispatcherImpl)Launcher.getLauncher(this.getContext()).getUserEventDispatcher()).eW(n);
+    }
+    
+    public void di() {
+        this.en = this.ek.dn();
+        this.dE();
+    }
+    
+    public void dj(final d el, final boolean b) {
+        this.el = el;
+        final boolean dj = el.dJ();
+        if (this.eo != dj) {
+            this.eo = dj;
+            this.dF();
+        }
+        this.setOnClickListener((View$OnClickListener)this);
+        this.setOnLongClickListener(this.dC());
+        if (this.eo) {
+            this.dy(el);
+        }
+        else {
+            this.dz(el, b);
+        }
+        this.mHandler.removeCallbacks((Runnable)this);
+        if (el.dJ() && el.eE.dQ()) {
+            final long dr = el.eE.dR();
+            long min = 61000L - System.currentTimeMillis() % 60000L;
+            if (dr > 0L) {
+                min = Math.min(min, dr);
+            }
+            this.mHandler.postDelayed((Runnable)this, min);
         }
     }
     
@@ -233,34 +225,34 @@ public class SmartspaceView extends FrameLayout implements c, ValueAnimator$Anim
     
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.dp.da(this);
+        this.ek.dt(this);
     }
     
     public void onClick(final View view) {
-        if (this.dq != null && this.dq.cS()) {
-            this.cp(10002);
-            this.dq.dP.cu(view);
+        if (this.el != null && this.el.dJ()) {
+            this.dD(3);
+            this.el.eE.dP(view);
         }
     }
     
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        f.get(this.getContext()).da(null);
+        this.ek.dt(null);
     }
     
     protected void onFinishInflate() {
         super.onFinishInflate();
-        this.cm();
-        (this.dr = (BubbleTextView)this.findViewById(2131624046)).setTag(new j(this));
-        this.dr.setContentDescription((CharSequence)"");
+        this.dA();
+        (this.em = (BubbleTextView)this.findViewById(2131624046)).setTag(new l(this));
+        this.em.setContentDescription((CharSequence)"");
     }
     
     protected void onLayout(final boolean b, final int n, final int n2, final int n3, final int n4) {
         super.onLayout(b, n, n2, n3, n4);
-        if (this.dq != null && this.dq.cS() && this.dq.dP.cv()) {
-            final String cn = this.cn();
-            if (!cn.equals(this.dD.getText())) {
-                this.dD.setText((CharSequence)cn);
+        if (this.el != null && this.el.dJ() && this.el.eE.dQ()) {
+            final String db = this.dB();
+            if (!db.equals(this.ey.getText())) {
+                this.ey.setText((CharSequence)db);
             }
         }
     }
@@ -271,9 +263,9 @@ public class SmartspaceView extends FrameLayout implements c, ValueAnimator$Anim
         final PopupContainerWithArrow popupContainerWithArrow = (PopupContainerWithArrow)launcher.getLayoutInflater().inflate(2130968612, (ViewGroup)launcher.getDragLayer(), false);
         popupContainerWithArrow.setVisibility(4);
         launcher.getDragLayer().addView((View)popupContainerWithArrow);
-        final ArrayList list = new ArrayList<b>(b ? 1 : 0);
-        list.add(new b());
-        popupContainerWithArrow.populateAndShow(this.dr, Collections.EMPTY_LIST, Collections.EMPTY_LIST, list);
+        final ArrayList list = new ArrayList<c>(b ? 1 : 0);
+        list.add(new c());
+        popupContainerWithArrow.populateAndShow(this.em, Collections.EMPTY_LIST, Collections.EMPTY_LIST, list);
         return b;
     }
     
@@ -282,15 +274,11 @@ public class SmartspaceView extends FrameLayout implements c, ValueAnimator$Anim
     }
     
     public void onResume() {
-        if (this.dq != null) {
-            this.cj(this.dq);
-        }
+        this.dE();
     }
     
     public void run() {
-        if (this.dq != null) {
-            this.cj(this.dq);
-        }
+        this.dE();
     }
     
     public void setPadding(final int n, final int n2, final int n3, final int n4) {

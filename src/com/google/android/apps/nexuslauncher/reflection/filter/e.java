@@ -4,27 +4,18 @@
 
 package com.google.android.apps.nexuslauncher.reflection.filter;
 
-import java.util.Iterator;
-import java.util.Collection;
-import com.google.research.reflection.predictor.f;
-import java.util.List;
-import java.util.Calendar;
-import java.util.LinkedList;
-import com.google.android.apps.nexuslauncher.reflection.a.b;
-import java.util.HashSet;
-import android.content.ComponentName;
-
-class e
+public class e
 {
-    public int D;
-    public String E;
-    public long F;
-    final /* synthetic */ d G;
+    public String F;
+    private final int G;
+    public final String packageName;
+    public int state;
     
-    public e(final d g, final ComponentName componentName, final long n, final long f) {
-        this.G = g;
-        this.E = g.B.i(componentName, n);
+    e(final String packageName, final String f, final int g, final int state) {
+        this.state = -1;
+        this.packageName = packageName;
         this.F = f;
-        this.D = 0;
+        this.state = state;
+        this.G = g;
     }
 }

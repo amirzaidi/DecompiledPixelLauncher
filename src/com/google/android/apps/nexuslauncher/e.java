@@ -17,10 +17,10 @@ import android.content.BroadcastReceiver;
 
 final class e extends BroadcastReceiver
 {
-    final /* synthetic */ DynamicIconProvider fR;
+    final /* synthetic */ DynamicIconProvider gO;
     
-    e(final DynamicIconProvider fr) {
-        this.fR = fr;
+    e(final DynamicIconProvider go) {
+        this.gO = go;
     }
     
     public void onReceive(final Context context, final Intent intent) {

@@ -10,37 +10,37 @@ import com.google.protobuf.nano.a;
 
 public final class c extends a
 {
-    public d cL;
-    public d cM;
+    public d dC;
+    public d dD;
     
     public c() {
         this.clear();
     }
     
     public c clear() {
-        this.cL = null;
-        this.cM = null;
+        this.dD = null;
+        this.dC = null;
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.cL != null) {
-            computeSerializedSize += b.Vo(1, this.cL);
+        if (this.dD != null) {
+            computeSerializedSize += b.EK(1, this.dD);
         }
-        if (this.cM != null) {
-            computeSerializedSize += b.Vo(2, this.cM);
+        if (this.dC != null) {
+            computeSerializedSize += b.EK(2, this.dC);
         }
         return computeSerializedSize;
     }
     
     public c mergeFrom(final com.google.protobuf.nano.c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -49,17 +49,17 @@ public final class c extends a
                     return this;
                 }
                 case 10: {
-                    if (this.cL == null) {
-                        this.cL = new d();
+                    if (this.dD == null) {
+                        this.dD = new d();
                     }
-                    c.Ww(this.cL);
+                    c.FS(this.dD);
                     continue;
                 }
                 case 18: {
-                    if (this.cM == null) {
-                        this.cM = new d();
+                    if (this.dC == null) {
+                        this.dC = new d();
                     }
-                    c.Ww(this.cM);
+                    c.FS(this.dC);
                     continue;
                 }
             }
@@ -67,11 +67,11 @@ public final class c extends a
     }
     
     public void writeTo(final b b) {
-        if (this.cL != null) {
-            b.VK(1, this.cL);
+        if (this.dD != null) {
+            b.Fg(1, this.dD);
         }
-        if (this.cM != null) {
-            b.VK(2, this.cM);
+        if (this.dC != null) {
+            b.Fg(2, this.dC);
         }
         super.writeTo(b);
     }

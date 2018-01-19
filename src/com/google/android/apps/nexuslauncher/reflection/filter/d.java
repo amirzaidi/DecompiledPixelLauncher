@@ -4,86 +4,142 @@
 
 package com.google.android.apps.nexuslauncher.reflection.filter;
 
-import android.content.ComponentName;
+import android.content.pm.LauncherActivityInfo;
 import java.util.Iterator;
-import java.util.Collection;
-import com.google.research.reflection.predictor.f;
 import java.util.List;
-import java.util.Calendar;
-import java.util.LinkedList;
-import com.google.android.apps.nexuslauncher.reflection.a.b;
+import android.content.pm.ActivityInfo;
+import android.content.pm.ResolveInfo;
+import android.content.Intent;
+import com.google.android.apps.nexuslauncher.reflection.b;
+import android.content.ComponentName;
+import com.google.research.reflection.predictor.f;
+import java.util.ArrayList;
+import android.os.Process;
+import java.util.HashMap;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.UserHandle;
+import java.util.Map;
 import java.util.HashSet;
 
 public class d
 {
-    private static long x;
-    private static int y;
-    private static int z;
-    private final HashSet A;
-    private final b B;
-    private final LinkedList C;
+    public static final String[] B;
+    private final e[] C;
+    private final HashSet D;
+    private final Map E;
+    private final UserHandle mMyUserHandle;
+    private final PackageManager mPackageManager;
     
     static {
-        d.z = 1;
-        d.x = 21600000L;
-        d.y = 10;
+        B = new String[] { "com.google.android.apps.photos", "com.google.android.apps.maps", "com.google.android.gm", "com.google.android.deskclock", "com.android.settings", "com.whatsapp", "com.facebook.katana", "com.facebook.orca", "com.google.android.youtube", "com.yodo1.crossyroad", "com.spotify.music", "com.android.chrome", "com.instagram.android", "com.skype.raider", "com.snapchat.android", "com.viber.voip", "com.twitter.android", "com.android.phone", "com.google.android.music", "com.google.android.calendar", "com.google.android.apps.genie.geniewidget", "com.netflix.mediaclient", "bbc.iplayer.android", "com.google.android.videos", "com.amazon.mShop.android.shopping", "com.microsoft.office.word", "com.google.android.apps.docs", "com.google.android.keep", "com.google.android.apps.plus", "com.google.android.talk" };
     }
     
-    public d(final b b) {
-        this.C = new LinkedList();
-        this.A = new HashSet();
-        this.B = b;
-    }
-    
-    private void z() {
-        final long timeInMillis = Calendar.getInstance().getTimeInMillis();
-        while (this.C.size() > 0 && (timeInMillis > this.C.peek().F + d.x || this.C.peek().D > d.y)) {
-            this.C.removeFirst();
+    public d(final Context context) {
+        this.C = new e[d.B.length];
+        this.E = new HashMap();
+        this.D = new HashSet();
+        this.mPackageManager = context.getPackageManager();
+        this.mMyUserHandle = Process.myUserHandle();
+        for (int i = 0; i < d.B.length; ++i) {
+            final e e = new e(d.B[i], "", i, -1);
+            this.C[i] = e;
+            this.E.put(d.B[i], e);
         }
     }
     
-    public void n(final List list, final List list2) {
-        float n = 1.0f;
-        this.z();
+    private ArrayList Q(final float n) {
+        final ArrayList<f> list = new ArrayList<f>(d.B.length);
+        for (int i = 0; i < d.B.length; ++i) {
+            if (this.C[i].state == -1) {
+                this.R(i);
+            }
+            if (this.C[i].state == 1) {
+                list.add(new f(b.aK(new ComponentName(this.C[i].packageName, this.C[i].F)), n - list.size()));
+            }
+        }
+        return list;
+    }
+    
+    private void R(final int n) {
+        final Intent launchIntentForPackage = this.mPackageManager.getLaunchIntentForPackage(d.B[n]);
+        while (true) {
+            Label_0164: {
+                if (launchIntentForPackage == null) {
+                    break Label_0164;
+                }
+                final ResolveInfo resolveActivity = this.mPackageManager.resolveActivity(launchIntentForPackage, 0);
+                if (resolveActivity == null) {
+                    break Label_0164;
+                }
+                final ActivityInfo activityInfo = resolveActivity.activityInfo;
+                if (activityInfo != null) {
+                    String f = activityInfo.name;
+                    if (f.startsWith(".")) {
+                        f = activityInfo.packageName + f;
+                    }
+                    this.C[n].state = 1;
+                    this.C[n].F = f;
+                }
+                else {
+                    this.C[n].state = 0;
+                    this.C[n].F = "";
+                }
+                return;
+            }
+            final ActivityInfo activityInfo = null;
+            continue;
+        }
+    }
+    
+    public void H(final List list, final List list2) {
+        final float n = 1.0f;
+        float n2;
         if (list.size() > 0) {
-            n += list.get(0).MK;
+            n2 = list.get(list.size() - 1).Pc - n;
         }
-        this.A.clear();
-        final LinkedList<f> list3 = new LinkedList<f>();
-        int i = Math.max(this.C.size() - d.z, 0);
-        int n2 = 0;
-        while (i < this.C.size()) {
-            this.A.add(((e)this.C.get(i)).E);
-            final f f = new f(this.C.get(i).E, n2 + n);
-            list3.add(0, (Object)f);
-            if (list2 != null) {
-                list2.add(0, f);
+        else {
+            n2 = n;
+        }
+        final ArrayList q = this.Q(n2);
+        this.D.clear();
+        final Iterator<f> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            this.D.add(iterator.next().Pd);
+        }
+        for (final f f : q) {
+            if (!this.D.contains(f.Pd)) {
+                list.add(f);
+                if (list2 == null) {
+                    continue;
+                }
+                list2.add(f);
             }
-            ++n2;
-            ++i;
         }
-        for (final f f2 : list) {
-            if (!this.A.contains(f2.ML)) {
-                list3.add((Object)f2);
+    }
+    
+    public void N(final int state, final LauncherActivityInfo launcherActivityInfo, final UserHandle userHandle) {
+        if (this.mMyUserHandle.equals((Object)userHandle)) {
+            final e e = this.E.get(launcherActivityInfo.getComponentName().getPackageName());
+            if (e != null) {
+                e.state = state;
+                e.F = launcherActivityInfo.getComponentName().getClassName();
             }
         }
-        list.clear();
-        list.addAll(list3);
     }
     
-    void setMaxNumPromotion(final int z) {
-        d.z = z;
-    }
-    
-    public void x() {
-        for (final e e : this.C) {
-            ++e.D;
+    public void O(final int state, final String s, final UserHandle userHandle) {
+        if (this.mMyUserHandle.equals((Object)userHandle)) {
+            final e e = this.E.get(s);
+            if (e != null) {
+                e.state = state;
+            }
         }
-        this.z();
     }
     
-    public void y(final ComponentName componentName, final long n, final long n2) {
-        this.C.add(new e(this, componentName, n, n2));
-        this.z();
+    public void P(final int n, final String[] array, final UserHandle userHandle) {
+        for (int i = 0; i < array.length; ++i) {
+            this.O(n, array[i], userHandle);
+        }
     }
 }

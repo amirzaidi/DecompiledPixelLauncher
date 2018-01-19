@@ -11,37 +11,37 @@ import com.google.protobuf.nano.a;
 
 public final class h extends a
 {
-    public long da;
-    public int db;
+    public long dR;
+    public int dS;
     
     public h() {
         this.clear();
     }
     
     public h clear() {
-        this.da = 0L;
-        this.db = 0;
+        this.dR = 0L;
+        this.dS = 0;
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.da != 0L) {
-            computeSerializedSize += b.Vz(1, this.da);
+        if (this.dR != 0L) {
+            computeSerializedSize += b.EV(1, this.dR);
         }
-        if (this.db != 0) {
-            computeSerializedSize += b.VA(2, this.db);
+        if (this.dS != 0) {
+            computeSerializedSize += b.EW(2, this.dS);
         }
         return computeSerializedSize;
     }
     
     public h mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -50,11 +50,11 @@ public final class h extends a
                     return this;
                 }
                 case 8: {
-                    this.da = c.Wz();
+                    this.dR = c.FV();
                     continue;
                 }
                 case 16: {
-                    this.db = c.WF();
+                    this.dS = c.Ga();
                     continue;
                 }
             }
@@ -62,11 +62,11 @@ public final class h extends a
     }
     
     public void writeTo(final b b) {
-        if (this.da != 0L) {
-            b.Wc(1, this.da);
+        if (this.dR != 0L) {
+            b.Fy(1, this.dR);
         }
-        if (this.db != 0) {
-            b.Vv(2, this.db);
+        if (this.dS != 0) {
+            b.ER(2, this.dS);
         }
         super.writeTo(b);
     }

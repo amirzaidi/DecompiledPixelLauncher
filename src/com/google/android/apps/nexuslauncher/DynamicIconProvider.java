@@ -7,7 +7,7 @@ package com.google.android.apps.nexuslauncher;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager$NameNotFoundException;
 import android.os.Process;
-import com.google.android.apps.nexuslauncher.b.c;
+import com.google.android.apps.nexuslauncher.a.c;
 import android.graphics.drawable.Drawable;
 import android.content.pm.LauncherActivityInfo;
 import android.content.res.TypedArray;
@@ -25,25 +25,25 @@ import com.android.launcher3.IconProvider;
 
 public class DynamicIconProvider extends IconProvider
 {
-    private final BroadcastReceiver fJ;
+    private final BroadcastReceiver gM;
     private final Context mContext;
     private final PackageManager mPackageManager;
     
     public DynamicIconProvider(final Context mContext) {
-        this.fJ = new e(this);
+        this.gM = new e(this);
         final IntentFilter intentFilter = new IntentFilter("android.intent.action.DATE_CHANGED");
         intentFilter.addAction("android.intent.action.TIME_SET");
         intentFilter.addAction("android.intent.action.TIMEZONE_CHANGED");
-        mContext.registerReceiver(this.fJ, intentFilter, (String)null, new Handler(LauncherModel.getWorkerLooper()));
+        mContext.registerReceiver(this.gM, intentFilter, (String)null, new Handler(LauncherModel.getWorkerLooper()));
         this.mContext = mContext;
         this.mPackageManager = mContext.getPackageManager();
     }
     
-    private int em() {
+    private int fw() {
         return Calendar.getInstance().get(5) - 1;
     }
     
-    private int en(final Bundle bundle, final Resources resources) {
+    private int fx(final Bundle bundle, final Resources resources) {
         if (bundle == null) {
             return 0;
         }
@@ -54,7 +54,7 @@ public class DynamicIconProvider extends IconProvider
         try {
             final TypedArray obtainTypedArray = resources.obtainTypedArray(int1);
             try {
-                return obtainTypedArray.getResourceId(this.em(), 0);
+                return obtainTypedArray.getResourceId(this.fw(), 0);
             }
             catch (Resources$NotFoundException ex) {
                 return 0;
@@ -63,7 +63,7 @@ public class DynamicIconProvider extends IconProvider
         catch (Resources$NotFoundException ex2) {}
     }
     
-    private boolean eo(final String s) {
+    private boolean fy(final String s) {
         return "com.google.android.calendar".equals(s);
     }
     
@@ -71,7 +71,7 @@ public class DynamicIconProvider extends IconProvider
         Drawable drawable = null;
         final String packageName = launcherActivityInfo.getApplicationInfo().packageName;
         Label_0117: {
-            if (!this.eo(packageName)) {
+            if (!this.fy(packageName)) {
                 break Label_0117;
             }
             try {
@@ -83,16 +83,16 @@ public class DynamicIconProvider extends IconProvider
                         while (true) {
                             try {
                                 final Resources resourcesForApplication = this.mPackageManager.getResourcesForApplication(packageName);
-                                final int en = this.en(metaData, resourcesForApplication);
-                                if (en != 0) {
-                                    drawable = resourcesForApplication.getDrawableForDensity(en, n);
+                                final int fx = this.fx(metaData, resourcesForApplication);
+                                if (fx != 0) {
+                                    drawable = resourcesForApplication.getDrawableForDensity(fx, n);
                                 }
                                 if (drawable == null) {
                                     drawable = super.getIcon(launcherActivityInfo, n, b);
                                 }
                                 return drawable;
-                                // iftrue(Label_0100:, b || !c.fk.equals((Object)launcherActivityInfo.getComponentName()) || !Process.myUserHandle().equals((Object)launcherActivityInfo.getUser()) || !this.mContext.getResources().getString(2131492890).equals((Object)DynamicDrawableFactory.class.getName()))
-                                drawable = c.dK(this.mContext, n);
+                                // iftrue(Label_0100:, b || !c.cj.equals((Object)launcherActivityInfo.getComponentName()) || !Process.myUserHandle().equals((Object)launcherActivityInfo.getUser()) || !this.mContext.getResources().getString(2131492888).equals((Object)DynamicDrawableFactory.class.getName()))
+                                drawable = c.bM(this.mContext, n);
                                 continue;
                             }
                             catch (PackageManager$NameNotFoundException ex) {
@@ -110,8 +110,8 @@ public class DynamicIconProvider extends IconProvider
     }
     
     public String getIconSystemState(final String s) {
-        if (this.eo(s)) {
-            return this.mSystemState + " " + this.em();
+        if (this.fy(s)) {
+            return this.mSystemState + " " + this.fw();
         }
         return this.mSystemState;
     }

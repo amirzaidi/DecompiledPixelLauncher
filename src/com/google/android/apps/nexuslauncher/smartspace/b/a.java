@@ -9,14 +9,14 @@ import com.google.protobuf.nano.c;
 
 public final class a extends com.google.protobuf.nano.a
 {
-    public b[] cw;
+    public b[] dn;
     
     public a() {
         this.clear();
     }
     
     public a clear() {
-        this.cw = b.emptyArray();
+        this.dn = b.emptyArray();
         this.cachedSize = -1;
         return this;
     }
@@ -24,11 +24,11 @@ public final class a extends com.google.protobuf.nano.a
     protected int computeSerializedSize() {
         int i = 0;
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.cw != null && this.cw.length > 0) {
-            while (i < this.cw.length) {
-                final b b = this.cw[i];
+        if (this.dn != null && this.dn.length > 0) {
+            while (i < this.dn.length) {
+                final b b = this.dn[i];
                 if (b != null) {
-                    computeSerializedSize += com.google.protobuf.nano.b.Vo(1, b);
+                    computeSerializedSize += com.google.protobuf.nano.b.EK(1, b);
                 }
                 ++i;
             }
@@ -38,10 +38,10 @@ public final class a extends com.google.protobuf.nano.a
     
     public a mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -50,25 +50,25 @@ public final class a extends com.google.protobuf.nano.a
                     return this;
                 }
                 case 10: {
-                    final int wn = f.WN(c, 10);
+                    final int gj = f.Gj(c, 10);
                     int i;
-                    if (this.cw == null) {
+                    if (this.dn == null) {
                         i = 0;
                     }
                     else {
-                        i = this.cw.length;
+                        i = this.dn.length;
                     }
-                    final b[] cw = new b[wn + i];
+                    final b[] dn = new b[gj + i];
                     if (i != 0) {
-                        System.arraycopy(this.cw, 0, cw, 0, i);
+                        System.arraycopy(this.dn, 0, dn, 0, i);
                     }
-                    while (i < cw.length - 1) {
-                        c.Ww(cw[i] = new b());
-                        c.Ws();
+                    while (i < dn.length - 1) {
+                        c.FS(dn[i] = new b());
+                        c.FO();
                         ++i;
                     }
-                    c.Ww(cw[i] = new b());
-                    this.cw = cw;
+                    c.FS(dn[i] = new b());
+                    this.dn = dn;
                     continue;
                 }
             }
@@ -77,11 +77,11 @@ public final class a extends com.google.protobuf.nano.a
     
     public void writeTo(final com.google.protobuf.nano.b b) {
         int i = 0;
-        if (this.cw != null && this.cw.length > 0) {
-            while (i < this.cw.length) {
-                final b b2 = this.cw[i];
+        if (this.dn != null && this.dn.length > 0) {
+            while (i < this.dn.length) {
+                final b b2 = this.dn[i];
                 if (b2 != null) {
-                    b.VK(1, b2);
+                    b.Fg(1, b2);
                 }
                 ++i;
             }

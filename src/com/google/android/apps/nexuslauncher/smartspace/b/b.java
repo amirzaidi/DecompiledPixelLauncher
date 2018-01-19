@@ -9,20 +9,20 @@ import com.google.protobuf.nano.a;
 
 public final class b extends a
 {
-    private static volatile b[] cI;
-    public int cA;
-    public c cB;
-    public c cC;
-    public long cD;
-    public long cE;
-    public h cF;
-    public g cG;
-    public c cH;
-    public int cJ;
-    public long cK;
-    public f cx;
-    public boolean cy;
-    public int cz;
+    private static volatile b[] do;
+    public g dA;
+    public long dB;
+    public int dp;
+    public int dq;
+    public int dr;
+    public c ds;
+    public long dt;
+    public long du;
+    public h dv;
+    public f dw;
+    public c dx;
+    public c dy;
+    public boolean dz;
     
     public b() {
         this.clear();
@@ -30,33 +30,33 @@ public final class b extends a
     
     public static b[] emptyArray() {
         Label_0035: {
-            if (b.cI != null) {
+            if (b.do != null) {
                 break Label_0035;
             }
-            synchronized (d.PH) {
-                if (b.cI == null) {
-                    b.cI = new b[0];
+            synchronized (d.Om) {
+                if (b.do == null) {
+                    b.do = new b[0];
                 }
-                return b.cI;
+                return b.do;
             }
         }
     }
     
     public b clear() {
-        final long ce = 0L;
-        this.cy = false;
-        this.cz = 0;
-        this.cJ = 0;
-        this.cB = null;
-        this.cC = null;
-        this.cH = null;
-        this.cx = null;
-        this.cA = 0;
-        this.cG = null;
-        this.cK = ce;
-        this.cD = ce;
-        this.cE = ce;
-        this.cF = null;
+        final long dt = 0L;
+        this.dz = false;
+        this.dq = 0;
+        this.dp = 0;
+        this.dy = null;
+        this.ds = null;
+        this.dx = null;
+        this.dw = null;
+        this.dr = 0;
+        this.dA = null;
+        this.dB = dt;
+        this.du = dt;
+        this.dt = dt;
+        this.dv = null;
         this.cachedSize = -1;
         return this;
     }
@@ -64,54 +64,54 @@ public final class b extends a
     protected int computeSerializedSize() {
         final long n = 0L;
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.cy) {
-            computeSerializedSize += com.google.protobuf.nano.b.VL(1, this.cy);
+        if (this.dz) {
+            computeSerializedSize += com.google.protobuf.nano.b.Fh(1, this.dz);
         }
-        if (this.cJ != 0) {
-            computeSerializedSize += com.google.protobuf.nano.b.VA(2, this.cJ);
+        if (this.dp != 0) {
+            computeSerializedSize += com.google.protobuf.nano.b.EW(2, this.dp);
         }
-        if (this.cB != null) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vo(3, this.cB);
+        if (this.dy != null) {
+            computeSerializedSize += com.google.protobuf.nano.b.EK(3, this.dy);
         }
-        if (this.cC != null) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vo(4, this.cC);
+        if (this.ds != null) {
+            computeSerializedSize += com.google.protobuf.nano.b.EK(4, this.ds);
         }
-        if (this.cH != null) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vo(5, this.cH);
+        if (this.dx != null) {
+            computeSerializedSize += com.google.protobuf.nano.b.EK(5, this.dx);
         }
-        if (this.cx != null) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vo(6, this.cx);
+        if (this.dw != null) {
+            computeSerializedSize += com.google.protobuf.nano.b.EK(6, this.dw);
         }
-        if (this.cA != 0) {
-            computeSerializedSize += com.google.protobuf.nano.b.VA(7, this.cA);
+        if (this.dr != 0) {
+            computeSerializedSize += com.google.protobuf.nano.b.EW(7, this.dr);
         }
-        if (this.cG != null) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vo(8, this.cG);
+        if (this.dA != null) {
+            computeSerializedSize += com.google.protobuf.nano.b.EK(8, this.dA);
         }
-        if (this.cK != n) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vz(9, this.cK);
+        if (this.dB != n) {
+            computeSerializedSize += com.google.protobuf.nano.b.EV(9, this.dB);
         }
-        if (this.cD != n) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vz(10, this.cD);
+        if (this.du != n) {
+            computeSerializedSize += com.google.protobuf.nano.b.EV(10, this.du);
         }
-        if (this.cE != n) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vz(11, this.cE);
+        if (this.dt != n) {
+            computeSerializedSize += com.google.protobuf.nano.b.EV(11, this.dt);
         }
-        if (this.cF != null) {
-            computeSerializedSize += com.google.protobuf.nano.b.Vo(12, this.cF);
+        if (this.dv != null) {
+            computeSerializedSize += com.google.protobuf.nano.b.EK(12, this.dv);
         }
-        if (this.cz != 0) {
-            computeSerializedSize += com.google.protobuf.nano.b.VA(13, this.cz);
+        if (this.dq != 0) {
+            computeSerializedSize += com.google.protobuf.nano.b.EW(13, this.dq);
         }
         return computeSerializedSize;
     }
     
     public b mergeFrom(final com.google.protobuf.nano.c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!com.google.protobuf.nano.f.WR(c, ws)) {
+                    if (!com.google.protobuf.nano.f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -120,44 +120,44 @@ public final class b extends a
                     return this;
                 }
                 case 8: {
-                    this.cy = c.Wy();
+                    this.dz = c.FU();
                     continue;
                 }
                 case 16: {
-                    this.cJ = c.WF();
+                    this.dp = c.Ga();
                     continue;
                 }
                 case 26: {
-                    if (this.cB == null) {
-                        this.cB = new c();
+                    if (this.dy == null) {
+                        this.dy = new c();
                     }
-                    c.Ww(this.cB);
+                    c.FS(this.dy);
                     continue;
                 }
                 case 34: {
-                    if (this.cC == null) {
-                        this.cC = new c();
+                    if (this.ds == null) {
+                        this.ds = new c();
                     }
-                    c.Ww(this.cC);
+                    c.FS(this.ds);
                     continue;
                 }
                 case 42: {
-                    if (this.cH == null) {
-                        this.cH = new c();
+                    if (this.dx == null) {
+                        this.dx = new c();
                     }
-                    c.Ww(this.cH);
+                    c.FS(this.dx);
                     continue;
                 }
                 case 50: {
-                    if (this.cx == null) {
-                        this.cx = new f();
+                    if (this.dw == null) {
+                        this.dw = new f();
                     }
-                    c.Ww(this.cx);
+                    c.FS(this.dw);
                     continue;
                 }
                 case 56: {
-                    final int wf = c.WF();
-                    switch (wf) {
+                    final int ga = c.Ga();
+                    switch (ga) {
                         default: {
                             continue;
                         }
@@ -168,48 +168,48 @@ public final class b extends a
                         case 4:
                         case 5:
                         case 6: {
-                            this.cA = wf;
+                            this.dr = ga;
                             continue;
                         }
                     }
                     break;
                 }
                 case 66: {
-                    if (this.cG == null) {
-                        this.cG = new g();
+                    if (this.dA == null) {
+                        this.dA = new g();
                     }
-                    c.Ww(this.cG);
+                    c.FS(this.dA);
                     continue;
                 }
                 case 72: {
-                    this.cK = c.Wz();
+                    this.dB = c.FV();
                     continue;
                 }
                 case 80: {
-                    this.cD = c.Wz();
+                    this.du = c.FV();
                     continue;
                 }
                 case 88: {
-                    this.cE = c.Wz();
+                    this.dt = c.FV();
                     continue;
                 }
                 case 98: {
-                    if (this.cF == null) {
-                        this.cF = new h();
+                    if (this.dv == null) {
+                        this.dv = new h();
                     }
-                    c.Ww(this.cF);
+                    c.FS(this.dv);
                     continue;
                 }
                 case 104: {
-                    final int wf2 = c.WF();
-                    switch (wf2) {
+                    final int ga2 = c.Ga();
+                    switch (ga2) {
                         default: {
                             continue;
                         }
                         case 0:
                         case 1:
                         case 2: {
-                            this.cz = wf2;
+                            this.dq = ga2;
                             continue;
                         }
                     }
@@ -221,44 +221,44 @@ public final class b extends a
     
     public void writeTo(final com.google.protobuf.nano.b b) {
         final long n = 0L;
-        if (this.cy) {
-            b.VG(1, this.cy);
+        if (this.dz) {
+            b.Fc(1, this.dz);
         }
-        if (this.cJ != 0) {
-            b.Vv(2, this.cJ);
+        if (this.dp != 0) {
+            b.ER(2, this.dp);
         }
-        if (this.cB != null) {
-            b.VK(3, this.cB);
+        if (this.dy != null) {
+            b.Fg(3, this.dy);
         }
-        if (this.cC != null) {
-            b.VK(4, this.cC);
+        if (this.ds != null) {
+            b.Fg(4, this.ds);
         }
-        if (this.cH != null) {
-            b.VK(5, this.cH);
+        if (this.dx != null) {
+            b.Fg(5, this.dx);
         }
-        if (this.cx != null) {
-            b.VK(6, this.cx);
+        if (this.dw != null) {
+            b.Fg(6, this.dw);
         }
-        if (this.cA != 0) {
-            b.Vv(7, this.cA);
+        if (this.dr != 0) {
+            b.ER(7, this.dr);
         }
-        if (this.cG != null) {
-            b.VK(8, this.cG);
+        if (this.dA != null) {
+            b.Fg(8, this.dA);
         }
-        if (this.cK != n) {
-            b.Wc(9, this.cK);
+        if (this.dB != n) {
+            b.Fy(9, this.dB);
         }
-        if (this.cD != n) {
-            b.Wc(10, this.cD);
+        if (this.du != n) {
+            b.Fy(10, this.du);
         }
-        if (this.cE != n) {
-            b.Wc(11, this.cE);
+        if (this.dt != n) {
+            b.Fy(11, this.dt);
         }
-        if (this.cF != null) {
-            b.VK(12, this.cF);
+        if (this.dv != null) {
+            b.Fg(12, this.dv);
         }
-        if (this.cz != 0) {
-            b.Vv(13, this.cz);
+        if (this.dq != 0) {
+            b.ER(13, this.dq);
         }
         super.writeTo(b);
     }

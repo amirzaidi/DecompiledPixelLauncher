@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.reflection.d;
+package com.google.android.apps.nexuslauncher.reflection.f;
 
 import com.google.protobuf.nano.f;
 import com.google.protobuf.nano.c;
@@ -11,47 +11,47 @@ import com.google.protobuf.nano.a;
 
 public final class k extends a
 {
-    public String aN;
-    public String aO;
-    public String aP;
-    public String aQ;
+    public String aX;
+    public String aY;
+    public String aZ;
+    public String ba;
     
     public k() {
         this.clear();
     }
     
     public k clear() {
-        this.aN = "";
-        this.aO = "";
-        this.aP = "";
-        this.aQ = "";
+        this.aX = "";
+        this.aY = "";
+        this.aZ = "";
+        this.ba = "";
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.aN.equals("")) {
-            computeSerializedSize += b.VW(1, this.aN);
+        if (!this.aX.equals("")) {
+            computeSerializedSize += b.Fs(1, this.aX);
         }
-        if (!this.aO.equals("")) {
-            computeSerializedSize += b.VW(2, this.aO);
+        if (!this.aY.equals("")) {
+            computeSerializedSize += b.Fs(2, this.aY);
         }
-        if (!this.aP.equals("")) {
-            computeSerializedSize += b.VW(3, this.aP);
+        if (!this.aZ.equals("")) {
+            computeSerializedSize += b.Fs(3, this.aZ);
         }
-        if (!this.aQ.equals("")) {
-            computeSerializedSize += b.VW(4, this.aQ);
+        if (!this.ba.equals("")) {
+            computeSerializedSize += b.Fs(4, this.ba);
         }
         return computeSerializedSize;
     }
     
     public k mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -60,19 +60,19 @@ public final class k extends a
                     return this;
                 }
                 case 10: {
-                    this.aN = c.WB();
+                    this.aX = c.FX();
                     continue;
                 }
                 case 18: {
-                    this.aO = c.WB();
+                    this.aY = c.FX();
                     continue;
                 }
                 case 26: {
-                    this.aP = c.WB();
+                    this.aZ = c.FX();
                     continue;
                 }
                 case 34: {
-                    this.aQ = c.WB();
+                    this.ba = c.FX();
                     continue;
                 }
             }
@@ -80,17 +80,17 @@ public final class k extends a
     }
     
     public void writeTo(final b b) {
-        if (!this.aN.equals("")) {
-            b.VT(1, this.aN);
+        if (!this.aX.equals("")) {
+            b.Fp(1, this.aX);
         }
-        if (!this.aO.equals("")) {
-            b.VT(2, this.aO);
+        if (!this.aY.equals("")) {
+            b.Fp(2, this.aY);
         }
-        if (!this.aP.equals("")) {
-            b.VT(3, this.aP);
+        if (!this.aZ.equals("")) {
+            b.Fp(3, this.aZ);
         }
-        if (!this.aQ.equals("")) {
-            b.VT(4, this.aQ);
+        if (!this.ba.equals("")) {
+            b.Fp(4, this.ba);
         }
         super.writeTo(b);
     }

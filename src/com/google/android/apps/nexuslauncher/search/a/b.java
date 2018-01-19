@@ -11,10 +11,10 @@ import com.google.protobuf.nano.a;
 
 public final class b extends a
 {
-    private static volatile b[] ei;
-    public String ej;
-    public String ek;
-    public String el;
+    private static volatile b[] fk;
+    public String fl;
+    public String fm;
+    public String fn;
     public String label;
     
     public b() {
@@ -23,23 +23,23 @@ public final class b extends a
     
     public static b[] emptyArray() {
         Label_0035: {
-            if (b.ei != null) {
+            if (b.fk != null) {
                 break Label_0035;
             }
-            synchronized (d.PH) {
-                if (b.ei == null) {
-                    b.ei = new b[0];
+            synchronized (d.Om) {
+                if (b.fk == null) {
+                    b.fk = new b[0];
                 }
-                return b.ei;
+                return b.fk;
             }
         }
     }
     
     public b clear() {
         this.label = "";
-        this.ek = "";
-        this.ej = "";
-        this.el = "";
+        this.fm = "";
+        this.fl = "";
+        this.fn = "";
         this.cachedSize = -1;
         return this;
     }
@@ -47,26 +47,26 @@ public final class b extends a
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
         if (!this.label.equals("")) {
-            computeSerializedSize += com.google.protobuf.nano.b.VW(1, this.label);
+            computeSerializedSize += com.google.protobuf.nano.b.Fs(1, this.label);
         }
-        if (!this.ek.equals("")) {
-            computeSerializedSize += com.google.protobuf.nano.b.VW(2, this.ek);
+        if (!this.fm.equals("")) {
+            computeSerializedSize += com.google.protobuf.nano.b.Fs(2, this.fm);
         }
-        if (!this.ej.equals("")) {
-            computeSerializedSize += com.google.protobuf.nano.b.VW(3, this.ej);
+        if (!this.fl.equals("")) {
+            computeSerializedSize += com.google.protobuf.nano.b.Fs(3, this.fl);
         }
-        if (!this.el.equals("")) {
-            computeSerializedSize += com.google.protobuf.nano.b.VW(4, this.el);
+        if (!this.fn.equals("")) {
+            computeSerializedSize += com.google.protobuf.nano.b.Fs(4, this.fn);
         }
         return computeSerializedSize;
     }
     
     public b mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -75,19 +75,19 @@ public final class b extends a
                     return this;
                 }
                 case 10: {
-                    this.label = c.WB();
+                    this.label = c.FX();
                     continue;
                 }
                 case 18: {
-                    this.ek = c.WB();
+                    this.fm = c.FX();
                     continue;
                 }
                 case 26: {
-                    this.ej = c.WB();
+                    this.fl = c.FX();
                     continue;
                 }
                 case 34: {
-                    this.el = c.WB();
+                    this.fn = c.FX();
                     continue;
                 }
             }
@@ -96,16 +96,16 @@ public final class b extends a
     
     public void writeTo(final com.google.protobuf.nano.b b) {
         if (!this.label.equals("")) {
-            b.VT(1, this.label);
+            b.Fp(1, this.label);
         }
-        if (!this.ek.equals("")) {
-            b.VT(2, this.ek);
+        if (!this.fm.equals("")) {
+            b.Fp(2, this.fm);
         }
-        if (!this.ej.equals("")) {
-            b.VT(3, this.ej);
+        if (!this.fl.equals("")) {
+            b.Fp(3, this.fl);
         }
-        if (!this.el.equals("")) {
-            b.VT(4, this.el);
+        if (!this.fn.equals("")) {
+            b.Fp(4, this.fn);
         }
         super.writeTo(b);
     }

@@ -10,47 +10,47 @@ import com.google.protobuf.nano.b;
 
 public final class a extends com.google.protobuf.nano.a
 {
-    public int ee;
-    public int ef;
-    public int eg;
-    public int eh;
+    public int fg;
+    public int fh;
+    public int fi;
+    public int fj;
     
     public a() {
         this.clear();
     }
     
     public a clear() {
-        this.ef = 0;
-        this.eg = 0;
-        this.eh = 0;
-        this.ee = 0;
+        this.fh = 0;
+        this.fi = 0;
+        this.fj = 0;
+        this.fg = 0;
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.ef != 0) {
-            computeSerializedSize += b.VA(1, this.ef);
+        if (this.fh != 0) {
+            computeSerializedSize += b.EW(1, this.fh);
         }
-        if (this.eg != 0) {
-            computeSerializedSize += b.VA(2, this.eg);
+        if (this.fi != 0) {
+            computeSerializedSize += b.EW(2, this.fi);
         }
-        if (this.eh != 0) {
-            computeSerializedSize += b.VA(3, this.eh);
+        if (this.fj != 0) {
+            computeSerializedSize += b.EW(3, this.fj);
         }
-        if (this.ee != 0) {
-            computeSerializedSize += b.VA(4, this.ee);
+        if (this.fg != 0) {
+            computeSerializedSize += b.EW(4, this.fg);
         }
         return computeSerializedSize;
     }
     
     public a mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -59,19 +59,19 @@ public final class a extends com.google.protobuf.nano.a
                     return this;
                 }
                 case 8: {
-                    this.ef = c.WF();
+                    this.fh = c.Ga();
                     continue;
                 }
                 case 16: {
-                    this.eg = c.WF();
+                    this.fi = c.Ga();
                     continue;
                 }
                 case 24: {
-                    this.eh = c.WF();
+                    this.fj = c.Ga();
                     continue;
                 }
                 case 32: {
-                    this.ee = c.WF();
+                    this.fg = c.Ga();
                     continue;
                 }
             }
@@ -79,17 +79,17 @@ public final class a extends com.google.protobuf.nano.a
     }
     
     public void writeTo(final b b) {
-        if (this.ef != 0) {
-            b.Vv(1, this.ef);
+        if (this.fh != 0) {
+            b.ER(1, this.fh);
         }
-        if (this.eg != 0) {
-            b.Vv(2, this.eg);
+        if (this.fi != 0) {
+            b.ER(2, this.fi);
         }
-        if (this.eh != 0) {
-            b.Vv(3, this.eh);
+        if (this.fj != 0) {
+            b.ER(3, this.fj);
         }
-        if (this.ee != 0) {
-            b.Vv(4, this.ee);
+        if (this.fg != 0) {
+            b.ER(4, this.fg);
         }
         super.writeTo(b);
     }

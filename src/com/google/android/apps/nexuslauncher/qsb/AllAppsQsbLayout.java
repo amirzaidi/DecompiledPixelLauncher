@@ -5,13 +5,12 @@
 package com.google.android.apps.nexuslauncher.qsb;
 
 import android.view.KeyEvent;
-import android.support.v4.b.a;
 import com.android.launcher3.util.Themes;
 import com.android.launcher3.dynamicui.WallpaperColorInfo;
 import android.support.v7.widget.m;
 import android.graphics.Canvas;
-import com.android.launcher3.CellLayout;
 import com.android.launcher3.Utilities;
+import com.android.launcher3.CellLayout;
 import android.view.View$OnLayoutChangeListener;
 import com.android.launcher3.allapps.SearchUiManager$OnScrollRangeChangeListener;
 import android.view.View;
@@ -19,19 +18,22 @@ import android.view.ViewGroup;
 import android.view.View$OnClickListener;
 import android.util.AttributeSet;
 import android.content.Context;
+import android.support.a.b;
 import com.android.launcher3.allapps.AlphabeticalAppsList;
-import android.graphics.Bitmap;
 import com.android.launcher3.allapps.AllAppsRecyclerView;
+import android.graphics.Bitmap;
 import com.android.launcher3.dynamicui.WallpaperColorInfo$OnChangeListener;
 import com.android.launcher3.allapps.SearchUiManager;
 
-public class AllAppsQsbLayout extends e implements SearchUiManager, WallpaperColorInfo$OnChangeListener
+public class AllAppsQsbLayout extends a implements SearchUiManager, WallpaperColorInfo$OnChangeListener
 {
-    private AllAppsRecyclerView bU;
-    private FallbackAppsSearchView bV;
-    private int bW;
-    private Bitmap bX;
+    private int cA;
+    private Bitmap cB;
+    private AllAppsRecyclerView cx;
+    private FallbackAppsSearchView cy;
+    private float cz;
     private AlphabeticalAppsList mApps;
+    private b mSpring;
     
     public AllAppsQsbLayout(final Context context) {
         this(context, null);
@@ -43,61 +45,65 @@ public class AllAppsQsbLayout extends e implements SearchUiManager, WallpaperCol
     
     public AllAppsQsbLayout(final Context context, final AttributeSet set, final int n) {
         super(context, set, n);
-        this.bW = 0;
+        this.cA = 0;
         this.setOnClickListener((View$OnClickListener)this);
+        this.cz = this.getTranslationY();
+        this.mSpring = new b(this, new l(this, "allAppsQsbLayoutSpringAnimation"), 0.0f);
     }
     
-    private void bx() {
-        if (this.bV != null) {
-            this.bV.showKeyboard();
+    private void ci() {
+        if (this.cy != null) {
+            this.cy.showKeyboard();
             return;
         }
         this.setOnClickListener((View$OnClickListener)null);
-        (this.bV = (FallbackAppsSearchView)this.cb.getLayoutInflater().inflate(2130968584, (ViewGroup)this, false)).bu(this, this.mApps, this.bU);
-        this.addView((View)this.bV);
-        this.bV.showKeyboard();
+        (this.cy = (FallbackAppsSearchView)this.cr.getLayoutInflater().inflate(2130968584, (ViewGroup)this, false)).cg(this, this.mApps, this.cx);
+        this.addView((View)this.cy);
+        this.cy.showKeyboard();
     }
     
     public void addOnScrollRangeChangeListener(final SearchUiManager$OnScrollRangeChangeListener searchUiManager$OnScrollRangeChangeListener) {
-        this.cb.getHotseat().addOnLayoutChangeListener((View$OnLayoutChangeListener)new d(this, searchUiManager$OnScrollRangeChangeListener));
+        this.cr.getHotseat().addOnLayoutChangeListener((View$OnLayoutChangeListener)new d(this, searchUiManager$OnScrollRangeChangeListener));
     }
     
-    void bv(final int n) {
+    protected int bY(final int n) {
+        if (this.cr.getDeviceProfile().isVerticalBarLayout()) {
+            return n - this.cx.getPaddingLeft() - this.cx.getPaddingRight();
+        }
+        final CellLayout layout = this.cr.getHotseat().getLayout();
+        return n - ((View)layout).getPaddingLeft() - ((View)layout).getPaddingRight();
+    }
+    
+    void ch(final int n) {
         final int boundToRange = Utilities.boundToRange(n, 0, 255);
-        if (this.bW != boundToRange) {
-            this.bW = boundToRange;
+        if (this.cA != boundToRange) {
+            this.cA = boundToRange;
             this.invalidate();
         }
     }
     
-    protected int bw(final int n) {
-        if (this.cb.getDeviceProfile().isVerticalBarLayout()) {
-            return n - this.bU.getPaddingLeft() - this.bU.getPaddingRight();
-        }
-        final CellLayout layout = this.cb.getHotseat().getLayout();
-        return n - ((View)layout).getPaddingLeft() - ((View)layout).getPaddingRight();
-    }
-    
-    protected void by() {
-    }
-    
     public void draw(final Canvas canvas) {
-        if (this.bW > 0) {
-            if (this.bX == null) {
-                this.bX = this.bB(this.getResources().getDimension(2131427498), this.getResources().getDimension(2131427499), 0);
+        if (this.cA > 0) {
+            if (this.cB == null) {
+                this.cB = this.bX(this.getResources().getDimension(2131427499), this.getResources().getDimension(2131427500), 0);
             }
-            this.mShadowPaint.setAlpha(this.bW);
-            this.bC(this.bX, canvas);
+            this.mShadowPaint.setAlpha(this.cA);
+            this.bW(this.cB, canvas);
             this.mShadowPaint.setAlpha(255);
         }
         super.draw(canvas);
     }
     
-    public void initialize(final AlphabeticalAppsList mApps, final AllAppsRecyclerView bu) {
+    public b getSpringForFling() {
+        return this.mSpring;
+    }
+    
+    public void initialize(final AlphabeticalAppsList mApps, final AllAppsRecyclerView cx) {
         this.mApps = mApps;
-        bu.setPadding(bu.getPaddingLeft(), this.getLayoutParams().height / 2 + this.getResources().getDimensionPixelSize(2131427502), bu.getPaddingRight(), bu.getPaddingBottom());
-        bu.addOnScrollListener(new c(this, null));
-        this.bU = bu;
+        cx.setPadding(cx.getPaddingLeft(), this.getLayoutParams().height / 2 + this.getResources().getDimensionPixelSize(2131427503), cx.getPaddingRight(), cx.getPaddingBottom());
+        cx.addOnScrollListener(new c(this, null));
+        cx.setVerticalFadingEdgeEnabled(true);
+        this.cx = cx;
     }
     
     protected void onAttachedToWindow() {
@@ -110,10 +116,10 @@ public class AllAppsQsbLayout extends e implements SearchUiManager, WallpaperCol
     public void onClick(final View view) {
         super.onClick(view);
         if (view == this) {
-            this.bA(4);
-            final f f = new f(this, true);
-            if (!this.cb.dY().startSearch(f.build(), f.getExtras())) {
-                this.bx();
+            this.ca(4);
+            final h h = new h(this, true);
+            if (!this.cr.ff().startSearch(h.build(), h.getExtras())) {
+                this.ci();
             }
         }
     }
@@ -125,31 +131,37 @@ public class AllAppsQsbLayout extends e implements SearchUiManager, WallpaperCol
     
     public void onExtractedColorsChanged(final WallpaperColorInfo wallpaperColorInfo) {
         int n;
-        if (Themes.getAttrBoolean((Context)this.cb, 2130772010)) {
+        if (Themes.getAttrBoolean((Context)this.cr, 2130772011)) {
             n = -335544321;
         }
         else {
             n = -855638017;
         }
-        this.bz(a.asf(a.asf(n, Themes.getAttrColor((Context)this.cb, 2130772006)), wallpaperColorInfo.getMainColor()));
+        this.cb(android.support.v4.b.a.aeG(android.support.v4.b.a.aeG(n, Themes.getAttrColor((Context)this.cr, 2130772006)), wallpaperColorInfo.getMainColor()));
+    }
+    
+    protected void onLayout(final boolean b, final int n, final int n2, final int n3, final int n4) {
+        super.onLayout(b, n, n2, n3, n4);
+        final View view = (View)this.getParent();
+        this.setTranslationX((float)(view.getPaddingLeft() + (view.getWidth() - view.getPaddingLeft() - view.getPaddingRight() - (n3 - n)) / 2 - n));
     }
     
     public void preDispatchKeyEvent(final KeyEvent keyEvent) {
     }
     
     public void refreshSearchResult() {
-        if (this.bV != null) {
-            this.bV.refreshSearchResult();
+        if (this.cy != null) {
+            this.cy.refreshSearchResult();
         }
     }
     
     public void reset() {
-        this.bv(0);
-        if (this.bV != null) {
-            this.bV.clearSearchResult();
+        this.ch(0);
+        if (this.cy != null) {
+            this.cy.clearSearchResult();
             this.setOnClickListener((View$OnClickListener)this);
-            this.removeView((View)this.bV);
-            this.bV = null;
+            this.removeView((View)this.cy);
+            this.cy = null;
         }
     }
 }

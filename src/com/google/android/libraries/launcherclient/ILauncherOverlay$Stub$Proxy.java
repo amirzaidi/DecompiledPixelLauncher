@@ -38,16 +38,16 @@ public class ILauncherOverlay$Stub$Proxy extends BaseProxy implements ILauncherO
     
     public boolean hasOverlayContent() {
         final Parcel transactAndReadException = this.transactAndReadException(13, this.obtainAndWriteInterfaceToken());
-        final boolean ry = a.RY(transactAndReadException);
+        final boolean eq = a.Eq(transactAndReadException);
         transactAndReadException.recycle();
-        return ry;
+        return eq;
     }
     
     public boolean isVoiceDetectionRunning() {
         final Parcel transactAndReadException = this.transactAndReadException(12, this.obtainAndWriteInterfaceToken());
-        final boolean ry = a.RY(transactAndReadException);
+        final boolean eq = a.Eq(transactAndReadException);
         transactAndReadException.recycle();
-        return ry;
+        return eq;
     }
     
     public void onPause() {
@@ -72,7 +72,7 @@ public class ILauncherOverlay$Stub$Proxy extends BaseProxy implements ILauncherO
     
     public void requestVoiceDetection(final boolean b) {
         final Parcel obtainAndWriteInterfaceToken = this.obtainAndWriteInterfaceToken();
-        a.Sc(obtainAndWriteInterfaceToken, b);
+        a.Eu(obtainAndWriteInterfaceToken, b);
         this.transactOneway(10, obtainAndWriteInterfaceToken);
     }
     
@@ -89,31 +89,31 @@ public class ILauncherOverlay$Stub$Proxy extends BaseProxy implements ILauncherO
     public boolean startSearch(final byte[] array, final Bundle bundle) {
         final Parcel obtainAndWriteInterfaceToken = this.obtainAndWriteInterfaceToken();
         obtainAndWriteInterfaceToken.writeByteArray(array);
-        a.Sa(obtainAndWriteInterfaceToken, (Parcelable)bundle);
+        a.Es(obtainAndWriteInterfaceToken, (Parcelable)bundle);
         final Parcel transactAndReadException = this.transactAndReadException(17, obtainAndWriteInterfaceToken);
-        final boolean ry = a.RY(transactAndReadException);
+        final boolean eq = a.Eq(transactAndReadException);
         transactAndReadException.recycle();
-        return ry;
+        return eq;
     }
     
     public void windowAttached(final WindowManager$LayoutParams windowManager$LayoutParams, final ILauncherOverlayCallback launcherOverlayCallback, final int n) {
         final Parcel obtainAndWriteInterfaceToken = this.obtainAndWriteInterfaceToken();
-        a.Sa(obtainAndWriteInterfaceToken, (Parcelable)windowManager$LayoutParams);
-        a.Sb(obtainAndWriteInterfaceToken, (IInterface)launcherOverlayCallback);
+        a.Es(obtainAndWriteInterfaceToken, (Parcelable)windowManager$LayoutParams);
+        a.Et(obtainAndWriteInterfaceToken, (IInterface)launcherOverlayCallback);
         obtainAndWriteInterfaceToken.writeInt(n);
         this.transactOneway(4, obtainAndWriteInterfaceToken);
     }
     
     public void windowAttached2(final Bundle bundle, final ILauncherOverlayCallback launcherOverlayCallback) {
         final Parcel obtainAndWriteInterfaceToken = this.obtainAndWriteInterfaceToken();
-        a.Sa(obtainAndWriteInterfaceToken, (Parcelable)bundle);
-        a.Sb(obtainAndWriteInterfaceToken, (IInterface)launcherOverlayCallback);
+        a.Es(obtainAndWriteInterfaceToken, (Parcelable)bundle);
+        a.Et(obtainAndWriteInterfaceToken, (IInterface)launcherOverlayCallback);
         this.transactOneway(14, obtainAndWriteInterfaceToken);
     }
     
     public void windowDetached(final boolean b) {
         final Parcel obtainAndWriteInterfaceToken = this.obtainAndWriteInterfaceToken();
-        a.Sc(obtainAndWriteInterfaceToken, b);
+        a.Eu(obtainAndWriteInterfaceToken, b);
         this.transactOneway(5, obtainAndWriteInterfaceToken);
     }
 }

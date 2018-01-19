@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.b;
+package com.google.android.apps.nexuslauncher.a;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -21,6 +21,7 @@ import com.android.launcher3.util.Preconditions;
 import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.content.IntentFilter;
+import com.google.android.apps.nexuslauncher.b.a;
 import android.os.Handler;
 import com.android.launcher3.LauncherModel;
 import java.util.Map;
@@ -33,13 +34,13 @@ import android.content.BroadcastReceiver;
 
 final class d implements Runnable
 {
-    final /* synthetic */ c fn;
+    final /* synthetic */ c cm;
     
-    d(final c fn) {
-        this.fn = fn;
+    d(final c cm) {
+        this.cm = cm;
     }
     
     public void run() {
-        this.fn.dN();
+        this.cm.bQ();
     }
 }

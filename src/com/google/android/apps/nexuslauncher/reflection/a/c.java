@@ -4,9 +4,15 @@
 
 package com.google.android.apps.nexuslauncher.reflection.a;
 
-import com.google.android.apps.nexuslauncher.reflection.b.b;
+import android.net.Uri;
 
 public interface c
 {
-    void l(final b p0);
+    Uri l();
+    
+    Uri m();
+    
+    Uri n();
+    
+    Uri o();
 }

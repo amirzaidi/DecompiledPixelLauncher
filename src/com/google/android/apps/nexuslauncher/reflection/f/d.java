@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.reflection.d;
+package com.google.android.apps.nexuslauncher.reflection.f;
 
 import com.google.protobuf.nano.f;
 import com.google.protobuf.nano.c;
@@ -11,8 +11,8 @@ import com.google.protobuf.nano.a;
 
 public final class d extends a
 {
-    private static volatile d[] af;
-    public long ag;
+    private static volatile d[] ap;
+    public long ao;
     public int key;
     
     public d() {
@@ -21,21 +21,21 @@ public final class d extends a
     
     public static d[] emptyArray() {
         Label_0035: {
-            if (d.af != null) {
+            if (d.ap != null) {
                 break Label_0035;
             }
-            synchronized (com.google.protobuf.nano.d.PH) {
-                if (d.af == null) {
-                    d.af = new d[0];
+            synchronized (com.google.protobuf.nano.d.Om) {
+                if (d.ap == null) {
+                    d.ap = new d[0];
                 }
-                return d.af;
+                return d.ap;
             }
         }
     }
     
     public d clear() {
         this.key = 0;
-        this.ag = 0L;
+        this.ao = 0L;
         this.cachedSize = -1;
         return this;
     }
@@ -43,20 +43,20 @@ public final class d extends a
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
         if (this.key != 0) {
-            computeSerializedSize += b.VA(1, this.key);
+            computeSerializedSize += b.EW(1, this.key);
         }
-        if (this.ag != 0L) {
-            computeSerializedSize += b.Vz(2, this.ag);
+        if (this.ao != 0L) {
+            computeSerializedSize += b.EV(2, this.ao);
         }
         return computeSerializedSize;
     }
     
     public d mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -65,11 +65,11 @@ public final class d extends a
                     return this;
                 }
                 case 8: {
-                    this.key = c.WF();
+                    this.key = c.Ga();
                     continue;
                 }
                 case 16: {
-                    this.ag = c.Wz();
+                    this.ao = c.FV();
                     continue;
                 }
             }
@@ -78,10 +78,10 @@ public final class d extends a
     
     public void writeTo(final b b) {
         if (this.key != 0) {
-            b.Vv(1, this.key);
+            b.ER(1, this.key);
         }
-        if (this.ag != 0L) {
-            b.Wc(2, this.ag);
+        if (this.ao != 0L) {
+            b.Fy(2, this.ao);
         }
         super.writeTo(b);
     }

@@ -32,13 +32,13 @@ import java.util.concurrent.Callable;
 import android.util.Log;
 import android.os.Looper;
 import android.os.Bundle;
+import android.net.Uri$Builder;
 import android.database.MatrixCursor$RowBuilder;
 import java.util.Iterator;
+import com.android.launcher3.AppInfo;
 import android.database.MatrixCursor;
 import android.database.Cursor;
 import java.util.List;
-import android.net.Uri$Builder;
-import com.android.launcher3.AppInfo;
 import com.android.launcher3.compat.UserManagerCompat;
 import android.content.ComponentName;
 import com.android.launcher3.util.ComponentKey;
@@ -51,41 +51,41 @@ import android.content.ContentProvider;
 
 public class AppSearchProvider extends ContentProvider
 {
-    private static final String[] eK;
-    private final ContentProvider$PipeDataWriter eL;
-    private LooperExecutor eM;
+    private static final String[] fN;
+    private final ContentProvider$PipeDataWriter fO;
+    private LooperExecutor fP;
     private LauncherAppState mApp;
     
     static {
-        eK = new String[] { "_id", "suggest_text_1", "suggest_icon_1", "suggest_intent_action", "suggest_intent_data" };
+        fN = new String[] { "_id", "suggest_text_1", "suggest_icon_1", "suggest_intent_action", "suggest_intent_data" };
     }
     
     public AppSearchProvider() {
-        this.eL = (ContentProvider$PipeDataWriter)new h(this);
+        this.fO = (ContentProvider$PipeDataWriter)new h(this);
     }
     
-    public static ComponentKey dl(final Uri uri, final Context context) {
+    public static ComponentKey es(final Uri uri, final Context context) {
         return new ComponentKey(ComponentName.unflattenFromString(uri.getQueryParameter("component")), UserManagerCompat.getInstance(context).getUserForSerialNumber(Long.parseLong(uri.getQueryParameter("user"))));
     }
     
-    public static Uri dm(final AppInfo appInfo, final UserManagerCompat userManagerCompat) {
-        return new Uri$Builder().scheme("content").authority("com.google.android.apps.nexuslauncher.appssearch").appendQueryParameter("component", appInfo.componentName.flattenToShortString()).appendQueryParameter("user", Long.toString(userManagerCompat.getSerialNumberForUser(appInfo.user))).build();
-    }
-    
-    private Cursor dn(final List list) {
-        final MatrixCursor matrixCursor = new MatrixCursor(AppSearchProvider.eK, list.size());
+    private Cursor et(final List list) {
+        final MatrixCursor matrixCursor = new MatrixCursor(AppSearchProvider.fN, list.size());
         final UserManagerCompat instance = UserManagerCompat.getInstance(this.getContext());
         final Iterator<AppInfo> iterator = (Iterator<AppInfo>)list.iterator();
         int n = 0;
         while (iterator.hasNext()) {
             final AppInfo appInfo = iterator.next();
-            final String string = dm(appInfo, instance).toString();
+            final String string = eu(appInfo, instance).toString();
             final MatrixCursor$RowBuilder row = matrixCursor.newRow();
             final int n2 = n + 1;
             row.add((Object)n).add((Object)appInfo.title.toString()).add((Object)string).add((Object)"com.google.android.apps.nexuslauncher.search.APP_LAUNCH").add((Object)string);
             n = n2;
         }
         return (Cursor)matrixCursor;
+    }
+    
+    public static Uri eu(final AppInfo appInfo, final UserManagerCompat userManagerCompat) {
+        return new Uri$Builder().scheme("content").authority("com.google.android.apps.nexuslauncher.appssearch").appendQueryParameter("component", appInfo.componentName.flattenToShortString()).appendQueryParameter("user", Long.toString(userManagerCompat.getSerialNumberForUser(appInfo.user))).build();
     }
     
     public Bundle call(final String s, final String s2, final Bundle bundle) {
@@ -97,12 +97,12 @@ public class AppSearchProvider extends ContentProvider
             try {
                 final Uri parse = Uri.parse(s2);
                 try {
-                    final ComponentKey dl = dl(parse, this.getContext());
+                    final ComponentKey es = es(parse, this.getContext());
                     try {
-                        final LooperExecutor em = this.eM;
+                        final LooperExecutor fp = this.fP;
                         try {
-                            final g g = new g(this, dl);
-                            final LooperExecutor looperExecutor = em;
+                            final g g = new g(this, es);
+                            final LooperExecutor looperExecutor = fp;
                             try {
                                 final Future<Bitmap> submit = looperExecutor.submit((Callable<Bitmap>)g);
                                 try {
@@ -152,7 +152,7 @@ public class AppSearchProvider extends ContentProvider
     }
     
     public boolean onCreate() {
-        this.eM = new LooperExecutor(LauncherModel.getWorkerLooper());
+        this.fP = new LooperExecutor(LauncherModel.getWorkerLooper());
         this.mApp = LauncherAppState.getInstance(this.getContext());
         return true;
     }
@@ -163,16 +163,16 @@ public class AppSearchProvider extends ContentProvider
             return null;
         }
         try {
-            final ComponentKey dl = dl(uri, this.getContext());
+            final ComponentKey es = es(uri, this.getContext());
             final String s2 = "image/png";
-            final LooperExecutor em = this.eM;
+            final LooperExecutor fp = this.fP;
             try {
-                final g g = new g(this, dl);
-                final LooperExecutor looperExecutor = em;
+                final g g = new g(this, es);
+                final LooperExecutor looperExecutor = fp;
                 try {
                     final Future<Object> submit = looperExecutor.submit((Callable<Object>)g);
                     try {
-                        return this.openPipeHelper(uri, s2, (Bundle)null, (Object)submit, this.eL);
+                        return this.openPipeHelper(uri, s2, (Bundle)null, (Object)submit, this.fO);
                     }
                     catch (Exception ex) {
                         throw new FileNotFoundException(ex.getMessage());
@@ -188,15 +188,15 @@ public class AppSearchProvider extends ContentProvider
     public Cursor query(final Uri uri, final String[] array, final String s, final String[] array2, final String s2) {
         if (Looper.myLooper() == Looper.getMainLooper()) {
             Log.e("AppSearchProvider", "Content provider accessed on main thread");
-            return (Cursor)new MatrixCursor(AppSearchProvider.eK, 0);
+            return (Cursor)new MatrixCursor(AppSearchProvider.fN, 0);
         }
         final f f = new f(uri.getLastPathSegment());
         this.mApp.getModel().enqueueModelUpdateTask(f);
         try {
-            final Object value = f.eN.get(5, TimeUnit.SECONDS);
+            final Object value = f.fQ.get(5, TimeUnit.SECONDS);
             try {
                 final List<?> list = (List<?>)value;
-                return this.dn(list);
+                return this.et(list);
             }
             catch (InterruptedException | ExecutionException | TimeoutException ex) {
                 final Throwable t;

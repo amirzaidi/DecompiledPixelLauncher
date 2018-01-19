@@ -13,73 +13,73 @@ import com.google.android.libraries.launcherclient.ILauncherOverlay;
 
 class g extends h
 {
-    private static g Mj;
-    private boolean Mg;
-    private ILauncherOverlay Mh;
-    private WeakReference Mi;
+    private static g NN;
+    private boolean NK;
+    private ILauncherOverlay NL;
+    private WeakReference NM;
     
     private g(final Context context) {
         super(context, 33);
     }
     
-    private void RO() {
-        if (this.Mg && this.Mh == null) {
-            this.RS();
+    private void DX() {
+        if (this.NK && this.NL == null) {
+            this.Eb();
         }
     }
     
-    private void RP(final ILauncherOverlay mh) {
-        this.Mh = mh;
-        final d rq = this.RQ();
-        if (rq != null) {
-            rq.Rn(this.Mh);
+    private void DY(final ILauncherOverlay nl) {
+        this.NL = nl;
+        final d dz = this.DZ();
+        if (dz != null) {
+            dz.Du(this.NL);
         }
     }
     
-    private d RQ() {
+    private d DZ() {
         d d = null;
-        if (this.Mi != null) {
-            d = (d)this.Mi.get();
+        if (this.NM != null) {
+            d = (d)this.NM.get();
         }
         return d;
     }
     
     static g get(final Context context) {
-        if (g.Mj == null) {
-            g.Mj = new g(context.getApplicationContext());
+        if (g.NN == null) {
+            g.NN = new g(context.getApplicationContext());
         }
-        return g.Mj;
+        return g.NN;
     }
     
-    public void RL(final d d, final boolean b) {
-        final d rq = this.RQ();
-        if (rq != null && rq.equals(d)) {
-            this.Mi = null;
+    public void DU(final d d, final boolean b) {
+        final d dz = this.DZ();
+        if (dz != null && dz.equals(d)) {
+            this.NM = null;
             if (b) {
-                this.RS();
-                if (g.Mj == this) {
-                    g.Mj = null;
+                this.Eb();
+                if (g.NN == this) {
+                    g.NN = null;
                 }
             }
         }
     }
     
-    public void RM(final boolean mg) {
-        this.Mg = mg;
-        this.RO();
+    public void DV(final boolean nk) {
+        this.NK = nk;
+        this.DX();
     }
     
-    public ILauncherOverlay RN(final d d) {
-        this.Mi = new WeakReference((T)d);
-        return this.Mh;
+    public ILauncherOverlay DW(final d d) {
+        this.NM = new WeakReference((T)d);
+        return this.NL;
     }
     
     public void onServiceConnected(final ComponentName componentName, final IBinder binder) {
-        this.RP(ILauncherOverlay$Stub.asInterface(binder));
+        this.DY(ILauncherOverlay$Stub.asInterface(binder));
     }
     
     public void onServiceDisconnected(final ComponentName componentName) {
-        this.RP(null);
-        this.RO();
+        this.DY(null);
+        this.DX();
     }
 }

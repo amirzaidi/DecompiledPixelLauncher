@@ -10,42 +10,42 @@ import com.google.protobuf.nano.a;
 
 public final class f extends a
 {
-    public String cV;
-    public String cW;
-    public String cX;
+    public String dM;
+    public String dN;
+    public String dO;
     
     public f() {
         this.clear();
     }
     
     public f clear() {
-        this.cV = "";
-        this.cX = "";
-        this.cW = "";
+        this.dN = "";
+        this.dM = "";
+        this.dO = "";
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.cV.equals("")) {
-            computeSerializedSize += b.VW(1, this.cV);
+        if (!this.dN.equals("")) {
+            computeSerializedSize += b.Fs(1, this.dN);
         }
-        if (!this.cX.equals("")) {
-            computeSerializedSize += b.VW(2, this.cX);
+        if (!this.dM.equals("")) {
+            computeSerializedSize += b.Fs(2, this.dM);
         }
-        if (!this.cW.equals("")) {
-            computeSerializedSize += b.VW(3, this.cW);
+        if (!this.dO.equals("")) {
+            computeSerializedSize += b.Fs(3, this.dO);
         }
         return computeSerializedSize;
     }
     
     public f mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!com.google.protobuf.nano.f.WR(c, ws)) {
+                    if (!com.google.protobuf.nano.f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -54,15 +54,15 @@ public final class f extends a
                     return this;
                 }
                 case 10: {
-                    this.cV = c.WB();
+                    this.dN = c.FX();
                     continue;
                 }
                 case 18: {
-                    this.cX = c.WB();
+                    this.dM = c.FX();
                     continue;
                 }
                 case 26: {
-                    this.cW = c.WB();
+                    this.dO = c.FX();
                     continue;
                 }
             }
@@ -70,14 +70,14 @@ public final class f extends a
     }
     
     public void writeTo(final b b) {
-        if (!this.cV.equals("")) {
-            b.VT(1, this.cV);
+        if (!this.dN.equals("")) {
+            b.Fp(1, this.dN);
         }
-        if (!this.cX.equals("")) {
-            b.VT(2, this.cX);
+        if (!this.dM.equals("")) {
+            b.Fp(2, this.dM);
         }
-        if (!this.cW.equals("")) {
-            b.VT(3, this.cW);
+        if (!this.dO.equals("")) {
+            b.Fp(3, this.dO);
         }
         super.writeTo(b);
     }

@@ -18,7 +18,7 @@ public class NewAppInstallReceiver$V26 extends BroadcastReceiver
         final PackageInstaller$SessionInfo packageInstaller$SessionInfo = (PackageInstaller$SessionInfo)intent.getParcelableExtra("android.content.pm.extra.SESSION");
         final UserHandle userHandle = (UserHandle)intent.getParcelableExtra("android.intent.extra.USER");
         if (!TextUtils.isEmpty((CharSequence)packageInstaller$SessionInfo.getAppPackageName()) && userHandle != null && packageInstaller$SessionInfo.getInstallReason() == 4) {
-            c.getInstance(context).ax(new PackageUserKey(packageInstaller$SessionInfo.getAppPackageName(), userHandle));
+            o.getInstance(context).bC(new PackageUserKey(packageInstaller$SessionInfo.getAppPackageName(), userHandle));
         }
     }
 }

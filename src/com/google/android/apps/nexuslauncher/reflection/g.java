@@ -4,29 +4,60 @@
 
 package com.google.android.apps.nexuslauncher.reflection;
 
-import android.content.ComponentName;
-import android.content.SharedPreferences;
+import android.app.AlarmManager;
+import android.app.PendingIntent$CanceledException;
+import java.util.concurrent.TimeUnit;
+import android.app.PendingIntent$OnFinished;
+import android.os.Handler;
+import android.os.Looper;
+import java.util.concurrent.CountDownLatch;
+import com.android.launcher3.util.Preconditions;
+import android.util.MutableLong;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.os.SystemClock;
+import java.util.Calendar;
 import android.content.Context;
-import java.util.Collections;
-import java.util.Arrays;
-import java.util.regex.Pattern;
-import java.util.List;
 
-public class g
+public class g implements e
 {
-    public static final List bs;
-    public static final Pattern bt;
+    private final long bA;
     
-    static {
-        bt = Pattern.compile("^([^/]+)/([^#/]+)(#(\\d+))?$");
-        bs = Collections.unmodifiableList((List<?>)Arrays.asList("reflection.engine", "reflection.engine.background", "reflection.events", "model.properties.xml", "reflection_multi_process.xml", "client_actions"));
+    public g(final Context context) {
+        this.bA = this.initRecordedTime(context, 1);
     }
     
-    public static SharedPreferences aT(final Context context) {
-        return context.getSharedPreferences("reflection.private.properties", 0);
+    public long aX() {
+        return this.bA;
     }
     
-    public static String aU(final ComponentName componentName) {
-        return componentName.flattenToString();
+    protected long getAbsoluteBootTime() {
+        return Calendar.getInstance().getTimeInMillis() - SystemClock.elapsedRealtime();
+    }
+    
+    protected long initRecordedTime(final Context context, final int n) {
+        final int n2 = 1;
+        final Intent intent = new Intent("com.google.android.apps.nexuslauncher.reflection.ACTION_BOOT_CYCLE");
+        final PendingIntent broadcast = PendingIntent.getBroadcast(context, n, intent, 536870912);
+        final MutableLong mutableLong = new MutableLong(this.getAbsoluteBootTime());
+        if (broadcast != null) {
+            try {
+                Preconditions.assertNonUiThread();
+                final CountDownLatch countDownLatch = new CountDownLatch(1);
+                final p p2 = new p(this, mutableLong, countDownLatch);
+                try {
+                    broadcast.send(n, (PendingIntent$OnFinished)p2, new Handler(Looper.getMainLooper()));
+                    countDownLatch.await(1L, TimeUnit.SECONDS);
+                    return mutableLong.value;
+                }
+                catch (PendingIntent$CanceledException ex) {}
+                catch (InterruptedException ex2) {}
+            }
+            catch (PendingIntent$CanceledException ex3) {}
+            catch (InterruptedException ex4) {}
+        }
+        intent.putExtra("time", mutableLong.value);
+        ((AlarmManager)context.getSystemService("alarm")).set(n2, Long.MAX_VALUE, PendingIntent.getBroadcast(context, n, intent, 134217728));
+        return mutableLong.value;
     }
 }

@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.reflection.d;
+package com.google.android.apps.nexuslauncher.reflection.f;
 
 import com.google.protobuf.nano.f;
 import com.google.protobuf.nano.c;
@@ -12,9 +12,9 @@ import com.google.protobuf.nano.a;
 
 public final class l extends a
 {
-    private static volatile l[] aS;
-    public String aR;
-    public float aT;
+    private static volatile l[] bd;
+    public String bb;
+    public float bc;
     
     public l() {
         this.clear();
@@ -22,42 +22,42 @@ public final class l extends a
     
     public static l[] emptyArray() {
         Label_0035: {
-            if (l.aS != null) {
+            if (l.bd != null) {
                 break Label_0035;
             }
-            synchronized (d.PH) {
-                if (l.aS == null) {
-                    l.aS = new l[0];
+            synchronized (d.Om) {
+                if (l.bd == null) {
+                    l.bd = new l[0];
                 }
-                return l.aS;
+                return l.bd;
             }
         }
     }
     
     public l clear() {
-        this.aR = "";
-        this.aT = 0.0f;
+        this.bb = "";
+        this.bc = 0.0f;
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.aR.equals("")) {
-            computeSerializedSize += b.VW(1, this.aR);
+        if (!this.bb.equals("")) {
+            computeSerializedSize += b.Fs(1, this.bb);
         }
-        if (Float.floatToIntBits(this.aT) != Float.floatToIntBits(0.0f)) {
-            computeSerializedSize += b.Vy(2, this.aT);
+        if (Float.floatToIntBits(this.bc) != Float.floatToIntBits(0.0f)) {
+            computeSerializedSize += b.EU(2, this.bc);
         }
         return computeSerializedSize;
     }
     
     public l mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -66,11 +66,11 @@ public final class l extends a
                     return this;
                 }
                 case 10: {
-                    this.aR = c.WB();
+                    this.bb = c.FX();
                     continue;
                 }
                 case 21: {
-                    this.aT = c.WH();
+                    this.bc = c.Gd();
                     continue;
                 }
             }
@@ -78,11 +78,11 @@ public final class l extends a
     }
     
     public void writeTo(final b b) {
-        if (!this.aR.equals("")) {
-            b.VT(1, this.aR);
+        if (!this.bb.equals("")) {
+            b.Fp(1, this.bb);
         }
-        if (Float.floatToIntBits(this.aT) != Float.floatToIntBits(0.0f)) {
-            b.VS(2, this.aT);
+        if (Float.floatToIntBits(this.bc) != Float.floatToIntBits(0.0f)) {
+            b.Fo(2, this.bc);
         }
         super.writeTo(b);
     }

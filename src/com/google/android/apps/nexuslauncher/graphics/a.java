@@ -15,13 +15,13 @@ import android.content.BroadcastReceiver;
 
 final class a extends BroadcastReceiver
 {
-    final /* synthetic */ IcuDateTextView eU;
+    final /* synthetic */ IcuDateTextView fX;
     
-    a(final IcuDateTextView eu) {
-        this.eU = eu;
+    a(final IcuDateTextView fx) {
+        this.fX = fx;
     }
     
     public void onReceive(final Context context, final Intent intent) {
-        this.eU.dr("android.intent.action.TIME_TICK".equals(intent.getAction()) ^ true);
+        this.fX.ey("android.intent.action.TIME_TICK".equals(intent.getAction()) ^ true);
     }
 }

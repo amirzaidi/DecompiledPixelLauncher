@@ -4,69 +4,37 @@
 
 package com.google.android.apps.nexuslauncher.b;
 
-import android.graphics.Rect;
-import android.graphics.Canvas;
-import java.util.TimeZone;
-import android.os.SystemClock;
-import android.graphics.Bitmap;
-import com.android.launcher3.FastBitmapDrawable;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager$NameNotFoundException;
+import android.content.Context;
+import android.content.IntentFilter;
 
-public class a extends FastBitmapDrawable implements Runnable
+public class a
 {
-    private b fa;
-    
-    public a(final Bitmap bitmap, final b fa) {
-        super(bitmap);
-        this.fa = fa;
+    public static IntentFilter eL(final String... array) {
+        return eM("com.google.android.googlequicksearchbox", array);
     }
     
-    private void dD() {
-        final long n = 1000L;
-        this.unscheduleSelf((Runnable)this);
-        final long uptimeMillis = SystemClock.uptimeMillis();
-        this.scheduleSelf((Runnable)this, uptimeMillis - uptimeMillis % n + n);
+    public static IntentFilter eM(final String s, final String... array) {
+        final IntentFilter intentFilter = new IntentFilter();
+        for (int length = array.length, i = 0; i < length; ++i) {
+            intentFilter.addAction(array[i]);
+        }
+        intentFilter.addDataScheme("package");
+        intentFilter.addDataSchemeSpecificPart(s, 0);
+        return intentFilter;
     }
     
-    public void dE(final b fa) {
-        this.fa = fa;
-        if (this.fa != null) {
-            this.fa.fb.setBounds(this.getBounds());
+    public static boolean eN(final Context context) {
+        try {
+            final ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo("com.google.android.googlequicksearchbox", 0);
+            try {
+                return applicationInfo.enabled;
+            }
+            catch (PackageManager$NameNotFoundException ex) {
+                return false;
+            }
         }
-        this.invalidateSelf();
-    }
-    
-    public void dF(final TimeZone timeZone) {
-        if (this.fa != null) {
-            this.fa.dH(timeZone);
-            this.invalidateSelf();
-        }
-    }
-    
-    public void draw(final Canvas canvas) {
-        super.draw(canvas);
-        if (this.fa == null) {
-            return;
-        }
-        this.fa.dG();
-        final Rect bounds = this.getBounds();
-        canvas.scale(this.fa.scale, this.fa.scale, bounds.exactCenterX(), bounds.exactCenterY());
-        this.fa.fb.draw(canvas);
-        this.dD();
-    }
-    
-    protected void onBoundsChange(final Rect bounds) {
-        super.onBoundsChange(bounds);
-        if (this.fa != null) {
-            this.fa.fb.setBounds(bounds);
-        }
-    }
-    
-    public void run() {
-        if (this.fa.dG()) {
-            this.invalidateSelf();
-        }
-        else {
-            this.dD();
-        }
+        catch (PackageManager$NameNotFoundException ex2) {}
     }
 }

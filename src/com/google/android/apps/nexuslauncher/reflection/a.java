@@ -4,60 +4,90 @@
 
 package com.google.android.apps.nexuslauncher.reflection;
 
-import java.util.Iterator;
-import android.content.SharedPreferences;
-import java.util.List;
-import com.google.android.apps.nexuslauncher.reflection.filter.d;
-import com.google.android.apps.nexuslauncher.reflection.c.e;
-import java.io.File;
-import com.google.android.apps.nexuslauncher.reflection.c.c;
-import com.android.launcher3.Utilities;
-import com.google.android.apps.nexuslauncher.reflection.a.b;
+import java.io.ObjectInputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.ArrayList;
-import android.content.Context;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.Iterator;
+import com.google.research.reflection.predictor.f;
+import java.util.List;
+import android.content.SharedPreferences;
 
 public class a
 {
-    public static n am(final Context context) {
-        final ArrayList<b> list = new ArrayList<b>();
-        final k k = new k(context);
-        final SharedPreferences prefs = Utilities.getPrefs(context);
-        new h();
-        final c c = new c(new com.google.android.apps.nexuslauncher.reflection.c.a(context, "reflection.events"));
-        e e = null;
-        final File file = new File(context.getCacheDir(), "client_actions");
-        if (prefs.getBoolean("pre_debug", false)) {
-            e = new e(file, 10485760L);
+    static final String PREDICTION_APP_SEPARATOR = ";";
+    private final SharedPreferences bm;
+    
+    public a(final SharedPreferences bm) {
+        this.bm = bm;
+    }
+    
+    public static String aH(final List list) {
+        final StringBuilder sb = new StringBuilder();
+        final Iterator<f> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            sb.append(iterator.next().Pd);
+            sb.append(";");
         }
-        else if (file.exists()) {
-            file.delete();
+        return sb.toString();
+    }
+    
+    public static String aI(final List list) {
+        final StringBuilder sb = new StringBuilder();
+        final Iterator<f> iterator = (Iterator<f>)list.iterator();
+        while (iterator.hasNext()) {
+            final Matcher matcher = b.bn.matcher(iterator.next().Pd);
+            if (matcher.find()) {
+                final String group = matcher.group(1);
+                final String group2 = matcher.group(2);
+                final String group3 = matcher.group(4);
+                if (sb.length() > 0) {
+                    sb.append(";");
+                }
+                sb.append(group);
+                sb.append("/");
+                sb.append(group2);
+                if (group3 == null) {
+                    continue;
+                }
+                sb.append("#");
+                sb.append(group3);
+            }
         }
-        final b b = new b(context);
-        list.add(b);
-        final SharedPreferences at = g.aT(context);
-        final com.google.android.apps.nexuslauncher.reflection.filter.c c2 = new com.google.android.apps.nexuslauncher.reflection.filter.c(context);
-        final com.google.android.apps.nexuslauncher.reflection.filter.a a = new com.google.android.apps.nexuslauncher.reflection.filter.a(context);
-        final d d = new d(b);
-        final com.google.android.apps.nexuslauncher.reflection.b b2 = new com.google.android.apps.nexuslauncher.reflection.b(context, c, at, "foreground_evt_buf.properties", null);
-        final File file2 = new File(context.getFilesDir(), "reflection.engine");
-        final com.google.android.apps.nexuslauncher.reflection.e e2 = new com.google.android.apps.nexuslauncher.reflection.e(context, c, at, new File(context.getFilesDir(), "reflection.engine.background"), b2);
-        new l().aX(at, file2, b2, c, e2);
-        b2.an(file2);
-        final m m = new m(at);
-        final ArrayList<String> list2 = new ArrayList<String>();
-        for (final String s : g.bs) {
-            if (s.startsWith("/")) {
-                list2.add(context.getDir(s.substring(1), 0).getAbsolutePath());
+        return sb.toString();
+    }
+    
+    public Map aG() {
+        final String[] split = this.bm.getString("prediction_order", "").split(";");
+        final HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+        final int length = split.length;
+        int i = 0;
+        int n = 0;
+        while (i < length) {
+            final String s = split[i];
+            int n2;
+            if (!s.isEmpty()) {
+                n2 = n + 1;
+                hashMap.put(s, n);
             }
             else {
-                list2.add(s);
+                n2 = n;
             }
+            ++i;
+            n = n2;
         }
-        final n n = new n(context, b2, e2, b, c2, a, d, m, new com.google.android.apps.nexuslauncher.reflection.c.b(at, new File(context.getApplicationInfo().dataDir), list2), e, k);
-        final j j = new j(context, n, a, c2);
-        list.add((b)j);
-        n.bc(list);
-        j.aW();
-        return n;
+        return hashMap;
+    }
+    
+    public void aJ(final List list, final List list2) {
+        final ArrayList list3 = new ArrayList(list.size() + list2.size());
+        list3.addAll(list);
+        list3.addAll(list2);
+        this.bm.edit().putString("reflection_last_predictions", aI(list3)).putLong("reflection_last_predictions_timestamp", System.currentTimeMillis()).putString("prediction_order", aH(list)).apply();
     }
 }

@@ -2,8 +2,9 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.b;
+package com.google.android.apps.nexuslauncher.a;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.MainThreadExecutor;
@@ -20,26 +21,28 @@ import com.android.launcher3.util.Preconditions;
 import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.content.IntentFilter;
+import com.google.android.apps.nexuslauncher.b.a;
 import android.os.Handler;
 import com.android.launcher3.LauncherModel;
 import java.util.Map;
 import java.util.Collections;
 import java.util.WeakHashMap;
+import android.content.Context;
 import java.util.Set;
 import android.content.ComponentName;
-import android.content.Intent;
-import android.content.Context;
 import android.content.BroadcastReceiver;
 
-final class e extends BroadcastReceiver
+final class f implements Runnable
 {
-    final /* synthetic */ c fo;
+    final /* synthetic */ c co;
+    final /* synthetic */ b cp;
     
-    e(final c fo) {
-        this.fo = fo;
+    f(final c co, final b cp) {
+        this.co = co;
+        this.cp = cp;
     }
     
-    public void onReceive(final Context context, final Intent intent) {
-        this.fo.dM(intent.getStringExtra("time-zone"));
+    public void run() {
+        this.co.bR(this.cp);
     }
 }

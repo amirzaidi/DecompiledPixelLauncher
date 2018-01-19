@@ -12,13 +12,13 @@ import android.content.ContentProvider$PipeDataWriter;
 
 final class h implements ContentProvider$PipeDataWriter
 {
-    final /* synthetic */ AppSearchProvider eQ;
+    final /* synthetic */ AppSearchProvider fT;
     
-    h(final AppSearchProvider eq) {
-        this.eQ = eq;
+    h(final AppSearchProvider ft) {
+        this.fT = ft;
     }
     
-    public void dq(final ParcelFileDescriptor p0, final Uri p1, final String p2, final Bundle p3, final Future p4) {
+    public void ex(final ParcelFileDescriptor p0, final Uri p1, final String p2, final Bundle p3, final Future p4) {
         // 
         // This method could not be decompiled.
         // 

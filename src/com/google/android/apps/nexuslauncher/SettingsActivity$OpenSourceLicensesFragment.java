@@ -20,6 +20,6 @@ public class SettingsActivity$OpenSourceLicensesFragment extends DialogFragment
         view.setWebViewClient(new WebViewClient());
         view.getSettings().setBuiltInZoomControls(true);
         view.loadUrl("file:///android_res/raw/license.html");
-        return (Dialog)new AlertDialog$Builder((Context)this.getActivity()).setTitle(2131493024).setView((View)view).create();
+        return (Dialog)new AlertDialog$Builder((Context)this.getActivity()).setTitle(2131493023).setView((View)view).create();
     }
 }

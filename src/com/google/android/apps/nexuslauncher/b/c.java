@@ -4,163 +4,84 @@
 
 package com.google.android.apps.nexuslauncher.b;
 
-import android.content.Intent;
+import android.graphics.PorterDuff$Mode;
+import android.graphics.Bitmap$Config;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Canvas;
 import android.graphics.Bitmap;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.MainThreadExecutor;
-import java.util.Iterator;
-import java.util.TimeZone;
-import android.graphics.drawable.LayerDrawable;
-import android.os.Bundle;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.graphics.Path;
-import android.graphics.RectF;
-import com.android.launcher3.graphics.IconNormalizer;
-import com.android.launcher3.util.Preconditions;
-import android.graphics.drawable.Drawable;
-import android.os.Looper;
-import android.content.IntentFilter;
-import android.os.Handler;
-import com.android.launcher3.LauncherModel;
-import java.util.Map;
-import java.util.Collections;
-import java.util.WeakHashMap;
-import android.content.Context;
-import java.util.Set;
-import android.content.ComponentName;
-import android.content.BroadcastReceiver;
 
-public class c extends BroadcastReceiver
+public class c
 {
-    public static final ComponentName fk;
-    private final Set fl;
-    private b fm;
-    private final Context mContext;
+    private int[] gg;
+    private Bitmap gh;
+    private Canvas gi;
+    private Paint gj;
+    private final Matrix gk;
     
-    static {
-        fk = new ComponentName("com.google.android.deskclock", "com.android.deskclock.DeskClock");
+    public c() {
+        this.gk = new Matrix();
     }
     
-    public c(final Context mContext) {
-        this.fl = Collections.newSetFromMap(new WeakHashMap<Object, Boolean>());
-        this.fm = new b();
-        this.mContext = mContext;
-        final Handler handler = new Handler(LauncherModel.getWorkerLooper());
-        mContext.registerReceiver((BroadcastReceiver)this, com.google.android.apps.nexuslauncher.a.b.dy("com.google.android.deskclock", "android.intent.action.PACKAGE_ADDED", "android.intent.action.PACKAGE_CHANGED"), (String)null, handler);
-        handler.post((Runnable)new d(this));
-        mContext.registerReceiver((BroadcastReceiver)new e(this), new IntentFilter("android.intent.action.TIMEZONE_CHANGED"), (String)null, new Handler(Looper.getMainLooper()));
-    }
-    
-    public static Drawable dK(final Context context, final int n) {
-        final b clone = dL(context, n, false).clone();
-        if (clone != null) {
-            clone.dG();
-            return clone.fb;
+    private void eR(final int n) {
+        if (this.gg == null || this.gg.length < n) {
+            this.gg = new int[n];
         }
-        return null;
     }
     
-    private static b dL(final Context context, final int n, final boolean b) {
-        Preconditions.assertWorkerThread();
-        final b b2 = new b();
-        try {
-            final PackageManager packageManager = context.getPackageManager();
-            final ApplicationInfo applicationInfo = packageManager.getApplicationInfo("com.google.android.deskclock", 8320);
-            try {
-                final Bundle metaData = applicationInfo.metaData;
-                if (metaData == null) {
-                    return b2;
-                }
-                final int int1 = metaData.getInt("com.google.android.apps.nexuslauncher.LEVEL_PER_TICK_ICON_ROUND", 0);
-                if (int1 == 0) {
-                    return b2;
-                }
-                final Drawable drawableForDensity = packageManager.getResourcesForApplication(applicationInfo).getDrawableForDensity(int1, n);
-                try {
-                    b2.fb = drawableForDensity.mutate();
-                    b2.fg = metaData.getInt("com.google.android.apps.nexuslauncher.HOUR_LAYER_INDEX", -1);
-                    b2.fi = metaData.getInt("com.google.android.apps.nexuslauncher.MINUTE_LAYER_INDEX", -1);
-                    b2.fj = metaData.getInt("com.google.android.apps.nexuslauncher.SECOND_LAYER_INDEX", -1);
-                    b2.fc = metaData.getInt("com.google.android.apps.nexuslauncher.DEFAULT_HOUR", 0);
-                    b2.fd = metaData.getInt("com.google.android.apps.nexuslauncher.DEFAULT_MINUTE", 0);
-                    b2.fe = metaData.getInt("com.google.android.apps.nexuslauncher.DEFAULT_SECOND", 0);
-                    Label_0300: {
-                        if (!b) {
-                            break Label_0300;
-                        }
-                        final IconNormalizer instance = IconNormalizer.getInstance(context);
-                        try {
-                            b2.scale = instance.getScale(b2.fb, null, null, null);
-                            final LayerDrawable di = b2.dI();
-                            try {
-                                final int numberOfLayers = di.getNumberOfLayers();
-                                try {
-                                    if (b2.fg < 0 || b2.fg >= numberOfLayers) {
-                                        b2.fg = -1;
-                                    }
-                                    if (b2.fi < 0 || b2.fi >= numberOfLayers) {
-                                        b2.fi = -1;
-                                    }
-                                    if (b2.fj < 0 || b2.fj >= numberOfLayers) {
-                                        b2.fj = -1;
-                                    }
-                                    else {
-                                        di.setDrawable(b2.fj, (Drawable)null);
-                                        b2.fj = -1;
-                                    }
-                                    return b2;
-                                }
-                                catch (Exception ex) {
-                                    b2.fb = null;
-                                    return b2;
-                                }
-                            }
-                            catch (Exception ex2) {}
-                        }
-                        catch (Exception ex3) {}
-                    }
-                }
-                catch (Exception ex4) {}
+    public static boolean eS(final int n) {
+        boolean b = true;
+        final int n2 = 20;
+        if ((n >> 24 & 0xFF) < 50) {
+            return b;
+        }
+        final int n3 = n >> 16 & 0xFF;
+        final int n4 = n >> 8 & 0xFF;
+        final int n5 = n & 0xFF;
+        if (Math.abs(n3 - n4) < n2 && Math.abs(n3 - n5) < n2) {
+            if (Math.abs(n4 - n5) >= n2) {
+                b = false;
             }
-            catch (Exception ex5) {}
-        }
-        catch (Exception ex6) {}
-    }
-    
-    private void dM(final String s) {
-        TimeZone timeZone;
-        if (s == null) {
-            timeZone = TimeZone.getDefault();
         }
         else {
-            timeZone = TimeZone.getTimeZone(s);
+            b = false;
         }
-        final Iterator iterator = this.fl.iterator();
-        while (iterator.hasNext()) {
-            iterator.next().dF(timeZone);
+        return b;
+    }
+    
+    public boolean eQ(Bitmap gh) {
+        final float n = 64.0f;
+        final boolean filterBitmap = true;
+        final int n2 = 64;
+        int height = gh.getHeight();
+        int width = gh.getWidth();
+        Bitmap bitmap;
+        if (height > n2 || width > n2) {
+            if (this.gh == null) {
+                this.gh = Bitmap.createBitmap(n2, n2, Bitmap$Config.ARGB_8888);
+                this.gi = new Canvas(this.gh);
+                (this.gj = new Paint((int)(filterBitmap ? 1 : 0))).setFilterBitmap(filterBitmap);
+            }
+            this.gk.reset();
+            this.gk.setScale(n / width, n / height, 0.0f, 0.0f);
+            this.gi.drawColor(0, PorterDuff$Mode.SRC);
+            this.gi.drawBitmap(gh, this.gk, this.gj);
+            gh = this.gh;
+            width = n2;
+            height = n2;
+            bitmap = gh;
         }
-    }
-    
-    private void dN() {
-        new MainThreadExecutor().execute(new f(this, dL(this.mContext, LauncherAppState.getIDP(this.mContext).fillResIconDpi, true)));
-    }
-    
-    private void dO(final b fm) {
-        this.fm = fm;
-        final Iterator iterator = this.fl.iterator();
-        while (iterator.hasNext()) {
-            iterator.next().dE(this.fm.clone());
+        else {
+            bitmap = gh;
         }
-    }
-    
-    public a dJ(final Bitmap bitmap) {
-        final a a = new a(bitmap, this.fm.clone());
-        this.fl.add(a);
-        return a;
-    }
-    
-    public void onReceive(final Context context, final Intent intent) {
-        this.dN();
+        final int n3 = height * width;
+        this.eR(n3);
+        bitmap.getPixels(this.gg, 0, width, 0, 0, width, height);
+        for (int i = 0; i < n3; ++i) {
+            if (!eS(this.gg[i])) {
+                return false;
+            }
+        }
+        return filterBitmap;
     }
 }

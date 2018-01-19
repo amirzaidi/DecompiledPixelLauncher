@@ -49,15 +49,15 @@ public abstract class ILauncherOverlay$Stub extends BaseStub implements ILaunche
                     break;
                 }
                 case 4: {
-                    this.windowAttached((WindowManager$LayoutParams)a.RZ(parcel, WindowManager$LayoutParams.CREATOR), ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()), parcel.readInt());
+                    this.windowAttached((WindowManager$LayoutParams)a.Er(parcel, WindowManager$LayoutParams.CREATOR), ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()), parcel.readInt());
                     break;
                 }
                 case 14: {
-                    this.windowAttached2((Bundle)a.RZ(parcel, Bundle.CREATOR), ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()));
+                    this.windowAttached2((Bundle)a.Er(parcel, Bundle.CREATOR), ILauncherOverlayCallback$Stub.asInterface(parcel.readStrongBinder()));
                     break;
                 }
                 case 5: {
-                    this.windowDetached(a.RY(parcel));
+                    this.windowDetached(a.Eq(parcel));
                     break;
                 }
                 case 6: {
@@ -81,7 +81,7 @@ public abstract class ILauncherOverlay$Stub extends BaseStub implements ILaunche
                     break;
                 }
                 case 10: {
-                    this.requestVoiceDetection(a.RY(parcel));
+                    this.requestVoiceDetection(a.Eq(parcel));
                     break;
                 }
                 case 11: {
@@ -93,19 +93,19 @@ public abstract class ILauncherOverlay$Stub extends BaseStub implements ILaunche
                 case 12: {
                     final boolean voiceDetectionRunning = this.isVoiceDetectionRunning();
                     parcel2.writeNoException();
-                    a.Sc(parcel2, voiceDetectionRunning);
+                    a.Eu(parcel2, voiceDetectionRunning);
                     break;
                 }
                 case 13: {
                     final boolean hasOverlayContent = this.hasOverlayContent();
                     parcel2.writeNoException();
-                    a.Sc(parcel2, hasOverlayContent);
+                    a.Eu(parcel2, hasOverlayContent);
                     break;
                 }
                 case 17: {
-                    final boolean startSearch = this.startSearch(parcel.createByteArray(), (Bundle)a.RZ(parcel, Bundle.CREATOR));
+                    final boolean startSearch = this.startSearch(parcel.createByteArray(), (Bundle)a.Er(parcel, Bundle.CREATOR));
                     parcel2.writeNoException();
-                    a.Sc(parcel2, startSearch);
+                    a.Eu(parcel2, startSearch);
                     break;
                 }
             }

@@ -4,48 +4,42 @@
 
 package com.google.android.apps.nexuslauncher;
 
-import java.lang.ref.WeakReference;
-import com.android.launcher3.model.LoaderResults;
-import android.util.Log;
-import java.util.concurrent.Executor;
-import com.android.launcher3.LauncherModel;
-import com.android.launcher3.model.BgDataModel;
-import com.android.launcher3.LauncherAppState;
-import com.android.launcher3.AllAppsList;
-import android.content.BroadcastReceiver$PendingResult;
-import com.android.launcher3.LauncherModel$ModelUpdateTask;
+import com.google.android.libraries.a.a.f;
+import android.content.SharedPreferences;
+import com.google.android.apps.nexuslauncher.reflection.o;
+import android.os.Bundle;
+import com.android.launcher3.LauncherExterns;
+import com.android.launcher3.Launcher;
+import com.android.launcher3.LauncherCallbacks;
+import com.google.android.libraries.a.a.d;
 
-class c implements LauncherModel$ModelUpdateTask
+public class c
 {
-    private final BroadcastReceiver$PendingResult fK;
-    private AllAppsList mAllAppsList;
-    private LauncherAppState mApp;
-    private BgDataModel mBgDataModel;
-    private LauncherModel mModel;
+    d gA;
+    a gB;
+    final LauncherCallbacks gC;
+    private final Launcher gD;
+    private boolean gE;
+    private final LauncherExterns gF;
+    com.google.android.apps.nexuslauncher.search.a gG;
+    private final Bundle gH;
+    private o gI;
+    private boolean gJ;
+    private boolean mStarted;
     
-    c(final BroadcastReceiver$PendingResult fk) {
-        this.fK = fk;
+    public c(final Launcher gd, final LauncherExterns gf) {
+        this.gH = new Bundle();
+        this.gD = gd;
+        this.gF = gf;
+        this.gC = new com.google.android.apps.nexuslauncher.d(this, null);
+        this.gF.setLauncherCallbacks(this.gC);
     }
     
-    public void init(final LauncherAppState mApp, final LauncherModel mModel, final BgDataModel mBgDataModel, final AllAppsList mAllAppsList, final Executor executor) {
-        this.mApp = mApp;
-        this.mModel = mModel;
-        this.mBgDataModel = mBgDataModel;
-        this.mAllAppsList = mAllAppsList;
-    }
-    
-    public void run() {
-        int resultCode = 0;
-        if (!this.mModel.isModelLoaded()) {
-            Log.d("SUWFinishReceiver", "Workspace not loaded, loading now");
-            this.mModel.startLoaderForResults(new LoaderResults(this.mApp, this.mBgDataModel, this.mAllAppsList, 0, null));
+    private static f fi(final SharedPreferences sharedPreferences) {
+        boolean b = true;
+        if (!sharedPreferences.getBoolean("pref_enable_minus_one", b)) {
+            b = false;
         }
-        Log.d("SUWFinishReceiver", "Preload completed : " + this.mModel.isModelLoaded());
-        final BroadcastReceiver$PendingResult fk = this.fK;
-        if (this.mModel.isModelLoaded()) {
-            resultCode = -1;
-        }
-        fk.setResultCode(resultCode);
-        this.fK.finish();
+        return new f((b ? 1 : 0) | 0x2 | 0x4 | 0x8);
     }
 }

@@ -11,37 +11,37 @@ import com.google.protobuf.nano.a;
 
 public final class g extends a
 {
-    public int cY;
-    public String cZ;
+    public int dP;
+    public String dQ;
     
     public g() {
         this.clear();
     }
     
     public g clear() {
-        this.cY = 0;
-        this.cZ = "";
+        this.dP = 0;
+        this.dQ = "";
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.cY != 0) {
-            computeSerializedSize += b.VA(1, this.cY);
+        if (this.dP != 0) {
+            computeSerializedSize += b.EW(1, this.dP);
         }
-        if (!this.cZ.equals("")) {
-            computeSerializedSize += b.VW(2, this.cZ);
+        if (!this.dQ.equals("")) {
+            computeSerializedSize += b.Fs(2, this.dQ);
         }
         return computeSerializedSize;
     }
     
     public g mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -50,22 +50,22 @@ public final class g extends a
                     return this;
                 }
                 case 8: {
-                    final int wf = c.WF();
-                    switch (wf) {
+                    final int ga = c.Ga();
+                    switch (ga) {
                         default: {
                             continue;
                         }
                         case 0:
                         case 1:
                         case 2: {
-                            this.cY = wf;
+                            this.dP = ga;
                             continue;
                         }
                     }
                     break;
                 }
                 case 18: {
-                    this.cZ = c.WB();
+                    this.dQ = c.FX();
                     continue;
                 }
             }
@@ -73,11 +73,11 @@ public final class g extends a
     }
     
     public void writeTo(final b b) {
-        if (this.cY != 0) {
-            b.Vv(1, this.cY);
+        if (this.dP != 0) {
+            b.ER(1, this.dP);
         }
-        if (!this.cZ.equals("")) {
-            b.VT(2, this.cZ);
+        if (!this.dQ.equals("")) {
+            b.Fp(2, this.dQ);
         }
         super.writeTo(b);
     }

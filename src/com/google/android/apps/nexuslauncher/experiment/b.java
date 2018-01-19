@@ -11,20 +11,22 @@ import com.google.android.gms.phenotype.a;
 
 class b extends a implements com.google.android.gms.phenotype.b
 {
-    private final SharedPreferences fv;
+    private final com.google.android.gms.common.api.a fe;
+    private final SharedPreferences ff;
     
-    public b(final com.google.android.gms.common.api.a a) {
-        super(a, "com.google.android.apps.nexuslauncher");
-        this.fv = a.getContext().getSharedPreferences("phenotype_configs", 0);
+    public b(final com.google.android.gms.common.api.a fe) {
+        super(fe, "com.google.android.apps.nexuslauncher");
+        this.ff = fe.getContext().getSharedPreferences("phenotype_configs", 0);
+        this.fe = fe;
     }
     
-    protected void dU(final Configurations configurations) {
-        a.CJ(this.fv, configurations);
+    protected void el(final Configurations configurations) {
+        a.fD(this.ff, configurations);
         Log.d("PhenotypeFlagCommitter", "Committed to new configuration from Phenotype");
     }
     
-    public void dV(final boolean b) {
+    public void em(final boolean b) {
         Log.d("PhenotypeFlagCommitter", "Commit finished, result:" + b);
-        this.xN.gi();
+        this.fe.gy();
     }
 }

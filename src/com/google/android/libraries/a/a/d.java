@@ -5,171 +5,213 @@
 package com.google.android.libraries.a.a;
 
 import android.util.Log;
-import android.content.pm.ResolveInfo;
+import java.io.PrintWriter;
 import android.content.res.Resources;
-import android.os.RemoteException;
 import com.google.android.libraries.launcherclient.ILauncherOverlayCallback;
 import android.os.Parcelable;
 import android.net.Uri;
 import android.os.Process;
 import android.content.Intent;
+import android.os.RemoteException;
+import android.content.pm.ResolveInfo;
 import android.os.Build$VERSION;
 import android.content.IntentFilter;
 import android.content.Context;
-import android.content.BroadcastReceiver;
 import com.google.android.libraries.launcherclient.ILauncherOverlay;
 import android.view.WindowManager$LayoutParams;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 
 public class d
 {
-    private static int LY;
-    private int LN;
-    private final Activity LO;
-    private Bundle LP;
-    private WindowManager$LayoutParams LQ;
-    private int LR;
-    private final b LS;
-    private final g LT;
-    private e LU;
-    private final h LV;
-    protected ILauncherOverlay LW;
-    private int LX;
-    private final BroadcastReceiver LZ;
+    private static int NB;
+    private int NA;
+    private final i NC;
+    private final BroadcastReceiver ND;
+    private int Np;
+    private final Activity Nq;
+    private Bundle Nr;
+    private WindowManager$LayoutParams Ns;
+    private int Nt;
+    private final b Nu;
+    private final g Nv;
+    private e Nw;
+    private final h Nx;
+    protected ILauncherOverlay Ny;
+    private final i Nz;
     private boolean mDestroyed;
     
     static {
-        d.LY = -1;
+        d.NB = -1;
     }
     
-    public d(final Activity lo, final b ls, final f f) {
+    public d(final Activity nq, final b nu, final f f) {
         final int n = 19;
-        this.LZ = new j(this);
-        this.LN = 0;
+        this.NC = new i("Client", 20);
+        this.Nz = new i("Service", 10);
+        this.ND = new l(this);
+        this.Np = 0;
         this.mDestroyed = false;
-        this.LX = 0;
-        this.LO = lo;
-        this.LS = ls;
-        this.LV = new h((Context)lo, 65);
-        this.LR = f.Mf;
-        this.LT = g.get((Context)lo);
-        this.LW = this.LT.RN(this);
+        this.NA = 0;
+        this.Nq = nq;
+        this.Nu = nu;
+        this.Nx = new h((Context)nq, 65);
+        this.Nt = f.NJ;
+        this.Nv = g.get((Context)nq);
+        this.Ny = this.Nv.DW(this);
         final IntentFilter intentFilter = new IntentFilter("android.intent.action.PACKAGE_ADDED");
         intentFilter.addDataScheme("package");
         if (Build$VERSION.SDK_INT >= n) {
             intentFilter.addDataSchemeSpecificPart("com.google.android.googlequicksearchbox", 0);
         }
-        this.LO.registerReceiver(this.LZ, intentFilter);
-        if (d.LY < 1) {
-            Ru((Context)lo);
+        this.Nq.registerReceiver(this.ND, intentFilter);
+        if (d.NB < 1) {
+            DD((Context)nq);
         }
-        this.Ry();
-        if (Build$VERSION.SDK_INT >= n && this.LO.getWindow() != null && this.LO.getWindow().peekDecorView() != null && this.LO.getWindow().peekDecorView().isAttachedToWindow()) {
+        this.DH();
+        if (Build$VERSION.SDK_INT >= n && this.Nq.getWindow() != null && this.Nq.getWindow().peekDecorView() != null && this.Nq.getWindow().peekDecorView().isAttachedToWindow()) {
             this.onAttachedToWindow();
         }
     }
     
-    static Intent RC(final Context context) {
-        final String packageName = context.getPackageName();
-        return new Intent("com.android.launcher3.WINDOW_OVERLAY").setPackage("com.google.android.googlequicksearchbox").setData(Uri.parse(new StringBuilder(String.valueOf(packageName).length() + 18).append("app://").append(packageName).append(":").append(Process.myUid()).toString()).buildUpon().appendQueryParameter("v", Integer.toString(7)).build());
+    private static void DD(final Context context) {
+        final int nb = 1;
+        final ResolveInfo resolveService = context.getPackageManager().resolveService(DL(context), 128);
+        if (resolveService != null && resolveService.serviceInfo.metaData != null) {
+            d.NB = resolveService.serviceInfo.metaData.getInt("service.api.version", nb);
+        }
+        else {
+            d.NB = nb;
+        }
     }
     
-    private void RE(final int lx) {
+    private void DF(final WindowManager$LayoutParams ns) {
+        if (this.Ns != ns) {
+            this.Ns = ns;
+            if (this.Ns == null) {
+                if (this.Ny != null) {
+                    try {
+                        final ILauncherOverlay ny = this.Ny;
+                        try {
+                            final Activity nq = this.Nq;
+                            try {
+                                ny.windowDetached(nq.isChangingConfigurations());
+                                this.Ny = null;
+                            }
+                            catch (RemoteException ex) {}
+                        }
+                        catch (RemoteException ex2) {}
+                    }
+                    catch (RemoteException ex3) {}
+                }
+            }
+            else {
+                this.Dt();
+            }
+        }
+    }
+    
+    static Intent DL(final Context context) {
+        final String packageName = context.getPackageName();
+        return new Intent("com.android.launcher3.WINDOW_OVERLAY").setPackage("com.google.android.googlequicksearchbox").setData(Uri.parse(new StringBuilder(String.valueOf(packageName).length() + 18).append("app://").append(packageName).append(":").append(Process.myUid()).toString()).buildUpon().appendQueryParameter("v", Integer.toString(7)).appendQueryParameter("cv", Integer.toString(9)).build());
+    }
+    
+    private void DN(final int na) {
         final boolean b = true;
         boolean b2 = false;
-        if (this.LX != lx) {
-            this.LX = lx;
-            final b ls = this.LS;
-            final boolean b3 = (lx & 0x1) != 0x0 && b;
-            if ((lx & 0x2) != 0x0) {
+        if (this.NA != na) {
+            this.NA = na;
+            final b nu = this.Nu;
+            final boolean b3 = (na & 0x1) != 0x0 && b;
+            if ((na & 0x2) != 0x0) {
                 b2 = b;
             }
-            ls.et(b3, b2);
+            nu.fd(b3, b2);
         }
     }
     
-    private void RF(final boolean b) {
+    private void DO(final boolean b) {
         if (!this.mDestroyed) {
-            this.LO.unregisterReceiver(this.LZ);
+            this.Nq.unregisterReceiver(this.ND);
         }
         this.mDestroyed = true;
-        this.LV.RS();
-        if (this.LU != null) {
-            this.LU.clear();
-            this.LU = null;
+        this.Nx.Eb();
+        if (this.Nw != null) {
+            this.Nw.clear();
+            this.Nw = null;
         }
-        this.LT.RL(this, b);
+        this.Nv.DU(this, b);
     }
     
-    private void Rm() {
-        if (this.LW != null) {
-            ILauncherOverlay lw5 = null;
+    private void Dt() {
+        if (this.Ny != null) {
+            ILauncherOverlay ny5 = null;
             try {
-                Label_0184: {
-                    if (this.LU == null) {
-                        break Label_0184;
+                Label_0185: {
+                    if (this.Nw == null) {
+                        break Label_0185;
                     }
                 Label_0019:
                     while (true) {
-                        this.LU.RJ(this);
-                        Label_0200: {
-                            if (d.LY < 3) {
-                                break Label_0200;
+                        this.Nw.DS(this);
+                        Label_0201: {
+                            if (d.NB < 3) {
+                                break Label_0201;
                             }
                             try {
                                 final Bundle bundle = new Bundle();
-                                bundle.putParcelable("layout_params", (Parcelable)this.LQ);
-                                final Activity lo = this.LO;
+                                bundle.putParcelable("layout_params", (Parcelable)this.Ns);
+                                final Activity nq = this.Nq;
                                 try {
-                                    final Resources resources = lo.getResources();
+                                    final Resources resources = nq.getResources();
                                     try {
                                         bundle.putParcelable("configuration", (Parcelable)resources.getConfiguration());
-                                        bundle.putInt("client_options", this.LR);
-                                        Label_0238: {
-                                            if (this.LP != null) {
-                                                break Label_0238;
+                                        bundle.putInt("client_options", this.Nt);
+                                        Label_0239: {
+                                            if (this.Nr != null) {
+                                                break Label_0239;
                                             }
-                                        Label_0127:
+                                        Label_0128:
                                             while (true) {
-                                                final ILauncherOverlay lw = this.LW;
+                                                final ILauncherOverlay ny = this.Ny;
                                                 try {
-                                                    lw.windowAttached2(bundle, this.LU);
+                                                    ny.windowAttached2(bundle, this.Nw);
                                                     while (true) {
-                                                        Label_0253: {
-                                                            if (d.LY < 4) {
-                                                                break Label_0253;
+                                                        Label_0254: {
+                                                            if (d.NB < 4) {
+                                                                break Label_0254;
                                                             }
-                                                            final ILauncherOverlay lw2 = this.LW;
+                                                            final ILauncherOverlay ny2 = this.Ny;
                                                             try {
-                                                                lw2.setActivityState(this.LN);
+                                                                ny2.setActivityState(this.Np);
                                                                 return;
                                                                 try {
-                                                                    final e lu = new e();
+                                                                    final e nw = new e();
                                                                     try {
-                                                                        this.LU = lu;
+                                                                        this.Nw = nw;
                                                                         continue Label_0019;
-                                                                        final ILauncherOverlay lw3 = this.LW;
+                                                                        final ILauncherOverlay ny3 = this.Ny;
                                                                         try {
-                                                                            final WindowManager$LayoutParams lq = this.LQ;
+                                                                            final WindowManager$LayoutParams ns = this.Ns;
                                                                             try {
-                                                                                final e lu2 = this.LU;
+                                                                                final e nw2 = this.Nw;
                                                                                 try {
-                                                                                    lw3.windowAttached(lq, lu2, this.LR);
+                                                                                    ny3.windowAttached(ns, nw2, this.Nt);
                                                                                     continue;
-                                                                                    final ILauncherOverlay lw4 = this.LW;
+                                                                                    final ILauncherOverlay ny4 = this.Ny;
                                                                                     try {
-                                                                                        lw4.onPause();
+                                                                                        ny4.onPause();
                                                                                         return;
-                                                                                        Label_0278: {
-                                                                                            lw5 = this.LW;
+                                                                                        Label_0279: {
+                                                                                            ny5 = this.Ny;
                                                                                         }
                                                                                     }
                                                                                     catch (RemoteException ex) {}
-                                                                                    bundle.putAll(this.LP);
-                                                                                    continue Label_0127;
+                                                                                    bundle.putAll(this.Nr);
+                                                                                    continue Label_0128;
                                                                                 }
-                                                                                // iftrue(Label_0278:, this.LN & 0x2 != 0x0)
+                                                                                // iftrue(Label_0279:, this.Np & 0x2 != 0x0)
                                                                                 catch (RemoteException ex2) {}
                                                                             }
                                                                             catch (RemoteException ex3) {}
@@ -199,279 +241,275 @@ public class d
                 }
             }
             catch (RemoteException ex12) {}
-            lw5.onResume();
+            ny5.onResume();
         }
     }
     
-    private boolean Rq() {
-        return this.LW != null;
+    private boolean Dy() {
+        return this.Ny != null;
     }
     
-    private static void Ru(final Context context) {
-        final int ly = 1;
-        final ResolveInfo resolveService = context.getPackageManager().resolveService(RC(context), 128);
-        if (resolveService != null && resolveService.serviceInfo.metaData != null) {
-            d.LY = resolveService.serviceInfo.metaData.getInt("service.api.version", ly);
-        }
-        else {
-            d.LY = ly;
-        }
+    public void DB(final String s, final PrintWriter printWriter) {
+        printWriter.println(String.valueOf(s).concat("LauncherClient"));
+        final String concat = String.valueOf(s).concat("  ");
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 18).append(concat).append("isConnected: ").append(this.Dy()).toString());
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 18).append(concat).append("act.isBound: ").append(this.Nx.isBound()).toString());
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 18).append(concat).append("app.isBound: ").append(this.Nv.isBound()).toString());
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 27).append(concat).append("serviceVersion: ").append(d.NB).toString());
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 26).append(concat).append("clientVersion: ").append(9).toString());
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 27).append(concat).append("mActivityState: ").append(this.Np).toString());
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 27).append(concat).append("mServiceStatus: ").append(this.NA).toString());
+        printWriter.println(new StringBuilder(String.valueOf(concat).length() + 45).append(concat).append("mCurrentServiceConnectionOptions: ").append(this.Nt).toString());
+        this.NC.Eh(concat, printWriter);
+        this.Nz.Eh(concat, printWriter);
     }
     
-    private void Rw(final WindowManager$LayoutParams lq) {
-        if (this.LQ != lq) {
-            this.LQ = lq;
-            if (this.LQ == null) {
-                if (this.LW != null) {
-                    try {
-                        final ILauncherOverlay lw = this.LW;
-                        try {
-                            final Activity lo = this.LO;
-                            try {
-                                lw.windowDetached(lo.isChangingConfigurations());
-                                this.LW = null;
-                            }
-                            catch (RemoteException ex) {}
-                        }
-                        catch (RemoteException ex2) {}
-                    }
-                    catch (RemoteException ex3) {}
-                }
-            }
-            else {
-                this.Rm();
-            }
+    public void DG(final Bundle nr) {
+        this.Nr = nr;
+        if (this.Ns != null && d.NB >= 7) {
+            this.Dt();
         }
     }
     
-    public void RB(final f f) {
-        if (f.Mf != this.LR) {
-            this.LR = f.Mf;
-            if (this.LQ != null) {
-                this.Rm();
-            }
-        }
-    }
-    
-    public void RD(final boolean b) {
-        int n = 0;
-        if (this.LW != null) {
-            while (true) {
-                while (true) {
-                    Label_0035: {
-                        try {
-                            final ILauncherOverlay lw = this.LW;
-                            if (b) {
-                                break Label_0035;
-                            }
-                            lw.openOverlay(n);
-                        }
-                        catch (RemoteException ex) {}
-                        break;
-                    }
-                    n = 1;
-                    continue;
-                }
-            }
-        }
-    }
-    
-    public void Rl() {
-        if (this.Rq()) {
-            try {
-                final ILauncherOverlay lw = this.LW;
-                try {
-                    lw.endScroll();
-                }
-                catch (RemoteException ex) {}
-            }
-            catch (RemoteException ex2) {}
-        }
-    }
-    
-    void Rn(final ILauncherOverlay lw) {
-        this.LW = lw;
-        if (this.LW != null) {
-            if (this.LQ != null) {
-                this.Rm();
-            }
-        }
-        else {
-            this.RE(0);
-        }
-    }
-    
-    public void Rp() {
-        if (this.Rq()) {
-            try {
-                final ILauncherOverlay lw = this.LW;
-                try {
-                    lw.startScroll();
-                }
-                catch (RemoteException ex) {}
-            }
-            catch (RemoteException ex2) {}
-        }
-    }
-    
-    public void Rr(final boolean b) {
-        int n = 0;
-        if (this.LW != null) {
-            while (true) {
-                while (true) {
-                    Label_0035: {
-                        try {
-                            final ILauncherOverlay lw = this.LW;
-                            if (b) {
-                                break Label_0035;
-                            }
-                            lw.closeOverlay(n);
-                        }
-                        catch (RemoteException ex) {}
-                        break;
-                    }
-                    n = 1;
-                    continue;
-                }
-            }
-        }
-    }
-    
-    public void Rx(final Bundle lp) {
-        this.LP = lp;
-        if (this.LQ != null && d.LY >= 7) {
-            this.Rm();
-        }
-    }
-    
-    public void Ry() {
+    public void DH() {
         if (!this.mDestroyed) {
-            if (!this.LT.RR() || !this.LV.RR()) {
-                this.LO.runOnUiThread((Runnable)new i(this));
+            if (!this.Nv.Ea() || !this.Nx.Ea()) {
+                this.Nq.runOnUiThread((Runnable)new j(this));
             }
         }
     }
     
-    public void Rz(final float n) {
-        if (this.Rq()) {
+    public void DI(final float n) {
+        this.NC.Eg("updateMove", n);
+        if (this.Dy()) {
             try {
-                this.LW.onScroll(n);
+                this.Ny.onScroll(n);
             }
             catch (RemoteException ex) {}
         }
     }
     
+    public void DK(final f f) {
+        if (f.NJ != this.Nt) {
+            this.Nt = f.NJ;
+            if (this.Ns != null) {
+                this.Dt();
+            }
+            this.NC.Ef("setClientOptions ", this.Nt);
+        }
+    }
+    
+    public void DM(final boolean b) {
+        int n = 0;
+        this.NC.Ed("showOverlay", b);
+        if (this.Ny != null) {
+            while (true) {
+                while (true) {
+                    Label_0052: {
+                        try {
+                            final ILauncherOverlay ny = this.Ny;
+                            if (b) {
+                                break Label_0052;
+                            }
+                            ny.openOverlay(n);
+                        }
+                        catch (RemoteException ex) {}
+                        break;
+                    }
+                    n = 1;
+                    continue;
+                }
+            }
+        }
+    }
+    
+    public void Ds() {
+        this.NC.Ei("endMove");
+        if (this.Dy()) {
+            try {
+                final ILauncherOverlay ny = this.Ny;
+                try {
+                    ny.endScroll();
+                }
+                catch (RemoteException ex) {}
+            }
+            catch (RemoteException ex2) {}
+        }
+    }
+    
+    void Du(final ILauncherOverlay ny) {
+        this.Nz.Ed("Connected", ny != null);
+        this.Ny = ny;
+        if (this.Ny != null) {
+            if (this.Ns != null) {
+                this.Dt();
+            }
+        }
+        else {
+            this.DN(0);
+        }
+    }
+    
+    public void Dx() {
+        this.NC.Ei("startMove");
+        if (this.Dy()) {
+            try {
+                final ILauncherOverlay ny = this.Ny;
+                try {
+                    ny.startScroll();
+                }
+                catch (RemoteException ex) {}
+            }
+            catch (RemoteException ex2) {}
+        }
+    }
+    
+    public void Dz(final boolean b) {
+        int n = 0;
+        this.NC.Ed("hideOverlay", b);
+        if (this.Ny != null) {
+            while (true) {
+                while (true) {
+                    Label_0052: {
+                        try {
+                            final ILauncherOverlay ny = this.Ny;
+                            if (b) {
+                                break Label_0052;
+                            }
+                            ny.closeOverlay(n);
+                        }
+                        catch (RemoteException ex) {}
+                        break;
+                    }
+                    n = 1;
+                    continue;
+                }
+            }
+        }
+    }
+    
     public final void onAttachedToWindow() {
         if (!this.mDestroyed) {
-            this.Rw(this.LO.getWindow().getAttributes());
+            this.NC.Ei("attachedToWindow");
+            this.DF(this.Nq.getWindow().getAttributes());
         }
     }
     
     public void onDestroy() {
         boolean b = false;
-        if (!this.LO.isChangingConfigurations()) {
+        if (!this.Nq.isChangingConfigurations()) {
             b = true;
         }
-        this.RF(b);
+        this.DO(b);
     }
     
     public final void onDetachedFromWindow() {
         if (!this.mDestroyed) {
-            this.Rw(null);
+            this.NC.Ei("detachedFromWindow");
+            this.DF(null);
         }
     }
     
     public void onPause() {
         if (!this.mDestroyed) {
-            this.LN &= 0xFFFFFFFD;
-            if (this.LW != null && this.LQ != null) {
-                ILauncherOverlay lw2 = null;
-                try {
-                    Label_0077: {
-                        if (d.LY < 4) {
-                            break Label_0077;
+            this.Np &= 0xFFFFFFFD;
+            Label_0031: {
+                if (this.Ny != null && this.Ns != null) {
+                    ILauncherOverlay ny2 = null;
+                    try {
+                        Label_0095: {
+                            if (d.NB < 4) {
+                                break Label_0095;
+                            }
+                            final ILauncherOverlay ny = this.Ny;
+                            try {
+                                ny.setActivityState(this.Np);
+                                break Label_0031;
+                                ny2 = this.Ny;
+                            }
+                            catch (RemoteException ex) {}
                         }
-                        final ILauncherOverlay lw = this.LW;
-                        try {
-                            lw.setActivityState(this.LN);
-                            return;
-                            lw2 = this.LW;
-                        }
-                        catch (RemoteException ex) {}
                     }
+                    catch (RemoteException ex2) {}
+                    ny2.onPause();
                 }
-                catch (RemoteException ex2) {}
-                lw2.onPause();
             }
+            this.NC.Ef("stateChanged ", this.Np);
         }
     }
     
     public void onResume() {
         if (!this.mDestroyed) {
-            this.LN |= 0x2;
-            if (this.LW != null && this.LQ != null) {
-                ILauncherOverlay lw2 = null;
-                try {
-                    Label_0076: {
-                        if (d.LY < 4) {
-                            break Label_0076;
+            this.Np |= 0x2;
+            Label_0030: {
+                if (this.Ny != null && this.Ns != null) {
+                    ILauncherOverlay ny2 = null;
+                    try {
+                        Label_0094: {
+                            if (d.NB < 4) {
+                                break Label_0094;
+                            }
+                            final ILauncherOverlay ny = this.Ny;
+                            try {
+                                ny.setActivityState(this.Np);
+                                break Label_0030;
+                                ny2 = this.Ny;
+                            }
+                            catch (RemoteException ex) {}
                         }
-                        final ILauncherOverlay lw = this.LW;
-                        try {
-                            lw.setActivityState(this.LN);
-                            return;
-                            lw2 = this.LW;
-                        }
-                        catch (RemoteException ex) {}
                     }
+                    catch (RemoteException ex2) {}
+                    ny2.onResume();
                 }
-                catch (RemoteException ex2) {}
-                lw2.onResume();
             }
+            this.NC.Ef("stateChanged ", this.Np);
         }
     }
     
     public void onStart() {
         if (!this.mDestroyed) {
-            this.LT.RM(false);
-            this.Ry();
-            this.LN |= 0x1;
-            if (this.LW != null && this.LQ != null) {
+            this.Nv.DV(false);
+            this.DH();
+            this.Np |= 0x1;
+            if (this.Ny != null && this.Ns != null) {
                 try {
-                    final ILauncherOverlay lw = this.LW;
+                    final ILauncherOverlay ny = this.Ny;
                     try {
-                        lw.setActivityState(this.LN);
+                        ny.setActivityState(this.Np);
                     }
                     catch (RemoteException ex) {}
                 }
                 catch (RemoteException ex2) {}
             }
+            this.NC.Ef("stateChanged ", this.Np);
         }
     }
     
     public void onStop() {
         if (!this.mDestroyed) {
-            this.LT.RM(true);
-            this.LV.RS();
-            this.LN &= 0xFFFFFFFE;
-            if (this.LW != null && this.LQ != null) {
+            this.Nv.DV(true);
+            this.Nx.Eb();
+            this.Np &= 0xFFFFFFFE;
+            if (this.Ny != null && this.Ns != null) {
                 try {
-                    final ILauncherOverlay lw = this.LW;
+                    final ILauncherOverlay ny = this.Ny;
                     try {
-                        lw.setActivityState(this.LN);
+                        ny.setActivityState(this.Np);
                     }
                     catch (RemoteException ex) {}
                 }
                 catch (RemoteException ex2) {}
             }
+            this.NC.Ef("stateChanged ", this.Np);
         }
     }
     
     public boolean startSearch(final byte[] array, final Bundle bundle) {
-        if (d.LY >= 6) {
-            if (this.LW != null) {
+        this.NC.Ei("startSearch");
+        if (d.NB >= 6) {
+            if (this.Ny != null) {
                 try {
-                    return this.LW.startSearch(array, bundle);
+                    return this.Ny.startSearch(array, bundle);
                 }
                 catch (RemoteException ex) {
                     Log.e("DrawerOverlayClient", "Error starting session for search", (Throwable)ex);

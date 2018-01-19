@@ -6,9 +6,9 @@ package com.google.android.libraries.a.a;
 
 public class f
 {
-    private final int Mf;
+    private final int NJ;
     
-    public f(final int mf) {
-        this.Mf = mf;
+    public f(final int nj) {
+        this.NJ = nj;
     }
 }

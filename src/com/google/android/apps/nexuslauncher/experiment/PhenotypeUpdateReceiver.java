@@ -13,14 +13,14 @@ import android.content.BroadcastReceiver;
 
 public class PhenotypeUpdateReceiver extends BroadcastReceiver
 {
-    static void dT(final Context context) {
-        final a build = new b(context).gu(g.yN).build();
-        build.gg();
+    static void ek(final Context context) {
+        final a build = new b(context).gG(g.hP).build();
+        build.gw();
         final com.google.android.apps.nexuslauncher.experiment.b b = new com.google.android.apps.nexuslauncher.experiment.b(build);
-        b.CH("", b);
+        b.fB("", b);
     }
     
     public void onReceive(final Context context, final Intent intent) {
-        dT(context.getApplicationContext());
+        ek(context.getApplicationContext());
     }
 }

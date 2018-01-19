@@ -10,32 +10,32 @@ import com.google.protobuf.nano.a;
 
 public final class d extends a
 {
-    public c eB;
+    public c fD;
     
     public d() {
         this.clear();
     }
     
     public d clear() {
-        this.eB = null;
+        this.fD = null;
         this.cachedSize = -1;
         return this;
     }
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (this.eB != null) {
-            computeSerializedSize += b.Vo(1, this.eB);
+        if (this.fD != null) {
+            computeSerializedSize += b.EK(1, this.fD);
         }
         return computeSerializedSize;
     }
     
     public d mergeFrom(final com.google.protobuf.nano.c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -44,10 +44,10 @@ public final class d extends a
                     return this;
                 }
                 case 10: {
-                    if (this.eB == null) {
-                        this.eB = new c();
+                    if (this.fD == null) {
+                        this.fD = new c();
                     }
-                    c.Ww(this.eB);
+                    c.FS(this.fD);
                     continue;
                 }
             }
@@ -55,8 +55,8 @@ public final class d extends a
     }
     
     public void writeTo(final b b) {
-        if (this.eB != null) {
-            b.VK(1, this.eB);
+        if (this.fD != null) {
+            b.Fg(1, this.fD);
         }
         super.writeTo(b);
     }

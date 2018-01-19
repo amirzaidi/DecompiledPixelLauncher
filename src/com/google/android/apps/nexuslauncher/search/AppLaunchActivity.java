@@ -14,6 +14,7 @@ import com.android.launcher3.LauncherModel$Callbacks;
 import com.android.launcher3.LauncherModel;
 import android.os.UserHandle;
 import android.content.pm.PackageManager;
+import com.android.launcher3.AppInfo;
 import com.android.launcher3.util.ComponentKey;
 import android.os.Bundle;
 import com.android.launcher3.compat.LauncherAppsCompat;
@@ -32,45 +33,45 @@ import com.android.launcher3.BaseActivity;
 
 public class AppLaunchActivity extends BaseActivity
 {
-    private void dk(final Uri uri) {
+    private void eq(final Uri uri) {
         while (true) {
             while (true) {
                 String queryParameter = null;
                 try {
-                    final ComponentKey dl = AppSearchProvider.dl(uri, (Context)this);
+                    final ComponentKey es = AppSearchProvider.es(uri, (Context)this);
+                    final AppInfo ep = b.ep((Context)this, es);
                     try {
-                        final d tag = new d(dl);
                         final PackageManager packageManager = this.getPackageManager();
                         try {
-                            Label_0077: {
-                                if (!packageManager.isSafeMode() || !(Utilities.isSystemApp((Context)this, tag.getIntent()) ^ true)) {
-                                    break Label_0077;
+                            Label_0074: {
+                                if (!packageManager.isSafeMode() || !(Utilities.isSystemApp((Context)this, ep.getIntent()) ^ true)) {
+                                    break Label_0074;
                                 }
-                                final Toast text = Toast.makeText((Context)this, 2131492899, 0);
+                                final Toast text = Toast.makeText((Context)this, 2131492898, 0);
                                 try {
                                     text.show();
                                     return;
-                                    final UserHandle user = dl.user;
+                                    final UserHandle user = es.user;
                                     try {
-                                        Label_0246: {
+                                        Label_0243: {
                                             if (!user.equals((Object)Process.myUserHandle())) {
-                                                break Label_0246;
+                                                break Label_0243;
                                             }
-                                            this.startActivity(tag.getIntent());
+                                            this.startActivity(ep.getIntent());
                                             while (true) {
                                                 final View view2;
                                                 final View view = view2 = new View((Context)this);
                                                 try {
-                                                    view2.setTag((Object)tag);
+                                                    view2.setTag((Object)ep);
                                                     int containerType = 2;
                                                     final LauncherAppState instance = LauncherAppState.getInstance((Context)this);
                                                     try {
                                                         final LauncherModel model = instance.getModel();
                                                         try {
                                                             final LauncherModel$Callbacks callback = model.getCallback();
-                                                            Label_0183: {
+                                                            Label_0180: {
                                                                 if (!(callback instanceof Launcher)) {
-                                                                    break Label_0183;
+                                                                    break Label_0180;
                                                                 }
                                                                 final Launcher launcher = (Launcher)callback;
                                                                 try {
@@ -86,25 +87,25 @@ public class AppLaunchActivity extends BaseActivity
                                                                                         break;
                                                                                     }
                                                                                     final int int1 = -1;
-                                                                                    final e e = new e((Context)this, int1);
+                                                                                    final c c = new c((Context)this, int1);
                                                                                     try {
-                                                                                        e.addView(view);
+                                                                                        c.addView(view);
                                                                                         final UserEventDispatcher userEventDispatcher = this.getUserEventDispatcher();
                                                                                         try {
-                                                                                            ((UserEventDispatcherImpl)userEventDispatcher).bn(view, tag, containerType);
+                                                                                            ((UserEventDispatcherImpl)userEventDispatcher).eV(view, ep, containerType);
                                                                                             return;
                                                                                             final LauncherAppsCompat instance2 = LauncherAppsCompat.getInstance((Context)this);
                                                                                             try {
-                                                                                                final ComponentName componentName = dl.componentName;
+                                                                                                final ComponentName componentName = es.componentName;
                                                                                                 try {
-                                                                                                    final UserHandle user2 = dl.user;
+                                                                                                    final UserHandle user2 = es.user;
                                                                                                     try {
                                                                                                         final Intent intent = this.getIntent();
                                                                                                         try {
                                                                                                             instance2.startActivityForProfile(componentName, user2, intent.getSourceBounds(), null);
                                                                                                         }
                                                                                                         catch (Exception ex) {
-                                                                                                            Toast.makeText((Context)this, 2131492897, 0).show();
+                                                                                                            Toast.makeText((Context)this, 2131492896, 0).show();
                                                                                                         }
                                                                                                     }
                                                                                                     catch (Exception ex2) {}
@@ -157,7 +158,7 @@ public class AppLaunchActivity extends BaseActivity
         this.mDeviceProfile = LauncherAppState.getIDP((Context)this).getDeviceProfile((Context)this);
         final Uri data = this.getIntent().getData();
         if (data != null) {
-            this.dk(data);
+            this.eq(data);
         }
         else {
             final String stringExtra = this.getIntent().getStringExtra("query");

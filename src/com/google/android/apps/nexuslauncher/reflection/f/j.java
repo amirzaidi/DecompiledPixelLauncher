@@ -2,7 +2,7 @@
 // Decompiled by Procyon v0.5.30
 // 
 
-package com.google.android.apps.nexuslauncher.reflection.d;
+package com.google.android.apps.nexuslauncher.reflection.f;
 
 import com.google.protobuf.nano.f;
 import com.google.protobuf.nano.b;
@@ -11,25 +11,25 @@ import com.google.protobuf.nano.a;
 
 public final class j extends a
 {
-    public long aJ;
-    public String aK;
-    public m aL;
-    public k aM;
+    public String aT;
+    public long aU;
+    public k aV;
+    public m aW;
     public String packageName;
     
     public j() {
         this.clear();
     }
     
-    public static j ah(final c c) {
+    public static j aF(final c c) {
         return new j().mergeFrom(c);
     }
     
     public j clear() {
-        this.aK = "";
-        this.aJ = 0L;
-        this.aM = null;
-        this.aL = null;
+        this.aT = "";
+        this.aU = 0L;
+        this.aV = null;
+        this.aW = null;
         this.packageName = "";
         this.cachedSize = -1;
         return this;
@@ -37,30 +37,30 @@ public final class j extends a
     
     protected int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.aK.equals("")) {
-            computeSerializedSize += b.VW(1, this.aK);
+        if (!this.aT.equals("")) {
+            computeSerializedSize += b.Fs(1, this.aT);
         }
-        if (this.aJ != 0L) {
-            computeSerializedSize += b.Vz(2, this.aJ);
+        if (this.aU != 0L) {
+            computeSerializedSize += b.EV(2, this.aU);
         }
-        if (this.aM != null) {
-            computeSerializedSize += b.Vo(3, this.aM);
+        if (this.aV != null) {
+            computeSerializedSize += b.EK(3, this.aV);
         }
-        if (this.aL != null) {
-            computeSerializedSize += b.Vo(4, this.aL);
+        if (this.aW != null) {
+            computeSerializedSize += b.EK(4, this.aW);
         }
         if (!this.packageName.equals("")) {
-            computeSerializedSize += b.VW(5, this.packageName);
+            computeSerializedSize += b.Fs(5, this.packageName);
         }
         return computeSerializedSize;
     }
     
     public j mergeFrom(final c c) {
         while (true) {
-            final int ws = c.Ws();
-            switch (ws) {
+            final int fo = c.FO();
+            switch (fo) {
                 default: {
-                    if (!f.WR(c, ws)) {
+                    if (!f.Gn(c, fo)) {
                         return this;
                     }
                     continue;
@@ -69,29 +69,29 @@ public final class j extends a
                     return this;
                 }
                 case 10: {
-                    this.aK = c.WB();
+                    this.aT = c.FX();
                     continue;
                 }
                 case 16: {
-                    this.aJ = c.Wz();
+                    this.aU = c.FV();
                     continue;
                 }
                 case 26: {
-                    if (this.aM == null) {
-                        this.aM = new k();
+                    if (this.aV == null) {
+                        this.aV = new k();
                     }
-                    c.Ww(this.aM);
+                    c.FS(this.aV);
                     continue;
                 }
                 case 34: {
-                    if (this.aL == null) {
-                        this.aL = new m();
+                    if (this.aW == null) {
+                        this.aW = new m();
                     }
-                    c.Ww(this.aL);
+                    c.FS(this.aW);
                     continue;
                 }
                 case 42: {
-                    this.packageName = c.WB();
+                    this.packageName = c.FX();
                     continue;
                 }
             }
@@ -99,20 +99,20 @@ public final class j extends a
     }
     
     public void writeTo(final b b) {
-        if (!this.aK.equals("")) {
-            b.VT(1, this.aK);
+        if (!this.aT.equals("")) {
+            b.Fp(1, this.aT);
         }
-        if (this.aJ != 0L) {
-            b.Wc(2, this.aJ);
+        if (this.aU != 0L) {
+            b.Fy(2, this.aU);
         }
-        if (this.aM != null) {
-            b.VK(3, this.aM);
+        if (this.aV != null) {
+            b.Fg(3, this.aV);
         }
-        if (this.aL != null) {
-            b.VK(4, this.aL);
+        if (this.aW != null) {
+            b.Fg(4, this.aW);
         }
         if (!this.packageName.equals("")) {
-            b.VT(5, this.packageName);
+            b.Fp(5, this.packageName);
         }
         super.writeTo(b);
     }

@@ -7,7 +7,7 @@ package com.google.android.apps.nexuslauncher.qsb;
 import java.util.ArrayList;
 import com.android.launcher3.allapps.search.SearchAlgorithm;
 import com.android.launcher3.Launcher;
-import com.google.android.apps.nexuslauncher.search.b;
+import com.google.android.apps.nexuslauncher.search.d;
 import android.util.AttributeSet;
 import android.content.Context;
 import com.android.launcher3.allapps.search.AllAppsSearchBarController;
@@ -19,7 +19,7 @@ import com.android.launcher3.ExtendedEditText;
 
 public class FallbackAppsSearchView extends ExtendedEditText implements AllAppsSearchBarController$Callbacks
 {
-    private AllAppsQsbLayout bT;
+    private AllAppsQsbLayout cw;
     private AllAppsGridAdapter mAdapter;
     private AlphabeticalAppsList mApps;
     private AllAppsRecyclerView mAppsRecyclerView;
@@ -39,16 +39,16 @@ public class FallbackAppsSearchView extends ExtendedEditText implements AllAppsS
     }
     
     private void notifyResultChanged() {
-        this.bT.bv(0);
+        this.cw.ch(0);
         this.mAppsRecyclerView.onSearchResultsChanged();
     }
     
-    public void bu(final AllAppsQsbLayout bt, final AlphabeticalAppsList mApps, final AllAppsRecyclerView mAppsRecyclerView) {
-        this.bT = bt;
+    public void cg(final AllAppsQsbLayout cw, final AlphabeticalAppsList mApps, final AllAppsRecyclerView mAppsRecyclerView) {
+        this.cw = cw;
         this.mApps = mApps;
         this.mAppsRecyclerView = mAppsRecyclerView;
         this.mAdapter = (AllAppsGridAdapter)this.mAppsRecyclerView.getAdapter();
-        this.mSearchBarController.initialize(new b(this.getContext()), this, Launcher.getLauncher(this.getContext()), this);
+        this.mSearchBarController.initialize(new d(this.getContext()), this, Launcher.getLauncher(this.getContext()), this);
     }
     
     public void clearSearchResult() {
