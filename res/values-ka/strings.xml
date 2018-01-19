@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">ძიების გასუფთავება</string>
     <string name="place_autocomplete_search_hint">ძიება</string>
-    <string name="common_google_play_services_unknown_issue">%1$s-ს Google Play სერვისებთან პრობლემა შეექმნა. თუ პრობლემა გამეორდება, გთხოვთ, დახმარებისთვის დეველოპერს დაუკავშირდეთ.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s-ს Google Play Services-თან პრობლემა შეექმნა. გთხოვთ, ცადოთ ხელახლა.</string>
     <string name="common_google_play_services_enable_button">ჩართვა</string>
     <string name="common_google_play_services_enable_text">%1$s ვერ იმუშავებს Google Play Services-ის ჩართვამდე.</string>
     <string name="common_google_play_services_enable_title">Google Play Services-ის ჩართვა</string>
-    <string name="common_google_play_services_install_button">Google Play Services-ის ჩამოტვირთვა</string>
-    <string name="common_google_play_services_install_text_phone">%1$s ვერ გაეშვება Google Play Services-ის გარეშე, რომელიც აკლია თქვენს ტელეფონს.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s ვერ გაეშვება Google Play Services-ის გარეშე, რომელიც აკლია თქვენს ტაბლეტს.</string>
+    <string name="common_google_play_services_install_button">ინსტალაცია</string>
+    <string name="common_google_play_services_install_text">%1$s ვერ გაეშვება Google Play Services-ის გარეშე, რომელიც აკლია თქვენს მოწყობილობას.</string>
     <string name="common_google_play_services_install_title">Google Play Services-ის ჩამოტვირთვა</string>
     <string name="common_google_play_services_notification_ticker">Google Play Services-ის შეცდომა</string>
-    <string name="common_google_play_services_unsupported_text">%1$s დამოკიდებულია Google Play Services-ზე, რომელიც თქვენი მოწყობილობის მიერ არ არის მხარდაჭერილი. გთხოვთ, დახმარებისთვის დაუკავშირდეთ მწარმოებელს.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play სერვისები</string>
+    <string name="common_google_play_services_unsupported_text">%1$s ვერ გაეშვება Google Play Services-ის გარეშე, რომლებიც მხარდაუჭერელია თქვენი მოწყობილობის მიერ.</string>
     <string name="common_google_play_services_update_button">განახლება</string>
     <string name="common_google_play_services_update_text">%1$s ვერ გაეშვება, თუ Google Play სერვისებს არ განაახლებთ.</string>
     <string name="common_google_play_services_update_title">განაახლეთ Google Play Services</string>
     <string name="common_google_play_services_updating_text">%1$s ვერ გაეშვება Google Play Services-ის გარეშე, რომელთა განახლებაც ამჟამად მიმდინარეობს.</string>
-    <string name="common_google_play_services_updating_title">Google Play Services-ის განახლება…</string>
     <string name="common_google_play_services_wear_update_text">საჭიროა Google Play Services-ის ახალი ვერსია. ის მალე განახლდება.</string>
     <string name="common_open_on_phone">ტელეფონში გახსნა</string>
     <string name="common_signin_button_text">შესვლა</string>
@@ -39,7 +36,7 @@
     <string name="add_item_request_drag_hint">ხანგრძლივად შეეხეთ ხელით განსათავსებლად</string>
     <string name="place_automatically">ავტომატურად დამატება</string>
     <string name="all_apps_search_bar_hint">აპების ძიება</string>
-    <string name="all_apps_loading_message">აპები იტვირთება...</string>
+    <string name="all_apps_loading_message">აპები იტვირთება…</string>
     <string name="all_apps_no_search_results">„%1$s“-ის თანხვედრი აპები არ მოიძებნა</string>
     <string name="all_apps_search_market_message">მეტი აპის პოვნა</string>
     <string name="notifications_header">შეტყობინებები</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">დახურვა</string>
     <string name="notification_dismissed">შეტყობინება დაიხურა</string>
     <string name="app_name_pixel_launcher">Pixel გამშვები</string>
-    <string name="title_app_suggestions">აპების შეთავაზებები</string>
+    <string name="title_app_suggestions">აპების შემოთავაზებების ჩვენება</string>
     <string name="summary_app_suggestions">თქვენი სიის „ყველა აპი“ სათავეში</string>
     <string name="title_disable_suggestions_prompt">გსურთ აპების შეთავაზებების გამორთვა?</string>
     <string name="msg_disable_suggestions_prompt">შეთავაზებები არ გამოჩნდება თქვენი აპების სიის თავში, ხოლო გამოყენების მონაცემები, რომელთა მეშვეობითაც ისინი შეიქმნა, სამუდამოდ წაიშლება.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">ვერსია</string>
     <string name="pref_open_source_licenses_title">ღია კოდის ლიცენზიები</string>
     <string name="icon_shape_rounded_square">მომრგვალებული კვადრატი</string>
+    <string name="smartspace_hours_mins">%1$s და %2$s</string>
     <string name="smartspace_calendar_event">%1$s %2$s-ში</string>
     <string name="smartspace_calendar_event_now">მიმდინარეობს %1$s</string>
     <string name="smartspace_preferences">პარამეტრები</string>

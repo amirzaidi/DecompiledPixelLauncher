@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Брисање претраге</string>
     <string name="place_autocomplete_search_hint">Претражите</string>
-    <string name="common_google_play_services_unknown_issue">%1$s има проблема са Google Play услугама. Ако се проблем и даље јавља, обратите се програмеру да бисте добили помоћ.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s има проблема са Google Play услугама. Пробајте поново.</string>
     <string name="common_google_play_services_enable_button">Омогући</string>
     <string name="common_google_play_services_enable_text">%1$s неће функционисати ако не омогућите Google Play услуге.</string>
     <string name="common_google_play_services_enable_title">Омогућите Google Play услуге</string>
-    <string name="common_google_play_services_install_button">Преузми Google Play услуге</string>
-    <string name="common_google_play_services_install_text_phone">%1$s не може да се покрене без Google Play услуга, које нису инсталиране на телефону.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s не може да се покрене без Google Play услуга, које нису инсталиране на таблету.</string>
+    <string name="common_google_play_services_install_button">Инсталирај</string>
+    <string name="common_google_play_services_install_text">%1$s не може да се покрене без Google Play услуга, које нису инсталиране на уређају.</string>
     <string name="common_google_play_services_install_title">Преузмите Google Play услуге</string>
     <string name="common_google_play_services_notification_ticker">Грешка Google Play услуга</string>
-    <string name="common_google_play_services_unsupported_text">%1$s користи Google Play услуге, које уређај не подржава. Контактирајте произвођача да бисте добили помоћ.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play услуге</string>
+    <string name="common_google_play_services_unsupported_text">%1$s не може да се покрене без Google Play услуга, које уређај не подржава.</string>
     <string name="common_google_play_services_update_button">Ажурирај</string>
     <string name="common_google_play_services_update_text">%1$s не може да се покрене ако не ажурирате Google Play услуге.</string>
     <string name="common_google_play_services_update_title">Ажурирајте Google Play услуге</string>
     <string name="common_google_play_services_updating_text">%1$s не може да се покрене без Google Play услуга, које се тренутно ажурирају.</string>
-    <string name="common_google_play_services_updating_title">Google Play услуге се ажурирају</string>
     <string name="common_google_play_services_wear_update_text">Потребна је нова верзија Google Play услуга. Ускоро ће се ажурирати.</string>
     <string name="common_open_on_phone">Отвори на телефону</string>
     <string name="common_signin_button_text">Пријави ме</string>
@@ -39,7 +36,7 @@
     <string name="add_item_request_drag_hint">Додирните и задржите да бисте поставили ручно</string>
     <string name="place_automatically">Аутоматски додај</string>
     <string name="all_apps_search_bar_hint">Претражите апликације</string>
-    <string name="all_apps_loading_message">Апликације се учитавају...</string>
+    <string name="all_apps_loading_message">Апликације се учитавају…</string>
     <string name="all_apps_no_search_results">Није пронађена ниједна апликација за „%1$s“</string>
     <string name="all_apps_search_market_message">Претражи још апликација</string>
     <string name="notifications_header">Обавештења</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Одбаци</string>
     <string name="notification_dismissed">Обавештење је одбачено</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Предлози апликација</string>
+    <string name="title_app_suggestions">Приказуј предлоге апликација</string>
     <string name="summary_app_suggestions">У врху листе Све апликације</string>
     <string name="title_disable_suggestions_prompt">Желите ли да искључите предлоге апликација?</string>
     <string name="msg_disable_suggestions_prompt">Предлози се неће приказивати у врху листе апликација и подаци о коришћењу који су коришћени за њихово прављење ће бити трајно обрисани.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Верзија</string>
     <string name="pref_open_source_licenses_title">Лиценце отвореног кода</string>
     <string name="icon_shape_rounded_square">Квадрат заобљених углова</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s за %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s је у току</string>
     <string name="smartspace_preferences">Подешавања</string>

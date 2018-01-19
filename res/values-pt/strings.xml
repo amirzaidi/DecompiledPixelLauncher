@@ -16,7 +16,7 @@
     <string name="widget_accessible_dims_format">%1$d de largura por %2$d de altura</string>
     <string name="add_item_request_drag_hint">Toque e mantenha pressionado para posicionar manualmente</string>
     <string name="place_automatically">Adicionar automaticamente</string>
-    <string name="all_apps_search_bar_hint">Pesquisar apps</string>
+    <string name="all_apps_search_bar_hint">Apps de pesquisa</string>
     <string name="all_apps_loading_message">Carregando apps…</string>
     <string name="all_apps_no_search_results">Nenhum app encontrado que corresponda a \"%1$s\"</string>
     <string name="all_apps_search_market_message">Pesquisar mais apps</string>
@@ -110,7 +110,7 @@
     <string name="action_dismiss_notification">Dispensar</string>
     <string name="notification_dismissed">Notificação dispensada</string>
     <string name="app_name_pixel_launcher">Tela de início do Pixel</string>
-    <string name="title_app_suggestions">Sugestões de apps</string>
+    <string name="title_app_suggestions">Exibir sugestões de apps</string>
     <string name="summary_app_suggestions">No topo da sua lista Todos os apps</string>
     <string name="title_disable_suggestions_prompt">Desativar sugestões de apps?</string>
     <string name="msg_disable_suggestions_prompt">As sugestões não serão exibidas na parte superior da sua lista de apps, e os dados de uso utilizados para criá-las serão permanentemente limpos.</string>
@@ -129,6 +129,7 @@
     <string name="about_app_version">Versão</string>
     <string name="pref_open_source_licenses_title">Licenças de código aberto</string>
     <string name="icon_shape_rounded_square">Quadrado arredondado</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s em %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s agora</string>
     <string name="smartspace_preferences">Preferências</string>

@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Хайлтыг цэвэрлэх</string>
     <string name="place_autocomplete_search_hint">Хайх</string>
-    <string name="common_google_play_services_unknown_issue">%1$s нь Google Play-н үйлчилгээг ашиглахад алдаа гарлаа. Хэрэв алдаа гарсаар байвал хөгжүүлэгчтэй холбогдож, зөвлөгөө аваарай.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s-г Google Play-н үйлчилгээгээр ашиглахад асуудал гарлаа. Дахин оролдоно уу.</string>
     <string name="common_google_play_services_enable_button">Идэвхжүүлэх</string>
     <string name="common_google_play_services_enable_text">%1$s нь Google Play үйлчилгээг идэвхжүүлэх хүртэл ажиллахгүй.</string>
     <string name="common_google_play_services_enable_title">Google Play үйлчилгээг идэвхжүүлэх</string>
-    <string name="common_google_play_services_install_button">Google Play үйлчилгээг авах</string>
-    <string name="common_google_play_services_install_text_phone">Google Play үйлчилгээ нь таны утсанд байхгүй учир %1$s ажиллах боломжгүй.</string>
-    <string name="common_google_play_services_install_text_tablet">Таны таблетад Google Play үйлчилгээ байхгүй учир %1$s ажиллах боломжгүй.</string>
+    <string name="common_google_play_services_install_button">Суулгах</string>
+    <string name="common_google_play_services_install_text">Таны төхөөрөмжид Google Play үйлчилгээ байхгүй тул %1$s ажиллахгүй.</string>
     <string name="common_google_play_services_install_title">Google Play үйлчилгээг авах</string>
     <string name="common_google_play_services_notification_ticker">Google Наадаан үйлчилгээний алдаа</string>
-    <string name="common_google_play_services_unsupported_text">%1$s нь Google Play үйлчилгээний тусламжтай ажилладаг боловч таны төхөөрөмж үүнийг дэмждэггүй. Тусламж авахын тулд үйлдвэрлэгчтэй холбоо барина уу.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play үйлчилгээ</string>
+    <string name="common_google_play_services_unsupported_text">Таны төхөөрөмж Google Play үйлчилгээг дэмждэггүй учир %1$s ажиллахгүй.</string>
     <string name="common_google_play_services_update_button">Шинэчлэх</string>
     <string name="common_google_play_services_update_text">%1$s нь таныг Google Play үйлчилгээнүүдийг шинэчлэхээс нааш ажиллахгүй.</string>
     <string name="common_google_play_services_update_title">Google Play үйлчилгээг шинэчлэх</string>
     <string name="common_google_play_services_updating_text">%1$s нь одоогоор шинэчилж буй Google Play үйлчилгээгүйгээр ажиллахгүй.</string>
-    <string name="common_google_play_services_updating_title">Google Play үйлчилгээг шинэчилж байна</string>
     <string name="common_google_play_services_wear_update_text">Google Play үйлчилгээний шинэ хувилбар хэрэгтэй. Энэ нь удахгүй өөрөө өөрийгөө шинэчлэх болно.</string>
     <string name="common_open_on_phone">Утсаар нээх</string>
     <string name="common_signin_button_text">Нэвтрэх</string>
@@ -39,8 +36,8 @@
     <string name="add_item_request_drag_hint">Гараар байршуулахын тулд дараад хүлээнэ үү</string>
     <string name="place_automatically">Автоматаар нэмэх</string>
     <string name="all_apps_search_bar_hint">Апп хайх</string>
-    <string name="all_apps_loading_message">Аппликейшныг ачаалж байна...</string>
-    <string name="all_apps_no_search_results">\"%1$s\"-д нийцэх апп олдсонгүй</string>
+    <string name="all_apps_loading_message">Аппыг ачааллаж байна...</string>
+    <string name="all_apps_no_search_results">\"%1$s\"-д тохирох апп олдсонгүй</string>
     <string name="all_apps_search_market_message">Бусад апп-г хайх</string>
     <string name="notifications_header">Мэдэгдэл</string>
     <string name="out_of_space">Энэ Нүүр дэлгэц зайгүй.</string>
@@ -131,8 +128,8 @@
     <string name="shortcuts_menu_with_notifications_description">%1$d товчлол болон %3$s-н %2$d мэдэгдэл</string>
     <string name="action_dismiss_notification">Хаах</string>
     <string name="notification_dismissed">Мэдэгдлийг хаасан</string>
-    <string name="app_name_pixel_launcher">Пиксел эхлүүлэгч</string>
-    <string name="title_app_suggestions">Апп-н зөвлөмж</string>
+    <string name="app_name_pixel_launcher">Pixel Эхлүүлэгч</string>
+    <string name="title_app_suggestions">Аппын зөвлөмж харуулах</string>
     <string name="summary_app_suggestions">Таны Бүх аппын жагсаалтын дээр</string>
     <string name="title_disable_suggestions_prompt">Апп-н зөвлөмжийг унтраах уу?</string>
     <string name="msg_disable_suggestions_prompt">Таны апп-н жагсаалтын дээр зөвлөмж гарч ирэхгүй бөгөөд тэдгээрийг үүсгэхэд ашигладаг хэрэглээний өгөгдөл бүрмөсөн устах болно.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Хувилбар</string>
     <string name="pref_open_source_licenses_title">Нээлттэй эхийн лиценз</string>
     <string name="icon_shape_rounded_square">Мохоо дөрвөлжин</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s %2$s-н дараа болно</string>
     <string name="smartspace_calendar_event_now">Одоо %1$s</string>
     <string name="smartspace_preferences">Сонголт</string>

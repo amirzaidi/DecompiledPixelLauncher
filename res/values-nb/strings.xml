@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Fjern søket</string>
     <string name="place_autocomplete_search_hint">Søk</string>
-    <string name="common_google_play_services_unknown_issue">%1$s har problemer med Google Play-tjenester. Hvis problemet vedvarer, kan du ta kontakt med utvikleren for å få hjelp.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s har problemer med Google Play-tjenester. Prøv på nytt.</string>
     <string name="common_google_play_services_enable_button">Slå på</string>
     <string name="common_google_play_services_enable_text">%1$s fungerer ikke med mindre du slår på Google Play-tjenester.</string>
     <string name="common_google_play_services_enable_title">Slå på Google Play-tjenester</string>
-    <string name="common_google_play_services_install_button">Installer Google Play-tjenester</string>
-    <string name="common_google_play_services_install_text_phone">%1$s kan ikke kjøre uten Google Play-tjenester, som ikke er installert på telefonen din.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s kan ikke kjøre uten Google Play-tjenester, som ikke er installert på nettbrettet ditt.</string>
+    <string name="common_google_play_services_install_button">Installer</string>
+    <string name="common_google_play_services_install_text">%1$s kan ikke kjøre uten Google Play-tjenester, som ikke er installert på enheten din.</string>
     <string name="common_google_play_services_install_title">Installer Google Play-tjenester</string>
     <string name="common_google_play_services_notification_ticker">Google Play Tjenester-feil</string>
-    <string name="common_google_play_services_unsupported_text">%1$s er avhengig av Google Play-tjenester, som ikke støttes av enheten din. Ta kontakt med produsenten for å få hjelp.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play Tjenester</string>
+    <string name="common_google_play_services_unsupported_text">%1$s kan ikke kjøre uten Google Play-tjenester, som ikke støttes av enheten din.</string>
     <string name="common_google_play_services_update_button">Oppdater</string>
     <string name="common_google_play_services_update_text">%1$s kjører ikke med mindre du oppdaterer Google Play Tjenester.</string>
     <string name="common_google_play_services_update_title">Oppdater Google Play-tjenester</string>
     <string name="common_google_play_services_updating_text">%1$s kjører ikke uten Google Play-tjenester, som oppdateres akkurat nå.</string>
-    <string name="common_google_play_services_updating_title">Google Play-tjenester oppdateres</string>
     <string name="common_google_play_services_wear_update_text">Du må installere en ny versjon av Google Play-tjenester. Appen oppdateres automatisk om en kort stund.</string>
     <string name="common_open_on_phone">Åpne på telefonen</string>
     <string name="common_signin_button_text">Logg på</string>
@@ -38,8 +35,8 @@
     <string name="widget_accessible_dims_format">%1$d bredde x %2$d høyde</string>
     <string name="add_item_request_drag_hint">Trykk og hold for å plassere manuelt</string>
     <string name="place_automatically">Legg til automatisk</string>
-    <string name="all_apps_search_bar_hint">Søk i apper</string>
-    <string name="all_apps_loading_message">Laster inn apper …</string>
+    <string name="all_apps_search_bar_hint">Søk etter apper</string>
+    <string name="all_apps_loading_message">Laster inn appene …</string>
     <string name="all_apps_no_search_results">Fant ingen apper som samsvarer med «%1$s»</string>
     <string name="all_apps_search_market_message">Søk etter flere apper</string>
     <string name="notifications_header">Varsler</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Avvis</string>
     <string name="notification_dismissed">Varselet ble avvist</string>
     <string name="app_name_pixel_launcher">Pixel-appoversikt</string>
-    <string name="title_app_suggestions">Appanbefalinger</string>
+    <string name="title_app_suggestions">Vis appforslag</string>
     <string name="summary_app_suggestions">Øverst på Alle apper-listen</string>
     <string name="title_disable_suggestions_prompt">Vil du slå av appanbefalinger?</string>
     <string name="msg_disable_suggestions_prompt">Du finner ikke lenger anbefalinger øverst på applisten din, og brukerdataene som ble brukt til oppretting, slettes permanent.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versjon</string>
     <string name="pref_open_source_licenses_title">Lisenser for åpen kildekode</string>
     <string name="icon_shape_rounded_square">Avrundet kvadrat</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s om %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s nå</string>
     <string name="smartspace_preferences">Innstillinger</string>

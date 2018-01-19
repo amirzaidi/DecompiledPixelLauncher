@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">खोज खाली गर्नुहोस्</string>
     <string name="place_autocomplete_search_hint">खोज</string>
-    <string name="common_google_play_services_unknown_issue">%1$s लाई Google Play सेवाहरू सँग समस्या भइरहेको छ। यदि समस्या हटेन भने सहयोगका लागि विकासकर्तालाई सम्पर्क गर्नुहोस्।</string>
+    <string name="common_google_play_services_unknown_issue">%1$s लाई Google Play services सँग सहकार्य गर्न समस्या भइरहेको छ। कृपया फेरि प्रयास गर्नुहोस्।</string>
     <string name="common_google_play_services_enable_button">सक्रिय गर्नुहोस्</string>
     <string name="common_google_play_services_enable_text">%1$s ले तपाईँले Google Play सेवाहरू सक्षम नगरेसम्म काम गर्दैन।</string>
     <string name="common_google_play_services_enable_title">Google Play सेवाहरू सक्षम पार्नुहोस्</string>
-    <string name="common_google_play_services_install_button">Google Play सेवाहरू प्राप्त गर्नुहोस्</string>
-    <string name="common_google_play_services_install_text_phone">Google Play सेवाहरू बिना %1$s सञ्‍चालन हुँदैन, जुन तपाईँको फोनमा छैन।</string>
-    <string name="common_google_play_services_install_text_tablet">Google Play सेवाहरू बिना %1$s सञ्‍चालन हुँदैन, जुन तपाईँको ट्याब्लेटमा छैन।</string>
+    <string name="common_google_play_services_install_button">स्थापना गर्नुहोस्</string>
+    <string name="common_google_play_services_install_text">%1$s Google Play services बिना सञ्चालन हुने छैन र तपाईँको यन्त्रमा Google Play services उपलब्ध छैनन्।</string>
     <string name="common_google_play_services_install_title">Google Play सेवाहरू प्राप्त गर्नुहोस्</string>
     <string name="common_google_play_services_notification_ticker">Google Play सेवाहरूका त्रुटि</string>
-    <string name="common_google_play_services_unsupported_text">%1$s Google Play सेवाहरूमा निर्भर छ, जुन तपाईँको यन्त्रद्वारा समथित छैन। सहायताको लागि निर्मातासँग सम्पर्क गर्नुहोस्।</string>
-    <string name="common_google_play_services_unsupported_title">Google Play सेवाहरू</string>
+    <string name="common_google_play_services_unsupported_text">%1$s Google Play services बिना सञ्चालन हुने छैन र तपाईँको यन्त्रले Google Play services लाई समर्थन गर्दैन।</string>
     <string name="common_google_play_services_update_button">अद्यावधिक गर्नुहोस्</string>
     <string name="common_google_play_services_update_text">%1$s तपाईंले Google प्ले सेवाहरू अद्यावधिक नगरेसम्म सञ्चालन हुँदैन।</string>
     <string name="common_google_play_services_update_title">Google Play सेवाहरू अद्यावधिक गर्नुहोस्</string>
     <string name="common_google_play_services_updating_text">Google Play सेवाहरू %1$s बिना सञ्‍चालन हुँदैन, जुन हाल अद्यावधिक भइरहेका छन्।</string>
-    <string name="common_google_play_services_updating_title">Google Play सेवाहरू अद्यावधिक भइरहेका छन्</string>
     <string name="common_google_play_services_wear_update_text">Google Play सेवाहरूको नयाँ संस्करण आवश्यक छ। यो आफै छिट्टै नै अद्यावधिक हुनेछ।</string>
     <string name="common_open_on_phone">फोनमा खोल्नुहोस्</string>
     <string name="common_signin_button_text">साइन इन गर्नुहोस्</string>
@@ -38,9 +35,9 @@
     <string name="widget_accessible_dims_format">%1$d चौडाइ गुणा %2$d उचाइ</string>
     <string name="add_item_request_drag_hint">म्यानुअल तरिकाले थप्न छुनुहोस् र थिची राख्नुहोस्‌</string>
     <string name="place_automatically">स्वतः थप्नुहोस्</string>
-    <string name="all_apps_search_bar_hint">अनुप्रयोगहरू खोज्नुहोस्</string>
-    <string name="all_apps_loading_message">अनुप्रयोगहरू लोड गरिँदै...</string>
-    <string name="all_apps_no_search_results">\"%1$s\" सँग मिल्दो कुनै अनुप्रयोगहरू फेला परेनन्</string>
+    <string name="all_apps_search_bar_hint">खोजसम्बन्धी अनुप्रयोगहरू</string>
+    <string name="all_apps_loading_message">अनुप्रयोगहरू लोड गर्दै…</string>
+    <string name="all_apps_no_search_results">\"%1$s\" सँग मिल्दो कुनै अनुप्रयोग भेटिएन</string>
     <string name="all_apps_search_market_message">थप अनुप्रयोगहरू खोज्नुहोस्</string>
     <string name="notifications_header">सूचनाहरू</string>
     <string name="out_of_space">यो गृह स्क्रिनमा कुनै थप ठाउँ छैन।</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">खारेज गर्नुहोस्</string>
     <string name="notification_dismissed">सूचना खारेज गरियो</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">अनुप्रयोग बारे सुझावहरू</string>
+    <string name="title_app_suggestions">अनुप्रयोगबारे सुझाावहरू देखाउनुहोस्</string>
     <string name="summary_app_suggestions">तपाईंका सबै अनुप्रयोगहरूको सूचीको शीर्षमा देखाइन्छ</string>
     <string name="title_disable_suggestions_prompt">अनुप्रयोग बारे सुझावहरूलाई निष्क्रिय पार्ने हो?</string>
     <string name="msg_disable_suggestions_prompt">तपाईँका अनुप्रयोगहरूको सूचीको शीर्षमा सुझावहरू देखिने छैनन् र तिनीहरूलाई सिर्जना गर्न प्रयोग गरिने प्रयोग सम्बन्धी डेटालाई स्थायी रूपमा मेटाइनेछ।</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">संस्करण</string>
     <string name="pref_open_source_licenses_title">खुला स्रोतका इजाजतपत्रहरू</string>
     <string name="icon_shape_rounded_square">गोलाकार वर्ग</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%2$s मा %1$s</string>
     <string name="smartspace_calendar_event_now">अहिले %1$s चल्दै छ</string>
     <string name="smartspace_preferences">प्राथमिकताहरू</string>

@@ -17,7 +17,7 @@
     <string name="add_item_request_drag_hint">Dodirnite i zadržite da biste postavili ručno</string>
     <string name="place_automatically">Automatski dodaj</string>
     <string name="all_apps_search_bar_hint">Pretražite aplikacije</string>
-    <string name="all_apps_loading_message">Aplikacije se učitavaju...</string>
+    <string name="all_apps_loading_message">Aplikacije se učitavaju…</string>
     <string name="all_apps_no_search_results">Nije pronađena nijedna aplikacija za „%1$s“</string>
     <string name="all_apps_search_market_message">Pretraži još aplikacija</string>
     <string name="notifications_header">Obaveštenja</string>
@@ -110,7 +110,7 @@
     <string name="action_dismiss_notification">Odbaci</string>
     <string name="notification_dismissed">Obaveštenje je odbačeno</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Predlozi aplikacija</string>
+    <string name="title_app_suggestions">Prikazuj predloge aplikacija</string>
     <string name="summary_app_suggestions">U vrhu liste Sve aplikacije</string>
     <string name="title_disable_suggestions_prompt">Želite li da isključite predloge aplikacija?</string>
     <string name="msg_disable_suggestions_prompt">Predlozi se neće prikazivati u vrhu liste aplikacija i podaci o korišćenju koji su korišćeni za njihovo pravljenje će biti trajno obrisani.</string>
@@ -129,6 +129,7 @@
     <string name="about_app_version">Verzija</string>
     <string name="pref_open_source_licenses_title">Licence otvorenog koda</string>
     <string name="icon_shape_rounded_square">Kvadrat zaobljenih uglova</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s za %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s je u toku</string>
     <string name="smartspace_preferences">Podešavanja</string>

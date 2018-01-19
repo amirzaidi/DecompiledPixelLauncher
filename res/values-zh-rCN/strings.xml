@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">清除搜索内容</string>
     <string name="place_autocomplete_search_hint">搜索</string>
-    <string name="common_google_play_services_unknown_issue">%1$s无法访问 Google Play 服务。如果问题一直存在，请与开发者联系以寻求帮助。</string>
+    <string name="common_google_play_services_unknown_issue">%1$s无法访问 Google Play 服务，请重试。</string>
     <string name="common_google_play_services_enable_button">启用</string>
     <string name="common_google_play_services_enable_text">您必须先启用 Google Play 服务，然后才能运行%1$s。</string>
     <string name="common_google_play_services_enable_title">启用 Google Play 服务</string>
-    <string name="common_google_play_services_install_button">获取 Google Play 服务</string>
-    <string name="common_google_play_services_install_text_phone">您的手机没有安装 Google Play 服务，因此无法运行%1$s。</string>
-    <string name="common_google_play_services_install_text_tablet">您的平板电脑没有安装 Google Play 服务，因此无法运行%1$s。</string>
+    <string name="common_google_play_services_install_button">安装</string>
+    <string name="common_google_play_services_install_text">您的设备没有安装 Google Play 服务，因此无法运行%1$s。</string>
     <string name="common_google_play_services_install_title">获取 Google Play 服务</string>
     <string name="common_google_play_services_notification_ticker">Google Play服务出错</string>
-    <string name="common_google_play_services_unsupported_text">%1$s必须搭配使用 Google Play 服务才能运行，但您的设备不支持该服务。请与设备制造商联系以寻求帮助。</string>
-    <string name="common_google_play_services_unsupported_title">Google Play服务</string>
+    <string name="common_google_play_services_unsupported_text">您的设备不支持 Google Play 服务，因此无法运行%1$s。</string>
     <string name="common_google_play_services_update_button">更新</string>
     <string name="common_google_play_services_update_text">您必须先更新 Google Play 服务，然后才能运行%1$s。</string>
     <string name="common_google_play_services_update_title">更新 Google Play 服务</string>
     <string name="common_google_play_services_updating_text">Google Play 服务当前正在更新，因此您无法运行%1$s。</string>
-    <string name="common_google_play_services_updating_title">Google Play 服务正在更新</string>
     <string name="common_google_play_services_wear_update_text">必须使用新版 Google Play 服务。该服务很快就会自行更新。</string>
     <string name="common_open_on_phone">在手机上打开</string>
     <string name="common_signin_button_text">登录</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">关闭</string>
     <string name="notification_dismissed">已关闭通知</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">应用推荐</string>
+    <string name="title_app_suggestions">显示应用推荐</string>
     <string name="summary_app_suggestions">位于“所有应用”列表的顶部</string>
     <string name="title_disable_suggestions_prompt">要关闭应用推荐吗？</string>
     <string name="msg_disable_suggestions_prompt">关闭后，系统将不会在您的应用列表顶部显示推荐应用，并且将永久清空用于生成这些信息的使用数据。</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">版本</string>
     <string name="pref_open_source_licenses_title">开放源代码许可</string>
     <string name="icon_shape_rounded_square">圆角正方形</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s将在 %2$s后开始</string>
     <string name="smartspace_calendar_event_now">%1$s正在进行</string>
     <string name="smartspace_preferences">偏好设置</string>

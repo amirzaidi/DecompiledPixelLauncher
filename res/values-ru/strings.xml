@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Удалить поисковый запрос</string>
     <string name="place_autocomplete_search_hint">Поиск</string>
-    <string name="common_google_play_services_unknown_issue">Приложению \"%1$s\" не удается подключиться к сервисам Google Play. Если проблема не исчезнет, обратитесь к разработчику.</string>
+    <string name="common_google_play_services_unknown_issue">Приложению \"%1$s\" не удается подключиться к сервисам Google Play. Повторите попытку.</string>
     <string name="common_google_play_services_enable_button">Включить</string>
     <string name="common_google_play_services_enable_text">Для работы приложения \"%1$s\" требуется включить сервисы Google Play.</string>
     <string name="common_google_play_services_enable_title">Включите сервисы Google Play</string>
     <string name="common_google_play_services_install_button">Установить</string>
-    <string name="common_google_play_services_install_text_phone">Для работы приложения \"%1$s\" требуется установить сервисы Google Play.</string>
-    <string name="common_google_play_services_install_text_tablet">Для работы приложения \"%1$s\" требуется установить сервисы Google Play.</string>
+    <string name="common_google_play_services_install_text">Для работы приложения \"%1$s\" требуется установить сервисы Google Play.</string>
     <string name="common_google_play_services_install_title">Установите сервисы Google Play</string>
     <string name="common_google_play_services_notification_ticker">Ошибка сервисов Google Play</string>
-    <string name="common_google_play_services_unsupported_text">Сервисы Google Play, необходимые для работы приложения \"%1$s\", не поддерживаются на вашем устройстве. Обратитесь к производителю.</string>
-    <string name="common_google_play_services_unsupported_title">Сервисы Google Play</string>
+    <string name="common_google_play_services_unsupported_text">Для работы с приложением \"%1$s\" требуются сервисы Google Play. Они не поддерживаются на вашем устройстве.</string>
     <string name="common_google_play_services_update_button">Обновить</string>
     <string name="common_google_play_services_update_text">Чтобы запустить приложение \"%1$s\", обновите сервисы Google Play.</string>
     <string name="common_google_play_services_update_title">Обновите сервисы Google Play</string>
     <string name="common_google_play_services_updating_text">Сервисы Google Play, необходимые для работы приложения \"%1$s\", в настоящий момент обновляются.</string>
-    <string name="common_google_play_services_updating_title">Обновление сервисов Google Play…</string>
     <string name="common_google_play_services_wear_update_text">Версия сервисов Google Play устарела. Они автоматически обновятся в ближайшее время.</string>
     <string name="common_open_on_phone">Открыть на телефоне</string>
     <string name="common_signin_button_text">Войти</string>
@@ -39,7 +36,7 @@
     <string name="add_item_request_drag_hint">Нажмите и удерживайте, чтобы добавить вручную</string>
     <string name="place_automatically">Добавить автоматически</string>
     <string name="all_apps_search_bar_hint">Поиск приложений</string>
-    <string name="all_apps_loading_message">Загрузка…</string>
+    <string name="all_apps_loading_message">Загрузка приложений…</string>
     <string name="all_apps_no_search_results">По запросу \"%1$s\" ничего не найдено</string>
     <string name="all_apps_search_market_message">Искать другие приложения</string>
     <string name="notifications_header">Уведомления</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Закрыть</string>
     <string name="notification_dismissed">Уведомление закрыто</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Рекомендуемые приложения</string>
+    <string name="title_app_suggestions">Показывать рекомендуемые приложения</string>
     <string name="summary_app_suggestions">Вверху списка всех приложений</string>
     <string name="title_disable_suggestions_prompt">Не показывать рекомендуемые приложения?</string>
     <string name="msg_disable_suggestions_prompt">Рекомендуемые приложения не будут показываться в начале списка. Данные, связанные с этой функцией, будут удалены.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Версия</string>
     <string name="pref_open_source_licenses_title">Лицензии открытого ПО</string>
     <string name="icon_shape_rounded_square">Квадрат с закругленными углами</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s через %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s сейчас</string>
     <string name="smartspace_preferences">Настройки</string>

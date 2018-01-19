@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">ລຶບ​ການ​ຊອກ​ຫາ</string>
     <string name="place_autocomplete_search_hint">ຄົ້ນຫາ</string>
-    <string name="common_google_play_services_unknown_issue">%1$s ກຳ​ລັງ​ມີ​ບັນ​ຫາ​ກັບ​ການ​ບໍ​ລິ​ການ Google Play. ຖ້າ​ບັນ​ຫາ​ຍັງ​ສືບ​ຕໍ່, ກະ​ລຸ​ນາ​ຕິດ​ຕໍ່​​ຜູ້​ພັດ​ທະ​ນາ ເພື່ອ​ຂໍ​ຄວາມ​ຊ່ວຍ​ເຫຼືອ.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s ກຳລັງມີບັນຫາກັບບໍລິການ Google Play. ກະລຸນາລອງໃໝ່ອີກຄັ້ງ.</string>
     <string name="common_google_play_services_enable_button">ເປີດນຳໃຊ້</string>
     <string name="common_google_play_services_enable_text">%1$s ຈະບໍ່ສາມາດໃຊ້ງານໄດ້ຈົນກວ່າທ່ານຈະເປີດໃຊ້ງານ​ການ​ບໍ​ລິ​ການ Google Play.</string>
     <string name="common_google_play_services_enable_title">ເປີດໃຊ້ການ​ບໍ​ລິ​ການ Google Play</string>
-    <string name="common_google_play_services_install_button">ຕິດຕັ້ງການ​ບໍ​ລິ​ການ Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s ຈະບໍ່ສາມາດໃຊ້ງານໄດ້ໂດຍທີ່ບໍ່ມີການ​ບໍ​ລິ​ການ Google Play ເຊິ່ງຂາດຫາຍໄປໃນໂທລະສັບຂອງທ່ານ.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s ຈະບໍ່ສາມາດໃຊ້ງານໄດ້ໂດຍທີ່ບໍ່ມີການ​ບໍ​ລິ​ການ Google Play ເຊິ່ງຂາດຫາຍໄປໃນແທັບ​ເລັດຂອງທ່ານ.</string>
+    <string name="common_google_play_services_install_button">ຕິດຕັ້ງ</string>
+    <string name="common_google_play_services_install_text">%1$s ຈະບໍ່ສາມາດເປີດໃຊ້ໄດ້ຫາກບໍ່ມີການບໍລິການ Google Play ເຊິ່ງແທັບເລັດຂອງທ່ານບໍ່ມີ.</string>
     <string name="common_google_play_services_install_title">ຕິດຕັ້ງບໍລິການ Google Play</string>
     <string name="common_google_play_services_notification_ticker">Google Play Services ​ເກີດ​ຄວາມ​ຜິດ​ພາດ</string>
-    <string name="common_google_play_services_unsupported_text">%1$s ຂຶ້ນ​ກັບ​ການ​ບໍ​ລິ​ການ Google Play, ເຊິ່ງ​ອຸ​ປະ​ກອນ​ຂອງ​ທ່ານ​ບໍ່​ຮອງ​ຮັບ. ຕິດ​ຕໍ່​ຫາ​ຜູ້​ຜະ​ລິດ​ເພື່ອ​ຂໍ​ການ​ຊ່ວຍ​ເຫຼືອ​ເພີ່ມ​ເຕີມ.</string>
-    <string name="common_google_play_services_unsupported_title">ບໍລິການ Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s ຈະບໍ່ສາມາດໃຊ້ໄດ້ຫາກບໍ່ມີບໍລິການ Google Play ເຊິ່ງອຸປະກອນຂອງທ່ານບໍ່ຮອງຮັບ.</string>
     <string name="common_google_play_services_update_button">ອັບເດດ</string>
     <string name="common_google_play_services_update_text">%1$s ຈະບໍ່ສາມາດເຮັດວຽກໄດ້ຈົນກວ່າທ່ານຈະອັບເດດການ​ບໍ​ລິ​ການ Google Play</string>
     <string name="common_google_play_services_update_title">ອັບເດດການ​ບໍ​ລິ​ການ Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s ຈະບໍ່ສາມາດໃຊ້ງານໄດ້ໂດຍທີ່ບໍ່ມີການ​ບໍ​ລິ​ການ Google Play, ເຊິ່ງ​ກຳ​ລັງ​ອັບ​ເດດ​ຢູ່​ໃນ​ປະ​ຈຸ​ບັນ.</string>
-    <string name="common_google_play_services_updating_title">ການ​ບໍ​ລິ​ການ Google Play ກຳ​ລັງ​ອັບ​ເດດ</string>
     <string name="common_google_play_services_wear_update_text">ຈຳ​ເປັນ​ຕ້ອງ​ມີ​ກາ​ນ​ບໍ​ລິ​ການ Google Play ເວີ​ຊັນ​ໃໝ່. ມັນ​ຈະ​ອັບ​ເດດ​ຕົວ​ເອງ​ໄວໆ​ນີ້.</string>
     <string name="common_open_on_phone">​ເປີດ​ໃນ​ໂທ​ລະ​ສັບ</string>
     <string name="common_signin_button_text">ລົງຊື່ເຂົ້າໃຊ້</string>
@@ -39,8 +36,8 @@
     <string name="add_item_request_drag_hint">ແຕະຄ້າງໄວ້ເພື່ອວາງດ້ວຍຕົນເອງ</string>
     <string name="place_automatically">ເພີ່ມໂດຍອັດຕະໂນມັດ</string>
     <string name="all_apps_search_bar_hint">ຊອກຫາແອັບ</string>
-    <string name="all_apps_loading_message">​ກຳ​ລັງ​ໂຫລດ​ແອັບ...</string>
-    <string name="all_apps_no_search_results">ບໍ່​ພົບ​ແອັບ​ໃດ​ທີ່​ກົງ​ກັນ \"%1$s\"</string>
+    <string name="all_apps_loading_message">ກໍາລັງໂຫຼດແອັບ…</string>
+    <string name="all_apps_no_search_results">ບໍ່ພົບແອັບທີ່ກົງກັບ \"%1$s\"</string>
     <string name="all_apps_search_market_message">ຊອກຫາແອັບເພີ່ມເຕີມ</string>
     <string name="notifications_header">ການແຈ້ງເຕືອນ</string>
     <string name="out_of_space">ບໍ່ມີຫ້ອງເຫຼືອໃນໜ້າຈໍຫຼັກນີ້.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">ປິດໄວ້</string>
     <string name="notification_dismissed">ປິດການແຈ້ງເຕືອນແລ້ວ</string>
     <string name="app_name_pixel_launcher">ຕົວເປີດ Pixel</string>
-    <string name="title_app_suggestions">ການແນະນຳແອັບ</string>
+    <string name="title_app_suggestions">ສະແດງການແນະນຳແອັບ</string>
     <string name="summary_app_suggestions">ຢູ່ເທິງສຸດຂອງລາຍຊື່ແອັບທັງໝົດຂອງທ່ານ</string>
     <string name="title_disable_suggestions_prompt">ປິດການແນະນຳແອັບໄວ້ບໍ?</string>
     <string name="msg_disable_suggestions_prompt">ການແນະນຳຈະບໍ່ປາກົດຢູ່ເທິງສຸດຂອງລາຍຊື່ແອັບຂອງທ່ານ ແລະ ຂໍ້ມູນການນຳໃຊ້ທີ່ໃຊ້ເພື່ອສ້າງພວກມັນຈະຖືກລຶບອອກຖາວອນ.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">ເວີຊັນ</string>
     <string name="pref_open_source_licenses_title">ໃບອະນຸຍາດໂອເພນຊອດ</string>
     <string name="icon_shape_rounded_square">ສີ່ຫຼ່ຽມຂອບມົນ</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s ໃນ %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s ຕອນນີ້</string>
     <string name="smartspace_preferences">ການຕັ້ງຄ່າ</string>

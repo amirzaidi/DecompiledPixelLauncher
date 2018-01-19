@@ -16,9 +16,9 @@
     <string name="widget_accessible_dims_format">%1$d wide by %2$d high</string>
     <string name="add_item_request_drag_hint">Touch &amp; hold to place manually</string>
     <string name="place_automatically">Add automatically</string>
-    <string name="all_apps_search_bar_hint">Search Apps</string>
-    <string name="all_apps_loading_message">Loading Apps…</string>
-    <string name="all_apps_no_search_results">No Apps found matching \"%1$s\"</string>
+    <string name="all_apps_search_bar_hint">Search apps</string>
+    <string name="all_apps_loading_message">Loading apps…</string>
+    <string name="all_apps_no_search_results">"No apps found matching '%1$s'"</string>
     <string name="all_apps_search_market_message">Search for more apps</string>
     <string name="notifications_header">Notifications</string>
     <string name="out_of_space">No more room on this Home screen.</string>
@@ -110,7 +110,7 @@
     <string name="action_dismiss_notification">Dismiss</string>
     <string name="notification_dismissed">Notification dismissed</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">App suggestions</string>
+    <string name="title_app_suggestions">Display app suggestions</string>
     <string name="summary_app_suggestions">At the top of your All Apps list</string>
     <string name="title_disable_suggestions_prompt">Turn off app suggestions?</string>
     <string name="msg_disable_suggestions_prompt">"Suggestions won't appear at the top of your apps list and the usage data used to create them will be permanently erased."</string>
@@ -129,10 +129,11 @@
     <string name="about_app_version">Version</string>
     <string name="pref_open_source_licenses_title">Open-source licences</string>
     <string name="icon_shape_rounded_square">Rounded square</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s in %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s now</string>
     <string name="smartspace_preferences">Preferences</string>
-    <string name="smartspace_preferences_in_settings">At a Glance</string>
+    <string name="smartspace_preferences_in_settings">At A Glance</string>
     <string name="smartspace_preferences_in_settings_desc">At the top of your Home screen</string>
     <string name="hint_qsb">Search apps &amp; more</string>
     <string name="hotseat_hint_qsb">Search apps, web, &amp; more…</string>

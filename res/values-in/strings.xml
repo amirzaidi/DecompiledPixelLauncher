@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Hapus penelusuran</string>
     <string name="place_autocomplete_search_hint">Telusuri</string>
-    <string name="common_google_play_services_unknown_issue">%1$s kesulitan dengan layanan Google Play. Jika masalah terus berlanjut, hubungi pengembang untuk mendapatkan bantuan.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s mengalami masalah dengan layanan Google Play. Coba lagi.</string>
     <string name="common_google_play_services_enable_button">Aktifkan</string>
     <string name="common_google_play_services_enable_text">%1$s tidak akan berfungsi jika layanan Google Play tidak diaktifkan.</string>
     <string name="common_google_play_services_enable_title">Aktifkan layanan Google Play</string>
-    <string name="common_google_play_services_install_button">Dapatkan layanan Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s tidak akan berjalan tanpa layanan Google Play, yang tidak ada di ponsel Anda.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s tidak akan berjalan tanpa layanan Google Play, yang tidak ada di tablet Anda.</string>
+    <string name="common_google_play_services_install_button">Pasang</string>
+    <string name="common_google_play_services_install_text">%1$s tidak akan berjalan tanpa layanan Google Play, yang tidak ada di perangkat Anda.</string>
     <string name="common_google_play_services_install_title">Dapatkan layanan Google Play</string>
     <string name="common_google_play_services_notification_ticker">Kesalahan layanan Google Play</string>
-    <string name="common_google_play_services_unsupported_text">%1$s memerlukan layanan Google Play, yang tidak didukung oleh perangkat Anda. Hubungi pabrikan untuk mendapat bantuan.</string>
-    <string name="common_google_play_services_unsupported_title">Layanan Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s tidak akan berjalan tanpa layanan Google Play, yang tidak didukung oleh perangkat Anda.</string>
     <string name="common_google_play_services_update_button">Perbarui</string>
     <string name="common_google_play_services_update_text">%1$s tidak akan berjalan jika layanan Google Play tidak diperbarui.</string>
     <string name="common_google_play_services_update_title">Perbarui layanan Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s tidak akan berjalan tanpa layanan Google Play, yang saat ini sedang diperbarui.</string>
-    <string name="common_google_play_services_updating_title">Layanan Google Play sedang diperbarui</string>
     <string name="common_google_play_services_wear_update_text">Perlu versi baru layanan Google Play. Akan segera memperbarui sendiri.</string>
     <string name="common_open_on_phone">Buka di ponsel</string>
     <string name="common_signin_button_text">Masuk</string>
@@ -38,9 +35,9 @@
     <string name="widget_accessible_dims_format">lebar %1$d x tinggi %2$d</string>
     <string name="add_item_request_drag_hint">Sentuh &amp; tahan untuk menempatkan secara manual</string>
     <string name="place_automatically">Tambahkan otomatis</string>
-    <string name="all_apps_search_bar_hint">Telusuri Apps</string>
-    <string name="all_apps_loading_message">Memuat Aplikasi...</string>
-    <string name="all_apps_no_search_results">Tidak ditemukan Aplikasi yang cocok dengan \"%1$s\"</string>
+    <string name="all_apps_search_bar_hint">Telusuri aplikasi</string>
+    <string name="all_apps_loading_message">Memuat aplikasi…</string>
+    <string name="all_apps_no_search_results">Tidak ditemukan aplikasi yang cocok dengan \"%1$s\"</string>
     <string name="all_apps_search_market_message">Telusuri aplikasi lainnya</string>
     <string name="notifications_header">Notifikasi</string>
     <string name="out_of_space">Tidak ada ruang lagi pada layar Utama ini.</string>
@@ -85,7 +82,7 @@
     <string name="title_missing_notification_access">Perlu akses notifikasi</string>
     <string name="msg_missing_notification_access">Guna menampilkan Titik Notifikasi, aktifkan notifikasi aplikasi untuk %1$s</string>
     <string name="title_change_settings">Ubah setelan</string>
-    <string name="auto_add_shortcuts_label">Tambahkan ikon ke layar Utama</string>
+    <string name="auto_add_shortcuts_label">Tambahkan ikon ke Layar utama</string>
     <string name="auto_add_shortcuts_description">Untuk aplikasi baru</string>
     <string name="icon_shape_override_label">Ubah bentuk ikon</string>
     <string name="icon_shape_system_default">Gunakan default sistem</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Tutup</string>
     <string name="notification_dismissed">Notifikasi ditutup</string>
     <string name="app_name_pixel_launcher">Peluncur Pixel</string>
-    <string name="title_app_suggestions">Saran aplikasi</string>
+    <string name="title_app_suggestions">Tampilkan saran aplikasi</string>
     <string name="summary_app_suggestions">Di bagian atas daftar Semua Aplikasi</string>
     <string name="title_disable_suggestions_prompt">Nonaktifkan saran aplikasi?</string>
     <string name="msg_disable_suggestions_prompt">Saran tidak akan muncul di bagian atas daftar aplikasi Anda, dan data penggunaan yang digunakan untuk membuatnya akan dihapus secara permanen.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versi</string>
     <string name="pref_open_source_licenses_title">Lisensi open source</string>
     <string name="icon_shape_rounded_square">Persegi membulat</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s dalam %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s sekarang</string>
     <string name="smartspace_preferences">Preferensi</string>

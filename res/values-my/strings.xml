@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">ရှာဖွေမှုကို ရှင်းပါ</string>
     <string name="place_autocomplete_search_hint">ရှာဖွေရန်</string>
-    <string name="common_google_play_services_unknown_issue">%1$s သည် Google Play ဝန်ဆောင်မှုများနှင့် ပြဿနာရှိနေသည်။ ပြဿနာရှိနေသေးလျှင်၊ အကူအညီအတွက် ဆော့ဖ်ဝဲအင်ဂျင်နီယာကို ဆက်သွယ်ပါ။</string>
+    <string name="common_google_play_services_unknown_issue">%1$s သည် Google Play ဝန်ဆောင်မှုများနှင့် ပြဿနာအနည်းငယ် ရှိနေပါသည်။ ထပ်လုပ်ကြည့်ပါ။</string>
     <string name="common_google_play_services_enable_button">ဖွင့်ရန်</string>
     <string name="common_google_play_services_enable_text">Google Play ဝန်ဆောင်မှုများကို မဖွင့်သ၍ %1$s သည်အလုပ်လုပ်မည်မဟုတ်ပါ။</string>
     <string name="common_google_play_services_enable_title">Google Play ဝန်ဆောင်မှုများ ဖွင့်ရန်</string>
-    <string name="common_google_play_services_install_button">Google Play ဝန်ဆောင်မှုများကိုရယူရန်</string>
-    <string name="common_google_play_services_install_text_phone">သင့်ဖုန်းတွင် Google Play ဝန်ဆောင်မှုများမရှိသောကြောင့် %1$s ကိုဖွင့်၍မရပါ။</string>
-    <string name="common_google_play_services_install_text_tablet">သင့်တပ်ဘလက်တွင် Google Play ဝန်ဆောင်မှုများမရှိသောကြောင့် %1$s ကိုဖွင့်၍မရပါ။</string>
+    <string name="common_google_play_services_install_button">ထည့်သွင်းပါ</string>
+    <string name="common_google_play_services_install_text">သင့်တက်ဘလက်တွင် Google Play ဝန်ဆောင်မှုများမရှိသောကြောင့် %1$s ကိုဖွင့်၍မရပါ။</string>
     <string name="common_google_play_services_install_title">Google Play ဝန်ဆောင်မှုများရယူရန်</string>
     <string name="common_google_play_services_notification_ticker">Google Play ဝန်ဆောင်မှုများ အမှား</string>
-    <string name="common_google_play_services_unsupported_text">%1$s သည်သင့်စက်ပစ္စည်းမှ မထောက်ပံ့သည့် Google Play ဝန်ဆောင်မှုများအပေါ် မှီခိုနေရသည်။ အကူအညီလိုလျှင် ထုတ်လုပ်သူကို ဆက်သွယ်ပါ။</string>
-    <string name="common_google_play_services_unsupported_title">Google Play ဝန်ဆောင်မှုများ</string>
+    <string name="common_google_play_services_unsupported_text">Google Play ဝန်ဆောင်မှုများကို သင့်စက်ပစ္စည်းတွင် ပံ့ပိုးမထားသည့်အတွက် ၎င်းမရှိဘဲ %1$s ကို ဖွင့်၍မရပါ။</string>
     <string name="common_google_play_services_update_button">အပ်ဒိတ်</string>
-    <string name="common_google_play_services_update_text">Google Play ဝန်ဆောင်မှုများအား မွမ်းမံခြင်းမရှိပါက %1$s အလုပ်လုပ်မည် မဟုတ်ပါ။</string>
+    <string name="common_google_play_services_update_text">Google Play ဝန်ဆောင်မှုများအား အပ်ဒိတ်မလုပ်ပါက %1$s အလုပ်လုပ်မည် မဟုတ်ပါ။</string>
     <string name="common_google_play_services_update_title">Google Play ဝန်ဆောင်မှုများကို အပ်ဒိတ်လုပ်ရန်</string>
     <string name="common_google_play_services_updating_text">Google Play ဝန်ဆောင်မှုများကို လက်ရှိအပ်ဒိတ်လုပ်နေသောကြောင့် %1$s ကိုဖွင့်၍ရမည်မဟုတ်ပါ။</string>
-    <string name="common_google_play_services_updating_title">Google Play ဝန်ဆောင်မှုများကို အပ်ဒိတ်လုပ်နေသည်</string>
     <string name="common_google_play_services_wear_update_text">Google Play ဝန်ဆောင်မှုဗားရှင်းအသစ်များ လိုအပ်နေသည်။ အချိန်အနည်းငယ်အကြာတွင် ၎င်းကိုယ်တိုင်အပ်ဒိတ်လုပ်ပါ လိမ့်မည်။</string>
     <string name="common_open_on_phone">ဖုန်းပေါ်မှာ ဖွင့်ပါ</string>
     <string name="common_signin_button_text">လက်မှတ်ထိုး ဝင်ရန်</string>
@@ -39,8 +36,8 @@
     <string name="add_item_request_drag_hint">ကိုယ်တိုင်ထည့်ရန် ထိထားပါ</string>
     <string name="place_automatically">အလိုအလျောက် ထည့်ရန်</string>
     <string name="all_apps_search_bar_hint">ရှာဖွေမှု အက်ပ်များ</string>
-    <string name="all_apps_loading_message">အက်ပ်များ ရယူနေစဉ်...</string>
-    <string name="all_apps_no_search_results">\"%1$s\" နှင့်ကိုက်ညီသည့် အပ်ဖ်များမတွေ့ပါ</string>
+    <string name="all_apps_loading_message">အက်ပ်များကို ဖွင့်နေသည်…</string>
+    <string name="all_apps_no_search_results">\"%1$s\" နှင့်ကိုက်ညီသည့် အပ်ပ်များကို မတွေ့ပါ</string>
     <string name="all_apps_search_market_message">နောက်ထပ် အက်ပ်များကို ရှာပါ</string>
     <string name="notifications_header">အကြောင်းကြားချက်များ</string>
     <string name="out_of_space">ဤပင်မမျက်နှာစာတွင် နေရာလွတ် မကျန်တော့ပါ</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">ပယ်ရန်</string>
     <string name="notification_dismissed">အသိပေးချက်ကို ဖယ်ထုတ်ပြီးပါပြီ</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">အက်ပ်အကြံပြုမှုများ</string>
+    <string name="title_app_suggestions">အက်ပ်အကြံပြုချက်များကို ပြသပါ</string>
     <string name="summary_app_suggestions">"သင်၏ 'အက်ပ်အားလုံး' စာရင်း၏ ထိပ်တွင်"</string>
     <string name="title_disable_suggestions_prompt">အက်ပ်အကြံပြုမှုများကို ပိတ်မလား။</string>
     <string name="msg_disable_suggestions_prompt">အကြံပြုချက်များသည် သင့်အက်ပ်စာရင်း၏ ထိပ်ဆုံးတွင် ပေါ်လာမည်မဟုတ်ပါ။ ထို့အပြင် ၎င်းတို့ကို ရေးသားပေးပို့ရာတွင် အသုံးပြုခဲ့သည့် အသုံးပြုမှုဒေတာများကို အပြီးအပိုင်ဖျက်လိုက်ပါမည်။</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">ဗားရှင်း</string>
     <string name="pref_open_source_licenses_title">အခမဲ့ရင်းမြစ်လိုင်စင်များ</string>
     <string name="icon_shape_rounded_square">လုံးဝန်းသည့်အနားသတ်များရှိသည့် စတုရန်း</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%2$s တွင် %1$s စပါမည်</string>
     <string name="smartspace_calendar_event_now">ယခု %1$s စပါပြီ</string>
     <string name="smartspace_preferences">ဦးစားပေးမှုများ</string>

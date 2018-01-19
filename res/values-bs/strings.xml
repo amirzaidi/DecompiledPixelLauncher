@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Obriši pretraživanje</string>
     <string name="place_autocomplete_search_hint">Traži</string>
-    <string name="common_google_play_services_unknown_issue">Aplikacija %1$s ima problema s Google Play uslugom. Ukoliko problem potraje, obratite se autoru za pomoć.</string>
+    <string name="common_google_play_services_unknown_issue">Aplikacija %1$s ima problema s Google Play uslugama. Pokušajte ponovo.</string>
     <string name="common_google_play_services_enable_button">Omogući</string>
     <string name="common_google_play_services_enable_text">Aplikacija %1$s neće raditi ako ne omogućite Google Play usluge.</string>
     <string name="common_google_play_services_enable_title">Omogućite Google Play usluge</string>
-    <string name="common_google_play_services_install_button">Nabavite Google Play usluge</string>
-    <string name="common_google_play_services_install_text_phone">Aplikacija %1$s neće raditi bez Google Play usluga, koje nedostaju u vašem telefonu.</string>
-    <string name="common_google_play_services_install_text_tablet">Aplikacija %1$s neće raditi bez Google Play usluga, koje nedostaju u vašem tabletu.</string>
+    <string name="common_google_play_services_install_button">Instaliraj</string>
+    <string name="common_google_play_services_install_text">Aplikacija %1$s neće raditi bez Google Play usluga, kojih na vašem uređaju nema.</string>
     <string name="common_google_play_services_install_title">Nabavite Google Play usluge</string>
     <string name="common_google_play_services_notification_ticker">Greška Google Play usluge</string>
-    <string name="common_google_play_services_unsupported_text">Aplikacija %1$s se oslanja na Google Play usluge koje vaš uređaj ne podržava. Obratite se proizvođaču za pomoć.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play usluge</string>
+    <string name="common_google_play_services_unsupported_text">Aplikacija %1$s neće raditi bez Google Play usluga, koje vaš uređaj ne podržava.</string>
     <string name="common_google_play_services_update_button">Ažuriraj</string>
     <string name="common_google_play_services_update_text">Aplikacija %1$s neće raditi ako ne ažurirate Google Play usluge.</string>
     <string name="common_google_play_services_update_title">Ažuriranje Google Play usluga</string>
     <string name="common_google_play_services_updating_text">Aplikacija %1$s neće raditi bez Google Play usluga, koje se trenutno ažuriraju.</string>
-    <string name="common_google_play_services_updating_title">Ažuriranje Google Play usluga</string>
     <string name="common_google_play_services_wear_update_text">Potrebna je nova verzija Google Play usluga. Ubrzo će se samo ažurirati.</string>
     <string name="common_open_on_phone">Otvori na telefonu</string>
     <string name="common_signin_button_text">Prijavi se</string>
@@ -38,9 +35,9 @@
     <string name="widget_accessible_dims_format">Širina %1$d, visina %2$d</string>
     <string name="add_item_request_drag_hint">Dodirnite i držite da postavite ručno</string>
     <string name="place_automatically">Dodaj automatski</string>
-    <string name="all_apps_search_bar_hint">Pretraži aplikacije</string>
+    <string name="all_apps_search_bar_hint">Pretražite aplikacije</string>
     <string name="all_apps_loading_message">Aplikacije se učitavaju…</string>
-    <string name="all_apps_no_search_results">Nije pronađena nijedna aplikacija koja odgovara upitu \"%1$s\"</string>
+    <string name="all_apps_no_search_results">Nije pronađena nijedna aplikacija za upit \"%1$s\"</string>
     <string name="all_apps_search_market_message">Pretraži više aplikacija</string>
     <string name="notifications_header">Obavještenja</string>
     <string name="out_of_space">Na ovom početnom ekranu nema više prostora.</string>
@@ -67,7 +64,7 @@
     <string name="workspace_new_page">Nova stranica početnog ekrana</string>
     <string name="folder_opened">Folder je otvoren, (š) %1$d (v) %2$d</string>
     <string name="folder_tap_to_close">Dodirnite da zatvorite folder</string>
-    <string name="folder_tap_to_rename">Dodirnite da sačuvate promjenu imena</string>
+    <string name="folder_tap_to_rename">Dodirnite da sačuvate promjenu naziva</string>
     <string name="folder_closed">Folder je zatvoren</string>
     <string name="folder_renamed">Ime foldera je promijenjeno u %1$s</string>
     <string name="folder_name_format">Folder: %1$s</string>
@@ -85,7 +82,7 @@
     <string name="title_missing_notification_access">Potreban je pristup obavještenjima</string>
     <string name="msg_missing_notification_access">Za prikaz tačaka obavještenja, uključite obavještenja za aplikacije za aplikaciju %1$s</string>
     <string name="title_change_settings">Promijeni postavke</string>
-    <string name="auto_add_shortcuts_label">Dodajte ikonu na početni ekran</string>
+    <string name="auto_add_shortcuts_label">Dodaj ikonu na početni ekran</string>
     <string name="auto_add_shortcuts_description">Za nove aplikacije</string>
     <string name="icon_shape_override_label">Promjena oblika ikona</string>
     <string name="icon_shape_system_default">Koristite sistemski zadano</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Odbaci</string>
     <string name="notification_dismissed">Obavještenje je odbačeno</string>
     <string name="app_name_pixel_launcher">Pixel pokretač za Nexus</string>
-    <string name="title_app_suggestions">Prijedlozi za aplikacije</string>
+    <string name="title_app_suggestions">Prikaži prijedloge aplikacija</string>
     <string name="summary_app_suggestions">Na vrhu liste Sve aplikacije</string>
     <string name="title_disable_suggestions_prompt">Isključiti prijedloge za aplikacije?</string>
     <string name="msg_disable_suggestions_prompt">Prijedlozi se neće pojaviti na vrhu liste vaših aplikacija, a podaci o korištenju koji su se koristili za kreiranje prijedloga bit će trajno izbrisani.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Verzija</string>
     <string name="pref_open_source_licenses_title">Licence otvorenog koda</string>
     <string name="icon_shape_rounded_square">Zaobljeni kvadrat</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s za %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s sada</string>
     <string name="smartspace_preferences">Postavke</string>

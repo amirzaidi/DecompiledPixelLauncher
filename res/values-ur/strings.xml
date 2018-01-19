@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">تلاش صاف کریں</string>
     <string name="place_autocomplete_search_hint">تلاش</string>
-    <string name="common_google_play_services_unknown_issue">‏%1$s کو Google Play سروسز کے ساتھ ایک مسئلہ پیش آ رہا ہے۔ اگر مسئلہ جاری رہتا ہے تو براہ کرم معاونت کیلئے ڈیولپر سے رابطہ کریں۔</string>
+    <string name="common_google_play_services_unknown_issue">‏%1$s کو Google Play سروسز کے ساتھ مسئلہ پیش آ رہا ہے۔ براہ کرم دوبارہ کوشش کریں۔</string>
     <string name="common_google_play_services_enable_button">فعال کریں</string>
     <string name="common_google_play_services_enable_text">‏جب تک آپ Google Play سروسز فعال نہیں کر لیتے، %1$s کام نہیں کرے گی۔</string>
     <string name="common_google_play_services_enable_title">‏Google Play سروسز فعال کریں</string>
-    <string name="common_google_play_services_install_button">‏Google Play سروسز حاصل کریں</string>
-    <string name="common_google_play_services_install_text_phone">‏%1$s Google Play سروسز کے بغیر نہیں چلے گی، جو آپ کے فون سے غائب ہیں۔</string>
-    <string name="common_google_play_services_install_text_tablet">‏%1$s Google Play سروسز کے بغیر نہیں چلے گی، جو آپ کے ٹیبلیٹ سے غائب ہیں۔</string>
+    <string name="common_google_play_services_install_button">انسٹال کریں</string>
+    <string name="common_google_play_services_install_text">‏%1$s Google Play سروسز کے بغیر نہیں چلے گی، جو آپ کے آلہ سے غائب ہیں۔</string>
     <string name="common_google_play_services_install_title">‏Google Play سروسز حاصل کریں</string>
     <string name="common_google_play_services_notification_ticker">‏Google Play سروسز کی خرابی</string>
-    <string name="common_google_play_services_unsupported_text">‏%1$s Google Play سروسز پر انحصار کرتی ہے، جو آپ کے آلہ کی جانب سے تعاون یافتہ نہیں ہے۔ مدد کیلئے مینوفیکچرر سے رابطہ کریں۔</string>
-    <string name="common_google_play_services_unsupported_title">‏Google Play سروسز</string>
+    <string name="common_google_play_services_unsupported_text">‏%1$s Google Play سروسز کے بغیر نہیں چلے گی، جن کی آپ کا آلہ معاونت نہیں کرتا۔</string>
     <string name="common_google_play_services_update_button">اپ ڈیٹ کریں</string>
     <string name="common_google_play_services_update_text">‏جب تک آپ Google Play سروسز اپ ڈیٹ نہیں کر لیتے ہیں %1$s تب تک نہیں چلے گی۔</string>
     <string name="common_google_play_services_update_title">‏Google Play سروسز اپ ڈیٹ کریں</string>
     <string name="common_google_play_services_updating_text">‏%1$s Google Play سروسز کے بغیر نہیں چلے گی، جو فی الحال اپ ڈیٹ ہو رہی ہیں۔</string>
-    <string name="common_google_play_services_updating_title">‏Google Play سروسز اپ ڈیٹ ہو رہی ہیں</string>
     <string name="common_google_play_services_wear_update_text">‏Google Play سروسز کے نئے ورژن کی ضرورت ہے۔ یہ تھوڑی دیر میں خود ہی اپنے آپ کو اپ ڈیٹ کر لے گا۔</string>
     <string name="common_open_on_phone">فون پر کھولیں</string>
     <string name="common_signin_button_text">سائن ان کریں</string>
@@ -39,7 +36,7 @@
     <string name="add_item_request_drag_hint">‏دستی طور پر رکھنے کیلئے ‎&amp; ٹچ کرکے ہولڈ کریں</string>
     <string name="place_automatically">خود کار طور پر شامل کریں</string>
     <string name="all_apps_search_bar_hint">ایپس تلاش کریں</string>
-    <string name="all_apps_loading_message">ایپس لوڈ ہو رہی ہیں…</string>
+    <string name="all_apps_loading_message">ایپس لوڈ کی جا رہی ہیں…</string>
     <string name="all_apps_no_search_results">\"%1$s\" سے مماثل کوئی ایپس نہیں ملیں</string>
     <string name="all_apps_search_market_message">مزید ایپس تلاش کریں</string>
     <string name="notifications_header">اطلاعات</string>
@@ -131,8 +128,8 @@
     <string name="shortcuts_menu_with_notifications_description">%3$s کے %1$d شارٹ کٹس اور %2$d اطلاعات</string>
     <string name="action_dismiss_notification">برخاست کریں</string>
     <string name="notification_dismissed">اطلاع مسترد ہو گئی</string>
-    <string name="app_name_pixel_launcher">پکسل لانچر</string>
-    <string name="title_app_suggestions">ایپ تجاویز</string>
+    <string name="app_name_pixel_launcher">‏Pixel لانچر</string>
+    <string name="title_app_suggestions">ایپ کی تجاویز دکھائیں</string>
     <string name="summary_app_suggestions">آپ کی تمام ایپس کی فہرست میں سب سے اوپر</string>
     <string name="title_disable_suggestions_prompt">ایپ تجاویز آف کریں؟</string>
     <string name="msg_disable_suggestions_prompt">تجاویز آپ کی ایپس کی فہرست کے بالائی حصے میں ظاہر نہیں ہوں گی اور ان کی تشکیل کیلئے مستعمل استعمال کا ڈیٹا دائمی طور پر مٹا دیا جائے گا۔</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">ورژن</string>
     <string name="pref_open_source_licenses_title">اوپن سورس لائسنسز</string>
     <string name="icon_shape_rounded_square">گول مربع</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">‏%2$s میں %1$s ہے</string>
     <string name="smartspace_calendar_event_now">‏%1$s ابھی ہے</string>
     <string name="smartspace_preferences">ترجیحات</string>

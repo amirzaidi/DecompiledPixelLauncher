@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="google_play_services_version">9452000</integer>
-    <integer name="config_dynamic_grid_overview_icon_zone_percentage">20</integer>
+    <integer name="google_play_services_version">11058000</integer>
+    <integer name="config_dynamic_grid_overview_icon_zone_percentage">22</integer>
+    <integer name="extracted_color_gradient_alpha">153</integer>
     <integer name="config_workspaceScrimAlpha">30</integer>
     <integer name="config_allAppsTransitionTime">100</integer>
     <integer name="config_overviewTransitionTime">250</integer>

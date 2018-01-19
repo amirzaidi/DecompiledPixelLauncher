@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Ryd søgning</string>
     <string name="place_autocomplete_search_hint">Søg</string>
-    <string name="common_google_play_services_unknown_issue">%1$s har problemer med Google Play-tjenester. Hvis problemet fortsætter, kan du kontakte udvikleren for at få hjælp.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s har problemer med Google Play-tjenester. Prøv igen.</string>
     <string name="common_google_play_services_enable_button">Aktivér</string>
     <string name="common_google_play_services_enable_text">Du skal aktivere Google Play-tjenester, for at %1$s kan fungere.</string>
     <string name="common_google_play_services_enable_title">Aktivér Google Play-tjenester</string>
-    <string name="common_google_play_services_install_button">Hent Google Play-tjenester</string>
-    <string name="common_google_play_services_install_text_phone">Du skal installere Google-tjenester, hvis %1$s skal kunne køre på din telefon.</string>
-    <string name="common_google_play_services_install_text_tablet">Du skal installere Google-tjenester, hvis %1$s skal kunne køre på din tablet.</string>
+    <string name="common_google_play_services_install_button">Installer</string>
+    <string name="common_google_play_services_install_text">Du skal installere Google Play-tjenester, før %1$s kan køre på din enhed.</string>
     <string name="common_google_play_services_install_title">Hent Google Play-tjenester</string>
     <string name="common_google_play_services_notification_ticker">Fejl i Google Play-tjenester</string>
-    <string name="common_google_play_services_unsupported_text">%1$s er afhængig af Google Play-tjenester, som ikke understøttes af din enhed. Kontakt producenten for at få hjælp.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play-tjenester</string>
+    <string name="common_google_play_services_unsupported_text">%1$s fungerer ikke uden Google Play-tjenester, som ikke understøttes på din enhed.</string>
     <string name="common_google_play_services_update_button">Opdater</string>
     <string name="common_google_play_services_update_text">%1$s kan ikke køre, medmindre du opdaterer Google Play-tjenester.</string>
     <string name="common_google_play_services_update_title">Opdater Google Play-tjenester</string>
     <string name="common_google_play_services_updating_text">%1$s kan ikke køre uden Google Play-tjenester, som i øjeblikket opdateres.</string>
-    <string name="common_google_play_services_updating_title">Google Play-tjenester opdateres</string>
     <string name="common_google_play_services_wear_update_text">Du skal bruge en ny version af Google Play-tjenester. Opdateringen gennemføres automatisk om et øjeblik.</string>
     <string name="common_open_on_phone">Åbn på telefonen</string>
     <string name="common_signin_button_text">Log ind</string>
@@ -38,7 +35,7 @@
     <string name="widget_accessible_dims_format">%1$d i bredden og %2$d i højden</string>
     <string name="add_item_request_drag_hint">Tryk, og hold fingeren nede for at placere manuelt</string>
     <string name="place_automatically">Tilføj automatisk</string>
-    <string name="all_apps_search_bar_hint">Søg i Apps</string>
+    <string name="all_apps_search_bar_hint">Søg efter apps</string>
     <string name="all_apps_loading_message">Indlæser apps…</string>
     <string name="all_apps_no_search_results">Der blev ikke fundet nogen apps, som matcher \"%1$s\"</string>
     <string name="all_apps_search_market_message">Søg efter flere apps</string>
@@ -49,7 +46,7 @@
     <string name="all_apps_home_button_label">Startskærm</string>
     <string name="remove_drop_target_label">Fjern</string>
     <string name="uninstall_drop_target_label">Afinstaller</string>
-    <string name="app_info_drop_target_label">Oplysninger om appen</string>
+    <string name="app_info_drop_target_label">Appinfo</string>
     <string name="permlab_install_shortcut">installere genveje</string>
     <string name="permdesc_install_shortcut">Tillader, at en app tilføjer genveje uden brugerens indgriben.</string>
     <string name="permlab_read_settings">læs indstillinger og genveje for startskærmen</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Afvis</string>
     <string name="notification_dismissed">Underretningen blev afvist</string>
     <string name="app_name_pixel_launcher">Pixel Starter</string>
-    <string name="title_app_suggestions">Appforslag</string>
+    <string name="title_app_suggestions">Vis forslag til apps</string>
     <string name="summary_app_suggestions">Øverst på listen Alle apps</string>
     <string name="title_disable_suggestions_prompt">Vil du slå appforslag fra?</string>
     <string name="msg_disable_suggestions_prompt">Der vises ikke forslag øverst på din liste over apps, og de brugsdata, der anvendes til at oprette dem, slettes permanent.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Version</string>
     <string name="pref_open_source_licenses_title">Open source-licenser</string>
     <string name="icon_shape_rounded_square">Kvadrat med runde hjørner</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s om %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s nu</string>
     <string name="smartspace_preferences">Præferencer</string>

@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">[Çļéåŕ šéåŕçĥ one two]</string>
     <string name="place_autocomplete_search_hint">[Šéåŕçĥ one two]</string>
-    <string name="common_google_play_services_unknown_issue">[%1$s îš ĥåVîñĝ ţŕöûɓļé ŵîţĥ Ĝööĝļé Þļåý šéŕVîçéš. Îƒ ţĥé þŕöɓļéḿ þéŕšîšţš, þļéåšé çöñţåçţ ţĥé ðéVéļöþéŕ ƒöŕ åššîšţåñçé. one two three four five six seven eight nine ten eleven twelve]</string>
+    <string name="common_google_play_services_unknown_issue">[%1$s îš ĥåVîñĝ ţŕöûɓļé ŵîţĥ Ĝööĝļé Þļåý šéŕVîçéš. Þļéåšé ţŕý åĝåîñ. one two three four five six seven]</string>
     <string name="common_google_play_services_enable_button">[Éñåɓļé one two]</string>
     <string name="common_google_play_services_enable_text">"[%1$s ŵöñ'ţ ŵöŕķ ûñļéšš ýöû éñåɓļé Ĝööĝļé Þļåý šéŕVîçéš. one two three four five six]"</string>
     <string name="common_google_play_services_enable_title">[Éñåɓļé Ĝööĝļé Þļåý šéŕVîçéš one two three four]</string>
-    <string name="common_google_play_services_install_button">[Ĝéţ Ĝööĝļé Þļåý šéŕVîçéš one two three]</string>
-    <string name="common_google_play_services_install_text_phone">"[%1$s ŵöñ'ţ ŕûñ ŵîţĥöûţ Ĝööĝļé Þļåý šéŕVîçéš, ŵĥîçĥ åŕé ḿîššîñĝ ƒŕöḿ ýöûŕ þĥöñé. one two three four five six seven eight]"</string>
-    <string name="common_google_play_services_install_text_tablet">"[%1$s ŵöñ'ţ ŕûñ ŵîţĥöûţ Ĝööĝļé Þļåý šéŕVîçéš, ŵĥîçĥ åŕé ḿîššîñĝ ƒŕöḿ ýöûŕ ţåɓļéţ. one two three four five six seven eight]"</string>
+    <string name="common_google_play_services_install_button">[Îñšţåļļ one two]</string>
+    <string name="common_google_play_services_install_text">"[%1$s ŵöñ'ţ ŕûñ ŵîţĥöûţ Ĝööĝļé Þļåý šéŕVîçéš, ŵĥîçĥ åŕé ḿîššîñĝ ƒŕöḿ ýöûŕ ðéVîçé. one two three four five six seven eight]"</string>
     <string name="common_google_play_services_install_title">[Ĝéţ Ĝööĝļé Þļåý šéŕVîçéš one two three]</string>
     <string name="common_google_play_services_notification_ticker">[Ĝööĝļé Þļåý šéŕVîçéš éŕŕöŕ one two three four]</string>
-    <string name="common_google_play_services_unsupported_text">[%1$s ŕéļîéš öñ Ĝööĝļé Þļåý šéŕVîçéš, ŵĥîçĥ îš ñöţ šûþþöŕţéð ɓý ýöûŕ ðéVîçé. Çöñţåçţ ţĥé ḿåñûƒåçţûŕéŕ ƒöŕ åššîšţåñçé. one two three four five six seven eight nine ten eleven twelve]</string>
-    <string name="common_google_play_services_unsupported_title">[Ĝööĝļé Þļåý šéŕVîçéš one two three]</string>
+    <string name="common_google_play_services_unsupported_text">"[%1$s ŵöñ'ţ ŕûñ ŵîţĥöûţ Ĝööĝļé Þļåý šéŕVîçéš, ŵĥîçĥ åŕé ñöţ šûþþöŕţéð ɓý ýöûŕ ðéVîçé. one two three four five six seven eight nine]"</string>
     <string name="common_google_play_services_update_button">[Ûþðåţé one two]</string>
     <string name="common_google_play_services_update_text">"[%1$s ŵöñ'ţ ŕûñ ûñļéšš ýöû ûþðåţé Ĝööĝļé Þļåý šéŕVîçéš. one two three four five six]"</string>
     <string name="common_google_play_services_update_title">[Ûþðåţé Ĝööĝļé Þļåý šéŕVîçéš one two three four]</string>
     <string name="common_google_play_services_updating_text">"[%1$s ŵöñ'ţ ŕûñ ŵîţĥöûţ Ĝööĝļé Þļåý šéŕVîçéš, ŵĥîçĥ åŕé çûŕŕéñţļý ûþðåţîñĝ. one two three four five six seven eight]"</string>
-    <string name="common_google_play_services_updating_title">[Ĝööĝļé Þļåý šéŕVîçéš åŕé ûþðåţîñĝ one two three four]</string>
     <string name="common_google_play_services_wear_update_text">[Ñéŵ Véŕšîöñ öƒ Ĝööĝļé Þļåý šéŕVîçéš ñééðéð. Îţ ŵîļļ ûþðåţé îţšéļƒ šĥöŕţļý. one two three four five six seven eight]</string>
     <string name="common_open_on_phone">[Öþéñ öñ þĥöñé one two]</string>
     <string name="common_signin_button_text">[Šîĝñ îñ one two]</string>
@@ -38,9 +35,9 @@
     <string name="widget_accessible_dims_format">[»%1$d« ŵîðé ɓý »%2$d« ĥîĝĥ one two three]</string>
     <string name="add_item_request_drag_hint">[Ţöûçĥ &amp; ĥöļð ţö þļåçé ḿåñûåļļý one two three four]</string>
     <string name="place_automatically">[Åðð åûţöḿåţîçåļļý one two three]</string>
-    <string name="all_apps_search_bar_hint">[Šéåŕçĥ Åþþš one two]</string>
-    <string name="all_apps_loading_message">[Ļöåðîñĝ Åþþš… one two]</string>
-    <string name="all_apps_no_search_results">[Ñö Åþþš ƒöûñð ḿåţçĥîñĝ \"%1$s\" one two three]</string>
+    <string name="all_apps_search_bar_hint">[Šéåŕçĥ åþþš one two]</string>
+    <string name="all_apps_loading_message">[Ļöåðîñĝ åþþš… one two]</string>
+    <string name="all_apps_no_search_results">[Ñö åþþš ƒöûñð ḿåţçĥîñĝ \"%1$s\" one two three]</string>
     <string name="all_apps_search_market_message">[Šéåŕçĥ ƒöŕ ḿöŕé åþþš one two three]</string>
     <string name="notifications_header">[Ñöţîƒîçåţîöñš one two]</string>
     <string name="out_of_space">[Ñö ḿöŕé ŕööḿ öñ ţĥîš Ĥöḿé šçŕééñ. one two three four]</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">[Ðîšḿîšš one two]</string>
     <string name="notification_dismissed">[Ñöţîƒîçåţîöñ ðîšḿîššéð one two three]</string>
     <string name="app_name_pixel_launcher">[Þîхéļ Ļåûñçĥéŕ one two three]</string>
-    <string name="title_app_suggestions">[Åþþ šûĝĝéšţîöñš one two three]</string>
+    <string name="title_app_suggestions">[Ðîšþļåý åþþ šûĝĝéšţîöñš one two three]</string>
     <string name="summary_app_suggestions">[Åţ ţĥé ţöþ öƒ ýöûŕ Åļļ Åþþš ļîšţ one two three four]</string>
     <string name="title_disable_suggestions_prompt">[Ţûŕñ öƒƒ åþþ šûĝĝéšţîöñš¿ one two three]</string>
     <string name="msg_disable_suggestions_prompt">"[Šûĝĝéšţîöñš ŵöñ'ţ åþþéåŕ åţ ţĥé ţöþ öƒ ýöûŕ åþþš ļîšţ, åñð ţĥé ûšåĝé ðåţå ûšéð ţö çŕéåţé ţĥéḿ ŵîļļ ɓé þéŕḿåñéñţļý éŕåšéð. one two three four five six seven eight nine ten eleven twelve]"</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">[νéŕšîöñ one two]</string>
     <string name="pref_open_source_licenses_title">[Öþéñ šöûŕçé ļîçéñšéš one two three]</string>
     <string name="icon_shape_rounded_square">[Ŕöûñðéð šQûåŕé one two three]</string>
+    <string name="smartspace_hours_mins">[%1$s %2$s one]</string>
     <string name="smartspace_calendar_event">[»%1$s« îñ »%2$s« one]</string>
     <string name="smartspace_calendar_event_now">[»%1$s« ñöŵ one]</string>
     <string name="smartspace_preferences">[Þŕéƒéŕéñçéš one two]</string>

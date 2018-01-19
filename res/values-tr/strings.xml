@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Aramayı temizle</string>
     <string name="place_autocomplete_search_hint">Ara</string>
-    <string name="common_google_play_services_unknown_issue">%1$s, Google Play hizmetleriyle ilgili sorun yaşıyor. Sorun devam ederse lütfen yardım için geliştiriciyle iletişim kurun.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s, Google Play hizmetleriyle ilgili sorun yaşıyor. Lütfen tekrar deneyin.</string>
     <string name="common_google_play_services_enable_button">Etkinleştir</string>
     <string name="common_google_play_services_enable_text">Google Play hizmetlerini etkinleştirmezseniz %1$s çalışmaz.</string>
     <string name="common_google_play_services_enable_title">Google Play hizmetlerini etkinleştirin</string>
-    <string name="common_google_play_services_install_button">Google Play hizmetlerini yükle</string>
-    <string name="common_google_play_services_install_text_phone">%1$s, şu anda telefonunuzda bulunmayan Google Play hizmetleri olmadan çalışmaz.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s, şu anda tabletinizde bulunmayan Google Play hizmetleri olmadan çalışmaz.</string>
+    <string name="common_google_play_services_install_button">Yükle</string>
+    <string name="common_google_play_services_install_text">%1$s, şu anda cihazınızda bulunmayan Google Play hizmetleri olmadan çalışmaz.</string>
     <string name="common_google_play_services_install_title">Google Play hizmetlerini edinin</string>
     <string name="common_google_play_services_notification_ticker">Google Play Hizmetleri hatası</string>
-    <string name="common_google_play_services_unsupported_text">%1$s, cihazınız tarafından desteklenmeyen Google Play hizmetlerine ihtiyaç duyuyor. Yardım için üreticiyle iletişim kurun.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play hizmetleri</string>
+    <string name="common_google_play_services_unsupported_text">%1$s, Google Play hizmetleri olmadan çalışmaz ve bu hizmetler cihazınız tarafından desteklenmiyor.</string>
     <string name="common_google_play_services_update_button">Güncelle</string>
     <string name="common_google_play_services_update_text">Google Play hizmetlerini güncellemezseniz %1$s çalışmayacak.</string>
     <string name="common_google_play_services_update_title">Google Play hizmetlerini güncelleyin</string>
     <string name="common_google_play_services_updating_text">%1$s, şu anda güncellenmekte olan Google Play hizmetleri olmadan çalışmaz.</string>
-    <string name="common_google_play_services_updating_title">Google Play hizmetleri güncelleniyor</string>
     <string name="common_google_play_services_wear_update_text">Google Play hizmetlerinin yeni sürümü gerekiyor. Kendisini kısa süre içinde güncelleyecektir.</string>
     <string name="common_open_on_phone">Telefonda aç</string>
     <string name="common_signin_button_text">Oturum aç</string>
@@ -38,8 +35,8 @@
     <string name="widget_accessible_dims_format">genişlik: %1$d, yükseklik: %2$d</string>
     <string name="add_item_request_drag_hint">Manuel olarak yerleştirmek için dokunun ve basılı tutun</string>
     <string name="place_automatically">Otomatik olarak ekle</string>
-    <string name="all_apps_search_bar_hint">Uygulamalarda Ara</string>
-    <string name="all_apps_loading_message">Uygulamalar Yükleniyor…</string>
+    <string name="all_apps_search_bar_hint">Uygulamalarda ara</string>
+    <string name="all_apps_loading_message">Uygulamalar yükleniyor…</string>
     <string name="all_apps_no_search_results">\"%1$s\" ile eşleşen uygulama bulunamadı</string>
     <string name="all_apps_search_market_message">Başka uygulamalar ara</string>
     <string name="notifications_header">Bildirimler</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Kapat</string>
     <string name="notification_dismissed">Bildirim kapatıldı</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Uygulama önerileri</string>
+    <string name="title_app_suggestions">Uygulama önerileri görüntüle</string>
     <string name="summary_app_suggestions">Tüm Uygulamalar listenizin en üstünde</string>
     <string name="title_disable_suggestions_prompt">Uygulama önerileri kapatılsın mı?</string>
     <string name="msg_disable_suggestions_prompt">Öneriler, uygulama listenizin üst kısmında görünmeyecek ve bunları oluşturmak için kullanılan kullanım verileri kalıcı olarak silinecek.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Sürüm</string>
     <string name="pref_open_source_licenses_title">Açık kaynak lisansları</string>
     <string name="icon_shape_rounded_square">Yuvarlanmış kare</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%2$s içinde %1$s</string>
     <string name="smartspace_calendar_event_now">Şimdi %1$s</string>
     <string name="smartspace_preferences">Tercihler</string>

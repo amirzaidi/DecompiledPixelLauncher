@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Hreinsa leit</string>
     <string name="place_autocomplete_search_hint">Leita</string>
-    <string name="common_google_play_services_unknown_issue">%1$s á í vandræðum með þjónustu Google Play. Ef vandamálið heldur áfram skaltu hafa samband við þróunaraðilann til að fá aðstoð.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s á í vandræðum með þjónustu Google Play. Reyndu aftur.</string>
     <string name="common_google_play_services_enable_button">Kveikja</string>
     <string name="common_google_play_services_enable_text">%1$s virkar ekki nema þú gerir þjónustu Google Play virka.</string>
     <string name="common_google_play_services_enable_title">Virkja þjónustu Google Play</string>
-    <string name="common_google_play_services_install_button">Sækja þjónustu Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s getur ekki keyrt án þjónustu Google Play, sem vantar í símann þinn.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s getur ekki keyrt án þjónustu Google Play, sem vantar í spjaldtölvuna þína.</string>
+    <string name="common_google_play_services_install_button">Setja upp</string>
+    <string name="common_google_play_services_install_text">%1$s getur ekki keyrt án þjónustu Google Play, sem vantar í tækið þitt.</string>
     <string name="common_google_play_services_install_title">Sækja þjónustu Google Play</string>
     <string name="common_google_play_services_notification_ticker">Villa í þjónustu Google Play</string>
-    <string name="common_google_play_services_unsupported_text">%1$s reiðir sig á þjónustu Google Play, sem er ekki studd í tækinu þínu. Hafðu samband við framleiðandann til að fá aðstoð.</string>
-    <string name="common_google_play_services_unsupported_title">Þjónusta Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s getur ekki keyrt án þjónustu Google Play, sem er ekki studd af tækinu þínu.</string>
     <string name="common_google_play_services_update_button">Uppfæra</string>
     <string name="common_google_play_services_update_text">%1$s getur ekki keyrt nema þú uppfærir þjónustu Google Play.</string>
     <string name="common_google_play_services_update_title">Uppfæra þjónustu Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s getur ekki keyrt án þjónustu Google Play, sem verið er að uppfæra.</string>
-    <string name="common_google_play_services_updating_title">Verið er að uppfæra þjónustu Google Play</string>
     <string name="common_google_play_services_wear_update_text">Nýja útgáfu af þjónustu Google Play vantar. Hún uppfærir sig sjálf innan skamms.</string>
     <string name="common_open_on_phone">Opna í símanum</string>
     <string name="common_signin_button_text">Skrá inn</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Hunsa</string>
     <string name="notification_dismissed">Tilkynningu lokað</string>
     <string name="app_name_pixel_launcher">Pixel ræsiforrit</string>
-    <string name="title_app_suggestions">Tillögur að forritum</string>
+    <string name="title_app_suggestions">Birta uppástungur um forrit</string>
     <string name="summary_app_suggestions">Efst á listanum yfir öll forrit</string>
     <string name="title_disable_suggestions_prompt">Slökkva á tillögum að forritum?</string>
     <string name="msg_disable_suggestions_prompt">Tillögur birtast ekki efst á forritalistanum þínum og notkunargögnunum sem notuð eru til að búa þær til verður eytt fyrir fullt og allt.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Útgáfa</string>
     <string name="pref_open_source_licenses_title">Leyfi opins kóða</string>
     <string name="icon_shape_rounded_square">Rúnnaður ferningur</string>
+    <string name="smartspace_hours_mins">%1$s og %2$s</string>
     <string name="smartspace_calendar_event">%1$s eftir %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s núna</string>
     <string name="smartspace_preferences">Kjörstillingar</string>

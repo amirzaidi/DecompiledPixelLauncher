@@ -57,6 +57,7 @@
     <attr name="fastScrollHorizontalThumbDrawable" format="reference" />
     <attr name="fastScrollHorizontalTrackDrawable" format="reference" />
     <attr name="allAppsScrimColor" format="color" />
+    <attr name="allAppsNavBarScrimColor" format="color" />
     <attr name="popupColorPrimary" format="color" />
     <attr name="popupColorSecondary" format="color" />
     <attr name="popupColorTertiary" format="color" />
@@ -116,6 +117,7 @@
     <attr name="landscapeIconSize" format="float" />
     <attr name="iconTextSize" format="float" />
     <attr name="defaultLayoutId" format="reference" />
+    <attr name="demoModeLayoutId" format="reference" />
     <attr name="containerType" format="integer">
         <enum name="folder" value="2" />
         <enum name="workspace" value="0" />

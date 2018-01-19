@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.android.launcher3.notification.NotificationMainView android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:elevation="@dimen/notification_elevation"
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/text_and_background" android:background="?popupColorPrimary" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="@dimen/notification_padding_start" android:paddingEnd="@dimen/notification_main_text_padding_end">
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/text_and_background" android:background="?popupColorPrimary" android:paddingBottom="14.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="@dimen/notification_padding_start" android:paddingEnd="@dimen/notification_main_text_padding_end">
         <TextView android:textSize="@dimen/notification_main_title_size" android:textColor="?android:textColorPrimary" android:ellipsize="end" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:fontFamily="sans-serif" android:textAlignment="viewStart" />
         <TextView android:textSize="@dimen/notification_main_text_size" android:textColor="?android:textColorSecondary" android:ellipsize="end" android:id="@id/text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:fontFamily="sans-serif" />
     </LinearLayout>
-    <View android:layout_gravity="end|center" android:id="@id/popup_item_icon" android:layout_width="@dimen/notification_icon_size" android:layout_height="@dimen/notification_icon_size" android:layout_marginBottom="8.0dip" android:layout_marginEnd="@dimen/notification_padding_end" />
+    <View android:layout_gravity="end|center" android:id="@id/popup_item_icon" android:layout_width="@dimen/notification_icon_size" android:layout_height="@dimen/notification_icon_size" android:layout_marginBottom="7.0dip" android:layout_marginEnd="@dimen/notification_padding_end" />
 </com.android.launcher3.notification.NotificationMainView>

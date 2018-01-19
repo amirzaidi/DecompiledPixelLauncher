@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Vymazat vyhledávání</string>
     <string name="place_autocomplete_search_hint">Vyhledávání</string>
-    <string name="common_google_play_services_unknown_issue">Aplikace %1$s má potíže se službami Google Play. Pokud problém přetrvává, obraťte se na vývojáře s žádostí o pomoc.</string>
+    <string name="common_google_play_services_unknown_issue">Aplikace %1$s má potíže se službami Google Play. Zkuste to prosím znovu.</string>
     <string name="common_google_play_services_enable_button">Povolit</string>
     <string name="common_google_play_services_enable_text">Ke spuštění aplikace %1$s je třeba aktivovat služby Google Play.</string>
     <string name="common_google_play_services_enable_title">Aktivace služeb Google Play</string>
-    <string name="common_google_play_services_install_button">Instalace služeb Google Play</string>
-    <string name="common_google_play_services_install_text_phone">Ke spuštění aplikace %1$s jsou potřeba služby Google Play, které v telefonu nemáte.</string>
-    <string name="common_google_play_services_install_text_tablet">Ke spuštění aplikace %1$s jsou potřeba služby Google Play, které v tabletu nemáte.</string>
+    <string name="common_google_play_services_install_button">Instalovat</string>
+    <string name="common_google_play_services_install_text">Ke spuštění aplikace %1$s jsou potřeba služby Google Play, které v zařízení nemáte.</string>
     <string name="common_google_play_services_install_title">Instalace služeb Google Play</string>
     <string name="common_google_play_services_notification_ticker">Chyba služeb Google Play</string>
-    <string name="common_google_play_services_unsupported_text">Aplikace %1$s vyžaduje služby Google Play, které ve vašem zařízení nejsou podporovány. S žádostí o pomoc kontaktujte výrobce zařízení.</string>
-    <string name="common_google_play_services_unsupported_title">Služby Google Play</string>
+    <string name="common_google_play_services_unsupported_text">Ke spuštění aplikace %1$s jsou potřeba služby Google Play, které v tomto zařízení nejsou podporovány.</string>
     <string name="common_google_play_services_update_button">Aktualizovat</string>
     <string name="common_google_play_services_update_text">Ke spuštění aplikace %1$s je třeba aktualizovat služby Google Play.</string>
     <string name="common_google_play_services_update_title">Aktualizace služeb Google Play</string>
     <string name="common_google_play_services_updating_text">Ke spuštění aplikace %1$s jsou potřeba služby Google Play, které jsou právě aktualizovány.</string>
-    <string name="common_google_play_services_updating_title">Probíhá aktualizace služeb Google Play</string>
     <string name="common_google_play_services_wear_update_text">Je vyžadována nová verze služeb Google Play. Nová verze se brzy sama nainstaluje.</string>
     <string name="common_open_on_phone">Otevřít v telefonu</string>
     <string name="common_signin_button_text">Přihlásit se</string>
@@ -38,7 +35,7 @@
     <string name="widget_accessible_dims_format">šířka %1$d, výška %2$d</string>
     <string name="add_item_request_drag_hint">Chcete-li položku umístit ručně, klepněte na ni a podržte ji</string>
     <string name="place_automatically">Přidat automaticky</string>
-    <string name="all_apps_search_bar_hint">Hledat aplikace</string>
+    <string name="all_apps_search_bar_hint">Hledat v aplikacích</string>
     <string name="all_apps_loading_message">Načítání aplikací…</string>
     <string name="all_apps_no_search_results">Dotazu „%1$s“ neodpovídají žádné aplikace</string>
     <string name="all_apps_search_market_message">Vyhledat další aplikace</string>
@@ -49,7 +46,7 @@
     <string name="all_apps_home_button_label">Plocha</string>
     <string name="remove_drop_target_label">Odstranit</string>
     <string name="uninstall_drop_target_label">Odinstalovat</string>
-    <string name="app_info_drop_target_label">Informace o aplikaci</string>
+    <string name="app_info_drop_target_label">O aplikaci</string>
     <string name="permlab_install_shortcut">instalace zástupce</string>
     <string name="permdesc_install_shortcut">Umožňuje aplikaci přidat zástupce bez zásahu uživatele.</string>
     <string name="permlab_read_settings">čtení nastavení a odkazů plochy</string>
@@ -79,11 +76,11 @@
     <string name="allow_rotation_title">Povolit otáčení plochy</string>
     <string name="allow_rotation_desc">Při otočení telefonu</string>
     <string name="allow_rotation_blocked_desc">Aktuální nastavení displeje neumožňuje otáčení</string>
-    <string name="icon_badging_title">Puntíky s oznámeními</string>
+    <string name="icon_badging_title">Puntíky s oznámením</string>
     <string name="icon_badging_desc_on">Zapnuto</string>
     <string name="icon_badging_desc_off">Vypnuto</string>
     <string name="title_missing_notification_access">Je třeba udělit přístup k oznámením</string>
-    <string name="msg_missing_notification_access">Chcete-li zobrazovat puntíky s oznámeními, zapněte oznámení z aplikace %1$s</string>
+    <string name="msg_missing_notification_access">Chcete-li zobrazovat puntíky s oznámením, zapněte oznámení z aplikace %1$s</string>
     <string name="title_change_settings">Změnit nastavení</string>
     <string name="auto_add_shortcuts_label">Přidat ikonu na plochu</string>
     <string name="auto_add_shortcuts_description">Pro nové aplikace</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Zavřít</string>
     <string name="notification_dismissed">Oznámení bylo zavřeno</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Návrhy aplikací</string>
+    <string name="title_app_suggestions">Zobrazovat návrhy aplikací</string>
     <string name="summary_app_suggestions">V horní části seznamu všech aplikací</string>
     <string name="title_disable_suggestions_prompt">Chcete návrhy aplikací vypnout?</string>
     <string name="msg_disable_suggestions_prompt">Na začátku seznamu aplikací se nebudou zobrazovat návrhy a údaje o využití, na základě kterých byly návrhy vytvářeny, budou trvale vymazány.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Verze</string>
     <string name="pref_open_source_licenses_title">Licence open source</string>
     <string name="icon_shape_rounded_square">Zaoblený čtverec</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s za %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s právě teď</string>
     <string name="smartspace_preferences">Předvolby</string>

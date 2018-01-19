@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">清除搜尋</string>
     <string name="place_autocomplete_search_hint">搜尋</string>
-    <string name="common_google_play_services_unknown_issue">「%1$s」存取 Google Play 服務時發生問題。如果問題持續，請聯絡開發人員尋求協助。</string>
+    <string name="common_google_play_services_unknown_issue">「%1$s」存取 Google Play 服務時發生問題。請稍後再試一次。</string>
     <string name="common_google_play_services_enable_button">啟用</string>
     <string name="common_google_play_services_enable_text">您必須啟用 Google Play 服務，方可執行「%1$s」。</string>
     <string name="common_google_play_services_enable_title">啟用 Google Play 服務</string>
-    <string name="common_google_play_services_install_button">安裝 Google Play 服務</string>
-    <string name="common_google_play_services_install_text_phone">您的手機尚未安裝 Google Play 服務，因此無法執行「%1$s」。</string>
-    <string name="common_google_play_services_install_text_tablet">您的平板電腦尚未安裝 Google Play 服務，因此無法執行「%1$s」。</string>
+    <string name="common_google_play_services_install_button">安裝</string>
+    <string name="common_google_play_services_install_text">您的裝置尚未安裝 Google Play 服務，因此無法執行「%1$s」。</string>
     <string name="common_google_play_services_install_title">安裝 Google Play 服務</string>
     <string name="common_google_play_services_notification_ticker">Google Play 服務錯誤</string>
-    <string name="common_google_play_services_unsupported_text">「%1$s」需要使用 Google Play 服務，但您的裝置並不支援此服務。請聯絡裝置製造商尋求協助。</string>
-    <string name="common_google_play_services_unsupported_title">Google Play 服務</string>
+    <string name="common_google_play_services_unsupported_text">您的裝置不支援 Google Play 服務，因此無法執行「%1$s」。</string>
     <string name="common_google_play_services_update_button">更新</string>
     <string name="common_google_play_services_update_text">您必須更新「Google Play 服務」，才能執行 %1$s。</string>
     <string name="common_google_play_services_update_title">更新 Google Play 服務</string>
     <string name="common_google_play_services_updating_text">正在更新 Google Play 服務，更新完成後方可執行「%1$s」。</string>
-    <string name="common_google_play_services_updating_title">正在更新 Google Play 服務</string>
     <string name="common_google_play_services_wear_update_text">需要使用新版本的 Google Play 服務。更新會即將自動開始。</string>
     <string name="common_open_on_phone">在手機開啟</string>
     <string name="common_signin_button_text">登入</string>
@@ -40,7 +37,7 @@
     <string name="place_automatically">自動新增</string>
     <string name="all_apps_search_bar_hint">搜尋應用程式</string>
     <string name="all_apps_loading_message">正在載入應用程式…</string>
-    <string name="all_apps_no_search_results">無法找到與「%1$s」相符的應用程式</string>
+    <string name="all_apps_no_search_results">找不到與「%1$s」相符的應用程式</string>
     <string name="all_apps_search_market_message">搜尋更多應用程式</string>
     <string name="notifications_header">通知</string>
     <string name="out_of_space">主畫面已無空間。</string>
@@ -131,8 +128,8 @@
     <string name="shortcuts_menu_with_notifications_description">「%3$s」嘅 %1$d 個捷徑同 %2$d 個通知</string>
     <string name="action_dismiss_notification">關閉</string>
     <string name="notification_dismissed">關閉咗通知</string>
-    <string name="app_name_pixel_launcher">Pixel 應用程式啟動器</string>
-    <string name="title_app_suggestions">應用程式建議</string>
+    <string name="app_name_pixel_launcher">Pixel 啟動器</string>
+    <string name="title_app_suggestions">顯示應用程式建議</string>
     <string name="summary_app_suggestions">位於「全部應用程式」清單頂部</string>
     <string name="title_disable_suggestions_prompt">要關閉應用程式建議嗎？</string>
     <string name="msg_disable_suggestions_prompt">建議將不會在應用程式清單上方顯示，而用作提供建議的使用資料將會永久清除。</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">版本</string>
     <string name="pref_open_source_licenses_title">開放原始碼授權</string>
     <string name="icon_shape_rounded_square">圓角正方形</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s將在 %2$s後開始</string>
     <string name="smartspace_calendar_event_now">%1$s現已開始</string>
     <string name="smartspace_preferences">偏好設定</string>

@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">തിരയുന്നത് മായ്‌ക്കുക</string>
     <string name="place_autocomplete_search_hint">തിരയുക</string>
-    <string name="common_google_play_services_unknown_issue">Google Play സേവനങ്ങളുമായി ബന്ധപ്പെട്ട് %1$s ബുദ്ധിമുട്ട് നേരിടുന്നു. പ്രശ്നം പരിഹരിക്കപ്പെടുന്നില്ലെങ്കിൽ, സഹായത്തിന് ഡെവലപ്പറെ ബന്ധപ്പെടുക.</string>
+    <string name="common_google_play_services_unknown_issue">Google Play സേവനങ്ങളുമായി ബന്ധപ്പെട്ട് %1$s ആപ്പിനെന്തോ പ്രശ്നമുണ്ട്. വീണ്ടും ശ്രമിക്കുക.</string>
     <string name="common_google_play_services_enable_button">പ്രവർത്തനക്ഷമമാക്കുക</string>
     <string name="common_google_play_services_enable_text">നിങ്ങൾ Google Play സേവനങ്ങൾ പ്രവർത്തനക്ഷമമാക്കുന്നില്ലെങ്കിൽ %1$s പ്രവർത്തിക്കില്ല.</string>
     <string name="common_google_play_services_enable_title">Google Play സേവനങ്ങൾ പ്രവർത്തനക്ഷമമാക്കുക</string>
-    <string name="common_google_play_services_install_button">Google Play സേവനങ്ങൾ സ്വീകരിക്കുക</string>
-    <string name="common_google_play_services_install_text_phone">നിങ്ങൾ Google Play സേവനങ്ങൾ പ്രവർത്തനക്ഷമമാക്കുന്നില്ലെങ്കിൽ, %1$s പ്രവർത്തിക്കില്ല.</string>
-    <string name="common_google_play_services_install_text_tablet">നിങ്ങളുടെ ടാബ്‌ലെറ്റിൽ നിന്നും വിട്ടുപോയിരിക്കുന്ന Google Play സേവനങ്ങളില്ലാതെ %1$s പ്രവർത്തിക്കില്ല.</string>
+    <string name="common_google_play_services_install_button">ഇന്‍സ്റ്റാള്‍ ചെയ്യുക</string>
+    <string name="common_google_play_services_install_text">Google Play സേവനങ്ങളില്ലാതെ %1$s പ്രവർത്തിക്കില്ല, ഈ സേവനങ്ങളാകട്ടെ നിങ്ങളുടെ ഉപകരണത്തിൽ ഇല്ല.</string>
     <string name="common_google_play_services_install_title">Google Play സേവനങ്ങൾ നേടുക</string>
     <string name="common_google_play_services_notification_ticker">Google Play സേവനങ്ങളിലെ പിശക്</string>
-    <string name="common_google_play_services_unsupported_text">നിങ്ങളുടെ ഉപകരണം പിന്തുണയ്ക്കാത്ത Google Play സേവനങ്ങളെയാണ് %1$s ആശ്രയിക്കുന്നത്. സഹായത്തിനായി നിർമ്മാതാവിനെ ബന്ധപ്പെടുക.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play സേവനങ്ങൾ</string>
+    <string name="common_google_play_services_unsupported_text">Google Play സേവനങ്ങളില്ലാതെ %1$s പ്രവർത്തിക്കില്ല, സേവനങ്ങളെയാകട്ടെ നിങ്ങളുടെ ഉപകരണം പിന്തുണയ്ക്കുന്നുമില്ല.</string>
     <string name="common_google_play_services_update_button">അപ്‌ഡേറ്റുചെയ്യുക</string>
     <string name="common_google_play_services_update_text">നിങ്ങൾ Google Play സേവനങ്ങൾ അപ്‌ഡേറ്റുചെയ്‌തില്ലെങ്കിൽ %1$s പ്രവർത്തിക്കില്ല.</string>
     <string name="common_google_play_services_update_title">Google Play സേവനങ്ങൾ അപ്‌ഡേറ്റുചെയ്യുക</string>
     <string name="common_google_play_services_updating_text">നിലവിൽ അപ്‌ഡേറ്റുചെയ്യുന്ന Google Play സേവനങ്ങൾ ഇല്ലാതെ %1$s പ്രവർത്തിക്കില്ല.</string>
-    <string name="common_google_play_services_updating_title">Google Play സേവനങ്ങൾ അപ്‌ഡേറ്റുചെയ്യുകയാണ്</string>
     <string name="common_google_play_services_wear_update_text">Google Play സേവനങ്ങളുടെ പുതിയ പതിപ്പ് ആവശ്യമാണ്. താമസിയാതെ ഇത് സ്വയം അപ്‌ഡേറ്റുചെയ്യും.</string>
     <string name="common_open_on_phone">ഫോണിൽ തുറക്കുക</string>
     <string name="common_signin_button_text">സൈൻ ഇൻ ചെയ്യുക</string>
@@ -38,9 +35,9 @@
     <string name="widget_accessible_dims_format">%1$d വീതിയും %2$d ഉയരവും</string>
     <string name="add_item_request_drag_hint">സ്വമേധയാ സ്ഥാപിക്കുന്നതിന് സ്‌പർശിച്ചുപിടിക്കുക</string>
     <string name="place_automatically">സ്വയമേവ ചേർക്കുക</string>
-    <string name="all_apps_search_bar_hint">ആപ്പുകളെ തിരയുക</string>
+    <string name="all_apps_search_bar_hint">ആപ്പുകൾ തിരയുക</string>
     <string name="all_apps_loading_message">ആപ്പുകൾ ലോഡുചെയ്യുന്നു...</string>
-    <string name="all_apps_no_search_results">\"%1$s\" എന്നതുമായി പൊരുത്തപ്പെടുന്ന ആപ്പ്‌സൊന്നും കണ്ടെത്തിയില്ല</string>
+    <string name="all_apps_no_search_results">\"%1$s\" എന്നതുമായി പൊരുത്തപ്പെടുന്ന ആപ്പുകളൊന്നും കണ്ടെത്തിയില്ല</string>
     <string name="all_apps_search_market_message">കൂടുതൽ ആപ്പുകൾക്ക് തിരയുക</string>
     <string name="notifications_header">അറിയിപ്പുകൾ</string>
     <string name="out_of_space">ഈ ഹോം സ്‌ക്രീനിൽ ഒഴിവൊന്നുമില്ല.</string>
@@ -75,7 +72,7 @@
     <string name="wallpaper_button_text">വാൾപേപ്പർ</string>
     <string name="settings_button_text">ഹോം ക്രമീകരണം</string>
     <string name="msg_disabled_by_admin">അഡ്മിൻ പ്രവർത്തനരഹിതമാക്കിയിരിക്കുന്നു</string>
-    <string name="accessibility_action_overview">കാഴ്ച</string>
+    <string name="accessibility_action_overview">അവലോകനം</string>
     <string name="allow_rotation_title">ഹോം സ്ക്രീൻ തിരിക്കൽ അനുവദിക്കുക</string>
     <string name="allow_rotation_desc">ഫോൺ തിരിച്ച നിലയിലായിരിക്കുമ്പോൾ</string>
     <string name="allow_rotation_blocked_desc">നിലവിലെ ഡിസ്പ്ലേ ക്രമീകരണം തിരിക്കൽ അനുവദിക്കുന്നില്ല</string>
@@ -131,8 +128,8 @@
     <string name="shortcuts_menu_with_notifications_description">%3$s ആപ്പിനായുള്ള %1$d കുറുക്കുവഴികളും %2$d അറിയിപ്പുകളും</string>
     <string name="action_dismiss_notification">നിരസിക്കുക</string>
     <string name="notification_dismissed">അറിയിപ്പ് നിരസിച്ചു</string>
-    <string name="app_name_pixel_launcher">പിക്സൽ ലോഞ്ചർ</string>
-    <string name="title_app_suggestions">ആപ്പ് നിർദ്ദേശങ്ങൾ</string>
+    <string name="app_name_pixel_launcher">Pixel ലോഞ്ചർ</string>
+    <string name="title_app_suggestions">ആപ്പ് നിർദ്ദേശങ്ങൾ പ്രദർശിപ്പിക്കുക</string>
     <string name="summary_app_suggestions">"നിങ്ങളുടെ 'എല്ലാ ആപ്പുകളും' ലിസ്റ്റിന്റെ മുകളിൽ"</string>
     <string name="title_disable_suggestions_prompt">ആപ്പ് നിർദ്ദേശങ്ങൾ ഓഫാക്കണോ?</string>
     <string name="msg_disable_suggestions_prompt">നിങ്ങളുടെ ആപ്സ് ലിസ്റ്റിന്റെ മുകളിൽ നിർദ്ദേശങ്ങൾ ദൃശ്യമാകില്ല, അവ സൃഷ്ടിക്കാൻ ഉപയോഗിച്ച ഉപയോഗ ഡാറ്റ ശാശ്വതമായി മായ്ക്കപ്പെടും.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">പതിപ്പ്</string>
     <string name="pref_open_source_licenses_title">ഓപ്പൺ സോഴ്‌സ് ലൈസൻസുകൾ</string>
     <string name="icon_shape_rounded_square">വൃത്താകാര ചതുരം</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%2$s എന്നതിൽ %1$s</string>
     <string name="smartspace_calendar_event_now">%1$s ഇപ്പോൾ</string>
     <string name="smartspace_preferences">മുൻഗണനകൾ</string>

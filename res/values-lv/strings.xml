@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Notīrīt meklēšanas vaicājumu</string>
     <string name="place_autocomplete_search_hint">Meklēt</string>
-    <string name="common_google_play_services_unknown_issue">Lietotnē %1$s ir radusies problēma ar Google Play pakalpojumu darbību. Ja problēma joprojām pastāv, lūdzu, sazinieties ar izstrādātāju.</string>
+    <string name="common_google_play_services_unknown_issue">Lietotnē %1$s ir radusies problēma ar Google Play pakalpojumu darbību. Lūdzu, mēģiniet vēlreiz.</string>
     <string name="common_google_play_services_enable_button">Iespējot</string>
     <string name="common_google_play_services_enable_text">Lai lietotne %1$s darbotos, ir jāiespējo Google Play pakalpojumi.</string>
     <string name="common_google_play_services_enable_title">Google Play pakalpojumu iespējošana</string>
-    <string name="common_google_play_services_install_button">Iegūt Google Play pakalpojumus</string>
-    <string name="common_google_play_services_install_text_phone">Lai lietotne %1$s darbotos, tālrunī ir jāinstalē Google Play pakalpojumi.</string>
-    <string name="common_google_play_services_install_text_tablet">Lai lietotne %1$s darbotos, planšetdatorā ir jāinstalē Google Play pakalpojumi.</string>
+    <string name="common_google_play_services_install_button">Instalēt</string>
+    <string name="common_google_play_services_install_text">Lai lietotne %1$s darbotos, ierīcē ir jāinstalē Google Play pakalpojumi.</string>
     <string name="common_google_play_services_install_title">Google Play pakalpojumu iegūšana</string>
     <string name="common_google_play_services_notification_ticker">Google Play pakalpojumu kļūda</string>
-    <string name="common_google_play_services_unsupported_text">Lai lietotne %1$s darbotos, ir jāinstalē Google Play pakalpojumi, taču tie jūsu ierīcē netiek atbalstīti. Sazinieties ar ražotāju, lai saņemtu palīdzību.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play pakalpojumi</string>
+    <string name="common_google_play_services_unsupported_text">Lai lietotne %1$s darbotos, ir nepieciešami Google Play pakalpojumi, taču jūsu ierīce tos neatbalsta.</string>
     <string name="common_google_play_services_update_button">Atjaunināt</string>
     <string name="common_google_play_services_update_text">Lai lietotne %1$s darbotos, jums ir jāatjaunina Google Play pakalpojumi.</string>
     <string name="common_google_play_services_update_title">Google Play pakalpojumu atjaunināšana</string>
     <string name="common_google_play_services_updating_text">Lai lietotne %1$s darbotos, ir jāinstalē Google Play pakalpojumi. Pašlaik notiek to atjaunināšana.</string>
-    <string name="common_google_play_services_updating_title">Tiek atjaunināti Google Play pakalpojumi</string>
     <string name="common_google_play_services_wear_update_text">Ir nepieciešama jauna Google Play pakalpojumu versija. Drīzumā tā tiks instalēta.</string>
     <string name="common_open_on_phone">Atvērt tālrunī</string>
     <string name="common_signin_button_text">Pierakstīties</string>
@@ -40,7 +37,7 @@
     <string name="place_automatically">Pievienot automātiski</string>
     <string name="all_apps_search_bar_hint">Meklēt lietotnes</string>
     <string name="all_apps_loading_message">Notiek lietotņu ielāde…</string>
-    <string name="all_apps_no_search_results">Vaicājumam “%1$s” neatbilda neviena lietotne.</string>
+    <string name="all_apps_no_search_results">Vaicājumam “%1$s” neatbilda neviena lietotne</string>
     <string name="all_apps_search_market_message">Meklēt citas lietotnes</string>
     <string name="notifications_header">Paziņojumi</string>
     <string name="out_of_space">Šajā sākuma ekrānā vairs nav vietas.</string>
@@ -49,7 +46,7 @@
     <string name="all_apps_home_button_label">Sākums</string>
     <string name="remove_drop_target_label">Noņemt</string>
     <string name="uninstall_drop_target_label">Atinstalēt</string>
-    <string name="app_info_drop_target_label">Lietotnes informācija</string>
+    <string name="app_info_drop_target_label">Par lietotni</string>
     <string name="permlab_install_shortcut">instalēt saīsnes</string>
     <string name="permdesc_install_shortcut">Ļauj lietotnei pievienot saīsnes, nejautājot lietotājam.</string>
     <string name="permlab_read_settings">lasīt sākuma ekrāna iestatījumus un saīsnes</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Nerādīt</string>
     <string name="notification_dismissed">Paziņojums netiek rādīts</string>
     <string name="app_name_pixel_launcher">Pixel palaišanas programma</string>
-    <string name="title_app_suggestions">Lietotņu ieteikumi</string>
+    <string name="title_app_suggestions">Lietotnes ieteikumu rādīšana</string>
     <string name="summary_app_suggestions">Visu lietotņu saraksta augšdaļā</string>
     <string name="title_disable_suggestions_prompt">Vai izslēgt lietotņu ieteikumus?</string>
     <string name="msg_disable_suggestions_prompt">Ieteikumi netiks rādīti jūsu lietotņu saraksta augšdaļā, un lietojuma dati, kas tika izmantoti to izveidē, tiks neatgriezeniski dzēsti.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versija</string>
     <string name="pref_open_source_licenses_title">Atklātā pirmkoda licences</string>
     <string name="icon_shape_rounded_square">Noapaļots kvadrāts</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s pēc %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s pašlaik</string>
     <string name="smartspace_preferences">Preferences</string>

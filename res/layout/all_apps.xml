@@ -7,5 +7,5 @@
         <include android:id="@id/search_container_all_apps" layout="?android:attr/keyboardLayout" />
         <include layout="@layout/all_apps_fast_scroller" />
     </com.android.launcher3.allapps.AllAppsRecyclerViewContainerView>
-    <View android:layout_gravity="bottom" android:id="@id/nav_bar_bg" android:focusable="false" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="0.0dip" style="@style/AllAppsNavBarProtection" />
+    <View android:layout_gravity="bottom" android:id="@id/nav_bar_bg" android:background="?allAppsNavBarScrimColor" android:focusable="false" android:layout_width="fill_parent" android:layout_height="0.0dip" />
 </com.android.launcher3.allapps.AllAppsContainerView>

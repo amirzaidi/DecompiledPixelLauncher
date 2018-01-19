@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Sula usesho</string>
     <string name="place_autocomplete_search_hint">Sesha</string>
-    <string name="common_google_play_services_unknown_issue">%1$s inenkinga ngamasevisi we-Google Play. Uma inkinga iqhubeka, sicela uxhumane nonjiniyela ngosizo.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s inenkinga ngamasevisi e-Google Play. Sicela uzame futhi.</string>
     <string name="common_google_play_services_enable_button">Nika amandla</string>
     <string name="common_google_play_services_enable_text">I-%1$s ngeke isebenze ngaphandle kokuthi unike amandla amasevisi we-Google Play.</string>
     <string name="common_google_play_services_enable_title">Nika amandla amasevisi we-Google Play</string>
-    <string name="common_google_play_services_install_button">Thola amasevisi we-Google Play</string>
-    <string name="common_google_play_services_install_text_phone">I-%1$s ngeke ize iqalise ngaphandle kwamasevisi we-Google Play, angekho kusukela kufoni yakho.</string>
-    <string name="common_google_play_services_install_text_tablet">I-%1$s ngeke ize iqalise ngaphandle kwamasevisi we-Google Play, angekho kusukela kuthebulethi yakho.</string>
+    <string name="common_google_play_services_install_button">Faka</string>
+    <string name="common_google_play_services_install_text">I-%1$s ngeke ize iqalise ngaphandle kwamasevisi we-Google Play, angekho kusukela kudivayisi yakho.</string>
     <string name="common_google_play_services_install_title">Thola amasevisi we-Google Play</string>
     <string name="common_google_play_services_notification_ticker">Iphutha lamasevisi we-Google Play</string>
-    <string name="common_google_play_services_unsupported_text">I-%1$s ithembela kumasevisi we-Google Play, angasekelwe yidivayisi yakho. Xhumana nomkhiqizi ukuze uthole usizo.</string>
-    <string name="common_google_play_services_unsupported_title">Amasevisi we-Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s ngeke isebenze ngaphandle kwamasevisi e-Google Play, angasekelwa idivayisi yakho.</string>
     <string name="common_google_play_services_update_button">Isibuyekezo</string>
     <string name="common_google_play_services_update_text">I-%1$s ngeke ize iqalise ngaphandle kokuthi ubuyekeze i-Google Play.</string>
     <string name="common_google_play_services_update_title">Buyekeza amasevisi we-Google Play</string>
     <string name="common_google_play_services_updating_text">I-%1$s ngeke ize iqalise ngaphandle kwamasevisi we-Google Play, okwamanje abuyekezwayo.</string>
-    <string name="common_google_play_services_updating_title">Amasevisi we-Google Play ayabuyekezwa</string>
     <string name="common_google_play_services_wear_update_text">Kudingeka inguqulo entsha yamasevisi we-Google Play. Izozibuyekeza ngokwayo maduze.</string>
     <string name="common_open_on_phone">Vula kufoni</string>
     <string name="common_signin_button_text">Ngena ngemvume</string>
@@ -38,9 +35,9 @@
     <string name="widget_accessible_dims_format">%1$d ububanzi ngokungu-%2$d ukuya phezulu</string>
     <string name="add_item_request_drag_hint">Thinta futhi ubambe ukuze ubeke ngokwenza</string>
     <string name="place_automatically">Engeza ngokuzenzakalelayo</string>
-    <string name="all_apps_search_bar_hint">Sesha Izinhlelo Zokusebenza</string>
+    <string name="all_apps_search_bar_hint">Sesha izinhlelo zokusebenza</string>
     <string name="all_apps_loading_message">Ilayisha izinhlelo zokusebenza...</string>
-    <string name="all_apps_no_search_results">Azikho izinhlelo zokusebenza ezitholakele ezifana ne-\"%1$s\"</string>
+    <string name="all_apps_no_search_results">Azikho izinhlelo zokusebenza ezitholiwe ezifana ne-\"%1$s\"</string>
     <string name="all_apps_search_market_message">Sesha izinhlelo zokusebenza eziningi</string>
     <string name="notifications_header">Izaziso</string>
     <string name="out_of_space">Asisekho isikhala kulesi sikrini Sasekhaya.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Cashisa</string>
     <string name="notification_dismissed">Isaziso sicashisiwe</string>
     <string name="app_name_pixel_launcher">Isiqalisi Sephikseli</string>
-    <string name="title_app_suggestions">Iziphakamiso zohlelo lokusebenza</string>
+    <string name="title_app_suggestions">Bonisa iziphakamiso zohlelo lokusebenza</string>
     <string name="summary_app_suggestions">Ngaphezulu kohlu lwakho lwazo zonke izinhlelo zokusebenza</string>
     <string name="title_disable_suggestions_prompt">Vala iziphakamiso zohlelo lokusebenza?</string>
     <string name="msg_disable_suggestions_prompt">Iziphakamiso ngeke zivele ngaphezulu kohlu lwezinhlelo zakho zokusebenza, futhi idatha yokusetshenziswa esetshenziselwe ukuzidala izosulwa ingunaphakade.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Inhlobo</string>
     <string name="pref_open_source_licenses_title">Amalayisense omthombo ovulekile</string>
     <string name="icon_shape_rounded_square">Isikwele esijikelezayo</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s ku-%2$s</string>
     <string name="smartspace_calendar_event_now">%1$s manje</string>
     <string name="smartspace_preferences">Okuncamelayo</string>

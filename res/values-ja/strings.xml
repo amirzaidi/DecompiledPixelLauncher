@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">検索をクリア</string>
     <string name="place_autocomplete_search_hint">検索</string>
-    <string name="common_google_play_services_unknown_issue">「%1$s」でGoogle Play開発者サービスに問題が発生しています。問題が解決しない場合は、デベロッパーにお問い合わせください。</string>
+    <string name="common_google_play_services_unknown_issue">「%1$s」で Google Play 開発者サービスに問題が発生しています。もう一度お試しください。</string>
     <string name="common_google_play_services_enable_button">有効にする</string>
     <string name="common_google_play_services_enable_text">%1$sの実行には、Google Play開発者サービスの有効化が必要です。</string>
     <string name="common_google_play_services_enable_title">Google Play開発者サービスの有効化</string>
-    <string name="common_google_play_services_install_button">Google Play開発者サービスを入手</string>
-    <string name="common_google_play_services_install_text_phone">%1$sの実行にはGoogle Play開発者サービスが必要ですが、お使いのスマートフォンにはインストールされていません。</string>
-    <string name="common_google_play_services_install_text_tablet">%1$sの実行にはGoogle Play開発者サービスが必要ですが、お使いのタブレットにはインストールされていません。</string>
+    <string name="common_google_play_services_install_button">インストール</string>
+    <string name="common_google_play_services_install_text">「%1$s」の実行には Google Play 開発者サービスが必要ですが、お使いの端末にはインストールされていません。</string>
     <string name="common_google_play_services_install_title">Google Play開発者サービスの入手</string>
     <string name="common_google_play_services_notification_ticker">Google Play開発者サービスのエラー</string>
-    <string name="common_google_play_services_unsupported_text">%1$sに必要なGoogle Play開発者サービスは、お使いの端末ではサポートされていません。詳しくは端末メーカーにお問い合わせください。</string>
-    <string name="common_google_play_services_unsupported_title">Google Play開発者サービス</string>
+    <string name="common_google_play_services_unsupported_text">「%1$s」の実行には Google Play 開発者サービスが必要ですが、お使いの端末ではサポートされていません。</string>
     <string name="common_google_play_services_update_button">更新</string>
     <string name="common_google_play_services_update_text">%1$sの実行にはGoogle Play開発者サービスの更新が必要です。</string>
     <string name="common_google_play_services_update_title">Google Play開発者サービスの更新</string>
     <string name="common_google_play_services_updating_text">%1$sの実行にはGoogle Play開発者サービスが必要ですが、このサービスは現在更新中です。</string>
-    <string name="common_google_play_services_updating_title">Google Play開発者サービスの更新中</string>
     <string name="common_google_play_services_wear_update_text">Google Play開発者サービスの新しいバージョンが必要です。まもなく自動更新されます。</string>
     <string name="common_open_on_phone">スマートフォンで開く</string>
     <string name="common_signin_button_text">ログイン</string>
@@ -86,7 +83,7 @@
     <string name="msg_missing_notification_access">通知ドットを表示するには、「%1$s」のアプリ通知を ON にしてください</string>
     <string name="title_change_settings">設定を変更</string>
     <string name="auto_add_shortcuts_label">ホーム画面にアイコンを追加</string>
-    <string name="auto_add_shortcuts_description">新しいアプリをダウンロードしたときに</string>
+    <string name="auto_add_shortcuts_description">新しいアプリをダウンロードしたとき</string>
     <string name="icon_shape_override_label">アイコンの形の変更</string>
     <string name="icon_shape_system_default">システムのデフォルトを使用</string>
     <string name="icon_shape_square">スクエア</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">表示しない</string>
     <string name="notification_dismissed">通知を非表示にしました</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">おすすめのアプリ</string>
+    <string name="title_app_suggestions">アプリの候補の表示</string>
     <string name="summary_app_suggestions">[すべてのアプリ] リストの一番上</string>
     <string name="title_disable_suggestions_prompt">おすすめのアプリを非表示にしますか？</string>
     <string name="msg_disable_suggestions_prompt">おすすめがアプリリストの上部に表示されなくなり、おすすめの作成に使用される利用データが完全に消去されます。</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">バージョン</string>
     <string name="pref_open_source_licenses_title">オープンソース ライセンス</string>
     <string name="icon_shape_rounded_square">ラウンデッド スクエア</string>
+    <string name="smartspace_hours_mins">%1$s%2$s</string>
     <string name="smartspace_calendar_event">%1$s（%2$s 後）</string>
     <string name="smartspace_calendar_event_now">%1$s（今すぐ）</string>
     <string name="smartspace_preferences">設定</string>

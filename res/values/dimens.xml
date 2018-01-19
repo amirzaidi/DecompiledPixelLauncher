@@ -147,9 +147,10 @@
     <dimen name="notification_padding_start">16.0dip</dimen>
     <dimen name="notification_padding_end">12.0dip</dimen>
     <dimen name="notification_footer_icon_row_padding">15.0dip</dimen>
-    <dimen name="notification_header_height">32.0dip</dimen>
-    <dimen name="notification_main_height">96.0dip</dimen>
+    <dimen name="notification_header_height">36.0dip</dimen>
+    <dimen name="notification_main_height">84.0dip</dimen>
     <dimen name="notification_footer_height">32.0dip</dimen>
+    <dimen name="notification_empty_footer_height">6.0dip</dimen>
     <dimen name="notification_header_text_size">13.0sp</dimen>
     <dimen name="notification_header_count_text_size">12.0sp</dimen>
     <dimen name="notification_main_title_size">16.0sp</dimen>
@@ -175,7 +176,6 @@
     <dimen name="qsb_shadow_margin">6.0dip</dimen>
     <dimen name="qsb_widget_height">56.0dip</dimen>
     <dimen name="all_apps_extra_search_padding">8.0dip</dimen>
-    <dimen name="qsb_hotseat_bottom_margin">-4.0dip</dimen>
     <dimen name="smartspace_title_size">24.0dip</dimen>
     <dimen name="smartspace_horizontal_padding">56.0dip</dimen>
 </resources>

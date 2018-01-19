@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Tyhjennä haku.</string>
     <string name="place_autocomplete_search_hint">Haku</string>
-    <string name="common_google_play_services_unknown_issue">Sovelluksella %1$s on ongelmia Google Play Palveluiden kanssa. Jos ongelma ei poistu, ota yhteyttä sovelluksen kehittäjään.</string>
+    <string name="common_google_play_services_unknown_issue">Sovelluksella %1$s on ongelmia Google Play Palveluiden kanssa. Yritä uudelleen.</string>
     <string name="common_google_play_services_enable_button">Ota käyttöön</string>
     <string name="common_google_play_services_enable_text">%1$s ei toimi, ellet ota Google Play Palveluita käyttöön.</string>
     <string name="common_google_play_services_enable_title">Ota Google Play Palvelut käyttöön</string>
-    <string name="common_google_play_services_install_button">Asenna Google Play Palvelut</string>
-    <string name="common_google_play_services_install_text_phone">%1$s ei toimi ilman Google Play Palveluita, jotka puuttuvat puhelimestasi.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s ei toimi ilman Google Play Palveluita, jotka puuttuvat tabletistasi.</string>
+    <string name="common_google_play_services_install_button">Asenna</string>
+    <string name="common_google_play_services_install_text">%1$s ei toimi ilman Google Play Palveluita, jotka puuttuvat laitteeltasi.</string>
     <string name="common_google_play_services_install_title">Asenna Google Play Palvelut</string>
     <string name="common_google_play_services_notification_ticker">Virhe Google Play -palveluissa</string>
-    <string name="common_google_play_services_unsupported_text">%1$s käyttää Google Play Palveluita, joita laitteesi ei tue. Ota yhteyttä laitteen valmistajaan.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play Palvelut</string>
+    <string name="common_google_play_services_unsupported_text">%1$s ei toimi ilman Google Play Palveluita, joita laitteesi ei tue.</string>
     <string name="common_google_play_services_update_button">Päivitä</string>
     <string name="common_google_play_services_update_text">%1$s ei toimi, ellet päivitä Google Play Palveluita.</string>
     <string name="common_google_play_services_update_title">Päivitä Google Play Palvelut</string>
     <string name="common_google_play_services_updating_text">%1$s ei toimi ilman Google Play Palveluita, joita päivitetään tällä hetkellä.</string>
-    <string name="common_google_play_services_updating_title">Google Play Palveluita päivitetään</string>
     <string name="common_google_play_services_wear_update_text">Uusi Google Play Palveluiden versio tarvitaan. Se päivittyy pian.</string>
     <string name="common_open_on_phone">Avaa puhelimessa</string>
     <string name="common_signin_button_text">Kirjaudu sisään</string>
@@ -38,9 +35,9 @@
     <string name="widget_accessible_dims_format">Leveys: %1$d, korkeus: %2$d</string>
     <string name="add_item_request_drag_hint">Sijoita manuaalisesti koskettamalla pitkään.</string>
     <string name="place_automatically">Lisää automaattisesti</string>
-    <string name="all_apps_search_bar_hint">Sovellushaku</string>
+    <string name="all_apps_search_bar_hint">Hae sovelluksia</string>
     <string name="all_apps_loading_message">Ladataan sovelluksia…</string>
-    <string name="all_apps_no_search_results">”%1$s” ei palauttanut sovelluksia.</string>
+    <string name="all_apps_no_search_results">%1$s ei palauttanut sovelluksia.</string>
     <string name="all_apps_search_market_message">Hae lisää sovelluksia</string>
     <string name="notifications_header">Ilmoitukset</string>
     <string name="out_of_space">Tässä aloitusruudussa ei ole enää tilaa.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Hylkää</string>
     <string name="notification_dismissed">Ilmoitus hylätty</string>
     <string name="app_name_pixel_launcher">Pixel-käynnistysohjelma</string>
-    <string name="title_app_suggestions">Sovellusehdotukset</string>
+    <string name="title_app_suggestions">Näytä sovellusehdotukset</string>
     <string name="summary_app_suggestions">Kaikki sovellukset ‑listan alussa</string>
     <string name="title_disable_suggestions_prompt">Poistetaanko sovellusehdotukset käytöstä?</string>
     <string name="msg_disable_suggestions_prompt">Ehdotuksia ei näytetä sovellusluettelosi yläosassa. Niiden luomiseen käytetyt tiedot poistetaan pysyvästi.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versio</string>
     <string name="pref_open_source_licenses_title">Avoimen lähdekoodin käyttöluvat</string>
     <string name="icon_shape_rounded_square">Pyöreäkulmainen neliö</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s: %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s nyt</string>
     <string name="smartspace_preferences">Asetukset</string>

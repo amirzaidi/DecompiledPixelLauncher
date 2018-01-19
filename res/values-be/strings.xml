@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Ачысціць пошук</string>
     <string name="place_autocomplete_search_hint">Пошук</string>
-    <string name="common_google_play_services_unknown_issue">У праграмы %1$s ўзніклі праблемы са службамі Google Play. Калі праблема не знікае, звярніцеся за дапамогай да распрацоўшчыка.</string>
+    <string name="common_google_play_services_unknown_issue">У праграмы %1$s узніклі праблемы са службамі Google Play. Паўтарыце спробу.</string>
     <string name="common_google_play_services_enable_button">Уключыць</string>
     <string name="common_google_play_services_enable_text">%1$s не будзе працаваць, пакуль вы не ўключыце службы Google Play.</string>
     <string name="common_google_play_services_enable_title">Уключыць службы Google Play</string>
-    <string name="common_google_play_services_install_button">Атрымаць службы Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s не будзе працаваць без службаў Google Play, якіх няма на вашым тэлефоне.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s не будзе працаваць без службаў Google Play, якіх няма на вашым планшэце.</string>
+    <string name="common_google_play_services_install_button">Усталяваць</string>
+    <string name="common_google_play_services_install_text">%1$s не будзе працаваць без службаў Google Play, якія адсутнічаюць на вашай прыладзе.</string>
     <string name="common_google_play_services_install_title">Атрымаць службы Google Play</string>
     <string name="common_google_play_services_notification_ticker">Памылка службаў Google Play</string>
-    <string name="common_google_play_services_unsupported_text">%1$s выкарыстоўвае службы Google Play, якія не падтрымліваюцца вашай прыладай. Звярніцеся за дапамогай да вытворцы.</string>
-    <string name="common_google_play_services_unsupported_title">Сэрвісы Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s не будзе працаваць без службаў Google Play, якія не падтрымліваюцца вашай прыладай.</string>
     <string name="common_google_play_services_update_button">Абнавіць</string>
     <string name="common_google_play_services_update_text">%1$s не будзе працаваць, пакуль вы не абновіце службы Google Play.</string>
     <string name="common_google_play_services_update_title">Абнаўленне службаў Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s не будзе працаваць без службаў Google Play, якія ў цяперашні час абнаўляюцца.</string>
-    <string name="common_google_play_services_updating_title">Службы Google Play абнаўляюцца</string>
     <string name="common_google_play_services_wear_update_text">Патрабуецца новая версія служб Google Play. Яна абновіцца аўтаматычна ў бліжэйшы час.</string>
     <string name="common_open_on_phone">Адкрыць на тэлефоне</string>
     <string name="common_signin_button_text">Увайсцi</string>
@@ -38,8 +35,8 @@
     <string name="widget_accessible_dims_format">Шырына: %1$d, вышыня: %2$d</string>
     <string name="add_item_request_drag_hint">Каб размясціць уручную, дакраніцеся і ўтрымлівайце</string>
     <string name="place_automatically">Дадаць аўтаматычна</string>
-    <string name="all_apps_search_bar_hint">Пошук у Праграмах</string>
-    <string name="all_apps_loading_message">Ідзе загрузка праграм…</string>
+    <string name="all_apps_search_bar_hint">Пошук праграм</string>
+    <string name="all_apps_loading_message">Праграмы загружаюцца…</string>
     <string name="all_apps_no_search_results">Праграм, якія адпавядаюць запыту \"%1$s\", не знойдзена</string>
     <string name="all_apps_search_market_message">Шукаць іншыя праграмы</string>
     <string name="notifications_header">Апавяшчэнні</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Адхіліць</string>
     <string name="notification_dismissed">Апавяшчэнне адхілена</string>
     <string name="app_name_pixel_launcher">Праграма запуску Pixel</string>
-    <string name="title_app_suggestions">Прапановы праграм</string>
+    <string name="title_app_suggestions">Паказаць прапановы праграм</string>
     <string name="summary_app_suggestions">Уверсе спіса ўсіх вашых праграм</string>
     <string name="title_disable_suggestions_prompt">Выключыць прапановы праграм?</string>
     <string name="msg_disable_suggestions_prompt">Прапановы не будуць паказвацца ўверсе спіса праграм, а даныя пра выкарыстанне, якія выкарыстоўваліся для іх стварэння, будуць сцёрты.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Версія</string>
     <string name="pref_open_source_licenses_title">Ліцэнзіі на ПЗ з адкрытым зыходным кодам</string>
     <string name="icon_shape_rounded_square">Квадрат са скругленымі вугламі</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s праз %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s зараз</string>
     <string name="smartspace_preferences">Параметры</string>

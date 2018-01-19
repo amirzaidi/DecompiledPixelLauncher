@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Borra a busca</string>
     <string name="place_autocomplete_search_hint">Buscar</string>
-    <string name="common_google_play_services_unknown_issue">%1$s ten problemas cos servizos de Google Play. Se o problema continúa, ponte en contacto co programador para obter axuda.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s ten problemas cos servizos de Google Play. Téntao de novo.</string>
     <string name="common_google_play_services_enable_button">Activar</string>
     <string name="common_google_play_services_enable_text">%1$s non funcionará a menos que actives os servizos de Google Play.</string>
     <string name="common_google_play_services_enable_title">Activar servizos de Google Play</string>
-    <string name="common_google_play_services_install_button">Descargar servizos de Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s non se executará se o teu teléfono non ten instalados os servizos de Google Play.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s non se executará se a túa tableta non ten instalados os servizos de Google Play.</string>
+    <string name="common_google_play_services_install_button">Instalar</string>
+    <string name="common_google_play_services_install_text">%1$s non se executará se o teu dispositivo non ten instalados os servizos de Google Play.</string>
     <string name="common_google_play_services_install_title">Descargar servizos de Google Play</string>
     <string name="common_google_play_services_notification_ticker">Erro nos servizos de Google Play</string>
-    <string name="common_google_play_services_unsupported_text">%1$s confía nos servizos de Google Play, que non son compatibles co teu dispositivo. Ponte en contacto co fabricante para obter axuda.</string>
-    <string name="common_google_play_services_unsupported_title">Servizos de Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s non se executará sen os servizos de Google Play, que non son compatibles co teu dispositivo.</string>
     <string name="common_google_play_services_update_button">Actualizar</string>
     <string name="common_google_play_services_update_text">%1$s non se executará a menos que actualices os servizos de Google Play.</string>
     <string name="common_google_play_services_update_title">Actualizar os servizos de Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s non se executará sen os servizos de Google Play, que se están actualizando neste momento.</string>
-    <string name="common_google_play_services_updating_title">Actualizando os servizos de Google Play</string>
     <string name="common_google_play_services_wear_update_text">Necesítase a nova versión dos servizos de Google Play. Actualizarase en breve.</string>
     <string name="common_open_on_phone">Abrir no teléfono</string>
     <string name="common_signin_button_text">Iniciar sesión</string>
@@ -38,8 +35,8 @@
     <string name="widget_accessible_dims_format">%1$d de largo por %2$d de alto</string>
     <string name="add_item_request_drag_hint">Mantén premido o elemento para colocalo manualmente</string>
     <string name="place_automatically">Engadir automaticamente</string>
-    <string name="all_apps_search_bar_hint">Aplicacións de busca</string>
-    <string name="all_apps_loading_message">Cargando aplicacións...</string>
+    <string name="all_apps_search_bar_hint">Buscar aplicacións</string>
+    <string name="all_apps_loading_message">Cargando aplicacións…</string>
     <string name="all_apps_no_search_results">Non se atoparon aplicacións que coincidan con \"%1$s\"</string>
     <string name="all_apps_search_market_message">Buscar máis aplicacións</string>
     <string name="notifications_header">Notificacións</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Ignorar</string>
     <string name="notification_dismissed">Ignorouse a notificación</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Suxestións de aplicacións</string>
+    <string name="title_app_suggestions">Mostrar suxestións de aplicacións</string>
     <string name="summary_app_suggestions">Na parte superior da lista Todas as aplicacións</string>
     <string name="title_disable_suggestions_prompt">Queres desactivar as suxestións de aplicacións?</string>
     <string name="msg_disable_suggestions_prompt">As suxestións non aparecerán na parte superior da lista de aplicacións e os datos de uso utilizados para crealas eliminaranse permanentemente.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versión</string>
     <string name="pref_open_source_licenses_title">Licenzas de código aberto</string>
     <string name="icon_shape_rounded_square">Cadrado redondeado</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s en %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s agora</string>
     <string name="smartspace_preferences">Preferencias</string>

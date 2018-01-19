@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Cancella ricerca</string>
     <string name="place_autocomplete_search_hint">Cerca</string>
-    <string name="common_google_play_services_unknown_issue">%1$s sta riscontrando problemi con Google Play Services. Se il problema persiste, contatta lo sviluppatore per ricevere assistenza.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s sta riscontrando problemi con Google Play Services. Riprova.</string>
     <string name="common_google_play_services_enable_button">Attiva</string>
     <string name="common_google_play_services_enable_text">%1$s non funzionerà se non attivi Google Play Services.</string>
     <string name="common_google_play_services_enable_title">Attiva Google Play Services</string>
-    <string name="common_google_play_services_install_button">Installa Google Play Services</string>
-    <string name="common_google_play_services_install_text_phone">%1$s non funzionerà senza Google Play Services, non presente sul tuo telefono.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s non funzionerà senza Google Play Services, non presente sul tuo tablet.</string>
+    <string name="common_google_play_services_install_button">Installa</string>
+    <string name="common_google_play_services_install_text">"L'app %1$s non funzionerà senza Google Play Services, non presente sul tuo dispositivo."</string>
     <string name="common_google_play_services_install_title">Installa Google Play Services</string>
     <string name="common_google_play_services_notification_ticker">Errore Google Play Services</string>
-    <string name="common_google_play_services_unsupported_text">%1$s si basa su Google Play Services, che non è supportato sul tuo dispositivo. Contatta il produttore per ricevere assistenza.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play Services</string>
+    <string name="common_google_play_services_unsupported_text">%1$s non funzionerà senza Google Play Services, non supportati dal tuo dispositivo.</string>
     <string name="common_google_play_services_update_button">Aggiorna</string>
     <string name="common_google_play_services_update_text">%1$s non funzionerà se non aggiorni Google Play Services.</string>
     <string name="common_google_play_services_update_title">Aggiorna Google Play Services</string>
     <string name="common_google_play_services_updating_text">%1$s non funzionerà senza Google Play Services, attualmente in fase di aggiornamento.</string>
-    <string name="common_google_play_services_updating_title">Aggiornamento di Google Play Services</string>
     <string name="common_google_play_services_wear_update_text">"È richiesta una nuova versione di Google Play Services. L'aggiornamento automatico verrà eseguito a breve."</string>
     <string name="common_open_on_phone">Apri sul telefono</string>
     <string name="common_signin_button_text">Accedi</string>
@@ -38,8 +35,8 @@
     <string name="widget_accessible_dims_format">%1$d di larghezza per %2$d di altezza</string>
     <string name="add_item_request_drag_hint">"Tieni premuto per posizionare l'elemento manualmente"</string>
     <string name="place_automatically">Aggiungi automaticamente</string>
-    <string name="all_apps_search_bar_hint">Cerca app</string>
-    <string name="all_apps_loading_message">Caricamento di app…</string>
+    <string name="all_apps_search_bar_hint">Cerca nelle app</string>
+    <string name="all_apps_loading_message">Caricamento delle app…</string>
     <string name="all_apps_no_search_results">Nessuna app trovata corrispondente a \"%1$s\"</string>
     <string name="all_apps_search_market_message">Cerca altre app</string>
     <string name="notifications_header">Notifiche</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Ignora</string>
     <string name="notification_dismissed">Notifica ignorata</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">App suggerite</string>
+    <string name="title_app_suggestions">Mostra suggerimenti di app</string>
     <string name="summary_app_suggestions">"In cima all'elenco Tutte le app"</string>
     <string name="title_disable_suggestions_prompt">Disattivare i suggerimenti di app?</string>
     <string name="msg_disable_suggestions_prompt">"I suggerimenti non verranno mostrati in cima all'elenco delle tue app e i dati sull'utilizzo utilizzati per crearli verranno cancellati definitivamente."</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versione</string>
     <string name="pref_open_source_licenses_title">Licenze open source</string>
     <string name="icon_shape_rounded_square">Quadrato arrotondato</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s tra %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s ora</string>
     <string name="smartspace_preferences">Preferenze</string>

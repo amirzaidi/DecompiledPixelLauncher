@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Исчисти го пребарувањето</string>
     <string name="place_autocomplete_search_hint">Пребарај</string>
-    <string name="common_google_play_services_unknown_issue">%1$s има проблеми со услугите на Google Play. Ако проблемот продолжи, контактирајте со програмерот за помош.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s има проблеми со услугите на Google Play. Обидете се повторно.</string>
     <string name="common_google_play_services_enable_button">Овозможи</string>
     <string name="common_google_play_services_enable_text">%1$s нема да се извршува ако не овозможите услуги на Google Play.</string>
     <string name="common_google_play_services_enable_title">Овозможи ги услугите на Google Play</string>
-    <string name="common_google_play_services_install_button">Преземи ги услугите на Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s нема да се извршува без услугите на Google Play што ги нема на телефонот.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s нема да се извршува без услугите на Google Play што ги нема на таблетот.</string>
+    <string name="common_google_play_services_install_button">Инсталирај</string>
+    <string name="common_google_play_services_install_text">%1$s нема да се извршува без услугите на Google Play што ги нема на уредот.</string>
     <string name="common_google_play_services_install_title">Преземи ги услугите на Google Play</string>
     <string name="common_google_play_services_notification_ticker">Грешка на услугите на Google Play</string>
-    <string name="common_google_play_services_unsupported_text">%1$s се потпира на услуги на Google Play што вашиот уред не ги поддржува. Контактирајте со производителот за помош.</string>
-    <string name="common_google_play_services_unsupported_title">Услуги на Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s нема да се извршува без услугите на Google Play, што не се подржани од уредов.</string>
     <string name="common_google_play_services_update_button">Ажурирај</string>
     <string name="common_google_play_services_update_text">%1$s нема да се извршува ако не ги ажурирате услугите на Google Play.</string>
     <string name="common_google_play_services_update_title">Ажурирај ги услугите на Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s нема да се извршува без услугите на Google Play што се ажурираат во моментов.</string>
-    <string name="common_google_play_services_updating_title">Услугите на Google Play се ажурираат</string>
     <string name="common_google_play_services_wear_update_text">Потребна е нова верзија на услугите на Google Play. Таа наскоро самата ќе се ажурира.</string>
     <string name="common_open_on_phone">Отвори на телефонот</string>
     <string name="common_signin_button_text">Најави се</string>
@@ -38,7 +35,7 @@
     <string name="widget_accessible_dims_format">%1$d широк на %2$d висок</string>
     <string name="add_item_request_drag_hint">Допрете и задржете за рачно поставување</string>
     <string name="place_automatically">Додај автоматски</string>
-    <string name="all_apps_search_bar_hint">Пребарување апликации</string>
+    <string name="all_apps_search_bar_hint">Пребарувајте апликации</string>
     <string name="all_apps_loading_message">Се вчитуваат апликации…</string>
     <string name="all_apps_no_search_results">Не се најдени апликации што одговараат на „%1$s“</string>
     <string name="all_apps_search_market_message">Пребарај други апликации</string>
@@ -71,8 +68,8 @@
     <string name="folder_closed">Папката е затворена</string>
     <string name="folder_renamed">Папката е преименувана во %1$s</string>
     <string name="folder_name_format">Папка: %1$s</string>
-    <string name="widget_button_text">Додатоци</string>
-    <string name="wallpaper_button_text">Позадини</string>
+    <string name="widget_button_text">Виџети</string>
+    <string name="wallpaper_button_text">Тапети</string>
     <string name="settings_button_text">Поставки за Home</string>
     <string name="msg_disabled_by_admin">Оневозможено од администраторот</string>
     <string name="accessibility_action_overview">Краток преглед</string>
@@ -85,7 +82,7 @@
     <string name="title_missing_notification_access">Потребен е пристап до известувањата</string>
     <string name="msg_missing_notification_access">За да се прикажуваат „Точки за известување“, вклучете ги известувањата за апликацијата %1$s</string>
     <string name="title_change_settings">Промени ги поставките</string>
-    <string name="auto_add_shortcuts_label">Додајте икона на почетниот екран</string>
+    <string name="auto_add_shortcuts_label">Додај икона на почетниот екран</string>
     <string name="auto_add_shortcuts_description">За нови апликации</string>
     <string name="icon_shape_override_label">Променете ја формата на иконата</string>
     <string name="icon_shape_system_default">Користи ја стандардната поставка на системот</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Отфрли</string>
     <string name="notification_dismissed">Известувањето е отфрлено</string>
     <string name="app_name_pixel_launcher">Стартер на Pixel</string>
-    <string name="title_app_suggestions">Предлози за апликации</string>
+    <string name="title_app_suggestions">Прикажувај предлози за апликации</string>
     <string name="summary_app_suggestions">На врвот од списокот „Сите апликации“</string>
     <string name="title_disable_suggestions_prompt">Да се исклучат предлозите за апликации?</string>
     <string name="msg_disable_suggestions_prompt">Предлозите нема да се појавуваат најгоре на списокот со апликации и трајно ќе се избришат податоците за користењето што се употребуваа за нивно создавање.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Верзија</string>
     <string name="pref_open_source_licenses_title">Лиценци за софтвер со отворен код</string>
     <string name="icon_shape_rounded_square">Заоблен квадрат</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s по %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s сега</string>
     <string name="smartspace_preferences">Поставки</string>

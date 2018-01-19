@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Rensa sökning</string>
     <string name="place_autocomplete_search_hint">Söka</string>
-    <string name="common_google_play_services_unknown_issue">%1$s har problem med Google Play-tjänster. Om problemet kvarstår kontaktar du utvecklaren.</string>
+    <string name="common_google_play_services_unknown_issue">Det har uppstått ett fel mellan %1$s och Google Play-tjänsterna. Försök igen.</string>
     <string name="common_google_play_services_enable_button">Aktivera</string>
     <string name="common_google_play_services_enable_text">%1$s fungerar inte om du inte aktiverar Google Play-tjänster.</string>
     <string name="common_google_play_services_enable_title">Aktivera Google Play-tjänster</string>
-    <string name="common_google_play_services_install_button">Hämta Google Play-tjänster</string>
-    <string name="common_google_play_services_install_text_phone">Du måste installera Google Play-tjänster för att kunna köra %1$s på mobilen.</string>
-    <string name="common_google_play_services_install_text_tablet">Du måste installera Google Play-tjänster för att kunna köra %1$s på surfplattan.</string>
+    <string name="common_google_play_services_install_button">Installera</string>
+    <string name="common_google_play_services_install_text">%1$s kan inte köras utan Google Play-tjänsterna, som saknas på enheten.</string>
     <string name="common_google_play_services_install_title">Hämta Google Play-tjänster</string>
     <string name="common_google_play_services_notification_ticker">Fel på Google Play-tjänster</string>
-    <string name="common_google_play_services_unsupported_text">För %1$s krävs Google Play-tjänster, och dessa stöds inte på enheten. Kontakta tillverkaren om du vill ha hjälp.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play-tjänster</string>
+    <string name="common_google_play_services_unsupported_text">%1$s fungerar inte utan Google Play-tjänsterna, som inte stöds på enheten.</string>
     <string name="common_google_play_services_update_button">Uppdatera</string>
     <string name="common_google_play_services_update_text">%1$s kan inte köras om du inte uppdaterar Google Play-tjänsterna.</string>
     <string name="common_google_play_services_update_title">Uppdatera Google Play-tjänster</string>
     <string name="common_google_play_services_updating_text">%1$s kan inte köras utan Google Play-tjänster, och dessa uppdateras för närvarande.</string>
-    <string name="common_google_play_services_updating_title">Google Play-tjänster uppdateras</string>
     <string name="common_google_play_services_wear_update_text">En ny version av Google Play-tjänster krävs. Den uppdateras automatiskt inom kort.</string>
     <string name="common_open_on_phone">Öppna på mobilen</string>
     <string name="common_signin_button_text">Logga in</string>
@@ -40,7 +37,7 @@
     <string name="place_automatically">Lägg till automatiskt</string>
     <string name="all_apps_search_bar_hint">Sök efter appar</string>
     <string name="all_apps_loading_message">Läser in appar …</string>
-    <string name="all_apps_no_search_results">Det gick inte att hitta några appar som matchar %1$s</string>
+    <string name="all_apps_no_search_results">Inga appar som matchar %1$s hittades</string>
     <string name="all_apps_search_market_message">Sök efter fler appar</string>
     <string name="notifications_header">Aviseringar</string>
     <string name="out_of_space">Det finns inte plats för mer på den här startskärmen.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Ignorera</string>
     <string name="notification_dismissed">Aviseringen togs bort</string>
     <string name="app_name_pixel_launcher">Översikt för Pixel</string>
-    <string name="title_app_suggestions">Appförslag</string>
+    <string name="title_app_suggestions">Visa appförslag</string>
     <string name="summary_app_suggestions">Högst upp i listan Alla appar</string>
     <string name="title_disable_suggestions_prompt">Vill du stänga av appförslag?</string>
     <string name="msg_disable_suggestions_prompt">Förslag visas inte längst upp i applistan och användaruppgifterna som används för att skapa dem raderas permanent.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Version</string>
     <string name="pref_open_source_licenses_title">Licenser för öppen källkod</string>
     <string name="icon_shape_rounded_square">Rundad kvadrat</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s om %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s nu</string>
     <string name="smartspace_preferences">Inställningar</string>

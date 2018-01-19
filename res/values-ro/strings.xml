@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Ștergeți căutarea</string>
     <string name="place_autocomplete_search_hint">Căutați</string>
-    <string name="common_google_play_services_unknown_issue">%1$s întâmpină probleme privind serviciile Google Play. Dacă problema persistă, contactați dezvoltatorul pentru asistență.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s întâmpină probleme privind serviciile Google Play. Încercați din nou.</string>
     <string name="common_google_play_services_enable_button">Activați</string>
     <string name="common_google_play_services_enable_text">%1$s nu va funcționa decât dacă activați serviciile Google Play.</string>
     <string name="common_google_play_services_enable_title">Activați serviciile Google Play</string>
-    <string name="common_google_play_services_install_button">Descărcați serviciile Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s nu va rula fără serviciile Google Play, care lipsesc de pe telefon.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s nu va rula fără serviciile Google Play, care lipsesc de pe tabletă.</string>
+    <string name="common_google_play_services_install_button">Instalați</string>
+    <string name="common_google_play_services_install_text">%1$s nu va rula fără serviciile Google Play, care lipsesc de pe dispozitivul dvs.</string>
     <string name="common_google_play_services_install_title">Descărcați serviciile Google Play</string>
     <string name="common_google_play_services_notification_ticker">Eroare a serviciilor Google Play</string>
-    <string name="common_google_play_services_unsupported_text">%1$s se bazează pe serviciile Google Play, care nu sunt acceptate de dispozitiv. Contactați producătorul pentru asistență.</string>
-    <string name="common_google_play_services_unsupported_title">Servicii Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s nu va rula fără serviciile Google Play, care nu sunt acceptate de dispozitivul dvs.</string>
     <string name="common_google_play_services_update_button">Actualizați</string>
     <string name="common_google_play_services_update_text">%1$s nu va rula decât dacă actualizați serviciile Google Play.</string>
     <string name="common_google_play_services_update_title">Actualizați serviciile Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s nu va rula fără serviciile Google Play, care momentan se actualizează.</string>
-    <string name="common_google_play_services_updating_title">Se actualizează serviciile Google Play</string>
     <string name="common_google_play_services_wear_update_text">Este necesară o nouă versiune a serviciilor Google Play. Se vor actualiza automat în curând.</string>
     <string name="common_open_on_phone">Deschideți pe telefon</string>
     <string name="common_signin_button_text">Conectați-vă</string>
@@ -39,8 +36,8 @@
     <string name="add_item_request_drag_hint">Atingeți lung pentru a plasa manual</string>
     <string name="place_automatically">Adăugați automat</string>
     <string name="all_apps_search_bar_hint">Căutați aplicații</string>
-    <string name="all_apps_loading_message">Se încarcă aplicațiile...</string>
-    <string name="all_apps_no_search_results">Nu s-a găsit nicio aplicație pentru „%1$s”</string>
+    <string name="all_apps_loading_message">Se încarcă aplicații…</string>
+    <string name="all_apps_no_search_results">Nu s-a găsit nicio aplicație pentru „%1$s\"</string>
     <string name="all_apps_search_market_message">Căutați mai multe aplicații</string>
     <string name="notifications_header">Notificări</string>
     <string name="out_of_space">Nu mai este loc pe acest Ecran de pornire.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Închideți</string>
     <string name="notification_dismissed">Notificare închisă</string>
     <string name="app_name_pixel_launcher">Lansator Pixel</string>
-    <string name="title_app_suggestions">Sugestii de aplicații</string>
+    <string name="title_app_suggestions">Afișează sugestiile aplicației</string>
     <string name="summary_app_suggestions">În partea de sus a listei Toate aplicațiile</string>
     <string name="title_disable_suggestions_prompt">Dezactivați sugestiile de aplicații?</string>
     <string name="msg_disable_suggestions_prompt">Sugestiile nu vor apărea la începutul listei de aplicații, iar datele despre utilizare folosite pentru a le crea vor fi șterse definitiv.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versiune</string>
     <string name="pref_open_source_licenses_title">Licențe open source</string>
     <string name="icon_shape_rounded_square">Pătrat rotunjit</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s în %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s acum</string>
     <string name="smartspace_preferences">Preferințe</string>

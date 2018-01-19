@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Vymazať vyhľadávanie</string>
     <string name="place_autocomplete_search_hint">Vyhľadávajte</string>
-    <string name="common_google_play_services_unknown_issue">Aplikácia %1$s má problémy so službami Google Play. Ak problém pretrváva, kontaktujte vývojára a požiadajte ho o pomoc.</string>
+    <string name="common_google_play_services_unknown_issue">Aplikácia %1$s má problémy so službami Google Play. Skúste to znova.</string>
     <string name="common_google_play_services_enable_button">Povoliť</string>
     <string name="common_google_play_services_enable_text">Aplikácia %1$s bude fungovať až po povolení služieb Google Play.</string>
     <string name="common_google_play_services_enable_title">Povoliť služby Google Play</string>
-    <string name="common_google_play_services_install_button">Inštalovať služby Google Play</string>
-    <string name="common_google_play_services_install_text_phone">Na spustenie aplikácie %1$s sa vyžadujú služby Google Play, ktoré na telefóne nemáte.</string>
-    <string name="common_google_play_services_install_text_tablet">Na spustenie aplikácie %1$s sa vyžadujú služby Google Play, ktoré na tablete nemáte.</string>
+    <string name="common_google_play_services_install_button">Inštalovať</string>
+    <string name="common_google_play_services_install_text">Na spustenie aplikácie %1$s sa vyžadujú služby Google Play, ktoré na zariadení nemáte.</string>
     <string name="common_google_play_services_install_title">Inštalovať služby Google Play</string>
     <string name="common_google_play_services_notification_ticker">Chyba služieb Google Play</string>
-    <string name="common_google_play_services_unsupported_text">Aplikácia %1$s potrebuje služby Google Play, ktoré vaše zariadenie nepodporuje. Kontaktujte príslušného výrobcu a požiadajte ho o pomoc.</string>
-    <string name="common_google_play_services_unsupported_title">Služby Google Play</string>
+    <string name="common_google_play_services_unsupported_text">Aplikáciu %1$s nebude možné spustiť bez služieb Google Play, ktoré vaše zariadenie nepodporuje.</string>
     <string name="common_google_play_services_update_button">Aktualizovať</string>
     <string name="common_google_play_services_update_text">Aplikáciu %1$s bude možné spustiť až po aktualizácii služieb Google Play.</string>
     <string name="common_google_play_services_update_title">Aktualizácia služieb Google Play</string>
     <string name="common_google_play_services_updating_text">Na spustenie aplikácie %1$s sa vyžadujú služby Google Play, ktoré sa momentálne aktualizujú.</string>
-    <string name="common_google_play_services_updating_title">Služby Google Play sa aktualizujú</string>
     <string name="common_google_play_services_wear_update_text">Vyžaduje sa nová verzia služieb Google Play. Aktualizujú sa automaticky v najbližšom čase.</string>
     <string name="common_open_on_phone">Otvoriť v telefóne</string>
     <string name="common_signin_button_text">Prihlásiť sa</string>
@@ -39,7 +36,7 @@
     <string name="add_item_request_drag_hint">Položku umiestnite ručne klepnutím a podržaním</string>
     <string name="place_automatically">Pridať automaticky</string>
     <string name="all_apps_search_bar_hint">Hľadať aplikácie</string>
-    <string name="all_apps_loading_message">Načítavajú sa aplikácie...</string>
+    <string name="all_apps_loading_message">Načítavajú sa aplikácie…</string>
     <string name="all_apps_no_search_results">Nenašli sa žiadne aplikácie zodpovedajúce dopytu %1$s</string>
     <string name="all_apps_search_market_message">Hľadať ďalšie aplikácie</string>
     <string name="notifications_header">Upozornenia</string>
@@ -61,7 +58,7 @@
     <string name="gadget_setup_text">Nastavenie</string>
     <string name="uninstall_system_app_text">Toto je systémová aplikácia a nedá sa odinštalovať.</string>
     <string name="folder_hint_text">Nepomenovaný priečinok</string>
-    <string name="disabled_app_label">Aplikácia %1$s je zakázaná</string>
+    <string name="disabled_app_label">Aplikácia %1$s je deaktivovaná</string>
     <string name="default_scroll_format">Stránka %1$d z %2$d</string>
     <string name="workspace_scroll_format">Plocha %1$d z %2$d</string>
     <string name="workspace_new_page">Nová stránka plochy</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Zavrieť</string>
     <string name="notification_dismissed">Upozornenie bolo zavreté</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Návrhy aplikácií</string>
+    <string name="title_app_suggestions">Zobraziť návrhy aplikácií</string>
     <string name="summary_app_suggestions">V hornej časti zoznamu Všetky aplikácie</string>
     <string name="title_disable_suggestions_prompt">Chcete vypnúť odporúčania aplikácií?</string>
     <string name="msg_disable_suggestions_prompt">Na začiatku zoznamu aplikácií sa nebudú zobrazovať odporúčania a údaje o využití, na základe ktorých boli vytvorené, budú trvalo vymazané.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Verzia</string>
     <string name="pref_open_source_licenses_title">Licencie open source</string>
     <string name="icon_shape_rounded_square">Okrúhly štvorec</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s o %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s – teraz</string>
     <string name="smartspace_preferences">Predvoľby</string>

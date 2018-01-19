@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Очистити поле пошуку</string>
     <string name="place_autocomplete_search_hint">Пошук</string>
-    <string name="common_google_play_services_unknown_issue">У додатка %1$s виникла проблема із сервісами Google Play. Якщо проблема не зникне, зверніться по допомогу до розробника.</string>
+    <string name="common_google_play_services_unknown_issue">У додатку %1$s виникла проблема із сервісами Google Play. Повторіть спробу.</string>
     <string name="common_google_play_services_enable_button">Увімкнути</string>
     <string name="common_google_play_services_enable_text">Додаток %1$s не працюватиме, якщо не ввімкнути сервіси Google Play.</string>
     <string name="common_google_play_services_enable_title">Увімкнути сервіси Google Play</string>
-    <string name="common_google_play_services_install_button">Установити сервіси Google Play</string>
-    <string name="common_google_play_services_install_text_phone">Додаток %1$s не працюватиме без сервісів Google Play, яких немає на вашому телефоні.</string>
-    <string name="common_google_play_services_install_text_tablet">Додаток %1$s не працюватиме без сервісів Google Play, яких немає на вашому планшеті.</string>
+    <string name="common_google_play_services_install_button">Установити</string>
+    <string name="common_google_play_services_install_text">Додаток %1$s не працюватиме без сервісів Google Play, яких немає на вашому пристрої.</string>
     <string name="common_google_play_services_install_title">Установити сервіси Google Play</string>
     <string name="common_google_play_services_notification_ticker">Помилка сервісів Google Play</string>
-    <string name="common_google_play_services_unsupported_text">Додаток %1$s працює завдяки сервісам Google Play, які не підтримуються на вашому пристрої. Зверніться по допомогу до виробника.</string>
-    <string name="common_google_play_services_unsupported_title">Сервіси Google Play</string>
+    <string name="common_google_play_services_unsupported_text">Додаток %1$s не працюватиме без сервісів Google Play, які не підтримуються на вашому пристрої.</string>
     <string name="common_google_play_services_update_button">Оновити</string>
     <string name="common_google_play_services_update_text">Додаток %1$s не працюватиме, якщо не оновити сервіси Google Play.</string>
     <string name="common_google_play_services_update_title">Оновіть сервіси Google Play</string>
     <string name="common_google_play_services_updating_text">Додаток %1$s не працюватиме без сервісів Google Play, які зараз оновлюються.</string>
-    <string name="common_google_play_services_updating_title">Сервіси Google Play оновлюються</string>
     <string name="common_google_play_services_wear_update_text">Потрібна нова версія сервісів Google Play. Вони невдовзі оновляться.</string>
     <string name="common_open_on_phone">Відкрити на телефоні</string>
     <string name="common_signin_button_text">Увійти</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Закрити</string>
     <string name="notification_dismissed">Сповіщення закрито</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Пропозиції додатків</string>
+    <string name="title_app_suggestions">Показувати пропозиції додатків</string>
     <string name="summary_app_suggestions">Угорі списку \"Усі додатки\"</string>
     <string name="title_disable_suggestions_prompt">Вимкнути пропозиції додатків?</string>
     <string name="msg_disable_suggestions_prompt">Пропозиції не відображатимуться вгорі списку додатків. Дані, які використовувалися для створення пропозицій, буде стерто назавжди.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Версія</string>
     <string name="pref_open_source_licenses_title">Ліцензії відкритого коду</string>
     <string name="icon_shape_rounded_square">Заокруглений квадрат</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s зараз</string>
     <string name="smartspace_preferences">Параметри</string>
     <string name="smartspace_preferences_in_settings">Зворотний відлік</string>

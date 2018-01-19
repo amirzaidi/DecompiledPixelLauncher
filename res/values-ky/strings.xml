@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Издөөнү тазалоо</string>
     <string name="place_autocomplete_search_hint">Издөө</string>
-    <string name="common_google_play_services_unknown_issue">%1$s Google Play кызматтары боюнча маселеге дуушар болууда. Эгер көйгөй жоголбосо, жардам үчүн иштеп чыгуучуга кайрылыңыз.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s колдонмосунун Google Play кызматтары менен иштөөдө көйгөй чыкты. Кайра аракет кылыңыз.</string>
     <string name="common_google_play_services_enable_button">Иштетүү</string>
     <string name="common_google_play_services_enable_text">Google Play кызматтарын иштетмейиңизче %1$s иштебейт.</string>
     <string name="common_google_play_services_enable_title">Google Play кызматтарын иштетүү</string>
-    <string name="common_google_play_services_install_button">Google Play кызматтарын алуу</string>
-    <string name="common_google_play_services_install_text_phone">Google Play кызматтарысыз %1$s иштебейт, алар телефонуңузда жок болуп жатат.</string>
-    <string name="common_google_play_services_install_text_tablet">Google Play кызматтарысыз %1$s иштебейт, алар планшетиңизде жок болуп жатат.</string>
+    <string name="common_google_play_services_install_button">Орнотуу</string>
+    <string name="common_google_play_services_install_text">Google Play кызматтарысыз %1$s иштебейт. Алар түзмөгүңүздө жок болуп жатат.</string>
     <string name="common_google_play_services_install_title">Google Play кызматтарын алуу</string>
     <string name="common_google_play_services_notification_ticker">Google Play кызматтарынын катасы</string>
-    <string name="common_google_play_services_unsupported_text">%1$s Google Play кызматтарына ишенет, аларды түзмөгүңүз колдоого албайт. Жардам үчүн өндүрүүчүгө кайрылыңыз.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play кызматтары</string>
+    <string name="common_google_play_services_unsupported_text">%1$s колдонмосу сиздин түзмөгүңүздө колдоого алынбаган Google Play кызматтары болбосо иштебейт.</string>
     <string name="common_google_play_services_update_button">Жаңыртуу</string>
     <string name="common_google_play_services_update_text">Google Play кызматтары жаңыртылмайынча %1$s иштебейт.</string>
     <string name="common_google_play_services_update_title">Google Play кызматтарын жаңыртуу</string>
     <string name="common_google_play_services_updating_text">Google Play кызматтарысыз %1$s иштебейт, алар учурда жаңыртылууда.</string>
-    <string name="common_google_play_services_updating_title">Google Play кызматтары жаңыртылууда</string>
     <string name="common_google_play_services_wear_update_text">Google Play кызматтарынын жаңы версиясы талап кылынат. Бир аздан кийин ал өзү эле жаңыртылат.</string>
     <string name="common_open_on_phone">Телефондо ачык</string>
     <string name="common_signin_button_text">Кирүү</string>
@@ -40,7 +37,7 @@
     <string name="place_automatically">Автоматтык түрдө кошуу</string>
     <string name="all_apps_search_bar_hint">Колдонмолорду издөө</string>
     <string name="all_apps_loading_message">Колдонмолор жүктөлүүдө…</string>
-    <string name="all_apps_no_search_results">\"%1$s\" дал келген колдонмолор табылган жок</string>
+    <string name="all_apps_no_search_results">\"%1$s\" сурамына дал келген колдонмолор табылган жок</string>
     <string name="all_apps_search_market_message">Көбүрөөк колдонмолорду издөө</string>
     <string name="notifications_header">Эскертмелер</string>
     <string name="out_of_space">Бул Үй экранында бош орун жок.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Этибарга албоо</string>
     <string name="notification_dismissed">Эскертме көз жаздымда калтырылды</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Колдонмо сунуштары</string>
+    <string name="title_app_suggestions">Колдонмонун сунуштарын көрсөтүү</string>
     <string name="summary_app_suggestions">\"Бардык колдонмолор\" тизмесинин башында</string>
     <string name="title_disable_suggestions_prompt">Колдонмо сунуштары өчүрүлсүнбү?</string>
     <string name="msg_disable_suggestions_prompt">Колдонмолор тизмесинин башында сунуштар көрсөтүлбөйт жана аларды түзүүгө керектүү дайындар биротоло тазаланат.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Версиясы</string>
     <string name="pref_open_source_licenses_title">Баштапкы коду ачык программалардын уруксаттамалары</string>
     <string name="icon_shape_rounded_square">Бурчтары тегеректелген чарчы</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%2$s кийин %1$s</string>
     <string name="smartspace_calendar_event_now">Азыр %1$s</string>
     <string name="smartspace_preferences">Жеке жөндөөлөр</string>

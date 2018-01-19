@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Garbitu bilaketa</string>
     <string name="place_autocomplete_search_hint">Bilaketa</string>
-    <string name="common_google_play_services_unknown_issue">%1$s aplikazioak arazoak ditu Google Play zerbitzuekin. Arazoek badiraute, laguntza lortzeko, jarri garatzailearekin harremanetan.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s aplikazioak arazoak ditu Google Play zerbitzuekin. Saiatu berriro.</string>
     <string name="common_google_play_services_enable_button">Gaitu</string>
     <string name="common_google_play_services_enable_text">%1$s aplikazioak ez du funtzionatuko Google Play zerbitzuak gaitzen ez badituzu.</string>
     <string name="common_google_play_services_enable_title">Gaitu Google Play zerbitzuak</string>
-    <string name="common_google_play_services_install_button">Lortu Google Play zerbitzuak</string>
-    <string name="common_google_play_services_install_text_phone">%1$s ez da exekutatuko Google Play zerbitzurik gabe, baina ez dituzu telefonoan.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s ez da exekutatuko Google Play zerbitzurik gabe, baina ez dituzu tabletan.</string>
+    <string name="common_google_play_services_install_button">Instalatu</string>
+    <string name="common_google_play_services_install_text">%1$s ez da exekutatuko Google Play zerbitzurik gabe, baina ez dituzu gailuan.</string>
     <string name="common_google_play_services_install_title">Lortu Google Play zerbitzuak</string>
     <string name="common_google_play_services_notification_ticker">Google Play zerbitzuen errorea</string>
-    <string name="common_google_play_services_unsupported_text">%1$s Google Play zerbitzuetan dago oinarrituta, baina zure gailuak ez ditu onartzen. Laguntza lortzeko, jarri fabrikatzailearekin harremanetan.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play zerbitzuak</string>
+    <string name="common_google_play_services_unsupported_text">%1$s aplikazioa ezin da erabili Google Play zerbitzurik gabe, eta zure gailua ez da zerbitzuokin bateragarria.</string>
     <string name="common_google_play_services_update_button">Eguneratu</string>
     <string name="common_google_play_services_update_text">%1$s ez da exekutatuko Google Play zerbitzuak eguneratzen ez badituzu.</string>
     <string name="common_google_play_services_update_title">Eguneratu Google Play zerbitzuak</string>
     <string name="common_google_play_services_updating_text">%1$s ez da exekutatuko Google Play zerbitzurik gabe; une honetan eguneratzen ari dira zerbitzuok.</string>
-    <string name="common_google_play_services_updating_title">Google Play zerbitzuak eguneratzen</string>
     <string name="common_google_play_services_wear_update_text">Google Play zerbitzuen bertsio berria behar da. Berehala eguneratuko da automatikoki.</string>
     <string name="common_open_on_phone">Ireki telefonoan</string>
     <string name="common_signin_button_text">Hasi saioa</string>
@@ -40,7 +37,7 @@
     <string name="place_automatically">Gehitu automatikoki</string>
     <string name="all_apps_search_bar_hint">Bilatu aplikazioetan</string>
     <string name="all_apps_loading_message">Aplikazioak kargatzen…</string>
-    <string name="all_apps_no_search_results">Ez da aurkitu \"%1$s\" bilaketarekin bat datorren aplikaziorik</string>
+    <string name="all_apps_no_search_results">Ez da aurkitu \"%1$s\" bilaketaren emaitzarik</string>
     <string name="all_apps_search_market_message">Bilatu aplikazio gehiago</string>
     <string name="notifications_header">Jakinarazpenak</string>
     <string name="out_of_space">Hasierako pantaila honetan ez dago toki gehiago.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Baztertu</string>
     <string name="notification_dismissed">Baztertu egin da jakinarazpena</string>
     <string name="app_name_pixel_launcher">Pixel abiarazlea</string>
-    <string name="title_app_suggestions">Aplikazioen iradokizunak</string>
+    <string name="title_app_suggestions">Erakutsi aplikazioen iradokizunak</string>
     <string name="summary_app_suggestions">\"Aplikazio guztiak\" zerrendaren goialdean</string>
     <string name="title_disable_suggestions_prompt">Iradokitako aplikazioak desaktibatu nahi dituzu?</string>
     <string name="msg_disable_suggestions_prompt">Ez dira agertuko iradokizunak aplikazio-zerrendaren goialdean, eta horiek sortzeko erabilitako erabilera-datuak betiko ezabatuko dira.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Bertsioa</string>
     <string name="pref_open_source_licenses_title">Kode irekiko lizentziak</string>
     <string name="icon_shape_rounded_square">Ertz biribilduko karratua</string>
+    <string name="smartspace_hours_mins">%1$s eta %2$s</string>
     <string name="smartspace_calendar_event">%1$s %2$s barru</string>
     <string name="smartspace_calendar_event_now">%1$s orain</string>
     <string name="smartspace_preferences">Hobespenak</string>

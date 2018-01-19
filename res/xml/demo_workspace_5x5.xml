@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<favorites
+  xmlns:launcher="http://schemas.android.com/apk/res-auto/com.android.launcher3">
+    <include launcher:workspace="@xml/dw_demo_hotseat_5" />
+</favorites>

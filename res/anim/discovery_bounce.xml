@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<set android:startOffset="200" android:ordering="sequentially"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <objectAnimator android:interpolator="@interpolator/disco_bounce_section1" android:duration="250" android:valueFrom="1f" android:valueTo=".94f" android:valueType="floatType" android:propertyName="progress" />
-    <objectAnimator android:interpolator="@interpolator/disco_bounce_section2" android:duration="216" android:valueFrom=".94f" android:valueTo="1.012f" android:valueType="floatType" android:propertyName="progress" />
-    <objectAnimator android:interpolator="@interpolator/disco_bounce_section3" android:duration="234" android:valueFrom="1.012f" android:valueTo="1f" android:valueType="floatType" android:propertyName="progress" />
-</set>

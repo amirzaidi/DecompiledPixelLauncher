@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Išvalyti paiešką</string>
     <string name="place_autocomplete_search_hint">Paieška</string>
-    <string name="common_google_play_services_unknown_issue">Naudojant programą „%1$s“ kyla problemų dėl „Google Play“ paslaugų. Jei problema išlieka, susisiekite su kūrėju, kad jums būtų suteikta pagalba.</string>
+    <string name="common_google_play_services_unknown_issue">Naudojant programą „%1$s“ kilo problemų dėl „Google Play“ paslaugų. Bandykite dar kartą.</string>
     <string name="common_google_play_services_enable_button">Įgalinti</string>
     <string name="common_google_play_services_enable_text">„%1$s“ neveiks, jei neįgalinsite „Google Play“ paslaugų.</string>
     <string name="common_google_play_services_enable_title">Įgalinkite „Google Play“ paslaugas</string>
-    <string name="common_google_play_services_install_button">Gauti „Google Play“ paslaugas</string>
-    <string name="common_google_play_services_install_text_phone">„%1$s“ nebus paleidžiama be „Google Play“ paslaugų, kurių nėra telefone.</string>
-    <string name="common_google_play_services_install_text_tablet">„%1$s“ nebus paleidžiama be „Google Play“ paslaugų, kurių nėra planšetiniame kompiuteryje.</string>
+    <string name="common_google_play_services_install_button">Įdiegti</string>
+    <string name="common_google_play_services_install_text">Programa „%1$s“ nebus paleidžiama be „Google Play“ paslaugų, kurių nėra įrenginyje.</string>
     <string name="common_google_play_services_install_title">Gaukite „Google Play“ paslaugas</string>
     <string name="common_google_play_services_notification_ticker">„Google Play“ paslaugų klaida</string>
-    <string name="common_google_play_services_unsupported_text">Norint naudoti „%1$s“ reikalingos „Google Play“ paslaugos, kurios nepalaikomos jūsų įrenginyje. Susisiekite su gamintoju, kad gautumėte pagalbos.</string>
-    <string name="common_google_play_services_unsupported_title">„Google Play“ paslaugos</string>
+    <string name="common_google_play_services_unsupported_text">Programa „%1$s“ nebus paleidžiama be „Google Play“ paslaugų, kurių jūsų įrenginys nepalaiko.</string>
     <string name="common_google_play_services_update_button">Atnaujinti</string>
     <string name="common_google_play_services_update_text">„%1$s“ nebus paleidžiama, jei neatnaujinsite „Google Play“ paslaugų.</string>
     <string name="common_google_play_services_update_title">Atnaujinkite „Google Play“ paslaugas</string>
     <string name="common_google_play_services_updating_text">„%1$s“ nebus paleidžiama be „Google Play“ paslaugų, kurios šiuo metu atnaujinamos.</string>
-    <string name="common_google_play_services_updating_title">„Google Play“ paslaugos atnaujinamos</string>
     <string name="common_google_play_services_wear_update_text">Reikia naujos versijos „Google Play“ paslaugų. Jos netrukus bus atnaujintos.</string>
     <string name="common_open_on_phone">Atidaryti telefone</string>
     <string name="common_signin_button_text">Prisijungti</string>
@@ -38,8 +35,8 @@
     <string name="widget_accessible_dims_format">%1$d plotis ir %2$d aukštis</string>
     <string name="add_item_request_drag_hint">Palieskite ir palaikykite, kad padėtumėte patys</string>
     <string name="place_automatically">Pridėti automatiškai</string>
-    <string name="all_apps_search_bar_hint">Ieškoti programų</string>
-    <string name="all_apps_loading_message">Įkeliamos programos...</string>
+    <string name="all_apps_search_bar_hint">Paieškos programos</string>
+    <string name="all_apps_loading_message">Įkeliamos programos…</string>
     <string name="all_apps_no_search_results">Nerasta jokių užklausą „%1$s“ atitinkančių programų</string>
     <string name="all_apps_search_market_message">Ieškoti daugiau programų</string>
     <string name="notifications_header">Pranešimai</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Atsisakyti</string>
     <string name="notification_dismissed">Pranešimo atsisakyta</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Programų pasiūlymai</string>
+    <string name="title_app_suggestions">Rodyti programų pasiūlymus</string>
     <string name="summary_app_suggestions">Visų programų sąrašo viršuje</string>
     <string name="title_disable_suggestions_prompt">Išjungti programų pasiūlymus?</string>
     <string name="msg_disable_suggestions_prompt">Pasiūlymai nebus rodomi programų sąrašo viršuje, o naudojimo duomenys, naudoti jiems sukurti, bus visam laikui ištrinti.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versija</string>
     <string name="pref_open_source_licenses_title">Atvirojo šaltinio licencijos</string>
     <string name="icon_shape_rounded_square">Suapvalintas kvadratas</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s už %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s dabar</string>
     <string name="smartspace_preferences">Nuostatos</string>

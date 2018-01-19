@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Διαγραφή αναζητήσεων</string>
     <string name="place_autocomplete_search_hint">Αναζήτηση</string>
-    <string name="common_google_play_services_unknown_issue">Παρουσιάζονται προβλήματα με τις υπηρεσίες Google Play στην εφαρμογή %1$s. Εάν το πρόβλημα εξακολουθεί να παρουσιάζεται, επικοινωνήστε με τον προγραμματιστή για βοήθεια.</string>
+    <string name="common_google_play_services_unknown_issue">Η εφαρμογή %1$s αντιμετωπίζει κάποιο πρόβλημα με τις υπηρεσίες Google Play. Προσπαθήστε ξανά.</string>
     <string name="common_google_play_services_enable_button">Ενεργοποίηση</string>
     <string name="common_google_play_services_enable_text">Η εφαρμογή %1$s δεν θα λειτουργήσει εάν δεν έχετε ενεργοποιήσει τις υπηρεσίες Google Play.</string>
     <string name="common_google_play_services_enable_title">Ενεργοποίηση υπηρεσιών Google Play</string>
-    <string name="common_google_play_services_install_button">Λήψη υπηρεσιών Google Play</string>
-    <string name="common_google_play_services_install_text_phone">Η εφαρμογή %1$s δεν θα εκτελεστεί χωρίς τις υπηρεσίες Google Play, οι οποίες λείπουν από το τηλέφωνό σας.</string>
-    <string name="common_google_play_services_install_text_tablet">Η εφαρμογή %1$s δεν θα εκτελεστεί χωρίς τις υπηρεσίες Google Play, οι οποίες λείπουν από το tablet σας.</string>
+    <string name="common_google_play_services_install_button">Εγκατάσταση</string>
+    <string name="common_google_play_services_install_text">Η εφαρμογή %1$s δεν μπορεί να εκτελεστεί χωρίς τις υπηρεσίες Google Play, οι οποίες λείπουν από τη συσκευή σας.</string>
     <string name="common_google_play_services_install_title">Λήψη υπηρεσιών Google Play</string>
     <string name="common_google_play_services_notification_ticker">Σφάλμα Υπηρεσιών Google Play</string>
-    <string name="common_google_play_services_unsupported_text">Η εφαρμογή %1$s βασίζεται στις υπηρεσίες Google Play, οι οποίες δεν υποστηρίζονται από τη συσκευή σας. Επικοινωνήστε με τον κατασκευαστή για βοήθεια.</string>
-    <string name="common_google_play_services_unsupported_title">Υπηρεσίες Google Play</string>
+    <string name="common_google_play_services_unsupported_text">Η εφαρμογή %1$s δεν θα εκτελεστεί χωρίς τις υπηρεσίες Google Play, οι οποίες δεν υποστηρίζονται από τη συσκευή σας.</string>
     <string name="common_google_play_services_update_button">Ενημέρωση</string>
     <string name="common_google_play_services_update_text">Η εφαρμογή %1$s θα εκτελεστεί αφού ενημερώσετε τις Υπηρεσίες Google Play.</string>
     <string name="common_google_play_services_update_title">Ενημέρωση υπηρεσιών Google Play</string>
     <string name="common_google_play_services_updating_text">Η εφαρμογή %1$s δεν θα εκτελεστεί χωρίς τις υπηρεσίες Google Play, οι οποίες ενημερώνονται αυτήν τη στιγμή.</string>
-    <string name="common_google_play_services_updating_title">Ενημέρωση των υπηρεσιών Google Play</string>
     <string name="common_google_play_services_wear_update_text">Απαιτείται νέα έκδοση των υπηρεσιών Google Play. Θα ενημερωθεί σύντομα.</string>
     <string name="common_open_on_phone">Άνοιγμα σε τηλέφωνο</string>
     <string name="common_signin_button_text">Σύνδεση</string>
@@ -40,7 +37,7 @@
     <string name="place_automatically">Αυτόματη προσθήκη</string>
     <string name="all_apps_search_bar_hint">Αναζήτηση εφαρμογών</string>
     <string name="all_apps_loading_message">Φόρτωση εφαρμογών…</string>
-    <string name="all_apps_no_search_results">Δεν βρέθηκαν εφαρμογές για το ερώτημα \"%1$s\"</string>
+    <string name="all_apps_no_search_results">Δεν βρέθηκαν εφαρμογές αντιστοίχισης για \"%1$s\"</string>
     <string name="all_apps_search_market_message">Αναζήτηση περισσότερων εφαρμογών</string>
     <string name="notifications_header">Ειδοποιήσεις</string>
     <string name="out_of_space">Δεν υπάρχει χώρος σε αυτήν την αρχική οθόνη.</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">Παράβλεψη</string>
     <string name="notification_dismissed">Η ειδοποίηση παραβλέφθηκε</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">Προτάσεις εφαρμογών</string>
+    <string name="title_app_suggestions">Εμφάνιση προτάσεων εφαρμογών</string>
     <string name="summary_app_suggestions">Στο επάνω μέρος της λίστας \"Όλες οι εφαρμογές\".</string>
     <string name="title_disable_suggestions_prompt">Απενεργοποίηση των προτάσεων εφαρμογών;</string>
     <string name="msg_disable_suggestions_prompt">Οι προτάσεις που δεν θα εμφανίζονται στο επάνω μέρος της λίστας των εφαρμογών σας και τα δεδομένα χρήσης που χρησιμοποιούνται για τη δημιουργία τους θα διαγραφούν οριστικά.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Έκδοση</string>
     <string name="pref_open_source_licenses_title">Άδειες λογισμικού ανοικτού κώδικα</string>
     <string name="icon_shape_rounded_square">Στρογγυλεμένο τετράγωνο</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s σε %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s αυτήν τη στιγμή</string>
     <string name="smartspace_preferences">Προτιμήσεις</string>

@@ -7,8 +7,4 @@
         <item name="android:colorPrimaryDark">#ff616161</item>
         <item name="android:colorEdgeEffect">?android:textColorSecondary</item>
     </style>
-    <style name="AllAppsNavBarProtection">
-        <item name="android:background">?android:colorPrimary</item>
-        <item name="android:alpha">0.6</item>
-    </style>
 </resources>

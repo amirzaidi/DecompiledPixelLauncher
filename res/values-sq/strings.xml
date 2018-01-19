@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">Pastro kërkimin</string>
     <string name="place_autocomplete_search_hint">Kërko</string>
-    <string name="common_google_play_services_unknown_issue">%1$s ka probleme me shërbimet e \"Luaj me Google\". Nëse problemi vazhdon, kontakto me zhvilluesin për ndihmë.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s ka probleme me shërbimet e Google Play. Provo sërish.</string>
     <string name="common_google_play_services_enable_button">Aktivizo</string>
     <string name="common_google_play_services_enable_text">%1$s nuk do të funksionojë nëse nuk aktivizon shërbimet e \"Luaj me Google\".</string>
     <string name="common_google_play_services_enable_title">Aktivizo shërbimet e \"Luaj me Google\"</string>
-    <string name="common_google_play_services_install_button">Merr shërbimet e \"Luaj me Google\"</string>
-    <string name="common_google_play_services_install_text_phone">%1$s nuk do të funksionojë pa shërbimet e \"Luaj me Google\", të cilat mungojnë në telefonin tënd.</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s nuk do të funksionojë pa shërbimet e \"Luaj me Google\", të cilat mungojnë në tabletin tënd.</string>
+    <string name="common_google_play_services_install_button">Instalo</string>
+    <string name="common_google_play_services_install_text">%1$s nuk do të funksionojë pa shërbimet e Google Play, të cilat mungojnë në pajisjen tënde.</string>
     <string name="common_google_play_services_install_title">Merr shërbimet e \"Luaj me Google\"</string>
     <string name="common_google_play_services_notification_ticker">Gabim në shërbimet e \"Luaj me Google\"</string>
-    <string name="common_google_play_services_unsupported_text">%1$s mbështetet në shërbimet e \"Luaj me Google\", të cilat nuk mbështeten nga pajisja jote. Kontakto me prodhuesin për ndihmë.</string>
-    <string name="common_google_play_services_unsupported_title">Shërbimet e \"Luaj me Google\"</string>
+    <string name="common_google_play_services_unsupported_text">%1$s nuk do të funksionojë pa shërbimet e Google Play, të cilat nuk mbështeten nga pajisja jote.</string>
     <string name="common_google_play_services_update_button">Përditëso</string>
     <string name="common_google_play_services_update_text">%1$s nuk do të funksionojë nëse nuk përditëson shërbimet e \"Luaj me Google\".</string>
     <string name="common_google_play_services_update_title">Përditëso shërbimet e \"Luaj me Google\"</string>
     <string name="common_google_play_services_updating_text">%1$s nuk do të funksionojë pa shërbimet e \"Luaj me Google\", të cilat po përditësohen aktualisht.</string>
-    <string name="common_google_play_services_updating_title">Shërbimet e \"Luaj me Google\" po përditësohen</string>
     <string name="common_google_play_services_wear_update_text">Nevojitet një version i ri i shërbimeve të \"Luaj me Google\". Ai do të përditësohet automatikisht së shpejti.</string>
     <string name="common_open_on_phone">Hape në telefon</string>
     <string name="common_signin_button_text">Identifikohu</string>
@@ -131,8 +128,8 @@
     <string name="shortcuts_menu_with_notifications_description">%1$d shkurtore dhe %2$d njoftime për %3$s</string>
     <string name="action_dismiss_notification">Hiqe</string>
     <string name="notification_dismissed">Njoftimi u hoq</string>
-    <string name="app_name_pixel_launcher">Nisësi i pikselëve</string>
-    <string name="title_app_suggestions">Sugjerimet e aplikacioneve</string>
+    <string name="app_name_pixel_launcher">Nisësi i Pixel</string>
+    <string name="title_app_suggestions">Shfaq sugjerimet e aplikacioneve</string>
     <string name="summary_app_suggestions">Në krye të listës tënde \"Të gjitha aplikacionet\"</string>
     <string name="title_disable_suggestions_prompt">Të çaktivizohen sugjerimet e aplikacioneve?</string>
     <string name="msg_disable_suggestions_prompt">"Sugjerimet nuk shfaqen në krye të listës së aplikacioneve dhe të dhënat e përdorimit që përdoren për t'i krijuar ato do të fshihen në mënyrë të përhershme."</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">Versioni</string>
     <string name="pref_open_source_licenses_title">Licenca me burim informacioni të hapur</string>
     <string name="icon_shape_rounded_square">Katror i rrumbullakosur</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s në %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s tani</string>
     <string name="smartspace_preferences">Preferencat</string>

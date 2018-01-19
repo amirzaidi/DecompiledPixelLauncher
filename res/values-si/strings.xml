@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">සෙවීම හිස් කරන්න</string>
     <string name="place_autocomplete_search_hint">සෙවීම</string>
-    <string name="common_google_play_services_unknown_issue">%1$s හට Google Play සේවා සමගින් ගැටලු ඇත. ගැටලුව දිගටම පැවතුණහොත්, කරුණාකර සහාය සඳහා සංවර්ධක අමතන්න.</string>
+    <string name="common_google_play_services_unknown_issue">%1$s හට Google Play සේවා සමගින් ගැටලු ඇත. කරුණාකර නැවත උත්සාහ කරන්න.</string>
     <string name="common_google_play_services_enable_button">සබල කරන්න</string>
     <string name="common_google_play_services_enable_text">ඔබ Google Play සේවා සබල කරන්නේ නම් මිස %1$s වැඩ නොකරනු ඇත.</string>
     <string name="common_google_play_services_enable_title">Google Play සේවා සබල කරන්න</string>
-    <string name="common_google_play_services_install_button">Google Play සේවා ලබා ගන්න</string>
-    <string name="common_google_play_services_install_text_phone">ඔබගේ දුරකථනයේ නැති Google Play සේවාවන් නොමැතිව %1$s ධාවනය නොවනු ඇත.</string>
-    <string name="common_google_play_services_install_text_tablet">ඔබගේ ටැබ්ලට් පරිගණකයේ නැති Google Play සේවා නොමැතිව %1$s ධාවනය නොවනු ඇත.</string>
+    <string name="common_google_play_services_install_button">ස්ථාපනය කරන්න</string>
+    <string name="common_google_play_services_install_text">ඔබගේ ටැබ්ලට් පරිගණකයේ නැති Google Play සේවා නොමැතිව %1$s ධාවනය නොවනු ඇත.</string>
     <string name="common_google_play_services_install_title">Google Play සේවා ලබා ගන්න</string>
     <string name="common_google_play_services_notification_ticker">Google Play සේවා දෝෂය</string>
-    <string name="common_google_play_services_unsupported_text">%1$s Google Play සේවා මත යැපෙන අතර, එය වෙත ඔබගේ උපාංගය සහාය නොදක්වයි. කරුණාකර සහාය සඳහා නිෂ්පාදකයා අමතන්න.</string>
-    <string name="common_google_play_services_unsupported_title">Google Play සේවා</string>
+    <string name="common_google_play_services_unsupported_text">ඔබගේ උපාංගය මගින් සහාය නොදක්වන, Google Play සේවා නොමැතිව %1$s ධාවනය නොවනු ඇත.</string>
     <string name="common_google_play_services_update_button">යාවත්කාලීන කරන්න</string>
     <string name="common_google_play_services_update_text">Google Play සේවා යාවත්කාලීන කරන්නේ නොමැතිව %1$s ධාවනය නොවේ.</string>
     <string name="common_google_play_services_update_title">Google Play සේවා යාවත්කාලීන කරන්න</string>
     <string name="common_google_play_services_updating_text">දැනට යාවත්කාලීන කරමින් ඇති, Google Play සේවා නොමැතිව %1$s ධාවනය නොවනු ඇත.</string>
-    <string name="common_google_play_services_updating_title">Google Play සේවා යාවත්කාලීන කරමින්</string>
     <string name="common_google_play_services_wear_update_text">Google Play සේවාවල නව අනුවාදයක් අවශ්‍යයි. එය මද වේලාවකින් එය විසින්ම යාවත්කාලීන වනු ඇත.</string>
     <string name="common_open_on_phone">දුරකථනය තුළ විවෘත කරන්න</string>
     <string name="common_signin_button_text">පුරන්න</string>
@@ -38,7 +35,7 @@
     <string name="widget_accessible_dims_format">පළල %1$d උස %2$d</string>
     <string name="add_item_request_drag_hint">අතින් ස්ථානගත කිරීමට ස්පර්ශ කර අල්ලාගෙන සිටින්න</string>
     <string name="place_automatically">ස්වයංක්‍රියව එක් කරන්න</string>
-    <string name="all_apps_search_bar_hint">යෙදුම් සෙවීම</string>
+    <string name="all_apps_search_bar_hint">යෙදුම් සොයන්න</string>
     <string name="all_apps_loading_message">යෙදුම් පූරණය වෙමින්…</string>
     <string name="all_apps_no_search_results">\"%1$s\" සමග ගැළපෙන යෙදුම් හමු නොවිණි</string>
     <string name="all_apps_search_market_message">තව යෙදුම් සඳහා සොයන්න</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">ඉවතලන්න</string>
     <string name="notification_dismissed">දැනුම්දීම ඉවතලන ලදී</string>
     <string name="app_name_pixel_launcher">පික්සල දියත්කරණය</string>
-    <string name="title_app_suggestions">යෙදුම් යෝජනා</string>
+    <string name="title_app_suggestions">සංදර්ශක යෙදුම් යෝජනා</string>
     <string name="summary_app_suggestions">ඔබගේ සියලු යෙදුම් ලැයිස්තුවේ ඉහළින්ම</string>
     <string name="title_disable_suggestions_prompt">යෙදුම් යෝජනා ක්‍රියාවිරහිත කරන්නද?</string>
     <string name="msg_disable_suggestions_prompt">යෝජනා ඔබේ යෙදුම් ලැයිස්තුවෙහි ඉහළින්ම දිස් නොවනු ඇති අතර, ඒවා සෑදීමට භාවිත කළ භාවිතා දත්ත ස්ථිරවම මකනු ඇත.</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">අනුවාදය</string>
     <string name="pref_open_source_licenses_title">විවෘත මූලාශ්‍ර බලපත්‍ර</string>
     <string name="icon_shape_rounded_square">වටකුරු සමචතුරස්‍රය</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%2$sකින් %1$s</string>
     <string name="smartspace_calendar_event_now">%1$s දැන්</string>
     <string name="smartspace_preferences">මනාප</string>

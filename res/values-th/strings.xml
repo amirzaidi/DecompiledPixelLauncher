@@ -2,22 +2,19 @@
 <resources>
     <string name="place_autocomplete_clear_button">ล้างการค้นหา</string>
     <string name="place_autocomplete_search_hint">ค้นหา</string>
-    <string name="common_google_play_services_unknown_issue">%1$s มีปัญหาเกี่ยวกับบริการของ Google Play หากยังคงมีปัญหาอยู่ โปรดติดต่อนักพัฒนาซอฟต์แวร์เพื่อขอความช่วยเหลือ</string>
+    <string name="common_google_play_services_unknown_issue">%1$s มีปัญหาเกี่ยวกับบริการของ Google Play โปรดลองอีกครั้ง</string>
     <string name="common_google_play_services_enable_button">เปิดใช้</string>
     <string name="common_google_play_services_enable_text">%1$s จะไม่ทำงานจนกว่าคุณจะเปิดใช้บริการ Google Play</string>
     <string name="common_google_play_services_enable_title">เปิดใช้บริการ Google Play</string>
-    <string name="common_google_play_services_install_button">ติดตั้งบริการ Google Play</string>
-    <string name="common_google_play_services_install_text_phone">%1$s จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งไม่มีในโทรศัพท์ของคุณ</string>
-    <string name="common_google_play_services_install_text_tablet">%1$s จะไม่ทำงานหากไม่มีบริการ Google Play ซี่งไม่มีในแท็บเล็ตของคุณ</string>
+    <string name="common_google_play_services_install_button">ติดตั้ง</string>
+    <string name="common_google_play_services_install_text">%1$s จะไม่ทำงานหากไม่มีบริการ Google Play ซี่งไม่มีในอุปกรณ์ของคุณ</string>
     <string name="common_google_play_services_install_title">ติดตั้งบริการ Google Play</string>
     <string name="common_google_play_services_notification_ticker">ข้อผิดพลาดของบริการ Google Play</string>
-    <string name="common_google_play_services_unsupported_text">%1$s ต้องอาศัยบริการ Google Play ซึ่งอุปกรณ์ของคุณไม่รองรับ โปรดติดต่อผู้ผลิตเพื่อขอความช่วยเหลือ</string>
-    <string name="common_google_play_services_unsupported_title">บริการ Google Play</string>
+    <string name="common_google_play_services_unsupported_text">%1$s จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งอุปกรณ์ของคุณไม่สนับสนุน</string>
     <string name="common_google_play_services_update_button">อัปเดต</string>
     <string name="common_google_play_services_update_text">%1$s จะไม่ทำงานจนกว่าคุณจะอัปเดตบริการ Google Play</string>
     <string name="common_google_play_services_update_title">อัปเดตบริการ Google Play</string>
     <string name="common_google_play_services_updating_text">%1$s จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งกำลังอัปเดตอยู่ในขณะนี้</string>
-    <string name="common_google_play_services_updating_title">กำลังอัปเดตบริการ Google Play</string>
     <string name="common_google_play_services_wear_update_text">จำเป็นต้องใช้บริการ Google Play เวอร์ชันใหม่ ซึ่งจะอัปเดตอัตโนมัติในอีกไม่ช้า</string>
     <string name="common_open_on_phone">เปิดบนโทรศัพท์</string>
     <string name="common_signin_button_text">ลงชื่อเข้าใช้</string>
@@ -132,7 +129,7 @@
     <string name="action_dismiss_notification">ปิด</string>
     <string name="notification_dismissed">ปิดการแจ้งเตือนแล้ว</string>
     <string name="app_name_pixel_launcher">Pixel Launcher</string>
-    <string name="title_app_suggestions">คำแนะนำเกี่ยวกับแอป</string>
+    <string name="title_app_suggestions">แสดงคำแนะนำแอป</string>
     <string name="summary_app_suggestions">ที่ด้านบนของรายการ \"แอปทั้งหมด\"</string>
     <string name="title_disable_suggestions_prompt">ปิดคำแนะนำเกี่ยวกับแอปใช่ไหม</string>
     <string name="msg_disable_suggestions_prompt">คำแนะนำจะไม่ปรากฏขึ้นที่ด้านบนของรายการแอป และข้อมูลการใช้งานที่ใช้ในการสร้างคำแนะนำจะถูกลบทิ้งถาวร</string>
@@ -151,6 +148,7 @@
     <string name="about_app_version">เวอร์ชัน</string>
     <string name="pref_open_source_licenses_title">สัญญาอนุญาตโอเพนซอร์ส</string>
     <string name="icon_shape_rounded_square">สี่เหลี่ยมจัตุรัสขอบมน</string>
+    <string name="smartspace_hours_mins">%1$s %2$s</string>
     <string name="smartspace_calendar_event">%1$s ใน %2$s</string>
     <string name="smartspace_calendar_event_now">%1$s ตอนนี้</string>
     <string name="smartspace_preferences">ค่ากำหนด</string>
